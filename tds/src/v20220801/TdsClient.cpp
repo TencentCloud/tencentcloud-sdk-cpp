@@ -62,25 +62,32 @@ TdsClient::DescribeFinanceFraudUltimateOutcome TdsClient::DescribeFinanceFraudUl
 
 void TdsClient::DescribeFinanceFraudUltimateAsync(const DescribeFinanceFraudUltimateRequest& request, const DescribeFinanceFraudUltimateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeFinanceFraudUltimate(request), context);
-    };
+    using Req = const DescribeFinanceFraudUltimateRequest&;
+    using Resp = DescribeFinanceFraudUltimateResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeFinanceFraudUltimate", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TdsClient::DescribeFinanceFraudUltimateOutcomeCallable TdsClient::DescribeFinanceFraudUltimateCallable(const DescribeFinanceFraudUltimateRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeFinanceFraudUltimateOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeFinanceFraudUltimate(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeFinanceFraudUltimateOutcome>>();
+    DescribeFinanceFraudUltimateAsync(
+    request,
+    [prom](
+        const TdsClient*,
+        const DescribeFinanceFraudUltimateRequest&,
+        DescribeFinanceFraudUltimateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TdsClient::DescribeFraudBaseOutcome TdsClient::DescribeFraudBase(const DescribeFraudBaseRequest &request)
@@ -105,25 +112,32 @@ TdsClient::DescribeFraudBaseOutcome TdsClient::DescribeFraudBase(const DescribeF
 
 void TdsClient::DescribeFraudBaseAsync(const DescribeFraudBaseRequest& request, const DescribeFraudBaseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeFraudBase(request), context);
-    };
+    using Req = const DescribeFraudBaseRequest&;
+    using Resp = DescribeFraudBaseResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeFraudBase", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TdsClient::DescribeFraudBaseOutcomeCallable TdsClient::DescribeFraudBaseCallable(const DescribeFraudBaseRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeFraudBaseOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeFraudBase(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeFraudBaseOutcome>>();
+    DescribeFraudBaseAsync(
+    request,
+    [prom](
+        const TdsClient*,
+        const DescribeFraudBaseRequest&,
+        DescribeFraudBaseOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TdsClient::DescribeFraudPremiumOutcome TdsClient::DescribeFraudPremium(const DescribeFraudPremiumRequest &request)
@@ -148,25 +162,32 @@ TdsClient::DescribeFraudPremiumOutcome TdsClient::DescribeFraudPremium(const Des
 
 void TdsClient::DescribeFraudPremiumAsync(const DescribeFraudPremiumRequest& request, const DescribeFraudPremiumAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeFraudPremium(request), context);
-    };
+    using Req = const DescribeFraudPremiumRequest&;
+    using Resp = DescribeFraudPremiumResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeFraudPremium", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TdsClient::DescribeFraudPremiumOutcomeCallable TdsClient::DescribeFraudPremiumCallable(const DescribeFraudPremiumRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeFraudPremiumOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeFraudPremium(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeFraudPremiumOutcome>>();
+    DescribeFraudPremiumAsync(
+    request,
+    [prom](
+        const TdsClient*,
+        const DescribeFraudPremiumRequest&,
+        DescribeFraudPremiumOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TdsClient::DescribeFraudUltimateOutcome TdsClient::DescribeFraudUltimate(const DescribeFraudUltimateRequest &request)
@@ -191,25 +212,32 @@ TdsClient::DescribeFraudUltimateOutcome TdsClient::DescribeFraudUltimate(const D
 
 void TdsClient::DescribeFraudUltimateAsync(const DescribeFraudUltimateRequest& request, const DescribeFraudUltimateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeFraudUltimate(request), context);
-    };
+    using Req = const DescribeFraudUltimateRequest&;
+    using Resp = DescribeFraudUltimateResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeFraudUltimate", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TdsClient::DescribeFraudUltimateOutcomeCallable TdsClient::DescribeFraudUltimateCallable(const DescribeFraudUltimateRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeFraudUltimateOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeFraudUltimate(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeFraudUltimateOutcome>>();
+    DescribeFraudUltimateAsync(
+    request,
+    [prom](
+        const TdsClient*,
+        const DescribeFraudUltimateRequest&,
+        DescribeFraudUltimateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TdsClient::DescribeTrustedIDOutcome TdsClient::DescribeTrustedID(const DescribeTrustedIDRequest &request)
@@ -234,24 +262,31 @@ TdsClient::DescribeTrustedIDOutcome TdsClient::DescribeTrustedID(const DescribeT
 
 void TdsClient::DescribeTrustedIDAsync(const DescribeTrustedIDRequest& request, const DescribeTrustedIDAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeTrustedID(request), context);
-    };
+    using Req = const DescribeTrustedIDRequest&;
+    using Resp = DescribeTrustedIDResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeTrustedID", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TdsClient::DescribeTrustedIDOutcomeCallable TdsClient::DescribeTrustedIDCallable(const DescribeTrustedIDRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeTrustedIDOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeTrustedID(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeTrustedIDOutcome>>();
+    DescribeTrustedIDAsync(
+    request,
+    [prom](
+        const TdsClient*,
+        const DescribeTrustedIDRequest&,
+        DescribeTrustedIDOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 

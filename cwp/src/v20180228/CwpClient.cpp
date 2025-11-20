@@ -62,25 +62,32 @@ CwpClient::AddLoginWhiteListsOutcome CwpClient::AddLoginWhiteLists(const AddLogi
 
 void CwpClient::AddLoginWhiteListsAsync(const AddLoginWhiteListsRequest& request, const AddLoginWhiteListsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->AddLoginWhiteLists(request), context);
-    };
+    using Req = const AddLoginWhiteListsRequest&;
+    using Resp = AddLoginWhiteListsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "AddLoginWhiteLists", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::AddLoginWhiteListsOutcomeCallable CwpClient::AddLoginWhiteListsCallable(const AddLoginWhiteListsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<AddLoginWhiteListsOutcome()>>(
-        [this, request]()
-        {
-            return this->AddLoginWhiteLists(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<AddLoginWhiteListsOutcome>>();
+    AddLoginWhiteListsAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const AddLoginWhiteListsRequest&,
+        AddLoginWhiteListsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::CancelIgnoreVulOutcome CwpClient::CancelIgnoreVul(const CancelIgnoreVulRequest &request)
@@ -105,25 +112,32 @@ CwpClient::CancelIgnoreVulOutcome CwpClient::CancelIgnoreVul(const CancelIgnoreV
 
 void CwpClient::CancelIgnoreVulAsync(const CancelIgnoreVulRequest& request, const CancelIgnoreVulAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CancelIgnoreVul(request), context);
-    };
+    using Req = const CancelIgnoreVulRequest&;
+    using Resp = CancelIgnoreVulResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CancelIgnoreVul", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::CancelIgnoreVulOutcomeCallable CwpClient::CancelIgnoreVulCallable(const CancelIgnoreVulRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CancelIgnoreVulOutcome()>>(
-        [this, request]()
-        {
-            return this->CancelIgnoreVul(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CancelIgnoreVulOutcome>>();
+    CancelIgnoreVulAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const CancelIgnoreVulRequest&,
+        CancelIgnoreVulOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::ChangeRuleEventsIgnoreStatusOutcome CwpClient::ChangeRuleEventsIgnoreStatus(const ChangeRuleEventsIgnoreStatusRequest &request)
@@ -148,25 +162,32 @@ CwpClient::ChangeRuleEventsIgnoreStatusOutcome CwpClient::ChangeRuleEventsIgnore
 
 void CwpClient::ChangeRuleEventsIgnoreStatusAsync(const ChangeRuleEventsIgnoreStatusRequest& request, const ChangeRuleEventsIgnoreStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ChangeRuleEventsIgnoreStatus(request), context);
-    };
+    using Req = const ChangeRuleEventsIgnoreStatusRequest&;
+    using Resp = ChangeRuleEventsIgnoreStatusResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ChangeRuleEventsIgnoreStatus", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::ChangeRuleEventsIgnoreStatusOutcomeCallable CwpClient::ChangeRuleEventsIgnoreStatusCallable(const ChangeRuleEventsIgnoreStatusRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ChangeRuleEventsIgnoreStatusOutcome()>>(
-        [this, request]()
-        {
-            return this->ChangeRuleEventsIgnoreStatus(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ChangeRuleEventsIgnoreStatusOutcome>>();
+    ChangeRuleEventsIgnoreStatusAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const ChangeRuleEventsIgnoreStatusRequest&,
+        ChangeRuleEventsIgnoreStatusOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::ChangeStrategyEnableStatusOutcome CwpClient::ChangeStrategyEnableStatus(const ChangeStrategyEnableStatusRequest &request)
@@ -191,25 +212,32 @@ CwpClient::ChangeStrategyEnableStatusOutcome CwpClient::ChangeStrategyEnableStat
 
 void CwpClient::ChangeStrategyEnableStatusAsync(const ChangeStrategyEnableStatusRequest& request, const ChangeStrategyEnableStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ChangeStrategyEnableStatus(request), context);
-    };
+    using Req = const ChangeStrategyEnableStatusRequest&;
+    using Resp = ChangeStrategyEnableStatusResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ChangeStrategyEnableStatus", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::ChangeStrategyEnableStatusOutcomeCallable CwpClient::ChangeStrategyEnableStatusCallable(const ChangeStrategyEnableStatusRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ChangeStrategyEnableStatusOutcome()>>(
-        [this, request]()
-        {
-            return this->ChangeStrategyEnableStatus(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ChangeStrategyEnableStatusOutcome>>();
+    ChangeStrategyEnableStatusAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const ChangeStrategyEnableStatusRequest&,
+        ChangeStrategyEnableStatusOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::CheckBashPolicyParamsOutcome CwpClient::CheckBashPolicyParams(const CheckBashPolicyParamsRequest &request)
@@ -234,25 +262,32 @@ CwpClient::CheckBashPolicyParamsOutcome CwpClient::CheckBashPolicyParams(const C
 
 void CwpClient::CheckBashPolicyParamsAsync(const CheckBashPolicyParamsRequest& request, const CheckBashPolicyParamsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CheckBashPolicyParams(request), context);
-    };
+    using Req = const CheckBashPolicyParamsRequest&;
+    using Resp = CheckBashPolicyParamsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CheckBashPolicyParams", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::CheckBashPolicyParamsOutcomeCallable CwpClient::CheckBashPolicyParamsCallable(const CheckBashPolicyParamsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CheckBashPolicyParamsOutcome()>>(
-        [this, request]()
-        {
-            return this->CheckBashPolicyParams(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CheckBashPolicyParamsOutcome>>();
+    CheckBashPolicyParamsAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const CheckBashPolicyParamsRequest&,
+        CheckBashPolicyParamsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::CheckBashRuleParamsOutcome CwpClient::CheckBashRuleParams(const CheckBashRuleParamsRequest &request)
@@ -277,25 +312,32 @@ CwpClient::CheckBashRuleParamsOutcome CwpClient::CheckBashRuleParams(const Check
 
 void CwpClient::CheckBashRuleParamsAsync(const CheckBashRuleParamsRequest& request, const CheckBashRuleParamsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CheckBashRuleParams(request), context);
-    };
+    using Req = const CheckBashRuleParamsRequest&;
+    using Resp = CheckBashRuleParamsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CheckBashRuleParams", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::CheckBashRuleParamsOutcomeCallable CwpClient::CheckBashRuleParamsCallable(const CheckBashRuleParamsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CheckBashRuleParamsOutcome()>>(
-        [this, request]()
-        {
-            return this->CheckBashRuleParams(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CheckBashRuleParamsOutcome>>();
+    CheckBashRuleParamsAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const CheckBashRuleParamsRequest&,
+        CheckBashRuleParamsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::CheckFileTamperRuleOutcome CwpClient::CheckFileTamperRule(const CheckFileTamperRuleRequest &request)
@@ -320,25 +362,32 @@ CwpClient::CheckFileTamperRuleOutcome CwpClient::CheckFileTamperRule(const Check
 
 void CwpClient::CheckFileTamperRuleAsync(const CheckFileTamperRuleRequest& request, const CheckFileTamperRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CheckFileTamperRule(request), context);
-    };
+    using Req = const CheckFileTamperRuleRequest&;
+    using Resp = CheckFileTamperRuleResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CheckFileTamperRule", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::CheckFileTamperRuleOutcomeCallable CwpClient::CheckFileTamperRuleCallable(const CheckFileTamperRuleRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CheckFileTamperRuleOutcome()>>(
-        [this, request]()
-        {
-            return this->CheckFileTamperRule(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CheckFileTamperRuleOutcome>>();
+    CheckFileTamperRuleAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const CheckFileTamperRuleRequest&,
+        CheckFileTamperRuleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::CheckFirstScanBaselineOutcome CwpClient::CheckFirstScanBaseline(const CheckFirstScanBaselineRequest &request)
@@ -363,25 +412,32 @@ CwpClient::CheckFirstScanBaselineOutcome CwpClient::CheckFirstScanBaseline(const
 
 void CwpClient::CheckFirstScanBaselineAsync(const CheckFirstScanBaselineRequest& request, const CheckFirstScanBaselineAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CheckFirstScanBaseline(request), context);
-    };
+    using Req = const CheckFirstScanBaselineRequest&;
+    using Resp = CheckFirstScanBaselineResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CheckFirstScanBaseline", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::CheckFirstScanBaselineOutcomeCallable CwpClient::CheckFirstScanBaselineCallable(const CheckFirstScanBaselineRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CheckFirstScanBaselineOutcome()>>(
-        [this, request]()
-        {
-            return this->CheckFirstScanBaseline(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CheckFirstScanBaselineOutcome>>();
+    CheckFirstScanBaselineAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const CheckFirstScanBaselineRequest&,
+        CheckFirstScanBaselineOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::CheckLogKafkaConnectionStateOutcome CwpClient::CheckLogKafkaConnectionState(const CheckLogKafkaConnectionStateRequest &request)
@@ -406,25 +462,32 @@ CwpClient::CheckLogKafkaConnectionStateOutcome CwpClient::CheckLogKafkaConnectio
 
 void CwpClient::CheckLogKafkaConnectionStateAsync(const CheckLogKafkaConnectionStateRequest& request, const CheckLogKafkaConnectionStateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CheckLogKafkaConnectionState(request), context);
-    };
+    using Req = const CheckLogKafkaConnectionStateRequest&;
+    using Resp = CheckLogKafkaConnectionStateResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CheckLogKafkaConnectionState", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::CheckLogKafkaConnectionStateOutcomeCallable CwpClient::CheckLogKafkaConnectionStateCallable(const CheckLogKafkaConnectionStateRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CheckLogKafkaConnectionStateOutcome()>>(
-        [this, request]()
-        {
-            return this->CheckLogKafkaConnectionState(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CheckLogKafkaConnectionStateOutcome>>();
+    CheckLogKafkaConnectionStateAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const CheckLogKafkaConnectionStateRequest&,
+        CheckLogKafkaConnectionStateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::ClearLocalStorageOutcome CwpClient::ClearLocalStorage(const ClearLocalStorageRequest &request)
@@ -449,25 +512,32 @@ CwpClient::ClearLocalStorageOutcome CwpClient::ClearLocalStorage(const ClearLoca
 
 void CwpClient::ClearLocalStorageAsync(const ClearLocalStorageRequest& request, const ClearLocalStorageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ClearLocalStorage(request), context);
-    };
+    using Req = const ClearLocalStorageRequest&;
+    using Resp = ClearLocalStorageResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ClearLocalStorage", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::ClearLocalStorageOutcomeCallable CwpClient::ClearLocalStorageCallable(const ClearLocalStorageRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ClearLocalStorageOutcome()>>(
-        [this, request]()
-        {
-            return this->ClearLocalStorage(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ClearLocalStorageOutcome>>();
+    ClearLocalStorageAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const ClearLocalStorageRequest&,
+        ClearLocalStorageOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::CreateBanWhiteListOutcome CwpClient::CreateBanWhiteList(const CreateBanWhiteListRequest &request)
@@ -492,25 +562,32 @@ CwpClient::CreateBanWhiteListOutcome CwpClient::CreateBanWhiteList(const CreateB
 
 void CwpClient::CreateBanWhiteListAsync(const CreateBanWhiteListRequest& request, const CreateBanWhiteListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateBanWhiteList(request), context);
-    };
+    using Req = const CreateBanWhiteListRequest&;
+    using Resp = CreateBanWhiteListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateBanWhiteList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::CreateBanWhiteListOutcomeCallable CwpClient::CreateBanWhiteListCallable(const CreateBanWhiteListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateBanWhiteListOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateBanWhiteList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateBanWhiteListOutcome>>();
+    CreateBanWhiteListAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const CreateBanWhiteListRequest&,
+        CreateBanWhiteListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::CreateBaselineStrategyOutcome CwpClient::CreateBaselineStrategy(const CreateBaselineStrategyRequest &request)
@@ -535,25 +612,32 @@ CwpClient::CreateBaselineStrategyOutcome CwpClient::CreateBaselineStrategy(const
 
 void CwpClient::CreateBaselineStrategyAsync(const CreateBaselineStrategyRequest& request, const CreateBaselineStrategyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateBaselineStrategy(request), context);
-    };
+    using Req = const CreateBaselineStrategyRequest&;
+    using Resp = CreateBaselineStrategyResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateBaselineStrategy", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::CreateBaselineStrategyOutcomeCallable CwpClient::CreateBaselineStrategyCallable(const CreateBaselineStrategyRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateBaselineStrategyOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateBaselineStrategy(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateBaselineStrategyOutcome>>();
+    CreateBaselineStrategyAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const CreateBaselineStrategyRequest&,
+        CreateBaselineStrategyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::CreateBuyBindTaskOutcome CwpClient::CreateBuyBindTask(const CreateBuyBindTaskRequest &request)
@@ -578,25 +662,32 @@ CwpClient::CreateBuyBindTaskOutcome CwpClient::CreateBuyBindTask(const CreateBuy
 
 void CwpClient::CreateBuyBindTaskAsync(const CreateBuyBindTaskRequest& request, const CreateBuyBindTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateBuyBindTask(request), context);
-    };
+    using Req = const CreateBuyBindTaskRequest&;
+    using Resp = CreateBuyBindTaskResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateBuyBindTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::CreateBuyBindTaskOutcomeCallable CwpClient::CreateBuyBindTaskCallable(const CreateBuyBindTaskRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateBuyBindTaskOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateBuyBindTask(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateBuyBindTaskOutcome>>();
+    CreateBuyBindTaskAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const CreateBuyBindTaskRequest&,
+        CreateBuyBindTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::CreateEmergencyVulScanOutcome CwpClient::CreateEmergencyVulScan(const CreateEmergencyVulScanRequest &request)
@@ -621,25 +712,32 @@ CwpClient::CreateEmergencyVulScanOutcome CwpClient::CreateEmergencyVulScan(const
 
 void CwpClient::CreateEmergencyVulScanAsync(const CreateEmergencyVulScanRequest& request, const CreateEmergencyVulScanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateEmergencyVulScan(request), context);
-    };
+    using Req = const CreateEmergencyVulScanRequest&;
+    using Resp = CreateEmergencyVulScanResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateEmergencyVulScan", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::CreateEmergencyVulScanOutcomeCallable CwpClient::CreateEmergencyVulScanCallable(const CreateEmergencyVulScanRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateEmergencyVulScanOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateEmergencyVulScan(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateEmergencyVulScanOutcome>>();
+    CreateEmergencyVulScanAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const CreateEmergencyVulScanRequest&,
+        CreateEmergencyVulScanOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::CreateIncidentBacktrackingOutcome CwpClient::CreateIncidentBacktracking(const CreateIncidentBacktrackingRequest &request)
@@ -664,25 +762,32 @@ CwpClient::CreateIncidentBacktrackingOutcome CwpClient::CreateIncidentBacktracki
 
 void CwpClient::CreateIncidentBacktrackingAsync(const CreateIncidentBacktrackingRequest& request, const CreateIncidentBacktrackingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateIncidentBacktracking(request), context);
-    };
+    using Req = const CreateIncidentBacktrackingRequest&;
+    using Resp = CreateIncidentBacktrackingResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateIncidentBacktracking", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::CreateIncidentBacktrackingOutcomeCallable CwpClient::CreateIncidentBacktrackingCallable(const CreateIncidentBacktrackingRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateIncidentBacktrackingOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateIncidentBacktracking(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateIncidentBacktrackingOutcome>>();
+    CreateIncidentBacktrackingAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const CreateIncidentBacktrackingRequest&,
+        CreateIncidentBacktrackingOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::CreateLicenseOrderOutcome CwpClient::CreateLicenseOrder(const CreateLicenseOrderRequest &request)
@@ -707,25 +812,32 @@ CwpClient::CreateLicenseOrderOutcome CwpClient::CreateLicenseOrder(const CreateL
 
 void CwpClient::CreateLicenseOrderAsync(const CreateLicenseOrderRequest& request, const CreateLicenseOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateLicenseOrder(request), context);
-    };
+    using Req = const CreateLicenseOrderRequest&;
+    using Resp = CreateLicenseOrderResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateLicenseOrder", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::CreateLicenseOrderOutcomeCallable CwpClient::CreateLicenseOrderCallable(const CreateLicenseOrderRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateLicenseOrderOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateLicenseOrder(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateLicenseOrderOutcome>>();
+    CreateLicenseOrderAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const CreateLicenseOrderRequest&,
+        CreateLicenseOrderOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::CreateLogExportOutcome CwpClient::CreateLogExport(const CreateLogExportRequest &request)
@@ -750,25 +862,32 @@ CwpClient::CreateLogExportOutcome CwpClient::CreateLogExport(const CreateLogExpo
 
 void CwpClient::CreateLogExportAsync(const CreateLogExportRequest& request, const CreateLogExportAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateLogExport(request), context);
-    };
+    using Req = const CreateLogExportRequest&;
+    using Resp = CreateLogExportResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateLogExport", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::CreateLogExportOutcomeCallable CwpClient::CreateLogExportCallable(const CreateLogExportRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateLogExportOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateLogExport(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateLogExportOutcome>>();
+    CreateLogExportAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const CreateLogExportRequest&,
+        CreateLogExportOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::CreateMaliciousRequestWhiteListOutcome CwpClient::CreateMaliciousRequestWhiteList(const CreateMaliciousRequestWhiteListRequest &request)
@@ -793,25 +912,32 @@ CwpClient::CreateMaliciousRequestWhiteListOutcome CwpClient::CreateMaliciousRequ
 
 void CwpClient::CreateMaliciousRequestWhiteListAsync(const CreateMaliciousRequestWhiteListRequest& request, const CreateMaliciousRequestWhiteListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateMaliciousRequestWhiteList(request), context);
-    };
+    using Req = const CreateMaliciousRequestWhiteListRequest&;
+    using Resp = CreateMaliciousRequestWhiteListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateMaliciousRequestWhiteList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::CreateMaliciousRequestWhiteListOutcomeCallable CwpClient::CreateMaliciousRequestWhiteListCallable(const CreateMaliciousRequestWhiteListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateMaliciousRequestWhiteListOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateMaliciousRequestWhiteList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateMaliciousRequestWhiteListOutcome>>();
+    CreateMaliciousRequestWhiteListAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const CreateMaliciousRequestWhiteListRequest&,
+        CreateMaliciousRequestWhiteListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::CreateMalwareWhiteListOutcome CwpClient::CreateMalwareWhiteList(const CreateMalwareWhiteListRequest &request)
@@ -836,25 +962,32 @@ CwpClient::CreateMalwareWhiteListOutcome CwpClient::CreateMalwareWhiteList(const
 
 void CwpClient::CreateMalwareWhiteListAsync(const CreateMalwareWhiteListRequest& request, const CreateMalwareWhiteListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateMalwareWhiteList(request), context);
-    };
+    using Req = const CreateMalwareWhiteListRequest&;
+    using Resp = CreateMalwareWhiteListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateMalwareWhiteList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::CreateMalwareWhiteListOutcomeCallable CwpClient::CreateMalwareWhiteListCallable(const CreateMalwareWhiteListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateMalwareWhiteListOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateMalwareWhiteList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateMalwareWhiteListOutcome>>();
+    CreateMalwareWhiteListAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const CreateMalwareWhiteListRequest&,
+        CreateMalwareWhiteListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::CreateNetAttackWhiteListOutcome CwpClient::CreateNetAttackWhiteList(const CreateNetAttackWhiteListRequest &request)
@@ -879,25 +1012,32 @@ CwpClient::CreateNetAttackWhiteListOutcome CwpClient::CreateNetAttackWhiteList(c
 
 void CwpClient::CreateNetAttackWhiteListAsync(const CreateNetAttackWhiteListRequest& request, const CreateNetAttackWhiteListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateNetAttackWhiteList(request), context);
-    };
+    using Req = const CreateNetAttackWhiteListRequest&;
+    using Resp = CreateNetAttackWhiteListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateNetAttackWhiteList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::CreateNetAttackWhiteListOutcomeCallable CwpClient::CreateNetAttackWhiteListCallable(const CreateNetAttackWhiteListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateNetAttackWhiteListOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateNetAttackWhiteList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateNetAttackWhiteListOutcome>>();
+    CreateNetAttackWhiteListAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const CreateNetAttackWhiteListRequest&,
+        CreateNetAttackWhiteListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::CreateProtectServerOutcome CwpClient::CreateProtectServer(const CreateProtectServerRequest &request)
@@ -922,25 +1062,32 @@ CwpClient::CreateProtectServerOutcome CwpClient::CreateProtectServer(const Creat
 
 void CwpClient::CreateProtectServerAsync(const CreateProtectServerRequest& request, const CreateProtectServerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateProtectServer(request), context);
-    };
+    using Req = const CreateProtectServerRequest&;
+    using Resp = CreateProtectServerResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateProtectServer", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::CreateProtectServerOutcomeCallable CwpClient::CreateProtectServerCallable(const CreateProtectServerRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateProtectServerOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateProtectServer(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateProtectServerOutcome>>();
+    CreateProtectServerAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const CreateProtectServerRequest&,
+        CreateProtectServerOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::CreateRansomDefenseStrategyOutcome CwpClient::CreateRansomDefenseStrategy(const CreateRansomDefenseStrategyRequest &request)
@@ -965,25 +1112,32 @@ CwpClient::CreateRansomDefenseStrategyOutcome CwpClient::CreateRansomDefenseStra
 
 void CwpClient::CreateRansomDefenseStrategyAsync(const CreateRansomDefenseStrategyRequest& request, const CreateRansomDefenseStrategyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateRansomDefenseStrategy(request), context);
-    };
+    using Req = const CreateRansomDefenseStrategyRequest&;
+    using Resp = CreateRansomDefenseStrategyResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateRansomDefenseStrategy", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::CreateRansomDefenseStrategyOutcomeCallable CwpClient::CreateRansomDefenseStrategyCallable(const CreateRansomDefenseStrategyRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateRansomDefenseStrategyOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateRansomDefenseStrategy(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateRansomDefenseStrategyOutcome>>();
+    CreateRansomDefenseStrategyAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const CreateRansomDefenseStrategyRequest&,
+        CreateRansomDefenseStrategyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::CreateScanMalwareSettingOutcome CwpClient::CreateScanMalwareSetting(const CreateScanMalwareSettingRequest &request)
@@ -1008,25 +1162,32 @@ CwpClient::CreateScanMalwareSettingOutcome CwpClient::CreateScanMalwareSetting(c
 
 void CwpClient::CreateScanMalwareSettingAsync(const CreateScanMalwareSettingRequest& request, const CreateScanMalwareSettingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateScanMalwareSetting(request), context);
-    };
+    using Req = const CreateScanMalwareSettingRequest&;
+    using Resp = CreateScanMalwareSettingResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateScanMalwareSetting", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::CreateScanMalwareSettingOutcomeCallable CwpClient::CreateScanMalwareSettingCallable(const CreateScanMalwareSettingRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateScanMalwareSettingOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateScanMalwareSetting(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateScanMalwareSettingOutcome>>();
+    CreateScanMalwareSettingAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const CreateScanMalwareSettingRequest&,
+        CreateScanMalwareSettingOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::CreateSearchLogOutcome CwpClient::CreateSearchLog(const CreateSearchLogRequest &request)
@@ -1051,25 +1212,32 @@ CwpClient::CreateSearchLogOutcome CwpClient::CreateSearchLog(const CreateSearchL
 
 void CwpClient::CreateSearchLogAsync(const CreateSearchLogRequest& request, const CreateSearchLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateSearchLog(request), context);
-    };
+    using Req = const CreateSearchLogRequest&;
+    using Resp = CreateSearchLogResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateSearchLog", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::CreateSearchLogOutcomeCallable CwpClient::CreateSearchLogCallable(const CreateSearchLogRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateSearchLogOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateSearchLog(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateSearchLogOutcome>>();
+    CreateSearchLogAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const CreateSearchLogRequest&,
+        CreateSearchLogOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::CreateSearchTemplateOutcome CwpClient::CreateSearchTemplate(const CreateSearchTemplateRequest &request)
@@ -1094,25 +1262,32 @@ CwpClient::CreateSearchTemplateOutcome CwpClient::CreateSearchTemplate(const Cre
 
 void CwpClient::CreateSearchTemplateAsync(const CreateSearchTemplateRequest& request, const CreateSearchTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateSearchTemplate(request), context);
-    };
+    using Req = const CreateSearchTemplateRequest&;
+    using Resp = CreateSearchTemplateResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateSearchTemplate", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::CreateSearchTemplateOutcomeCallable CwpClient::CreateSearchTemplateCallable(const CreateSearchTemplateRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateSearchTemplateOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateSearchTemplate(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateSearchTemplateOutcome>>();
+    CreateSearchTemplateAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const CreateSearchTemplateRequest&,
+        CreateSearchTemplateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::CreateVulFixOutcome CwpClient::CreateVulFix(const CreateVulFixRequest &request)
@@ -1137,25 +1312,32 @@ CwpClient::CreateVulFixOutcome CwpClient::CreateVulFix(const CreateVulFixRequest
 
 void CwpClient::CreateVulFixAsync(const CreateVulFixRequest& request, const CreateVulFixAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateVulFix(request), context);
-    };
+    using Req = const CreateVulFixRequest&;
+    using Resp = CreateVulFixResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateVulFix", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::CreateVulFixOutcomeCallable CwpClient::CreateVulFixCallable(const CreateVulFixRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateVulFixOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateVulFix(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateVulFixOutcome>>();
+    CreateVulFixAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const CreateVulFixRequest&,
+        CreateVulFixOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::CreateWhiteListOrderOutcome CwpClient::CreateWhiteListOrder(const CreateWhiteListOrderRequest &request)
@@ -1180,25 +1362,32 @@ CwpClient::CreateWhiteListOrderOutcome CwpClient::CreateWhiteListOrder(const Cre
 
 void CwpClient::CreateWhiteListOrderAsync(const CreateWhiteListOrderRequest& request, const CreateWhiteListOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateWhiteListOrder(request), context);
-    };
+    using Req = const CreateWhiteListOrderRequest&;
+    using Resp = CreateWhiteListOrderResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateWhiteListOrder", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::CreateWhiteListOrderOutcomeCallable CwpClient::CreateWhiteListOrderCallable(const CreateWhiteListOrderRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateWhiteListOrderOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateWhiteListOrder(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateWhiteListOrderOutcome>>();
+    CreateWhiteListOrderAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const CreateWhiteListOrderRequest&,
+        CreateWhiteListOrderOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DeleteAllJavaMemShellsOutcome CwpClient::DeleteAllJavaMemShells(const DeleteAllJavaMemShellsRequest &request)
@@ -1223,25 +1412,32 @@ CwpClient::DeleteAllJavaMemShellsOutcome CwpClient::DeleteAllJavaMemShells(const
 
 void CwpClient::DeleteAllJavaMemShellsAsync(const DeleteAllJavaMemShellsRequest& request, const DeleteAllJavaMemShellsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteAllJavaMemShells(request), context);
-    };
+    using Req = const DeleteAllJavaMemShellsRequest&;
+    using Resp = DeleteAllJavaMemShellsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteAllJavaMemShells", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DeleteAllJavaMemShellsOutcomeCallable CwpClient::DeleteAllJavaMemShellsCallable(const DeleteAllJavaMemShellsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteAllJavaMemShellsOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteAllJavaMemShells(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteAllJavaMemShellsOutcome>>();
+    DeleteAllJavaMemShellsAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DeleteAllJavaMemShellsRequest&,
+        DeleteAllJavaMemShellsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DeleteBanWhiteListOutcome CwpClient::DeleteBanWhiteList(const DeleteBanWhiteListRequest &request)
@@ -1266,25 +1462,32 @@ CwpClient::DeleteBanWhiteListOutcome CwpClient::DeleteBanWhiteList(const DeleteB
 
 void CwpClient::DeleteBanWhiteListAsync(const DeleteBanWhiteListRequest& request, const DeleteBanWhiteListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteBanWhiteList(request), context);
-    };
+    using Req = const DeleteBanWhiteListRequest&;
+    using Resp = DeleteBanWhiteListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteBanWhiteList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DeleteBanWhiteListOutcomeCallable CwpClient::DeleteBanWhiteListCallable(const DeleteBanWhiteListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteBanWhiteListOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteBanWhiteList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteBanWhiteListOutcome>>();
+    DeleteBanWhiteListAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DeleteBanWhiteListRequest&,
+        DeleteBanWhiteListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DeleteBaselinePolicyOutcome CwpClient::DeleteBaselinePolicy(const DeleteBaselinePolicyRequest &request)
@@ -1309,25 +1512,32 @@ CwpClient::DeleteBaselinePolicyOutcome CwpClient::DeleteBaselinePolicy(const Del
 
 void CwpClient::DeleteBaselinePolicyAsync(const DeleteBaselinePolicyRequest& request, const DeleteBaselinePolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteBaselinePolicy(request), context);
-    };
+    using Req = const DeleteBaselinePolicyRequest&;
+    using Resp = DeleteBaselinePolicyResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteBaselinePolicy", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DeleteBaselinePolicyOutcomeCallable CwpClient::DeleteBaselinePolicyCallable(const DeleteBaselinePolicyRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteBaselinePolicyOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteBaselinePolicy(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteBaselinePolicyOutcome>>();
+    DeleteBaselinePolicyAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DeleteBaselinePolicyRequest&,
+        DeleteBaselinePolicyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DeleteBaselineRuleOutcome CwpClient::DeleteBaselineRule(const DeleteBaselineRuleRequest &request)
@@ -1352,25 +1562,32 @@ CwpClient::DeleteBaselineRuleOutcome CwpClient::DeleteBaselineRule(const DeleteB
 
 void CwpClient::DeleteBaselineRuleAsync(const DeleteBaselineRuleRequest& request, const DeleteBaselineRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteBaselineRule(request), context);
-    };
+    using Req = const DeleteBaselineRuleRequest&;
+    using Resp = DeleteBaselineRuleResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteBaselineRule", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DeleteBaselineRuleOutcomeCallable CwpClient::DeleteBaselineRuleCallable(const DeleteBaselineRuleRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteBaselineRuleOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteBaselineRule(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteBaselineRuleOutcome>>();
+    DeleteBaselineRuleAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DeleteBaselineRuleRequest&,
+        DeleteBaselineRuleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DeleteBaselineRuleIgnoreOutcome CwpClient::DeleteBaselineRuleIgnore(const DeleteBaselineRuleIgnoreRequest &request)
@@ -1395,25 +1612,32 @@ CwpClient::DeleteBaselineRuleIgnoreOutcome CwpClient::DeleteBaselineRuleIgnore(c
 
 void CwpClient::DeleteBaselineRuleIgnoreAsync(const DeleteBaselineRuleIgnoreRequest& request, const DeleteBaselineRuleIgnoreAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteBaselineRuleIgnore(request), context);
-    };
+    using Req = const DeleteBaselineRuleIgnoreRequest&;
+    using Resp = DeleteBaselineRuleIgnoreResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteBaselineRuleIgnore", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DeleteBaselineRuleIgnoreOutcomeCallable CwpClient::DeleteBaselineRuleIgnoreCallable(const DeleteBaselineRuleIgnoreRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteBaselineRuleIgnoreOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteBaselineRuleIgnore(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteBaselineRuleIgnoreOutcome>>();
+    DeleteBaselineRuleIgnoreAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DeleteBaselineRuleIgnoreRequest&,
+        DeleteBaselineRuleIgnoreOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DeleteBaselineStrategyOutcome CwpClient::DeleteBaselineStrategy(const DeleteBaselineStrategyRequest &request)
@@ -1438,25 +1662,32 @@ CwpClient::DeleteBaselineStrategyOutcome CwpClient::DeleteBaselineStrategy(const
 
 void CwpClient::DeleteBaselineStrategyAsync(const DeleteBaselineStrategyRequest& request, const DeleteBaselineStrategyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteBaselineStrategy(request), context);
-    };
+    using Req = const DeleteBaselineStrategyRequest&;
+    using Resp = DeleteBaselineStrategyResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteBaselineStrategy", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DeleteBaselineStrategyOutcomeCallable CwpClient::DeleteBaselineStrategyCallable(const DeleteBaselineStrategyRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteBaselineStrategyOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteBaselineStrategy(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteBaselineStrategyOutcome>>();
+    DeleteBaselineStrategyAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DeleteBaselineStrategyRequest&,
+        DeleteBaselineStrategyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DeleteBaselineWeakPasswordOutcome CwpClient::DeleteBaselineWeakPassword(const DeleteBaselineWeakPasswordRequest &request)
@@ -1481,25 +1712,32 @@ CwpClient::DeleteBaselineWeakPasswordOutcome CwpClient::DeleteBaselineWeakPasswo
 
 void CwpClient::DeleteBaselineWeakPasswordAsync(const DeleteBaselineWeakPasswordRequest& request, const DeleteBaselineWeakPasswordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteBaselineWeakPassword(request), context);
-    };
+    using Req = const DeleteBaselineWeakPasswordRequest&;
+    using Resp = DeleteBaselineWeakPasswordResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteBaselineWeakPassword", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DeleteBaselineWeakPasswordOutcomeCallable CwpClient::DeleteBaselineWeakPasswordCallable(const DeleteBaselineWeakPasswordRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteBaselineWeakPasswordOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteBaselineWeakPassword(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteBaselineWeakPasswordOutcome>>();
+    DeleteBaselineWeakPasswordAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DeleteBaselineWeakPasswordRequest&,
+        DeleteBaselineWeakPasswordOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DeleteBashEventsOutcome CwpClient::DeleteBashEvents(const DeleteBashEventsRequest &request)
@@ -1524,25 +1762,32 @@ CwpClient::DeleteBashEventsOutcome CwpClient::DeleteBashEvents(const DeleteBashE
 
 void CwpClient::DeleteBashEventsAsync(const DeleteBashEventsRequest& request, const DeleteBashEventsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteBashEvents(request), context);
-    };
+    using Req = const DeleteBashEventsRequest&;
+    using Resp = DeleteBashEventsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteBashEvents", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DeleteBashEventsOutcomeCallable CwpClient::DeleteBashEventsCallable(const DeleteBashEventsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteBashEventsOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteBashEvents(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteBashEventsOutcome>>();
+    DeleteBashEventsAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DeleteBashEventsRequest&,
+        DeleteBashEventsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DeleteBashPoliciesOutcome CwpClient::DeleteBashPolicies(const DeleteBashPoliciesRequest &request)
@@ -1567,25 +1812,32 @@ CwpClient::DeleteBashPoliciesOutcome CwpClient::DeleteBashPolicies(const DeleteB
 
 void CwpClient::DeleteBashPoliciesAsync(const DeleteBashPoliciesRequest& request, const DeleteBashPoliciesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteBashPolicies(request), context);
-    };
+    using Req = const DeleteBashPoliciesRequest&;
+    using Resp = DeleteBashPoliciesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteBashPolicies", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DeleteBashPoliciesOutcomeCallable CwpClient::DeleteBashPoliciesCallable(const DeleteBashPoliciesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteBashPoliciesOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteBashPolicies(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteBashPoliciesOutcome>>();
+    DeleteBashPoliciesAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DeleteBashPoliciesRequest&,
+        DeleteBashPoliciesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DeleteBashRulesOutcome CwpClient::DeleteBashRules(const DeleteBashRulesRequest &request)
@@ -1610,25 +1862,32 @@ CwpClient::DeleteBashRulesOutcome CwpClient::DeleteBashRules(const DeleteBashRul
 
 void CwpClient::DeleteBashRulesAsync(const DeleteBashRulesRequest& request, const DeleteBashRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteBashRules(request), context);
-    };
+    using Req = const DeleteBashRulesRequest&;
+    using Resp = DeleteBashRulesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteBashRules", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DeleteBashRulesOutcomeCallable CwpClient::DeleteBashRulesCallable(const DeleteBashRulesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteBashRulesOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteBashRules(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteBashRulesOutcome>>();
+    DeleteBashRulesAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DeleteBashRulesRequest&,
+        DeleteBashRulesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DeleteBruteAttacksOutcome CwpClient::DeleteBruteAttacks(const DeleteBruteAttacksRequest &request)
@@ -1653,25 +1912,32 @@ CwpClient::DeleteBruteAttacksOutcome CwpClient::DeleteBruteAttacks(const DeleteB
 
 void CwpClient::DeleteBruteAttacksAsync(const DeleteBruteAttacksRequest& request, const DeleteBruteAttacksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteBruteAttacks(request), context);
-    };
+    using Req = const DeleteBruteAttacksRequest&;
+    using Resp = DeleteBruteAttacksResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteBruteAttacks", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DeleteBruteAttacksOutcomeCallable CwpClient::DeleteBruteAttacksCallable(const DeleteBruteAttacksRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteBruteAttacksOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteBruteAttacks(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteBruteAttacksOutcome>>();
+    DeleteBruteAttacksAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DeleteBruteAttacksRequest&,
+        DeleteBruteAttacksOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DeleteLicenseRecordOutcome CwpClient::DeleteLicenseRecord(const DeleteLicenseRecordRequest &request)
@@ -1696,25 +1962,32 @@ CwpClient::DeleteLicenseRecordOutcome CwpClient::DeleteLicenseRecord(const Delet
 
 void CwpClient::DeleteLicenseRecordAsync(const DeleteLicenseRecordRequest& request, const DeleteLicenseRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteLicenseRecord(request), context);
-    };
+    using Req = const DeleteLicenseRecordRequest&;
+    using Resp = DeleteLicenseRecordResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteLicenseRecord", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DeleteLicenseRecordOutcomeCallable CwpClient::DeleteLicenseRecordCallable(const DeleteLicenseRecordRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteLicenseRecordOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteLicenseRecord(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteLicenseRecordOutcome>>();
+    DeleteLicenseRecordAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DeleteLicenseRecordRequest&,
+        DeleteLicenseRecordOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DeleteLicenseRecordAllOutcome CwpClient::DeleteLicenseRecordAll(const DeleteLicenseRecordAllRequest &request)
@@ -1739,25 +2012,32 @@ CwpClient::DeleteLicenseRecordAllOutcome CwpClient::DeleteLicenseRecordAll(const
 
 void CwpClient::DeleteLicenseRecordAllAsync(const DeleteLicenseRecordAllRequest& request, const DeleteLicenseRecordAllAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteLicenseRecordAll(request), context);
-    };
+    using Req = const DeleteLicenseRecordAllRequest&;
+    using Resp = DeleteLicenseRecordAllResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteLicenseRecordAll", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DeleteLicenseRecordAllOutcomeCallable CwpClient::DeleteLicenseRecordAllCallable(const DeleteLicenseRecordAllRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteLicenseRecordAllOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteLicenseRecordAll(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteLicenseRecordAllOutcome>>();
+    DeleteLicenseRecordAllAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DeleteLicenseRecordAllRequest&,
+        DeleteLicenseRecordAllOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DeleteLogExportOutcome CwpClient::DeleteLogExport(const DeleteLogExportRequest &request)
@@ -1782,25 +2062,32 @@ CwpClient::DeleteLogExportOutcome CwpClient::DeleteLogExport(const DeleteLogExpo
 
 void CwpClient::DeleteLogExportAsync(const DeleteLogExportRequest& request, const DeleteLogExportAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteLogExport(request), context);
-    };
+    using Req = const DeleteLogExportRequest&;
+    using Resp = DeleteLogExportResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteLogExport", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DeleteLogExportOutcomeCallable CwpClient::DeleteLogExportCallable(const DeleteLogExportRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteLogExportOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteLogExport(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteLogExportOutcome>>();
+    DeleteLogExportAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DeleteLogExportRequest&,
+        DeleteLogExportOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DeleteLoginWhiteListOutcome CwpClient::DeleteLoginWhiteList(const DeleteLoginWhiteListRequest &request)
@@ -1825,25 +2112,32 @@ CwpClient::DeleteLoginWhiteListOutcome CwpClient::DeleteLoginWhiteList(const Del
 
 void CwpClient::DeleteLoginWhiteListAsync(const DeleteLoginWhiteListRequest& request, const DeleteLoginWhiteListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteLoginWhiteList(request), context);
-    };
+    using Req = const DeleteLoginWhiteListRequest&;
+    using Resp = DeleteLoginWhiteListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteLoginWhiteList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DeleteLoginWhiteListOutcomeCallable CwpClient::DeleteLoginWhiteListCallable(const DeleteLoginWhiteListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteLoginWhiteListOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteLoginWhiteList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteLoginWhiteListOutcome>>();
+    DeleteLoginWhiteListAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DeleteLoginWhiteListRequest&,
+        DeleteLoginWhiteListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DeleteMachineOutcome CwpClient::DeleteMachine(const DeleteMachineRequest &request)
@@ -1868,25 +2162,32 @@ CwpClient::DeleteMachineOutcome CwpClient::DeleteMachine(const DeleteMachineRequ
 
 void CwpClient::DeleteMachineAsync(const DeleteMachineRequest& request, const DeleteMachineAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteMachine(request), context);
-    };
+    using Req = const DeleteMachineRequest&;
+    using Resp = DeleteMachineResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteMachine", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DeleteMachineOutcomeCallable CwpClient::DeleteMachineCallable(const DeleteMachineRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteMachineOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteMachine(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteMachineOutcome>>();
+    DeleteMachineAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DeleteMachineRequest&,
+        DeleteMachineOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DeleteMachineClearHistoryOutcome CwpClient::DeleteMachineClearHistory(const DeleteMachineClearHistoryRequest &request)
@@ -1911,25 +2212,32 @@ CwpClient::DeleteMachineClearHistoryOutcome CwpClient::DeleteMachineClearHistory
 
 void CwpClient::DeleteMachineClearHistoryAsync(const DeleteMachineClearHistoryRequest& request, const DeleteMachineClearHistoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteMachineClearHistory(request), context);
-    };
+    using Req = const DeleteMachineClearHistoryRequest&;
+    using Resp = DeleteMachineClearHistoryResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteMachineClearHistory", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DeleteMachineClearHistoryOutcomeCallable CwpClient::DeleteMachineClearHistoryCallable(const DeleteMachineClearHistoryRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteMachineClearHistoryOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteMachineClearHistory(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteMachineClearHistoryOutcome>>();
+    DeleteMachineClearHistoryAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DeleteMachineClearHistoryRequest&,
+        DeleteMachineClearHistoryOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DeleteMachineTagOutcome CwpClient::DeleteMachineTag(const DeleteMachineTagRequest &request)
@@ -1954,25 +2262,32 @@ CwpClient::DeleteMachineTagOutcome CwpClient::DeleteMachineTag(const DeleteMachi
 
 void CwpClient::DeleteMachineTagAsync(const DeleteMachineTagRequest& request, const DeleteMachineTagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteMachineTag(request), context);
-    };
+    using Req = const DeleteMachineTagRequest&;
+    using Resp = DeleteMachineTagResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteMachineTag", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DeleteMachineTagOutcomeCallable CwpClient::DeleteMachineTagCallable(const DeleteMachineTagRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteMachineTagOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteMachineTag(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteMachineTagOutcome>>();
+    DeleteMachineTagAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DeleteMachineTagRequest&,
+        DeleteMachineTagOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DeleteMaliciousRequestWhiteListOutcome CwpClient::DeleteMaliciousRequestWhiteList(const DeleteMaliciousRequestWhiteListRequest &request)
@@ -1997,25 +2312,32 @@ CwpClient::DeleteMaliciousRequestWhiteListOutcome CwpClient::DeleteMaliciousRequ
 
 void CwpClient::DeleteMaliciousRequestWhiteListAsync(const DeleteMaliciousRequestWhiteListRequest& request, const DeleteMaliciousRequestWhiteListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteMaliciousRequestWhiteList(request), context);
-    };
+    using Req = const DeleteMaliciousRequestWhiteListRequest&;
+    using Resp = DeleteMaliciousRequestWhiteListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteMaliciousRequestWhiteList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DeleteMaliciousRequestWhiteListOutcomeCallable CwpClient::DeleteMaliciousRequestWhiteListCallable(const DeleteMaliciousRequestWhiteListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteMaliciousRequestWhiteListOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteMaliciousRequestWhiteList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteMaliciousRequestWhiteListOutcome>>();
+    DeleteMaliciousRequestWhiteListAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DeleteMaliciousRequestWhiteListRequest&,
+        DeleteMaliciousRequestWhiteListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DeleteMaliciousRequestsOutcome CwpClient::DeleteMaliciousRequests(const DeleteMaliciousRequestsRequest &request)
@@ -2040,25 +2362,32 @@ CwpClient::DeleteMaliciousRequestsOutcome CwpClient::DeleteMaliciousRequests(con
 
 void CwpClient::DeleteMaliciousRequestsAsync(const DeleteMaliciousRequestsRequest& request, const DeleteMaliciousRequestsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteMaliciousRequests(request), context);
-    };
+    using Req = const DeleteMaliciousRequestsRequest&;
+    using Resp = DeleteMaliciousRequestsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteMaliciousRequests", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DeleteMaliciousRequestsOutcomeCallable CwpClient::DeleteMaliciousRequestsCallable(const DeleteMaliciousRequestsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteMaliciousRequestsOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteMaliciousRequests(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteMaliciousRequestsOutcome>>();
+    DeleteMaliciousRequestsAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DeleteMaliciousRequestsRequest&,
+        DeleteMaliciousRequestsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DeleteMalwareScanTaskOutcome CwpClient::DeleteMalwareScanTask(const DeleteMalwareScanTaskRequest &request)
@@ -2083,25 +2412,32 @@ CwpClient::DeleteMalwareScanTaskOutcome CwpClient::DeleteMalwareScanTask(const D
 
 void CwpClient::DeleteMalwareScanTaskAsync(const DeleteMalwareScanTaskRequest& request, const DeleteMalwareScanTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteMalwareScanTask(request), context);
-    };
+    using Req = const DeleteMalwareScanTaskRequest&;
+    using Resp = DeleteMalwareScanTaskResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteMalwareScanTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DeleteMalwareScanTaskOutcomeCallable CwpClient::DeleteMalwareScanTaskCallable(const DeleteMalwareScanTaskRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteMalwareScanTaskOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteMalwareScanTask(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteMalwareScanTaskOutcome>>();
+    DeleteMalwareScanTaskAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DeleteMalwareScanTaskRequest&,
+        DeleteMalwareScanTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DeleteMalwareWhiteListOutcome CwpClient::DeleteMalwareWhiteList(const DeleteMalwareWhiteListRequest &request)
@@ -2126,25 +2462,32 @@ CwpClient::DeleteMalwareWhiteListOutcome CwpClient::DeleteMalwareWhiteList(const
 
 void CwpClient::DeleteMalwareWhiteListAsync(const DeleteMalwareWhiteListRequest& request, const DeleteMalwareWhiteListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteMalwareWhiteList(request), context);
-    };
+    using Req = const DeleteMalwareWhiteListRequest&;
+    using Resp = DeleteMalwareWhiteListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteMalwareWhiteList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DeleteMalwareWhiteListOutcomeCallable CwpClient::DeleteMalwareWhiteListCallable(const DeleteMalwareWhiteListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteMalwareWhiteListOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteMalwareWhiteList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteMalwareWhiteListOutcome>>();
+    DeleteMalwareWhiteListAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DeleteMalwareWhiteListRequest&,
+        DeleteMalwareWhiteListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DeleteMalwaresOutcome CwpClient::DeleteMalwares(const DeleteMalwaresRequest &request)
@@ -2169,25 +2512,32 @@ CwpClient::DeleteMalwaresOutcome CwpClient::DeleteMalwares(const DeleteMalwaresR
 
 void CwpClient::DeleteMalwaresAsync(const DeleteMalwaresRequest& request, const DeleteMalwaresAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteMalwares(request), context);
-    };
+    using Req = const DeleteMalwaresRequest&;
+    using Resp = DeleteMalwaresResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteMalwares", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DeleteMalwaresOutcomeCallable CwpClient::DeleteMalwaresCallable(const DeleteMalwaresRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteMalwaresOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteMalwares(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteMalwaresOutcome>>();
+    DeleteMalwaresAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DeleteMalwaresRequest&,
+        DeleteMalwaresOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DeleteNetAttackWhiteListOutcome CwpClient::DeleteNetAttackWhiteList(const DeleteNetAttackWhiteListRequest &request)
@@ -2212,25 +2562,32 @@ CwpClient::DeleteNetAttackWhiteListOutcome CwpClient::DeleteNetAttackWhiteList(c
 
 void CwpClient::DeleteNetAttackWhiteListAsync(const DeleteNetAttackWhiteListRequest& request, const DeleteNetAttackWhiteListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteNetAttackWhiteList(request), context);
-    };
+    using Req = const DeleteNetAttackWhiteListRequest&;
+    using Resp = DeleteNetAttackWhiteListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteNetAttackWhiteList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DeleteNetAttackWhiteListOutcomeCallable CwpClient::DeleteNetAttackWhiteListCallable(const DeleteNetAttackWhiteListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteNetAttackWhiteListOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteNetAttackWhiteList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteNetAttackWhiteListOutcome>>();
+    DeleteNetAttackWhiteListAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DeleteNetAttackWhiteListRequest&,
+        DeleteNetAttackWhiteListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DeleteNonlocalLoginPlacesOutcome CwpClient::DeleteNonlocalLoginPlaces(const DeleteNonlocalLoginPlacesRequest &request)
@@ -2255,25 +2612,32 @@ CwpClient::DeleteNonlocalLoginPlacesOutcome CwpClient::DeleteNonlocalLoginPlaces
 
 void CwpClient::DeleteNonlocalLoginPlacesAsync(const DeleteNonlocalLoginPlacesRequest& request, const DeleteNonlocalLoginPlacesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteNonlocalLoginPlaces(request), context);
-    };
+    using Req = const DeleteNonlocalLoginPlacesRequest&;
+    using Resp = DeleteNonlocalLoginPlacesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteNonlocalLoginPlaces", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DeleteNonlocalLoginPlacesOutcomeCallable CwpClient::DeleteNonlocalLoginPlacesCallable(const DeleteNonlocalLoginPlacesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteNonlocalLoginPlacesOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteNonlocalLoginPlaces(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteNonlocalLoginPlacesOutcome>>();
+    DeleteNonlocalLoginPlacesAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DeleteNonlocalLoginPlacesRequest&,
+        DeleteNonlocalLoginPlacesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DeletePrivilegeEventsOutcome CwpClient::DeletePrivilegeEvents(const DeletePrivilegeEventsRequest &request)
@@ -2298,25 +2662,32 @@ CwpClient::DeletePrivilegeEventsOutcome CwpClient::DeletePrivilegeEvents(const D
 
 void CwpClient::DeletePrivilegeEventsAsync(const DeletePrivilegeEventsRequest& request, const DeletePrivilegeEventsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeletePrivilegeEvents(request), context);
-    };
+    using Req = const DeletePrivilegeEventsRequest&;
+    using Resp = DeletePrivilegeEventsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeletePrivilegeEvents", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DeletePrivilegeEventsOutcomeCallable CwpClient::DeletePrivilegeEventsCallable(const DeletePrivilegeEventsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeletePrivilegeEventsOutcome()>>(
-        [this, request]()
-        {
-            return this->DeletePrivilegeEvents(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeletePrivilegeEventsOutcome>>();
+    DeletePrivilegeEventsAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DeletePrivilegeEventsRequest&,
+        DeletePrivilegeEventsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DeletePrivilegeRulesOutcome CwpClient::DeletePrivilegeRules(const DeletePrivilegeRulesRequest &request)
@@ -2341,25 +2712,32 @@ CwpClient::DeletePrivilegeRulesOutcome CwpClient::DeletePrivilegeRules(const Del
 
 void CwpClient::DeletePrivilegeRulesAsync(const DeletePrivilegeRulesRequest& request, const DeletePrivilegeRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeletePrivilegeRules(request), context);
-    };
+    using Req = const DeletePrivilegeRulesRequest&;
+    using Resp = DeletePrivilegeRulesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeletePrivilegeRules", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DeletePrivilegeRulesOutcomeCallable CwpClient::DeletePrivilegeRulesCallable(const DeletePrivilegeRulesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeletePrivilegeRulesOutcome()>>(
-        [this, request]()
-        {
-            return this->DeletePrivilegeRules(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeletePrivilegeRulesOutcome>>();
+    DeletePrivilegeRulesAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DeletePrivilegeRulesRequest&,
+        DeletePrivilegeRulesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DeleteProtectDirOutcome CwpClient::DeleteProtectDir(const DeleteProtectDirRequest &request)
@@ -2384,25 +2762,32 @@ CwpClient::DeleteProtectDirOutcome CwpClient::DeleteProtectDir(const DeleteProte
 
 void CwpClient::DeleteProtectDirAsync(const DeleteProtectDirRequest& request, const DeleteProtectDirAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteProtectDir(request), context);
-    };
+    using Req = const DeleteProtectDirRequest&;
+    using Resp = DeleteProtectDirResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteProtectDir", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DeleteProtectDirOutcomeCallable CwpClient::DeleteProtectDirCallable(const DeleteProtectDirRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteProtectDirOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteProtectDir(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteProtectDirOutcome>>();
+    DeleteProtectDirAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DeleteProtectDirRequest&,
+        DeleteProtectDirOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DeleteRaspRulesOutcome CwpClient::DeleteRaspRules(const DeleteRaspRulesRequest &request)
@@ -2427,25 +2812,32 @@ CwpClient::DeleteRaspRulesOutcome CwpClient::DeleteRaspRules(const DeleteRaspRul
 
 void CwpClient::DeleteRaspRulesAsync(const DeleteRaspRulesRequest& request, const DeleteRaspRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteRaspRules(request), context);
-    };
+    using Req = const DeleteRaspRulesRequest&;
+    using Resp = DeleteRaspRulesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteRaspRules", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DeleteRaspRulesOutcomeCallable CwpClient::DeleteRaspRulesCallable(const DeleteRaspRulesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteRaspRulesOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteRaspRules(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteRaspRulesOutcome>>();
+    DeleteRaspRulesAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DeleteRaspRulesRequest&,
+        DeleteRaspRulesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DeleteReverseShellEventsOutcome CwpClient::DeleteReverseShellEvents(const DeleteReverseShellEventsRequest &request)
@@ -2470,25 +2862,32 @@ CwpClient::DeleteReverseShellEventsOutcome CwpClient::DeleteReverseShellEvents(c
 
 void CwpClient::DeleteReverseShellEventsAsync(const DeleteReverseShellEventsRequest& request, const DeleteReverseShellEventsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteReverseShellEvents(request), context);
-    };
+    using Req = const DeleteReverseShellEventsRequest&;
+    using Resp = DeleteReverseShellEventsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteReverseShellEvents", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DeleteReverseShellEventsOutcomeCallable CwpClient::DeleteReverseShellEventsCallable(const DeleteReverseShellEventsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteReverseShellEventsOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteReverseShellEvents(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteReverseShellEventsOutcome>>();
+    DeleteReverseShellEventsAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DeleteReverseShellEventsRequest&,
+        DeleteReverseShellEventsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DeleteReverseShellRulesOutcome CwpClient::DeleteReverseShellRules(const DeleteReverseShellRulesRequest &request)
@@ -2513,25 +2912,32 @@ CwpClient::DeleteReverseShellRulesOutcome CwpClient::DeleteReverseShellRules(con
 
 void CwpClient::DeleteReverseShellRulesAsync(const DeleteReverseShellRulesRequest& request, const DeleteReverseShellRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteReverseShellRules(request), context);
-    };
+    using Req = const DeleteReverseShellRulesRequest&;
+    using Resp = DeleteReverseShellRulesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteReverseShellRules", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DeleteReverseShellRulesOutcomeCallable CwpClient::DeleteReverseShellRulesCallable(const DeleteReverseShellRulesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteReverseShellRulesOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteReverseShellRules(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteReverseShellRulesOutcome>>();
+    DeleteReverseShellRulesAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DeleteReverseShellRulesRequest&,
+        DeleteReverseShellRulesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DeleteRiskDnsEventOutcome CwpClient::DeleteRiskDnsEvent(const DeleteRiskDnsEventRequest &request)
@@ -2556,25 +2962,32 @@ CwpClient::DeleteRiskDnsEventOutcome CwpClient::DeleteRiskDnsEvent(const DeleteR
 
 void CwpClient::DeleteRiskDnsEventAsync(const DeleteRiskDnsEventRequest& request, const DeleteRiskDnsEventAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteRiskDnsEvent(request), context);
-    };
+    using Req = const DeleteRiskDnsEventRequest&;
+    using Resp = DeleteRiskDnsEventResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteRiskDnsEvent", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DeleteRiskDnsEventOutcomeCallable CwpClient::DeleteRiskDnsEventCallable(const DeleteRiskDnsEventRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteRiskDnsEventOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteRiskDnsEvent(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteRiskDnsEventOutcome>>();
+    DeleteRiskDnsEventAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DeleteRiskDnsEventRequest&,
+        DeleteRiskDnsEventOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DeleteRiskDnsPolicyOutcome CwpClient::DeleteRiskDnsPolicy(const DeleteRiskDnsPolicyRequest &request)
@@ -2599,25 +3012,32 @@ CwpClient::DeleteRiskDnsPolicyOutcome CwpClient::DeleteRiskDnsPolicy(const Delet
 
 void CwpClient::DeleteRiskDnsPolicyAsync(const DeleteRiskDnsPolicyRequest& request, const DeleteRiskDnsPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteRiskDnsPolicy(request), context);
-    };
+    using Req = const DeleteRiskDnsPolicyRequest&;
+    using Resp = DeleteRiskDnsPolicyResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteRiskDnsPolicy", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DeleteRiskDnsPolicyOutcomeCallable CwpClient::DeleteRiskDnsPolicyCallable(const DeleteRiskDnsPolicyRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteRiskDnsPolicyOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteRiskDnsPolicy(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteRiskDnsPolicyOutcome>>();
+    DeleteRiskDnsPolicyAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DeleteRiskDnsPolicyRequest&,
+        DeleteRiskDnsPolicyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DeleteScanTaskOutcome CwpClient::DeleteScanTask(const DeleteScanTaskRequest &request)
@@ -2642,25 +3062,32 @@ CwpClient::DeleteScanTaskOutcome CwpClient::DeleteScanTask(const DeleteScanTaskR
 
 void CwpClient::DeleteScanTaskAsync(const DeleteScanTaskRequest& request, const DeleteScanTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteScanTask(request), context);
-    };
+    using Req = const DeleteScanTaskRequest&;
+    using Resp = DeleteScanTaskResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteScanTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DeleteScanTaskOutcomeCallable CwpClient::DeleteScanTaskCallable(const DeleteScanTaskRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteScanTaskOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteScanTask(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteScanTaskOutcome>>();
+    DeleteScanTaskAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DeleteScanTaskRequest&,
+        DeleteScanTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DeleteSearchTemplateOutcome CwpClient::DeleteSearchTemplate(const DeleteSearchTemplateRequest &request)
@@ -2685,25 +3112,32 @@ CwpClient::DeleteSearchTemplateOutcome CwpClient::DeleteSearchTemplate(const Del
 
 void CwpClient::DeleteSearchTemplateAsync(const DeleteSearchTemplateRequest& request, const DeleteSearchTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteSearchTemplate(request), context);
-    };
+    using Req = const DeleteSearchTemplateRequest&;
+    using Resp = DeleteSearchTemplateResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteSearchTemplate", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DeleteSearchTemplateOutcomeCallable CwpClient::DeleteSearchTemplateCallable(const DeleteSearchTemplateRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteSearchTemplateOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteSearchTemplate(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteSearchTemplateOutcome>>();
+    DeleteSearchTemplateAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DeleteSearchTemplateRequest&,
+        DeleteSearchTemplateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DeleteTagsOutcome CwpClient::DeleteTags(const DeleteTagsRequest &request)
@@ -2728,25 +3162,32 @@ CwpClient::DeleteTagsOutcome CwpClient::DeleteTags(const DeleteTagsRequest &requ
 
 void CwpClient::DeleteTagsAsync(const DeleteTagsRequest& request, const DeleteTagsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteTags(request), context);
-    };
+    using Req = const DeleteTagsRequest&;
+    using Resp = DeleteTagsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteTags", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DeleteTagsOutcomeCallable CwpClient::DeleteTagsCallable(const DeleteTagsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteTagsOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteTags(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteTagsOutcome>>();
+    DeleteTagsAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DeleteTagsRequest&,
+        DeleteTagsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DeleteWebHookPolicyOutcome CwpClient::DeleteWebHookPolicy(const DeleteWebHookPolicyRequest &request)
@@ -2771,25 +3212,32 @@ CwpClient::DeleteWebHookPolicyOutcome CwpClient::DeleteWebHookPolicy(const Delet
 
 void CwpClient::DeleteWebHookPolicyAsync(const DeleteWebHookPolicyRequest& request, const DeleteWebHookPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteWebHookPolicy(request), context);
-    };
+    using Req = const DeleteWebHookPolicyRequest&;
+    using Resp = DeleteWebHookPolicyResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteWebHookPolicy", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DeleteWebHookPolicyOutcomeCallable CwpClient::DeleteWebHookPolicyCallable(const DeleteWebHookPolicyRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteWebHookPolicyOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteWebHookPolicy(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteWebHookPolicyOutcome>>();
+    DeleteWebHookPolicyAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DeleteWebHookPolicyRequest&,
+        DeleteWebHookPolicyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DeleteWebHookReceiverOutcome CwpClient::DeleteWebHookReceiver(const DeleteWebHookReceiverRequest &request)
@@ -2814,25 +3262,32 @@ CwpClient::DeleteWebHookReceiverOutcome CwpClient::DeleteWebHookReceiver(const D
 
 void CwpClient::DeleteWebHookReceiverAsync(const DeleteWebHookReceiverRequest& request, const DeleteWebHookReceiverAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteWebHookReceiver(request), context);
-    };
+    using Req = const DeleteWebHookReceiverRequest&;
+    using Resp = DeleteWebHookReceiverResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteWebHookReceiver", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DeleteWebHookReceiverOutcomeCallable CwpClient::DeleteWebHookReceiverCallable(const DeleteWebHookReceiverRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteWebHookReceiverOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteWebHookReceiver(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteWebHookReceiverOutcome>>();
+    DeleteWebHookReceiverAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DeleteWebHookReceiverRequest&,
+        DeleteWebHookReceiverOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DeleteWebHookRuleOutcome CwpClient::DeleteWebHookRule(const DeleteWebHookRuleRequest &request)
@@ -2857,25 +3312,32 @@ CwpClient::DeleteWebHookRuleOutcome CwpClient::DeleteWebHookRule(const DeleteWeb
 
 void CwpClient::DeleteWebHookRuleAsync(const DeleteWebHookRuleRequest& request, const DeleteWebHookRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteWebHookRule(request), context);
-    };
+    using Req = const DeleteWebHookRuleRequest&;
+    using Resp = DeleteWebHookRuleResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteWebHookRule", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DeleteWebHookRuleOutcomeCallable CwpClient::DeleteWebHookRuleCallable(const DeleteWebHookRuleRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteWebHookRuleOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteWebHookRule(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteWebHookRuleOutcome>>();
+    DeleteWebHookRuleAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DeleteWebHookRuleRequest&,
+        DeleteWebHookRuleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DeleteWebPageEventLogOutcome CwpClient::DeleteWebPageEventLog(const DeleteWebPageEventLogRequest &request)
@@ -2900,25 +3362,32 @@ CwpClient::DeleteWebPageEventLogOutcome CwpClient::DeleteWebPageEventLog(const D
 
 void CwpClient::DeleteWebPageEventLogAsync(const DeleteWebPageEventLogRequest& request, const DeleteWebPageEventLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteWebPageEventLog(request), context);
-    };
+    using Req = const DeleteWebPageEventLogRequest&;
+    using Resp = DeleteWebPageEventLogResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteWebPageEventLog", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DeleteWebPageEventLogOutcomeCallable CwpClient::DeleteWebPageEventLogCallable(const DeleteWebPageEventLogRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteWebPageEventLogOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteWebPageEventLog(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteWebPageEventLogOutcome>>();
+    DeleteWebPageEventLogAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DeleteWebPageEventLogRequest&,
+        DeleteWebPageEventLogOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeABTestConfigOutcome CwpClient::DescribeABTestConfig(const DescribeABTestConfigRequest &request)
@@ -2943,25 +3412,32 @@ CwpClient::DescribeABTestConfigOutcome CwpClient::DescribeABTestConfig(const Des
 
 void CwpClient::DescribeABTestConfigAsync(const DescribeABTestConfigRequest& request, const DescribeABTestConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeABTestConfig(request), context);
-    };
+    using Req = const DescribeABTestConfigRequest&;
+    using Resp = DescribeABTestConfigResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeABTestConfig", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeABTestConfigOutcomeCallable CwpClient::DescribeABTestConfigCallable(const DescribeABTestConfigRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeABTestConfigOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeABTestConfig(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeABTestConfigOutcome>>();
+    DescribeABTestConfigAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeABTestConfigRequest&,
+        DescribeABTestConfigOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeAESKeyOutcome CwpClient::DescribeAESKey(const DescribeAESKeyRequest &request)
@@ -2986,25 +3462,32 @@ CwpClient::DescribeAESKeyOutcome CwpClient::DescribeAESKey(const DescribeAESKeyR
 
 void CwpClient::DescribeAESKeyAsync(const DescribeAESKeyRequest& request, const DescribeAESKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAESKey(request), context);
-    };
+    using Req = const DescribeAESKeyRequest&;
+    using Resp = DescribeAESKeyResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAESKey", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeAESKeyOutcomeCallable CwpClient::DescribeAESKeyCallable(const DescribeAESKeyRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAESKeyOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAESKey(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAESKeyOutcome>>();
+    DescribeAESKeyAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeAESKeyRequest&,
+        DescribeAESKeyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeAccountStatisticsOutcome CwpClient::DescribeAccountStatistics(const DescribeAccountStatisticsRequest &request)
@@ -3029,25 +3512,32 @@ CwpClient::DescribeAccountStatisticsOutcome CwpClient::DescribeAccountStatistics
 
 void CwpClient::DescribeAccountStatisticsAsync(const DescribeAccountStatisticsRequest& request, const DescribeAccountStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAccountStatistics(request), context);
-    };
+    using Req = const DescribeAccountStatisticsRequest&;
+    using Resp = DescribeAccountStatisticsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAccountStatistics", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeAccountStatisticsOutcomeCallable CwpClient::DescribeAccountStatisticsCallable(const DescribeAccountStatisticsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAccountStatisticsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAccountStatistics(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAccountStatisticsOutcome>>();
+    DescribeAccountStatisticsAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeAccountStatisticsRequest&,
+        DescribeAccountStatisticsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeAgentInstallCommandOutcome CwpClient::DescribeAgentInstallCommand(const DescribeAgentInstallCommandRequest &request)
@@ -3072,25 +3562,32 @@ CwpClient::DescribeAgentInstallCommandOutcome CwpClient::DescribeAgentInstallCom
 
 void CwpClient::DescribeAgentInstallCommandAsync(const DescribeAgentInstallCommandRequest& request, const DescribeAgentInstallCommandAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAgentInstallCommand(request), context);
-    };
+    using Req = const DescribeAgentInstallCommandRequest&;
+    using Resp = DescribeAgentInstallCommandResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAgentInstallCommand", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeAgentInstallCommandOutcomeCallable CwpClient::DescribeAgentInstallCommandCallable(const DescribeAgentInstallCommandRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAgentInstallCommandOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAgentInstallCommand(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAgentInstallCommandOutcome>>();
+    DescribeAgentInstallCommandAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeAgentInstallCommandRequest&,
+        DescribeAgentInstallCommandOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeAgentInstallationTokenOutcome CwpClient::DescribeAgentInstallationToken(const DescribeAgentInstallationTokenRequest &request)
@@ -3115,25 +3612,32 @@ CwpClient::DescribeAgentInstallationTokenOutcome CwpClient::DescribeAgentInstall
 
 void CwpClient::DescribeAgentInstallationTokenAsync(const DescribeAgentInstallationTokenRequest& request, const DescribeAgentInstallationTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAgentInstallationToken(request), context);
-    };
+    using Req = const DescribeAgentInstallationTokenRequest&;
+    using Resp = DescribeAgentInstallationTokenResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAgentInstallationToken", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeAgentInstallationTokenOutcomeCallable CwpClient::DescribeAgentInstallationTokenCallable(const DescribeAgentInstallationTokenRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAgentInstallationTokenOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAgentInstallationToken(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAgentInstallationTokenOutcome>>();
+    DescribeAgentInstallationTokenAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeAgentInstallationTokenRequest&,
+        DescribeAgentInstallationTokenOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeAlarmIncidentNodesOutcome CwpClient::DescribeAlarmIncidentNodes(const DescribeAlarmIncidentNodesRequest &request)
@@ -3158,25 +3662,32 @@ CwpClient::DescribeAlarmIncidentNodesOutcome CwpClient::DescribeAlarmIncidentNod
 
 void CwpClient::DescribeAlarmIncidentNodesAsync(const DescribeAlarmIncidentNodesRequest& request, const DescribeAlarmIncidentNodesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAlarmIncidentNodes(request), context);
-    };
+    using Req = const DescribeAlarmIncidentNodesRequest&;
+    using Resp = DescribeAlarmIncidentNodesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAlarmIncidentNodes", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeAlarmIncidentNodesOutcomeCallable CwpClient::DescribeAlarmIncidentNodesCallable(const DescribeAlarmIncidentNodesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAlarmIncidentNodesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAlarmIncidentNodes(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAlarmIncidentNodesOutcome>>();
+    DescribeAlarmIncidentNodesAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeAlarmIncidentNodesRequest&,
+        DescribeAlarmIncidentNodesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeAlarmVertexIdOutcome CwpClient::DescribeAlarmVertexId(const DescribeAlarmVertexIdRequest &request)
@@ -3201,25 +3712,32 @@ CwpClient::DescribeAlarmVertexIdOutcome CwpClient::DescribeAlarmVertexId(const D
 
 void CwpClient::DescribeAlarmVertexIdAsync(const DescribeAlarmVertexIdRequest& request, const DescribeAlarmVertexIdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAlarmVertexId(request), context);
-    };
+    using Req = const DescribeAlarmVertexIdRequest&;
+    using Resp = DescribeAlarmVertexIdResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAlarmVertexId", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeAlarmVertexIdOutcomeCallable CwpClient::DescribeAlarmVertexIdCallable(const DescribeAlarmVertexIdRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAlarmVertexIdOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAlarmVertexId(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAlarmVertexIdOutcome>>();
+    DescribeAlarmVertexIdAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeAlarmVertexIdRequest&,
+        DescribeAlarmVertexIdOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeAssetAppCountOutcome CwpClient::DescribeAssetAppCount(const DescribeAssetAppCountRequest &request)
@@ -3244,25 +3762,32 @@ CwpClient::DescribeAssetAppCountOutcome CwpClient::DescribeAssetAppCount(const D
 
 void CwpClient::DescribeAssetAppCountAsync(const DescribeAssetAppCountRequest& request, const DescribeAssetAppCountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAssetAppCount(request), context);
-    };
+    using Req = const DescribeAssetAppCountRequest&;
+    using Resp = DescribeAssetAppCountResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAssetAppCount", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeAssetAppCountOutcomeCallable CwpClient::DescribeAssetAppCountCallable(const DescribeAssetAppCountRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAssetAppCountOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAssetAppCount(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAssetAppCountOutcome>>();
+    DescribeAssetAppCountAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeAssetAppCountRequest&,
+        DescribeAssetAppCountOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeAssetAppListOutcome CwpClient::DescribeAssetAppList(const DescribeAssetAppListRequest &request)
@@ -3287,25 +3812,32 @@ CwpClient::DescribeAssetAppListOutcome CwpClient::DescribeAssetAppList(const Des
 
 void CwpClient::DescribeAssetAppListAsync(const DescribeAssetAppListRequest& request, const DescribeAssetAppListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAssetAppList(request), context);
-    };
+    using Req = const DescribeAssetAppListRequest&;
+    using Resp = DescribeAssetAppListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAssetAppList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeAssetAppListOutcomeCallable CwpClient::DescribeAssetAppListCallable(const DescribeAssetAppListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAssetAppListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAssetAppList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAssetAppListOutcome>>();
+    DescribeAssetAppListAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeAssetAppListRequest&,
+        DescribeAssetAppListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeAssetAppProcessListOutcome CwpClient::DescribeAssetAppProcessList(const DescribeAssetAppProcessListRequest &request)
@@ -3330,25 +3862,32 @@ CwpClient::DescribeAssetAppProcessListOutcome CwpClient::DescribeAssetAppProcess
 
 void CwpClient::DescribeAssetAppProcessListAsync(const DescribeAssetAppProcessListRequest& request, const DescribeAssetAppProcessListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAssetAppProcessList(request), context);
-    };
+    using Req = const DescribeAssetAppProcessListRequest&;
+    using Resp = DescribeAssetAppProcessListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAssetAppProcessList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeAssetAppProcessListOutcomeCallable CwpClient::DescribeAssetAppProcessListCallable(const DescribeAssetAppProcessListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAssetAppProcessListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAssetAppProcessList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAssetAppProcessListOutcome>>();
+    DescribeAssetAppProcessListAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeAssetAppProcessListRequest&,
+        DescribeAssetAppProcessListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeAssetCoreModuleInfoOutcome CwpClient::DescribeAssetCoreModuleInfo(const DescribeAssetCoreModuleInfoRequest &request)
@@ -3373,25 +3912,32 @@ CwpClient::DescribeAssetCoreModuleInfoOutcome CwpClient::DescribeAssetCoreModule
 
 void CwpClient::DescribeAssetCoreModuleInfoAsync(const DescribeAssetCoreModuleInfoRequest& request, const DescribeAssetCoreModuleInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAssetCoreModuleInfo(request), context);
-    };
+    using Req = const DescribeAssetCoreModuleInfoRequest&;
+    using Resp = DescribeAssetCoreModuleInfoResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAssetCoreModuleInfo", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeAssetCoreModuleInfoOutcomeCallable CwpClient::DescribeAssetCoreModuleInfoCallable(const DescribeAssetCoreModuleInfoRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAssetCoreModuleInfoOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAssetCoreModuleInfo(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAssetCoreModuleInfoOutcome>>();
+    DescribeAssetCoreModuleInfoAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeAssetCoreModuleInfoRequest&,
+        DescribeAssetCoreModuleInfoOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeAssetCoreModuleListOutcome CwpClient::DescribeAssetCoreModuleList(const DescribeAssetCoreModuleListRequest &request)
@@ -3416,25 +3962,32 @@ CwpClient::DescribeAssetCoreModuleListOutcome CwpClient::DescribeAssetCoreModule
 
 void CwpClient::DescribeAssetCoreModuleListAsync(const DescribeAssetCoreModuleListRequest& request, const DescribeAssetCoreModuleListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAssetCoreModuleList(request), context);
-    };
+    using Req = const DescribeAssetCoreModuleListRequest&;
+    using Resp = DescribeAssetCoreModuleListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAssetCoreModuleList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeAssetCoreModuleListOutcomeCallable CwpClient::DescribeAssetCoreModuleListCallable(const DescribeAssetCoreModuleListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAssetCoreModuleListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAssetCoreModuleList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAssetCoreModuleListOutcome>>();
+    DescribeAssetCoreModuleListAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeAssetCoreModuleListRequest&,
+        DescribeAssetCoreModuleListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeAssetDatabaseCountOutcome CwpClient::DescribeAssetDatabaseCount(const DescribeAssetDatabaseCountRequest &request)
@@ -3459,25 +4012,32 @@ CwpClient::DescribeAssetDatabaseCountOutcome CwpClient::DescribeAssetDatabaseCou
 
 void CwpClient::DescribeAssetDatabaseCountAsync(const DescribeAssetDatabaseCountRequest& request, const DescribeAssetDatabaseCountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAssetDatabaseCount(request), context);
-    };
+    using Req = const DescribeAssetDatabaseCountRequest&;
+    using Resp = DescribeAssetDatabaseCountResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAssetDatabaseCount", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeAssetDatabaseCountOutcomeCallable CwpClient::DescribeAssetDatabaseCountCallable(const DescribeAssetDatabaseCountRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAssetDatabaseCountOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAssetDatabaseCount(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAssetDatabaseCountOutcome>>();
+    DescribeAssetDatabaseCountAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeAssetDatabaseCountRequest&,
+        DescribeAssetDatabaseCountOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeAssetDatabaseInfoOutcome CwpClient::DescribeAssetDatabaseInfo(const DescribeAssetDatabaseInfoRequest &request)
@@ -3502,25 +4062,32 @@ CwpClient::DescribeAssetDatabaseInfoOutcome CwpClient::DescribeAssetDatabaseInfo
 
 void CwpClient::DescribeAssetDatabaseInfoAsync(const DescribeAssetDatabaseInfoRequest& request, const DescribeAssetDatabaseInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAssetDatabaseInfo(request), context);
-    };
+    using Req = const DescribeAssetDatabaseInfoRequest&;
+    using Resp = DescribeAssetDatabaseInfoResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAssetDatabaseInfo", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeAssetDatabaseInfoOutcomeCallable CwpClient::DescribeAssetDatabaseInfoCallable(const DescribeAssetDatabaseInfoRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAssetDatabaseInfoOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAssetDatabaseInfo(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAssetDatabaseInfoOutcome>>();
+    DescribeAssetDatabaseInfoAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeAssetDatabaseInfoRequest&,
+        DescribeAssetDatabaseInfoOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeAssetDatabaseListOutcome CwpClient::DescribeAssetDatabaseList(const DescribeAssetDatabaseListRequest &request)
@@ -3545,25 +4112,32 @@ CwpClient::DescribeAssetDatabaseListOutcome CwpClient::DescribeAssetDatabaseList
 
 void CwpClient::DescribeAssetDatabaseListAsync(const DescribeAssetDatabaseListRequest& request, const DescribeAssetDatabaseListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAssetDatabaseList(request), context);
-    };
+    using Req = const DescribeAssetDatabaseListRequest&;
+    using Resp = DescribeAssetDatabaseListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAssetDatabaseList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeAssetDatabaseListOutcomeCallable CwpClient::DescribeAssetDatabaseListCallable(const DescribeAssetDatabaseListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAssetDatabaseListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAssetDatabaseList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAssetDatabaseListOutcome>>();
+    DescribeAssetDatabaseListAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeAssetDatabaseListRequest&,
+        DescribeAssetDatabaseListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeAssetDiskListOutcome CwpClient::DescribeAssetDiskList(const DescribeAssetDiskListRequest &request)
@@ -3588,25 +4162,32 @@ CwpClient::DescribeAssetDiskListOutcome CwpClient::DescribeAssetDiskList(const D
 
 void CwpClient::DescribeAssetDiskListAsync(const DescribeAssetDiskListRequest& request, const DescribeAssetDiskListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAssetDiskList(request), context);
-    };
+    using Req = const DescribeAssetDiskListRequest&;
+    using Resp = DescribeAssetDiskListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAssetDiskList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeAssetDiskListOutcomeCallable CwpClient::DescribeAssetDiskListCallable(const DescribeAssetDiskListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAssetDiskListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAssetDiskList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAssetDiskListOutcome>>();
+    DescribeAssetDiskListAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeAssetDiskListRequest&,
+        DescribeAssetDiskListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeAssetEnvListOutcome CwpClient::DescribeAssetEnvList(const DescribeAssetEnvListRequest &request)
@@ -3631,25 +4212,32 @@ CwpClient::DescribeAssetEnvListOutcome CwpClient::DescribeAssetEnvList(const Des
 
 void CwpClient::DescribeAssetEnvListAsync(const DescribeAssetEnvListRequest& request, const DescribeAssetEnvListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAssetEnvList(request), context);
-    };
+    using Req = const DescribeAssetEnvListRequest&;
+    using Resp = DescribeAssetEnvListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAssetEnvList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeAssetEnvListOutcomeCallable CwpClient::DescribeAssetEnvListCallable(const DescribeAssetEnvListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAssetEnvListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAssetEnvList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAssetEnvListOutcome>>();
+    DescribeAssetEnvListAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeAssetEnvListRequest&,
+        DescribeAssetEnvListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeAssetHostTotalCountOutcome CwpClient::DescribeAssetHostTotalCount(const DescribeAssetHostTotalCountRequest &request)
@@ -3674,25 +4262,32 @@ CwpClient::DescribeAssetHostTotalCountOutcome CwpClient::DescribeAssetHostTotalC
 
 void CwpClient::DescribeAssetHostTotalCountAsync(const DescribeAssetHostTotalCountRequest& request, const DescribeAssetHostTotalCountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAssetHostTotalCount(request), context);
-    };
+    using Req = const DescribeAssetHostTotalCountRequest&;
+    using Resp = DescribeAssetHostTotalCountResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAssetHostTotalCount", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeAssetHostTotalCountOutcomeCallable CwpClient::DescribeAssetHostTotalCountCallable(const DescribeAssetHostTotalCountRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAssetHostTotalCountOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAssetHostTotalCount(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAssetHostTotalCountOutcome>>();
+    DescribeAssetHostTotalCountAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeAssetHostTotalCountRequest&,
+        DescribeAssetHostTotalCountOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeAssetInfoOutcome CwpClient::DescribeAssetInfo(const DescribeAssetInfoRequest &request)
@@ -3717,25 +4312,32 @@ CwpClient::DescribeAssetInfoOutcome CwpClient::DescribeAssetInfo(const DescribeA
 
 void CwpClient::DescribeAssetInfoAsync(const DescribeAssetInfoRequest& request, const DescribeAssetInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAssetInfo(request), context);
-    };
+    using Req = const DescribeAssetInfoRequest&;
+    using Resp = DescribeAssetInfoResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAssetInfo", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeAssetInfoOutcomeCallable CwpClient::DescribeAssetInfoCallable(const DescribeAssetInfoRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAssetInfoOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAssetInfo(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAssetInfoOutcome>>();
+    DescribeAssetInfoAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeAssetInfoRequest&,
+        DescribeAssetInfoOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeAssetInitServiceListOutcome CwpClient::DescribeAssetInitServiceList(const DescribeAssetInitServiceListRequest &request)
@@ -3760,25 +4362,32 @@ CwpClient::DescribeAssetInitServiceListOutcome CwpClient::DescribeAssetInitServi
 
 void CwpClient::DescribeAssetInitServiceListAsync(const DescribeAssetInitServiceListRequest& request, const DescribeAssetInitServiceListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAssetInitServiceList(request), context);
-    };
+    using Req = const DescribeAssetInitServiceListRequest&;
+    using Resp = DescribeAssetInitServiceListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAssetInitServiceList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeAssetInitServiceListOutcomeCallable CwpClient::DescribeAssetInitServiceListCallable(const DescribeAssetInitServiceListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAssetInitServiceListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAssetInitServiceList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAssetInitServiceListOutcome>>();
+    DescribeAssetInitServiceListAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeAssetInitServiceListRequest&,
+        DescribeAssetInitServiceListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeAssetJarInfoOutcome CwpClient::DescribeAssetJarInfo(const DescribeAssetJarInfoRequest &request)
@@ -3803,25 +4412,32 @@ CwpClient::DescribeAssetJarInfoOutcome CwpClient::DescribeAssetJarInfo(const Des
 
 void CwpClient::DescribeAssetJarInfoAsync(const DescribeAssetJarInfoRequest& request, const DescribeAssetJarInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAssetJarInfo(request), context);
-    };
+    using Req = const DescribeAssetJarInfoRequest&;
+    using Resp = DescribeAssetJarInfoResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAssetJarInfo", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeAssetJarInfoOutcomeCallable CwpClient::DescribeAssetJarInfoCallable(const DescribeAssetJarInfoRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAssetJarInfoOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAssetJarInfo(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAssetJarInfoOutcome>>();
+    DescribeAssetJarInfoAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeAssetJarInfoRequest&,
+        DescribeAssetJarInfoOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeAssetJarListOutcome CwpClient::DescribeAssetJarList(const DescribeAssetJarListRequest &request)
@@ -3846,25 +4462,32 @@ CwpClient::DescribeAssetJarListOutcome CwpClient::DescribeAssetJarList(const Des
 
 void CwpClient::DescribeAssetJarListAsync(const DescribeAssetJarListRequest& request, const DescribeAssetJarListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAssetJarList(request), context);
-    };
+    using Req = const DescribeAssetJarListRequest&;
+    using Resp = DescribeAssetJarListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAssetJarList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeAssetJarListOutcomeCallable CwpClient::DescribeAssetJarListCallable(const DescribeAssetJarListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAssetJarListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAssetJarList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAssetJarListOutcome>>();
+    DescribeAssetJarListAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeAssetJarListRequest&,
+        DescribeAssetJarListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeAssetLoadInfoOutcome CwpClient::DescribeAssetLoadInfo(const DescribeAssetLoadInfoRequest &request)
@@ -3889,25 +4512,32 @@ CwpClient::DescribeAssetLoadInfoOutcome CwpClient::DescribeAssetLoadInfo(const D
 
 void CwpClient::DescribeAssetLoadInfoAsync(const DescribeAssetLoadInfoRequest& request, const DescribeAssetLoadInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAssetLoadInfo(request), context);
-    };
+    using Req = const DescribeAssetLoadInfoRequest&;
+    using Resp = DescribeAssetLoadInfoResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAssetLoadInfo", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeAssetLoadInfoOutcomeCallable CwpClient::DescribeAssetLoadInfoCallable(const DescribeAssetLoadInfoRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAssetLoadInfoOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAssetLoadInfo(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAssetLoadInfoOutcome>>();
+    DescribeAssetLoadInfoAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeAssetLoadInfoRequest&,
+        DescribeAssetLoadInfoOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeAssetMachineDetailOutcome CwpClient::DescribeAssetMachineDetail(const DescribeAssetMachineDetailRequest &request)
@@ -3932,25 +4562,32 @@ CwpClient::DescribeAssetMachineDetailOutcome CwpClient::DescribeAssetMachineDeta
 
 void CwpClient::DescribeAssetMachineDetailAsync(const DescribeAssetMachineDetailRequest& request, const DescribeAssetMachineDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAssetMachineDetail(request), context);
-    };
+    using Req = const DescribeAssetMachineDetailRequest&;
+    using Resp = DescribeAssetMachineDetailResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAssetMachineDetail", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeAssetMachineDetailOutcomeCallable CwpClient::DescribeAssetMachineDetailCallable(const DescribeAssetMachineDetailRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAssetMachineDetailOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAssetMachineDetail(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAssetMachineDetailOutcome>>();
+    DescribeAssetMachineDetailAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeAssetMachineDetailRequest&,
+        DescribeAssetMachineDetailOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeAssetMachineListOutcome CwpClient::DescribeAssetMachineList(const DescribeAssetMachineListRequest &request)
@@ -3975,25 +4612,32 @@ CwpClient::DescribeAssetMachineListOutcome CwpClient::DescribeAssetMachineList(c
 
 void CwpClient::DescribeAssetMachineListAsync(const DescribeAssetMachineListRequest& request, const DescribeAssetMachineListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAssetMachineList(request), context);
-    };
+    using Req = const DescribeAssetMachineListRequest&;
+    using Resp = DescribeAssetMachineListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAssetMachineList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeAssetMachineListOutcomeCallable CwpClient::DescribeAssetMachineListCallable(const DescribeAssetMachineListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAssetMachineListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAssetMachineList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAssetMachineListOutcome>>();
+    DescribeAssetMachineListAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeAssetMachineListRequest&,
+        DescribeAssetMachineListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeAssetMachineTagTopOutcome CwpClient::DescribeAssetMachineTagTop(const DescribeAssetMachineTagTopRequest &request)
@@ -4018,25 +4662,32 @@ CwpClient::DescribeAssetMachineTagTopOutcome CwpClient::DescribeAssetMachineTagT
 
 void CwpClient::DescribeAssetMachineTagTopAsync(const DescribeAssetMachineTagTopRequest& request, const DescribeAssetMachineTagTopAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAssetMachineTagTop(request), context);
-    };
+    using Req = const DescribeAssetMachineTagTopRequest&;
+    using Resp = DescribeAssetMachineTagTopResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAssetMachineTagTop", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeAssetMachineTagTopOutcomeCallable CwpClient::DescribeAssetMachineTagTopCallable(const DescribeAssetMachineTagTopRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAssetMachineTagTopOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAssetMachineTagTop(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAssetMachineTagTopOutcome>>();
+    DescribeAssetMachineTagTopAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeAssetMachineTagTopRequest&,
+        DescribeAssetMachineTagTopOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeAssetPlanTaskListOutcome CwpClient::DescribeAssetPlanTaskList(const DescribeAssetPlanTaskListRequest &request)
@@ -4061,25 +4712,32 @@ CwpClient::DescribeAssetPlanTaskListOutcome CwpClient::DescribeAssetPlanTaskList
 
 void CwpClient::DescribeAssetPlanTaskListAsync(const DescribeAssetPlanTaskListRequest& request, const DescribeAssetPlanTaskListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAssetPlanTaskList(request), context);
-    };
+    using Req = const DescribeAssetPlanTaskListRequest&;
+    using Resp = DescribeAssetPlanTaskListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAssetPlanTaskList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeAssetPlanTaskListOutcomeCallable CwpClient::DescribeAssetPlanTaskListCallable(const DescribeAssetPlanTaskListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAssetPlanTaskListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAssetPlanTaskList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAssetPlanTaskListOutcome>>();
+    DescribeAssetPlanTaskListAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeAssetPlanTaskListRequest&,
+        DescribeAssetPlanTaskListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeAssetPortCountOutcome CwpClient::DescribeAssetPortCount(const DescribeAssetPortCountRequest &request)
@@ -4104,25 +4762,32 @@ CwpClient::DescribeAssetPortCountOutcome CwpClient::DescribeAssetPortCount(const
 
 void CwpClient::DescribeAssetPortCountAsync(const DescribeAssetPortCountRequest& request, const DescribeAssetPortCountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAssetPortCount(request), context);
-    };
+    using Req = const DescribeAssetPortCountRequest&;
+    using Resp = DescribeAssetPortCountResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAssetPortCount", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeAssetPortCountOutcomeCallable CwpClient::DescribeAssetPortCountCallable(const DescribeAssetPortCountRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAssetPortCountOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAssetPortCount(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAssetPortCountOutcome>>();
+    DescribeAssetPortCountAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeAssetPortCountRequest&,
+        DescribeAssetPortCountOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeAssetPortInfoListOutcome CwpClient::DescribeAssetPortInfoList(const DescribeAssetPortInfoListRequest &request)
@@ -4147,25 +4812,32 @@ CwpClient::DescribeAssetPortInfoListOutcome CwpClient::DescribeAssetPortInfoList
 
 void CwpClient::DescribeAssetPortInfoListAsync(const DescribeAssetPortInfoListRequest& request, const DescribeAssetPortInfoListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAssetPortInfoList(request), context);
-    };
+    using Req = const DescribeAssetPortInfoListRequest&;
+    using Resp = DescribeAssetPortInfoListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAssetPortInfoList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeAssetPortInfoListOutcomeCallable CwpClient::DescribeAssetPortInfoListCallable(const DescribeAssetPortInfoListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAssetPortInfoListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAssetPortInfoList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAssetPortInfoListOutcome>>();
+    DescribeAssetPortInfoListAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeAssetPortInfoListRequest&,
+        DescribeAssetPortInfoListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeAssetProcessCountOutcome CwpClient::DescribeAssetProcessCount(const DescribeAssetProcessCountRequest &request)
@@ -4190,25 +4862,32 @@ CwpClient::DescribeAssetProcessCountOutcome CwpClient::DescribeAssetProcessCount
 
 void CwpClient::DescribeAssetProcessCountAsync(const DescribeAssetProcessCountRequest& request, const DescribeAssetProcessCountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAssetProcessCount(request), context);
-    };
+    using Req = const DescribeAssetProcessCountRequest&;
+    using Resp = DescribeAssetProcessCountResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAssetProcessCount", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeAssetProcessCountOutcomeCallable CwpClient::DescribeAssetProcessCountCallable(const DescribeAssetProcessCountRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAssetProcessCountOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAssetProcessCount(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAssetProcessCountOutcome>>();
+    DescribeAssetProcessCountAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeAssetProcessCountRequest&,
+        DescribeAssetProcessCountOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeAssetProcessInfoListOutcome CwpClient::DescribeAssetProcessInfoList(const DescribeAssetProcessInfoListRequest &request)
@@ -4233,25 +4912,32 @@ CwpClient::DescribeAssetProcessInfoListOutcome CwpClient::DescribeAssetProcessIn
 
 void CwpClient::DescribeAssetProcessInfoListAsync(const DescribeAssetProcessInfoListRequest& request, const DescribeAssetProcessInfoListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAssetProcessInfoList(request), context);
-    };
+    using Req = const DescribeAssetProcessInfoListRequest&;
+    using Resp = DescribeAssetProcessInfoListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAssetProcessInfoList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeAssetProcessInfoListOutcomeCallable CwpClient::DescribeAssetProcessInfoListCallable(const DescribeAssetProcessInfoListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAssetProcessInfoListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAssetProcessInfoList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAssetProcessInfoListOutcome>>();
+    DescribeAssetProcessInfoListAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeAssetProcessInfoListRequest&,
+        DescribeAssetProcessInfoListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeAssetRecentMachineInfoOutcome CwpClient::DescribeAssetRecentMachineInfo(const DescribeAssetRecentMachineInfoRequest &request)
@@ -4276,25 +4962,32 @@ CwpClient::DescribeAssetRecentMachineInfoOutcome CwpClient::DescribeAssetRecentM
 
 void CwpClient::DescribeAssetRecentMachineInfoAsync(const DescribeAssetRecentMachineInfoRequest& request, const DescribeAssetRecentMachineInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAssetRecentMachineInfo(request), context);
-    };
+    using Req = const DescribeAssetRecentMachineInfoRequest&;
+    using Resp = DescribeAssetRecentMachineInfoResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAssetRecentMachineInfo", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeAssetRecentMachineInfoOutcomeCallable CwpClient::DescribeAssetRecentMachineInfoCallable(const DescribeAssetRecentMachineInfoRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAssetRecentMachineInfoOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAssetRecentMachineInfo(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAssetRecentMachineInfoOutcome>>();
+    DescribeAssetRecentMachineInfoAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeAssetRecentMachineInfoRequest&,
+        DescribeAssetRecentMachineInfoOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeAssetSystemPackageListOutcome CwpClient::DescribeAssetSystemPackageList(const DescribeAssetSystemPackageListRequest &request)
@@ -4319,25 +5012,32 @@ CwpClient::DescribeAssetSystemPackageListOutcome CwpClient::DescribeAssetSystemP
 
 void CwpClient::DescribeAssetSystemPackageListAsync(const DescribeAssetSystemPackageListRequest& request, const DescribeAssetSystemPackageListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAssetSystemPackageList(request), context);
-    };
+    using Req = const DescribeAssetSystemPackageListRequest&;
+    using Resp = DescribeAssetSystemPackageListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAssetSystemPackageList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeAssetSystemPackageListOutcomeCallable CwpClient::DescribeAssetSystemPackageListCallable(const DescribeAssetSystemPackageListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAssetSystemPackageListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAssetSystemPackageList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAssetSystemPackageListOutcome>>();
+    DescribeAssetSystemPackageListAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeAssetSystemPackageListRequest&,
+        DescribeAssetSystemPackageListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeAssetTotalCountOutcome CwpClient::DescribeAssetTotalCount(const DescribeAssetTotalCountRequest &request)
@@ -4362,25 +5062,32 @@ CwpClient::DescribeAssetTotalCountOutcome CwpClient::DescribeAssetTotalCount(con
 
 void CwpClient::DescribeAssetTotalCountAsync(const DescribeAssetTotalCountRequest& request, const DescribeAssetTotalCountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAssetTotalCount(request), context);
-    };
+    using Req = const DescribeAssetTotalCountRequest&;
+    using Resp = DescribeAssetTotalCountResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAssetTotalCount", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeAssetTotalCountOutcomeCallable CwpClient::DescribeAssetTotalCountCallable(const DescribeAssetTotalCountRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAssetTotalCountOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAssetTotalCount(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAssetTotalCountOutcome>>();
+    DescribeAssetTotalCountAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeAssetTotalCountRequest&,
+        DescribeAssetTotalCountOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeAssetTypeTopOutcome CwpClient::DescribeAssetTypeTop(const DescribeAssetTypeTopRequest &request)
@@ -4405,25 +5112,32 @@ CwpClient::DescribeAssetTypeTopOutcome CwpClient::DescribeAssetTypeTop(const Des
 
 void CwpClient::DescribeAssetTypeTopAsync(const DescribeAssetTypeTopRequest& request, const DescribeAssetTypeTopAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAssetTypeTop(request), context);
-    };
+    using Req = const DescribeAssetTypeTopRequest&;
+    using Resp = DescribeAssetTypeTopResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAssetTypeTop", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeAssetTypeTopOutcomeCallable CwpClient::DescribeAssetTypeTopCallable(const DescribeAssetTypeTopRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAssetTypeTopOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAssetTypeTop(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAssetTypeTopOutcome>>();
+    DescribeAssetTypeTopAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeAssetTypeTopRequest&,
+        DescribeAssetTypeTopOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeAssetTypesOutcome CwpClient::DescribeAssetTypes(const DescribeAssetTypesRequest &request)
@@ -4448,25 +5162,32 @@ CwpClient::DescribeAssetTypesOutcome CwpClient::DescribeAssetTypes(const Describ
 
 void CwpClient::DescribeAssetTypesAsync(const DescribeAssetTypesRequest& request, const DescribeAssetTypesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAssetTypes(request), context);
-    };
+    using Req = const DescribeAssetTypesRequest&;
+    using Resp = DescribeAssetTypesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAssetTypes", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeAssetTypesOutcomeCallable CwpClient::DescribeAssetTypesCallable(const DescribeAssetTypesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAssetTypesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAssetTypes(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAssetTypesOutcome>>();
+    DescribeAssetTypesAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeAssetTypesRequest&,
+        DescribeAssetTypesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeAssetUserCountOutcome CwpClient::DescribeAssetUserCount(const DescribeAssetUserCountRequest &request)
@@ -4491,25 +5212,32 @@ CwpClient::DescribeAssetUserCountOutcome CwpClient::DescribeAssetUserCount(const
 
 void CwpClient::DescribeAssetUserCountAsync(const DescribeAssetUserCountRequest& request, const DescribeAssetUserCountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAssetUserCount(request), context);
-    };
+    using Req = const DescribeAssetUserCountRequest&;
+    using Resp = DescribeAssetUserCountResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAssetUserCount", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeAssetUserCountOutcomeCallable CwpClient::DescribeAssetUserCountCallable(const DescribeAssetUserCountRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAssetUserCountOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAssetUserCount(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAssetUserCountOutcome>>();
+    DescribeAssetUserCountAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeAssetUserCountRequest&,
+        DescribeAssetUserCountOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeAssetUserInfoOutcome CwpClient::DescribeAssetUserInfo(const DescribeAssetUserInfoRequest &request)
@@ -4534,25 +5262,32 @@ CwpClient::DescribeAssetUserInfoOutcome CwpClient::DescribeAssetUserInfo(const D
 
 void CwpClient::DescribeAssetUserInfoAsync(const DescribeAssetUserInfoRequest& request, const DescribeAssetUserInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAssetUserInfo(request), context);
-    };
+    using Req = const DescribeAssetUserInfoRequest&;
+    using Resp = DescribeAssetUserInfoResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAssetUserInfo", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeAssetUserInfoOutcomeCallable CwpClient::DescribeAssetUserInfoCallable(const DescribeAssetUserInfoRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAssetUserInfoOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAssetUserInfo(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAssetUserInfoOutcome>>();
+    DescribeAssetUserInfoAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeAssetUserInfoRequest&,
+        DescribeAssetUserInfoOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeAssetUserKeyListOutcome CwpClient::DescribeAssetUserKeyList(const DescribeAssetUserKeyListRequest &request)
@@ -4577,25 +5312,32 @@ CwpClient::DescribeAssetUserKeyListOutcome CwpClient::DescribeAssetUserKeyList(c
 
 void CwpClient::DescribeAssetUserKeyListAsync(const DescribeAssetUserKeyListRequest& request, const DescribeAssetUserKeyListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAssetUserKeyList(request), context);
-    };
+    using Req = const DescribeAssetUserKeyListRequest&;
+    using Resp = DescribeAssetUserKeyListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAssetUserKeyList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeAssetUserKeyListOutcomeCallable CwpClient::DescribeAssetUserKeyListCallable(const DescribeAssetUserKeyListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAssetUserKeyListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAssetUserKeyList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAssetUserKeyListOutcome>>();
+    DescribeAssetUserKeyListAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeAssetUserKeyListRequest&,
+        DescribeAssetUserKeyListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeAssetUserListOutcome CwpClient::DescribeAssetUserList(const DescribeAssetUserListRequest &request)
@@ -4620,25 +5362,32 @@ CwpClient::DescribeAssetUserListOutcome CwpClient::DescribeAssetUserList(const D
 
 void CwpClient::DescribeAssetUserListAsync(const DescribeAssetUserListRequest& request, const DescribeAssetUserListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAssetUserList(request), context);
-    };
+    using Req = const DescribeAssetUserListRequest&;
+    using Resp = DescribeAssetUserListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAssetUserList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeAssetUserListOutcomeCallable CwpClient::DescribeAssetUserListCallable(const DescribeAssetUserListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAssetUserListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAssetUserList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAssetUserListOutcome>>();
+    DescribeAssetUserListAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeAssetUserListRequest&,
+        DescribeAssetUserListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeAssetWebAppCountOutcome CwpClient::DescribeAssetWebAppCount(const DescribeAssetWebAppCountRequest &request)
@@ -4663,25 +5412,32 @@ CwpClient::DescribeAssetWebAppCountOutcome CwpClient::DescribeAssetWebAppCount(c
 
 void CwpClient::DescribeAssetWebAppCountAsync(const DescribeAssetWebAppCountRequest& request, const DescribeAssetWebAppCountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAssetWebAppCount(request), context);
-    };
+    using Req = const DescribeAssetWebAppCountRequest&;
+    using Resp = DescribeAssetWebAppCountResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAssetWebAppCount", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeAssetWebAppCountOutcomeCallable CwpClient::DescribeAssetWebAppCountCallable(const DescribeAssetWebAppCountRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAssetWebAppCountOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAssetWebAppCount(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAssetWebAppCountOutcome>>();
+    DescribeAssetWebAppCountAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeAssetWebAppCountRequest&,
+        DescribeAssetWebAppCountOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeAssetWebAppListOutcome CwpClient::DescribeAssetWebAppList(const DescribeAssetWebAppListRequest &request)
@@ -4706,25 +5462,32 @@ CwpClient::DescribeAssetWebAppListOutcome CwpClient::DescribeAssetWebAppList(con
 
 void CwpClient::DescribeAssetWebAppListAsync(const DescribeAssetWebAppListRequest& request, const DescribeAssetWebAppListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAssetWebAppList(request), context);
-    };
+    using Req = const DescribeAssetWebAppListRequest&;
+    using Resp = DescribeAssetWebAppListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAssetWebAppList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeAssetWebAppListOutcomeCallable CwpClient::DescribeAssetWebAppListCallable(const DescribeAssetWebAppListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAssetWebAppListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAssetWebAppList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAssetWebAppListOutcome>>();
+    DescribeAssetWebAppListAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeAssetWebAppListRequest&,
+        DescribeAssetWebAppListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeAssetWebAppPluginListOutcome CwpClient::DescribeAssetWebAppPluginList(const DescribeAssetWebAppPluginListRequest &request)
@@ -4749,25 +5512,32 @@ CwpClient::DescribeAssetWebAppPluginListOutcome CwpClient::DescribeAssetWebAppPl
 
 void CwpClient::DescribeAssetWebAppPluginListAsync(const DescribeAssetWebAppPluginListRequest& request, const DescribeAssetWebAppPluginListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAssetWebAppPluginList(request), context);
-    };
+    using Req = const DescribeAssetWebAppPluginListRequest&;
+    using Resp = DescribeAssetWebAppPluginListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAssetWebAppPluginList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeAssetWebAppPluginListOutcomeCallable CwpClient::DescribeAssetWebAppPluginListCallable(const DescribeAssetWebAppPluginListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAssetWebAppPluginListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAssetWebAppPluginList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAssetWebAppPluginListOutcome>>();
+    DescribeAssetWebAppPluginListAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeAssetWebAppPluginListRequest&,
+        DescribeAssetWebAppPluginListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeAssetWebFrameCountOutcome CwpClient::DescribeAssetWebFrameCount(const DescribeAssetWebFrameCountRequest &request)
@@ -4792,25 +5562,32 @@ CwpClient::DescribeAssetWebFrameCountOutcome CwpClient::DescribeAssetWebFrameCou
 
 void CwpClient::DescribeAssetWebFrameCountAsync(const DescribeAssetWebFrameCountRequest& request, const DescribeAssetWebFrameCountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAssetWebFrameCount(request), context);
-    };
+    using Req = const DescribeAssetWebFrameCountRequest&;
+    using Resp = DescribeAssetWebFrameCountResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAssetWebFrameCount", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeAssetWebFrameCountOutcomeCallable CwpClient::DescribeAssetWebFrameCountCallable(const DescribeAssetWebFrameCountRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAssetWebFrameCountOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAssetWebFrameCount(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAssetWebFrameCountOutcome>>();
+    DescribeAssetWebFrameCountAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeAssetWebFrameCountRequest&,
+        DescribeAssetWebFrameCountOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeAssetWebFrameListOutcome CwpClient::DescribeAssetWebFrameList(const DescribeAssetWebFrameListRequest &request)
@@ -4835,25 +5612,32 @@ CwpClient::DescribeAssetWebFrameListOutcome CwpClient::DescribeAssetWebFrameList
 
 void CwpClient::DescribeAssetWebFrameListAsync(const DescribeAssetWebFrameListRequest& request, const DescribeAssetWebFrameListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAssetWebFrameList(request), context);
-    };
+    using Req = const DescribeAssetWebFrameListRequest&;
+    using Resp = DescribeAssetWebFrameListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAssetWebFrameList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeAssetWebFrameListOutcomeCallable CwpClient::DescribeAssetWebFrameListCallable(const DescribeAssetWebFrameListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAssetWebFrameListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAssetWebFrameList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAssetWebFrameListOutcome>>();
+    DescribeAssetWebFrameListAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeAssetWebFrameListRequest&,
+        DescribeAssetWebFrameListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeAssetWebLocationCountOutcome CwpClient::DescribeAssetWebLocationCount(const DescribeAssetWebLocationCountRequest &request)
@@ -4878,25 +5662,32 @@ CwpClient::DescribeAssetWebLocationCountOutcome CwpClient::DescribeAssetWebLocat
 
 void CwpClient::DescribeAssetWebLocationCountAsync(const DescribeAssetWebLocationCountRequest& request, const DescribeAssetWebLocationCountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAssetWebLocationCount(request), context);
-    };
+    using Req = const DescribeAssetWebLocationCountRequest&;
+    using Resp = DescribeAssetWebLocationCountResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAssetWebLocationCount", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeAssetWebLocationCountOutcomeCallable CwpClient::DescribeAssetWebLocationCountCallable(const DescribeAssetWebLocationCountRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAssetWebLocationCountOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAssetWebLocationCount(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAssetWebLocationCountOutcome>>();
+    DescribeAssetWebLocationCountAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeAssetWebLocationCountRequest&,
+        DescribeAssetWebLocationCountOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeAssetWebLocationInfoOutcome CwpClient::DescribeAssetWebLocationInfo(const DescribeAssetWebLocationInfoRequest &request)
@@ -4921,25 +5712,32 @@ CwpClient::DescribeAssetWebLocationInfoOutcome CwpClient::DescribeAssetWebLocati
 
 void CwpClient::DescribeAssetWebLocationInfoAsync(const DescribeAssetWebLocationInfoRequest& request, const DescribeAssetWebLocationInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAssetWebLocationInfo(request), context);
-    };
+    using Req = const DescribeAssetWebLocationInfoRequest&;
+    using Resp = DescribeAssetWebLocationInfoResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAssetWebLocationInfo", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeAssetWebLocationInfoOutcomeCallable CwpClient::DescribeAssetWebLocationInfoCallable(const DescribeAssetWebLocationInfoRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAssetWebLocationInfoOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAssetWebLocationInfo(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAssetWebLocationInfoOutcome>>();
+    DescribeAssetWebLocationInfoAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeAssetWebLocationInfoRequest&,
+        DescribeAssetWebLocationInfoOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeAssetWebLocationListOutcome CwpClient::DescribeAssetWebLocationList(const DescribeAssetWebLocationListRequest &request)
@@ -4964,25 +5762,32 @@ CwpClient::DescribeAssetWebLocationListOutcome CwpClient::DescribeAssetWebLocati
 
 void CwpClient::DescribeAssetWebLocationListAsync(const DescribeAssetWebLocationListRequest& request, const DescribeAssetWebLocationListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAssetWebLocationList(request), context);
-    };
+    using Req = const DescribeAssetWebLocationListRequest&;
+    using Resp = DescribeAssetWebLocationListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAssetWebLocationList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeAssetWebLocationListOutcomeCallable CwpClient::DescribeAssetWebLocationListCallable(const DescribeAssetWebLocationListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAssetWebLocationListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAssetWebLocationList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAssetWebLocationListOutcome>>();
+    DescribeAssetWebLocationListAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeAssetWebLocationListRequest&,
+        DescribeAssetWebLocationListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeAssetWebLocationPathListOutcome CwpClient::DescribeAssetWebLocationPathList(const DescribeAssetWebLocationPathListRequest &request)
@@ -5007,25 +5812,32 @@ CwpClient::DescribeAssetWebLocationPathListOutcome CwpClient::DescribeAssetWebLo
 
 void CwpClient::DescribeAssetWebLocationPathListAsync(const DescribeAssetWebLocationPathListRequest& request, const DescribeAssetWebLocationPathListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAssetWebLocationPathList(request), context);
-    };
+    using Req = const DescribeAssetWebLocationPathListRequest&;
+    using Resp = DescribeAssetWebLocationPathListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAssetWebLocationPathList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeAssetWebLocationPathListOutcomeCallable CwpClient::DescribeAssetWebLocationPathListCallable(const DescribeAssetWebLocationPathListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAssetWebLocationPathListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAssetWebLocationPathList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAssetWebLocationPathListOutcome>>();
+    DescribeAssetWebLocationPathListAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeAssetWebLocationPathListRequest&,
+        DescribeAssetWebLocationPathListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeAssetWebServiceCountOutcome CwpClient::DescribeAssetWebServiceCount(const DescribeAssetWebServiceCountRequest &request)
@@ -5050,25 +5862,32 @@ CwpClient::DescribeAssetWebServiceCountOutcome CwpClient::DescribeAssetWebServic
 
 void CwpClient::DescribeAssetWebServiceCountAsync(const DescribeAssetWebServiceCountRequest& request, const DescribeAssetWebServiceCountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAssetWebServiceCount(request), context);
-    };
+    using Req = const DescribeAssetWebServiceCountRequest&;
+    using Resp = DescribeAssetWebServiceCountResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAssetWebServiceCount", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeAssetWebServiceCountOutcomeCallable CwpClient::DescribeAssetWebServiceCountCallable(const DescribeAssetWebServiceCountRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAssetWebServiceCountOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAssetWebServiceCount(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAssetWebServiceCountOutcome>>();
+    DescribeAssetWebServiceCountAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeAssetWebServiceCountRequest&,
+        DescribeAssetWebServiceCountOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeAssetWebServiceInfoListOutcome CwpClient::DescribeAssetWebServiceInfoList(const DescribeAssetWebServiceInfoListRequest &request)
@@ -5093,25 +5912,32 @@ CwpClient::DescribeAssetWebServiceInfoListOutcome CwpClient::DescribeAssetWebSer
 
 void CwpClient::DescribeAssetWebServiceInfoListAsync(const DescribeAssetWebServiceInfoListRequest& request, const DescribeAssetWebServiceInfoListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAssetWebServiceInfoList(request), context);
-    };
+    using Req = const DescribeAssetWebServiceInfoListRequest&;
+    using Resp = DescribeAssetWebServiceInfoListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAssetWebServiceInfoList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeAssetWebServiceInfoListOutcomeCallable CwpClient::DescribeAssetWebServiceInfoListCallable(const DescribeAssetWebServiceInfoListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAssetWebServiceInfoListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAssetWebServiceInfoList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAssetWebServiceInfoListOutcome>>();
+    DescribeAssetWebServiceInfoListAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeAssetWebServiceInfoListRequest&,
+        DescribeAssetWebServiceInfoListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeAssetWebServiceProcessListOutcome CwpClient::DescribeAssetWebServiceProcessList(const DescribeAssetWebServiceProcessListRequest &request)
@@ -5136,25 +5962,32 @@ CwpClient::DescribeAssetWebServiceProcessListOutcome CwpClient::DescribeAssetWeb
 
 void CwpClient::DescribeAssetWebServiceProcessListAsync(const DescribeAssetWebServiceProcessListRequest& request, const DescribeAssetWebServiceProcessListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAssetWebServiceProcessList(request), context);
-    };
+    using Req = const DescribeAssetWebServiceProcessListRequest&;
+    using Resp = DescribeAssetWebServiceProcessListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAssetWebServiceProcessList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeAssetWebServiceProcessListOutcomeCallable CwpClient::DescribeAssetWebServiceProcessListCallable(const DescribeAssetWebServiceProcessListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAssetWebServiceProcessListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAssetWebServiceProcessList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAssetWebServiceProcessListOutcome>>();
+    DescribeAssetWebServiceProcessListAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeAssetWebServiceProcessListRequest&,
+        DescribeAssetWebServiceProcessListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeAttackEventInfoOutcome CwpClient::DescribeAttackEventInfo(const DescribeAttackEventInfoRequest &request)
@@ -5179,25 +6012,32 @@ CwpClient::DescribeAttackEventInfoOutcome CwpClient::DescribeAttackEventInfo(con
 
 void CwpClient::DescribeAttackEventInfoAsync(const DescribeAttackEventInfoRequest& request, const DescribeAttackEventInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAttackEventInfo(request), context);
-    };
+    using Req = const DescribeAttackEventInfoRequest&;
+    using Resp = DescribeAttackEventInfoResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAttackEventInfo", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeAttackEventInfoOutcomeCallable CwpClient::DescribeAttackEventInfoCallable(const DescribeAttackEventInfoRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAttackEventInfoOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAttackEventInfo(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAttackEventInfoOutcome>>();
+    DescribeAttackEventInfoAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeAttackEventInfoRequest&,
+        DescribeAttackEventInfoOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeAttackEventsOutcome CwpClient::DescribeAttackEvents(const DescribeAttackEventsRequest &request)
@@ -5222,25 +6062,32 @@ CwpClient::DescribeAttackEventsOutcome CwpClient::DescribeAttackEvents(const Des
 
 void CwpClient::DescribeAttackEventsAsync(const DescribeAttackEventsRequest& request, const DescribeAttackEventsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAttackEvents(request), context);
-    };
+    using Req = const DescribeAttackEventsRequest&;
+    using Resp = DescribeAttackEventsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAttackEvents", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeAttackEventsOutcomeCallable CwpClient::DescribeAttackEventsCallable(const DescribeAttackEventsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAttackEventsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAttackEvents(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAttackEventsOutcome>>();
+    DescribeAttackEventsAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeAttackEventsRequest&,
+        DescribeAttackEventsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeAttackStatisticsOutcome CwpClient::DescribeAttackStatistics(const DescribeAttackStatisticsRequest &request)
@@ -5265,25 +6112,32 @@ CwpClient::DescribeAttackStatisticsOutcome CwpClient::DescribeAttackStatistics(c
 
 void CwpClient::DescribeAttackStatisticsAsync(const DescribeAttackStatisticsRequest& request, const DescribeAttackStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAttackStatistics(request), context);
-    };
+    using Req = const DescribeAttackStatisticsRequest&;
+    using Resp = DescribeAttackStatisticsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAttackStatistics", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeAttackStatisticsOutcomeCallable CwpClient::DescribeAttackStatisticsCallable(const DescribeAttackStatisticsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAttackStatisticsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAttackStatistics(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAttackStatisticsOutcome>>();
+    DescribeAttackStatisticsAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeAttackStatisticsRequest&,
+        DescribeAttackStatisticsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeAttackTopOutcome CwpClient::DescribeAttackTop(const DescribeAttackTopRequest &request)
@@ -5308,25 +6162,32 @@ CwpClient::DescribeAttackTopOutcome CwpClient::DescribeAttackTop(const DescribeA
 
 void CwpClient::DescribeAttackTopAsync(const DescribeAttackTopRequest& request, const DescribeAttackTopAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAttackTop(request), context);
-    };
+    using Req = const DescribeAttackTopRequest&;
+    using Resp = DescribeAttackTopResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAttackTop", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeAttackTopOutcomeCallable CwpClient::DescribeAttackTopCallable(const DescribeAttackTopRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAttackTopOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAttackTop(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAttackTopOutcome>>();
+    DescribeAttackTopAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeAttackTopRequest&,
+        DescribeAttackTopOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeAttackTrendsOutcome CwpClient::DescribeAttackTrends(const DescribeAttackTrendsRequest &request)
@@ -5351,25 +6212,32 @@ CwpClient::DescribeAttackTrendsOutcome CwpClient::DescribeAttackTrends(const Des
 
 void CwpClient::DescribeAttackTrendsAsync(const DescribeAttackTrendsRequest& request, const DescribeAttackTrendsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAttackTrends(request), context);
-    };
+    using Req = const DescribeAttackTrendsRequest&;
+    using Resp = DescribeAttackTrendsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAttackTrends", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeAttackTrendsOutcomeCallable CwpClient::DescribeAttackTrendsCallable(const DescribeAttackTrendsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAttackTrendsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAttackTrends(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAttackTrendsOutcome>>();
+    DescribeAttackTrendsAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeAttackTrendsRequest&,
+        DescribeAttackTrendsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeAttackVulTypeListOutcome CwpClient::DescribeAttackVulTypeList(const DescribeAttackVulTypeListRequest &request)
@@ -5394,25 +6262,32 @@ CwpClient::DescribeAttackVulTypeListOutcome CwpClient::DescribeAttackVulTypeList
 
 void CwpClient::DescribeAttackVulTypeListAsync(const DescribeAttackVulTypeListRequest& request, const DescribeAttackVulTypeListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAttackVulTypeList(request), context);
-    };
+    using Req = const DescribeAttackVulTypeListRequest&;
+    using Resp = DescribeAttackVulTypeListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAttackVulTypeList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeAttackVulTypeListOutcomeCallable CwpClient::DescribeAttackVulTypeListCallable(const DescribeAttackVulTypeListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAttackVulTypeListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAttackVulTypeList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAttackVulTypeListOutcome>>();
+    DescribeAttackVulTypeListAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeAttackVulTypeListRequest&,
+        DescribeAttackVulTypeListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeAvailableExpertServiceDetailOutcome CwpClient::DescribeAvailableExpertServiceDetail(const DescribeAvailableExpertServiceDetailRequest &request)
@@ -5437,25 +6312,32 @@ CwpClient::DescribeAvailableExpertServiceDetailOutcome CwpClient::DescribeAvaila
 
 void CwpClient::DescribeAvailableExpertServiceDetailAsync(const DescribeAvailableExpertServiceDetailRequest& request, const DescribeAvailableExpertServiceDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAvailableExpertServiceDetail(request), context);
-    };
+    using Req = const DescribeAvailableExpertServiceDetailRequest&;
+    using Resp = DescribeAvailableExpertServiceDetailResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAvailableExpertServiceDetail", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeAvailableExpertServiceDetailOutcomeCallable CwpClient::DescribeAvailableExpertServiceDetailCallable(const DescribeAvailableExpertServiceDetailRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAvailableExpertServiceDetailOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAvailableExpertServiceDetail(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAvailableExpertServiceDetailOutcome>>();
+    DescribeAvailableExpertServiceDetailAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeAvailableExpertServiceDetailRequest&,
+        DescribeAvailableExpertServiceDetailOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeBanModeOutcome CwpClient::DescribeBanMode(const DescribeBanModeRequest &request)
@@ -5480,25 +6362,32 @@ CwpClient::DescribeBanModeOutcome CwpClient::DescribeBanMode(const DescribeBanMo
 
 void CwpClient::DescribeBanModeAsync(const DescribeBanModeRequest& request, const DescribeBanModeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeBanMode(request), context);
-    };
+    using Req = const DescribeBanModeRequest&;
+    using Resp = DescribeBanModeResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeBanMode", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeBanModeOutcomeCallable CwpClient::DescribeBanModeCallable(const DescribeBanModeRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeBanModeOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeBanMode(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeBanModeOutcome>>();
+    DescribeBanModeAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeBanModeRequest&,
+        DescribeBanModeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeBanRegionsOutcome CwpClient::DescribeBanRegions(const DescribeBanRegionsRequest &request)
@@ -5523,25 +6412,32 @@ CwpClient::DescribeBanRegionsOutcome CwpClient::DescribeBanRegions(const Describ
 
 void CwpClient::DescribeBanRegionsAsync(const DescribeBanRegionsRequest& request, const DescribeBanRegionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeBanRegions(request), context);
-    };
+    using Req = const DescribeBanRegionsRequest&;
+    using Resp = DescribeBanRegionsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeBanRegions", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeBanRegionsOutcomeCallable CwpClient::DescribeBanRegionsCallable(const DescribeBanRegionsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeBanRegionsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeBanRegions(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeBanRegionsOutcome>>();
+    DescribeBanRegionsAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeBanRegionsRequest&,
+        DescribeBanRegionsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeBanStatusOutcome CwpClient::DescribeBanStatus(const DescribeBanStatusRequest &request)
@@ -5566,25 +6462,32 @@ CwpClient::DescribeBanStatusOutcome CwpClient::DescribeBanStatus(const DescribeB
 
 void CwpClient::DescribeBanStatusAsync(const DescribeBanStatusRequest& request, const DescribeBanStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeBanStatus(request), context);
-    };
+    using Req = const DescribeBanStatusRequest&;
+    using Resp = DescribeBanStatusResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeBanStatus", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeBanStatusOutcomeCallable CwpClient::DescribeBanStatusCallable(const DescribeBanStatusRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeBanStatusOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeBanStatus(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeBanStatusOutcome>>();
+    DescribeBanStatusAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeBanStatusRequest&,
+        DescribeBanStatusOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeBanWhiteListOutcome CwpClient::DescribeBanWhiteList(const DescribeBanWhiteListRequest &request)
@@ -5609,25 +6512,32 @@ CwpClient::DescribeBanWhiteListOutcome CwpClient::DescribeBanWhiteList(const Des
 
 void CwpClient::DescribeBanWhiteListAsync(const DescribeBanWhiteListRequest& request, const DescribeBanWhiteListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeBanWhiteList(request), context);
-    };
+    using Req = const DescribeBanWhiteListRequest&;
+    using Resp = DescribeBanWhiteListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeBanWhiteList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeBanWhiteListOutcomeCallable CwpClient::DescribeBanWhiteListCallable(const DescribeBanWhiteListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeBanWhiteListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeBanWhiteList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeBanWhiteListOutcome>>();
+    DescribeBanWhiteListAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeBanWhiteListRequest&,
+        DescribeBanWhiteListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeBaselineAnalysisDataOutcome CwpClient::DescribeBaselineAnalysisData(const DescribeBaselineAnalysisDataRequest &request)
@@ -5652,25 +6562,32 @@ CwpClient::DescribeBaselineAnalysisDataOutcome CwpClient::DescribeBaselineAnalys
 
 void CwpClient::DescribeBaselineAnalysisDataAsync(const DescribeBaselineAnalysisDataRequest& request, const DescribeBaselineAnalysisDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeBaselineAnalysisData(request), context);
-    };
+    using Req = const DescribeBaselineAnalysisDataRequest&;
+    using Resp = DescribeBaselineAnalysisDataResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeBaselineAnalysisData", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeBaselineAnalysisDataOutcomeCallable CwpClient::DescribeBaselineAnalysisDataCallable(const DescribeBaselineAnalysisDataRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeBaselineAnalysisDataOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeBaselineAnalysisData(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeBaselineAnalysisDataOutcome>>();
+    DescribeBaselineAnalysisDataAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeBaselineAnalysisDataRequest&,
+        DescribeBaselineAnalysisDataOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeBaselineBasicInfoOutcome CwpClient::DescribeBaselineBasicInfo(const DescribeBaselineBasicInfoRequest &request)
@@ -5695,25 +6612,32 @@ CwpClient::DescribeBaselineBasicInfoOutcome CwpClient::DescribeBaselineBasicInfo
 
 void CwpClient::DescribeBaselineBasicInfoAsync(const DescribeBaselineBasicInfoRequest& request, const DescribeBaselineBasicInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeBaselineBasicInfo(request), context);
-    };
+    using Req = const DescribeBaselineBasicInfoRequest&;
+    using Resp = DescribeBaselineBasicInfoResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeBaselineBasicInfo", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeBaselineBasicInfoOutcomeCallable CwpClient::DescribeBaselineBasicInfoCallable(const DescribeBaselineBasicInfoRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeBaselineBasicInfoOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeBaselineBasicInfo(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeBaselineBasicInfoOutcome>>();
+    DescribeBaselineBasicInfoAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeBaselineBasicInfoRequest&,
+        DescribeBaselineBasicInfoOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeBaselineDefaultStrategyListOutcome CwpClient::DescribeBaselineDefaultStrategyList(const DescribeBaselineDefaultStrategyListRequest &request)
@@ -5738,25 +6662,32 @@ CwpClient::DescribeBaselineDefaultStrategyListOutcome CwpClient::DescribeBaselin
 
 void CwpClient::DescribeBaselineDefaultStrategyListAsync(const DescribeBaselineDefaultStrategyListRequest& request, const DescribeBaselineDefaultStrategyListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeBaselineDefaultStrategyList(request), context);
-    };
+    using Req = const DescribeBaselineDefaultStrategyListRequest&;
+    using Resp = DescribeBaselineDefaultStrategyListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeBaselineDefaultStrategyList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeBaselineDefaultStrategyListOutcomeCallable CwpClient::DescribeBaselineDefaultStrategyListCallable(const DescribeBaselineDefaultStrategyListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeBaselineDefaultStrategyListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeBaselineDefaultStrategyList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeBaselineDefaultStrategyListOutcome>>();
+    DescribeBaselineDefaultStrategyListAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeBaselineDefaultStrategyListRequest&,
+        DescribeBaselineDefaultStrategyListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeBaselineDetailOutcome CwpClient::DescribeBaselineDetail(const DescribeBaselineDetailRequest &request)
@@ -5781,25 +6712,32 @@ CwpClient::DescribeBaselineDetailOutcome CwpClient::DescribeBaselineDetail(const
 
 void CwpClient::DescribeBaselineDetailAsync(const DescribeBaselineDetailRequest& request, const DescribeBaselineDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeBaselineDetail(request), context);
-    };
+    using Req = const DescribeBaselineDetailRequest&;
+    using Resp = DescribeBaselineDetailResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeBaselineDetail", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeBaselineDetailOutcomeCallable CwpClient::DescribeBaselineDetailCallable(const DescribeBaselineDetailRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeBaselineDetailOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeBaselineDetail(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeBaselineDetailOutcome>>();
+    DescribeBaselineDetailAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeBaselineDetailRequest&,
+        DescribeBaselineDetailOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeBaselineDetectListOutcome CwpClient::DescribeBaselineDetectList(const DescribeBaselineDetectListRequest &request)
@@ -5824,25 +6762,32 @@ CwpClient::DescribeBaselineDetectListOutcome CwpClient::DescribeBaselineDetectLi
 
 void CwpClient::DescribeBaselineDetectListAsync(const DescribeBaselineDetectListRequest& request, const DescribeBaselineDetectListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeBaselineDetectList(request), context);
-    };
+    using Req = const DescribeBaselineDetectListRequest&;
+    using Resp = DescribeBaselineDetectListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeBaselineDetectList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeBaselineDetectListOutcomeCallable CwpClient::DescribeBaselineDetectListCallable(const DescribeBaselineDetectListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeBaselineDetectListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeBaselineDetectList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeBaselineDetectListOutcome>>();
+    DescribeBaselineDetectListAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeBaselineDetectListRequest&,
+        DescribeBaselineDetectListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeBaselineDetectOverviewOutcome CwpClient::DescribeBaselineDetectOverview(const DescribeBaselineDetectOverviewRequest &request)
@@ -5867,25 +6812,32 @@ CwpClient::DescribeBaselineDetectOverviewOutcome CwpClient::DescribeBaselineDete
 
 void CwpClient::DescribeBaselineDetectOverviewAsync(const DescribeBaselineDetectOverviewRequest& request, const DescribeBaselineDetectOverviewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeBaselineDetectOverview(request), context);
-    };
+    using Req = const DescribeBaselineDetectOverviewRequest&;
+    using Resp = DescribeBaselineDetectOverviewResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeBaselineDetectOverview", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeBaselineDetectOverviewOutcomeCallable CwpClient::DescribeBaselineDetectOverviewCallable(const DescribeBaselineDetectOverviewRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeBaselineDetectOverviewOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeBaselineDetectOverview(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeBaselineDetectOverviewOutcome>>();
+    DescribeBaselineDetectOverviewAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeBaselineDetectOverviewRequest&,
+        DescribeBaselineDetectOverviewOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeBaselineDownloadListOutcome CwpClient::DescribeBaselineDownloadList(const DescribeBaselineDownloadListRequest &request)
@@ -5910,25 +6862,32 @@ CwpClient::DescribeBaselineDownloadListOutcome CwpClient::DescribeBaselineDownlo
 
 void CwpClient::DescribeBaselineDownloadListAsync(const DescribeBaselineDownloadListRequest& request, const DescribeBaselineDownloadListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeBaselineDownloadList(request), context);
-    };
+    using Req = const DescribeBaselineDownloadListRequest&;
+    using Resp = DescribeBaselineDownloadListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeBaselineDownloadList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeBaselineDownloadListOutcomeCallable CwpClient::DescribeBaselineDownloadListCallable(const DescribeBaselineDownloadListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeBaselineDownloadListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeBaselineDownloadList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeBaselineDownloadListOutcome>>();
+    DescribeBaselineDownloadListAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeBaselineDownloadListRequest&,
+        DescribeBaselineDownloadListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeBaselineEffectHostListOutcome CwpClient::DescribeBaselineEffectHostList(const DescribeBaselineEffectHostListRequest &request)
@@ -5953,25 +6912,32 @@ CwpClient::DescribeBaselineEffectHostListOutcome CwpClient::DescribeBaselineEffe
 
 void CwpClient::DescribeBaselineEffectHostListAsync(const DescribeBaselineEffectHostListRequest& request, const DescribeBaselineEffectHostListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeBaselineEffectHostList(request), context);
-    };
+    using Req = const DescribeBaselineEffectHostListRequest&;
+    using Resp = DescribeBaselineEffectHostListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeBaselineEffectHostList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeBaselineEffectHostListOutcomeCallable CwpClient::DescribeBaselineEffectHostListCallable(const DescribeBaselineEffectHostListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeBaselineEffectHostListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeBaselineEffectHostList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeBaselineEffectHostListOutcome>>();
+    DescribeBaselineEffectHostListAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeBaselineEffectHostListRequest&,
+        DescribeBaselineEffectHostListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeBaselineFixListOutcome CwpClient::DescribeBaselineFixList(const DescribeBaselineFixListRequest &request)
@@ -5996,25 +6962,32 @@ CwpClient::DescribeBaselineFixListOutcome CwpClient::DescribeBaselineFixList(con
 
 void CwpClient::DescribeBaselineFixListAsync(const DescribeBaselineFixListRequest& request, const DescribeBaselineFixListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeBaselineFixList(request), context);
-    };
+    using Req = const DescribeBaselineFixListRequest&;
+    using Resp = DescribeBaselineFixListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeBaselineFixList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeBaselineFixListOutcomeCallable CwpClient::DescribeBaselineFixListCallable(const DescribeBaselineFixListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeBaselineFixListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeBaselineFixList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeBaselineFixListOutcome>>();
+    DescribeBaselineFixListAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeBaselineFixListRequest&,
+        DescribeBaselineFixListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeBaselineHostDetectListOutcome CwpClient::DescribeBaselineHostDetectList(const DescribeBaselineHostDetectListRequest &request)
@@ -6039,25 +7012,32 @@ CwpClient::DescribeBaselineHostDetectListOutcome CwpClient::DescribeBaselineHost
 
 void CwpClient::DescribeBaselineHostDetectListAsync(const DescribeBaselineHostDetectListRequest& request, const DescribeBaselineHostDetectListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeBaselineHostDetectList(request), context);
-    };
+    using Req = const DescribeBaselineHostDetectListRequest&;
+    using Resp = DescribeBaselineHostDetectListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeBaselineHostDetectList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeBaselineHostDetectListOutcomeCallable CwpClient::DescribeBaselineHostDetectListCallable(const DescribeBaselineHostDetectListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeBaselineHostDetectListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeBaselineHostDetectList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeBaselineHostDetectListOutcome>>();
+    DescribeBaselineHostDetectListAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeBaselineHostDetectListRequest&,
+        DescribeBaselineHostDetectListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeBaselineHostIgnoreListOutcome CwpClient::DescribeBaselineHostIgnoreList(const DescribeBaselineHostIgnoreListRequest &request)
@@ -6082,25 +7062,32 @@ CwpClient::DescribeBaselineHostIgnoreListOutcome CwpClient::DescribeBaselineHost
 
 void CwpClient::DescribeBaselineHostIgnoreListAsync(const DescribeBaselineHostIgnoreListRequest& request, const DescribeBaselineHostIgnoreListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeBaselineHostIgnoreList(request), context);
-    };
+    using Req = const DescribeBaselineHostIgnoreListRequest&;
+    using Resp = DescribeBaselineHostIgnoreListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeBaselineHostIgnoreList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeBaselineHostIgnoreListOutcomeCallable CwpClient::DescribeBaselineHostIgnoreListCallable(const DescribeBaselineHostIgnoreListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeBaselineHostIgnoreListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeBaselineHostIgnoreList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeBaselineHostIgnoreListOutcome>>();
+    DescribeBaselineHostIgnoreListAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeBaselineHostIgnoreListRequest&,
+        DescribeBaselineHostIgnoreListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeBaselineHostRiskTopOutcome CwpClient::DescribeBaselineHostRiskTop(const DescribeBaselineHostRiskTopRequest &request)
@@ -6125,25 +7112,32 @@ CwpClient::DescribeBaselineHostRiskTopOutcome CwpClient::DescribeBaselineHostRis
 
 void CwpClient::DescribeBaselineHostRiskTopAsync(const DescribeBaselineHostRiskTopRequest& request, const DescribeBaselineHostRiskTopAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeBaselineHostRiskTop(request), context);
-    };
+    using Req = const DescribeBaselineHostRiskTopRequest&;
+    using Resp = DescribeBaselineHostRiskTopResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeBaselineHostRiskTop", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeBaselineHostRiskTopOutcomeCallable CwpClient::DescribeBaselineHostRiskTopCallable(const DescribeBaselineHostRiskTopRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeBaselineHostRiskTopOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeBaselineHostRiskTop(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeBaselineHostRiskTopOutcome>>();
+    DescribeBaselineHostRiskTopAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeBaselineHostRiskTopRequest&,
+        DescribeBaselineHostRiskTopOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeBaselineHostTopOutcome CwpClient::DescribeBaselineHostTop(const DescribeBaselineHostTopRequest &request)
@@ -6168,25 +7162,32 @@ CwpClient::DescribeBaselineHostTopOutcome CwpClient::DescribeBaselineHostTop(con
 
 void CwpClient::DescribeBaselineHostTopAsync(const DescribeBaselineHostTopRequest& request, const DescribeBaselineHostTopAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeBaselineHostTop(request), context);
-    };
+    using Req = const DescribeBaselineHostTopRequest&;
+    using Resp = DescribeBaselineHostTopResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeBaselineHostTop", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeBaselineHostTopOutcomeCallable CwpClient::DescribeBaselineHostTopCallable(const DescribeBaselineHostTopRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeBaselineHostTopOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeBaselineHostTop(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeBaselineHostTopOutcome>>();
+    DescribeBaselineHostTopAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeBaselineHostTopRequest&,
+        DescribeBaselineHostTopOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeBaselineItemDetectListOutcome CwpClient::DescribeBaselineItemDetectList(const DescribeBaselineItemDetectListRequest &request)
@@ -6211,25 +7212,32 @@ CwpClient::DescribeBaselineItemDetectListOutcome CwpClient::DescribeBaselineItem
 
 void CwpClient::DescribeBaselineItemDetectListAsync(const DescribeBaselineItemDetectListRequest& request, const DescribeBaselineItemDetectListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeBaselineItemDetectList(request), context);
-    };
+    using Req = const DescribeBaselineItemDetectListRequest&;
+    using Resp = DescribeBaselineItemDetectListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeBaselineItemDetectList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeBaselineItemDetectListOutcomeCallable CwpClient::DescribeBaselineItemDetectListCallable(const DescribeBaselineItemDetectListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeBaselineItemDetectListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeBaselineItemDetectList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeBaselineItemDetectListOutcome>>();
+    DescribeBaselineItemDetectListAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeBaselineItemDetectListRequest&,
+        DescribeBaselineItemDetectListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeBaselineItemIgnoreListOutcome CwpClient::DescribeBaselineItemIgnoreList(const DescribeBaselineItemIgnoreListRequest &request)
@@ -6254,25 +7262,32 @@ CwpClient::DescribeBaselineItemIgnoreListOutcome CwpClient::DescribeBaselineItem
 
 void CwpClient::DescribeBaselineItemIgnoreListAsync(const DescribeBaselineItemIgnoreListRequest& request, const DescribeBaselineItemIgnoreListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeBaselineItemIgnoreList(request), context);
-    };
+    using Req = const DescribeBaselineItemIgnoreListRequest&;
+    using Resp = DescribeBaselineItemIgnoreListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeBaselineItemIgnoreList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeBaselineItemIgnoreListOutcomeCallable CwpClient::DescribeBaselineItemIgnoreListCallable(const DescribeBaselineItemIgnoreListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeBaselineItemIgnoreListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeBaselineItemIgnoreList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeBaselineItemIgnoreListOutcome>>();
+    DescribeBaselineItemIgnoreListAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeBaselineItemIgnoreListRequest&,
+        DescribeBaselineItemIgnoreListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeBaselineItemInfoOutcome CwpClient::DescribeBaselineItemInfo(const DescribeBaselineItemInfoRequest &request)
@@ -6297,25 +7312,32 @@ CwpClient::DescribeBaselineItemInfoOutcome CwpClient::DescribeBaselineItemInfo(c
 
 void CwpClient::DescribeBaselineItemInfoAsync(const DescribeBaselineItemInfoRequest& request, const DescribeBaselineItemInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeBaselineItemInfo(request), context);
-    };
+    using Req = const DescribeBaselineItemInfoRequest&;
+    using Resp = DescribeBaselineItemInfoResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeBaselineItemInfo", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeBaselineItemInfoOutcomeCallable CwpClient::DescribeBaselineItemInfoCallable(const DescribeBaselineItemInfoRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeBaselineItemInfoOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeBaselineItemInfo(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeBaselineItemInfoOutcome>>();
+    DescribeBaselineItemInfoAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeBaselineItemInfoRequest&,
+        DescribeBaselineItemInfoOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeBaselineItemListOutcome CwpClient::DescribeBaselineItemList(const DescribeBaselineItemListRequest &request)
@@ -6340,25 +7362,32 @@ CwpClient::DescribeBaselineItemListOutcome CwpClient::DescribeBaselineItemList(c
 
 void CwpClient::DescribeBaselineItemListAsync(const DescribeBaselineItemListRequest& request, const DescribeBaselineItemListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeBaselineItemList(request), context);
-    };
+    using Req = const DescribeBaselineItemListRequest&;
+    using Resp = DescribeBaselineItemListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeBaselineItemList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeBaselineItemListOutcomeCallable CwpClient::DescribeBaselineItemListCallable(const DescribeBaselineItemListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeBaselineItemListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeBaselineItemList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeBaselineItemListOutcome>>();
+    DescribeBaselineItemListAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeBaselineItemListRequest&,
+        DescribeBaselineItemListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeBaselineItemRiskTopOutcome CwpClient::DescribeBaselineItemRiskTop(const DescribeBaselineItemRiskTopRequest &request)
@@ -6383,25 +7412,32 @@ CwpClient::DescribeBaselineItemRiskTopOutcome CwpClient::DescribeBaselineItemRis
 
 void CwpClient::DescribeBaselineItemRiskTopAsync(const DescribeBaselineItemRiskTopRequest& request, const DescribeBaselineItemRiskTopAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeBaselineItemRiskTop(request), context);
-    };
+    using Req = const DescribeBaselineItemRiskTopRequest&;
+    using Resp = DescribeBaselineItemRiskTopResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeBaselineItemRiskTop", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeBaselineItemRiskTopOutcomeCallable CwpClient::DescribeBaselineItemRiskTopCallable(const DescribeBaselineItemRiskTopRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeBaselineItemRiskTopOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeBaselineItemRiskTop(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeBaselineItemRiskTopOutcome>>();
+    DescribeBaselineItemRiskTopAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeBaselineItemRiskTopRequest&,
+        DescribeBaselineItemRiskTopOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeBaselineListOutcome CwpClient::DescribeBaselineList(const DescribeBaselineListRequest &request)
@@ -6426,25 +7462,32 @@ CwpClient::DescribeBaselineListOutcome CwpClient::DescribeBaselineList(const Des
 
 void CwpClient::DescribeBaselineListAsync(const DescribeBaselineListRequest& request, const DescribeBaselineListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeBaselineList(request), context);
-    };
+    using Req = const DescribeBaselineListRequest&;
+    using Resp = DescribeBaselineListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeBaselineList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeBaselineListOutcomeCallable CwpClient::DescribeBaselineListCallable(const DescribeBaselineListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeBaselineListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeBaselineList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeBaselineListOutcome>>();
+    DescribeBaselineListAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeBaselineListRequest&,
+        DescribeBaselineListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeBaselinePolicyListOutcome CwpClient::DescribeBaselinePolicyList(const DescribeBaselinePolicyListRequest &request)
@@ -6469,25 +7512,32 @@ CwpClient::DescribeBaselinePolicyListOutcome CwpClient::DescribeBaselinePolicyLi
 
 void CwpClient::DescribeBaselinePolicyListAsync(const DescribeBaselinePolicyListRequest& request, const DescribeBaselinePolicyListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeBaselinePolicyList(request), context);
-    };
+    using Req = const DescribeBaselinePolicyListRequest&;
+    using Resp = DescribeBaselinePolicyListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeBaselinePolicyList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeBaselinePolicyListOutcomeCallable CwpClient::DescribeBaselinePolicyListCallable(const DescribeBaselinePolicyListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeBaselinePolicyListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeBaselinePolicyList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeBaselinePolicyListOutcome>>();
+    DescribeBaselinePolicyListAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeBaselinePolicyListRequest&,
+        DescribeBaselinePolicyListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeBaselineRuleOutcome CwpClient::DescribeBaselineRule(const DescribeBaselineRuleRequest &request)
@@ -6512,25 +7562,32 @@ CwpClient::DescribeBaselineRuleOutcome CwpClient::DescribeBaselineRule(const Des
 
 void CwpClient::DescribeBaselineRuleAsync(const DescribeBaselineRuleRequest& request, const DescribeBaselineRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeBaselineRule(request), context);
-    };
+    using Req = const DescribeBaselineRuleRequest&;
+    using Resp = DescribeBaselineRuleResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeBaselineRule", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeBaselineRuleOutcomeCallable CwpClient::DescribeBaselineRuleCallable(const DescribeBaselineRuleRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeBaselineRuleOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeBaselineRule(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeBaselineRuleOutcome>>();
+    DescribeBaselineRuleAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeBaselineRuleRequest&,
+        DescribeBaselineRuleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeBaselineRuleCategoryListOutcome CwpClient::DescribeBaselineRuleCategoryList(const DescribeBaselineRuleCategoryListRequest &request)
@@ -6555,25 +7612,32 @@ CwpClient::DescribeBaselineRuleCategoryListOutcome CwpClient::DescribeBaselineRu
 
 void CwpClient::DescribeBaselineRuleCategoryListAsync(const DescribeBaselineRuleCategoryListRequest& request, const DescribeBaselineRuleCategoryListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeBaselineRuleCategoryList(request), context);
-    };
+    using Req = const DescribeBaselineRuleCategoryListRequest&;
+    using Resp = DescribeBaselineRuleCategoryListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeBaselineRuleCategoryList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeBaselineRuleCategoryListOutcomeCallable CwpClient::DescribeBaselineRuleCategoryListCallable(const DescribeBaselineRuleCategoryListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeBaselineRuleCategoryListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeBaselineRuleCategoryList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeBaselineRuleCategoryListOutcome>>();
+    DescribeBaselineRuleCategoryListAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeBaselineRuleCategoryListRequest&,
+        DescribeBaselineRuleCategoryListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeBaselineRuleDetectListOutcome CwpClient::DescribeBaselineRuleDetectList(const DescribeBaselineRuleDetectListRequest &request)
@@ -6598,25 +7662,32 @@ CwpClient::DescribeBaselineRuleDetectListOutcome CwpClient::DescribeBaselineRule
 
 void CwpClient::DescribeBaselineRuleDetectListAsync(const DescribeBaselineRuleDetectListRequest& request, const DescribeBaselineRuleDetectListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeBaselineRuleDetectList(request), context);
-    };
+    using Req = const DescribeBaselineRuleDetectListRequest&;
+    using Resp = DescribeBaselineRuleDetectListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeBaselineRuleDetectList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeBaselineRuleDetectListOutcomeCallable CwpClient::DescribeBaselineRuleDetectListCallable(const DescribeBaselineRuleDetectListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeBaselineRuleDetectListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeBaselineRuleDetectList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeBaselineRuleDetectListOutcome>>();
+    DescribeBaselineRuleDetectListAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeBaselineRuleDetectListRequest&,
+        DescribeBaselineRuleDetectListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeBaselineRuleIgnoreListOutcome CwpClient::DescribeBaselineRuleIgnoreList(const DescribeBaselineRuleIgnoreListRequest &request)
@@ -6641,25 +7712,32 @@ CwpClient::DescribeBaselineRuleIgnoreListOutcome CwpClient::DescribeBaselineRule
 
 void CwpClient::DescribeBaselineRuleIgnoreListAsync(const DescribeBaselineRuleIgnoreListRequest& request, const DescribeBaselineRuleIgnoreListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeBaselineRuleIgnoreList(request), context);
-    };
+    using Req = const DescribeBaselineRuleIgnoreListRequest&;
+    using Resp = DescribeBaselineRuleIgnoreListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeBaselineRuleIgnoreList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeBaselineRuleIgnoreListOutcomeCallable CwpClient::DescribeBaselineRuleIgnoreListCallable(const DescribeBaselineRuleIgnoreListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeBaselineRuleIgnoreListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeBaselineRuleIgnoreList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeBaselineRuleIgnoreListOutcome>>();
+    DescribeBaselineRuleIgnoreListAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeBaselineRuleIgnoreListRequest&,
+        DescribeBaselineRuleIgnoreListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeBaselineRuleListOutcome CwpClient::DescribeBaselineRuleList(const DescribeBaselineRuleListRequest &request)
@@ -6684,25 +7762,32 @@ CwpClient::DescribeBaselineRuleListOutcome CwpClient::DescribeBaselineRuleList(c
 
 void CwpClient::DescribeBaselineRuleListAsync(const DescribeBaselineRuleListRequest& request, const DescribeBaselineRuleListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeBaselineRuleList(request), context);
-    };
+    using Req = const DescribeBaselineRuleListRequest&;
+    using Resp = DescribeBaselineRuleListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeBaselineRuleList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeBaselineRuleListOutcomeCallable CwpClient::DescribeBaselineRuleListCallable(const DescribeBaselineRuleListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeBaselineRuleListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeBaselineRuleList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeBaselineRuleListOutcome>>();
+    DescribeBaselineRuleListAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeBaselineRuleListRequest&,
+        DescribeBaselineRuleListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeBaselineScanScheduleOutcome CwpClient::DescribeBaselineScanSchedule(const DescribeBaselineScanScheduleRequest &request)
@@ -6727,25 +7812,32 @@ CwpClient::DescribeBaselineScanScheduleOutcome CwpClient::DescribeBaselineScanSc
 
 void CwpClient::DescribeBaselineScanScheduleAsync(const DescribeBaselineScanScheduleRequest& request, const DescribeBaselineScanScheduleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeBaselineScanSchedule(request), context);
-    };
+    using Req = const DescribeBaselineScanScheduleRequest&;
+    using Resp = DescribeBaselineScanScheduleResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeBaselineScanSchedule", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeBaselineScanScheduleOutcomeCallable CwpClient::DescribeBaselineScanScheduleCallable(const DescribeBaselineScanScheduleRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeBaselineScanScheduleOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeBaselineScanSchedule(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeBaselineScanScheduleOutcome>>();
+    DescribeBaselineScanScheduleAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeBaselineScanScheduleRequest&,
+        DescribeBaselineScanScheduleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeBaselineStrategyDetailOutcome CwpClient::DescribeBaselineStrategyDetail(const DescribeBaselineStrategyDetailRequest &request)
@@ -6770,25 +7862,32 @@ CwpClient::DescribeBaselineStrategyDetailOutcome CwpClient::DescribeBaselineStra
 
 void CwpClient::DescribeBaselineStrategyDetailAsync(const DescribeBaselineStrategyDetailRequest& request, const DescribeBaselineStrategyDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeBaselineStrategyDetail(request), context);
-    };
+    using Req = const DescribeBaselineStrategyDetailRequest&;
+    using Resp = DescribeBaselineStrategyDetailResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeBaselineStrategyDetail", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeBaselineStrategyDetailOutcomeCallable CwpClient::DescribeBaselineStrategyDetailCallable(const DescribeBaselineStrategyDetailRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeBaselineStrategyDetailOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeBaselineStrategyDetail(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeBaselineStrategyDetailOutcome>>();
+    DescribeBaselineStrategyDetailAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeBaselineStrategyDetailRequest&,
+        DescribeBaselineStrategyDetailOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeBaselineStrategyListOutcome CwpClient::DescribeBaselineStrategyList(const DescribeBaselineStrategyListRequest &request)
@@ -6813,25 +7912,32 @@ CwpClient::DescribeBaselineStrategyListOutcome CwpClient::DescribeBaselineStrate
 
 void CwpClient::DescribeBaselineStrategyListAsync(const DescribeBaselineStrategyListRequest& request, const DescribeBaselineStrategyListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeBaselineStrategyList(request), context);
-    };
+    using Req = const DescribeBaselineStrategyListRequest&;
+    using Resp = DescribeBaselineStrategyListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeBaselineStrategyList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeBaselineStrategyListOutcomeCallable CwpClient::DescribeBaselineStrategyListCallable(const DescribeBaselineStrategyListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeBaselineStrategyListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeBaselineStrategyList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeBaselineStrategyListOutcome>>();
+    DescribeBaselineStrategyListAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeBaselineStrategyListRequest&,
+        DescribeBaselineStrategyListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeBaselineTopOutcome CwpClient::DescribeBaselineTop(const DescribeBaselineTopRequest &request)
@@ -6856,25 +7962,32 @@ CwpClient::DescribeBaselineTopOutcome CwpClient::DescribeBaselineTop(const Descr
 
 void CwpClient::DescribeBaselineTopAsync(const DescribeBaselineTopRequest& request, const DescribeBaselineTopAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeBaselineTop(request), context);
-    };
+    using Req = const DescribeBaselineTopRequest&;
+    using Resp = DescribeBaselineTopResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeBaselineTop", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeBaselineTopOutcomeCallable CwpClient::DescribeBaselineTopCallable(const DescribeBaselineTopRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeBaselineTopOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeBaselineTop(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeBaselineTopOutcome>>();
+    DescribeBaselineTopAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeBaselineTopRequest&,
+        DescribeBaselineTopOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeBaselineWeakPasswordListOutcome CwpClient::DescribeBaselineWeakPasswordList(const DescribeBaselineWeakPasswordListRequest &request)
@@ -6899,25 +8012,32 @@ CwpClient::DescribeBaselineWeakPasswordListOutcome CwpClient::DescribeBaselineWe
 
 void CwpClient::DescribeBaselineWeakPasswordListAsync(const DescribeBaselineWeakPasswordListRequest& request, const DescribeBaselineWeakPasswordListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeBaselineWeakPasswordList(request), context);
-    };
+    using Req = const DescribeBaselineWeakPasswordListRequest&;
+    using Resp = DescribeBaselineWeakPasswordListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeBaselineWeakPasswordList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeBaselineWeakPasswordListOutcomeCallable CwpClient::DescribeBaselineWeakPasswordListCallable(const DescribeBaselineWeakPasswordListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeBaselineWeakPasswordListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeBaselineWeakPasswordList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeBaselineWeakPasswordListOutcome>>();
+    DescribeBaselineWeakPasswordListAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeBaselineWeakPasswordListRequest&,
+        DescribeBaselineWeakPasswordListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeBashEventsOutcome CwpClient::DescribeBashEvents(const DescribeBashEventsRequest &request)
@@ -6942,25 +8062,32 @@ CwpClient::DescribeBashEventsOutcome CwpClient::DescribeBashEvents(const Describ
 
 void CwpClient::DescribeBashEventsAsync(const DescribeBashEventsRequest& request, const DescribeBashEventsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeBashEvents(request), context);
-    };
+    using Req = const DescribeBashEventsRequest&;
+    using Resp = DescribeBashEventsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeBashEvents", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeBashEventsOutcomeCallable CwpClient::DescribeBashEventsCallable(const DescribeBashEventsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeBashEventsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeBashEvents(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeBashEventsOutcome>>();
+    DescribeBashEventsAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeBashEventsRequest&,
+        DescribeBashEventsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeBashEventsInfoOutcome CwpClient::DescribeBashEventsInfo(const DescribeBashEventsInfoRequest &request)
@@ -6985,25 +8112,32 @@ CwpClient::DescribeBashEventsInfoOutcome CwpClient::DescribeBashEventsInfo(const
 
 void CwpClient::DescribeBashEventsInfoAsync(const DescribeBashEventsInfoRequest& request, const DescribeBashEventsInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeBashEventsInfo(request), context);
-    };
+    using Req = const DescribeBashEventsInfoRequest&;
+    using Resp = DescribeBashEventsInfoResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeBashEventsInfo", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeBashEventsInfoOutcomeCallable CwpClient::DescribeBashEventsInfoCallable(const DescribeBashEventsInfoRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeBashEventsInfoOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeBashEventsInfo(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeBashEventsInfoOutcome>>();
+    DescribeBashEventsInfoAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeBashEventsInfoRequest&,
+        DescribeBashEventsInfoOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeBashEventsInfoNewOutcome CwpClient::DescribeBashEventsInfoNew(const DescribeBashEventsInfoNewRequest &request)
@@ -7028,25 +8162,32 @@ CwpClient::DescribeBashEventsInfoNewOutcome CwpClient::DescribeBashEventsInfoNew
 
 void CwpClient::DescribeBashEventsInfoNewAsync(const DescribeBashEventsInfoNewRequest& request, const DescribeBashEventsInfoNewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeBashEventsInfoNew(request), context);
-    };
+    using Req = const DescribeBashEventsInfoNewRequest&;
+    using Resp = DescribeBashEventsInfoNewResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeBashEventsInfoNew", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeBashEventsInfoNewOutcomeCallable CwpClient::DescribeBashEventsInfoNewCallable(const DescribeBashEventsInfoNewRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeBashEventsInfoNewOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeBashEventsInfoNew(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeBashEventsInfoNewOutcome>>();
+    DescribeBashEventsInfoNewAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeBashEventsInfoNewRequest&,
+        DescribeBashEventsInfoNewOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeBashEventsNewOutcome CwpClient::DescribeBashEventsNew(const DescribeBashEventsNewRequest &request)
@@ -7071,25 +8212,32 @@ CwpClient::DescribeBashEventsNewOutcome CwpClient::DescribeBashEventsNew(const D
 
 void CwpClient::DescribeBashEventsNewAsync(const DescribeBashEventsNewRequest& request, const DescribeBashEventsNewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeBashEventsNew(request), context);
-    };
+    using Req = const DescribeBashEventsNewRequest&;
+    using Resp = DescribeBashEventsNewResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeBashEventsNew", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeBashEventsNewOutcomeCallable CwpClient::DescribeBashEventsNewCallable(const DescribeBashEventsNewRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeBashEventsNewOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeBashEventsNew(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeBashEventsNewOutcome>>();
+    DescribeBashEventsNewAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeBashEventsNewRequest&,
+        DescribeBashEventsNewOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeBashPoliciesOutcome CwpClient::DescribeBashPolicies(const DescribeBashPoliciesRequest &request)
@@ -7114,25 +8262,32 @@ CwpClient::DescribeBashPoliciesOutcome CwpClient::DescribeBashPolicies(const Des
 
 void CwpClient::DescribeBashPoliciesAsync(const DescribeBashPoliciesRequest& request, const DescribeBashPoliciesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeBashPolicies(request), context);
-    };
+    using Req = const DescribeBashPoliciesRequest&;
+    using Resp = DescribeBashPoliciesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeBashPolicies", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeBashPoliciesOutcomeCallable CwpClient::DescribeBashPoliciesCallable(const DescribeBashPoliciesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeBashPoliciesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeBashPolicies(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeBashPoliciesOutcome>>();
+    DescribeBashPoliciesAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeBashPoliciesRequest&,
+        DescribeBashPoliciesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeBashRulesOutcome CwpClient::DescribeBashRules(const DescribeBashRulesRequest &request)
@@ -7157,25 +8312,32 @@ CwpClient::DescribeBashRulesOutcome CwpClient::DescribeBashRules(const DescribeB
 
 void CwpClient::DescribeBashRulesAsync(const DescribeBashRulesRequest& request, const DescribeBashRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeBashRules(request), context);
-    };
+    using Req = const DescribeBashRulesRequest&;
+    using Resp = DescribeBashRulesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeBashRules", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeBashRulesOutcomeCallable CwpClient::DescribeBashRulesCallable(const DescribeBashRulesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeBashRulesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeBashRules(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeBashRulesOutcome>>();
+    DescribeBashRulesAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeBashRulesRequest&,
+        DescribeBashRulesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeBruteAttackListOutcome CwpClient::DescribeBruteAttackList(const DescribeBruteAttackListRequest &request)
@@ -7200,25 +8362,32 @@ CwpClient::DescribeBruteAttackListOutcome CwpClient::DescribeBruteAttackList(con
 
 void CwpClient::DescribeBruteAttackListAsync(const DescribeBruteAttackListRequest& request, const DescribeBruteAttackListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeBruteAttackList(request), context);
-    };
+    using Req = const DescribeBruteAttackListRequest&;
+    using Resp = DescribeBruteAttackListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeBruteAttackList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeBruteAttackListOutcomeCallable CwpClient::DescribeBruteAttackListCallable(const DescribeBruteAttackListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeBruteAttackListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeBruteAttackList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeBruteAttackListOutcome>>();
+    DescribeBruteAttackListAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeBruteAttackListRequest&,
+        DescribeBruteAttackListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeBruteAttackRulesOutcome CwpClient::DescribeBruteAttackRules(const DescribeBruteAttackRulesRequest &request)
@@ -7243,25 +8412,32 @@ CwpClient::DescribeBruteAttackRulesOutcome CwpClient::DescribeBruteAttackRules(c
 
 void CwpClient::DescribeBruteAttackRulesAsync(const DescribeBruteAttackRulesRequest& request, const DescribeBruteAttackRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeBruteAttackRules(request), context);
-    };
+    using Req = const DescribeBruteAttackRulesRequest&;
+    using Resp = DescribeBruteAttackRulesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeBruteAttackRules", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeBruteAttackRulesOutcomeCallable CwpClient::DescribeBruteAttackRulesCallable(const DescribeBruteAttackRulesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeBruteAttackRulesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeBruteAttackRules(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeBruteAttackRulesOutcome>>();
+    DescribeBruteAttackRulesAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeBruteAttackRulesRequest&,
+        DescribeBruteAttackRulesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeCanFixVulMachineOutcome CwpClient::DescribeCanFixVulMachine(const DescribeCanFixVulMachineRequest &request)
@@ -7286,25 +8462,32 @@ CwpClient::DescribeCanFixVulMachineOutcome CwpClient::DescribeCanFixVulMachine(c
 
 void CwpClient::DescribeCanFixVulMachineAsync(const DescribeCanFixVulMachineRequest& request, const DescribeCanFixVulMachineAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeCanFixVulMachine(request), context);
-    };
+    using Req = const DescribeCanFixVulMachineRequest&;
+    using Resp = DescribeCanFixVulMachineResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeCanFixVulMachine", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeCanFixVulMachineOutcomeCallable CwpClient::DescribeCanFixVulMachineCallable(const DescribeCanFixVulMachineRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeCanFixVulMachineOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeCanFixVulMachine(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeCanFixVulMachineOutcome>>();
+    DescribeCanFixVulMachineAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeCanFixVulMachineRequest&,
+        DescribeCanFixVulMachineOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeCanNotSeparateMachineOutcome CwpClient::DescribeCanNotSeparateMachine(const DescribeCanNotSeparateMachineRequest &request)
@@ -7329,25 +8512,32 @@ CwpClient::DescribeCanNotSeparateMachineOutcome CwpClient::DescribeCanNotSeparat
 
 void CwpClient::DescribeCanNotSeparateMachineAsync(const DescribeCanNotSeparateMachineRequest& request, const DescribeCanNotSeparateMachineAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeCanNotSeparateMachine(request), context);
-    };
+    using Req = const DescribeCanNotSeparateMachineRequest&;
+    using Resp = DescribeCanNotSeparateMachineResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeCanNotSeparateMachine", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeCanNotSeparateMachineOutcomeCallable CwpClient::DescribeCanNotSeparateMachineCallable(const DescribeCanNotSeparateMachineRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeCanNotSeparateMachineOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeCanNotSeparateMachine(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeCanNotSeparateMachineOutcome>>();
+    DescribeCanNotSeparateMachineAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeCanNotSeparateMachineRequest&,
+        DescribeCanNotSeparateMachineOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeClientExceptionOutcome CwpClient::DescribeClientException(const DescribeClientExceptionRequest &request)
@@ -7372,25 +8562,32 @@ CwpClient::DescribeClientExceptionOutcome CwpClient::DescribeClientException(con
 
 void CwpClient::DescribeClientExceptionAsync(const DescribeClientExceptionRequest& request, const DescribeClientExceptionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeClientException(request), context);
-    };
+    using Req = const DescribeClientExceptionRequest&;
+    using Resp = DescribeClientExceptionResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeClientException", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeClientExceptionOutcomeCallable CwpClient::DescribeClientExceptionCallable(const DescribeClientExceptionRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeClientExceptionOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeClientException(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeClientExceptionOutcome>>();
+    DescribeClientExceptionAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeClientExceptionRequest&,
+        DescribeClientExceptionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeDefenceEventDetailOutcome CwpClient::DescribeDefenceEventDetail(const DescribeDefenceEventDetailRequest &request)
@@ -7415,25 +8612,32 @@ CwpClient::DescribeDefenceEventDetailOutcome CwpClient::DescribeDefenceEventDeta
 
 void CwpClient::DescribeDefenceEventDetailAsync(const DescribeDefenceEventDetailRequest& request, const DescribeDefenceEventDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDefenceEventDetail(request), context);
-    };
+    using Req = const DescribeDefenceEventDetailRequest&;
+    using Resp = DescribeDefenceEventDetailResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeDefenceEventDetail", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeDefenceEventDetailOutcomeCallable CwpClient::DescribeDefenceEventDetailCallable(const DescribeDefenceEventDetailRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeDefenceEventDetailOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDefenceEventDetail(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeDefenceEventDetailOutcome>>();
+    DescribeDefenceEventDetailAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeDefenceEventDetailRequest&,
+        DescribeDefenceEventDetailOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeDirectConnectInstallCommandOutcome CwpClient::DescribeDirectConnectInstallCommand(const DescribeDirectConnectInstallCommandRequest &request)
@@ -7458,25 +8662,32 @@ CwpClient::DescribeDirectConnectInstallCommandOutcome CwpClient::DescribeDirectC
 
 void CwpClient::DescribeDirectConnectInstallCommandAsync(const DescribeDirectConnectInstallCommandRequest& request, const DescribeDirectConnectInstallCommandAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDirectConnectInstallCommand(request), context);
-    };
+    using Req = const DescribeDirectConnectInstallCommandRequest&;
+    using Resp = DescribeDirectConnectInstallCommandResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeDirectConnectInstallCommand", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeDirectConnectInstallCommandOutcomeCallable CwpClient::DescribeDirectConnectInstallCommandCallable(const DescribeDirectConnectInstallCommandRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeDirectConnectInstallCommandOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDirectConnectInstallCommand(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeDirectConnectInstallCommandOutcome>>();
+    DescribeDirectConnectInstallCommandAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeDirectConnectInstallCommandRequest&,
+        DescribeDirectConnectInstallCommandOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeESAggregationsOutcome CwpClient::DescribeESAggregations(const DescribeESAggregationsRequest &request)
@@ -7501,25 +8712,32 @@ CwpClient::DescribeESAggregationsOutcome CwpClient::DescribeESAggregations(const
 
 void CwpClient::DescribeESAggregationsAsync(const DescribeESAggregationsRequest& request, const DescribeESAggregationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeESAggregations(request), context);
-    };
+    using Req = const DescribeESAggregationsRequest&;
+    using Resp = DescribeESAggregationsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeESAggregations", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeESAggregationsOutcomeCallable CwpClient::DescribeESAggregationsCallable(const DescribeESAggregationsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeESAggregationsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeESAggregations(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeESAggregationsOutcome>>();
+    DescribeESAggregationsAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeESAggregationsRequest&,
+        DescribeESAggregationsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeEmergencyResponseListOutcome CwpClient::DescribeEmergencyResponseList(const DescribeEmergencyResponseListRequest &request)
@@ -7544,25 +8762,32 @@ CwpClient::DescribeEmergencyResponseListOutcome CwpClient::DescribeEmergencyResp
 
 void CwpClient::DescribeEmergencyResponseListAsync(const DescribeEmergencyResponseListRequest& request, const DescribeEmergencyResponseListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeEmergencyResponseList(request), context);
-    };
+    using Req = const DescribeEmergencyResponseListRequest&;
+    using Resp = DescribeEmergencyResponseListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeEmergencyResponseList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeEmergencyResponseListOutcomeCallable CwpClient::DescribeEmergencyResponseListCallable(const DescribeEmergencyResponseListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeEmergencyResponseListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeEmergencyResponseList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeEmergencyResponseListOutcome>>();
+    DescribeEmergencyResponseListAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeEmergencyResponseListRequest&,
+        DescribeEmergencyResponseListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeEmergencyVulListOutcome CwpClient::DescribeEmergencyVulList(const DescribeEmergencyVulListRequest &request)
@@ -7587,25 +8812,32 @@ CwpClient::DescribeEmergencyVulListOutcome CwpClient::DescribeEmergencyVulList(c
 
 void CwpClient::DescribeEmergencyVulListAsync(const DescribeEmergencyVulListRequest& request, const DescribeEmergencyVulListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeEmergencyVulList(request), context);
-    };
+    using Req = const DescribeEmergencyVulListRequest&;
+    using Resp = DescribeEmergencyVulListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeEmergencyVulList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeEmergencyVulListOutcomeCallable CwpClient::DescribeEmergencyVulListCallable(const DescribeEmergencyVulListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeEmergencyVulListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeEmergencyVulList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeEmergencyVulListOutcome>>();
+    DescribeEmergencyVulListAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeEmergencyVulListRequest&,
+        DescribeEmergencyVulListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeEventByTableOutcome CwpClient::DescribeEventByTable(const DescribeEventByTableRequest &request)
@@ -7630,25 +8862,32 @@ CwpClient::DescribeEventByTableOutcome CwpClient::DescribeEventByTable(const Des
 
 void CwpClient::DescribeEventByTableAsync(const DescribeEventByTableRequest& request, const DescribeEventByTableAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeEventByTable(request), context);
-    };
+    using Req = const DescribeEventByTableRequest&;
+    using Resp = DescribeEventByTableResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeEventByTable", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeEventByTableOutcomeCallable CwpClient::DescribeEventByTableCallable(const DescribeEventByTableRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeEventByTableOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeEventByTable(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeEventByTableOutcome>>();
+    DescribeEventByTableAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeEventByTableRequest&,
+        DescribeEventByTableOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeExpertServiceListOutcome CwpClient::DescribeExpertServiceList(const DescribeExpertServiceListRequest &request)
@@ -7673,25 +8912,32 @@ CwpClient::DescribeExpertServiceListOutcome CwpClient::DescribeExpertServiceList
 
 void CwpClient::DescribeExpertServiceListAsync(const DescribeExpertServiceListRequest& request, const DescribeExpertServiceListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeExpertServiceList(request), context);
-    };
+    using Req = const DescribeExpertServiceListRequest&;
+    using Resp = DescribeExpertServiceListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeExpertServiceList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeExpertServiceListOutcomeCallable CwpClient::DescribeExpertServiceListCallable(const DescribeExpertServiceListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeExpertServiceListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeExpertServiceList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeExpertServiceListOutcome>>();
+    DescribeExpertServiceListAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeExpertServiceListRequest&,
+        DescribeExpertServiceListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeExpertServiceOrderListOutcome CwpClient::DescribeExpertServiceOrderList(const DescribeExpertServiceOrderListRequest &request)
@@ -7716,25 +8962,32 @@ CwpClient::DescribeExpertServiceOrderListOutcome CwpClient::DescribeExpertServic
 
 void CwpClient::DescribeExpertServiceOrderListAsync(const DescribeExpertServiceOrderListRequest& request, const DescribeExpertServiceOrderListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeExpertServiceOrderList(request), context);
-    };
+    using Req = const DescribeExpertServiceOrderListRequest&;
+    using Resp = DescribeExpertServiceOrderListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeExpertServiceOrderList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeExpertServiceOrderListOutcomeCallable CwpClient::DescribeExpertServiceOrderListCallable(const DescribeExpertServiceOrderListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeExpertServiceOrderListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeExpertServiceOrderList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeExpertServiceOrderListOutcome>>();
+    DescribeExpertServiceOrderListAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeExpertServiceOrderListRequest&,
+        DescribeExpertServiceOrderListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeExportMachinesOutcome CwpClient::DescribeExportMachines(const DescribeExportMachinesRequest &request)
@@ -7759,25 +9012,32 @@ CwpClient::DescribeExportMachinesOutcome CwpClient::DescribeExportMachines(const
 
 void CwpClient::DescribeExportMachinesAsync(const DescribeExportMachinesRequest& request, const DescribeExportMachinesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeExportMachines(request), context);
-    };
+    using Req = const DescribeExportMachinesRequest&;
+    using Resp = DescribeExportMachinesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeExportMachines", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeExportMachinesOutcomeCallable CwpClient::DescribeExportMachinesCallable(const DescribeExportMachinesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeExportMachinesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeExportMachines(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeExportMachinesOutcome>>();
+    DescribeExportMachinesAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeExportMachinesRequest&,
+        DescribeExportMachinesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeFastAnalysisOutcome CwpClient::DescribeFastAnalysis(const DescribeFastAnalysisRequest &request)
@@ -7802,25 +9062,32 @@ CwpClient::DescribeFastAnalysisOutcome CwpClient::DescribeFastAnalysis(const Des
 
 void CwpClient::DescribeFastAnalysisAsync(const DescribeFastAnalysisRequest& request, const DescribeFastAnalysisAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeFastAnalysis(request), context);
-    };
+    using Req = const DescribeFastAnalysisRequest&;
+    using Resp = DescribeFastAnalysisResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeFastAnalysis", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeFastAnalysisOutcomeCallable CwpClient::DescribeFastAnalysisCallable(const DescribeFastAnalysisRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeFastAnalysisOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeFastAnalysis(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeFastAnalysisOutcome>>();
+    DescribeFastAnalysisAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeFastAnalysisRequest&,
+        DescribeFastAnalysisOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeFileTamperEventRuleInfoOutcome CwpClient::DescribeFileTamperEventRuleInfo(const DescribeFileTamperEventRuleInfoRequest &request)
@@ -7845,25 +9112,32 @@ CwpClient::DescribeFileTamperEventRuleInfoOutcome CwpClient::DescribeFileTamperE
 
 void CwpClient::DescribeFileTamperEventRuleInfoAsync(const DescribeFileTamperEventRuleInfoRequest& request, const DescribeFileTamperEventRuleInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeFileTamperEventRuleInfo(request), context);
-    };
+    using Req = const DescribeFileTamperEventRuleInfoRequest&;
+    using Resp = DescribeFileTamperEventRuleInfoResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeFileTamperEventRuleInfo", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeFileTamperEventRuleInfoOutcomeCallable CwpClient::DescribeFileTamperEventRuleInfoCallable(const DescribeFileTamperEventRuleInfoRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeFileTamperEventRuleInfoOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeFileTamperEventRuleInfo(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeFileTamperEventRuleInfoOutcome>>();
+    DescribeFileTamperEventRuleInfoAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeFileTamperEventRuleInfoRequest&,
+        DescribeFileTamperEventRuleInfoOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeFileTamperEventsOutcome CwpClient::DescribeFileTamperEvents(const DescribeFileTamperEventsRequest &request)
@@ -7888,25 +9162,32 @@ CwpClient::DescribeFileTamperEventsOutcome CwpClient::DescribeFileTamperEvents(c
 
 void CwpClient::DescribeFileTamperEventsAsync(const DescribeFileTamperEventsRequest& request, const DescribeFileTamperEventsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeFileTamperEvents(request), context);
-    };
+    using Req = const DescribeFileTamperEventsRequest&;
+    using Resp = DescribeFileTamperEventsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeFileTamperEvents", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeFileTamperEventsOutcomeCallable CwpClient::DescribeFileTamperEventsCallable(const DescribeFileTamperEventsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeFileTamperEventsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeFileTamperEvents(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeFileTamperEventsOutcome>>();
+    DescribeFileTamperEventsAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeFileTamperEventsRequest&,
+        DescribeFileTamperEventsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeFileTamperRuleCountOutcome CwpClient::DescribeFileTamperRuleCount(const DescribeFileTamperRuleCountRequest &request)
@@ -7931,25 +9212,32 @@ CwpClient::DescribeFileTamperRuleCountOutcome CwpClient::DescribeFileTamperRuleC
 
 void CwpClient::DescribeFileTamperRuleCountAsync(const DescribeFileTamperRuleCountRequest& request, const DescribeFileTamperRuleCountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeFileTamperRuleCount(request), context);
-    };
+    using Req = const DescribeFileTamperRuleCountRequest&;
+    using Resp = DescribeFileTamperRuleCountResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeFileTamperRuleCount", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeFileTamperRuleCountOutcomeCallable CwpClient::DescribeFileTamperRuleCountCallable(const DescribeFileTamperRuleCountRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeFileTamperRuleCountOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeFileTamperRuleCount(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeFileTamperRuleCountOutcome>>();
+    DescribeFileTamperRuleCountAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeFileTamperRuleCountRequest&,
+        DescribeFileTamperRuleCountOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeFileTamperRuleInfoOutcome CwpClient::DescribeFileTamperRuleInfo(const DescribeFileTamperRuleInfoRequest &request)
@@ -7974,25 +9262,32 @@ CwpClient::DescribeFileTamperRuleInfoOutcome CwpClient::DescribeFileTamperRuleIn
 
 void CwpClient::DescribeFileTamperRuleInfoAsync(const DescribeFileTamperRuleInfoRequest& request, const DescribeFileTamperRuleInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeFileTamperRuleInfo(request), context);
-    };
+    using Req = const DescribeFileTamperRuleInfoRequest&;
+    using Resp = DescribeFileTamperRuleInfoResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeFileTamperRuleInfo", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeFileTamperRuleInfoOutcomeCallable CwpClient::DescribeFileTamperRuleInfoCallable(const DescribeFileTamperRuleInfoRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeFileTamperRuleInfoOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeFileTamperRuleInfo(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeFileTamperRuleInfoOutcome>>();
+    DescribeFileTamperRuleInfoAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeFileTamperRuleInfoRequest&,
+        DescribeFileTamperRuleInfoOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeFileTamperRulesOutcome CwpClient::DescribeFileTamperRules(const DescribeFileTamperRulesRequest &request)
@@ -8017,25 +9312,32 @@ CwpClient::DescribeFileTamperRulesOutcome CwpClient::DescribeFileTamperRules(con
 
 void CwpClient::DescribeFileTamperRulesAsync(const DescribeFileTamperRulesRequest& request, const DescribeFileTamperRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeFileTamperRules(request), context);
-    };
+    using Req = const DescribeFileTamperRulesRequest&;
+    using Resp = DescribeFileTamperRulesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeFileTamperRules", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeFileTamperRulesOutcomeCallable CwpClient::DescribeFileTamperRulesCallable(const DescribeFileTamperRulesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeFileTamperRulesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeFileTamperRules(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeFileTamperRulesOutcome>>();
+    DescribeFileTamperRulesAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeFileTamperRulesRequest&,
+        DescribeFileTamperRulesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeGeneralStatOutcome CwpClient::DescribeGeneralStat(const DescribeGeneralStatRequest &request)
@@ -8060,25 +9362,32 @@ CwpClient::DescribeGeneralStatOutcome CwpClient::DescribeGeneralStat(const Descr
 
 void CwpClient::DescribeGeneralStatAsync(const DescribeGeneralStatRequest& request, const DescribeGeneralStatAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeGeneralStat(request), context);
-    };
+    using Req = const DescribeGeneralStatRequest&;
+    using Resp = DescribeGeneralStatResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeGeneralStat", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeGeneralStatOutcomeCallable CwpClient::DescribeGeneralStatCallable(const DescribeGeneralStatRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeGeneralStatOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeGeneralStat(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeGeneralStatOutcome>>();
+    DescribeGeneralStatAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeGeneralStatRequest&,
+        DescribeGeneralStatOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeHistoryAccountsOutcome CwpClient::DescribeHistoryAccounts(const DescribeHistoryAccountsRequest &request)
@@ -8103,25 +9412,32 @@ CwpClient::DescribeHistoryAccountsOutcome CwpClient::DescribeHistoryAccounts(con
 
 void CwpClient::DescribeHistoryAccountsAsync(const DescribeHistoryAccountsRequest& request, const DescribeHistoryAccountsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeHistoryAccounts(request), context);
-    };
+    using Req = const DescribeHistoryAccountsRequest&;
+    using Resp = DescribeHistoryAccountsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeHistoryAccounts", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeHistoryAccountsOutcomeCallable CwpClient::DescribeHistoryAccountsCallable(const DescribeHistoryAccountsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeHistoryAccountsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeHistoryAccounts(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeHistoryAccountsOutcome>>();
+    DescribeHistoryAccountsAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeHistoryAccountsRequest&,
+        DescribeHistoryAccountsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeHistoryServiceOutcome CwpClient::DescribeHistoryService(const DescribeHistoryServiceRequest &request)
@@ -8146,25 +9462,32 @@ CwpClient::DescribeHistoryServiceOutcome CwpClient::DescribeHistoryService(const
 
 void CwpClient::DescribeHistoryServiceAsync(const DescribeHistoryServiceRequest& request, const DescribeHistoryServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeHistoryService(request), context);
-    };
+    using Req = const DescribeHistoryServiceRequest&;
+    using Resp = DescribeHistoryServiceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeHistoryService", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeHistoryServiceOutcomeCallable CwpClient::DescribeHistoryServiceCallable(const DescribeHistoryServiceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeHistoryServiceOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeHistoryService(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeHistoryServiceOutcome>>();
+    DescribeHistoryServiceAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeHistoryServiceRequest&,
+        DescribeHistoryServiceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeHostInfoOutcome CwpClient::DescribeHostInfo(const DescribeHostInfoRequest &request)
@@ -8189,25 +9512,32 @@ CwpClient::DescribeHostInfoOutcome CwpClient::DescribeHostInfo(const DescribeHos
 
 void CwpClient::DescribeHostInfoAsync(const DescribeHostInfoRequest& request, const DescribeHostInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeHostInfo(request), context);
-    };
+    using Req = const DescribeHostInfoRequest&;
+    using Resp = DescribeHostInfoResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeHostInfo", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeHostInfoOutcomeCallable CwpClient::DescribeHostInfoCallable(const DescribeHostInfoRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeHostInfoOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeHostInfo(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeHostInfoOutcome>>();
+    DescribeHostInfoAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeHostInfoRequest&,
+        DescribeHostInfoOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeHostLoginListOutcome CwpClient::DescribeHostLoginList(const DescribeHostLoginListRequest &request)
@@ -8232,25 +9562,32 @@ CwpClient::DescribeHostLoginListOutcome CwpClient::DescribeHostLoginList(const D
 
 void CwpClient::DescribeHostLoginListAsync(const DescribeHostLoginListRequest& request, const DescribeHostLoginListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeHostLoginList(request), context);
-    };
+    using Req = const DescribeHostLoginListRequest&;
+    using Resp = DescribeHostLoginListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeHostLoginList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeHostLoginListOutcomeCallable CwpClient::DescribeHostLoginListCallable(const DescribeHostLoginListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeHostLoginListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeHostLoginList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeHostLoginListOutcome>>();
+    DescribeHostLoginListAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeHostLoginListRequest&,
+        DescribeHostLoginListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeHotVulTopOutcome CwpClient::DescribeHotVulTop(const DescribeHotVulTopRequest &request)
@@ -8275,25 +9612,32 @@ CwpClient::DescribeHotVulTopOutcome CwpClient::DescribeHotVulTop(const DescribeH
 
 void CwpClient::DescribeHotVulTopAsync(const DescribeHotVulTopRequest& request, const DescribeHotVulTopAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeHotVulTop(request), context);
-    };
+    using Req = const DescribeHotVulTopRequest&;
+    using Resp = DescribeHotVulTopResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeHotVulTop", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeHotVulTopOutcomeCallable CwpClient::DescribeHotVulTopCallable(const DescribeHotVulTopRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeHotVulTopOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeHotVulTop(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeHotVulTopOutcome>>();
+    DescribeHotVulTopAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeHotVulTopRequest&,
+        DescribeHotVulTopOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeIgnoreBaselineRuleOutcome CwpClient::DescribeIgnoreBaselineRule(const DescribeIgnoreBaselineRuleRequest &request)
@@ -8318,25 +9662,32 @@ CwpClient::DescribeIgnoreBaselineRuleOutcome CwpClient::DescribeIgnoreBaselineRu
 
 void CwpClient::DescribeIgnoreBaselineRuleAsync(const DescribeIgnoreBaselineRuleRequest& request, const DescribeIgnoreBaselineRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeIgnoreBaselineRule(request), context);
-    };
+    using Req = const DescribeIgnoreBaselineRuleRequest&;
+    using Resp = DescribeIgnoreBaselineRuleResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeIgnoreBaselineRule", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeIgnoreBaselineRuleOutcomeCallable CwpClient::DescribeIgnoreBaselineRuleCallable(const DescribeIgnoreBaselineRuleRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeIgnoreBaselineRuleOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeIgnoreBaselineRule(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeIgnoreBaselineRuleOutcome>>();
+    DescribeIgnoreBaselineRuleAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeIgnoreBaselineRuleRequest&,
+        DescribeIgnoreBaselineRuleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeIgnoreHostAndItemConfigOutcome CwpClient::DescribeIgnoreHostAndItemConfig(const DescribeIgnoreHostAndItemConfigRequest &request)
@@ -8361,25 +9712,32 @@ CwpClient::DescribeIgnoreHostAndItemConfigOutcome CwpClient::DescribeIgnoreHostA
 
 void CwpClient::DescribeIgnoreHostAndItemConfigAsync(const DescribeIgnoreHostAndItemConfigRequest& request, const DescribeIgnoreHostAndItemConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeIgnoreHostAndItemConfig(request), context);
-    };
+    using Req = const DescribeIgnoreHostAndItemConfigRequest&;
+    using Resp = DescribeIgnoreHostAndItemConfigResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeIgnoreHostAndItemConfig", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeIgnoreHostAndItemConfigOutcomeCallable CwpClient::DescribeIgnoreHostAndItemConfigCallable(const DescribeIgnoreHostAndItemConfigRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeIgnoreHostAndItemConfigOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeIgnoreHostAndItemConfig(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeIgnoreHostAndItemConfigOutcome>>();
+    DescribeIgnoreHostAndItemConfigAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeIgnoreHostAndItemConfigRequest&,
+        DescribeIgnoreHostAndItemConfigOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeIgnoreRuleEffectHostListOutcome CwpClient::DescribeIgnoreRuleEffectHostList(const DescribeIgnoreRuleEffectHostListRequest &request)
@@ -8404,25 +9762,32 @@ CwpClient::DescribeIgnoreRuleEffectHostListOutcome CwpClient::DescribeIgnoreRule
 
 void CwpClient::DescribeIgnoreRuleEffectHostListAsync(const DescribeIgnoreRuleEffectHostListRequest& request, const DescribeIgnoreRuleEffectHostListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeIgnoreRuleEffectHostList(request), context);
-    };
+    using Req = const DescribeIgnoreRuleEffectHostListRequest&;
+    using Resp = DescribeIgnoreRuleEffectHostListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeIgnoreRuleEffectHostList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeIgnoreRuleEffectHostListOutcomeCallable CwpClient::DescribeIgnoreRuleEffectHostListCallable(const DescribeIgnoreRuleEffectHostListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeIgnoreRuleEffectHostListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeIgnoreRuleEffectHostList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeIgnoreRuleEffectHostListOutcome>>();
+    DescribeIgnoreRuleEffectHostListAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeIgnoreRuleEffectHostListRequest&,
+        DescribeIgnoreRuleEffectHostListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeImportMachineInfoOutcome CwpClient::DescribeImportMachineInfo(const DescribeImportMachineInfoRequest &request)
@@ -8447,25 +9812,32 @@ CwpClient::DescribeImportMachineInfoOutcome CwpClient::DescribeImportMachineInfo
 
 void CwpClient::DescribeImportMachineInfoAsync(const DescribeImportMachineInfoRequest& request, const DescribeImportMachineInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeImportMachineInfo(request), context);
-    };
+    using Req = const DescribeImportMachineInfoRequest&;
+    using Resp = DescribeImportMachineInfoResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeImportMachineInfo", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeImportMachineInfoOutcomeCallable CwpClient::DescribeImportMachineInfoCallable(const DescribeImportMachineInfoRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeImportMachineInfoOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeImportMachineInfo(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeImportMachineInfoOutcome>>();
+    DescribeImportMachineInfoAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeImportMachineInfoRequest&,
+        DescribeImportMachineInfoOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeJavaMemShellInfoOutcome CwpClient::DescribeJavaMemShellInfo(const DescribeJavaMemShellInfoRequest &request)
@@ -8490,25 +9862,32 @@ CwpClient::DescribeJavaMemShellInfoOutcome CwpClient::DescribeJavaMemShellInfo(c
 
 void CwpClient::DescribeJavaMemShellInfoAsync(const DescribeJavaMemShellInfoRequest& request, const DescribeJavaMemShellInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeJavaMemShellInfo(request), context);
-    };
+    using Req = const DescribeJavaMemShellInfoRequest&;
+    using Resp = DescribeJavaMemShellInfoResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeJavaMemShellInfo", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeJavaMemShellInfoOutcomeCallable CwpClient::DescribeJavaMemShellInfoCallable(const DescribeJavaMemShellInfoRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeJavaMemShellInfoOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeJavaMemShellInfo(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeJavaMemShellInfoOutcome>>();
+    DescribeJavaMemShellInfoAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeJavaMemShellInfoRequest&,
+        DescribeJavaMemShellInfoOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeJavaMemShellListOutcome CwpClient::DescribeJavaMemShellList(const DescribeJavaMemShellListRequest &request)
@@ -8533,25 +9912,32 @@ CwpClient::DescribeJavaMemShellListOutcome CwpClient::DescribeJavaMemShellList(c
 
 void CwpClient::DescribeJavaMemShellListAsync(const DescribeJavaMemShellListRequest& request, const DescribeJavaMemShellListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeJavaMemShellList(request), context);
-    };
+    using Req = const DescribeJavaMemShellListRequest&;
+    using Resp = DescribeJavaMemShellListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeJavaMemShellList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeJavaMemShellListOutcomeCallable CwpClient::DescribeJavaMemShellListCallable(const DescribeJavaMemShellListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeJavaMemShellListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeJavaMemShellList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeJavaMemShellListOutcome>>();
+    DescribeJavaMemShellListAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeJavaMemShellListRequest&,
+        DescribeJavaMemShellListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeJavaMemShellPluginInfoOutcome CwpClient::DescribeJavaMemShellPluginInfo(const DescribeJavaMemShellPluginInfoRequest &request)
@@ -8576,25 +9962,32 @@ CwpClient::DescribeJavaMemShellPluginInfoOutcome CwpClient::DescribeJavaMemShell
 
 void CwpClient::DescribeJavaMemShellPluginInfoAsync(const DescribeJavaMemShellPluginInfoRequest& request, const DescribeJavaMemShellPluginInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeJavaMemShellPluginInfo(request), context);
-    };
+    using Req = const DescribeJavaMemShellPluginInfoRequest&;
+    using Resp = DescribeJavaMemShellPluginInfoResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeJavaMemShellPluginInfo", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeJavaMemShellPluginInfoOutcomeCallable CwpClient::DescribeJavaMemShellPluginInfoCallable(const DescribeJavaMemShellPluginInfoRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeJavaMemShellPluginInfoOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeJavaMemShellPluginInfo(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeJavaMemShellPluginInfoOutcome>>();
+    DescribeJavaMemShellPluginInfoAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeJavaMemShellPluginInfoRequest&,
+        DescribeJavaMemShellPluginInfoOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeJavaMemShellPluginListOutcome CwpClient::DescribeJavaMemShellPluginList(const DescribeJavaMemShellPluginListRequest &request)
@@ -8619,25 +10012,32 @@ CwpClient::DescribeJavaMemShellPluginListOutcome CwpClient::DescribeJavaMemShell
 
 void CwpClient::DescribeJavaMemShellPluginListAsync(const DescribeJavaMemShellPluginListRequest& request, const DescribeJavaMemShellPluginListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeJavaMemShellPluginList(request), context);
-    };
+    using Req = const DescribeJavaMemShellPluginListRequest&;
+    using Resp = DescribeJavaMemShellPluginListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeJavaMemShellPluginList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeJavaMemShellPluginListOutcomeCallable CwpClient::DescribeJavaMemShellPluginListCallable(const DescribeJavaMemShellPluginListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeJavaMemShellPluginListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeJavaMemShellPluginList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeJavaMemShellPluginListOutcome>>();
+    DescribeJavaMemShellPluginListAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeJavaMemShellPluginListRequest&,
+        DescribeJavaMemShellPluginListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeLicenseOutcome CwpClient::DescribeLicense(const DescribeLicenseRequest &request)
@@ -8662,25 +10062,32 @@ CwpClient::DescribeLicenseOutcome CwpClient::DescribeLicense(const DescribeLicen
 
 void CwpClient::DescribeLicenseAsync(const DescribeLicenseRequest& request, const DescribeLicenseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeLicense(request), context);
-    };
+    using Req = const DescribeLicenseRequest&;
+    using Resp = DescribeLicenseResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeLicense", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeLicenseOutcomeCallable CwpClient::DescribeLicenseCallable(const DescribeLicenseRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeLicenseOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeLicense(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeLicenseOutcome>>();
+    DescribeLicenseAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeLicenseRequest&,
+        DescribeLicenseOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeLicenseBindListOutcome CwpClient::DescribeLicenseBindList(const DescribeLicenseBindListRequest &request)
@@ -8705,25 +10112,32 @@ CwpClient::DescribeLicenseBindListOutcome CwpClient::DescribeLicenseBindList(con
 
 void CwpClient::DescribeLicenseBindListAsync(const DescribeLicenseBindListRequest& request, const DescribeLicenseBindListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeLicenseBindList(request), context);
-    };
+    using Req = const DescribeLicenseBindListRequest&;
+    using Resp = DescribeLicenseBindListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeLicenseBindList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeLicenseBindListOutcomeCallable CwpClient::DescribeLicenseBindListCallable(const DescribeLicenseBindListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeLicenseBindListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeLicenseBindList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeLicenseBindListOutcome>>();
+    DescribeLicenseBindListAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeLicenseBindListRequest&,
+        DescribeLicenseBindListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeLicenseBindScheduleOutcome CwpClient::DescribeLicenseBindSchedule(const DescribeLicenseBindScheduleRequest &request)
@@ -8748,25 +10162,32 @@ CwpClient::DescribeLicenseBindScheduleOutcome CwpClient::DescribeLicenseBindSche
 
 void CwpClient::DescribeLicenseBindScheduleAsync(const DescribeLicenseBindScheduleRequest& request, const DescribeLicenseBindScheduleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeLicenseBindSchedule(request), context);
-    };
+    using Req = const DescribeLicenseBindScheduleRequest&;
+    using Resp = DescribeLicenseBindScheduleResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeLicenseBindSchedule", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeLicenseBindScheduleOutcomeCallable CwpClient::DescribeLicenseBindScheduleCallable(const DescribeLicenseBindScheduleRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeLicenseBindScheduleOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeLicenseBindSchedule(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeLicenseBindScheduleOutcome>>();
+    DescribeLicenseBindScheduleAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeLicenseBindScheduleRequest&,
+        DescribeLicenseBindScheduleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeLicenseGeneralOutcome CwpClient::DescribeLicenseGeneral(const DescribeLicenseGeneralRequest &request)
@@ -8791,25 +10212,32 @@ CwpClient::DescribeLicenseGeneralOutcome CwpClient::DescribeLicenseGeneral(const
 
 void CwpClient::DescribeLicenseGeneralAsync(const DescribeLicenseGeneralRequest& request, const DescribeLicenseGeneralAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeLicenseGeneral(request), context);
-    };
+    using Req = const DescribeLicenseGeneralRequest&;
+    using Resp = DescribeLicenseGeneralResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeLicenseGeneral", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeLicenseGeneralOutcomeCallable CwpClient::DescribeLicenseGeneralCallable(const DescribeLicenseGeneralRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeLicenseGeneralOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeLicenseGeneral(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeLicenseGeneralOutcome>>();
+    DescribeLicenseGeneralAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeLicenseGeneralRequest&,
+        DescribeLicenseGeneralOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeLicenseListOutcome CwpClient::DescribeLicenseList(const DescribeLicenseListRequest &request)
@@ -8834,25 +10262,32 @@ CwpClient::DescribeLicenseListOutcome CwpClient::DescribeLicenseList(const Descr
 
 void CwpClient::DescribeLicenseListAsync(const DescribeLicenseListRequest& request, const DescribeLicenseListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeLicenseList(request), context);
-    };
+    using Req = const DescribeLicenseListRequest&;
+    using Resp = DescribeLicenseListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeLicenseList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeLicenseListOutcomeCallable CwpClient::DescribeLicenseListCallable(const DescribeLicenseListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeLicenseListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeLicenseList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeLicenseListOutcome>>();
+    DescribeLicenseListAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeLicenseListRequest&,
+        DescribeLicenseListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeLicenseWhiteConfigOutcome CwpClient::DescribeLicenseWhiteConfig(const DescribeLicenseWhiteConfigRequest &request)
@@ -8877,25 +10312,32 @@ CwpClient::DescribeLicenseWhiteConfigOutcome CwpClient::DescribeLicenseWhiteConf
 
 void CwpClient::DescribeLicenseWhiteConfigAsync(const DescribeLicenseWhiteConfigRequest& request, const DescribeLicenseWhiteConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeLicenseWhiteConfig(request), context);
-    };
+    using Req = const DescribeLicenseWhiteConfigRequest&;
+    using Resp = DescribeLicenseWhiteConfigResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeLicenseWhiteConfig", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeLicenseWhiteConfigOutcomeCallable CwpClient::DescribeLicenseWhiteConfigCallable(const DescribeLicenseWhiteConfigRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeLicenseWhiteConfigOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeLicenseWhiteConfig(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeLicenseWhiteConfigOutcome>>();
+    DescribeLicenseWhiteConfigAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeLicenseWhiteConfigRequest&,
+        DescribeLicenseWhiteConfigOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeLogDeliveryKafkaOptionsOutcome CwpClient::DescribeLogDeliveryKafkaOptions(const DescribeLogDeliveryKafkaOptionsRequest &request)
@@ -8920,25 +10362,32 @@ CwpClient::DescribeLogDeliveryKafkaOptionsOutcome CwpClient::DescribeLogDelivery
 
 void CwpClient::DescribeLogDeliveryKafkaOptionsAsync(const DescribeLogDeliveryKafkaOptionsRequest& request, const DescribeLogDeliveryKafkaOptionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeLogDeliveryKafkaOptions(request), context);
-    };
+    using Req = const DescribeLogDeliveryKafkaOptionsRequest&;
+    using Resp = DescribeLogDeliveryKafkaOptionsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeLogDeliveryKafkaOptions", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeLogDeliveryKafkaOptionsOutcomeCallable CwpClient::DescribeLogDeliveryKafkaOptionsCallable(const DescribeLogDeliveryKafkaOptionsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeLogDeliveryKafkaOptionsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeLogDeliveryKafkaOptions(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeLogDeliveryKafkaOptionsOutcome>>();
+    DescribeLogDeliveryKafkaOptionsAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeLogDeliveryKafkaOptionsRequest&,
+        DescribeLogDeliveryKafkaOptionsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeLogExportsOutcome CwpClient::DescribeLogExports(const DescribeLogExportsRequest &request)
@@ -8963,25 +10412,32 @@ CwpClient::DescribeLogExportsOutcome CwpClient::DescribeLogExports(const Describ
 
 void CwpClient::DescribeLogExportsAsync(const DescribeLogExportsRequest& request, const DescribeLogExportsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeLogExports(request), context);
-    };
+    using Req = const DescribeLogExportsRequest&;
+    using Resp = DescribeLogExportsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeLogExports", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeLogExportsOutcomeCallable CwpClient::DescribeLogExportsCallable(const DescribeLogExportsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeLogExportsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeLogExports(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeLogExportsOutcome>>();
+    DescribeLogExportsAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeLogExportsRequest&,
+        DescribeLogExportsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeLogHistogramOutcome CwpClient::DescribeLogHistogram(const DescribeLogHistogramRequest &request)
@@ -9006,25 +10462,32 @@ CwpClient::DescribeLogHistogramOutcome CwpClient::DescribeLogHistogram(const Des
 
 void CwpClient::DescribeLogHistogramAsync(const DescribeLogHistogramRequest& request, const DescribeLogHistogramAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeLogHistogram(request), context);
-    };
+    using Req = const DescribeLogHistogramRequest&;
+    using Resp = DescribeLogHistogramResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeLogHistogram", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeLogHistogramOutcomeCallable CwpClient::DescribeLogHistogramCallable(const DescribeLogHistogramRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeLogHistogramOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeLogHistogram(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeLogHistogramOutcome>>();
+    DescribeLogHistogramAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeLogHistogramRequest&,
+        DescribeLogHistogramOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeLogIndexOutcome CwpClient::DescribeLogIndex(const DescribeLogIndexRequest &request)
@@ -9049,25 +10512,32 @@ CwpClient::DescribeLogIndexOutcome CwpClient::DescribeLogIndex(const DescribeLog
 
 void CwpClient::DescribeLogIndexAsync(const DescribeLogIndexRequest& request, const DescribeLogIndexAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeLogIndex(request), context);
-    };
+    using Req = const DescribeLogIndexRequest&;
+    using Resp = DescribeLogIndexResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeLogIndex", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeLogIndexOutcomeCallable CwpClient::DescribeLogIndexCallable(const DescribeLogIndexRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeLogIndexOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeLogIndex(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeLogIndexOutcome>>();
+    DescribeLogIndexAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeLogIndexRequest&,
+        DescribeLogIndexOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeLogKafkaDeliverInfoOutcome CwpClient::DescribeLogKafkaDeliverInfo(const DescribeLogKafkaDeliverInfoRequest &request)
@@ -9092,25 +10562,32 @@ CwpClient::DescribeLogKafkaDeliverInfoOutcome CwpClient::DescribeLogKafkaDeliver
 
 void CwpClient::DescribeLogKafkaDeliverInfoAsync(const DescribeLogKafkaDeliverInfoRequest& request, const DescribeLogKafkaDeliverInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeLogKafkaDeliverInfo(request), context);
-    };
+    using Req = const DescribeLogKafkaDeliverInfoRequest&;
+    using Resp = DescribeLogKafkaDeliverInfoResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeLogKafkaDeliverInfo", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeLogKafkaDeliverInfoOutcomeCallable CwpClient::DescribeLogKafkaDeliverInfoCallable(const DescribeLogKafkaDeliverInfoRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeLogKafkaDeliverInfoOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeLogKafkaDeliverInfo(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeLogKafkaDeliverInfoOutcome>>();
+    DescribeLogKafkaDeliverInfoAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeLogKafkaDeliverInfoRequest&,
+        DescribeLogKafkaDeliverInfoOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeLogStorageConfigOutcome CwpClient::DescribeLogStorageConfig(const DescribeLogStorageConfigRequest &request)
@@ -9135,25 +10612,32 @@ CwpClient::DescribeLogStorageConfigOutcome CwpClient::DescribeLogStorageConfig(c
 
 void CwpClient::DescribeLogStorageConfigAsync(const DescribeLogStorageConfigRequest& request, const DescribeLogStorageConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeLogStorageConfig(request), context);
-    };
+    using Req = const DescribeLogStorageConfigRequest&;
+    using Resp = DescribeLogStorageConfigResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeLogStorageConfig", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeLogStorageConfigOutcomeCallable CwpClient::DescribeLogStorageConfigCallable(const DescribeLogStorageConfigRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeLogStorageConfigOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeLogStorageConfig(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeLogStorageConfigOutcome>>();
+    DescribeLogStorageConfigAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeLogStorageConfigRequest&,
+        DescribeLogStorageConfigOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeLogStorageRecordOutcome CwpClient::DescribeLogStorageRecord(const DescribeLogStorageRecordRequest &request)
@@ -9178,25 +10662,32 @@ CwpClient::DescribeLogStorageRecordOutcome CwpClient::DescribeLogStorageRecord(c
 
 void CwpClient::DescribeLogStorageRecordAsync(const DescribeLogStorageRecordRequest& request, const DescribeLogStorageRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeLogStorageRecord(request), context);
-    };
+    using Req = const DescribeLogStorageRecordRequest&;
+    using Resp = DescribeLogStorageRecordResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeLogStorageRecord", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeLogStorageRecordOutcomeCallable CwpClient::DescribeLogStorageRecordCallable(const DescribeLogStorageRecordRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeLogStorageRecordOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeLogStorageRecord(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeLogStorageRecordOutcome>>();
+    DescribeLogStorageRecordAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeLogStorageRecordRequest&,
+        DescribeLogStorageRecordOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeLogStorageStatisticOutcome CwpClient::DescribeLogStorageStatistic(const DescribeLogStorageStatisticRequest &request)
@@ -9221,25 +10712,32 @@ CwpClient::DescribeLogStorageStatisticOutcome CwpClient::DescribeLogStorageStati
 
 void CwpClient::DescribeLogStorageStatisticAsync(const DescribeLogStorageStatisticRequest& request, const DescribeLogStorageStatisticAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeLogStorageStatistic(request), context);
-    };
+    using Req = const DescribeLogStorageStatisticRequest&;
+    using Resp = DescribeLogStorageStatisticResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeLogStorageStatistic", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeLogStorageStatisticOutcomeCallable CwpClient::DescribeLogStorageStatisticCallable(const DescribeLogStorageStatisticRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeLogStorageStatisticOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeLogStorageStatistic(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeLogStorageStatisticOutcome>>();
+    DescribeLogStorageStatisticAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeLogStorageStatisticRequest&,
+        DescribeLogStorageStatisticOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeLogTypeOutcome CwpClient::DescribeLogType(const DescribeLogTypeRequest &request)
@@ -9264,25 +10762,32 @@ CwpClient::DescribeLogTypeOutcome CwpClient::DescribeLogType(const DescribeLogTy
 
 void CwpClient::DescribeLogTypeAsync(const DescribeLogTypeRequest& request, const DescribeLogTypeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeLogType(request), context);
-    };
+    using Req = const DescribeLogTypeRequest&;
+    using Resp = DescribeLogTypeResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeLogType", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeLogTypeOutcomeCallable CwpClient::DescribeLogTypeCallable(const DescribeLogTypeRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeLogTypeOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeLogType(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeLogTypeOutcome>>();
+    DescribeLogTypeAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeLogTypeRequest&,
+        DescribeLogTypeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeLoginWhiteCombinedListOutcome CwpClient::DescribeLoginWhiteCombinedList(const DescribeLoginWhiteCombinedListRequest &request)
@@ -9307,25 +10812,32 @@ CwpClient::DescribeLoginWhiteCombinedListOutcome CwpClient::DescribeLoginWhiteCo
 
 void CwpClient::DescribeLoginWhiteCombinedListAsync(const DescribeLoginWhiteCombinedListRequest& request, const DescribeLoginWhiteCombinedListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeLoginWhiteCombinedList(request), context);
-    };
+    using Req = const DescribeLoginWhiteCombinedListRequest&;
+    using Resp = DescribeLoginWhiteCombinedListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeLoginWhiteCombinedList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeLoginWhiteCombinedListOutcomeCallable CwpClient::DescribeLoginWhiteCombinedListCallable(const DescribeLoginWhiteCombinedListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeLoginWhiteCombinedListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeLoginWhiteCombinedList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeLoginWhiteCombinedListOutcome>>();
+    DescribeLoginWhiteCombinedListAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeLoginWhiteCombinedListRequest&,
+        DescribeLoginWhiteCombinedListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeLoginWhiteHostListOutcome CwpClient::DescribeLoginWhiteHostList(const DescribeLoginWhiteHostListRequest &request)
@@ -9350,25 +10862,32 @@ CwpClient::DescribeLoginWhiteHostListOutcome CwpClient::DescribeLoginWhiteHostLi
 
 void CwpClient::DescribeLoginWhiteHostListAsync(const DescribeLoginWhiteHostListRequest& request, const DescribeLoginWhiteHostListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeLoginWhiteHostList(request), context);
-    };
+    using Req = const DescribeLoginWhiteHostListRequest&;
+    using Resp = DescribeLoginWhiteHostListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeLoginWhiteHostList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeLoginWhiteHostListOutcomeCallable CwpClient::DescribeLoginWhiteHostListCallable(const DescribeLoginWhiteHostListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeLoginWhiteHostListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeLoginWhiteHostList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeLoginWhiteHostListOutcome>>();
+    DescribeLoginWhiteHostListAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeLoginWhiteHostListRequest&,
+        DescribeLoginWhiteHostListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeLoginWhiteListOutcome CwpClient::DescribeLoginWhiteList(const DescribeLoginWhiteListRequest &request)
@@ -9393,25 +10912,32 @@ CwpClient::DescribeLoginWhiteListOutcome CwpClient::DescribeLoginWhiteList(const
 
 void CwpClient::DescribeLoginWhiteListAsync(const DescribeLoginWhiteListRequest& request, const DescribeLoginWhiteListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeLoginWhiteList(request), context);
-    };
+    using Req = const DescribeLoginWhiteListRequest&;
+    using Resp = DescribeLoginWhiteListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeLoginWhiteList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeLoginWhiteListOutcomeCallable CwpClient::DescribeLoginWhiteListCallable(const DescribeLoginWhiteListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeLoginWhiteListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeLoginWhiteList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeLoginWhiteListOutcome>>();
+    DescribeLoginWhiteListAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeLoginWhiteListRequest&,
+        DescribeLoginWhiteListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeMachineClearHistoryOutcome CwpClient::DescribeMachineClearHistory(const DescribeMachineClearHistoryRequest &request)
@@ -9436,25 +10962,32 @@ CwpClient::DescribeMachineClearHistoryOutcome CwpClient::DescribeMachineClearHis
 
 void CwpClient::DescribeMachineClearHistoryAsync(const DescribeMachineClearHistoryRequest& request, const DescribeMachineClearHistoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeMachineClearHistory(request), context);
-    };
+    using Req = const DescribeMachineClearHistoryRequest&;
+    using Resp = DescribeMachineClearHistoryResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeMachineClearHistory", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeMachineClearHistoryOutcomeCallable CwpClient::DescribeMachineClearHistoryCallable(const DescribeMachineClearHistoryRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeMachineClearHistoryOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeMachineClearHistory(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeMachineClearHistoryOutcome>>();
+    DescribeMachineClearHistoryAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeMachineClearHistoryRequest&,
+        DescribeMachineClearHistoryOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeMachineDefenseCntOutcome CwpClient::DescribeMachineDefenseCnt(const DescribeMachineDefenseCntRequest &request)
@@ -9479,25 +11012,32 @@ CwpClient::DescribeMachineDefenseCntOutcome CwpClient::DescribeMachineDefenseCnt
 
 void CwpClient::DescribeMachineDefenseCntAsync(const DescribeMachineDefenseCntRequest& request, const DescribeMachineDefenseCntAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeMachineDefenseCnt(request), context);
-    };
+    using Req = const DescribeMachineDefenseCntRequest&;
+    using Resp = DescribeMachineDefenseCntResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeMachineDefenseCnt", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeMachineDefenseCntOutcomeCallable CwpClient::DescribeMachineDefenseCntCallable(const DescribeMachineDefenseCntRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeMachineDefenseCntOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeMachineDefenseCnt(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeMachineDefenseCntOutcome>>();
+    DescribeMachineDefenseCntAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeMachineDefenseCntRequest&,
+        DescribeMachineDefenseCntOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeMachineFileTamperRulesOutcome CwpClient::DescribeMachineFileTamperRules(const DescribeMachineFileTamperRulesRequest &request)
@@ -9522,25 +11062,32 @@ CwpClient::DescribeMachineFileTamperRulesOutcome CwpClient::DescribeMachineFileT
 
 void CwpClient::DescribeMachineFileTamperRulesAsync(const DescribeMachineFileTamperRulesRequest& request, const DescribeMachineFileTamperRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeMachineFileTamperRules(request), context);
-    };
+    using Req = const DescribeMachineFileTamperRulesRequest&;
+    using Resp = DescribeMachineFileTamperRulesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeMachineFileTamperRules", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeMachineFileTamperRulesOutcomeCallable CwpClient::DescribeMachineFileTamperRulesCallable(const DescribeMachineFileTamperRulesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeMachineFileTamperRulesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeMachineFileTamperRules(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeMachineFileTamperRulesOutcome>>();
+    DescribeMachineFileTamperRulesAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeMachineFileTamperRulesRequest&,
+        DescribeMachineFileTamperRulesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeMachineGeneralOutcome CwpClient::DescribeMachineGeneral(const DescribeMachineGeneralRequest &request)
@@ -9565,25 +11112,32 @@ CwpClient::DescribeMachineGeneralOutcome CwpClient::DescribeMachineGeneral(const
 
 void CwpClient::DescribeMachineGeneralAsync(const DescribeMachineGeneralRequest& request, const DescribeMachineGeneralAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeMachineGeneral(request), context);
-    };
+    using Req = const DescribeMachineGeneralRequest&;
+    using Resp = DescribeMachineGeneralResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeMachineGeneral", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeMachineGeneralOutcomeCallable CwpClient::DescribeMachineGeneralCallable(const DescribeMachineGeneralRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeMachineGeneralOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeMachineGeneral(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeMachineGeneralOutcome>>();
+    DescribeMachineGeneralAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeMachineGeneralRequest&,
+        DescribeMachineGeneralOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeMachineInfoOutcome CwpClient::DescribeMachineInfo(const DescribeMachineInfoRequest &request)
@@ -9608,25 +11162,32 @@ CwpClient::DescribeMachineInfoOutcome CwpClient::DescribeMachineInfo(const Descr
 
 void CwpClient::DescribeMachineInfoAsync(const DescribeMachineInfoRequest& request, const DescribeMachineInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeMachineInfo(request), context);
-    };
+    using Req = const DescribeMachineInfoRequest&;
+    using Resp = DescribeMachineInfoResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeMachineInfo", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeMachineInfoOutcomeCallable CwpClient::DescribeMachineInfoCallable(const DescribeMachineInfoRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeMachineInfoOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeMachineInfo(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeMachineInfoOutcome>>();
+    DescribeMachineInfoAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeMachineInfoRequest&,
+        DescribeMachineInfoOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeMachineLicenseDetailOutcome CwpClient::DescribeMachineLicenseDetail(const DescribeMachineLicenseDetailRequest &request)
@@ -9651,25 +11212,32 @@ CwpClient::DescribeMachineLicenseDetailOutcome CwpClient::DescribeMachineLicense
 
 void CwpClient::DescribeMachineLicenseDetailAsync(const DescribeMachineLicenseDetailRequest& request, const DescribeMachineLicenseDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeMachineLicenseDetail(request), context);
-    };
+    using Req = const DescribeMachineLicenseDetailRequest&;
+    using Resp = DescribeMachineLicenseDetailResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeMachineLicenseDetail", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeMachineLicenseDetailOutcomeCallable CwpClient::DescribeMachineLicenseDetailCallable(const DescribeMachineLicenseDetailRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeMachineLicenseDetailOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeMachineLicenseDetail(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeMachineLicenseDetailOutcome>>();
+    DescribeMachineLicenseDetailAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeMachineLicenseDetailRequest&,
+        DescribeMachineLicenseDetailOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeMachineListOutcome CwpClient::DescribeMachineList(const DescribeMachineListRequest &request)
@@ -9694,25 +11262,32 @@ CwpClient::DescribeMachineListOutcome CwpClient::DescribeMachineList(const Descr
 
 void CwpClient::DescribeMachineListAsync(const DescribeMachineListRequest& request, const DescribeMachineListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeMachineList(request), context);
-    };
+    using Req = const DescribeMachineListRequest&;
+    using Resp = DescribeMachineListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeMachineList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeMachineListOutcomeCallable CwpClient::DescribeMachineListCallable(const DescribeMachineListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeMachineListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeMachineList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeMachineListOutcome>>();
+    DescribeMachineListAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeMachineListRequest&,
+        DescribeMachineListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeMachineOsListOutcome CwpClient::DescribeMachineOsList(const DescribeMachineOsListRequest &request)
@@ -9737,25 +11312,32 @@ CwpClient::DescribeMachineOsListOutcome CwpClient::DescribeMachineOsList(const D
 
 void CwpClient::DescribeMachineOsListAsync(const DescribeMachineOsListRequest& request, const DescribeMachineOsListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeMachineOsList(request), context);
-    };
+    using Req = const DescribeMachineOsListRequest&;
+    using Resp = DescribeMachineOsListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeMachineOsList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeMachineOsListOutcomeCallable CwpClient::DescribeMachineOsListCallable(const DescribeMachineOsListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeMachineOsListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeMachineOsList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeMachineOsListOutcome>>();
+    DescribeMachineOsListAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeMachineOsListRequest&,
+        DescribeMachineOsListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeMachineRegionListOutcome CwpClient::DescribeMachineRegionList(const DescribeMachineRegionListRequest &request)
@@ -9780,25 +11362,32 @@ CwpClient::DescribeMachineRegionListOutcome CwpClient::DescribeMachineRegionList
 
 void CwpClient::DescribeMachineRegionListAsync(const DescribeMachineRegionListRequest& request, const DescribeMachineRegionListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeMachineRegionList(request), context);
-    };
+    using Req = const DescribeMachineRegionListRequest&;
+    using Resp = DescribeMachineRegionListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeMachineRegionList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeMachineRegionListOutcomeCallable CwpClient::DescribeMachineRegionListCallable(const DescribeMachineRegionListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeMachineRegionListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeMachineRegionList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeMachineRegionListOutcome>>();
+    DescribeMachineRegionListAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeMachineRegionListRequest&,
+        DescribeMachineRegionListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeMachineRegionsOutcome CwpClient::DescribeMachineRegions(const DescribeMachineRegionsRequest &request)
@@ -9823,25 +11412,32 @@ CwpClient::DescribeMachineRegionsOutcome CwpClient::DescribeMachineRegions(const
 
 void CwpClient::DescribeMachineRegionsAsync(const DescribeMachineRegionsRequest& request, const DescribeMachineRegionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeMachineRegions(request), context);
-    };
+    using Req = const DescribeMachineRegionsRequest&;
+    using Resp = DescribeMachineRegionsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeMachineRegions", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeMachineRegionsOutcomeCallable CwpClient::DescribeMachineRegionsCallable(const DescribeMachineRegionsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeMachineRegionsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeMachineRegions(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeMachineRegionsOutcome>>();
+    DescribeMachineRegionsAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeMachineRegionsRequest&,
+        DescribeMachineRegionsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeMachineRiskCntOutcome CwpClient::DescribeMachineRiskCnt(const DescribeMachineRiskCntRequest &request)
@@ -9866,25 +11462,32 @@ CwpClient::DescribeMachineRiskCntOutcome CwpClient::DescribeMachineRiskCnt(const
 
 void CwpClient::DescribeMachineRiskCntAsync(const DescribeMachineRiskCntRequest& request, const DescribeMachineRiskCntAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeMachineRiskCnt(request), context);
-    };
+    using Req = const DescribeMachineRiskCntRequest&;
+    using Resp = DescribeMachineRiskCntResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeMachineRiskCnt", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeMachineRiskCntOutcomeCallable CwpClient::DescribeMachineRiskCntCallable(const DescribeMachineRiskCntRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeMachineRiskCntOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeMachineRiskCnt(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeMachineRiskCntOutcome>>();
+    DescribeMachineRiskCntAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeMachineRiskCntRequest&,
+        DescribeMachineRiskCntOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeMachineSnapshotOutcome CwpClient::DescribeMachineSnapshot(const DescribeMachineSnapshotRequest &request)
@@ -9909,25 +11512,32 @@ CwpClient::DescribeMachineSnapshotOutcome CwpClient::DescribeMachineSnapshot(con
 
 void CwpClient::DescribeMachineSnapshotAsync(const DescribeMachineSnapshotRequest& request, const DescribeMachineSnapshotAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeMachineSnapshot(request), context);
-    };
+    using Req = const DescribeMachineSnapshotRequest&;
+    using Resp = DescribeMachineSnapshotResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeMachineSnapshot", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeMachineSnapshotOutcomeCallable CwpClient::DescribeMachineSnapshotCallable(const DescribeMachineSnapshotRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeMachineSnapshotOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeMachineSnapshot(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeMachineSnapshotOutcome>>();
+    DescribeMachineSnapshotAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeMachineSnapshotRequest&,
+        DescribeMachineSnapshotOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeMachinesOutcome CwpClient::DescribeMachines(const DescribeMachinesRequest &request)
@@ -9952,25 +11562,32 @@ CwpClient::DescribeMachinesOutcome CwpClient::DescribeMachines(const DescribeMac
 
 void CwpClient::DescribeMachinesAsync(const DescribeMachinesRequest& request, const DescribeMachinesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeMachines(request), context);
-    };
+    using Req = const DescribeMachinesRequest&;
+    using Resp = DescribeMachinesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeMachines", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeMachinesOutcomeCallable CwpClient::DescribeMachinesCallable(const DescribeMachinesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeMachinesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeMachines(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeMachinesOutcome>>();
+    DescribeMachinesAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeMachinesRequest&,
+        DescribeMachinesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeMachinesSimpleOutcome CwpClient::DescribeMachinesSimple(const DescribeMachinesSimpleRequest &request)
@@ -9995,25 +11612,32 @@ CwpClient::DescribeMachinesSimpleOutcome CwpClient::DescribeMachinesSimple(const
 
 void CwpClient::DescribeMachinesSimpleAsync(const DescribeMachinesSimpleRequest& request, const DescribeMachinesSimpleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeMachinesSimple(request), context);
-    };
+    using Req = const DescribeMachinesSimpleRequest&;
+    using Resp = DescribeMachinesSimpleResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeMachinesSimple", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeMachinesSimpleOutcomeCallable CwpClient::DescribeMachinesSimpleCallable(const DescribeMachinesSimpleRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeMachinesSimpleOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeMachinesSimple(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeMachinesSimpleOutcome>>();
+    DescribeMachinesSimpleAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeMachinesSimpleRequest&,
+        DescribeMachinesSimpleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeMalWareListOutcome CwpClient::DescribeMalWareList(const DescribeMalWareListRequest &request)
@@ -10038,25 +11662,32 @@ CwpClient::DescribeMalWareListOutcome CwpClient::DescribeMalWareList(const Descr
 
 void CwpClient::DescribeMalWareListAsync(const DescribeMalWareListRequest& request, const DescribeMalWareListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeMalWareList(request), context);
-    };
+    using Req = const DescribeMalWareListRequest&;
+    using Resp = DescribeMalWareListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeMalWareList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeMalWareListOutcomeCallable CwpClient::DescribeMalWareListCallable(const DescribeMalWareListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeMalWareListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeMalWareList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeMalWareListOutcome>>();
+    DescribeMalWareListAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeMalWareListRequest&,
+        DescribeMalWareListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeMaliciousRequestWhiteListOutcome CwpClient::DescribeMaliciousRequestWhiteList(const DescribeMaliciousRequestWhiteListRequest &request)
@@ -10081,25 +11712,32 @@ CwpClient::DescribeMaliciousRequestWhiteListOutcome CwpClient::DescribeMalicious
 
 void CwpClient::DescribeMaliciousRequestWhiteListAsync(const DescribeMaliciousRequestWhiteListRequest& request, const DescribeMaliciousRequestWhiteListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeMaliciousRequestWhiteList(request), context);
-    };
+    using Req = const DescribeMaliciousRequestWhiteListRequest&;
+    using Resp = DescribeMaliciousRequestWhiteListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeMaliciousRequestWhiteList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeMaliciousRequestWhiteListOutcomeCallable CwpClient::DescribeMaliciousRequestWhiteListCallable(const DescribeMaliciousRequestWhiteListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeMaliciousRequestWhiteListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeMaliciousRequestWhiteList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeMaliciousRequestWhiteListOutcome>>();
+    DescribeMaliciousRequestWhiteListAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeMaliciousRequestWhiteListRequest&,
+        DescribeMaliciousRequestWhiteListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeMalwareFileOutcome CwpClient::DescribeMalwareFile(const DescribeMalwareFileRequest &request)
@@ -10124,25 +11762,32 @@ CwpClient::DescribeMalwareFileOutcome CwpClient::DescribeMalwareFile(const Descr
 
 void CwpClient::DescribeMalwareFileAsync(const DescribeMalwareFileRequest& request, const DescribeMalwareFileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeMalwareFile(request), context);
-    };
+    using Req = const DescribeMalwareFileRequest&;
+    using Resp = DescribeMalwareFileResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeMalwareFile", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeMalwareFileOutcomeCallable CwpClient::DescribeMalwareFileCallable(const DescribeMalwareFileRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeMalwareFileOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeMalwareFile(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeMalwareFileOutcome>>();
+    DescribeMalwareFileAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeMalwareFileRequest&,
+        DescribeMalwareFileOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeMalwareInfoOutcome CwpClient::DescribeMalwareInfo(const DescribeMalwareInfoRequest &request)
@@ -10167,25 +11812,32 @@ CwpClient::DescribeMalwareInfoOutcome CwpClient::DescribeMalwareInfo(const Descr
 
 void CwpClient::DescribeMalwareInfoAsync(const DescribeMalwareInfoRequest& request, const DescribeMalwareInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeMalwareInfo(request), context);
-    };
+    using Req = const DescribeMalwareInfoRequest&;
+    using Resp = DescribeMalwareInfoResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeMalwareInfo", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeMalwareInfoOutcomeCallable CwpClient::DescribeMalwareInfoCallable(const DescribeMalwareInfoRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeMalwareInfoOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeMalwareInfo(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeMalwareInfoOutcome>>();
+    DescribeMalwareInfoAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeMalwareInfoRequest&,
+        DescribeMalwareInfoOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeMalwareRiskOverviewOutcome CwpClient::DescribeMalwareRiskOverview(const DescribeMalwareRiskOverviewRequest &request)
@@ -10210,25 +11862,32 @@ CwpClient::DescribeMalwareRiskOverviewOutcome CwpClient::DescribeMalwareRiskOver
 
 void CwpClient::DescribeMalwareRiskOverviewAsync(const DescribeMalwareRiskOverviewRequest& request, const DescribeMalwareRiskOverviewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeMalwareRiskOverview(request), context);
-    };
+    using Req = const DescribeMalwareRiskOverviewRequest&;
+    using Resp = DescribeMalwareRiskOverviewResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeMalwareRiskOverview", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeMalwareRiskOverviewOutcomeCallable CwpClient::DescribeMalwareRiskOverviewCallable(const DescribeMalwareRiskOverviewRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeMalwareRiskOverviewOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeMalwareRiskOverview(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeMalwareRiskOverviewOutcome>>();
+    DescribeMalwareRiskOverviewAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeMalwareRiskOverviewRequest&,
+        DescribeMalwareRiskOverviewOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeMalwareRiskWarningOutcome CwpClient::DescribeMalwareRiskWarning(const DescribeMalwareRiskWarningRequest &request)
@@ -10253,25 +11912,32 @@ CwpClient::DescribeMalwareRiskWarningOutcome CwpClient::DescribeMalwareRiskWarni
 
 void CwpClient::DescribeMalwareRiskWarningAsync(const DescribeMalwareRiskWarningRequest& request, const DescribeMalwareRiskWarningAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeMalwareRiskWarning(request), context);
-    };
+    using Req = const DescribeMalwareRiskWarningRequest&;
+    using Resp = DescribeMalwareRiskWarningResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeMalwareRiskWarning", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeMalwareRiskWarningOutcomeCallable CwpClient::DescribeMalwareRiskWarningCallable(const DescribeMalwareRiskWarningRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeMalwareRiskWarningOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeMalwareRiskWarning(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeMalwareRiskWarningOutcome>>();
+    DescribeMalwareRiskWarningAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeMalwareRiskWarningRequest&,
+        DescribeMalwareRiskWarningOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeMalwareTimingScanSettingOutcome CwpClient::DescribeMalwareTimingScanSetting(const DescribeMalwareTimingScanSettingRequest &request)
@@ -10296,25 +11962,32 @@ CwpClient::DescribeMalwareTimingScanSettingOutcome CwpClient::DescribeMalwareTim
 
 void CwpClient::DescribeMalwareTimingScanSettingAsync(const DescribeMalwareTimingScanSettingRequest& request, const DescribeMalwareTimingScanSettingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeMalwareTimingScanSetting(request), context);
-    };
+    using Req = const DescribeMalwareTimingScanSettingRequest&;
+    using Resp = DescribeMalwareTimingScanSettingResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeMalwareTimingScanSetting", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeMalwareTimingScanSettingOutcomeCallable CwpClient::DescribeMalwareTimingScanSettingCallable(const DescribeMalwareTimingScanSettingRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeMalwareTimingScanSettingOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeMalwareTimingScanSetting(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeMalwareTimingScanSettingOutcome>>();
+    DescribeMalwareTimingScanSettingAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeMalwareTimingScanSettingRequest&,
+        DescribeMalwareTimingScanSettingOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeMalwareWhiteListOutcome CwpClient::DescribeMalwareWhiteList(const DescribeMalwareWhiteListRequest &request)
@@ -10339,25 +12012,32 @@ CwpClient::DescribeMalwareWhiteListOutcome CwpClient::DescribeMalwareWhiteList(c
 
 void CwpClient::DescribeMalwareWhiteListAsync(const DescribeMalwareWhiteListRequest& request, const DescribeMalwareWhiteListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeMalwareWhiteList(request), context);
-    };
+    using Req = const DescribeMalwareWhiteListRequest&;
+    using Resp = DescribeMalwareWhiteListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeMalwareWhiteList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeMalwareWhiteListOutcomeCallable CwpClient::DescribeMalwareWhiteListCallable(const DescribeMalwareWhiteListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeMalwareWhiteListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeMalwareWhiteList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeMalwareWhiteListOutcome>>();
+    DescribeMalwareWhiteListAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeMalwareWhiteListRequest&,
+        DescribeMalwareWhiteListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeMalwareWhiteListAffectListOutcome CwpClient::DescribeMalwareWhiteListAffectList(const DescribeMalwareWhiteListAffectListRequest &request)
@@ -10382,25 +12062,32 @@ CwpClient::DescribeMalwareWhiteListAffectListOutcome CwpClient::DescribeMalwareW
 
 void CwpClient::DescribeMalwareWhiteListAffectListAsync(const DescribeMalwareWhiteListAffectListRequest& request, const DescribeMalwareWhiteListAffectListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeMalwareWhiteListAffectList(request), context);
-    };
+    using Req = const DescribeMalwareWhiteListAffectListRequest&;
+    using Resp = DescribeMalwareWhiteListAffectListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeMalwareWhiteListAffectList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeMalwareWhiteListAffectListOutcomeCallable CwpClient::DescribeMalwareWhiteListAffectListCallable(const DescribeMalwareWhiteListAffectListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeMalwareWhiteListAffectListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeMalwareWhiteListAffectList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeMalwareWhiteListAffectListOutcome>>();
+    DescribeMalwareWhiteListAffectListAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeMalwareWhiteListAffectListRequest&,
+        DescribeMalwareWhiteListAffectListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeMonthInspectionReportOutcome CwpClient::DescribeMonthInspectionReport(const DescribeMonthInspectionReportRequest &request)
@@ -10425,25 +12112,32 @@ CwpClient::DescribeMonthInspectionReportOutcome CwpClient::DescribeMonthInspecti
 
 void CwpClient::DescribeMonthInspectionReportAsync(const DescribeMonthInspectionReportRequest& request, const DescribeMonthInspectionReportAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeMonthInspectionReport(request), context);
-    };
+    using Req = const DescribeMonthInspectionReportRequest&;
+    using Resp = DescribeMonthInspectionReportResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeMonthInspectionReport", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeMonthInspectionReportOutcomeCallable CwpClient::DescribeMonthInspectionReportCallable(const DescribeMonthInspectionReportRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeMonthInspectionReportOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeMonthInspectionReport(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeMonthInspectionReportOutcome>>();
+    DescribeMonthInspectionReportAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeMonthInspectionReportRequest&,
+        DescribeMonthInspectionReportOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeNetAttackSettingOutcome CwpClient::DescribeNetAttackSetting(const DescribeNetAttackSettingRequest &request)
@@ -10468,25 +12162,32 @@ CwpClient::DescribeNetAttackSettingOutcome CwpClient::DescribeNetAttackSetting(c
 
 void CwpClient::DescribeNetAttackSettingAsync(const DescribeNetAttackSettingRequest& request, const DescribeNetAttackSettingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeNetAttackSetting(request), context);
-    };
+    using Req = const DescribeNetAttackSettingRequest&;
+    using Resp = DescribeNetAttackSettingResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeNetAttackSetting", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeNetAttackSettingOutcomeCallable CwpClient::DescribeNetAttackSettingCallable(const DescribeNetAttackSettingRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeNetAttackSettingOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeNetAttackSetting(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeNetAttackSettingOutcome>>();
+    DescribeNetAttackSettingAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeNetAttackSettingRequest&,
+        DescribeNetAttackSettingOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeNetAttackWhiteListOutcome CwpClient::DescribeNetAttackWhiteList(const DescribeNetAttackWhiteListRequest &request)
@@ -10511,25 +12212,32 @@ CwpClient::DescribeNetAttackWhiteListOutcome CwpClient::DescribeNetAttackWhiteLi
 
 void CwpClient::DescribeNetAttackWhiteListAsync(const DescribeNetAttackWhiteListRequest& request, const DescribeNetAttackWhiteListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeNetAttackWhiteList(request), context);
-    };
+    using Req = const DescribeNetAttackWhiteListRequest&;
+    using Resp = DescribeNetAttackWhiteListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeNetAttackWhiteList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeNetAttackWhiteListOutcomeCallable CwpClient::DescribeNetAttackWhiteListCallable(const DescribeNetAttackWhiteListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeNetAttackWhiteListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeNetAttackWhiteList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeNetAttackWhiteListOutcome>>();
+    DescribeNetAttackWhiteListAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeNetAttackWhiteListRequest&,
+        DescribeNetAttackWhiteListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeOpenPortStatisticsOutcome CwpClient::DescribeOpenPortStatistics(const DescribeOpenPortStatisticsRequest &request)
@@ -10554,25 +12262,32 @@ CwpClient::DescribeOpenPortStatisticsOutcome CwpClient::DescribeOpenPortStatisti
 
 void CwpClient::DescribeOpenPortStatisticsAsync(const DescribeOpenPortStatisticsRequest& request, const DescribeOpenPortStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeOpenPortStatistics(request), context);
-    };
+    using Req = const DescribeOpenPortStatisticsRequest&;
+    using Resp = DescribeOpenPortStatisticsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeOpenPortStatistics", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeOpenPortStatisticsOutcomeCallable CwpClient::DescribeOpenPortStatisticsCallable(const DescribeOpenPortStatisticsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeOpenPortStatisticsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeOpenPortStatistics(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeOpenPortStatisticsOutcome>>();
+    DescribeOpenPortStatisticsAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeOpenPortStatisticsRequest&,
+        DescribeOpenPortStatisticsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeOverviewStatisticsOutcome CwpClient::DescribeOverviewStatistics(const DescribeOverviewStatisticsRequest &request)
@@ -10597,25 +12312,32 @@ CwpClient::DescribeOverviewStatisticsOutcome CwpClient::DescribeOverviewStatisti
 
 void CwpClient::DescribeOverviewStatisticsAsync(const DescribeOverviewStatisticsRequest& request, const DescribeOverviewStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeOverviewStatistics(request), context);
-    };
+    using Req = const DescribeOverviewStatisticsRequest&;
+    using Resp = DescribeOverviewStatisticsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeOverviewStatistics", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeOverviewStatisticsOutcomeCallable CwpClient::DescribeOverviewStatisticsCallable(const DescribeOverviewStatisticsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeOverviewStatisticsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeOverviewStatistics(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeOverviewStatisticsOutcome>>();
+    DescribeOverviewStatisticsAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeOverviewStatisticsRequest&,
+        DescribeOverviewStatisticsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribePrivilegeEventInfoOutcome CwpClient::DescribePrivilegeEventInfo(const DescribePrivilegeEventInfoRequest &request)
@@ -10640,25 +12362,32 @@ CwpClient::DescribePrivilegeEventInfoOutcome CwpClient::DescribePrivilegeEventIn
 
 void CwpClient::DescribePrivilegeEventInfoAsync(const DescribePrivilegeEventInfoRequest& request, const DescribePrivilegeEventInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribePrivilegeEventInfo(request), context);
-    };
+    using Req = const DescribePrivilegeEventInfoRequest&;
+    using Resp = DescribePrivilegeEventInfoResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribePrivilegeEventInfo", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribePrivilegeEventInfoOutcomeCallable CwpClient::DescribePrivilegeEventInfoCallable(const DescribePrivilegeEventInfoRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribePrivilegeEventInfoOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribePrivilegeEventInfo(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribePrivilegeEventInfoOutcome>>();
+    DescribePrivilegeEventInfoAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribePrivilegeEventInfoRequest&,
+        DescribePrivilegeEventInfoOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribePrivilegeEventsOutcome CwpClient::DescribePrivilegeEvents(const DescribePrivilegeEventsRequest &request)
@@ -10683,25 +12412,32 @@ CwpClient::DescribePrivilegeEventsOutcome CwpClient::DescribePrivilegeEvents(con
 
 void CwpClient::DescribePrivilegeEventsAsync(const DescribePrivilegeEventsRequest& request, const DescribePrivilegeEventsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribePrivilegeEvents(request), context);
-    };
+    using Req = const DescribePrivilegeEventsRequest&;
+    using Resp = DescribePrivilegeEventsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribePrivilegeEvents", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribePrivilegeEventsOutcomeCallable CwpClient::DescribePrivilegeEventsCallable(const DescribePrivilegeEventsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribePrivilegeEventsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribePrivilegeEvents(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribePrivilegeEventsOutcome>>();
+    DescribePrivilegeEventsAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribePrivilegeEventsRequest&,
+        DescribePrivilegeEventsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribePrivilegeRulesOutcome CwpClient::DescribePrivilegeRules(const DescribePrivilegeRulesRequest &request)
@@ -10726,25 +12462,32 @@ CwpClient::DescribePrivilegeRulesOutcome CwpClient::DescribePrivilegeRules(const
 
 void CwpClient::DescribePrivilegeRulesAsync(const DescribePrivilegeRulesRequest& request, const DescribePrivilegeRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribePrivilegeRules(request), context);
-    };
+    using Req = const DescribePrivilegeRulesRequest&;
+    using Resp = DescribePrivilegeRulesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribePrivilegeRules", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribePrivilegeRulesOutcomeCallable CwpClient::DescribePrivilegeRulesCallable(const DescribePrivilegeRulesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribePrivilegeRulesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribePrivilegeRules(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribePrivilegeRulesOutcome>>();
+    DescribePrivilegeRulesAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribePrivilegeRulesRequest&,
+        DescribePrivilegeRulesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeProVersionInfoOutcome CwpClient::DescribeProVersionInfo(const DescribeProVersionInfoRequest &request)
@@ -10769,25 +12512,32 @@ CwpClient::DescribeProVersionInfoOutcome CwpClient::DescribeProVersionInfo(const
 
 void CwpClient::DescribeProVersionInfoAsync(const DescribeProVersionInfoRequest& request, const DescribeProVersionInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeProVersionInfo(request), context);
-    };
+    using Req = const DescribeProVersionInfoRequest&;
+    using Resp = DescribeProVersionInfoResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeProVersionInfo", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeProVersionInfoOutcomeCallable CwpClient::DescribeProVersionInfoCallable(const DescribeProVersionInfoRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeProVersionInfoOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeProVersionInfo(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeProVersionInfoOutcome>>();
+    DescribeProVersionInfoAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeProVersionInfoRequest&,
+        DescribeProVersionInfoOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeProVersionStatusOutcome CwpClient::DescribeProVersionStatus(const DescribeProVersionStatusRequest &request)
@@ -10812,25 +12562,32 @@ CwpClient::DescribeProVersionStatusOutcome CwpClient::DescribeProVersionStatus(c
 
 void CwpClient::DescribeProVersionStatusAsync(const DescribeProVersionStatusRequest& request, const DescribeProVersionStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeProVersionStatus(request), context);
-    };
+    using Req = const DescribeProVersionStatusRequest&;
+    using Resp = DescribeProVersionStatusResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeProVersionStatus", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeProVersionStatusOutcomeCallable CwpClient::DescribeProVersionStatusCallable(const DescribeProVersionStatusRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeProVersionStatusOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeProVersionStatus(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeProVersionStatusOutcome>>();
+    DescribeProVersionStatusAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeProVersionStatusRequest&,
+        DescribeProVersionStatusOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeProcessStatisticsOutcome CwpClient::DescribeProcessStatistics(const DescribeProcessStatisticsRequest &request)
@@ -10855,25 +12612,32 @@ CwpClient::DescribeProcessStatisticsOutcome CwpClient::DescribeProcessStatistics
 
 void CwpClient::DescribeProcessStatisticsAsync(const DescribeProcessStatisticsRequest& request, const DescribeProcessStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeProcessStatistics(request), context);
-    };
+    using Req = const DescribeProcessStatisticsRequest&;
+    using Resp = DescribeProcessStatisticsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeProcessStatistics", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeProcessStatisticsOutcomeCallable CwpClient::DescribeProcessStatisticsCallable(const DescribeProcessStatisticsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeProcessStatisticsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeProcessStatistics(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeProcessStatisticsOutcome>>();
+    DescribeProcessStatisticsAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeProcessStatisticsRequest&,
+        DescribeProcessStatisticsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeProductStatusOutcome CwpClient::DescribeProductStatus(const DescribeProductStatusRequest &request)
@@ -10898,25 +12662,32 @@ CwpClient::DescribeProductStatusOutcome CwpClient::DescribeProductStatus(const D
 
 void CwpClient::DescribeProductStatusAsync(const DescribeProductStatusRequest& request, const DescribeProductStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeProductStatus(request), context);
-    };
+    using Req = const DescribeProductStatusRequest&;
+    using Resp = DescribeProductStatusResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeProductStatus", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeProductStatusOutcomeCallable CwpClient::DescribeProductStatusCallable(const DescribeProductStatusRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeProductStatusOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeProductStatus(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeProductStatusOutcome>>();
+    DescribeProductStatusAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeProductStatusRequest&,
+        DescribeProductStatusOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeProtectDirListOutcome CwpClient::DescribeProtectDirList(const DescribeProtectDirListRequest &request)
@@ -10941,25 +12712,32 @@ CwpClient::DescribeProtectDirListOutcome CwpClient::DescribeProtectDirList(const
 
 void CwpClient::DescribeProtectDirListAsync(const DescribeProtectDirListRequest& request, const DescribeProtectDirListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeProtectDirList(request), context);
-    };
+    using Req = const DescribeProtectDirListRequest&;
+    using Resp = DescribeProtectDirListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeProtectDirList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeProtectDirListOutcomeCallable CwpClient::DescribeProtectDirListCallable(const DescribeProtectDirListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeProtectDirListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeProtectDirList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeProtectDirListOutcome>>();
+    DescribeProtectDirListAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeProtectDirListRequest&,
+        DescribeProtectDirListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeProtectDirRelatedServerOutcome CwpClient::DescribeProtectDirRelatedServer(const DescribeProtectDirRelatedServerRequest &request)
@@ -10984,25 +12762,32 @@ CwpClient::DescribeProtectDirRelatedServerOutcome CwpClient::DescribeProtectDirR
 
 void CwpClient::DescribeProtectDirRelatedServerAsync(const DescribeProtectDirRelatedServerRequest& request, const DescribeProtectDirRelatedServerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeProtectDirRelatedServer(request), context);
-    };
+    using Req = const DescribeProtectDirRelatedServerRequest&;
+    using Resp = DescribeProtectDirRelatedServerResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeProtectDirRelatedServer", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeProtectDirRelatedServerOutcomeCallable CwpClient::DescribeProtectDirRelatedServerCallable(const DescribeProtectDirRelatedServerRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeProtectDirRelatedServerOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeProtectDirRelatedServer(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeProtectDirRelatedServerOutcome>>();
+    DescribeProtectDirRelatedServerAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeProtectDirRelatedServerRequest&,
+        DescribeProtectDirRelatedServerOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeProtectNetListOutcome CwpClient::DescribeProtectNetList(const DescribeProtectNetListRequest &request)
@@ -11027,25 +12812,32 @@ CwpClient::DescribeProtectNetListOutcome CwpClient::DescribeProtectNetList(const
 
 void CwpClient::DescribeProtectNetListAsync(const DescribeProtectNetListRequest& request, const DescribeProtectNetListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeProtectNetList(request), context);
-    };
+    using Req = const DescribeProtectNetListRequest&;
+    using Resp = DescribeProtectNetListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeProtectNetList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeProtectNetListOutcomeCallable CwpClient::DescribeProtectNetListCallable(const DescribeProtectNetListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeProtectNetListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeProtectNetList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeProtectNetListOutcome>>();
+    DescribeProtectNetListAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeProtectNetListRequest&,
+        DescribeProtectNetListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribePublicProxyInstallCommandOutcome CwpClient::DescribePublicProxyInstallCommand(const DescribePublicProxyInstallCommandRequest &request)
@@ -11070,25 +12862,32 @@ CwpClient::DescribePublicProxyInstallCommandOutcome CwpClient::DescribePublicPro
 
 void CwpClient::DescribePublicProxyInstallCommandAsync(const DescribePublicProxyInstallCommandRequest& request, const DescribePublicProxyInstallCommandAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribePublicProxyInstallCommand(request), context);
-    };
+    using Req = const DescribePublicProxyInstallCommandRequest&;
+    using Resp = DescribePublicProxyInstallCommandResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribePublicProxyInstallCommand", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribePublicProxyInstallCommandOutcomeCallable CwpClient::DescribePublicProxyInstallCommandCallable(const DescribePublicProxyInstallCommandRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribePublicProxyInstallCommandOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribePublicProxyInstallCommand(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribePublicProxyInstallCommandOutcome>>();
+    DescribePublicProxyInstallCommandAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribePublicProxyInstallCommandRequest&,
+        DescribePublicProxyInstallCommandOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeRansomDefenseBackupListOutcome CwpClient::DescribeRansomDefenseBackupList(const DescribeRansomDefenseBackupListRequest &request)
@@ -11113,25 +12912,32 @@ CwpClient::DescribeRansomDefenseBackupListOutcome CwpClient::DescribeRansomDefen
 
 void CwpClient::DescribeRansomDefenseBackupListAsync(const DescribeRansomDefenseBackupListRequest& request, const DescribeRansomDefenseBackupListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeRansomDefenseBackupList(request), context);
-    };
+    using Req = const DescribeRansomDefenseBackupListRequest&;
+    using Resp = DescribeRansomDefenseBackupListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeRansomDefenseBackupList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeRansomDefenseBackupListOutcomeCallable CwpClient::DescribeRansomDefenseBackupListCallable(const DescribeRansomDefenseBackupListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeRansomDefenseBackupListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeRansomDefenseBackupList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeRansomDefenseBackupListOutcome>>();
+    DescribeRansomDefenseBackupListAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeRansomDefenseBackupListRequest&,
+        DescribeRansomDefenseBackupListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeRansomDefenseEventsListOutcome CwpClient::DescribeRansomDefenseEventsList(const DescribeRansomDefenseEventsListRequest &request)
@@ -11156,25 +12962,32 @@ CwpClient::DescribeRansomDefenseEventsListOutcome CwpClient::DescribeRansomDefen
 
 void CwpClient::DescribeRansomDefenseEventsListAsync(const DescribeRansomDefenseEventsListRequest& request, const DescribeRansomDefenseEventsListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeRansomDefenseEventsList(request), context);
-    };
+    using Req = const DescribeRansomDefenseEventsListRequest&;
+    using Resp = DescribeRansomDefenseEventsListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeRansomDefenseEventsList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeRansomDefenseEventsListOutcomeCallable CwpClient::DescribeRansomDefenseEventsListCallable(const DescribeRansomDefenseEventsListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeRansomDefenseEventsListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeRansomDefenseEventsList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeRansomDefenseEventsListOutcome>>();
+    DescribeRansomDefenseEventsListAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeRansomDefenseEventsListRequest&,
+        DescribeRansomDefenseEventsListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeRansomDefenseMachineListOutcome CwpClient::DescribeRansomDefenseMachineList(const DescribeRansomDefenseMachineListRequest &request)
@@ -11199,25 +13012,32 @@ CwpClient::DescribeRansomDefenseMachineListOutcome CwpClient::DescribeRansomDefe
 
 void CwpClient::DescribeRansomDefenseMachineListAsync(const DescribeRansomDefenseMachineListRequest& request, const DescribeRansomDefenseMachineListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeRansomDefenseMachineList(request), context);
-    };
+    using Req = const DescribeRansomDefenseMachineListRequest&;
+    using Resp = DescribeRansomDefenseMachineListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeRansomDefenseMachineList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeRansomDefenseMachineListOutcomeCallable CwpClient::DescribeRansomDefenseMachineListCallable(const DescribeRansomDefenseMachineListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeRansomDefenseMachineListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeRansomDefenseMachineList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeRansomDefenseMachineListOutcome>>();
+    DescribeRansomDefenseMachineListAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeRansomDefenseMachineListRequest&,
+        DescribeRansomDefenseMachineListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeRansomDefenseMachineStrategyInfoOutcome CwpClient::DescribeRansomDefenseMachineStrategyInfo(const DescribeRansomDefenseMachineStrategyInfoRequest &request)
@@ -11242,25 +13062,32 @@ CwpClient::DescribeRansomDefenseMachineStrategyInfoOutcome CwpClient::DescribeRa
 
 void CwpClient::DescribeRansomDefenseMachineStrategyInfoAsync(const DescribeRansomDefenseMachineStrategyInfoRequest& request, const DescribeRansomDefenseMachineStrategyInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeRansomDefenseMachineStrategyInfo(request), context);
-    };
+    using Req = const DescribeRansomDefenseMachineStrategyInfoRequest&;
+    using Resp = DescribeRansomDefenseMachineStrategyInfoResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeRansomDefenseMachineStrategyInfo", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeRansomDefenseMachineStrategyInfoOutcomeCallable CwpClient::DescribeRansomDefenseMachineStrategyInfoCallable(const DescribeRansomDefenseMachineStrategyInfoRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeRansomDefenseMachineStrategyInfoOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeRansomDefenseMachineStrategyInfo(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeRansomDefenseMachineStrategyInfoOutcome>>();
+    DescribeRansomDefenseMachineStrategyInfoAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeRansomDefenseMachineStrategyInfoRequest&,
+        DescribeRansomDefenseMachineStrategyInfoOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeRansomDefenseRollBackTaskListOutcome CwpClient::DescribeRansomDefenseRollBackTaskList(const DescribeRansomDefenseRollBackTaskListRequest &request)
@@ -11285,25 +13112,32 @@ CwpClient::DescribeRansomDefenseRollBackTaskListOutcome CwpClient::DescribeRanso
 
 void CwpClient::DescribeRansomDefenseRollBackTaskListAsync(const DescribeRansomDefenseRollBackTaskListRequest& request, const DescribeRansomDefenseRollBackTaskListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeRansomDefenseRollBackTaskList(request), context);
-    };
+    using Req = const DescribeRansomDefenseRollBackTaskListRequest&;
+    using Resp = DescribeRansomDefenseRollBackTaskListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeRansomDefenseRollBackTaskList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeRansomDefenseRollBackTaskListOutcomeCallable CwpClient::DescribeRansomDefenseRollBackTaskListCallable(const DescribeRansomDefenseRollBackTaskListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeRansomDefenseRollBackTaskListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeRansomDefenseRollBackTaskList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeRansomDefenseRollBackTaskListOutcome>>();
+    DescribeRansomDefenseRollBackTaskListAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeRansomDefenseRollBackTaskListRequest&,
+        DescribeRansomDefenseRollBackTaskListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeRansomDefenseStateOutcome CwpClient::DescribeRansomDefenseState(const DescribeRansomDefenseStateRequest &request)
@@ -11328,25 +13162,32 @@ CwpClient::DescribeRansomDefenseStateOutcome CwpClient::DescribeRansomDefenseSta
 
 void CwpClient::DescribeRansomDefenseStateAsync(const DescribeRansomDefenseStateRequest& request, const DescribeRansomDefenseStateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeRansomDefenseState(request), context);
-    };
+    using Req = const DescribeRansomDefenseStateRequest&;
+    using Resp = DescribeRansomDefenseStateResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeRansomDefenseState", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeRansomDefenseStateOutcomeCallable CwpClient::DescribeRansomDefenseStateCallable(const DescribeRansomDefenseStateRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeRansomDefenseStateOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeRansomDefenseState(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeRansomDefenseStateOutcome>>();
+    DescribeRansomDefenseStateAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeRansomDefenseStateRequest&,
+        DescribeRansomDefenseStateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeRansomDefenseStrategyDetailOutcome CwpClient::DescribeRansomDefenseStrategyDetail(const DescribeRansomDefenseStrategyDetailRequest &request)
@@ -11371,25 +13212,32 @@ CwpClient::DescribeRansomDefenseStrategyDetailOutcome CwpClient::DescribeRansomD
 
 void CwpClient::DescribeRansomDefenseStrategyDetailAsync(const DescribeRansomDefenseStrategyDetailRequest& request, const DescribeRansomDefenseStrategyDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeRansomDefenseStrategyDetail(request), context);
-    };
+    using Req = const DescribeRansomDefenseStrategyDetailRequest&;
+    using Resp = DescribeRansomDefenseStrategyDetailResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeRansomDefenseStrategyDetail", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeRansomDefenseStrategyDetailOutcomeCallable CwpClient::DescribeRansomDefenseStrategyDetailCallable(const DescribeRansomDefenseStrategyDetailRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeRansomDefenseStrategyDetailOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeRansomDefenseStrategyDetail(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeRansomDefenseStrategyDetailOutcome>>();
+    DescribeRansomDefenseStrategyDetailAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeRansomDefenseStrategyDetailRequest&,
+        DescribeRansomDefenseStrategyDetailOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeRansomDefenseStrategyListOutcome CwpClient::DescribeRansomDefenseStrategyList(const DescribeRansomDefenseStrategyListRequest &request)
@@ -11414,25 +13262,32 @@ CwpClient::DescribeRansomDefenseStrategyListOutcome CwpClient::DescribeRansomDef
 
 void CwpClient::DescribeRansomDefenseStrategyListAsync(const DescribeRansomDefenseStrategyListRequest& request, const DescribeRansomDefenseStrategyListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeRansomDefenseStrategyList(request), context);
-    };
+    using Req = const DescribeRansomDefenseStrategyListRequest&;
+    using Resp = DescribeRansomDefenseStrategyListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeRansomDefenseStrategyList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeRansomDefenseStrategyListOutcomeCallable CwpClient::DescribeRansomDefenseStrategyListCallable(const DescribeRansomDefenseStrategyListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeRansomDefenseStrategyListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeRansomDefenseStrategyList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeRansomDefenseStrategyListOutcome>>();
+    DescribeRansomDefenseStrategyListAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeRansomDefenseStrategyListRequest&,
+        DescribeRansomDefenseStrategyListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeRansomDefenseStrategyMachinesOutcome CwpClient::DescribeRansomDefenseStrategyMachines(const DescribeRansomDefenseStrategyMachinesRequest &request)
@@ -11457,25 +13312,32 @@ CwpClient::DescribeRansomDefenseStrategyMachinesOutcome CwpClient::DescribeRanso
 
 void CwpClient::DescribeRansomDefenseStrategyMachinesAsync(const DescribeRansomDefenseStrategyMachinesRequest& request, const DescribeRansomDefenseStrategyMachinesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeRansomDefenseStrategyMachines(request), context);
-    };
+    using Req = const DescribeRansomDefenseStrategyMachinesRequest&;
+    using Resp = DescribeRansomDefenseStrategyMachinesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeRansomDefenseStrategyMachines", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeRansomDefenseStrategyMachinesOutcomeCallable CwpClient::DescribeRansomDefenseStrategyMachinesCallable(const DescribeRansomDefenseStrategyMachinesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeRansomDefenseStrategyMachinesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeRansomDefenseStrategyMachines(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeRansomDefenseStrategyMachinesOutcome>>();
+    DescribeRansomDefenseStrategyMachinesAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeRansomDefenseStrategyMachinesRequest&,
+        DescribeRansomDefenseStrategyMachinesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeRansomDefenseTrendOutcome CwpClient::DescribeRansomDefenseTrend(const DescribeRansomDefenseTrendRequest &request)
@@ -11500,25 +13362,32 @@ CwpClient::DescribeRansomDefenseTrendOutcome CwpClient::DescribeRansomDefenseTre
 
 void CwpClient::DescribeRansomDefenseTrendAsync(const DescribeRansomDefenseTrendRequest& request, const DescribeRansomDefenseTrendAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeRansomDefenseTrend(request), context);
-    };
+    using Req = const DescribeRansomDefenseTrendRequest&;
+    using Resp = DescribeRansomDefenseTrendResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeRansomDefenseTrend", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeRansomDefenseTrendOutcomeCallable CwpClient::DescribeRansomDefenseTrendCallable(const DescribeRansomDefenseTrendRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeRansomDefenseTrendOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeRansomDefenseTrend(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeRansomDefenseTrendOutcome>>();
+    DescribeRansomDefenseTrendAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeRansomDefenseTrendRequest&,
+        DescribeRansomDefenseTrendOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeRaspMaxCpuOutcome CwpClient::DescribeRaspMaxCpu(const DescribeRaspMaxCpuRequest &request)
@@ -11543,25 +13412,32 @@ CwpClient::DescribeRaspMaxCpuOutcome CwpClient::DescribeRaspMaxCpu(const Describ
 
 void CwpClient::DescribeRaspMaxCpuAsync(const DescribeRaspMaxCpuRequest& request, const DescribeRaspMaxCpuAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeRaspMaxCpu(request), context);
-    };
+    using Req = const DescribeRaspMaxCpuRequest&;
+    using Resp = DescribeRaspMaxCpuResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeRaspMaxCpu", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeRaspMaxCpuOutcomeCallable CwpClient::DescribeRaspMaxCpuCallable(const DescribeRaspMaxCpuRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeRaspMaxCpuOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeRaspMaxCpu(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeRaspMaxCpuOutcome>>();
+    DescribeRaspMaxCpuAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeRaspMaxCpuRequest&,
+        DescribeRaspMaxCpuOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeRaspRuleVulsOutcome CwpClient::DescribeRaspRuleVuls(const DescribeRaspRuleVulsRequest &request)
@@ -11586,25 +13462,32 @@ CwpClient::DescribeRaspRuleVulsOutcome CwpClient::DescribeRaspRuleVuls(const Des
 
 void CwpClient::DescribeRaspRuleVulsAsync(const DescribeRaspRuleVulsRequest& request, const DescribeRaspRuleVulsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeRaspRuleVuls(request), context);
-    };
+    using Req = const DescribeRaspRuleVulsRequest&;
+    using Resp = DescribeRaspRuleVulsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeRaspRuleVuls", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeRaspRuleVulsOutcomeCallable CwpClient::DescribeRaspRuleVulsCallable(const DescribeRaspRuleVulsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeRaspRuleVulsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeRaspRuleVuls(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeRaspRuleVulsOutcome>>();
+    DescribeRaspRuleVulsAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeRaspRuleVulsRequest&,
+        DescribeRaspRuleVulsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeRaspRulesOutcome CwpClient::DescribeRaspRules(const DescribeRaspRulesRequest &request)
@@ -11629,25 +13512,32 @@ CwpClient::DescribeRaspRulesOutcome CwpClient::DescribeRaspRules(const DescribeR
 
 void CwpClient::DescribeRaspRulesAsync(const DescribeRaspRulesRequest& request, const DescribeRaspRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeRaspRules(request), context);
-    };
+    using Req = const DescribeRaspRulesRequest&;
+    using Resp = DescribeRaspRulesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeRaspRules", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeRaspRulesOutcomeCallable CwpClient::DescribeRaspRulesCallable(const DescribeRaspRulesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeRaspRulesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeRaspRules(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeRaspRulesOutcome>>();
+    DescribeRaspRulesAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeRaspRulesRequest&,
+        DescribeRaspRulesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeRecommendedProtectCpuOutcome CwpClient::DescribeRecommendedProtectCpu(const DescribeRecommendedProtectCpuRequest &request)
@@ -11672,25 +13562,32 @@ CwpClient::DescribeRecommendedProtectCpuOutcome CwpClient::DescribeRecommendedPr
 
 void CwpClient::DescribeRecommendedProtectCpuAsync(const DescribeRecommendedProtectCpuRequest& request, const DescribeRecommendedProtectCpuAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeRecommendedProtectCpu(request), context);
-    };
+    using Req = const DescribeRecommendedProtectCpuRequest&;
+    using Resp = DescribeRecommendedProtectCpuResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeRecommendedProtectCpu", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeRecommendedProtectCpuOutcomeCallable CwpClient::DescribeRecommendedProtectCpuCallable(const DescribeRecommendedProtectCpuRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeRecommendedProtectCpuOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeRecommendedProtectCpu(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeRecommendedProtectCpuOutcome>>();
+    DescribeRecommendedProtectCpuAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeRecommendedProtectCpuRequest&,
+        DescribeRecommendedProtectCpuOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeReverseShellEventInfoOutcome CwpClient::DescribeReverseShellEventInfo(const DescribeReverseShellEventInfoRequest &request)
@@ -11715,25 +13612,32 @@ CwpClient::DescribeReverseShellEventInfoOutcome CwpClient::DescribeReverseShellE
 
 void CwpClient::DescribeReverseShellEventInfoAsync(const DescribeReverseShellEventInfoRequest& request, const DescribeReverseShellEventInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeReverseShellEventInfo(request), context);
-    };
+    using Req = const DescribeReverseShellEventInfoRequest&;
+    using Resp = DescribeReverseShellEventInfoResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeReverseShellEventInfo", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeReverseShellEventInfoOutcomeCallable CwpClient::DescribeReverseShellEventInfoCallable(const DescribeReverseShellEventInfoRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeReverseShellEventInfoOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeReverseShellEventInfo(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeReverseShellEventInfoOutcome>>();
+    DescribeReverseShellEventInfoAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeReverseShellEventInfoRequest&,
+        DescribeReverseShellEventInfoOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeReverseShellEventsOutcome CwpClient::DescribeReverseShellEvents(const DescribeReverseShellEventsRequest &request)
@@ -11758,25 +13662,32 @@ CwpClient::DescribeReverseShellEventsOutcome CwpClient::DescribeReverseShellEven
 
 void CwpClient::DescribeReverseShellEventsAsync(const DescribeReverseShellEventsRequest& request, const DescribeReverseShellEventsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeReverseShellEvents(request), context);
-    };
+    using Req = const DescribeReverseShellEventsRequest&;
+    using Resp = DescribeReverseShellEventsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeReverseShellEvents", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeReverseShellEventsOutcomeCallable CwpClient::DescribeReverseShellEventsCallable(const DescribeReverseShellEventsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeReverseShellEventsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeReverseShellEvents(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeReverseShellEventsOutcome>>();
+    DescribeReverseShellEventsAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeReverseShellEventsRequest&,
+        DescribeReverseShellEventsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeReverseShellRulesOutcome CwpClient::DescribeReverseShellRules(const DescribeReverseShellRulesRequest &request)
@@ -11801,25 +13712,32 @@ CwpClient::DescribeReverseShellRulesOutcome CwpClient::DescribeReverseShellRules
 
 void CwpClient::DescribeReverseShellRulesAsync(const DescribeReverseShellRulesRequest& request, const DescribeReverseShellRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeReverseShellRules(request), context);
-    };
+    using Req = const DescribeReverseShellRulesRequest&;
+    using Resp = DescribeReverseShellRulesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeReverseShellRules", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeReverseShellRulesOutcomeCallable CwpClient::DescribeReverseShellRulesCallable(const DescribeReverseShellRulesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeReverseShellRulesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeReverseShellRules(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeReverseShellRulesOutcome>>();
+    DescribeReverseShellRulesAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeReverseShellRulesRequest&,
+        DescribeReverseShellRulesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeRiskBatchStatusOutcome CwpClient::DescribeRiskBatchStatus(const DescribeRiskBatchStatusRequest &request)
@@ -11844,25 +13762,32 @@ CwpClient::DescribeRiskBatchStatusOutcome CwpClient::DescribeRiskBatchStatus(con
 
 void CwpClient::DescribeRiskBatchStatusAsync(const DescribeRiskBatchStatusRequest& request, const DescribeRiskBatchStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeRiskBatchStatus(request), context);
-    };
+    using Req = const DescribeRiskBatchStatusRequest&;
+    using Resp = DescribeRiskBatchStatusResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeRiskBatchStatus", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeRiskBatchStatusOutcomeCallable CwpClient::DescribeRiskBatchStatusCallable(const DescribeRiskBatchStatusRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeRiskBatchStatusOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeRiskBatchStatus(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeRiskBatchStatusOutcome>>();
+    DescribeRiskBatchStatusAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeRiskBatchStatusRequest&,
+        DescribeRiskBatchStatusOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeRiskDnsEventInfoOutcome CwpClient::DescribeRiskDnsEventInfo(const DescribeRiskDnsEventInfoRequest &request)
@@ -11887,25 +13812,32 @@ CwpClient::DescribeRiskDnsEventInfoOutcome CwpClient::DescribeRiskDnsEventInfo(c
 
 void CwpClient::DescribeRiskDnsEventInfoAsync(const DescribeRiskDnsEventInfoRequest& request, const DescribeRiskDnsEventInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeRiskDnsEventInfo(request), context);
-    };
+    using Req = const DescribeRiskDnsEventInfoRequest&;
+    using Resp = DescribeRiskDnsEventInfoResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeRiskDnsEventInfo", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeRiskDnsEventInfoOutcomeCallable CwpClient::DescribeRiskDnsEventInfoCallable(const DescribeRiskDnsEventInfoRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeRiskDnsEventInfoOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeRiskDnsEventInfo(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeRiskDnsEventInfoOutcome>>();
+    DescribeRiskDnsEventInfoAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeRiskDnsEventInfoRequest&,
+        DescribeRiskDnsEventInfoOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeRiskDnsEventListOutcome CwpClient::DescribeRiskDnsEventList(const DescribeRiskDnsEventListRequest &request)
@@ -11930,25 +13862,32 @@ CwpClient::DescribeRiskDnsEventListOutcome CwpClient::DescribeRiskDnsEventList(c
 
 void CwpClient::DescribeRiskDnsEventListAsync(const DescribeRiskDnsEventListRequest& request, const DescribeRiskDnsEventListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeRiskDnsEventList(request), context);
-    };
+    using Req = const DescribeRiskDnsEventListRequest&;
+    using Resp = DescribeRiskDnsEventListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeRiskDnsEventList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeRiskDnsEventListOutcomeCallable CwpClient::DescribeRiskDnsEventListCallable(const DescribeRiskDnsEventListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeRiskDnsEventListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeRiskDnsEventList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeRiskDnsEventListOutcome>>();
+    DescribeRiskDnsEventListAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeRiskDnsEventListRequest&,
+        DescribeRiskDnsEventListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeRiskDnsInfoOutcome CwpClient::DescribeRiskDnsInfo(const DescribeRiskDnsInfoRequest &request)
@@ -11973,25 +13912,32 @@ CwpClient::DescribeRiskDnsInfoOutcome CwpClient::DescribeRiskDnsInfo(const Descr
 
 void CwpClient::DescribeRiskDnsInfoAsync(const DescribeRiskDnsInfoRequest& request, const DescribeRiskDnsInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeRiskDnsInfo(request), context);
-    };
+    using Req = const DescribeRiskDnsInfoRequest&;
+    using Resp = DescribeRiskDnsInfoResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeRiskDnsInfo", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeRiskDnsInfoOutcomeCallable CwpClient::DescribeRiskDnsInfoCallable(const DescribeRiskDnsInfoRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeRiskDnsInfoOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeRiskDnsInfo(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeRiskDnsInfoOutcome>>();
+    DescribeRiskDnsInfoAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeRiskDnsInfoRequest&,
+        DescribeRiskDnsInfoOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeRiskDnsListOutcome CwpClient::DescribeRiskDnsList(const DescribeRiskDnsListRequest &request)
@@ -12016,25 +13962,32 @@ CwpClient::DescribeRiskDnsListOutcome CwpClient::DescribeRiskDnsList(const Descr
 
 void CwpClient::DescribeRiskDnsListAsync(const DescribeRiskDnsListRequest& request, const DescribeRiskDnsListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeRiskDnsList(request), context);
-    };
+    using Req = const DescribeRiskDnsListRequest&;
+    using Resp = DescribeRiskDnsListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeRiskDnsList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeRiskDnsListOutcomeCallable CwpClient::DescribeRiskDnsListCallable(const DescribeRiskDnsListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeRiskDnsListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeRiskDnsList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeRiskDnsListOutcome>>();
+    DescribeRiskDnsListAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeRiskDnsListRequest&,
+        DescribeRiskDnsListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeRiskDnsPolicyListOutcome CwpClient::DescribeRiskDnsPolicyList(const DescribeRiskDnsPolicyListRequest &request)
@@ -12059,25 +14012,32 @@ CwpClient::DescribeRiskDnsPolicyListOutcome CwpClient::DescribeRiskDnsPolicyList
 
 void CwpClient::DescribeRiskDnsPolicyListAsync(const DescribeRiskDnsPolicyListRequest& request, const DescribeRiskDnsPolicyListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeRiskDnsPolicyList(request), context);
-    };
+    using Req = const DescribeRiskDnsPolicyListRequest&;
+    using Resp = DescribeRiskDnsPolicyListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeRiskDnsPolicyList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeRiskDnsPolicyListOutcomeCallable CwpClient::DescribeRiskDnsPolicyListCallable(const DescribeRiskDnsPolicyListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeRiskDnsPolicyListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeRiskDnsPolicyList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeRiskDnsPolicyListOutcome>>();
+    DescribeRiskDnsPolicyListAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeRiskDnsPolicyListRequest&,
+        DescribeRiskDnsPolicyListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeRiskProcessEventsOutcome CwpClient::DescribeRiskProcessEvents(const DescribeRiskProcessEventsRequest &request)
@@ -12102,25 +14062,32 @@ CwpClient::DescribeRiskProcessEventsOutcome CwpClient::DescribeRiskProcessEvents
 
 void CwpClient::DescribeRiskProcessEventsAsync(const DescribeRiskProcessEventsRequest& request, const DescribeRiskProcessEventsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeRiskProcessEvents(request), context);
-    };
+    using Req = const DescribeRiskProcessEventsRequest&;
+    using Resp = DescribeRiskProcessEventsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeRiskProcessEvents", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeRiskProcessEventsOutcomeCallable CwpClient::DescribeRiskProcessEventsCallable(const DescribeRiskProcessEventsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeRiskProcessEventsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeRiskProcessEvents(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeRiskProcessEventsOutcome>>();
+    DescribeRiskProcessEventsAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeRiskProcessEventsRequest&,
+        DescribeRiskProcessEventsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeSafeInfoOutcome CwpClient::DescribeSafeInfo(const DescribeSafeInfoRequest &request)
@@ -12145,25 +14112,32 @@ CwpClient::DescribeSafeInfoOutcome CwpClient::DescribeSafeInfo(const DescribeSaf
 
 void CwpClient::DescribeSafeInfoAsync(const DescribeSafeInfoRequest& request, const DescribeSafeInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeSafeInfo(request), context);
-    };
+    using Req = const DescribeSafeInfoRequest&;
+    using Resp = DescribeSafeInfoResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeSafeInfo", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeSafeInfoOutcomeCallable CwpClient::DescribeSafeInfoCallable(const DescribeSafeInfoRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeSafeInfoOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeSafeInfo(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeSafeInfoOutcome>>();
+    DescribeSafeInfoAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeSafeInfoRequest&,
+        DescribeSafeInfoOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeScanMalwareScheduleOutcome CwpClient::DescribeScanMalwareSchedule(const DescribeScanMalwareScheduleRequest &request)
@@ -12188,25 +14162,32 @@ CwpClient::DescribeScanMalwareScheduleOutcome CwpClient::DescribeScanMalwareSche
 
 void CwpClient::DescribeScanMalwareScheduleAsync(const DescribeScanMalwareScheduleRequest& request, const DescribeScanMalwareScheduleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeScanMalwareSchedule(request), context);
-    };
+    using Req = const DescribeScanMalwareScheduleRequest&;
+    using Resp = DescribeScanMalwareScheduleResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeScanMalwareSchedule", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeScanMalwareScheduleOutcomeCallable CwpClient::DescribeScanMalwareScheduleCallable(const DescribeScanMalwareScheduleRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeScanMalwareScheduleOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeScanMalwareSchedule(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeScanMalwareScheduleOutcome>>();
+    DescribeScanMalwareScheduleAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeScanMalwareScheduleRequest&,
+        DescribeScanMalwareScheduleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeScanScheduleOutcome CwpClient::DescribeScanSchedule(const DescribeScanScheduleRequest &request)
@@ -12231,25 +14212,32 @@ CwpClient::DescribeScanScheduleOutcome CwpClient::DescribeScanSchedule(const Des
 
 void CwpClient::DescribeScanScheduleAsync(const DescribeScanScheduleRequest& request, const DescribeScanScheduleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeScanSchedule(request), context);
-    };
+    using Req = const DescribeScanScheduleRequest&;
+    using Resp = DescribeScanScheduleResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeScanSchedule", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeScanScheduleOutcomeCallable CwpClient::DescribeScanScheduleCallable(const DescribeScanScheduleRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeScanScheduleOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeScanSchedule(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeScanScheduleOutcome>>();
+    DescribeScanScheduleAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeScanScheduleRequest&,
+        DescribeScanScheduleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeScanStateOutcome CwpClient::DescribeScanState(const DescribeScanStateRequest &request)
@@ -12274,25 +14262,32 @@ CwpClient::DescribeScanStateOutcome CwpClient::DescribeScanState(const DescribeS
 
 void CwpClient::DescribeScanStateAsync(const DescribeScanStateRequest& request, const DescribeScanStateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeScanState(request), context);
-    };
+    using Req = const DescribeScanStateRequest&;
+    using Resp = DescribeScanStateResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeScanState", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeScanStateOutcomeCallable CwpClient::DescribeScanStateCallable(const DescribeScanStateRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeScanStateOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeScanState(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeScanStateOutcome>>();
+    DescribeScanStateAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeScanStateRequest&,
+        DescribeScanStateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeScanTaskDetailsOutcome CwpClient::DescribeScanTaskDetails(const DescribeScanTaskDetailsRequest &request)
@@ -12317,25 +14312,32 @@ CwpClient::DescribeScanTaskDetailsOutcome CwpClient::DescribeScanTaskDetails(con
 
 void CwpClient::DescribeScanTaskDetailsAsync(const DescribeScanTaskDetailsRequest& request, const DescribeScanTaskDetailsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeScanTaskDetails(request), context);
-    };
+    using Req = const DescribeScanTaskDetailsRequest&;
+    using Resp = DescribeScanTaskDetailsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeScanTaskDetails", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeScanTaskDetailsOutcomeCallable CwpClient::DescribeScanTaskDetailsCallable(const DescribeScanTaskDetailsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeScanTaskDetailsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeScanTaskDetails(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeScanTaskDetailsOutcome>>();
+    DescribeScanTaskDetailsAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeScanTaskDetailsRequest&,
+        DescribeScanTaskDetailsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeScanTaskStatusOutcome CwpClient::DescribeScanTaskStatus(const DescribeScanTaskStatusRequest &request)
@@ -12360,25 +14362,32 @@ CwpClient::DescribeScanTaskStatusOutcome CwpClient::DescribeScanTaskStatus(const
 
 void CwpClient::DescribeScanTaskStatusAsync(const DescribeScanTaskStatusRequest& request, const DescribeScanTaskStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeScanTaskStatus(request), context);
-    };
+    using Req = const DescribeScanTaskStatusRequest&;
+    using Resp = DescribeScanTaskStatusResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeScanTaskStatus", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeScanTaskStatusOutcomeCallable CwpClient::DescribeScanTaskStatusCallable(const DescribeScanTaskStatusRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeScanTaskStatusOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeScanTaskStatus(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeScanTaskStatusOutcome>>();
+    DescribeScanTaskStatusAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeScanTaskStatusRequest&,
+        DescribeScanTaskStatusOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeScanVulSettingOutcome CwpClient::DescribeScanVulSetting(const DescribeScanVulSettingRequest &request)
@@ -12403,25 +14412,32 @@ CwpClient::DescribeScanVulSettingOutcome CwpClient::DescribeScanVulSetting(const
 
 void CwpClient::DescribeScanVulSettingAsync(const DescribeScanVulSettingRequest& request, const DescribeScanVulSettingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeScanVulSetting(request), context);
-    };
+    using Req = const DescribeScanVulSettingRequest&;
+    using Resp = DescribeScanVulSettingResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeScanVulSetting", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeScanVulSettingOutcomeCallable CwpClient::DescribeScanVulSettingCallable(const DescribeScanVulSettingRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeScanVulSettingOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeScanVulSetting(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeScanVulSettingOutcome>>();
+    DescribeScanVulSettingAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeScanVulSettingRequest&,
+        DescribeScanVulSettingOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeScreenAttackHotspotOutcome CwpClient::DescribeScreenAttackHotspot(const DescribeScreenAttackHotspotRequest &request)
@@ -12446,25 +14462,32 @@ CwpClient::DescribeScreenAttackHotspotOutcome CwpClient::DescribeScreenAttackHot
 
 void CwpClient::DescribeScreenAttackHotspotAsync(const DescribeScreenAttackHotspotRequest& request, const DescribeScreenAttackHotspotAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeScreenAttackHotspot(request), context);
-    };
+    using Req = const DescribeScreenAttackHotspotRequest&;
+    using Resp = DescribeScreenAttackHotspotResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeScreenAttackHotspot", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeScreenAttackHotspotOutcomeCallable CwpClient::DescribeScreenAttackHotspotCallable(const DescribeScreenAttackHotspotRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeScreenAttackHotspotOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeScreenAttackHotspot(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeScreenAttackHotspotOutcome>>();
+    DescribeScreenAttackHotspotAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeScreenAttackHotspotRequest&,
+        DescribeScreenAttackHotspotOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeScreenBroadcastsOutcome CwpClient::DescribeScreenBroadcasts(const DescribeScreenBroadcastsRequest &request)
@@ -12489,25 +14512,32 @@ CwpClient::DescribeScreenBroadcastsOutcome CwpClient::DescribeScreenBroadcasts(c
 
 void CwpClient::DescribeScreenBroadcastsAsync(const DescribeScreenBroadcastsRequest& request, const DescribeScreenBroadcastsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeScreenBroadcasts(request), context);
-    };
+    using Req = const DescribeScreenBroadcastsRequest&;
+    using Resp = DescribeScreenBroadcastsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeScreenBroadcasts", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeScreenBroadcastsOutcomeCallable CwpClient::DescribeScreenBroadcastsCallable(const DescribeScreenBroadcastsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeScreenBroadcastsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeScreenBroadcasts(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeScreenBroadcastsOutcome>>();
+    DescribeScreenBroadcastsAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeScreenBroadcastsRequest&,
+        DescribeScreenBroadcastsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeScreenDefenseTrendsOutcome CwpClient::DescribeScreenDefenseTrends(const DescribeScreenDefenseTrendsRequest &request)
@@ -12532,25 +14562,32 @@ CwpClient::DescribeScreenDefenseTrendsOutcome CwpClient::DescribeScreenDefenseTr
 
 void CwpClient::DescribeScreenDefenseTrendsAsync(const DescribeScreenDefenseTrendsRequest& request, const DescribeScreenDefenseTrendsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeScreenDefenseTrends(request), context);
-    };
+    using Req = const DescribeScreenDefenseTrendsRequest&;
+    using Resp = DescribeScreenDefenseTrendsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeScreenDefenseTrends", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeScreenDefenseTrendsOutcomeCallable CwpClient::DescribeScreenDefenseTrendsCallable(const DescribeScreenDefenseTrendsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeScreenDefenseTrendsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeScreenDefenseTrends(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeScreenDefenseTrendsOutcome>>();
+    DescribeScreenDefenseTrendsAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeScreenDefenseTrendsRequest&,
+        DescribeScreenDefenseTrendsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeScreenEmergentMsgOutcome CwpClient::DescribeScreenEmergentMsg(const DescribeScreenEmergentMsgRequest &request)
@@ -12575,25 +14612,32 @@ CwpClient::DescribeScreenEmergentMsgOutcome CwpClient::DescribeScreenEmergentMsg
 
 void CwpClient::DescribeScreenEmergentMsgAsync(const DescribeScreenEmergentMsgRequest& request, const DescribeScreenEmergentMsgAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeScreenEmergentMsg(request), context);
-    };
+    using Req = const DescribeScreenEmergentMsgRequest&;
+    using Resp = DescribeScreenEmergentMsgResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeScreenEmergentMsg", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeScreenEmergentMsgOutcomeCallable CwpClient::DescribeScreenEmergentMsgCallable(const DescribeScreenEmergentMsgRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeScreenEmergentMsgOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeScreenEmergentMsg(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeScreenEmergentMsgOutcome>>();
+    DescribeScreenEmergentMsgAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeScreenEmergentMsgRequest&,
+        DescribeScreenEmergentMsgOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeScreenEventsCntOutcome CwpClient::DescribeScreenEventsCnt(const DescribeScreenEventsCntRequest &request)
@@ -12618,25 +14662,32 @@ CwpClient::DescribeScreenEventsCntOutcome CwpClient::DescribeScreenEventsCnt(con
 
 void CwpClient::DescribeScreenEventsCntAsync(const DescribeScreenEventsCntRequest& request, const DescribeScreenEventsCntAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeScreenEventsCnt(request), context);
-    };
+    using Req = const DescribeScreenEventsCntRequest&;
+    using Resp = DescribeScreenEventsCntResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeScreenEventsCnt", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeScreenEventsCntOutcomeCallable CwpClient::DescribeScreenEventsCntCallable(const DescribeScreenEventsCntRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeScreenEventsCntOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeScreenEventsCnt(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeScreenEventsCntOutcome>>();
+    DescribeScreenEventsCntAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeScreenEventsCntRequest&,
+        DescribeScreenEventsCntOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeScreenGeneralStatOutcome CwpClient::DescribeScreenGeneralStat(const DescribeScreenGeneralStatRequest &request)
@@ -12661,25 +14712,32 @@ CwpClient::DescribeScreenGeneralStatOutcome CwpClient::DescribeScreenGeneralStat
 
 void CwpClient::DescribeScreenGeneralStatAsync(const DescribeScreenGeneralStatRequest& request, const DescribeScreenGeneralStatAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeScreenGeneralStat(request), context);
-    };
+    using Req = const DescribeScreenGeneralStatRequest&;
+    using Resp = DescribeScreenGeneralStatResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeScreenGeneralStat", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeScreenGeneralStatOutcomeCallable CwpClient::DescribeScreenGeneralStatCallable(const DescribeScreenGeneralStatRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeScreenGeneralStatOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeScreenGeneralStat(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeScreenGeneralStatOutcome>>();
+    DescribeScreenGeneralStatAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeScreenGeneralStatRequest&,
+        DescribeScreenGeneralStatOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeScreenHostInvasionOutcome CwpClient::DescribeScreenHostInvasion(const DescribeScreenHostInvasionRequest &request)
@@ -12704,25 +14762,32 @@ CwpClient::DescribeScreenHostInvasionOutcome CwpClient::DescribeScreenHostInvasi
 
 void CwpClient::DescribeScreenHostInvasionAsync(const DescribeScreenHostInvasionRequest& request, const DescribeScreenHostInvasionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeScreenHostInvasion(request), context);
-    };
+    using Req = const DescribeScreenHostInvasionRequest&;
+    using Resp = DescribeScreenHostInvasionResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeScreenHostInvasion", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeScreenHostInvasionOutcomeCallable CwpClient::DescribeScreenHostInvasionCallable(const DescribeScreenHostInvasionRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeScreenHostInvasionOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeScreenHostInvasion(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeScreenHostInvasionOutcome>>();
+    DescribeScreenHostInvasionAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeScreenHostInvasionRequest&,
+        DescribeScreenHostInvasionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeScreenMachineRegionsOutcome CwpClient::DescribeScreenMachineRegions(const DescribeScreenMachineRegionsRequest &request)
@@ -12747,25 +14812,32 @@ CwpClient::DescribeScreenMachineRegionsOutcome CwpClient::DescribeScreenMachineR
 
 void CwpClient::DescribeScreenMachineRegionsAsync(const DescribeScreenMachineRegionsRequest& request, const DescribeScreenMachineRegionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeScreenMachineRegions(request), context);
-    };
+    using Req = const DescribeScreenMachineRegionsRequest&;
+    using Resp = DescribeScreenMachineRegionsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeScreenMachineRegions", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeScreenMachineRegionsOutcomeCallable CwpClient::DescribeScreenMachineRegionsCallable(const DescribeScreenMachineRegionsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeScreenMachineRegionsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeScreenMachineRegions(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeScreenMachineRegionsOutcome>>();
+    DescribeScreenMachineRegionsAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeScreenMachineRegionsRequest&,
+        DescribeScreenMachineRegionsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeScreenMachinesOutcome CwpClient::DescribeScreenMachines(const DescribeScreenMachinesRequest &request)
@@ -12790,25 +14862,32 @@ CwpClient::DescribeScreenMachinesOutcome CwpClient::DescribeScreenMachines(const
 
 void CwpClient::DescribeScreenMachinesAsync(const DescribeScreenMachinesRequest& request, const DescribeScreenMachinesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeScreenMachines(request), context);
-    };
+    using Req = const DescribeScreenMachinesRequest&;
+    using Resp = DescribeScreenMachinesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeScreenMachines", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeScreenMachinesOutcomeCallable CwpClient::DescribeScreenMachinesCallable(const DescribeScreenMachinesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeScreenMachinesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeScreenMachines(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeScreenMachinesOutcome>>();
+    DescribeScreenMachinesAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeScreenMachinesRequest&,
+        DescribeScreenMachinesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeScreenProtectionCntOutcome CwpClient::DescribeScreenProtectionCnt(const DescribeScreenProtectionCntRequest &request)
@@ -12833,25 +14912,32 @@ CwpClient::DescribeScreenProtectionCntOutcome CwpClient::DescribeScreenProtectio
 
 void CwpClient::DescribeScreenProtectionCntAsync(const DescribeScreenProtectionCntRequest& request, const DescribeScreenProtectionCntAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeScreenProtectionCnt(request), context);
-    };
+    using Req = const DescribeScreenProtectionCntRequest&;
+    using Resp = DescribeScreenProtectionCntResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeScreenProtectionCnt", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeScreenProtectionCntOutcomeCallable CwpClient::DescribeScreenProtectionCntCallable(const DescribeScreenProtectionCntRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeScreenProtectionCntOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeScreenProtectionCnt(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeScreenProtectionCntOutcome>>();
+    DescribeScreenProtectionCntAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeScreenProtectionCntRequest&,
+        DescribeScreenProtectionCntOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeScreenProtectionStatOutcome CwpClient::DescribeScreenProtectionStat(const DescribeScreenProtectionStatRequest &request)
@@ -12876,25 +14962,32 @@ CwpClient::DescribeScreenProtectionStatOutcome CwpClient::DescribeScreenProtecti
 
 void CwpClient::DescribeScreenProtectionStatAsync(const DescribeScreenProtectionStatRequest& request, const DescribeScreenProtectionStatAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeScreenProtectionStat(request), context);
-    };
+    using Req = const DescribeScreenProtectionStatRequest&;
+    using Resp = DescribeScreenProtectionStatResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeScreenProtectionStat", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeScreenProtectionStatOutcomeCallable CwpClient::DescribeScreenProtectionStatCallable(const DescribeScreenProtectionStatRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeScreenProtectionStatOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeScreenProtectionStat(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeScreenProtectionStatOutcome>>();
+    DescribeScreenProtectionStatAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeScreenProtectionStatRequest&,
+        DescribeScreenProtectionStatOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeScreenRiskAssetsTopOutcome CwpClient::DescribeScreenRiskAssetsTop(const DescribeScreenRiskAssetsTopRequest &request)
@@ -12919,25 +15012,32 @@ CwpClient::DescribeScreenRiskAssetsTopOutcome CwpClient::DescribeScreenRiskAsset
 
 void CwpClient::DescribeScreenRiskAssetsTopAsync(const DescribeScreenRiskAssetsTopRequest& request, const DescribeScreenRiskAssetsTopAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeScreenRiskAssetsTop(request), context);
-    };
+    using Req = const DescribeScreenRiskAssetsTopRequest&;
+    using Resp = DescribeScreenRiskAssetsTopResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeScreenRiskAssetsTop", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeScreenRiskAssetsTopOutcomeCallable CwpClient::DescribeScreenRiskAssetsTopCallable(const DescribeScreenRiskAssetsTopRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeScreenRiskAssetsTopOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeScreenRiskAssetsTop(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeScreenRiskAssetsTopOutcome>>();
+    DescribeScreenRiskAssetsTopAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeScreenRiskAssetsTopRequest&,
+        DescribeScreenRiskAssetsTopOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeSearchLogsOutcome CwpClient::DescribeSearchLogs(const DescribeSearchLogsRequest &request)
@@ -12962,25 +15062,32 @@ CwpClient::DescribeSearchLogsOutcome CwpClient::DescribeSearchLogs(const Describ
 
 void CwpClient::DescribeSearchLogsAsync(const DescribeSearchLogsRequest& request, const DescribeSearchLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeSearchLogs(request), context);
-    };
+    using Req = const DescribeSearchLogsRequest&;
+    using Resp = DescribeSearchLogsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeSearchLogs", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeSearchLogsOutcomeCallable CwpClient::DescribeSearchLogsCallable(const DescribeSearchLogsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeSearchLogsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeSearchLogs(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeSearchLogsOutcome>>();
+    DescribeSearchLogsAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeSearchLogsRequest&,
+        DescribeSearchLogsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeSearchTemplatesOutcome CwpClient::DescribeSearchTemplates(const DescribeSearchTemplatesRequest &request)
@@ -13005,25 +15112,32 @@ CwpClient::DescribeSearchTemplatesOutcome CwpClient::DescribeSearchTemplates(con
 
 void CwpClient::DescribeSearchTemplatesAsync(const DescribeSearchTemplatesRequest& request, const DescribeSearchTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeSearchTemplates(request), context);
-    };
+    using Req = const DescribeSearchTemplatesRequest&;
+    using Resp = DescribeSearchTemplatesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeSearchTemplates", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeSearchTemplatesOutcomeCallable CwpClient::DescribeSearchTemplatesCallable(const DescribeSearchTemplatesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeSearchTemplatesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeSearchTemplates(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeSearchTemplatesOutcome>>();
+    DescribeSearchTemplatesAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeSearchTemplatesRequest&,
+        DescribeSearchTemplatesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeSecurityBroadcastInfoOutcome CwpClient::DescribeSecurityBroadcastInfo(const DescribeSecurityBroadcastInfoRequest &request)
@@ -13048,25 +15162,32 @@ CwpClient::DescribeSecurityBroadcastInfoOutcome CwpClient::DescribeSecurityBroad
 
 void CwpClient::DescribeSecurityBroadcastInfoAsync(const DescribeSecurityBroadcastInfoRequest& request, const DescribeSecurityBroadcastInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeSecurityBroadcastInfo(request), context);
-    };
+    using Req = const DescribeSecurityBroadcastInfoRequest&;
+    using Resp = DescribeSecurityBroadcastInfoResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeSecurityBroadcastInfo", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeSecurityBroadcastInfoOutcomeCallable CwpClient::DescribeSecurityBroadcastInfoCallable(const DescribeSecurityBroadcastInfoRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeSecurityBroadcastInfoOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeSecurityBroadcastInfo(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeSecurityBroadcastInfoOutcome>>();
+    DescribeSecurityBroadcastInfoAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeSecurityBroadcastInfoRequest&,
+        DescribeSecurityBroadcastInfoOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeSecurityBroadcastsOutcome CwpClient::DescribeSecurityBroadcasts(const DescribeSecurityBroadcastsRequest &request)
@@ -13091,25 +15212,32 @@ CwpClient::DescribeSecurityBroadcastsOutcome CwpClient::DescribeSecurityBroadcas
 
 void CwpClient::DescribeSecurityBroadcastsAsync(const DescribeSecurityBroadcastsRequest& request, const DescribeSecurityBroadcastsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeSecurityBroadcasts(request), context);
-    };
+    using Req = const DescribeSecurityBroadcastsRequest&;
+    using Resp = DescribeSecurityBroadcastsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeSecurityBroadcasts", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeSecurityBroadcastsOutcomeCallable CwpClient::DescribeSecurityBroadcastsCallable(const DescribeSecurityBroadcastsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeSecurityBroadcastsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeSecurityBroadcasts(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeSecurityBroadcastsOutcome>>();
+    DescribeSecurityBroadcastsAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeSecurityBroadcastsRequest&,
+        DescribeSecurityBroadcastsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeSecurityDynamicsOutcome CwpClient::DescribeSecurityDynamics(const DescribeSecurityDynamicsRequest &request)
@@ -13134,25 +15262,32 @@ CwpClient::DescribeSecurityDynamicsOutcome CwpClient::DescribeSecurityDynamics(c
 
 void CwpClient::DescribeSecurityDynamicsAsync(const DescribeSecurityDynamicsRequest& request, const DescribeSecurityDynamicsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeSecurityDynamics(request), context);
-    };
+    using Req = const DescribeSecurityDynamicsRequest&;
+    using Resp = DescribeSecurityDynamicsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeSecurityDynamics", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeSecurityDynamicsOutcomeCallable CwpClient::DescribeSecurityDynamicsCallable(const DescribeSecurityDynamicsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeSecurityDynamicsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeSecurityDynamics(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeSecurityDynamicsOutcome>>();
+    DescribeSecurityDynamicsAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeSecurityDynamicsRequest&,
+        DescribeSecurityDynamicsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeSecurityEventStatOutcome CwpClient::DescribeSecurityEventStat(const DescribeSecurityEventStatRequest &request)
@@ -13177,25 +15312,32 @@ CwpClient::DescribeSecurityEventStatOutcome CwpClient::DescribeSecurityEventStat
 
 void CwpClient::DescribeSecurityEventStatAsync(const DescribeSecurityEventStatRequest& request, const DescribeSecurityEventStatAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeSecurityEventStat(request), context);
-    };
+    using Req = const DescribeSecurityEventStatRequest&;
+    using Resp = DescribeSecurityEventStatResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeSecurityEventStat", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeSecurityEventStatOutcomeCallable CwpClient::DescribeSecurityEventStatCallable(const DescribeSecurityEventStatRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeSecurityEventStatOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeSecurityEventStat(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeSecurityEventStatOutcome>>();
+    DescribeSecurityEventStatAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeSecurityEventStatRequest&,
+        DescribeSecurityEventStatOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeSecurityEventsCntOutcome CwpClient::DescribeSecurityEventsCnt(const DescribeSecurityEventsCntRequest &request)
@@ -13220,25 +15362,32 @@ CwpClient::DescribeSecurityEventsCntOutcome CwpClient::DescribeSecurityEventsCnt
 
 void CwpClient::DescribeSecurityEventsCntAsync(const DescribeSecurityEventsCntRequest& request, const DescribeSecurityEventsCntAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeSecurityEventsCnt(request), context);
-    };
+    using Req = const DescribeSecurityEventsCntRequest&;
+    using Resp = DescribeSecurityEventsCntResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeSecurityEventsCnt", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeSecurityEventsCntOutcomeCallable CwpClient::DescribeSecurityEventsCntCallable(const DescribeSecurityEventsCntRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeSecurityEventsCntOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeSecurityEventsCnt(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeSecurityEventsCntOutcome>>();
+    DescribeSecurityEventsCntAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeSecurityEventsCntRequest&,
+        DescribeSecurityEventsCntOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeSecurityTrendsOutcome CwpClient::DescribeSecurityTrends(const DescribeSecurityTrendsRequest &request)
@@ -13263,25 +15412,32 @@ CwpClient::DescribeSecurityTrendsOutcome CwpClient::DescribeSecurityTrends(const
 
 void CwpClient::DescribeSecurityTrendsAsync(const DescribeSecurityTrendsRequest& request, const DescribeSecurityTrendsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeSecurityTrends(request), context);
-    };
+    using Req = const DescribeSecurityTrendsRequest&;
+    using Resp = DescribeSecurityTrendsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeSecurityTrends", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeSecurityTrendsOutcomeCallable CwpClient::DescribeSecurityTrendsCallable(const DescribeSecurityTrendsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeSecurityTrendsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeSecurityTrends(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeSecurityTrendsOutcome>>();
+    DescribeSecurityTrendsAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeSecurityTrendsRequest&,
+        DescribeSecurityTrendsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeServerRelatedDirInfoOutcome CwpClient::DescribeServerRelatedDirInfo(const DescribeServerRelatedDirInfoRequest &request)
@@ -13306,25 +15462,32 @@ CwpClient::DescribeServerRelatedDirInfoOutcome CwpClient::DescribeServerRelatedD
 
 void CwpClient::DescribeServerRelatedDirInfoAsync(const DescribeServerRelatedDirInfoRequest& request, const DescribeServerRelatedDirInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeServerRelatedDirInfo(request), context);
-    };
+    using Req = const DescribeServerRelatedDirInfoRequest&;
+    using Resp = DescribeServerRelatedDirInfoResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeServerRelatedDirInfo", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeServerRelatedDirInfoOutcomeCallable CwpClient::DescribeServerRelatedDirInfoCallable(const DescribeServerRelatedDirInfoRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeServerRelatedDirInfoOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeServerRelatedDirInfo(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeServerRelatedDirInfoOutcome>>();
+    DescribeServerRelatedDirInfoAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeServerRelatedDirInfoRequest&,
+        DescribeServerRelatedDirInfoOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeServersAndRiskAndFirstInfoOutcome CwpClient::DescribeServersAndRiskAndFirstInfo(const DescribeServersAndRiskAndFirstInfoRequest &request)
@@ -13349,25 +15512,32 @@ CwpClient::DescribeServersAndRiskAndFirstInfoOutcome CwpClient::DescribeServersA
 
 void CwpClient::DescribeServersAndRiskAndFirstInfoAsync(const DescribeServersAndRiskAndFirstInfoRequest& request, const DescribeServersAndRiskAndFirstInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeServersAndRiskAndFirstInfo(request), context);
-    };
+    using Req = const DescribeServersAndRiskAndFirstInfoRequest&;
+    using Resp = DescribeServersAndRiskAndFirstInfoResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeServersAndRiskAndFirstInfo", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeServersAndRiskAndFirstInfoOutcomeCallable CwpClient::DescribeServersAndRiskAndFirstInfoCallable(const DescribeServersAndRiskAndFirstInfoRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeServersAndRiskAndFirstInfoOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeServersAndRiskAndFirstInfo(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeServersAndRiskAndFirstInfoOutcome>>();
+    DescribeServersAndRiskAndFirstInfoAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeServersAndRiskAndFirstInfoRequest&,
+        DescribeServersAndRiskAndFirstInfoOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeStrategyExistOutcome CwpClient::DescribeStrategyExist(const DescribeStrategyExistRequest &request)
@@ -13392,25 +15562,32 @@ CwpClient::DescribeStrategyExistOutcome CwpClient::DescribeStrategyExist(const D
 
 void CwpClient::DescribeStrategyExistAsync(const DescribeStrategyExistRequest& request, const DescribeStrategyExistAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeStrategyExist(request), context);
-    };
+    using Req = const DescribeStrategyExistRequest&;
+    using Resp = DescribeStrategyExistResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeStrategyExist", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeStrategyExistOutcomeCallable CwpClient::DescribeStrategyExistCallable(const DescribeStrategyExistRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeStrategyExistOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeStrategyExist(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeStrategyExistOutcome>>();
+    DescribeStrategyExistAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeStrategyExistRequest&,
+        DescribeStrategyExistOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeTagMachinesOutcome CwpClient::DescribeTagMachines(const DescribeTagMachinesRequest &request)
@@ -13435,25 +15612,32 @@ CwpClient::DescribeTagMachinesOutcome CwpClient::DescribeTagMachines(const Descr
 
 void CwpClient::DescribeTagMachinesAsync(const DescribeTagMachinesRequest& request, const DescribeTagMachinesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeTagMachines(request), context);
-    };
+    using Req = const DescribeTagMachinesRequest&;
+    using Resp = DescribeTagMachinesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeTagMachines", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeTagMachinesOutcomeCallable CwpClient::DescribeTagMachinesCallable(const DescribeTagMachinesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeTagMachinesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeTagMachines(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeTagMachinesOutcome>>();
+    DescribeTagMachinesAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeTagMachinesRequest&,
+        DescribeTagMachinesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeTagsOutcome CwpClient::DescribeTags(const DescribeTagsRequest &request)
@@ -13478,25 +15662,32 @@ CwpClient::DescribeTagsOutcome CwpClient::DescribeTags(const DescribeTagsRequest
 
 void CwpClient::DescribeTagsAsync(const DescribeTagsRequest& request, const DescribeTagsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeTags(request), context);
-    };
+    using Req = const DescribeTagsRequest&;
+    using Resp = DescribeTagsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeTags", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeTagsOutcomeCallable CwpClient::DescribeTagsCallable(const DescribeTagsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeTagsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeTags(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeTagsOutcome>>();
+    DescribeTagsAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeTagsRequest&,
+        DescribeTagsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeTrialReportOutcome CwpClient::DescribeTrialReport(const DescribeTrialReportRequest &request)
@@ -13521,25 +15712,32 @@ CwpClient::DescribeTrialReportOutcome CwpClient::DescribeTrialReport(const Descr
 
 void CwpClient::DescribeTrialReportAsync(const DescribeTrialReportRequest& request, const DescribeTrialReportAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeTrialReport(request), context);
-    };
+    using Req = const DescribeTrialReportRequest&;
+    using Resp = DescribeTrialReportResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeTrialReport", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeTrialReportOutcomeCallable CwpClient::DescribeTrialReportCallable(const DescribeTrialReportRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeTrialReportOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeTrialReport(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeTrialReportOutcome>>();
+    DescribeTrialReportAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeTrialReportRequest&,
+        DescribeTrialReportOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeUndoVulCountsOutcome CwpClient::DescribeUndoVulCounts(const DescribeUndoVulCountsRequest &request)
@@ -13564,25 +15762,32 @@ CwpClient::DescribeUndoVulCountsOutcome CwpClient::DescribeUndoVulCounts(const D
 
 void CwpClient::DescribeUndoVulCountsAsync(const DescribeUndoVulCountsRequest& request, const DescribeUndoVulCountsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeUndoVulCounts(request), context);
-    };
+    using Req = const DescribeUndoVulCountsRequest&;
+    using Resp = DescribeUndoVulCountsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeUndoVulCounts", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeUndoVulCountsOutcomeCallable CwpClient::DescribeUndoVulCountsCallable(const DescribeUndoVulCountsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeUndoVulCountsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeUndoVulCounts(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeUndoVulCountsOutcome>>();
+    DescribeUndoVulCountsAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeUndoVulCountsRequest&,
+        DescribeUndoVulCountsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeUsersConfigOutcome CwpClient::DescribeUsersConfig(const DescribeUsersConfigRequest &request)
@@ -13607,25 +15812,32 @@ CwpClient::DescribeUsersConfigOutcome CwpClient::DescribeUsersConfig(const Descr
 
 void CwpClient::DescribeUsersConfigAsync(const DescribeUsersConfigRequest& request, const DescribeUsersConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeUsersConfig(request), context);
-    };
+    using Req = const DescribeUsersConfigRequest&;
+    using Resp = DescribeUsersConfigResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeUsersConfig", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeUsersConfigOutcomeCallable CwpClient::DescribeUsersConfigCallable(const DescribeUsersConfigRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeUsersConfigOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeUsersConfig(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeUsersConfigOutcome>>();
+    DescribeUsersConfigAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeUsersConfigRequest&,
+        DescribeUsersConfigOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeUsualLoginPlacesOutcome CwpClient::DescribeUsualLoginPlaces(const DescribeUsualLoginPlacesRequest &request)
@@ -13650,25 +15862,32 @@ CwpClient::DescribeUsualLoginPlacesOutcome CwpClient::DescribeUsualLoginPlaces(c
 
 void CwpClient::DescribeUsualLoginPlacesAsync(const DescribeUsualLoginPlacesRequest& request, const DescribeUsualLoginPlacesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeUsualLoginPlaces(request), context);
-    };
+    using Req = const DescribeUsualLoginPlacesRequest&;
+    using Resp = DescribeUsualLoginPlacesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeUsualLoginPlaces", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeUsualLoginPlacesOutcomeCallable CwpClient::DescribeUsualLoginPlacesCallable(const DescribeUsualLoginPlacesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeUsualLoginPlacesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeUsualLoginPlaces(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeUsualLoginPlacesOutcome>>();
+    DescribeUsualLoginPlacesAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeUsualLoginPlacesRequest&,
+        DescribeUsualLoginPlacesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeVdbAndPocInfoOutcome CwpClient::DescribeVdbAndPocInfo(const DescribeVdbAndPocInfoRequest &request)
@@ -13693,25 +15912,32 @@ CwpClient::DescribeVdbAndPocInfoOutcome CwpClient::DescribeVdbAndPocInfo(const D
 
 void CwpClient::DescribeVdbAndPocInfoAsync(const DescribeVdbAndPocInfoRequest& request, const DescribeVdbAndPocInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeVdbAndPocInfo(request), context);
-    };
+    using Req = const DescribeVdbAndPocInfoRequest&;
+    using Resp = DescribeVdbAndPocInfoResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeVdbAndPocInfo", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeVdbAndPocInfoOutcomeCallable CwpClient::DescribeVdbAndPocInfoCallable(const DescribeVdbAndPocInfoRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeVdbAndPocInfoOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeVdbAndPocInfo(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeVdbAndPocInfoOutcome>>();
+    DescribeVdbAndPocInfoAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeVdbAndPocInfoRequest&,
+        DescribeVdbAndPocInfoOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeVersionCompareChartOutcome CwpClient::DescribeVersionCompareChart(const DescribeVersionCompareChartRequest &request)
@@ -13736,25 +15962,32 @@ CwpClient::DescribeVersionCompareChartOutcome CwpClient::DescribeVersionCompareC
 
 void CwpClient::DescribeVersionCompareChartAsync(const DescribeVersionCompareChartRequest& request, const DescribeVersionCompareChartAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeVersionCompareChart(request), context);
-    };
+    using Req = const DescribeVersionCompareChartRequest&;
+    using Resp = DescribeVersionCompareChartResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeVersionCompareChart", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeVersionCompareChartOutcomeCallable CwpClient::DescribeVersionCompareChartCallable(const DescribeVersionCompareChartRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeVersionCompareChartOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeVersionCompareChart(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeVersionCompareChartOutcome>>();
+    DescribeVersionCompareChartAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeVersionCompareChartRequest&,
+        DescribeVersionCompareChartOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeVersionStatisticsOutcome CwpClient::DescribeVersionStatistics(const DescribeVersionStatisticsRequest &request)
@@ -13779,25 +16012,32 @@ CwpClient::DescribeVersionStatisticsOutcome CwpClient::DescribeVersionStatistics
 
 void CwpClient::DescribeVersionStatisticsAsync(const DescribeVersionStatisticsRequest& request, const DescribeVersionStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeVersionStatistics(request), context);
-    };
+    using Req = const DescribeVersionStatisticsRequest&;
+    using Resp = DescribeVersionStatisticsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeVersionStatistics", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeVersionStatisticsOutcomeCallable CwpClient::DescribeVersionStatisticsCallable(const DescribeVersionStatisticsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeVersionStatisticsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeVersionStatistics(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeVersionStatisticsOutcome>>();
+    DescribeVersionStatisticsAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeVersionStatisticsRequest&,
+        DescribeVersionStatisticsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeVertexDetailOutcome CwpClient::DescribeVertexDetail(const DescribeVertexDetailRequest &request)
@@ -13822,25 +16062,32 @@ CwpClient::DescribeVertexDetailOutcome CwpClient::DescribeVertexDetail(const Des
 
 void CwpClient::DescribeVertexDetailAsync(const DescribeVertexDetailRequest& request, const DescribeVertexDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeVertexDetail(request), context);
-    };
+    using Req = const DescribeVertexDetailRequest&;
+    using Resp = DescribeVertexDetailResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeVertexDetail", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeVertexDetailOutcomeCallable CwpClient::DescribeVertexDetailCallable(const DescribeVertexDetailRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeVertexDetailOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeVertexDetail(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeVertexDetailOutcome>>();
+    DescribeVertexDetailAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeVertexDetailRequest&,
+        DescribeVertexDetailOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeVulCountByDatesOutcome CwpClient::DescribeVulCountByDates(const DescribeVulCountByDatesRequest &request)
@@ -13865,25 +16112,32 @@ CwpClient::DescribeVulCountByDatesOutcome CwpClient::DescribeVulCountByDates(con
 
 void CwpClient::DescribeVulCountByDatesAsync(const DescribeVulCountByDatesRequest& request, const DescribeVulCountByDatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeVulCountByDates(request), context);
-    };
+    using Req = const DescribeVulCountByDatesRequest&;
+    using Resp = DescribeVulCountByDatesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeVulCountByDates", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeVulCountByDatesOutcomeCallable CwpClient::DescribeVulCountByDatesCallable(const DescribeVulCountByDatesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeVulCountByDatesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeVulCountByDates(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeVulCountByDatesOutcome>>();
+    DescribeVulCountByDatesAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeVulCountByDatesRequest&,
+        DescribeVulCountByDatesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeVulCveIdInfoOutcome CwpClient::DescribeVulCveIdInfo(const DescribeVulCveIdInfoRequest &request)
@@ -13908,25 +16162,32 @@ CwpClient::DescribeVulCveIdInfoOutcome CwpClient::DescribeVulCveIdInfo(const Des
 
 void CwpClient::DescribeVulCveIdInfoAsync(const DescribeVulCveIdInfoRequest& request, const DescribeVulCveIdInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeVulCveIdInfo(request), context);
-    };
+    using Req = const DescribeVulCveIdInfoRequest&;
+    using Resp = DescribeVulCveIdInfoResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeVulCveIdInfo", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeVulCveIdInfoOutcomeCallable CwpClient::DescribeVulCveIdInfoCallable(const DescribeVulCveIdInfoRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeVulCveIdInfoOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeVulCveIdInfo(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeVulCveIdInfoOutcome>>();
+    DescribeVulCveIdInfoAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeVulCveIdInfoRequest&,
+        DescribeVulCveIdInfoOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeVulDefenceEventOutcome CwpClient::DescribeVulDefenceEvent(const DescribeVulDefenceEventRequest &request)
@@ -13951,25 +16212,32 @@ CwpClient::DescribeVulDefenceEventOutcome CwpClient::DescribeVulDefenceEvent(con
 
 void CwpClient::DescribeVulDefenceEventAsync(const DescribeVulDefenceEventRequest& request, const DescribeVulDefenceEventAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeVulDefenceEvent(request), context);
-    };
+    using Req = const DescribeVulDefenceEventRequest&;
+    using Resp = DescribeVulDefenceEventResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeVulDefenceEvent", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeVulDefenceEventOutcomeCallable CwpClient::DescribeVulDefenceEventCallable(const DescribeVulDefenceEventRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeVulDefenceEventOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeVulDefenceEvent(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeVulDefenceEventOutcome>>();
+    DescribeVulDefenceEventAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeVulDefenceEventRequest&,
+        DescribeVulDefenceEventOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeVulDefenceListOutcome CwpClient::DescribeVulDefenceList(const DescribeVulDefenceListRequest &request)
@@ -13994,25 +16262,32 @@ CwpClient::DescribeVulDefenceListOutcome CwpClient::DescribeVulDefenceList(const
 
 void CwpClient::DescribeVulDefenceListAsync(const DescribeVulDefenceListRequest& request, const DescribeVulDefenceListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeVulDefenceList(request), context);
-    };
+    using Req = const DescribeVulDefenceListRequest&;
+    using Resp = DescribeVulDefenceListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeVulDefenceList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeVulDefenceListOutcomeCallable CwpClient::DescribeVulDefenceListCallable(const DescribeVulDefenceListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeVulDefenceListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeVulDefenceList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeVulDefenceListOutcome>>();
+    DescribeVulDefenceListAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeVulDefenceListRequest&,
+        DescribeVulDefenceListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeVulDefenceOverviewOutcome CwpClient::DescribeVulDefenceOverview(const DescribeVulDefenceOverviewRequest &request)
@@ -14037,25 +16312,32 @@ CwpClient::DescribeVulDefenceOverviewOutcome CwpClient::DescribeVulDefenceOvervi
 
 void CwpClient::DescribeVulDefenceOverviewAsync(const DescribeVulDefenceOverviewRequest& request, const DescribeVulDefenceOverviewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeVulDefenceOverview(request), context);
-    };
+    using Req = const DescribeVulDefenceOverviewRequest&;
+    using Resp = DescribeVulDefenceOverviewResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeVulDefenceOverview", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeVulDefenceOverviewOutcomeCallable CwpClient::DescribeVulDefenceOverviewCallable(const DescribeVulDefenceOverviewRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeVulDefenceOverviewOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeVulDefenceOverview(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeVulDefenceOverviewOutcome>>();
+    DescribeVulDefenceOverviewAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeVulDefenceOverviewRequest&,
+        DescribeVulDefenceOverviewOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeVulDefencePluginDetailOutcome CwpClient::DescribeVulDefencePluginDetail(const DescribeVulDefencePluginDetailRequest &request)
@@ -14080,25 +16362,32 @@ CwpClient::DescribeVulDefencePluginDetailOutcome CwpClient::DescribeVulDefencePl
 
 void CwpClient::DescribeVulDefencePluginDetailAsync(const DescribeVulDefencePluginDetailRequest& request, const DescribeVulDefencePluginDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeVulDefencePluginDetail(request), context);
-    };
+    using Req = const DescribeVulDefencePluginDetailRequest&;
+    using Resp = DescribeVulDefencePluginDetailResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeVulDefencePluginDetail", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeVulDefencePluginDetailOutcomeCallable CwpClient::DescribeVulDefencePluginDetailCallable(const DescribeVulDefencePluginDetailRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeVulDefencePluginDetailOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeVulDefencePluginDetail(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeVulDefencePluginDetailOutcome>>();
+    DescribeVulDefencePluginDetailAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeVulDefencePluginDetailRequest&,
+        DescribeVulDefencePluginDetailOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeVulDefencePluginExceptionCountOutcome CwpClient::DescribeVulDefencePluginExceptionCount(const DescribeVulDefencePluginExceptionCountRequest &request)
@@ -14123,25 +16412,32 @@ CwpClient::DescribeVulDefencePluginExceptionCountOutcome CwpClient::DescribeVulD
 
 void CwpClient::DescribeVulDefencePluginExceptionCountAsync(const DescribeVulDefencePluginExceptionCountRequest& request, const DescribeVulDefencePluginExceptionCountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeVulDefencePluginExceptionCount(request), context);
-    };
+    using Req = const DescribeVulDefencePluginExceptionCountRequest&;
+    using Resp = DescribeVulDefencePluginExceptionCountResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeVulDefencePluginExceptionCount", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeVulDefencePluginExceptionCountOutcomeCallable CwpClient::DescribeVulDefencePluginExceptionCountCallable(const DescribeVulDefencePluginExceptionCountRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeVulDefencePluginExceptionCountOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeVulDefencePluginExceptionCount(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeVulDefencePluginExceptionCountOutcome>>();
+    DescribeVulDefencePluginExceptionCountAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeVulDefencePluginExceptionCountRequest&,
+        DescribeVulDefencePluginExceptionCountOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeVulDefencePluginStatusOutcome CwpClient::DescribeVulDefencePluginStatus(const DescribeVulDefencePluginStatusRequest &request)
@@ -14166,25 +16462,32 @@ CwpClient::DescribeVulDefencePluginStatusOutcome CwpClient::DescribeVulDefencePl
 
 void CwpClient::DescribeVulDefencePluginStatusAsync(const DescribeVulDefencePluginStatusRequest& request, const DescribeVulDefencePluginStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeVulDefencePluginStatus(request), context);
-    };
+    using Req = const DescribeVulDefencePluginStatusRequest&;
+    using Resp = DescribeVulDefencePluginStatusResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeVulDefencePluginStatus", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeVulDefencePluginStatusOutcomeCallable CwpClient::DescribeVulDefencePluginStatusCallable(const DescribeVulDefencePluginStatusRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeVulDefencePluginStatusOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeVulDefencePluginStatus(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeVulDefencePluginStatusOutcome>>();
+    DescribeVulDefencePluginStatusAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeVulDefencePluginStatusRequest&,
+        DescribeVulDefencePluginStatusOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeVulDefenceSettingOutcome CwpClient::DescribeVulDefenceSetting(const DescribeVulDefenceSettingRequest &request)
@@ -14209,25 +16512,32 @@ CwpClient::DescribeVulDefenceSettingOutcome CwpClient::DescribeVulDefenceSetting
 
 void CwpClient::DescribeVulDefenceSettingAsync(const DescribeVulDefenceSettingRequest& request, const DescribeVulDefenceSettingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeVulDefenceSetting(request), context);
-    };
+    using Req = const DescribeVulDefenceSettingRequest&;
+    using Resp = DescribeVulDefenceSettingResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeVulDefenceSetting", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeVulDefenceSettingOutcomeCallable CwpClient::DescribeVulDefenceSettingCallable(const DescribeVulDefenceSettingRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeVulDefenceSettingOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeVulDefenceSetting(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeVulDefenceSettingOutcome>>();
+    DescribeVulDefenceSettingAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeVulDefenceSettingRequest&,
+        DescribeVulDefenceSettingOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeVulEffectHostListOutcome CwpClient::DescribeVulEffectHostList(const DescribeVulEffectHostListRequest &request)
@@ -14252,25 +16562,32 @@ CwpClient::DescribeVulEffectHostListOutcome CwpClient::DescribeVulEffectHostList
 
 void CwpClient::DescribeVulEffectHostListAsync(const DescribeVulEffectHostListRequest& request, const DescribeVulEffectHostListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeVulEffectHostList(request), context);
-    };
+    using Req = const DescribeVulEffectHostListRequest&;
+    using Resp = DescribeVulEffectHostListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeVulEffectHostList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeVulEffectHostListOutcomeCallable CwpClient::DescribeVulEffectHostListCallable(const DescribeVulEffectHostListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeVulEffectHostListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeVulEffectHostList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeVulEffectHostListOutcome>>();
+    DescribeVulEffectHostListAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeVulEffectHostListRequest&,
+        DescribeVulEffectHostListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeVulEffectModulesOutcome CwpClient::DescribeVulEffectModules(const DescribeVulEffectModulesRequest &request)
@@ -14295,25 +16612,32 @@ CwpClient::DescribeVulEffectModulesOutcome CwpClient::DescribeVulEffectModules(c
 
 void CwpClient::DescribeVulEffectModulesAsync(const DescribeVulEffectModulesRequest& request, const DescribeVulEffectModulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeVulEffectModules(request), context);
-    };
+    using Req = const DescribeVulEffectModulesRequest&;
+    using Resp = DescribeVulEffectModulesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeVulEffectModules", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeVulEffectModulesOutcomeCallable CwpClient::DescribeVulEffectModulesCallable(const DescribeVulEffectModulesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeVulEffectModulesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeVulEffectModules(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeVulEffectModulesOutcome>>();
+    DescribeVulEffectModulesAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeVulEffectModulesRequest&,
+        DescribeVulEffectModulesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeVulEmergentMsgOutcome CwpClient::DescribeVulEmergentMsg(const DescribeVulEmergentMsgRequest &request)
@@ -14338,25 +16662,32 @@ CwpClient::DescribeVulEmergentMsgOutcome CwpClient::DescribeVulEmergentMsg(const
 
 void CwpClient::DescribeVulEmergentMsgAsync(const DescribeVulEmergentMsgRequest& request, const DescribeVulEmergentMsgAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeVulEmergentMsg(request), context);
-    };
+    using Req = const DescribeVulEmergentMsgRequest&;
+    using Resp = DescribeVulEmergentMsgResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeVulEmergentMsg", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeVulEmergentMsgOutcomeCallable CwpClient::DescribeVulEmergentMsgCallable(const DescribeVulEmergentMsgRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeVulEmergentMsgOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeVulEmergentMsg(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeVulEmergentMsgOutcome>>();
+    DescribeVulEmergentMsgAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeVulEmergentMsgRequest&,
+        DescribeVulEmergentMsgOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeVulFixStatusOutcome CwpClient::DescribeVulFixStatus(const DescribeVulFixStatusRequest &request)
@@ -14381,25 +16712,32 @@ CwpClient::DescribeVulFixStatusOutcome CwpClient::DescribeVulFixStatus(const Des
 
 void CwpClient::DescribeVulFixStatusAsync(const DescribeVulFixStatusRequest& request, const DescribeVulFixStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeVulFixStatus(request), context);
-    };
+    using Req = const DescribeVulFixStatusRequest&;
+    using Resp = DescribeVulFixStatusResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeVulFixStatus", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeVulFixStatusOutcomeCallable CwpClient::DescribeVulFixStatusCallable(const DescribeVulFixStatusRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeVulFixStatusOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeVulFixStatus(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeVulFixStatusOutcome>>();
+    DescribeVulFixStatusAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeVulFixStatusRequest&,
+        DescribeVulFixStatusOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeVulHostCountScanTimeOutcome CwpClient::DescribeVulHostCountScanTime(const DescribeVulHostCountScanTimeRequest &request)
@@ -14424,25 +16762,32 @@ CwpClient::DescribeVulHostCountScanTimeOutcome CwpClient::DescribeVulHostCountSc
 
 void CwpClient::DescribeVulHostCountScanTimeAsync(const DescribeVulHostCountScanTimeRequest& request, const DescribeVulHostCountScanTimeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeVulHostCountScanTime(request), context);
-    };
+    using Req = const DescribeVulHostCountScanTimeRequest&;
+    using Resp = DescribeVulHostCountScanTimeResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeVulHostCountScanTime", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeVulHostCountScanTimeOutcomeCallable CwpClient::DescribeVulHostCountScanTimeCallable(const DescribeVulHostCountScanTimeRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeVulHostCountScanTimeOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeVulHostCountScanTime(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeVulHostCountScanTimeOutcome>>();
+    DescribeVulHostCountScanTimeAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeVulHostCountScanTimeRequest&,
+        DescribeVulHostCountScanTimeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeVulHostTopOutcome CwpClient::DescribeVulHostTop(const DescribeVulHostTopRequest &request)
@@ -14467,25 +16812,32 @@ CwpClient::DescribeVulHostTopOutcome CwpClient::DescribeVulHostTop(const Describ
 
 void CwpClient::DescribeVulHostTopAsync(const DescribeVulHostTopRequest& request, const DescribeVulHostTopAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeVulHostTop(request), context);
-    };
+    using Req = const DescribeVulHostTopRequest&;
+    using Resp = DescribeVulHostTopResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeVulHostTop", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeVulHostTopOutcomeCallable CwpClient::DescribeVulHostTopCallable(const DescribeVulHostTopRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeVulHostTopOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeVulHostTop(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeVulHostTopOutcome>>();
+    DescribeVulHostTopAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeVulHostTopRequest&,
+        DescribeVulHostTopOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeVulInfoCvssOutcome CwpClient::DescribeVulInfoCvss(const DescribeVulInfoCvssRequest &request)
@@ -14510,25 +16862,32 @@ CwpClient::DescribeVulInfoCvssOutcome CwpClient::DescribeVulInfoCvss(const Descr
 
 void CwpClient::DescribeVulInfoCvssAsync(const DescribeVulInfoCvssRequest& request, const DescribeVulInfoCvssAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeVulInfoCvss(request), context);
-    };
+    using Req = const DescribeVulInfoCvssRequest&;
+    using Resp = DescribeVulInfoCvssResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeVulInfoCvss", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeVulInfoCvssOutcomeCallable CwpClient::DescribeVulInfoCvssCallable(const DescribeVulInfoCvssRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeVulInfoCvssOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeVulInfoCvss(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeVulInfoCvssOutcome>>();
+    DescribeVulInfoCvssAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeVulInfoCvssRequest&,
+        DescribeVulInfoCvssOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeVulLabelsOutcome CwpClient::DescribeVulLabels(const DescribeVulLabelsRequest &request)
@@ -14553,25 +16912,32 @@ CwpClient::DescribeVulLabelsOutcome CwpClient::DescribeVulLabels(const DescribeV
 
 void CwpClient::DescribeVulLabelsAsync(const DescribeVulLabelsRequest& request, const DescribeVulLabelsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeVulLabels(request), context);
-    };
+    using Req = const DescribeVulLabelsRequest&;
+    using Resp = DescribeVulLabelsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeVulLabels", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeVulLabelsOutcomeCallable CwpClient::DescribeVulLabelsCallable(const DescribeVulLabelsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeVulLabelsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeVulLabels(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeVulLabelsOutcome>>();
+    DescribeVulLabelsAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeVulLabelsRequest&,
+        DescribeVulLabelsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeVulLevelCountOutcome CwpClient::DescribeVulLevelCount(const DescribeVulLevelCountRequest &request)
@@ -14596,25 +16962,32 @@ CwpClient::DescribeVulLevelCountOutcome CwpClient::DescribeVulLevelCount(const D
 
 void CwpClient::DescribeVulLevelCountAsync(const DescribeVulLevelCountRequest& request, const DescribeVulLevelCountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeVulLevelCount(request), context);
-    };
+    using Req = const DescribeVulLevelCountRequest&;
+    using Resp = DescribeVulLevelCountResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeVulLevelCount", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeVulLevelCountOutcomeCallable CwpClient::DescribeVulLevelCountCallable(const DescribeVulLevelCountRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeVulLevelCountOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeVulLevelCount(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeVulLevelCountOutcome>>();
+    DescribeVulLevelCountAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeVulLevelCountRequest&,
+        DescribeVulLevelCountOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeVulListOutcome CwpClient::DescribeVulList(const DescribeVulListRequest &request)
@@ -14639,25 +17012,32 @@ CwpClient::DescribeVulListOutcome CwpClient::DescribeVulList(const DescribeVulLi
 
 void CwpClient::DescribeVulListAsync(const DescribeVulListRequest& request, const DescribeVulListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeVulList(request), context);
-    };
+    using Req = const DescribeVulListRequest&;
+    using Resp = DescribeVulListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeVulList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeVulListOutcomeCallable CwpClient::DescribeVulListCallable(const DescribeVulListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeVulListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeVulList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeVulListOutcome>>();
+    DescribeVulListAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeVulListRequest&,
+        DescribeVulListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeVulOverviewOutcome CwpClient::DescribeVulOverview(const DescribeVulOverviewRequest &request)
@@ -14682,25 +17062,32 @@ CwpClient::DescribeVulOverviewOutcome CwpClient::DescribeVulOverview(const Descr
 
 void CwpClient::DescribeVulOverviewAsync(const DescribeVulOverviewRequest& request, const DescribeVulOverviewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeVulOverview(request), context);
-    };
+    using Req = const DescribeVulOverviewRequest&;
+    using Resp = DescribeVulOverviewResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeVulOverview", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeVulOverviewOutcomeCallable CwpClient::DescribeVulOverviewCallable(const DescribeVulOverviewRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeVulOverviewOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeVulOverview(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeVulOverviewOutcome>>();
+    DescribeVulOverviewAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeVulOverviewRequest&,
+        DescribeVulOverviewOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeVulStoreListOutcome CwpClient::DescribeVulStoreList(const DescribeVulStoreListRequest &request)
@@ -14725,25 +17112,32 @@ CwpClient::DescribeVulStoreListOutcome CwpClient::DescribeVulStoreList(const Des
 
 void CwpClient::DescribeVulStoreListAsync(const DescribeVulStoreListRequest& request, const DescribeVulStoreListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeVulStoreList(request), context);
-    };
+    using Req = const DescribeVulStoreListRequest&;
+    using Resp = DescribeVulStoreListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeVulStoreList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeVulStoreListOutcomeCallable CwpClient::DescribeVulStoreListCallable(const DescribeVulStoreListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeVulStoreListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeVulStoreList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeVulStoreListOutcome>>();
+    DescribeVulStoreListAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeVulStoreListRequest&,
+        DescribeVulStoreListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeVulTopOutcome CwpClient::DescribeVulTop(const DescribeVulTopRequest &request)
@@ -14768,25 +17162,32 @@ CwpClient::DescribeVulTopOutcome CwpClient::DescribeVulTop(const DescribeVulTopR
 
 void CwpClient::DescribeVulTopAsync(const DescribeVulTopRequest& request, const DescribeVulTopAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeVulTop(request), context);
-    };
+    using Req = const DescribeVulTopRequest&;
+    using Resp = DescribeVulTopResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeVulTop", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeVulTopOutcomeCallable CwpClient::DescribeVulTopCallable(const DescribeVulTopRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeVulTopOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeVulTop(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeVulTopOutcome>>();
+    DescribeVulTopAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeVulTopRequest&,
+        DescribeVulTopOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeVulTrendOutcome CwpClient::DescribeVulTrend(const DescribeVulTrendRequest &request)
@@ -14811,25 +17212,32 @@ CwpClient::DescribeVulTrendOutcome CwpClient::DescribeVulTrend(const DescribeVul
 
 void CwpClient::DescribeVulTrendAsync(const DescribeVulTrendRequest& request, const DescribeVulTrendAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeVulTrend(request), context);
-    };
+    using Req = const DescribeVulTrendRequest&;
+    using Resp = DescribeVulTrendResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeVulTrend", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeVulTrendOutcomeCallable CwpClient::DescribeVulTrendCallable(const DescribeVulTrendRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeVulTrendOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeVulTrend(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeVulTrendOutcome>>();
+    DescribeVulTrendAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeVulTrendRequest&,
+        DescribeVulTrendOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeWarningHostConfigOutcome CwpClient::DescribeWarningHostConfig(const DescribeWarningHostConfigRequest &request)
@@ -14854,25 +17262,32 @@ CwpClient::DescribeWarningHostConfigOutcome CwpClient::DescribeWarningHostConfig
 
 void CwpClient::DescribeWarningHostConfigAsync(const DescribeWarningHostConfigRequest& request, const DescribeWarningHostConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeWarningHostConfig(request), context);
-    };
+    using Req = const DescribeWarningHostConfigRequest&;
+    using Resp = DescribeWarningHostConfigResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeWarningHostConfig", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeWarningHostConfigOutcomeCallable CwpClient::DescribeWarningHostConfigCallable(const DescribeWarningHostConfigRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeWarningHostConfigOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeWarningHostConfig(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeWarningHostConfigOutcome>>();
+    DescribeWarningHostConfigAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeWarningHostConfigRequest&,
+        DescribeWarningHostConfigOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeWarningListOutcome CwpClient::DescribeWarningList(const DescribeWarningListRequest &request)
@@ -14897,25 +17312,32 @@ CwpClient::DescribeWarningListOutcome CwpClient::DescribeWarningList(const Descr
 
 void CwpClient::DescribeWarningListAsync(const DescribeWarningListRequest& request, const DescribeWarningListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeWarningList(request), context);
-    };
+    using Req = const DescribeWarningListRequest&;
+    using Resp = DescribeWarningListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeWarningList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeWarningListOutcomeCallable CwpClient::DescribeWarningListCallable(const DescribeWarningListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeWarningListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeWarningList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeWarningListOutcome>>();
+    DescribeWarningListAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeWarningListRequest&,
+        DescribeWarningListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeWebHookPolicyOutcome CwpClient::DescribeWebHookPolicy(const DescribeWebHookPolicyRequest &request)
@@ -14940,25 +17362,32 @@ CwpClient::DescribeWebHookPolicyOutcome CwpClient::DescribeWebHookPolicy(const D
 
 void CwpClient::DescribeWebHookPolicyAsync(const DescribeWebHookPolicyRequest& request, const DescribeWebHookPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeWebHookPolicy(request), context);
-    };
+    using Req = const DescribeWebHookPolicyRequest&;
+    using Resp = DescribeWebHookPolicyResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeWebHookPolicy", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeWebHookPolicyOutcomeCallable CwpClient::DescribeWebHookPolicyCallable(const DescribeWebHookPolicyRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeWebHookPolicyOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeWebHookPolicy(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeWebHookPolicyOutcome>>();
+    DescribeWebHookPolicyAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeWebHookPolicyRequest&,
+        DescribeWebHookPolicyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeWebHookReceiverOutcome CwpClient::DescribeWebHookReceiver(const DescribeWebHookReceiverRequest &request)
@@ -14983,25 +17412,32 @@ CwpClient::DescribeWebHookReceiverOutcome CwpClient::DescribeWebHookReceiver(con
 
 void CwpClient::DescribeWebHookReceiverAsync(const DescribeWebHookReceiverRequest& request, const DescribeWebHookReceiverAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeWebHookReceiver(request), context);
-    };
+    using Req = const DescribeWebHookReceiverRequest&;
+    using Resp = DescribeWebHookReceiverResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeWebHookReceiver", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeWebHookReceiverOutcomeCallable CwpClient::DescribeWebHookReceiverCallable(const DescribeWebHookReceiverRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeWebHookReceiverOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeWebHookReceiver(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeWebHookReceiverOutcome>>();
+    DescribeWebHookReceiverAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeWebHookReceiverRequest&,
+        DescribeWebHookReceiverOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeWebHookReceiverUsageOutcome CwpClient::DescribeWebHookReceiverUsage(const DescribeWebHookReceiverUsageRequest &request)
@@ -15026,25 +17462,32 @@ CwpClient::DescribeWebHookReceiverUsageOutcome CwpClient::DescribeWebHookReceive
 
 void CwpClient::DescribeWebHookReceiverUsageAsync(const DescribeWebHookReceiverUsageRequest& request, const DescribeWebHookReceiverUsageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeWebHookReceiverUsage(request), context);
-    };
+    using Req = const DescribeWebHookReceiverUsageRequest&;
+    using Resp = DescribeWebHookReceiverUsageResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeWebHookReceiverUsage", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeWebHookReceiverUsageOutcomeCallable CwpClient::DescribeWebHookReceiverUsageCallable(const DescribeWebHookReceiverUsageRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeWebHookReceiverUsageOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeWebHookReceiverUsage(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeWebHookReceiverUsageOutcome>>();
+    DescribeWebHookReceiverUsageAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeWebHookReceiverUsageRequest&,
+        DescribeWebHookReceiverUsageOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeWebHookRuleOutcome CwpClient::DescribeWebHookRule(const DescribeWebHookRuleRequest &request)
@@ -15069,25 +17512,32 @@ CwpClient::DescribeWebHookRuleOutcome CwpClient::DescribeWebHookRule(const Descr
 
 void CwpClient::DescribeWebHookRuleAsync(const DescribeWebHookRuleRequest& request, const DescribeWebHookRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeWebHookRule(request), context);
-    };
+    using Req = const DescribeWebHookRuleRequest&;
+    using Resp = DescribeWebHookRuleResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeWebHookRule", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeWebHookRuleOutcomeCallable CwpClient::DescribeWebHookRuleCallable(const DescribeWebHookRuleRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeWebHookRuleOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeWebHookRule(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeWebHookRuleOutcome>>();
+    DescribeWebHookRuleAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeWebHookRuleRequest&,
+        DescribeWebHookRuleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeWebHookRulesOutcome CwpClient::DescribeWebHookRules(const DescribeWebHookRulesRequest &request)
@@ -15112,25 +17562,32 @@ CwpClient::DescribeWebHookRulesOutcome CwpClient::DescribeWebHookRules(const Des
 
 void CwpClient::DescribeWebHookRulesAsync(const DescribeWebHookRulesRequest& request, const DescribeWebHookRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeWebHookRules(request), context);
-    };
+    using Req = const DescribeWebHookRulesRequest&;
+    using Resp = DescribeWebHookRulesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeWebHookRules", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeWebHookRulesOutcomeCallable CwpClient::DescribeWebHookRulesCallable(const DescribeWebHookRulesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeWebHookRulesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeWebHookRules(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeWebHookRulesOutcome>>();
+    DescribeWebHookRulesAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeWebHookRulesRequest&,
+        DescribeWebHookRulesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeWebPageEventListOutcome CwpClient::DescribeWebPageEventList(const DescribeWebPageEventListRequest &request)
@@ -15155,25 +17612,32 @@ CwpClient::DescribeWebPageEventListOutcome CwpClient::DescribeWebPageEventList(c
 
 void CwpClient::DescribeWebPageEventListAsync(const DescribeWebPageEventListRequest& request, const DescribeWebPageEventListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeWebPageEventList(request), context);
-    };
+    using Req = const DescribeWebPageEventListRequest&;
+    using Resp = DescribeWebPageEventListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeWebPageEventList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeWebPageEventListOutcomeCallable CwpClient::DescribeWebPageEventListCallable(const DescribeWebPageEventListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeWebPageEventListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeWebPageEventList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeWebPageEventListOutcome>>();
+    DescribeWebPageEventListAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeWebPageEventListRequest&,
+        DescribeWebPageEventListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeWebPageGeneralizeOutcome CwpClient::DescribeWebPageGeneralize(const DescribeWebPageGeneralizeRequest &request)
@@ -15198,25 +17662,32 @@ CwpClient::DescribeWebPageGeneralizeOutcome CwpClient::DescribeWebPageGeneralize
 
 void CwpClient::DescribeWebPageGeneralizeAsync(const DescribeWebPageGeneralizeRequest& request, const DescribeWebPageGeneralizeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeWebPageGeneralize(request), context);
-    };
+    using Req = const DescribeWebPageGeneralizeRequest&;
+    using Resp = DescribeWebPageGeneralizeResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeWebPageGeneralize", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeWebPageGeneralizeOutcomeCallable CwpClient::DescribeWebPageGeneralizeCallable(const DescribeWebPageGeneralizeRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeWebPageGeneralizeOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeWebPageGeneralize(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeWebPageGeneralizeOutcome>>();
+    DescribeWebPageGeneralizeAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeWebPageGeneralizeRequest&,
+        DescribeWebPageGeneralizeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeWebPageProtectStatOutcome CwpClient::DescribeWebPageProtectStat(const DescribeWebPageProtectStatRequest &request)
@@ -15241,25 +17712,32 @@ CwpClient::DescribeWebPageProtectStatOutcome CwpClient::DescribeWebPageProtectSt
 
 void CwpClient::DescribeWebPageProtectStatAsync(const DescribeWebPageProtectStatRequest& request, const DescribeWebPageProtectStatAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeWebPageProtectStat(request), context);
-    };
+    using Req = const DescribeWebPageProtectStatRequest&;
+    using Resp = DescribeWebPageProtectStatResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeWebPageProtectStat", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeWebPageProtectStatOutcomeCallable CwpClient::DescribeWebPageProtectStatCallable(const DescribeWebPageProtectStatRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeWebPageProtectStatOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeWebPageProtectStat(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeWebPageProtectStatOutcome>>();
+    DescribeWebPageProtectStatAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeWebPageProtectStatRequest&,
+        DescribeWebPageProtectStatOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DescribeWebPageServiceInfoOutcome CwpClient::DescribeWebPageServiceInfo(const DescribeWebPageServiceInfoRequest &request)
@@ -15284,25 +17762,32 @@ CwpClient::DescribeWebPageServiceInfoOutcome CwpClient::DescribeWebPageServiceIn
 
 void CwpClient::DescribeWebPageServiceInfoAsync(const DescribeWebPageServiceInfoRequest& request, const DescribeWebPageServiceInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeWebPageServiceInfo(request), context);
-    };
+    using Req = const DescribeWebPageServiceInfoRequest&;
+    using Resp = DescribeWebPageServiceInfoResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeWebPageServiceInfo", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DescribeWebPageServiceInfoOutcomeCallable CwpClient::DescribeWebPageServiceInfoCallable(const DescribeWebPageServiceInfoRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeWebPageServiceInfoOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeWebPageServiceInfo(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeWebPageServiceInfoOutcome>>();
+    DescribeWebPageServiceInfoAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeWebPageServiceInfoRequest&,
+        DescribeWebPageServiceInfoOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::DestroyOrderOutcome CwpClient::DestroyOrder(const DestroyOrderRequest &request)
@@ -15327,25 +17812,32 @@ CwpClient::DestroyOrderOutcome CwpClient::DestroyOrder(const DestroyOrderRequest
 
 void CwpClient::DestroyOrderAsync(const DestroyOrderRequest& request, const DestroyOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DestroyOrder(request), context);
-    };
+    using Req = const DestroyOrderRequest&;
+    using Resp = DestroyOrderResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DestroyOrder", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::DestroyOrderOutcomeCallable CwpClient::DestroyOrderCallable(const DestroyOrderRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DestroyOrderOutcome()>>(
-        [this, request]()
-        {
-            return this->DestroyOrder(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DestroyOrderOutcome>>();
+    DestroyOrderAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DestroyOrderRequest&,
+        DestroyOrderOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::EditBashRulesOutcome CwpClient::EditBashRules(const EditBashRulesRequest &request)
@@ -15370,25 +17862,32 @@ CwpClient::EditBashRulesOutcome CwpClient::EditBashRules(const EditBashRulesRequ
 
 void CwpClient::EditBashRulesAsync(const EditBashRulesRequest& request, const EditBashRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->EditBashRules(request), context);
-    };
+    using Req = const EditBashRulesRequest&;
+    using Resp = EditBashRulesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "EditBashRules", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::EditBashRulesOutcomeCallable CwpClient::EditBashRulesCallable(const EditBashRulesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<EditBashRulesOutcome()>>(
-        [this, request]()
-        {
-            return this->EditBashRules(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<EditBashRulesOutcome>>();
+    EditBashRulesAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const EditBashRulesRequest&,
+        EditBashRulesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::EditPrivilegeRulesOutcome CwpClient::EditPrivilegeRules(const EditPrivilegeRulesRequest &request)
@@ -15413,25 +17912,32 @@ CwpClient::EditPrivilegeRulesOutcome CwpClient::EditPrivilegeRules(const EditPri
 
 void CwpClient::EditPrivilegeRulesAsync(const EditPrivilegeRulesRequest& request, const EditPrivilegeRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->EditPrivilegeRules(request), context);
-    };
+    using Req = const EditPrivilegeRulesRequest&;
+    using Resp = EditPrivilegeRulesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "EditPrivilegeRules", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::EditPrivilegeRulesOutcomeCallable CwpClient::EditPrivilegeRulesCallable(const EditPrivilegeRulesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<EditPrivilegeRulesOutcome()>>(
-        [this, request]()
-        {
-            return this->EditPrivilegeRules(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<EditPrivilegeRulesOutcome>>();
+    EditPrivilegeRulesAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const EditPrivilegeRulesRequest&,
+        EditPrivilegeRulesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::EditReverseShellRulesOutcome CwpClient::EditReverseShellRules(const EditReverseShellRulesRequest &request)
@@ -15456,25 +17962,32 @@ CwpClient::EditReverseShellRulesOutcome CwpClient::EditReverseShellRules(const E
 
 void CwpClient::EditReverseShellRulesAsync(const EditReverseShellRulesRequest& request, const EditReverseShellRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->EditReverseShellRules(request), context);
-    };
+    using Req = const EditReverseShellRulesRequest&;
+    using Resp = EditReverseShellRulesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "EditReverseShellRules", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::EditReverseShellRulesOutcomeCallable CwpClient::EditReverseShellRulesCallable(const EditReverseShellRulesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<EditReverseShellRulesOutcome()>>(
-        [this, request]()
-        {
-            return this->EditReverseShellRules(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<EditReverseShellRulesOutcome>>();
+    EditReverseShellRulesAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const EditReverseShellRulesRequest&,
+        EditReverseShellRulesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::EditTagsOutcome CwpClient::EditTags(const EditTagsRequest &request)
@@ -15499,25 +18012,32 @@ CwpClient::EditTagsOutcome CwpClient::EditTags(const EditTagsRequest &request)
 
 void CwpClient::EditTagsAsync(const EditTagsRequest& request, const EditTagsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->EditTags(request), context);
-    };
+    using Req = const EditTagsRequest&;
+    using Resp = EditTagsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "EditTags", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::EditTagsOutcomeCallable CwpClient::EditTagsCallable(const EditTagsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<EditTagsOutcome()>>(
-        [this, request]()
-        {
-            return this->EditTags(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<EditTagsOutcome>>();
+    EditTagsAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const EditTagsRequest&,
+        EditTagsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::ExportAssetAppListOutcome CwpClient::ExportAssetAppList(const ExportAssetAppListRequest &request)
@@ -15542,25 +18062,32 @@ CwpClient::ExportAssetAppListOutcome CwpClient::ExportAssetAppList(const ExportA
 
 void CwpClient::ExportAssetAppListAsync(const ExportAssetAppListRequest& request, const ExportAssetAppListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ExportAssetAppList(request), context);
-    };
+    using Req = const ExportAssetAppListRequest&;
+    using Resp = ExportAssetAppListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ExportAssetAppList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::ExportAssetAppListOutcomeCallable CwpClient::ExportAssetAppListCallable(const ExportAssetAppListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ExportAssetAppListOutcome()>>(
-        [this, request]()
-        {
-            return this->ExportAssetAppList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ExportAssetAppListOutcome>>();
+    ExportAssetAppListAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const ExportAssetAppListRequest&,
+        ExportAssetAppListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::ExportAssetCoreModuleListOutcome CwpClient::ExportAssetCoreModuleList(const ExportAssetCoreModuleListRequest &request)
@@ -15585,25 +18112,32 @@ CwpClient::ExportAssetCoreModuleListOutcome CwpClient::ExportAssetCoreModuleList
 
 void CwpClient::ExportAssetCoreModuleListAsync(const ExportAssetCoreModuleListRequest& request, const ExportAssetCoreModuleListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ExportAssetCoreModuleList(request), context);
-    };
+    using Req = const ExportAssetCoreModuleListRequest&;
+    using Resp = ExportAssetCoreModuleListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ExportAssetCoreModuleList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::ExportAssetCoreModuleListOutcomeCallable CwpClient::ExportAssetCoreModuleListCallable(const ExportAssetCoreModuleListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ExportAssetCoreModuleListOutcome()>>(
-        [this, request]()
-        {
-            return this->ExportAssetCoreModuleList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ExportAssetCoreModuleListOutcome>>();
+    ExportAssetCoreModuleListAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const ExportAssetCoreModuleListRequest&,
+        ExportAssetCoreModuleListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::ExportAssetDatabaseListOutcome CwpClient::ExportAssetDatabaseList(const ExportAssetDatabaseListRequest &request)
@@ -15628,25 +18162,32 @@ CwpClient::ExportAssetDatabaseListOutcome CwpClient::ExportAssetDatabaseList(con
 
 void CwpClient::ExportAssetDatabaseListAsync(const ExportAssetDatabaseListRequest& request, const ExportAssetDatabaseListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ExportAssetDatabaseList(request), context);
-    };
+    using Req = const ExportAssetDatabaseListRequest&;
+    using Resp = ExportAssetDatabaseListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ExportAssetDatabaseList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::ExportAssetDatabaseListOutcomeCallable CwpClient::ExportAssetDatabaseListCallable(const ExportAssetDatabaseListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ExportAssetDatabaseListOutcome()>>(
-        [this, request]()
-        {
-            return this->ExportAssetDatabaseList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ExportAssetDatabaseListOutcome>>();
+    ExportAssetDatabaseListAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const ExportAssetDatabaseListRequest&,
+        ExportAssetDatabaseListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::ExportAssetEnvListOutcome CwpClient::ExportAssetEnvList(const ExportAssetEnvListRequest &request)
@@ -15671,25 +18212,32 @@ CwpClient::ExportAssetEnvListOutcome CwpClient::ExportAssetEnvList(const ExportA
 
 void CwpClient::ExportAssetEnvListAsync(const ExportAssetEnvListRequest& request, const ExportAssetEnvListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ExportAssetEnvList(request), context);
-    };
+    using Req = const ExportAssetEnvListRequest&;
+    using Resp = ExportAssetEnvListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ExportAssetEnvList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::ExportAssetEnvListOutcomeCallable CwpClient::ExportAssetEnvListCallable(const ExportAssetEnvListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ExportAssetEnvListOutcome()>>(
-        [this, request]()
-        {
-            return this->ExportAssetEnvList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ExportAssetEnvListOutcome>>();
+    ExportAssetEnvListAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const ExportAssetEnvListRequest&,
+        ExportAssetEnvListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::ExportAssetInitServiceListOutcome CwpClient::ExportAssetInitServiceList(const ExportAssetInitServiceListRequest &request)
@@ -15714,25 +18262,32 @@ CwpClient::ExportAssetInitServiceListOutcome CwpClient::ExportAssetInitServiceLi
 
 void CwpClient::ExportAssetInitServiceListAsync(const ExportAssetInitServiceListRequest& request, const ExportAssetInitServiceListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ExportAssetInitServiceList(request), context);
-    };
+    using Req = const ExportAssetInitServiceListRequest&;
+    using Resp = ExportAssetInitServiceListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ExportAssetInitServiceList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::ExportAssetInitServiceListOutcomeCallable CwpClient::ExportAssetInitServiceListCallable(const ExportAssetInitServiceListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ExportAssetInitServiceListOutcome()>>(
-        [this, request]()
-        {
-            return this->ExportAssetInitServiceList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ExportAssetInitServiceListOutcome>>();
+    ExportAssetInitServiceListAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const ExportAssetInitServiceListRequest&,
+        ExportAssetInitServiceListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::ExportAssetJarListOutcome CwpClient::ExportAssetJarList(const ExportAssetJarListRequest &request)
@@ -15757,25 +18312,32 @@ CwpClient::ExportAssetJarListOutcome CwpClient::ExportAssetJarList(const ExportA
 
 void CwpClient::ExportAssetJarListAsync(const ExportAssetJarListRequest& request, const ExportAssetJarListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ExportAssetJarList(request), context);
-    };
+    using Req = const ExportAssetJarListRequest&;
+    using Resp = ExportAssetJarListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ExportAssetJarList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::ExportAssetJarListOutcomeCallable CwpClient::ExportAssetJarListCallable(const ExportAssetJarListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ExportAssetJarListOutcome()>>(
-        [this, request]()
-        {
-            return this->ExportAssetJarList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ExportAssetJarListOutcome>>();
+    ExportAssetJarListAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const ExportAssetJarListRequest&,
+        ExportAssetJarListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::ExportAssetMachineDetailOutcome CwpClient::ExportAssetMachineDetail(const ExportAssetMachineDetailRequest &request)
@@ -15800,25 +18362,32 @@ CwpClient::ExportAssetMachineDetailOutcome CwpClient::ExportAssetMachineDetail(c
 
 void CwpClient::ExportAssetMachineDetailAsync(const ExportAssetMachineDetailRequest& request, const ExportAssetMachineDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ExportAssetMachineDetail(request), context);
-    };
+    using Req = const ExportAssetMachineDetailRequest&;
+    using Resp = ExportAssetMachineDetailResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ExportAssetMachineDetail", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::ExportAssetMachineDetailOutcomeCallable CwpClient::ExportAssetMachineDetailCallable(const ExportAssetMachineDetailRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ExportAssetMachineDetailOutcome()>>(
-        [this, request]()
-        {
-            return this->ExportAssetMachineDetail(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ExportAssetMachineDetailOutcome>>();
+    ExportAssetMachineDetailAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const ExportAssetMachineDetailRequest&,
+        ExportAssetMachineDetailOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::ExportAssetMachineListOutcome CwpClient::ExportAssetMachineList(const ExportAssetMachineListRequest &request)
@@ -15843,25 +18412,32 @@ CwpClient::ExportAssetMachineListOutcome CwpClient::ExportAssetMachineList(const
 
 void CwpClient::ExportAssetMachineListAsync(const ExportAssetMachineListRequest& request, const ExportAssetMachineListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ExportAssetMachineList(request), context);
-    };
+    using Req = const ExportAssetMachineListRequest&;
+    using Resp = ExportAssetMachineListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ExportAssetMachineList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::ExportAssetMachineListOutcomeCallable CwpClient::ExportAssetMachineListCallable(const ExportAssetMachineListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ExportAssetMachineListOutcome()>>(
-        [this, request]()
-        {
-            return this->ExportAssetMachineList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ExportAssetMachineListOutcome>>();
+    ExportAssetMachineListAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const ExportAssetMachineListRequest&,
+        ExportAssetMachineListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::ExportAssetPlanTaskListOutcome CwpClient::ExportAssetPlanTaskList(const ExportAssetPlanTaskListRequest &request)
@@ -15886,25 +18462,32 @@ CwpClient::ExportAssetPlanTaskListOutcome CwpClient::ExportAssetPlanTaskList(con
 
 void CwpClient::ExportAssetPlanTaskListAsync(const ExportAssetPlanTaskListRequest& request, const ExportAssetPlanTaskListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ExportAssetPlanTaskList(request), context);
-    };
+    using Req = const ExportAssetPlanTaskListRequest&;
+    using Resp = ExportAssetPlanTaskListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ExportAssetPlanTaskList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::ExportAssetPlanTaskListOutcomeCallable CwpClient::ExportAssetPlanTaskListCallable(const ExportAssetPlanTaskListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ExportAssetPlanTaskListOutcome()>>(
-        [this, request]()
-        {
-            return this->ExportAssetPlanTaskList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ExportAssetPlanTaskListOutcome>>();
+    ExportAssetPlanTaskListAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const ExportAssetPlanTaskListRequest&,
+        ExportAssetPlanTaskListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::ExportAssetPortInfoListOutcome CwpClient::ExportAssetPortInfoList(const ExportAssetPortInfoListRequest &request)
@@ -15929,25 +18512,32 @@ CwpClient::ExportAssetPortInfoListOutcome CwpClient::ExportAssetPortInfoList(con
 
 void CwpClient::ExportAssetPortInfoListAsync(const ExportAssetPortInfoListRequest& request, const ExportAssetPortInfoListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ExportAssetPortInfoList(request), context);
-    };
+    using Req = const ExportAssetPortInfoListRequest&;
+    using Resp = ExportAssetPortInfoListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ExportAssetPortInfoList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::ExportAssetPortInfoListOutcomeCallable CwpClient::ExportAssetPortInfoListCallable(const ExportAssetPortInfoListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ExportAssetPortInfoListOutcome()>>(
-        [this, request]()
-        {
-            return this->ExportAssetPortInfoList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ExportAssetPortInfoListOutcome>>();
+    ExportAssetPortInfoListAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const ExportAssetPortInfoListRequest&,
+        ExportAssetPortInfoListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::ExportAssetProcessInfoListOutcome CwpClient::ExportAssetProcessInfoList(const ExportAssetProcessInfoListRequest &request)
@@ -15972,25 +18562,32 @@ CwpClient::ExportAssetProcessInfoListOutcome CwpClient::ExportAssetProcessInfoLi
 
 void CwpClient::ExportAssetProcessInfoListAsync(const ExportAssetProcessInfoListRequest& request, const ExportAssetProcessInfoListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ExportAssetProcessInfoList(request), context);
-    };
+    using Req = const ExportAssetProcessInfoListRequest&;
+    using Resp = ExportAssetProcessInfoListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ExportAssetProcessInfoList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::ExportAssetProcessInfoListOutcomeCallable CwpClient::ExportAssetProcessInfoListCallable(const ExportAssetProcessInfoListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ExportAssetProcessInfoListOutcome()>>(
-        [this, request]()
-        {
-            return this->ExportAssetProcessInfoList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ExportAssetProcessInfoListOutcome>>();
+    ExportAssetProcessInfoListAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const ExportAssetProcessInfoListRequest&,
+        ExportAssetProcessInfoListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::ExportAssetRecentMachineInfoOutcome CwpClient::ExportAssetRecentMachineInfo(const ExportAssetRecentMachineInfoRequest &request)
@@ -16015,25 +18612,32 @@ CwpClient::ExportAssetRecentMachineInfoOutcome CwpClient::ExportAssetRecentMachi
 
 void CwpClient::ExportAssetRecentMachineInfoAsync(const ExportAssetRecentMachineInfoRequest& request, const ExportAssetRecentMachineInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ExportAssetRecentMachineInfo(request), context);
-    };
+    using Req = const ExportAssetRecentMachineInfoRequest&;
+    using Resp = ExportAssetRecentMachineInfoResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ExportAssetRecentMachineInfo", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::ExportAssetRecentMachineInfoOutcomeCallable CwpClient::ExportAssetRecentMachineInfoCallable(const ExportAssetRecentMachineInfoRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ExportAssetRecentMachineInfoOutcome()>>(
-        [this, request]()
-        {
-            return this->ExportAssetRecentMachineInfo(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ExportAssetRecentMachineInfoOutcome>>();
+    ExportAssetRecentMachineInfoAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const ExportAssetRecentMachineInfoRequest&,
+        ExportAssetRecentMachineInfoOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::ExportAssetSystemPackageListOutcome CwpClient::ExportAssetSystemPackageList(const ExportAssetSystemPackageListRequest &request)
@@ -16058,25 +18662,32 @@ CwpClient::ExportAssetSystemPackageListOutcome CwpClient::ExportAssetSystemPacka
 
 void CwpClient::ExportAssetSystemPackageListAsync(const ExportAssetSystemPackageListRequest& request, const ExportAssetSystemPackageListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ExportAssetSystemPackageList(request), context);
-    };
+    using Req = const ExportAssetSystemPackageListRequest&;
+    using Resp = ExportAssetSystemPackageListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ExportAssetSystemPackageList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::ExportAssetSystemPackageListOutcomeCallable CwpClient::ExportAssetSystemPackageListCallable(const ExportAssetSystemPackageListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ExportAssetSystemPackageListOutcome()>>(
-        [this, request]()
-        {
-            return this->ExportAssetSystemPackageList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ExportAssetSystemPackageListOutcome>>();
+    ExportAssetSystemPackageListAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const ExportAssetSystemPackageListRequest&,
+        ExportAssetSystemPackageListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::ExportAssetUserListOutcome CwpClient::ExportAssetUserList(const ExportAssetUserListRequest &request)
@@ -16101,25 +18712,32 @@ CwpClient::ExportAssetUserListOutcome CwpClient::ExportAssetUserList(const Expor
 
 void CwpClient::ExportAssetUserListAsync(const ExportAssetUserListRequest& request, const ExportAssetUserListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ExportAssetUserList(request), context);
-    };
+    using Req = const ExportAssetUserListRequest&;
+    using Resp = ExportAssetUserListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ExportAssetUserList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::ExportAssetUserListOutcomeCallable CwpClient::ExportAssetUserListCallable(const ExportAssetUserListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ExportAssetUserListOutcome()>>(
-        [this, request]()
-        {
-            return this->ExportAssetUserList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ExportAssetUserListOutcome>>();
+    ExportAssetUserListAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const ExportAssetUserListRequest&,
+        ExportAssetUserListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::ExportAssetWebAppListOutcome CwpClient::ExportAssetWebAppList(const ExportAssetWebAppListRequest &request)
@@ -16144,25 +18762,32 @@ CwpClient::ExportAssetWebAppListOutcome CwpClient::ExportAssetWebAppList(const E
 
 void CwpClient::ExportAssetWebAppListAsync(const ExportAssetWebAppListRequest& request, const ExportAssetWebAppListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ExportAssetWebAppList(request), context);
-    };
+    using Req = const ExportAssetWebAppListRequest&;
+    using Resp = ExportAssetWebAppListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ExportAssetWebAppList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::ExportAssetWebAppListOutcomeCallable CwpClient::ExportAssetWebAppListCallable(const ExportAssetWebAppListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ExportAssetWebAppListOutcome()>>(
-        [this, request]()
-        {
-            return this->ExportAssetWebAppList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ExportAssetWebAppListOutcome>>();
+    ExportAssetWebAppListAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const ExportAssetWebAppListRequest&,
+        ExportAssetWebAppListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::ExportAssetWebFrameListOutcome CwpClient::ExportAssetWebFrameList(const ExportAssetWebFrameListRequest &request)
@@ -16187,25 +18812,32 @@ CwpClient::ExportAssetWebFrameListOutcome CwpClient::ExportAssetWebFrameList(con
 
 void CwpClient::ExportAssetWebFrameListAsync(const ExportAssetWebFrameListRequest& request, const ExportAssetWebFrameListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ExportAssetWebFrameList(request), context);
-    };
+    using Req = const ExportAssetWebFrameListRequest&;
+    using Resp = ExportAssetWebFrameListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ExportAssetWebFrameList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::ExportAssetWebFrameListOutcomeCallable CwpClient::ExportAssetWebFrameListCallable(const ExportAssetWebFrameListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ExportAssetWebFrameListOutcome()>>(
-        [this, request]()
-        {
-            return this->ExportAssetWebFrameList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ExportAssetWebFrameListOutcome>>();
+    ExportAssetWebFrameListAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const ExportAssetWebFrameListRequest&,
+        ExportAssetWebFrameListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::ExportAssetWebLocationListOutcome CwpClient::ExportAssetWebLocationList(const ExportAssetWebLocationListRequest &request)
@@ -16230,25 +18862,32 @@ CwpClient::ExportAssetWebLocationListOutcome CwpClient::ExportAssetWebLocationLi
 
 void CwpClient::ExportAssetWebLocationListAsync(const ExportAssetWebLocationListRequest& request, const ExportAssetWebLocationListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ExportAssetWebLocationList(request), context);
-    };
+    using Req = const ExportAssetWebLocationListRequest&;
+    using Resp = ExportAssetWebLocationListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ExportAssetWebLocationList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::ExportAssetWebLocationListOutcomeCallable CwpClient::ExportAssetWebLocationListCallable(const ExportAssetWebLocationListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ExportAssetWebLocationListOutcome()>>(
-        [this, request]()
-        {
-            return this->ExportAssetWebLocationList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ExportAssetWebLocationListOutcome>>();
+    ExportAssetWebLocationListAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const ExportAssetWebLocationListRequest&,
+        ExportAssetWebLocationListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::ExportAssetWebServiceInfoListOutcome CwpClient::ExportAssetWebServiceInfoList(const ExportAssetWebServiceInfoListRequest &request)
@@ -16273,25 +18912,32 @@ CwpClient::ExportAssetWebServiceInfoListOutcome CwpClient::ExportAssetWebService
 
 void CwpClient::ExportAssetWebServiceInfoListAsync(const ExportAssetWebServiceInfoListRequest& request, const ExportAssetWebServiceInfoListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ExportAssetWebServiceInfoList(request), context);
-    };
+    using Req = const ExportAssetWebServiceInfoListRequest&;
+    using Resp = ExportAssetWebServiceInfoListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ExportAssetWebServiceInfoList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::ExportAssetWebServiceInfoListOutcomeCallable CwpClient::ExportAssetWebServiceInfoListCallable(const ExportAssetWebServiceInfoListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ExportAssetWebServiceInfoListOutcome()>>(
-        [this, request]()
-        {
-            return this->ExportAssetWebServiceInfoList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ExportAssetWebServiceInfoListOutcome>>();
+    ExportAssetWebServiceInfoListAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const ExportAssetWebServiceInfoListRequest&,
+        ExportAssetWebServiceInfoListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::ExportAttackEventsOutcome CwpClient::ExportAttackEvents(const ExportAttackEventsRequest &request)
@@ -16316,25 +18962,32 @@ CwpClient::ExportAttackEventsOutcome CwpClient::ExportAttackEvents(const ExportA
 
 void CwpClient::ExportAttackEventsAsync(const ExportAttackEventsRequest& request, const ExportAttackEventsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ExportAttackEvents(request), context);
-    };
+    using Req = const ExportAttackEventsRequest&;
+    using Resp = ExportAttackEventsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ExportAttackEvents", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::ExportAttackEventsOutcomeCallable CwpClient::ExportAttackEventsCallable(const ExportAttackEventsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ExportAttackEventsOutcome()>>(
-        [this, request]()
-        {
-            return this->ExportAttackEvents(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ExportAttackEventsOutcome>>();
+    ExportAttackEventsAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const ExportAttackEventsRequest&,
+        ExportAttackEventsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::ExportBaselineEffectHostListOutcome CwpClient::ExportBaselineEffectHostList(const ExportBaselineEffectHostListRequest &request)
@@ -16359,25 +19012,32 @@ CwpClient::ExportBaselineEffectHostListOutcome CwpClient::ExportBaselineEffectHo
 
 void CwpClient::ExportBaselineEffectHostListAsync(const ExportBaselineEffectHostListRequest& request, const ExportBaselineEffectHostListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ExportBaselineEffectHostList(request), context);
-    };
+    using Req = const ExportBaselineEffectHostListRequest&;
+    using Resp = ExportBaselineEffectHostListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ExportBaselineEffectHostList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::ExportBaselineEffectHostListOutcomeCallable CwpClient::ExportBaselineEffectHostListCallable(const ExportBaselineEffectHostListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ExportBaselineEffectHostListOutcome()>>(
-        [this, request]()
-        {
-            return this->ExportBaselineEffectHostList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ExportBaselineEffectHostListOutcome>>();
+    ExportBaselineEffectHostListAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const ExportBaselineEffectHostListRequest&,
+        ExportBaselineEffectHostListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::ExportBaselineFixListOutcome CwpClient::ExportBaselineFixList(const ExportBaselineFixListRequest &request)
@@ -16402,25 +19062,32 @@ CwpClient::ExportBaselineFixListOutcome CwpClient::ExportBaselineFixList(const E
 
 void CwpClient::ExportBaselineFixListAsync(const ExportBaselineFixListRequest& request, const ExportBaselineFixListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ExportBaselineFixList(request), context);
-    };
+    using Req = const ExportBaselineFixListRequest&;
+    using Resp = ExportBaselineFixListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ExportBaselineFixList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::ExportBaselineFixListOutcomeCallable CwpClient::ExportBaselineFixListCallable(const ExportBaselineFixListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ExportBaselineFixListOutcome()>>(
-        [this, request]()
-        {
-            return this->ExportBaselineFixList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ExportBaselineFixListOutcome>>();
+    ExportBaselineFixListAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const ExportBaselineFixListRequest&,
+        ExportBaselineFixListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::ExportBaselineHostDetectListOutcome CwpClient::ExportBaselineHostDetectList(const ExportBaselineHostDetectListRequest &request)
@@ -16445,25 +19112,32 @@ CwpClient::ExportBaselineHostDetectListOutcome CwpClient::ExportBaselineHostDete
 
 void CwpClient::ExportBaselineHostDetectListAsync(const ExportBaselineHostDetectListRequest& request, const ExportBaselineHostDetectListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ExportBaselineHostDetectList(request), context);
-    };
+    using Req = const ExportBaselineHostDetectListRequest&;
+    using Resp = ExportBaselineHostDetectListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ExportBaselineHostDetectList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::ExportBaselineHostDetectListOutcomeCallable CwpClient::ExportBaselineHostDetectListCallable(const ExportBaselineHostDetectListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ExportBaselineHostDetectListOutcome()>>(
-        [this, request]()
-        {
-            return this->ExportBaselineHostDetectList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ExportBaselineHostDetectListOutcome>>();
+    ExportBaselineHostDetectListAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const ExportBaselineHostDetectListRequest&,
+        ExportBaselineHostDetectListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::ExportBaselineItemDetectListOutcome CwpClient::ExportBaselineItemDetectList(const ExportBaselineItemDetectListRequest &request)
@@ -16488,25 +19162,32 @@ CwpClient::ExportBaselineItemDetectListOutcome CwpClient::ExportBaselineItemDete
 
 void CwpClient::ExportBaselineItemDetectListAsync(const ExportBaselineItemDetectListRequest& request, const ExportBaselineItemDetectListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ExportBaselineItemDetectList(request), context);
-    };
+    using Req = const ExportBaselineItemDetectListRequest&;
+    using Resp = ExportBaselineItemDetectListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ExportBaselineItemDetectList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::ExportBaselineItemDetectListOutcomeCallable CwpClient::ExportBaselineItemDetectListCallable(const ExportBaselineItemDetectListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ExportBaselineItemDetectListOutcome()>>(
-        [this, request]()
-        {
-            return this->ExportBaselineItemDetectList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ExportBaselineItemDetectListOutcome>>();
+    ExportBaselineItemDetectListAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const ExportBaselineItemDetectListRequest&,
+        ExportBaselineItemDetectListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::ExportBaselineItemListOutcome CwpClient::ExportBaselineItemList(const ExportBaselineItemListRequest &request)
@@ -16531,25 +19212,32 @@ CwpClient::ExportBaselineItemListOutcome CwpClient::ExportBaselineItemList(const
 
 void CwpClient::ExportBaselineItemListAsync(const ExportBaselineItemListRequest& request, const ExportBaselineItemListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ExportBaselineItemList(request), context);
-    };
+    using Req = const ExportBaselineItemListRequest&;
+    using Resp = ExportBaselineItemListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ExportBaselineItemList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::ExportBaselineItemListOutcomeCallable CwpClient::ExportBaselineItemListCallable(const ExportBaselineItemListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ExportBaselineItemListOutcome()>>(
-        [this, request]()
-        {
-            return this->ExportBaselineItemList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ExportBaselineItemListOutcome>>();
+    ExportBaselineItemListAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const ExportBaselineItemListRequest&,
+        ExportBaselineItemListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::ExportBaselineListOutcome CwpClient::ExportBaselineList(const ExportBaselineListRequest &request)
@@ -16574,25 +19262,32 @@ CwpClient::ExportBaselineListOutcome CwpClient::ExportBaselineList(const ExportB
 
 void CwpClient::ExportBaselineListAsync(const ExportBaselineListRequest& request, const ExportBaselineListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ExportBaselineList(request), context);
-    };
+    using Req = const ExportBaselineListRequest&;
+    using Resp = ExportBaselineListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ExportBaselineList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::ExportBaselineListOutcomeCallable CwpClient::ExportBaselineListCallable(const ExportBaselineListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ExportBaselineListOutcome()>>(
-        [this, request]()
-        {
-            return this->ExportBaselineList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ExportBaselineListOutcome>>();
+    ExportBaselineListAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const ExportBaselineListRequest&,
+        ExportBaselineListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::ExportBaselineRuleDetectListOutcome CwpClient::ExportBaselineRuleDetectList(const ExportBaselineRuleDetectListRequest &request)
@@ -16617,25 +19312,32 @@ CwpClient::ExportBaselineRuleDetectListOutcome CwpClient::ExportBaselineRuleDete
 
 void CwpClient::ExportBaselineRuleDetectListAsync(const ExportBaselineRuleDetectListRequest& request, const ExportBaselineRuleDetectListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ExportBaselineRuleDetectList(request), context);
-    };
+    using Req = const ExportBaselineRuleDetectListRequest&;
+    using Resp = ExportBaselineRuleDetectListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ExportBaselineRuleDetectList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::ExportBaselineRuleDetectListOutcomeCallable CwpClient::ExportBaselineRuleDetectListCallable(const ExportBaselineRuleDetectListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ExportBaselineRuleDetectListOutcome()>>(
-        [this, request]()
-        {
-            return this->ExportBaselineRuleDetectList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ExportBaselineRuleDetectListOutcome>>();
+    ExportBaselineRuleDetectListAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const ExportBaselineRuleDetectListRequest&,
+        ExportBaselineRuleDetectListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::ExportBaselineWeakPasswordListOutcome CwpClient::ExportBaselineWeakPasswordList(const ExportBaselineWeakPasswordListRequest &request)
@@ -16660,25 +19362,32 @@ CwpClient::ExportBaselineWeakPasswordListOutcome CwpClient::ExportBaselineWeakPa
 
 void CwpClient::ExportBaselineWeakPasswordListAsync(const ExportBaselineWeakPasswordListRequest& request, const ExportBaselineWeakPasswordListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ExportBaselineWeakPasswordList(request), context);
-    };
+    using Req = const ExportBaselineWeakPasswordListRequest&;
+    using Resp = ExportBaselineWeakPasswordListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ExportBaselineWeakPasswordList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::ExportBaselineWeakPasswordListOutcomeCallable CwpClient::ExportBaselineWeakPasswordListCallable(const ExportBaselineWeakPasswordListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ExportBaselineWeakPasswordListOutcome()>>(
-        [this, request]()
-        {
-            return this->ExportBaselineWeakPasswordList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ExportBaselineWeakPasswordListOutcome>>();
+    ExportBaselineWeakPasswordListAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const ExportBaselineWeakPasswordListRequest&,
+        ExportBaselineWeakPasswordListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::ExportBashEventsOutcome CwpClient::ExportBashEvents(const ExportBashEventsRequest &request)
@@ -16703,25 +19412,32 @@ CwpClient::ExportBashEventsOutcome CwpClient::ExportBashEvents(const ExportBashE
 
 void CwpClient::ExportBashEventsAsync(const ExportBashEventsRequest& request, const ExportBashEventsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ExportBashEvents(request), context);
-    };
+    using Req = const ExportBashEventsRequest&;
+    using Resp = ExportBashEventsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ExportBashEvents", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::ExportBashEventsOutcomeCallable CwpClient::ExportBashEventsCallable(const ExportBashEventsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ExportBashEventsOutcome()>>(
-        [this, request]()
-        {
-            return this->ExportBashEvents(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ExportBashEventsOutcome>>();
+    ExportBashEventsAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const ExportBashEventsRequest&,
+        ExportBashEventsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::ExportBashEventsNewOutcome CwpClient::ExportBashEventsNew(const ExportBashEventsNewRequest &request)
@@ -16746,25 +19462,32 @@ CwpClient::ExportBashEventsNewOutcome CwpClient::ExportBashEventsNew(const Expor
 
 void CwpClient::ExportBashEventsNewAsync(const ExportBashEventsNewRequest& request, const ExportBashEventsNewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ExportBashEventsNew(request), context);
-    };
+    using Req = const ExportBashEventsNewRequest&;
+    using Resp = ExportBashEventsNewResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ExportBashEventsNew", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::ExportBashEventsNewOutcomeCallable CwpClient::ExportBashEventsNewCallable(const ExportBashEventsNewRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ExportBashEventsNewOutcome()>>(
-        [this, request]()
-        {
-            return this->ExportBashEventsNew(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ExportBashEventsNewOutcome>>();
+    ExportBashEventsNewAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const ExportBashEventsNewRequest&,
+        ExportBashEventsNewOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::ExportBashPoliciesOutcome CwpClient::ExportBashPolicies(const ExportBashPoliciesRequest &request)
@@ -16789,25 +19512,32 @@ CwpClient::ExportBashPoliciesOutcome CwpClient::ExportBashPolicies(const ExportB
 
 void CwpClient::ExportBashPoliciesAsync(const ExportBashPoliciesRequest& request, const ExportBashPoliciesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ExportBashPolicies(request), context);
-    };
+    using Req = const ExportBashPoliciesRequest&;
+    using Resp = ExportBashPoliciesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ExportBashPolicies", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::ExportBashPoliciesOutcomeCallable CwpClient::ExportBashPoliciesCallable(const ExportBashPoliciesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ExportBashPoliciesOutcome()>>(
-        [this, request]()
-        {
-            return this->ExportBashPolicies(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ExportBashPoliciesOutcome>>();
+    ExportBashPoliciesAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const ExportBashPoliciesRequest&,
+        ExportBashPoliciesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::ExportBruteAttacksOutcome CwpClient::ExportBruteAttacks(const ExportBruteAttacksRequest &request)
@@ -16832,25 +19562,32 @@ CwpClient::ExportBruteAttacksOutcome CwpClient::ExportBruteAttacks(const ExportB
 
 void CwpClient::ExportBruteAttacksAsync(const ExportBruteAttacksRequest& request, const ExportBruteAttacksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ExportBruteAttacks(request), context);
-    };
+    using Req = const ExportBruteAttacksRequest&;
+    using Resp = ExportBruteAttacksResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ExportBruteAttacks", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::ExportBruteAttacksOutcomeCallable CwpClient::ExportBruteAttacksCallable(const ExportBruteAttacksRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ExportBruteAttacksOutcome()>>(
-        [this, request]()
-        {
-            return this->ExportBruteAttacks(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ExportBruteAttacksOutcome>>();
+    ExportBruteAttacksAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const ExportBruteAttacksRequest&,
+        ExportBruteAttacksOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::ExportFileTamperEventsOutcome CwpClient::ExportFileTamperEvents(const ExportFileTamperEventsRequest &request)
@@ -16875,25 +19612,32 @@ CwpClient::ExportFileTamperEventsOutcome CwpClient::ExportFileTamperEvents(const
 
 void CwpClient::ExportFileTamperEventsAsync(const ExportFileTamperEventsRequest& request, const ExportFileTamperEventsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ExportFileTamperEvents(request), context);
-    };
+    using Req = const ExportFileTamperEventsRequest&;
+    using Resp = ExportFileTamperEventsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ExportFileTamperEvents", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::ExportFileTamperEventsOutcomeCallable CwpClient::ExportFileTamperEventsCallable(const ExportFileTamperEventsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ExportFileTamperEventsOutcome()>>(
-        [this, request]()
-        {
-            return this->ExportFileTamperEvents(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ExportFileTamperEventsOutcome>>();
+    ExportFileTamperEventsAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const ExportFileTamperEventsRequest&,
+        ExportFileTamperEventsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::ExportFileTamperRulesOutcome CwpClient::ExportFileTamperRules(const ExportFileTamperRulesRequest &request)
@@ -16918,25 +19662,32 @@ CwpClient::ExportFileTamperRulesOutcome CwpClient::ExportFileTamperRules(const E
 
 void CwpClient::ExportFileTamperRulesAsync(const ExportFileTamperRulesRequest& request, const ExportFileTamperRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ExportFileTamperRules(request), context);
-    };
+    using Req = const ExportFileTamperRulesRequest&;
+    using Resp = ExportFileTamperRulesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ExportFileTamperRules", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::ExportFileTamperRulesOutcomeCallable CwpClient::ExportFileTamperRulesCallable(const ExportFileTamperRulesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ExportFileTamperRulesOutcome()>>(
-        [this, request]()
-        {
-            return this->ExportFileTamperRules(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ExportFileTamperRulesOutcome>>();
+    ExportFileTamperRulesAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const ExportFileTamperRulesRequest&,
+        ExportFileTamperRulesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::ExportIgnoreBaselineRuleOutcome CwpClient::ExportIgnoreBaselineRule(const ExportIgnoreBaselineRuleRequest &request)
@@ -16961,25 +19712,32 @@ CwpClient::ExportIgnoreBaselineRuleOutcome CwpClient::ExportIgnoreBaselineRule(c
 
 void CwpClient::ExportIgnoreBaselineRuleAsync(const ExportIgnoreBaselineRuleRequest& request, const ExportIgnoreBaselineRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ExportIgnoreBaselineRule(request), context);
-    };
+    using Req = const ExportIgnoreBaselineRuleRequest&;
+    using Resp = ExportIgnoreBaselineRuleResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ExportIgnoreBaselineRule", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::ExportIgnoreBaselineRuleOutcomeCallable CwpClient::ExportIgnoreBaselineRuleCallable(const ExportIgnoreBaselineRuleRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ExportIgnoreBaselineRuleOutcome()>>(
-        [this, request]()
-        {
-            return this->ExportIgnoreBaselineRule(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ExportIgnoreBaselineRuleOutcome>>();
+    ExportIgnoreBaselineRuleAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const ExportIgnoreBaselineRuleRequest&,
+        ExportIgnoreBaselineRuleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::ExportIgnoreRuleEffectHostListOutcome CwpClient::ExportIgnoreRuleEffectHostList(const ExportIgnoreRuleEffectHostListRequest &request)
@@ -17004,25 +19762,32 @@ CwpClient::ExportIgnoreRuleEffectHostListOutcome CwpClient::ExportIgnoreRuleEffe
 
 void CwpClient::ExportIgnoreRuleEffectHostListAsync(const ExportIgnoreRuleEffectHostListRequest& request, const ExportIgnoreRuleEffectHostListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ExportIgnoreRuleEffectHostList(request), context);
-    };
+    using Req = const ExportIgnoreRuleEffectHostListRequest&;
+    using Resp = ExportIgnoreRuleEffectHostListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ExportIgnoreRuleEffectHostList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::ExportIgnoreRuleEffectHostListOutcomeCallable CwpClient::ExportIgnoreRuleEffectHostListCallable(const ExportIgnoreRuleEffectHostListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ExportIgnoreRuleEffectHostListOutcome()>>(
-        [this, request]()
-        {
-            return this->ExportIgnoreRuleEffectHostList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ExportIgnoreRuleEffectHostListOutcome>>();
+    ExportIgnoreRuleEffectHostListAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const ExportIgnoreRuleEffectHostListRequest&,
+        ExportIgnoreRuleEffectHostListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::ExportJavaMemShellPluginsOutcome CwpClient::ExportJavaMemShellPlugins(const ExportJavaMemShellPluginsRequest &request)
@@ -17047,25 +19812,32 @@ CwpClient::ExportJavaMemShellPluginsOutcome CwpClient::ExportJavaMemShellPlugins
 
 void CwpClient::ExportJavaMemShellPluginsAsync(const ExportJavaMemShellPluginsRequest& request, const ExportJavaMemShellPluginsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ExportJavaMemShellPlugins(request), context);
-    };
+    using Req = const ExportJavaMemShellPluginsRequest&;
+    using Resp = ExportJavaMemShellPluginsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ExportJavaMemShellPlugins", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::ExportJavaMemShellPluginsOutcomeCallable CwpClient::ExportJavaMemShellPluginsCallable(const ExportJavaMemShellPluginsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ExportJavaMemShellPluginsOutcome()>>(
-        [this, request]()
-        {
-            return this->ExportJavaMemShellPlugins(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ExportJavaMemShellPluginsOutcome>>();
+    ExportJavaMemShellPluginsAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const ExportJavaMemShellPluginsRequest&,
+        ExportJavaMemShellPluginsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::ExportJavaMemShellsOutcome CwpClient::ExportJavaMemShells(const ExportJavaMemShellsRequest &request)
@@ -17090,25 +19862,32 @@ CwpClient::ExportJavaMemShellsOutcome CwpClient::ExportJavaMemShells(const Expor
 
 void CwpClient::ExportJavaMemShellsAsync(const ExportJavaMemShellsRequest& request, const ExportJavaMemShellsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ExportJavaMemShells(request), context);
-    };
+    using Req = const ExportJavaMemShellsRequest&;
+    using Resp = ExportJavaMemShellsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ExportJavaMemShells", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::ExportJavaMemShellsOutcomeCallable CwpClient::ExportJavaMemShellsCallable(const ExportJavaMemShellsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ExportJavaMemShellsOutcome()>>(
-        [this, request]()
-        {
-            return this->ExportJavaMemShells(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ExportJavaMemShellsOutcome>>();
+    ExportJavaMemShellsAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const ExportJavaMemShellsRequest&,
+        ExportJavaMemShellsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::ExportLicenseDetailOutcome CwpClient::ExportLicenseDetail(const ExportLicenseDetailRequest &request)
@@ -17133,25 +19912,32 @@ CwpClient::ExportLicenseDetailOutcome CwpClient::ExportLicenseDetail(const Expor
 
 void CwpClient::ExportLicenseDetailAsync(const ExportLicenseDetailRequest& request, const ExportLicenseDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ExportLicenseDetail(request), context);
-    };
+    using Req = const ExportLicenseDetailRequest&;
+    using Resp = ExportLicenseDetailResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ExportLicenseDetail", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::ExportLicenseDetailOutcomeCallable CwpClient::ExportLicenseDetailCallable(const ExportLicenseDetailRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ExportLicenseDetailOutcome()>>(
-        [this, request]()
-        {
-            return this->ExportLicenseDetail(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ExportLicenseDetailOutcome>>();
+    ExportLicenseDetailAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const ExportLicenseDetailRequest&,
+        ExportLicenseDetailOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::ExportMaliciousRequestsOutcome CwpClient::ExportMaliciousRequests(const ExportMaliciousRequestsRequest &request)
@@ -17176,25 +19962,32 @@ CwpClient::ExportMaliciousRequestsOutcome CwpClient::ExportMaliciousRequests(con
 
 void CwpClient::ExportMaliciousRequestsAsync(const ExportMaliciousRequestsRequest& request, const ExportMaliciousRequestsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ExportMaliciousRequests(request), context);
-    };
+    using Req = const ExportMaliciousRequestsRequest&;
+    using Resp = ExportMaliciousRequestsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ExportMaliciousRequests", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::ExportMaliciousRequestsOutcomeCallable CwpClient::ExportMaliciousRequestsCallable(const ExportMaliciousRequestsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ExportMaliciousRequestsOutcome()>>(
-        [this, request]()
-        {
-            return this->ExportMaliciousRequests(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ExportMaliciousRequestsOutcome>>();
+    ExportMaliciousRequestsAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const ExportMaliciousRequestsRequest&,
+        ExportMaliciousRequestsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::ExportMalwaresOutcome CwpClient::ExportMalwares(const ExportMalwaresRequest &request)
@@ -17219,25 +20012,32 @@ CwpClient::ExportMalwaresOutcome CwpClient::ExportMalwares(const ExportMalwaresR
 
 void CwpClient::ExportMalwaresAsync(const ExportMalwaresRequest& request, const ExportMalwaresAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ExportMalwares(request), context);
-    };
+    using Req = const ExportMalwaresRequest&;
+    using Resp = ExportMalwaresResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ExportMalwares", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::ExportMalwaresOutcomeCallable CwpClient::ExportMalwaresCallable(const ExportMalwaresRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ExportMalwaresOutcome()>>(
-        [this, request]()
-        {
-            return this->ExportMalwares(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ExportMalwaresOutcome>>();
+    ExportMalwaresAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const ExportMalwaresRequest&,
+        ExportMalwaresOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::ExportNonlocalLoginPlacesOutcome CwpClient::ExportNonlocalLoginPlaces(const ExportNonlocalLoginPlacesRequest &request)
@@ -17262,25 +20062,32 @@ CwpClient::ExportNonlocalLoginPlacesOutcome CwpClient::ExportNonlocalLoginPlaces
 
 void CwpClient::ExportNonlocalLoginPlacesAsync(const ExportNonlocalLoginPlacesRequest& request, const ExportNonlocalLoginPlacesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ExportNonlocalLoginPlaces(request), context);
-    };
+    using Req = const ExportNonlocalLoginPlacesRequest&;
+    using Resp = ExportNonlocalLoginPlacesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ExportNonlocalLoginPlaces", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::ExportNonlocalLoginPlacesOutcomeCallable CwpClient::ExportNonlocalLoginPlacesCallable(const ExportNonlocalLoginPlacesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ExportNonlocalLoginPlacesOutcome()>>(
-        [this, request]()
-        {
-            return this->ExportNonlocalLoginPlaces(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ExportNonlocalLoginPlacesOutcome>>();
+    ExportNonlocalLoginPlacesAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const ExportNonlocalLoginPlacesRequest&,
+        ExportNonlocalLoginPlacesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::ExportPrivilegeEventsOutcome CwpClient::ExportPrivilegeEvents(const ExportPrivilegeEventsRequest &request)
@@ -17305,25 +20112,32 @@ CwpClient::ExportPrivilegeEventsOutcome CwpClient::ExportPrivilegeEvents(const E
 
 void CwpClient::ExportPrivilegeEventsAsync(const ExportPrivilegeEventsRequest& request, const ExportPrivilegeEventsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ExportPrivilegeEvents(request), context);
-    };
+    using Req = const ExportPrivilegeEventsRequest&;
+    using Resp = ExportPrivilegeEventsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ExportPrivilegeEvents", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::ExportPrivilegeEventsOutcomeCallable CwpClient::ExportPrivilegeEventsCallable(const ExportPrivilegeEventsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ExportPrivilegeEventsOutcome()>>(
-        [this, request]()
-        {
-            return this->ExportPrivilegeEvents(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ExportPrivilegeEventsOutcome>>();
+    ExportPrivilegeEventsAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const ExportPrivilegeEventsRequest&,
+        ExportPrivilegeEventsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::ExportProtectDirListOutcome CwpClient::ExportProtectDirList(const ExportProtectDirListRequest &request)
@@ -17348,25 +20162,32 @@ CwpClient::ExportProtectDirListOutcome CwpClient::ExportProtectDirList(const Exp
 
 void CwpClient::ExportProtectDirListAsync(const ExportProtectDirListRequest& request, const ExportProtectDirListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ExportProtectDirList(request), context);
-    };
+    using Req = const ExportProtectDirListRequest&;
+    using Resp = ExportProtectDirListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ExportProtectDirList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::ExportProtectDirListOutcomeCallable CwpClient::ExportProtectDirListCallable(const ExportProtectDirListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ExportProtectDirListOutcome()>>(
-        [this, request]()
-        {
-            return this->ExportProtectDirList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ExportProtectDirListOutcome>>();
+    ExportProtectDirListAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const ExportProtectDirListRequest&,
+        ExportProtectDirListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::ExportRansomDefenseBackupListOutcome CwpClient::ExportRansomDefenseBackupList(const ExportRansomDefenseBackupListRequest &request)
@@ -17391,25 +20212,32 @@ CwpClient::ExportRansomDefenseBackupListOutcome CwpClient::ExportRansomDefenseBa
 
 void CwpClient::ExportRansomDefenseBackupListAsync(const ExportRansomDefenseBackupListRequest& request, const ExportRansomDefenseBackupListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ExportRansomDefenseBackupList(request), context);
-    };
+    using Req = const ExportRansomDefenseBackupListRequest&;
+    using Resp = ExportRansomDefenseBackupListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ExportRansomDefenseBackupList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::ExportRansomDefenseBackupListOutcomeCallable CwpClient::ExportRansomDefenseBackupListCallable(const ExportRansomDefenseBackupListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ExportRansomDefenseBackupListOutcome()>>(
-        [this, request]()
-        {
-            return this->ExportRansomDefenseBackupList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ExportRansomDefenseBackupListOutcome>>();
+    ExportRansomDefenseBackupListAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const ExportRansomDefenseBackupListRequest&,
+        ExportRansomDefenseBackupListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::ExportRansomDefenseEventsListOutcome CwpClient::ExportRansomDefenseEventsList(const ExportRansomDefenseEventsListRequest &request)
@@ -17434,25 +20262,32 @@ CwpClient::ExportRansomDefenseEventsListOutcome CwpClient::ExportRansomDefenseEv
 
 void CwpClient::ExportRansomDefenseEventsListAsync(const ExportRansomDefenseEventsListRequest& request, const ExportRansomDefenseEventsListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ExportRansomDefenseEventsList(request), context);
-    };
+    using Req = const ExportRansomDefenseEventsListRequest&;
+    using Resp = ExportRansomDefenseEventsListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ExportRansomDefenseEventsList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::ExportRansomDefenseEventsListOutcomeCallable CwpClient::ExportRansomDefenseEventsListCallable(const ExportRansomDefenseEventsListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ExportRansomDefenseEventsListOutcome()>>(
-        [this, request]()
-        {
-            return this->ExportRansomDefenseEventsList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ExportRansomDefenseEventsListOutcome>>();
+    ExportRansomDefenseEventsListAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const ExportRansomDefenseEventsListRequest&,
+        ExportRansomDefenseEventsListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::ExportRansomDefenseMachineListOutcome CwpClient::ExportRansomDefenseMachineList(const ExportRansomDefenseMachineListRequest &request)
@@ -17477,25 +20312,32 @@ CwpClient::ExportRansomDefenseMachineListOutcome CwpClient::ExportRansomDefenseM
 
 void CwpClient::ExportRansomDefenseMachineListAsync(const ExportRansomDefenseMachineListRequest& request, const ExportRansomDefenseMachineListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ExportRansomDefenseMachineList(request), context);
-    };
+    using Req = const ExportRansomDefenseMachineListRequest&;
+    using Resp = ExportRansomDefenseMachineListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ExportRansomDefenseMachineList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::ExportRansomDefenseMachineListOutcomeCallable CwpClient::ExportRansomDefenseMachineListCallable(const ExportRansomDefenseMachineListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ExportRansomDefenseMachineListOutcome()>>(
-        [this, request]()
-        {
-            return this->ExportRansomDefenseMachineList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ExportRansomDefenseMachineListOutcome>>();
+    ExportRansomDefenseMachineListAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const ExportRansomDefenseMachineListRequest&,
+        ExportRansomDefenseMachineListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::ExportRansomDefenseStrategyListOutcome CwpClient::ExportRansomDefenseStrategyList(const ExportRansomDefenseStrategyListRequest &request)
@@ -17520,25 +20362,32 @@ CwpClient::ExportRansomDefenseStrategyListOutcome CwpClient::ExportRansomDefense
 
 void CwpClient::ExportRansomDefenseStrategyListAsync(const ExportRansomDefenseStrategyListRequest& request, const ExportRansomDefenseStrategyListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ExportRansomDefenseStrategyList(request), context);
-    };
+    using Req = const ExportRansomDefenseStrategyListRequest&;
+    using Resp = ExportRansomDefenseStrategyListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ExportRansomDefenseStrategyList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::ExportRansomDefenseStrategyListOutcomeCallable CwpClient::ExportRansomDefenseStrategyListCallable(const ExportRansomDefenseStrategyListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ExportRansomDefenseStrategyListOutcome()>>(
-        [this, request]()
-        {
-            return this->ExportRansomDefenseStrategyList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ExportRansomDefenseStrategyListOutcome>>();
+    ExportRansomDefenseStrategyListAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const ExportRansomDefenseStrategyListRequest&,
+        ExportRansomDefenseStrategyListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::ExportRansomDefenseStrategyMachinesOutcome CwpClient::ExportRansomDefenseStrategyMachines(const ExportRansomDefenseStrategyMachinesRequest &request)
@@ -17563,25 +20412,32 @@ CwpClient::ExportRansomDefenseStrategyMachinesOutcome CwpClient::ExportRansomDef
 
 void CwpClient::ExportRansomDefenseStrategyMachinesAsync(const ExportRansomDefenseStrategyMachinesRequest& request, const ExportRansomDefenseStrategyMachinesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ExportRansomDefenseStrategyMachines(request), context);
-    };
+    using Req = const ExportRansomDefenseStrategyMachinesRequest&;
+    using Resp = ExportRansomDefenseStrategyMachinesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ExportRansomDefenseStrategyMachines", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::ExportRansomDefenseStrategyMachinesOutcomeCallable CwpClient::ExportRansomDefenseStrategyMachinesCallable(const ExportRansomDefenseStrategyMachinesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ExportRansomDefenseStrategyMachinesOutcome()>>(
-        [this, request]()
-        {
-            return this->ExportRansomDefenseStrategyMachines(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ExportRansomDefenseStrategyMachinesOutcome>>();
+    ExportRansomDefenseStrategyMachinesAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const ExportRansomDefenseStrategyMachinesRequest&,
+        ExportRansomDefenseStrategyMachinesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::ExportReverseShellEventsOutcome CwpClient::ExportReverseShellEvents(const ExportReverseShellEventsRequest &request)
@@ -17606,25 +20462,32 @@ CwpClient::ExportReverseShellEventsOutcome CwpClient::ExportReverseShellEvents(c
 
 void CwpClient::ExportReverseShellEventsAsync(const ExportReverseShellEventsRequest& request, const ExportReverseShellEventsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ExportReverseShellEvents(request), context);
-    };
+    using Req = const ExportReverseShellEventsRequest&;
+    using Resp = ExportReverseShellEventsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ExportReverseShellEvents", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::ExportReverseShellEventsOutcomeCallable CwpClient::ExportReverseShellEventsCallable(const ExportReverseShellEventsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ExportReverseShellEventsOutcome()>>(
-        [this, request]()
-        {
-            return this->ExportReverseShellEvents(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ExportReverseShellEventsOutcome>>();
+    ExportReverseShellEventsAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const ExportReverseShellEventsRequest&,
+        ExportReverseShellEventsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::ExportRiskDnsEventListOutcome CwpClient::ExportRiskDnsEventList(const ExportRiskDnsEventListRequest &request)
@@ -17649,25 +20512,32 @@ CwpClient::ExportRiskDnsEventListOutcome CwpClient::ExportRiskDnsEventList(const
 
 void CwpClient::ExportRiskDnsEventListAsync(const ExportRiskDnsEventListRequest& request, const ExportRiskDnsEventListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ExportRiskDnsEventList(request), context);
-    };
+    using Req = const ExportRiskDnsEventListRequest&;
+    using Resp = ExportRiskDnsEventListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ExportRiskDnsEventList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::ExportRiskDnsEventListOutcomeCallable CwpClient::ExportRiskDnsEventListCallable(const ExportRiskDnsEventListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ExportRiskDnsEventListOutcome()>>(
-        [this, request]()
-        {
-            return this->ExportRiskDnsEventList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ExportRiskDnsEventListOutcome>>();
+    ExportRiskDnsEventListAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const ExportRiskDnsEventListRequest&,
+        ExportRiskDnsEventListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::ExportRiskDnsPolicyListOutcome CwpClient::ExportRiskDnsPolicyList(const ExportRiskDnsPolicyListRequest &request)
@@ -17692,25 +20562,32 @@ CwpClient::ExportRiskDnsPolicyListOutcome CwpClient::ExportRiskDnsPolicyList(con
 
 void CwpClient::ExportRiskDnsPolicyListAsync(const ExportRiskDnsPolicyListRequest& request, const ExportRiskDnsPolicyListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ExportRiskDnsPolicyList(request), context);
-    };
+    using Req = const ExportRiskDnsPolicyListRequest&;
+    using Resp = ExportRiskDnsPolicyListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ExportRiskDnsPolicyList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::ExportRiskDnsPolicyListOutcomeCallable CwpClient::ExportRiskDnsPolicyListCallable(const ExportRiskDnsPolicyListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ExportRiskDnsPolicyListOutcome()>>(
-        [this, request]()
-        {
-            return this->ExportRiskDnsPolicyList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ExportRiskDnsPolicyListOutcome>>();
+    ExportRiskDnsPolicyListAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const ExportRiskDnsPolicyListRequest&,
+        ExportRiskDnsPolicyListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::ExportRiskProcessEventsOutcome CwpClient::ExportRiskProcessEvents(const ExportRiskProcessEventsRequest &request)
@@ -17735,25 +20612,32 @@ CwpClient::ExportRiskProcessEventsOutcome CwpClient::ExportRiskProcessEvents(con
 
 void CwpClient::ExportRiskProcessEventsAsync(const ExportRiskProcessEventsRequest& request, const ExportRiskProcessEventsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ExportRiskProcessEvents(request), context);
-    };
+    using Req = const ExportRiskProcessEventsRequest&;
+    using Resp = ExportRiskProcessEventsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ExportRiskProcessEvents", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::ExportRiskProcessEventsOutcomeCallable CwpClient::ExportRiskProcessEventsCallable(const ExportRiskProcessEventsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ExportRiskProcessEventsOutcome()>>(
-        [this, request]()
-        {
-            return this->ExportRiskProcessEvents(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ExportRiskProcessEventsOutcome>>();
+    ExportRiskProcessEventsAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const ExportRiskProcessEventsRequest&,
+        ExportRiskProcessEventsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::ExportScanTaskDetailsOutcome CwpClient::ExportScanTaskDetails(const ExportScanTaskDetailsRequest &request)
@@ -17778,25 +20662,32 @@ CwpClient::ExportScanTaskDetailsOutcome CwpClient::ExportScanTaskDetails(const E
 
 void CwpClient::ExportScanTaskDetailsAsync(const ExportScanTaskDetailsRequest& request, const ExportScanTaskDetailsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ExportScanTaskDetails(request), context);
-    };
+    using Req = const ExportScanTaskDetailsRequest&;
+    using Resp = ExportScanTaskDetailsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ExportScanTaskDetails", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::ExportScanTaskDetailsOutcomeCallable CwpClient::ExportScanTaskDetailsCallable(const ExportScanTaskDetailsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ExportScanTaskDetailsOutcome()>>(
-        [this, request]()
-        {
-            return this->ExportScanTaskDetails(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ExportScanTaskDetailsOutcome>>();
+    ExportScanTaskDetailsAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const ExportScanTaskDetailsRequest&,
+        ExportScanTaskDetailsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::ExportSecurityTrendsOutcome CwpClient::ExportSecurityTrends(const ExportSecurityTrendsRequest &request)
@@ -17821,25 +20712,32 @@ CwpClient::ExportSecurityTrendsOutcome CwpClient::ExportSecurityTrends(const Exp
 
 void CwpClient::ExportSecurityTrendsAsync(const ExportSecurityTrendsRequest& request, const ExportSecurityTrendsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ExportSecurityTrends(request), context);
-    };
+    using Req = const ExportSecurityTrendsRequest&;
+    using Resp = ExportSecurityTrendsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ExportSecurityTrends", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::ExportSecurityTrendsOutcomeCallable CwpClient::ExportSecurityTrendsCallable(const ExportSecurityTrendsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ExportSecurityTrendsOutcome()>>(
-        [this, request]()
-        {
-            return this->ExportSecurityTrends(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ExportSecurityTrendsOutcome>>();
+    ExportSecurityTrendsAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const ExportSecurityTrendsRequest&,
+        ExportSecurityTrendsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::ExportTasksOutcome CwpClient::ExportTasks(const ExportTasksRequest &request)
@@ -17864,25 +20762,32 @@ CwpClient::ExportTasksOutcome CwpClient::ExportTasks(const ExportTasksRequest &r
 
 void CwpClient::ExportTasksAsync(const ExportTasksRequest& request, const ExportTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ExportTasks(request), context);
-    };
+    using Req = const ExportTasksRequest&;
+    using Resp = ExportTasksResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ExportTasks", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::ExportTasksOutcomeCallable CwpClient::ExportTasksCallable(const ExportTasksRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ExportTasksOutcome()>>(
-        [this, request]()
-        {
-            return this->ExportTasks(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ExportTasksOutcome>>();
+    ExportTasksAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const ExportTasksRequest&,
+        ExportTasksOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::ExportVulDefenceEventOutcome CwpClient::ExportVulDefenceEvent(const ExportVulDefenceEventRequest &request)
@@ -17907,25 +20812,32 @@ CwpClient::ExportVulDefenceEventOutcome CwpClient::ExportVulDefenceEvent(const E
 
 void CwpClient::ExportVulDefenceEventAsync(const ExportVulDefenceEventRequest& request, const ExportVulDefenceEventAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ExportVulDefenceEvent(request), context);
-    };
+    using Req = const ExportVulDefenceEventRequest&;
+    using Resp = ExportVulDefenceEventResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ExportVulDefenceEvent", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::ExportVulDefenceEventOutcomeCallable CwpClient::ExportVulDefenceEventCallable(const ExportVulDefenceEventRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ExportVulDefenceEventOutcome()>>(
-        [this, request]()
-        {
-            return this->ExportVulDefenceEvent(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ExportVulDefenceEventOutcome>>();
+    ExportVulDefenceEventAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const ExportVulDefenceEventRequest&,
+        ExportVulDefenceEventOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::ExportVulDefenceListOutcome CwpClient::ExportVulDefenceList(const ExportVulDefenceListRequest &request)
@@ -17950,25 +20862,32 @@ CwpClient::ExportVulDefenceListOutcome CwpClient::ExportVulDefenceList(const Exp
 
 void CwpClient::ExportVulDefenceListAsync(const ExportVulDefenceListRequest& request, const ExportVulDefenceListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ExportVulDefenceList(request), context);
-    };
+    using Req = const ExportVulDefenceListRequest&;
+    using Resp = ExportVulDefenceListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ExportVulDefenceList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::ExportVulDefenceListOutcomeCallable CwpClient::ExportVulDefenceListCallable(const ExportVulDefenceListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ExportVulDefenceListOutcome()>>(
-        [this, request]()
-        {
-            return this->ExportVulDefenceList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ExportVulDefenceListOutcome>>();
+    ExportVulDefenceListAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const ExportVulDefenceListRequest&,
+        ExportVulDefenceListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::ExportVulDefencePluginEventOutcome CwpClient::ExportVulDefencePluginEvent(const ExportVulDefencePluginEventRequest &request)
@@ -17993,25 +20912,32 @@ CwpClient::ExportVulDefencePluginEventOutcome CwpClient::ExportVulDefencePluginE
 
 void CwpClient::ExportVulDefencePluginEventAsync(const ExportVulDefencePluginEventRequest& request, const ExportVulDefencePluginEventAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ExportVulDefencePluginEvent(request), context);
-    };
+    using Req = const ExportVulDefencePluginEventRequest&;
+    using Resp = ExportVulDefencePluginEventResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ExportVulDefencePluginEvent", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::ExportVulDefencePluginEventOutcomeCallable CwpClient::ExportVulDefencePluginEventCallable(const ExportVulDefencePluginEventRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ExportVulDefencePluginEventOutcome()>>(
-        [this, request]()
-        {
-            return this->ExportVulDefencePluginEvent(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ExportVulDefencePluginEventOutcome>>();
+    ExportVulDefencePluginEventAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const ExportVulDefencePluginEventRequest&,
+        ExportVulDefencePluginEventOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::ExportVulDetectionExcelOutcome CwpClient::ExportVulDetectionExcel(const ExportVulDetectionExcelRequest &request)
@@ -18036,25 +20962,32 @@ CwpClient::ExportVulDetectionExcelOutcome CwpClient::ExportVulDetectionExcel(con
 
 void CwpClient::ExportVulDetectionExcelAsync(const ExportVulDetectionExcelRequest& request, const ExportVulDetectionExcelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ExportVulDetectionExcel(request), context);
-    };
+    using Req = const ExportVulDetectionExcelRequest&;
+    using Resp = ExportVulDetectionExcelResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ExportVulDetectionExcel", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::ExportVulDetectionExcelOutcomeCallable CwpClient::ExportVulDetectionExcelCallable(const ExportVulDetectionExcelRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ExportVulDetectionExcelOutcome()>>(
-        [this, request]()
-        {
-            return this->ExportVulDetectionExcel(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ExportVulDetectionExcelOutcome>>();
+    ExportVulDetectionExcelAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const ExportVulDetectionExcelRequest&,
+        ExportVulDetectionExcelOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::ExportVulDetectionReportOutcome CwpClient::ExportVulDetectionReport(const ExportVulDetectionReportRequest &request)
@@ -18079,25 +21012,32 @@ CwpClient::ExportVulDetectionReportOutcome CwpClient::ExportVulDetectionReport(c
 
 void CwpClient::ExportVulDetectionReportAsync(const ExportVulDetectionReportRequest& request, const ExportVulDetectionReportAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ExportVulDetectionReport(request), context);
-    };
+    using Req = const ExportVulDetectionReportRequest&;
+    using Resp = ExportVulDetectionReportResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ExportVulDetectionReport", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::ExportVulDetectionReportOutcomeCallable CwpClient::ExportVulDetectionReportCallable(const ExportVulDetectionReportRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ExportVulDetectionReportOutcome()>>(
-        [this, request]()
-        {
-            return this->ExportVulDetectionReport(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ExportVulDetectionReportOutcome>>();
+    ExportVulDetectionReportAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const ExportVulDetectionReportRequest&,
+        ExportVulDetectionReportOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::ExportVulEffectHostListOutcome CwpClient::ExportVulEffectHostList(const ExportVulEffectHostListRequest &request)
@@ -18122,25 +21062,32 @@ CwpClient::ExportVulEffectHostListOutcome CwpClient::ExportVulEffectHostList(con
 
 void CwpClient::ExportVulEffectHostListAsync(const ExportVulEffectHostListRequest& request, const ExportVulEffectHostListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ExportVulEffectHostList(request), context);
-    };
+    using Req = const ExportVulEffectHostListRequest&;
+    using Resp = ExportVulEffectHostListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ExportVulEffectHostList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::ExportVulEffectHostListOutcomeCallable CwpClient::ExportVulEffectHostListCallable(const ExportVulEffectHostListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ExportVulEffectHostListOutcome()>>(
-        [this, request]()
-        {
-            return this->ExportVulEffectHostList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ExportVulEffectHostListOutcome>>();
+    ExportVulEffectHostListAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const ExportVulEffectHostListRequest&,
+        ExportVulEffectHostListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::ExportVulInfoOutcome CwpClient::ExportVulInfo(const ExportVulInfoRequest &request)
@@ -18165,25 +21112,32 @@ CwpClient::ExportVulInfoOutcome CwpClient::ExportVulInfo(const ExportVulInfoRequ
 
 void CwpClient::ExportVulInfoAsync(const ExportVulInfoRequest& request, const ExportVulInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ExportVulInfo(request), context);
-    };
+    using Req = const ExportVulInfoRequest&;
+    using Resp = ExportVulInfoResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ExportVulInfo", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::ExportVulInfoOutcomeCallable CwpClient::ExportVulInfoCallable(const ExportVulInfoRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ExportVulInfoOutcome()>>(
-        [this, request]()
-        {
-            return this->ExportVulInfo(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ExportVulInfoOutcome>>();
+    ExportVulInfoAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const ExportVulInfoRequest&,
+        ExportVulInfoOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::ExportVulListOutcome CwpClient::ExportVulList(const ExportVulListRequest &request)
@@ -18208,25 +21162,32 @@ CwpClient::ExportVulListOutcome CwpClient::ExportVulList(const ExportVulListRequ
 
 void CwpClient::ExportVulListAsync(const ExportVulListRequest& request, const ExportVulListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ExportVulList(request), context);
-    };
+    using Req = const ExportVulListRequest&;
+    using Resp = ExportVulListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ExportVulList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::ExportVulListOutcomeCallable CwpClient::ExportVulListCallable(const ExportVulListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ExportVulListOutcome()>>(
-        [this, request]()
-        {
-            return this->ExportVulList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ExportVulListOutcome>>();
+    ExportVulListAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const ExportVulListRequest&,
+        ExportVulListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::ExportWebPageEventListOutcome CwpClient::ExportWebPageEventList(const ExportWebPageEventListRequest &request)
@@ -18251,25 +21212,32 @@ CwpClient::ExportWebPageEventListOutcome CwpClient::ExportWebPageEventList(const
 
 void CwpClient::ExportWebPageEventListAsync(const ExportWebPageEventListRequest& request, const ExportWebPageEventListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ExportWebPageEventList(request), context);
-    };
+    using Req = const ExportWebPageEventListRequest&;
+    using Resp = ExportWebPageEventListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ExportWebPageEventList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::ExportWebPageEventListOutcomeCallable CwpClient::ExportWebPageEventListCallable(const ExportWebPageEventListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ExportWebPageEventListOutcome()>>(
-        [this, request]()
-        {
-            return this->ExportWebPageEventList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ExportWebPageEventListOutcome>>();
+    ExportWebPageEventListAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const ExportWebPageEventListRequest&,
+        ExportWebPageEventListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::FixBaselineDetectOutcome CwpClient::FixBaselineDetect(const FixBaselineDetectRequest &request)
@@ -18294,25 +21262,32 @@ CwpClient::FixBaselineDetectOutcome CwpClient::FixBaselineDetect(const FixBaseli
 
 void CwpClient::FixBaselineDetectAsync(const FixBaselineDetectRequest& request, const FixBaselineDetectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->FixBaselineDetect(request), context);
-    };
+    using Req = const FixBaselineDetectRequest&;
+    using Resp = FixBaselineDetectResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "FixBaselineDetect", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::FixBaselineDetectOutcomeCallable CwpClient::FixBaselineDetectCallable(const FixBaselineDetectRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<FixBaselineDetectOutcome()>>(
-        [this, request]()
-        {
-            return this->FixBaselineDetect(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<FixBaselineDetectOutcome>>();
+    FixBaselineDetectAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const FixBaselineDetectRequest&,
+        FixBaselineDetectOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::GetLocalStorageItemOutcome CwpClient::GetLocalStorageItem(const GetLocalStorageItemRequest &request)
@@ -18337,25 +21312,32 @@ CwpClient::GetLocalStorageItemOutcome CwpClient::GetLocalStorageItem(const GetLo
 
 void CwpClient::GetLocalStorageItemAsync(const GetLocalStorageItemRequest& request, const GetLocalStorageItemAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->GetLocalStorageItem(request), context);
-    };
+    using Req = const GetLocalStorageItemRequest&;
+    using Resp = GetLocalStorageItemResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "GetLocalStorageItem", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::GetLocalStorageItemOutcomeCallable CwpClient::GetLocalStorageItemCallable(const GetLocalStorageItemRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<GetLocalStorageItemOutcome()>>(
-        [this, request]()
-        {
-            return this->GetLocalStorageItem(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<GetLocalStorageItemOutcome>>();
+    GetLocalStorageItemAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const GetLocalStorageItemRequest&,
+        GetLocalStorageItemOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::IgnoreImpactedHostsOutcome CwpClient::IgnoreImpactedHosts(const IgnoreImpactedHostsRequest &request)
@@ -18380,25 +21362,32 @@ CwpClient::IgnoreImpactedHostsOutcome CwpClient::IgnoreImpactedHosts(const Ignor
 
 void CwpClient::IgnoreImpactedHostsAsync(const IgnoreImpactedHostsRequest& request, const IgnoreImpactedHostsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->IgnoreImpactedHosts(request), context);
-    };
+    using Req = const IgnoreImpactedHostsRequest&;
+    using Resp = IgnoreImpactedHostsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "IgnoreImpactedHosts", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::IgnoreImpactedHostsOutcomeCallable CwpClient::IgnoreImpactedHostsCallable(const IgnoreImpactedHostsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<IgnoreImpactedHostsOutcome()>>(
-        [this, request]()
-        {
-            return this->IgnoreImpactedHosts(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<IgnoreImpactedHostsOutcome>>();
+    IgnoreImpactedHostsAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const IgnoreImpactedHostsRequest&,
+        IgnoreImpactedHostsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::KeysLocalStorageOutcome CwpClient::KeysLocalStorage(const KeysLocalStorageRequest &request)
@@ -18423,25 +21412,32 @@ CwpClient::KeysLocalStorageOutcome CwpClient::KeysLocalStorage(const KeysLocalSt
 
 void CwpClient::KeysLocalStorageAsync(const KeysLocalStorageRequest& request, const KeysLocalStorageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->KeysLocalStorage(request), context);
-    };
+    using Req = const KeysLocalStorageRequest&;
+    using Resp = KeysLocalStorageResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "KeysLocalStorage", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::KeysLocalStorageOutcomeCallable CwpClient::KeysLocalStorageCallable(const KeysLocalStorageRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<KeysLocalStorageOutcome()>>(
-        [this, request]()
-        {
-            return this->KeysLocalStorage(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<KeysLocalStorageOutcome>>();
+    KeysLocalStorageAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const KeysLocalStorageRequest&,
+        KeysLocalStorageOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::ModifyAutoOpenProVersionConfigOutcome CwpClient::ModifyAutoOpenProVersionConfig(const ModifyAutoOpenProVersionConfigRequest &request)
@@ -18466,25 +21462,32 @@ CwpClient::ModifyAutoOpenProVersionConfigOutcome CwpClient::ModifyAutoOpenProVer
 
 void CwpClient::ModifyAutoOpenProVersionConfigAsync(const ModifyAutoOpenProVersionConfigRequest& request, const ModifyAutoOpenProVersionConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyAutoOpenProVersionConfig(request), context);
-    };
+    using Req = const ModifyAutoOpenProVersionConfigRequest&;
+    using Resp = ModifyAutoOpenProVersionConfigResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyAutoOpenProVersionConfig", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::ModifyAutoOpenProVersionConfigOutcomeCallable CwpClient::ModifyAutoOpenProVersionConfigCallable(const ModifyAutoOpenProVersionConfigRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyAutoOpenProVersionConfigOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyAutoOpenProVersionConfig(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyAutoOpenProVersionConfigOutcome>>();
+    ModifyAutoOpenProVersionConfigAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const ModifyAutoOpenProVersionConfigRequest&,
+        ModifyAutoOpenProVersionConfigOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::ModifyBanModeOutcome CwpClient::ModifyBanMode(const ModifyBanModeRequest &request)
@@ -18509,25 +21512,32 @@ CwpClient::ModifyBanModeOutcome CwpClient::ModifyBanMode(const ModifyBanModeRequ
 
 void CwpClient::ModifyBanModeAsync(const ModifyBanModeRequest& request, const ModifyBanModeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyBanMode(request), context);
-    };
+    using Req = const ModifyBanModeRequest&;
+    using Resp = ModifyBanModeResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyBanMode", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::ModifyBanModeOutcomeCallable CwpClient::ModifyBanModeCallable(const ModifyBanModeRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyBanModeOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyBanMode(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyBanModeOutcome>>();
+    ModifyBanModeAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const ModifyBanModeRequest&,
+        ModifyBanModeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::ModifyBanStatusOutcome CwpClient::ModifyBanStatus(const ModifyBanStatusRequest &request)
@@ -18552,25 +21562,32 @@ CwpClient::ModifyBanStatusOutcome CwpClient::ModifyBanStatus(const ModifyBanStat
 
 void CwpClient::ModifyBanStatusAsync(const ModifyBanStatusRequest& request, const ModifyBanStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyBanStatus(request), context);
-    };
+    using Req = const ModifyBanStatusRequest&;
+    using Resp = ModifyBanStatusResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyBanStatus", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::ModifyBanStatusOutcomeCallable CwpClient::ModifyBanStatusCallable(const ModifyBanStatusRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyBanStatusOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyBanStatus(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyBanStatusOutcome>>();
+    ModifyBanStatusAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const ModifyBanStatusRequest&,
+        ModifyBanStatusOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::ModifyBanWhiteListOutcome CwpClient::ModifyBanWhiteList(const ModifyBanWhiteListRequest &request)
@@ -18595,25 +21612,32 @@ CwpClient::ModifyBanWhiteListOutcome CwpClient::ModifyBanWhiteList(const ModifyB
 
 void CwpClient::ModifyBanWhiteListAsync(const ModifyBanWhiteListRequest& request, const ModifyBanWhiteListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyBanWhiteList(request), context);
-    };
+    using Req = const ModifyBanWhiteListRequest&;
+    using Resp = ModifyBanWhiteListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyBanWhiteList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::ModifyBanWhiteListOutcomeCallable CwpClient::ModifyBanWhiteListCallable(const ModifyBanWhiteListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyBanWhiteListOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyBanWhiteList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyBanWhiteListOutcome>>();
+    ModifyBanWhiteListAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const ModifyBanWhiteListRequest&,
+        ModifyBanWhiteListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::ModifyBaselinePolicyOutcome CwpClient::ModifyBaselinePolicy(const ModifyBaselinePolicyRequest &request)
@@ -18638,25 +21662,32 @@ CwpClient::ModifyBaselinePolicyOutcome CwpClient::ModifyBaselinePolicy(const Mod
 
 void CwpClient::ModifyBaselinePolicyAsync(const ModifyBaselinePolicyRequest& request, const ModifyBaselinePolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyBaselinePolicy(request), context);
-    };
+    using Req = const ModifyBaselinePolicyRequest&;
+    using Resp = ModifyBaselinePolicyResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyBaselinePolicy", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::ModifyBaselinePolicyOutcomeCallable CwpClient::ModifyBaselinePolicyCallable(const ModifyBaselinePolicyRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyBaselinePolicyOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyBaselinePolicy(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyBaselinePolicyOutcome>>();
+    ModifyBaselinePolicyAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const ModifyBaselinePolicyRequest&,
+        ModifyBaselinePolicyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::ModifyBaselinePolicyStateOutcome CwpClient::ModifyBaselinePolicyState(const ModifyBaselinePolicyStateRequest &request)
@@ -18681,25 +21712,32 @@ CwpClient::ModifyBaselinePolicyStateOutcome CwpClient::ModifyBaselinePolicyState
 
 void CwpClient::ModifyBaselinePolicyStateAsync(const ModifyBaselinePolicyStateRequest& request, const ModifyBaselinePolicyStateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyBaselinePolicyState(request), context);
-    };
+    using Req = const ModifyBaselinePolicyStateRequest&;
+    using Resp = ModifyBaselinePolicyStateResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyBaselinePolicyState", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::ModifyBaselinePolicyStateOutcomeCallable CwpClient::ModifyBaselinePolicyStateCallable(const ModifyBaselinePolicyStateRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyBaselinePolicyStateOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyBaselinePolicyState(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyBaselinePolicyStateOutcome>>();
+    ModifyBaselinePolicyStateAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const ModifyBaselinePolicyStateRequest&,
+        ModifyBaselinePolicyStateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::ModifyBaselineRuleOutcome CwpClient::ModifyBaselineRule(const ModifyBaselineRuleRequest &request)
@@ -18724,25 +21762,32 @@ CwpClient::ModifyBaselineRuleOutcome CwpClient::ModifyBaselineRule(const ModifyB
 
 void CwpClient::ModifyBaselineRuleAsync(const ModifyBaselineRuleRequest& request, const ModifyBaselineRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyBaselineRule(request), context);
-    };
+    using Req = const ModifyBaselineRuleRequest&;
+    using Resp = ModifyBaselineRuleResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyBaselineRule", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::ModifyBaselineRuleOutcomeCallable CwpClient::ModifyBaselineRuleCallable(const ModifyBaselineRuleRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyBaselineRuleOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyBaselineRule(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyBaselineRuleOutcome>>();
+    ModifyBaselineRuleAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const ModifyBaselineRuleRequest&,
+        ModifyBaselineRuleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::ModifyBaselineRuleIgnoreOutcome CwpClient::ModifyBaselineRuleIgnore(const ModifyBaselineRuleIgnoreRequest &request)
@@ -18767,25 +21812,32 @@ CwpClient::ModifyBaselineRuleIgnoreOutcome CwpClient::ModifyBaselineRuleIgnore(c
 
 void CwpClient::ModifyBaselineRuleIgnoreAsync(const ModifyBaselineRuleIgnoreRequest& request, const ModifyBaselineRuleIgnoreAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyBaselineRuleIgnore(request), context);
-    };
+    using Req = const ModifyBaselineRuleIgnoreRequest&;
+    using Resp = ModifyBaselineRuleIgnoreResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyBaselineRuleIgnore", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::ModifyBaselineRuleIgnoreOutcomeCallable CwpClient::ModifyBaselineRuleIgnoreCallable(const ModifyBaselineRuleIgnoreRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyBaselineRuleIgnoreOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyBaselineRuleIgnore(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyBaselineRuleIgnoreOutcome>>();
+    ModifyBaselineRuleIgnoreAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const ModifyBaselineRuleIgnoreRequest&,
+        ModifyBaselineRuleIgnoreOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::ModifyBaselineWeakPasswordOutcome CwpClient::ModifyBaselineWeakPassword(const ModifyBaselineWeakPasswordRequest &request)
@@ -18810,25 +21862,32 @@ CwpClient::ModifyBaselineWeakPasswordOutcome CwpClient::ModifyBaselineWeakPasswo
 
 void CwpClient::ModifyBaselineWeakPasswordAsync(const ModifyBaselineWeakPasswordRequest& request, const ModifyBaselineWeakPasswordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyBaselineWeakPassword(request), context);
-    };
+    using Req = const ModifyBaselineWeakPasswordRequest&;
+    using Resp = ModifyBaselineWeakPasswordResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyBaselineWeakPassword", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::ModifyBaselineWeakPasswordOutcomeCallable CwpClient::ModifyBaselineWeakPasswordCallable(const ModifyBaselineWeakPasswordRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyBaselineWeakPasswordOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyBaselineWeakPassword(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyBaselineWeakPasswordOutcome>>();
+    ModifyBaselineWeakPasswordAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const ModifyBaselineWeakPasswordRequest&,
+        ModifyBaselineWeakPasswordOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::ModifyBashPolicyOutcome CwpClient::ModifyBashPolicy(const ModifyBashPolicyRequest &request)
@@ -18853,25 +21912,32 @@ CwpClient::ModifyBashPolicyOutcome CwpClient::ModifyBashPolicy(const ModifyBashP
 
 void CwpClient::ModifyBashPolicyAsync(const ModifyBashPolicyRequest& request, const ModifyBashPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyBashPolicy(request), context);
-    };
+    using Req = const ModifyBashPolicyRequest&;
+    using Resp = ModifyBashPolicyResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyBashPolicy", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::ModifyBashPolicyOutcomeCallable CwpClient::ModifyBashPolicyCallable(const ModifyBashPolicyRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyBashPolicyOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyBashPolicy(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyBashPolicyOutcome>>();
+    ModifyBashPolicyAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const ModifyBashPolicyRequest&,
+        ModifyBashPolicyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::ModifyBashPolicyStatusOutcome CwpClient::ModifyBashPolicyStatus(const ModifyBashPolicyStatusRequest &request)
@@ -18896,25 +21962,32 @@ CwpClient::ModifyBashPolicyStatusOutcome CwpClient::ModifyBashPolicyStatus(const
 
 void CwpClient::ModifyBashPolicyStatusAsync(const ModifyBashPolicyStatusRequest& request, const ModifyBashPolicyStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyBashPolicyStatus(request), context);
-    };
+    using Req = const ModifyBashPolicyStatusRequest&;
+    using Resp = ModifyBashPolicyStatusResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyBashPolicyStatus", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::ModifyBashPolicyStatusOutcomeCallable CwpClient::ModifyBashPolicyStatusCallable(const ModifyBashPolicyStatusRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyBashPolicyStatusOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyBashPolicyStatus(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyBashPolicyStatusOutcome>>();
+    ModifyBashPolicyStatusAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const ModifyBashPolicyStatusRequest&,
+        ModifyBashPolicyStatusOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::ModifyBruteAttackRulesOutcome CwpClient::ModifyBruteAttackRules(const ModifyBruteAttackRulesRequest &request)
@@ -18939,25 +22012,32 @@ CwpClient::ModifyBruteAttackRulesOutcome CwpClient::ModifyBruteAttackRules(const
 
 void CwpClient::ModifyBruteAttackRulesAsync(const ModifyBruteAttackRulesRequest& request, const ModifyBruteAttackRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyBruteAttackRules(request), context);
-    };
+    using Req = const ModifyBruteAttackRulesRequest&;
+    using Resp = ModifyBruteAttackRulesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyBruteAttackRules", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::ModifyBruteAttackRulesOutcomeCallable CwpClient::ModifyBruteAttackRulesCallable(const ModifyBruteAttackRulesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyBruteAttackRulesOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyBruteAttackRules(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyBruteAttackRulesOutcome>>();
+    ModifyBruteAttackRulesAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const ModifyBruteAttackRulesRequest&,
+        ModifyBruteAttackRulesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::ModifyEventAttackStatusOutcome CwpClient::ModifyEventAttackStatus(const ModifyEventAttackStatusRequest &request)
@@ -18982,25 +22062,32 @@ CwpClient::ModifyEventAttackStatusOutcome CwpClient::ModifyEventAttackStatus(con
 
 void CwpClient::ModifyEventAttackStatusAsync(const ModifyEventAttackStatusRequest& request, const ModifyEventAttackStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyEventAttackStatus(request), context);
-    };
+    using Req = const ModifyEventAttackStatusRequest&;
+    using Resp = ModifyEventAttackStatusResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyEventAttackStatus", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::ModifyEventAttackStatusOutcomeCallable CwpClient::ModifyEventAttackStatusCallable(const ModifyEventAttackStatusRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyEventAttackStatusOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyEventAttackStatus(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyEventAttackStatusOutcome>>();
+    ModifyEventAttackStatusAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const ModifyEventAttackStatusRequest&,
+        ModifyEventAttackStatusOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::ModifyFileTamperEventsOutcome CwpClient::ModifyFileTamperEvents(const ModifyFileTamperEventsRequest &request)
@@ -19025,25 +22112,32 @@ CwpClient::ModifyFileTamperEventsOutcome CwpClient::ModifyFileTamperEvents(const
 
 void CwpClient::ModifyFileTamperEventsAsync(const ModifyFileTamperEventsRequest& request, const ModifyFileTamperEventsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyFileTamperEvents(request), context);
-    };
+    using Req = const ModifyFileTamperEventsRequest&;
+    using Resp = ModifyFileTamperEventsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyFileTamperEvents", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::ModifyFileTamperEventsOutcomeCallable CwpClient::ModifyFileTamperEventsCallable(const ModifyFileTamperEventsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyFileTamperEventsOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyFileTamperEvents(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyFileTamperEventsOutcome>>();
+    ModifyFileTamperEventsAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const ModifyFileTamperEventsRequest&,
+        ModifyFileTamperEventsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::ModifyFileTamperRuleOutcome CwpClient::ModifyFileTamperRule(const ModifyFileTamperRuleRequest &request)
@@ -19068,25 +22162,32 @@ CwpClient::ModifyFileTamperRuleOutcome CwpClient::ModifyFileTamperRule(const Mod
 
 void CwpClient::ModifyFileTamperRuleAsync(const ModifyFileTamperRuleRequest& request, const ModifyFileTamperRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyFileTamperRule(request), context);
-    };
+    using Req = const ModifyFileTamperRuleRequest&;
+    using Resp = ModifyFileTamperRuleResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyFileTamperRule", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::ModifyFileTamperRuleOutcomeCallable CwpClient::ModifyFileTamperRuleCallable(const ModifyFileTamperRuleRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyFileTamperRuleOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyFileTamperRule(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyFileTamperRuleOutcome>>();
+    ModifyFileTamperRuleAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const ModifyFileTamperRuleRequest&,
+        ModifyFileTamperRuleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::ModifyFileTamperRuleStatusOutcome CwpClient::ModifyFileTamperRuleStatus(const ModifyFileTamperRuleStatusRequest &request)
@@ -19111,25 +22212,32 @@ CwpClient::ModifyFileTamperRuleStatusOutcome CwpClient::ModifyFileTamperRuleStat
 
 void CwpClient::ModifyFileTamperRuleStatusAsync(const ModifyFileTamperRuleStatusRequest& request, const ModifyFileTamperRuleStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyFileTamperRuleStatus(request), context);
-    };
+    using Req = const ModifyFileTamperRuleStatusRequest&;
+    using Resp = ModifyFileTamperRuleStatusResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyFileTamperRuleStatus", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::ModifyFileTamperRuleStatusOutcomeCallable CwpClient::ModifyFileTamperRuleStatusCallable(const ModifyFileTamperRuleStatusRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyFileTamperRuleStatusOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyFileTamperRuleStatus(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyFileTamperRuleStatusOutcome>>();
+    ModifyFileTamperRuleStatusAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const ModifyFileTamperRuleStatusRequest&,
+        ModifyFileTamperRuleStatusOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::ModifyJavaMemShellPluginSwitchOutcome CwpClient::ModifyJavaMemShellPluginSwitch(const ModifyJavaMemShellPluginSwitchRequest &request)
@@ -19154,25 +22262,32 @@ CwpClient::ModifyJavaMemShellPluginSwitchOutcome CwpClient::ModifyJavaMemShellPl
 
 void CwpClient::ModifyJavaMemShellPluginSwitchAsync(const ModifyJavaMemShellPluginSwitchRequest& request, const ModifyJavaMemShellPluginSwitchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyJavaMemShellPluginSwitch(request), context);
-    };
+    using Req = const ModifyJavaMemShellPluginSwitchRequest&;
+    using Resp = ModifyJavaMemShellPluginSwitchResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyJavaMemShellPluginSwitch", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::ModifyJavaMemShellPluginSwitchOutcomeCallable CwpClient::ModifyJavaMemShellPluginSwitchCallable(const ModifyJavaMemShellPluginSwitchRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyJavaMemShellPluginSwitchOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyJavaMemShellPluginSwitch(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyJavaMemShellPluginSwitchOutcome>>();
+    ModifyJavaMemShellPluginSwitchAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const ModifyJavaMemShellPluginSwitchRequest&,
+        ModifyJavaMemShellPluginSwitchOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::ModifyJavaMemShellsStatusOutcome CwpClient::ModifyJavaMemShellsStatus(const ModifyJavaMemShellsStatusRequest &request)
@@ -19197,25 +22312,32 @@ CwpClient::ModifyJavaMemShellsStatusOutcome CwpClient::ModifyJavaMemShellsStatus
 
 void CwpClient::ModifyJavaMemShellsStatusAsync(const ModifyJavaMemShellsStatusRequest& request, const ModifyJavaMemShellsStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyJavaMemShellsStatus(request), context);
-    };
+    using Req = const ModifyJavaMemShellsStatusRequest&;
+    using Resp = ModifyJavaMemShellsStatusResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyJavaMemShellsStatus", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::ModifyJavaMemShellsStatusOutcomeCallable CwpClient::ModifyJavaMemShellsStatusCallable(const ModifyJavaMemShellsStatusRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyJavaMemShellsStatusOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyJavaMemShellsStatus(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyJavaMemShellsStatusOutcome>>();
+    ModifyJavaMemShellsStatusAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const ModifyJavaMemShellsStatusRequest&,
+        ModifyJavaMemShellsStatusOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::ModifyLicenseBindsOutcome CwpClient::ModifyLicenseBinds(const ModifyLicenseBindsRequest &request)
@@ -19240,25 +22362,32 @@ CwpClient::ModifyLicenseBindsOutcome CwpClient::ModifyLicenseBinds(const ModifyL
 
 void CwpClient::ModifyLicenseBindsAsync(const ModifyLicenseBindsRequest& request, const ModifyLicenseBindsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyLicenseBinds(request), context);
-    };
+    using Req = const ModifyLicenseBindsRequest&;
+    using Resp = ModifyLicenseBindsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyLicenseBinds", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::ModifyLicenseBindsOutcomeCallable CwpClient::ModifyLicenseBindsCallable(const ModifyLicenseBindsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyLicenseBindsOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyLicenseBinds(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyLicenseBindsOutcome>>();
+    ModifyLicenseBindsAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const ModifyLicenseBindsRequest&,
+        ModifyLicenseBindsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::ModifyLicenseOrderOutcome CwpClient::ModifyLicenseOrder(const ModifyLicenseOrderRequest &request)
@@ -19283,25 +22412,32 @@ CwpClient::ModifyLicenseOrderOutcome CwpClient::ModifyLicenseOrder(const ModifyL
 
 void CwpClient::ModifyLicenseOrderAsync(const ModifyLicenseOrderRequest& request, const ModifyLicenseOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyLicenseOrder(request), context);
-    };
+    using Req = const ModifyLicenseOrderRequest&;
+    using Resp = ModifyLicenseOrderResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyLicenseOrder", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::ModifyLicenseOrderOutcomeCallable CwpClient::ModifyLicenseOrderCallable(const ModifyLicenseOrderRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyLicenseOrderOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyLicenseOrder(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyLicenseOrderOutcome>>();
+    ModifyLicenseOrderAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const ModifyLicenseOrderRequest&,
+        ModifyLicenseOrderOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::ModifyLicenseUnBindsOutcome CwpClient::ModifyLicenseUnBinds(const ModifyLicenseUnBindsRequest &request)
@@ -19326,25 +22462,32 @@ CwpClient::ModifyLicenseUnBindsOutcome CwpClient::ModifyLicenseUnBinds(const Mod
 
 void CwpClient::ModifyLicenseUnBindsAsync(const ModifyLicenseUnBindsRequest& request, const ModifyLicenseUnBindsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyLicenseUnBinds(request), context);
-    };
+    using Req = const ModifyLicenseUnBindsRequest&;
+    using Resp = ModifyLicenseUnBindsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyLicenseUnBinds", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::ModifyLicenseUnBindsOutcomeCallable CwpClient::ModifyLicenseUnBindsCallable(const ModifyLicenseUnBindsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyLicenseUnBindsOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyLicenseUnBinds(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyLicenseUnBindsOutcome>>();
+    ModifyLicenseUnBindsAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const ModifyLicenseUnBindsRequest&,
+        ModifyLicenseUnBindsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::ModifyLogKafkaAccessOutcome CwpClient::ModifyLogKafkaAccess(const ModifyLogKafkaAccessRequest &request)
@@ -19369,25 +22512,32 @@ CwpClient::ModifyLogKafkaAccessOutcome CwpClient::ModifyLogKafkaAccess(const Mod
 
 void CwpClient::ModifyLogKafkaAccessAsync(const ModifyLogKafkaAccessRequest& request, const ModifyLogKafkaAccessAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyLogKafkaAccess(request), context);
-    };
+    using Req = const ModifyLogKafkaAccessRequest&;
+    using Resp = ModifyLogKafkaAccessResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyLogKafkaAccess", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::ModifyLogKafkaAccessOutcomeCallable CwpClient::ModifyLogKafkaAccessCallable(const ModifyLogKafkaAccessRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyLogKafkaAccessOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyLogKafkaAccess(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyLogKafkaAccessOutcome>>();
+    ModifyLogKafkaAccessAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const ModifyLogKafkaAccessRequest&,
+        ModifyLogKafkaAccessOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::ModifyLogKafkaDeliverTypeOutcome CwpClient::ModifyLogKafkaDeliverType(const ModifyLogKafkaDeliverTypeRequest &request)
@@ -19412,25 +22562,32 @@ CwpClient::ModifyLogKafkaDeliverTypeOutcome CwpClient::ModifyLogKafkaDeliverType
 
 void CwpClient::ModifyLogKafkaDeliverTypeAsync(const ModifyLogKafkaDeliverTypeRequest& request, const ModifyLogKafkaDeliverTypeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyLogKafkaDeliverType(request), context);
-    };
+    using Req = const ModifyLogKafkaDeliverTypeRequest&;
+    using Resp = ModifyLogKafkaDeliverTypeResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyLogKafkaDeliverType", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::ModifyLogKafkaDeliverTypeOutcomeCallable CwpClient::ModifyLogKafkaDeliverTypeCallable(const ModifyLogKafkaDeliverTypeRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyLogKafkaDeliverTypeOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyLogKafkaDeliverType(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyLogKafkaDeliverTypeOutcome>>();
+    ModifyLogKafkaDeliverTypeAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const ModifyLogKafkaDeliverTypeRequest&,
+        ModifyLogKafkaDeliverTypeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::ModifyLogKafkaStateOutcome CwpClient::ModifyLogKafkaState(const ModifyLogKafkaStateRequest &request)
@@ -19455,25 +22612,32 @@ CwpClient::ModifyLogKafkaStateOutcome CwpClient::ModifyLogKafkaState(const Modif
 
 void CwpClient::ModifyLogKafkaStateAsync(const ModifyLogKafkaStateRequest& request, const ModifyLogKafkaStateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyLogKafkaState(request), context);
-    };
+    using Req = const ModifyLogKafkaStateRequest&;
+    using Resp = ModifyLogKafkaStateResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyLogKafkaState", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::ModifyLogKafkaStateOutcomeCallable CwpClient::ModifyLogKafkaStateCallable(const ModifyLogKafkaStateRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyLogKafkaStateOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyLogKafkaState(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyLogKafkaStateOutcome>>();
+    ModifyLogKafkaStateAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const ModifyLogKafkaStateRequest&,
+        ModifyLogKafkaStateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::ModifyLogStorageConfigOutcome CwpClient::ModifyLogStorageConfig(const ModifyLogStorageConfigRequest &request)
@@ -19498,25 +22662,32 @@ CwpClient::ModifyLogStorageConfigOutcome CwpClient::ModifyLogStorageConfig(const
 
 void CwpClient::ModifyLogStorageConfigAsync(const ModifyLogStorageConfigRequest& request, const ModifyLogStorageConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyLogStorageConfig(request), context);
-    };
+    using Req = const ModifyLogStorageConfigRequest&;
+    using Resp = ModifyLogStorageConfigResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyLogStorageConfig", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::ModifyLogStorageConfigOutcomeCallable CwpClient::ModifyLogStorageConfigCallable(const ModifyLogStorageConfigRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyLogStorageConfigOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyLogStorageConfig(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyLogStorageConfigOutcome>>();
+    ModifyLogStorageConfigAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const ModifyLogStorageConfigRequest&,
+        ModifyLogStorageConfigOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::ModifyLoginWhiteInfoOutcome CwpClient::ModifyLoginWhiteInfo(const ModifyLoginWhiteInfoRequest &request)
@@ -19541,25 +22712,32 @@ CwpClient::ModifyLoginWhiteInfoOutcome CwpClient::ModifyLoginWhiteInfo(const Mod
 
 void CwpClient::ModifyLoginWhiteInfoAsync(const ModifyLoginWhiteInfoRequest& request, const ModifyLoginWhiteInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyLoginWhiteInfo(request), context);
-    };
+    using Req = const ModifyLoginWhiteInfoRequest&;
+    using Resp = ModifyLoginWhiteInfoResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyLoginWhiteInfo", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::ModifyLoginWhiteInfoOutcomeCallable CwpClient::ModifyLoginWhiteInfoCallable(const ModifyLoginWhiteInfoRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyLoginWhiteInfoOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyLoginWhiteInfo(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyLoginWhiteInfoOutcome>>();
+    ModifyLoginWhiteInfoAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const ModifyLoginWhiteInfoRequest&,
+        ModifyLoginWhiteInfoOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::ModifyLoginWhiteRecordOutcome CwpClient::ModifyLoginWhiteRecord(const ModifyLoginWhiteRecordRequest &request)
@@ -19584,25 +22762,32 @@ CwpClient::ModifyLoginWhiteRecordOutcome CwpClient::ModifyLoginWhiteRecord(const
 
 void CwpClient::ModifyLoginWhiteRecordAsync(const ModifyLoginWhiteRecordRequest& request, const ModifyLoginWhiteRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyLoginWhiteRecord(request), context);
-    };
+    using Req = const ModifyLoginWhiteRecordRequest&;
+    using Resp = ModifyLoginWhiteRecordResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyLoginWhiteRecord", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::ModifyLoginWhiteRecordOutcomeCallable CwpClient::ModifyLoginWhiteRecordCallable(const ModifyLoginWhiteRecordRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyLoginWhiteRecordOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyLoginWhiteRecord(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyLoginWhiteRecordOutcome>>();
+    ModifyLoginWhiteRecordAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const ModifyLoginWhiteRecordRequest&,
+        ModifyLoginWhiteRecordOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::ModifyMachineAutoClearConfigOutcome CwpClient::ModifyMachineAutoClearConfig(const ModifyMachineAutoClearConfigRequest &request)
@@ -19627,25 +22812,32 @@ CwpClient::ModifyMachineAutoClearConfigOutcome CwpClient::ModifyMachineAutoClear
 
 void CwpClient::ModifyMachineAutoClearConfigAsync(const ModifyMachineAutoClearConfigRequest& request, const ModifyMachineAutoClearConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyMachineAutoClearConfig(request), context);
-    };
+    using Req = const ModifyMachineAutoClearConfigRequest&;
+    using Resp = ModifyMachineAutoClearConfigResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyMachineAutoClearConfig", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::ModifyMachineAutoClearConfigOutcomeCallable CwpClient::ModifyMachineAutoClearConfigCallable(const ModifyMachineAutoClearConfigRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyMachineAutoClearConfigOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyMachineAutoClearConfig(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyMachineAutoClearConfigOutcome>>();
+    ModifyMachineAutoClearConfigAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const ModifyMachineAutoClearConfigRequest&,
+        ModifyMachineAutoClearConfigOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::ModifyMachineRemarkOutcome CwpClient::ModifyMachineRemark(const ModifyMachineRemarkRequest &request)
@@ -19670,25 +22862,32 @@ CwpClient::ModifyMachineRemarkOutcome CwpClient::ModifyMachineRemark(const Modif
 
 void CwpClient::ModifyMachineRemarkAsync(const ModifyMachineRemarkRequest& request, const ModifyMachineRemarkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyMachineRemark(request), context);
-    };
+    using Req = const ModifyMachineRemarkRequest&;
+    using Resp = ModifyMachineRemarkResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyMachineRemark", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::ModifyMachineRemarkOutcomeCallable CwpClient::ModifyMachineRemarkCallable(const ModifyMachineRemarkRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyMachineRemarkOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyMachineRemark(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyMachineRemarkOutcome>>();
+    ModifyMachineRemarkAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const ModifyMachineRemarkRequest&,
+        ModifyMachineRemarkOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::ModifyMaliciousRequestWhiteListOutcome CwpClient::ModifyMaliciousRequestWhiteList(const ModifyMaliciousRequestWhiteListRequest &request)
@@ -19713,25 +22912,32 @@ CwpClient::ModifyMaliciousRequestWhiteListOutcome CwpClient::ModifyMaliciousRequ
 
 void CwpClient::ModifyMaliciousRequestWhiteListAsync(const ModifyMaliciousRequestWhiteListRequest& request, const ModifyMaliciousRequestWhiteListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyMaliciousRequestWhiteList(request), context);
-    };
+    using Req = const ModifyMaliciousRequestWhiteListRequest&;
+    using Resp = ModifyMaliciousRequestWhiteListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyMaliciousRequestWhiteList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::ModifyMaliciousRequestWhiteListOutcomeCallable CwpClient::ModifyMaliciousRequestWhiteListCallable(const ModifyMaliciousRequestWhiteListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyMaliciousRequestWhiteListOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyMaliciousRequestWhiteList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyMaliciousRequestWhiteListOutcome>>();
+    ModifyMaliciousRequestWhiteListAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const ModifyMaliciousRequestWhiteListRequest&,
+        ModifyMaliciousRequestWhiteListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::ModifyMalwareTimingScanSettingsOutcome CwpClient::ModifyMalwareTimingScanSettings(const ModifyMalwareTimingScanSettingsRequest &request)
@@ -19756,25 +22962,32 @@ CwpClient::ModifyMalwareTimingScanSettingsOutcome CwpClient::ModifyMalwareTiming
 
 void CwpClient::ModifyMalwareTimingScanSettingsAsync(const ModifyMalwareTimingScanSettingsRequest& request, const ModifyMalwareTimingScanSettingsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyMalwareTimingScanSettings(request), context);
-    };
+    using Req = const ModifyMalwareTimingScanSettingsRequest&;
+    using Resp = ModifyMalwareTimingScanSettingsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyMalwareTimingScanSettings", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::ModifyMalwareTimingScanSettingsOutcomeCallable CwpClient::ModifyMalwareTimingScanSettingsCallable(const ModifyMalwareTimingScanSettingsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyMalwareTimingScanSettingsOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyMalwareTimingScanSettings(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyMalwareTimingScanSettingsOutcome>>();
+    ModifyMalwareTimingScanSettingsAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const ModifyMalwareTimingScanSettingsRequest&,
+        ModifyMalwareTimingScanSettingsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::ModifyMalwareWhiteListOutcome CwpClient::ModifyMalwareWhiteList(const ModifyMalwareWhiteListRequest &request)
@@ -19799,25 +23012,32 @@ CwpClient::ModifyMalwareWhiteListOutcome CwpClient::ModifyMalwareWhiteList(const
 
 void CwpClient::ModifyMalwareWhiteListAsync(const ModifyMalwareWhiteListRequest& request, const ModifyMalwareWhiteListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyMalwareWhiteList(request), context);
-    };
+    using Req = const ModifyMalwareWhiteListRequest&;
+    using Resp = ModifyMalwareWhiteListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyMalwareWhiteList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::ModifyMalwareWhiteListOutcomeCallable CwpClient::ModifyMalwareWhiteListCallable(const ModifyMalwareWhiteListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyMalwareWhiteListOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyMalwareWhiteList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyMalwareWhiteListOutcome>>();
+    ModifyMalwareWhiteListAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const ModifyMalwareWhiteListRequest&,
+        ModifyMalwareWhiteListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::ModifyNetAttackSettingOutcome CwpClient::ModifyNetAttackSetting(const ModifyNetAttackSettingRequest &request)
@@ -19842,25 +23062,32 @@ CwpClient::ModifyNetAttackSettingOutcome CwpClient::ModifyNetAttackSetting(const
 
 void CwpClient::ModifyNetAttackSettingAsync(const ModifyNetAttackSettingRequest& request, const ModifyNetAttackSettingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyNetAttackSetting(request), context);
-    };
+    using Req = const ModifyNetAttackSettingRequest&;
+    using Resp = ModifyNetAttackSettingResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyNetAttackSetting", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::ModifyNetAttackSettingOutcomeCallable CwpClient::ModifyNetAttackSettingCallable(const ModifyNetAttackSettingRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyNetAttackSettingOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyNetAttackSetting(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyNetAttackSettingOutcome>>();
+    ModifyNetAttackSettingAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const ModifyNetAttackSettingRequest&,
+        ModifyNetAttackSettingOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::ModifyNetAttackWhiteListOutcome CwpClient::ModifyNetAttackWhiteList(const ModifyNetAttackWhiteListRequest &request)
@@ -19885,25 +23112,32 @@ CwpClient::ModifyNetAttackWhiteListOutcome CwpClient::ModifyNetAttackWhiteList(c
 
 void CwpClient::ModifyNetAttackWhiteListAsync(const ModifyNetAttackWhiteListRequest& request, const ModifyNetAttackWhiteListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyNetAttackWhiteList(request), context);
-    };
+    using Req = const ModifyNetAttackWhiteListRequest&;
+    using Resp = ModifyNetAttackWhiteListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyNetAttackWhiteList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::ModifyNetAttackWhiteListOutcomeCallable CwpClient::ModifyNetAttackWhiteListCallable(const ModifyNetAttackWhiteListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyNetAttackWhiteListOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyNetAttackWhiteList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyNetAttackWhiteListOutcome>>();
+    ModifyNetAttackWhiteListAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const ModifyNetAttackWhiteListRequest&,
+        ModifyNetAttackWhiteListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::ModifyOrderAttributeOutcome CwpClient::ModifyOrderAttribute(const ModifyOrderAttributeRequest &request)
@@ -19928,25 +23162,32 @@ CwpClient::ModifyOrderAttributeOutcome CwpClient::ModifyOrderAttribute(const Mod
 
 void CwpClient::ModifyOrderAttributeAsync(const ModifyOrderAttributeRequest& request, const ModifyOrderAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyOrderAttribute(request), context);
-    };
+    using Req = const ModifyOrderAttributeRequest&;
+    using Resp = ModifyOrderAttributeResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyOrderAttribute", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::ModifyOrderAttributeOutcomeCallable CwpClient::ModifyOrderAttributeCallable(const ModifyOrderAttributeRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyOrderAttributeOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyOrderAttribute(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyOrderAttributeOutcome>>();
+    ModifyOrderAttributeAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const ModifyOrderAttributeRequest&,
+        ModifyOrderAttributeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::ModifyRansomDefenseEventsStatusOutcome CwpClient::ModifyRansomDefenseEventsStatus(const ModifyRansomDefenseEventsStatusRequest &request)
@@ -19971,25 +23212,32 @@ CwpClient::ModifyRansomDefenseEventsStatusOutcome CwpClient::ModifyRansomDefense
 
 void CwpClient::ModifyRansomDefenseEventsStatusAsync(const ModifyRansomDefenseEventsStatusRequest& request, const ModifyRansomDefenseEventsStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyRansomDefenseEventsStatus(request), context);
-    };
+    using Req = const ModifyRansomDefenseEventsStatusRequest&;
+    using Resp = ModifyRansomDefenseEventsStatusResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyRansomDefenseEventsStatus", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::ModifyRansomDefenseEventsStatusOutcomeCallable CwpClient::ModifyRansomDefenseEventsStatusCallable(const ModifyRansomDefenseEventsStatusRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyRansomDefenseEventsStatusOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyRansomDefenseEventsStatus(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyRansomDefenseEventsStatusOutcome>>();
+    ModifyRansomDefenseEventsStatusAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const ModifyRansomDefenseEventsStatusRequest&,
+        ModifyRansomDefenseEventsStatusOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::ModifyRansomDefenseStrategyStatusOutcome CwpClient::ModifyRansomDefenseStrategyStatus(const ModifyRansomDefenseStrategyStatusRequest &request)
@@ -20014,25 +23262,32 @@ CwpClient::ModifyRansomDefenseStrategyStatusOutcome CwpClient::ModifyRansomDefen
 
 void CwpClient::ModifyRansomDefenseStrategyStatusAsync(const ModifyRansomDefenseStrategyStatusRequest& request, const ModifyRansomDefenseStrategyStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyRansomDefenseStrategyStatus(request), context);
-    };
+    using Req = const ModifyRansomDefenseStrategyStatusRequest&;
+    using Resp = ModifyRansomDefenseStrategyStatusResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyRansomDefenseStrategyStatus", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::ModifyRansomDefenseStrategyStatusOutcomeCallable CwpClient::ModifyRansomDefenseStrategyStatusCallable(const ModifyRansomDefenseStrategyStatusRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyRansomDefenseStrategyStatusOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyRansomDefenseStrategyStatus(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyRansomDefenseStrategyStatusOutcome>>();
+    ModifyRansomDefenseStrategyStatusAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const ModifyRansomDefenseStrategyStatusRequest&,
+        ModifyRansomDefenseStrategyStatusOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::ModifyRaspMaxCpuOutcome CwpClient::ModifyRaspMaxCpu(const ModifyRaspMaxCpuRequest &request)
@@ -20057,25 +23312,32 @@ CwpClient::ModifyRaspMaxCpuOutcome CwpClient::ModifyRaspMaxCpu(const ModifyRaspM
 
 void CwpClient::ModifyRaspMaxCpuAsync(const ModifyRaspMaxCpuRequest& request, const ModifyRaspMaxCpuAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyRaspMaxCpu(request), context);
-    };
+    using Req = const ModifyRaspMaxCpuRequest&;
+    using Resp = ModifyRaspMaxCpuResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyRaspMaxCpu", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::ModifyRaspMaxCpuOutcomeCallable CwpClient::ModifyRaspMaxCpuCallable(const ModifyRaspMaxCpuRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyRaspMaxCpuOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyRaspMaxCpu(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyRaspMaxCpuOutcome>>();
+    ModifyRaspMaxCpuAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const ModifyRaspMaxCpuRequest&,
+        ModifyRaspMaxCpuOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::ModifyRaspRulesOutcome CwpClient::ModifyRaspRules(const ModifyRaspRulesRequest &request)
@@ -20100,25 +23362,32 @@ CwpClient::ModifyRaspRulesOutcome CwpClient::ModifyRaspRules(const ModifyRaspRul
 
 void CwpClient::ModifyRaspRulesAsync(const ModifyRaspRulesRequest& request, const ModifyRaspRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyRaspRules(request), context);
-    };
+    using Req = const ModifyRaspRulesRequest&;
+    using Resp = ModifyRaspRulesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyRaspRules", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::ModifyRaspRulesOutcomeCallable CwpClient::ModifyRaspRulesCallable(const ModifyRaspRulesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyRaspRulesOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyRaspRules(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyRaspRulesOutcome>>();
+    ModifyRaspRulesAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const ModifyRaspRulesRequest&,
+        ModifyRaspRulesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::ModifyReverseShellRulesAggregationOutcome CwpClient::ModifyReverseShellRulesAggregation(const ModifyReverseShellRulesAggregationRequest &request)
@@ -20143,25 +23412,32 @@ CwpClient::ModifyReverseShellRulesAggregationOutcome CwpClient::ModifyReverseShe
 
 void CwpClient::ModifyReverseShellRulesAggregationAsync(const ModifyReverseShellRulesAggregationRequest& request, const ModifyReverseShellRulesAggregationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyReverseShellRulesAggregation(request), context);
-    };
+    using Req = const ModifyReverseShellRulesAggregationRequest&;
+    using Resp = ModifyReverseShellRulesAggregationResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyReverseShellRulesAggregation", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::ModifyReverseShellRulesAggregationOutcomeCallable CwpClient::ModifyReverseShellRulesAggregationCallable(const ModifyReverseShellRulesAggregationRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyReverseShellRulesAggregationOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyReverseShellRulesAggregation(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyReverseShellRulesAggregationOutcome>>();
+    ModifyReverseShellRulesAggregationAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const ModifyReverseShellRulesAggregationRequest&,
+        ModifyReverseShellRulesAggregationOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::ModifyRiskDnsPolicyOutcome CwpClient::ModifyRiskDnsPolicy(const ModifyRiskDnsPolicyRequest &request)
@@ -20186,25 +23462,32 @@ CwpClient::ModifyRiskDnsPolicyOutcome CwpClient::ModifyRiskDnsPolicy(const Modif
 
 void CwpClient::ModifyRiskDnsPolicyAsync(const ModifyRiskDnsPolicyRequest& request, const ModifyRiskDnsPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyRiskDnsPolicy(request), context);
-    };
+    using Req = const ModifyRiskDnsPolicyRequest&;
+    using Resp = ModifyRiskDnsPolicyResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyRiskDnsPolicy", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::ModifyRiskDnsPolicyOutcomeCallable CwpClient::ModifyRiskDnsPolicyCallable(const ModifyRiskDnsPolicyRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyRiskDnsPolicyOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyRiskDnsPolicy(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyRiskDnsPolicyOutcome>>();
+    ModifyRiskDnsPolicyAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const ModifyRiskDnsPolicyRequest&,
+        ModifyRiskDnsPolicyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::ModifyRiskDnsPolicyStatusOutcome CwpClient::ModifyRiskDnsPolicyStatus(const ModifyRiskDnsPolicyStatusRequest &request)
@@ -20229,25 +23512,32 @@ CwpClient::ModifyRiskDnsPolicyStatusOutcome CwpClient::ModifyRiskDnsPolicyStatus
 
 void CwpClient::ModifyRiskDnsPolicyStatusAsync(const ModifyRiskDnsPolicyStatusRequest& request, const ModifyRiskDnsPolicyStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyRiskDnsPolicyStatus(request), context);
-    };
+    using Req = const ModifyRiskDnsPolicyStatusRequest&;
+    using Resp = ModifyRiskDnsPolicyStatusResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyRiskDnsPolicyStatus", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::ModifyRiskDnsPolicyStatusOutcomeCallable CwpClient::ModifyRiskDnsPolicyStatusCallable(const ModifyRiskDnsPolicyStatusRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyRiskDnsPolicyStatusOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyRiskDnsPolicyStatus(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyRiskDnsPolicyStatusOutcome>>();
+    ModifyRiskDnsPolicyStatusAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const ModifyRiskDnsPolicyStatusRequest&,
+        ModifyRiskDnsPolicyStatusOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::ModifyRiskEventsStatusOutcome CwpClient::ModifyRiskEventsStatus(const ModifyRiskEventsStatusRequest &request)
@@ -20272,25 +23562,32 @@ CwpClient::ModifyRiskEventsStatusOutcome CwpClient::ModifyRiskEventsStatus(const
 
 void CwpClient::ModifyRiskEventsStatusAsync(const ModifyRiskEventsStatusRequest& request, const ModifyRiskEventsStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyRiskEventsStatus(request), context);
-    };
+    using Req = const ModifyRiskEventsStatusRequest&;
+    using Resp = ModifyRiskEventsStatusResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyRiskEventsStatus", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::ModifyRiskEventsStatusOutcomeCallable CwpClient::ModifyRiskEventsStatusCallable(const ModifyRiskEventsStatusRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyRiskEventsStatusOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyRiskEventsStatus(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyRiskEventsStatusOutcome>>();
+    ModifyRiskEventsStatusAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const ModifyRiskEventsStatusRequest&,
+        ModifyRiskEventsStatusOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::ModifyUsersConfigOutcome CwpClient::ModifyUsersConfig(const ModifyUsersConfigRequest &request)
@@ -20315,25 +23612,32 @@ CwpClient::ModifyUsersConfigOutcome CwpClient::ModifyUsersConfig(const ModifyUse
 
 void CwpClient::ModifyUsersConfigAsync(const ModifyUsersConfigRequest& request, const ModifyUsersConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyUsersConfig(request), context);
-    };
+    using Req = const ModifyUsersConfigRequest&;
+    using Resp = ModifyUsersConfigResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyUsersConfig", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::ModifyUsersConfigOutcomeCallable CwpClient::ModifyUsersConfigCallable(const ModifyUsersConfigRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyUsersConfigOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyUsersConfig(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyUsersConfigOutcome>>();
+    ModifyUsersConfigAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const ModifyUsersConfigRequest&,
+        ModifyUsersConfigOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::ModifyVulDefenceEventStatusOutcome CwpClient::ModifyVulDefenceEventStatus(const ModifyVulDefenceEventStatusRequest &request)
@@ -20358,25 +23662,32 @@ CwpClient::ModifyVulDefenceEventStatusOutcome CwpClient::ModifyVulDefenceEventSt
 
 void CwpClient::ModifyVulDefenceEventStatusAsync(const ModifyVulDefenceEventStatusRequest& request, const ModifyVulDefenceEventStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyVulDefenceEventStatus(request), context);
-    };
+    using Req = const ModifyVulDefenceEventStatusRequest&;
+    using Resp = ModifyVulDefenceEventStatusResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyVulDefenceEventStatus", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::ModifyVulDefenceEventStatusOutcomeCallable CwpClient::ModifyVulDefenceEventStatusCallable(const ModifyVulDefenceEventStatusRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyVulDefenceEventStatusOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyVulDefenceEventStatus(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyVulDefenceEventStatusOutcome>>();
+    ModifyVulDefenceEventStatusAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const ModifyVulDefenceEventStatusRequest&,
+        ModifyVulDefenceEventStatusOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::ModifyVulDefenceSettingOutcome CwpClient::ModifyVulDefenceSetting(const ModifyVulDefenceSettingRequest &request)
@@ -20401,25 +23712,32 @@ CwpClient::ModifyVulDefenceSettingOutcome CwpClient::ModifyVulDefenceSetting(con
 
 void CwpClient::ModifyVulDefenceSettingAsync(const ModifyVulDefenceSettingRequest& request, const ModifyVulDefenceSettingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyVulDefenceSetting(request), context);
-    };
+    using Req = const ModifyVulDefenceSettingRequest&;
+    using Resp = ModifyVulDefenceSettingResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyVulDefenceSetting", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::ModifyVulDefenceSettingOutcomeCallable CwpClient::ModifyVulDefenceSettingCallable(const ModifyVulDefenceSettingRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyVulDefenceSettingOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyVulDefenceSetting(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyVulDefenceSettingOutcome>>();
+    ModifyVulDefenceSettingAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const ModifyVulDefenceSettingRequest&,
+        ModifyVulDefenceSettingOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::ModifyWarningHostConfigOutcome CwpClient::ModifyWarningHostConfig(const ModifyWarningHostConfigRequest &request)
@@ -20444,25 +23762,32 @@ CwpClient::ModifyWarningHostConfigOutcome CwpClient::ModifyWarningHostConfig(con
 
 void CwpClient::ModifyWarningHostConfigAsync(const ModifyWarningHostConfigRequest& request, const ModifyWarningHostConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyWarningHostConfig(request), context);
-    };
+    using Req = const ModifyWarningHostConfigRequest&;
+    using Resp = ModifyWarningHostConfigResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyWarningHostConfig", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::ModifyWarningHostConfigOutcomeCallable CwpClient::ModifyWarningHostConfigCallable(const ModifyWarningHostConfigRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyWarningHostConfigOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyWarningHostConfig(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyWarningHostConfigOutcome>>();
+    ModifyWarningHostConfigAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const ModifyWarningHostConfigRequest&,
+        ModifyWarningHostConfigOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::ModifyWarningSettingOutcome CwpClient::ModifyWarningSetting(const ModifyWarningSettingRequest &request)
@@ -20487,25 +23812,32 @@ CwpClient::ModifyWarningSettingOutcome CwpClient::ModifyWarningSetting(const Mod
 
 void CwpClient::ModifyWarningSettingAsync(const ModifyWarningSettingRequest& request, const ModifyWarningSettingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyWarningSetting(request), context);
-    };
+    using Req = const ModifyWarningSettingRequest&;
+    using Resp = ModifyWarningSettingResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyWarningSetting", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::ModifyWarningSettingOutcomeCallable CwpClient::ModifyWarningSettingCallable(const ModifyWarningSettingRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyWarningSettingOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyWarningSetting(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyWarningSettingOutcome>>();
+    ModifyWarningSettingAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const ModifyWarningSettingRequest&,
+        ModifyWarningSettingOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::ModifyWebHookPolicyOutcome CwpClient::ModifyWebHookPolicy(const ModifyWebHookPolicyRequest &request)
@@ -20530,25 +23862,32 @@ CwpClient::ModifyWebHookPolicyOutcome CwpClient::ModifyWebHookPolicy(const Modif
 
 void CwpClient::ModifyWebHookPolicyAsync(const ModifyWebHookPolicyRequest& request, const ModifyWebHookPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyWebHookPolicy(request), context);
-    };
+    using Req = const ModifyWebHookPolicyRequest&;
+    using Resp = ModifyWebHookPolicyResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyWebHookPolicy", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::ModifyWebHookPolicyOutcomeCallable CwpClient::ModifyWebHookPolicyCallable(const ModifyWebHookPolicyRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyWebHookPolicyOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyWebHookPolicy(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyWebHookPolicyOutcome>>();
+    ModifyWebHookPolicyAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const ModifyWebHookPolicyRequest&,
+        ModifyWebHookPolicyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::ModifyWebHookPolicyStatusOutcome CwpClient::ModifyWebHookPolicyStatus(const ModifyWebHookPolicyStatusRequest &request)
@@ -20573,25 +23912,32 @@ CwpClient::ModifyWebHookPolicyStatusOutcome CwpClient::ModifyWebHookPolicyStatus
 
 void CwpClient::ModifyWebHookPolicyStatusAsync(const ModifyWebHookPolicyStatusRequest& request, const ModifyWebHookPolicyStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyWebHookPolicyStatus(request), context);
-    };
+    using Req = const ModifyWebHookPolicyStatusRequest&;
+    using Resp = ModifyWebHookPolicyStatusResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyWebHookPolicyStatus", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::ModifyWebHookPolicyStatusOutcomeCallable CwpClient::ModifyWebHookPolicyStatusCallable(const ModifyWebHookPolicyStatusRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyWebHookPolicyStatusOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyWebHookPolicyStatus(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyWebHookPolicyStatusOutcome>>();
+    ModifyWebHookPolicyStatusAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const ModifyWebHookPolicyStatusRequest&,
+        ModifyWebHookPolicyStatusOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::ModifyWebHookReceiverOutcome CwpClient::ModifyWebHookReceiver(const ModifyWebHookReceiverRequest &request)
@@ -20616,25 +23962,32 @@ CwpClient::ModifyWebHookReceiverOutcome CwpClient::ModifyWebHookReceiver(const M
 
 void CwpClient::ModifyWebHookReceiverAsync(const ModifyWebHookReceiverRequest& request, const ModifyWebHookReceiverAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyWebHookReceiver(request), context);
-    };
+    using Req = const ModifyWebHookReceiverRequest&;
+    using Resp = ModifyWebHookReceiverResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyWebHookReceiver", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::ModifyWebHookReceiverOutcomeCallable CwpClient::ModifyWebHookReceiverCallable(const ModifyWebHookReceiverRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyWebHookReceiverOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyWebHookReceiver(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyWebHookReceiverOutcome>>();
+    ModifyWebHookReceiverAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const ModifyWebHookReceiverRequest&,
+        ModifyWebHookReceiverOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::ModifyWebHookRuleOutcome CwpClient::ModifyWebHookRule(const ModifyWebHookRuleRequest &request)
@@ -20659,25 +24012,32 @@ CwpClient::ModifyWebHookRuleOutcome CwpClient::ModifyWebHookRule(const ModifyWeb
 
 void CwpClient::ModifyWebHookRuleAsync(const ModifyWebHookRuleRequest& request, const ModifyWebHookRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyWebHookRule(request), context);
-    };
+    using Req = const ModifyWebHookRuleRequest&;
+    using Resp = ModifyWebHookRuleResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyWebHookRule", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::ModifyWebHookRuleOutcomeCallable CwpClient::ModifyWebHookRuleCallable(const ModifyWebHookRuleRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyWebHookRuleOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyWebHookRule(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyWebHookRuleOutcome>>();
+    ModifyWebHookRuleAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const ModifyWebHookRuleRequest&,
+        ModifyWebHookRuleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::ModifyWebHookRuleStatusOutcome CwpClient::ModifyWebHookRuleStatus(const ModifyWebHookRuleStatusRequest &request)
@@ -20702,25 +24062,32 @@ CwpClient::ModifyWebHookRuleStatusOutcome CwpClient::ModifyWebHookRuleStatus(con
 
 void CwpClient::ModifyWebHookRuleStatusAsync(const ModifyWebHookRuleStatusRequest& request, const ModifyWebHookRuleStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyWebHookRuleStatus(request), context);
-    };
+    using Req = const ModifyWebHookRuleStatusRequest&;
+    using Resp = ModifyWebHookRuleStatusResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyWebHookRuleStatus", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::ModifyWebHookRuleStatusOutcomeCallable CwpClient::ModifyWebHookRuleStatusCallable(const ModifyWebHookRuleStatusRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyWebHookRuleStatusOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyWebHookRuleStatus(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyWebHookRuleStatusOutcome>>();
+    ModifyWebHookRuleStatusAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const ModifyWebHookRuleStatusRequest&,
+        ModifyWebHookRuleStatusOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::ModifyWebPageProtectDirOutcome CwpClient::ModifyWebPageProtectDir(const ModifyWebPageProtectDirRequest &request)
@@ -20745,25 +24112,32 @@ CwpClient::ModifyWebPageProtectDirOutcome CwpClient::ModifyWebPageProtectDir(con
 
 void CwpClient::ModifyWebPageProtectDirAsync(const ModifyWebPageProtectDirRequest& request, const ModifyWebPageProtectDirAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyWebPageProtectDir(request), context);
-    };
+    using Req = const ModifyWebPageProtectDirRequest&;
+    using Resp = ModifyWebPageProtectDirResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyWebPageProtectDir", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::ModifyWebPageProtectDirOutcomeCallable CwpClient::ModifyWebPageProtectDirCallable(const ModifyWebPageProtectDirRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyWebPageProtectDirOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyWebPageProtectDir(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyWebPageProtectDirOutcome>>();
+    ModifyWebPageProtectDirAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const ModifyWebPageProtectDirRequest&,
+        ModifyWebPageProtectDirOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::ModifyWebPageProtectSettingOutcome CwpClient::ModifyWebPageProtectSetting(const ModifyWebPageProtectSettingRequest &request)
@@ -20788,25 +24162,32 @@ CwpClient::ModifyWebPageProtectSettingOutcome CwpClient::ModifyWebPageProtectSet
 
 void CwpClient::ModifyWebPageProtectSettingAsync(const ModifyWebPageProtectSettingRequest& request, const ModifyWebPageProtectSettingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyWebPageProtectSetting(request), context);
-    };
+    using Req = const ModifyWebPageProtectSettingRequest&;
+    using Resp = ModifyWebPageProtectSettingResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyWebPageProtectSetting", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::ModifyWebPageProtectSettingOutcomeCallable CwpClient::ModifyWebPageProtectSettingCallable(const ModifyWebPageProtectSettingRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyWebPageProtectSettingOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyWebPageProtectSetting(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyWebPageProtectSettingOutcome>>();
+    ModifyWebPageProtectSettingAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const ModifyWebPageProtectSettingRequest&,
+        ModifyWebPageProtectSettingOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::ModifyWebPageProtectSwitchOutcome CwpClient::ModifyWebPageProtectSwitch(const ModifyWebPageProtectSwitchRequest &request)
@@ -20831,25 +24212,32 @@ CwpClient::ModifyWebPageProtectSwitchOutcome CwpClient::ModifyWebPageProtectSwit
 
 void CwpClient::ModifyWebPageProtectSwitchAsync(const ModifyWebPageProtectSwitchRequest& request, const ModifyWebPageProtectSwitchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyWebPageProtectSwitch(request), context);
-    };
+    using Req = const ModifyWebPageProtectSwitchRequest&;
+    using Resp = ModifyWebPageProtectSwitchResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyWebPageProtectSwitch", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::ModifyWebPageProtectSwitchOutcomeCallable CwpClient::ModifyWebPageProtectSwitchCallable(const ModifyWebPageProtectSwitchRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyWebPageProtectSwitchOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyWebPageProtectSwitch(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyWebPageProtectSwitchOutcome>>();
+    ModifyWebPageProtectSwitchAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const ModifyWebPageProtectSwitchRequest&,
+        ModifyWebPageProtectSwitchOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::RansomDefenseRollbackOutcome CwpClient::RansomDefenseRollback(const RansomDefenseRollbackRequest &request)
@@ -20874,25 +24262,32 @@ CwpClient::RansomDefenseRollbackOutcome CwpClient::RansomDefenseRollback(const R
 
 void CwpClient::RansomDefenseRollbackAsync(const RansomDefenseRollbackRequest& request, const RansomDefenseRollbackAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->RansomDefenseRollback(request), context);
-    };
+    using Req = const RansomDefenseRollbackRequest&;
+    using Resp = RansomDefenseRollbackResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "RansomDefenseRollback", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::RansomDefenseRollbackOutcomeCallable CwpClient::RansomDefenseRollbackCallable(const RansomDefenseRollbackRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<RansomDefenseRollbackOutcome()>>(
-        [this, request]()
-        {
-            return this->RansomDefenseRollback(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<RansomDefenseRollbackOutcome>>();
+    RansomDefenseRollbackAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const RansomDefenseRollbackRequest&,
+        RansomDefenseRollbackOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::RecoverMalwaresOutcome CwpClient::RecoverMalwares(const RecoverMalwaresRequest &request)
@@ -20917,25 +24312,32 @@ CwpClient::RecoverMalwaresOutcome CwpClient::RecoverMalwares(const RecoverMalwar
 
 void CwpClient::RecoverMalwaresAsync(const RecoverMalwaresRequest& request, const RecoverMalwaresAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->RecoverMalwares(request), context);
-    };
+    using Req = const RecoverMalwaresRequest&;
+    using Resp = RecoverMalwaresResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "RecoverMalwares", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::RecoverMalwaresOutcomeCallable CwpClient::RecoverMalwaresCallable(const RecoverMalwaresRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<RecoverMalwaresOutcome()>>(
-        [this, request]()
-        {
-            return this->RecoverMalwares(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<RecoverMalwaresOutcome>>();
+    RecoverMalwaresAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const RecoverMalwaresRequest&,
+        RecoverMalwaresOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::RemoveLocalStorageItemOutcome CwpClient::RemoveLocalStorageItem(const RemoveLocalStorageItemRequest &request)
@@ -20960,25 +24362,32 @@ CwpClient::RemoveLocalStorageItemOutcome CwpClient::RemoveLocalStorageItem(const
 
 void CwpClient::RemoveLocalStorageItemAsync(const RemoveLocalStorageItemRequest& request, const RemoveLocalStorageItemAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->RemoveLocalStorageItem(request), context);
-    };
+    using Req = const RemoveLocalStorageItemRequest&;
+    using Resp = RemoveLocalStorageItemResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "RemoveLocalStorageItem", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::RemoveLocalStorageItemOutcomeCallable CwpClient::RemoveLocalStorageItemCallable(const RemoveLocalStorageItemRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<RemoveLocalStorageItemOutcome()>>(
-        [this, request]()
-        {
-            return this->RemoveLocalStorageItem(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<RemoveLocalStorageItemOutcome>>();
+    RemoveLocalStorageItemAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const RemoveLocalStorageItemRequest&,
+        RemoveLocalStorageItemOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::RemoveMachineOutcome CwpClient::RemoveMachine(const RemoveMachineRequest &request)
@@ -21003,25 +24412,32 @@ CwpClient::RemoveMachineOutcome CwpClient::RemoveMachine(const RemoveMachineRequ
 
 void CwpClient::RemoveMachineAsync(const RemoveMachineRequest& request, const RemoveMachineAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->RemoveMachine(request), context);
-    };
+    using Req = const RemoveMachineRequest&;
+    using Resp = RemoveMachineResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "RemoveMachine", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::RemoveMachineOutcomeCallable CwpClient::RemoveMachineCallable(const RemoveMachineRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<RemoveMachineOutcome()>>(
-        [this, request]()
-        {
-            return this->RemoveMachine(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<RemoveMachineOutcome>>();
+    RemoveMachineAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const RemoveMachineRequest&,
+        RemoveMachineOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::RetryCreateSnapshotOutcome CwpClient::RetryCreateSnapshot(const RetryCreateSnapshotRequest &request)
@@ -21046,25 +24462,32 @@ CwpClient::RetryCreateSnapshotOutcome CwpClient::RetryCreateSnapshot(const Retry
 
 void CwpClient::RetryCreateSnapshotAsync(const RetryCreateSnapshotRequest& request, const RetryCreateSnapshotAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->RetryCreateSnapshot(request), context);
-    };
+    using Req = const RetryCreateSnapshotRequest&;
+    using Resp = RetryCreateSnapshotResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "RetryCreateSnapshot", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::RetryCreateSnapshotOutcomeCallable CwpClient::RetryCreateSnapshotCallable(const RetryCreateSnapshotRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<RetryCreateSnapshotOutcome()>>(
-        [this, request]()
-        {
-            return this->RetryCreateSnapshot(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<RetryCreateSnapshotOutcome>>();
+    RetryCreateSnapshotAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const RetryCreateSnapshotRequest&,
+        RetryCreateSnapshotOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::RetryVulFixOutcome CwpClient::RetryVulFix(const RetryVulFixRequest &request)
@@ -21089,25 +24512,32 @@ CwpClient::RetryVulFixOutcome CwpClient::RetryVulFix(const RetryVulFixRequest &r
 
 void CwpClient::RetryVulFixAsync(const RetryVulFixRequest& request, const RetryVulFixAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->RetryVulFix(request), context);
-    };
+    using Req = const RetryVulFixRequest&;
+    using Resp = RetryVulFixResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "RetryVulFix", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::RetryVulFixOutcomeCallable CwpClient::RetryVulFixCallable(const RetryVulFixRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<RetryVulFixOutcome()>>(
-        [this, request]()
-        {
-            return this->RetryVulFix(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<RetryVulFixOutcome>>();
+    RetryVulFixAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const RetryVulFixRequest&,
+        RetryVulFixOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::ScanAssetOutcome CwpClient::ScanAsset(const ScanAssetRequest &request)
@@ -21132,25 +24562,32 @@ CwpClient::ScanAssetOutcome CwpClient::ScanAsset(const ScanAssetRequest &request
 
 void CwpClient::ScanAssetAsync(const ScanAssetRequest& request, const ScanAssetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ScanAsset(request), context);
-    };
+    using Req = const ScanAssetRequest&;
+    using Resp = ScanAssetResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ScanAsset", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::ScanAssetOutcomeCallable CwpClient::ScanAssetCallable(const ScanAssetRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ScanAssetOutcome()>>(
-        [this, request]()
-        {
-            return this->ScanAsset(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ScanAssetOutcome>>();
+    ScanAssetAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const ScanAssetRequest&,
+        ScanAssetOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::ScanBaselineOutcome CwpClient::ScanBaseline(const ScanBaselineRequest &request)
@@ -21175,25 +24612,32 @@ CwpClient::ScanBaselineOutcome CwpClient::ScanBaseline(const ScanBaselineRequest
 
 void CwpClient::ScanBaselineAsync(const ScanBaselineRequest& request, const ScanBaselineAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ScanBaseline(request), context);
-    };
+    using Req = const ScanBaselineRequest&;
+    using Resp = ScanBaselineResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ScanBaseline", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::ScanBaselineOutcomeCallable CwpClient::ScanBaselineCallable(const ScanBaselineRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ScanBaselineOutcome()>>(
-        [this, request]()
-        {
-            return this->ScanBaseline(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ScanBaselineOutcome>>();
+    ScanBaselineAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const ScanBaselineRequest&,
+        ScanBaselineOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::ScanTaskAgainOutcome CwpClient::ScanTaskAgain(const ScanTaskAgainRequest &request)
@@ -21218,25 +24662,32 @@ CwpClient::ScanTaskAgainOutcome CwpClient::ScanTaskAgain(const ScanTaskAgainRequ
 
 void CwpClient::ScanTaskAgainAsync(const ScanTaskAgainRequest& request, const ScanTaskAgainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ScanTaskAgain(request), context);
-    };
+    using Req = const ScanTaskAgainRequest&;
+    using Resp = ScanTaskAgainResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ScanTaskAgain", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::ScanTaskAgainOutcomeCallable CwpClient::ScanTaskAgainCallable(const ScanTaskAgainRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ScanTaskAgainOutcome()>>(
-        [this, request]()
-        {
-            return this->ScanTaskAgain(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ScanTaskAgainOutcome>>();
+    ScanTaskAgainAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const ScanTaskAgainRequest&,
+        ScanTaskAgainOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::ScanVulOutcome CwpClient::ScanVul(const ScanVulRequest &request)
@@ -21261,25 +24712,32 @@ CwpClient::ScanVulOutcome CwpClient::ScanVul(const ScanVulRequest &request)
 
 void CwpClient::ScanVulAsync(const ScanVulRequest& request, const ScanVulAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ScanVul(request), context);
-    };
+    using Req = const ScanVulRequest&;
+    using Resp = ScanVulResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ScanVul", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::ScanVulOutcomeCallable CwpClient::ScanVulCallable(const ScanVulRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ScanVulOutcome()>>(
-        [this, request]()
-        {
-            return this->ScanVul(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ScanVulOutcome>>();
+    ScanVulAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const ScanVulRequest&,
+        ScanVulOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::ScanVulAgainOutcome CwpClient::ScanVulAgain(const ScanVulAgainRequest &request)
@@ -21304,25 +24762,32 @@ CwpClient::ScanVulAgainOutcome CwpClient::ScanVulAgain(const ScanVulAgainRequest
 
 void CwpClient::ScanVulAgainAsync(const ScanVulAgainRequest& request, const ScanVulAgainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ScanVulAgain(request), context);
-    };
+    using Req = const ScanVulAgainRequest&;
+    using Resp = ScanVulAgainResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ScanVulAgain", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::ScanVulAgainOutcomeCallable CwpClient::ScanVulAgainCallable(const ScanVulAgainRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ScanVulAgainOutcome()>>(
-        [this, request]()
-        {
-            return this->ScanVulAgain(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ScanVulAgainOutcome>>();
+    ScanVulAgainAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const ScanVulAgainRequest&,
+        ScanVulAgainOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::ScanVulSettingOutcome CwpClient::ScanVulSetting(const ScanVulSettingRequest &request)
@@ -21347,25 +24812,32 @@ CwpClient::ScanVulSettingOutcome CwpClient::ScanVulSetting(const ScanVulSettingR
 
 void CwpClient::ScanVulSettingAsync(const ScanVulSettingRequest& request, const ScanVulSettingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ScanVulSetting(request), context);
-    };
+    using Req = const ScanVulSettingRequest&;
+    using Resp = ScanVulSettingResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ScanVulSetting", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::ScanVulSettingOutcomeCallable CwpClient::ScanVulSettingCallable(const ScanVulSettingRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ScanVulSettingOutcome()>>(
-        [this, request]()
-        {
-            return this->ScanVulSetting(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ScanVulSettingOutcome>>();
+    ScanVulSettingAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const ScanVulSettingRequest&,
+        ScanVulSettingOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::SearchLogOutcome CwpClient::SearchLog(const SearchLogRequest &request)
@@ -21390,25 +24862,32 @@ CwpClient::SearchLogOutcome CwpClient::SearchLog(const SearchLogRequest &request
 
 void CwpClient::SearchLogAsync(const SearchLogRequest& request, const SearchLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->SearchLog(request), context);
-    };
+    using Req = const SearchLogRequest&;
+    using Resp = SearchLogResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "SearchLog", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::SearchLogOutcomeCallable CwpClient::SearchLogCallable(const SearchLogRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<SearchLogOutcome()>>(
-        [this, request]()
-        {
-            return this->SearchLog(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<SearchLogOutcome>>();
+    SearchLogAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const SearchLogRequest&,
+        SearchLogOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::SeparateMalwaresOutcome CwpClient::SeparateMalwares(const SeparateMalwaresRequest &request)
@@ -21433,25 +24912,32 @@ CwpClient::SeparateMalwaresOutcome CwpClient::SeparateMalwares(const SeparateMal
 
 void CwpClient::SeparateMalwaresAsync(const SeparateMalwaresRequest& request, const SeparateMalwaresAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->SeparateMalwares(request), context);
-    };
+    using Req = const SeparateMalwaresRequest&;
+    using Resp = SeparateMalwaresResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "SeparateMalwares", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::SeparateMalwaresOutcomeCallable CwpClient::SeparateMalwaresCallable(const SeparateMalwaresRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<SeparateMalwaresOutcome()>>(
-        [this, request]()
-        {
-            return this->SeparateMalwares(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<SeparateMalwaresOutcome>>();
+    SeparateMalwaresAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const SeparateMalwaresRequest&,
+        SeparateMalwaresOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::SetBashEventsStatusOutcome CwpClient::SetBashEventsStatus(const SetBashEventsStatusRequest &request)
@@ -21476,25 +24962,32 @@ CwpClient::SetBashEventsStatusOutcome CwpClient::SetBashEventsStatus(const SetBa
 
 void CwpClient::SetBashEventsStatusAsync(const SetBashEventsStatusRequest& request, const SetBashEventsStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->SetBashEventsStatus(request), context);
-    };
+    using Req = const SetBashEventsStatusRequest&;
+    using Resp = SetBashEventsStatusResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "SetBashEventsStatus", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::SetBashEventsStatusOutcomeCallable CwpClient::SetBashEventsStatusCallable(const SetBashEventsStatusRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<SetBashEventsStatusOutcome()>>(
-        [this, request]()
-        {
-            return this->SetBashEventsStatus(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<SetBashEventsStatusOutcome>>();
+    SetBashEventsStatusAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const SetBashEventsStatusRequest&,
+        SetBashEventsStatusOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::SetLocalStorageExpireOutcome CwpClient::SetLocalStorageExpire(const SetLocalStorageExpireRequest &request)
@@ -21519,25 +25012,32 @@ CwpClient::SetLocalStorageExpireOutcome CwpClient::SetLocalStorageExpire(const S
 
 void CwpClient::SetLocalStorageExpireAsync(const SetLocalStorageExpireRequest& request, const SetLocalStorageExpireAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->SetLocalStorageExpire(request), context);
-    };
+    using Req = const SetLocalStorageExpireRequest&;
+    using Resp = SetLocalStorageExpireResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "SetLocalStorageExpire", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::SetLocalStorageExpireOutcomeCallable CwpClient::SetLocalStorageExpireCallable(const SetLocalStorageExpireRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<SetLocalStorageExpireOutcome()>>(
-        [this, request]()
-        {
-            return this->SetLocalStorageExpire(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<SetLocalStorageExpireOutcome>>();
+    SetLocalStorageExpireAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const SetLocalStorageExpireRequest&,
+        SetLocalStorageExpireOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::SetLocalStorageItemOutcome CwpClient::SetLocalStorageItem(const SetLocalStorageItemRequest &request)
@@ -21562,25 +25062,32 @@ CwpClient::SetLocalStorageItemOutcome CwpClient::SetLocalStorageItem(const SetLo
 
 void CwpClient::SetLocalStorageItemAsync(const SetLocalStorageItemRequest& request, const SetLocalStorageItemAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->SetLocalStorageItem(request), context);
-    };
+    using Req = const SetLocalStorageItemRequest&;
+    using Resp = SetLocalStorageItemResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "SetLocalStorageItem", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::SetLocalStorageItemOutcomeCallable CwpClient::SetLocalStorageItemCallable(const SetLocalStorageItemRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<SetLocalStorageItemOutcome()>>(
-        [this, request]()
-        {
-            return this->SetLocalStorageItem(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<SetLocalStorageItemOutcome>>();
+    SetLocalStorageItemAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const SetLocalStorageItemRequest&,
+        SetLocalStorageItemOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::StartBaselineDetectOutcome CwpClient::StartBaselineDetect(const StartBaselineDetectRequest &request)
@@ -21605,25 +25112,32 @@ CwpClient::StartBaselineDetectOutcome CwpClient::StartBaselineDetect(const Start
 
 void CwpClient::StartBaselineDetectAsync(const StartBaselineDetectRequest& request, const StartBaselineDetectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->StartBaselineDetect(request), context);
-    };
+    using Req = const StartBaselineDetectRequest&;
+    using Resp = StartBaselineDetectResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "StartBaselineDetect", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::StartBaselineDetectOutcomeCallable CwpClient::StartBaselineDetectCallable(const StartBaselineDetectRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<StartBaselineDetectOutcome()>>(
-        [this, request]()
-        {
-            return this->StartBaselineDetect(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<StartBaselineDetectOutcome>>();
+    StartBaselineDetectAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const StartBaselineDetectRequest&,
+        StartBaselineDetectOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::StopAssetScanOutcome CwpClient::StopAssetScan(const StopAssetScanRequest &request)
@@ -21648,25 +25162,32 @@ CwpClient::StopAssetScanOutcome CwpClient::StopAssetScan(const StopAssetScanRequ
 
 void CwpClient::StopAssetScanAsync(const StopAssetScanRequest& request, const StopAssetScanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->StopAssetScan(request), context);
-    };
+    using Req = const StopAssetScanRequest&;
+    using Resp = StopAssetScanResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "StopAssetScan", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::StopAssetScanOutcomeCallable CwpClient::StopAssetScanCallable(const StopAssetScanRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<StopAssetScanOutcome()>>(
-        [this, request]()
-        {
-            return this->StopAssetScan(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<StopAssetScanOutcome>>();
+    StopAssetScanAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const StopAssetScanRequest&,
+        StopAssetScanOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::StopBaselineDetectOutcome CwpClient::StopBaselineDetect(const StopBaselineDetectRequest &request)
@@ -21691,25 +25212,32 @@ CwpClient::StopBaselineDetectOutcome CwpClient::StopBaselineDetect(const StopBas
 
 void CwpClient::StopBaselineDetectAsync(const StopBaselineDetectRequest& request, const StopBaselineDetectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->StopBaselineDetect(request), context);
-    };
+    using Req = const StopBaselineDetectRequest&;
+    using Resp = StopBaselineDetectResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "StopBaselineDetect", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::StopBaselineDetectOutcomeCallable CwpClient::StopBaselineDetectCallable(const StopBaselineDetectRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<StopBaselineDetectOutcome()>>(
-        [this, request]()
-        {
-            return this->StopBaselineDetect(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<StopBaselineDetectOutcome>>();
+    StopBaselineDetectAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const StopBaselineDetectRequest&,
+        StopBaselineDetectOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::StopNoticeBanTipsOutcome CwpClient::StopNoticeBanTips(const StopNoticeBanTipsRequest &request)
@@ -21734,25 +25262,32 @@ CwpClient::StopNoticeBanTipsOutcome CwpClient::StopNoticeBanTips(const StopNotic
 
 void CwpClient::StopNoticeBanTipsAsync(const StopNoticeBanTipsRequest& request, const StopNoticeBanTipsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->StopNoticeBanTips(request), context);
-    };
+    using Req = const StopNoticeBanTipsRequest&;
+    using Resp = StopNoticeBanTipsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "StopNoticeBanTips", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::StopNoticeBanTipsOutcomeCallable CwpClient::StopNoticeBanTipsCallable(const StopNoticeBanTipsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<StopNoticeBanTipsOutcome()>>(
-        [this, request]()
-        {
-            return this->StopNoticeBanTips(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<StopNoticeBanTipsOutcome>>();
+    StopNoticeBanTipsAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const StopNoticeBanTipsRequest&,
+        StopNoticeBanTipsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::SwitchBashRulesOutcome CwpClient::SwitchBashRules(const SwitchBashRulesRequest &request)
@@ -21777,25 +25312,32 @@ CwpClient::SwitchBashRulesOutcome CwpClient::SwitchBashRules(const SwitchBashRul
 
 void CwpClient::SwitchBashRulesAsync(const SwitchBashRulesRequest& request, const SwitchBashRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->SwitchBashRules(request), context);
-    };
+    using Req = const SwitchBashRulesRequest&;
+    using Resp = SwitchBashRulesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "SwitchBashRules", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::SwitchBashRulesOutcomeCallable CwpClient::SwitchBashRulesCallable(const SwitchBashRulesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<SwitchBashRulesOutcome()>>(
-        [this, request]()
-        {
-            return this->SwitchBashRules(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<SwitchBashRulesOutcome>>();
+    SwitchBashRulesAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const SwitchBashRulesRequest&,
+        SwitchBashRulesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::SyncAssetScanOutcome CwpClient::SyncAssetScan(const SyncAssetScanRequest &request)
@@ -21820,25 +25362,32 @@ CwpClient::SyncAssetScanOutcome CwpClient::SyncAssetScan(const SyncAssetScanRequ
 
 void CwpClient::SyncAssetScanAsync(const SyncAssetScanRequest& request, const SyncAssetScanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->SyncAssetScan(request), context);
-    };
+    using Req = const SyncAssetScanRequest&;
+    using Resp = SyncAssetScanResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "SyncAssetScan", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::SyncAssetScanOutcomeCallable CwpClient::SyncAssetScanCallable(const SyncAssetScanRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<SyncAssetScanOutcome()>>(
-        [this, request]()
-        {
-            return this->SyncAssetScan(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<SyncAssetScanOutcome>>();
+    SyncAssetScanAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const SyncAssetScanRequest&,
+        SyncAssetScanOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::SyncBaselineDetectSummaryOutcome CwpClient::SyncBaselineDetectSummary(const SyncBaselineDetectSummaryRequest &request)
@@ -21863,25 +25412,32 @@ CwpClient::SyncBaselineDetectSummaryOutcome CwpClient::SyncBaselineDetectSummary
 
 void CwpClient::SyncBaselineDetectSummaryAsync(const SyncBaselineDetectSummaryRequest& request, const SyncBaselineDetectSummaryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->SyncBaselineDetectSummary(request), context);
-    };
+    using Req = const SyncBaselineDetectSummaryRequest&;
+    using Resp = SyncBaselineDetectSummaryResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "SyncBaselineDetectSummary", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::SyncBaselineDetectSummaryOutcomeCallable CwpClient::SyncBaselineDetectSummaryCallable(const SyncBaselineDetectSummaryRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<SyncBaselineDetectSummaryOutcome()>>(
-        [this, request]()
-        {
-            return this->SyncBaselineDetectSummary(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<SyncBaselineDetectSummaryOutcome>>();
+    SyncBaselineDetectSummaryAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const SyncBaselineDetectSummaryRequest&,
+        SyncBaselineDetectSummaryOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::SyncMachinesOutcome CwpClient::SyncMachines(const SyncMachinesRequest &request)
@@ -21906,25 +25462,32 @@ CwpClient::SyncMachinesOutcome CwpClient::SyncMachines(const SyncMachinesRequest
 
 void CwpClient::SyncMachinesAsync(const SyncMachinesRequest& request, const SyncMachinesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->SyncMachines(request), context);
-    };
+    using Req = const SyncMachinesRequest&;
+    using Resp = SyncMachinesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "SyncMachines", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::SyncMachinesOutcomeCallable CwpClient::SyncMachinesCallable(const SyncMachinesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<SyncMachinesOutcome()>>(
-        [this, request]()
-        {
-            return this->SyncMachines(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<SyncMachinesOutcome>>();
+    SyncMachinesAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const SyncMachinesRequest&,
+        SyncMachinesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::TestWebHookRuleOutcome CwpClient::TestWebHookRule(const TestWebHookRuleRequest &request)
@@ -21949,25 +25512,32 @@ CwpClient::TestWebHookRuleOutcome CwpClient::TestWebHookRule(const TestWebHookRu
 
 void CwpClient::TestWebHookRuleAsync(const TestWebHookRuleRequest& request, const TestWebHookRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->TestWebHookRule(request), context);
-    };
+    using Req = const TestWebHookRuleRequest&;
+    using Resp = TestWebHookRuleResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "TestWebHookRule", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::TestWebHookRuleOutcomeCallable CwpClient::TestWebHookRuleCallable(const TestWebHookRuleRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<TestWebHookRuleOutcome()>>(
-        [this, request]()
-        {
-            return this->TestWebHookRule(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<TestWebHookRuleOutcome>>();
+    TestWebHookRuleAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const TestWebHookRuleRequest&,
+        TestWebHookRuleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::TrustMalwaresOutcome CwpClient::TrustMalwares(const TrustMalwaresRequest &request)
@@ -21992,25 +25562,32 @@ CwpClient::TrustMalwaresOutcome CwpClient::TrustMalwares(const TrustMalwaresRequ
 
 void CwpClient::TrustMalwaresAsync(const TrustMalwaresRequest& request, const TrustMalwaresAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->TrustMalwares(request), context);
-    };
+    using Req = const TrustMalwaresRequest&;
+    using Resp = TrustMalwaresResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "TrustMalwares", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::TrustMalwaresOutcomeCallable CwpClient::TrustMalwaresCallable(const TrustMalwaresRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<TrustMalwaresOutcome()>>(
-        [this, request]()
-        {
-            return this->TrustMalwares(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<TrustMalwaresOutcome>>();
+    TrustMalwaresAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const TrustMalwaresRequest&,
+        TrustMalwaresOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::UntrustMalwaresOutcome CwpClient::UntrustMalwares(const UntrustMalwaresRequest &request)
@@ -22035,25 +25612,32 @@ CwpClient::UntrustMalwaresOutcome CwpClient::UntrustMalwares(const UntrustMalwar
 
 void CwpClient::UntrustMalwaresAsync(const UntrustMalwaresRequest& request, const UntrustMalwaresAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UntrustMalwares(request), context);
-    };
+    using Req = const UntrustMalwaresRequest&;
+    using Resp = UntrustMalwaresResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UntrustMalwares", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::UntrustMalwaresOutcomeCallable CwpClient::UntrustMalwaresCallable(const UntrustMalwaresRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UntrustMalwaresOutcome()>>(
-        [this, request]()
-        {
-            return this->UntrustMalwares(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UntrustMalwaresOutcome>>();
+    UntrustMalwaresAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const UntrustMalwaresRequest&,
+        UntrustMalwaresOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::UpdateBaselineStrategyOutcome CwpClient::UpdateBaselineStrategy(const UpdateBaselineStrategyRequest &request)
@@ -22078,25 +25662,32 @@ CwpClient::UpdateBaselineStrategyOutcome CwpClient::UpdateBaselineStrategy(const
 
 void CwpClient::UpdateBaselineStrategyAsync(const UpdateBaselineStrategyRequest& request, const UpdateBaselineStrategyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UpdateBaselineStrategy(request), context);
-    };
+    using Req = const UpdateBaselineStrategyRequest&;
+    using Resp = UpdateBaselineStrategyResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UpdateBaselineStrategy", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::UpdateBaselineStrategyOutcomeCallable CwpClient::UpdateBaselineStrategyCallable(const UpdateBaselineStrategyRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UpdateBaselineStrategyOutcome()>>(
-        [this, request]()
-        {
-            return this->UpdateBaselineStrategy(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UpdateBaselineStrategyOutcome>>();
+    UpdateBaselineStrategyAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const UpdateBaselineStrategyRequest&,
+        UpdateBaselineStrategyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwpClient::UpdateMachineTagsOutcome CwpClient::UpdateMachineTags(const UpdateMachineTagsRequest &request)
@@ -22121,24 +25712,31 @@ CwpClient::UpdateMachineTagsOutcome CwpClient::UpdateMachineTags(const UpdateMac
 
 void CwpClient::UpdateMachineTagsAsync(const UpdateMachineTagsRequest& request, const UpdateMachineTagsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UpdateMachineTags(request), context);
-    };
+    using Req = const UpdateMachineTagsRequest&;
+    using Resp = UpdateMachineTagsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UpdateMachineTags", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwpClient::UpdateMachineTagsOutcomeCallable CwpClient::UpdateMachineTagsCallable(const UpdateMachineTagsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UpdateMachineTagsOutcome()>>(
-        [this, request]()
-        {
-            return this->UpdateMachineTags(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UpdateMachineTagsOutcome>>();
+    UpdateMachineTagsAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const UpdateMachineTagsRequest&,
+        UpdateMachineTagsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 

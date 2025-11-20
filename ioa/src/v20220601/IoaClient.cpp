@@ -62,25 +62,32 @@ IoaClient::CreateDLPFileDetectTaskOutcome IoaClient::CreateDLPFileDetectTask(con
 
 void IoaClient::CreateDLPFileDetectTaskAsync(const CreateDLPFileDetectTaskRequest& request, const CreateDLPFileDetectTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateDLPFileDetectTask(request), context);
-    };
+    using Req = const CreateDLPFileDetectTaskRequest&;
+    using Resp = CreateDLPFileDetectTaskResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateDLPFileDetectTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IoaClient::CreateDLPFileDetectTaskOutcomeCallable IoaClient::CreateDLPFileDetectTaskCallable(const CreateDLPFileDetectTaskRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateDLPFileDetectTaskOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateDLPFileDetectTask(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateDLPFileDetectTaskOutcome>>();
+    CreateDLPFileDetectTaskAsync(
+    request,
+    [prom](
+        const IoaClient*,
+        const CreateDLPFileDetectTaskRequest&,
+        CreateDLPFileDetectTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IoaClient::CreateDLPFileDetectionTaskOutcome IoaClient::CreateDLPFileDetectionTask(const CreateDLPFileDetectionTaskRequest &request)
@@ -105,25 +112,32 @@ IoaClient::CreateDLPFileDetectionTaskOutcome IoaClient::CreateDLPFileDetectionTa
 
 void IoaClient::CreateDLPFileDetectionTaskAsync(const CreateDLPFileDetectionTaskRequest& request, const CreateDLPFileDetectionTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateDLPFileDetectionTask(request), context);
-    };
+    using Req = const CreateDLPFileDetectionTaskRequest&;
+    using Resp = CreateDLPFileDetectionTaskResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateDLPFileDetectionTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IoaClient::CreateDLPFileDetectionTaskOutcomeCallable IoaClient::CreateDLPFileDetectionTaskCallable(const CreateDLPFileDetectionTaskRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateDLPFileDetectionTaskOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateDLPFileDetectionTask(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateDLPFileDetectionTaskOutcome>>();
+    CreateDLPFileDetectionTaskAsync(
+    request,
+    [prom](
+        const IoaClient*,
+        const CreateDLPFileDetectionTaskRequest&,
+        CreateDLPFileDetectionTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IoaClient::CreateDeviceTaskOutcome IoaClient::CreateDeviceTask(const CreateDeviceTaskRequest &request)
@@ -148,25 +162,32 @@ IoaClient::CreateDeviceTaskOutcome IoaClient::CreateDeviceTask(const CreateDevic
 
 void IoaClient::CreateDeviceTaskAsync(const CreateDeviceTaskRequest& request, const CreateDeviceTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateDeviceTask(request), context);
-    };
+    using Req = const CreateDeviceTaskRequest&;
+    using Resp = CreateDeviceTaskResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateDeviceTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IoaClient::CreateDeviceTaskOutcomeCallable IoaClient::CreateDeviceTaskCallable(const CreateDeviceTaskRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateDeviceTaskOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateDeviceTask(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateDeviceTaskOutcome>>();
+    CreateDeviceTaskAsync(
+    request,
+    [prom](
+        const IoaClient*,
+        const CreateDeviceTaskRequest&,
+        CreateDeviceTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IoaClient::CreateDeviceVirtualGroupOutcome IoaClient::CreateDeviceVirtualGroup(const CreateDeviceVirtualGroupRequest &request)
@@ -191,25 +212,32 @@ IoaClient::CreateDeviceVirtualGroupOutcome IoaClient::CreateDeviceVirtualGroup(c
 
 void IoaClient::CreateDeviceVirtualGroupAsync(const CreateDeviceVirtualGroupRequest& request, const CreateDeviceVirtualGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateDeviceVirtualGroup(request), context);
-    };
+    using Req = const CreateDeviceVirtualGroupRequest&;
+    using Resp = CreateDeviceVirtualGroupResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateDeviceVirtualGroup", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IoaClient::CreateDeviceVirtualGroupOutcomeCallable IoaClient::CreateDeviceVirtualGroupCallable(const CreateDeviceVirtualGroupRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateDeviceVirtualGroupOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateDeviceVirtualGroup(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateDeviceVirtualGroupOutcome>>();
+    CreateDeviceVirtualGroupAsync(
+    request,
+    [prom](
+        const IoaClient*,
+        const CreateDeviceVirtualGroupRequest&,
+        CreateDeviceVirtualGroupOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IoaClient::CreatePrivilegeCodeOutcome IoaClient::CreatePrivilegeCode(const CreatePrivilegeCodeRequest &request)
@@ -234,25 +262,32 @@ IoaClient::CreatePrivilegeCodeOutcome IoaClient::CreatePrivilegeCode(const Creat
 
 void IoaClient::CreatePrivilegeCodeAsync(const CreatePrivilegeCodeRequest& request, const CreatePrivilegeCodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreatePrivilegeCode(request), context);
-    };
+    using Req = const CreatePrivilegeCodeRequest&;
+    using Resp = CreatePrivilegeCodeResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreatePrivilegeCode", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IoaClient::CreatePrivilegeCodeOutcomeCallable IoaClient::CreatePrivilegeCodeCallable(const CreatePrivilegeCodeRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreatePrivilegeCodeOutcome()>>(
-        [this, request]()
-        {
-            return this->CreatePrivilegeCode(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreatePrivilegeCodeOutcome>>();
+    CreatePrivilegeCodeAsync(
+    request,
+    [prom](
+        const IoaClient*,
+        const CreatePrivilegeCodeRequest&,
+        CreatePrivilegeCodeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IoaClient::DescribeAccountGroupsOutcome IoaClient::DescribeAccountGroups(const DescribeAccountGroupsRequest &request)
@@ -277,25 +312,32 @@ IoaClient::DescribeAccountGroupsOutcome IoaClient::DescribeAccountGroups(const D
 
 void IoaClient::DescribeAccountGroupsAsync(const DescribeAccountGroupsRequest& request, const DescribeAccountGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAccountGroups(request), context);
-    };
+    using Req = const DescribeAccountGroupsRequest&;
+    using Resp = DescribeAccountGroupsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAccountGroups", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IoaClient::DescribeAccountGroupsOutcomeCallable IoaClient::DescribeAccountGroupsCallable(const DescribeAccountGroupsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAccountGroupsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAccountGroups(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAccountGroupsOutcome>>();
+    DescribeAccountGroupsAsync(
+    request,
+    [prom](
+        const IoaClient*,
+        const DescribeAccountGroupsRequest&,
+        DescribeAccountGroupsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IoaClient::DescribeAggrSoftCategorySoftListOutcome IoaClient::DescribeAggrSoftCategorySoftList(const DescribeAggrSoftCategorySoftListRequest &request)
@@ -320,25 +362,32 @@ IoaClient::DescribeAggrSoftCategorySoftListOutcome IoaClient::DescribeAggrSoftCa
 
 void IoaClient::DescribeAggrSoftCategorySoftListAsync(const DescribeAggrSoftCategorySoftListRequest& request, const DescribeAggrSoftCategorySoftListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAggrSoftCategorySoftList(request), context);
-    };
+    using Req = const DescribeAggrSoftCategorySoftListRequest&;
+    using Resp = DescribeAggrSoftCategorySoftListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAggrSoftCategorySoftList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IoaClient::DescribeAggrSoftCategorySoftListOutcomeCallable IoaClient::DescribeAggrSoftCategorySoftListCallable(const DescribeAggrSoftCategorySoftListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAggrSoftCategorySoftListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAggrSoftCategorySoftList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAggrSoftCategorySoftListOutcome>>();
+    DescribeAggrSoftCategorySoftListAsync(
+    request,
+    [prom](
+        const IoaClient*,
+        const DescribeAggrSoftCategorySoftListRequest&,
+        DescribeAggrSoftCategorySoftListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IoaClient::DescribeAggrSoftDetailOutcome IoaClient::DescribeAggrSoftDetail(const DescribeAggrSoftDetailRequest &request)
@@ -363,25 +412,32 @@ IoaClient::DescribeAggrSoftDetailOutcome IoaClient::DescribeAggrSoftDetail(const
 
 void IoaClient::DescribeAggrSoftDetailAsync(const DescribeAggrSoftDetailRequest& request, const DescribeAggrSoftDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAggrSoftDetail(request), context);
-    };
+    using Req = const DescribeAggrSoftDetailRequest&;
+    using Resp = DescribeAggrSoftDetailResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAggrSoftDetail", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IoaClient::DescribeAggrSoftDetailOutcomeCallable IoaClient::DescribeAggrSoftDetailCallable(const DescribeAggrSoftDetailRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAggrSoftDetailOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAggrSoftDetail(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAggrSoftDetailOutcome>>();
+    DescribeAggrSoftDetailAsync(
+    request,
+    [prom](
+        const IoaClient*,
+        const DescribeAggrSoftDetailRequest&,
+        DescribeAggrSoftDetailOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IoaClient::DescribeAggrSoftDeviceListOutcome IoaClient::DescribeAggrSoftDeviceList(const DescribeAggrSoftDeviceListRequest &request)
@@ -406,25 +462,32 @@ IoaClient::DescribeAggrSoftDeviceListOutcome IoaClient::DescribeAggrSoftDeviceLi
 
 void IoaClient::DescribeAggrSoftDeviceListAsync(const DescribeAggrSoftDeviceListRequest& request, const DescribeAggrSoftDeviceListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAggrSoftDeviceList(request), context);
-    };
+    using Req = const DescribeAggrSoftDeviceListRequest&;
+    using Resp = DescribeAggrSoftDeviceListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAggrSoftDeviceList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IoaClient::DescribeAggrSoftDeviceListOutcomeCallable IoaClient::DescribeAggrSoftDeviceListCallable(const DescribeAggrSoftDeviceListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAggrSoftDeviceListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAggrSoftDeviceList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAggrSoftDeviceListOutcome>>();
+    DescribeAggrSoftDeviceListAsync(
+    request,
+    [prom](
+        const IoaClient*,
+        const DescribeAggrSoftDeviceListRequest&,
+        DescribeAggrSoftDeviceListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IoaClient::DescribeDLPEdgeNodeGroupsOutcome IoaClient::DescribeDLPEdgeNodeGroups(const DescribeDLPEdgeNodeGroupsRequest &request)
@@ -449,25 +512,32 @@ IoaClient::DescribeDLPEdgeNodeGroupsOutcome IoaClient::DescribeDLPEdgeNodeGroups
 
 void IoaClient::DescribeDLPEdgeNodeGroupsAsync(const DescribeDLPEdgeNodeGroupsRequest& request, const DescribeDLPEdgeNodeGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDLPEdgeNodeGroups(request), context);
-    };
+    using Req = const DescribeDLPEdgeNodeGroupsRequest&;
+    using Resp = DescribeDLPEdgeNodeGroupsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeDLPEdgeNodeGroups", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IoaClient::DescribeDLPEdgeNodeGroupsOutcomeCallable IoaClient::DescribeDLPEdgeNodeGroupsCallable(const DescribeDLPEdgeNodeGroupsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeDLPEdgeNodeGroupsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDLPEdgeNodeGroups(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeDLPEdgeNodeGroupsOutcome>>();
+    DescribeDLPEdgeNodeGroupsAsync(
+    request,
+    [prom](
+        const IoaClient*,
+        const DescribeDLPEdgeNodeGroupsRequest&,
+        DescribeDLPEdgeNodeGroupsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IoaClient::DescribeDLPEdgeNodesOutcome IoaClient::DescribeDLPEdgeNodes(const DescribeDLPEdgeNodesRequest &request)
@@ -492,25 +562,32 @@ IoaClient::DescribeDLPEdgeNodesOutcome IoaClient::DescribeDLPEdgeNodes(const Des
 
 void IoaClient::DescribeDLPEdgeNodesAsync(const DescribeDLPEdgeNodesRequest& request, const DescribeDLPEdgeNodesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDLPEdgeNodes(request), context);
-    };
+    using Req = const DescribeDLPEdgeNodesRequest&;
+    using Resp = DescribeDLPEdgeNodesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeDLPEdgeNodes", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IoaClient::DescribeDLPEdgeNodesOutcomeCallable IoaClient::DescribeDLPEdgeNodesCallable(const DescribeDLPEdgeNodesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeDLPEdgeNodesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDLPEdgeNodes(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeDLPEdgeNodesOutcome>>();
+    DescribeDLPEdgeNodesAsync(
+    request,
+    [prom](
+        const IoaClient*,
+        const DescribeDLPEdgeNodesRequest&,
+        DescribeDLPEdgeNodesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IoaClient::DescribeDLPFileDetectResultOutcome IoaClient::DescribeDLPFileDetectResult(const DescribeDLPFileDetectResultRequest &request)
@@ -535,25 +612,32 @@ IoaClient::DescribeDLPFileDetectResultOutcome IoaClient::DescribeDLPFileDetectRe
 
 void IoaClient::DescribeDLPFileDetectResultAsync(const DescribeDLPFileDetectResultRequest& request, const DescribeDLPFileDetectResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDLPFileDetectResult(request), context);
-    };
+    using Req = const DescribeDLPFileDetectResultRequest&;
+    using Resp = DescribeDLPFileDetectResultResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeDLPFileDetectResult", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IoaClient::DescribeDLPFileDetectResultOutcomeCallable IoaClient::DescribeDLPFileDetectResultCallable(const DescribeDLPFileDetectResultRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeDLPFileDetectResultOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDLPFileDetectResult(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeDLPFileDetectResultOutcome>>();
+    DescribeDLPFileDetectResultAsync(
+    request,
+    [prom](
+        const IoaClient*,
+        const DescribeDLPFileDetectResultRequest&,
+        DescribeDLPFileDetectResultOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IoaClient::DescribeDLPFileDetectTaskResultOutcome IoaClient::DescribeDLPFileDetectTaskResult(const DescribeDLPFileDetectTaskResultRequest &request)
@@ -578,25 +662,32 @@ IoaClient::DescribeDLPFileDetectTaskResultOutcome IoaClient::DescribeDLPFileDete
 
 void IoaClient::DescribeDLPFileDetectTaskResultAsync(const DescribeDLPFileDetectTaskResultRequest& request, const DescribeDLPFileDetectTaskResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDLPFileDetectTaskResult(request), context);
-    };
+    using Req = const DescribeDLPFileDetectTaskResultRequest&;
+    using Resp = DescribeDLPFileDetectTaskResultResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeDLPFileDetectTaskResult", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IoaClient::DescribeDLPFileDetectTaskResultOutcomeCallable IoaClient::DescribeDLPFileDetectTaskResultCallable(const DescribeDLPFileDetectTaskResultRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeDLPFileDetectTaskResultOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDLPFileDetectTaskResult(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeDLPFileDetectTaskResultOutcome>>();
+    DescribeDLPFileDetectTaskResultAsync(
+    request,
+    [prom](
+        const IoaClient*,
+        const DescribeDLPFileDetectTaskResultRequest&,
+        DescribeDLPFileDetectTaskResultOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IoaClient::DescribeDeviceChildGroupsOutcome IoaClient::DescribeDeviceChildGroups(const DescribeDeviceChildGroupsRequest &request)
@@ -621,25 +712,32 @@ IoaClient::DescribeDeviceChildGroupsOutcome IoaClient::DescribeDeviceChildGroups
 
 void IoaClient::DescribeDeviceChildGroupsAsync(const DescribeDeviceChildGroupsRequest& request, const DescribeDeviceChildGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDeviceChildGroups(request), context);
-    };
+    using Req = const DescribeDeviceChildGroupsRequest&;
+    using Resp = DescribeDeviceChildGroupsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeDeviceChildGroups", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IoaClient::DescribeDeviceChildGroupsOutcomeCallable IoaClient::DescribeDeviceChildGroupsCallable(const DescribeDeviceChildGroupsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeDeviceChildGroupsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDeviceChildGroups(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeDeviceChildGroupsOutcome>>();
+    DescribeDeviceChildGroupsAsync(
+    request,
+    [prom](
+        const IoaClient*,
+        const DescribeDeviceChildGroupsRequest&,
+        DescribeDeviceChildGroupsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IoaClient::DescribeDeviceDetailListOutcome IoaClient::DescribeDeviceDetailList(const DescribeDeviceDetailListRequest &request)
@@ -664,25 +762,32 @@ IoaClient::DescribeDeviceDetailListOutcome IoaClient::DescribeDeviceDetailList(c
 
 void IoaClient::DescribeDeviceDetailListAsync(const DescribeDeviceDetailListRequest& request, const DescribeDeviceDetailListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDeviceDetailList(request), context);
-    };
+    using Req = const DescribeDeviceDetailListRequest&;
+    using Resp = DescribeDeviceDetailListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeDeviceDetailList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IoaClient::DescribeDeviceDetailListOutcomeCallable IoaClient::DescribeDeviceDetailListCallable(const DescribeDeviceDetailListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeDeviceDetailListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDeviceDetailList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeDeviceDetailListOutcome>>();
+    DescribeDeviceDetailListAsync(
+    request,
+    [prom](
+        const IoaClient*,
+        const DescribeDeviceDetailListRequest&,
+        DescribeDeviceDetailListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IoaClient::DescribeDeviceHardwareInfoListOutcome IoaClient::DescribeDeviceHardwareInfoList(const DescribeDeviceHardwareInfoListRequest &request)
@@ -707,25 +812,32 @@ IoaClient::DescribeDeviceHardwareInfoListOutcome IoaClient::DescribeDeviceHardwa
 
 void IoaClient::DescribeDeviceHardwareInfoListAsync(const DescribeDeviceHardwareInfoListRequest& request, const DescribeDeviceHardwareInfoListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDeviceHardwareInfoList(request), context);
-    };
+    using Req = const DescribeDeviceHardwareInfoListRequest&;
+    using Resp = DescribeDeviceHardwareInfoListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeDeviceHardwareInfoList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IoaClient::DescribeDeviceHardwareInfoListOutcomeCallable IoaClient::DescribeDeviceHardwareInfoListCallable(const DescribeDeviceHardwareInfoListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeDeviceHardwareInfoListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDeviceHardwareInfoList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeDeviceHardwareInfoListOutcome>>();
+    DescribeDeviceHardwareInfoListAsync(
+    request,
+    [prom](
+        const IoaClient*,
+        const DescribeDeviceHardwareInfoListRequest&,
+        DescribeDeviceHardwareInfoListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IoaClient::DescribeDeviceInfoOutcome IoaClient::DescribeDeviceInfo(const DescribeDeviceInfoRequest &request)
@@ -750,25 +862,32 @@ IoaClient::DescribeDeviceInfoOutcome IoaClient::DescribeDeviceInfo(const Describ
 
 void IoaClient::DescribeDeviceInfoAsync(const DescribeDeviceInfoRequest& request, const DescribeDeviceInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDeviceInfo(request), context);
-    };
+    using Req = const DescribeDeviceInfoRequest&;
+    using Resp = DescribeDeviceInfoResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeDeviceInfo", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IoaClient::DescribeDeviceInfoOutcomeCallable IoaClient::DescribeDeviceInfoCallable(const DescribeDeviceInfoRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeDeviceInfoOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDeviceInfo(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeDeviceInfoOutcome>>();
+    DescribeDeviceInfoAsync(
+    request,
+    [prom](
+        const IoaClient*,
+        const DescribeDeviceInfoRequest&,
+        DescribeDeviceInfoOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IoaClient::DescribeDeviceVirtualGroupsOutcome IoaClient::DescribeDeviceVirtualGroups(const DescribeDeviceVirtualGroupsRequest &request)
@@ -793,25 +912,32 @@ IoaClient::DescribeDeviceVirtualGroupsOutcome IoaClient::DescribeDeviceVirtualGr
 
 void IoaClient::DescribeDeviceVirtualGroupsAsync(const DescribeDeviceVirtualGroupsRequest& request, const DescribeDeviceVirtualGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDeviceVirtualGroups(request), context);
-    };
+    using Req = const DescribeDeviceVirtualGroupsRequest&;
+    using Resp = DescribeDeviceVirtualGroupsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeDeviceVirtualGroups", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IoaClient::DescribeDeviceVirtualGroupsOutcomeCallable IoaClient::DescribeDeviceVirtualGroupsCallable(const DescribeDeviceVirtualGroupsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeDeviceVirtualGroupsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDeviceVirtualGroups(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeDeviceVirtualGroupsOutcome>>();
+    DescribeDeviceVirtualGroupsAsync(
+    request,
+    [prom](
+        const IoaClient*,
+        const DescribeDeviceVirtualGroupsRequest&,
+        DescribeDeviceVirtualGroupsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IoaClient::DescribeDevicesOutcome IoaClient::DescribeDevices(const DescribeDevicesRequest &request)
@@ -836,25 +962,32 @@ IoaClient::DescribeDevicesOutcome IoaClient::DescribeDevices(const DescribeDevic
 
 void IoaClient::DescribeDevicesAsync(const DescribeDevicesRequest& request, const DescribeDevicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDevices(request), context);
-    };
+    using Req = const DescribeDevicesRequest&;
+    using Resp = DescribeDevicesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeDevices", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IoaClient::DescribeDevicesOutcomeCallable IoaClient::DescribeDevicesCallable(const DescribeDevicesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeDevicesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDevices(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeDevicesOutcome>>();
+    DescribeDevicesAsync(
+    request,
+    [prom](
+        const IoaClient*,
+        const DescribeDevicesRequest&,
+        DescribeDevicesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IoaClient::DescribeLocalAccountsOutcome IoaClient::DescribeLocalAccounts(const DescribeLocalAccountsRequest &request)
@@ -879,25 +1012,32 @@ IoaClient::DescribeLocalAccountsOutcome IoaClient::DescribeLocalAccounts(const D
 
 void IoaClient::DescribeLocalAccountsAsync(const DescribeLocalAccountsRequest& request, const DescribeLocalAccountsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeLocalAccounts(request), context);
-    };
+    using Req = const DescribeLocalAccountsRequest&;
+    using Resp = DescribeLocalAccountsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeLocalAccounts", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IoaClient::DescribeLocalAccountsOutcomeCallable IoaClient::DescribeLocalAccountsCallable(const DescribeLocalAccountsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeLocalAccountsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeLocalAccounts(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeLocalAccountsOutcome>>();
+    DescribeLocalAccountsAsync(
+    request,
+    [prom](
+        const IoaClient*,
+        const DescribeLocalAccountsRequest&,
+        DescribeLocalAccountsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IoaClient::DescribeRootAccountGroupOutcome IoaClient::DescribeRootAccountGroup(const DescribeRootAccountGroupRequest &request)
@@ -922,25 +1062,32 @@ IoaClient::DescribeRootAccountGroupOutcome IoaClient::DescribeRootAccountGroup(c
 
 void IoaClient::DescribeRootAccountGroupAsync(const DescribeRootAccountGroupRequest& request, const DescribeRootAccountGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeRootAccountGroup(request), context);
-    };
+    using Req = const DescribeRootAccountGroupRequest&;
+    using Resp = DescribeRootAccountGroupResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeRootAccountGroup", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IoaClient::DescribeRootAccountGroupOutcomeCallable IoaClient::DescribeRootAccountGroupCallable(const DescribeRootAccountGroupRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeRootAccountGroupOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeRootAccountGroup(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeRootAccountGroupOutcome>>();
+    DescribeRootAccountGroupAsync(
+    request,
+    [prom](
+        const IoaClient*,
+        const DescribeRootAccountGroupRequest&,
+        DescribeRootAccountGroupOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IoaClient::DescribeSoftCensusListByDeviceOutcome IoaClient::DescribeSoftCensusListByDevice(const DescribeSoftCensusListByDeviceRequest &request)
@@ -965,25 +1112,32 @@ IoaClient::DescribeSoftCensusListByDeviceOutcome IoaClient::DescribeSoftCensusLi
 
 void IoaClient::DescribeSoftCensusListByDeviceAsync(const DescribeSoftCensusListByDeviceRequest& request, const DescribeSoftCensusListByDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeSoftCensusListByDevice(request), context);
-    };
+    using Req = const DescribeSoftCensusListByDeviceRequest&;
+    using Resp = DescribeSoftCensusListByDeviceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeSoftCensusListByDevice", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IoaClient::DescribeSoftCensusListByDeviceOutcomeCallable IoaClient::DescribeSoftCensusListByDeviceCallable(const DescribeSoftCensusListByDeviceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeSoftCensusListByDeviceOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeSoftCensusListByDevice(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeSoftCensusListByDeviceOutcome>>();
+    DescribeSoftCensusListByDeviceAsync(
+    request,
+    [prom](
+        const IoaClient*,
+        const DescribeSoftCensusListByDeviceRequest&,
+        DescribeSoftCensusListByDeviceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IoaClient::DescribeSoftwareInformationOutcome IoaClient::DescribeSoftwareInformation(const DescribeSoftwareInformationRequest &request)
@@ -1008,25 +1162,32 @@ IoaClient::DescribeSoftwareInformationOutcome IoaClient::DescribeSoftwareInforma
 
 void IoaClient::DescribeSoftwareInformationAsync(const DescribeSoftwareInformationRequest& request, const DescribeSoftwareInformationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeSoftwareInformation(request), context);
-    };
+    using Req = const DescribeSoftwareInformationRequest&;
+    using Resp = DescribeSoftwareInformationResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeSoftwareInformation", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IoaClient::DescribeSoftwareInformationOutcomeCallable IoaClient::DescribeSoftwareInformationCallable(const DescribeSoftwareInformationRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeSoftwareInformationOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeSoftwareInformation(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeSoftwareInformationOutcome>>();
+    DescribeSoftwareInformationAsync(
+    request,
+    [prom](
+        const IoaClient*,
+        const DescribeSoftwareInformationRequest&,
+        DescribeSoftwareInformationOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IoaClient::DescribeVirtualDevicesOutcome IoaClient::DescribeVirtualDevices(const DescribeVirtualDevicesRequest &request)
@@ -1051,25 +1212,32 @@ IoaClient::DescribeVirtualDevicesOutcome IoaClient::DescribeVirtualDevices(const
 
 void IoaClient::DescribeVirtualDevicesAsync(const DescribeVirtualDevicesRequest& request, const DescribeVirtualDevicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeVirtualDevices(request), context);
-    };
+    using Req = const DescribeVirtualDevicesRequest&;
+    using Resp = DescribeVirtualDevicesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeVirtualDevices", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IoaClient::DescribeVirtualDevicesOutcomeCallable IoaClient::DescribeVirtualDevicesCallable(const DescribeVirtualDevicesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeVirtualDevicesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeVirtualDevices(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeVirtualDevicesOutcome>>();
+    DescribeVirtualDevicesAsync(
+    request,
+    [prom](
+        const IoaClient*,
+        const DescribeVirtualDevicesRequest&,
+        DescribeVirtualDevicesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IoaClient::ExportDeviceDownloadTaskOutcome IoaClient::ExportDeviceDownloadTask(const ExportDeviceDownloadTaskRequest &request)
@@ -1094,25 +1262,32 @@ IoaClient::ExportDeviceDownloadTaskOutcome IoaClient::ExportDeviceDownloadTask(c
 
 void IoaClient::ExportDeviceDownloadTaskAsync(const ExportDeviceDownloadTaskRequest& request, const ExportDeviceDownloadTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ExportDeviceDownloadTask(request), context);
-    };
+    using Req = const ExportDeviceDownloadTaskRequest&;
+    using Resp = ExportDeviceDownloadTaskResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ExportDeviceDownloadTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IoaClient::ExportDeviceDownloadTaskOutcomeCallable IoaClient::ExportDeviceDownloadTaskCallable(const ExportDeviceDownloadTaskRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ExportDeviceDownloadTaskOutcome()>>(
-        [this, request]()
-        {
-            return this->ExportDeviceDownloadTask(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ExportDeviceDownloadTaskOutcome>>();
+    ExportDeviceDownloadTaskAsync(
+    request,
+    [prom](
+        const IoaClient*,
+        const ExportDeviceDownloadTaskRequest&,
+        ExportDeviceDownloadTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IoaClient::ExportSoftwareInformationListOutcome IoaClient::ExportSoftwareInformationList(const ExportSoftwareInformationListRequest &request)
@@ -1137,25 +1312,32 @@ IoaClient::ExportSoftwareInformationListOutcome IoaClient::ExportSoftwareInforma
 
 void IoaClient::ExportSoftwareInformationListAsync(const ExportSoftwareInformationListRequest& request, const ExportSoftwareInformationListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ExportSoftwareInformationList(request), context);
-    };
+    using Req = const ExportSoftwareInformationListRequest&;
+    using Resp = ExportSoftwareInformationListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ExportSoftwareInformationList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IoaClient::ExportSoftwareInformationListOutcomeCallable IoaClient::ExportSoftwareInformationListCallable(const ExportSoftwareInformationListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ExportSoftwareInformationListOutcome()>>(
-        [this, request]()
-        {
-            return this->ExportSoftwareInformationList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ExportSoftwareInformationListOutcome>>();
+    ExportSoftwareInformationListAsync(
+    request,
+    [prom](
+        const IoaClient*,
+        const ExportSoftwareInformationListRequest&,
+        ExportSoftwareInformationListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IoaClient::ModifyVirtualDeviceGroupsOutcome IoaClient::ModifyVirtualDeviceGroups(const ModifyVirtualDeviceGroupsRequest &request)
@@ -1180,24 +1362,31 @@ IoaClient::ModifyVirtualDeviceGroupsOutcome IoaClient::ModifyVirtualDeviceGroups
 
 void IoaClient::ModifyVirtualDeviceGroupsAsync(const ModifyVirtualDeviceGroupsRequest& request, const ModifyVirtualDeviceGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyVirtualDeviceGroups(request), context);
-    };
+    using Req = const ModifyVirtualDeviceGroupsRequest&;
+    using Resp = ModifyVirtualDeviceGroupsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyVirtualDeviceGroups", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IoaClient::ModifyVirtualDeviceGroupsOutcomeCallable IoaClient::ModifyVirtualDeviceGroupsCallable(const ModifyVirtualDeviceGroupsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyVirtualDeviceGroupsOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyVirtualDeviceGroups(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyVirtualDeviceGroupsOutcome>>();
+    ModifyVirtualDeviceGroupsAsync(
+    request,
+    [prom](
+        const IoaClient*,
+        const ModifyVirtualDeviceGroupsRequest&,
+        ModifyVirtualDeviceGroupsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 

@@ -62,25 +62,32 @@ ApigatewayClient::AttachPluginOutcome ApigatewayClient::AttachPlugin(const Attac
 
 void ApigatewayClient::AttachPluginAsync(const AttachPluginRequest& request, const AttachPluginAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->AttachPlugin(request), context);
-    };
+    using Req = const AttachPluginRequest&;
+    using Resp = AttachPluginResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "AttachPlugin", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ApigatewayClient::AttachPluginOutcomeCallable ApigatewayClient::AttachPluginCallable(const AttachPluginRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<AttachPluginOutcome()>>(
-        [this, request]()
-        {
-            return this->AttachPlugin(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<AttachPluginOutcome>>();
+    AttachPluginAsync(
+    request,
+    [prom](
+        const ApigatewayClient*,
+        const AttachPluginRequest&,
+        AttachPluginOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ApigatewayClient::BindApiAppOutcome ApigatewayClient::BindApiApp(const BindApiAppRequest &request)
@@ -105,25 +112,32 @@ ApigatewayClient::BindApiAppOutcome ApigatewayClient::BindApiApp(const BindApiAp
 
 void ApigatewayClient::BindApiAppAsync(const BindApiAppRequest& request, const BindApiAppAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->BindApiApp(request), context);
-    };
+    using Req = const BindApiAppRequest&;
+    using Resp = BindApiAppResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "BindApiApp", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ApigatewayClient::BindApiAppOutcomeCallable ApigatewayClient::BindApiAppCallable(const BindApiAppRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<BindApiAppOutcome()>>(
-        [this, request]()
-        {
-            return this->BindApiApp(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<BindApiAppOutcome>>();
+    BindApiAppAsync(
+    request,
+    [prom](
+        const ApigatewayClient*,
+        const BindApiAppRequest&,
+        BindApiAppOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ApigatewayClient::BindEnvironmentOutcome ApigatewayClient::BindEnvironment(const BindEnvironmentRequest &request)
@@ -148,25 +162,32 @@ ApigatewayClient::BindEnvironmentOutcome ApigatewayClient::BindEnvironment(const
 
 void ApigatewayClient::BindEnvironmentAsync(const BindEnvironmentRequest& request, const BindEnvironmentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->BindEnvironment(request), context);
-    };
+    using Req = const BindEnvironmentRequest&;
+    using Resp = BindEnvironmentResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "BindEnvironment", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ApigatewayClient::BindEnvironmentOutcomeCallable ApigatewayClient::BindEnvironmentCallable(const BindEnvironmentRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<BindEnvironmentOutcome()>>(
-        [this, request]()
-        {
-            return this->BindEnvironment(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<BindEnvironmentOutcome>>();
+    BindEnvironmentAsync(
+    request,
+    [prom](
+        const ApigatewayClient*,
+        const BindEnvironmentRequest&,
+        BindEnvironmentOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ApigatewayClient::BindIPStrategyOutcome ApigatewayClient::BindIPStrategy(const BindIPStrategyRequest &request)
@@ -191,25 +212,32 @@ ApigatewayClient::BindIPStrategyOutcome ApigatewayClient::BindIPStrategy(const B
 
 void ApigatewayClient::BindIPStrategyAsync(const BindIPStrategyRequest& request, const BindIPStrategyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->BindIPStrategy(request), context);
-    };
+    using Req = const BindIPStrategyRequest&;
+    using Resp = BindIPStrategyResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "BindIPStrategy", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ApigatewayClient::BindIPStrategyOutcomeCallable ApigatewayClient::BindIPStrategyCallable(const BindIPStrategyRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<BindIPStrategyOutcome()>>(
-        [this, request]()
-        {
-            return this->BindIPStrategy(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<BindIPStrategyOutcome>>();
+    BindIPStrategyAsync(
+    request,
+    [prom](
+        const ApigatewayClient*,
+        const BindIPStrategyRequest&,
+        BindIPStrategyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ApigatewayClient::BindSecretIdsOutcome ApigatewayClient::BindSecretIds(const BindSecretIdsRequest &request)
@@ -234,25 +262,32 @@ ApigatewayClient::BindSecretIdsOutcome ApigatewayClient::BindSecretIds(const Bin
 
 void ApigatewayClient::BindSecretIdsAsync(const BindSecretIdsRequest& request, const BindSecretIdsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->BindSecretIds(request), context);
-    };
+    using Req = const BindSecretIdsRequest&;
+    using Resp = BindSecretIdsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "BindSecretIds", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ApigatewayClient::BindSecretIdsOutcomeCallable ApigatewayClient::BindSecretIdsCallable(const BindSecretIdsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<BindSecretIdsOutcome()>>(
-        [this, request]()
-        {
-            return this->BindSecretIds(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<BindSecretIdsOutcome>>();
+    BindSecretIdsAsync(
+    request,
+    [prom](
+        const ApigatewayClient*,
+        const BindSecretIdsRequest&,
+        BindSecretIdsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ApigatewayClient::BindSubDomainOutcome ApigatewayClient::BindSubDomain(const BindSubDomainRequest &request)
@@ -277,25 +312,32 @@ ApigatewayClient::BindSubDomainOutcome ApigatewayClient::BindSubDomain(const Bin
 
 void ApigatewayClient::BindSubDomainAsync(const BindSubDomainRequest& request, const BindSubDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->BindSubDomain(request), context);
-    };
+    using Req = const BindSubDomainRequest&;
+    using Resp = BindSubDomainResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "BindSubDomain", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ApigatewayClient::BindSubDomainOutcomeCallable ApigatewayClient::BindSubDomainCallable(const BindSubDomainRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<BindSubDomainOutcome()>>(
-        [this, request]()
-        {
-            return this->BindSubDomain(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<BindSubDomainOutcome>>();
+    BindSubDomainAsync(
+    request,
+    [prom](
+        const ApigatewayClient*,
+        const BindSubDomainRequest&,
+        BindSubDomainOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ApigatewayClient::BuildAPIDocOutcome ApigatewayClient::BuildAPIDoc(const BuildAPIDocRequest &request)
@@ -320,25 +362,32 @@ ApigatewayClient::BuildAPIDocOutcome ApigatewayClient::BuildAPIDoc(const BuildAP
 
 void ApigatewayClient::BuildAPIDocAsync(const BuildAPIDocRequest& request, const BuildAPIDocAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->BuildAPIDoc(request), context);
-    };
+    using Req = const BuildAPIDocRequest&;
+    using Resp = BuildAPIDocResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "BuildAPIDoc", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ApigatewayClient::BuildAPIDocOutcomeCallable ApigatewayClient::BuildAPIDocCallable(const BuildAPIDocRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<BuildAPIDocOutcome()>>(
-        [this, request]()
-        {
-            return this->BuildAPIDoc(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<BuildAPIDocOutcome>>();
+    BuildAPIDocAsync(
+    request,
+    [prom](
+        const ApigatewayClient*,
+        const BuildAPIDocRequest&,
+        BuildAPIDocOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ApigatewayClient::CreateAPIDocOutcome ApigatewayClient::CreateAPIDoc(const CreateAPIDocRequest &request)
@@ -363,25 +412,32 @@ ApigatewayClient::CreateAPIDocOutcome ApigatewayClient::CreateAPIDoc(const Creat
 
 void ApigatewayClient::CreateAPIDocAsync(const CreateAPIDocRequest& request, const CreateAPIDocAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateAPIDoc(request), context);
-    };
+    using Req = const CreateAPIDocRequest&;
+    using Resp = CreateAPIDocResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateAPIDoc", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ApigatewayClient::CreateAPIDocOutcomeCallable ApigatewayClient::CreateAPIDocCallable(const CreateAPIDocRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateAPIDocOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateAPIDoc(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateAPIDocOutcome>>();
+    CreateAPIDocAsync(
+    request,
+    [prom](
+        const ApigatewayClient*,
+        const CreateAPIDocRequest&,
+        CreateAPIDocOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ApigatewayClient::CreateApiOutcome ApigatewayClient::CreateApi(const CreateApiRequest &request)
@@ -406,25 +462,32 @@ ApigatewayClient::CreateApiOutcome ApigatewayClient::CreateApi(const CreateApiRe
 
 void ApigatewayClient::CreateApiAsync(const CreateApiRequest& request, const CreateApiAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateApi(request), context);
-    };
+    using Req = const CreateApiRequest&;
+    using Resp = CreateApiResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateApi", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ApigatewayClient::CreateApiOutcomeCallable ApigatewayClient::CreateApiCallable(const CreateApiRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateApiOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateApi(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateApiOutcome>>();
+    CreateApiAsync(
+    request,
+    [prom](
+        const ApigatewayClient*,
+        const CreateApiRequest&,
+        CreateApiOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ApigatewayClient::CreateApiAppOutcome ApigatewayClient::CreateApiApp(const CreateApiAppRequest &request)
@@ -449,25 +512,32 @@ ApigatewayClient::CreateApiAppOutcome ApigatewayClient::CreateApiApp(const Creat
 
 void ApigatewayClient::CreateApiAppAsync(const CreateApiAppRequest& request, const CreateApiAppAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateApiApp(request), context);
-    };
+    using Req = const CreateApiAppRequest&;
+    using Resp = CreateApiAppResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateApiApp", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ApigatewayClient::CreateApiAppOutcomeCallable ApigatewayClient::CreateApiAppCallable(const CreateApiAppRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateApiAppOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateApiApp(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateApiAppOutcome>>();
+    CreateApiAppAsync(
+    request,
+    [prom](
+        const ApigatewayClient*,
+        const CreateApiAppRequest&,
+        CreateApiAppOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ApigatewayClient::CreateApiKeyOutcome ApigatewayClient::CreateApiKey(const CreateApiKeyRequest &request)
@@ -492,25 +562,32 @@ ApigatewayClient::CreateApiKeyOutcome ApigatewayClient::CreateApiKey(const Creat
 
 void ApigatewayClient::CreateApiKeyAsync(const CreateApiKeyRequest& request, const CreateApiKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateApiKey(request), context);
-    };
+    using Req = const CreateApiKeyRequest&;
+    using Resp = CreateApiKeyResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateApiKey", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ApigatewayClient::CreateApiKeyOutcomeCallable ApigatewayClient::CreateApiKeyCallable(const CreateApiKeyRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateApiKeyOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateApiKey(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateApiKeyOutcome>>();
+    CreateApiKeyAsync(
+    request,
+    [prom](
+        const ApigatewayClient*,
+        const CreateApiKeyRequest&,
+        CreateApiKeyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ApigatewayClient::CreateExclusiveInstancesOutcome ApigatewayClient::CreateExclusiveInstances(const CreateExclusiveInstancesRequest &request)
@@ -535,25 +612,32 @@ ApigatewayClient::CreateExclusiveInstancesOutcome ApigatewayClient::CreateExclus
 
 void ApigatewayClient::CreateExclusiveInstancesAsync(const CreateExclusiveInstancesRequest& request, const CreateExclusiveInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateExclusiveInstances(request), context);
-    };
+    using Req = const CreateExclusiveInstancesRequest&;
+    using Resp = CreateExclusiveInstancesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateExclusiveInstances", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ApigatewayClient::CreateExclusiveInstancesOutcomeCallable ApigatewayClient::CreateExclusiveInstancesCallable(const CreateExclusiveInstancesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateExclusiveInstancesOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateExclusiveInstances(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateExclusiveInstancesOutcome>>();
+    CreateExclusiveInstancesAsync(
+    request,
+    [prom](
+        const ApigatewayClient*,
+        const CreateExclusiveInstancesRequest&,
+        CreateExclusiveInstancesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ApigatewayClient::CreateIPStrategyOutcome ApigatewayClient::CreateIPStrategy(const CreateIPStrategyRequest &request)
@@ -578,25 +662,32 @@ ApigatewayClient::CreateIPStrategyOutcome ApigatewayClient::CreateIPStrategy(con
 
 void ApigatewayClient::CreateIPStrategyAsync(const CreateIPStrategyRequest& request, const CreateIPStrategyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateIPStrategy(request), context);
-    };
+    using Req = const CreateIPStrategyRequest&;
+    using Resp = CreateIPStrategyResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateIPStrategy", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ApigatewayClient::CreateIPStrategyOutcomeCallable ApigatewayClient::CreateIPStrategyCallable(const CreateIPStrategyRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateIPStrategyOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateIPStrategy(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateIPStrategyOutcome>>();
+    CreateIPStrategyAsync(
+    request,
+    [prom](
+        const ApigatewayClient*,
+        const CreateIPStrategyRequest&,
+        CreateIPStrategyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ApigatewayClient::CreatePluginOutcome ApigatewayClient::CreatePlugin(const CreatePluginRequest &request)
@@ -621,25 +712,32 @@ ApigatewayClient::CreatePluginOutcome ApigatewayClient::CreatePlugin(const Creat
 
 void ApigatewayClient::CreatePluginAsync(const CreatePluginRequest& request, const CreatePluginAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreatePlugin(request), context);
-    };
+    using Req = const CreatePluginRequest&;
+    using Resp = CreatePluginResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreatePlugin", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ApigatewayClient::CreatePluginOutcomeCallable ApigatewayClient::CreatePluginCallable(const CreatePluginRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreatePluginOutcome()>>(
-        [this, request]()
-        {
-            return this->CreatePlugin(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreatePluginOutcome>>();
+    CreatePluginAsync(
+    request,
+    [prom](
+        const ApigatewayClient*,
+        const CreatePluginRequest&,
+        CreatePluginOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ApigatewayClient::CreateServiceOutcome ApigatewayClient::CreateService(const CreateServiceRequest &request)
@@ -664,25 +762,32 @@ ApigatewayClient::CreateServiceOutcome ApigatewayClient::CreateService(const Cre
 
 void ApigatewayClient::CreateServiceAsync(const CreateServiceRequest& request, const CreateServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateService(request), context);
-    };
+    using Req = const CreateServiceRequest&;
+    using Resp = CreateServiceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateService", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ApigatewayClient::CreateServiceOutcomeCallable ApigatewayClient::CreateServiceCallable(const CreateServiceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateServiceOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateService(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateServiceOutcome>>();
+    CreateServiceAsync(
+    request,
+    [prom](
+        const ApigatewayClient*,
+        const CreateServiceRequest&,
+        CreateServiceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ApigatewayClient::CreateUpstreamOutcome ApigatewayClient::CreateUpstream(const CreateUpstreamRequest &request)
@@ -707,25 +812,32 @@ ApigatewayClient::CreateUpstreamOutcome ApigatewayClient::CreateUpstream(const C
 
 void ApigatewayClient::CreateUpstreamAsync(const CreateUpstreamRequest& request, const CreateUpstreamAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateUpstream(request), context);
-    };
+    using Req = const CreateUpstreamRequest&;
+    using Resp = CreateUpstreamResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateUpstream", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ApigatewayClient::CreateUpstreamOutcomeCallable ApigatewayClient::CreateUpstreamCallable(const CreateUpstreamRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateUpstreamOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateUpstream(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateUpstreamOutcome>>();
+    CreateUpstreamAsync(
+    request,
+    [prom](
+        const ApigatewayClient*,
+        const CreateUpstreamRequest&,
+        CreateUpstreamOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ApigatewayClient::CreateUsagePlanOutcome ApigatewayClient::CreateUsagePlan(const CreateUsagePlanRequest &request)
@@ -750,25 +862,32 @@ ApigatewayClient::CreateUsagePlanOutcome ApigatewayClient::CreateUsagePlan(const
 
 void ApigatewayClient::CreateUsagePlanAsync(const CreateUsagePlanRequest& request, const CreateUsagePlanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateUsagePlan(request), context);
-    };
+    using Req = const CreateUsagePlanRequest&;
+    using Resp = CreateUsagePlanResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateUsagePlan", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ApigatewayClient::CreateUsagePlanOutcomeCallable ApigatewayClient::CreateUsagePlanCallable(const CreateUsagePlanRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateUsagePlanOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateUsagePlan(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateUsagePlanOutcome>>();
+    CreateUsagePlanAsync(
+    request,
+    [prom](
+        const ApigatewayClient*,
+        const CreateUsagePlanRequest&,
+        CreateUsagePlanOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ApigatewayClient::DeleteAPIDocOutcome ApigatewayClient::DeleteAPIDoc(const DeleteAPIDocRequest &request)
@@ -793,25 +912,32 @@ ApigatewayClient::DeleteAPIDocOutcome ApigatewayClient::DeleteAPIDoc(const Delet
 
 void ApigatewayClient::DeleteAPIDocAsync(const DeleteAPIDocRequest& request, const DeleteAPIDocAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteAPIDoc(request), context);
-    };
+    using Req = const DeleteAPIDocRequest&;
+    using Resp = DeleteAPIDocResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteAPIDoc", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ApigatewayClient::DeleteAPIDocOutcomeCallable ApigatewayClient::DeleteAPIDocCallable(const DeleteAPIDocRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteAPIDocOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteAPIDoc(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteAPIDocOutcome>>();
+    DeleteAPIDocAsync(
+    request,
+    [prom](
+        const ApigatewayClient*,
+        const DeleteAPIDocRequest&,
+        DeleteAPIDocOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ApigatewayClient::DeleteApiOutcome ApigatewayClient::DeleteApi(const DeleteApiRequest &request)
@@ -836,25 +962,32 @@ ApigatewayClient::DeleteApiOutcome ApigatewayClient::DeleteApi(const DeleteApiRe
 
 void ApigatewayClient::DeleteApiAsync(const DeleteApiRequest& request, const DeleteApiAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteApi(request), context);
-    };
+    using Req = const DeleteApiRequest&;
+    using Resp = DeleteApiResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteApi", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ApigatewayClient::DeleteApiOutcomeCallable ApigatewayClient::DeleteApiCallable(const DeleteApiRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteApiOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteApi(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteApiOutcome>>();
+    DeleteApiAsync(
+    request,
+    [prom](
+        const ApigatewayClient*,
+        const DeleteApiRequest&,
+        DeleteApiOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ApigatewayClient::DeleteApiAppOutcome ApigatewayClient::DeleteApiApp(const DeleteApiAppRequest &request)
@@ -879,25 +1012,32 @@ ApigatewayClient::DeleteApiAppOutcome ApigatewayClient::DeleteApiApp(const Delet
 
 void ApigatewayClient::DeleteApiAppAsync(const DeleteApiAppRequest& request, const DeleteApiAppAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteApiApp(request), context);
-    };
+    using Req = const DeleteApiAppRequest&;
+    using Resp = DeleteApiAppResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteApiApp", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ApigatewayClient::DeleteApiAppOutcomeCallable ApigatewayClient::DeleteApiAppCallable(const DeleteApiAppRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteApiAppOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteApiApp(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteApiAppOutcome>>();
+    DeleteApiAppAsync(
+    request,
+    [prom](
+        const ApigatewayClient*,
+        const DeleteApiAppRequest&,
+        DeleteApiAppOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ApigatewayClient::DeleteApiKeyOutcome ApigatewayClient::DeleteApiKey(const DeleteApiKeyRequest &request)
@@ -922,25 +1062,32 @@ ApigatewayClient::DeleteApiKeyOutcome ApigatewayClient::DeleteApiKey(const Delet
 
 void ApigatewayClient::DeleteApiKeyAsync(const DeleteApiKeyRequest& request, const DeleteApiKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteApiKey(request), context);
-    };
+    using Req = const DeleteApiKeyRequest&;
+    using Resp = DeleteApiKeyResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteApiKey", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ApigatewayClient::DeleteApiKeyOutcomeCallable ApigatewayClient::DeleteApiKeyCallable(const DeleteApiKeyRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteApiKeyOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteApiKey(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteApiKeyOutcome>>();
+    DeleteApiKeyAsync(
+    request,
+    [prom](
+        const ApigatewayClient*,
+        const DeleteApiKeyRequest&,
+        DeleteApiKeyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ApigatewayClient::DeleteIPStrategyOutcome ApigatewayClient::DeleteIPStrategy(const DeleteIPStrategyRequest &request)
@@ -965,25 +1112,32 @@ ApigatewayClient::DeleteIPStrategyOutcome ApigatewayClient::DeleteIPStrategy(con
 
 void ApigatewayClient::DeleteIPStrategyAsync(const DeleteIPStrategyRequest& request, const DeleteIPStrategyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteIPStrategy(request), context);
-    };
+    using Req = const DeleteIPStrategyRequest&;
+    using Resp = DeleteIPStrategyResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteIPStrategy", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ApigatewayClient::DeleteIPStrategyOutcomeCallable ApigatewayClient::DeleteIPStrategyCallable(const DeleteIPStrategyRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteIPStrategyOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteIPStrategy(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteIPStrategyOutcome>>();
+    DeleteIPStrategyAsync(
+    request,
+    [prom](
+        const ApigatewayClient*,
+        const DeleteIPStrategyRequest&,
+        DeleteIPStrategyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ApigatewayClient::DeletePluginOutcome ApigatewayClient::DeletePlugin(const DeletePluginRequest &request)
@@ -1008,25 +1162,32 @@ ApigatewayClient::DeletePluginOutcome ApigatewayClient::DeletePlugin(const Delet
 
 void ApigatewayClient::DeletePluginAsync(const DeletePluginRequest& request, const DeletePluginAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeletePlugin(request), context);
-    };
+    using Req = const DeletePluginRequest&;
+    using Resp = DeletePluginResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeletePlugin", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ApigatewayClient::DeletePluginOutcomeCallable ApigatewayClient::DeletePluginCallable(const DeletePluginRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeletePluginOutcome()>>(
-        [this, request]()
-        {
-            return this->DeletePlugin(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeletePluginOutcome>>();
+    DeletePluginAsync(
+    request,
+    [prom](
+        const ApigatewayClient*,
+        const DeletePluginRequest&,
+        DeletePluginOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ApigatewayClient::DeleteServiceOutcome ApigatewayClient::DeleteService(const DeleteServiceRequest &request)
@@ -1051,25 +1212,32 @@ ApigatewayClient::DeleteServiceOutcome ApigatewayClient::DeleteService(const Del
 
 void ApigatewayClient::DeleteServiceAsync(const DeleteServiceRequest& request, const DeleteServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteService(request), context);
-    };
+    using Req = const DeleteServiceRequest&;
+    using Resp = DeleteServiceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteService", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ApigatewayClient::DeleteServiceOutcomeCallable ApigatewayClient::DeleteServiceCallable(const DeleteServiceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteServiceOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteService(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteServiceOutcome>>();
+    DeleteServiceAsync(
+    request,
+    [prom](
+        const ApigatewayClient*,
+        const DeleteServiceRequest&,
+        DeleteServiceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ApigatewayClient::DeleteServiceSubDomainMappingOutcome ApigatewayClient::DeleteServiceSubDomainMapping(const DeleteServiceSubDomainMappingRequest &request)
@@ -1094,25 +1262,32 @@ ApigatewayClient::DeleteServiceSubDomainMappingOutcome ApigatewayClient::DeleteS
 
 void ApigatewayClient::DeleteServiceSubDomainMappingAsync(const DeleteServiceSubDomainMappingRequest& request, const DeleteServiceSubDomainMappingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteServiceSubDomainMapping(request), context);
-    };
+    using Req = const DeleteServiceSubDomainMappingRequest&;
+    using Resp = DeleteServiceSubDomainMappingResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteServiceSubDomainMapping", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ApigatewayClient::DeleteServiceSubDomainMappingOutcomeCallable ApigatewayClient::DeleteServiceSubDomainMappingCallable(const DeleteServiceSubDomainMappingRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteServiceSubDomainMappingOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteServiceSubDomainMapping(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteServiceSubDomainMappingOutcome>>();
+    DeleteServiceSubDomainMappingAsync(
+    request,
+    [prom](
+        const ApigatewayClient*,
+        const DeleteServiceSubDomainMappingRequest&,
+        DeleteServiceSubDomainMappingOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ApigatewayClient::DeleteUpstreamOutcome ApigatewayClient::DeleteUpstream(const DeleteUpstreamRequest &request)
@@ -1137,25 +1312,32 @@ ApigatewayClient::DeleteUpstreamOutcome ApigatewayClient::DeleteUpstream(const D
 
 void ApigatewayClient::DeleteUpstreamAsync(const DeleteUpstreamRequest& request, const DeleteUpstreamAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteUpstream(request), context);
-    };
+    using Req = const DeleteUpstreamRequest&;
+    using Resp = DeleteUpstreamResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteUpstream", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ApigatewayClient::DeleteUpstreamOutcomeCallable ApigatewayClient::DeleteUpstreamCallable(const DeleteUpstreamRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteUpstreamOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteUpstream(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteUpstreamOutcome>>();
+    DeleteUpstreamAsync(
+    request,
+    [prom](
+        const ApigatewayClient*,
+        const DeleteUpstreamRequest&,
+        DeleteUpstreamOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ApigatewayClient::DeleteUsagePlanOutcome ApigatewayClient::DeleteUsagePlan(const DeleteUsagePlanRequest &request)
@@ -1180,25 +1362,32 @@ ApigatewayClient::DeleteUsagePlanOutcome ApigatewayClient::DeleteUsagePlan(const
 
 void ApigatewayClient::DeleteUsagePlanAsync(const DeleteUsagePlanRequest& request, const DeleteUsagePlanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteUsagePlan(request), context);
-    };
+    using Req = const DeleteUsagePlanRequest&;
+    using Resp = DeleteUsagePlanResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteUsagePlan", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ApigatewayClient::DeleteUsagePlanOutcomeCallable ApigatewayClient::DeleteUsagePlanCallable(const DeleteUsagePlanRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteUsagePlanOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteUsagePlan(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteUsagePlanOutcome>>();
+    DeleteUsagePlanAsync(
+    request,
+    [prom](
+        const ApigatewayClient*,
+        const DeleteUsagePlanRequest&,
+        DeleteUsagePlanOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ApigatewayClient::DemoteServiceUsagePlanOutcome ApigatewayClient::DemoteServiceUsagePlan(const DemoteServiceUsagePlanRequest &request)
@@ -1223,25 +1412,32 @@ ApigatewayClient::DemoteServiceUsagePlanOutcome ApigatewayClient::DemoteServiceU
 
 void ApigatewayClient::DemoteServiceUsagePlanAsync(const DemoteServiceUsagePlanRequest& request, const DemoteServiceUsagePlanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DemoteServiceUsagePlan(request), context);
-    };
+    using Req = const DemoteServiceUsagePlanRequest&;
+    using Resp = DemoteServiceUsagePlanResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DemoteServiceUsagePlan", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ApigatewayClient::DemoteServiceUsagePlanOutcomeCallable ApigatewayClient::DemoteServiceUsagePlanCallable(const DemoteServiceUsagePlanRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DemoteServiceUsagePlanOutcome()>>(
-        [this, request]()
-        {
-            return this->DemoteServiceUsagePlan(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DemoteServiceUsagePlanOutcome>>();
+    DemoteServiceUsagePlanAsync(
+    request,
+    [prom](
+        const ApigatewayClient*,
+        const DemoteServiceUsagePlanRequest&,
+        DemoteServiceUsagePlanOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ApigatewayClient::DescribeAPIDocDetailOutcome ApigatewayClient::DescribeAPIDocDetail(const DescribeAPIDocDetailRequest &request)
@@ -1266,25 +1462,32 @@ ApigatewayClient::DescribeAPIDocDetailOutcome ApigatewayClient::DescribeAPIDocDe
 
 void ApigatewayClient::DescribeAPIDocDetailAsync(const DescribeAPIDocDetailRequest& request, const DescribeAPIDocDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAPIDocDetail(request), context);
-    };
+    using Req = const DescribeAPIDocDetailRequest&;
+    using Resp = DescribeAPIDocDetailResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAPIDocDetail", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ApigatewayClient::DescribeAPIDocDetailOutcomeCallable ApigatewayClient::DescribeAPIDocDetailCallable(const DescribeAPIDocDetailRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAPIDocDetailOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAPIDocDetail(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAPIDocDetailOutcome>>();
+    DescribeAPIDocDetailAsync(
+    request,
+    [prom](
+        const ApigatewayClient*,
+        const DescribeAPIDocDetailRequest&,
+        DescribeAPIDocDetailOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ApigatewayClient::DescribeAPIDocsOutcome ApigatewayClient::DescribeAPIDocs(const DescribeAPIDocsRequest &request)
@@ -1309,25 +1512,32 @@ ApigatewayClient::DescribeAPIDocsOutcome ApigatewayClient::DescribeAPIDocs(const
 
 void ApigatewayClient::DescribeAPIDocsAsync(const DescribeAPIDocsRequest& request, const DescribeAPIDocsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAPIDocs(request), context);
-    };
+    using Req = const DescribeAPIDocsRequest&;
+    using Resp = DescribeAPIDocsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAPIDocs", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ApigatewayClient::DescribeAPIDocsOutcomeCallable ApigatewayClient::DescribeAPIDocsCallable(const DescribeAPIDocsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAPIDocsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAPIDocs(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAPIDocsOutcome>>();
+    DescribeAPIDocsAsync(
+    request,
+    [prom](
+        const ApigatewayClient*,
+        const DescribeAPIDocsRequest&,
+        DescribeAPIDocsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ApigatewayClient::DescribeAllPluginApisOutcome ApigatewayClient::DescribeAllPluginApis(const DescribeAllPluginApisRequest &request)
@@ -1352,25 +1562,32 @@ ApigatewayClient::DescribeAllPluginApisOutcome ApigatewayClient::DescribeAllPlug
 
 void ApigatewayClient::DescribeAllPluginApisAsync(const DescribeAllPluginApisRequest& request, const DescribeAllPluginApisAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAllPluginApis(request), context);
-    };
+    using Req = const DescribeAllPluginApisRequest&;
+    using Resp = DescribeAllPluginApisResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAllPluginApis", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ApigatewayClient::DescribeAllPluginApisOutcomeCallable ApigatewayClient::DescribeAllPluginApisCallable(const DescribeAllPluginApisRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAllPluginApisOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAllPluginApis(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAllPluginApisOutcome>>();
+    DescribeAllPluginApisAsync(
+    request,
+    [prom](
+        const ApigatewayClient*,
+        const DescribeAllPluginApisRequest&,
+        DescribeAllPluginApisOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ApigatewayClient::DescribeApiOutcome ApigatewayClient::DescribeApi(const DescribeApiRequest &request)
@@ -1395,25 +1612,32 @@ ApigatewayClient::DescribeApiOutcome ApigatewayClient::DescribeApi(const Describ
 
 void ApigatewayClient::DescribeApiAsync(const DescribeApiRequest& request, const DescribeApiAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeApi(request), context);
-    };
+    using Req = const DescribeApiRequest&;
+    using Resp = DescribeApiResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeApi", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ApigatewayClient::DescribeApiOutcomeCallable ApigatewayClient::DescribeApiCallable(const DescribeApiRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeApiOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeApi(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeApiOutcome>>();
+    DescribeApiAsync(
+    request,
+    [prom](
+        const ApigatewayClient*,
+        const DescribeApiRequest&,
+        DescribeApiOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ApigatewayClient::DescribeApiAppOutcome ApigatewayClient::DescribeApiApp(const DescribeApiAppRequest &request)
@@ -1438,25 +1662,32 @@ ApigatewayClient::DescribeApiAppOutcome ApigatewayClient::DescribeApiApp(const D
 
 void ApigatewayClient::DescribeApiAppAsync(const DescribeApiAppRequest& request, const DescribeApiAppAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeApiApp(request), context);
-    };
+    using Req = const DescribeApiAppRequest&;
+    using Resp = DescribeApiAppResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeApiApp", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ApigatewayClient::DescribeApiAppOutcomeCallable ApigatewayClient::DescribeApiAppCallable(const DescribeApiAppRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeApiAppOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeApiApp(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeApiAppOutcome>>();
+    DescribeApiAppAsync(
+    request,
+    [prom](
+        const ApigatewayClient*,
+        const DescribeApiAppRequest&,
+        DescribeApiAppOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ApigatewayClient::DescribeApiAppBindApisStatusOutcome ApigatewayClient::DescribeApiAppBindApisStatus(const DescribeApiAppBindApisStatusRequest &request)
@@ -1481,25 +1712,32 @@ ApigatewayClient::DescribeApiAppBindApisStatusOutcome ApigatewayClient::Describe
 
 void ApigatewayClient::DescribeApiAppBindApisStatusAsync(const DescribeApiAppBindApisStatusRequest& request, const DescribeApiAppBindApisStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeApiAppBindApisStatus(request), context);
-    };
+    using Req = const DescribeApiAppBindApisStatusRequest&;
+    using Resp = DescribeApiAppBindApisStatusResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeApiAppBindApisStatus", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ApigatewayClient::DescribeApiAppBindApisStatusOutcomeCallable ApigatewayClient::DescribeApiAppBindApisStatusCallable(const DescribeApiAppBindApisStatusRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeApiAppBindApisStatusOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeApiAppBindApisStatus(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeApiAppBindApisStatusOutcome>>();
+    DescribeApiAppBindApisStatusAsync(
+    request,
+    [prom](
+        const ApigatewayClient*,
+        const DescribeApiAppBindApisStatusRequest&,
+        DescribeApiAppBindApisStatusOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ApigatewayClient::DescribeApiAppsStatusOutcome ApigatewayClient::DescribeApiAppsStatus(const DescribeApiAppsStatusRequest &request)
@@ -1524,25 +1762,32 @@ ApigatewayClient::DescribeApiAppsStatusOutcome ApigatewayClient::DescribeApiApps
 
 void ApigatewayClient::DescribeApiAppsStatusAsync(const DescribeApiAppsStatusRequest& request, const DescribeApiAppsStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeApiAppsStatus(request), context);
-    };
+    using Req = const DescribeApiAppsStatusRequest&;
+    using Resp = DescribeApiAppsStatusResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeApiAppsStatus", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ApigatewayClient::DescribeApiAppsStatusOutcomeCallable ApigatewayClient::DescribeApiAppsStatusCallable(const DescribeApiAppsStatusRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeApiAppsStatusOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeApiAppsStatus(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeApiAppsStatusOutcome>>();
+    DescribeApiAppsStatusAsync(
+    request,
+    [prom](
+        const ApigatewayClient*,
+        const DescribeApiAppsStatusRequest&,
+        DescribeApiAppsStatusOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ApigatewayClient::DescribeApiBindApiAppsStatusOutcome ApigatewayClient::DescribeApiBindApiAppsStatus(const DescribeApiBindApiAppsStatusRequest &request)
@@ -1567,25 +1812,32 @@ ApigatewayClient::DescribeApiBindApiAppsStatusOutcome ApigatewayClient::Describe
 
 void ApigatewayClient::DescribeApiBindApiAppsStatusAsync(const DescribeApiBindApiAppsStatusRequest& request, const DescribeApiBindApiAppsStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeApiBindApiAppsStatus(request), context);
-    };
+    using Req = const DescribeApiBindApiAppsStatusRequest&;
+    using Resp = DescribeApiBindApiAppsStatusResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeApiBindApiAppsStatus", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ApigatewayClient::DescribeApiBindApiAppsStatusOutcomeCallable ApigatewayClient::DescribeApiBindApiAppsStatusCallable(const DescribeApiBindApiAppsStatusRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeApiBindApiAppsStatusOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeApiBindApiAppsStatus(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeApiBindApiAppsStatusOutcome>>();
+    DescribeApiBindApiAppsStatusAsync(
+    request,
+    [prom](
+        const ApigatewayClient*,
+        const DescribeApiBindApiAppsStatusRequest&,
+        DescribeApiBindApiAppsStatusOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ApigatewayClient::DescribeApiEnvironmentStrategyOutcome ApigatewayClient::DescribeApiEnvironmentStrategy(const DescribeApiEnvironmentStrategyRequest &request)
@@ -1610,25 +1862,32 @@ ApigatewayClient::DescribeApiEnvironmentStrategyOutcome ApigatewayClient::Descri
 
 void ApigatewayClient::DescribeApiEnvironmentStrategyAsync(const DescribeApiEnvironmentStrategyRequest& request, const DescribeApiEnvironmentStrategyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeApiEnvironmentStrategy(request), context);
-    };
+    using Req = const DescribeApiEnvironmentStrategyRequest&;
+    using Resp = DescribeApiEnvironmentStrategyResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeApiEnvironmentStrategy", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ApigatewayClient::DescribeApiEnvironmentStrategyOutcomeCallable ApigatewayClient::DescribeApiEnvironmentStrategyCallable(const DescribeApiEnvironmentStrategyRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeApiEnvironmentStrategyOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeApiEnvironmentStrategy(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeApiEnvironmentStrategyOutcome>>();
+    DescribeApiEnvironmentStrategyAsync(
+    request,
+    [prom](
+        const ApigatewayClient*,
+        const DescribeApiEnvironmentStrategyRequest&,
+        DescribeApiEnvironmentStrategyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ApigatewayClient::DescribeApiForApiAppOutcome ApigatewayClient::DescribeApiForApiApp(const DescribeApiForApiAppRequest &request)
@@ -1653,25 +1912,32 @@ ApigatewayClient::DescribeApiForApiAppOutcome ApigatewayClient::DescribeApiForAp
 
 void ApigatewayClient::DescribeApiForApiAppAsync(const DescribeApiForApiAppRequest& request, const DescribeApiForApiAppAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeApiForApiApp(request), context);
-    };
+    using Req = const DescribeApiForApiAppRequest&;
+    using Resp = DescribeApiForApiAppResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeApiForApiApp", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ApigatewayClient::DescribeApiForApiAppOutcomeCallable ApigatewayClient::DescribeApiForApiAppCallable(const DescribeApiForApiAppRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeApiForApiAppOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeApiForApiApp(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeApiForApiAppOutcome>>();
+    DescribeApiForApiAppAsync(
+    request,
+    [prom](
+        const ApigatewayClient*,
+        const DescribeApiForApiAppRequest&,
+        DescribeApiForApiAppOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ApigatewayClient::DescribeApiKeyOutcome ApigatewayClient::DescribeApiKey(const DescribeApiKeyRequest &request)
@@ -1696,25 +1962,32 @@ ApigatewayClient::DescribeApiKeyOutcome ApigatewayClient::DescribeApiKey(const D
 
 void ApigatewayClient::DescribeApiKeyAsync(const DescribeApiKeyRequest& request, const DescribeApiKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeApiKey(request), context);
-    };
+    using Req = const DescribeApiKeyRequest&;
+    using Resp = DescribeApiKeyResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeApiKey", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ApigatewayClient::DescribeApiKeyOutcomeCallable ApigatewayClient::DescribeApiKeyCallable(const DescribeApiKeyRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeApiKeyOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeApiKey(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeApiKeyOutcome>>();
+    DescribeApiKeyAsync(
+    request,
+    [prom](
+        const ApigatewayClient*,
+        const DescribeApiKeyRequest&,
+        DescribeApiKeyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ApigatewayClient::DescribeApiKeysStatusOutcome ApigatewayClient::DescribeApiKeysStatus(const DescribeApiKeysStatusRequest &request)
@@ -1739,25 +2012,32 @@ ApigatewayClient::DescribeApiKeysStatusOutcome ApigatewayClient::DescribeApiKeys
 
 void ApigatewayClient::DescribeApiKeysStatusAsync(const DescribeApiKeysStatusRequest& request, const DescribeApiKeysStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeApiKeysStatus(request), context);
-    };
+    using Req = const DescribeApiKeysStatusRequest&;
+    using Resp = DescribeApiKeysStatusResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeApiKeysStatus", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ApigatewayClient::DescribeApiKeysStatusOutcomeCallable ApigatewayClient::DescribeApiKeysStatusCallable(const DescribeApiKeysStatusRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeApiKeysStatusOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeApiKeysStatus(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeApiKeysStatusOutcome>>();
+    DescribeApiKeysStatusAsync(
+    request,
+    [prom](
+        const ApigatewayClient*,
+        const DescribeApiKeysStatusRequest&,
+        DescribeApiKeysStatusOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ApigatewayClient::DescribeApiUsagePlanOutcome ApigatewayClient::DescribeApiUsagePlan(const DescribeApiUsagePlanRequest &request)
@@ -1782,25 +2062,32 @@ ApigatewayClient::DescribeApiUsagePlanOutcome ApigatewayClient::DescribeApiUsage
 
 void ApigatewayClient::DescribeApiUsagePlanAsync(const DescribeApiUsagePlanRequest& request, const DescribeApiUsagePlanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeApiUsagePlan(request), context);
-    };
+    using Req = const DescribeApiUsagePlanRequest&;
+    using Resp = DescribeApiUsagePlanResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeApiUsagePlan", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ApigatewayClient::DescribeApiUsagePlanOutcomeCallable ApigatewayClient::DescribeApiUsagePlanCallable(const DescribeApiUsagePlanRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeApiUsagePlanOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeApiUsagePlan(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeApiUsagePlanOutcome>>();
+    DescribeApiUsagePlanAsync(
+    request,
+    [prom](
+        const ApigatewayClient*,
+        const DescribeApiUsagePlanRequest&,
+        DescribeApiUsagePlanOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ApigatewayClient::DescribeApisStatusOutcome ApigatewayClient::DescribeApisStatus(const DescribeApisStatusRequest &request)
@@ -1825,25 +2112,32 @@ ApigatewayClient::DescribeApisStatusOutcome ApigatewayClient::DescribeApisStatus
 
 void ApigatewayClient::DescribeApisStatusAsync(const DescribeApisStatusRequest& request, const DescribeApisStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeApisStatus(request), context);
-    };
+    using Req = const DescribeApisStatusRequest&;
+    using Resp = DescribeApisStatusResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeApisStatus", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ApigatewayClient::DescribeApisStatusOutcomeCallable ApigatewayClient::DescribeApisStatusCallable(const DescribeApisStatusRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeApisStatusOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeApisStatus(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeApisStatusOutcome>>();
+    DescribeApisStatusAsync(
+    request,
+    [prom](
+        const ApigatewayClient*,
+        const DescribeApisStatusRequest&,
+        DescribeApisStatusOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ApigatewayClient::DescribeExclusiveInstanceDetailOutcome ApigatewayClient::DescribeExclusiveInstanceDetail(const DescribeExclusiveInstanceDetailRequest &request)
@@ -1868,25 +2162,32 @@ ApigatewayClient::DescribeExclusiveInstanceDetailOutcome ApigatewayClient::Descr
 
 void ApigatewayClient::DescribeExclusiveInstanceDetailAsync(const DescribeExclusiveInstanceDetailRequest& request, const DescribeExclusiveInstanceDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeExclusiveInstanceDetail(request), context);
-    };
+    using Req = const DescribeExclusiveInstanceDetailRequest&;
+    using Resp = DescribeExclusiveInstanceDetailResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeExclusiveInstanceDetail", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ApigatewayClient::DescribeExclusiveInstanceDetailOutcomeCallable ApigatewayClient::DescribeExclusiveInstanceDetailCallable(const DescribeExclusiveInstanceDetailRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeExclusiveInstanceDetailOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeExclusiveInstanceDetail(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeExclusiveInstanceDetailOutcome>>();
+    DescribeExclusiveInstanceDetailAsync(
+    request,
+    [prom](
+        const ApigatewayClient*,
+        const DescribeExclusiveInstanceDetailRequest&,
+        DescribeExclusiveInstanceDetailOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ApigatewayClient::DescribeExclusiveInstanceRegionsOutcome ApigatewayClient::DescribeExclusiveInstanceRegions(const DescribeExclusiveInstanceRegionsRequest &request)
@@ -1911,25 +2212,32 @@ ApigatewayClient::DescribeExclusiveInstanceRegionsOutcome ApigatewayClient::Desc
 
 void ApigatewayClient::DescribeExclusiveInstanceRegionsAsync(const DescribeExclusiveInstanceRegionsRequest& request, const DescribeExclusiveInstanceRegionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeExclusiveInstanceRegions(request), context);
-    };
+    using Req = const DescribeExclusiveInstanceRegionsRequest&;
+    using Resp = DescribeExclusiveInstanceRegionsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeExclusiveInstanceRegions", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ApigatewayClient::DescribeExclusiveInstanceRegionsOutcomeCallable ApigatewayClient::DescribeExclusiveInstanceRegionsCallable(const DescribeExclusiveInstanceRegionsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeExclusiveInstanceRegionsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeExclusiveInstanceRegions(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeExclusiveInstanceRegionsOutcome>>();
+    DescribeExclusiveInstanceRegionsAsync(
+    request,
+    [prom](
+        const ApigatewayClient*,
+        const DescribeExclusiveInstanceRegionsRequest&,
+        DescribeExclusiveInstanceRegionsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ApigatewayClient::DescribeExclusiveInstancesOutcome ApigatewayClient::DescribeExclusiveInstances(const DescribeExclusiveInstancesRequest &request)
@@ -1954,25 +2262,32 @@ ApigatewayClient::DescribeExclusiveInstancesOutcome ApigatewayClient::DescribeEx
 
 void ApigatewayClient::DescribeExclusiveInstancesAsync(const DescribeExclusiveInstancesRequest& request, const DescribeExclusiveInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeExclusiveInstances(request), context);
-    };
+    using Req = const DescribeExclusiveInstancesRequest&;
+    using Resp = DescribeExclusiveInstancesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeExclusiveInstances", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ApigatewayClient::DescribeExclusiveInstancesOutcomeCallable ApigatewayClient::DescribeExclusiveInstancesCallable(const DescribeExclusiveInstancesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeExclusiveInstancesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeExclusiveInstances(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeExclusiveInstancesOutcome>>();
+    DescribeExclusiveInstancesAsync(
+    request,
+    [prom](
+        const ApigatewayClient*,
+        const DescribeExclusiveInstancesRequest&,
+        DescribeExclusiveInstancesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ApigatewayClient::DescribeExclusiveInstancesStatusOutcome ApigatewayClient::DescribeExclusiveInstancesStatus(const DescribeExclusiveInstancesStatusRequest &request)
@@ -1997,25 +2312,32 @@ ApigatewayClient::DescribeExclusiveInstancesStatusOutcome ApigatewayClient::Desc
 
 void ApigatewayClient::DescribeExclusiveInstancesStatusAsync(const DescribeExclusiveInstancesStatusRequest& request, const DescribeExclusiveInstancesStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeExclusiveInstancesStatus(request), context);
-    };
+    using Req = const DescribeExclusiveInstancesStatusRequest&;
+    using Resp = DescribeExclusiveInstancesStatusResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeExclusiveInstancesStatus", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ApigatewayClient::DescribeExclusiveInstancesStatusOutcomeCallable ApigatewayClient::DescribeExclusiveInstancesStatusCallable(const DescribeExclusiveInstancesStatusRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeExclusiveInstancesStatusOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeExclusiveInstancesStatus(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeExclusiveInstancesStatusOutcome>>();
+    DescribeExclusiveInstancesStatusAsync(
+    request,
+    [prom](
+        const ApigatewayClient*,
+        const DescribeExclusiveInstancesStatusRequest&,
+        DescribeExclusiveInstancesStatusOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ApigatewayClient::DescribeIPStrategyOutcome ApigatewayClient::DescribeIPStrategy(const DescribeIPStrategyRequest &request)
@@ -2040,25 +2362,32 @@ ApigatewayClient::DescribeIPStrategyOutcome ApigatewayClient::DescribeIPStrategy
 
 void ApigatewayClient::DescribeIPStrategyAsync(const DescribeIPStrategyRequest& request, const DescribeIPStrategyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeIPStrategy(request), context);
-    };
+    using Req = const DescribeIPStrategyRequest&;
+    using Resp = DescribeIPStrategyResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeIPStrategy", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ApigatewayClient::DescribeIPStrategyOutcomeCallable ApigatewayClient::DescribeIPStrategyCallable(const DescribeIPStrategyRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeIPStrategyOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeIPStrategy(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeIPStrategyOutcome>>();
+    DescribeIPStrategyAsync(
+    request,
+    [prom](
+        const ApigatewayClient*,
+        const DescribeIPStrategyRequest&,
+        DescribeIPStrategyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ApigatewayClient::DescribeIPStrategyApisStatusOutcome ApigatewayClient::DescribeIPStrategyApisStatus(const DescribeIPStrategyApisStatusRequest &request)
@@ -2083,25 +2412,32 @@ ApigatewayClient::DescribeIPStrategyApisStatusOutcome ApigatewayClient::Describe
 
 void ApigatewayClient::DescribeIPStrategyApisStatusAsync(const DescribeIPStrategyApisStatusRequest& request, const DescribeIPStrategyApisStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeIPStrategyApisStatus(request), context);
-    };
+    using Req = const DescribeIPStrategyApisStatusRequest&;
+    using Resp = DescribeIPStrategyApisStatusResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeIPStrategyApisStatus", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ApigatewayClient::DescribeIPStrategyApisStatusOutcomeCallable ApigatewayClient::DescribeIPStrategyApisStatusCallable(const DescribeIPStrategyApisStatusRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeIPStrategyApisStatusOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeIPStrategyApisStatus(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeIPStrategyApisStatusOutcome>>();
+    DescribeIPStrategyApisStatusAsync(
+    request,
+    [prom](
+        const ApigatewayClient*,
+        const DescribeIPStrategyApisStatusRequest&,
+        DescribeIPStrategyApisStatusOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ApigatewayClient::DescribeIPStrategysStatusOutcome ApigatewayClient::DescribeIPStrategysStatus(const DescribeIPStrategysStatusRequest &request)
@@ -2126,25 +2462,32 @@ ApigatewayClient::DescribeIPStrategysStatusOutcome ApigatewayClient::DescribeIPS
 
 void ApigatewayClient::DescribeIPStrategysStatusAsync(const DescribeIPStrategysStatusRequest& request, const DescribeIPStrategysStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeIPStrategysStatus(request), context);
-    };
+    using Req = const DescribeIPStrategysStatusRequest&;
+    using Resp = DescribeIPStrategysStatusResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeIPStrategysStatus", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ApigatewayClient::DescribeIPStrategysStatusOutcomeCallable ApigatewayClient::DescribeIPStrategysStatusCallable(const DescribeIPStrategysStatusRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeIPStrategysStatusOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeIPStrategysStatus(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeIPStrategysStatusOutcome>>();
+    DescribeIPStrategysStatusAsync(
+    request,
+    [prom](
+        const ApigatewayClient*,
+        const DescribeIPStrategysStatusRequest&,
+        DescribeIPStrategysStatusOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ApigatewayClient::DescribeInstancesNetworkConfigOutcome ApigatewayClient::DescribeInstancesNetworkConfig(const DescribeInstancesNetworkConfigRequest &request)
@@ -2169,25 +2512,32 @@ ApigatewayClient::DescribeInstancesNetworkConfigOutcome ApigatewayClient::Descri
 
 void ApigatewayClient::DescribeInstancesNetworkConfigAsync(const DescribeInstancesNetworkConfigRequest& request, const DescribeInstancesNetworkConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeInstancesNetworkConfig(request), context);
-    };
+    using Req = const DescribeInstancesNetworkConfigRequest&;
+    using Resp = DescribeInstancesNetworkConfigResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeInstancesNetworkConfig", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ApigatewayClient::DescribeInstancesNetworkConfigOutcomeCallable ApigatewayClient::DescribeInstancesNetworkConfigCallable(const DescribeInstancesNetworkConfigRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeInstancesNetworkConfigOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeInstancesNetworkConfig(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeInstancesNetworkConfigOutcome>>();
+    DescribeInstancesNetworkConfigAsync(
+    request,
+    [prom](
+        const ApigatewayClient*,
+        const DescribeInstancesNetworkConfigRequest&,
+        DescribeInstancesNetworkConfigOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ApigatewayClient::DescribeLogSearchOutcome ApigatewayClient::DescribeLogSearch(const DescribeLogSearchRequest &request)
@@ -2212,25 +2562,32 @@ ApigatewayClient::DescribeLogSearchOutcome ApigatewayClient::DescribeLogSearch(c
 
 void ApigatewayClient::DescribeLogSearchAsync(const DescribeLogSearchRequest& request, const DescribeLogSearchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeLogSearch(request), context);
-    };
+    using Req = const DescribeLogSearchRequest&;
+    using Resp = DescribeLogSearchResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeLogSearch", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ApigatewayClient::DescribeLogSearchOutcomeCallable ApigatewayClient::DescribeLogSearchCallable(const DescribeLogSearchRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeLogSearchOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeLogSearch(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeLogSearchOutcome>>();
+    DescribeLogSearchAsync(
+    request,
+    [prom](
+        const ApigatewayClient*,
+        const DescribeLogSearchRequest&,
+        DescribeLogSearchOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ApigatewayClient::DescribePluginOutcome ApigatewayClient::DescribePlugin(const DescribePluginRequest &request)
@@ -2255,25 +2612,32 @@ ApigatewayClient::DescribePluginOutcome ApigatewayClient::DescribePlugin(const D
 
 void ApigatewayClient::DescribePluginAsync(const DescribePluginRequest& request, const DescribePluginAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribePlugin(request), context);
-    };
+    using Req = const DescribePluginRequest&;
+    using Resp = DescribePluginResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribePlugin", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ApigatewayClient::DescribePluginOutcomeCallable ApigatewayClient::DescribePluginCallable(const DescribePluginRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribePluginOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribePlugin(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribePluginOutcome>>();
+    DescribePluginAsync(
+    request,
+    [prom](
+        const ApigatewayClient*,
+        const DescribePluginRequest&,
+        DescribePluginOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ApigatewayClient::DescribePluginApisOutcome ApigatewayClient::DescribePluginApis(const DescribePluginApisRequest &request)
@@ -2298,25 +2662,32 @@ ApigatewayClient::DescribePluginApisOutcome ApigatewayClient::DescribePluginApis
 
 void ApigatewayClient::DescribePluginApisAsync(const DescribePluginApisRequest& request, const DescribePluginApisAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribePluginApis(request), context);
-    };
+    using Req = const DescribePluginApisRequest&;
+    using Resp = DescribePluginApisResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribePluginApis", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ApigatewayClient::DescribePluginApisOutcomeCallable ApigatewayClient::DescribePluginApisCallable(const DescribePluginApisRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribePluginApisOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribePluginApis(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribePluginApisOutcome>>();
+    DescribePluginApisAsync(
+    request,
+    [prom](
+        const ApigatewayClient*,
+        const DescribePluginApisRequest&,
+        DescribePluginApisOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ApigatewayClient::DescribePluginsOutcome ApigatewayClient::DescribePlugins(const DescribePluginsRequest &request)
@@ -2341,25 +2712,32 @@ ApigatewayClient::DescribePluginsOutcome ApigatewayClient::DescribePlugins(const
 
 void ApigatewayClient::DescribePluginsAsync(const DescribePluginsRequest& request, const DescribePluginsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribePlugins(request), context);
-    };
+    using Req = const DescribePluginsRequest&;
+    using Resp = DescribePluginsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribePlugins", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ApigatewayClient::DescribePluginsOutcomeCallable ApigatewayClient::DescribePluginsCallable(const DescribePluginsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribePluginsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribePlugins(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribePluginsOutcome>>();
+    DescribePluginsAsync(
+    request,
+    [prom](
+        const ApigatewayClient*,
+        const DescribePluginsRequest&,
+        DescribePluginsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ApigatewayClient::DescribePluginsByApiOutcome ApigatewayClient::DescribePluginsByApi(const DescribePluginsByApiRequest &request)
@@ -2384,25 +2762,32 @@ ApigatewayClient::DescribePluginsByApiOutcome ApigatewayClient::DescribePluginsB
 
 void ApigatewayClient::DescribePluginsByApiAsync(const DescribePluginsByApiRequest& request, const DescribePluginsByApiAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribePluginsByApi(request), context);
-    };
+    using Req = const DescribePluginsByApiRequest&;
+    using Resp = DescribePluginsByApiResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribePluginsByApi", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ApigatewayClient::DescribePluginsByApiOutcomeCallable ApigatewayClient::DescribePluginsByApiCallable(const DescribePluginsByApiRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribePluginsByApiOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribePluginsByApi(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribePluginsByApiOutcome>>();
+    DescribePluginsByApiAsync(
+    request,
+    [prom](
+        const ApigatewayClient*,
+        const DescribePluginsByApiRequest&,
+        DescribePluginsByApiOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ApigatewayClient::DescribeServiceOutcome ApigatewayClient::DescribeService(const DescribeServiceRequest &request)
@@ -2427,25 +2812,32 @@ ApigatewayClient::DescribeServiceOutcome ApigatewayClient::DescribeService(const
 
 void ApigatewayClient::DescribeServiceAsync(const DescribeServiceRequest& request, const DescribeServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeService(request), context);
-    };
+    using Req = const DescribeServiceRequest&;
+    using Resp = DescribeServiceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeService", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ApigatewayClient::DescribeServiceOutcomeCallable ApigatewayClient::DescribeServiceCallable(const DescribeServiceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeServiceOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeService(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeServiceOutcome>>();
+    DescribeServiceAsync(
+    request,
+    [prom](
+        const ApigatewayClient*,
+        const DescribeServiceRequest&,
+        DescribeServiceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ApigatewayClient::DescribeServiceEnvironmentListOutcome ApigatewayClient::DescribeServiceEnvironmentList(const DescribeServiceEnvironmentListRequest &request)
@@ -2470,25 +2862,32 @@ ApigatewayClient::DescribeServiceEnvironmentListOutcome ApigatewayClient::Descri
 
 void ApigatewayClient::DescribeServiceEnvironmentListAsync(const DescribeServiceEnvironmentListRequest& request, const DescribeServiceEnvironmentListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeServiceEnvironmentList(request), context);
-    };
+    using Req = const DescribeServiceEnvironmentListRequest&;
+    using Resp = DescribeServiceEnvironmentListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeServiceEnvironmentList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ApigatewayClient::DescribeServiceEnvironmentListOutcomeCallable ApigatewayClient::DescribeServiceEnvironmentListCallable(const DescribeServiceEnvironmentListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeServiceEnvironmentListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeServiceEnvironmentList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeServiceEnvironmentListOutcome>>();
+    DescribeServiceEnvironmentListAsync(
+    request,
+    [prom](
+        const ApigatewayClient*,
+        const DescribeServiceEnvironmentListRequest&,
+        DescribeServiceEnvironmentListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ApigatewayClient::DescribeServiceEnvironmentReleaseHistoryOutcome ApigatewayClient::DescribeServiceEnvironmentReleaseHistory(const DescribeServiceEnvironmentReleaseHistoryRequest &request)
@@ -2513,25 +2912,32 @@ ApigatewayClient::DescribeServiceEnvironmentReleaseHistoryOutcome ApigatewayClie
 
 void ApigatewayClient::DescribeServiceEnvironmentReleaseHistoryAsync(const DescribeServiceEnvironmentReleaseHistoryRequest& request, const DescribeServiceEnvironmentReleaseHistoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeServiceEnvironmentReleaseHistory(request), context);
-    };
+    using Req = const DescribeServiceEnvironmentReleaseHistoryRequest&;
+    using Resp = DescribeServiceEnvironmentReleaseHistoryResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeServiceEnvironmentReleaseHistory", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ApigatewayClient::DescribeServiceEnvironmentReleaseHistoryOutcomeCallable ApigatewayClient::DescribeServiceEnvironmentReleaseHistoryCallable(const DescribeServiceEnvironmentReleaseHistoryRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeServiceEnvironmentReleaseHistoryOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeServiceEnvironmentReleaseHistory(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeServiceEnvironmentReleaseHistoryOutcome>>();
+    DescribeServiceEnvironmentReleaseHistoryAsync(
+    request,
+    [prom](
+        const ApigatewayClient*,
+        const DescribeServiceEnvironmentReleaseHistoryRequest&,
+        DescribeServiceEnvironmentReleaseHistoryOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ApigatewayClient::DescribeServiceEnvironmentStrategyOutcome ApigatewayClient::DescribeServiceEnvironmentStrategy(const DescribeServiceEnvironmentStrategyRequest &request)
@@ -2556,25 +2962,32 @@ ApigatewayClient::DescribeServiceEnvironmentStrategyOutcome ApigatewayClient::De
 
 void ApigatewayClient::DescribeServiceEnvironmentStrategyAsync(const DescribeServiceEnvironmentStrategyRequest& request, const DescribeServiceEnvironmentStrategyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeServiceEnvironmentStrategy(request), context);
-    };
+    using Req = const DescribeServiceEnvironmentStrategyRequest&;
+    using Resp = DescribeServiceEnvironmentStrategyResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeServiceEnvironmentStrategy", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ApigatewayClient::DescribeServiceEnvironmentStrategyOutcomeCallable ApigatewayClient::DescribeServiceEnvironmentStrategyCallable(const DescribeServiceEnvironmentStrategyRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeServiceEnvironmentStrategyOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeServiceEnvironmentStrategy(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeServiceEnvironmentStrategyOutcome>>();
+    DescribeServiceEnvironmentStrategyAsync(
+    request,
+    [prom](
+        const ApigatewayClient*,
+        const DescribeServiceEnvironmentStrategyRequest&,
+        DescribeServiceEnvironmentStrategyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ApigatewayClient::DescribeServiceForApiAppOutcome ApigatewayClient::DescribeServiceForApiApp(const DescribeServiceForApiAppRequest &request)
@@ -2599,25 +3012,32 @@ ApigatewayClient::DescribeServiceForApiAppOutcome ApigatewayClient::DescribeServ
 
 void ApigatewayClient::DescribeServiceForApiAppAsync(const DescribeServiceForApiAppRequest& request, const DescribeServiceForApiAppAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeServiceForApiApp(request), context);
-    };
+    using Req = const DescribeServiceForApiAppRequest&;
+    using Resp = DescribeServiceForApiAppResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeServiceForApiApp", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ApigatewayClient::DescribeServiceForApiAppOutcomeCallable ApigatewayClient::DescribeServiceForApiAppCallable(const DescribeServiceForApiAppRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeServiceForApiAppOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeServiceForApiApp(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeServiceForApiAppOutcome>>();
+    DescribeServiceForApiAppAsync(
+    request,
+    [prom](
+        const ApigatewayClient*,
+        const DescribeServiceForApiAppRequest&,
+        DescribeServiceForApiAppOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ApigatewayClient::DescribeServiceReleaseVersionOutcome ApigatewayClient::DescribeServiceReleaseVersion(const DescribeServiceReleaseVersionRequest &request)
@@ -2642,25 +3062,32 @@ ApigatewayClient::DescribeServiceReleaseVersionOutcome ApigatewayClient::Describ
 
 void ApigatewayClient::DescribeServiceReleaseVersionAsync(const DescribeServiceReleaseVersionRequest& request, const DescribeServiceReleaseVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeServiceReleaseVersion(request), context);
-    };
+    using Req = const DescribeServiceReleaseVersionRequest&;
+    using Resp = DescribeServiceReleaseVersionResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeServiceReleaseVersion", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ApigatewayClient::DescribeServiceReleaseVersionOutcomeCallable ApigatewayClient::DescribeServiceReleaseVersionCallable(const DescribeServiceReleaseVersionRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeServiceReleaseVersionOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeServiceReleaseVersion(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeServiceReleaseVersionOutcome>>();
+    DescribeServiceReleaseVersionAsync(
+    request,
+    [prom](
+        const ApigatewayClient*,
+        const DescribeServiceReleaseVersionRequest&,
+        DescribeServiceReleaseVersionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ApigatewayClient::DescribeServiceSubDomainMappingsOutcome ApigatewayClient::DescribeServiceSubDomainMappings(const DescribeServiceSubDomainMappingsRequest &request)
@@ -2685,25 +3112,32 @@ ApigatewayClient::DescribeServiceSubDomainMappingsOutcome ApigatewayClient::Desc
 
 void ApigatewayClient::DescribeServiceSubDomainMappingsAsync(const DescribeServiceSubDomainMappingsRequest& request, const DescribeServiceSubDomainMappingsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeServiceSubDomainMappings(request), context);
-    };
+    using Req = const DescribeServiceSubDomainMappingsRequest&;
+    using Resp = DescribeServiceSubDomainMappingsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeServiceSubDomainMappings", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ApigatewayClient::DescribeServiceSubDomainMappingsOutcomeCallable ApigatewayClient::DescribeServiceSubDomainMappingsCallable(const DescribeServiceSubDomainMappingsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeServiceSubDomainMappingsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeServiceSubDomainMappings(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeServiceSubDomainMappingsOutcome>>();
+    DescribeServiceSubDomainMappingsAsync(
+    request,
+    [prom](
+        const ApigatewayClient*,
+        const DescribeServiceSubDomainMappingsRequest&,
+        DescribeServiceSubDomainMappingsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ApigatewayClient::DescribeServiceSubDomainsOutcome ApigatewayClient::DescribeServiceSubDomains(const DescribeServiceSubDomainsRequest &request)
@@ -2728,25 +3162,32 @@ ApigatewayClient::DescribeServiceSubDomainsOutcome ApigatewayClient::DescribeSer
 
 void ApigatewayClient::DescribeServiceSubDomainsAsync(const DescribeServiceSubDomainsRequest& request, const DescribeServiceSubDomainsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeServiceSubDomains(request), context);
-    };
+    using Req = const DescribeServiceSubDomainsRequest&;
+    using Resp = DescribeServiceSubDomainsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeServiceSubDomains", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ApigatewayClient::DescribeServiceSubDomainsOutcomeCallable ApigatewayClient::DescribeServiceSubDomainsCallable(const DescribeServiceSubDomainsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeServiceSubDomainsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeServiceSubDomains(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeServiceSubDomainsOutcome>>();
+    DescribeServiceSubDomainsAsync(
+    request,
+    [prom](
+        const ApigatewayClient*,
+        const DescribeServiceSubDomainsRequest&,
+        DescribeServiceSubDomainsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ApigatewayClient::DescribeServiceUsagePlanOutcome ApigatewayClient::DescribeServiceUsagePlan(const DescribeServiceUsagePlanRequest &request)
@@ -2771,25 +3212,32 @@ ApigatewayClient::DescribeServiceUsagePlanOutcome ApigatewayClient::DescribeServ
 
 void ApigatewayClient::DescribeServiceUsagePlanAsync(const DescribeServiceUsagePlanRequest& request, const DescribeServiceUsagePlanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeServiceUsagePlan(request), context);
-    };
+    using Req = const DescribeServiceUsagePlanRequest&;
+    using Resp = DescribeServiceUsagePlanResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeServiceUsagePlan", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ApigatewayClient::DescribeServiceUsagePlanOutcomeCallable ApigatewayClient::DescribeServiceUsagePlanCallable(const DescribeServiceUsagePlanRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeServiceUsagePlanOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeServiceUsagePlan(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeServiceUsagePlanOutcome>>();
+    DescribeServiceUsagePlanAsync(
+    request,
+    [prom](
+        const ApigatewayClient*,
+        const DescribeServiceUsagePlanRequest&,
+        DescribeServiceUsagePlanOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ApigatewayClient::DescribeServicesStatusOutcome ApigatewayClient::DescribeServicesStatus(const DescribeServicesStatusRequest &request)
@@ -2814,25 +3262,32 @@ ApigatewayClient::DescribeServicesStatusOutcome ApigatewayClient::DescribeServic
 
 void ApigatewayClient::DescribeServicesStatusAsync(const DescribeServicesStatusRequest& request, const DescribeServicesStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeServicesStatus(request), context);
-    };
+    using Req = const DescribeServicesStatusRequest&;
+    using Resp = DescribeServicesStatusResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeServicesStatus", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ApigatewayClient::DescribeServicesStatusOutcomeCallable ApigatewayClient::DescribeServicesStatusCallable(const DescribeServicesStatusRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeServicesStatusOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeServicesStatus(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeServicesStatusOutcome>>();
+    DescribeServicesStatusAsync(
+    request,
+    [prom](
+        const ApigatewayClient*,
+        const DescribeServicesStatusRequest&,
+        DescribeServicesStatusOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ApigatewayClient::DescribeUpstreamBindApisOutcome ApigatewayClient::DescribeUpstreamBindApis(const DescribeUpstreamBindApisRequest &request)
@@ -2857,25 +3312,32 @@ ApigatewayClient::DescribeUpstreamBindApisOutcome ApigatewayClient::DescribeUpst
 
 void ApigatewayClient::DescribeUpstreamBindApisAsync(const DescribeUpstreamBindApisRequest& request, const DescribeUpstreamBindApisAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeUpstreamBindApis(request), context);
-    };
+    using Req = const DescribeUpstreamBindApisRequest&;
+    using Resp = DescribeUpstreamBindApisResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeUpstreamBindApis", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ApigatewayClient::DescribeUpstreamBindApisOutcomeCallable ApigatewayClient::DescribeUpstreamBindApisCallable(const DescribeUpstreamBindApisRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeUpstreamBindApisOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeUpstreamBindApis(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeUpstreamBindApisOutcome>>();
+    DescribeUpstreamBindApisAsync(
+    request,
+    [prom](
+        const ApigatewayClient*,
+        const DescribeUpstreamBindApisRequest&,
+        DescribeUpstreamBindApisOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ApigatewayClient::DescribeUpstreamsOutcome ApigatewayClient::DescribeUpstreams(const DescribeUpstreamsRequest &request)
@@ -2900,25 +3362,32 @@ ApigatewayClient::DescribeUpstreamsOutcome ApigatewayClient::DescribeUpstreams(c
 
 void ApigatewayClient::DescribeUpstreamsAsync(const DescribeUpstreamsRequest& request, const DescribeUpstreamsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeUpstreams(request), context);
-    };
+    using Req = const DescribeUpstreamsRequest&;
+    using Resp = DescribeUpstreamsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeUpstreams", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ApigatewayClient::DescribeUpstreamsOutcomeCallable ApigatewayClient::DescribeUpstreamsCallable(const DescribeUpstreamsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeUpstreamsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeUpstreams(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeUpstreamsOutcome>>();
+    DescribeUpstreamsAsync(
+    request,
+    [prom](
+        const ApigatewayClient*,
+        const DescribeUpstreamsRequest&,
+        DescribeUpstreamsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ApigatewayClient::DescribeUsagePlanOutcome ApigatewayClient::DescribeUsagePlan(const DescribeUsagePlanRequest &request)
@@ -2943,25 +3412,32 @@ ApigatewayClient::DescribeUsagePlanOutcome ApigatewayClient::DescribeUsagePlan(c
 
 void ApigatewayClient::DescribeUsagePlanAsync(const DescribeUsagePlanRequest& request, const DescribeUsagePlanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeUsagePlan(request), context);
-    };
+    using Req = const DescribeUsagePlanRequest&;
+    using Resp = DescribeUsagePlanResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeUsagePlan", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ApigatewayClient::DescribeUsagePlanOutcomeCallable ApigatewayClient::DescribeUsagePlanCallable(const DescribeUsagePlanRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeUsagePlanOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeUsagePlan(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeUsagePlanOutcome>>();
+    DescribeUsagePlanAsync(
+    request,
+    [prom](
+        const ApigatewayClient*,
+        const DescribeUsagePlanRequest&,
+        DescribeUsagePlanOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ApigatewayClient::DescribeUsagePlanEnvironmentsOutcome ApigatewayClient::DescribeUsagePlanEnvironments(const DescribeUsagePlanEnvironmentsRequest &request)
@@ -2986,25 +3462,32 @@ ApigatewayClient::DescribeUsagePlanEnvironmentsOutcome ApigatewayClient::Describ
 
 void ApigatewayClient::DescribeUsagePlanEnvironmentsAsync(const DescribeUsagePlanEnvironmentsRequest& request, const DescribeUsagePlanEnvironmentsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeUsagePlanEnvironments(request), context);
-    };
+    using Req = const DescribeUsagePlanEnvironmentsRequest&;
+    using Resp = DescribeUsagePlanEnvironmentsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeUsagePlanEnvironments", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ApigatewayClient::DescribeUsagePlanEnvironmentsOutcomeCallable ApigatewayClient::DescribeUsagePlanEnvironmentsCallable(const DescribeUsagePlanEnvironmentsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeUsagePlanEnvironmentsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeUsagePlanEnvironments(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeUsagePlanEnvironmentsOutcome>>();
+    DescribeUsagePlanEnvironmentsAsync(
+    request,
+    [prom](
+        const ApigatewayClient*,
+        const DescribeUsagePlanEnvironmentsRequest&,
+        DescribeUsagePlanEnvironmentsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ApigatewayClient::DescribeUsagePlanSecretIdsOutcome ApigatewayClient::DescribeUsagePlanSecretIds(const DescribeUsagePlanSecretIdsRequest &request)
@@ -3029,25 +3512,32 @@ ApigatewayClient::DescribeUsagePlanSecretIdsOutcome ApigatewayClient::DescribeUs
 
 void ApigatewayClient::DescribeUsagePlanSecretIdsAsync(const DescribeUsagePlanSecretIdsRequest& request, const DescribeUsagePlanSecretIdsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeUsagePlanSecretIds(request), context);
-    };
+    using Req = const DescribeUsagePlanSecretIdsRequest&;
+    using Resp = DescribeUsagePlanSecretIdsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeUsagePlanSecretIds", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ApigatewayClient::DescribeUsagePlanSecretIdsOutcomeCallable ApigatewayClient::DescribeUsagePlanSecretIdsCallable(const DescribeUsagePlanSecretIdsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeUsagePlanSecretIdsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeUsagePlanSecretIds(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeUsagePlanSecretIdsOutcome>>();
+    DescribeUsagePlanSecretIdsAsync(
+    request,
+    [prom](
+        const ApigatewayClient*,
+        const DescribeUsagePlanSecretIdsRequest&,
+        DescribeUsagePlanSecretIdsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ApigatewayClient::DescribeUsagePlansStatusOutcome ApigatewayClient::DescribeUsagePlansStatus(const DescribeUsagePlansStatusRequest &request)
@@ -3072,25 +3562,32 @@ ApigatewayClient::DescribeUsagePlansStatusOutcome ApigatewayClient::DescribeUsag
 
 void ApigatewayClient::DescribeUsagePlansStatusAsync(const DescribeUsagePlansStatusRequest& request, const DescribeUsagePlansStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeUsagePlansStatus(request), context);
-    };
+    using Req = const DescribeUsagePlansStatusRequest&;
+    using Resp = DescribeUsagePlansStatusResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeUsagePlansStatus", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ApigatewayClient::DescribeUsagePlansStatusOutcomeCallable ApigatewayClient::DescribeUsagePlansStatusCallable(const DescribeUsagePlansStatusRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeUsagePlansStatusOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeUsagePlansStatus(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeUsagePlansStatusOutcome>>();
+    DescribeUsagePlansStatusAsync(
+    request,
+    [prom](
+        const ApigatewayClient*,
+        const DescribeUsagePlansStatusRequest&,
+        DescribeUsagePlansStatusOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ApigatewayClient::DetachPluginOutcome ApigatewayClient::DetachPlugin(const DetachPluginRequest &request)
@@ -3115,25 +3612,32 @@ ApigatewayClient::DetachPluginOutcome ApigatewayClient::DetachPlugin(const Detac
 
 void ApigatewayClient::DetachPluginAsync(const DetachPluginRequest& request, const DetachPluginAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DetachPlugin(request), context);
-    };
+    using Req = const DetachPluginRequest&;
+    using Resp = DetachPluginResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DetachPlugin", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ApigatewayClient::DetachPluginOutcomeCallable ApigatewayClient::DetachPluginCallable(const DetachPluginRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DetachPluginOutcome()>>(
-        [this, request]()
-        {
-            return this->DetachPlugin(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DetachPluginOutcome>>();
+    DetachPluginAsync(
+    request,
+    [prom](
+        const ApigatewayClient*,
+        const DetachPluginRequest&,
+        DetachPluginOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ApigatewayClient::DisableApiKeyOutcome ApigatewayClient::DisableApiKey(const DisableApiKeyRequest &request)
@@ -3158,25 +3662,32 @@ ApigatewayClient::DisableApiKeyOutcome ApigatewayClient::DisableApiKey(const Dis
 
 void ApigatewayClient::DisableApiKeyAsync(const DisableApiKeyRequest& request, const DisableApiKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DisableApiKey(request), context);
-    };
+    using Req = const DisableApiKeyRequest&;
+    using Resp = DisableApiKeyResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DisableApiKey", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ApigatewayClient::DisableApiKeyOutcomeCallable ApigatewayClient::DisableApiKeyCallable(const DisableApiKeyRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DisableApiKeyOutcome()>>(
-        [this, request]()
-        {
-            return this->DisableApiKey(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DisableApiKeyOutcome>>();
+    DisableApiKeyAsync(
+    request,
+    [prom](
+        const ApigatewayClient*,
+        const DisableApiKeyRequest&,
+        DisableApiKeyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ApigatewayClient::EnableApiKeyOutcome ApigatewayClient::EnableApiKey(const EnableApiKeyRequest &request)
@@ -3201,25 +3712,32 @@ ApigatewayClient::EnableApiKeyOutcome ApigatewayClient::EnableApiKey(const Enabl
 
 void ApigatewayClient::EnableApiKeyAsync(const EnableApiKeyRequest& request, const EnableApiKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->EnableApiKey(request), context);
-    };
+    using Req = const EnableApiKeyRequest&;
+    using Resp = EnableApiKeyResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "EnableApiKey", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ApigatewayClient::EnableApiKeyOutcomeCallable ApigatewayClient::EnableApiKeyCallable(const EnableApiKeyRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<EnableApiKeyOutcome()>>(
-        [this, request]()
-        {
-            return this->EnableApiKey(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<EnableApiKeyOutcome>>();
+    EnableApiKeyAsync(
+    request,
+    [prom](
+        const ApigatewayClient*,
+        const EnableApiKeyRequest&,
+        EnableApiKeyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ApigatewayClient::ImportOpenApiOutcome ApigatewayClient::ImportOpenApi(const ImportOpenApiRequest &request)
@@ -3244,25 +3762,32 @@ ApigatewayClient::ImportOpenApiOutcome ApigatewayClient::ImportOpenApi(const Imp
 
 void ApigatewayClient::ImportOpenApiAsync(const ImportOpenApiRequest& request, const ImportOpenApiAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ImportOpenApi(request), context);
-    };
+    using Req = const ImportOpenApiRequest&;
+    using Resp = ImportOpenApiResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ImportOpenApi", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ApigatewayClient::ImportOpenApiOutcomeCallable ApigatewayClient::ImportOpenApiCallable(const ImportOpenApiRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ImportOpenApiOutcome()>>(
-        [this, request]()
-        {
-            return this->ImportOpenApi(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ImportOpenApiOutcome>>();
+    ImportOpenApiAsync(
+    request,
+    [prom](
+        const ApigatewayClient*,
+        const ImportOpenApiRequest&,
+        ImportOpenApiOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ApigatewayClient::ModifyAPIDocOutcome ApigatewayClient::ModifyAPIDoc(const ModifyAPIDocRequest &request)
@@ -3287,25 +3812,32 @@ ApigatewayClient::ModifyAPIDocOutcome ApigatewayClient::ModifyAPIDoc(const Modif
 
 void ApigatewayClient::ModifyAPIDocAsync(const ModifyAPIDocRequest& request, const ModifyAPIDocAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyAPIDoc(request), context);
-    };
+    using Req = const ModifyAPIDocRequest&;
+    using Resp = ModifyAPIDocResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyAPIDoc", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ApigatewayClient::ModifyAPIDocOutcomeCallable ApigatewayClient::ModifyAPIDocCallable(const ModifyAPIDocRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyAPIDocOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyAPIDoc(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyAPIDocOutcome>>();
+    ModifyAPIDocAsync(
+    request,
+    [prom](
+        const ApigatewayClient*,
+        const ModifyAPIDocRequest&,
+        ModifyAPIDocOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ApigatewayClient::ModifyApiOutcome ApigatewayClient::ModifyApi(const ModifyApiRequest &request)
@@ -3330,25 +3862,32 @@ ApigatewayClient::ModifyApiOutcome ApigatewayClient::ModifyApi(const ModifyApiRe
 
 void ApigatewayClient::ModifyApiAsync(const ModifyApiRequest& request, const ModifyApiAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyApi(request), context);
-    };
+    using Req = const ModifyApiRequest&;
+    using Resp = ModifyApiResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyApi", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ApigatewayClient::ModifyApiOutcomeCallable ApigatewayClient::ModifyApiCallable(const ModifyApiRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyApiOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyApi(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyApiOutcome>>();
+    ModifyApiAsync(
+    request,
+    [prom](
+        const ApigatewayClient*,
+        const ModifyApiRequest&,
+        ModifyApiOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ApigatewayClient::ModifyApiAppOutcome ApigatewayClient::ModifyApiApp(const ModifyApiAppRequest &request)
@@ -3373,25 +3912,32 @@ ApigatewayClient::ModifyApiAppOutcome ApigatewayClient::ModifyApiApp(const Modif
 
 void ApigatewayClient::ModifyApiAppAsync(const ModifyApiAppRequest& request, const ModifyApiAppAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyApiApp(request), context);
-    };
+    using Req = const ModifyApiAppRequest&;
+    using Resp = ModifyApiAppResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyApiApp", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ApigatewayClient::ModifyApiAppOutcomeCallable ApigatewayClient::ModifyApiAppCallable(const ModifyApiAppRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyApiAppOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyApiApp(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyApiAppOutcome>>();
+    ModifyApiAppAsync(
+    request,
+    [prom](
+        const ApigatewayClient*,
+        const ModifyApiAppRequest&,
+        ModifyApiAppOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ApigatewayClient::ModifyApiEnvironmentStrategyOutcome ApigatewayClient::ModifyApiEnvironmentStrategy(const ModifyApiEnvironmentStrategyRequest &request)
@@ -3416,25 +3962,32 @@ ApigatewayClient::ModifyApiEnvironmentStrategyOutcome ApigatewayClient::ModifyAp
 
 void ApigatewayClient::ModifyApiEnvironmentStrategyAsync(const ModifyApiEnvironmentStrategyRequest& request, const ModifyApiEnvironmentStrategyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyApiEnvironmentStrategy(request), context);
-    };
+    using Req = const ModifyApiEnvironmentStrategyRequest&;
+    using Resp = ModifyApiEnvironmentStrategyResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyApiEnvironmentStrategy", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ApigatewayClient::ModifyApiEnvironmentStrategyOutcomeCallable ApigatewayClient::ModifyApiEnvironmentStrategyCallable(const ModifyApiEnvironmentStrategyRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyApiEnvironmentStrategyOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyApiEnvironmentStrategy(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyApiEnvironmentStrategyOutcome>>();
+    ModifyApiEnvironmentStrategyAsync(
+    request,
+    [prom](
+        const ApigatewayClient*,
+        const ModifyApiEnvironmentStrategyRequest&,
+        ModifyApiEnvironmentStrategyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ApigatewayClient::ModifyApiIncrementOutcome ApigatewayClient::ModifyApiIncrement(const ModifyApiIncrementRequest &request)
@@ -3459,25 +4012,32 @@ ApigatewayClient::ModifyApiIncrementOutcome ApigatewayClient::ModifyApiIncrement
 
 void ApigatewayClient::ModifyApiIncrementAsync(const ModifyApiIncrementRequest& request, const ModifyApiIncrementAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyApiIncrement(request), context);
-    };
+    using Req = const ModifyApiIncrementRequest&;
+    using Resp = ModifyApiIncrementResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyApiIncrement", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ApigatewayClient::ModifyApiIncrementOutcomeCallable ApigatewayClient::ModifyApiIncrementCallable(const ModifyApiIncrementRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyApiIncrementOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyApiIncrement(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyApiIncrementOutcome>>();
+    ModifyApiIncrementAsync(
+    request,
+    [prom](
+        const ApigatewayClient*,
+        const ModifyApiIncrementRequest&,
+        ModifyApiIncrementOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ApigatewayClient::ModifyExclusiveInstanceOutcome ApigatewayClient::ModifyExclusiveInstance(const ModifyExclusiveInstanceRequest &request)
@@ -3502,25 +4062,32 @@ ApigatewayClient::ModifyExclusiveInstanceOutcome ApigatewayClient::ModifyExclusi
 
 void ApigatewayClient::ModifyExclusiveInstanceAsync(const ModifyExclusiveInstanceRequest& request, const ModifyExclusiveInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyExclusiveInstance(request), context);
-    };
+    using Req = const ModifyExclusiveInstanceRequest&;
+    using Resp = ModifyExclusiveInstanceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyExclusiveInstance", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ApigatewayClient::ModifyExclusiveInstanceOutcomeCallable ApigatewayClient::ModifyExclusiveInstanceCallable(const ModifyExclusiveInstanceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyExclusiveInstanceOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyExclusiveInstance(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyExclusiveInstanceOutcome>>();
+    ModifyExclusiveInstanceAsync(
+    request,
+    [prom](
+        const ApigatewayClient*,
+        const ModifyExclusiveInstanceRequest&,
+        ModifyExclusiveInstanceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ApigatewayClient::ModifyIPStrategyOutcome ApigatewayClient::ModifyIPStrategy(const ModifyIPStrategyRequest &request)
@@ -3545,25 +4112,32 @@ ApigatewayClient::ModifyIPStrategyOutcome ApigatewayClient::ModifyIPStrategy(con
 
 void ApigatewayClient::ModifyIPStrategyAsync(const ModifyIPStrategyRequest& request, const ModifyIPStrategyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyIPStrategy(request), context);
-    };
+    using Req = const ModifyIPStrategyRequest&;
+    using Resp = ModifyIPStrategyResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyIPStrategy", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ApigatewayClient::ModifyIPStrategyOutcomeCallable ApigatewayClient::ModifyIPStrategyCallable(const ModifyIPStrategyRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyIPStrategyOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyIPStrategy(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyIPStrategyOutcome>>();
+    ModifyIPStrategyAsync(
+    request,
+    [prom](
+        const ApigatewayClient*,
+        const ModifyIPStrategyRequest&,
+        ModifyIPStrategyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ApigatewayClient::ModifyPluginOutcome ApigatewayClient::ModifyPlugin(const ModifyPluginRequest &request)
@@ -3588,25 +4162,32 @@ ApigatewayClient::ModifyPluginOutcome ApigatewayClient::ModifyPlugin(const Modif
 
 void ApigatewayClient::ModifyPluginAsync(const ModifyPluginRequest& request, const ModifyPluginAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyPlugin(request), context);
-    };
+    using Req = const ModifyPluginRequest&;
+    using Resp = ModifyPluginResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyPlugin", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ApigatewayClient::ModifyPluginOutcomeCallable ApigatewayClient::ModifyPluginCallable(const ModifyPluginRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyPluginOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyPlugin(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyPluginOutcome>>();
+    ModifyPluginAsync(
+    request,
+    [prom](
+        const ApigatewayClient*,
+        const ModifyPluginRequest&,
+        ModifyPluginOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ApigatewayClient::ModifyServiceOutcome ApigatewayClient::ModifyService(const ModifyServiceRequest &request)
@@ -3631,25 +4212,32 @@ ApigatewayClient::ModifyServiceOutcome ApigatewayClient::ModifyService(const Mod
 
 void ApigatewayClient::ModifyServiceAsync(const ModifyServiceRequest& request, const ModifyServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyService(request), context);
-    };
+    using Req = const ModifyServiceRequest&;
+    using Resp = ModifyServiceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyService", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ApigatewayClient::ModifyServiceOutcomeCallable ApigatewayClient::ModifyServiceCallable(const ModifyServiceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyServiceOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyService(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyServiceOutcome>>();
+    ModifyServiceAsync(
+    request,
+    [prom](
+        const ApigatewayClient*,
+        const ModifyServiceRequest&,
+        ModifyServiceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ApigatewayClient::ModifyServiceEnvironmentStrategyOutcome ApigatewayClient::ModifyServiceEnvironmentStrategy(const ModifyServiceEnvironmentStrategyRequest &request)
@@ -3674,25 +4262,32 @@ ApigatewayClient::ModifyServiceEnvironmentStrategyOutcome ApigatewayClient::Modi
 
 void ApigatewayClient::ModifyServiceEnvironmentStrategyAsync(const ModifyServiceEnvironmentStrategyRequest& request, const ModifyServiceEnvironmentStrategyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyServiceEnvironmentStrategy(request), context);
-    };
+    using Req = const ModifyServiceEnvironmentStrategyRequest&;
+    using Resp = ModifyServiceEnvironmentStrategyResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyServiceEnvironmentStrategy", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ApigatewayClient::ModifyServiceEnvironmentStrategyOutcomeCallable ApigatewayClient::ModifyServiceEnvironmentStrategyCallable(const ModifyServiceEnvironmentStrategyRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyServiceEnvironmentStrategyOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyServiceEnvironmentStrategy(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyServiceEnvironmentStrategyOutcome>>();
+    ModifyServiceEnvironmentStrategyAsync(
+    request,
+    [prom](
+        const ApigatewayClient*,
+        const ModifyServiceEnvironmentStrategyRequest&,
+        ModifyServiceEnvironmentStrategyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ApigatewayClient::ModifySubDomainOutcome ApigatewayClient::ModifySubDomain(const ModifySubDomainRequest &request)
@@ -3717,25 +4312,32 @@ ApigatewayClient::ModifySubDomainOutcome ApigatewayClient::ModifySubDomain(const
 
 void ApigatewayClient::ModifySubDomainAsync(const ModifySubDomainRequest& request, const ModifySubDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifySubDomain(request), context);
-    };
+    using Req = const ModifySubDomainRequest&;
+    using Resp = ModifySubDomainResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifySubDomain", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ApigatewayClient::ModifySubDomainOutcomeCallable ApigatewayClient::ModifySubDomainCallable(const ModifySubDomainRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifySubDomainOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifySubDomain(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifySubDomainOutcome>>();
+    ModifySubDomainAsync(
+    request,
+    [prom](
+        const ApigatewayClient*,
+        const ModifySubDomainRequest&,
+        ModifySubDomainOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ApigatewayClient::ModifyUpstreamOutcome ApigatewayClient::ModifyUpstream(const ModifyUpstreamRequest &request)
@@ -3760,25 +4362,32 @@ ApigatewayClient::ModifyUpstreamOutcome ApigatewayClient::ModifyUpstream(const M
 
 void ApigatewayClient::ModifyUpstreamAsync(const ModifyUpstreamRequest& request, const ModifyUpstreamAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyUpstream(request), context);
-    };
+    using Req = const ModifyUpstreamRequest&;
+    using Resp = ModifyUpstreamResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyUpstream", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ApigatewayClient::ModifyUpstreamOutcomeCallable ApigatewayClient::ModifyUpstreamCallable(const ModifyUpstreamRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyUpstreamOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyUpstream(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyUpstreamOutcome>>();
+    ModifyUpstreamAsync(
+    request,
+    [prom](
+        const ApigatewayClient*,
+        const ModifyUpstreamRequest&,
+        ModifyUpstreamOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ApigatewayClient::ModifyUsagePlanOutcome ApigatewayClient::ModifyUsagePlan(const ModifyUsagePlanRequest &request)
@@ -3803,25 +4412,32 @@ ApigatewayClient::ModifyUsagePlanOutcome ApigatewayClient::ModifyUsagePlan(const
 
 void ApigatewayClient::ModifyUsagePlanAsync(const ModifyUsagePlanRequest& request, const ModifyUsagePlanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyUsagePlan(request), context);
-    };
+    using Req = const ModifyUsagePlanRequest&;
+    using Resp = ModifyUsagePlanResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyUsagePlan", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ApigatewayClient::ModifyUsagePlanOutcomeCallable ApigatewayClient::ModifyUsagePlanCallable(const ModifyUsagePlanRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyUsagePlanOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyUsagePlan(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyUsagePlanOutcome>>();
+    ModifyUsagePlanAsync(
+    request,
+    [prom](
+        const ApigatewayClient*,
+        const ModifyUsagePlanRequest&,
+        ModifyUsagePlanOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ApigatewayClient::ReleaseServiceOutcome ApigatewayClient::ReleaseService(const ReleaseServiceRequest &request)
@@ -3846,25 +4462,32 @@ ApigatewayClient::ReleaseServiceOutcome ApigatewayClient::ReleaseService(const R
 
 void ApigatewayClient::ReleaseServiceAsync(const ReleaseServiceRequest& request, const ReleaseServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ReleaseService(request), context);
-    };
+    using Req = const ReleaseServiceRequest&;
+    using Resp = ReleaseServiceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ReleaseService", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ApigatewayClient::ReleaseServiceOutcomeCallable ApigatewayClient::ReleaseServiceCallable(const ReleaseServiceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ReleaseServiceOutcome()>>(
-        [this, request]()
-        {
-            return this->ReleaseService(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ReleaseServiceOutcome>>();
+    ReleaseServiceAsync(
+    request,
+    [prom](
+        const ApigatewayClient*,
+        const ReleaseServiceRequest&,
+        ReleaseServiceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ApigatewayClient::ResetAPIDocPasswordOutcome ApigatewayClient::ResetAPIDocPassword(const ResetAPIDocPasswordRequest &request)
@@ -3889,25 +4512,32 @@ ApigatewayClient::ResetAPIDocPasswordOutcome ApigatewayClient::ResetAPIDocPasswo
 
 void ApigatewayClient::ResetAPIDocPasswordAsync(const ResetAPIDocPasswordRequest& request, const ResetAPIDocPasswordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ResetAPIDocPassword(request), context);
-    };
+    using Req = const ResetAPIDocPasswordRequest&;
+    using Resp = ResetAPIDocPasswordResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ResetAPIDocPassword", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ApigatewayClient::ResetAPIDocPasswordOutcomeCallable ApigatewayClient::ResetAPIDocPasswordCallable(const ResetAPIDocPasswordRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ResetAPIDocPasswordOutcome()>>(
-        [this, request]()
-        {
-            return this->ResetAPIDocPassword(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ResetAPIDocPasswordOutcome>>();
+    ResetAPIDocPasswordAsync(
+    request,
+    [prom](
+        const ApigatewayClient*,
+        const ResetAPIDocPasswordRequest&,
+        ResetAPIDocPasswordOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ApigatewayClient::UnBindEnvironmentOutcome ApigatewayClient::UnBindEnvironment(const UnBindEnvironmentRequest &request)
@@ -3932,25 +4562,32 @@ ApigatewayClient::UnBindEnvironmentOutcome ApigatewayClient::UnBindEnvironment(c
 
 void ApigatewayClient::UnBindEnvironmentAsync(const UnBindEnvironmentRequest& request, const UnBindEnvironmentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UnBindEnvironment(request), context);
-    };
+    using Req = const UnBindEnvironmentRequest&;
+    using Resp = UnBindEnvironmentResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UnBindEnvironment", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ApigatewayClient::UnBindEnvironmentOutcomeCallable ApigatewayClient::UnBindEnvironmentCallable(const UnBindEnvironmentRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UnBindEnvironmentOutcome()>>(
-        [this, request]()
-        {
-            return this->UnBindEnvironment(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UnBindEnvironmentOutcome>>();
+    UnBindEnvironmentAsync(
+    request,
+    [prom](
+        const ApigatewayClient*,
+        const UnBindEnvironmentRequest&,
+        UnBindEnvironmentOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ApigatewayClient::UnBindIPStrategyOutcome ApigatewayClient::UnBindIPStrategy(const UnBindIPStrategyRequest &request)
@@ -3975,25 +4612,32 @@ ApigatewayClient::UnBindIPStrategyOutcome ApigatewayClient::UnBindIPStrategy(con
 
 void ApigatewayClient::UnBindIPStrategyAsync(const UnBindIPStrategyRequest& request, const UnBindIPStrategyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UnBindIPStrategy(request), context);
-    };
+    using Req = const UnBindIPStrategyRequest&;
+    using Resp = UnBindIPStrategyResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UnBindIPStrategy", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ApigatewayClient::UnBindIPStrategyOutcomeCallable ApigatewayClient::UnBindIPStrategyCallable(const UnBindIPStrategyRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UnBindIPStrategyOutcome()>>(
-        [this, request]()
-        {
-            return this->UnBindIPStrategy(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UnBindIPStrategyOutcome>>();
+    UnBindIPStrategyAsync(
+    request,
+    [prom](
+        const ApigatewayClient*,
+        const UnBindIPStrategyRequest&,
+        UnBindIPStrategyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ApigatewayClient::UnBindSecretIdsOutcome ApigatewayClient::UnBindSecretIds(const UnBindSecretIdsRequest &request)
@@ -4018,25 +4662,32 @@ ApigatewayClient::UnBindSecretIdsOutcome ApigatewayClient::UnBindSecretIds(const
 
 void ApigatewayClient::UnBindSecretIdsAsync(const UnBindSecretIdsRequest& request, const UnBindSecretIdsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UnBindSecretIds(request), context);
-    };
+    using Req = const UnBindSecretIdsRequest&;
+    using Resp = UnBindSecretIdsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UnBindSecretIds", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ApigatewayClient::UnBindSecretIdsOutcomeCallable ApigatewayClient::UnBindSecretIdsCallable(const UnBindSecretIdsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UnBindSecretIdsOutcome()>>(
-        [this, request]()
-        {
-            return this->UnBindSecretIds(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UnBindSecretIdsOutcome>>();
+    UnBindSecretIdsAsync(
+    request,
+    [prom](
+        const ApigatewayClient*,
+        const UnBindSecretIdsRequest&,
+        UnBindSecretIdsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ApigatewayClient::UnBindSubDomainOutcome ApigatewayClient::UnBindSubDomain(const UnBindSubDomainRequest &request)
@@ -4061,25 +4712,32 @@ ApigatewayClient::UnBindSubDomainOutcome ApigatewayClient::UnBindSubDomain(const
 
 void ApigatewayClient::UnBindSubDomainAsync(const UnBindSubDomainRequest& request, const UnBindSubDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UnBindSubDomain(request), context);
-    };
+    using Req = const UnBindSubDomainRequest&;
+    using Resp = UnBindSubDomainResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UnBindSubDomain", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ApigatewayClient::UnBindSubDomainOutcomeCallable ApigatewayClient::UnBindSubDomainCallable(const UnBindSubDomainRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UnBindSubDomainOutcome()>>(
-        [this, request]()
-        {
-            return this->UnBindSubDomain(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UnBindSubDomainOutcome>>();
+    UnBindSubDomainAsync(
+    request,
+    [prom](
+        const ApigatewayClient*,
+        const UnBindSubDomainRequest&,
+        UnBindSubDomainOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ApigatewayClient::UnReleaseServiceOutcome ApigatewayClient::UnReleaseService(const UnReleaseServiceRequest &request)
@@ -4104,25 +4762,32 @@ ApigatewayClient::UnReleaseServiceOutcome ApigatewayClient::UnReleaseService(con
 
 void ApigatewayClient::UnReleaseServiceAsync(const UnReleaseServiceRequest& request, const UnReleaseServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UnReleaseService(request), context);
-    };
+    using Req = const UnReleaseServiceRequest&;
+    using Resp = UnReleaseServiceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UnReleaseService", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ApigatewayClient::UnReleaseServiceOutcomeCallable ApigatewayClient::UnReleaseServiceCallable(const UnReleaseServiceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UnReleaseServiceOutcome()>>(
-        [this, request]()
-        {
-            return this->UnReleaseService(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UnReleaseServiceOutcome>>();
+    UnReleaseServiceAsync(
+    request,
+    [prom](
+        const ApigatewayClient*,
+        const UnReleaseServiceRequest&,
+        UnReleaseServiceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ApigatewayClient::UnbindApiAppOutcome ApigatewayClient::UnbindApiApp(const UnbindApiAppRequest &request)
@@ -4147,25 +4812,32 @@ ApigatewayClient::UnbindApiAppOutcome ApigatewayClient::UnbindApiApp(const Unbin
 
 void ApigatewayClient::UnbindApiAppAsync(const UnbindApiAppRequest& request, const UnbindApiAppAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UnbindApiApp(request), context);
-    };
+    using Req = const UnbindApiAppRequest&;
+    using Resp = UnbindApiAppResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UnbindApiApp", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ApigatewayClient::UnbindApiAppOutcomeCallable ApigatewayClient::UnbindApiAppCallable(const UnbindApiAppRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UnbindApiAppOutcome()>>(
-        [this, request]()
-        {
-            return this->UnbindApiApp(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UnbindApiAppOutcome>>();
+    UnbindApiAppAsync(
+    request,
+    [prom](
+        const ApigatewayClient*,
+        const UnbindApiAppRequest&,
+        UnbindApiAppOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ApigatewayClient::UpdateApiAppKeyOutcome ApigatewayClient::UpdateApiAppKey(const UpdateApiAppKeyRequest &request)
@@ -4190,25 +4862,32 @@ ApigatewayClient::UpdateApiAppKeyOutcome ApigatewayClient::UpdateApiAppKey(const
 
 void ApigatewayClient::UpdateApiAppKeyAsync(const UpdateApiAppKeyRequest& request, const UpdateApiAppKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UpdateApiAppKey(request), context);
-    };
+    using Req = const UpdateApiAppKeyRequest&;
+    using Resp = UpdateApiAppKeyResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UpdateApiAppKey", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ApigatewayClient::UpdateApiAppKeyOutcomeCallable ApigatewayClient::UpdateApiAppKeyCallable(const UpdateApiAppKeyRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UpdateApiAppKeyOutcome()>>(
-        [this, request]()
-        {
-            return this->UpdateApiAppKey(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UpdateApiAppKeyOutcome>>();
+    UpdateApiAppKeyAsync(
+    request,
+    [prom](
+        const ApigatewayClient*,
+        const UpdateApiAppKeyRequest&,
+        UpdateApiAppKeyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ApigatewayClient::UpdateApiKeyOutcome ApigatewayClient::UpdateApiKey(const UpdateApiKeyRequest &request)
@@ -4233,25 +4912,32 @@ ApigatewayClient::UpdateApiKeyOutcome ApigatewayClient::UpdateApiKey(const Updat
 
 void ApigatewayClient::UpdateApiKeyAsync(const UpdateApiKeyRequest& request, const UpdateApiKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UpdateApiKey(request), context);
-    };
+    using Req = const UpdateApiKeyRequest&;
+    using Resp = UpdateApiKeyResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UpdateApiKey", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ApigatewayClient::UpdateApiKeyOutcomeCallable ApigatewayClient::UpdateApiKeyCallable(const UpdateApiKeyRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UpdateApiKeyOutcome()>>(
-        [this, request]()
-        {
-            return this->UpdateApiKey(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UpdateApiKeyOutcome>>();
+    UpdateApiKeyAsync(
+    request,
+    [prom](
+        const ApigatewayClient*,
+        const UpdateApiKeyRequest&,
+        UpdateApiKeyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ApigatewayClient::UpdateServiceOutcome ApigatewayClient::UpdateService(const UpdateServiceRequest &request)
@@ -4276,24 +4962,31 @@ ApigatewayClient::UpdateServiceOutcome ApigatewayClient::UpdateService(const Upd
 
 void ApigatewayClient::UpdateServiceAsync(const UpdateServiceRequest& request, const UpdateServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UpdateService(request), context);
-    };
+    using Req = const UpdateServiceRequest&;
+    using Resp = UpdateServiceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UpdateService", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ApigatewayClient::UpdateServiceOutcomeCallable ApigatewayClient::UpdateServiceCallable(const UpdateServiceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UpdateServiceOutcome()>>(
-        [this, request]()
-        {
-            return this->UpdateService(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UpdateServiceOutcome>>();
+    UpdateServiceAsync(
+    request,
+    [prom](
+        const ApigatewayClient*,
+        const UpdateServiceRequest&,
+        UpdateServiceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 

@@ -62,25 +62,32 @@ VodClient::CreateIncrementalMigrationStrategyOutcome VodClient::CreateIncrementa
 
 void VodClient::CreateIncrementalMigrationStrategyAsync(const CreateIncrementalMigrationStrategyRequest& request, const CreateIncrementalMigrationStrategyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateIncrementalMigrationStrategy(request), context);
-    };
+    using Req = const CreateIncrementalMigrationStrategyRequest&;
+    using Resp = CreateIncrementalMigrationStrategyResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateIncrementalMigrationStrategy", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::CreateIncrementalMigrationStrategyOutcomeCallable VodClient::CreateIncrementalMigrationStrategyCallable(const CreateIncrementalMigrationStrategyRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateIncrementalMigrationStrategyOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateIncrementalMigrationStrategy(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateIncrementalMigrationStrategyOutcome>>();
+    CreateIncrementalMigrationStrategyAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const CreateIncrementalMigrationStrategyRequest&,
+        CreateIncrementalMigrationStrategyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::CreateStorageOutcome VodClient::CreateStorage(const CreateStorageRequest &request)
@@ -105,25 +112,32 @@ VodClient::CreateStorageOutcome VodClient::CreateStorage(const CreateStorageRequ
 
 void VodClient::CreateStorageAsync(const CreateStorageRequest& request, const CreateStorageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateStorage(request), context);
-    };
+    using Req = const CreateStorageRequest&;
+    using Resp = CreateStorageResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateStorage", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::CreateStorageOutcomeCallable VodClient::CreateStorageCallable(const CreateStorageRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateStorageOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateStorage(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateStorageOutcome>>();
+    CreateStorageAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const CreateStorageRequest&,
+        CreateStorageOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::CreateStorageCredentialsOutcome VodClient::CreateStorageCredentials(const CreateStorageCredentialsRequest &request)
@@ -148,25 +162,32 @@ VodClient::CreateStorageCredentialsOutcome VodClient::CreateStorageCredentials(c
 
 void VodClient::CreateStorageCredentialsAsync(const CreateStorageCredentialsRequest& request, const CreateStorageCredentialsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateStorageCredentials(request), context);
-    };
+    using Req = const CreateStorageCredentialsRequest&;
+    using Resp = CreateStorageCredentialsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateStorageCredentials", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::CreateStorageCredentialsOutcomeCallable VodClient::CreateStorageCredentialsCallable(const CreateStorageCredentialsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateStorageCredentialsOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateStorageCredentials(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateStorageCredentialsOutcome>>();
+    CreateStorageCredentialsAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const CreateStorageCredentialsRequest&,
+        CreateStorageCredentialsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::DeleteIncrementalMigrationStrategyOutcome VodClient::DeleteIncrementalMigrationStrategy(const DeleteIncrementalMigrationStrategyRequest &request)
@@ -191,25 +212,32 @@ VodClient::DeleteIncrementalMigrationStrategyOutcome VodClient::DeleteIncrementa
 
 void VodClient::DeleteIncrementalMigrationStrategyAsync(const DeleteIncrementalMigrationStrategyRequest& request, const DeleteIncrementalMigrationStrategyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteIncrementalMigrationStrategy(request), context);
-    };
+    using Req = const DeleteIncrementalMigrationStrategyRequest&;
+    using Resp = DeleteIncrementalMigrationStrategyResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteIncrementalMigrationStrategy", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::DeleteIncrementalMigrationStrategyOutcomeCallable VodClient::DeleteIncrementalMigrationStrategyCallable(const DeleteIncrementalMigrationStrategyRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteIncrementalMigrationStrategyOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteIncrementalMigrationStrategy(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteIncrementalMigrationStrategyOutcome>>();
+    DeleteIncrementalMigrationStrategyAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const DeleteIncrementalMigrationStrategyRequest&,
+        DeleteIncrementalMigrationStrategyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::DescribeIncrementalMigrationStrategyInfosOutcome VodClient::DescribeIncrementalMigrationStrategyInfos(const DescribeIncrementalMigrationStrategyInfosRequest &request)
@@ -234,25 +262,32 @@ VodClient::DescribeIncrementalMigrationStrategyInfosOutcome VodClient::DescribeI
 
 void VodClient::DescribeIncrementalMigrationStrategyInfosAsync(const DescribeIncrementalMigrationStrategyInfosRequest& request, const DescribeIncrementalMigrationStrategyInfosAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeIncrementalMigrationStrategyInfos(request), context);
-    };
+    using Req = const DescribeIncrementalMigrationStrategyInfosRequest&;
+    using Resp = DescribeIncrementalMigrationStrategyInfosResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeIncrementalMigrationStrategyInfos", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::DescribeIncrementalMigrationStrategyInfosOutcomeCallable VodClient::DescribeIncrementalMigrationStrategyInfosCallable(const DescribeIncrementalMigrationStrategyInfosRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeIncrementalMigrationStrategyInfosOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeIncrementalMigrationStrategyInfos(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeIncrementalMigrationStrategyInfosOutcome>>();
+    DescribeIncrementalMigrationStrategyInfosAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const DescribeIncrementalMigrationStrategyInfosRequest&,
+        DescribeIncrementalMigrationStrategyInfosOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::DescribeStorageOutcome VodClient::DescribeStorage(const DescribeStorageRequest &request)
@@ -277,25 +312,32 @@ VodClient::DescribeStorageOutcome VodClient::DescribeStorage(const DescribeStora
 
 void VodClient::DescribeStorageAsync(const DescribeStorageRequest& request, const DescribeStorageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeStorage(request), context);
-    };
+    using Req = const DescribeStorageRequest&;
+    using Resp = DescribeStorageResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeStorage", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::DescribeStorageOutcomeCallable VodClient::DescribeStorageCallable(const DescribeStorageRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeStorageOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeStorage(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeStorageOutcome>>();
+    DescribeStorageAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const DescribeStorageRequest&,
+        DescribeStorageOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VodClient::ModifyIncrementalMigrationStrategyOutcome VodClient::ModifyIncrementalMigrationStrategy(const ModifyIncrementalMigrationStrategyRequest &request)
@@ -320,24 +362,31 @@ VodClient::ModifyIncrementalMigrationStrategyOutcome VodClient::ModifyIncrementa
 
 void VodClient::ModifyIncrementalMigrationStrategyAsync(const ModifyIncrementalMigrationStrategyRequest& request, const ModifyIncrementalMigrationStrategyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyIncrementalMigrationStrategy(request), context);
-    };
+    using Req = const ModifyIncrementalMigrationStrategyRequest&;
+    using Resp = ModifyIncrementalMigrationStrategyResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyIncrementalMigrationStrategy", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VodClient::ModifyIncrementalMigrationStrategyOutcomeCallable VodClient::ModifyIncrementalMigrationStrategyCallable(const ModifyIncrementalMigrationStrategyRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyIncrementalMigrationStrategyOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyIncrementalMigrationStrategy(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyIncrementalMigrationStrategyOutcome>>();
+    ModifyIncrementalMigrationStrategyAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const ModifyIncrementalMigrationStrategyRequest&,
+        ModifyIncrementalMigrationStrategyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 

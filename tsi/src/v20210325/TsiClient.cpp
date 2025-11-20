@@ -62,25 +62,32 @@ TsiClient::TongChuanDisplayOutcome TsiClient::TongChuanDisplay(const TongChuanDi
 
 void TsiClient::TongChuanDisplayAsync(const TongChuanDisplayRequest& request, const TongChuanDisplayAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->TongChuanDisplay(request), context);
-    };
+    using Req = const TongChuanDisplayRequest&;
+    using Resp = TongChuanDisplayResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "TongChuanDisplay", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TsiClient::TongChuanDisplayOutcomeCallable TsiClient::TongChuanDisplayCallable(const TongChuanDisplayRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<TongChuanDisplayOutcome()>>(
-        [this, request]()
-        {
-            return this->TongChuanDisplay(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<TongChuanDisplayOutcome>>();
+    TongChuanDisplayAsync(
+    request,
+    [prom](
+        const TsiClient*,
+        const TongChuanDisplayRequest&,
+        TongChuanDisplayOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TsiClient::TongChuanRecognizeOutcome TsiClient::TongChuanRecognize(const TongChuanRecognizeRequest &request)
@@ -105,25 +112,32 @@ TsiClient::TongChuanRecognizeOutcome TsiClient::TongChuanRecognize(const TongChu
 
 void TsiClient::TongChuanRecognizeAsync(const TongChuanRecognizeRequest& request, const TongChuanRecognizeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->TongChuanRecognize(request), context);
-    };
+    using Req = const TongChuanRecognizeRequest&;
+    using Resp = TongChuanRecognizeResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "TongChuanRecognize", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TsiClient::TongChuanRecognizeOutcomeCallable TsiClient::TongChuanRecognizeCallable(const TongChuanRecognizeRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<TongChuanRecognizeOutcome()>>(
-        [this, request]()
-        {
-            return this->TongChuanRecognize(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<TongChuanRecognizeOutcome>>();
+    TongChuanRecognizeAsync(
+    request,
+    [prom](
+        const TsiClient*,
+        const TongChuanRecognizeRequest&,
+        TongChuanRecognizeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TsiClient::TongChuanSyncOutcome TsiClient::TongChuanSync(const TongChuanSyncRequest &request)
@@ -148,24 +162,31 @@ TsiClient::TongChuanSyncOutcome TsiClient::TongChuanSync(const TongChuanSyncRequ
 
 void TsiClient::TongChuanSyncAsync(const TongChuanSyncRequest& request, const TongChuanSyncAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->TongChuanSync(request), context);
-    };
+    using Req = const TongChuanSyncRequest&;
+    using Resp = TongChuanSyncResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "TongChuanSync", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TsiClient::TongChuanSyncOutcomeCallable TsiClient::TongChuanSyncCallable(const TongChuanSyncRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<TongChuanSyncOutcome()>>(
-        [this, request]()
-        {
-            return this->TongChuanSync(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<TongChuanSyncOutcome>>();
+    TongChuanSyncAsync(
+    request,
+    [prom](
+        const TsiClient*,
+        const TongChuanSyncRequest&,
+        TongChuanSyncOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 

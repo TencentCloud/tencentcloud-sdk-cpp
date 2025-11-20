@@ -62,25 +62,32 @@ TrabbitClient::CreateRabbitMQServerlessBindingOutcome TrabbitClient::CreateRabbi
 
 void TrabbitClient::CreateRabbitMQServerlessBindingAsync(const CreateRabbitMQServerlessBindingRequest& request, const CreateRabbitMQServerlessBindingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateRabbitMQServerlessBinding(request), context);
-    };
+    using Req = const CreateRabbitMQServerlessBindingRequest&;
+    using Resp = CreateRabbitMQServerlessBindingResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateRabbitMQServerlessBinding", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TrabbitClient::CreateRabbitMQServerlessBindingOutcomeCallable TrabbitClient::CreateRabbitMQServerlessBindingCallable(const CreateRabbitMQServerlessBindingRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateRabbitMQServerlessBindingOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateRabbitMQServerlessBinding(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateRabbitMQServerlessBindingOutcome>>();
+    CreateRabbitMQServerlessBindingAsync(
+    request,
+    [prom](
+        const TrabbitClient*,
+        const CreateRabbitMQServerlessBindingRequest&,
+        CreateRabbitMQServerlessBindingOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TrabbitClient::CreateRabbitMQServerlessExchangeOutcome TrabbitClient::CreateRabbitMQServerlessExchange(const CreateRabbitMQServerlessExchangeRequest &request)
@@ -105,25 +112,32 @@ TrabbitClient::CreateRabbitMQServerlessExchangeOutcome TrabbitClient::CreateRabb
 
 void TrabbitClient::CreateRabbitMQServerlessExchangeAsync(const CreateRabbitMQServerlessExchangeRequest& request, const CreateRabbitMQServerlessExchangeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateRabbitMQServerlessExchange(request), context);
-    };
+    using Req = const CreateRabbitMQServerlessExchangeRequest&;
+    using Resp = CreateRabbitMQServerlessExchangeResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateRabbitMQServerlessExchange", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TrabbitClient::CreateRabbitMQServerlessExchangeOutcomeCallable TrabbitClient::CreateRabbitMQServerlessExchangeCallable(const CreateRabbitMQServerlessExchangeRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateRabbitMQServerlessExchangeOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateRabbitMQServerlessExchange(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateRabbitMQServerlessExchangeOutcome>>();
+    CreateRabbitMQServerlessExchangeAsync(
+    request,
+    [prom](
+        const TrabbitClient*,
+        const CreateRabbitMQServerlessExchangeRequest&,
+        CreateRabbitMQServerlessExchangeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TrabbitClient::CreateRabbitMQServerlessQueueOutcome TrabbitClient::CreateRabbitMQServerlessQueue(const CreateRabbitMQServerlessQueueRequest &request)
@@ -148,25 +162,32 @@ TrabbitClient::CreateRabbitMQServerlessQueueOutcome TrabbitClient::CreateRabbitM
 
 void TrabbitClient::CreateRabbitMQServerlessQueueAsync(const CreateRabbitMQServerlessQueueRequest& request, const CreateRabbitMQServerlessQueueAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateRabbitMQServerlessQueue(request), context);
-    };
+    using Req = const CreateRabbitMQServerlessQueueRequest&;
+    using Resp = CreateRabbitMQServerlessQueueResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateRabbitMQServerlessQueue", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TrabbitClient::CreateRabbitMQServerlessQueueOutcomeCallable TrabbitClient::CreateRabbitMQServerlessQueueCallable(const CreateRabbitMQServerlessQueueRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateRabbitMQServerlessQueueOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateRabbitMQServerlessQueue(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateRabbitMQServerlessQueueOutcome>>();
+    CreateRabbitMQServerlessQueueAsync(
+    request,
+    [prom](
+        const TrabbitClient*,
+        const CreateRabbitMQServerlessQueueRequest&,
+        CreateRabbitMQServerlessQueueOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TrabbitClient::CreateRabbitMQServerlessUserOutcome TrabbitClient::CreateRabbitMQServerlessUser(const CreateRabbitMQServerlessUserRequest &request)
@@ -191,25 +212,32 @@ TrabbitClient::CreateRabbitMQServerlessUserOutcome TrabbitClient::CreateRabbitMQ
 
 void TrabbitClient::CreateRabbitMQServerlessUserAsync(const CreateRabbitMQServerlessUserRequest& request, const CreateRabbitMQServerlessUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateRabbitMQServerlessUser(request), context);
-    };
+    using Req = const CreateRabbitMQServerlessUserRequest&;
+    using Resp = CreateRabbitMQServerlessUserResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateRabbitMQServerlessUser", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TrabbitClient::CreateRabbitMQServerlessUserOutcomeCallable TrabbitClient::CreateRabbitMQServerlessUserCallable(const CreateRabbitMQServerlessUserRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateRabbitMQServerlessUserOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateRabbitMQServerlessUser(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateRabbitMQServerlessUserOutcome>>();
+    CreateRabbitMQServerlessUserAsync(
+    request,
+    [prom](
+        const TrabbitClient*,
+        const CreateRabbitMQServerlessUserRequest&,
+        CreateRabbitMQServerlessUserOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TrabbitClient::CreateRabbitMQServerlessVirtualHostOutcome TrabbitClient::CreateRabbitMQServerlessVirtualHost(const CreateRabbitMQServerlessVirtualHostRequest &request)
@@ -234,25 +262,32 @@ TrabbitClient::CreateRabbitMQServerlessVirtualHostOutcome TrabbitClient::CreateR
 
 void TrabbitClient::CreateRabbitMQServerlessVirtualHostAsync(const CreateRabbitMQServerlessVirtualHostRequest& request, const CreateRabbitMQServerlessVirtualHostAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateRabbitMQServerlessVirtualHost(request), context);
-    };
+    using Req = const CreateRabbitMQServerlessVirtualHostRequest&;
+    using Resp = CreateRabbitMQServerlessVirtualHostResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateRabbitMQServerlessVirtualHost", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TrabbitClient::CreateRabbitMQServerlessVirtualHostOutcomeCallable TrabbitClient::CreateRabbitMQServerlessVirtualHostCallable(const CreateRabbitMQServerlessVirtualHostRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateRabbitMQServerlessVirtualHostOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateRabbitMQServerlessVirtualHost(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateRabbitMQServerlessVirtualHostOutcome>>();
+    CreateRabbitMQServerlessVirtualHostAsync(
+    request,
+    [prom](
+        const TrabbitClient*,
+        const CreateRabbitMQServerlessVirtualHostRequest&,
+        CreateRabbitMQServerlessVirtualHostOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TrabbitClient::DeleteRabbitMQServerlessBindingOutcome TrabbitClient::DeleteRabbitMQServerlessBinding(const DeleteRabbitMQServerlessBindingRequest &request)
@@ -277,25 +312,32 @@ TrabbitClient::DeleteRabbitMQServerlessBindingOutcome TrabbitClient::DeleteRabbi
 
 void TrabbitClient::DeleteRabbitMQServerlessBindingAsync(const DeleteRabbitMQServerlessBindingRequest& request, const DeleteRabbitMQServerlessBindingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteRabbitMQServerlessBinding(request), context);
-    };
+    using Req = const DeleteRabbitMQServerlessBindingRequest&;
+    using Resp = DeleteRabbitMQServerlessBindingResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteRabbitMQServerlessBinding", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TrabbitClient::DeleteRabbitMQServerlessBindingOutcomeCallable TrabbitClient::DeleteRabbitMQServerlessBindingCallable(const DeleteRabbitMQServerlessBindingRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteRabbitMQServerlessBindingOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteRabbitMQServerlessBinding(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteRabbitMQServerlessBindingOutcome>>();
+    DeleteRabbitMQServerlessBindingAsync(
+    request,
+    [prom](
+        const TrabbitClient*,
+        const DeleteRabbitMQServerlessBindingRequest&,
+        DeleteRabbitMQServerlessBindingOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TrabbitClient::DeleteRabbitMQServerlessExchangeOutcome TrabbitClient::DeleteRabbitMQServerlessExchange(const DeleteRabbitMQServerlessExchangeRequest &request)
@@ -320,25 +362,32 @@ TrabbitClient::DeleteRabbitMQServerlessExchangeOutcome TrabbitClient::DeleteRabb
 
 void TrabbitClient::DeleteRabbitMQServerlessExchangeAsync(const DeleteRabbitMQServerlessExchangeRequest& request, const DeleteRabbitMQServerlessExchangeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteRabbitMQServerlessExchange(request), context);
-    };
+    using Req = const DeleteRabbitMQServerlessExchangeRequest&;
+    using Resp = DeleteRabbitMQServerlessExchangeResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteRabbitMQServerlessExchange", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TrabbitClient::DeleteRabbitMQServerlessExchangeOutcomeCallable TrabbitClient::DeleteRabbitMQServerlessExchangeCallable(const DeleteRabbitMQServerlessExchangeRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteRabbitMQServerlessExchangeOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteRabbitMQServerlessExchange(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteRabbitMQServerlessExchangeOutcome>>();
+    DeleteRabbitMQServerlessExchangeAsync(
+    request,
+    [prom](
+        const TrabbitClient*,
+        const DeleteRabbitMQServerlessExchangeRequest&,
+        DeleteRabbitMQServerlessExchangeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TrabbitClient::DeleteRabbitMQServerlessPermissionOutcome TrabbitClient::DeleteRabbitMQServerlessPermission(const DeleteRabbitMQServerlessPermissionRequest &request)
@@ -363,25 +412,32 @@ TrabbitClient::DeleteRabbitMQServerlessPermissionOutcome TrabbitClient::DeleteRa
 
 void TrabbitClient::DeleteRabbitMQServerlessPermissionAsync(const DeleteRabbitMQServerlessPermissionRequest& request, const DeleteRabbitMQServerlessPermissionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteRabbitMQServerlessPermission(request), context);
-    };
+    using Req = const DeleteRabbitMQServerlessPermissionRequest&;
+    using Resp = DeleteRabbitMQServerlessPermissionResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteRabbitMQServerlessPermission", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TrabbitClient::DeleteRabbitMQServerlessPermissionOutcomeCallable TrabbitClient::DeleteRabbitMQServerlessPermissionCallable(const DeleteRabbitMQServerlessPermissionRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteRabbitMQServerlessPermissionOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteRabbitMQServerlessPermission(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteRabbitMQServerlessPermissionOutcome>>();
+    DeleteRabbitMQServerlessPermissionAsync(
+    request,
+    [prom](
+        const TrabbitClient*,
+        const DeleteRabbitMQServerlessPermissionRequest&,
+        DeleteRabbitMQServerlessPermissionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TrabbitClient::DeleteRabbitMQServerlessQueueOutcome TrabbitClient::DeleteRabbitMQServerlessQueue(const DeleteRabbitMQServerlessQueueRequest &request)
@@ -406,25 +462,32 @@ TrabbitClient::DeleteRabbitMQServerlessQueueOutcome TrabbitClient::DeleteRabbitM
 
 void TrabbitClient::DeleteRabbitMQServerlessQueueAsync(const DeleteRabbitMQServerlessQueueRequest& request, const DeleteRabbitMQServerlessQueueAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteRabbitMQServerlessQueue(request), context);
-    };
+    using Req = const DeleteRabbitMQServerlessQueueRequest&;
+    using Resp = DeleteRabbitMQServerlessQueueResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteRabbitMQServerlessQueue", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TrabbitClient::DeleteRabbitMQServerlessQueueOutcomeCallable TrabbitClient::DeleteRabbitMQServerlessQueueCallable(const DeleteRabbitMQServerlessQueueRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteRabbitMQServerlessQueueOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteRabbitMQServerlessQueue(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteRabbitMQServerlessQueueOutcome>>();
+    DeleteRabbitMQServerlessQueueAsync(
+    request,
+    [prom](
+        const TrabbitClient*,
+        const DeleteRabbitMQServerlessQueueRequest&,
+        DeleteRabbitMQServerlessQueueOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TrabbitClient::DeleteRabbitMQServerlessUserOutcome TrabbitClient::DeleteRabbitMQServerlessUser(const DeleteRabbitMQServerlessUserRequest &request)
@@ -449,25 +512,32 @@ TrabbitClient::DeleteRabbitMQServerlessUserOutcome TrabbitClient::DeleteRabbitMQ
 
 void TrabbitClient::DeleteRabbitMQServerlessUserAsync(const DeleteRabbitMQServerlessUserRequest& request, const DeleteRabbitMQServerlessUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteRabbitMQServerlessUser(request), context);
-    };
+    using Req = const DeleteRabbitMQServerlessUserRequest&;
+    using Resp = DeleteRabbitMQServerlessUserResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteRabbitMQServerlessUser", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TrabbitClient::DeleteRabbitMQServerlessUserOutcomeCallable TrabbitClient::DeleteRabbitMQServerlessUserCallable(const DeleteRabbitMQServerlessUserRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteRabbitMQServerlessUserOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteRabbitMQServerlessUser(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteRabbitMQServerlessUserOutcome>>();
+    DeleteRabbitMQServerlessUserAsync(
+    request,
+    [prom](
+        const TrabbitClient*,
+        const DeleteRabbitMQServerlessUserRequest&,
+        DeleteRabbitMQServerlessUserOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TrabbitClient::DeleteRabbitMQServerlessVirtualHostOutcome TrabbitClient::DeleteRabbitMQServerlessVirtualHost(const DeleteRabbitMQServerlessVirtualHostRequest &request)
@@ -492,25 +562,32 @@ TrabbitClient::DeleteRabbitMQServerlessVirtualHostOutcome TrabbitClient::DeleteR
 
 void TrabbitClient::DeleteRabbitMQServerlessVirtualHostAsync(const DeleteRabbitMQServerlessVirtualHostRequest& request, const DeleteRabbitMQServerlessVirtualHostAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteRabbitMQServerlessVirtualHost(request), context);
-    };
+    using Req = const DeleteRabbitMQServerlessVirtualHostRequest&;
+    using Resp = DeleteRabbitMQServerlessVirtualHostResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteRabbitMQServerlessVirtualHost", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TrabbitClient::DeleteRabbitMQServerlessVirtualHostOutcomeCallable TrabbitClient::DeleteRabbitMQServerlessVirtualHostCallable(const DeleteRabbitMQServerlessVirtualHostRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteRabbitMQServerlessVirtualHostOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteRabbitMQServerlessVirtualHost(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteRabbitMQServerlessVirtualHostOutcome>>();
+    DeleteRabbitMQServerlessVirtualHostAsync(
+    request,
+    [prom](
+        const TrabbitClient*,
+        const DeleteRabbitMQServerlessVirtualHostRequest&,
+        DeleteRabbitMQServerlessVirtualHostOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TrabbitClient::DescribeRabbitMQServerlessBindingsOutcome TrabbitClient::DescribeRabbitMQServerlessBindings(const DescribeRabbitMQServerlessBindingsRequest &request)
@@ -535,25 +612,32 @@ TrabbitClient::DescribeRabbitMQServerlessBindingsOutcome TrabbitClient::Describe
 
 void TrabbitClient::DescribeRabbitMQServerlessBindingsAsync(const DescribeRabbitMQServerlessBindingsRequest& request, const DescribeRabbitMQServerlessBindingsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeRabbitMQServerlessBindings(request), context);
-    };
+    using Req = const DescribeRabbitMQServerlessBindingsRequest&;
+    using Resp = DescribeRabbitMQServerlessBindingsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeRabbitMQServerlessBindings", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TrabbitClient::DescribeRabbitMQServerlessBindingsOutcomeCallable TrabbitClient::DescribeRabbitMQServerlessBindingsCallable(const DescribeRabbitMQServerlessBindingsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeRabbitMQServerlessBindingsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeRabbitMQServerlessBindings(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeRabbitMQServerlessBindingsOutcome>>();
+    DescribeRabbitMQServerlessBindingsAsync(
+    request,
+    [prom](
+        const TrabbitClient*,
+        const DescribeRabbitMQServerlessBindingsRequest&,
+        DescribeRabbitMQServerlessBindingsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TrabbitClient::DescribeRabbitMQServerlessConnectionOutcome TrabbitClient::DescribeRabbitMQServerlessConnection(const DescribeRabbitMQServerlessConnectionRequest &request)
@@ -578,25 +662,32 @@ TrabbitClient::DescribeRabbitMQServerlessConnectionOutcome TrabbitClient::Descri
 
 void TrabbitClient::DescribeRabbitMQServerlessConnectionAsync(const DescribeRabbitMQServerlessConnectionRequest& request, const DescribeRabbitMQServerlessConnectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeRabbitMQServerlessConnection(request), context);
-    };
+    using Req = const DescribeRabbitMQServerlessConnectionRequest&;
+    using Resp = DescribeRabbitMQServerlessConnectionResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeRabbitMQServerlessConnection", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TrabbitClient::DescribeRabbitMQServerlessConnectionOutcomeCallable TrabbitClient::DescribeRabbitMQServerlessConnectionCallable(const DescribeRabbitMQServerlessConnectionRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeRabbitMQServerlessConnectionOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeRabbitMQServerlessConnection(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeRabbitMQServerlessConnectionOutcome>>();
+    DescribeRabbitMQServerlessConnectionAsync(
+    request,
+    [prom](
+        const TrabbitClient*,
+        const DescribeRabbitMQServerlessConnectionRequest&,
+        DescribeRabbitMQServerlessConnectionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TrabbitClient::DescribeRabbitMQServerlessConsumersOutcome TrabbitClient::DescribeRabbitMQServerlessConsumers(const DescribeRabbitMQServerlessConsumersRequest &request)
@@ -621,25 +712,32 @@ TrabbitClient::DescribeRabbitMQServerlessConsumersOutcome TrabbitClient::Describ
 
 void TrabbitClient::DescribeRabbitMQServerlessConsumersAsync(const DescribeRabbitMQServerlessConsumersRequest& request, const DescribeRabbitMQServerlessConsumersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeRabbitMQServerlessConsumers(request), context);
-    };
+    using Req = const DescribeRabbitMQServerlessConsumersRequest&;
+    using Resp = DescribeRabbitMQServerlessConsumersResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeRabbitMQServerlessConsumers", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TrabbitClient::DescribeRabbitMQServerlessConsumersOutcomeCallable TrabbitClient::DescribeRabbitMQServerlessConsumersCallable(const DescribeRabbitMQServerlessConsumersRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeRabbitMQServerlessConsumersOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeRabbitMQServerlessConsumers(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeRabbitMQServerlessConsumersOutcome>>();
+    DescribeRabbitMQServerlessConsumersAsync(
+    request,
+    [prom](
+        const TrabbitClient*,
+        const DescribeRabbitMQServerlessConsumersRequest&,
+        DescribeRabbitMQServerlessConsumersOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TrabbitClient::DescribeRabbitMQServerlessExchangeDetailOutcome TrabbitClient::DescribeRabbitMQServerlessExchangeDetail(const DescribeRabbitMQServerlessExchangeDetailRequest &request)
@@ -664,25 +762,32 @@ TrabbitClient::DescribeRabbitMQServerlessExchangeDetailOutcome TrabbitClient::De
 
 void TrabbitClient::DescribeRabbitMQServerlessExchangeDetailAsync(const DescribeRabbitMQServerlessExchangeDetailRequest& request, const DescribeRabbitMQServerlessExchangeDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeRabbitMQServerlessExchangeDetail(request), context);
-    };
+    using Req = const DescribeRabbitMQServerlessExchangeDetailRequest&;
+    using Resp = DescribeRabbitMQServerlessExchangeDetailResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeRabbitMQServerlessExchangeDetail", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TrabbitClient::DescribeRabbitMQServerlessExchangeDetailOutcomeCallable TrabbitClient::DescribeRabbitMQServerlessExchangeDetailCallable(const DescribeRabbitMQServerlessExchangeDetailRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeRabbitMQServerlessExchangeDetailOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeRabbitMQServerlessExchangeDetail(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeRabbitMQServerlessExchangeDetailOutcome>>();
+    DescribeRabbitMQServerlessExchangeDetailAsync(
+    request,
+    [prom](
+        const TrabbitClient*,
+        const DescribeRabbitMQServerlessExchangeDetailRequest&,
+        DescribeRabbitMQServerlessExchangeDetailOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TrabbitClient::DescribeRabbitMQServerlessExchangesOutcome TrabbitClient::DescribeRabbitMQServerlessExchanges(const DescribeRabbitMQServerlessExchangesRequest &request)
@@ -707,25 +812,32 @@ TrabbitClient::DescribeRabbitMQServerlessExchangesOutcome TrabbitClient::Describ
 
 void TrabbitClient::DescribeRabbitMQServerlessExchangesAsync(const DescribeRabbitMQServerlessExchangesRequest& request, const DescribeRabbitMQServerlessExchangesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeRabbitMQServerlessExchanges(request), context);
-    };
+    using Req = const DescribeRabbitMQServerlessExchangesRequest&;
+    using Resp = DescribeRabbitMQServerlessExchangesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeRabbitMQServerlessExchanges", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TrabbitClient::DescribeRabbitMQServerlessExchangesOutcomeCallable TrabbitClient::DescribeRabbitMQServerlessExchangesCallable(const DescribeRabbitMQServerlessExchangesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeRabbitMQServerlessExchangesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeRabbitMQServerlessExchanges(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeRabbitMQServerlessExchangesOutcome>>();
+    DescribeRabbitMQServerlessExchangesAsync(
+    request,
+    [prom](
+        const TrabbitClient*,
+        const DescribeRabbitMQServerlessExchangesRequest&,
+        DescribeRabbitMQServerlessExchangesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TrabbitClient::DescribeRabbitMQServerlessInstanceOutcome TrabbitClient::DescribeRabbitMQServerlessInstance(const DescribeRabbitMQServerlessInstanceRequest &request)
@@ -750,25 +862,32 @@ TrabbitClient::DescribeRabbitMQServerlessInstanceOutcome TrabbitClient::Describe
 
 void TrabbitClient::DescribeRabbitMQServerlessInstanceAsync(const DescribeRabbitMQServerlessInstanceRequest& request, const DescribeRabbitMQServerlessInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeRabbitMQServerlessInstance(request), context);
-    };
+    using Req = const DescribeRabbitMQServerlessInstanceRequest&;
+    using Resp = DescribeRabbitMQServerlessInstanceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeRabbitMQServerlessInstance", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TrabbitClient::DescribeRabbitMQServerlessInstanceOutcomeCallable TrabbitClient::DescribeRabbitMQServerlessInstanceCallable(const DescribeRabbitMQServerlessInstanceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeRabbitMQServerlessInstanceOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeRabbitMQServerlessInstance(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeRabbitMQServerlessInstanceOutcome>>();
+    DescribeRabbitMQServerlessInstanceAsync(
+    request,
+    [prom](
+        const TrabbitClient*,
+        const DescribeRabbitMQServerlessInstanceRequest&,
+        DescribeRabbitMQServerlessInstanceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TrabbitClient::DescribeRabbitMQServerlessPermissionOutcome TrabbitClient::DescribeRabbitMQServerlessPermission(const DescribeRabbitMQServerlessPermissionRequest &request)
@@ -793,25 +912,32 @@ TrabbitClient::DescribeRabbitMQServerlessPermissionOutcome TrabbitClient::Descri
 
 void TrabbitClient::DescribeRabbitMQServerlessPermissionAsync(const DescribeRabbitMQServerlessPermissionRequest& request, const DescribeRabbitMQServerlessPermissionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeRabbitMQServerlessPermission(request), context);
-    };
+    using Req = const DescribeRabbitMQServerlessPermissionRequest&;
+    using Resp = DescribeRabbitMQServerlessPermissionResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeRabbitMQServerlessPermission", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TrabbitClient::DescribeRabbitMQServerlessPermissionOutcomeCallable TrabbitClient::DescribeRabbitMQServerlessPermissionCallable(const DescribeRabbitMQServerlessPermissionRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeRabbitMQServerlessPermissionOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeRabbitMQServerlessPermission(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeRabbitMQServerlessPermissionOutcome>>();
+    DescribeRabbitMQServerlessPermissionAsync(
+    request,
+    [prom](
+        const TrabbitClient*,
+        const DescribeRabbitMQServerlessPermissionRequest&,
+        DescribeRabbitMQServerlessPermissionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TrabbitClient::DescribeRabbitMQServerlessQueueDetailOutcome TrabbitClient::DescribeRabbitMQServerlessQueueDetail(const DescribeRabbitMQServerlessQueueDetailRequest &request)
@@ -836,25 +962,32 @@ TrabbitClient::DescribeRabbitMQServerlessQueueDetailOutcome TrabbitClient::Descr
 
 void TrabbitClient::DescribeRabbitMQServerlessQueueDetailAsync(const DescribeRabbitMQServerlessQueueDetailRequest& request, const DescribeRabbitMQServerlessQueueDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeRabbitMQServerlessQueueDetail(request), context);
-    };
+    using Req = const DescribeRabbitMQServerlessQueueDetailRequest&;
+    using Resp = DescribeRabbitMQServerlessQueueDetailResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeRabbitMQServerlessQueueDetail", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TrabbitClient::DescribeRabbitMQServerlessQueueDetailOutcomeCallable TrabbitClient::DescribeRabbitMQServerlessQueueDetailCallable(const DescribeRabbitMQServerlessQueueDetailRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeRabbitMQServerlessQueueDetailOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeRabbitMQServerlessQueueDetail(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeRabbitMQServerlessQueueDetailOutcome>>();
+    DescribeRabbitMQServerlessQueueDetailAsync(
+    request,
+    [prom](
+        const TrabbitClient*,
+        const DescribeRabbitMQServerlessQueueDetailRequest&,
+        DescribeRabbitMQServerlessQueueDetailOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TrabbitClient::DescribeRabbitMQServerlessQueuesOutcome TrabbitClient::DescribeRabbitMQServerlessQueues(const DescribeRabbitMQServerlessQueuesRequest &request)
@@ -879,25 +1012,32 @@ TrabbitClient::DescribeRabbitMQServerlessQueuesOutcome TrabbitClient::DescribeRa
 
 void TrabbitClient::DescribeRabbitMQServerlessQueuesAsync(const DescribeRabbitMQServerlessQueuesRequest& request, const DescribeRabbitMQServerlessQueuesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeRabbitMQServerlessQueues(request), context);
-    };
+    using Req = const DescribeRabbitMQServerlessQueuesRequest&;
+    using Resp = DescribeRabbitMQServerlessQueuesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeRabbitMQServerlessQueues", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TrabbitClient::DescribeRabbitMQServerlessQueuesOutcomeCallable TrabbitClient::DescribeRabbitMQServerlessQueuesCallable(const DescribeRabbitMQServerlessQueuesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeRabbitMQServerlessQueuesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeRabbitMQServerlessQueues(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeRabbitMQServerlessQueuesOutcome>>();
+    DescribeRabbitMQServerlessQueuesAsync(
+    request,
+    [prom](
+        const TrabbitClient*,
+        const DescribeRabbitMQServerlessQueuesRequest&,
+        DescribeRabbitMQServerlessQueuesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TrabbitClient::DescribeRabbitMQServerlessUserOutcome TrabbitClient::DescribeRabbitMQServerlessUser(const DescribeRabbitMQServerlessUserRequest &request)
@@ -922,25 +1062,32 @@ TrabbitClient::DescribeRabbitMQServerlessUserOutcome TrabbitClient::DescribeRabb
 
 void TrabbitClient::DescribeRabbitMQServerlessUserAsync(const DescribeRabbitMQServerlessUserRequest& request, const DescribeRabbitMQServerlessUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeRabbitMQServerlessUser(request), context);
-    };
+    using Req = const DescribeRabbitMQServerlessUserRequest&;
+    using Resp = DescribeRabbitMQServerlessUserResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeRabbitMQServerlessUser", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TrabbitClient::DescribeRabbitMQServerlessUserOutcomeCallable TrabbitClient::DescribeRabbitMQServerlessUserCallable(const DescribeRabbitMQServerlessUserRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeRabbitMQServerlessUserOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeRabbitMQServerlessUser(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeRabbitMQServerlessUserOutcome>>();
+    DescribeRabbitMQServerlessUserAsync(
+    request,
+    [prom](
+        const TrabbitClient*,
+        const DescribeRabbitMQServerlessUserRequest&,
+        DescribeRabbitMQServerlessUserOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TrabbitClient::DescribeRabbitMQServerlessVirtualHostOutcome TrabbitClient::DescribeRabbitMQServerlessVirtualHost(const DescribeRabbitMQServerlessVirtualHostRequest &request)
@@ -965,25 +1112,32 @@ TrabbitClient::DescribeRabbitMQServerlessVirtualHostOutcome TrabbitClient::Descr
 
 void TrabbitClient::DescribeRabbitMQServerlessVirtualHostAsync(const DescribeRabbitMQServerlessVirtualHostRequest& request, const DescribeRabbitMQServerlessVirtualHostAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeRabbitMQServerlessVirtualHost(request), context);
-    };
+    using Req = const DescribeRabbitMQServerlessVirtualHostRequest&;
+    using Resp = DescribeRabbitMQServerlessVirtualHostResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeRabbitMQServerlessVirtualHost", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TrabbitClient::DescribeRabbitMQServerlessVirtualHostOutcomeCallable TrabbitClient::DescribeRabbitMQServerlessVirtualHostCallable(const DescribeRabbitMQServerlessVirtualHostRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeRabbitMQServerlessVirtualHostOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeRabbitMQServerlessVirtualHost(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeRabbitMQServerlessVirtualHostOutcome>>();
+    DescribeRabbitMQServerlessVirtualHostAsync(
+    request,
+    [prom](
+        const TrabbitClient*,
+        const DescribeRabbitMQServerlessVirtualHostRequest&,
+        DescribeRabbitMQServerlessVirtualHostOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TrabbitClient::ListRabbitMQServerlessInstancesOutcome TrabbitClient::ListRabbitMQServerlessInstances(const ListRabbitMQServerlessInstancesRequest &request)
@@ -1008,25 +1162,32 @@ TrabbitClient::ListRabbitMQServerlessInstancesOutcome TrabbitClient::ListRabbitM
 
 void TrabbitClient::ListRabbitMQServerlessInstancesAsync(const ListRabbitMQServerlessInstancesRequest& request, const ListRabbitMQServerlessInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ListRabbitMQServerlessInstances(request), context);
-    };
+    using Req = const ListRabbitMQServerlessInstancesRequest&;
+    using Resp = ListRabbitMQServerlessInstancesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ListRabbitMQServerlessInstances", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TrabbitClient::ListRabbitMQServerlessInstancesOutcomeCallable TrabbitClient::ListRabbitMQServerlessInstancesCallable(const ListRabbitMQServerlessInstancesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ListRabbitMQServerlessInstancesOutcome()>>(
-        [this, request]()
-        {
-            return this->ListRabbitMQServerlessInstances(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ListRabbitMQServerlessInstancesOutcome>>();
+    ListRabbitMQServerlessInstancesAsync(
+    request,
+    [prom](
+        const TrabbitClient*,
+        const ListRabbitMQServerlessInstancesRequest&,
+        ListRabbitMQServerlessInstancesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TrabbitClient::ModifyRabbitMQServerlessExchangeOutcome TrabbitClient::ModifyRabbitMQServerlessExchange(const ModifyRabbitMQServerlessExchangeRequest &request)
@@ -1051,25 +1212,32 @@ TrabbitClient::ModifyRabbitMQServerlessExchangeOutcome TrabbitClient::ModifyRabb
 
 void TrabbitClient::ModifyRabbitMQServerlessExchangeAsync(const ModifyRabbitMQServerlessExchangeRequest& request, const ModifyRabbitMQServerlessExchangeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyRabbitMQServerlessExchange(request), context);
-    };
+    using Req = const ModifyRabbitMQServerlessExchangeRequest&;
+    using Resp = ModifyRabbitMQServerlessExchangeResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyRabbitMQServerlessExchange", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TrabbitClient::ModifyRabbitMQServerlessExchangeOutcomeCallable TrabbitClient::ModifyRabbitMQServerlessExchangeCallable(const ModifyRabbitMQServerlessExchangeRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyRabbitMQServerlessExchangeOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyRabbitMQServerlessExchange(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyRabbitMQServerlessExchangeOutcome>>();
+    ModifyRabbitMQServerlessExchangeAsync(
+    request,
+    [prom](
+        const TrabbitClient*,
+        const ModifyRabbitMQServerlessExchangeRequest&,
+        ModifyRabbitMQServerlessExchangeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TrabbitClient::ModifyRabbitMQServerlessInstanceOutcome TrabbitClient::ModifyRabbitMQServerlessInstance(const ModifyRabbitMQServerlessInstanceRequest &request)
@@ -1094,25 +1262,32 @@ TrabbitClient::ModifyRabbitMQServerlessInstanceOutcome TrabbitClient::ModifyRabb
 
 void TrabbitClient::ModifyRabbitMQServerlessInstanceAsync(const ModifyRabbitMQServerlessInstanceRequest& request, const ModifyRabbitMQServerlessInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyRabbitMQServerlessInstance(request), context);
-    };
+    using Req = const ModifyRabbitMQServerlessInstanceRequest&;
+    using Resp = ModifyRabbitMQServerlessInstanceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyRabbitMQServerlessInstance", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TrabbitClient::ModifyRabbitMQServerlessInstanceOutcomeCallable TrabbitClient::ModifyRabbitMQServerlessInstanceCallable(const ModifyRabbitMQServerlessInstanceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyRabbitMQServerlessInstanceOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyRabbitMQServerlessInstance(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyRabbitMQServerlessInstanceOutcome>>();
+    ModifyRabbitMQServerlessInstanceAsync(
+    request,
+    [prom](
+        const TrabbitClient*,
+        const ModifyRabbitMQServerlessInstanceRequest&,
+        ModifyRabbitMQServerlessInstanceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TrabbitClient::ModifyRabbitMQServerlessPermissionOutcome TrabbitClient::ModifyRabbitMQServerlessPermission(const ModifyRabbitMQServerlessPermissionRequest &request)
@@ -1137,25 +1312,32 @@ TrabbitClient::ModifyRabbitMQServerlessPermissionOutcome TrabbitClient::ModifyRa
 
 void TrabbitClient::ModifyRabbitMQServerlessPermissionAsync(const ModifyRabbitMQServerlessPermissionRequest& request, const ModifyRabbitMQServerlessPermissionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyRabbitMQServerlessPermission(request), context);
-    };
+    using Req = const ModifyRabbitMQServerlessPermissionRequest&;
+    using Resp = ModifyRabbitMQServerlessPermissionResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyRabbitMQServerlessPermission", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TrabbitClient::ModifyRabbitMQServerlessPermissionOutcomeCallable TrabbitClient::ModifyRabbitMQServerlessPermissionCallable(const ModifyRabbitMQServerlessPermissionRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyRabbitMQServerlessPermissionOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyRabbitMQServerlessPermission(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyRabbitMQServerlessPermissionOutcome>>();
+    ModifyRabbitMQServerlessPermissionAsync(
+    request,
+    [prom](
+        const TrabbitClient*,
+        const ModifyRabbitMQServerlessPermissionRequest&,
+        ModifyRabbitMQServerlessPermissionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TrabbitClient::ModifyRabbitMQServerlessQueueOutcome TrabbitClient::ModifyRabbitMQServerlessQueue(const ModifyRabbitMQServerlessQueueRequest &request)
@@ -1180,25 +1362,32 @@ TrabbitClient::ModifyRabbitMQServerlessQueueOutcome TrabbitClient::ModifyRabbitM
 
 void TrabbitClient::ModifyRabbitMQServerlessQueueAsync(const ModifyRabbitMQServerlessQueueRequest& request, const ModifyRabbitMQServerlessQueueAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyRabbitMQServerlessQueue(request), context);
-    };
+    using Req = const ModifyRabbitMQServerlessQueueRequest&;
+    using Resp = ModifyRabbitMQServerlessQueueResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyRabbitMQServerlessQueue", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TrabbitClient::ModifyRabbitMQServerlessQueueOutcomeCallable TrabbitClient::ModifyRabbitMQServerlessQueueCallable(const ModifyRabbitMQServerlessQueueRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyRabbitMQServerlessQueueOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyRabbitMQServerlessQueue(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyRabbitMQServerlessQueueOutcome>>();
+    ModifyRabbitMQServerlessQueueAsync(
+    request,
+    [prom](
+        const TrabbitClient*,
+        const ModifyRabbitMQServerlessQueueRequest&,
+        ModifyRabbitMQServerlessQueueOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TrabbitClient::ModifyRabbitMQServerlessUserOutcome TrabbitClient::ModifyRabbitMQServerlessUser(const ModifyRabbitMQServerlessUserRequest &request)
@@ -1223,25 +1412,32 @@ TrabbitClient::ModifyRabbitMQServerlessUserOutcome TrabbitClient::ModifyRabbitMQ
 
 void TrabbitClient::ModifyRabbitMQServerlessUserAsync(const ModifyRabbitMQServerlessUserRequest& request, const ModifyRabbitMQServerlessUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyRabbitMQServerlessUser(request), context);
-    };
+    using Req = const ModifyRabbitMQServerlessUserRequest&;
+    using Resp = ModifyRabbitMQServerlessUserResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyRabbitMQServerlessUser", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TrabbitClient::ModifyRabbitMQServerlessUserOutcomeCallable TrabbitClient::ModifyRabbitMQServerlessUserCallable(const ModifyRabbitMQServerlessUserRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyRabbitMQServerlessUserOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyRabbitMQServerlessUser(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyRabbitMQServerlessUserOutcome>>();
+    ModifyRabbitMQServerlessUserAsync(
+    request,
+    [prom](
+        const TrabbitClient*,
+        const ModifyRabbitMQServerlessUserRequest&,
+        ModifyRabbitMQServerlessUserOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TrabbitClient::ModifyRabbitMQServerlessVirtualHostOutcome TrabbitClient::ModifyRabbitMQServerlessVirtualHost(const ModifyRabbitMQServerlessVirtualHostRequest &request)
@@ -1266,24 +1462,31 @@ TrabbitClient::ModifyRabbitMQServerlessVirtualHostOutcome TrabbitClient::ModifyR
 
 void TrabbitClient::ModifyRabbitMQServerlessVirtualHostAsync(const ModifyRabbitMQServerlessVirtualHostRequest& request, const ModifyRabbitMQServerlessVirtualHostAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyRabbitMQServerlessVirtualHost(request), context);
-    };
+    using Req = const ModifyRabbitMQServerlessVirtualHostRequest&;
+    using Resp = ModifyRabbitMQServerlessVirtualHostResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyRabbitMQServerlessVirtualHost", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TrabbitClient::ModifyRabbitMQServerlessVirtualHostOutcomeCallable TrabbitClient::ModifyRabbitMQServerlessVirtualHostCallable(const ModifyRabbitMQServerlessVirtualHostRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyRabbitMQServerlessVirtualHostOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyRabbitMQServerlessVirtualHost(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyRabbitMQServerlessVirtualHostOutcome>>();
+    ModifyRabbitMQServerlessVirtualHostAsync(
+    request,
+    [prom](
+        const TrabbitClient*,
+        const ModifyRabbitMQServerlessVirtualHostRequest&,
+        ModifyRabbitMQServerlessVirtualHostOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 

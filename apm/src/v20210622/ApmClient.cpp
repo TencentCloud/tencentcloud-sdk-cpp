@@ -62,25 +62,32 @@ ApmClient::CreateApmInstanceOutcome ApmClient::CreateApmInstance(const CreateApm
 
 void ApmClient::CreateApmInstanceAsync(const CreateApmInstanceRequest& request, const CreateApmInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateApmInstance(request), context);
-    };
+    using Req = const CreateApmInstanceRequest&;
+    using Resp = CreateApmInstanceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateApmInstance", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ApmClient::CreateApmInstanceOutcomeCallable ApmClient::CreateApmInstanceCallable(const CreateApmInstanceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateApmInstanceOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateApmInstance(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateApmInstanceOutcome>>();
+    CreateApmInstanceAsync(
+    request,
+    [prom](
+        const ApmClient*,
+        const CreateApmInstanceRequest&,
+        CreateApmInstanceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ApmClient::CreateApmPrometheusRuleOutcome ApmClient::CreateApmPrometheusRule(const CreateApmPrometheusRuleRequest &request)
@@ -105,25 +112,32 @@ ApmClient::CreateApmPrometheusRuleOutcome ApmClient::CreateApmPrometheusRule(con
 
 void ApmClient::CreateApmPrometheusRuleAsync(const CreateApmPrometheusRuleRequest& request, const CreateApmPrometheusRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateApmPrometheusRule(request), context);
-    };
+    using Req = const CreateApmPrometheusRuleRequest&;
+    using Resp = CreateApmPrometheusRuleResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateApmPrometheusRule", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ApmClient::CreateApmPrometheusRuleOutcomeCallable ApmClient::CreateApmPrometheusRuleCallable(const CreateApmPrometheusRuleRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateApmPrometheusRuleOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateApmPrometheusRule(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateApmPrometheusRuleOutcome>>();
+    CreateApmPrometheusRuleAsync(
+    request,
+    [prom](
+        const ApmClient*,
+        const CreateApmPrometheusRuleRequest&,
+        CreateApmPrometheusRuleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ApmClient::CreateApmSampleConfigOutcome ApmClient::CreateApmSampleConfig(const CreateApmSampleConfigRequest &request)
@@ -148,25 +162,32 @@ ApmClient::CreateApmSampleConfigOutcome ApmClient::CreateApmSampleConfig(const C
 
 void ApmClient::CreateApmSampleConfigAsync(const CreateApmSampleConfigRequest& request, const CreateApmSampleConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateApmSampleConfig(request), context);
-    };
+    using Req = const CreateApmSampleConfigRequest&;
+    using Resp = CreateApmSampleConfigResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateApmSampleConfig", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ApmClient::CreateApmSampleConfigOutcomeCallable ApmClient::CreateApmSampleConfigCallable(const CreateApmSampleConfigRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateApmSampleConfigOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateApmSampleConfig(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateApmSampleConfigOutcome>>();
+    CreateApmSampleConfigAsync(
+    request,
+    [prom](
+        const ApmClient*,
+        const CreateApmSampleConfigRequest&,
+        CreateApmSampleConfigOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ApmClient::CreateProfileTaskOutcome ApmClient::CreateProfileTask(const CreateProfileTaskRequest &request)
@@ -191,25 +212,32 @@ ApmClient::CreateProfileTaskOutcome ApmClient::CreateProfileTask(const CreatePro
 
 void ApmClient::CreateProfileTaskAsync(const CreateProfileTaskRequest& request, const CreateProfileTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateProfileTask(request), context);
-    };
+    using Req = const CreateProfileTaskRequest&;
+    using Resp = CreateProfileTaskResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateProfileTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ApmClient::CreateProfileTaskOutcomeCallable ApmClient::CreateProfileTaskCallable(const CreateProfileTaskRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateProfileTaskOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateProfileTask(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateProfileTaskOutcome>>();
+    CreateProfileTaskAsync(
+    request,
+    [prom](
+        const ApmClient*,
+        const CreateProfileTaskRequest&,
+        CreateProfileTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ApmClient::DeleteApmSampleConfigOutcome ApmClient::DeleteApmSampleConfig(const DeleteApmSampleConfigRequest &request)
@@ -234,25 +262,32 @@ ApmClient::DeleteApmSampleConfigOutcome ApmClient::DeleteApmSampleConfig(const D
 
 void ApmClient::DeleteApmSampleConfigAsync(const DeleteApmSampleConfigRequest& request, const DeleteApmSampleConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteApmSampleConfig(request), context);
-    };
+    using Req = const DeleteApmSampleConfigRequest&;
+    using Resp = DeleteApmSampleConfigResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteApmSampleConfig", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ApmClient::DeleteApmSampleConfigOutcomeCallable ApmClient::DeleteApmSampleConfigCallable(const DeleteApmSampleConfigRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteApmSampleConfigOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteApmSampleConfig(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteApmSampleConfigOutcome>>();
+    DeleteApmSampleConfigAsync(
+    request,
+    [prom](
+        const ApmClient*,
+        const DeleteApmSampleConfigRequest&,
+        DeleteApmSampleConfigOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ApmClient::DescribeApmAgentOutcome ApmClient::DescribeApmAgent(const DescribeApmAgentRequest &request)
@@ -277,25 +312,32 @@ ApmClient::DescribeApmAgentOutcome ApmClient::DescribeApmAgent(const DescribeApm
 
 void ApmClient::DescribeApmAgentAsync(const DescribeApmAgentRequest& request, const DescribeApmAgentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeApmAgent(request), context);
-    };
+    using Req = const DescribeApmAgentRequest&;
+    using Resp = DescribeApmAgentResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeApmAgent", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ApmClient::DescribeApmAgentOutcomeCallable ApmClient::DescribeApmAgentCallable(const DescribeApmAgentRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeApmAgentOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeApmAgent(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeApmAgentOutcome>>();
+    DescribeApmAgentAsync(
+    request,
+    [prom](
+        const ApmClient*,
+        const DescribeApmAgentRequest&,
+        DescribeApmAgentOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ApmClient::DescribeApmApplicationConfigOutcome ApmClient::DescribeApmApplicationConfig(const DescribeApmApplicationConfigRequest &request)
@@ -320,25 +362,32 @@ ApmClient::DescribeApmApplicationConfigOutcome ApmClient::DescribeApmApplication
 
 void ApmClient::DescribeApmApplicationConfigAsync(const DescribeApmApplicationConfigRequest& request, const DescribeApmApplicationConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeApmApplicationConfig(request), context);
-    };
+    using Req = const DescribeApmApplicationConfigRequest&;
+    using Resp = DescribeApmApplicationConfigResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeApmApplicationConfig", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ApmClient::DescribeApmApplicationConfigOutcomeCallable ApmClient::DescribeApmApplicationConfigCallable(const DescribeApmApplicationConfigRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeApmApplicationConfigOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeApmApplicationConfig(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeApmApplicationConfigOutcome>>();
+    DescribeApmApplicationConfigAsync(
+    request,
+    [prom](
+        const ApmClient*,
+        const DescribeApmApplicationConfigRequest&,
+        DescribeApmApplicationConfigOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ApmClient::DescribeApmAssociationOutcome ApmClient::DescribeApmAssociation(const DescribeApmAssociationRequest &request)
@@ -363,25 +412,32 @@ ApmClient::DescribeApmAssociationOutcome ApmClient::DescribeApmAssociation(const
 
 void ApmClient::DescribeApmAssociationAsync(const DescribeApmAssociationRequest& request, const DescribeApmAssociationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeApmAssociation(request), context);
-    };
+    using Req = const DescribeApmAssociationRequest&;
+    using Resp = DescribeApmAssociationResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeApmAssociation", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ApmClient::DescribeApmAssociationOutcomeCallable ApmClient::DescribeApmAssociationCallable(const DescribeApmAssociationRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeApmAssociationOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeApmAssociation(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeApmAssociationOutcome>>();
+    DescribeApmAssociationAsync(
+    request,
+    [prom](
+        const ApmClient*,
+        const DescribeApmAssociationRequest&,
+        DescribeApmAssociationOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ApmClient::DescribeApmInstancesOutcome ApmClient::DescribeApmInstances(const DescribeApmInstancesRequest &request)
@@ -406,25 +462,32 @@ ApmClient::DescribeApmInstancesOutcome ApmClient::DescribeApmInstances(const Des
 
 void ApmClient::DescribeApmInstancesAsync(const DescribeApmInstancesRequest& request, const DescribeApmInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeApmInstances(request), context);
-    };
+    using Req = const DescribeApmInstancesRequest&;
+    using Resp = DescribeApmInstancesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeApmInstances", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ApmClient::DescribeApmInstancesOutcomeCallable ApmClient::DescribeApmInstancesCallable(const DescribeApmInstancesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeApmInstancesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeApmInstances(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeApmInstancesOutcome>>();
+    DescribeApmInstancesAsync(
+    request,
+    [prom](
+        const ApmClient*,
+        const DescribeApmInstancesRequest&,
+        DescribeApmInstancesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ApmClient::DescribeApmPrometheusRuleOutcome ApmClient::DescribeApmPrometheusRule(const DescribeApmPrometheusRuleRequest &request)
@@ -449,25 +512,32 @@ ApmClient::DescribeApmPrometheusRuleOutcome ApmClient::DescribeApmPrometheusRule
 
 void ApmClient::DescribeApmPrometheusRuleAsync(const DescribeApmPrometheusRuleRequest& request, const DescribeApmPrometheusRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeApmPrometheusRule(request), context);
-    };
+    using Req = const DescribeApmPrometheusRuleRequest&;
+    using Resp = DescribeApmPrometheusRuleResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeApmPrometheusRule", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ApmClient::DescribeApmPrometheusRuleOutcomeCallable ApmClient::DescribeApmPrometheusRuleCallable(const DescribeApmPrometheusRuleRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeApmPrometheusRuleOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeApmPrometheusRule(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeApmPrometheusRuleOutcome>>();
+    DescribeApmPrometheusRuleAsync(
+    request,
+    [prom](
+        const ApmClient*,
+        const DescribeApmPrometheusRuleRequest&,
+        DescribeApmPrometheusRuleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ApmClient::DescribeApmSampleConfigOutcome ApmClient::DescribeApmSampleConfig(const DescribeApmSampleConfigRequest &request)
@@ -492,25 +562,32 @@ ApmClient::DescribeApmSampleConfigOutcome ApmClient::DescribeApmSampleConfig(con
 
 void ApmClient::DescribeApmSampleConfigAsync(const DescribeApmSampleConfigRequest& request, const DescribeApmSampleConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeApmSampleConfig(request), context);
-    };
+    using Req = const DescribeApmSampleConfigRequest&;
+    using Resp = DescribeApmSampleConfigResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeApmSampleConfig", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ApmClient::DescribeApmSampleConfigOutcomeCallable ApmClient::DescribeApmSampleConfigCallable(const DescribeApmSampleConfigRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeApmSampleConfigOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeApmSampleConfig(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeApmSampleConfigOutcome>>();
+    DescribeApmSampleConfigAsync(
+    request,
+    [prom](
+        const ApmClient*,
+        const DescribeApmSampleConfigRequest&,
+        DescribeApmSampleConfigOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ApmClient::DescribeApmServiceMetricOutcome ApmClient::DescribeApmServiceMetric(const DescribeApmServiceMetricRequest &request)
@@ -535,25 +612,32 @@ ApmClient::DescribeApmServiceMetricOutcome ApmClient::DescribeApmServiceMetric(c
 
 void ApmClient::DescribeApmServiceMetricAsync(const DescribeApmServiceMetricRequest& request, const DescribeApmServiceMetricAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeApmServiceMetric(request), context);
-    };
+    using Req = const DescribeApmServiceMetricRequest&;
+    using Resp = DescribeApmServiceMetricResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeApmServiceMetric", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ApmClient::DescribeApmServiceMetricOutcomeCallable ApmClient::DescribeApmServiceMetricCallable(const DescribeApmServiceMetricRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeApmServiceMetricOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeApmServiceMetric(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeApmServiceMetricOutcome>>();
+    DescribeApmServiceMetricAsync(
+    request,
+    [prom](
+        const ApmClient*,
+        const DescribeApmServiceMetricRequest&,
+        DescribeApmServiceMetricOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ApmClient::DescribeGeneralApmApplicationConfigOutcome ApmClient::DescribeGeneralApmApplicationConfig(const DescribeGeneralApmApplicationConfigRequest &request)
@@ -578,25 +662,32 @@ ApmClient::DescribeGeneralApmApplicationConfigOutcome ApmClient::DescribeGeneral
 
 void ApmClient::DescribeGeneralApmApplicationConfigAsync(const DescribeGeneralApmApplicationConfigRequest& request, const DescribeGeneralApmApplicationConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeGeneralApmApplicationConfig(request), context);
-    };
+    using Req = const DescribeGeneralApmApplicationConfigRequest&;
+    using Resp = DescribeGeneralApmApplicationConfigResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeGeneralApmApplicationConfig", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ApmClient::DescribeGeneralApmApplicationConfigOutcomeCallable ApmClient::DescribeGeneralApmApplicationConfigCallable(const DescribeGeneralApmApplicationConfigRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeGeneralApmApplicationConfigOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeGeneralApmApplicationConfig(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeGeneralApmApplicationConfigOutcome>>();
+    DescribeGeneralApmApplicationConfigAsync(
+    request,
+    [prom](
+        const ApmClient*,
+        const DescribeGeneralApmApplicationConfigRequest&,
+        DescribeGeneralApmApplicationConfigOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ApmClient::DescribeGeneralMetricDataOutcome ApmClient::DescribeGeneralMetricData(const DescribeGeneralMetricDataRequest &request)
@@ -621,25 +712,32 @@ ApmClient::DescribeGeneralMetricDataOutcome ApmClient::DescribeGeneralMetricData
 
 void ApmClient::DescribeGeneralMetricDataAsync(const DescribeGeneralMetricDataRequest& request, const DescribeGeneralMetricDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeGeneralMetricData(request), context);
-    };
+    using Req = const DescribeGeneralMetricDataRequest&;
+    using Resp = DescribeGeneralMetricDataResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeGeneralMetricData", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ApmClient::DescribeGeneralMetricDataOutcomeCallable ApmClient::DescribeGeneralMetricDataCallable(const DescribeGeneralMetricDataRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeGeneralMetricDataOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeGeneralMetricData(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeGeneralMetricDataOutcome>>();
+    DescribeGeneralMetricDataAsync(
+    request,
+    [prom](
+        const ApmClient*,
+        const DescribeGeneralMetricDataRequest&,
+        DescribeGeneralMetricDataOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ApmClient::DescribeGeneralOTSpanListOutcome ApmClient::DescribeGeneralOTSpanList(const DescribeGeneralOTSpanListRequest &request)
@@ -664,25 +762,32 @@ ApmClient::DescribeGeneralOTSpanListOutcome ApmClient::DescribeGeneralOTSpanList
 
 void ApmClient::DescribeGeneralOTSpanListAsync(const DescribeGeneralOTSpanListRequest& request, const DescribeGeneralOTSpanListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeGeneralOTSpanList(request), context);
-    };
+    using Req = const DescribeGeneralOTSpanListRequest&;
+    using Resp = DescribeGeneralOTSpanListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeGeneralOTSpanList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ApmClient::DescribeGeneralOTSpanListOutcomeCallable ApmClient::DescribeGeneralOTSpanListCallable(const DescribeGeneralOTSpanListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeGeneralOTSpanListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeGeneralOTSpanList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeGeneralOTSpanListOutcome>>();
+    DescribeGeneralOTSpanListAsync(
+    request,
+    [prom](
+        const ApmClient*,
+        const DescribeGeneralOTSpanListRequest&,
+        DescribeGeneralOTSpanListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ApmClient::DescribeGeneralSpanListOutcome ApmClient::DescribeGeneralSpanList(const DescribeGeneralSpanListRequest &request)
@@ -707,25 +812,32 @@ ApmClient::DescribeGeneralSpanListOutcome ApmClient::DescribeGeneralSpanList(con
 
 void ApmClient::DescribeGeneralSpanListAsync(const DescribeGeneralSpanListRequest& request, const DescribeGeneralSpanListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeGeneralSpanList(request), context);
-    };
+    using Req = const DescribeGeneralSpanListRequest&;
+    using Resp = DescribeGeneralSpanListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeGeneralSpanList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ApmClient::DescribeGeneralSpanListOutcomeCallable ApmClient::DescribeGeneralSpanListCallable(const DescribeGeneralSpanListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeGeneralSpanListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeGeneralSpanList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeGeneralSpanListOutcome>>();
+    DescribeGeneralSpanListAsync(
+    request,
+    [prom](
+        const ApmClient*,
+        const DescribeGeneralSpanListRequest&,
+        DescribeGeneralSpanListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ApmClient::DescribeMetricRecordsOutcome ApmClient::DescribeMetricRecords(const DescribeMetricRecordsRequest &request)
@@ -750,25 +862,32 @@ ApmClient::DescribeMetricRecordsOutcome ApmClient::DescribeMetricRecords(const D
 
 void ApmClient::DescribeMetricRecordsAsync(const DescribeMetricRecordsRequest& request, const DescribeMetricRecordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeMetricRecords(request), context);
-    };
+    using Req = const DescribeMetricRecordsRequest&;
+    using Resp = DescribeMetricRecordsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeMetricRecords", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ApmClient::DescribeMetricRecordsOutcomeCallable ApmClient::DescribeMetricRecordsCallable(const DescribeMetricRecordsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeMetricRecordsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeMetricRecords(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeMetricRecordsOutcome>>();
+    DescribeMetricRecordsAsync(
+    request,
+    [prom](
+        const ApmClient*,
+        const DescribeMetricRecordsRequest&,
+        DescribeMetricRecordsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ApmClient::DescribeServiceOverviewOutcome ApmClient::DescribeServiceOverview(const DescribeServiceOverviewRequest &request)
@@ -793,25 +912,32 @@ ApmClient::DescribeServiceOverviewOutcome ApmClient::DescribeServiceOverview(con
 
 void ApmClient::DescribeServiceOverviewAsync(const DescribeServiceOverviewRequest& request, const DescribeServiceOverviewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeServiceOverview(request), context);
-    };
+    using Req = const DescribeServiceOverviewRequest&;
+    using Resp = DescribeServiceOverviewResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeServiceOverview", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ApmClient::DescribeServiceOverviewOutcomeCallable ApmClient::DescribeServiceOverviewCallable(const DescribeServiceOverviewRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeServiceOverviewOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeServiceOverview(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeServiceOverviewOutcome>>();
+    DescribeServiceOverviewAsync(
+    request,
+    [prom](
+        const ApmClient*,
+        const DescribeServiceOverviewRequest&,
+        DescribeServiceOverviewOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ApmClient::DescribeTagValuesOutcome ApmClient::DescribeTagValues(const DescribeTagValuesRequest &request)
@@ -836,25 +962,32 @@ ApmClient::DescribeTagValuesOutcome ApmClient::DescribeTagValues(const DescribeT
 
 void ApmClient::DescribeTagValuesAsync(const DescribeTagValuesRequest& request, const DescribeTagValuesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeTagValues(request), context);
-    };
+    using Req = const DescribeTagValuesRequest&;
+    using Resp = DescribeTagValuesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeTagValues", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ApmClient::DescribeTagValuesOutcomeCallable ApmClient::DescribeTagValuesCallable(const DescribeTagValuesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeTagValuesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeTagValues(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeTagValuesOutcome>>();
+    DescribeTagValuesAsync(
+    request,
+    [prom](
+        const ApmClient*,
+        const DescribeTagValuesRequest&,
+        DescribeTagValuesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ApmClient::ModifyApmApplicationConfigOutcome ApmClient::ModifyApmApplicationConfig(const ModifyApmApplicationConfigRequest &request)
@@ -879,25 +1012,32 @@ ApmClient::ModifyApmApplicationConfigOutcome ApmClient::ModifyApmApplicationConf
 
 void ApmClient::ModifyApmApplicationConfigAsync(const ModifyApmApplicationConfigRequest& request, const ModifyApmApplicationConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyApmApplicationConfig(request), context);
-    };
+    using Req = const ModifyApmApplicationConfigRequest&;
+    using Resp = ModifyApmApplicationConfigResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyApmApplicationConfig", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ApmClient::ModifyApmApplicationConfigOutcomeCallable ApmClient::ModifyApmApplicationConfigCallable(const ModifyApmApplicationConfigRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyApmApplicationConfigOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyApmApplicationConfig(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyApmApplicationConfigOutcome>>();
+    ModifyApmApplicationConfigAsync(
+    request,
+    [prom](
+        const ApmClient*,
+        const ModifyApmApplicationConfigRequest&,
+        ModifyApmApplicationConfigOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ApmClient::ModifyApmAssociationOutcome ApmClient::ModifyApmAssociation(const ModifyApmAssociationRequest &request)
@@ -922,25 +1062,32 @@ ApmClient::ModifyApmAssociationOutcome ApmClient::ModifyApmAssociation(const Mod
 
 void ApmClient::ModifyApmAssociationAsync(const ModifyApmAssociationRequest& request, const ModifyApmAssociationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyApmAssociation(request), context);
-    };
+    using Req = const ModifyApmAssociationRequest&;
+    using Resp = ModifyApmAssociationResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyApmAssociation", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ApmClient::ModifyApmAssociationOutcomeCallable ApmClient::ModifyApmAssociationCallable(const ModifyApmAssociationRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyApmAssociationOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyApmAssociation(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyApmAssociationOutcome>>();
+    ModifyApmAssociationAsync(
+    request,
+    [prom](
+        const ApmClient*,
+        const ModifyApmAssociationRequest&,
+        ModifyApmAssociationOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ApmClient::ModifyApmInstanceOutcome ApmClient::ModifyApmInstance(const ModifyApmInstanceRequest &request)
@@ -965,25 +1112,32 @@ ApmClient::ModifyApmInstanceOutcome ApmClient::ModifyApmInstance(const ModifyApm
 
 void ApmClient::ModifyApmInstanceAsync(const ModifyApmInstanceRequest& request, const ModifyApmInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyApmInstance(request), context);
-    };
+    using Req = const ModifyApmInstanceRequest&;
+    using Resp = ModifyApmInstanceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyApmInstance", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ApmClient::ModifyApmInstanceOutcomeCallable ApmClient::ModifyApmInstanceCallable(const ModifyApmInstanceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyApmInstanceOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyApmInstance(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyApmInstanceOutcome>>();
+    ModifyApmInstanceAsync(
+    request,
+    [prom](
+        const ApmClient*,
+        const ModifyApmInstanceRequest&,
+        ModifyApmInstanceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ApmClient::ModifyApmPrometheusRuleOutcome ApmClient::ModifyApmPrometheusRule(const ModifyApmPrometheusRuleRequest &request)
@@ -1008,25 +1162,32 @@ ApmClient::ModifyApmPrometheusRuleOutcome ApmClient::ModifyApmPrometheusRule(con
 
 void ApmClient::ModifyApmPrometheusRuleAsync(const ModifyApmPrometheusRuleRequest& request, const ModifyApmPrometheusRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyApmPrometheusRule(request), context);
-    };
+    using Req = const ModifyApmPrometheusRuleRequest&;
+    using Resp = ModifyApmPrometheusRuleResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyApmPrometheusRule", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ApmClient::ModifyApmPrometheusRuleOutcomeCallable ApmClient::ModifyApmPrometheusRuleCallable(const ModifyApmPrometheusRuleRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyApmPrometheusRuleOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyApmPrometheusRule(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyApmPrometheusRuleOutcome>>();
+    ModifyApmPrometheusRuleAsync(
+    request,
+    [prom](
+        const ApmClient*,
+        const ModifyApmPrometheusRuleRequest&,
+        ModifyApmPrometheusRuleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ApmClient::ModifyApmSampleConfigOutcome ApmClient::ModifyApmSampleConfig(const ModifyApmSampleConfigRequest &request)
@@ -1051,25 +1212,32 @@ ApmClient::ModifyApmSampleConfigOutcome ApmClient::ModifyApmSampleConfig(const M
 
 void ApmClient::ModifyApmSampleConfigAsync(const ModifyApmSampleConfigRequest& request, const ModifyApmSampleConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyApmSampleConfig(request), context);
-    };
+    using Req = const ModifyApmSampleConfigRequest&;
+    using Resp = ModifyApmSampleConfigResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyApmSampleConfig", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ApmClient::ModifyApmSampleConfigOutcomeCallable ApmClient::ModifyApmSampleConfigCallable(const ModifyApmSampleConfigRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyApmSampleConfigOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyApmSampleConfig(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyApmSampleConfigOutcome>>();
+    ModifyApmSampleConfigAsync(
+    request,
+    [prom](
+        const ApmClient*,
+        const ModifyApmSampleConfigRequest&,
+        ModifyApmSampleConfigOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ApmClient::ModifyGeneralApmApplicationConfigOutcome ApmClient::ModifyGeneralApmApplicationConfig(const ModifyGeneralApmApplicationConfigRequest &request)
@@ -1094,25 +1262,32 @@ ApmClient::ModifyGeneralApmApplicationConfigOutcome ApmClient::ModifyGeneralApmA
 
 void ApmClient::ModifyGeneralApmApplicationConfigAsync(const ModifyGeneralApmApplicationConfigRequest& request, const ModifyGeneralApmApplicationConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyGeneralApmApplicationConfig(request), context);
-    };
+    using Req = const ModifyGeneralApmApplicationConfigRequest&;
+    using Resp = ModifyGeneralApmApplicationConfigResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyGeneralApmApplicationConfig", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ApmClient::ModifyGeneralApmApplicationConfigOutcomeCallable ApmClient::ModifyGeneralApmApplicationConfigCallable(const ModifyGeneralApmApplicationConfigRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyGeneralApmApplicationConfigOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyGeneralApmApplicationConfig(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyGeneralApmApplicationConfigOutcome>>();
+    ModifyGeneralApmApplicationConfigAsync(
+    request,
+    [prom](
+        const ApmClient*,
+        const ModifyGeneralApmApplicationConfigRequest&,
+        ModifyGeneralApmApplicationConfigOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ApmClient::TerminateApmInstanceOutcome ApmClient::TerminateApmInstance(const TerminateApmInstanceRequest &request)
@@ -1137,24 +1312,31 @@ ApmClient::TerminateApmInstanceOutcome ApmClient::TerminateApmInstance(const Ter
 
 void ApmClient::TerminateApmInstanceAsync(const TerminateApmInstanceRequest& request, const TerminateApmInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->TerminateApmInstance(request), context);
-    };
+    using Req = const TerminateApmInstanceRequest&;
+    using Resp = TerminateApmInstanceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "TerminateApmInstance", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ApmClient::TerminateApmInstanceOutcomeCallable ApmClient::TerminateApmInstanceCallable(const TerminateApmInstanceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<TerminateApmInstanceOutcome()>>(
-        [this, request]()
-        {
-            return this->TerminateApmInstance(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<TerminateApmInstanceOutcome>>();
+    TerminateApmInstanceAsync(
+    request,
+    [prom](
+        const ApmClient*,
+        const TerminateApmInstanceRequest&,
+        TerminateApmInstanceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 

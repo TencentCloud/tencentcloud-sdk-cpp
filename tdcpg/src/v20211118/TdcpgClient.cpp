@@ -62,25 +62,32 @@ TdcpgClient::CloneClusterToPointInTimeOutcome TdcpgClient::CloneClusterToPointIn
 
 void TdcpgClient::CloneClusterToPointInTimeAsync(const CloneClusterToPointInTimeRequest& request, const CloneClusterToPointInTimeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CloneClusterToPointInTime(request), context);
-    };
+    using Req = const CloneClusterToPointInTimeRequest&;
+    using Resp = CloneClusterToPointInTimeResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CloneClusterToPointInTime", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TdcpgClient::CloneClusterToPointInTimeOutcomeCallable TdcpgClient::CloneClusterToPointInTimeCallable(const CloneClusterToPointInTimeRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CloneClusterToPointInTimeOutcome()>>(
-        [this, request]()
-        {
-            return this->CloneClusterToPointInTime(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CloneClusterToPointInTimeOutcome>>();
+    CloneClusterToPointInTimeAsync(
+    request,
+    [prom](
+        const TdcpgClient*,
+        const CloneClusterToPointInTimeRequest&,
+        CloneClusterToPointInTimeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TdcpgClient::CreateClusterOutcome TdcpgClient::CreateCluster(const CreateClusterRequest &request)
@@ -105,25 +112,32 @@ TdcpgClient::CreateClusterOutcome TdcpgClient::CreateCluster(const CreateCluster
 
 void TdcpgClient::CreateClusterAsync(const CreateClusterRequest& request, const CreateClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateCluster(request), context);
-    };
+    using Req = const CreateClusterRequest&;
+    using Resp = CreateClusterResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateCluster", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TdcpgClient::CreateClusterOutcomeCallable TdcpgClient::CreateClusterCallable(const CreateClusterRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateClusterOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateCluster(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateClusterOutcome>>();
+    CreateClusterAsync(
+    request,
+    [prom](
+        const TdcpgClient*,
+        const CreateClusterRequest&,
+        CreateClusterOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TdcpgClient::CreateClusterInstancesOutcome TdcpgClient::CreateClusterInstances(const CreateClusterInstancesRequest &request)
@@ -148,25 +162,32 @@ TdcpgClient::CreateClusterInstancesOutcome TdcpgClient::CreateClusterInstances(c
 
 void TdcpgClient::CreateClusterInstancesAsync(const CreateClusterInstancesRequest& request, const CreateClusterInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateClusterInstances(request), context);
-    };
+    using Req = const CreateClusterInstancesRequest&;
+    using Resp = CreateClusterInstancesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateClusterInstances", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TdcpgClient::CreateClusterInstancesOutcomeCallable TdcpgClient::CreateClusterInstancesCallable(const CreateClusterInstancesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateClusterInstancesOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateClusterInstances(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateClusterInstancesOutcome>>();
+    CreateClusterInstancesAsync(
+    request,
+    [prom](
+        const TdcpgClient*,
+        const CreateClusterInstancesRequest&,
+        CreateClusterInstancesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TdcpgClient::DeleteClusterOutcome TdcpgClient::DeleteCluster(const DeleteClusterRequest &request)
@@ -191,25 +212,32 @@ TdcpgClient::DeleteClusterOutcome TdcpgClient::DeleteCluster(const DeleteCluster
 
 void TdcpgClient::DeleteClusterAsync(const DeleteClusterRequest& request, const DeleteClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteCluster(request), context);
-    };
+    using Req = const DeleteClusterRequest&;
+    using Resp = DeleteClusterResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteCluster", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TdcpgClient::DeleteClusterOutcomeCallable TdcpgClient::DeleteClusterCallable(const DeleteClusterRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteClusterOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteCluster(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteClusterOutcome>>();
+    DeleteClusterAsync(
+    request,
+    [prom](
+        const TdcpgClient*,
+        const DeleteClusterRequest&,
+        DeleteClusterOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TdcpgClient::DeleteClusterInstancesOutcome TdcpgClient::DeleteClusterInstances(const DeleteClusterInstancesRequest &request)
@@ -234,25 +262,32 @@ TdcpgClient::DeleteClusterInstancesOutcome TdcpgClient::DeleteClusterInstances(c
 
 void TdcpgClient::DeleteClusterInstancesAsync(const DeleteClusterInstancesRequest& request, const DeleteClusterInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteClusterInstances(request), context);
-    };
+    using Req = const DeleteClusterInstancesRequest&;
+    using Resp = DeleteClusterInstancesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteClusterInstances", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TdcpgClient::DeleteClusterInstancesOutcomeCallable TdcpgClient::DeleteClusterInstancesCallable(const DeleteClusterInstancesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteClusterInstancesOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteClusterInstances(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteClusterInstancesOutcome>>();
+    DeleteClusterInstancesAsync(
+    request,
+    [prom](
+        const TdcpgClient*,
+        const DeleteClusterInstancesRequest&,
+        DeleteClusterInstancesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TdcpgClient::DescribeAccountsOutcome TdcpgClient::DescribeAccounts(const DescribeAccountsRequest &request)
@@ -277,25 +312,32 @@ TdcpgClient::DescribeAccountsOutcome TdcpgClient::DescribeAccounts(const Describ
 
 void TdcpgClient::DescribeAccountsAsync(const DescribeAccountsRequest& request, const DescribeAccountsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAccounts(request), context);
-    };
+    using Req = const DescribeAccountsRequest&;
+    using Resp = DescribeAccountsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAccounts", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TdcpgClient::DescribeAccountsOutcomeCallable TdcpgClient::DescribeAccountsCallable(const DescribeAccountsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAccountsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAccounts(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAccountsOutcome>>();
+    DescribeAccountsAsync(
+    request,
+    [prom](
+        const TdcpgClient*,
+        const DescribeAccountsRequest&,
+        DescribeAccountsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TdcpgClient::DescribeClusterBackupsOutcome TdcpgClient::DescribeClusterBackups(const DescribeClusterBackupsRequest &request)
@@ -320,25 +362,32 @@ TdcpgClient::DescribeClusterBackupsOutcome TdcpgClient::DescribeClusterBackups(c
 
 void TdcpgClient::DescribeClusterBackupsAsync(const DescribeClusterBackupsRequest& request, const DescribeClusterBackupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeClusterBackups(request), context);
-    };
+    using Req = const DescribeClusterBackupsRequest&;
+    using Resp = DescribeClusterBackupsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeClusterBackups", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TdcpgClient::DescribeClusterBackupsOutcomeCallable TdcpgClient::DescribeClusterBackupsCallable(const DescribeClusterBackupsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeClusterBackupsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeClusterBackups(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeClusterBackupsOutcome>>();
+    DescribeClusterBackupsAsync(
+    request,
+    [prom](
+        const TdcpgClient*,
+        const DescribeClusterBackupsRequest&,
+        DescribeClusterBackupsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TdcpgClient::DescribeClusterEndpointsOutcome TdcpgClient::DescribeClusterEndpoints(const DescribeClusterEndpointsRequest &request)
@@ -363,25 +412,32 @@ TdcpgClient::DescribeClusterEndpointsOutcome TdcpgClient::DescribeClusterEndpoin
 
 void TdcpgClient::DescribeClusterEndpointsAsync(const DescribeClusterEndpointsRequest& request, const DescribeClusterEndpointsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeClusterEndpoints(request), context);
-    };
+    using Req = const DescribeClusterEndpointsRequest&;
+    using Resp = DescribeClusterEndpointsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeClusterEndpoints", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TdcpgClient::DescribeClusterEndpointsOutcomeCallable TdcpgClient::DescribeClusterEndpointsCallable(const DescribeClusterEndpointsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeClusterEndpointsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeClusterEndpoints(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeClusterEndpointsOutcome>>();
+    DescribeClusterEndpointsAsync(
+    request,
+    [prom](
+        const TdcpgClient*,
+        const DescribeClusterEndpointsRequest&,
+        DescribeClusterEndpointsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TdcpgClient::DescribeClusterInstancesOutcome TdcpgClient::DescribeClusterInstances(const DescribeClusterInstancesRequest &request)
@@ -406,25 +462,32 @@ TdcpgClient::DescribeClusterInstancesOutcome TdcpgClient::DescribeClusterInstanc
 
 void TdcpgClient::DescribeClusterInstancesAsync(const DescribeClusterInstancesRequest& request, const DescribeClusterInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeClusterInstances(request), context);
-    };
+    using Req = const DescribeClusterInstancesRequest&;
+    using Resp = DescribeClusterInstancesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeClusterInstances", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TdcpgClient::DescribeClusterInstancesOutcomeCallable TdcpgClient::DescribeClusterInstancesCallable(const DescribeClusterInstancesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeClusterInstancesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeClusterInstances(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeClusterInstancesOutcome>>();
+    DescribeClusterInstancesAsync(
+    request,
+    [prom](
+        const TdcpgClient*,
+        const DescribeClusterInstancesRequest&,
+        DescribeClusterInstancesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TdcpgClient::DescribeClusterRecoveryTimeRangeOutcome TdcpgClient::DescribeClusterRecoveryTimeRange(const DescribeClusterRecoveryTimeRangeRequest &request)
@@ -449,25 +512,32 @@ TdcpgClient::DescribeClusterRecoveryTimeRangeOutcome TdcpgClient::DescribeCluste
 
 void TdcpgClient::DescribeClusterRecoveryTimeRangeAsync(const DescribeClusterRecoveryTimeRangeRequest& request, const DescribeClusterRecoveryTimeRangeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeClusterRecoveryTimeRange(request), context);
-    };
+    using Req = const DescribeClusterRecoveryTimeRangeRequest&;
+    using Resp = DescribeClusterRecoveryTimeRangeResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeClusterRecoveryTimeRange", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TdcpgClient::DescribeClusterRecoveryTimeRangeOutcomeCallable TdcpgClient::DescribeClusterRecoveryTimeRangeCallable(const DescribeClusterRecoveryTimeRangeRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeClusterRecoveryTimeRangeOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeClusterRecoveryTimeRange(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeClusterRecoveryTimeRangeOutcome>>();
+    DescribeClusterRecoveryTimeRangeAsync(
+    request,
+    [prom](
+        const TdcpgClient*,
+        const DescribeClusterRecoveryTimeRangeRequest&,
+        DescribeClusterRecoveryTimeRangeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TdcpgClient::DescribeClustersOutcome TdcpgClient::DescribeClusters(const DescribeClustersRequest &request)
@@ -492,25 +562,32 @@ TdcpgClient::DescribeClustersOutcome TdcpgClient::DescribeClusters(const Describ
 
 void TdcpgClient::DescribeClustersAsync(const DescribeClustersRequest& request, const DescribeClustersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeClusters(request), context);
-    };
+    using Req = const DescribeClustersRequest&;
+    using Resp = DescribeClustersResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeClusters", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TdcpgClient::DescribeClustersOutcomeCallable TdcpgClient::DescribeClustersCallable(const DescribeClustersRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeClustersOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeClusters(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeClustersOutcome>>();
+    DescribeClustersAsync(
+    request,
+    [prom](
+        const TdcpgClient*,
+        const DescribeClustersRequest&,
+        DescribeClustersOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TdcpgClient::DescribeResourcesByDealNameOutcome TdcpgClient::DescribeResourcesByDealName(const DescribeResourcesByDealNameRequest &request)
@@ -535,25 +612,32 @@ TdcpgClient::DescribeResourcesByDealNameOutcome TdcpgClient::DescribeResourcesBy
 
 void TdcpgClient::DescribeResourcesByDealNameAsync(const DescribeResourcesByDealNameRequest& request, const DescribeResourcesByDealNameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeResourcesByDealName(request), context);
-    };
+    using Req = const DescribeResourcesByDealNameRequest&;
+    using Resp = DescribeResourcesByDealNameResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeResourcesByDealName", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TdcpgClient::DescribeResourcesByDealNameOutcomeCallable TdcpgClient::DescribeResourcesByDealNameCallable(const DescribeResourcesByDealNameRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeResourcesByDealNameOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeResourcesByDealName(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeResourcesByDealNameOutcome>>();
+    DescribeResourcesByDealNameAsync(
+    request,
+    [prom](
+        const TdcpgClient*,
+        const DescribeResourcesByDealNameRequest&,
+        DescribeResourcesByDealNameOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TdcpgClient::IsolateClusterOutcome TdcpgClient::IsolateCluster(const IsolateClusterRequest &request)
@@ -578,25 +662,32 @@ TdcpgClient::IsolateClusterOutcome TdcpgClient::IsolateCluster(const IsolateClus
 
 void TdcpgClient::IsolateClusterAsync(const IsolateClusterRequest& request, const IsolateClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->IsolateCluster(request), context);
-    };
+    using Req = const IsolateClusterRequest&;
+    using Resp = IsolateClusterResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "IsolateCluster", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TdcpgClient::IsolateClusterOutcomeCallable TdcpgClient::IsolateClusterCallable(const IsolateClusterRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<IsolateClusterOutcome()>>(
-        [this, request]()
-        {
-            return this->IsolateCluster(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<IsolateClusterOutcome>>();
+    IsolateClusterAsync(
+    request,
+    [prom](
+        const TdcpgClient*,
+        const IsolateClusterRequest&,
+        IsolateClusterOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TdcpgClient::IsolateClusterInstancesOutcome TdcpgClient::IsolateClusterInstances(const IsolateClusterInstancesRequest &request)
@@ -621,25 +712,32 @@ TdcpgClient::IsolateClusterInstancesOutcome TdcpgClient::IsolateClusterInstances
 
 void TdcpgClient::IsolateClusterInstancesAsync(const IsolateClusterInstancesRequest& request, const IsolateClusterInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->IsolateClusterInstances(request), context);
-    };
+    using Req = const IsolateClusterInstancesRequest&;
+    using Resp = IsolateClusterInstancesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "IsolateClusterInstances", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TdcpgClient::IsolateClusterInstancesOutcomeCallable TdcpgClient::IsolateClusterInstancesCallable(const IsolateClusterInstancesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<IsolateClusterInstancesOutcome()>>(
-        [this, request]()
-        {
-            return this->IsolateClusterInstances(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<IsolateClusterInstancesOutcome>>();
+    IsolateClusterInstancesAsync(
+    request,
+    [prom](
+        const TdcpgClient*,
+        const IsolateClusterInstancesRequest&,
+        IsolateClusterInstancesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TdcpgClient::ModifyAccountDescriptionOutcome TdcpgClient::ModifyAccountDescription(const ModifyAccountDescriptionRequest &request)
@@ -664,25 +762,32 @@ TdcpgClient::ModifyAccountDescriptionOutcome TdcpgClient::ModifyAccountDescripti
 
 void TdcpgClient::ModifyAccountDescriptionAsync(const ModifyAccountDescriptionRequest& request, const ModifyAccountDescriptionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyAccountDescription(request), context);
-    };
+    using Req = const ModifyAccountDescriptionRequest&;
+    using Resp = ModifyAccountDescriptionResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyAccountDescription", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TdcpgClient::ModifyAccountDescriptionOutcomeCallable TdcpgClient::ModifyAccountDescriptionCallable(const ModifyAccountDescriptionRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyAccountDescriptionOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyAccountDescription(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyAccountDescriptionOutcome>>();
+    ModifyAccountDescriptionAsync(
+    request,
+    [prom](
+        const TdcpgClient*,
+        const ModifyAccountDescriptionRequest&,
+        ModifyAccountDescriptionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TdcpgClient::ModifyClusterEndpointWanStatusOutcome TdcpgClient::ModifyClusterEndpointWanStatus(const ModifyClusterEndpointWanStatusRequest &request)
@@ -707,25 +812,32 @@ TdcpgClient::ModifyClusterEndpointWanStatusOutcome TdcpgClient::ModifyClusterEnd
 
 void TdcpgClient::ModifyClusterEndpointWanStatusAsync(const ModifyClusterEndpointWanStatusRequest& request, const ModifyClusterEndpointWanStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyClusterEndpointWanStatus(request), context);
-    };
+    using Req = const ModifyClusterEndpointWanStatusRequest&;
+    using Resp = ModifyClusterEndpointWanStatusResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyClusterEndpointWanStatus", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TdcpgClient::ModifyClusterEndpointWanStatusOutcomeCallable TdcpgClient::ModifyClusterEndpointWanStatusCallable(const ModifyClusterEndpointWanStatusRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyClusterEndpointWanStatusOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyClusterEndpointWanStatus(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyClusterEndpointWanStatusOutcome>>();
+    ModifyClusterEndpointWanStatusAsync(
+    request,
+    [prom](
+        const TdcpgClient*,
+        const ModifyClusterEndpointWanStatusRequest&,
+        ModifyClusterEndpointWanStatusOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TdcpgClient::ModifyClusterInstancesSpecOutcome TdcpgClient::ModifyClusterInstancesSpec(const ModifyClusterInstancesSpecRequest &request)
@@ -750,25 +862,32 @@ TdcpgClient::ModifyClusterInstancesSpecOutcome TdcpgClient::ModifyClusterInstanc
 
 void TdcpgClient::ModifyClusterInstancesSpecAsync(const ModifyClusterInstancesSpecRequest& request, const ModifyClusterInstancesSpecAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyClusterInstancesSpec(request), context);
-    };
+    using Req = const ModifyClusterInstancesSpecRequest&;
+    using Resp = ModifyClusterInstancesSpecResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyClusterInstancesSpec", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TdcpgClient::ModifyClusterInstancesSpecOutcomeCallable TdcpgClient::ModifyClusterInstancesSpecCallable(const ModifyClusterInstancesSpecRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyClusterInstancesSpecOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyClusterInstancesSpec(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyClusterInstancesSpecOutcome>>();
+    ModifyClusterInstancesSpecAsync(
+    request,
+    [prom](
+        const TdcpgClient*,
+        const ModifyClusterInstancesSpecRequest&,
+        ModifyClusterInstancesSpecOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TdcpgClient::ModifyClusterNameOutcome TdcpgClient::ModifyClusterName(const ModifyClusterNameRequest &request)
@@ -793,25 +912,32 @@ TdcpgClient::ModifyClusterNameOutcome TdcpgClient::ModifyClusterName(const Modif
 
 void TdcpgClient::ModifyClusterNameAsync(const ModifyClusterNameRequest& request, const ModifyClusterNameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyClusterName(request), context);
-    };
+    using Req = const ModifyClusterNameRequest&;
+    using Resp = ModifyClusterNameResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyClusterName", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TdcpgClient::ModifyClusterNameOutcomeCallable TdcpgClient::ModifyClusterNameCallable(const ModifyClusterNameRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyClusterNameOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyClusterName(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyClusterNameOutcome>>();
+    ModifyClusterNameAsync(
+    request,
+    [prom](
+        const TdcpgClient*,
+        const ModifyClusterNameRequest&,
+        ModifyClusterNameOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TdcpgClient::ModifyClustersAutoRenewFlagOutcome TdcpgClient::ModifyClustersAutoRenewFlag(const ModifyClustersAutoRenewFlagRequest &request)
@@ -836,25 +962,32 @@ TdcpgClient::ModifyClustersAutoRenewFlagOutcome TdcpgClient::ModifyClustersAutoR
 
 void TdcpgClient::ModifyClustersAutoRenewFlagAsync(const ModifyClustersAutoRenewFlagRequest& request, const ModifyClustersAutoRenewFlagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyClustersAutoRenewFlag(request), context);
-    };
+    using Req = const ModifyClustersAutoRenewFlagRequest&;
+    using Resp = ModifyClustersAutoRenewFlagResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyClustersAutoRenewFlag", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TdcpgClient::ModifyClustersAutoRenewFlagOutcomeCallable TdcpgClient::ModifyClustersAutoRenewFlagCallable(const ModifyClustersAutoRenewFlagRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyClustersAutoRenewFlagOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyClustersAutoRenewFlag(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyClustersAutoRenewFlagOutcome>>();
+    ModifyClustersAutoRenewFlagAsync(
+    request,
+    [prom](
+        const TdcpgClient*,
+        const ModifyClustersAutoRenewFlagRequest&,
+        ModifyClustersAutoRenewFlagOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TdcpgClient::RecoverClusterOutcome TdcpgClient::RecoverCluster(const RecoverClusterRequest &request)
@@ -879,25 +1012,32 @@ TdcpgClient::RecoverClusterOutcome TdcpgClient::RecoverCluster(const RecoverClus
 
 void TdcpgClient::RecoverClusterAsync(const RecoverClusterRequest& request, const RecoverClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->RecoverCluster(request), context);
-    };
+    using Req = const RecoverClusterRequest&;
+    using Resp = RecoverClusterResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "RecoverCluster", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TdcpgClient::RecoverClusterOutcomeCallable TdcpgClient::RecoverClusterCallable(const RecoverClusterRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<RecoverClusterOutcome()>>(
-        [this, request]()
-        {
-            return this->RecoverCluster(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<RecoverClusterOutcome>>();
+    RecoverClusterAsync(
+    request,
+    [prom](
+        const TdcpgClient*,
+        const RecoverClusterRequest&,
+        RecoverClusterOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TdcpgClient::RecoverClusterInstancesOutcome TdcpgClient::RecoverClusterInstances(const RecoverClusterInstancesRequest &request)
@@ -922,25 +1062,32 @@ TdcpgClient::RecoverClusterInstancesOutcome TdcpgClient::RecoverClusterInstances
 
 void TdcpgClient::RecoverClusterInstancesAsync(const RecoverClusterInstancesRequest& request, const RecoverClusterInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->RecoverClusterInstances(request), context);
-    };
+    using Req = const RecoverClusterInstancesRequest&;
+    using Resp = RecoverClusterInstancesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "RecoverClusterInstances", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TdcpgClient::RecoverClusterInstancesOutcomeCallable TdcpgClient::RecoverClusterInstancesCallable(const RecoverClusterInstancesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<RecoverClusterInstancesOutcome()>>(
-        [this, request]()
-        {
-            return this->RecoverClusterInstances(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<RecoverClusterInstancesOutcome>>();
+    RecoverClusterInstancesAsync(
+    request,
+    [prom](
+        const TdcpgClient*,
+        const RecoverClusterInstancesRequest&,
+        RecoverClusterInstancesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TdcpgClient::RenewClusterOutcome TdcpgClient::RenewCluster(const RenewClusterRequest &request)
@@ -965,25 +1112,32 @@ TdcpgClient::RenewClusterOutcome TdcpgClient::RenewCluster(const RenewClusterReq
 
 void TdcpgClient::RenewClusterAsync(const RenewClusterRequest& request, const RenewClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->RenewCluster(request), context);
-    };
+    using Req = const RenewClusterRequest&;
+    using Resp = RenewClusterResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "RenewCluster", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TdcpgClient::RenewClusterOutcomeCallable TdcpgClient::RenewClusterCallable(const RenewClusterRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<RenewClusterOutcome()>>(
-        [this, request]()
-        {
-            return this->RenewCluster(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<RenewClusterOutcome>>();
+    RenewClusterAsync(
+    request,
+    [prom](
+        const TdcpgClient*,
+        const RenewClusterRequest&,
+        RenewClusterOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TdcpgClient::ResetAccountPasswordOutcome TdcpgClient::ResetAccountPassword(const ResetAccountPasswordRequest &request)
@@ -1008,25 +1162,32 @@ TdcpgClient::ResetAccountPasswordOutcome TdcpgClient::ResetAccountPassword(const
 
 void TdcpgClient::ResetAccountPasswordAsync(const ResetAccountPasswordRequest& request, const ResetAccountPasswordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ResetAccountPassword(request), context);
-    };
+    using Req = const ResetAccountPasswordRequest&;
+    using Resp = ResetAccountPasswordResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ResetAccountPassword", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TdcpgClient::ResetAccountPasswordOutcomeCallable TdcpgClient::ResetAccountPasswordCallable(const ResetAccountPasswordRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ResetAccountPasswordOutcome()>>(
-        [this, request]()
-        {
-            return this->ResetAccountPassword(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ResetAccountPasswordOutcome>>();
+    ResetAccountPasswordAsync(
+    request,
+    [prom](
+        const TdcpgClient*,
+        const ResetAccountPasswordRequest&,
+        ResetAccountPasswordOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TdcpgClient::RestartClusterInstancesOutcome TdcpgClient::RestartClusterInstances(const RestartClusterInstancesRequest &request)
@@ -1051,25 +1212,32 @@ TdcpgClient::RestartClusterInstancesOutcome TdcpgClient::RestartClusterInstances
 
 void TdcpgClient::RestartClusterInstancesAsync(const RestartClusterInstancesRequest& request, const RestartClusterInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->RestartClusterInstances(request), context);
-    };
+    using Req = const RestartClusterInstancesRequest&;
+    using Resp = RestartClusterInstancesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "RestartClusterInstances", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TdcpgClient::RestartClusterInstancesOutcomeCallable TdcpgClient::RestartClusterInstancesCallable(const RestartClusterInstancesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<RestartClusterInstancesOutcome()>>(
-        [this, request]()
-        {
-            return this->RestartClusterInstances(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<RestartClusterInstancesOutcome>>();
+    RestartClusterInstancesAsync(
+    request,
+    [prom](
+        const TdcpgClient*,
+        const RestartClusterInstancesRequest&,
+        RestartClusterInstancesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TdcpgClient::TransformClusterPayModeOutcome TdcpgClient::TransformClusterPayMode(const TransformClusterPayModeRequest &request)
@@ -1094,24 +1262,31 @@ TdcpgClient::TransformClusterPayModeOutcome TdcpgClient::TransformClusterPayMode
 
 void TdcpgClient::TransformClusterPayModeAsync(const TransformClusterPayModeRequest& request, const TransformClusterPayModeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->TransformClusterPayMode(request), context);
-    };
+    using Req = const TransformClusterPayModeRequest&;
+    using Resp = TransformClusterPayModeResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "TransformClusterPayMode", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TdcpgClient::TransformClusterPayModeOutcomeCallable TdcpgClient::TransformClusterPayModeCallable(const TransformClusterPayModeRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<TransformClusterPayModeOutcome()>>(
-        [this, request]()
-        {
-            return this->TransformClusterPayMode(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<TransformClusterPayModeOutcome>>();
+    TransformClusterPayModeAsync(
+    request,
+    [prom](
+        const TdcpgClient*,
+        const TransformClusterPayModeRequest&,
+        TransformClusterPayModeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 

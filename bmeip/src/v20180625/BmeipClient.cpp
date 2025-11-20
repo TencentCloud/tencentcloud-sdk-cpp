@@ -62,25 +62,32 @@ BmeipClient::BindEipAclsOutcome BmeipClient::BindEipAcls(const BindEipAclsReques
 
 void BmeipClient::BindEipAclsAsync(const BindEipAclsRequest& request, const BindEipAclsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->BindEipAcls(request), context);
-    };
+    using Req = const BindEipAclsRequest&;
+    using Resp = BindEipAclsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "BindEipAcls", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BmeipClient::BindEipAclsOutcomeCallable BmeipClient::BindEipAclsCallable(const BindEipAclsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<BindEipAclsOutcome()>>(
-        [this, request]()
-        {
-            return this->BindEipAcls(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<BindEipAclsOutcome>>();
+    BindEipAclsAsync(
+    request,
+    [prom](
+        const BmeipClient*,
+        const BindEipAclsRequest&,
+        BindEipAclsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BmeipClient::BindHostedOutcome BmeipClient::BindHosted(const BindHostedRequest &request)
@@ -105,25 +112,32 @@ BmeipClient::BindHostedOutcome BmeipClient::BindHosted(const BindHostedRequest &
 
 void BmeipClient::BindHostedAsync(const BindHostedRequest& request, const BindHostedAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->BindHosted(request), context);
-    };
+    using Req = const BindHostedRequest&;
+    using Resp = BindHostedResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "BindHosted", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BmeipClient::BindHostedOutcomeCallable BmeipClient::BindHostedCallable(const BindHostedRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<BindHostedOutcome()>>(
-        [this, request]()
-        {
-            return this->BindHosted(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<BindHostedOutcome>>();
+    BindHostedAsync(
+    request,
+    [prom](
+        const BmeipClient*,
+        const BindHostedRequest&,
+        BindHostedOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BmeipClient::BindRsOutcome BmeipClient::BindRs(const BindRsRequest &request)
@@ -148,25 +162,32 @@ BmeipClient::BindRsOutcome BmeipClient::BindRs(const BindRsRequest &request)
 
 void BmeipClient::BindRsAsync(const BindRsRequest& request, const BindRsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->BindRs(request), context);
-    };
+    using Req = const BindRsRequest&;
+    using Resp = BindRsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "BindRs", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BmeipClient::BindRsOutcomeCallable BmeipClient::BindRsCallable(const BindRsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<BindRsOutcome()>>(
-        [this, request]()
-        {
-            return this->BindRs(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<BindRsOutcome>>();
+    BindRsAsync(
+    request,
+    [prom](
+        const BmeipClient*,
+        const BindRsRequest&,
+        BindRsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BmeipClient::BindVpcIpOutcome BmeipClient::BindVpcIp(const BindVpcIpRequest &request)
@@ -191,25 +212,32 @@ BmeipClient::BindVpcIpOutcome BmeipClient::BindVpcIp(const BindVpcIpRequest &req
 
 void BmeipClient::BindVpcIpAsync(const BindVpcIpRequest& request, const BindVpcIpAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->BindVpcIp(request), context);
-    };
+    using Req = const BindVpcIpRequest&;
+    using Resp = BindVpcIpResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "BindVpcIp", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BmeipClient::BindVpcIpOutcomeCallable BmeipClient::BindVpcIpCallable(const BindVpcIpRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<BindVpcIpOutcome()>>(
-        [this, request]()
-        {
-            return this->BindVpcIp(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<BindVpcIpOutcome>>();
+    BindVpcIpAsync(
+    request,
+    [prom](
+        const BmeipClient*,
+        const BindVpcIpRequest&,
+        BindVpcIpOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BmeipClient::CreateEipOutcome BmeipClient::CreateEip(const CreateEipRequest &request)
@@ -234,25 +262,32 @@ BmeipClient::CreateEipOutcome BmeipClient::CreateEip(const CreateEipRequest &req
 
 void BmeipClient::CreateEipAsync(const CreateEipRequest& request, const CreateEipAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateEip(request), context);
-    };
+    using Req = const CreateEipRequest&;
+    using Resp = CreateEipResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateEip", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BmeipClient::CreateEipOutcomeCallable BmeipClient::CreateEipCallable(const CreateEipRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateEipOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateEip(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateEipOutcome>>();
+    CreateEipAsync(
+    request,
+    [prom](
+        const BmeipClient*,
+        const CreateEipRequest&,
+        CreateEipOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BmeipClient::CreateEipAclOutcome BmeipClient::CreateEipAcl(const CreateEipAclRequest &request)
@@ -277,25 +312,32 @@ BmeipClient::CreateEipAclOutcome BmeipClient::CreateEipAcl(const CreateEipAclReq
 
 void BmeipClient::CreateEipAclAsync(const CreateEipAclRequest& request, const CreateEipAclAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateEipAcl(request), context);
-    };
+    using Req = const CreateEipAclRequest&;
+    using Resp = CreateEipAclResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateEipAcl", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BmeipClient::CreateEipAclOutcomeCallable BmeipClient::CreateEipAclCallable(const CreateEipAclRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateEipAclOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateEipAcl(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateEipAclOutcome>>();
+    CreateEipAclAsync(
+    request,
+    [prom](
+        const BmeipClient*,
+        const CreateEipAclRequest&,
+        CreateEipAclOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BmeipClient::DeleteEipOutcome BmeipClient::DeleteEip(const DeleteEipRequest &request)
@@ -320,25 +362,32 @@ BmeipClient::DeleteEipOutcome BmeipClient::DeleteEip(const DeleteEipRequest &req
 
 void BmeipClient::DeleteEipAsync(const DeleteEipRequest& request, const DeleteEipAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteEip(request), context);
-    };
+    using Req = const DeleteEipRequest&;
+    using Resp = DeleteEipResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteEip", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BmeipClient::DeleteEipOutcomeCallable BmeipClient::DeleteEipCallable(const DeleteEipRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteEipOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteEip(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteEipOutcome>>();
+    DeleteEipAsync(
+    request,
+    [prom](
+        const BmeipClient*,
+        const DeleteEipRequest&,
+        DeleteEipOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BmeipClient::DeleteEipAclOutcome BmeipClient::DeleteEipAcl(const DeleteEipAclRequest &request)
@@ -363,25 +412,32 @@ BmeipClient::DeleteEipAclOutcome BmeipClient::DeleteEipAcl(const DeleteEipAclReq
 
 void BmeipClient::DeleteEipAclAsync(const DeleteEipAclRequest& request, const DeleteEipAclAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteEipAcl(request), context);
-    };
+    using Req = const DeleteEipAclRequest&;
+    using Resp = DeleteEipAclResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteEipAcl", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BmeipClient::DeleteEipAclOutcomeCallable BmeipClient::DeleteEipAclCallable(const DeleteEipAclRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteEipAclOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteEipAcl(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteEipAclOutcome>>();
+    DeleteEipAclAsync(
+    request,
+    [prom](
+        const BmeipClient*,
+        const DeleteEipAclRequest&,
+        DeleteEipAclOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BmeipClient::DescribeEipAclsOutcome BmeipClient::DescribeEipAcls(const DescribeEipAclsRequest &request)
@@ -406,25 +462,32 @@ BmeipClient::DescribeEipAclsOutcome BmeipClient::DescribeEipAcls(const DescribeE
 
 void BmeipClient::DescribeEipAclsAsync(const DescribeEipAclsRequest& request, const DescribeEipAclsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeEipAcls(request), context);
-    };
+    using Req = const DescribeEipAclsRequest&;
+    using Resp = DescribeEipAclsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeEipAcls", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BmeipClient::DescribeEipAclsOutcomeCallable BmeipClient::DescribeEipAclsCallable(const DescribeEipAclsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeEipAclsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeEipAcls(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeEipAclsOutcome>>();
+    DescribeEipAclsAsync(
+    request,
+    [prom](
+        const BmeipClient*,
+        const DescribeEipAclsRequest&,
+        DescribeEipAclsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BmeipClient::DescribeEipQuotaOutcome BmeipClient::DescribeEipQuota(const DescribeEipQuotaRequest &request)
@@ -449,25 +512,32 @@ BmeipClient::DescribeEipQuotaOutcome BmeipClient::DescribeEipQuota(const Describ
 
 void BmeipClient::DescribeEipQuotaAsync(const DescribeEipQuotaRequest& request, const DescribeEipQuotaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeEipQuota(request), context);
-    };
+    using Req = const DescribeEipQuotaRequest&;
+    using Resp = DescribeEipQuotaResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeEipQuota", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BmeipClient::DescribeEipQuotaOutcomeCallable BmeipClient::DescribeEipQuotaCallable(const DescribeEipQuotaRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeEipQuotaOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeEipQuota(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeEipQuotaOutcome>>();
+    DescribeEipQuotaAsync(
+    request,
+    [prom](
+        const BmeipClient*,
+        const DescribeEipQuotaRequest&,
+        DescribeEipQuotaOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BmeipClient::DescribeEipTaskOutcome BmeipClient::DescribeEipTask(const DescribeEipTaskRequest &request)
@@ -492,25 +562,32 @@ BmeipClient::DescribeEipTaskOutcome BmeipClient::DescribeEipTask(const DescribeE
 
 void BmeipClient::DescribeEipTaskAsync(const DescribeEipTaskRequest& request, const DescribeEipTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeEipTask(request), context);
-    };
+    using Req = const DescribeEipTaskRequest&;
+    using Resp = DescribeEipTaskResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeEipTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BmeipClient::DescribeEipTaskOutcomeCallable BmeipClient::DescribeEipTaskCallable(const DescribeEipTaskRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeEipTaskOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeEipTask(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeEipTaskOutcome>>();
+    DescribeEipTaskAsync(
+    request,
+    [prom](
+        const BmeipClient*,
+        const DescribeEipTaskRequest&,
+        DescribeEipTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BmeipClient::DescribeEipsOutcome BmeipClient::DescribeEips(const DescribeEipsRequest &request)
@@ -535,25 +612,32 @@ BmeipClient::DescribeEipsOutcome BmeipClient::DescribeEips(const DescribeEipsReq
 
 void BmeipClient::DescribeEipsAsync(const DescribeEipsRequest& request, const DescribeEipsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeEips(request), context);
-    };
+    using Req = const DescribeEipsRequest&;
+    using Resp = DescribeEipsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeEips", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BmeipClient::DescribeEipsOutcomeCallable BmeipClient::DescribeEipsCallable(const DescribeEipsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeEipsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeEips(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeEipsOutcome>>();
+    DescribeEipsAsync(
+    request,
+    [prom](
+        const BmeipClient*,
+        const DescribeEipsRequest&,
+        DescribeEipsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BmeipClient::ModifyEipAclOutcome BmeipClient::ModifyEipAcl(const ModifyEipAclRequest &request)
@@ -578,25 +662,32 @@ BmeipClient::ModifyEipAclOutcome BmeipClient::ModifyEipAcl(const ModifyEipAclReq
 
 void BmeipClient::ModifyEipAclAsync(const ModifyEipAclRequest& request, const ModifyEipAclAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyEipAcl(request), context);
-    };
+    using Req = const ModifyEipAclRequest&;
+    using Resp = ModifyEipAclResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyEipAcl", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BmeipClient::ModifyEipAclOutcomeCallable BmeipClient::ModifyEipAclCallable(const ModifyEipAclRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyEipAclOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyEipAcl(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyEipAclOutcome>>();
+    ModifyEipAclAsync(
+    request,
+    [prom](
+        const BmeipClient*,
+        const ModifyEipAclRequest&,
+        ModifyEipAclOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BmeipClient::ModifyEipChargeOutcome BmeipClient::ModifyEipCharge(const ModifyEipChargeRequest &request)
@@ -621,25 +712,32 @@ BmeipClient::ModifyEipChargeOutcome BmeipClient::ModifyEipCharge(const ModifyEip
 
 void BmeipClient::ModifyEipChargeAsync(const ModifyEipChargeRequest& request, const ModifyEipChargeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyEipCharge(request), context);
-    };
+    using Req = const ModifyEipChargeRequest&;
+    using Resp = ModifyEipChargeResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyEipCharge", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BmeipClient::ModifyEipChargeOutcomeCallable BmeipClient::ModifyEipChargeCallable(const ModifyEipChargeRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyEipChargeOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyEipCharge(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyEipChargeOutcome>>();
+    ModifyEipChargeAsync(
+    request,
+    [prom](
+        const BmeipClient*,
+        const ModifyEipChargeRequest&,
+        ModifyEipChargeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BmeipClient::ModifyEipNameOutcome BmeipClient::ModifyEipName(const ModifyEipNameRequest &request)
@@ -664,25 +762,32 @@ BmeipClient::ModifyEipNameOutcome BmeipClient::ModifyEipName(const ModifyEipName
 
 void BmeipClient::ModifyEipNameAsync(const ModifyEipNameRequest& request, const ModifyEipNameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyEipName(request), context);
-    };
+    using Req = const ModifyEipNameRequest&;
+    using Resp = ModifyEipNameResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyEipName", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BmeipClient::ModifyEipNameOutcomeCallable BmeipClient::ModifyEipNameCallable(const ModifyEipNameRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyEipNameOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyEipName(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyEipNameOutcome>>();
+    ModifyEipNameAsync(
+    request,
+    [prom](
+        const BmeipClient*,
+        const ModifyEipNameRequest&,
+        ModifyEipNameOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BmeipClient::UnbindEipAclsOutcome BmeipClient::UnbindEipAcls(const UnbindEipAclsRequest &request)
@@ -707,25 +812,32 @@ BmeipClient::UnbindEipAclsOutcome BmeipClient::UnbindEipAcls(const UnbindEipAcls
 
 void BmeipClient::UnbindEipAclsAsync(const UnbindEipAclsRequest& request, const UnbindEipAclsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UnbindEipAcls(request), context);
-    };
+    using Req = const UnbindEipAclsRequest&;
+    using Resp = UnbindEipAclsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UnbindEipAcls", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BmeipClient::UnbindEipAclsOutcomeCallable BmeipClient::UnbindEipAclsCallable(const UnbindEipAclsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UnbindEipAclsOutcome()>>(
-        [this, request]()
-        {
-            return this->UnbindEipAcls(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UnbindEipAclsOutcome>>();
+    UnbindEipAclsAsync(
+    request,
+    [prom](
+        const BmeipClient*,
+        const UnbindEipAclsRequest&,
+        UnbindEipAclsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BmeipClient::UnbindHostedOutcome BmeipClient::UnbindHosted(const UnbindHostedRequest &request)
@@ -750,25 +862,32 @@ BmeipClient::UnbindHostedOutcome BmeipClient::UnbindHosted(const UnbindHostedReq
 
 void BmeipClient::UnbindHostedAsync(const UnbindHostedRequest& request, const UnbindHostedAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UnbindHosted(request), context);
-    };
+    using Req = const UnbindHostedRequest&;
+    using Resp = UnbindHostedResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UnbindHosted", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BmeipClient::UnbindHostedOutcomeCallable BmeipClient::UnbindHostedCallable(const UnbindHostedRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UnbindHostedOutcome()>>(
-        [this, request]()
-        {
-            return this->UnbindHosted(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UnbindHostedOutcome>>();
+    UnbindHostedAsync(
+    request,
+    [prom](
+        const BmeipClient*,
+        const UnbindHostedRequest&,
+        UnbindHostedOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BmeipClient::UnbindRsOutcome BmeipClient::UnbindRs(const UnbindRsRequest &request)
@@ -793,25 +912,32 @@ BmeipClient::UnbindRsOutcome BmeipClient::UnbindRs(const UnbindRsRequest &reques
 
 void BmeipClient::UnbindRsAsync(const UnbindRsRequest& request, const UnbindRsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UnbindRs(request), context);
-    };
+    using Req = const UnbindRsRequest&;
+    using Resp = UnbindRsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UnbindRs", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BmeipClient::UnbindRsOutcomeCallable BmeipClient::UnbindRsCallable(const UnbindRsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UnbindRsOutcome()>>(
-        [this, request]()
-        {
-            return this->UnbindRs(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UnbindRsOutcome>>();
+    UnbindRsAsync(
+    request,
+    [prom](
+        const BmeipClient*,
+        const UnbindRsRequest&,
+        UnbindRsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BmeipClient::UnbindRsListOutcome BmeipClient::UnbindRsList(const UnbindRsListRequest &request)
@@ -836,25 +962,32 @@ BmeipClient::UnbindRsListOutcome BmeipClient::UnbindRsList(const UnbindRsListReq
 
 void BmeipClient::UnbindRsListAsync(const UnbindRsListRequest& request, const UnbindRsListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UnbindRsList(request), context);
-    };
+    using Req = const UnbindRsListRequest&;
+    using Resp = UnbindRsListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UnbindRsList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BmeipClient::UnbindRsListOutcomeCallable BmeipClient::UnbindRsListCallable(const UnbindRsListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UnbindRsListOutcome()>>(
-        [this, request]()
-        {
-            return this->UnbindRsList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UnbindRsListOutcome>>();
+    UnbindRsListAsync(
+    request,
+    [prom](
+        const BmeipClient*,
+        const UnbindRsListRequest&,
+        UnbindRsListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BmeipClient::UnbindVpcIpOutcome BmeipClient::UnbindVpcIp(const UnbindVpcIpRequest &request)
@@ -879,24 +1012,31 @@ BmeipClient::UnbindVpcIpOutcome BmeipClient::UnbindVpcIp(const UnbindVpcIpReques
 
 void BmeipClient::UnbindVpcIpAsync(const UnbindVpcIpRequest& request, const UnbindVpcIpAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UnbindVpcIp(request), context);
-    };
+    using Req = const UnbindVpcIpRequest&;
+    using Resp = UnbindVpcIpResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UnbindVpcIp", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BmeipClient::UnbindVpcIpOutcomeCallable BmeipClient::UnbindVpcIpCallable(const UnbindVpcIpRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UnbindVpcIpOutcome()>>(
-        [this, request]()
-        {
-            return this->UnbindVpcIp(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UnbindVpcIpOutcome>>();
+    UnbindVpcIpAsync(
+    request,
+    [prom](
+        const BmeipClient*,
+        const UnbindVpcIpRequest&,
+        UnbindVpcIpOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 

@@ -62,25 +62,32 @@ CynosdbClient::ActivateInstanceOutcome CynosdbClient::ActivateInstance(const Act
 
 void CynosdbClient::ActivateInstanceAsync(const ActivateInstanceRequest& request, const ActivateInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ActivateInstance(request), context);
-    };
+    using Req = const ActivateInstanceRequest&;
+    using Resp = ActivateInstanceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ActivateInstance", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CynosdbClient::ActivateInstanceOutcomeCallable CynosdbClient::ActivateInstanceCallable(const ActivateInstanceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ActivateInstanceOutcome()>>(
-        [this, request]()
-        {
-            return this->ActivateInstance(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ActivateInstanceOutcome>>();
+    ActivateInstanceAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const ActivateInstanceRequest&,
+        ActivateInstanceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CynosdbClient::AddClusterSlaveZoneOutcome CynosdbClient::AddClusterSlaveZone(const AddClusterSlaveZoneRequest &request)
@@ -105,25 +112,32 @@ CynosdbClient::AddClusterSlaveZoneOutcome CynosdbClient::AddClusterSlaveZone(con
 
 void CynosdbClient::AddClusterSlaveZoneAsync(const AddClusterSlaveZoneRequest& request, const AddClusterSlaveZoneAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->AddClusterSlaveZone(request), context);
-    };
+    using Req = const AddClusterSlaveZoneRequest&;
+    using Resp = AddClusterSlaveZoneResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "AddClusterSlaveZone", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CynosdbClient::AddClusterSlaveZoneOutcomeCallable CynosdbClient::AddClusterSlaveZoneCallable(const AddClusterSlaveZoneRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<AddClusterSlaveZoneOutcome()>>(
-        [this, request]()
-        {
-            return this->AddClusterSlaveZone(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<AddClusterSlaveZoneOutcome>>();
+    AddClusterSlaveZoneAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const AddClusterSlaveZoneRequest&,
+        AddClusterSlaveZoneOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CynosdbClient::AddInstancesOutcome CynosdbClient::AddInstances(const AddInstancesRequest &request)
@@ -148,25 +162,32 @@ CynosdbClient::AddInstancesOutcome CynosdbClient::AddInstances(const AddInstance
 
 void CynosdbClient::AddInstancesAsync(const AddInstancesRequest& request, const AddInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->AddInstances(request), context);
-    };
+    using Req = const AddInstancesRequest&;
+    using Resp = AddInstancesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "AddInstances", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CynosdbClient::AddInstancesOutcomeCallable CynosdbClient::AddInstancesCallable(const AddInstancesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<AddInstancesOutcome()>>(
-        [this, request]()
-        {
-            return this->AddInstances(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<AddInstancesOutcome>>();
+    AddInstancesAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const AddInstancesRequest&,
+        AddInstancesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CynosdbClient::AssociateSecurityGroupsOutcome CynosdbClient::AssociateSecurityGroups(const AssociateSecurityGroupsRequest &request)
@@ -191,25 +212,32 @@ CynosdbClient::AssociateSecurityGroupsOutcome CynosdbClient::AssociateSecurityGr
 
 void CynosdbClient::AssociateSecurityGroupsAsync(const AssociateSecurityGroupsRequest& request, const AssociateSecurityGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->AssociateSecurityGroups(request), context);
-    };
+    using Req = const AssociateSecurityGroupsRequest&;
+    using Resp = AssociateSecurityGroupsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "AssociateSecurityGroups", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CynosdbClient::AssociateSecurityGroupsOutcomeCallable CynosdbClient::AssociateSecurityGroupsCallable(const AssociateSecurityGroupsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<AssociateSecurityGroupsOutcome()>>(
-        [this, request]()
-        {
-            return this->AssociateSecurityGroups(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<AssociateSecurityGroupsOutcome>>();
+    AssociateSecurityGroupsAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const AssociateSecurityGroupsRequest&,
+        AssociateSecurityGroupsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CynosdbClient::BindClusterResourcePackagesOutcome CynosdbClient::BindClusterResourcePackages(const BindClusterResourcePackagesRequest &request)
@@ -234,25 +262,32 @@ CynosdbClient::BindClusterResourcePackagesOutcome CynosdbClient::BindClusterReso
 
 void CynosdbClient::BindClusterResourcePackagesAsync(const BindClusterResourcePackagesRequest& request, const BindClusterResourcePackagesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->BindClusterResourcePackages(request), context);
-    };
+    using Req = const BindClusterResourcePackagesRequest&;
+    using Resp = BindClusterResourcePackagesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "BindClusterResourcePackages", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CynosdbClient::BindClusterResourcePackagesOutcomeCallable CynosdbClient::BindClusterResourcePackagesCallable(const BindClusterResourcePackagesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<BindClusterResourcePackagesOutcome()>>(
-        [this, request]()
-        {
-            return this->BindClusterResourcePackages(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<BindClusterResourcePackagesOutcome>>();
+    BindClusterResourcePackagesAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const BindClusterResourcePackagesRequest&,
+        BindClusterResourcePackagesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CynosdbClient::CloseAuditServiceOutcome CynosdbClient::CloseAuditService(const CloseAuditServiceRequest &request)
@@ -277,25 +312,32 @@ CynosdbClient::CloseAuditServiceOutcome CynosdbClient::CloseAuditService(const C
 
 void CynosdbClient::CloseAuditServiceAsync(const CloseAuditServiceRequest& request, const CloseAuditServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CloseAuditService(request), context);
-    };
+    using Req = const CloseAuditServiceRequest&;
+    using Resp = CloseAuditServiceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CloseAuditService", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CynosdbClient::CloseAuditServiceOutcomeCallable CynosdbClient::CloseAuditServiceCallable(const CloseAuditServiceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CloseAuditServiceOutcome()>>(
-        [this, request]()
-        {
-            return this->CloseAuditService(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CloseAuditServiceOutcome>>();
+    CloseAuditServiceAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const CloseAuditServiceRequest&,
+        CloseAuditServiceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CynosdbClient::CloseClusterPasswordComplexityOutcome CynosdbClient::CloseClusterPasswordComplexity(const CloseClusterPasswordComplexityRequest &request)
@@ -320,25 +362,32 @@ CynosdbClient::CloseClusterPasswordComplexityOutcome CynosdbClient::CloseCluster
 
 void CynosdbClient::CloseClusterPasswordComplexityAsync(const CloseClusterPasswordComplexityRequest& request, const CloseClusterPasswordComplexityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CloseClusterPasswordComplexity(request), context);
-    };
+    using Req = const CloseClusterPasswordComplexityRequest&;
+    using Resp = CloseClusterPasswordComplexityResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CloseClusterPasswordComplexity", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CynosdbClient::CloseClusterPasswordComplexityOutcomeCallable CynosdbClient::CloseClusterPasswordComplexityCallable(const CloseClusterPasswordComplexityRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CloseClusterPasswordComplexityOutcome()>>(
-        [this, request]()
-        {
-            return this->CloseClusterPasswordComplexity(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CloseClusterPasswordComplexityOutcome>>();
+    CloseClusterPasswordComplexityAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const CloseClusterPasswordComplexityRequest&,
+        CloseClusterPasswordComplexityOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CynosdbClient::CloseProxyOutcome CynosdbClient::CloseProxy(const CloseProxyRequest &request)
@@ -363,25 +412,32 @@ CynosdbClient::CloseProxyOutcome CynosdbClient::CloseProxy(const CloseProxyReque
 
 void CynosdbClient::CloseProxyAsync(const CloseProxyRequest& request, const CloseProxyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CloseProxy(request), context);
-    };
+    using Req = const CloseProxyRequest&;
+    using Resp = CloseProxyResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CloseProxy", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CynosdbClient::CloseProxyOutcomeCallable CynosdbClient::CloseProxyCallable(const CloseProxyRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CloseProxyOutcome()>>(
-        [this, request]()
-        {
-            return this->CloseProxy(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CloseProxyOutcome>>();
+    CloseProxyAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const CloseProxyRequest&,
+        CloseProxyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CynosdbClient::CloseProxyEndPointOutcome CynosdbClient::CloseProxyEndPoint(const CloseProxyEndPointRequest &request)
@@ -406,25 +462,32 @@ CynosdbClient::CloseProxyEndPointOutcome CynosdbClient::CloseProxyEndPoint(const
 
 void CynosdbClient::CloseProxyEndPointAsync(const CloseProxyEndPointRequest& request, const CloseProxyEndPointAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CloseProxyEndPoint(request), context);
-    };
+    using Req = const CloseProxyEndPointRequest&;
+    using Resp = CloseProxyEndPointResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CloseProxyEndPoint", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CynosdbClient::CloseProxyEndPointOutcomeCallable CynosdbClient::CloseProxyEndPointCallable(const CloseProxyEndPointRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CloseProxyEndPointOutcome()>>(
-        [this, request]()
-        {
-            return this->CloseProxyEndPoint(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CloseProxyEndPointOutcome>>();
+    CloseProxyEndPointAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const CloseProxyEndPointRequest&,
+        CloseProxyEndPointOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CynosdbClient::CloseSSLOutcome CynosdbClient::CloseSSL(const CloseSSLRequest &request)
@@ -449,25 +512,32 @@ CynosdbClient::CloseSSLOutcome CynosdbClient::CloseSSL(const CloseSSLRequest &re
 
 void CynosdbClient::CloseSSLAsync(const CloseSSLRequest& request, const CloseSSLAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CloseSSL(request), context);
-    };
+    using Req = const CloseSSLRequest&;
+    using Resp = CloseSSLResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CloseSSL", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CynosdbClient::CloseSSLOutcomeCallable CynosdbClient::CloseSSLCallable(const CloseSSLRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CloseSSLOutcome()>>(
-        [this, request]()
-        {
-            return this->CloseSSL(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CloseSSLOutcome>>();
+    CloseSSLAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const CloseSSLRequest&,
+        CloseSSLOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CynosdbClient::CloseWanOutcome CynosdbClient::CloseWan(const CloseWanRequest &request)
@@ -492,25 +562,32 @@ CynosdbClient::CloseWanOutcome CynosdbClient::CloseWan(const CloseWanRequest &re
 
 void CynosdbClient::CloseWanAsync(const CloseWanRequest& request, const CloseWanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CloseWan(request), context);
-    };
+    using Req = const CloseWanRequest&;
+    using Resp = CloseWanResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CloseWan", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CynosdbClient::CloseWanOutcomeCallable CynosdbClient::CloseWanCallable(const CloseWanRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CloseWanOutcome()>>(
-        [this, request]()
-        {
-            return this->CloseWan(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CloseWanOutcome>>();
+    CloseWanAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const CloseWanRequest&,
+        CloseWanOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CynosdbClient::CopyClusterPasswordComplexityOutcome CynosdbClient::CopyClusterPasswordComplexity(const CopyClusterPasswordComplexityRequest &request)
@@ -535,25 +612,32 @@ CynosdbClient::CopyClusterPasswordComplexityOutcome CynosdbClient::CopyClusterPa
 
 void CynosdbClient::CopyClusterPasswordComplexityAsync(const CopyClusterPasswordComplexityRequest& request, const CopyClusterPasswordComplexityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CopyClusterPasswordComplexity(request), context);
-    };
+    using Req = const CopyClusterPasswordComplexityRequest&;
+    using Resp = CopyClusterPasswordComplexityResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CopyClusterPasswordComplexity", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CynosdbClient::CopyClusterPasswordComplexityOutcomeCallable CynosdbClient::CopyClusterPasswordComplexityCallable(const CopyClusterPasswordComplexityRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CopyClusterPasswordComplexityOutcome()>>(
-        [this, request]()
-        {
-            return this->CopyClusterPasswordComplexity(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CopyClusterPasswordComplexityOutcome>>();
+    CopyClusterPasswordComplexityAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const CopyClusterPasswordComplexityRequest&,
+        CopyClusterPasswordComplexityOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CynosdbClient::CreateAccountsOutcome CynosdbClient::CreateAccounts(const CreateAccountsRequest &request)
@@ -578,25 +662,32 @@ CynosdbClient::CreateAccountsOutcome CynosdbClient::CreateAccounts(const CreateA
 
 void CynosdbClient::CreateAccountsAsync(const CreateAccountsRequest& request, const CreateAccountsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateAccounts(request), context);
-    };
+    using Req = const CreateAccountsRequest&;
+    using Resp = CreateAccountsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateAccounts", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CynosdbClient::CreateAccountsOutcomeCallable CynosdbClient::CreateAccountsCallable(const CreateAccountsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateAccountsOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateAccounts(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateAccountsOutcome>>();
+    CreateAccountsAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const CreateAccountsRequest&,
+        CreateAccountsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CynosdbClient::CreateAuditLogFileOutcome CynosdbClient::CreateAuditLogFile(const CreateAuditLogFileRequest &request)
@@ -621,25 +712,32 @@ CynosdbClient::CreateAuditLogFileOutcome CynosdbClient::CreateAuditLogFile(const
 
 void CynosdbClient::CreateAuditLogFileAsync(const CreateAuditLogFileRequest& request, const CreateAuditLogFileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateAuditLogFile(request), context);
-    };
+    using Req = const CreateAuditLogFileRequest&;
+    using Resp = CreateAuditLogFileResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateAuditLogFile", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CynosdbClient::CreateAuditLogFileOutcomeCallable CynosdbClient::CreateAuditLogFileCallable(const CreateAuditLogFileRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateAuditLogFileOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateAuditLogFile(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateAuditLogFileOutcome>>();
+    CreateAuditLogFileAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const CreateAuditLogFileRequest&,
+        CreateAuditLogFileOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CynosdbClient::CreateAuditRuleTemplateOutcome CynosdbClient::CreateAuditRuleTemplate(const CreateAuditRuleTemplateRequest &request)
@@ -664,25 +762,32 @@ CynosdbClient::CreateAuditRuleTemplateOutcome CynosdbClient::CreateAuditRuleTemp
 
 void CynosdbClient::CreateAuditRuleTemplateAsync(const CreateAuditRuleTemplateRequest& request, const CreateAuditRuleTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateAuditRuleTemplate(request), context);
-    };
+    using Req = const CreateAuditRuleTemplateRequest&;
+    using Resp = CreateAuditRuleTemplateResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateAuditRuleTemplate", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CynosdbClient::CreateAuditRuleTemplateOutcomeCallable CynosdbClient::CreateAuditRuleTemplateCallable(const CreateAuditRuleTemplateRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateAuditRuleTemplateOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateAuditRuleTemplate(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateAuditRuleTemplateOutcome>>();
+    CreateAuditRuleTemplateAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const CreateAuditRuleTemplateRequest&,
+        CreateAuditRuleTemplateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CynosdbClient::CreateBackupOutcome CynosdbClient::CreateBackup(const CreateBackupRequest &request)
@@ -707,25 +812,32 @@ CynosdbClient::CreateBackupOutcome CynosdbClient::CreateBackup(const CreateBacku
 
 void CynosdbClient::CreateBackupAsync(const CreateBackupRequest& request, const CreateBackupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateBackup(request), context);
-    };
+    using Req = const CreateBackupRequest&;
+    using Resp = CreateBackupResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateBackup", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CynosdbClient::CreateBackupOutcomeCallable CynosdbClient::CreateBackupCallable(const CreateBackupRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateBackupOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateBackup(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateBackupOutcome>>();
+    CreateBackupAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const CreateBackupRequest&,
+        CreateBackupOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CynosdbClient::CreateCLSDeliveryOutcome CynosdbClient::CreateCLSDelivery(const CreateCLSDeliveryRequest &request)
@@ -750,25 +862,32 @@ CynosdbClient::CreateCLSDeliveryOutcome CynosdbClient::CreateCLSDelivery(const C
 
 void CynosdbClient::CreateCLSDeliveryAsync(const CreateCLSDeliveryRequest& request, const CreateCLSDeliveryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateCLSDelivery(request), context);
-    };
+    using Req = const CreateCLSDeliveryRequest&;
+    using Resp = CreateCLSDeliveryResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateCLSDelivery", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CynosdbClient::CreateCLSDeliveryOutcomeCallable CynosdbClient::CreateCLSDeliveryCallable(const CreateCLSDeliveryRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateCLSDeliveryOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateCLSDelivery(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateCLSDeliveryOutcome>>();
+    CreateCLSDeliveryAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const CreateCLSDeliveryRequest&,
+        CreateCLSDeliveryOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CynosdbClient::CreateClusterDatabaseOutcome CynosdbClient::CreateClusterDatabase(const CreateClusterDatabaseRequest &request)
@@ -793,25 +912,32 @@ CynosdbClient::CreateClusterDatabaseOutcome CynosdbClient::CreateClusterDatabase
 
 void CynosdbClient::CreateClusterDatabaseAsync(const CreateClusterDatabaseRequest& request, const CreateClusterDatabaseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateClusterDatabase(request), context);
-    };
+    using Req = const CreateClusterDatabaseRequest&;
+    using Resp = CreateClusterDatabaseResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateClusterDatabase", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CynosdbClient::CreateClusterDatabaseOutcomeCallable CynosdbClient::CreateClusterDatabaseCallable(const CreateClusterDatabaseRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateClusterDatabaseOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateClusterDatabase(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateClusterDatabaseOutcome>>();
+    CreateClusterDatabaseAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const CreateClusterDatabaseRequest&,
+        CreateClusterDatabaseOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CynosdbClient::CreateClustersOutcome CynosdbClient::CreateClusters(const CreateClustersRequest &request)
@@ -836,25 +962,32 @@ CynosdbClient::CreateClustersOutcome CynosdbClient::CreateClusters(const CreateC
 
 void CynosdbClient::CreateClustersAsync(const CreateClustersRequest& request, const CreateClustersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateClusters(request), context);
-    };
+    using Req = const CreateClustersRequest&;
+    using Resp = CreateClustersResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateClusters", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CynosdbClient::CreateClustersOutcomeCallable CynosdbClient::CreateClustersCallable(const CreateClustersRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateClustersOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateClusters(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateClustersOutcome>>();
+    CreateClustersAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const CreateClustersRequest&,
+        CreateClustersOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CynosdbClient::CreateIntegrateClusterOutcome CynosdbClient::CreateIntegrateCluster(const CreateIntegrateClusterRequest &request)
@@ -879,25 +1012,32 @@ CynosdbClient::CreateIntegrateClusterOutcome CynosdbClient::CreateIntegrateClust
 
 void CynosdbClient::CreateIntegrateClusterAsync(const CreateIntegrateClusterRequest& request, const CreateIntegrateClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateIntegrateCluster(request), context);
-    };
+    using Req = const CreateIntegrateClusterRequest&;
+    using Resp = CreateIntegrateClusterResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateIntegrateCluster", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CynosdbClient::CreateIntegrateClusterOutcomeCallable CynosdbClient::CreateIntegrateClusterCallable(const CreateIntegrateClusterRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateIntegrateClusterOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateIntegrateCluster(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateIntegrateClusterOutcome>>();
+    CreateIntegrateClusterAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const CreateIntegrateClusterRequest&,
+        CreateIntegrateClusterOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CynosdbClient::CreateParamTemplateOutcome CynosdbClient::CreateParamTemplate(const CreateParamTemplateRequest &request)
@@ -922,25 +1062,32 @@ CynosdbClient::CreateParamTemplateOutcome CynosdbClient::CreateParamTemplate(con
 
 void CynosdbClient::CreateParamTemplateAsync(const CreateParamTemplateRequest& request, const CreateParamTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateParamTemplate(request), context);
-    };
+    using Req = const CreateParamTemplateRequest&;
+    using Resp = CreateParamTemplateResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateParamTemplate", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CynosdbClient::CreateParamTemplateOutcomeCallable CynosdbClient::CreateParamTemplateCallable(const CreateParamTemplateRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateParamTemplateOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateParamTemplate(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateParamTemplateOutcome>>();
+    CreateParamTemplateAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const CreateParamTemplateRequest&,
+        CreateParamTemplateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CynosdbClient::CreateProxyOutcome CynosdbClient::CreateProxy(const CreateProxyRequest &request)
@@ -965,25 +1112,32 @@ CynosdbClient::CreateProxyOutcome CynosdbClient::CreateProxy(const CreateProxyRe
 
 void CynosdbClient::CreateProxyAsync(const CreateProxyRequest& request, const CreateProxyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateProxy(request), context);
-    };
+    using Req = const CreateProxyRequest&;
+    using Resp = CreateProxyResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateProxy", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CynosdbClient::CreateProxyOutcomeCallable CynosdbClient::CreateProxyCallable(const CreateProxyRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateProxyOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateProxy(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateProxyOutcome>>();
+    CreateProxyAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const CreateProxyRequest&,
+        CreateProxyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CynosdbClient::CreateProxyEndPointOutcome CynosdbClient::CreateProxyEndPoint(const CreateProxyEndPointRequest &request)
@@ -1008,25 +1162,32 @@ CynosdbClient::CreateProxyEndPointOutcome CynosdbClient::CreateProxyEndPoint(con
 
 void CynosdbClient::CreateProxyEndPointAsync(const CreateProxyEndPointRequest& request, const CreateProxyEndPointAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateProxyEndPoint(request), context);
-    };
+    using Req = const CreateProxyEndPointRequest&;
+    using Resp = CreateProxyEndPointResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateProxyEndPoint", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CynosdbClient::CreateProxyEndPointOutcomeCallable CynosdbClient::CreateProxyEndPointCallable(const CreateProxyEndPointRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateProxyEndPointOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateProxyEndPoint(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateProxyEndPointOutcome>>();
+    CreateProxyEndPointAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const CreateProxyEndPointRequest&,
+        CreateProxyEndPointOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CynosdbClient::CreateResourcePackageOutcome CynosdbClient::CreateResourcePackage(const CreateResourcePackageRequest &request)
@@ -1051,25 +1212,32 @@ CynosdbClient::CreateResourcePackageOutcome CynosdbClient::CreateResourcePackage
 
 void CynosdbClient::CreateResourcePackageAsync(const CreateResourcePackageRequest& request, const CreateResourcePackageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateResourcePackage(request), context);
-    };
+    using Req = const CreateResourcePackageRequest&;
+    using Resp = CreateResourcePackageResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateResourcePackage", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CynosdbClient::CreateResourcePackageOutcomeCallable CynosdbClient::CreateResourcePackageCallable(const CreateResourcePackageRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateResourcePackageOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateResourcePackage(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateResourcePackageOutcome>>();
+    CreateResourcePackageAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const CreateResourcePackageRequest&,
+        CreateResourcePackageOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CynosdbClient::DeleteAccountsOutcome CynosdbClient::DeleteAccounts(const DeleteAccountsRequest &request)
@@ -1094,25 +1262,32 @@ CynosdbClient::DeleteAccountsOutcome CynosdbClient::DeleteAccounts(const DeleteA
 
 void CynosdbClient::DeleteAccountsAsync(const DeleteAccountsRequest& request, const DeleteAccountsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteAccounts(request), context);
-    };
+    using Req = const DeleteAccountsRequest&;
+    using Resp = DeleteAccountsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteAccounts", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CynosdbClient::DeleteAccountsOutcomeCallable CynosdbClient::DeleteAccountsCallable(const DeleteAccountsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteAccountsOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteAccounts(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteAccountsOutcome>>();
+    DeleteAccountsAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const DeleteAccountsRequest&,
+        DeleteAccountsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CynosdbClient::DeleteAuditLogFileOutcome CynosdbClient::DeleteAuditLogFile(const DeleteAuditLogFileRequest &request)
@@ -1137,25 +1312,32 @@ CynosdbClient::DeleteAuditLogFileOutcome CynosdbClient::DeleteAuditLogFile(const
 
 void CynosdbClient::DeleteAuditLogFileAsync(const DeleteAuditLogFileRequest& request, const DeleteAuditLogFileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteAuditLogFile(request), context);
-    };
+    using Req = const DeleteAuditLogFileRequest&;
+    using Resp = DeleteAuditLogFileResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteAuditLogFile", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CynosdbClient::DeleteAuditLogFileOutcomeCallable CynosdbClient::DeleteAuditLogFileCallable(const DeleteAuditLogFileRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteAuditLogFileOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteAuditLogFile(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteAuditLogFileOutcome>>();
+    DeleteAuditLogFileAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const DeleteAuditLogFileRequest&,
+        DeleteAuditLogFileOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CynosdbClient::DeleteAuditRuleTemplatesOutcome CynosdbClient::DeleteAuditRuleTemplates(const DeleteAuditRuleTemplatesRequest &request)
@@ -1180,25 +1362,32 @@ CynosdbClient::DeleteAuditRuleTemplatesOutcome CynosdbClient::DeleteAuditRuleTem
 
 void CynosdbClient::DeleteAuditRuleTemplatesAsync(const DeleteAuditRuleTemplatesRequest& request, const DeleteAuditRuleTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteAuditRuleTemplates(request), context);
-    };
+    using Req = const DeleteAuditRuleTemplatesRequest&;
+    using Resp = DeleteAuditRuleTemplatesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteAuditRuleTemplates", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CynosdbClient::DeleteAuditRuleTemplatesOutcomeCallable CynosdbClient::DeleteAuditRuleTemplatesCallable(const DeleteAuditRuleTemplatesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteAuditRuleTemplatesOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteAuditRuleTemplates(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteAuditRuleTemplatesOutcome>>();
+    DeleteAuditRuleTemplatesAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const DeleteAuditRuleTemplatesRequest&,
+        DeleteAuditRuleTemplatesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CynosdbClient::DeleteBackupOutcome CynosdbClient::DeleteBackup(const DeleteBackupRequest &request)
@@ -1223,25 +1412,32 @@ CynosdbClient::DeleteBackupOutcome CynosdbClient::DeleteBackup(const DeleteBacku
 
 void CynosdbClient::DeleteBackupAsync(const DeleteBackupRequest& request, const DeleteBackupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteBackup(request), context);
-    };
+    using Req = const DeleteBackupRequest&;
+    using Resp = DeleteBackupResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteBackup", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CynosdbClient::DeleteBackupOutcomeCallable CynosdbClient::DeleteBackupCallable(const DeleteBackupRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteBackupOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteBackup(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteBackupOutcome>>();
+    DeleteBackupAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const DeleteBackupRequest&,
+        DeleteBackupOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CynosdbClient::DeleteCLSDeliveryOutcome CynosdbClient::DeleteCLSDelivery(const DeleteCLSDeliveryRequest &request)
@@ -1266,25 +1462,32 @@ CynosdbClient::DeleteCLSDeliveryOutcome CynosdbClient::DeleteCLSDelivery(const D
 
 void CynosdbClient::DeleteCLSDeliveryAsync(const DeleteCLSDeliveryRequest& request, const DeleteCLSDeliveryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteCLSDelivery(request), context);
-    };
+    using Req = const DeleteCLSDeliveryRequest&;
+    using Resp = DeleteCLSDeliveryResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteCLSDelivery", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CynosdbClient::DeleteCLSDeliveryOutcomeCallable CynosdbClient::DeleteCLSDeliveryCallable(const DeleteCLSDeliveryRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteCLSDeliveryOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteCLSDelivery(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteCLSDeliveryOutcome>>();
+    DeleteCLSDeliveryAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const DeleteCLSDeliveryRequest&,
+        DeleteCLSDeliveryOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CynosdbClient::DeleteClusterDatabaseOutcome CynosdbClient::DeleteClusterDatabase(const DeleteClusterDatabaseRequest &request)
@@ -1309,25 +1512,32 @@ CynosdbClient::DeleteClusterDatabaseOutcome CynosdbClient::DeleteClusterDatabase
 
 void CynosdbClient::DeleteClusterDatabaseAsync(const DeleteClusterDatabaseRequest& request, const DeleteClusterDatabaseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteClusterDatabase(request), context);
-    };
+    using Req = const DeleteClusterDatabaseRequest&;
+    using Resp = DeleteClusterDatabaseResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteClusterDatabase", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CynosdbClient::DeleteClusterDatabaseOutcomeCallable CynosdbClient::DeleteClusterDatabaseCallable(const DeleteClusterDatabaseRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteClusterDatabaseOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteClusterDatabase(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteClusterDatabaseOutcome>>();
+    DeleteClusterDatabaseAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const DeleteClusterDatabaseRequest&,
+        DeleteClusterDatabaseOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CynosdbClient::DeleteParamTemplateOutcome CynosdbClient::DeleteParamTemplate(const DeleteParamTemplateRequest &request)
@@ -1352,25 +1562,32 @@ CynosdbClient::DeleteParamTemplateOutcome CynosdbClient::DeleteParamTemplate(con
 
 void CynosdbClient::DeleteParamTemplateAsync(const DeleteParamTemplateRequest& request, const DeleteParamTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteParamTemplate(request), context);
-    };
+    using Req = const DeleteParamTemplateRequest&;
+    using Resp = DeleteParamTemplateResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteParamTemplate", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CynosdbClient::DeleteParamTemplateOutcomeCallable CynosdbClient::DeleteParamTemplateCallable(const DeleteParamTemplateRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteParamTemplateOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteParamTemplate(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteParamTemplateOutcome>>();
+    DeleteParamTemplateAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const DeleteParamTemplateRequest&,
+        DeleteParamTemplateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CynosdbClient::DescribeAccountAllGrantPrivilegesOutcome CynosdbClient::DescribeAccountAllGrantPrivileges(const DescribeAccountAllGrantPrivilegesRequest &request)
@@ -1395,25 +1612,32 @@ CynosdbClient::DescribeAccountAllGrantPrivilegesOutcome CynosdbClient::DescribeA
 
 void CynosdbClient::DescribeAccountAllGrantPrivilegesAsync(const DescribeAccountAllGrantPrivilegesRequest& request, const DescribeAccountAllGrantPrivilegesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAccountAllGrantPrivileges(request), context);
-    };
+    using Req = const DescribeAccountAllGrantPrivilegesRequest&;
+    using Resp = DescribeAccountAllGrantPrivilegesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAccountAllGrantPrivileges", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CynosdbClient::DescribeAccountAllGrantPrivilegesOutcomeCallable CynosdbClient::DescribeAccountAllGrantPrivilegesCallable(const DescribeAccountAllGrantPrivilegesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAccountAllGrantPrivilegesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAccountAllGrantPrivileges(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAccountAllGrantPrivilegesOutcome>>();
+    DescribeAccountAllGrantPrivilegesAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const DescribeAccountAllGrantPrivilegesRequest&,
+        DescribeAccountAllGrantPrivilegesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CynosdbClient::DescribeAccountPrivilegesOutcome CynosdbClient::DescribeAccountPrivileges(const DescribeAccountPrivilegesRequest &request)
@@ -1438,25 +1662,32 @@ CynosdbClient::DescribeAccountPrivilegesOutcome CynosdbClient::DescribeAccountPr
 
 void CynosdbClient::DescribeAccountPrivilegesAsync(const DescribeAccountPrivilegesRequest& request, const DescribeAccountPrivilegesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAccountPrivileges(request), context);
-    };
+    using Req = const DescribeAccountPrivilegesRequest&;
+    using Resp = DescribeAccountPrivilegesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAccountPrivileges", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CynosdbClient::DescribeAccountPrivilegesOutcomeCallable CynosdbClient::DescribeAccountPrivilegesCallable(const DescribeAccountPrivilegesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAccountPrivilegesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAccountPrivileges(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAccountPrivilegesOutcome>>();
+    DescribeAccountPrivilegesAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const DescribeAccountPrivilegesRequest&,
+        DescribeAccountPrivilegesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CynosdbClient::DescribeAccountsOutcome CynosdbClient::DescribeAccounts(const DescribeAccountsRequest &request)
@@ -1481,25 +1712,32 @@ CynosdbClient::DescribeAccountsOutcome CynosdbClient::DescribeAccounts(const Des
 
 void CynosdbClient::DescribeAccountsAsync(const DescribeAccountsRequest& request, const DescribeAccountsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAccounts(request), context);
-    };
+    using Req = const DescribeAccountsRequest&;
+    using Resp = DescribeAccountsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAccounts", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CynosdbClient::DescribeAccountsOutcomeCallable CynosdbClient::DescribeAccountsCallable(const DescribeAccountsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAccountsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAccounts(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAccountsOutcome>>();
+    DescribeAccountsAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const DescribeAccountsRequest&,
+        DescribeAccountsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CynosdbClient::DescribeAuditInstanceListOutcome CynosdbClient::DescribeAuditInstanceList(const DescribeAuditInstanceListRequest &request)
@@ -1524,25 +1762,32 @@ CynosdbClient::DescribeAuditInstanceListOutcome CynosdbClient::DescribeAuditInst
 
 void CynosdbClient::DescribeAuditInstanceListAsync(const DescribeAuditInstanceListRequest& request, const DescribeAuditInstanceListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAuditInstanceList(request), context);
-    };
+    using Req = const DescribeAuditInstanceListRequest&;
+    using Resp = DescribeAuditInstanceListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAuditInstanceList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CynosdbClient::DescribeAuditInstanceListOutcomeCallable CynosdbClient::DescribeAuditInstanceListCallable(const DescribeAuditInstanceListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAuditInstanceListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAuditInstanceList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAuditInstanceListOutcome>>();
+    DescribeAuditInstanceListAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const DescribeAuditInstanceListRequest&,
+        DescribeAuditInstanceListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CynosdbClient::DescribeAuditLogFilesOutcome CynosdbClient::DescribeAuditLogFiles(const DescribeAuditLogFilesRequest &request)
@@ -1567,25 +1812,32 @@ CynosdbClient::DescribeAuditLogFilesOutcome CynosdbClient::DescribeAuditLogFiles
 
 void CynosdbClient::DescribeAuditLogFilesAsync(const DescribeAuditLogFilesRequest& request, const DescribeAuditLogFilesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAuditLogFiles(request), context);
-    };
+    using Req = const DescribeAuditLogFilesRequest&;
+    using Resp = DescribeAuditLogFilesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAuditLogFiles", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CynosdbClient::DescribeAuditLogFilesOutcomeCallable CynosdbClient::DescribeAuditLogFilesCallable(const DescribeAuditLogFilesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAuditLogFilesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAuditLogFiles(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAuditLogFilesOutcome>>();
+    DescribeAuditLogFilesAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const DescribeAuditLogFilesRequest&,
+        DescribeAuditLogFilesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CynosdbClient::DescribeAuditLogsOutcome CynosdbClient::DescribeAuditLogs(const DescribeAuditLogsRequest &request)
@@ -1610,25 +1862,32 @@ CynosdbClient::DescribeAuditLogsOutcome CynosdbClient::DescribeAuditLogs(const D
 
 void CynosdbClient::DescribeAuditLogsAsync(const DescribeAuditLogsRequest& request, const DescribeAuditLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAuditLogs(request), context);
-    };
+    using Req = const DescribeAuditLogsRequest&;
+    using Resp = DescribeAuditLogsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAuditLogs", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CynosdbClient::DescribeAuditLogsOutcomeCallable CynosdbClient::DescribeAuditLogsCallable(const DescribeAuditLogsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAuditLogsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAuditLogs(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAuditLogsOutcome>>();
+    DescribeAuditLogsAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const DescribeAuditLogsRequest&,
+        DescribeAuditLogsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CynosdbClient::DescribeAuditRuleTemplatesOutcome CynosdbClient::DescribeAuditRuleTemplates(const DescribeAuditRuleTemplatesRequest &request)
@@ -1653,25 +1912,32 @@ CynosdbClient::DescribeAuditRuleTemplatesOutcome CynosdbClient::DescribeAuditRul
 
 void CynosdbClient::DescribeAuditRuleTemplatesAsync(const DescribeAuditRuleTemplatesRequest& request, const DescribeAuditRuleTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAuditRuleTemplates(request), context);
-    };
+    using Req = const DescribeAuditRuleTemplatesRequest&;
+    using Resp = DescribeAuditRuleTemplatesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAuditRuleTemplates", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CynosdbClient::DescribeAuditRuleTemplatesOutcomeCallable CynosdbClient::DescribeAuditRuleTemplatesCallable(const DescribeAuditRuleTemplatesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAuditRuleTemplatesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAuditRuleTemplates(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAuditRuleTemplatesOutcome>>();
+    DescribeAuditRuleTemplatesAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const DescribeAuditRuleTemplatesRequest&,
+        DescribeAuditRuleTemplatesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CynosdbClient::DescribeAuditRuleWithInstanceIdsOutcome CynosdbClient::DescribeAuditRuleWithInstanceIds(const DescribeAuditRuleWithInstanceIdsRequest &request)
@@ -1696,25 +1962,32 @@ CynosdbClient::DescribeAuditRuleWithInstanceIdsOutcome CynosdbClient::DescribeAu
 
 void CynosdbClient::DescribeAuditRuleWithInstanceIdsAsync(const DescribeAuditRuleWithInstanceIdsRequest& request, const DescribeAuditRuleWithInstanceIdsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAuditRuleWithInstanceIds(request), context);
-    };
+    using Req = const DescribeAuditRuleWithInstanceIdsRequest&;
+    using Resp = DescribeAuditRuleWithInstanceIdsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAuditRuleWithInstanceIds", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CynosdbClient::DescribeAuditRuleWithInstanceIdsOutcomeCallable CynosdbClient::DescribeAuditRuleWithInstanceIdsCallable(const DescribeAuditRuleWithInstanceIdsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAuditRuleWithInstanceIdsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAuditRuleWithInstanceIds(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAuditRuleWithInstanceIdsOutcome>>();
+    DescribeAuditRuleWithInstanceIdsAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const DescribeAuditRuleWithInstanceIdsRequest&,
+        DescribeAuditRuleWithInstanceIdsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CynosdbClient::DescribeBackupConfigOutcome CynosdbClient::DescribeBackupConfig(const DescribeBackupConfigRequest &request)
@@ -1739,25 +2012,32 @@ CynosdbClient::DescribeBackupConfigOutcome CynosdbClient::DescribeBackupConfig(c
 
 void CynosdbClient::DescribeBackupConfigAsync(const DescribeBackupConfigRequest& request, const DescribeBackupConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeBackupConfig(request), context);
-    };
+    using Req = const DescribeBackupConfigRequest&;
+    using Resp = DescribeBackupConfigResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeBackupConfig", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CynosdbClient::DescribeBackupConfigOutcomeCallable CynosdbClient::DescribeBackupConfigCallable(const DescribeBackupConfigRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeBackupConfigOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeBackupConfig(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeBackupConfigOutcome>>();
+    DescribeBackupConfigAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const DescribeBackupConfigRequest&,
+        DescribeBackupConfigOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CynosdbClient::DescribeBackupDownloadRestrictionOutcome CynosdbClient::DescribeBackupDownloadRestriction(const DescribeBackupDownloadRestrictionRequest &request)
@@ -1782,25 +2062,32 @@ CynosdbClient::DescribeBackupDownloadRestrictionOutcome CynosdbClient::DescribeB
 
 void CynosdbClient::DescribeBackupDownloadRestrictionAsync(const DescribeBackupDownloadRestrictionRequest& request, const DescribeBackupDownloadRestrictionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeBackupDownloadRestriction(request), context);
-    };
+    using Req = const DescribeBackupDownloadRestrictionRequest&;
+    using Resp = DescribeBackupDownloadRestrictionResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeBackupDownloadRestriction", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CynosdbClient::DescribeBackupDownloadRestrictionOutcomeCallable CynosdbClient::DescribeBackupDownloadRestrictionCallable(const DescribeBackupDownloadRestrictionRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeBackupDownloadRestrictionOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeBackupDownloadRestriction(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeBackupDownloadRestrictionOutcome>>();
+    DescribeBackupDownloadRestrictionAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const DescribeBackupDownloadRestrictionRequest&,
+        DescribeBackupDownloadRestrictionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CynosdbClient::DescribeBackupDownloadUrlOutcome CynosdbClient::DescribeBackupDownloadUrl(const DescribeBackupDownloadUrlRequest &request)
@@ -1825,25 +2112,32 @@ CynosdbClient::DescribeBackupDownloadUrlOutcome CynosdbClient::DescribeBackupDow
 
 void CynosdbClient::DescribeBackupDownloadUrlAsync(const DescribeBackupDownloadUrlRequest& request, const DescribeBackupDownloadUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeBackupDownloadUrl(request), context);
-    };
+    using Req = const DescribeBackupDownloadUrlRequest&;
+    using Resp = DescribeBackupDownloadUrlResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeBackupDownloadUrl", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CynosdbClient::DescribeBackupDownloadUrlOutcomeCallable CynosdbClient::DescribeBackupDownloadUrlCallable(const DescribeBackupDownloadUrlRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeBackupDownloadUrlOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeBackupDownloadUrl(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeBackupDownloadUrlOutcome>>();
+    DescribeBackupDownloadUrlAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const DescribeBackupDownloadUrlRequest&,
+        DescribeBackupDownloadUrlOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CynosdbClient::DescribeBackupDownloadUserRestrictionOutcome CynosdbClient::DescribeBackupDownloadUserRestriction(const DescribeBackupDownloadUserRestrictionRequest &request)
@@ -1868,25 +2162,32 @@ CynosdbClient::DescribeBackupDownloadUserRestrictionOutcome CynosdbClient::Descr
 
 void CynosdbClient::DescribeBackupDownloadUserRestrictionAsync(const DescribeBackupDownloadUserRestrictionRequest& request, const DescribeBackupDownloadUserRestrictionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeBackupDownloadUserRestriction(request), context);
-    };
+    using Req = const DescribeBackupDownloadUserRestrictionRequest&;
+    using Resp = DescribeBackupDownloadUserRestrictionResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeBackupDownloadUserRestriction", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CynosdbClient::DescribeBackupDownloadUserRestrictionOutcomeCallable CynosdbClient::DescribeBackupDownloadUserRestrictionCallable(const DescribeBackupDownloadUserRestrictionRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeBackupDownloadUserRestrictionOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeBackupDownloadUserRestriction(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeBackupDownloadUserRestrictionOutcome>>();
+    DescribeBackupDownloadUserRestrictionAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const DescribeBackupDownloadUserRestrictionRequest&,
+        DescribeBackupDownloadUserRestrictionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CynosdbClient::DescribeBackupListOutcome CynosdbClient::DescribeBackupList(const DescribeBackupListRequest &request)
@@ -1911,25 +2212,32 @@ CynosdbClient::DescribeBackupListOutcome CynosdbClient::DescribeBackupList(const
 
 void CynosdbClient::DescribeBackupListAsync(const DescribeBackupListRequest& request, const DescribeBackupListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeBackupList(request), context);
-    };
+    using Req = const DescribeBackupListRequest&;
+    using Resp = DescribeBackupListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeBackupList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CynosdbClient::DescribeBackupListOutcomeCallable CynosdbClient::DescribeBackupListCallable(const DescribeBackupListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeBackupListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeBackupList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeBackupListOutcome>>();
+    DescribeBackupListAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const DescribeBackupListRequest&,
+        DescribeBackupListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CynosdbClient::DescribeBinlogConfigOutcome CynosdbClient::DescribeBinlogConfig(const DescribeBinlogConfigRequest &request)
@@ -1954,25 +2262,32 @@ CynosdbClient::DescribeBinlogConfigOutcome CynosdbClient::DescribeBinlogConfig(c
 
 void CynosdbClient::DescribeBinlogConfigAsync(const DescribeBinlogConfigRequest& request, const DescribeBinlogConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeBinlogConfig(request), context);
-    };
+    using Req = const DescribeBinlogConfigRequest&;
+    using Resp = DescribeBinlogConfigResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeBinlogConfig", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CynosdbClient::DescribeBinlogConfigOutcomeCallable CynosdbClient::DescribeBinlogConfigCallable(const DescribeBinlogConfigRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeBinlogConfigOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeBinlogConfig(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeBinlogConfigOutcome>>();
+    DescribeBinlogConfigAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const DescribeBinlogConfigRequest&,
+        DescribeBinlogConfigOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CynosdbClient::DescribeBinlogDownloadUrlOutcome CynosdbClient::DescribeBinlogDownloadUrl(const DescribeBinlogDownloadUrlRequest &request)
@@ -1997,25 +2312,32 @@ CynosdbClient::DescribeBinlogDownloadUrlOutcome CynosdbClient::DescribeBinlogDow
 
 void CynosdbClient::DescribeBinlogDownloadUrlAsync(const DescribeBinlogDownloadUrlRequest& request, const DescribeBinlogDownloadUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeBinlogDownloadUrl(request), context);
-    };
+    using Req = const DescribeBinlogDownloadUrlRequest&;
+    using Resp = DescribeBinlogDownloadUrlResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeBinlogDownloadUrl", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CynosdbClient::DescribeBinlogDownloadUrlOutcomeCallable CynosdbClient::DescribeBinlogDownloadUrlCallable(const DescribeBinlogDownloadUrlRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeBinlogDownloadUrlOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeBinlogDownloadUrl(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeBinlogDownloadUrlOutcome>>();
+    DescribeBinlogDownloadUrlAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const DescribeBinlogDownloadUrlRequest&,
+        DescribeBinlogDownloadUrlOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CynosdbClient::DescribeBinlogSaveDaysOutcome CynosdbClient::DescribeBinlogSaveDays(const DescribeBinlogSaveDaysRequest &request)
@@ -2040,25 +2362,32 @@ CynosdbClient::DescribeBinlogSaveDaysOutcome CynosdbClient::DescribeBinlogSaveDa
 
 void CynosdbClient::DescribeBinlogSaveDaysAsync(const DescribeBinlogSaveDaysRequest& request, const DescribeBinlogSaveDaysAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeBinlogSaveDays(request), context);
-    };
+    using Req = const DescribeBinlogSaveDaysRequest&;
+    using Resp = DescribeBinlogSaveDaysResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeBinlogSaveDays", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CynosdbClient::DescribeBinlogSaveDaysOutcomeCallable CynosdbClient::DescribeBinlogSaveDaysCallable(const DescribeBinlogSaveDaysRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeBinlogSaveDaysOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeBinlogSaveDays(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeBinlogSaveDaysOutcome>>();
+    DescribeBinlogSaveDaysAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const DescribeBinlogSaveDaysRequest&,
+        DescribeBinlogSaveDaysOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CynosdbClient::DescribeBinlogsOutcome CynosdbClient::DescribeBinlogs(const DescribeBinlogsRequest &request)
@@ -2083,25 +2412,32 @@ CynosdbClient::DescribeBinlogsOutcome CynosdbClient::DescribeBinlogs(const Descr
 
 void CynosdbClient::DescribeBinlogsAsync(const DescribeBinlogsRequest& request, const DescribeBinlogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeBinlogs(request), context);
-    };
+    using Req = const DescribeBinlogsRequest&;
+    using Resp = DescribeBinlogsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeBinlogs", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CynosdbClient::DescribeBinlogsOutcomeCallable CynosdbClient::DescribeBinlogsCallable(const DescribeBinlogsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeBinlogsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeBinlogs(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeBinlogsOutcome>>();
+    DescribeBinlogsAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const DescribeBinlogsRequest&,
+        DescribeBinlogsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CynosdbClient::DescribeChangedParamsAfterUpgradeOutcome CynosdbClient::DescribeChangedParamsAfterUpgrade(const DescribeChangedParamsAfterUpgradeRequest &request)
@@ -2126,25 +2462,32 @@ CynosdbClient::DescribeChangedParamsAfterUpgradeOutcome CynosdbClient::DescribeC
 
 void CynosdbClient::DescribeChangedParamsAfterUpgradeAsync(const DescribeChangedParamsAfterUpgradeRequest& request, const DescribeChangedParamsAfterUpgradeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeChangedParamsAfterUpgrade(request), context);
-    };
+    using Req = const DescribeChangedParamsAfterUpgradeRequest&;
+    using Resp = DescribeChangedParamsAfterUpgradeResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeChangedParamsAfterUpgrade", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CynosdbClient::DescribeChangedParamsAfterUpgradeOutcomeCallable CynosdbClient::DescribeChangedParamsAfterUpgradeCallable(const DescribeChangedParamsAfterUpgradeRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeChangedParamsAfterUpgradeOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeChangedParamsAfterUpgrade(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeChangedParamsAfterUpgradeOutcome>>();
+    DescribeChangedParamsAfterUpgradeAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const DescribeChangedParamsAfterUpgradeRequest&,
+        DescribeChangedParamsAfterUpgradeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CynosdbClient::DescribeClusterDatabaseTablesOutcome CynosdbClient::DescribeClusterDatabaseTables(const DescribeClusterDatabaseTablesRequest &request)
@@ -2169,25 +2512,32 @@ CynosdbClient::DescribeClusterDatabaseTablesOutcome CynosdbClient::DescribeClust
 
 void CynosdbClient::DescribeClusterDatabaseTablesAsync(const DescribeClusterDatabaseTablesRequest& request, const DescribeClusterDatabaseTablesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeClusterDatabaseTables(request), context);
-    };
+    using Req = const DescribeClusterDatabaseTablesRequest&;
+    using Resp = DescribeClusterDatabaseTablesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeClusterDatabaseTables", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CynosdbClient::DescribeClusterDatabaseTablesOutcomeCallable CynosdbClient::DescribeClusterDatabaseTablesCallable(const DescribeClusterDatabaseTablesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeClusterDatabaseTablesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeClusterDatabaseTables(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeClusterDatabaseTablesOutcome>>();
+    DescribeClusterDatabaseTablesAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const DescribeClusterDatabaseTablesRequest&,
+        DescribeClusterDatabaseTablesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CynosdbClient::DescribeClusterDatabasesOutcome CynosdbClient::DescribeClusterDatabases(const DescribeClusterDatabasesRequest &request)
@@ -2212,25 +2562,32 @@ CynosdbClient::DescribeClusterDatabasesOutcome CynosdbClient::DescribeClusterDat
 
 void CynosdbClient::DescribeClusterDatabasesAsync(const DescribeClusterDatabasesRequest& request, const DescribeClusterDatabasesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeClusterDatabases(request), context);
-    };
+    using Req = const DescribeClusterDatabasesRequest&;
+    using Resp = DescribeClusterDatabasesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeClusterDatabases", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CynosdbClient::DescribeClusterDatabasesOutcomeCallable CynosdbClient::DescribeClusterDatabasesCallable(const DescribeClusterDatabasesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeClusterDatabasesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeClusterDatabases(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeClusterDatabasesOutcome>>();
+    DescribeClusterDatabasesAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const DescribeClusterDatabasesRequest&,
+        DescribeClusterDatabasesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CynosdbClient::DescribeClusterDetailOutcome CynosdbClient::DescribeClusterDetail(const DescribeClusterDetailRequest &request)
@@ -2255,25 +2612,32 @@ CynosdbClient::DescribeClusterDetailOutcome CynosdbClient::DescribeClusterDetail
 
 void CynosdbClient::DescribeClusterDetailAsync(const DescribeClusterDetailRequest& request, const DescribeClusterDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeClusterDetail(request), context);
-    };
+    using Req = const DescribeClusterDetailRequest&;
+    using Resp = DescribeClusterDetailResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeClusterDetail", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CynosdbClient::DescribeClusterDetailOutcomeCallable CynosdbClient::DescribeClusterDetailCallable(const DescribeClusterDetailRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeClusterDetailOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeClusterDetail(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeClusterDetailOutcome>>();
+    DescribeClusterDetailAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const DescribeClusterDetailRequest&,
+        DescribeClusterDetailOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CynosdbClient::DescribeClusterDetailDatabasesOutcome CynosdbClient::DescribeClusterDetailDatabases(const DescribeClusterDetailDatabasesRequest &request)
@@ -2298,25 +2662,32 @@ CynosdbClient::DescribeClusterDetailDatabasesOutcome CynosdbClient::DescribeClus
 
 void CynosdbClient::DescribeClusterDetailDatabasesAsync(const DescribeClusterDetailDatabasesRequest& request, const DescribeClusterDetailDatabasesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeClusterDetailDatabases(request), context);
-    };
+    using Req = const DescribeClusterDetailDatabasesRequest&;
+    using Resp = DescribeClusterDetailDatabasesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeClusterDetailDatabases", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CynosdbClient::DescribeClusterDetailDatabasesOutcomeCallable CynosdbClient::DescribeClusterDetailDatabasesCallable(const DescribeClusterDetailDatabasesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeClusterDetailDatabasesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeClusterDetailDatabases(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeClusterDetailDatabasesOutcome>>();
+    DescribeClusterDetailDatabasesAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const DescribeClusterDetailDatabasesRequest&,
+        DescribeClusterDetailDatabasesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CynosdbClient::DescribeClusterInstanceGroupsOutcome CynosdbClient::DescribeClusterInstanceGroups(const DescribeClusterInstanceGroupsRequest &request)
@@ -2341,25 +2712,32 @@ CynosdbClient::DescribeClusterInstanceGroupsOutcome CynosdbClient::DescribeClust
 
 void CynosdbClient::DescribeClusterInstanceGroupsAsync(const DescribeClusterInstanceGroupsRequest& request, const DescribeClusterInstanceGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeClusterInstanceGroups(request), context);
-    };
+    using Req = const DescribeClusterInstanceGroupsRequest&;
+    using Resp = DescribeClusterInstanceGroupsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeClusterInstanceGroups", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CynosdbClient::DescribeClusterInstanceGroupsOutcomeCallable CynosdbClient::DescribeClusterInstanceGroupsCallable(const DescribeClusterInstanceGroupsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeClusterInstanceGroupsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeClusterInstanceGroups(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeClusterInstanceGroupsOutcome>>();
+    DescribeClusterInstanceGroupsAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const DescribeClusterInstanceGroupsRequest&,
+        DescribeClusterInstanceGroupsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CynosdbClient::DescribeClusterInstanceGrpsOutcome CynosdbClient::DescribeClusterInstanceGrps(const DescribeClusterInstanceGrpsRequest &request)
@@ -2384,25 +2762,32 @@ CynosdbClient::DescribeClusterInstanceGrpsOutcome CynosdbClient::DescribeCluster
 
 void CynosdbClient::DescribeClusterInstanceGrpsAsync(const DescribeClusterInstanceGrpsRequest& request, const DescribeClusterInstanceGrpsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeClusterInstanceGrps(request), context);
-    };
+    using Req = const DescribeClusterInstanceGrpsRequest&;
+    using Resp = DescribeClusterInstanceGrpsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeClusterInstanceGrps", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CynosdbClient::DescribeClusterInstanceGrpsOutcomeCallable CynosdbClient::DescribeClusterInstanceGrpsCallable(const DescribeClusterInstanceGrpsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeClusterInstanceGrpsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeClusterInstanceGrps(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeClusterInstanceGrpsOutcome>>();
+    DescribeClusterInstanceGrpsAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const DescribeClusterInstanceGrpsRequest&,
+        DescribeClusterInstanceGrpsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CynosdbClient::DescribeClusterParamLogsOutcome CynosdbClient::DescribeClusterParamLogs(const DescribeClusterParamLogsRequest &request)
@@ -2427,25 +2812,32 @@ CynosdbClient::DescribeClusterParamLogsOutcome CynosdbClient::DescribeClusterPar
 
 void CynosdbClient::DescribeClusterParamLogsAsync(const DescribeClusterParamLogsRequest& request, const DescribeClusterParamLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeClusterParamLogs(request), context);
-    };
+    using Req = const DescribeClusterParamLogsRequest&;
+    using Resp = DescribeClusterParamLogsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeClusterParamLogs", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CynosdbClient::DescribeClusterParamLogsOutcomeCallable CynosdbClient::DescribeClusterParamLogsCallable(const DescribeClusterParamLogsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeClusterParamLogsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeClusterParamLogs(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeClusterParamLogsOutcome>>();
+    DescribeClusterParamLogsAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const DescribeClusterParamLogsRequest&,
+        DescribeClusterParamLogsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CynosdbClient::DescribeClusterParamsOutcome CynosdbClient::DescribeClusterParams(const DescribeClusterParamsRequest &request)
@@ -2470,25 +2862,32 @@ CynosdbClient::DescribeClusterParamsOutcome CynosdbClient::DescribeClusterParams
 
 void CynosdbClient::DescribeClusterParamsAsync(const DescribeClusterParamsRequest& request, const DescribeClusterParamsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeClusterParams(request), context);
-    };
+    using Req = const DescribeClusterParamsRequest&;
+    using Resp = DescribeClusterParamsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeClusterParams", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CynosdbClient::DescribeClusterParamsOutcomeCallable CynosdbClient::DescribeClusterParamsCallable(const DescribeClusterParamsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeClusterParamsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeClusterParams(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeClusterParamsOutcome>>();
+    DescribeClusterParamsAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const DescribeClusterParamsRequest&,
+        DescribeClusterParamsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CynosdbClient::DescribeClusterPasswordComplexityOutcome CynosdbClient::DescribeClusterPasswordComplexity(const DescribeClusterPasswordComplexityRequest &request)
@@ -2513,25 +2912,32 @@ CynosdbClient::DescribeClusterPasswordComplexityOutcome CynosdbClient::DescribeC
 
 void CynosdbClient::DescribeClusterPasswordComplexityAsync(const DescribeClusterPasswordComplexityRequest& request, const DescribeClusterPasswordComplexityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeClusterPasswordComplexity(request), context);
-    };
+    using Req = const DescribeClusterPasswordComplexityRequest&;
+    using Resp = DescribeClusterPasswordComplexityResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeClusterPasswordComplexity", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CynosdbClient::DescribeClusterPasswordComplexityOutcomeCallable CynosdbClient::DescribeClusterPasswordComplexityCallable(const DescribeClusterPasswordComplexityRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeClusterPasswordComplexityOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeClusterPasswordComplexity(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeClusterPasswordComplexityOutcome>>();
+    DescribeClusterPasswordComplexityAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const DescribeClusterPasswordComplexityRequest&,
+        DescribeClusterPasswordComplexityOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CynosdbClient::DescribeClusterReadOnlyOutcome CynosdbClient::DescribeClusterReadOnly(const DescribeClusterReadOnlyRequest &request)
@@ -2556,25 +2962,32 @@ CynosdbClient::DescribeClusterReadOnlyOutcome CynosdbClient::DescribeClusterRead
 
 void CynosdbClient::DescribeClusterReadOnlyAsync(const DescribeClusterReadOnlyRequest& request, const DescribeClusterReadOnlyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeClusterReadOnly(request), context);
-    };
+    using Req = const DescribeClusterReadOnlyRequest&;
+    using Resp = DescribeClusterReadOnlyResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeClusterReadOnly", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CynosdbClient::DescribeClusterReadOnlyOutcomeCallable CynosdbClient::DescribeClusterReadOnlyCallable(const DescribeClusterReadOnlyRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeClusterReadOnlyOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeClusterReadOnly(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeClusterReadOnlyOutcome>>();
+    DescribeClusterReadOnlyAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const DescribeClusterReadOnlyRequest&,
+        DescribeClusterReadOnlyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CynosdbClient::DescribeClusterTransparentEncryptInfoOutcome CynosdbClient::DescribeClusterTransparentEncryptInfo(const DescribeClusterTransparentEncryptInfoRequest &request)
@@ -2599,25 +3012,32 @@ CynosdbClient::DescribeClusterTransparentEncryptInfoOutcome CynosdbClient::Descr
 
 void CynosdbClient::DescribeClusterTransparentEncryptInfoAsync(const DescribeClusterTransparentEncryptInfoRequest& request, const DescribeClusterTransparentEncryptInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeClusterTransparentEncryptInfo(request), context);
-    };
+    using Req = const DescribeClusterTransparentEncryptInfoRequest&;
+    using Resp = DescribeClusterTransparentEncryptInfoResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeClusterTransparentEncryptInfo", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CynosdbClient::DescribeClusterTransparentEncryptInfoOutcomeCallable CynosdbClient::DescribeClusterTransparentEncryptInfoCallable(const DescribeClusterTransparentEncryptInfoRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeClusterTransparentEncryptInfoOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeClusterTransparentEncryptInfo(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeClusterTransparentEncryptInfoOutcome>>();
+    DescribeClusterTransparentEncryptInfoAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const DescribeClusterTransparentEncryptInfoRequest&,
+        DescribeClusterTransparentEncryptInfoOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CynosdbClient::DescribeClustersOutcome CynosdbClient::DescribeClusters(const DescribeClustersRequest &request)
@@ -2642,25 +3062,32 @@ CynosdbClient::DescribeClustersOutcome CynosdbClient::DescribeClusters(const Des
 
 void CynosdbClient::DescribeClustersAsync(const DescribeClustersRequest& request, const DescribeClustersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeClusters(request), context);
-    };
+    using Req = const DescribeClustersRequest&;
+    using Resp = DescribeClustersResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeClusters", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CynosdbClient::DescribeClustersOutcomeCallable CynosdbClient::DescribeClustersCallable(const DescribeClustersRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeClustersOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeClusters(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeClustersOutcome>>();
+    DescribeClustersAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const DescribeClustersRequest&,
+        DescribeClustersOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CynosdbClient::DescribeDBSecurityGroupsOutcome CynosdbClient::DescribeDBSecurityGroups(const DescribeDBSecurityGroupsRequest &request)
@@ -2685,25 +3112,32 @@ CynosdbClient::DescribeDBSecurityGroupsOutcome CynosdbClient::DescribeDBSecurity
 
 void CynosdbClient::DescribeDBSecurityGroupsAsync(const DescribeDBSecurityGroupsRequest& request, const DescribeDBSecurityGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDBSecurityGroups(request), context);
-    };
+    using Req = const DescribeDBSecurityGroupsRequest&;
+    using Resp = DescribeDBSecurityGroupsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeDBSecurityGroups", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CynosdbClient::DescribeDBSecurityGroupsOutcomeCallable CynosdbClient::DescribeDBSecurityGroupsCallable(const DescribeDBSecurityGroupsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeDBSecurityGroupsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDBSecurityGroups(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeDBSecurityGroupsOutcome>>();
+    DescribeDBSecurityGroupsAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const DescribeDBSecurityGroupsRequest&,
+        DescribeDBSecurityGroupsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CynosdbClient::DescribeFlowOutcome CynosdbClient::DescribeFlow(const DescribeFlowRequest &request)
@@ -2728,25 +3162,32 @@ CynosdbClient::DescribeFlowOutcome CynosdbClient::DescribeFlow(const DescribeFlo
 
 void CynosdbClient::DescribeFlowAsync(const DescribeFlowRequest& request, const DescribeFlowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeFlow(request), context);
-    };
+    using Req = const DescribeFlowRequest&;
+    using Resp = DescribeFlowResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeFlow", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CynosdbClient::DescribeFlowOutcomeCallable CynosdbClient::DescribeFlowCallable(const DescribeFlowRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeFlowOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeFlow(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeFlowOutcome>>();
+    DescribeFlowAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const DescribeFlowRequest&,
+        DescribeFlowOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CynosdbClient::DescribeInstanceCLSLogDeliveryOutcome CynosdbClient::DescribeInstanceCLSLogDelivery(const DescribeInstanceCLSLogDeliveryRequest &request)
@@ -2771,25 +3212,32 @@ CynosdbClient::DescribeInstanceCLSLogDeliveryOutcome CynosdbClient::DescribeInst
 
 void CynosdbClient::DescribeInstanceCLSLogDeliveryAsync(const DescribeInstanceCLSLogDeliveryRequest& request, const DescribeInstanceCLSLogDeliveryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeInstanceCLSLogDelivery(request), context);
-    };
+    using Req = const DescribeInstanceCLSLogDeliveryRequest&;
+    using Resp = DescribeInstanceCLSLogDeliveryResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeInstanceCLSLogDelivery", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CynosdbClient::DescribeInstanceCLSLogDeliveryOutcomeCallable CynosdbClient::DescribeInstanceCLSLogDeliveryCallable(const DescribeInstanceCLSLogDeliveryRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeInstanceCLSLogDeliveryOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeInstanceCLSLogDelivery(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeInstanceCLSLogDeliveryOutcome>>();
+    DescribeInstanceCLSLogDeliveryAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const DescribeInstanceCLSLogDeliveryRequest&,
+        DescribeInstanceCLSLogDeliveryOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CynosdbClient::DescribeInstanceDetailOutcome CynosdbClient::DescribeInstanceDetail(const DescribeInstanceDetailRequest &request)
@@ -2814,25 +3262,32 @@ CynosdbClient::DescribeInstanceDetailOutcome CynosdbClient::DescribeInstanceDeta
 
 void CynosdbClient::DescribeInstanceDetailAsync(const DescribeInstanceDetailRequest& request, const DescribeInstanceDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeInstanceDetail(request), context);
-    };
+    using Req = const DescribeInstanceDetailRequest&;
+    using Resp = DescribeInstanceDetailResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeInstanceDetail", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CynosdbClient::DescribeInstanceDetailOutcomeCallable CynosdbClient::DescribeInstanceDetailCallable(const DescribeInstanceDetailRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeInstanceDetailOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeInstanceDetail(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeInstanceDetailOutcome>>();
+    DescribeInstanceDetailAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const DescribeInstanceDetailRequest&,
+        DescribeInstanceDetailOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CynosdbClient::DescribeInstanceErrorLogsOutcome CynosdbClient::DescribeInstanceErrorLogs(const DescribeInstanceErrorLogsRequest &request)
@@ -2857,25 +3312,32 @@ CynosdbClient::DescribeInstanceErrorLogsOutcome CynosdbClient::DescribeInstanceE
 
 void CynosdbClient::DescribeInstanceErrorLogsAsync(const DescribeInstanceErrorLogsRequest& request, const DescribeInstanceErrorLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeInstanceErrorLogs(request), context);
-    };
+    using Req = const DescribeInstanceErrorLogsRequest&;
+    using Resp = DescribeInstanceErrorLogsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeInstanceErrorLogs", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CynosdbClient::DescribeInstanceErrorLogsOutcomeCallable CynosdbClient::DescribeInstanceErrorLogsCallable(const DescribeInstanceErrorLogsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeInstanceErrorLogsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeInstanceErrorLogs(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeInstanceErrorLogsOutcome>>();
+    DescribeInstanceErrorLogsAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const DescribeInstanceErrorLogsRequest&,
+        DescribeInstanceErrorLogsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CynosdbClient::DescribeInstanceParamsOutcome CynosdbClient::DescribeInstanceParams(const DescribeInstanceParamsRequest &request)
@@ -2900,25 +3362,32 @@ CynosdbClient::DescribeInstanceParamsOutcome CynosdbClient::DescribeInstancePara
 
 void CynosdbClient::DescribeInstanceParamsAsync(const DescribeInstanceParamsRequest& request, const DescribeInstanceParamsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeInstanceParams(request), context);
-    };
+    using Req = const DescribeInstanceParamsRequest&;
+    using Resp = DescribeInstanceParamsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeInstanceParams", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CynosdbClient::DescribeInstanceParamsOutcomeCallable CynosdbClient::DescribeInstanceParamsCallable(const DescribeInstanceParamsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeInstanceParamsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeInstanceParams(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeInstanceParamsOutcome>>();
+    DescribeInstanceParamsAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const DescribeInstanceParamsRequest&,
+        DescribeInstanceParamsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CynosdbClient::DescribeInstanceSlowQueriesOutcome CynosdbClient::DescribeInstanceSlowQueries(const DescribeInstanceSlowQueriesRequest &request)
@@ -2943,25 +3412,32 @@ CynosdbClient::DescribeInstanceSlowQueriesOutcome CynosdbClient::DescribeInstanc
 
 void CynosdbClient::DescribeInstanceSlowQueriesAsync(const DescribeInstanceSlowQueriesRequest& request, const DescribeInstanceSlowQueriesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeInstanceSlowQueries(request), context);
-    };
+    using Req = const DescribeInstanceSlowQueriesRequest&;
+    using Resp = DescribeInstanceSlowQueriesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeInstanceSlowQueries", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CynosdbClient::DescribeInstanceSlowQueriesOutcomeCallable CynosdbClient::DescribeInstanceSlowQueriesCallable(const DescribeInstanceSlowQueriesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeInstanceSlowQueriesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeInstanceSlowQueries(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeInstanceSlowQueriesOutcome>>();
+    DescribeInstanceSlowQueriesAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const DescribeInstanceSlowQueriesRequest&,
+        DescribeInstanceSlowQueriesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CynosdbClient::DescribeInstanceSpecsOutcome CynosdbClient::DescribeInstanceSpecs(const DescribeInstanceSpecsRequest &request)
@@ -2986,25 +3462,32 @@ CynosdbClient::DescribeInstanceSpecsOutcome CynosdbClient::DescribeInstanceSpecs
 
 void CynosdbClient::DescribeInstanceSpecsAsync(const DescribeInstanceSpecsRequest& request, const DescribeInstanceSpecsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeInstanceSpecs(request), context);
-    };
+    using Req = const DescribeInstanceSpecsRequest&;
+    using Resp = DescribeInstanceSpecsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeInstanceSpecs", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CynosdbClient::DescribeInstanceSpecsOutcomeCallable CynosdbClient::DescribeInstanceSpecsCallable(const DescribeInstanceSpecsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeInstanceSpecsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeInstanceSpecs(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeInstanceSpecsOutcome>>();
+    DescribeInstanceSpecsAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const DescribeInstanceSpecsRequest&,
+        DescribeInstanceSpecsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CynosdbClient::DescribeInstancesOutcome CynosdbClient::DescribeInstances(const DescribeInstancesRequest &request)
@@ -3029,25 +3512,32 @@ CynosdbClient::DescribeInstancesOutcome CynosdbClient::DescribeInstances(const D
 
 void CynosdbClient::DescribeInstancesAsync(const DescribeInstancesRequest& request, const DescribeInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeInstances(request), context);
-    };
+    using Req = const DescribeInstancesRequest&;
+    using Resp = DescribeInstancesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeInstances", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CynosdbClient::DescribeInstancesOutcomeCallable CynosdbClient::DescribeInstancesCallable(const DescribeInstancesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeInstancesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeInstances(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeInstancesOutcome>>();
+    DescribeInstancesAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const DescribeInstancesRequest&,
+        DescribeInstancesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CynosdbClient::DescribeInstancesWithinSameClusterOutcome CynosdbClient::DescribeInstancesWithinSameCluster(const DescribeInstancesWithinSameClusterRequest &request)
@@ -3072,25 +3562,32 @@ CynosdbClient::DescribeInstancesWithinSameClusterOutcome CynosdbClient::Describe
 
 void CynosdbClient::DescribeInstancesWithinSameClusterAsync(const DescribeInstancesWithinSameClusterRequest& request, const DescribeInstancesWithinSameClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeInstancesWithinSameCluster(request), context);
-    };
+    using Req = const DescribeInstancesWithinSameClusterRequest&;
+    using Resp = DescribeInstancesWithinSameClusterResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeInstancesWithinSameCluster", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CynosdbClient::DescribeInstancesWithinSameClusterOutcomeCallable CynosdbClient::DescribeInstancesWithinSameClusterCallable(const DescribeInstancesWithinSameClusterRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeInstancesWithinSameClusterOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeInstancesWithinSameCluster(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeInstancesWithinSameClusterOutcome>>();
+    DescribeInstancesWithinSameClusterAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const DescribeInstancesWithinSameClusterRequest&,
+        DescribeInstancesWithinSameClusterOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CynosdbClient::DescribeIntegrateTaskOutcome CynosdbClient::DescribeIntegrateTask(const DescribeIntegrateTaskRequest &request)
@@ -3115,25 +3612,32 @@ CynosdbClient::DescribeIntegrateTaskOutcome CynosdbClient::DescribeIntegrateTask
 
 void CynosdbClient::DescribeIntegrateTaskAsync(const DescribeIntegrateTaskRequest& request, const DescribeIntegrateTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeIntegrateTask(request), context);
-    };
+    using Req = const DescribeIntegrateTaskRequest&;
+    using Resp = DescribeIntegrateTaskResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeIntegrateTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CynosdbClient::DescribeIntegrateTaskOutcomeCallable CynosdbClient::DescribeIntegrateTaskCallable(const DescribeIntegrateTaskRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeIntegrateTaskOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeIntegrateTask(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeIntegrateTaskOutcome>>();
+    DescribeIntegrateTaskAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const DescribeIntegrateTaskRequest&,
+        DescribeIntegrateTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CynosdbClient::DescribeIsolatedInstancesOutcome CynosdbClient::DescribeIsolatedInstances(const DescribeIsolatedInstancesRequest &request)
@@ -3158,25 +3662,32 @@ CynosdbClient::DescribeIsolatedInstancesOutcome CynosdbClient::DescribeIsolatedI
 
 void CynosdbClient::DescribeIsolatedInstancesAsync(const DescribeIsolatedInstancesRequest& request, const DescribeIsolatedInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeIsolatedInstances(request), context);
-    };
+    using Req = const DescribeIsolatedInstancesRequest&;
+    using Resp = DescribeIsolatedInstancesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeIsolatedInstances", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CynosdbClient::DescribeIsolatedInstancesOutcomeCallable CynosdbClient::DescribeIsolatedInstancesCallable(const DescribeIsolatedInstancesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeIsolatedInstancesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeIsolatedInstances(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeIsolatedInstancesOutcome>>();
+    DescribeIsolatedInstancesAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const DescribeIsolatedInstancesRequest&,
+        DescribeIsolatedInstancesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CynosdbClient::DescribeMaintainPeriodOutcome CynosdbClient::DescribeMaintainPeriod(const DescribeMaintainPeriodRequest &request)
@@ -3201,25 +3712,32 @@ CynosdbClient::DescribeMaintainPeriodOutcome CynosdbClient::DescribeMaintainPeri
 
 void CynosdbClient::DescribeMaintainPeriodAsync(const DescribeMaintainPeriodRequest& request, const DescribeMaintainPeriodAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeMaintainPeriod(request), context);
-    };
+    using Req = const DescribeMaintainPeriodRequest&;
+    using Resp = DescribeMaintainPeriodResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeMaintainPeriod", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CynosdbClient::DescribeMaintainPeriodOutcomeCallable CynosdbClient::DescribeMaintainPeriodCallable(const DescribeMaintainPeriodRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeMaintainPeriodOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeMaintainPeriod(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeMaintainPeriodOutcome>>();
+    DescribeMaintainPeriodAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const DescribeMaintainPeriodRequest&,
+        DescribeMaintainPeriodOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CynosdbClient::DescribeParamTemplateDetailOutcome CynosdbClient::DescribeParamTemplateDetail(const DescribeParamTemplateDetailRequest &request)
@@ -3244,25 +3762,32 @@ CynosdbClient::DescribeParamTemplateDetailOutcome CynosdbClient::DescribeParamTe
 
 void CynosdbClient::DescribeParamTemplateDetailAsync(const DescribeParamTemplateDetailRequest& request, const DescribeParamTemplateDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeParamTemplateDetail(request), context);
-    };
+    using Req = const DescribeParamTemplateDetailRequest&;
+    using Resp = DescribeParamTemplateDetailResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeParamTemplateDetail", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CynosdbClient::DescribeParamTemplateDetailOutcomeCallable CynosdbClient::DescribeParamTemplateDetailCallable(const DescribeParamTemplateDetailRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeParamTemplateDetailOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeParamTemplateDetail(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeParamTemplateDetailOutcome>>();
+    DescribeParamTemplateDetailAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const DescribeParamTemplateDetailRequest&,
+        DescribeParamTemplateDetailOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CynosdbClient::DescribeParamTemplatesOutcome CynosdbClient::DescribeParamTemplates(const DescribeParamTemplatesRequest &request)
@@ -3287,25 +3812,32 @@ CynosdbClient::DescribeParamTemplatesOutcome CynosdbClient::DescribeParamTemplat
 
 void CynosdbClient::DescribeParamTemplatesAsync(const DescribeParamTemplatesRequest& request, const DescribeParamTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeParamTemplates(request), context);
-    };
+    using Req = const DescribeParamTemplatesRequest&;
+    using Resp = DescribeParamTemplatesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeParamTemplates", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CynosdbClient::DescribeParamTemplatesOutcomeCallable CynosdbClient::DescribeParamTemplatesCallable(const DescribeParamTemplatesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeParamTemplatesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeParamTemplates(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeParamTemplatesOutcome>>();
+    DescribeParamTemplatesAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const DescribeParamTemplatesRequest&,
+        DescribeParamTemplatesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CynosdbClient::DescribeProjectSecurityGroupsOutcome CynosdbClient::DescribeProjectSecurityGroups(const DescribeProjectSecurityGroupsRequest &request)
@@ -3330,25 +3862,32 @@ CynosdbClient::DescribeProjectSecurityGroupsOutcome CynosdbClient::DescribeProje
 
 void CynosdbClient::DescribeProjectSecurityGroupsAsync(const DescribeProjectSecurityGroupsRequest& request, const DescribeProjectSecurityGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeProjectSecurityGroups(request), context);
-    };
+    using Req = const DescribeProjectSecurityGroupsRequest&;
+    using Resp = DescribeProjectSecurityGroupsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeProjectSecurityGroups", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CynosdbClient::DescribeProjectSecurityGroupsOutcomeCallable CynosdbClient::DescribeProjectSecurityGroupsCallable(const DescribeProjectSecurityGroupsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeProjectSecurityGroupsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeProjectSecurityGroups(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeProjectSecurityGroupsOutcome>>();
+    DescribeProjectSecurityGroupsAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const DescribeProjectSecurityGroupsRequest&,
+        DescribeProjectSecurityGroupsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CynosdbClient::DescribeProxiesOutcome CynosdbClient::DescribeProxies(const DescribeProxiesRequest &request)
@@ -3373,25 +3912,32 @@ CynosdbClient::DescribeProxiesOutcome CynosdbClient::DescribeProxies(const Descr
 
 void CynosdbClient::DescribeProxiesAsync(const DescribeProxiesRequest& request, const DescribeProxiesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeProxies(request), context);
-    };
+    using Req = const DescribeProxiesRequest&;
+    using Resp = DescribeProxiesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeProxies", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CynosdbClient::DescribeProxiesOutcomeCallable CynosdbClient::DescribeProxiesCallable(const DescribeProxiesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeProxiesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeProxies(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeProxiesOutcome>>();
+    DescribeProxiesAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const DescribeProxiesRequest&,
+        DescribeProxiesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CynosdbClient::DescribeProxyNodesOutcome CynosdbClient::DescribeProxyNodes(const DescribeProxyNodesRequest &request)
@@ -3416,25 +3962,32 @@ CynosdbClient::DescribeProxyNodesOutcome CynosdbClient::DescribeProxyNodes(const
 
 void CynosdbClient::DescribeProxyNodesAsync(const DescribeProxyNodesRequest& request, const DescribeProxyNodesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeProxyNodes(request), context);
-    };
+    using Req = const DescribeProxyNodesRequest&;
+    using Resp = DescribeProxyNodesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeProxyNodes", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CynosdbClient::DescribeProxyNodesOutcomeCallable CynosdbClient::DescribeProxyNodesCallable(const DescribeProxyNodesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeProxyNodesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeProxyNodes(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeProxyNodesOutcome>>();
+    DescribeProxyNodesAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const DescribeProxyNodesRequest&,
+        DescribeProxyNodesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CynosdbClient::DescribeProxySpecsOutcome CynosdbClient::DescribeProxySpecs(const DescribeProxySpecsRequest &request)
@@ -3459,25 +4012,32 @@ CynosdbClient::DescribeProxySpecsOutcome CynosdbClient::DescribeProxySpecs(const
 
 void CynosdbClient::DescribeProxySpecsAsync(const DescribeProxySpecsRequest& request, const DescribeProxySpecsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeProxySpecs(request), context);
-    };
+    using Req = const DescribeProxySpecsRequest&;
+    using Resp = DescribeProxySpecsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeProxySpecs", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CynosdbClient::DescribeProxySpecsOutcomeCallable CynosdbClient::DescribeProxySpecsCallable(const DescribeProxySpecsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeProxySpecsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeProxySpecs(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeProxySpecsOutcome>>();
+    DescribeProxySpecsAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const DescribeProxySpecsRequest&,
+        DescribeProxySpecsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CynosdbClient::DescribeResourcePackageDetailOutcome CynosdbClient::DescribeResourcePackageDetail(const DescribeResourcePackageDetailRequest &request)
@@ -3502,25 +4062,32 @@ CynosdbClient::DescribeResourcePackageDetailOutcome CynosdbClient::DescribeResou
 
 void CynosdbClient::DescribeResourcePackageDetailAsync(const DescribeResourcePackageDetailRequest& request, const DescribeResourcePackageDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeResourcePackageDetail(request), context);
-    };
+    using Req = const DescribeResourcePackageDetailRequest&;
+    using Resp = DescribeResourcePackageDetailResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeResourcePackageDetail", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CynosdbClient::DescribeResourcePackageDetailOutcomeCallable CynosdbClient::DescribeResourcePackageDetailCallable(const DescribeResourcePackageDetailRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeResourcePackageDetailOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeResourcePackageDetail(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeResourcePackageDetailOutcome>>();
+    DescribeResourcePackageDetailAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const DescribeResourcePackageDetailRequest&,
+        DescribeResourcePackageDetailOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CynosdbClient::DescribeResourcePackageListOutcome CynosdbClient::DescribeResourcePackageList(const DescribeResourcePackageListRequest &request)
@@ -3545,25 +4112,32 @@ CynosdbClient::DescribeResourcePackageListOutcome CynosdbClient::DescribeResourc
 
 void CynosdbClient::DescribeResourcePackageListAsync(const DescribeResourcePackageListRequest& request, const DescribeResourcePackageListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeResourcePackageList(request), context);
-    };
+    using Req = const DescribeResourcePackageListRequest&;
+    using Resp = DescribeResourcePackageListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeResourcePackageList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CynosdbClient::DescribeResourcePackageListOutcomeCallable CynosdbClient::DescribeResourcePackageListCallable(const DescribeResourcePackageListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeResourcePackageListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeResourcePackageList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeResourcePackageListOutcome>>();
+    DescribeResourcePackageListAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const DescribeResourcePackageListRequest&,
+        DescribeResourcePackageListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CynosdbClient::DescribeResourcePackageSaleSpecOutcome CynosdbClient::DescribeResourcePackageSaleSpec(const DescribeResourcePackageSaleSpecRequest &request)
@@ -3588,25 +4162,32 @@ CynosdbClient::DescribeResourcePackageSaleSpecOutcome CynosdbClient::DescribeRes
 
 void CynosdbClient::DescribeResourcePackageSaleSpecAsync(const DescribeResourcePackageSaleSpecRequest& request, const DescribeResourcePackageSaleSpecAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeResourcePackageSaleSpec(request), context);
-    };
+    using Req = const DescribeResourcePackageSaleSpecRequest&;
+    using Resp = DescribeResourcePackageSaleSpecResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeResourcePackageSaleSpec", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CynosdbClient::DescribeResourcePackageSaleSpecOutcomeCallable CynosdbClient::DescribeResourcePackageSaleSpecCallable(const DescribeResourcePackageSaleSpecRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeResourcePackageSaleSpecOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeResourcePackageSaleSpec(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeResourcePackageSaleSpecOutcome>>();
+    DescribeResourcePackageSaleSpecAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const DescribeResourcePackageSaleSpecRequest&,
+        DescribeResourcePackageSaleSpecOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CynosdbClient::DescribeResourcesByDealNameOutcome CynosdbClient::DescribeResourcesByDealName(const DescribeResourcesByDealNameRequest &request)
@@ -3631,25 +4212,32 @@ CynosdbClient::DescribeResourcesByDealNameOutcome CynosdbClient::DescribeResourc
 
 void CynosdbClient::DescribeResourcesByDealNameAsync(const DescribeResourcesByDealNameRequest& request, const DescribeResourcesByDealNameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeResourcesByDealName(request), context);
-    };
+    using Req = const DescribeResourcesByDealNameRequest&;
+    using Resp = DescribeResourcesByDealNameResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeResourcesByDealName", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CynosdbClient::DescribeResourcesByDealNameOutcomeCallable CynosdbClient::DescribeResourcesByDealNameCallable(const DescribeResourcesByDealNameRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeResourcesByDealNameOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeResourcesByDealName(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeResourcesByDealNameOutcome>>();
+    DescribeResourcesByDealNameAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const DescribeResourcesByDealNameRequest&,
+        DescribeResourcesByDealNameOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CynosdbClient::DescribeRollbackTimeRangeOutcome CynosdbClient::DescribeRollbackTimeRange(const DescribeRollbackTimeRangeRequest &request)
@@ -3674,25 +4262,32 @@ CynosdbClient::DescribeRollbackTimeRangeOutcome CynosdbClient::DescribeRollbackT
 
 void CynosdbClient::DescribeRollbackTimeRangeAsync(const DescribeRollbackTimeRangeRequest& request, const DescribeRollbackTimeRangeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeRollbackTimeRange(request), context);
-    };
+    using Req = const DescribeRollbackTimeRangeRequest&;
+    using Resp = DescribeRollbackTimeRangeResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeRollbackTimeRange", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CynosdbClient::DescribeRollbackTimeRangeOutcomeCallable CynosdbClient::DescribeRollbackTimeRangeCallable(const DescribeRollbackTimeRangeRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeRollbackTimeRangeOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeRollbackTimeRange(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeRollbackTimeRangeOutcome>>();
+    DescribeRollbackTimeRangeAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const DescribeRollbackTimeRangeRequest&,
+        DescribeRollbackTimeRangeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CynosdbClient::DescribeSSLStatusOutcome CynosdbClient::DescribeSSLStatus(const DescribeSSLStatusRequest &request)
@@ -3717,25 +4312,32 @@ CynosdbClient::DescribeSSLStatusOutcome CynosdbClient::DescribeSSLStatus(const D
 
 void CynosdbClient::DescribeSSLStatusAsync(const DescribeSSLStatusRequest& request, const DescribeSSLStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeSSLStatus(request), context);
-    };
+    using Req = const DescribeSSLStatusRequest&;
+    using Resp = DescribeSSLStatusResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeSSLStatus", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CynosdbClient::DescribeSSLStatusOutcomeCallable CynosdbClient::DescribeSSLStatusCallable(const DescribeSSLStatusRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeSSLStatusOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeSSLStatus(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeSSLStatusOutcome>>();
+    DescribeSSLStatusAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const DescribeSSLStatusRequest&,
+        DescribeSSLStatusOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CynosdbClient::DescribeServerlessInstanceSpecsOutcome CynosdbClient::DescribeServerlessInstanceSpecs(const DescribeServerlessInstanceSpecsRequest &request)
@@ -3760,25 +4362,32 @@ CynosdbClient::DescribeServerlessInstanceSpecsOutcome CynosdbClient::DescribeSer
 
 void CynosdbClient::DescribeServerlessInstanceSpecsAsync(const DescribeServerlessInstanceSpecsRequest& request, const DescribeServerlessInstanceSpecsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeServerlessInstanceSpecs(request), context);
-    };
+    using Req = const DescribeServerlessInstanceSpecsRequest&;
+    using Resp = DescribeServerlessInstanceSpecsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeServerlessInstanceSpecs", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CynosdbClient::DescribeServerlessInstanceSpecsOutcomeCallable CynosdbClient::DescribeServerlessInstanceSpecsCallable(const DescribeServerlessInstanceSpecsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeServerlessInstanceSpecsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeServerlessInstanceSpecs(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeServerlessInstanceSpecsOutcome>>();
+    DescribeServerlessInstanceSpecsAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const DescribeServerlessInstanceSpecsRequest&,
+        DescribeServerlessInstanceSpecsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CynosdbClient::DescribeServerlessStrategyOutcome CynosdbClient::DescribeServerlessStrategy(const DescribeServerlessStrategyRequest &request)
@@ -3803,25 +4412,32 @@ CynosdbClient::DescribeServerlessStrategyOutcome CynosdbClient::DescribeServerle
 
 void CynosdbClient::DescribeServerlessStrategyAsync(const DescribeServerlessStrategyRequest& request, const DescribeServerlessStrategyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeServerlessStrategy(request), context);
-    };
+    using Req = const DescribeServerlessStrategyRequest&;
+    using Resp = DescribeServerlessStrategyResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeServerlessStrategy", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CynosdbClient::DescribeServerlessStrategyOutcomeCallable CynosdbClient::DescribeServerlessStrategyCallable(const DescribeServerlessStrategyRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeServerlessStrategyOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeServerlessStrategy(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeServerlessStrategyOutcome>>();
+    DescribeServerlessStrategyAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const DescribeServerlessStrategyRequest&,
+        DescribeServerlessStrategyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CynosdbClient::DescribeSlaveZonesOutcome CynosdbClient::DescribeSlaveZones(const DescribeSlaveZonesRequest &request)
@@ -3846,25 +4462,32 @@ CynosdbClient::DescribeSlaveZonesOutcome CynosdbClient::DescribeSlaveZones(const
 
 void CynosdbClient::DescribeSlaveZonesAsync(const DescribeSlaveZonesRequest& request, const DescribeSlaveZonesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeSlaveZones(request), context);
-    };
+    using Req = const DescribeSlaveZonesRequest&;
+    using Resp = DescribeSlaveZonesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeSlaveZones", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CynosdbClient::DescribeSlaveZonesOutcomeCallable CynosdbClient::DescribeSlaveZonesCallable(const DescribeSlaveZonesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeSlaveZonesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeSlaveZones(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeSlaveZonesOutcome>>();
+    DescribeSlaveZonesAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const DescribeSlaveZonesRequest&,
+        DescribeSlaveZonesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CynosdbClient::DescribeSupportProxyVersionOutcome CynosdbClient::DescribeSupportProxyVersion(const DescribeSupportProxyVersionRequest &request)
@@ -3889,25 +4512,32 @@ CynosdbClient::DescribeSupportProxyVersionOutcome CynosdbClient::DescribeSupport
 
 void CynosdbClient::DescribeSupportProxyVersionAsync(const DescribeSupportProxyVersionRequest& request, const DescribeSupportProxyVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeSupportProxyVersion(request), context);
-    };
+    using Req = const DescribeSupportProxyVersionRequest&;
+    using Resp = DescribeSupportProxyVersionResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeSupportProxyVersion", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CynosdbClient::DescribeSupportProxyVersionOutcomeCallable CynosdbClient::DescribeSupportProxyVersionCallable(const DescribeSupportProxyVersionRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeSupportProxyVersionOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeSupportProxyVersion(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeSupportProxyVersionOutcome>>();
+    DescribeSupportProxyVersionAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const DescribeSupportProxyVersionRequest&,
+        DescribeSupportProxyVersionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CynosdbClient::DescribeTasksOutcome CynosdbClient::DescribeTasks(const DescribeTasksRequest &request)
@@ -3932,25 +4562,32 @@ CynosdbClient::DescribeTasksOutcome CynosdbClient::DescribeTasks(const DescribeT
 
 void CynosdbClient::DescribeTasksAsync(const DescribeTasksRequest& request, const DescribeTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeTasks(request), context);
-    };
+    using Req = const DescribeTasksRequest&;
+    using Resp = DescribeTasksResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeTasks", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CynosdbClient::DescribeTasksOutcomeCallable CynosdbClient::DescribeTasksCallable(const DescribeTasksRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeTasksOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeTasks(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeTasksOutcome>>();
+    DescribeTasksAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const DescribeTasksRequest&,
+        DescribeTasksOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CynosdbClient::DescribeZonesOutcome CynosdbClient::DescribeZones(const DescribeZonesRequest &request)
@@ -3975,25 +4612,32 @@ CynosdbClient::DescribeZonesOutcome CynosdbClient::DescribeZones(const DescribeZ
 
 void CynosdbClient::DescribeZonesAsync(const DescribeZonesRequest& request, const DescribeZonesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeZones(request), context);
-    };
+    using Req = const DescribeZonesRequest&;
+    using Resp = DescribeZonesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeZones", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CynosdbClient::DescribeZonesOutcomeCallable CynosdbClient::DescribeZonesCallable(const DescribeZonesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeZonesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeZones(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeZonesOutcome>>();
+    DescribeZonesAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const DescribeZonesRequest&,
+        DescribeZonesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CynosdbClient::DisassociateSecurityGroupsOutcome CynosdbClient::DisassociateSecurityGroups(const DisassociateSecurityGroupsRequest &request)
@@ -4018,25 +4662,32 @@ CynosdbClient::DisassociateSecurityGroupsOutcome CynosdbClient::DisassociateSecu
 
 void CynosdbClient::DisassociateSecurityGroupsAsync(const DisassociateSecurityGroupsRequest& request, const DisassociateSecurityGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DisassociateSecurityGroups(request), context);
-    };
+    using Req = const DisassociateSecurityGroupsRequest&;
+    using Resp = DisassociateSecurityGroupsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DisassociateSecurityGroups", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CynosdbClient::DisassociateSecurityGroupsOutcomeCallable CynosdbClient::DisassociateSecurityGroupsCallable(const DisassociateSecurityGroupsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DisassociateSecurityGroupsOutcome()>>(
-        [this, request]()
-        {
-            return this->DisassociateSecurityGroups(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DisassociateSecurityGroupsOutcome>>();
+    DisassociateSecurityGroupsAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const DisassociateSecurityGroupsRequest&,
+        DisassociateSecurityGroupsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CynosdbClient::ExportInstanceErrorLogsOutcome CynosdbClient::ExportInstanceErrorLogs(const ExportInstanceErrorLogsRequest &request)
@@ -4061,25 +4712,32 @@ CynosdbClient::ExportInstanceErrorLogsOutcome CynosdbClient::ExportInstanceError
 
 void CynosdbClient::ExportInstanceErrorLogsAsync(const ExportInstanceErrorLogsRequest& request, const ExportInstanceErrorLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ExportInstanceErrorLogs(request), context);
-    };
+    using Req = const ExportInstanceErrorLogsRequest&;
+    using Resp = ExportInstanceErrorLogsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ExportInstanceErrorLogs", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CynosdbClient::ExportInstanceErrorLogsOutcomeCallable CynosdbClient::ExportInstanceErrorLogsCallable(const ExportInstanceErrorLogsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ExportInstanceErrorLogsOutcome()>>(
-        [this, request]()
-        {
-            return this->ExportInstanceErrorLogs(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ExportInstanceErrorLogsOutcome>>();
+    ExportInstanceErrorLogsAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const ExportInstanceErrorLogsRequest&,
+        ExportInstanceErrorLogsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CynosdbClient::ExportInstanceSlowQueriesOutcome CynosdbClient::ExportInstanceSlowQueries(const ExportInstanceSlowQueriesRequest &request)
@@ -4104,25 +4762,32 @@ CynosdbClient::ExportInstanceSlowQueriesOutcome CynosdbClient::ExportInstanceSlo
 
 void CynosdbClient::ExportInstanceSlowQueriesAsync(const ExportInstanceSlowQueriesRequest& request, const ExportInstanceSlowQueriesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ExportInstanceSlowQueries(request), context);
-    };
+    using Req = const ExportInstanceSlowQueriesRequest&;
+    using Resp = ExportInstanceSlowQueriesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ExportInstanceSlowQueries", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CynosdbClient::ExportInstanceSlowQueriesOutcomeCallable CynosdbClient::ExportInstanceSlowQueriesCallable(const ExportInstanceSlowQueriesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ExportInstanceSlowQueriesOutcome()>>(
-        [this, request]()
-        {
-            return this->ExportInstanceSlowQueries(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ExportInstanceSlowQueriesOutcome>>();
+    ExportInstanceSlowQueriesAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const ExportInstanceSlowQueriesRequest&,
+        ExportInstanceSlowQueriesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CynosdbClient::ExportResourcePackageDeductDetailsOutcome CynosdbClient::ExportResourcePackageDeductDetails(const ExportResourcePackageDeductDetailsRequest &request)
@@ -4147,25 +4812,32 @@ CynosdbClient::ExportResourcePackageDeductDetailsOutcome CynosdbClient::ExportRe
 
 void CynosdbClient::ExportResourcePackageDeductDetailsAsync(const ExportResourcePackageDeductDetailsRequest& request, const ExportResourcePackageDeductDetailsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ExportResourcePackageDeductDetails(request), context);
-    };
+    using Req = const ExportResourcePackageDeductDetailsRequest&;
+    using Resp = ExportResourcePackageDeductDetailsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ExportResourcePackageDeductDetails", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CynosdbClient::ExportResourcePackageDeductDetailsOutcomeCallable CynosdbClient::ExportResourcePackageDeductDetailsCallable(const ExportResourcePackageDeductDetailsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ExportResourcePackageDeductDetailsOutcome()>>(
-        [this, request]()
-        {
-            return this->ExportResourcePackageDeductDetails(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ExportResourcePackageDeductDetailsOutcome>>();
+    ExportResourcePackageDeductDetailsAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const ExportResourcePackageDeductDetailsRequest&,
+        ExportResourcePackageDeductDetailsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CynosdbClient::GrantAccountPrivilegesOutcome CynosdbClient::GrantAccountPrivileges(const GrantAccountPrivilegesRequest &request)
@@ -4190,25 +4862,32 @@ CynosdbClient::GrantAccountPrivilegesOutcome CynosdbClient::GrantAccountPrivileg
 
 void CynosdbClient::GrantAccountPrivilegesAsync(const GrantAccountPrivilegesRequest& request, const GrantAccountPrivilegesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->GrantAccountPrivileges(request), context);
-    };
+    using Req = const GrantAccountPrivilegesRequest&;
+    using Resp = GrantAccountPrivilegesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "GrantAccountPrivileges", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CynosdbClient::GrantAccountPrivilegesOutcomeCallable CynosdbClient::GrantAccountPrivilegesCallable(const GrantAccountPrivilegesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<GrantAccountPrivilegesOutcome()>>(
-        [this, request]()
-        {
-            return this->GrantAccountPrivileges(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<GrantAccountPrivilegesOutcome>>();
+    GrantAccountPrivilegesAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const GrantAccountPrivilegesRequest&,
+        GrantAccountPrivilegesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CynosdbClient::InquirePriceCreateOutcome CynosdbClient::InquirePriceCreate(const InquirePriceCreateRequest &request)
@@ -4233,25 +4912,32 @@ CynosdbClient::InquirePriceCreateOutcome CynosdbClient::InquirePriceCreate(const
 
 void CynosdbClient::InquirePriceCreateAsync(const InquirePriceCreateRequest& request, const InquirePriceCreateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->InquirePriceCreate(request), context);
-    };
+    using Req = const InquirePriceCreateRequest&;
+    using Resp = InquirePriceCreateResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "InquirePriceCreate", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CynosdbClient::InquirePriceCreateOutcomeCallable CynosdbClient::InquirePriceCreateCallable(const InquirePriceCreateRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<InquirePriceCreateOutcome()>>(
-        [this, request]()
-        {
-            return this->InquirePriceCreate(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<InquirePriceCreateOutcome>>();
+    InquirePriceCreateAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const InquirePriceCreateRequest&,
+        InquirePriceCreateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CynosdbClient::InquirePriceModifyOutcome CynosdbClient::InquirePriceModify(const InquirePriceModifyRequest &request)
@@ -4276,25 +4962,32 @@ CynosdbClient::InquirePriceModifyOutcome CynosdbClient::InquirePriceModify(const
 
 void CynosdbClient::InquirePriceModifyAsync(const InquirePriceModifyRequest& request, const InquirePriceModifyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->InquirePriceModify(request), context);
-    };
+    using Req = const InquirePriceModifyRequest&;
+    using Resp = InquirePriceModifyResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "InquirePriceModify", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CynosdbClient::InquirePriceModifyOutcomeCallable CynosdbClient::InquirePriceModifyCallable(const InquirePriceModifyRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<InquirePriceModifyOutcome()>>(
-        [this, request]()
-        {
-            return this->InquirePriceModify(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<InquirePriceModifyOutcome>>();
+    InquirePriceModifyAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const InquirePriceModifyRequest&,
+        InquirePriceModifyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CynosdbClient::InquirePriceMultiSpecOutcome CynosdbClient::InquirePriceMultiSpec(const InquirePriceMultiSpecRequest &request)
@@ -4319,25 +5012,32 @@ CynosdbClient::InquirePriceMultiSpecOutcome CynosdbClient::InquirePriceMultiSpec
 
 void CynosdbClient::InquirePriceMultiSpecAsync(const InquirePriceMultiSpecRequest& request, const InquirePriceMultiSpecAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->InquirePriceMultiSpec(request), context);
-    };
+    using Req = const InquirePriceMultiSpecRequest&;
+    using Resp = InquirePriceMultiSpecResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "InquirePriceMultiSpec", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CynosdbClient::InquirePriceMultiSpecOutcomeCallable CynosdbClient::InquirePriceMultiSpecCallable(const InquirePriceMultiSpecRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<InquirePriceMultiSpecOutcome()>>(
-        [this, request]()
-        {
-            return this->InquirePriceMultiSpec(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<InquirePriceMultiSpecOutcome>>();
+    InquirePriceMultiSpecAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const InquirePriceMultiSpecRequest&,
+        InquirePriceMultiSpecOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CynosdbClient::InquirePriceRenewOutcome CynosdbClient::InquirePriceRenew(const InquirePriceRenewRequest &request)
@@ -4362,25 +5062,32 @@ CynosdbClient::InquirePriceRenewOutcome CynosdbClient::InquirePriceRenew(const I
 
 void CynosdbClient::InquirePriceRenewAsync(const InquirePriceRenewRequest& request, const InquirePriceRenewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->InquirePriceRenew(request), context);
-    };
+    using Req = const InquirePriceRenewRequest&;
+    using Resp = InquirePriceRenewResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "InquirePriceRenew", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CynosdbClient::InquirePriceRenewOutcomeCallable CynosdbClient::InquirePriceRenewCallable(const InquirePriceRenewRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<InquirePriceRenewOutcome()>>(
-        [this, request]()
-        {
-            return this->InquirePriceRenew(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<InquirePriceRenewOutcome>>();
+    InquirePriceRenewAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const InquirePriceRenewRequest&,
+        InquirePriceRenewOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CynosdbClient::IsolateClusterOutcome CynosdbClient::IsolateCluster(const IsolateClusterRequest &request)
@@ -4405,25 +5112,32 @@ CynosdbClient::IsolateClusterOutcome CynosdbClient::IsolateCluster(const Isolate
 
 void CynosdbClient::IsolateClusterAsync(const IsolateClusterRequest& request, const IsolateClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->IsolateCluster(request), context);
-    };
+    using Req = const IsolateClusterRequest&;
+    using Resp = IsolateClusterResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "IsolateCluster", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CynosdbClient::IsolateClusterOutcomeCallable CynosdbClient::IsolateClusterCallable(const IsolateClusterRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<IsolateClusterOutcome()>>(
-        [this, request]()
-        {
-            return this->IsolateCluster(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<IsolateClusterOutcome>>();
+    IsolateClusterAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const IsolateClusterRequest&,
+        IsolateClusterOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CynosdbClient::IsolateInstanceOutcome CynosdbClient::IsolateInstance(const IsolateInstanceRequest &request)
@@ -4448,25 +5162,32 @@ CynosdbClient::IsolateInstanceOutcome CynosdbClient::IsolateInstance(const Isola
 
 void CynosdbClient::IsolateInstanceAsync(const IsolateInstanceRequest& request, const IsolateInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->IsolateInstance(request), context);
-    };
+    using Req = const IsolateInstanceRequest&;
+    using Resp = IsolateInstanceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "IsolateInstance", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CynosdbClient::IsolateInstanceOutcomeCallable CynosdbClient::IsolateInstanceCallable(const IsolateInstanceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<IsolateInstanceOutcome()>>(
-        [this, request]()
-        {
-            return this->IsolateInstance(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<IsolateInstanceOutcome>>();
+    IsolateInstanceAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const IsolateInstanceRequest&,
+        IsolateInstanceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CynosdbClient::ModifyAccountDescriptionOutcome CynosdbClient::ModifyAccountDescription(const ModifyAccountDescriptionRequest &request)
@@ -4491,25 +5212,32 @@ CynosdbClient::ModifyAccountDescriptionOutcome CynosdbClient::ModifyAccountDescr
 
 void CynosdbClient::ModifyAccountDescriptionAsync(const ModifyAccountDescriptionRequest& request, const ModifyAccountDescriptionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyAccountDescription(request), context);
-    };
+    using Req = const ModifyAccountDescriptionRequest&;
+    using Resp = ModifyAccountDescriptionResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyAccountDescription", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CynosdbClient::ModifyAccountDescriptionOutcomeCallable CynosdbClient::ModifyAccountDescriptionCallable(const ModifyAccountDescriptionRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyAccountDescriptionOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyAccountDescription(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyAccountDescriptionOutcome>>();
+    ModifyAccountDescriptionAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const ModifyAccountDescriptionRequest&,
+        ModifyAccountDescriptionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CynosdbClient::ModifyAccountHostOutcome CynosdbClient::ModifyAccountHost(const ModifyAccountHostRequest &request)
@@ -4534,25 +5262,32 @@ CynosdbClient::ModifyAccountHostOutcome CynosdbClient::ModifyAccountHost(const M
 
 void CynosdbClient::ModifyAccountHostAsync(const ModifyAccountHostRequest& request, const ModifyAccountHostAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyAccountHost(request), context);
-    };
+    using Req = const ModifyAccountHostRequest&;
+    using Resp = ModifyAccountHostResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyAccountHost", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CynosdbClient::ModifyAccountHostOutcomeCallable CynosdbClient::ModifyAccountHostCallable(const ModifyAccountHostRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyAccountHostOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyAccountHost(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyAccountHostOutcome>>();
+    ModifyAccountHostAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const ModifyAccountHostRequest&,
+        ModifyAccountHostOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CynosdbClient::ModifyAccountParamsOutcome CynosdbClient::ModifyAccountParams(const ModifyAccountParamsRequest &request)
@@ -4577,25 +5312,32 @@ CynosdbClient::ModifyAccountParamsOutcome CynosdbClient::ModifyAccountParams(con
 
 void CynosdbClient::ModifyAccountParamsAsync(const ModifyAccountParamsRequest& request, const ModifyAccountParamsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyAccountParams(request), context);
-    };
+    using Req = const ModifyAccountParamsRequest&;
+    using Resp = ModifyAccountParamsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyAccountParams", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CynosdbClient::ModifyAccountParamsOutcomeCallable CynosdbClient::ModifyAccountParamsCallable(const ModifyAccountParamsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyAccountParamsOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyAccountParams(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyAccountParamsOutcome>>();
+    ModifyAccountParamsAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const ModifyAccountParamsRequest&,
+        ModifyAccountParamsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CynosdbClient::ModifyAccountPrivilegesOutcome CynosdbClient::ModifyAccountPrivileges(const ModifyAccountPrivilegesRequest &request)
@@ -4620,25 +5362,32 @@ CynosdbClient::ModifyAccountPrivilegesOutcome CynosdbClient::ModifyAccountPrivil
 
 void CynosdbClient::ModifyAccountPrivilegesAsync(const ModifyAccountPrivilegesRequest& request, const ModifyAccountPrivilegesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyAccountPrivileges(request), context);
-    };
+    using Req = const ModifyAccountPrivilegesRequest&;
+    using Resp = ModifyAccountPrivilegesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyAccountPrivileges", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CynosdbClient::ModifyAccountPrivilegesOutcomeCallable CynosdbClient::ModifyAccountPrivilegesCallable(const ModifyAccountPrivilegesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyAccountPrivilegesOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyAccountPrivileges(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyAccountPrivilegesOutcome>>();
+    ModifyAccountPrivilegesAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const ModifyAccountPrivilegesRequest&,
+        ModifyAccountPrivilegesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CynosdbClient::ModifyAuditRuleTemplatesOutcome CynosdbClient::ModifyAuditRuleTemplates(const ModifyAuditRuleTemplatesRequest &request)
@@ -4663,25 +5412,32 @@ CynosdbClient::ModifyAuditRuleTemplatesOutcome CynosdbClient::ModifyAuditRuleTem
 
 void CynosdbClient::ModifyAuditRuleTemplatesAsync(const ModifyAuditRuleTemplatesRequest& request, const ModifyAuditRuleTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyAuditRuleTemplates(request), context);
-    };
+    using Req = const ModifyAuditRuleTemplatesRequest&;
+    using Resp = ModifyAuditRuleTemplatesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyAuditRuleTemplates", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CynosdbClient::ModifyAuditRuleTemplatesOutcomeCallable CynosdbClient::ModifyAuditRuleTemplatesCallable(const ModifyAuditRuleTemplatesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyAuditRuleTemplatesOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyAuditRuleTemplates(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyAuditRuleTemplatesOutcome>>();
+    ModifyAuditRuleTemplatesAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const ModifyAuditRuleTemplatesRequest&,
+        ModifyAuditRuleTemplatesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CynosdbClient::ModifyAuditServiceOutcome CynosdbClient::ModifyAuditService(const ModifyAuditServiceRequest &request)
@@ -4706,25 +5462,32 @@ CynosdbClient::ModifyAuditServiceOutcome CynosdbClient::ModifyAuditService(const
 
 void CynosdbClient::ModifyAuditServiceAsync(const ModifyAuditServiceRequest& request, const ModifyAuditServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyAuditService(request), context);
-    };
+    using Req = const ModifyAuditServiceRequest&;
+    using Resp = ModifyAuditServiceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyAuditService", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CynosdbClient::ModifyAuditServiceOutcomeCallable CynosdbClient::ModifyAuditServiceCallable(const ModifyAuditServiceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyAuditServiceOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyAuditService(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyAuditServiceOutcome>>();
+    ModifyAuditServiceAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const ModifyAuditServiceRequest&,
+        ModifyAuditServiceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CynosdbClient::ModifyBackupConfigOutcome CynosdbClient::ModifyBackupConfig(const ModifyBackupConfigRequest &request)
@@ -4749,25 +5512,32 @@ CynosdbClient::ModifyBackupConfigOutcome CynosdbClient::ModifyBackupConfig(const
 
 void CynosdbClient::ModifyBackupConfigAsync(const ModifyBackupConfigRequest& request, const ModifyBackupConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyBackupConfig(request), context);
-    };
+    using Req = const ModifyBackupConfigRequest&;
+    using Resp = ModifyBackupConfigResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyBackupConfig", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CynosdbClient::ModifyBackupConfigOutcomeCallable CynosdbClient::ModifyBackupConfigCallable(const ModifyBackupConfigRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyBackupConfigOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyBackupConfig(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyBackupConfigOutcome>>();
+    ModifyBackupConfigAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const ModifyBackupConfigRequest&,
+        ModifyBackupConfigOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CynosdbClient::ModifyBackupDownloadRestrictionOutcome CynosdbClient::ModifyBackupDownloadRestriction(const ModifyBackupDownloadRestrictionRequest &request)
@@ -4792,25 +5562,32 @@ CynosdbClient::ModifyBackupDownloadRestrictionOutcome CynosdbClient::ModifyBacku
 
 void CynosdbClient::ModifyBackupDownloadRestrictionAsync(const ModifyBackupDownloadRestrictionRequest& request, const ModifyBackupDownloadRestrictionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyBackupDownloadRestriction(request), context);
-    };
+    using Req = const ModifyBackupDownloadRestrictionRequest&;
+    using Resp = ModifyBackupDownloadRestrictionResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyBackupDownloadRestriction", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CynosdbClient::ModifyBackupDownloadRestrictionOutcomeCallable CynosdbClient::ModifyBackupDownloadRestrictionCallable(const ModifyBackupDownloadRestrictionRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyBackupDownloadRestrictionOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyBackupDownloadRestriction(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyBackupDownloadRestrictionOutcome>>();
+    ModifyBackupDownloadRestrictionAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const ModifyBackupDownloadRestrictionRequest&,
+        ModifyBackupDownloadRestrictionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CynosdbClient::ModifyBackupDownloadUserRestrictionOutcome CynosdbClient::ModifyBackupDownloadUserRestriction(const ModifyBackupDownloadUserRestrictionRequest &request)
@@ -4835,25 +5612,32 @@ CynosdbClient::ModifyBackupDownloadUserRestrictionOutcome CynosdbClient::ModifyB
 
 void CynosdbClient::ModifyBackupDownloadUserRestrictionAsync(const ModifyBackupDownloadUserRestrictionRequest& request, const ModifyBackupDownloadUserRestrictionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyBackupDownloadUserRestriction(request), context);
-    };
+    using Req = const ModifyBackupDownloadUserRestrictionRequest&;
+    using Resp = ModifyBackupDownloadUserRestrictionResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyBackupDownloadUserRestriction", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CynosdbClient::ModifyBackupDownloadUserRestrictionOutcomeCallable CynosdbClient::ModifyBackupDownloadUserRestrictionCallable(const ModifyBackupDownloadUserRestrictionRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyBackupDownloadUserRestrictionOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyBackupDownloadUserRestriction(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyBackupDownloadUserRestrictionOutcome>>();
+    ModifyBackupDownloadUserRestrictionAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const ModifyBackupDownloadUserRestrictionRequest&,
+        ModifyBackupDownloadUserRestrictionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CynosdbClient::ModifyBackupNameOutcome CynosdbClient::ModifyBackupName(const ModifyBackupNameRequest &request)
@@ -4878,25 +5662,32 @@ CynosdbClient::ModifyBackupNameOutcome CynosdbClient::ModifyBackupName(const Mod
 
 void CynosdbClient::ModifyBackupNameAsync(const ModifyBackupNameRequest& request, const ModifyBackupNameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyBackupName(request), context);
-    };
+    using Req = const ModifyBackupNameRequest&;
+    using Resp = ModifyBackupNameResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyBackupName", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CynosdbClient::ModifyBackupNameOutcomeCallable CynosdbClient::ModifyBackupNameCallable(const ModifyBackupNameRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyBackupNameOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyBackupName(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyBackupNameOutcome>>();
+    ModifyBackupNameAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const ModifyBackupNameRequest&,
+        ModifyBackupNameOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CynosdbClient::ModifyBinlogConfigOutcome CynosdbClient::ModifyBinlogConfig(const ModifyBinlogConfigRequest &request)
@@ -4921,25 +5712,32 @@ CynosdbClient::ModifyBinlogConfigOutcome CynosdbClient::ModifyBinlogConfig(const
 
 void CynosdbClient::ModifyBinlogConfigAsync(const ModifyBinlogConfigRequest& request, const ModifyBinlogConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyBinlogConfig(request), context);
-    };
+    using Req = const ModifyBinlogConfigRequest&;
+    using Resp = ModifyBinlogConfigResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyBinlogConfig", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CynosdbClient::ModifyBinlogConfigOutcomeCallable CynosdbClient::ModifyBinlogConfigCallable(const ModifyBinlogConfigRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyBinlogConfigOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyBinlogConfig(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyBinlogConfigOutcome>>();
+    ModifyBinlogConfigAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const ModifyBinlogConfigRequest&,
+        ModifyBinlogConfigOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CynosdbClient::ModifyBinlogSaveDaysOutcome CynosdbClient::ModifyBinlogSaveDays(const ModifyBinlogSaveDaysRequest &request)
@@ -4964,25 +5762,32 @@ CynosdbClient::ModifyBinlogSaveDaysOutcome CynosdbClient::ModifyBinlogSaveDays(c
 
 void CynosdbClient::ModifyBinlogSaveDaysAsync(const ModifyBinlogSaveDaysRequest& request, const ModifyBinlogSaveDaysAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyBinlogSaveDays(request), context);
-    };
+    using Req = const ModifyBinlogSaveDaysRequest&;
+    using Resp = ModifyBinlogSaveDaysResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyBinlogSaveDays", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CynosdbClient::ModifyBinlogSaveDaysOutcomeCallable CynosdbClient::ModifyBinlogSaveDaysCallable(const ModifyBinlogSaveDaysRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyBinlogSaveDaysOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyBinlogSaveDays(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyBinlogSaveDaysOutcome>>();
+    ModifyBinlogSaveDaysAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const ModifyBinlogSaveDaysRequest&,
+        ModifyBinlogSaveDaysOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CynosdbClient::ModifyClusterDatabaseOutcome CynosdbClient::ModifyClusterDatabase(const ModifyClusterDatabaseRequest &request)
@@ -5007,25 +5812,32 @@ CynosdbClient::ModifyClusterDatabaseOutcome CynosdbClient::ModifyClusterDatabase
 
 void CynosdbClient::ModifyClusterDatabaseAsync(const ModifyClusterDatabaseRequest& request, const ModifyClusterDatabaseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyClusterDatabase(request), context);
-    };
+    using Req = const ModifyClusterDatabaseRequest&;
+    using Resp = ModifyClusterDatabaseResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyClusterDatabase", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CynosdbClient::ModifyClusterDatabaseOutcomeCallable CynosdbClient::ModifyClusterDatabaseCallable(const ModifyClusterDatabaseRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyClusterDatabaseOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyClusterDatabase(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyClusterDatabaseOutcome>>();
+    ModifyClusterDatabaseAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const ModifyClusterDatabaseRequest&,
+        ModifyClusterDatabaseOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CynosdbClient::ModifyClusterNameOutcome CynosdbClient::ModifyClusterName(const ModifyClusterNameRequest &request)
@@ -5050,25 +5862,32 @@ CynosdbClient::ModifyClusterNameOutcome CynosdbClient::ModifyClusterName(const M
 
 void CynosdbClient::ModifyClusterNameAsync(const ModifyClusterNameRequest& request, const ModifyClusterNameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyClusterName(request), context);
-    };
+    using Req = const ModifyClusterNameRequest&;
+    using Resp = ModifyClusterNameResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyClusterName", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CynosdbClient::ModifyClusterNameOutcomeCallable CynosdbClient::ModifyClusterNameCallable(const ModifyClusterNameRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyClusterNameOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyClusterName(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyClusterNameOutcome>>();
+    ModifyClusterNameAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const ModifyClusterNameRequest&,
+        ModifyClusterNameOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CynosdbClient::ModifyClusterParamOutcome CynosdbClient::ModifyClusterParam(const ModifyClusterParamRequest &request)
@@ -5093,25 +5912,32 @@ CynosdbClient::ModifyClusterParamOutcome CynosdbClient::ModifyClusterParam(const
 
 void CynosdbClient::ModifyClusterParamAsync(const ModifyClusterParamRequest& request, const ModifyClusterParamAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyClusterParam(request), context);
-    };
+    using Req = const ModifyClusterParamRequest&;
+    using Resp = ModifyClusterParamResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyClusterParam", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CynosdbClient::ModifyClusterParamOutcomeCallable CynosdbClient::ModifyClusterParamCallable(const ModifyClusterParamRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyClusterParamOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyClusterParam(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyClusterParamOutcome>>();
+    ModifyClusterParamAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const ModifyClusterParamRequest&,
+        ModifyClusterParamOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CynosdbClient::ModifyClusterPasswordComplexityOutcome CynosdbClient::ModifyClusterPasswordComplexity(const ModifyClusterPasswordComplexityRequest &request)
@@ -5136,25 +5962,32 @@ CynosdbClient::ModifyClusterPasswordComplexityOutcome CynosdbClient::ModifyClust
 
 void CynosdbClient::ModifyClusterPasswordComplexityAsync(const ModifyClusterPasswordComplexityRequest& request, const ModifyClusterPasswordComplexityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyClusterPasswordComplexity(request), context);
-    };
+    using Req = const ModifyClusterPasswordComplexityRequest&;
+    using Resp = ModifyClusterPasswordComplexityResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyClusterPasswordComplexity", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CynosdbClient::ModifyClusterPasswordComplexityOutcomeCallable CynosdbClient::ModifyClusterPasswordComplexityCallable(const ModifyClusterPasswordComplexityRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyClusterPasswordComplexityOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyClusterPasswordComplexity(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyClusterPasswordComplexityOutcome>>();
+    ModifyClusterPasswordComplexityAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const ModifyClusterPasswordComplexityRequest&,
+        ModifyClusterPasswordComplexityOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CynosdbClient::ModifyClusterReadOnlyOutcome CynosdbClient::ModifyClusterReadOnly(const ModifyClusterReadOnlyRequest &request)
@@ -5179,25 +6012,32 @@ CynosdbClient::ModifyClusterReadOnlyOutcome CynosdbClient::ModifyClusterReadOnly
 
 void CynosdbClient::ModifyClusterReadOnlyAsync(const ModifyClusterReadOnlyRequest& request, const ModifyClusterReadOnlyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyClusterReadOnly(request), context);
-    };
+    using Req = const ModifyClusterReadOnlyRequest&;
+    using Resp = ModifyClusterReadOnlyResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyClusterReadOnly", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CynosdbClient::ModifyClusterReadOnlyOutcomeCallable CynosdbClient::ModifyClusterReadOnlyCallable(const ModifyClusterReadOnlyRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyClusterReadOnlyOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyClusterReadOnly(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyClusterReadOnlyOutcome>>();
+    ModifyClusterReadOnlyAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const ModifyClusterReadOnlyRequest&,
+        ModifyClusterReadOnlyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CynosdbClient::ModifyClusterSlaveZoneOutcome CynosdbClient::ModifyClusterSlaveZone(const ModifyClusterSlaveZoneRequest &request)
@@ -5222,25 +6062,32 @@ CynosdbClient::ModifyClusterSlaveZoneOutcome CynosdbClient::ModifyClusterSlaveZo
 
 void CynosdbClient::ModifyClusterSlaveZoneAsync(const ModifyClusterSlaveZoneRequest& request, const ModifyClusterSlaveZoneAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyClusterSlaveZone(request), context);
-    };
+    using Req = const ModifyClusterSlaveZoneRequest&;
+    using Resp = ModifyClusterSlaveZoneResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyClusterSlaveZone", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CynosdbClient::ModifyClusterSlaveZoneOutcomeCallable CynosdbClient::ModifyClusterSlaveZoneCallable(const ModifyClusterSlaveZoneRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyClusterSlaveZoneOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyClusterSlaveZone(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyClusterSlaveZoneOutcome>>();
+    ModifyClusterSlaveZoneAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const ModifyClusterSlaveZoneRequest&,
+        ModifyClusterSlaveZoneOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CynosdbClient::ModifyClusterStorageOutcome CynosdbClient::ModifyClusterStorage(const ModifyClusterStorageRequest &request)
@@ -5265,25 +6112,32 @@ CynosdbClient::ModifyClusterStorageOutcome CynosdbClient::ModifyClusterStorage(c
 
 void CynosdbClient::ModifyClusterStorageAsync(const ModifyClusterStorageRequest& request, const ModifyClusterStorageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyClusterStorage(request), context);
-    };
+    using Req = const ModifyClusterStorageRequest&;
+    using Resp = ModifyClusterStorageResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyClusterStorage", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CynosdbClient::ModifyClusterStorageOutcomeCallable CynosdbClient::ModifyClusterStorageCallable(const ModifyClusterStorageRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyClusterStorageOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyClusterStorage(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyClusterStorageOutcome>>();
+    ModifyClusterStorageAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const ModifyClusterStorageRequest&,
+        ModifyClusterStorageOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CynosdbClient::ModifyDBInstanceSecurityGroupsOutcome CynosdbClient::ModifyDBInstanceSecurityGroups(const ModifyDBInstanceSecurityGroupsRequest &request)
@@ -5308,25 +6162,32 @@ CynosdbClient::ModifyDBInstanceSecurityGroupsOutcome CynosdbClient::ModifyDBInst
 
 void CynosdbClient::ModifyDBInstanceSecurityGroupsAsync(const ModifyDBInstanceSecurityGroupsRequest& request, const ModifyDBInstanceSecurityGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyDBInstanceSecurityGroups(request), context);
-    };
+    using Req = const ModifyDBInstanceSecurityGroupsRequest&;
+    using Resp = ModifyDBInstanceSecurityGroupsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyDBInstanceSecurityGroups", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CynosdbClient::ModifyDBInstanceSecurityGroupsOutcomeCallable CynosdbClient::ModifyDBInstanceSecurityGroupsCallable(const ModifyDBInstanceSecurityGroupsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyDBInstanceSecurityGroupsOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyDBInstanceSecurityGroups(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyDBInstanceSecurityGroupsOutcome>>();
+    ModifyDBInstanceSecurityGroupsAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const ModifyDBInstanceSecurityGroupsRequest&,
+        ModifyDBInstanceSecurityGroupsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CynosdbClient::ModifyInstanceNameOutcome CynosdbClient::ModifyInstanceName(const ModifyInstanceNameRequest &request)
@@ -5351,25 +6212,32 @@ CynosdbClient::ModifyInstanceNameOutcome CynosdbClient::ModifyInstanceName(const
 
 void CynosdbClient::ModifyInstanceNameAsync(const ModifyInstanceNameRequest& request, const ModifyInstanceNameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyInstanceName(request), context);
-    };
+    using Req = const ModifyInstanceNameRequest&;
+    using Resp = ModifyInstanceNameResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyInstanceName", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CynosdbClient::ModifyInstanceNameOutcomeCallable CynosdbClient::ModifyInstanceNameCallable(const ModifyInstanceNameRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyInstanceNameOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyInstanceName(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyInstanceNameOutcome>>();
+    ModifyInstanceNameAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const ModifyInstanceNameRequest&,
+        ModifyInstanceNameOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CynosdbClient::ModifyInstanceParamOutcome CynosdbClient::ModifyInstanceParam(const ModifyInstanceParamRequest &request)
@@ -5394,25 +6262,32 @@ CynosdbClient::ModifyInstanceParamOutcome CynosdbClient::ModifyInstanceParam(con
 
 void CynosdbClient::ModifyInstanceParamAsync(const ModifyInstanceParamRequest& request, const ModifyInstanceParamAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyInstanceParam(request), context);
-    };
+    using Req = const ModifyInstanceParamRequest&;
+    using Resp = ModifyInstanceParamResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyInstanceParam", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CynosdbClient::ModifyInstanceParamOutcomeCallable CynosdbClient::ModifyInstanceParamCallable(const ModifyInstanceParamRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyInstanceParamOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyInstanceParam(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyInstanceParamOutcome>>();
+    ModifyInstanceParamAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const ModifyInstanceParamRequest&,
+        ModifyInstanceParamOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CynosdbClient::ModifyInstanceUpgradeLimitDaysOutcome CynosdbClient::ModifyInstanceUpgradeLimitDays(const ModifyInstanceUpgradeLimitDaysRequest &request)
@@ -5437,25 +6312,32 @@ CynosdbClient::ModifyInstanceUpgradeLimitDaysOutcome CynosdbClient::ModifyInstan
 
 void CynosdbClient::ModifyInstanceUpgradeLimitDaysAsync(const ModifyInstanceUpgradeLimitDaysRequest& request, const ModifyInstanceUpgradeLimitDaysAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyInstanceUpgradeLimitDays(request), context);
-    };
+    using Req = const ModifyInstanceUpgradeLimitDaysRequest&;
+    using Resp = ModifyInstanceUpgradeLimitDaysResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyInstanceUpgradeLimitDays", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CynosdbClient::ModifyInstanceUpgradeLimitDaysOutcomeCallable CynosdbClient::ModifyInstanceUpgradeLimitDaysCallable(const ModifyInstanceUpgradeLimitDaysRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyInstanceUpgradeLimitDaysOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyInstanceUpgradeLimitDays(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyInstanceUpgradeLimitDaysOutcome>>();
+    ModifyInstanceUpgradeLimitDaysAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const ModifyInstanceUpgradeLimitDaysRequest&,
+        ModifyInstanceUpgradeLimitDaysOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CynosdbClient::ModifyMaintainPeriodConfigOutcome CynosdbClient::ModifyMaintainPeriodConfig(const ModifyMaintainPeriodConfigRequest &request)
@@ -5480,25 +6362,32 @@ CynosdbClient::ModifyMaintainPeriodConfigOutcome CynosdbClient::ModifyMaintainPe
 
 void CynosdbClient::ModifyMaintainPeriodConfigAsync(const ModifyMaintainPeriodConfigRequest& request, const ModifyMaintainPeriodConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyMaintainPeriodConfig(request), context);
-    };
+    using Req = const ModifyMaintainPeriodConfigRequest&;
+    using Resp = ModifyMaintainPeriodConfigResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyMaintainPeriodConfig", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CynosdbClient::ModifyMaintainPeriodConfigOutcomeCallable CynosdbClient::ModifyMaintainPeriodConfigCallable(const ModifyMaintainPeriodConfigRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyMaintainPeriodConfigOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyMaintainPeriodConfig(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyMaintainPeriodConfigOutcome>>();
+    ModifyMaintainPeriodConfigAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const ModifyMaintainPeriodConfigRequest&,
+        ModifyMaintainPeriodConfigOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CynosdbClient::ModifyParamTemplateOutcome CynosdbClient::ModifyParamTemplate(const ModifyParamTemplateRequest &request)
@@ -5523,25 +6412,32 @@ CynosdbClient::ModifyParamTemplateOutcome CynosdbClient::ModifyParamTemplate(con
 
 void CynosdbClient::ModifyParamTemplateAsync(const ModifyParamTemplateRequest& request, const ModifyParamTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyParamTemplate(request), context);
-    };
+    using Req = const ModifyParamTemplateRequest&;
+    using Resp = ModifyParamTemplateResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyParamTemplate", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CynosdbClient::ModifyParamTemplateOutcomeCallable CynosdbClient::ModifyParamTemplateCallable(const ModifyParamTemplateRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyParamTemplateOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyParamTemplate(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyParamTemplateOutcome>>();
+    ModifyParamTemplateAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const ModifyParamTemplateRequest&,
+        ModifyParamTemplateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CynosdbClient::ModifyProxyDescOutcome CynosdbClient::ModifyProxyDesc(const ModifyProxyDescRequest &request)
@@ -5566,25 +6462,32 @@ CynosdbClient::ModifyProxyDescOutcome CynosdbClient::ModifyProxyDesc(const Modif
 
 void CynosdbClient::ModifyProxyDescAsync(const ModifyProxyDescRequest& request, const ModifyProxyDescAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyProxyDesc(request), context);
-    };
+    using Req = const ModifyProxyDescRequest&;
+    using Resp = ModifyProxyDescResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyProxyDesc", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CynosdbClient::ModifyProxyDescOutcomeCallable CynosdbClient::ModifyProxyDescCallable(const ModifyProxyDescRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyProxyDescOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyProxyDesc(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyProxyDescOutcome>>();
+    ModifyProxyDescAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const ModifyProxyDescRequest&,
+        ModifyProxyDescOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CynosdbClient::ModifyProxyRwSplitOutcome CynosdbClient::ModifyProxyRwSplit(const ModifyProxyRwSplitRequest &request)
@@ -5609,25 +6512,32 @@ CynosdbClient::ModifyProxyRwSplitOutcome CynosdbClient::ModifyProxyRwSplit(const
 
 void CynosdbClient::ModifyProxyRwSplitAsync(const ModifyProxyRwSplitRequest& request, const ModifyProxyRwSplitAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyProxyRwSplit(request), context);
-    };
+    using Req = const ModifyProxyRwSplitRequest&;
+    using Resp = ModifyProxyRwSplitResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyProxyRwSplit", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CynosdbClient::ModifyProxyRwSplitOutcomeCallable CynosdbClient::ModifyProxyRwSplitCallable(const ModifyProxyRwSplitRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyProxyRwSplitOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyProxyRwSplit(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyProxyRwSplitOutcome>>();
+    ModifyProxyRwSplitAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const ModifyProxyRwSplitRequest&,
+        ModifyProxyRwSplitOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CynosdbClient::ModifyResourcePackageClustersOutcome CynosdbClient::ModifyResourcePackageClusters(const ModifyResourcePackageClustersRequest &request)
@@ -5652,25 +6562,32 @@ CynosdbClient::ModifyResourcePackageClustersOutcome CynosdbClient::ModifyResourc
 
 void CynosdbClient::ModifyResourcePackageClustersAsync(const ModifyResourcePackageClustersRequest& request, const ModifyResourcePackageClustersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyResourcePackageClusters(request), context);
-    };
+    using Req = const ModifyResourcePackageClustersRequest&;
+    using Resp = ModifyResourcePackageClustersResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyResourcePackageClusters", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CynosdbClient::ModifyResourcePackageClustersOutcomeCallable CynosdbClient::ModifyResourcePackageClustersCallable(const ModifyResourcePackageClustersRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyResourcePackageClustersOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyResourcePackageClusters(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyResourcePackageClustersOutcome>>();
+    ModifyResourcePackageClustersAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const ModifyResourcePackageClustersRequest&,
+        ModifyResourcePackageClustersOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CynosdbClient::ModifyResourcePackageNameOutcome CynosdbClient::ModifyResourcePackageName(const ModifyResourcePackageNameRequest &request)
@@ -5695,25 +6612,32 @@ CynosdbClient::ModifyResourcePackageNameOutcome CynosdbClient::ModifyResourcePac
 
 void CynosdbClient::ModifyResourcePackageNameAsync(const ModifyResourcePackageNameRequest& request, const ModifyResourcePackageNameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyResourcePackageName(request), context);
-    };
+    using Req = const ModifyResourcePackageNameRequest&;
+    using Resp = ModifyResourcePackageNameResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyResourcePackageName", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CynosdbClient::ModifyResourcePackageNameOutcomeCallable CynosdbClient::ModifyResourcePackageNameCallable(const ModifyResourcePackageNameRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyResourcePackageNameOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyResourcePackageName(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyResourcePackageNameOutcome>>();
+    ModifyResourcePackageNameAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const ModifyResourcePackageNameRequest&,
+        ModifyResourcePackageNameOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CynosdbClient::ModifyResourcePackagesDeductionPriorityOutcome CynosdbClient::ModifyResourcePackagesDeductionPriority(const ModifyResourcePackagesDeductionPriorityRequest &request)
@@ -5738,25 +6662,32 @@ CynosdbClient::ModifyResourcePackagesDeductionPriorityOutcome CynosdbClient::Mod
 
 void CynosdbClient::ModifyResourcePackagesDeductionPriorityAsync(const ModifyResourcePackagesDeductionPriorityRequest& request, const ModifyResourcePackagesDeductionPriorityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyResourcePackagesDeductionPriority(request), context);
-    };
+    using Req = const ModifyResourcePackagesDeductionPriorityRequest&;
+    using Resp = ModifyResourcePackagesDeductionPriorityResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyResourcePackagesDeductionPriority", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CynosdbClient::ModifyResourcePackagesDeductionPriorityOutcomeCallable CynosdbClient::ModifyResourcePackagesDeductionPriorityCallable(const ModifyResourcePackagesDeductionPriorityRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyResourcePackagesDeductionPriorityOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyResourcePackagesDeductionPriority(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyResourcePackagesDeductionPriorityOutcome>>();
+    ModifyResourcePackagesDeductionPriorityAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const ModifyResourcePackagesDeductionPriorityRequest&,
+        ModifyResourcePackagesDeductionPriorityOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CynosdbClient::ModifyServerlessStrategyOutcome CynosdbClient::ModifyServerlessStrategy(const ModifyServerlessStrategyRequest &request)
@@ -5781,25 +6712,32 @@ CynosdbClient::ModifyServerlessStrategyOutcome CynosdbClient::ModifyServerlessSt
 
 void CynosdbClient::ModifyServerlessStrategyAsync(const ModifyServerlessStrategyRequest& request, const ModifyServerlessStrategyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyServerlessStrategy(request), context);
-    };
+    using Req = const ModifyServerlessStrategyRequest&;
+    using Resp = ModifyServerlessStrategyResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyServerlessStrategy", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CynosdbClient::ModifyServerlessStrategyOutcomeCallable CynosdbClient::ModifyServerlessStrategyCallable(const ModifyServerlessStrategyRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyServerlessStrategyOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyServerlessStrategy(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyServerlessStrategyOutcome>>();
+    ModifyServerlessStrategyAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const ModifyServerlessStrategyRequest&,
+        ModifyServerlessStrategyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CynosdbClient::ModifyVipVportOutcome CynosdbClient::ModifyVipVport(const ModifyVipVportRequest &request)
@@ -5824,25 +6762,32 @@ CynosdbClient::ModifyVipVportOutcome CynosdbClient::ModifyVipVport(const ModifyV
 
 void CynosdbClient::ModifyVipVportAsync(const ModifyVipVportRequest& request, const ModifyVipVportAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyVipVport(request), context);
-    };
+    using Req = const ModifyVipVportRequest&;
+    using Resp = ModifyVipVportResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyVipVport", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CynosdbClient::ModifyVipVportOutcomeCallable CynosdbClient::ModifyVipVportCallable(const ModifyVipVportRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyVipVportOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyVipVport(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyVipVportOutcome>>();
+    ModifyVipVportAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const ModifyVipVportRequest&,
+        ModifyVipVportOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CynosdbClient::OfflineClusterOutcome CynosdbClient::OfflineCluster(const OfflineClusterRequest &request)
@@ -5867,25 +6812,32 @@ CynosdbClient::OfflineClusterOutcome CynosdbClient::OfflineCluster(const Offline
 
 void CynosdbClient::OfflineClusterAsync(const OfflineClusterRequest& request, const OfflineClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->OfflineCluster(request), context);
-    };
+    using Req = const OfflineClusterRequest&;
+    using Resp = OfflineClusterResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "OfflineCluster", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CynosdbClient::OfflineClusterOutcomeCallable CynosdbClient::OfflineClusterCallable(const OfflineClusterRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<OfflineClusterOutcome()>>(
-        [this, request]()
-        {
-            return this->OfflineCluster(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<OfflineClusterOutcome>>();
+    OfflineClusterAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const OfflineClusterRequest&,
+        OfflineClusterOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CynosdbClient::OfflineInstanceOutcome CynosdbClient::OfflineInstance(const OfflineInstanceRequest &request)
@@ -5910,25 +6862,32 @@ CynosdbClient::OfflineInstanceOutcome CynosdbClient::OfflineInstance(const Offli
 
 void CynosdbClient::OfflineInstanceAsync(const OfflineInstanceRequest& request, const OfflineInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->OfflineInstance(request), context);
-    };
+    using Req = const OfflineInstanceRequest&;
+    using Resp = OfflineInstanceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "OfflineInstance", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CynosdbClient::OfflineInstanceOutcomeCallable CynosdbClient::OfflineInstanceCallable(const OfflineInstanceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<OfflineInstanceOutcome()>>(
-        [this, request]()
-        {
-            return this->OfflineInstance(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<OfflineInstanceOutcome>>();
+    OfflineInstanceAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const OfflineInstanceRequest&,
+        OfflineInstanceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CynosdbClient::OpenAuditServiceOutcome CynosdbClient::OpenAuditService(const OpenAuditServiceRequest &request)
@@ -5953,25 +6912,32 @@ CynosdbClient::OpenAuditServiceOutcome CynosdbClient::OpenAuditService(const Ope
 
 void CynosdbClient::OpenAuditServiceAsync(const OpenAuditServiceRequest& request, const OpenAuditServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->OpenAuditService(request), context);
-    };
+    using Req = const OpenAuditServiceRequest&;
+    using Resp = OpenAuditServiceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "OpenAuditService", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CynosdbClient::OpenAuditServiceOutcomeCallable CynosdbClient::OpenAuditServiceCallable(const OpenAuditServiceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<OpenAuditServiceOutcome()>>(
-        [this, request]()
-        {
-            return this->OpenAuditService(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<OpenAuditServiceOutcome>>();
+    OpenAuditServiceAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const OpenAuditServiceRequest&,
+        OpenAuditServiceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CynosdbClient::OpenClusterPasswordComplexityOutcome CynosdbClient::OpenClusterPasswordComplexity(const OpenClusterPasswordComplexityRequest &request)
@@ -5996,25 +6962,32 @@ CynosdbClient::OpenClusterPasswordComplexityOutcome CynosdbClient::OpenClusterPa
 
 void CynosdbClient::OpenClusterPasswordComplexityAsync(const OpenClusterPasswordComplexityRequest& request, const OpenClusterPasswordComplexityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->OpenClusterPasswordComplexity(request), context);
-    };
+    using Req = const OpenClusterPasswordComplexityRequest&;
+    using Resp = OpenClusterPasswordComplexityResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "OpenClusterPasswordComplexity", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CynosdbClient::OpenClusterPasswordComplexityOutcomeCallable CynosdbClient::OpenClusterPasswordComplexityCallable(const OpenClusterPasswordComplexityRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<OpenClusterPasswordComplexityOutcome()>>(
-        [this, request]()
-        {
-            return this->OpenClusterPasswordComplexity(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<OpenClusterPasswordComplexityOutcome>>();
+    OpenClusterPasswordComplexityAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const OpenClusterPasswordComplexityRequest&,
+        OpenClusterPasswordComplexityOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CynosdbClient::OpenClusterReadOnlyInstanceGroupAccessOutcome CynosdbClient::OpenClusterReadOnlyInstanceGroupAccess(const OpenClusterReadOnlyInstanceGroupAccessRequest &request)
@@ -6039,25 +7012,32 @@ CynosdbClient::OpenClusterReadOnlyInstanceGroupAccessOutcome CynosdbClient::Open
 
 void CynosdbClient::OpenClusterReadOnlyInstanceGroupAccessAsync(const OpenClusterReadOnlyInstanceGroupAccessRequest& request, const OpenClusterReadOnlyInstanceGroupAccessAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->OpenClusterReadOnlyInstanceGroupAccess(request), context);
-    };
+    using Req = const OpenClusterReadOnlyInstanceGroupAccessRequest&;
+    using Resp = OpenClusterReadOnlyInstanceGroupAccessResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "OpenClusterReadOnlyInstanceGroupAccess", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CynosdbClient::OpenClusterReadOnlyInstanceGroupAccessOutcomeCallable CynosdbClient::OpenClusterReadOnlyInstanceGroupAccessCallable(const OpenClusterReadOnlyInstanceGroupAccessRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<OpenClusterReadOnlyInstanceGroupAccessOutcome()>>(
-        [this, request]()
-        {
-            return this->OpenClusterReadOnlyInstanceGroupAccess(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<OpenClusterReadOnlyInstanceGroupAccessOutcome>>();
+    OpenClusterReadOnlyInstanceGroupAccessAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const OpenClusterReadOnlyInstanceGroupAccessRequest&,
+        OpenClusterReadOnlyInstanceGroupAccessOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CynosdbClient::OpenClusterTransparentEncryptOutcome CynosdbClient::OpenClusterTransparentEncrypt(const OpenClusterTransparentEncryptRequest &request)
@@ -6082,25 +7062,32 @@ CynosdbClient::OpenClusterTransparentEncryptOutcome CynosdbClient::OpenClusterTr
 
 void CynosdbClient::OpenClusterTransparentEncryptAsync(const OpenClusterTransparentEncryptRequest& request, const OpenClusterTransparentEncryptAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->OpenClusterTransparentEncrypt(request), context);
-    };
+    using Req = const OpenClusterTransparentEncryptRequest&;
+    using Resp = OpenClusterTransparentEncryptResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "OpenClusterTransparentEncrypt", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CynosdbClient::OpenClusterTransparentEncryptOutcomeCallable CynosdbClient::OpenClusterTransparentEncryptCallable(const OpenClusterTransparentEncryptRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<OpenClusterTransparentEncryptOutcome()>>(
-        [this, request]()
-        {
-            return this->OpenClusterTransparentEncrypt(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<OpenClusterTransparentEncryptOutcome>>();
+    OpenClusterTransparentEncryptAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const OpenClusterTransparentEncryptRequest&,
+        OpenClusterTransparentEncryptOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CynosdbClient::OpenReadOnlyInstanceExclusiveAccessOutcome CynosdbClient::OpenReadOnlyInstanceExclusiveAccess(const OpenReadOnlyInstanceExclusiveAccessRequest &request)
@@ -6125,25 +7112,32 @@ CynosdbClient::OpenReadOnlyInstanceExclusiveAccessOutcome CynosdbClient::OpenRea
 
 void CynosdbClient::OpenReadOnlyInstanceExclusiveAccessAsync(const OpenReadOnlyInstanceExclusiveAccessRequest& request, const OpenReadOnlyInstanceExclusiveAccessAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->OpenReadOnlyInstanceExclusiveAccess(request), context);
-    };
+    using Req = const OpenReadOnlyInstanceExclusiveAccessRequest&;
+    using Resp = OpenReadOnlyInstanceExclusiveAccessResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "OpenReadOnlyInstanceExclusiveAccess", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CynosdbClient::OpenReadOnlyInstanceExclusiveAccessOutcomeCallable CynosdbClient::OpenReadOnlyInstanceExclusiveAccessCallable(const OpenReadOnlyInstanceExclusiveAccessRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<OpenReadOnlyInstanceExclusiveAccessOutcome()>>(
-        [this, request]()
-        {
-            return this->OpenReadOnlyInstanceExclusiveAccess(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<OpenReadOnlyInstanceExclusiveAccessOutcome>>();
+    OpenReadOnlyInstanceExclusiveAccessAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const OpenReadOnlyInstanceExclusiveAccessRequest&,
+        OpenReadOnlyInstanceExclusiveAccessOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CynosdbClient::OpenSSLOutcome CynosdbClient::OpenSSL(const OpenSSLRequest &request)
@@ -6168,25 +7162,32 @@ CynosdbClient::OpenSSLOutcome CynosdbClient::OpenSSL(const OpenSSLRequest &reque
 
 void CynosdbClient::OpenSSLAsync(const OpenSSLRequest& request, const OpenSSLAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->OpenSSL(request), context);
-    };
+    using Req = const OpenSSLRequest&;
+    using Resp = OpenSSLResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "OpenSSL", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CynosdbClient::OpenSSLOutcomeCallable CynosdbClient::OpenSSLCallable(const OpenSSLRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<OpenSSLOutcome()>>(
-        [this, request]()
-        {
-            return this->OpenSSL(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<OpenSSLOutcome>>();
+    OpenSSLAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const OpenSSLRequest&,
+        OpenSSLOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CynosdbClient::OpenWanOutcome CynosdbClient::OpenWan(const OpenWanRequest &request)
@@ -6211,25 +7212,32 @@ CynosdbClient::OpenWanOutcome CynosdbClient::OpenWan(const OpenWanRequest &reque
 
 void CynosdbClient::OpenWanAsync(const OpenWanRequest& request, const OpenWanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->OpenWan(request), context);
-    };
+    using Req = const OpenWanRequest&;
+    using Resp = OpenWanResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "OpenWan", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CynosdbClient::OpenWanOutcomeCallable CynosdbClient::OpenWanCallable(const OpenWanRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<OpenWanOutcome()>>(
-        [this, request]()
-        {
-            return this->OpenWan(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<OpenWanOutcome>>();
+    OpenWanAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const OpenWanRequest&,
+        OpenWanOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CynosdbClient::PauseServerlessOutcome CynosdbClient::PauseServerless(const PauseServerlessRequest &request)
@@ -6254,25 +7262,32 @@ CynosdbClient::PauseServerlessOutcome CynosdbClient::PauseServerless(const Pause
 
 void CynosdbClient::PauseServerlessAsync(const PauseServerlessRequest& request, const PauseServerlessAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->PauseServerless(request), context);
-    };
+    using Req = const PauseServerlessRequest&;
+    using Resp = PauseServerlessResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "PauseServerless", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CynosdbClient::PauseServerlessOutcomeCallable CynosdbClient::PauseServerlessCallable(const PauseServerlessRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<PauseServerlessOutcome()>>(
-        [this, request]()
-        {
-            return this->PauseServerless(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<PauseServerlessOutcome>>();
+    PauseServerlessAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const PauseServerlessRequest&,
+        PauseServerlessOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CynosdbClient::RefundResourcePackageOutcome CynosdbClient::RefundResourcePackage(const RefundResourcePackageRequest &request)
@@ -6297,25 +7312,32 @@ CynosdbClient::RefundResourcePackageOutcome CynosdbClient::RefundResourcePackage
 
 void CynosdbClient::RefundResourcePackageAsync(const RefundResourcePackageRequest& request, const RefundResourcePackageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->RefundResourcePackage(request), context);
-    };
+    using Req = const RefundResourcePackageRequest&;
+    using Resp = RefundResourcePackageResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "RefundResourcePackage", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CynosdbClient::RefundResourcePackageOutcomeCallable CynosdbClient::RefundResourcePackageCallable(const RefundResourcePackageRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<RefundResourcePackageOutcome()>>(
-        [this, request]()
-        {
-            return this->RefundResourcePackage(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<RefundResourcePackageOutcome>>();
+    RefundResourcePackageAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const RefundResourcePackageRequest&,
+        RefundResourcePackageOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CynosdbClient::ReloadBalanceProxyNodeOutcome CynosdbClient::ReloadBalanceProxyNode(const ReloadBalanceProxyNodeRequest &request)
@@ -6340,25 +7362,32 @@ CynosdbClient::ReloadBalanceProxyNodeOutcome CynosdbClient::ReloadBalanceProxyNo
 
 void CynosdbClient::ReloadBalanceProxyNodeAsync(const ReloadBalanceProxyNodeRequest& request, const ReloadBalanceProxyNodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ReloadBalanceProxyNode(request), context);
-    };
+    using Req = const ReloadBalanceProxyNodeRequest&;
+    using Resp = ReloadBalanceProxyNodeResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ReloadBalanceProxyNode", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CynosdbClient::ReloadBalanceProxyNodeOutcomeCallable CynosdbClient::ReloadBalanceProxyNodeCallable(const ReloadBalanceProxyNodeRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ReloadBalanceProxyNodeOutcome()>>(
-        [this, request]()
-        {
-            return this->ReloadBalanceProxyNode(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ReloadBalanceProxyNodeOutcome>>();
+    ReloadBalanceProxyNodeAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const ReloadBalanceProxyNodeRequest&,
+        ReloadBalanceProxyNodeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CynosdbClient::RemoveClusterSlaveZoneOutcome CynosdbClient::RemoveClusterSlaveZone(const RemoveClusterSlaveZoneRequest &request)
@@ -6383,25 +7412,32 @@ CynosdbClient::RemoveClusterSlaveZoneOutcome CynosdbClient::RemoveClusterSlaveZo
 
 void CynosdbClient::RemoveClusterSlaveZoneAsync(const RemoveClusterSlaveZoneRequest& request, const RemoveClusterSlaveZoneAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->RemoveClusterSlaveZone(request), context);
-    };
+    using Req = const RemoveClusterSlaveZoneRequest&;
+    using Resp = RemoveClusterSlaveZoneResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "RemoveClusterSlaveZone", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CynosdbClient::RemoveClusterSlaveZoneOutcomeCallable CynosdbClient::RemoveClusterSlaveZoneCallable(const RemoveClusterSlaveZoneRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<RemoveClusterSlaveZoneOutcome()>>(
-        [this, request]()
-        {
-            return this->RemoveClusterSlaveZone(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<RemoveClusterSlaveZoneOutcome>>();
+    RemoveClusterSlaveZoneAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const RemoveClusterSlaveZoneRequest&,
+        RemoveClusterSlaveZoneOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CynosdbClient::RenewClustersOutcome CynosdbClient::RenewClusters(const RenewClustersRequest &request)
@@ -6426,25 +7462,32 @@ CynosdbClient::RenewClustersOutcome CynosdbClient::RenewClusters(const RenewClus
 
 void CynosdbClient::RenewClustersAsync(const RenewClustersRequest& request, const RenewClustersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->RenewClusters(request), context);
-    };
+    using Req = const RenewClustersRequest&;
+    using Resp = RenewClustersResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "RenewClusters", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CynosdbClient::RenewClustersOutcomeCallable CynosdbClient::RenewClustersCallable(const RenewClustersRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<RenewClustersOutcome()>>(
-        [this, request]()
-        {
-            return this->RenewClusters(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<RenewClustersOutcome>>();
+    RenewClustersAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const RenewClustersRequest&,
+        RenewClustersOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CynosdbClient::ReplayInstanceAuditLogOutcome CynosdbClient::ReplayInstanceAuditLog(const ReplayInstanceAuditLogRequest &request)
@@ -6469,25 +7512,32 @@ CynosdbClient::ReplayInstanceAuditLogOutcome CynosdbClient::ReplayInstanceAuditL
 
 void CynosdbClient::ReplayInstanceAuditLogAsync(const ReplayInstanceAuditLogRequest& request, const ReplayInstanceAuditLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ReplayInstanceAuditLog(request), context);
-    };
+    using Req = const ReplayInstanceAuditLogRequest&;
+    using Resp = ReplayInstanceAuditLogResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ReplayInstanceAuditLog", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CynosdbClient::ReplayInstanceAuditLogOutcomeCallable CynosdbClient::ReplayInstanceAuditLogCallable(const ReplayInstanceAuditLogRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ReplayInstanceAuditLogOutcome()>>(
-        [this, request]()
-        {
-            return this->ReplayInstanceAuditLog(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ReplayInstanceAuditLogOutcome>>();
+    ReplayInstanceAuditLogAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const ReplayInstanceAuditLogRequest&,
+        ReplayInstanceAuditLogOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CynosdbClient::ResetAccountPasswordOutcome CynosdbClient::ResetAccountPassword(const ResetAccountPasswordRequest &request)
@@ -6512,25 +7562,32 @@ CynosdbClient::ResetAccountPasswordOutcome CynosdbClient::ResetAccountPassword(c
 
 void CynosdbClient::ResetAccountPasswordAsync(const ResetAccountPasswordRequest& request, const ResetAccountPasswordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ResetAccountPassword(request), context);
-    };
+    using Req = const ResetAccountPasswordRequest&;
+    using Resp = ResetAccountPasswordResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ResetAccountPassword", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CynosdbClient::ResetAccountPasswordOutcomeCallable CynosdbClient::ResetAccountPasswordCallable(const ResetAccountPasswordRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ResetAccountPasswordOutcome()>>(
-        [this, request]()
-        {
-            return this->ResetAccountPassword(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ResetAccountPasswordOutcome>>();
+    ResetAccountPasswordAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const ResetAccountPasswordRequest&,
+        ResetAccountPasswordOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CynosdbClient::RestartInstanceOutcome CynosdbClient::RestartInstance(const RestartInstanceRequest &request)
@@ -6555,25 +7612,32 @@ CynosdbClient::RestartInstanceOutcome CynosdbClient::RestartInstance(const Resta
 
 void CynosdbClient::RestartInstanceAsync(const RestartInstanceRequest& request, const RestartInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->RestartInstance(request), context);
-    };
+    using Req = const RestartInstanceRequest&;
+    using Resp = RestartInstanceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "RestartInstance", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CynosdbClient::RestartInstanceOutcomeCallable CynosdbClient::RestartInstanceCallable(const RestartInstanceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<RestartInstanceOutcome()>>(
-        [this, request]()
-        {
-            return this->RestartInstance(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<RestartInstanceOutcome>>();
+    RestartInstanceAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const RestartInstanceRequest&,
+        RestartInstanceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CynosdbClient::ResumeServerlessOutcome CynosdbClient::ResumeServerless(const ResumeServerlessRequest &request)
@@ -6598,25 +7662,32 @@ CynosdbClient::ResumeServerlessOutcome CynosdbClient::ResumeServerless(const Res
 
 void CynosdbClient::ResumeServerlessAsync(const ResumeServerlessRequest& request, const ResumeServerlessAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ResumeServerless(request), context);
-    };
+    using Req = const ResumeServerlessRequest&;
+    using Resp = ResumeServerlessResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ResumeServerless", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CynosdbClient::ResumeServerlessOutcomeCallable CynosdbClient::ResumeServerlessCallable(const ResumeServerlessRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ResumeServerlessOutcome()>>(
-        [this, request]()
-        {
-            return this->ResumeServerless(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ResumeServerlessOutcome>>();
+    ResumeServerlessAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const ResumeServerlessRequest&,
+        ResumeServerlessOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CynosdbClient::RevokeAccountPrivilegesOutcome CynosdbClient::RevokeAccountPrivileges(const RevokeAccountPrivilegesRequest &request)
@@ -6641,25 +7712,32 @@ CynosdbClient::RevokeAccountPrivilegesOutcome CynosdbClient::RevokeAccountPrivil
 
 void CynosdbClient::RevokeAccountPrivilegesAsync(const RevokeAccountPrivilegesRequest& request, const RevokeAccountPrivilegesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->RevokeAccountPrivileges(request), context);
-    };
+    using Req = const RevokeAccountPrivilegesRequest&;
+    using Resp = RevokeAccountPrivilegesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "RevokeAccountPrivileges", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CynosdbClient::RevokeAccountPrivilegesOutcomeCallable CynosdbClient::RevokeAccountPrivilegesCallable(const RevokeAccountPrivilegesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<RevokeAccountPrivilegesOutcome()>>(
-        [this, request]()
-        {
-            return this->RevokeAccountPrivileges(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<RevokeAccountPrivilegesOutcome>>();
+    RevokeAccountPrivilegesAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const RevokeAccountPrivilegesRequest&,
+        RevokeAccountPrivilegesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CynosdbClient::RollBackClusterOutcome CynosdbClient::RollBackCluster(const RollBackClusterRequest &request)
@@ -6684,25 +7762,32 @@ CynosdbClient::RollBackClusterOutcome CynosdbClient::RollBackCluster(const RollB
 
 void CynosdbClient::RollBackClusterAsync(const RollBackClusterRequest& request, const RollBackClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->RollBackCluster(request), context);
-    };
+    using Req = const RollBackClusterRequest&;
+    using Resp = RollBackClusterResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "RollBackCluster", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CynosdbClient::RollBackClusterOutcomeCallable CynosdbClient::RollBackClusterCallable(const RollBackClusterRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<RollBackClusterOutcome()>>(
-        [this, request]()
-        {
-            return this->RollBackCluster(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<RollBackClusterOutcome>>();
+    RollBackClusterAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const RollBackClusterRequest&,
+        RollBackClusterOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CynosdbClient::RollbackToNewClusterOutcome CynosdbClient::RollbackToNewCluster(const RollbackToNewClusterRequest &request)
@@ -6727,25 +7812,32 @@ CynosdbClient::RollbackToNewClusterOutcome CynosdbClient::RollbackToNewCluster(c
 
 void CynosdbClient::RollbackToNewClusterAsync(const RollbackToNewClusterRequest& request, const RollbackToNewClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->RollbackToNewCluster(request), context);
-    };
+    using Req = const RollbackToNewClusterRequest&;
+    using Resp = RollbackToNewClusterResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "RollbackToNewCluster", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CynosdbClient::RollbackToNewClusterOutcomeCallable CynosdbClient::RollbackToNewClusterCallable(const RollbackToNewClusterRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<RollbackToNewClusterOutcome()>>(
-        [this, request]()
-        {
-            return this->RollbackToNewCluster(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<RollbackToNewClusterOutcome>>();
+    RollbackToNewClusterAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const RollbackToNewClusterRequest&,
+        RollbackToNewClusterOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CynosdbClient::SearchClusterDatabasesOutcome CynosdbClient::SearchClusterDatabases(const SearchClusterDatabasesRequest &request)
@@ -6770,25 +7862,32 @@ CynosdbClient::SearchClusterDatabasesOutcome CynosdbClient::SearchClusterDatabas
 
 void CynosdbClient::SearchClusterDatabasesAsync(const SearchClusterDatabasesRequest& request, const SearchClusterDatabasesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->SearchClusterDatabases(request), context);
-    };
+    using Req = const SearchClusterDatabasesRequest&;
+    using Resp = SearchClusterDatabasesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "SearchClusterDatabases", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CynosdbClient::SearchClusterDatabasesOutcomeCallable CynosdbClient::SearchClusterDatabasesCallable(const SearchClusterDatabasesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<SearchClusterDatabasesOutcome()>>(
-        [this, request]()
-        {
-            return this->SearchClusterDatabases(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<SearchClusterDatabasesOutcome>>();
+    SearchClusterDatabasesAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const SearchClusterDatabasesRequest&,
+        SearchClusterDatabasesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CynosdbClient::SearchClusterTablesOutcome CynosdbClient::SearchClusterTables(const SearchClusterTablesRequest &request)
@@ -6813,25 +7912,32 @@ CynosdbClient::SearchClusterTablesOutcome CynosdbClient::SearchClusterTables(con
 
 void CynosdbClient::SearchClusterTablesAsync(const SearchClusterTablesRequest& request, const SearchClusterTablesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->SearchClusterTables(request), context);
-    };
+    using Req = const SearchClusterTablesRequest&;
+    using Resp = SearchClusterTablesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "SearchClusterTables", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CynosdbClient::SearchClusterTablesOutcomeCallable CynosdbClient::SearchClusterTablesCallable(const SearchClusterTablesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<SearchClusterTablesOutcome()>>(
-        [this, request]()
-        {
-            return this->SearchClusterTables(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<SearchClusterTablesOutcome>>();
+    SearchClusterTablesAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const SearchClusterTablesRequest&,
+        SearchClusterTablesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CynosdbClient::SetRenewFlagOutcome CynosdbClient::SetRenewFlag(const SetRenewFlagRequest &request)
@@ -6856,25 +7962,32 @@ CynosdbClient::SetRenewFlagOutcome CynosdbClient::SetRenewFlag(const SetRenewFla
 
 void CynosdbClient::SetRenewFlagAsync(const SetRenewFlagRequest& request, const SetRenewFlagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->SetRenewFlag(request), context);
-    };
+    using Req = const SetRenewFlagRequest&;
+    using Resp = SetRenewFlagResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "SetRenewFlag", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CynosdbClient::SetRenewFlagOutcomeCallable CynosdbClient::SetRenewFlagCallable(const SetRenewFlagRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<SetRenewFlagOutcome()>>(
-        [this, request]()
-        {
-            return this->SetRenewFlag(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<SetRenewFlagOutcome>>();
+    SetRenewFlagAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const SetRenewFlagRequest&,
+        SetRenewFlagOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CynosdbClient::StartCLSDeliveryOutcome CynosdbClient::StartCLSDelivery(const StartCLSDeliveryRequest &request)
@@ -6899,25 +8012,32 @@ CynosdbClient::StartCLSDeliveryOutcome CynosdbClient::StartCLSDelivery(const Sta
 
 void CynosdbClient::StartCLSDeliveryAsync(const StartCLSDeliveryRequest& request, const StartCLSDeliveryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->StartCLSDelivery(request), context);
-    };
+    using Req = const StartCLSDeliveryRequest&;
+    using Resp = StartCLSDeliveryResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "StartCLSDelivery", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CynosdbClient::StartCLSDeliveryOutcomeCallable CynosdbClient::StartCLSDeliveryCallable(const StartCLSDeliveryRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<StartCLSDeliveryOutcome()>>(
-        [this, request]()
-        {
-            return this->StartCLSDelivery(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<StartCLSDeliveryOutcome>>();
+    StartCLSDeliveryAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const StartCLSDeliveryRequest&,
+        StartCLSDeliveryOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CynosdbClient::StopCLSDeliveryOutcome CynosdbClient::StopCLSDelivery(const StopCLSDeliveryRequest &request)
@@ -6942,25 +8062,32 @@ CynosdbClient::StopCLSDeliveryOutcome CynosdbClient::StopCLSDelivery(const StopC
 
 void CynosdbClient::StopCLSDeliveryAsync(const StopCLSDeliveryRequest& request, const StopCLSDeliveryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->StopCLSDelivery(request), context);
-    };
+    using Req = const StopCLSDeliveryRequest&;
+    using Resp = StopCLSDeliveryResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "StopCLSDelivery", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CynosdbClient::StopCLSDeliveryOutcomeCallable CynosdbClient::StopCLSDeliveryCallable(const StopCLSDeliveryRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<StopCLSDeliveryOutcome()>>(
-        [this, request]()
-        {
-            return this->StopCLSDelivery(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<StopCLSDeliveryOutcome>>();
+    StopCLSDeliveryAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const StopCLSDeliveryRequest&,
+        StopCLSDeliveryOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CynosdbClient::SwitchClusterVpcOutcome CynosdbClient::SwitchClusterVpc(const SwitchClusterVpcRequest &request)
@@ -6985,25 +8112,32 @@ CynosdbClient::SwitchClusterVpcOutcome CynosdbClient::SwitchClusterVpc(const Swi
 
 void CynosdbClient::SwitchClusterVpcAsync(const SwitchClusterVpcRequest& request, const SwitchClusterVpcAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->SwitchClusterVpc(request), context);
-    };
+    using Req = const SwitchClusterVpcRequest&;
+    using Resp = SwitchClusterVpcResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "SwitchClusterVpc", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CynosdbClient::SwitchClusterVpcOutcomeCallable CynosdbClient::SwitchClusterVpcCallable(const SwitchClusterVpcRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<SwitchClusterVpcOutcome()>>(
-        [this, request]()
-        {
-            return this->SwitchClusterVpc(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<SwitchClusterVpcOutcome>>();
+    SwitchClusterVpcAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const SwitchClusterVpcRequest&,
+        SwitchClusterVpcOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CynosdbClient::SwitchClusterZoneOutcome CynosdbClient::SwitchClusterZone(const SwitchClusterZoneRequest &request)
@@ -7028,25 +8162,32 @@ CynosdbClient::SwitchClusterZoneOutcome CynosdbClient::SwitchClusterZone(const S
 
 void CynosdbClient::SwitchClusterZoneAsync(const SwitchClusterZoneRequest& request, const SwitchClusterZoneAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->SwitchClusterZone(request), context);
-    };
+    using Req = const SwitchClusterZoneRequest&;
+    using Resp = SwitchClusterZoneResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "SwitchClusterZone", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CynosdbClient::SwitchClusterZoneOutcomeCallable CynosdbClient::SwitchClusterZoneCallable(const SwitchClusterZoneRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<SwitchClusterZoneOutcome()>>(
-        [this, request]()
-        {
-            return this->SwitchClusterZone(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<SwitchClusterZoneOutcome>>();
+    SwitchClusterZoneAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const SwitchClusterZoneRequest&,
+        SwitchClusterZoneOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CynosdbClient::SwitchProxyVpcOutcome CynosdbClient::SwitchProxyVpc(const SwitchProxyVpcRequest &request)
@@ -7071,25 +8212,32 @@ CynosdbClient::SwitchProxyVpcOutcome CynosdbClient::SwitchProxyVpc(const SwitchP
 
 void CynosdbClient::SwitchProxyVpcAsync(const SwitchProxyVpcRequest& request, const SwitchProxyVpcAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->SwitchProxyVpc(request), context);
-    };
+    using Req = const SwitchProxyVpcRequest&;
+    using Resp = SwitchProxyVpcResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "SwitchProxyVpc", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CynosdbClient::SwitchProxyVpcOutcomeCallable CynosdbClient::SwitchProxyVpcCallable(const SwitchProxyVpcRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<SwitchProxyVpcOutcome()>>(
-        [this, request]()
-        {
-            return this->SwitchProxyVpc(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<SwitchProxyVpcOutcome>>();
+    SwitchProxyVpcAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const SwitchProxyVpcRequest&,
+        SwitchProxyVpcOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CynosdbClient::UnbindClusterResourcePackagesOutcome CynosdbClient::UnbindClusterResourcePackages(const UnbindClusterResourcePackagesRequest &request)
@@ -7114,25 +8262,32 @@ CynosdbClient::UnbindClusterResourcePackagesOutcome CynosdbClient::UnbindCluster
 
 void CynosdbClient::UnbindClusterResourcePackagesAsync(const UnbindClusterResourcePackagesRequest& request, const UnbindClusterResourcePackagesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UnbindClusterResourcePackages(request), context);
-    };
+    using Req = const UnbindClusterResourcePackagesRequest&;
+    using Resp = UnbindClusterResourcePackagesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UnbindClusterResourcePackages", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CynosdbClient::UnbindClusterResourcePackagesOutcomeCallable CynosdbClient::UnbindClusterResourcePackagesCallable(const UnbindClusterResourcePackagesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UnbindClusterResourcePackagesOutcome()>>(
-        [this, request]()
-        {
-            return this->UnbindClusterResourcePackages(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UnbindClusterResourcePackagesOutcome>>();
+    UnbindClusterResourcePackagesAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const UnbindClusterResourcePackagesRequest&,
+        UnbindClusterResourcePackagesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CynosdbClient::UpgradeClusterVersionOutcome CynosdbClient::UpgradeClusterVersion(const UpgradeClusterVersionRequest &request)
@@ -7157,25 +8312,32 @@ CynosdbClient::UpgradeClusterVersionOutcome CynosdbClient::UpgradeClusterVersion
 
 void CynosdbClient::UpgradeClusterVersionAsync(const UpgradeClusterVersionRequest& request, const UpgradeClusterVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UpgradeClusterVersion(request), context);
-    };
+    using Req = const UpgradeClusterVersionRequest&;
+    using Resp = UpgradeClusterVersionResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UpgradeClusterVersion", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CynosdbClient::UpgradeClusterVersionOutcomeCallable CynosdbClient::UpgradeClusterVersionCallable(const UpgradeClusterVersionRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UpgradeClusterVersionOutcome()>>(
-        [this, request]()
-        {
-            return this->UpgradeClusterVersion(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UpgradeClusterVersionOutcome>>();
+    UpgradeClusterVersionAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const UpgradeClusterVersionRequest&,
+        UpgradeClusterVersionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CynosdbClient::UpgradeInstanceOutcome CynosdbClient::UpgradeInstance(const UpgradeInstanceRequest &request)
@@ -7200,25 +8362,32 @@ CynosdbClient::UpgradeInstanceOutcome CynosdbClient::UpgradeInstance(const Upgra
 
 void CynosdbClient::UpgradeInstanceAsync(const UpgradeInstanceRequest& request, const UpgradeInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UpgradeInstance(request), context);
-    };
+    using Req = const UpgradeInstanceRequest&;
+    using Resp = UpgradeInstanceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UpgradeInstance", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CynosdbClient::UpgradeInstanceOutcomeCallable CynosdbClient::UpgradeInstanceCallable(const UpgradeInstanceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UpgradeInstanceOutcome()>>(
-        [this, request]()
-        {
-            return this->UpgradeInstance(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UpgradeInstanceOutcome>>();
+    UpgradeInstanceAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const UpgradeInstanceRequest&,
+        UpgradeInstanceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CynosdbClient::UpgradeProxyOutcome CynosdbClient::UpgradeProxy(const UpgradeProxyRequest &request)
@@ -7243,25 +8412,32 @@ CynosdbClient::UpgradeProxyOutcome CynosdbClient::UpgradeProxy(const UpgradeProx
 
 void CynosdbClient::UpgradeProxyAsync(const UpgradeProxyRequest& request, const UpgradeProxyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UpgradeProxy(request), context);
-    };
+    using Req = const UpgradeProxyRequest&;
+    using Resp = UpgradeProxyResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UpgradeProxy", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CynosdbClient::UpgradeProxyOutcomeCallable CynosdbClient::UpgradeProxyCallable(const UpgradeProxyRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UpgradeProxyOutcome()>>(
-        [this, request]()
-        {
-            return this->UpgradeProxy(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UpgradeProxyOutcome>>();
+    UpgradeProxyAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const UpgradeProxyRequest&,
+        UpgradeProxyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CynosdbClient::UpgradeProxyVersionOutcome CynosdbClient::UpgradeProxyVersion(const UpgradeProxyVersionRequest &request)
@@ -7286,24 +8462,31 @@ CynosdbClient::UpgradeProxyVersionOutcome CynosdbClient::UpgradeProxyVersion(con
 
 void CynosdbClient::UpgradeProxyVersionAsync(const UpgradeProxyVersionRequest& request, const UpgradeProxyVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UpgradeProxyVersion(request), context);
-    };
+    using Req = const UpgradeProxyVersionRequest&;
+    using Resp = UpgradeProxyVersionResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UpgradeProxyVersion", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CynosdbClient::UpgradeProxyVersionOutcomeCallable CynosdbClient::UpgradeProxyVersionCallable(const UpgradeProxyVersionRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UpgradeProxyVersionOutcome()>>(
-        [this, request]()
-        {
-            return this->UpgradeProxyVersion(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UpgradeProxyVersionOutcome>>();
+    UpgradeProxyVersionAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const UpgradeProxyVersionRequest&,
+        UpgradeProxyVersionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 

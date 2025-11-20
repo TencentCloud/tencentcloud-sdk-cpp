@@ -62,25 +62,32 @@ TkeClient::CreateHealthCheckPolicyOutcome TkeClient::CreateHealthCheckPolicy(con
 
 void TkeClient::CreateHealthCheckPolicyAsync(const CreateHealthCheckPolicyRequest& request, const CreateHealthCheckPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateHealthCheckPolicy(request), context);
-    };
+    using Req = const CreateHealthCheckPolicyRequest&;
+    using Resp = CreateHealthCheckPolicyResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateHealthCheckPolicy", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::CreateHealthCheckPolicyOutcomeCallable TkeClient::CreateHealthCheckPolicyCallable(const CreateHealthCheckPolicyRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateHealthCheckPolicyOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateHealthCheckPolicy(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateHealthCheckPolicyOutcome>>();
+    CreateHealthCheckPolicyAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const CreateHealthCheckPolicyRequest&,
+        CreateHealthCheckPolicyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::CreateNodePoolOutcome TkeClient::CreateNodePool(const CreateNodePoolRequest &request)
@@ -105,25 +112,32 @@ TkeClient::CreateNodePoolOutcome TkeClient::CreateNodePool(const CreateNodePoolR
 
 void TkeClient::CreateNodePoolAsync(const CreateNodePoolRequest& request, const CreateNodePoolAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateNodePool(request), context);
-    };
+    using Req = const CreateNodePoolRequest&;
+    using Resp = CreateNodePoolResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateNodePool", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::CreateNodePoolOutcomeCallable TkeClient::CreateNodePoolCallable(const CreateNodePoolRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateNodePoolOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateNodePool(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateNodePoolOutcome>>();
+    CreateNodePoolAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const CreateNodePoolRequest&,
+        CreateNodePoolOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::DeleteClusterMachinesOutcome TkeClient::DeleteClusterMachines(const DeleteClusterMachinesRequest &request)
@@ -148,25 +162,32 @@ TkeClient::DeleteClusterMachinesOutcome TkeClient::DeleteClusterMachines(const D
 
 void TkeClient::DeleteClusterMachinesAsync(const DeleteClusterMachinesRequest& request, const DeleteClusterMachinesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteClusterMachines(request), context);
-    };
+    using Req = const DeleteClusterMachinesRequest&;
+    using Resp = DeleteClusterMachinesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteClusterMachines", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::DeleteClusterMachinesOutcomeCallable TkeClient::DeleteClusterMachinesCallable(const DeleteClusterMachinesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteClusterMachinesOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteClusterMachines(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteClusterMachinesOutcome>>();
+    DeleteClusterMachinesAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const DeleteClusterMachinesRequest&,
+        DeleteClusterMachinesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::DeleteHealthCheckPolicyOutcome TkeClient::DeleteHealthCheckPolicy(const DeleteHealthCheckPolicyRequest &request)
@@ -191,25 +212,32 @@ TkeClient::DeleteHealthCheckPolicyOutcome TkeClient::DeleteHealthCheckPolicy(con
 
 void TkeClient::DeleteHealthCheckPolicyAsync(const DeleteHealthCheckPolicyRequest& request, const DeleteHealthCheckPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteHealthCheckPolicy(request), context);
-    };
+    using Req = const DeleteHealthCheckPolicyRequest&;
+    using Resp = DeleteHealthCheckPolicyResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteHealthCheckPolicy", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::DeleteHealthCheckPolicyOutcomeCallable TkeClient::DeleteHealthCheckPolicyCallable(const DeleteHealthCheckPolicyRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteHealthCheckPolicyOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteHealthCheckPolicy(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteHealthCheckPolicyOutcome>>();
+    DeleteHealthCheckPolicyAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const DeleteHealthCheckPolicyRequest&,
+        DeleteHealthCheckPolicyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::DeleteNodePoolOutcome TkeClient::DeleteNodePool(const DeleteNodePoolRequest &request)
@@ -234,25 +262,32 @@ TkeClient::DeleteNodePoolOutcome TkeClient::DeleteNodePool(const DeleteNodePoolR
 
 void TkeClient::DeleteNodePoolAsync(const DeleteNodePoolRequest& request, const DeleteNodePoolAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteNodePool(request), context);
-    };
+    using Req = const DeleteNodePoolRequest&;
+    using Resp = DeleteNodePoolResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteNodePool", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::DeleteNodePoolOutcomeCallable TkeClient::DeleteNodePoolCallable(const DeleteNodePoolRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteNodePoolOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteNodePool(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteNodePoolOutcome>>();
+    DeleteNodePoolAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const DeleteNodePoolRequest&,
+        DeleteNodePoolOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::DescribeClusterInstancesOutcome TkeClient::DescribeClusterInstances(const DescribeClusterInstancesRequest &request)
@@ -277,25 +312,32 @@ TkeClient::DescribeClusterInstancesOutcome TkeClient::DescribeClusterInstances(c
 
 void TkeClient::DescribeClusterInstancesAsync(const DescribeClusterInstancesRequest& request, const DescribeClusterInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeClusterInstances(request), context);
-    };
+    using Req = const DescribeClusterInstancesRequest&;
+    using Resp = DescribeClusterInstancesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeClusterInstances", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::DescribeClusterInstancesOutcomeCallable TkeClient::DescribeClusterInstancesCallable(const DescribeClusterInstancesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeClusterInstancesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeClusterInstances(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeClusterInstancesOutcome>>();
+    DescribeClusterInstancesAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const DescribeClusterInstancesRequest&,
+        DescribeClusterInstancesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::DescribeClustersOutcome TkeClient::DescribeClusters(const DescribeClustersRequest &request)
@@ -320,25 +362,32 @@ TkeClient::DescribeClustersOutcome TkeClient::DescribeClusters(const DescribeClu
 
 void TkeClient::DescribeClustersAsync(const DescribeClustersRequest& request, const DescribeClustersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeClusters(request), context);
-    };
+    using Req = const DescribeClustersRequest&;
+    using Resp = DescribeClustersResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeClusters", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::DescribeClustersOutcomeCallable TkeClient::DescribeClustersCallable(const DescribeClustersRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeClustersOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeClusters(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeClustersOutcome>>();
+    DescribeClustersAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const DescribeClustersRequest&,
+        DescribeClustersOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::DescribeHealthCheckPoliciesOutcome TkeClient::DescribeHealthCheckPolicies(const DescribeHealthCheckPoliciesRequest &request)
@@ -363,25 +412,32 @@ TkeClient::DescribeHealthCheckPoliciesOutcome TkeClient::DescribeHealthCheckPoli
 
 void TkeClient::DescribeHealthCheckPoliciesAsync(const DescribeHealthCheckPoliciesRequest& request, const DescribeHealthCheckPoliciesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeHealthCheckPolicies(request), context);
-    };
+    using Req = const DescribeHealthCheckPoliciesRequest&;
+    using Resp = DescribeHealthCheckPoliciesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeHealthCheckPolicies", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::DescribeHealthCheckPoliciesOutcomeCallable TkeClient::DescribeHealthCheckPoliciesCallable(const DescribeHealthCheckPoliciesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeHealthCheckPoliciesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeHealthCheckPolicies(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeHealthCheckPoliciesOutcome>>();
+    DescribeHealthCheckPoliciesAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const DescribeHealthCheckPoliciesRequest&,
+        DescribeHealthCheckPoliciesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::DescribeHealthCheckPolicyBindingsOutcome TkeClient::DescribeHealthCheckPolicyBindings(const DescribeHealthCheckPolicyBindingsRequest &request)
@@ -406,25 +462,32 @@ TkeClient::DescribeHealthCheckPolicyBindingsOutcome TkeClient::DescribeHealthChe
 
 void TkeClient::DescribeHealthCheckPolicyBindingsAsync(const DescribeHealthCheckPolicyBindingsRequest& request, const DescribeHealthCheckPolicyBindingsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeHealthCheckPolicyBindings(request), context);
-    };
+    using Req = const DescribeHealthCheckPolicyBindingsRequest&;
+    using Resp = DescribeHealthCheckPolicyBindingsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeHealthCheckPolicyBindings", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::DescribeHealthCheckPolicyBindingsOutcomeCallable TkeClient::DescribeHealthCheckPolicyBindingsCallable(const DescribeHealthCheckPolicyBindingsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeHealthCheckPolicyBindingsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeHealthCheckPolicyBindings(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeHealthCheckPolicyBindingsOutcome>>();
+    DescribeHealthCheckPolicyBindingsAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const DescribeHealthCheckPolicyBindingsRequest&,
+        DescribeHealthCheckPolicyBindingsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::DescribeHealthCheckTemplateOutcome TkeClient::DescribeHealthCheckTemplate(const DescribeHealthCheckTemplateRequest &request)
@@ -449,25 +512,32 @@ TkeClient::DescribeHealthCheckTemplateOutcome TkeClient::DescribeHealthCheckTemp
 
 void TkeClient::DescribeHealthCheckTemplateAsync(const DescribeHealthCheckTemplateRequest& request, const DescribeHealthCheckTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeHealthCheckTemplate(request), context);
-    };
+    using Req = const DescribeHealthCheckTemplateRequest&;
+    using Resp = DescribeHealthCheckTemplateResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeHealthCheckTemplate", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::DescribeHealthCheckTemplateOutcomeCallable TkeClient::DescribeHealthCheckTemplateCallable(const DescribeHealthCheckTemplateRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeHealthCheckTemplateOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeHealthCheckTemplate(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeHealthCheckTemplateOutcome>>();
+    DescribeHealthCheckTemplateAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const DescribeHealthCheckTemplateRequest&,
+        DescribeHealthCheckTemplateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::DescribeNodePoolsOutcome TkeClient::DescribeNodePools(const DescribeNodePoolsRequest &request)
@@ -492,25 +562,32 @@ TkeClient::DescribeNodePoolsOutcome TkeClient::DescribeNodePools(const DescribeN
 
 void TkeClient::DescribeNodePoolsAsync(const DescribeNodePoolsRequest& request, const DescribeNodePoolsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeNodePools(request), context);
-    };
+    using Req = const DescribeNodePoolsRequest&;
+    using Resp = DescribeNodePoolsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeNodePools", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::DescribeNodePoolsOutcomeCallable TkeClient::DescribeNodePoolsCallable(const DescribeNodePoolsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeNodePoolsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeNodePools(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeNodePoolsOutcome>>();
+    DescribeNodePoolsAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const DescribeNodePoolsRequest&,
+        DescribeNodePoolsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::ModifyHealthCheckPolicyOutcome TkeClient::ModifyHealthCheckPolicy(const ModifyHealthCheckPolicyRequest &request)
@@ -535,25 +612,32 @@ TkeClient::ModifyHealthCheckPolicyOutcome TkeClient::ModifyHealthCheckPolicy(con
 
 void TkeClient::ModifyHealthCheckPolicyAsync(const ModifyHealthCheckPolicyRequest& request, const ModifyHealthCheckPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyHealthCheckPolicy(request), context);
-    };
+    using Req = const ModifyHealthCheckPolicyRequest&;
+    using Resp = ModifyHealthCheckPolicyResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyHealthCheckPolicy", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::ModifyHealthCheckPolicyOutcomeCallable TkeClient::ModifyHealthCheckPolicyCallable(const ModifyHealthCheckPolicyRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyHealthCheckPolicyOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyHealthCheckPolicy(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyHealthCheckPolicyOutcome>>();
+    ModifyHealthCheckPolicyAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const ModifyHealthCheckPolicyRequest&,
+        ModifyHealthCheckPolicyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::ModifyNodePoolOutcome TkeClient::ModifyNodePool(const ModifyNodePoolRequest &request)
@@ -578,25 +662,32 @@ TkeClient::ModifyNodePoolOutcome TkeClient::ModifyNodePool(const ModifyNodePoolR
 
 void TkeClient::ModifyNodePoolAsync(const ModifyNodePoolRequest& request, const ModifyNodePoolAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyNodePool(request), context);
-    };
+    using Req = const ModifyNodePoolRequest&;
+    using Resp = ModifyNodePoolResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyNodePool", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::ModifyNodePoolOutcomeCallable TkeClient::ModifyNodePoolCallable(const ModifyNodePoolRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyNodePoolOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyNodePool(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyNodePoolOutcome>>();
+    ModifyNodePoolAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const ModifyNodePoolRequest&,
+        ModifyNodePoolOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::RebootMachinesOutcome TkeClient::RebootMachines(const RebootMachinesRequest &request)
@@ -621,25 +712,32 @@ TkeClient::RebootMachinesOutcome TkeClient::RebootMachines(const RebootMachinesR
 
 void TkeClient::RebootMachinesAsync(const RebootMachinesRequest& request, const RebootMachinesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->RebootMachines(request), context);
-    };
+    using Req = const RebootMachinesRequest&;
+    using Resp = RebootMachinesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "RebootMachines", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::RebootMachinesOutcomeCallable TkeClient::RebootMachinesCallable(const RebootMachinesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<RebootMachinesOutcome()>>(
-        [this, request]()
-        {
-            return this->RebootMachines(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<RebootMachinesOutcome>>();
+    RebootMachinesAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const RebootMachinesRequest&,
+        RebootMachinesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::SetMachineLoginOutcome TkeClient::SetMachineLogin(const SetMachineLoginRequest &request)
@@ -664,25 +762,32 @@ TkeClient::SetMachineLoginOutcome TkeClient::SetMachineLogin(const SetMachineLog
 
 void TkeClient::SetMachineLoginAsync(const SetMachineLoginRequest& request, const SetMachineLoginAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->SetMachineLogin(request), context);
-    };
+    using Req = const SetMachineLoginRequest&;
+    using Resp = SetMachineLoginResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "SetMachineLogin", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::SetMachineLoginOutcomeCallable TkeClient::SetMachineLoginCallable(const SetMachineLoginRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<SetMachineLoginOutcome()>>(
-        [this, request]()
-        {
-            return this->SetMachineLogin(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<SetMachineLoginOutcome>>();
+    SetMachineLoginAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const SetMachineLoginRequest&,
+        SetMachineLoginOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::StartMachinesOutcome TkeClient::StartMachines(const StartMachinesRequest &request)
@@ -707,25 +812,32 @@ TkeClient::StartMachinesOutcome TkeClient::StartMachines(const StartMachinesRequ
 
 void TkeClient::StartMachinesAsync(const StartMachinesRequest& request, const StartMachinesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->StartMachines(request), context);
-    };
+    using Req = const StartMachinesRequest&;
+    using Resp = StartMachinesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "StartMachines", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::StartMachinesOutcomeCallable TkeClient::StartMachinesCallable(const StartMachinesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<StartMachinesOutcome()>>(
-        [this, request]()
-        {
-            return this->StartMachines(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<StartMachinesOutcome>>();
+    StartMachinesAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const StartMachinesRequest&,
+        StartMachinesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::StopMachinesOutcome TkeClient::StopMachines(const StopMachinesRequest &request)
@@ -750,24 +862,31 @@ TkeClient::StopMachinesOutcome TkeClient::StopMachines(const StopMachinesRequest
 
 void TkeClient::StopMachinesAsync(const StopMachinesRequest& request, const StopMachinesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->StopMachines(request), context);
-    };
+    using Req = const StopMachinesRequest&;
+    using Resp = StopMachinesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "StopMachines", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::StopMachinesOutcomeCallable TkeClient::StopMachinesCallable(const StopMachinesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<StopMachinesOutcome()>>(
-        [this, request]()
-        {
-            return this->StopMachines(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<StopMachinesOutcome>>();
+    StopMachinesAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const StopMachinesRequest&,
+        StopMachinesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 

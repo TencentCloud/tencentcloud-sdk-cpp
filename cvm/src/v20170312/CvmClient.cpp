@@ -62,25 +62,32 @@ CvmClient::AllocateHostsOutcome CvmClient::AllocateHosts(const AllocateHostsRequ
 
 void CvmClient::AllocateHostsAsync(const AllocateHostsRequest& request, const AllocateHostsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->AllocateHosts(request), context);
-    };
+    using Req = const AllocateHostsRequest&;
+    using Resp = AllocateHostsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "AllocateHosts", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CvmClient::AllocateHostsOutcomeCallable CvmClient::AllocateHostsCallable(const AllocateHostsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<AllocateHostsOutcome()>>(
-        [this, request]()
-        {
-            return this->AllocateHosts(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<AllocateHostsOutcome>>();
+    AllocateHostsAsync(
+    request,
+    [prom](
+        const CvmClient*,
+        const AllocateHostsRequest&,
+        AllocateHostsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CvmClient::AssociateInstancesKeyPairsOutcome CvmClient::AssociateInstancesKeyPairs(const AssociateInstancesKeyPairsRequest &request)
@@ -105,25 +112,32 @@ CvmClient::AssociateInstancesKeyPairsOutcome CvmClient::AssociateInstancesKeyPai
 
 void CvmClient::AssociateInstancesKeyPairsAsync(const AssociateInstancesKeyPairsRequest& request, const AssociateInstancesKeyPairsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->AssociateInstancesKeyPairs(request), context);
-    };
+    using Req = const AssociateInstancesKeyPairsRequest&;
+    using Resp = AssociateInstancesKeyPairsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "AssociateInstancesKeyPairs", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CvmClient::AssociateInstancesKeyPairsOutcomeCallable CvmClient::AssociateInstancesKeyPairsCallable(const AssociateInstancesKeyPairsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<AssociateInstancesKeyPairsOutcome()>>(
-        [this, request]()
-        {
-            return this->AssociateInstancesKeyPairs(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<AssociateInstancesKeyPairsOutcome>>();
+    AssociateInstancesKeyPairsAsync(
+    request,
+    [prom](
+        const CvmClient*,
+        const AssociateInstancesKeyPairsRequest&,
+        AssociateInstancesKeyPairsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CvmClient::AssociateSecurityGroupsOutcome CvmClient::AssociateSecurityGroups(const AssociateSecurityGroupsRequest &request)
@@ -148,25 +162,32 @@ CvmClient::AssociateSecurityGroupsOutcome CvmClient::AssociateSecurityGroups(con
 
 void CvmClient::AssociateSecurityGroupsAsync(const AssociateSecurityGroupsRequest& request, const AssociateSecurityGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->AssociateSecurityGroups(request), context);
-    };
+    using Req = const AssociateSecurityGroupsRequest&;
+    using Resp = AssociateSecurityGroupsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "AssociateSecurityGroups", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CvmClient::AssociateSecurityGroupsOutcomeCallable CvmClient::AssociateSecurityGroupsCallable(const AssociateSecurityGroupsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<AssociateSecurityGroupsOutcome()>>(
-        [this, request]()
-        {
-            return this->AssociateSecurityGroups(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<AssociateSecurityGroupsOutcome>>();
+    AssociateSecurityGroupsAsync(
+    request,
+    [prom](
+        const CvmClient*,
+        const AssociateSecurityGroupsRequest&,
+        AssociateSecurityGroupsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CvmClient::ConfigureChcAssistVpcOutcome CvmClient::ConfigureChcAssistVpc(const ConfigureChcAssistVpcRequest &request)
@@ -191,25 +212,32 @@ CvmClient::ConfigureChcAssistVpcOutcome CvmClient::ConfigureChcAssistVpc(const C
 
 void CvmClient::ConfigureChcAssistVpcAsync(const ConfigureChcAssistVpcRequest& request, const ConfigureChcAssistVpcAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ConfigureChcAssistVpc(request), context);
-    };
+    using Req = const ConfigureChcAssistVpcRequest&;
+    using Resp = ConfigureChcAssistVpcResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ConfigureChcAssistVpc", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CvmClient::ConfigureChcAssistVpcOutcomeCallable CvmClient::ConfigureChcAssistVpcCallable(const ConfigureChcAssistVpcRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ConfigureChcAssistVpcOutcome()>>(
-        [this, request]()
-        {
-            return this->ConfigureChcAssistVpc(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ConfigureChcAssistVpcOutcome>>();
+    ConfigureChcAssistVpcAsync(
+    request,
+    [prom](
+        const CvmClient*,
+        const ConfigureChcAssistVpcRequest&,
+        ConfigureChcAssistVpcOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CvmClient::ConfigureChcDeployVpcOutcome CvmClient::ConfigureChcDeployVpc(const ConfigureChcDeployVpcRequest &request)
@@ -234,25 +262,32 @@ CvmClient::ConfigureChcDeployVpcOutcome CvmClient::ConfigureChcDeployVpc(const C
 
 void CvmClient::ConfigureChcDeployVpcAsync(const ConfigureChcDeployVpcRequest& request, const ConfigureChcDeployVpcAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ConfigureChcDeployVpc(request), context);
-    };
+    using Req = const ConfigureChcDeployVpcRequest&;
+    using Resp = ConfigureChcDeployVpcResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ConfigureChcDeployVpc", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CvmClient::ConfigureChcDeployVpcOutcomeCallable CvmClient::ConfigureChcDeployVpcCallable(const ConfigureChcDeployVpcRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ConfigureChcDeployVpcOutcome()>>(
-        [this, request]()
-        {
-            return this->ConfigureChcDeployVpc(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ConfigureChcDeployVpcOutcome>>();
+    ConfigureChcDeployVpcAsync(
+    request,
+    [prom](
+        const CvmClient*,
+        const ConfigureChcDeployVpcRequest&,
+        ConfigureChcDeployVpcOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CvmClient::ConvertOperatingSystemsOutcome CvmClient::ConvertOperatingSystems(const ConvertOperatingSystemsRequest &request)
@@ -277,25 +312,32 @@ CvmClient::ConvertOperatingSystemsOutcome CvmClient::ConvertOperatingSystems(con
 
 void CvmClient::ConvertOperatingSystemsAsync(const ConvertOperatingSystemsRequest& request, const ConvertOperatingSystemsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ConvertOperatingSystems(request), context);
-    };
+    using Req = const ConvertOperatingSystemsRequest&;
+    using Resp = ConvertOperatingSystemsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ConvertOperatingSystems", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CvmClient::ConvertOperatingSystemsOutcomeCallable CvmClient::ConvertOperatingSystemsCallable(const ConvertOperatingSystemsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ConvertOperatingSystemsOutcome()>>(
-        [this, request]()
-        {
-            return this->ConvertOperatingSystems(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ConvertOperatingSystemsOutcome>>();
+    ConvertOperatingSystemsAsync(
+    request,
+    [prom](
+        const CvmClient*,
+        const ConvertOperatingSystemsRequest&,
+        ConvertOperatingSystemsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CvmClient::CreateDisasterRecoverGroupOutcome CvmClient::CreateDisasterRecoverGroup(const CreateDisasterRecoverGroupRequest &request)
@@ -320,25 +362,32 @@ CvmClient::CreateDisasterRecoverGroupOutcome CvmClient::CreateDisasterRecoverGro
 
 void CvmClient::CreateDisasterRecoverGroupAsync(const CreateDisasterRecoverGroupRequest& request, const CreateDisasterRecoverGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateDisasterRecoverGroup(request), context);
-    };
+    using Req = const CreateDisasterRecoverGroupRequest&;
+    using Resp = CreateDisasterRecoverGroupResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateDisasterRecoverGroup", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CvmClient::CreateDisasterRecoverGroupOutcomeCallable CvmClient::CreateDisasterRecoverGroupCallable(const CreateDisasterRecoverGroupRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateDisasterRecoverGroupOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateDisasterRecoverGroup(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateDisasterRecoverGroupOutcome>>();
+    CreateDisasterRecoverGroupAsync(
+    request,
+    [prom](
+        const CvmClient*,
+        const CreateDisasterRecoverGroupRequest&,
+        CreateDisasterRecoverGroupOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CvmClient::CreateHpcClusterOutcome CvmClient::CreateHpcCluster(const CreateHpcClusterRequest &request)
@@ -363,25 +412,32 @@ CvmClient::CreateHpcClusterOutcome CvmClient::CreateHpcCluster(const CreateHpcCl
 
 void CvmClient::CreateHpcClusterAsync(const CreateHpcClusterRequest& request, const CreateHpcClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateHpcCluster(request), context);
-    };
+    using Req = const CreateHpcClusterRequest&;
+    using Resp = CreateHpcClusterResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateHpcCluster", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CvmClient::CreateHpcClusterOutcomeCallable CvmClient::CreateHpcClusterCallable(const CreateHpcClusterRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateHpcClusterOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateHpcCluster(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateHpcClusterOutcome>>();
+    CreateHpcClusterAsync(
+    request,
+    [prom](
+        const CvmClient*,
+        const CreateHpcClusterRequest&,
+        CreateHpcClusterOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CvmClient::CreateImageOutcome CvmClient::CreateImage(const CreateImageRequest &request)
@@ -406,25 +462,32 @@ CvmClient::CreateImageOutcome CvmClient::CreateImage(const CreateImageRequest &r
 
 void CvmClient::CreateImageAsync(const CreateImageRequest& request, const CreateImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateImage(request), context);
-    };
+    using Req = const CreateImageRequest&;
+    using Resp = CreateImageResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateImage", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CvmClient::CreateImageOutcomeCallable CvmClient::CreateImageCallable(const CreateImageRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateImageOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateImage(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateImageOutcome>>();
+    CreateImageAsync(
+    request,
+    [prom](
+        const CvmClient*,
+        const CreateImageRequest&,
+        CreateImageOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CvmClient::CreateKeyPairOutcome CvmClient::CreateKeyPair(const CreateKeyPairRequest &request)
@@ -449,25 +512,32 @@ CvmClient::CreateKeyPairOutcome CvmClient::CreateKeyPair(const CreateKeyPairRequ
 
 void CvmClient::CreateKeyPairAsync(const CreateKeyPairRequest& request, const CreateKeyPairAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateKeyPair(request), context);
-    };
+    using Req = const CreateKeyPairRequest&;
+    using Resp = CreateKeyPairResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateKeyPair", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CvmClient::CreateKeyPairOutcomeCallable CvmClient::CreateKeyPairCallable(const CreateKeyPairRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateKeyPairOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateKeyPair(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateKeyPairOutcome>>();
+    CreateKeyPairAsync(
+    request,
+    [prom](
+        const CvmClient*,
+        const CreateKeyPairRequest&,
+        CreateKeyPairOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CvmClient::CreateLaunchTemplateOutcome CvmClient::CreateLaunchTemplate(const CreateLaunchTemplateRequest &request)
@@ -492,25 +562,32 @@ CvmClient::CreateLaunchTemplateOutcome CvmClient::CreateLaunchTemplate(const Cre
 
 void CvmClient::CreateLaunchTemplateAsync(const CreateLaunchTemplateRequest& request, const CreateLaunchTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateLaunchTemplate(request), context);
-    };
+    using Req = const CreateLaunchTemplateRequest&;
+    using Resp = CreateLaunchTemplateResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateLaunchTemplate", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CvmClient::CreateLaunchTemplateOutcomeCallable CvmClient::CreateLaunchTemplateCallable(const CreateLaunchTemplateRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateLaunchTemplateOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateLaunchTemplate(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateLaunchTemplateOutcome>>();
+    CreateLaunchTemplateAsync(
+    request,
+    [prom](
+        const CvmClient*,
+        const CreateLaunchTemplateRequest&,
+        CreateLaunchTemplateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CvmClient::CreateLaunchTemplateVersionOutcome CvmClient::CreateLaunchTemplateVersion(const CreateLaunchTemplateVersionRequest &request)
@@ -535,25 +612,32 @@ CvmClient::CreateLaunchTemplateVersionOutcome CvmClient::CreateLaunchTemplateVer
 
 void CvmClient::CreateLaunchTemplateVersionAsync(const CreateLaunchTemplateVersionRequest& request, const CreateLaunchTemplateVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateLaunchTemplateVersion(request), context);
-    };
+    using Req = const CreateLaunchTemplateVersionRequest&;
+    using Resp = CreateLaunchTemplateVersionResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateLaunchTemplateVersion", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CvmClient::CreateLaunchTemplateVersionOutcomeCallable CvmClient::CreateLaunchTemplateVersionCallable(const CreateLaunchTemplateVersionRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateLaunchTemplateVersionOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateLaunchTemplateVersion(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateLaunchTemplateVersionOutcome>>();
+    CreateLaunchTemplateVersionAsync(
+    request,
+    [prom](
+        const CvmClient*,
+        const CreateLaunchTemplateVersionRequest&,
+        CreateLaunchTemplateVersionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CvmClient::DeleteDisasterRecoverGroupsOutcome CvmClient::DeleteDisasterRecoverGroups(const DeleteDisasterRecoverGroupsRequest &request)
@@ -578,25 +662,32 @@ CvmClient::DeleteDisasterRecoverGroupsOutcome CvmClient::DeleteDisasterRecoverGr
 
 void CvmClient::DeleteDisasterRecoverGroupsAsync(const DeleteDisasterRecoverGroupsRequest& request, const DeleteDisasterRecoverGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteDisasterRecoverGroups(request), context);
-    };
+    using Req = const DeleteDisasterRecoverGroupsRequest&;
+    using Resp = DeleteDisasterRecoverGroupsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteDisasterRecoverGroups", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CvmClient::DeleteDisasterRecoverGroupsOutcomeCallable CvmClient::DeleteDisasterRecoverGroupsCallable(const DeleteDisasterRecoverGroupsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteDisasterRecoverGroupsOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteDisasterRecoverGroups(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteDisasterRecoverGroupsOutcome>>();
+    DeleteDisasterRecoverGroupsAsync(
+    request,
+    [prom](
+        const CvmClient*,
+        const DeleteDisasterRecoverGroupsRequest&,
+        DeleteDisasterRecoverGroupsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CvmClient::DeleteHpcClustersOutcome CvmClient::DeleteHpcClusters(const DeleteHpcClustersRequest &request)
@@ -621,25 +712,32 @@ CvmClient::DeleteHpcClustersOutcome CvmClient::DeleteHpcClusters(const DeleteHpc
 
 void CvmClient::DeleteHpcClustersAsync(const DeleteHpcClustersRequest& request, const DeleteHpcClustersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteHpcClusters(request), context);
-    };
+    using Req = const DeleteHpcClustersRequest&;
+    using Resp = DeleteHpcClustersResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteHpcClusters", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CvmClient::DeleteHpcClustersOutcomeCallable CvmClient::DeleteHpcClustersCallable(const DeleteHpcClustersRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteHpcClustersOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteHpcClusters(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteHpcClustersOutcome>>();
+    DeleteHpcClustersAsync(
+    request,
+    [prom](
+        const CvmClient*,
+        const DeleteHpcClustersRequest&,
+        DeleteHpcClustersOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CvmClient::DeleteImagesOutcome CvmClient::DeleteImages(const DeleteImagesRequest &request)
@@ -664,25 +762,32 @@ CvmClient::DeleteImagesOutcome CvmClient::DeleteImages(const DeleteImagesRequest
 
 void CvmClient::DeleteImagesAsync(const DeleteImagesRequest& request, const DeleteImagesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteImages(request), context);
-    };
+    using Req = const DeleteImagesRequest&;
+    using Resp = DeleteImagesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteImages", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CvmClient::DeleteImagesOutcomeCallable CvmClient::DeleteImagesCallable(const DeleteImagesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteImagesOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteImages(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteImagesOutcome>>();
+    DeleteImagesAsync(
+    request,
+    [prom](
+        const CvmClient*,
+        const DeleteImagesRequest&,
+        DeleteImagesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CvmClient::DeleteInstancesActionTimerOutcome CvmClient::DeleteInstancesActionTimer(const DeleteInstancesActionTimerRequest &request)
@@ -707,25 +812,32 @@ CvmClient::DeleteInstancesActionTimerOutcome CvmClient::DeleteInstancesActionTim
 
 void CvmClient::DeleteInstancesActionTimerAsync(const DeleteInstancesActionTimerRequest& request, const DeleteInstancesActionTimerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteInstancesActionTimer(request), context);
-    };
+    using Req = const DeleteInstancesActionTimerRequest&;
+    using Resp = DeleteInstancesActionTimerResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteInstancesActionTimer", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CvmClient::DeleteInstancesActionTimerOutcomeCallable CvmClient::DeleteInstancesActionTimerCallable(const DeleteInstancesActionTimerRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteInstancesActionTimerOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteInstancesActionTimer(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteInstancesActionTimerOutcome>>();
+    DeleteInstancesActionTimerAsync(
+    request,
+    [prom](
+        const CvmClient*,
+        const DeleteInstancesActionTimerRequest&,
+        DeleteInstancesActionTimerOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CvmClient::DeleteKeyPairsOutcome CvmClient::DeleteKeyPairs(const DeleteKeyPairsRequest &request)
@@ -750,25 +862,32 @@ CvmClient::DeleteKeyPairsOutcome CvmClient::DeleteKeyPairs(const DeleteKeyPairsR
 
 void CvmClient::DeleteKeyPairsAsync(const DeleteKeyPairsRequest& request, const DeleteKeyPairsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteKeyPairs(request), context);
-    };
+    using Req = const DeleteKeyPairsRequest&;
+    using Resp = DeleteKeyPairsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteKeyPairs", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CvmClient::DeleteKeyPairsOutcomeCallable CvmClient::DeleteKeyPairsCallable(const DeleteKeyPairsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteKeyPairsOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteKeyPairs(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteKeyPairsOutcome>>();
+    DeleteKeyPairsAsync(
+    request,
+    [prom](
+        const CvmClient*,
+        const DeleteKeyPairsRequest&,
+        DeleteKeyPairsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CvmClient::DeleteLaunchTemplateOutcome CvmClient::DeleteLaunchTemplate(const DeleteLaunchTemplateRequest &request)
@@ -793,25 +912,32 @@ CvmClient::DeleteLaunchTemplateOutcome CvmClient::DeleteLaunchTemplate(const Del
 
 void CvmClient::DeleteLaunchTemplateAsync(const DeleteLaunchTemplateRequest& request, const DeleteLaunchTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteLaunchTemplate(request), context);
-    };
+    using Req = const DeleteLaunchTemplateRequest&;
+    using Resp = DeleteLaunchTemplateResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteLaunchTemplate", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CvmClient::DeleteLaunchTemplateOutcomeCallable CvmClient::DeleteLaunchTemplateCallable(const DeleteLaunchTemplateRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteLaunchTemplateOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteLaunchTemplate(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteLaunchTemplateOutcome>>();
+    DeleteLaunchTemplateAsync(
+    request,
+    [prom](
+        const CvmClient*,
+        const DeleteLaunchTemplateRequest&,
+        DeleteLaunchTemplateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CvmClient::DeleteLaunchTemplateVersionsOutcome CvmClient::DeleteLaunchTemplateVersions(const DeleteLaunchTemplateVersionsRequest &request)
@@ -836,25 +962,32 @@ CvmClient::DeleteLaunchTemplateVersionsOutcome CvmClient::DeleteLaunchTemplateVe
 
 void CvmClient::DeleteLaunchTemplateVersionsAsync(const DeleteLaunchTemplateVersionsRequest& request, const DeleteLaunchTemplateVersionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteLaunchTemplateVersions(request), context);
-    };
+    using Req = const DeleteLaunchTemplateVersionsRequest&;
+    using Resp = DeleteLaunchTemplateVersionsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteLaunchTemplateVersions", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CvmClient::DeleteLaunchTemplateVersionsOutcomeCallable CvmClient::DeleteLaunchTemplateVersionsCallable(const DeleteLaunchTemplateVersionsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteLaunchTemplateVersionsOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteLaunchTemplateVersions(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteLaunchTemplateVersionsOutcome>>();
+    DeleteLaunchTemplateVersionsAsync(
+    request,
+    [prom](
+        const CvmClient*,
+        const DeleteLaunchTemplateVersionsRequest&,
+        DeleteLaunchTemplateVersionsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CvmClient::DescribeAccountQuotaOutcome CvmClient::DescribeAccountQuota(const DescribeAccountQuotaRequest &request)
@@ -879,25 +1012,32 @@ CvmClient::DescribeAccountQuotaOutcome CvmClient::DescribeAccountQuota(const Des
 
 void CvmClient::DescribeAccountQuotaAsync(const DescribeAccountQuotaRequest& request, const DescribeAccountQuotaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAccountQuota(request), context);
-    };
+    using Req = const DescribeAccountQuotaRequest&;
+    using Resp = DescribeAccountQuotaResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAccountQuota", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CvmClient::DescribeAccountQuotaOutcomeCallable CvmClient::DescribeAccountQuotaCallable(const DescribeAccountQuotaRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAccountQuotaOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAccountQuota(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAccountQuotaOutcome>>();
+    DescribeAccountQuotaAsync(
+    request,
+    [prom](
+        const CvmClient*,
+        const DescribeAccountQuotaRequest&,
+        DescribeAccountQuotaOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CvmClient::DescribeChcDeniedActionsOutcome CvmClient::DescribeChcDeniedActions(const DescribeChcDeniedActionsRequest &request)
@@ -922,25 +1062,32 @@ CvmClient::DescribeChcDeniedActionsOutcome CvmClient::DescribeChcDeniedActions(c
 
 void CvmClient::DescribeChcDeniedActionsAsync(const DescribeChcDeniedActionsRequest& request, const DescribeChcDeniedActionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeChcDeniedActions(request), context);
-    };
+    using Req = const DescribeChcDeniedActionsRequest&;
+    using Resp = DescribeChcDeniedActionsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeChcDeniedActions", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CvmClient::DescribeChcDeniedActionsOutcomeCallable CvmClient::DescribeChcDeniedActionsCallable(const DescribeChcDeniedActionsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeChcDeniedActionsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeChcDeniedActions(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeChcDeniedActionsOutcome>>();
+    DescribeChcDeniedActionsAsync(
+    request,
+    [prom](
+        const CvmClient*,
+        const DescribeChcDeniedActionsRequest&,
+        DescribeChcDeniedActionsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CvmClient::DescribeChcHostsOutcome CvmClient::DescribeChcHosts(const DescribeChcHostsRequest &request)
@@ -965,25 +1112,32 @@ CvmClient::DescribeChcHostsOutcome CvmClient::DescribeChcHosts(const DescribeChc
 
 void CvmClient::DescribeChcHostsAsync(const DescribeChcHostsRequest& request, const DescribeChcHostsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeChcHosts(request), context);
-    };
+    using Req = const DescribeChcHostsRequest&;
+    using Resp = DescribeChcHostsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeChcHosts", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CvmClient::DescribeChcHostsOutcomeCallable CvmClient::DescribeChcHostsCallable(const DescribeChcHostsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeChcHostsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeChcHosts(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeChcHostsOutcome>>();
+    DescribeChcHostsAsync(
+    request,
+    [prom](
+        const CvmClient*,
+        const DescribeChcHostsRequest&,
+        DescribeChcHostsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CvmClient::DescribeDisasterRecoverGroupQuotaOutcome CvmClient::DescribeDisasterRecoverGroupQuota(const DescribeDisasterRecoverGroupQuotaRequest &request)
@@ -1008,25 +1162,32 @@ CvmClient::DescribeDisasterRecoverGroupQuotaOutcome CvmClient::DescribeDisasterR
 
 void CvmClient::DescribeDisasterRecoverGroupQuotaAsync(const DescribeDisasterRecoverGroupQuotaRequest& request, const DescribeDisasterRecoverGroupQuotaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDisasterRecoverGroupQuota(request), context);
-    };
+    using Req = const DescribeDisasterRecoverGroupQuotaRequest&;
+    using Resp = DescribeDisasterRecoverGroupQuotaResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeDisasterRecoverGroupQuota", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CvmClient::DescribeDisasterRecoverGroupQuotaOutcomeCallable CvmClient::DescribeDisasterRecoverGroupQuotaCallable(const DescribeDisasterRecoverGroupQuotaRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeDisasterRecoverGroupQuotaOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDisasterRecoverGroupQuota(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeDisasterRecoverGroupQuotaOutcome>>();
+    DescribeDisasterRecoverGroupQuotaAsync(
+    request,
+    [prom](
+        const CvmClient*,
+        const DescribeDisasterRecoverGroupQuotaRequest&,
+        DescribeDisasterRecoverGroupQuotaOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CvmClient::DescribeDisasterRecoverGroupsOutcome CvmClient::DescribeDisasterRecoverGroups(const DescribeDisasterRecoverGroupsRequest &request)
@@ -1051,25 +1212,32 @@ CvmClient::DescribeDisasterRecoverGroupsOutcome CvmClient::DescribeDisasterRecov
 
 void CvmClient::DescribeDisasterRecoverGroupsAsync(const DescribeDisasterRecoverGroupsRequest& request, const DescribeDisasterRecoverGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDisasterRecoverGroups(request), context);
-    };
+    using Req = const DescribeDisasterRecoverGroupsRequest&;
+    using Resp = DescribeDisasterRecoverGroupsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeDisasterRecoverGroups", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CvmClient::DescribeDisasterRecoverGroupsOutcomeCallable CvmClient::DescribeDisasterRecoverGroupsCallable(const DescribeDisasterRecoverGroupsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeDisasterRecoverGroupsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDisasterRecoverGroups(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeDisasterRecoverGroupsOutcome>>();
+    DescribeDisasterRecoverGroupsAsync(
+    request,
+    [prom](
+        const CvmClient*,
+        const DescribeDisasterRecoverGroupsRequest&,
+        DescribeDisasterRecoverGroupsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CvmClient::DescribeHostsOutcome CvmClient::DescribeHosts(const DescribeHostsRequest &request)
@@ -1094,25 +1262,32 @@ CvmClient::DescribeHostsOutcome CvmClient::DescribeHosts(const DescribeHostsRequ
 
 void CvmClient::DescribeHostsAsync(const DescribeHostsRequest& request, const DescribeHostsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeHosts(request), context);
-    };
+    using Req = const DescribeHostsRequest&;
+    using Resp = DescribeHostsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeHosts", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CvmClient::DescribeHostsOutcomeCallable CvmClient::DescribeHostsCallable(const DescribeHostsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeHostsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeHosts(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeHostsOutcome>>();
+    DescribeHostsAsync(
+    request,
+    [prom](
+        const CvmClient*,
+        const DescribeHostsRequest&,
+        DescribeHostsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CvmClient::DescribeHpcClustersOutcome CvmClient::DescribeHpcClusters(const DescribeHpcClustersRequest &request)
@@ -1137,25 +1312,32 @@ CvmClient::DescribeHpcClustersOutcome CvmClient::DescribeHpcClusters(const Descr
 
 void CvmClient::DescribeHpcClustersAsync(const DescribeHpcClustersRequest& request, const DescribeHpcClustersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeHpcClusters(request), context);
-    };
+    using Req = const DescribeHpcClustersRequest&;
+    using Resp = DescribeHpcClustersResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeHpcClusters", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CvmClient::DescribeHpcClustersOutcomeCallable CvmClient::DescribeHpcClustersCallable(const DescribeHpcClustersRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeHpcClustersOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeHpcClusters(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeHpcClustersOutcome>>();
+    DescribeHpcClustersAsync(
+    request,
+    [prom](
+        const CvmClient*,
+        const DescribeHpcClustersRequest&,
+        DescribeHpcClustersOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CvmClient::DescribeImageFromFamilyOutcome CvmClient::DescribeImageFromFamily(const DescribeImageFromFamilyRequest &request)
@@ -1180,25 +1362,32 @@ CvmClient::DescribeImageFromFamilyOutcome CvmClient::DescribeImageFromFamily(con
 
 void CvmClient::DescribeImageFromFamilyAsync(const DescribeImageFromFamilyRequest& request, const DescribeImageFromFamilyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeImageFromFamily(request), context);
-    };
+    using Req = const DescribeImageFromFamilyRequest&;
+    using Resp = DescribeImageFromFamilyResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeImageFromFamily", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CvmClient::DescribeImageFromFamilyOutcomeCallable CvmClient::DescribeImageFromFamilyCallable(const DescribeImageFromFamilyRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeImageFromFamilyOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeImageFromFamily(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeImageFromFamilyOutcome>>();
+    DescribeImageFromFamilyAsync(
+    request,
+    [prom](
+        const CvmClient*,
+        const DescribeImageFromFamilyRequest&,
+        DescribeImageFromFamilyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CvmClient::DescribeImageQuotaOutcome CvmClient::DescribeImageQuota(const DescribeImageQuotaRequest &request)
@@ -1223,25 +1412,32 @@ CvmClient::DescribeImageQuotaOutcome CvmClient::DescribeImageQuota(const Describ
 
 void CvmClient::DescribeImageQuotaAsync(const DescribeImageQuotaRequest& request, const DescribeImageQuotaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeImageQuota(request), context);
-    };
+    using Req = const DescribeImageQuotaRequest&;
+    using Resp = DescribeImageQuotaResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeImageQuota", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CvmClient::DescribeImageQuotaOutcomeCallable CvmClient::DescribeImageQuotaCallable(const DescribeImageQuotaRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeImageQuotaOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeImageQuota(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeImageQuotaOutcome>>();
+    DescribeImageQuotaAsync(
+    request,
+    [prom](
+        const CvmClient*,
+        const DescribeImageQuotaRequest&,
+        DescribeImageQuotaOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CvmClient::DescribeImageSharePermissionOutcome CvmClient::DescribeImageSharePermission(const DescribeImageSharePermissionRequest &request)
@@ -1266,25 +1462,32 @@ CvmClient::DescribeImageSharePermissionOutcome CvmClient::DescribeImageSharePerm
 
 void CvmClient::DescribeImageSharePermissionAsync(const DescribeImageSharePermissionRequest& request, const DescribeImageSharePermissionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeImageSharePermission(request), context);
-    };
+    using Req = const DescribeImageSharePermissionRequest&;
+    using Resp = DescribeImageSharePermissionResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeImageSharePermission", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CvmClient::DescribeImageSharePermissionOutcomeCallable CvmClient::DescribeImageSharePermissionCallable(const DescribeImageSharePermissionRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeImageSharePermissionOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeImageSharePermission(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeImageSharePermissionOutcome>>();
+    DescribeImageSharePermissionAsync(
+    request,
+    [prom](
+        const CvmClient*,
+        const DescribeImageSharePermissionRequest&,
+        DescribeImageSharePermissionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CvmClient::DescribeImagesOutcome CvmClient::DescribeImages(const DescribeImagesRequest &request)
@@ -1309,25 +1512,32 @@ CvmClient::DescribeImagesOutcome CvmClient::DescribeImages(const DescribeImagesR
 
 void CvmClient::DescribeImagesAsync(const DescribeImagesRequest& request, const DescribeImagesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeImages(request), context);
-    };
+    using Req = const DescribeImagesRequest&;
+    using Resp = DescribeImagesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeImages", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CvmClient::DescribeImagesOutcomeCallable CvmClient::DescribeImagesCallable(const DescribeImagesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeImagesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeImages(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeImagesOutcome>>();
+    DescribeImagesAsync(
+    request,
+    [prom](
+        const CvmClient*,
+        const DescribeImagesRequest&,
+        DescribeImagesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CvmClient::DescribeImportImageOsOutcome CvmClient::DescribeImportImageOs(const DescribeImportImageOsRequest &request)
@@ -1352,25 +1562,32 @@ CvmClient::DescribeImportImageOsOutcome CvmClient::DescribeImportImageOs(const D
 
 void CvmClient::DescribeImportImageOsAsync(const DescribeImportImageOsRequest& request, const DescribeImportImageOsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeImportImageOs(request), context);
-    };
+    using Req = const DescribeImportImageOsRequest&;
+    using Resp = DescribeImportImageOsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeImportImageOs", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CvmClient::DescribeImportImageOsOutcomeCallable CvmClient::DescribeImportImageOsCallable(const DescribeImportImageOsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeImportImageOsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeImportImageOs(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeImportImageOsOutcome>>();
+    DescribeImportImageOsAsync(
+    request,
+    [prom](
+        const CvmClient*,
+        const DescribeImportImageOsRequest&,
+        DescribeImportImageOsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CvmClient::DescribeInstanceFamilyConfigsOutcome CvmClient::DescribeInstanceFamilyConfigs(const DescribeInstanceFamilyConfigsRequest &request)
@@ -1395,25 +1612,32 @@ CvmClient::DescribeInstanceFamilyConfigsOutcome CvmClient::DescribeInstanceFamil
 
 void CvmClient::DescribeInstanceFamilyConfigsAsync(const DescribeInstanceFamilyConfigsRequest& request, const DescribeInstanceFamilyConfigsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeInstanceFamilyConfigs(request), context);
-    };
+    using Req = const DescribeInstanceFamilyConfigsRequest&;
+    using Resp = DescribeInstanceFamilyConfigsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeInstanceFamilyConfigs", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CvmClient::DescribeInstanceFamilyConfigsOutcomeCallable CvmClient::DescribeInstanceFamilyConfigsCallable(const DescribeInstanceFamilyConfigsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeInstanceFamilyConfigsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeInstanceFamilyConfigs(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeInstanceFamilyConfigsOutcome>>();
+    DescribeInstanceFamilyConfigsAsync(
+    request,
+    [prom](
+        const CvmClient*,
+        const DescribeInstanceFamilyConfigsRequest&,
+        DescribeInstanceFamilyConfigsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CvmClient::DescribeInstanceInternetBandwidthConfigsOutcome CvmClient::DescribeInstanceInternetBandwidthConfigs(const DescribeInstanceInternetBandwidthConfigsRequest &request)
@@ -1438,25 +1662,32 @@ CvmClient::DescribeInstanceInternetBandwidthConfigsOutcome CvmClient::DescribeIn
 
 void CvmClient::DescribeInstanceInternetBandwidthConfigsAsync(const DescribeInstanceInternetBandwidthConfigsRequest& request, const DescribeInstanceInternetBandwidthConfigsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeInstanceInternetBandwidthConfigs(request), context);
-    };
+    using Req = const DescribeInstanceInternetBandwidthConfigsRequest&;
+    using Resp = DescribeInstanceInternetBandwidthConfigsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeInstanceInternetBandwidthConfigs", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CvmClient::DescribeInstanceInternetBandwidthConfigsOutcomeCallable CvmClient::DescribeInstanceInternetBandwidthConfigsCallable(const DescribeInstanceInternetBandwidthConfigsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeInstanceInternetBandwidthConfigsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeInstanceInternetBandwidthConfigs(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeInstanceInternetBandwidthConfigsOutcome>>();
+    DescribeInstanceInternetBandwidthConfigsAsync(
+    request,
+    [prom](
+        const CvmClient*,
+        const DescribeInstanceInternetBandwidthConfigsRequest&,
+        DescribeInstanceInternetBandwidthConfigsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CvmClient::DescribeInstanceTypeConfigsOutcome CvmClient::DescribeInstanceTypeConfigs(const DescribeInstanceTypeConfigsRequest &request)
@@ -1481,25 +1712,32 @@ CvmClient::DescribeInstanceTypeConfigsOutcome CvmClient::DescribeInstanceTypeCon
 
 void CvmClient::DescribeInstanceTypeConfigsAsync(const DescribeInstanceTypeConfigsRequest& request, const DescribeInstanceTypeConfigsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeInstanceTypeConfigs(request), context);
-    };
+    using Req = const DescribeInstanceTypeConfigsRequest&;
+    using Resp = DescribeInstanceTypeConfigsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeInstanceTypeConfigs", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CvmClient::DescribeInstanceTypeConfigsOutcomeCallable CvmClient::DescribeInstanceTypeConfigsCallable(const DescribeInstanceTypeConfigsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeInstanceTypeConfigsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeInstanceTypeConfigs(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeInstanceTypeConfigsOutcome>>();
+    DescribeInstanceTypeConfigsAsync(
+    request,
+    [prom](
+        const CvmClient*,
+        const DescribeInstanceTypeConfigsRequest&,
+        DescribeInstanceTypeConfigsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CvmClient::DescribeInstanceVncUrlOutcome CvmClient::DescribeInstanceVncUrl(const DescribeInstanceVncUrlRequest &request)
@@ -1524,25 +1762,32 @@ CvmClient::DescribeInstanceVncUrlOutcome CvmClient::DescribeInstanceVncUrl(const
 
 void CvmClient::DescribeInstanceVncUrlAsync(const DescribeInstanceVncUrlRequest& request, const DescribeInstanceVncUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeInstanceVncUrl(request), context);
-    };
+    using Req = const DescribeInstanceVncUrlRequest&;
+    using Resp = DescribeInstanceVncUrlResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeInstanceVncUrl", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CvmClient::DescribeInstanceVncUrlOutcomeCallable CvmClient::DescribeInstanceVncUrlCallable(const DescribeInstanceVncUrlRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeInstanceVncUrlOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeInstanceVncUrl(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeInstanceVncUrlOutcome>>();
+    DescribeInstanceVncUrlAsync(
+    request,
+    [prom](
+        const CvmClient*,
+        const DescribeInstanceVncUrlRequest&,
+        DescribeInstanceVncUrlOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CvmClient::DescribeInstancesOutcome CvmClient::DescribeInstances(const DescribeInstancesRequest &request)
@@ -1567,25 +1812,32 @@ CvmClient::DescribeInstancesOutcome CvmClient::DescribeInstances(const DescribeI
 
 void CvmClient::DescribeInstancesAsync(const DescribeInstancesRequest& request, const DescribeInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeInstances(request), context);
-    };
+    using Req = const DescribeInstancesRequest&;
+    using Resp = DescribeInstancesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeInstances", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CvmClient::DescribeInstancesOutcomeCallable CvmClient::DescribeInstancesCallable(const DescribeInstancesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeInstancesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeInstances(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeInstancesOutcome>>();
+    DescribeInstancesAsync(
+    request,
+    [prom](
+        const CvmClient*,
+        const DescribeInstancesRequest&,
+        DescribeInstancesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CvmClient::DescribeInstancesActionTimerOutcome CvmClient::DescribeInstancesActionTimer(const DescribeInstancesActionTimerRequest &request)
@@ -1610,25 +1862,32 @@ CvmClient::DescribeInstancesActionTimerOutcome CvmClient::DescribeInstancesActio
 
 void CvmClient::DescribeInstancesActionTimerAsync(const DescribeInstancesActionTimerRequest& request, const DescribeInstancesActionTimerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeInstancesActionTimer(request), context);
-    };
+    using Req = const DescribeInstancesActionTimerRequest&;
+    using Resp = DescribeInstancesActionTimerResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeInstancesActionTimer", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CvmClient::DescribeInstancesActionTimerOutcomeCallable CvmClient::DescribeInstancesActionTimerCallable(const DescribeInstancesActionTimerRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeInstancesActionTimerOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeInstancesActionTimer(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeInstancesActionTimerOutcome>>();
+    DescribeInstancesActionTimerAsync(
+    request,
+    [prom](
+        const CvmClient*,
+        const DescribeInstancesActionTimerRequest&,
+        DescribeInstancesActionTimerOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CvmClient::DescribeInstancesAttributesOutcome CvmClient::DescribeInstancesAttributes(const DescribeInstancesAttributesRequest &request)
@@ -1653,25 +1912,32 @@ CvmClient::DescribeInstancesAttributesOutcome CvmClient::DescribeInstancesAttrib
 
 void CvmClient::DescribeInstancesAttributesAsync(const DescribeInstancesAttributesRequest& request, const DescribeInstancesAttributesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeInstancesAttributes(request), context);
-    };
+    using Req = const DescribeInstancesAttributesRequest&;
+    using Resp = DescribeInstancesAttributesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeInstancesAttributes", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CvmClient::DescribeInstancesAttributesOutcomeCallable CvmClient::DescribeInstancesAttributesCallable(const DescribeInstancesAttributesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeInstancesAttributesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeInstancesAttributes(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeInstancesAttributesOutcome>>();
+    DescribeInstancesAttributesAsync(
+    request,
+    [prom](
+        const CvmClient*,
+        const DescribeInstancesAttributesRequest&,
+        DescribeInstancesAttributesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CvmClient::DescribeInstancesModificationOutcome CvmClient::DescribeInstancesModification(const DescribeInstancesModificationRequest &request)
@@ -1696,25 +1962,32 @@ CvmClient::DescribeInstancesModificationOutcome CvmClient::DescribeInstancesModi
 
 void CvmClient::DescribeInstancesModificationAsync(const DescribeInstancesModificationRequest& request, const DescribeInstancesModificationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeInstancesModification(request), context);
-    };
+    using Req = const DescribeInstancesModificationRequest&;
+    using Resp = DescribeInstancesModificationResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeInstancesModification", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CvmClient::DescribeInstancesModificationOutcomeCallable CvmClient::DescribeInstancesModificationCallable(const DescribeInstancesModificationRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeInstancesModificationOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeInstancesModification(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeInstancesModificationOutcome>>();
+    DescribeInstancesModificationAsync(
+    request,
+    [prom](
+        const CvmClient*,
+        const DescribeInstancesModificationRequest&,
+        DescribeInstancesModificationOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CvmClient::DescribeInstancesOperationLimitOutcome CvmClient::DescribeInstancesOperationLimit(const DescribeInstancesOperationLimitRequest &request)
@@ -1739,25 +2012,32 @@ CvmClient::DescribeInstancesOperationLimitOutcome CvmClient::DescribeInstancesOp
 
 void CvmClient::DescribeInstancesOperationLimitAsync(const DescribeInstancesOperationLimitRequest& request, const DescribeInstancesOperationLimitAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeInstancesOperationLimit(request), context);
-    };
+    using Req = const DescribeInstancesOperationLimitRequest&;
+    using Resp = DescribeInstancesOperationLimitResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeInstancesOperationLimit", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CvmClient::DescribeInstancesOperationLimitOutcomeCallable CvmClient::DescribeInstancesOperationLimitCallable(const DescribeInstancesOperationLimitRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeInstancesOperationLimitOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeInstancesOperationLimit(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeInstancesOperationLimitOutcome>>();
+    DescribeInstancesOperationLimitAsync(
+    request,
+    [prom](
+        const CvmClient*,
+        const DescribeInstancesOperationLimitRequest&,
+        DescribeInstancesOperationLimitOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CvmClient::DescribeInstancesStatusOutcome CvmClient::DescribeInstancesStatus(const DescribeInstancesStatusRequest &request)
@@ -1782,25 +2062,32 @@ CvmClient::DescribeInstancesStatusOutcome CvmClient::DescribeInstancesStatus(con
 
 void CvmClient::DescribeInstancesStatusAsync(const DescribeInstancesStatusRequest& request, const DescribeInstancesStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeInstancesStatus(request), context);
-    };
+    using Req = const DescribeInstancesStatusRequest&;
+    using Resp = DescribeInstancesStatusResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeInstancesStatus", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CvmClient::DescribeInstancesStatusOutcomeCallable CvmClient::DescribeInstancesStatusCallable(const DescribeInstancesStatusRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeInstancesStatusOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeInstancesStatus(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeInstancesStatusOutcome>>();
+    DescribeInstancesStatusAsync(
+    request,
+    [prom](
+        const CvmClient*,
+        const DescribeInstancesStatusRequest&,
+        DescribeInstancesStatusOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CvmClient::DescribeInternetChargeTypeConfigsOutcome CvmClient::DescribeInternetChargeTypeConfigs(const DescribeInternetChargeTypeConfigsRequest &request)
@@ -1825,25 +2112,32 @@ CvmClient::DescribeInternetChargeTypeConfigsOutcome CvmClient::DescribeInternetC
 
 void CvmClient::DescribeInternetChargeTypeConfigsAsync(const DescribeInternetChargeTypeConfigsRequest& request, const DescribeInternetChargeTypeConfigsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeInternetChargeTypeConfigs(request), context);
-    };
+    using Req = const DescribeInternetChargeTypeConfigsRequest&;
+    using Resp = DescribeInternetChargeTypeConfigsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeInternetChargeTypeConfigs", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CvmClient::DescribeInternetChargeTypeConfigsOutcomeCallable CvmClient::DescribeInternetChargeTypeConfigsCallable(const DescribeInternetChargeTypeConfigsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeInternetChargeTypeConfigsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeInternetChargeTypeConfigs(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeInternetChargeTypeConfigsOutcome>>();
+    DescribeInternetChargeTypeConfigsAsync(
+    request,
+    [prom](
+        const CvmClient*,
+        const DescribeInternetChargeTypeConfigsRequest&,
+        DescribeInternetChargeTypeConfigsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CvmClient::DescribeKeyPairsOutcome CvmClient::DescribeKeyPairs(const DescribeKeyPairsRequest &request)
@@ -1868,25 +2162,32 @@ CvmClient::DescribeKeyPairsOutcome CvmClient::DescribeKeyPairs(const DescribeKey
 
 void CvmClient::DescribeKeyPairsAsync(const DescribeKeyPairsRequest& request, const DescribeKeyPairsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeKeyPairs(request), context);
-    };
+    using Req = const DescribeKeyPairsRequest&;
+    using Resp = DescribeKeyPairsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeKeyPairs", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CvmClient::DescribeKeyPairsOutcomeCallable CvmClient::DescribeKeyPairsCallable(const DescribeKeyPairsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeKeyPairsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeKeyPairs(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeKeyPairsOutcome>>();
+    DescribeKeyPairsAsync(
+    request,
+    [prom](
+        const CvmClient*,
+        const DescribeKeyPairsRequest&,
+        DescribeKeyPairsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CvmClient::DescribeLaunchTemplateVersionsOutcome CvmClient::DescribeLaunchTemplateVersions(const DescribeLaunchTemplateVersionsRequest &request)
@@ -1911,25 +2212,32 @@ CvmClient::DescribeLaunchTemplateVersionsOutcome CvmClient::DescribeLaunchTempla
 
 void CvmClient::DescribeLaunchTemplateVersionsAsync(const DescribeLaunchTemplateVersionsRequest& request, const DescribeLaunchTemplateVersionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeLaunchTemplateVersions(request), context);
-    };
+    using Req = const DescribeLaunchTemplateVersionsRequest&;
+    using Resp = DescribeLaunchTemplateVersionsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeLaunchTemplateVersions", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CvmClient::DescribeLaunchTemplateVersionsOutcomeCallable CvmClient::DescribeLaunchTemplateVersionsCallable(const DescribeLaunchTemplateVersionsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeLaunchTemplateVersionsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeLaunchTemplateVersions(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeLaunchTemplateVersionsOutcome>>();
+    DescribeLaunchTemplateVersionsAsync(
+    request,
+    [prom](
+        const CvmClient*,
+        const DescribeLaunchTemplateVersionsRequest&,
+        DescribeLaunchTemplateVersionsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CvmClient::DescribeLaunchTemplatesOutcome CvmClient::DescribeLaunchTemplates(const DescribeLaunchTemplatesRequest &request)
@@ -1954,25 +2262,32 @@ CvmClient::DescribeLaunchTemplatesOutcome CvmClient::DescribeLaunchTemplates(con
 
 void CvmClient::DescribeLaunchTemplatesAsync(const DescribeLaunchTemplatesRequest& request, const DescribeLaunchTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeLaunchTemplates(request), context);
-    };
+    using Req = const DescribeLaunchTemplatesRequest&;
+    using Resp = DescribeLaunchTemplatesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeLaunchTemplates", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CvmClient::DescribeLaunchTemplatesOutcomeCallable CvmClient::DescribeLaunchTemplatesCallable(const DescribeLaunchTemplatesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeLaunchTemplatesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeLaunchTemplates(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeLaunchTemplatesOutcome>>();
+    DescribeLaunchTemplatesAsync(
+    request,
+    [prom](
+        const CvmClient*,
+        const DescribeLaunchTemplatesRequest&,
+        DescribeLaunchTemplatesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CvmClient::DescribeRegionsOutcome CvmClient::DescribeRegions(const DescribeRegionsRequest &request)
@@ -1997,25 +2312,32 @@ CvmClient::DescribeRegionsOutcome CvmClient::DescribeRegions(const DescribeRegio
 
 void CvmClient::DescribeRegionsAsync(const DescribeRegionsRequest& request, const DescribeRegionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeRegions(request), context);
-    };
+    using Req = const DescribeRegionsRequest&;
+    using Resp = DescribeRegionsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeRegions", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CvmClient::DescribeRegionsOutcomeCallable CvmClient::DescribeRegionsCallable(const DescribeRegionsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeRegionsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeRegions(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeRegionsOutcome>>();
+    DescribeRegionsAsync(
+    request,
+    [prom](
+        const CvmClient*,
+        const DescribeRegionsRequest&,
+        DescribeRegionsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CvmClient::DescribeTaskInfoOutcome CvmClient::DescribeTaskInfo(const DescribeTaskInfoRequest &request)
@@ -2040,25 +2362,32 @@ CvmClient::DescribeTaskInfoOutcome CvmClient::DescribeTaskInfo(const DescribeTas
 
 void CvmClient::DescribeTaskInfoAsync(const DescribeTaskInfoRequest& request, const DescribeTaskInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeTaskInfo(request), context);
-    };
+    using Req = const DescribeTaskInfoRequest&;
+    using Resp = DescribeTaskInfoResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeTaskInfo", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CvmClient::DescribeTaskInfoOutcomeCallable CvmClient::DescribeTaskInfoCallable(const DescribeTaskInfoRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeTaskInfoOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeTaskInfo(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeTaskInfoOutcome>>();
+    DescribeTaskInfoAsync(
+    request,
+    [prom](
+        const CvmClient*,
+        const DescribeTaskInfoRequest&,
+        DescribeTaskInfoOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CvmClient::DescribeZoneInstanceConfigInfosOutcome CvmClient::DescribeZoneInstanceConfigInfos(const DescribeZoneInstanceConfigInfosRequest &request)
@@ -2083,25 +2412,32 @@ CvmClient::DescribeZoneInstanceConfigInfosOutcome CvmClient::DescribeZoneInstanc
 
 void CvmClient::DescribeZoneInstanceConfigInfosAsync(const DescribeZoneInstanceConfigInfosRequest& request, const DescribeZoneInstanceConfigInfosAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeZoneInstanceConfigInfos(request), context);
-    };
+    using Req = const DescribeZoneInstanceConfigInfosRequest&;
+    using Resp = DescribeZoneInstanceConfigInfosResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeZoneInstanceConfigInfos", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CvmClient::DescribeZoneInstanceConfigInfosOutcomeCallable CvmClient::DescribeZoneInstanceConfigInfosCallable(const DescribeZoneInstanceConfigInfosRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeZoneInstanceConfigInfosOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeZoneInstanceConfigInfos(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeZoneInstanceConfigInfosOutcome>>();
+    DescribeZoneInstanceConfigInfosAsync(
+    request,
+    [prom](
+        const CvmClient*,
+        const DescribeZoneInstanceConfigInfosRequest&,
+        DescribeZoneInstanceConfigInfosOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CvmClient::DescribeZonesOutcome CvmClient::DescribeZones(const DescribeZonesRequest &request)
@@ -2126,25 +2462,32 @@ CvmClient::DescribeZonesOutcome CvmClient::DescribeZones(const DescribeZonesRequ
 
 void CvmClient::DescribeZonesAsync(const DescribeZonesRequest& request, const DescribeZonesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeZones(request), context);
-    };
+    using Req = const DescribeZonesRequest&;
+    using Resp = DescribeZonesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeZones", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CvmClient::DescribeZonesOutcomeCallable CvmClient::DescribeZonesCallable(const DescribeZonesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeZonesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeZones(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeZonesOutcome>>();
+    DescribeZonesAsync(
+    request,
+    [prom](
+        const CvmClient*,
+        const DescribeZonesRequest&,
+        DescribeZonesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CvmClient::DisassociateInstancesKeyPairsOutcome CvmClient::DisassociateInstancesKeyPairs(const DisassociateInstancesKeyPairsRequest &request)
@@ -2169,25 +2512,32 @@ CvmClient::DisassociateInstancesKeyPairsOutcome CvmClient::DisassociateInstances
 
 void CvmClient::DisassociateInstancesKeyPairsAsync(const DisassociateInstancesKeyPairsRequest& request, const DisassociateInstancesKeyPairsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DisassociateInstancesKeyPairs(request), context);
-    };
+    using Req = const DisassociateInstancesKeyPairsRequest&;
+    using Resp = DisassociateInstancesKeyPairsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DisassociateInstancesKeyPairs", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CvmClient::DisassociateInstancesKeyPairsOutcomeCallable CvmClient::DisassociateInstancesKeyPairsCallable(const DisassociateInstancesKeyPairsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DisassociateInstancesKeyPairsOutcome()>>(
-        [this, request]()
-        {
-            return this->DisassociateInstancesKeyPairs(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DisassociateInstancesKeyPairsOutcome>>();
+    DisassociateInstancesKeyPairsAsync(
+    request,
+    [prom](
+        const CvmClient*,
+        const DisassociateInstancesKeyPairsRequest&,
+        DisassociateInstancesKeyPairsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CvmClient::DisassociateSecurityGroupsOutcome CvmClient::DisassociateSecurityGroups(const DisassociateSecurityGroupsRequest &request)
@@ -2212,25 +2562,32 @@ CvmClient::DisassociateSecurityGroupsOutcome CvmClient::DisassociateSecurityGrou
 
 void CvmClient::DisassociateSecurityGroupsAsync(const DisassociateSecurityGroupsRequest& request, const DisassociateSecurityGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DisassociateSecurityGroups(request), context);
-    };
+    using Req = const DisassociateSecurityGroupsRequest&;
+    using Resp = DisassociateSecurityGroupsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DisassociateSecurityGroups", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CvmClient::DisassociateSecurityGroupsOutcomeCallable CvmClient::DisassociateSecurityGroupsCallable(const DisassociateSecurityGroupsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DisassociateSecurityGroupsOutcome()>>(
-        [this, request]()
-        {
-            return this->DisassociateSecurityGroups(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DisassociateSecurityGroupsOutcome>>();
+    DisassociateSecurityGroupsAsync(
+    request,
+    [prom](
+        const CvmClient*,
+        const DisassociateSecurityGroupsRequest&,
+        DisassociateSecurityGroupsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CvmClient::EnterRescueModeOutcome CvmClient::EnterRescueMode(const EnterRescueModeRequest &request)
@@ -2255,25 +2612,32 @@ CvmClient::EnterRescueModeOutcome CvmClient::EnterRescueMode(const EnterRescueMo
 
 void CvmClient::EnterRescueModeAsync(const EnterRescueModeRequest& request, const EnterRescueModeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->EnterRescueMode(request), context);
-    };
+    using Req = const EnterRescueModeRequest&;
+    using Resp = EnterRescueModeResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "EnterRescueMode", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CvmClient::EnterRescueModeOutcomeCallable CvmClient::EnterRescueModeCallable(const EnterRescueModeRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<EnterRescueModeOutcome()>>(
-        [this, request]()
-        {
-            return this->EnterRescueMode(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<EnterRescueModeOutcome>>();
+    EnterRescueModeAsync(
+    request,
+    [prom](
+        const CvmClient*,
+        const EnterRescueModeRequest&,
+        EnterRescueModeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CvmClient::ExitRescueModeOutcome CvmClient::ExitRescueMode(const ExitRescueModeRequest &request)
@@ -2298,25 +2662,32 @@ CvmClient::ExitRescueModeOutcome CvmClient::ExitRescueMode(const ExitRescueModeR
 
 void CvmClient::ExitRescueModeAsync(const ExitRescueModeRequest& request, const ExitRescueModeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ExitRescueMode(request), context);
-    };
+    using Req = const ExitRescueModeRequest&;
+    using Resp = ExitRescueModeResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ExitRescueMode", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CvmClient::ExitRescueModeOutcomeCallable CvmClient::ExitRescueModeCallable(const ExitRescueModeRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ExitRescueModeOutcome()>>(
-        [this, request]()
-        {
-            return this->ExitRescueMode(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ExitRescueModeOutcome>>();
+    ExitRescueModeAsync(
+    request,
+    [prom](
+        const CvmClient*,
+        const ExitRescueModeRequest&,
+        ExitRescueModeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CvmClient::ExportImagesOutcome CvmClient::ExportImages(const ExportImagesRequest &request)
@@ -2341,25 +2712,32 @@ CvmClient::ExportImagesOutcome CvmClient::ExportImages(const ExportImagesRequest
 
 void CvmClient::ExportImagesAsync(const ExportImagesRequest& request, const ExportImagesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ExportImages(request), context);
-    };
+    using Req = const ExportImagesRequest&;
+    using Resp = ExportImagesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ExportImages", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CvmClient::ExportImagesOutcomeCallable CvmClient::ExportImagesCallable(const ExportImagesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ExportImagesOutcome()>>(
-        [this, request]()
-        {
-            return this->ExportImages(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ExportImagesOutcome>>();
+    ExportImagesAsync(
+    request,
+    [prom](
+        const CvmClient*,
+        const ExportImagesRequest&,
+        ExportImagesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CvmClient::ImportImageOutcome CvmClient::ImportImage(const ImportImageRequest &request)
@@ -2384,25 +2762,32 @@ CvmClient::ImportImageOutcome CvmClient::ImportImage(const ImportImageRequest &r
 
 void CvmClient::ImportImageAsync(const ImportImageRequest& request, const ImportImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ImportImage(request), context);
-    };
+    using Req = const ImportImageRequest&;
+    using Resp = ImportImageResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ImportImage", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CvmClient::ImportImageOutcomeCallable CvmClient::ImportImageCallable(const ImportImageRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ImportImageOutcome()>>(
-        [this, request]()
-        {
-            return this->ImportImage(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ImportImageOutcome>>();
+    ImportImageAsync(
+    request,
+    [prom](
+        const CvmClient*,
+        const ImportImageRequest&,
+        ImportImageOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CvmClient::ImportInstancesActionTimerOutcome CvmClient::ImportInstancesActionTimer(const ImportInstancesActionTimerRequest &request)
@@ -2427,25 +2812,32 @@ CvmClient::ImportInstancesActionTimerOutcome CvmClient::ImportInstancesActionTim
 
 void CvmClient::ImportInstancesActionTimerAsync(const ImportInstancesActionTimerRequest& request, const ImportInstancesActionTimerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ImportInstancesActionTimer(request), context);
-    };
+    using Req = const ImportInstancesActionTimerRequest&;
+    using Resp = ImportInstancesActionTimerResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ImportInstancesActionTimer", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CvmClient::ImportInstancesActionTimerOutcomeCallable CvmClient::ImportInstancesActionTimerCallable(const ImportInstancesActionTimerRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ImportInstancesActionTimerOutcome()>>(
-        [this, request]()
-        {
-            return this->ImportInstancesActionTimer(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ImportInstancesActionTimerOutcome>>();
+    ImportInstancesActionTimerAsync(
+    request,
+    [prom](
+        const CvmClient*,
+        const ImportInstancesActionTimerRequest&,
+        ImportInstancesActionTimerOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CvmClient::ImportKeyPairOutcome CvmClient::ImportKeyPair(const ImportKeyPairRequest &request)
@@ -2470,25 +2862,32 @@ CvmClient::ImportKeyPairOutcome CvmClient::ImportKeyPair(const ImportKeyPairRequ
 
 void CvmClient::ImportKeyPairAsync(const ImportKeyPairRequest& request, const ImportKeyPairAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ImportKeyPair(request), context);
-    };
+    using Req = const ImportKeyPairRequest&;
+    using Resp = ImportKeyPairResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ImportKeyPair", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CvmClient::ImportKeyPairOutcomeCallable CvmClient::ImportKeyPairCallable(const ImportKeyPairRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ImportKeyPairOutcome()>>(
-        [this, request]()
-        {
-            return this->ImportKeyPair(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ImportKeyPairOutcome>>();
+    ImportKeyPairAsync(
+    request,
+    [prom](
+        const CvmClient*,
+        const ImportKeyPairRequest&,
+        ImportKeyPairOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CvmClient::InquiryPriceModifyInstancesChargeTypeOutcome CvmClient::InquiryPriceModifyInstancesChargeType(const InquiryPriceModifyInstancesChargeTypeRequest &request)
@@ -2513,25 +2912,32 @@ CvmClient::InquiryPriceModifyInstancesChargeTypeOutcome CvmClient::InquiryPriceM
 
 void CvmClient::InquiryPriceModifyInstancesChargeTypeAsync(const InquiryPriceModifyInstancesChargeTypeRequest& request, const InquiryPriceModifyInstancesChargeTypeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->InquiryPriceModifyInstancesChargeType(request), context);
-    };
+    using Req = const InquiryPriceModifyInstancesChargeTypeRequest&;
+    using Resp = InquiryPriceModifyInstancesChargeTypeResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "InquiryPriceModifyInstancesChargeType", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CvmClient::InquiryPriceModifyInstancesChargeTypeOutcomeCallable CvmClient::InquiryPriceModifyInstancesChargeTypeCallable(const InquiryPriceModifyInstancesChargeTypeRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<InquiryPriceModifyInstancesChargeTypeOutcome()>>(
-        [this, request]()
-        {
-            return this->InquiryPriceModifyInstancesChargeType(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<InquiryPriceModifyInstancesChargeTypeOutcome>>();
+    InquiryPriceModifyInstancesChargeTypeAsync(
+    request,
+    [prom](
+        const CvmClient*,
+        const InquiryPriceModifyInstancesChargeTypeRequest&,
+        InquiryPriceModifyInstancesChargeTypeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CvmClient::InquiryPriceRenewHostsOutcome CvmClient::InquiryPriceRenewHosts(const InquiryPriceRenewHostsRequest &request)
@@ -2556,25 +2962,32 @@ CvmClient::InquiryPriceRenewHostsOutcome CvmClient::InquiryPriceRenewHosts(const
 
 void CvmClient::InquiryPriceRenewHostsAsync(const InquiryPriceRenewHostsRequest& request, const InquiryPriceRenewHostsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->InquiryPriceRenewHosts(request), context);
-    };
+    using Req = const InquiryPriceRenewHostsRequest&;
+    using Resp = InquiryPriceRenewHostsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "InquiryPriceRenewHosts", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CvmClient::InquiryPriceRenewHostsOutcomeCallable CvmClient::InquiryPriceRenewHostsCallable(const InquiryPriceRenewHostsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<InquiryPriceRenewHostsOutcome()>>(
-        [this, request]()
-        {
-            return this->InquiryPriceRenewHosts(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<InquiryPriceRenewHostsOutcome>>();
+    InquiryPriceRenewHostsAsync(
+    request,
+    [prom](
+        const CvmClient*,
+        const InquiryPriceRenewHostsRequest&,
+        InquiryPriceRenewHostsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CvmClient::InquiryPriceRenewInstancesOutcome CvmClient::InquiryPriceRenewInstances(const InquiryPriceRenewInstancesRequest &request)
@@ -2599,25 +3012,32 @@ CvmClient::InquiryPriceRenewInstancesOutcome CvmClient::InquiryPriceRenewInstanc
 
 void CvmClient::InquiryPriceRenewInstancesAsync(const InquiryPriceRenewInstancesRequest& request, const InquiryPriceRenewInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->InquiryPriceRenewInstances(request), context);
-    };
+    using Req = const InquiryPriceRenewInstancesRequest&;
+    using Resp = InquiryPriceRenewInstancesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "InquiryPriceRenewInstances", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CvmClient::InquiryPriceRenewInstancesOutcomeCallable CvmClient::InquiryPriceRenewInstancesCallable(const InquiryPriceRenewInstancesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<InquiryPriceRenewInstancesOutcome()>>(
-        [this, request]()
-        {
-            return this->InquiryPriceRenewInstances(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<InquiryPriceRenewInstancesOutcome>>();
+    InquiryPriceRenewInstancesAsync(
+    request,
+    [prom](
+        const CvmClient*,
+        const InquiryPriceRenewInstancesRequest&,
+        InquiryPriceRenewInstancesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CvmClient::InquiryPriceResetInstanceOutcome CvmClient::InquiryPriceResetInstance(const InquiryPriceResetInstanceRequest &request)
@@ -2642,25 +3062,32 @@ CvmClient::InquiryPriceResetInstanceOutcome CvmClient::InquiryPriceResetInstance
 
 void CvmClient::InquiryPriceResetInstanceAsync(const InquiryPriceResetInstanceRequest& request, const InquiryPriceResetInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->InquiryPriceResetInstance(request), context);
-    };
+    using Req = const InquiryPriceResetInstanceRequest&;
+    using Resp = InquiryPriceResetInstanceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "InquiryPriceResetInstance", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CvmClient::InquiryPriceResetInstanceOutcomeCallable CvmClient::InquiryPriceResetInstanceCallable(const InquiryPriceResetInstanceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<InquiryPriceResetInstanceOutcome()>>(
-        [this, request]()
-        {
-            return this->InquiryPriceResetInstance(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<InquiryPriceResetInstanceOutcome>>();
+    InquiryPriceResetInstanceAsync(
+    request,
+    [prom](
+        const CvmClient*,
+        const InquiryPriceResetInstanceRequest&,
+        InquiryPriceResetInstanceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CvmClient::InquiryPriceResetInstancesInternetMaxBandwidthOutcome CvmClient::InquiryPriceResetInstancesInternetMaxBandwidth(const InquiryPriceResetInstancesInternetMaxBandwidthRequest &request)
@@ -2685,25 +3112,32 @@ CvmClient::InquiryPriceResetInstancesInternetMaxBandwidthOutcome CvmClient::Inqu
 
 void CvmClient::InquiryPriceResetInstancesInternetMaxBandwidthAsync(const InquiryPriceResetInstancesInternetMaxBandwidthRequest& request, const InquiryPriceResetInstancesInternetMaxBandwidthAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->InquiryPriceResetInstancesInternetMaxBandwidth(request), context);
-    };
+    using Req = const InquiryPriceResetInstancesInternetMaxBandwidthRequest&;
+    using Resp = InquiryPriceResetInstancesInternetMaxBandwidthResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "InquiryPriceResetInstancesInternetMaxBandwidth", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CvmClient::InquiryPriceResetInstancesInternetMaxBandwidthOutcomeCallable CvmClient::InquiryPriceResetInstancesInternetMaxBandwidthCallable(const InquiryPriceResetInstancesInternetMaxBandwidthRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<InquiryPriceResetInstancesInternetMaxBandwidthOutcome()>>(
-        [this, request]()
-        {
-            return this->InquiryPriceResetInstancesInternetMaxBandwidth(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<InquiryPriceResetInstancesInternetMaxBandwidthOutcome>>();
+    InquiryPriceResetInstancesInternetMaxBandwidthAsync(
+    request,
+    [prom](
+        const CvmClient*,
+        const InquiryPriceResetInstancesInternetMaxBandwidthRequest&,
+        InquiryPriceResetInstancesInternetMaxBandwidthOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CvmClient::InquiryPriceResetInstancesTypeOutcome CvmClient::InquiryPriceResetInstancesType(const InquiryPriceResetInstancesTypeRequest &request)
@@ -2728,25 +3162,32 @@ CvmClient::InquiryPriceResetInstancesTypeOutcome CvmClient::InquiryPriceResetIns
 
 void CvmClient::InquiryPriceResetInstancesTypeAsync(const InquiryPriceResetInstancesTypeRequest& request, const InquiryPriceResetInstancesTypeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->InquiryPriceResetInstancesType(request), context);
-    };
+    using Req = const InquiryPriceResetInstancesTypeRequest&;
+    using Resp = InquiryPriceResetInstancesTypeResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "InquiryPriceResetInstancesType", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CvmClient::InquiryPriceResetInstancesTypeOutcomeCallable CvmClient::InquiryPriceResetInstancesTypeCallable(const InquiryPriceResetInstancesTypeRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<InquiryPriceResetInstancesTypeOutcome()>>(
-        [this, request]()
-        {
-            return this->InquiryPriceResetInstancesType(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<InquiryPriceResetInstancesTypeOutcome>>();
+    InquiryPriceResetInstancesTypeAsync(
+    request,
+    [prom](
+        const CvmClient*,
+        const InquiryPriceResetInstancesTypeRequest&,
+        InquiryPriceResetInstancesTypeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CvmClient::InquiryPriceResizeInstanceDisksOutcome CvmClient::InquiryPriceResizeInstanceDisks(const InquiryPriceResizeInstanceDisksRequest &request)
@@ -2771,25 +3212,32 @@ CvmClient::InquiryPriceResizeInstanceDisksOutcome CvmClient::InquiryPriceResizeI
 
 void CvmClient::InquiryPriceResizeInstanceDisksAsync(const InquiryPriceResizeInstanceDisksRequest& request, const InquiryPriceResizeInstanceDisksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->InquiryPriceResizeInstanceDisks(request), context);
-    };
+    using Req = const InquiryPriceResizeInstanceDisksRequest&;
+    using Resp = InquiryPriceResizeInstanceDisksResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "InquiryPriceResizeInstanceDisks", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CvmClient::InquiryPriceResizeInstanceDisksOutcomeCallable CvmClient::InquiryPriceResizeInstanceDisksCallable(const InquiryPriceResizeInstanceDisksRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<InquiryPriceResizeInstanceDisksOutcome()>>(
-        [this, request]()
-        {
-            return this->InquiryPriceResizeInstanceDisks(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<InquiryPriceResizeInstanceDisksOutcome>>();
+    InquiryPriceResizeInstanceDisksAsync(
+    request,
+    [prom](
+        const CvmClient*,
+        const InquiryPriceResizeInstanceDisksRequest&,
+        InquiryPriceResizeInstanceDisksOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CvmClient::InquiryPriceRunInstancesOutcome CvmClient::InquiryPriceRunInstances(const InquiryPriceRunInstancesRequest &request)
@@ -2814,25 +3262,32 @@ CvmClient::InquiryPriceRunInstancesOutcome CvmClient::InquiryPriceRunInstances(c
 
 void CvmClient::InquiryPriceRunInstancesAsync(const InquiryPriceRunInstancesRequest& request, const InquiryPriceRunInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->InquiryPriceRunInstances(request), context);
-    };
+    using Req = const InquiryPriceRunInstancesRequest&;
+    using Resp = InquiryPriceRunInstancesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "InquiryPriceRunInstances", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CvmClient::InquiryPriceRunInstancesOutcomeCallable CvmClient::InquiryPriceRunInstancesCallable(const InquiryPriceRunInstancesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<InquiryPriceRunInstancesOutcome()>>(
-        [this, request]()
-        {
-            return this->InquiryPriceRunInstances(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<InquiryPriceRunInstancesOutcome>>();
+    InquiryPriceRunInstancesAsync(
+    request,
+    [prom](
+        const CvmClient*,
+        const InquiryPriceRunInstancesRequest&,
+        InquiryPriceRunInstancesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CvmClient::InquiryPriceTerminateInstancesOutcome CvmClient::InquiryPriceTerminateInstances(const InquiryPriceTerminateInstancesRequest &request)
@@ -2857,25 +3312,32 @@ CvmClient::InquiryPriceTerminateInstancesOutcome CvmClient::InquiryPriceTerminat
 
 void CvmClient::InquiryPriceTerminateInstancesAsync(const InquiryPriceTerminateInstancesRequest& request, const InquiryPriceTerminateInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->InquiryPriceTerminateInstances(request), context);
-    };
+    using Req = const InquiryPriceTerminateInstancesRequest&;
+    using Resp = InquiryPriceTerminateInstancesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "InquiryPriceTerminateInstances", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CvmClient::InquiryPriceTerminateInstancesOutcomeCallable CvmClient::InquiryPriceTerminateInstancesCallable(const InquiryPriceTerminateInstancesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<InquiryPriceTerminateInstancesOutcome()>>(
-        [this, request]()
-        {
-            return this->InquiryPriceTerminateInstances(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<InquiryPriceTerminateInstancesOutcome>>();
+    InquiryPriceTerminateInstancesAsync(
+    request,
+    [prom](
+        const CvmClient*,
+        const InquiryPriceTerminateInstancesRequest&,
+        InquiryPriceTerminateInstancesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CvmClient::ModifyChcAttributeOutcome CvmClient::ModifyChcAttribute(const ModifyChcAttributeRequest &request)
@@ -2900,25 +3362,32 @@ CvmClient::ModifyChcAttributeOutcome CvmClient::ModifyChcAttribute(const ModifyC
 
 void CvmClient::ModifyChcAttributeAsync(const ModifyChcAttributeRequest& request, const ModifyChcAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyChcAttribute(request), context);
-    };
+    using Req = const ModifyChcAttributeRequest&;
+    using Resp = ModifyChcAttributeResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyChcAttribute", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CvmClient::ModifyChcAttributeOutcomeCallable CvmClient::ModifyChcAttributeCallable(const ModifyChcAttributeRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyChcAttributeOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyChcAttribute(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyChcAttributeOutcome>>();
+    ModifyChcAttributeAsync(
+    request,
+    [prom](
+        const CvmClient*,
+        const ModifyChcAttributeRequest&,
+        ModifyChcAttributeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CvmClient::ModifyDisasterRecoverGroupAttributeOutcome CvmClient::ModifyDisasterRecoverGroupAttribute(const ModifyDisasterRecoverGroupAttributeRequest &request)
@@ -2943,25 +3412,32 @@ CvmClient::ModifyDisasterRecoverGroupAttributeOutcome CvmClient::ModifyDisasterR
 
 void CvmClient::ModifyDisasterRecoverGroupAttributeAsync(const ModifyDisasterRecoverGroupAttributeRequest& request, const ModifyDisasterRecoverGroupAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyDisasterRecoverGroupAttribute(request), context);
-    };
+    using Req = const ModifyDisasterRecoverGroupAttributeRequest&;
+    using Resp = ModifyDisasterRecoverGroupAttributeResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyDisasterRecoverGroupAttribute", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CvmClient::ModifyDisasterRecoverGroupAttributeOutcomeCallable CvmClient::ModifyDisasterRecoverGroupAttributeCallable(const ModifyDisasterRecoverGroupAttributeRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyDisasterRecoverGroupAttributeOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyDisasterRecoverGroupAttribute(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyDisasterRecoverGroupAttributeOutcome>>();
+    ModifyDisasterRecoverGroupAttributeAsync(
+    request,
+    [prom](
+        const CvmClient*,
+        const ModifyDisasterRecoverGroupAttributeRequest&,
+        ModifyDisasterRecoverGroupAttributeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CvmClient::ModifyHostsAttributeOutcome CvmClient::ModifyHostsAttribute(const ModifyHostsAttributeRequest &request)
@@ -2986,25 +3462,32 @@ CvmClient::ModifyHostsAttributeOutcome CvmClient::ModifyHostsAttribute(const Mod
 
 void CvmClient::ModifyHostsAttributeAsync(const ModifyHostsAttributeRequest& request, const ModifyHostsAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyHostsAttribute(request), context);
-    };
+    using Req = const ModifyHostsAttributeRequest&;
+    using Resp = ModifyHostsAttributeResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyHostsAttribute", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CvmClient::ModifyHostsAttributeOutcomeCallable CvmClient::ModifyHostsAttributeCallable(const ModifyHostsAttributeRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyHostsAttributeOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyHostsAttribute(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyHostsAttributeOutcome>>();
+    ModifyHostsAttributeAsync(
+    request,
+    [prom](
+        const CvmClient*,
+        const ModifyHostsAttributeRequest&,
+        ModifyHostsAttributeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CvmClient::ModifyHpcClusterAttributeOutcome CvmClient::ModifyHpcClusterAttribute(const ModifyHpcClusterAttributeRequest &request)
@@ -3029,25 +3512,32 @@ CvmClient::ModifyHpcClusterAttributeOutcome CvmClient::ModifyHpcClusterAttribute
 
 void CvmClient::ModifyHpcClusterAttributeAsync(const ModifyHpcClusterAttributeRequest& request, const ModifyHpcClusterAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyHpcClusterAttribute(request), context);
-    };
+    using Req = const ModifyHpcClusterAttributeRequest&;
+    using Resp = ModifyHpcClusterAttributeResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyHpcClusterAttribute", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CvmClient::ModifyHpcClusterAttributeOutcomeCallable CvmClient::ModifyHpcClusterAttributeCallable(const ModifyHpcClusterAttributeRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyHpcClusterAttributeOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyHpcClusterAttribute(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyHpcClusterAttributeOutcome>>();
+    ModifyHpcClusterAttributeAsync(
+    request,
+    [prom](
+        const CvmClient*,
+        const ModifyHpcClusterAttributeRequest&,
+        ModifyHpcClusterAttributeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CvmClient::ModifyImageAttributeOutcome CvmClient::ModifyImageAttribute(const ModifyImageAttributeRequest &request)
@@ -3072,25 +3562,32 @@ CvmClient::ModifyImageAttributeOutcome CvmClient::ModifyImageAttribute(const Mod
 
 void CvmClient::ModifyImageAttributeAsync(const ModifyImageAttributeRequest& request, const ModifyImageAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyImageAttribute(request), context);
-    };
+    using Req = const ModifyImageAttributeRequest&;
+    using Resp = ModifyImageAttributeResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyImageAttribute", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CvmClient::ModifyImageAttributeOutcomeCallable CvmClient::ModifyImageAttributeCallable(const ModifyImageAttributeRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyImageAttributeOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyImageAttribute(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyImageAttributeOutcome>>();
+    ModifyImageAttributeAsync(
+    request,
+    [prom](
+        const CvmClient*,
+        const ModifyImageAttributeRequest&,
+        ModifyImageAttributeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CvmClient::ModifyImageSharePermissionOutcome CvmClient::ModifyImageSharePermission(const ModifyImageSharePermissionRequest &request)
@@ -3115,25 +3612,32 @@ CvmClient::ModifyImageSharePermissionOutcome CvmClient::ModifyImageSharePermissi
 
 void CvmClient::ModifyImageSharePermissionAsync(const ModifyImageSharePermissionRequest& request, const ModifyImageSharePermissionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyImageSharePermission(request), context);
-    };
+    using Req = const ModifyImageSharePermissionRequest&;
+    using Resp = ModifyImageSharePermissionResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyImageSharePermission", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CvmClient::ModifyImageSharePermissionOutcomeCallable CvmClient::ModifyImageSharePermissionCallable(const ModifyImageSharePermissionRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyImageSharePermissionOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyImageSharePermission(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyImageSharePermissionOutcome>>();
+    ModifyImageSharePermissionAsync(
+    request,
+    [prom](
+        const CvmClient*,
+        const ModifyImageSharePermissionRequest&,
+        ModifyImageSharePermissionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CvmClient::ModifyInstanceDiskTypeOutcome CvmClient::ModifyInstanceDiskType(const ModifyInstanceDiskTypeRequest &request)
@@ -3158,25 +3662,32 @@ CvmClient::ModifyInstanceDiskTypeOutcome CvmClient::ModifyInstanceDiskType(const
 
 void CvmClient::ModifyInstanceDiskTypeAsync(const ModifyInstanceDiskTypeRequest& request, const ModifyInstanceDiskTypeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyInstanceDiskType(request), context);
-    };
+    using Req = const ModifyInstanceDiskTypeRequest&;
+    using Resp = ModifyInstanceDiskTypeResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyInstanceDiskType", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CvmClient::ModifyInstanceDiskTypeOutcomeCallable CvmClient::ModifyInstanceDiskTypeCallable(const ModifyInstanceDiskTypeRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyInstanceDiskTypeOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyInstanceDiskType(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyInstanceDiskTypeOutcome>>();
+    ModifyInstanceDiskTypeAsync(
+    request,
+    [prom](
+        const CvmClient*,
+        const ModifyInstanceDiskTypeRequest&,
+        ModifyInstanceDiskTypeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CvmClient::ModifyInstancesAttributeOutcome CvmClient::ModifyInstancesAttribute(const ModifyInstancesAttributeRequest &request)
@@ -3201,25 +3712,32 @@ CvmClient::ModifyInstancesAttributeOutcome CvmClient::ModifyInstancesAttribute(c
 
 void CvmClient::ModifyInstancesAttributeAsync(const ModifyInstancesAttributeRequest& request, const ModifyInstancesAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyInstancesAttribute(request), context);
-    };
+    using Req = const ModifyInstancesAttributeRequest&;
+    using Resp = ModifyInstancesAttributeResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyInstancesAttribute", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CvmClient::ModifyInstancesAttributeOutcomeCallable CvmClient::ModifyInstancesAttributeCallable(const ModifyInstancesAttributeRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyInstancesAttributeOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyInstancesAttribute(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyInstancesAttributeOutcome>>();
+    ModifyInstancesAttributeAsync(
+    request,
+    [prom](
+        const CvmClient*,
+        const ModifyInstancesAttributeRequest&,
+        ModifyInstancesAttributeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CvmClient::ModifyInstancesChargeTypeOutcome CvmClient::ModifyInstancesChargeType(const ModifyInstancesChargeTypeRequest &request)
@@ -3244,25 +3762,32 @@ CvmClient::ModifyInstancesChargeTypeOutcome CvmClient::ModifyInstancesChargeType
 
 void CvmClient::ModifyInstancesChargeTypeAsync(const ModifyInstancesChargeTypeRequest& request, const ModifyInstancesChargeTypeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyInstancesChargeType(request), context);
-    };
+    using Req = const ModifyInstancesChargeTypeRequest&;
+    using Resp = ModifyInstancesChargeTypeResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyInstancesChargeType", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CvmClient::ModifyInstancesChargeTypeOutcomeCallable CvmClient::ModifyInstancesChargeTypeCallable(const ModifyInstancesChargeTypeRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyInstancesChargeTypeOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyInstancesChargeType(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyInstancesChargeTypeOutcome>>();
+    ModifyInstancesChargeTypeAsync(
+    request,
+    [prom](
+        const CvmClient*,
+        const ModifyInstancesChargeTypeRequest&,
+        ModifyInstancesChargeTypeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CvmClient::ModifyInstancesDisasterRecoverGroupOutcome CvmClient::ModifyInstancesDisasterRecoverGroup(const ModifyInstancesDisasterRecoverGroupRequest &request)
@@ -3287,25 +3812,32 @@ CvmClient::ModifyInstancesDisasterRecoverGroupOutcome CvmClient::ModifyInstances
 
 void CvmClient::ModifyInstancesDisasterRecoverGroupAsync(const ModifyInstancesDisasterRecoverGroupRequest& request, const ModifyInstancesDisasterRecoverGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyInstancesDisasterRecoverGroup(request), context);
-    };
+    using Req = const ModifyInstancesDisasterRecoverGroupRequest&;
+    using Resp = ModifyInstancesDisasterRecoverGroupResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyInstancesDisasterRecoverGroup", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CvmClient::ModifyInstancesDisasterRecoverGroupOutcomeCallable CvmClient::ModifyInstancesDisasterRecoverGroupCallable(const ModifyInstancesDisasterRecoverGroupRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyInstancesDisasterRecoverGroupOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyInstancesDisasterRecoverGroup(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyInstancesDisasterRecoverGroupOutcome>>();
+    ModifyInstancesDisasterRecoverGroupAsync(
+    request,
+    [prom](
+        const CvmClient*,
+        const ModifyInstancesDisasterRecoverGroupRequest&,
+        ModifyInstancesDisasterRecoverGroupOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CvmClient::ModifyInstancesProjectOutcome CvmClient::ModifyInstancesProject(const ModifyInstancesProjectRequest &request)
@@ -3330,25 +3862,32 @@ CvmClient::ModifyInstancesProjectOutcome CvmClient::ModifyInstancesProject(const
 
 void CvmClient::ModifyInstancesProjectAsync(const ModifyInstancesProjectRequest& request, const ModifyInstancesProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyInstancesProject(request), context);
-    };
+    using Req = const ModifyInstancesProjectRequest&;
+    using Resp = ModifyInstancesProjectResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyInstancesProject", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CvmClient::ModifyInstancesProjectOutcomeCallable CvmClient::ModifyInstancesProjectCallable(const ModifyInstancesProjectRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyInstancesProjectOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyInstancesProject(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyInstancesProjectOutcome>>();
+    ModifyInstancesProjectAsync(
+    request,
+    [prom](
+        const CvmClient*,
+        const ModifyInstancesProjectRequest&,
+        ModifyInstancesProjectOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CvmClient::ModifyInstancesRenewFlagOutcome CvmClient::ModifyInstancesRenewFlag(const ModifyInstancesRenewFlagRequest &request)
@@ -3373,25 +3912,32 @@ CvmClient::ModifyInstancesRenewFlagOutcome CvmClient::ModifyInstancesRenewFlag(c
 
 void CvmClient::ModifyInstancesRenewFlagAsync(const ModifyInstancesRenewFlagRequest& request, const ModifyInstancesRenewFlagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyInstancesRenewFlag(request), context);
-    };
+    using Req = const ModifyInstancesRenewFlagRequest&;
+    using Resp = ModifyInstancesRenewFlagResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyInstancesRenewFlag", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CvmClient::ModifyInstancesRenewFlagOutcomeCallable CvmClient::ModifyInstancesRenewFlagCallable(const ModifyInstancesRenewFlagRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyInstancesRenewFlagOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyInstancesRenewFlag(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyInstancesRenewFlagOutcome>>();
+    ModifyInstancesRenewFlagAsync(
+    request,
+    [prom](
+        const CvmClient*,
+        const ModifyInstancesRenewFlagRequest&,
+        ModifyInstancesRenewFlagOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CvmClient::ModifyInstancesVpcAttributeOutcome CvmClient::ModifyInstancesVpcAttribute(const ModifyInstancesVpcAttributeRequest &request)
@@ -3416,25 +3962,32 @@ CvmClient::ModifyInstancesVpcAttributeOutcome CvmClient::ModifyInstancesVpcAttri
 
 void CvmClient::ModifyInstancesVpcAttributeAsync(const ModifyInstancesVpcAttributeRequest& request, const ModifyInstancesVpcAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyInstancesVpcAttribute(request), context);
-    };
+    using Req = const ModifyInstancesVpcAttributeRequest&;
+    using Resp = ModifyInstancesVpcAttributeResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyInstancesVpcAttribute", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CvmClient::ModifyInstancesVpcAttributeOutcomeCallable CvmClient::ModifyInstancesVpcAttributeCallable(const ModifyInstancesVpcAttributeRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyInstancesVpcAttributeOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyInstancesVpcAttribute(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyInstancesVpcAttributeOutcome>>();
+    ModifyInstancesVpcAttributeAsync(
+    request,
+    [prom](
+        const CvmClient*,
+        const ModifyInstancesVpcAttributeRequest&,
+        ModifyInstancesVpcAttributeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CvmClient::ModifyKeyPairAttributeOutcome CvmClient::ModifyKeyPairAttribute(const ModifyKeyPairAttributeRequest &request)
@@ -3459,25 +4012,32 @@ CvmClient::ModifyKeyPairAttributeOutcome CvmClient::ModifyKeyPairAttribute(const
 
 void CvmClient::ModifyKeyPairAttributeAsync(const ModifyKeyPairAttributeRequest& request, const ModifyKeyPairAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyKeyPairAttribute(request), context);
-    };
+    using Req = const ModifyKeyPairAttributeRequest&;
+    using Resp = ModifyKeyPairAttributeResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyKeyPairAttribute", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CvmClient::ModifyKeyPairAttributeOutcomeCallable CvmClient::ModifyKeyPairAttributeCallable(const ModifyKeyPairAttributeRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyKeyPairAttributeOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyKeyPairAttribute(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyKeyPairAttributeOutcome>>();
+    ModifyKeyPairAttributeAsync(
+    request,
+    [prom](
+        const CvmClient*,
+        const ModifyKeyPairAttributeRequest&,
+        ModifyKeyPairAttributeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CvmClient::ModifyLaunchTemplateDefaultVersionOutcome CvmClient::ModifyLaunchTemplateDefaultVersion(const ModifyLaunchTemplateDefaultVersionRequest &request)
@@ -3502,25 +4062,32 @@ CvmClient::ModifyLaunchTemplateDefaultVersionOutcome CvmClient::ModifyLaunchTemp
 
 void CvmClient::ModifyLaunchTemplateDefaultVersionAsync(const ModifyLaunchTemplateDefaultVersionRequest& request, const ModifyLaunchTemplateDefaultVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyLaunchTemplateDefaultVersion(request), context);
-    };
+    using Req = const ModifyLaunchTemplateDefaultVersionRequest&;
+    using Resp = ModifyLaunchTemplateDefaultVersionResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyLaunchTemplateDefaultVersion", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CvmClient::ModifyLaunchTemplateDefaultVersionOutcomeCallable CvmClient::ModifyLaunchTemplateDefaultVersionCallable(const ModifyLaunchTemplateDefaultVersionRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyLaunchTemplateDefaultVersionOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyLaunchTemplateDefaultVersion(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyLaunchTemplateDefaultVersionOutcome>>();
+    ModifyLaunchTemplateDefaultVersionAsync(
+    request,
+    [prom](
+        const CvmClient*,
+        const ModifyLaunchTemplateDefaultVersionRequest&,
+        ModifyLaunchTemplateDefaultVersionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CvmClient::ProgramFpgaImageOutcome CvmClient::ProgramFpgaImage(const ProgramFpgaImageRequest &request)
@@ -3545,25 +4112,32 @@ CvmClient::ProgramFpgaImageOutcome CvmClient::ProgramFpgaImage(const ProgramFpga
 
 void CvmClient::ProgramFpgaImageAsync(const ProgramFpgaImageRequest& request, const ProgramFpgaImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ProgramFpgaImage(request), context);
-    };
+    using Req = const ProgramFpgaImageRequest&;
+    using Resp = ProgramFpgaImageResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ProgramFpgaImage", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CvmClient::ProgramFpgaImageOutcomeCallable CvmClient::ProgramFpgaImageCallable(const ProgramFpgaImageRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ProgramFpgaImageOutcome()>>(
-        [this, request]()
-        {
-            return this->ProgramFpgaImage(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ProgramFpgaImageOutcome>>();
+    ProgramFpgaImageAsync(
+    request,
+    [prom](
+        const CvmClient*,
+        const ProgramFpgaImageRequest&,
+        ProgramFpgaImageOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CvmClient::RebootInstancesOutcome CvmClient::RebootInstances(const RebootInstancesRequest &request)
@@ -3588,25 +4162,32 @@ CvmClient::RebootInstancesOutcome CvmClient::RebootInstances(const RebootInstanc
 
 void CvmClient::RebootInstancesAsync(const RebootInstancesRequest& request, const RebootInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->RebootInstances(request), context);
-    };
+    using Req = const RebootInstancesRequest&;
+    using Resp = RebootInstancesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "RebootInstances", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CvmClient::RebootInstancesOutcomeCallable CvmClient::RebootInstancesCallable(const RebootInstancesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<RebootInstancesOutcome()>>(
-        [this, request]()
-        {
-            return this->RebootInstances(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<RebootInstancesOutcome>>();
+    RebootInstancesAsync(
+    request,
+    [prom](
+        const CvmClient*,
+        const RebootInstancesRequest&,
+        RebootInstancesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CvmClient::RemoveChcAssistVpcOutcome CvmClient::RemoveChcAssistVpc(const RemoveChcAssistVpcRequest &request)
@@ -3631,25 +4212,32 @@ CvmClient::RemoveChcAssistVpcOutcome CvmClient::RemoveChcAssistVpc(const RemoveC
 
 void CvmClient::RemoveChcAssistVpcAsync(const RemoveChcAssistVpcRequest& request, const RemoveChcAssistVpcAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->RemoveChcAssistVpc(request), context);
-    };
+    using Req = const RemoveChcAssistVpcRequest&;
+    using Resp = RemoveChcAssistVpcResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "RemoveChcAssistVpc", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CvmClient::RemoveChcAssistVpcOutcomeCallable CvmClient::RemoveChcAssistVpcCallable(const RemoveChcAssistVpcRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<RemoveChcAssistVpcOutcome()>>(
-        [this, request]()
-        {
-            return this->RemoveChcAssistVpc(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<RemoveChcAssistVpcOutcome>>();
+    RemoveChcAssistVpcAsync(
+    request,
+    [prom](
+        const CvmClient*,
+        const RemoveChcAssistVpcRequest&,
+        RemoveChcAssistVpcOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CvmClient::RemoveChcDeployVpcOutcome CvmClient::RemoveChcDeployVpc(const RemoveChcDeployVpcRequest &request)
@@ -3674,25 +4262,32 @@ CvmClient::RemoveChcDeployVpcOutcome CvmClient::RemoveChcDeployVpc(const RemoveC
 
 void CvmClient::RemoveChcDeployVpcAsync(const RemoveChcDeployVpcRequest& request, const RemoveChcDeployVpcAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->RemoveChcDeployVpc(request), context);
-    };
+    using Req = const RemoveChcDeployVpcRequest&;
+    using Resp = RemoveChcDeployVpcResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "RemoveChcDeployVpc", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CvmClient::RemoveChcDeployVpcOutcomeCallable CvmClient::RemoveChcDeployVpcCallable(const RemoveChcDeployVpcRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<RemoveChcDeployVpcOutcome()>>(
-        [this, request]()
-        {
-            return this->RemoveChcDeployVpc(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<RemoveChcDeployVpcOutcome>>();
+    RemoveChcDeployVpcAsync(
+    request,
+    [prom](
+        const CvmClient*,
+        const RemoveChcDeployVpcRequest&,
+        RemoveChcDeployVpcOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CvmClient::RenewHostsOutcome CvmClient::RenewHosts(const RenewHostsRequest &request)
@@ -3717,25 +4312,32 @@ CvmClient::RenewHostsOutcome CvmClient::RenewHosts(const RenewHostsRequest &requ
 
 void CvmClient::RenewHostsAsync(const RenewHostsRequest& request, const RenewHostsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->RenewHosts(request), context);
-    };
+    using Req = const RenewHostsRequest&;
+    using Resp = RenewHostsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "RenewHosts", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CvmClient::RenewHostsOutcomeCallable CvmClient::RenewHostsCallable(const RenewHostsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<RenewHostsOutcome()>>(
-        [this, request]()
-        {
-            return this->RenewHosts(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<RenewHostsOutcome>>();
+    RenewHostsAsync(
+    request,
+    [prom](
+        const CvmClient*,
+        const RenewHostsRequest&,
+        RenewHostsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CvmClient::RenewInstancesOutcome CvmClient::RenewInstances(const RenewInstancesRequest &request)
@@ -3760,25 +4362,32 @@ CvmClient::RenewInstancesOutcome CvmClient::RenewInstances(const RenewInstancesR
 
 void CvmClient::RenewInstancesAsync(const RenewInstancesRequest& request, const RenewInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->RenewInstances(request), context);
-    };
+    using Req = const RenewInstancesRequest&;
+    using Resp = RenewInstancesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "RenewInstances", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CvmClient::RenewInstancesOutcomeCallable CvmClient::RenewInstancesCallable(const RenewInstancesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<RenewInstancesOutcome()>>(
-        [this, request]()
-        {
-            return this->RenewInstances(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<RenewInstancesOutcome>>();
+    RenewInstancesAsync(
+    request,
+    [prom](
+        const CvmClient*,
+        const RenewInstancesRequest&,
+        RenewInstancesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CvmClient::RepairTaskControlOutcome CvmClient::RepairTaskControl(const RepairTaskControlRequest &request)
@@ -3803,25 +4412,32 @@ CvmClient::RepairTaskControlOutcome CvmClient::RepairTaskControl(const RepairTas
 
 void CvmClient::RepairTaskControlAsync(const RepairTaskControlRequest& request, const RepairTaskControlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->RepairTaskControl(request), context);
-    };
+    using Req = const RepairTaskControlRequest&;
+    using Resp = RepairTaskControlResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "RepairTaskControl", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CvmClient::RepairTaskControlOutcomeCallable CvmClient::RepairTaskControlCallable(const RepairTaskControlRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<RepairTaskControlOutcome()>>(
-        [this, request]()
-        {
-            return this->RepairTaskControl(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<RepairTaskControlOutcome>>();
+    RepairTaskControlAsync(
+    request,
+    [prom](
+        const CvmClient*,
+        const RepairTaskControlRequest&,
+        RepairTaskControlOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CvmClient::ResetInstanceOutcome CvmClient::ResetInstance(const ResetInstanceRequest &request)
@@ -3846,25 +4462,32 @@ CvmClient::ResetInstanceOutcome CvmClient::ResetInstance(const ResetInstanceRequ
 
 void CvmClient::ResetInstanceAsync(const ResetInstanceRequest& request, const ResetInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ResetInstance(request), context);
-    };
+    using Req = const ResetInstanceRequest&;
+    using Resp = ResetInstanceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ResetInstance", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CvmClient::ResetInstanceOutcomeCallable CvmClient::ResetInstanceCallable(const ResetInstanceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ResetInstanceOutcome()>>(
-        [this, request]()
-        {
-            return this->ResetInstance(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ResetInstanceOutcome>>();
+    ResetInstanceAsync(
+    request,
+    [prom](
+        const CvmClient*,
+        const ResetInstanceRequest&,
+        ResetInstanceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CvmClient::ResetInstancesInternetMaxBandwidthOutcome CvmClient::ResetInstancesInternetMaxBandwidth(const ResetInstancesInternetMaxBandwidthRequest &request)
@@ -3889,25 +4512,32 @@ CvmClient::ResetInstancesInternetMaxBandwidthOutcome CvmClient::ResetInstancesIn
 
 void CvmClient::ResetInstancesInternetMaxBandwidthAsync(const ResetInstancesInternetMaxBandwidthRequest& request, const ResetInstancesInternetMaxBandwidthAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ResetInstancesInternetMaxBandwidth(request), context);
-    };
+    using Req = const ResetInstancesInternetMaxBandwidthRequest&;
+    using Resp = ResetInstancesInternetMaxBandwidthResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ResetInstancesInternetMaxBandwidth", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CvmClient::ResetInstancesInternetMaxBandwidthOutcomeCallable CvmClient::ResetInstancesInternetMaxBandwidthCallable(const ResetInstancesInternetMaxBandwidthRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ResetInstancesInternetMaxBandwidthOutcome()>>(
-        [this, request]()
-        {
-            return this->ResetInstancesInternetMaxBandwidth(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ResetInstancesInternetMaxBandwidthOutcome>>();
+    ResetInstancesInternetMaxBandwidthAsync(
+    request,
+    [prom](
+        const CvmClient*,
+        const ResetInstancesInternetMaxBandwidthRequest&,
+        ResetInstancesInternetMaxBandwidthOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CvmClient::ResetInstancesPasswordOutcome CvmClient::ResetInstancesPassword(const ResetInstancesPasswordRequest &request)
@@ -3932,25 +4562,32 @@ CvmClient::ResetInstancesPasswordOutcome CvmClient::ResetInstancesPassword(const
 
 void CvmClient::ResetInstancesPasswordAsync(const ResetInstancesPasswordRequest& request, const ResetInstancesPasswordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ResetInstancesPassword(request), context);
-    };
+    using Req = const ResetInstancesPasswordRequest&;
+    using Resp = ResetInstancesPasswordResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ResetInstancesPassword", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CvmClient::ResetInstancesPasswordOutcomeCallable CvmClient::ResetInstancesPasswordCallable(const ResetInstancesPasswordRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ResetInstancesPasswordOutcome()>>(
-        [this, request]()
-        {
-            return this->ResetInstancesPassword(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ResetInstancesPasswordOutcome>>();
+    ResetInstancesPasswordAsync(
+    request,
+    [prom](
+        const CvmClient*,
+        const ResetInstancesPasswordRequest&,
+        ResetInstancesPasswordOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CvmClient::ResetInstancesTypeOutcome CvmClient::ResetInstancesType(const ResetInstancesTypeRequest &request)
@@ -3975,25 +4612,32 @@ CvmClient::ResetInstancesTypeOutcome CvmClient::ResetInstancesType(const ResetIn
 
 void CvmClient::ResetInstancesTypeAsync(const ResetInstancesTypeRequest& request, const ResetInstancesTypeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ResetInstancesType(request), context);
-    };
+    using Req = const ResetInstancesTypeRequest&;
+    using Resp = ResetInstancesTypeResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ResetInstancesType", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CvmClient::ResetInstancesTypeOutcomeCallable CvmClient::ResetInstancesTypeCallable(const ResetInstancesTypeRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ResetInstancesTypeOutcome()>>(
-        [this, request]()
-        {
-            return this->ResetInstancesType(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ResetInstancesTypeOutcome>>();
+    ResetInstancesTypeAsync(
+    request,
+    [prom](
+        const CvmClient*,
+        const ResetInstancesTypeRequest&,
+        ResetInstancesTypeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CvmClient::ResizeInstanceDisksOutcome CvmClient::ResizeInstanceDisks(const ResizeInstanceDisksRequest &request)
@@ -4018,25 +4662,32 @@ CvmClient::ResizeInstanceDisksOutcome CvmClient::ResizeInstanceDisks(const Resiz
 
 void CvmClient::ResizeInstanceDisksAsync(const ResizeInstanceDisksRequest& request, const ResizeInstanceDisksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ResizeInstanceDisks(request), context);
-    };
+    using Req = const ResizeInstanceDisksRequest&;
+    using Resp = ResizeInstanceDisksResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ResizeInstanceDisks", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CvmClient::ResizeInstanceDisksOutcomeCallable CvmClient::ResizeInstanceDisksCallable(const ResizeInstanceDisksRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ResizeInstanceDisksOutcome()>>(
-        [this, request]()
-        {
-            return this->ResizeInstanceDisks(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ResizeInstanceDisksOutcome>>();
+    ResizeInstanceDisksAsync(
+    request,
+    [prom](
+        const CvmClient*,
+        const ResizeInstanceDisksRequest&,
+        ResizeInstanceDisksOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CvmClient::RunInstancesOutcome CvmClient::RunInstances(const RunInstancesRequest &request)
@@ -4061,25 +4712,32 @@ CvmClient::RunInstancesOutcome CvmClient::RunInstances(const RunInstancesRequest
 
 void CvmClient::RunInstancesAsync(const RunInstancesRequest& request, const RunInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->RunInstances(request), context);
-    };
+    using Req = const RunInstancesRequest&;
+    using Resp = RunInstancesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "RunInstances", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CvmClient::RunInstancesOutcomeCallable CvmClient::RunInstancesCallable(const RunInstancesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<RunInstancesOutcome()>>(
-        [this, request]()
-        {
-            return this->RunInstances(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<RunInstancesOutcome>>();
+    RunInstancesAsync(
+    request,
+    [prom](
+        const CvmClient*,
+        const RunInstancesRequest&,
+        RunInstancesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CvmClient::StartInstancesOutcome CvmClient::StartInstances(const StartInstancesRequest &request)
@@ -4104,25 +4762,32 @@ CvmClient::StartInstancesOutcome CvmClient::StartInstances(const StartInstancesR
 
 void CvmClient::StartInstancesAsync(const StartInstancesRequest& request, const StartInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->StartInstances(request), context);
-    };
+    using Req = const StartInstancesRequest&;
+    using Resp = StartInstancesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "StartInstances", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CvmClient::StartInstancesOutcomeCallable CvmClient::StartInstancesCallable(const StartInstancesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<StartInstancesOutcome()>>(
-        [this, request]()
-        {
-            return this->StartInstances(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<StartInstancesOutcome>>();
+    StartInstancesAsync(
+    request,
+    [prom](
+        const CvmClient*,
+        const StartInstancesRequest&,
+        StartInstancesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CvmClient::StopInstancesOutcome CvmClient::StopInstances(const StopInstancesRequest &request)
@@ -4147,25 +4812,32 @@ CvmClient::StopInstancesOutcome CvmClient::StopInstances(const StopInstancesRequ
 
 void CvmClient::StopInstancesAsync(const StopInstancesRequest& request, const StopInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->StopInstances(request), context);
-    };
+    using Req = const StopInstancesRequest&;
+    using Resp = StopInstancesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "StopInstances", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CvmClient::StopInstancesOutcomeCallable CvmClient::StopInstancesCallable(const StopInstancesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<StopInstancesOutcome()>>(
-        [this, request]()
-        {
-            return this->StopInstances(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<StopInstancesOutcome>>();
+    StopInstancesAsync(
+    request,
+    [prom](
+        const CvmClient*,
+        const StopInstancesRequest&,
+        StopInstancesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CvmClient::SyncImagesOutcome CvmClient::SyncImages(const SyncImagesRequest &request)
@@ -4190,25 +4862,32 @@ CvmClient::SyncImagesOutcome CvmClient::SyncImages(const SyncImagesRequest &requ
 
 void CvmClient::SyncImagesAsync(const SyncImagesRequest& request, const SyncImagesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->SyncImages(request), context);
-    };
+    using Req = const SyncImagesRequest&;
+    using Resp = SyncImagesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "SyncImages", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CvmClient::SyncImagesOutcomeCallable CvmClient::SyncImagesCallable(const SyncImagesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<SyncImagesOutcome()>>(
-        [this, request]()
-        {
-            return this->SyncImages(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<SyncImagesOutcome>>();
+    SyncImagesAsync(
+    request,
+    [prom](
+        const CvmClient*,
+        const SyncImagesRequest&,
+        SyncImagesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CvmClient::TerminateInstancesOutcome CvmClient::TerminateInstances(const TerminateInstancesRequest &request)
@@ -4233,24 +4912,31 @@ CvmClient::TerminateInstancesOutcome CvmClient::TerminateInstances(const Termina
 
 void CvmClient::TerminateInstancesAsync(const TerminateInstancesRequest& request, const TerminateInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->TerminateInstances(request), context);
-    };
+    using Req = const TerminateInstancesRequest&;
+    using Resp = TerminateInstancesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "TerminateInstances", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CvmClient::TerminateInstancesOutcomeCallable CvmClient::TerminateInstancesCallable(const TerminateInstancesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<TerminateInstancesOutcome()>>(
-        [this, request]()
-        {
-            return this->TerminateInstances(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<TerminateInstancesOutcome>>();
+    TerminateInstancesAsync(
+    request,
+    [prom](
+        const CvmClient*,
+        const TerminateInstancesRequest&,
+        TerminateInstancesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 

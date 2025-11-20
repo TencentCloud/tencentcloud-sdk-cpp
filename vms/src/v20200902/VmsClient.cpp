@@ -62,25 +62,32 @@ VmsClient::SendCodeVoiceOutcome VmsClient::SendCodeVoice(const SendCodeVoiceRequ
 
 void VmsClient::SendCodeVoiceAsync(const SendCodeVoiceRequest& request, const SendCodeVoiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->SendCodeVoice(request), context);
-    };
+    using Req = const SendCodeVoiceRequest&;
+    using Resp = SendCodeVoiceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "SendCodeVoice", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VmsClient::SendCodeVoiceOutcomeCallable VmsClient::SendCodeVoiceCallable(const SendCodeVoiceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<SendCodeVoiceOutcome()>>(
-        [this, request]()
-        {
-            return this->SendCodeVoice(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<SendCodeVoiceOutcome>>();
+    SendCodeVoiceAsync(
+    request,
+    [prom](
+        const VmsClient*,
+        const SendCodeVoiceRequest&,
+        SendCodeVoiceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VmsClient::SendTtsVoiceOutcome VmsClient::SendTtsVoice(const SendTtsVoiceRequest &request)
@@ -105,24 +112,31 @@ VmsClient::SendTtsVoiceOutcome VmsClient::SendTtsVoice(const SendTtsVoiceRequest
 
 void VmsClient::SendTtsVoiceAsync(const SendTtsVoiceRequest& request, const SendTtsVoiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->SendTtsVoice(request), context);
-    };
+    using Req = const SendTtsVoiceRequest&;
+    using Resp = SendTtsVoiceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "SendTtsVoice", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VmsClient::SendTtsVoiceOutcomeCallable VmsClient::SendTtsVoiceCallable(const SendTtsVoiceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<SendTtsVoiceOutcome()>>(
-        [this, request]()
-        {
-            return this->SendTtsVoice(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<SendTtsVoiceOutcome>>();
+    SendTtsVoiceAsync(
+    request,
+    [prom](
+        const VmsClient*,
+        const SendTtsVoiceRequest&,
+        SendTtsVoiceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 

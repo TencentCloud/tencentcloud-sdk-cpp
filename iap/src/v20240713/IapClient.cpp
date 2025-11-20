@@ -62,25 +62,32 @@ IapClient::CreateIAPUserOIDCConfigOutcome IapClient::CreateIAPUserOIDCConfig(con
 
 void IapClient::CreateIAPUserOIDCConfigAsync(const CreateIAPUserOIDCConfigRequest& request, const CreateIAPUserOIDCConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateIAPUserOIDCConfig(request), context);
-    };
+    using Req = const CreateIAPUserOIDCConfigRequest&;
+    using Resp = CreateIAPUserOIDCConfigResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateIAPUserOIDCConfig", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IapClient::CreateIAPUserOIDCConfigOutcomeCallable IapClient::CreateIAPUserOIDCConfigCallable(const CreateIAPUserOIDCConfigRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateIAPUserOIDCConfigOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateIAPUserOIDCConfig(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateIAPUserOIDCConfigOutcome>>();
+    CreateIAPUserOIDCConfigAsync(
+    request,
+    [prom](
+        const IapClient*,
+        const CreateIAPUserOIDCConfigRequest&,
+        CreateIAPUserOIDCConfigOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IapClient::DescribeIAPLoginSessionDurationOutcome IapClient::DescribeIAPLoginSessionDuration(const DescribeIAPLoginSessionDurationRequest &request)
@@ -105,25 +112,32 @@ IapClient::DescribeIAPLoginSessionDurationOutcome IapClient::DescribeIAPLoginSes
 
 void IapClient::DescribeIAPLoginSessionDurationAsync(const DescribeIAPLoginSessionDurationRequest& request, const DescribeIAPLoginSessionDurationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeIAPLoginSessionDuration(request), context);
-    };
+    using Req = const DescribeIAPLoginSessionDurationRequest&;
+    using Resp = DescribeIAPLoginSessionDurationResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeIAPLoginSessionDuration", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IapClient::DescribeIAPLoginSessionDurationOutcomeCallable IapClient::DescribeIAPLoginSessionDurationCallable(const DescribeIAPLoginSessionDurationRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeIAPLoginSessionDurationOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeIAPLoginSessionDuration(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeIAPLoginSessionDurationOutcome>>();
+    DescribeIAPLoginSessionDurationAsync(
+    request,
+    [prom](
+        const IapClient*,
+        const DescribeIAPLoginSessionDurationRequest&,
+        DescribeIAPLoginSessionDurationOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IapClient::DescribeIAPUserOIDCConfigOutcome IapClient::DescribeIAPUserOIDCConfig(const DescribeIAPUserOIDCConfigRequest &request)
@@ -148,25 +162,32 @@ IapClient::DescribeIAPUserOIDCConfigOutcome IapClient::DescribeIAPUserOIDCConfig
 
 void IapClient::DescribeIAPUserOIDCConfigAsync(const DescribeIAPUserOIDCConfigRequest& request, const DescribeIAPUserOIDCConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeIAPUserOIDCConfig(request), context);
-    };
+    using Req = const DescribeIAPUserOIDCConfigRequest&;
+    using Resp = DescribeIAPUserOIDCConfigResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeIAPUserOIDCConfig", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IapClient::DescribeIAPUserOIDCConfigOutcomeCallable IapClient::DescribeIAPUserOIDCConfigCallable(const DescribeIAPUserOIDCConfigRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeIAPUserOIDCConfigOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeIAPUserOIDCConfig(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeIAPUserOIDCConfigOutcome>>();
+    DescribeIAPUserOIDCConfigAsync(
+    request,
+    [prom](
+        const IapClient*,
+        const DescribeIAPUserOIDCConfigRequest&,
+        DescribeIAPUserOIDCConfigOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IapClient::DisableIAPUserSSOOutcome IapClient::DisableIAPUserSSO(const DisableIAPUserSSORequest &request)
@@ -191,25 +212,32 @@ IapClient::DisableIAPUserSSOOutcome IapClient::DisableIAPUserSSO(const DisableIA
 
 void IapClient::DisableIAPUserSSOAsync(const DisableIAPUserSSORequest& request, const DisableIAPUserSSOAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DisableIAPUserSSO(request), context);
-    };
+    using Req = const DisableIAPUserSSORequest&;
+    using Resp = DisableIAPUserSSOResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DisableIAPUserSSO", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IapClient::DisableIAPUserSSOOutcomeCallable IapClient::DisableIAPUserSSOCallable(const DisableIAPUserSSORequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DisableIAPUserSSOOutcome()>>(
-        [this, request]()
-        {
-            return this->DisableIAPUserSSO(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DisableIAPUserSSOOutcome>>();
+    DisableIAPUserSSOAsync(
+    request,
+    [prom](
+        const IapClient*,
+        const DisableIAPUserSSORequest&,
+        DisableIAPUserSSOOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IapClient::ModifyIAPLoginSessionDurationOutcome IapClient::ModifyIAPLoginSessionDuration(const ModifyIAPLoginSessionDurationRequest &request)
@@ -234,25 +262,32 @@ IapClient::ModifyIAPLoginSessionDurationOutcome IapClient::ModifyIAPLoginSession
 
 void IapClient::ModifyIAPLoginSessionDurationAsync(const ModifyIAPLoginSessionDurationRequest& request, const ModifyIAPLoginSessionDurationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyIAPLoginSessionDuration(request), context);
-    };
+    using Req = const ModifyIAPLoginSessionDurationRequest&;
+    using Resp = ModifyIAPLoginSessionDurationResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyIAPLoginSessionDuration", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IapClient::ModifyIAPLoginSessionDurationOutcomeCallable IapClient::ModifyIAPLoginSessionDurationCallable(const ModifyIAPLoginSessionDurationRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyIAPLoginSessionDurationOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyIAPLoginSessionDuration(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyIAPLoginSessionDurationOutcome>>();
+    ModifyIAPLoginSessionDurationAsync(
+    request,
+    [prom](
+        const IapClient*,
+        const ModifyIAPLoginSessionDurationRequest&,
+        ModifyIAPLoginSessionDurationOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IapClient::UpdateIAPUserOIDCConfigOutcome IapClient::UpdateIAPUserOIDCConfig(const UpdateIAPUserOIDCConfigRequest &request)
@@ -277,24 +312,31 @@ IapClient::UpdateIAPUserOIDCConfigOutcome IapClient::UpdateIAPUserOIDCConfig(con
 
 void IapClient::UpdateIAPUserOIDCConfigAsync(const UpdateIAPUserOIDCConfigRequest& request, const UpdateIAPUserOIDCConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UpdateIAPUserOIDCConfig(request), context);
-    };
+    using Req = const UpdateIAPUserOIDCConfigRequest&;
+    using Resp = UpdateIAPUserOIDCConfigResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UpdateIAPUserOIDCConfig", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IapClient::UpdateIAPUserOIDCConfigOutcomeCallable IapClient::UpdateIAPUserOIDCConfigCallable(const UpdateIAPUserOIDCConfigRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UpdateIAPUserOIDCConfigOutcome()>>(
-        [this, request]()
-        {
-            return this->UpdateIAPUserOIDCConfig(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UpdateIAPUserOIDCConfigOutcome>>();
+    UpdateIAPUserOIDCConfigAsync(
+    request,
+    [prom](
+        const IapClient*,
+        const UpdateIAPUserOIDCConfigRequest&,
+        UpdateIAPUserOIDCConfigOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 

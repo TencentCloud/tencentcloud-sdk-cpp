@@ -62,25 +62,32 @@ FtClient::CancelFaceMorphJobOutcome FtClient::CancelFaceMorphJob(const CancelFac
 
 void FtClient::CancelFaceMorphJobAsync(const CancelFaceMorphJobRequest& request, const CancelFaceMorphJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CancelFaceMorphJob(request), context);
-    };
+    using Req = const CancelFaceMorphJobRequest&;
+    using Resp = CancelFaceMorphJobResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CancelFaceMorphJob", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 FtClient::CancelFaceMorphJobOutcomeCallable FtClient::CancelFaceMorphJobCallable(const CancelFaceMorphJobRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CancelFaceMorphJobOutcome()>>(
-        [this, request]()
-        {
-            return this->CancelFaceMorphJob(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CancelFaceMorphJobOutcome>>();
+    CancelFaceMorphJobAsync(
+    request,
+    [prom](
+        const FtClient*,
+        const CancelFaceMorphJobRequest&,
+        CancelFaceMorphJobOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 FtClient::ChangeAgePicOutcome FtClient::ChangeAgePic(const ChangeAgePicRequest &request)
@@ -105,25 +112,32 @@ FtClient::ChangeAgePicOutcome FtClient::ChangeAgePic(const ChangeAgePicRequest &
 
 void FtClient::ChangeAgePicAsync(const ChangeAgePicRequest& request, const ChangeAgePicAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ChangeAgePic(request), context);
-    };
+    using Req = const ChangeAgePicRequest&;
+    using Resp = ChangeAgePicResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ChangeAgePic", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 FtClient::ChangeAgePicOutcomeCallable FtClient::ChangeAgePicCallable(const ChangeAgePicRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ChangeAgePicOutcome()>>(
-        [this, request]()
-        {
-            return this->ChangeAgePic(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ChangeAgePicOutcome>>();
+    ChangeAgePicAsync(
+    request,
+    [prom](
+        const FtClient*,
+        const ChangeAgePicRequest&,
+        ChangeAgePicOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 FtClient::FaceCartoonPicOutcome FtClient::FaceCartoonPic(const FaceCartoonPicRequest &request)
@@ -148,25 +162,32 @@ FtClient::FaceCartoonPicOutcome FtClient::FaceCartoonPic(const FaceCartoonPicReq
 
 void FtClient::FaceCartoonPicAsync(const FaceCartoonPicRequest& request, const FaceCartoonPicAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->FaceCartoonPic(request), context);
-    };
+    using Req = const FaceCartoonPicRequest&;
+    using Resp = FaceCartoonPicResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "FaceCartoonPic", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 FtClient::FaceCartoonPicOutcomeCallable FtClient::FaceCartoonPicCallable(const FaceCartoonPicRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<FaceCartoonPicOutcome()>>(
-        [this, request]()
-        {
-            return this->FaceCartoonPic(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<FaceCartoonPicOutcome>>();
+    FaceCartoonPicAsync(
+    request,
+    [prom](
+        const FtClient*,
+        const FaceCartoonPicRequest&,
+        FaceCartoonPicOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 FtClient::MorphFaceOutcome FtClient::MorphFace(const MorphFaceRequest &request)
@@ -191,25 +212,32 @@ FtClient::MorphFaceOutcome FtClient::MorphFace(const MorphFaceRequest &request)
 
 void FtClient::MorphFaceAsync(const MorphFaceRequest& request, const MorphFaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->MorphFace(request), context);
-    };
+    using Req = const MorphFaceRequest&;
+    using Resp = MorphFaceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "MorphFace", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 FtClient::MorphFaceOutcomeCallable FtClient::MorphFaceCallable(const MorphFaceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<MorphFaceOutcome()>>(
-        [this, request]()
-        {
-            return this->MorphFace(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<MorphFaceOutcome>>();
+    MorphFaceAsync(
+    request,
+    [prom](
+        const FtClient*,
+        const MorphFaceRequest&,
+        MorphFaceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 FtClient::QueryFaceMorphJobOutcome FtClient::QueryFaceMorphJob(const QueryFaceMorphJobRequest &request)
@@ -234,25 +262,32 @@ FtClient::QueryFaceMorphJobOutcome FtClient::QueryFaceMorphJob(const QueryFaceMo
 
 void FtClient::QueryFaceMorphJobAsync(const QueryFaceMorphJobRequest& request, const QueryFaceMorphJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->QueryFaceMorphJob(request), context);
-    };
+    using Req = const QueryFaceMorphJobRequest&;
+    using Resp = QueryFaceMorphJobResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "QueryFaceMorphJob", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 FtClient::QueryFaceMorphJobOutcomeCallable FtClient::QueryFaceMorphJobCallable(const QueryFaceMorphJobRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<QueryFaceMorphJobOutcome()>>(
-        [this, request]()
-        {
-            return this->QueryFaceMorphJob(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<QueryFaceMorphJobOutcome>>();
+    QueryFaceMorphJobAsync(
+    request,
+    [prom](
+        const FtClient*,
+        const QueryFaceMorphJobRequest&,
+        QueryFaceMorphJobOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 FtClient::SwapGenderPicOutcome FtClient::SwapGenderPic(const SwapGenderPicRequest &request)
@@ -277,24 +312,31 @@ FtClient::SwapGenderPicOutcome FtClient::SwapGenderPic(const SwapGenderPicReques
 
 void FtClient::SwapGenderPicAsync(const SwapGenderPicRequest& request, const SwapGenderPicAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->SwapGenderPic(request), context);
-    };
+    using Req = const SwapGenderPicRequest&;
+    using Resp = SwapGenderPicResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "SwapGenderPic", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 FtClient::SwapGenderPicOutcomeCallable FtClient::SwapGenderPicCallable(const SwapGenderPicRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<SwapGenderPicOutcome()>>(
-        [this, request]()
-        {
-            return this->SwapGenderPic(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<SwapGenderPicOutcome>>();
+    SwapGenderPicAsync(
+    request,
+    [prom](
+        const FtClient*,
+        const SwapGenderPicRequest&,
+        SwapGenderPicOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 

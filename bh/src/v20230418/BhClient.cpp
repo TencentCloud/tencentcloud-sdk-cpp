@@ -62,25 +62,32 @@ BhClient::AccessDevicesOutcome BhClient::AccessDevices(const AccessDevicesReques
 
 void BhClient::AccessDevicesAsync(const AccessDevicesRequest& request, const AccessDevicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->AccessDevices(request), context);
-    };
+    using Req = const AccessDevicesRequest&;
+    using Resp = AccessDevicesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "AccessDevices", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BhClient::AccessDevicesOutcomeCallable BhClient::AccessDevicesCallable(const AccessDevicesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<AccessDevicesOutcome()>>(
-        [this, request]()
-        {
-            return this->AccessDevices(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<AccessDevicesOutcome>>();
+    AccessDevicesAsync(
+    request,
+    [prom](
+        const BhClient*,
+        const AccessDevicesRequest&,
+        AccessDevicesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BhClient::AddDeviceGroupMembersOutcome BhClient::AddDeviceGroupMembers(const AddDeviceGroupMembersRequest &request)
@@ -105,25 +112,32 @@ BhClient::AddDeviceGroupMembersOutcome BhClient::AddDeviceGroupMembers(const Add
 
 void BhClient::AddDeviceGroupMembersAsync(const AddDeviceGroupMembersRequest& request, const AddDeviceGroupMembersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->AddDeviceGroupMembers(request), context);
-    };
+    using Req = const AddDeviceGroupMembersRequest&;
+    using Resp = AddDeviceGroupMembersResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "AddDeviceGroupMembers", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BhClient::AddDeviceGroupMembersOutcomeCallable BhClient::AddDeviceGroupMembersCallable(const AddDeviceGroupMembersRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<AddDeviceGroupMembersOutcome()>>(
-        [this, request]()
-        {
-            return this->AddDeviceGroupMembers(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<AddDeviceGroupMembersOutcome>>();
+    AddDeviceGroupMembersAsync(
+    request,
+    [prom](
+        const BhClient*,
+        const AddDeviceGroupMembersRequest&,
+        AddDeviceGroupMembersOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BhClient::AddUserGroupMembersOutcome BhClient::AddUserGroupMembers(const AddUserGroupMembersRequest &request)
@@ -148,25 +162,32 @@ BhClient::AddUserGroupMembersOutcome BhClient::AddUserGroupMembers(const AddUser
 
 void BhClient::AddUserGroupMembersAsync(const AddUserGroupMembersRequest& request, const AddUserGroupMembersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->AddUserGroupMembers(request), context);
-    };
+    using Req = const AddUserGroupMembersRequest&;
+    using Resp = AddUserGroupMembersResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "AddUserGroupMembers", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BhClient::AddUserGroupMembersOutcomeCallable BhClient::AddUserGroupMembersCallable(const AddUserGroupMembersRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<AddUserGroupMembersOutcome()>>(
-        [this, request]()
-        {
-            return this->AddUserGroupMembers(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<AddUserGroupMembersOutcome>>();
+    AddUserGroupMembersAsync(
+    request,
+    [prom](
+        const BhClient*,
+        const AddUserGroupMembersRequest&,
+        AddUserGroupMembersOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BhClient::BindDeviceAccountPasswordOutcome BhClient::BindDeviceAccountPassword(const BindDeviceAccountPasswordRequest &request)
@@ -191,25 +212,32 @@ BhClient::BindDeviceAccountPasswordOutcome BhClient::BindDeviceAccountPassword(c
 
 void BhClient::BindDeviceAccountPasswordAsync(const BindDeviceAccountPasswordRequest& request, const BindDeviceAccountPasswordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->BindDeviceAccountPassword(request), context);
-    };
+    using Req = const BindDeviceAccountPasswordRequest&;
+    using Resp = BindDeviceAccountPasswordResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "BindDeviceAccountPassword", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BhClient::BindDeviceAccountPasswordOutcomeCallable BhClient::BindDeviceAccountPasswordCallable(const BindDeviceAccountPasswordRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<BindDeviceAccountPasswordOutcome()>>(
-        [this, request]()
-        {
-            return this->BindDeviceAccountPassword(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<BindDeviceAccountPasswordOutcome>>();
+    BindDeviceAccountPasswordAsync(
+    request,
+    [prom](
+        const BhClient*,
+        const BindDeviceAccountPasswordRequest&,
+        BindDeviceAccountPasswordOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BhClient::BindDeviceAccountPrivateKeyOutcome BhClient::BindDeviceAccountPrivateKey(const BindDeviceAccountPrivateKeyRequest &request)
@@ -234,25 +262,32 @@ BhClient::BindDeviceAccountPrivateKeyOutcome BhClient::BindDeviceAccountPrivateK
 
 void BhClient::BindDeviceAccountPrivateKeyAsync(const BindDeviceAccountPrivateKeyRequest& request, const BindDeviceAccountPrivateKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->BindDeviceAccountPrivateKey(request), context);
-    };
+    using Req = const BindDeviceAccountPrivateKeyRequest&;
+    using Resp = BindDeviceAccountPrivateKeyResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "BindDeviceAccountPrivateKey", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BhClient::BindDeviceAccountPrivateKeyOutcomeCallable BhClient::BindDeviceAccountPrivateKeyCallable(const BindDeviceAccountPrivateKeyRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<BindDeviceAccountPrivateKeyOutcome()>>(
-        [this, request]()
-        {
-            return this->BindDeviceAccountPrivateKey(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<BindDeviceAccountPrivateKeyOutcome>>();
+    BindDeviceAccountPrivateKeyAsync(
+    request,
+    [prom](
+        const BhClient*,
+        const BindDeviceAccountPrivateKeyRequest&,
+        BindDeviceAccountPrivateKeyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BhClient::BindDeviceResourceOutcome BhClient::BindDeviceResource(const BindDeviceResourceRequest &request)
@@ -277,25 +312,32 @@ BhClient::BindDeviceResourceOutcome BhClient::BindDeviceResource(const BindDevic
 
 void BhClient::BindDeviceResourceAsync(const BindDeviceResourceRequest& request, const BindDeviceResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->BindDeviceResource(request), context);
-    };
+    using Req = const BindDeviceResourceRequest&;
+    using Resp = BindDeviceResourceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "BindDeviceResource", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BhClient::BindDeviceResourceOutcomeCallable BhClient::BindDeviceResourceCallable(const BindDeviceResourceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<BindDeviceResourceOutcome()>>(
-        [this, request]()
-        {
-            return this->BindDeviceResource(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<BindDeviceResourceOutcome>>();
+    BindDeviceResourceAsync(
+    request,
+    [prom](
+        const BhClient*,
+        const BindDeviceResourceRequest&,
+        BindDeviceResourceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BhClient::CheckLDAPConnectionOutcome BhClient::CheckLDAPConnection(const CheckLDAPConnectionRequest &request)
@@ -320,25 +362,32 @@ BhClient::CheckLDAPConnectionOutcome BhClient::CheckLDAPConnection(const CheckLD
 
 void BhClient::CheckLDAPConnectionAsync(const CheckLDAPConnectionRequest& request, const CheckLDAPConnectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CheckLDAPConnection(request), context);
-    };
+    using Req = const CheckLDAPConnectionRequest&;
+    using Resp = CheckLDAPConnectionResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CheckLDAPConnection", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BhClient::CheckLDAPConnectionOutcomeCallable BhClient::CheckLDAPConnectionCallable(const CheckLDAPConnectionRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CheckLDAPConnectionOutcome()>>(
-        [this, request]()
-        {
-            return this->CheckLDAPConnection(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CheckLDAPConnectionOutcome>>();
+    CheckLDAPConnectionAsync(
+    request,
+    [prom](
+        const BhClient*,
+        const CheckLDAPConnectionRequest&,
+        CheckLDAPConnectionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BhClient::CreateAccessWhiteListRuleOutcome BhClient::CreateAccessWhiteListRule(const CreateAccessWhiteListRuleRequest &request)
@@ -363,25 +412,32 @@ BhClient::CreateAccessWhiteListRuleOutcome BhClient::CreateAccessWhiteListRule(c
 
 void BhClient::CreateAccessWhiteListRuleAsync(const CreateAccessWhiteListRuleRequest& request, const CreateAccessWhiteListRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateAccessWhiteListRule(request), context);
-    };
+    using Req = const CreateAccessWhiteListRuleRequest&;
+    using Resp = CreateAccessWhiteListRuleResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateAccessWhiteListRule", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BhClient::CreateAccessWhiteListRuleOutcomeCallable BhClient::CreateAccessWhiteListRuleCallable(const CreateAccessWhiteListRuleRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateAccessWhiteListRuleOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateAccessWhiteListRule(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateAccessWhiteListRuleOutcome>>();
+    CreateAccessWhiteListRuleAsync(
+    request,
+    [prom](
+        const BhClient*,
+        const CreateAccessWhiteListRuleRequest&,
+        CreateAccessWhiteListRuleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BhClient::CreateAclOutcome BhClient::CreateAcl(const CreateAclRequest &request)
@@ -406,25 +462,32 @@ BhClient::CreateAclOutcome BhClient::CreateAcl(const CreateAclRequest &request)
 
 void BhClient::CreateAclAsync(const CreateAclRequest& request, const CreateAclAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateAcl(request), context);
-    };
+    using Req = const CreateAclRequest&;
+    using Resp = CreateAclResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateAcl", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BhClient::CreateAclOutcomeCallable BhClient::CreateAclCallable(const CreateAclRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateAclOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateAcl(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateAclOutcome>>();
+    CreateAclAsync(
+    request,
+    [prom](
+        const BhClient*,
+        const CreateAclRequest&,
+        CreateAclOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BhClient::CreateAssetSyncJobOutcome BhClient::CreateAssetSyncJob(const CreateAssetSyncJobRequest &request)
@@ -449,25 +512,32 @@ BhClient::CreateAssetSyncJobOutcome BhClient::CreateAssetSyncJob(const CreateAss
 
 void BhClient::CreateAssetSyncJobAsync(const CreateAssetSyncJobRequest& request, const CreateAssetSyncJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateAssetSyncJob(request), context);
-    };
+    using Req = const CreateAssetSyncJobRequest&;
+    using Resp = CreateAssetSyncJobResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateAssetSyncJob", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BhClient::CreateAssetSyncJobOutcomeCallable BhClient::CreateAssetSyncJobCallable(const CreateAssetSyncJobRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateAssetSyncJobOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateAssetSyncJob(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateAssetSyncJobOutcome>>();
+    CreateAssetSyncJobAsync(
+    request,
+    [prom](
+        const BhClient*,
+        const CreateAssetSyncJobRequest&,
+        CreateAssetSyncJobOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BhClient::CreateChangePwdTaskOutcome BhClient::CreateChangePwdTask(const CreateChangePwdTaskRequest &request)
@@ -492,25 +562,32 @@ BhClient::CreateChangePwdTaskOutcome BhClient::CreateChangePwdTask(const CreateC
 
 void BhClient::CreateChangePwdTaskAsync(const CreateChangePwdTaskRequest& request, const CreateChangePwdTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateChangePwdTask(request), context);
-    };
+    using Req = const CreateChangePwdTaskRequest&;
+    using Resp = CreateChangePwdTaskResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateChangePwdTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BhClient::CreateChangePwdTaskOutcomeCallable BhClient::CreateChangePwdTaskCallable(const CreateChangePwdTaskRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateChangePwdTaskOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateChangePwdTask(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateChangePwdTaskOutcome>>();
+    CreateChangePwdTaskAsync(
+    request,
+    [prom](
+        const BhClient*,
+        const CreateChangePwdTaskRequest&,
+        CreateChangePwdTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BhClient::CreateCmdTemplateOutcome BhClient::CreateCmdTemplate(const CreateCmdTemplateRequest &request)
@@ -535,25 +612,32 @@ BhClient::CreateCmdTemplateOutcome BhClient::CreateCmdTemplate(const CreateCmdTe
 
 void BhClient::CreateCmdTemplateAsync(const CreateCmdTemplateRequest& request, const CreateCmdTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateCmdTemplate(request), context);
-    };
+    using Req = const CreateCmdTemplateRequest&;
+    using Resp = CreateCmdTemplateResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateCmdTemplate", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BhClient::CreateCmdTemplateOutcomeCallable BhClient::CreateCmdTemplateCallable(const CreateCmdTemplateRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateCmdTemplateOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateCmdTemplate(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateCmdTemplateOutcome>>();
+    CreateCmdTemplateAsync(
+    request,
+    [prom](
+        const BhClient*,
+        const CreateCmdTemplateRequest&,
+        CreateCmdTemplateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BhClient::CreateDeviceAccountOutcome BhClient::CreateDeviceAccount(const CreateDeviceAccountRequest &request)
@@ -578,25 +662,32 @@ BhClient::CreateDeviceAccountOutcome BhClient::CreateDeviceAccount(const CreateD
 
 void BhClient::CreateDeviceAccountAsync(const CreateDeviceAccountRequest& request, const CreateDeviceAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateDeviceAccount(request), context);
-    };
+    using Req = const CreateDeviceAccountRequest&;
+    using Resp = CreateDeviceAccountResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateDeviceAccount", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BhClient::CreateDeviceAccountOutcomeCallable BhClient::CreateDeviceAccountCallable(const CreateDeviceAccountRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateDeviceAccountOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateDeviceAccount(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateDeviceAccountOutcome>>();
+    CreateDeviceAccountAsync(
+    request,
+    [prom](
+        const BhClient*,
+        const CreateDeviceAccountRequest&,
+        CreateDeviceAccountOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BhClient::CreateDeviceGroupOutcome BhClient::CreateDeviceGroup(const CreateDeviceGroupRequest &request)
@@ -621,25 +712,32 @@ BhClient::CreateDeviceGroupOutcome BhClient::CreateDeviceGroup(const CreateDevic
 
 void BhClient::CreateDeviceGroupAsync(const CreateDeviceGroupRequest& request, const CreateDeviceGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateDeviceGroup(request), context);
-    };
+    using Req = const CreateDeviceGroupRequest&;
+    using Resp = CreateDeviceGroupResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateDeviceGroup", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BhClient::CreateDeviceGroupOutcomeCallable BhClient::CreateDeviceGroupCallable(const CreateDeviceGroupRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateDeviceGroupOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateDeviceGroup(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateDeviceGroupOutcome>>();
+    CreateDeviceGroupAsync(
+    request,
+    [prom](
+        const BhClient*,
+        const CreateDeviceGroupRequest&,
+        CreateDeviceGroupOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BhClient::CreateOperationTaskOutcome BhClient::CreateOperationTask(const CreateOperationTaskRequest &request)
@@ -664,25 +762,32 @@ BhClient::CreateOperationTaskOutcome BhClient::CreateOperationTask(const CreateO
 
 void BhClient::CreateOperationTaskAsync(const CreateOperationTaskRequest& request, const CreateOperationTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateOperationTask(request), context);
-    };
+    using Req = const CreateOperationTaskRequest&;
+    using Resp = CreateOperationTaskResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateOperationTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BhClient::CreateOperationTaskOutcomeCallable BhClient::CreateOperationTaskCallable(const CreateOperationTaskRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateOperationTaskOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateOperationTask(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateOperationTaskOutcome>>();
+    CreateOperationTaskAsync(
+    request,
+    [prom](
+        const BhClient*,
+        const CreateOperationTaskRequest&,
+        CreateOperationTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BhClient::CreateResourceOutcome BhClient::CreateResource(const CreateResourceRequest &request)
@@ -707,25 +812,32 @@ BhClient::CreateResourceOutcome BhClient::CreateResource(const CreateResourceReq
 
 void BhClient::CreateResourceAsync(const CreateResourceRequest& request, const CreateResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateResource(request), context);
-    };
+    using Req = const CreateResourceRequest&;
+    using Resp = CreateResourceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateResource", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BhClient::CreateResourceOutcomeCallable BhClient::CreateResourceCallable(const CreateResourceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateResourceOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateResource(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateResourceOutcome>>();
+    CreateResourceAsync(
+    request,
+    [prom](
+        const BhClient*,
+        const CreateResourceRequest&,
+        CreateResourceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BhClient::CreateUserOutcome BhClient::CreateUser(const CreateUserRequest &request)
@@ -750,25 +862,32 @@ BhClient::CreateUserOutcome BhClient::CreateUser(const CreateUserRequest &reques
 
 void BhClient::CreateUserAsync(const CreateUserRequest& request, const CreateUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateUser(request), context);
-    };
+    using Req = const CreateUserRequest&;
+    using Resp = CreateUserResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateUser", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BhClient::CreateUserOutcomeCallable BhClient::CreateUserCallable(const CreateUserRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateUserOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateUser(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateUserOutcome>>();
+    CreateUserAsync(
+    request,
+    [prom](
+        const BhClient*,
+        const CreateUserRequest&,
+        CreateUserOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BhClient::CreateUserGroupOutcome BhClient::CreateUserGroup(const CreateUserGroupRequest &request)
@@ -793,25 +912,32 @@ BhClient::CreateUserGroupOutcome BhClient::CreateUserGroup(const CreateUserGroup
 
 void BhClient::CreateUserGroupAsync(const CreateUserGroupRequest& request, const CreateUserGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateUserGroup(request), context);
-    };
+    using Req = const CreateUserGroupRequest&;
+    using Resp = CreateUserGroupResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateUserGroup", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BhClient::CreateUserGroupOutcomeCallable BhClient::CreateUserGroupCallable(const CreateUserGroupRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateUserGroupOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateUserGroup(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateUserGroupOutcome>>();
+    CreateUserGroupAsync(
+    request,
+    [prom](
+        const BhClient*,
+        const CreateUserGroupRequest&,
+        CreateUserGroupOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BhClient::DeleteAccessWhiteListRulesOutcome BhClient::DeleteAccessWhiteListRules(const DeleteAccessWhiteListRulesRequest &request)
@@ -836,25 +962,32 @@ BhClient::DeleteAccessWhiteListRulesOutcome BhClient::DeleteAccessWhiteListRules
 
 void BhClient::DeleteAccessWhiteListRulesAsync(const DeleteAccessWhiteListRulesRequest& request, const DeleteAccessWhiteListRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteAccessWhiteListRules(request), context);
-    };
+    using Req = const DeleteAccessWhiteListRulesRequest&;
+    using Resp = DeleteAccessWhiteListRulesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteAccessWhiteListRules", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BhClient::DeleteAccessWhiteListRulesOutcomeCallable BhClient::DeleteAccessWhiteListRulesCallable(const DeleteAccessWhiteListRulesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteAccessWhiteListRulesOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteAccessWhiteListRules(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteAccessWhiteListRulesOutcome>>();
+    DeleteAccessWhiteListRulesAsync(
+    request,
+    [prom](
+        const BhClient*,
+        const DeleteAccessWhiteListRulesRequest&,
+        DeleteAccessWhiteListRulesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BhClient::DeleteAclsOutcome BhClient::DeleteAcls(const DeleteAclsRequest &request)
@@ -879,25 +1012,32 @@ BhClient::DeleteAclsOutcome BhClient::DeleteAcls(const DeleteAclsRequest &reques
 
 void BhClient::DeleteAclsAsync(const DeleteAclsRequest& request, const DeleteAclsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteAcls(request), context);
-    };
+    using Req = const DeleteAclsRequest&;
+    using Resp = DeleteAclsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteAcls", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BhClient::DeleteAclsOutcomeCallable BhClient::DeleteAclsCallable(const DeleteAclsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteAclsOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteAcls(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteAclsOutcome>>();
+    DeleteAclsAsync(
+    request,
+    [prom](
+        const BhClient*,
+        const DeleteAclsRequest&,
+        DeleteAclsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BhClient::DeleteChangePwdTaskOutcome BhClient::DeleteChangePwdTask(const DeleteChangePwdTaskRequest &request)
@@ -922,25 +1062,32 @@ BhClient::DeleteChangePwdTaskOutcome BhClient::DeleteChangePwdTask(const DeleteC
 
 void BhClient::DeleteChangePwdTaskAsync(const DeleteChangePwdTaskRequest& request, const DeleteChangePwdTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteChangePwdTask(request), context);
-    };
+    using Req = const DeleteChangePwdTaskRequest&;
+    using Resp = DeleteChangePwdTaskResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteChangePwdTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BhClient::DeleteChangePwdTaskOutcomeCallable BhClient::DeleteChangePwdTaskCallable(const DeleteChangePwdTaskRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteChangePwdTaskOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteChangePwdTask(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteChangePwdTaskOutcome>>();
+    DeleteChangePwdTaskAsync(
+    request,
+    [prom](
+        const BhClient*,
+        const DeleteChangePwdTaskRequest&,
+        DeleteChangePwdTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BhClient::DeleteCmdTemplatesOutcome BhClient::DeleteCmdTemplates(const DeleteCmdTemplatesRequest &request)
@@ -965,25 +1112,32 @@ BhClient::DeleteCmdTemplatesOutcome BhClient::DeleteCmdTemplates(const DeleteCmd
 
 void BhClient::DeleteCmdTemplatesAsync(const DeleteCmdTemplatesRequest& request, const DeleteCmdTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteCmdTemplates(request), context);
-    };
+    using Req = const DeleteCmdTemplatesRequest&;
+    using Resp = DeleteCmdTemplatesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteCmdTemplates", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BhClient::DeleteCmdTemplatesOutcomeCallable BhClient::DeleteCmdTemplatesCallable(const DeleteCmdTemplatesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteCmdTemplatesOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteCmdTemplates(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteCmdTemplatesOutcome>>();
+    DeleteCmdTemplatesAsync(
+    request,
+    [prom](
+        const BhClient*,
+        const DeleteCmdTemplatesRequest&,
+        DeleteCmdTemplatesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BhClient::DeleteDeviceAccountsOutcome BhClient::DeleteDeviceAccounts(const DeleteDeviceAccountsRequest &request)
@@ -1008,25 +1162,32 @@ BhClient::DeleteDeviceAccountsOutcome BhClient::DeleteDeviceAccounts(const Delet
 
 void BhClient::DeleteDeviceAccountsAsync(const DeleteDeviceAccountsRequest& request, const DeleteDeviceAccountsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteDeviceAccounts(request), context);
-    };
+    using Req = const DeleteDeviceAccountsRequest&;
+    using Resp = DeleteDeviceAccountsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteDeviceAccounts", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BhClient::DeleteDeviceAccountsOutcomeCallable BhClient::DeleteDeviceAccountsCallable(const DeleteDeviceAccountsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteDeviceAccountsOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteDeviceAccounts(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteDeviceAccountsOutcome>>();
+    DeleteDeviceAccountsAsync(
+    request,
+    [prom](
+        const BhClient*,
+        const DeleteDeviceAccountsRequest&,
+        DeleteDeviceAccountsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BhClient::DeleteDeviceGroupMembersOutcome BhClient::DeleteDeviceGroupMembers(const DeleteDeviceGroupMembersRequest &request)
@@ -1051,25 +1212,32 @@ BhClient::DeleteDeviceGroupMembersOutcome BhClient::DeleteDeviceGroupMembers(con
 
 void BhClient::DeleteDeviceGroupMembersAsync(const DeleteDeviceGroupMembersRequest& request, const DeleteDeviceGroupMembersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteDeviceGroupMembers(request), context);
-    };
+    using Req = const DeleteDeviceGroupMembersRequest&;
+    using Resp = DeleteDeviceGroupMembersResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteDeviceGroupMembers", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BhClient::DeleteDeviceGroupMembersOutcomeCallable BhClient::DeleteDeviceGroupMembersCallable(const DeleteDeviceGroupMembersRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteDeviceGroupMembersOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteDeviceGroupMembers(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteDeviceGroupMembersOutcome>>();
+    DeleteDeviceGroupMembersAsync(
+    request,
+    [prom](
+        const BhClient*,
+        const DeleteDeviceGroupMembersRequest&,
+        DeleteDeviceGroupMembersOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BhClient::DeleteDeviceGroupsOutcome BhClient::DeleteDeviceGroups(const DeleteDeviceGroupsRequest &request)
@@ -1094,25 +1262,32 @@ BhClient::DeleteDeviceGroupsOutcome BhClient::DeleteDeviceGroups(const DeleteDev
 
 void BhClient::DeleteDeviceGroupsAsync(const DeleteDeviceGroupsRequest& request, const DeleteDeviceGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteDeviceGroups(request), context);
-    };
+    using Req = const DeleteDeviceGroupsRequest&;
+    using Resp = DeleteDeviceGroupsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteDeviceGroups", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BhClient::DeleteDeviceGroupsOutcomeCallable BhClient::DeleteDeviceGroupsCallable(const DeleteDeviceGroupsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteDeviceGroupsOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteDeviceGroups(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteDeviceGroupsOutcome>>();
+    DeleteDeviceGroupsAsync(
+    request,
+    [prom](
+        const BhClient*,
+        const DeleteDeviceGroupsRequest&,
+        DeleteDeviceGroupsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BhClient::DeleteDevicesOutcome BhClient::DeleteDevices(const DeleteDevicesRequest &request)
@@ -1137,25 +1312,32 @@ BhClient::DeleteDevicesOutcome BhClient::DeleteDevices(const DeleteDevicesReques
 
 void BhClient::DeleteDevicesAsync(const DeleteDevicesRequest& request, const DeleteDevicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteDevices(request), context);
-    };
+    using Req = const DeleteDevicesRequest&;
+    using Resp = DeleteDevicesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteDevices", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BhClient::DeleteDevicesOutcomeCallable BhClient::DeleteDevicesCallable(const DeleteDevicesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteDevicesOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteDevices(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteDevicesOutcome>>();
+    DeleteDevicesAsync(
+    request,
+    [prom](
+        const BhClient*,
+        const DeleteDevicesRequest&,
+        DeleteDevicesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BhClient::DeleteOperationTasksOutcome BhClient::DeleteOperationTasks(const DeleteOperationTasksRequest &request)
@@ -1180,25 +1362,32 @@ BhClient::DeleteOperationTasksOutcome BhClient::DeleteOperationTasks(const Delet
 
 void BhClient::DeleteOperationTasksAsync(const DeleteOperationTasksRequest& request, const DeleteOperationTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteOperationTasks(request), context);
-    };
+    using Req = const DeleteOperationTasksRequest&;
+    using Resp = DeleteOperationTasksResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteOperationTasks", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BhClient::DeleteOperationTasksOutcomeCallable BhClient::DeleteOperationTasksCallable(const DeleteOperationTasksRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteOperationTasksOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteOperationTasks(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteOperationTasksOutcome>>();
+    DeleteOperationTasksAsync(
+    request,
+    [prom](
+        const BhClient*,
+        const DeleteOperationTasksRequest&,
+        DeleteOperationTasksOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BhClient::DeleteUserGroupMembersOutcome BhClient::DeleteUserGroupMembers(const DeleteUserGroupMembersRequest &request)
@@ -1223,25 +1412,32 @@ BhClient::DeleteUserGroupMembersOutcome BhClient::DeleteUserGroupMembers(const D
 
 void BhClient::DeleteUserGroupMembersAsync(const DeleteUserGroupMembersRequest& request, const DeleteUserGroupMembersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteUserGroupMembers(request), context);
-    };
+    using Req = const DeleteUserGroupMembersRequest&;
+    using Resp = DeleteUserGroupMembersResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteUserGroupMembers", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BhClient::DeleteUserGroupMembersOutcomeCallable BhClient::DeleteUserGroupMembersCallable(const DeleteUserGroupMembersRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteUserGroupMembersOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteUserGroupMembers(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteUserGroupMembersOutcome>>();
+    DeleteUserGroupMembersAsync(
+    request,
+    [prom](
+        const BhClient*,
+        const DeleteUserGroupMembersRequest&,
+        DeleteUserGroupMembersOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BhClient::DeleteUserGroupsOutcome BhClient::DeleteUserGroups(const DeleteUserGroupsRequest &request)
@@ -1266,25 +1462,32 @@ BhClient::DeleteUserGroupsOutcome BhClient::DeleteUserGroups(const DeleteUserGro
 
 void BhClient::DeleteUserGroupsAsync(const DeleteUserGroupsRequest& request, const DeleteUserGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteUserGroups(request), context);
-    };
+    using Req = const DeleteUserGroupsRequest&;
+    using Resp = DeleteUserGroupsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteUserGroups", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BhClient::DeleteUserGroupsOutcomeCallable BhClient::DeleteUserGroupsCallable(const DeleteUserGroupsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteUserGroupsOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteUserGroups(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteUserGroupsOutcome>>();
+    DeleteUserGroupsAsync(
+    request,
+    [prom](
+        const BhClient*,
+        const DeleteUserGroupsRequest&,
+        DeleteUserGroupsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BhClient::DeleteUsersOutcome BhClient::DeleteUsers(const DeleteUsersRequest &request)
@@ -1309,25 +1512,32 @@ BhClient::DeleteUsersOutcome BhClient::DeleteUsers(const DeleteUsersRequest &req
 
 void BhClient::DeleteUsersAsync(const DeleteUsersRequest& request, const DeleteUsersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteUsers(request), context);
-    };
+    using Req = const DeleteUsersRequest&;
+    using Resp = DeleteUsersResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteUsers", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BhClient::DeleteUsersOutcomeCallable BhClient::DeleteUsersCallable(const DeleteUsersRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteUsersOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteUsers(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteUsersOutcome>>();
+    DeleteUsersAsync(
+    request,
+    [prom](
+        const BhClient*,
+        const DeleteUsersRequest&,
+        DeleteUsersOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BhClient::DeployResourceOutcome BhClient::DeployResource(const DeployResourceRequest &request)
@@ -1352,25 +1562,32 @@ BhClient::DeployResourceOutcome BhClient::DeployResource(const DeployResourceReq
 
 void BhClient::DeployResourceAsync(const DeployResourceRequest& request, const DeployResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeployResource(request), context);
-    };
+    using Req = const DeployResourceRequest&;
+    using Resp = DeployResourceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeployResource", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BhClient::DeployResourceOutcomeCallable BhClient::DeployResourceCallable(const DeployResourceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeployResourceOutcome()>>(
-        [this, request]()
-        {
-            return this->DeployResource(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeployResourceOutcome>>();
+    DeployResourceAsync(
+    request,
+    [prom](
+        const BhClient*,
+        const DeployResourceRequest&,
+        DeployResourceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BhClient::DescribeAccessWhiteListRulesOutcome BhClient::DescribeAccessWhiteListRules(const DescribeAccessWhiteListRulesRequest &request)
@@ -1395,25 +1612,32 @@ BhClient::DescribeAccessWhiteListRulesOutcome BhClient::DescribeAccessWhiteListR
 
 void BhClient::DescribeAccessWhiteListRulesAsync(const DescribeAccessWhiteListRulesRequest& request, const DescribeAccessWhiteListRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAccessWhiteListRules(request), context);
-    };
+    using Req = const DescribeAccessWhiteListRulesRequest&;
+    using Resp = DescribeAccessWhiteListRulesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAccessWhiteListRules", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BhClient::DescribeAccessWhiteListRulesOutcomeCallable BhClient::DescribeAccessWhiteListRulesCallable(const DescribeAccessWhiteListRulesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAccessWhiteListRulesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAccessWhiteListRules(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAccessWhiteListRulesOutcome>>();
+    DescribeAccessWhiteListRulesAsync(
+    request,
+    [prom](
+        const BhClient*,
+        const DescribeAccessWhiteListRulesRequest&,
+        DescribeAccessWhiteListRulesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BhClient::DescribeAclsOutcome BhClient::DescribeAcls(const DescribeAclsRequest &request)
@@ -1438,25 +1662,32 @@ BhClient::DescribeAclsOutcome BhClient::DescribeAcls(const DescribeAclsRequest &
 
 void BhClient::DescribeAclsAsync(const DescribeAclsRequest& request, const DescribeAclsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAcls(request), context);
-    };
+    using Req = const DescribeAclsRequest&;
+    using Resp = DescribeAclsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAcls", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BhClient::DescribeAclsOutcomeCallable BhClient::DescribeAclsCallable(const DescribeAclsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAclsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAcls(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAclsOutcome>>();
+    DescribeAclsAsync(
+    request,
+    [prom](
+        const BhClient*,
+        const DescribeAclsRequest&,
+        DescribeAclsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BhClient::DescribeAssetSyncFlagOutcome BhClient::DescribeAssetSyncFlag(const DescribeAssetSyncFlagRequest &request)
@@ -1481,25 +1712,32 @@ BhClient::DescribeAssetSyncFlagOutcome BhClient::DescribeAssetSyncFlag(const Des
 
 void BhClient::DescribeAssetSyncFlagAsync(const DescribeAssetSyncFlagRequest& request, const DescribeAssetSyncFlagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAssetSyncFlag(request), context);
-    };
+    using Req = const DescribeAssetSyncFlagRequest&;
+    using Resp = DescribeAssetSyncFlagResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAssetSyncFlag", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BhClient::DescribeAssetSyncFlagOutcomeCallable BhClient::DescribeAssetSyncFlagCallable(const DescribeAssetSyncFlagRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAssetSyncFlagOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAssetSyncFlag(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAssetSyncFlagOutcome>>();
+    DescribeAssetSyncFlagAsync(
+    request,
+    [prom](
+        const BhClient*,
+        const DescribeAssetSyncFlagRequest&,
+        DescribeAssetSyncFlagOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BhClient::DescribeAssetSyncStatusOutcome BhClient::DescribeAssetSyncStatus(const DescribeAssetSyncStatusRequest &request)
@@ -1524,25 +1762,32 @@ BhClient::DescribeAssetSyncStatusOutcome BhClient::DescribeAssetSyncStatus(const
 
 void BhClient::DescribeAssetSyncStatusAsync(const DescribeAssetSyncStatusRequest& request, const DescribeAssetSyncStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAssetSyncStatus(request), context);
-    };
+    using Req = const DescribeAssetSyncStatusRequest&;
+    using Resp = DescribeAssetSyncStatusResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAssetSyncStatus", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BhClient::DescribeAssetSyncStatusOutcomeCallable BhClient::DescribeAssetSyncStatusCallable(const DescribeAssetSyncStatusRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAssetSyncStatusOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAssetSyncStatus(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAssetSyncStatusOutcome>>();
+    DescribeAssetSyncStatusAsync(
+    request,
+    [prom](
+        const BhClient*,
+        const DescribeAssetSyncStatusRequest&,
+        DescribeAssetSyncStatusOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BhClient::DescribeChangePwdTaskOutcome BhClient::DescribeChangePwdTask(const DescribeChangePwdTaskRequest &request)
@@ -1567,25 +1812,32 @@ BhClient::DescribeChangePwdTaskOutcome BhClient::DescribeChangePwdTask(const Des
 
 void BhClient::DescribeChangePwdTaskAsync(const DescribeChangePwdTaskRequest& request, const DescribeChangePwdTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeChangePwdTask(request), context);
-    };
+    using Req = const DescribeChangePwdTaskRequest&;
+    using Resp = DescribeChangePwdTaskResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeChangePwdTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BhClient::DescribeChangePwdTaskOutcomeCallable BhClient::DescribeChangePwdTaskCallable(const DescribeChangePwdTaskRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeChangePwdTaskOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeChangePwdTask(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeChangePwdTaskOutcome>>();
+    DescribeChangePwdTaskAsync(
+    request,
+    [prom](
+        const BhClient*,
+        const DescribeChangePwdTaskRequest&,
+        DescribeChangePwdTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BhClient::DescribeChangePwdTaskDetailOutcome BhClient::DescribeChangePwdTaskDetail(const DescribeChangePwdTaskDetailRequest &request)
@@ -1610,25 +1862,32 @@ BhClient::DescribeChangePwdTaskDetailOutcome BhClient::DescribeChangePwdTaskDeta
 
 void BhClient::DescribeChangePwdTaskDetailAsync(const DescribeChangePwdTaskDetailRequest& request, const DescribeChangePwdTaskDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeChangePwdTaskDetail(request), context);
-    };
+    using Req = const DescribeChangePwdTaskDetailRequest&;
+    using Resp = DescribeChangePwdTaskDetailResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeChangePwdTaskDetail", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BhClient::DescribeChangePwdTaskDetailOutcomeCallable BhClient::DescribeChangePwdTaskDetailCallable(const DescribeChangePwdTaskDetailRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeChangePwdTaskDetailOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeChangePwdTaskDetail(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeChangePwdTaskDetailOutcome>>();
+    DescribeChangePwdTaskDetailAsync(
+    request,
+    [prom](
+        const BhClient*,
+        const DescribeChangePwdTaskDetailRequest&,
+        DescribeChangePwdTaskDetailOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BhClient::DescribeCmdTemplatesOutcome BhClient::DescribeCmdTemplates(const DescribeCmdTemplatesRequest &request)
@@ -1653,25 +1912,32 @@ BhClient::DescribeCmdTemplatesOutcome BhClient::DescribeCmdTemplates(const Descr
 
 void BhClient::DescribeCmdTemplatesAsync(const DescribeCmdTemplatesRequest& request, const DescribeCmdTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeCmdTemplates(request), context);
-    };
+    using Req = const DescribeCmdTemplatesRequest&;
+    using Resp = DescribeCmdTemplatesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeCmdTemplates", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BhClient::DescribeCmdTemplatesOutcomeCallable BhClient::DescribeCmdTemplatesCallable(const DescribeCmdTemplatesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeCmdTemplatesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeCmdTemplates(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeCmdTemplatesOutcome>>();
+    DescribeCmdTemplatesAsync(
+    request,
+    [prom](
+        const BhClient*,
+        const DescribeCmdTemplatesRequest&,
+        DescribeCmdTemplatesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BhClient::DescribeDeviceAccountsOutcome BhClient::DescribeDeviceAccounts(const DescribeDeviceAccountsRequest &request)
@@ -1696,25 +1962,32 @@ BhClient::DescribeDeviceAccountsOutcome BhClient::DescribeDeviceAccounts(const D
 
 void BhClient::DescribeDeviceAccountsAsync(const DescribeDeviceAccountsRequest& request, const DescribeDeviceAccountsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDeviceAccounts(request), context);
-    };
+    using Req = const DescribeDeviceAccountsRequest&;
+    using Resp = DescribeDeviceAccountsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeDeviceAccounts", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BhClient::DescribeDeviceAccountsOutcomeCallable BhClient::DescribeDeviceAccountsCallable(const DescribeDeviceAccountsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeDeviceAccountsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDeviceAccounts(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeDeviceAccountsOutcome>>();
+    DescribeDeviceAccountsAsync(
+    request,
+    [prom](
+        const BhClient*,
+        const DescribeDeviceAccountsRequest&,
+        DescribeDeviceAccountsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BhClient::DescribeDeviceGroupMembersOutcome BhClient::DescribeDeviceGroupMembers(const DescribeDeviceGroupMembersRequest &request)
@@ -1739,25 +2012,32 @@ BhClient::DescribeDeviceGroupMembersOutcome BhClient::DescribeDeviceGroupMembers
 
 void BhClient::DescribeDeviceGroupMembersAsync(const DescribeDeviceGroupMembersRequest& request, const DescribeDeviceGroupMembersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDeviceGroupMembers(request), context);
-    };
+    using Req = const DescribeDeviceGroupMembersRequest&;
+    using Resp = DescribeDeviceGroupMembersResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeDeviceGroupMembers", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BhClient::DescribeDeviceGroupMembersOutcomeCallable BhClient::DescribeDeviceGroupMembersCallable(const DescribeDeviceGroupMembersRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeDeviceGroupMembersOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDeviceGroupMembers(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeDeviceGroupMembersOutcome>>();
+    DescribeDeviceGroupMembersAsync(
+    request,
+    [prom](
+        const BhClient*,
+        const DescribeDeviceGroupMembersRequest&,
+        DescribeDeviceGroupMembersOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BhClient::DescribeDeviceGroupsOutcome BhClient::DescribeDeviceGroups(const DescribeDeviceGroupsRequest &request)
@@ -1782,25 +2062,32 @@ BhClient::DescribeDeviceGroupsOutcome BhClient::DescribeDeviceGroups(const Descr
 
 void BhClient::DescribeDeviceGroupsAsync(const DescribeDeviceGroupsRequest& request, const DescribeDeviceGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDeviceGroups(request), context);
-    };
+    using Req = const DescribeDeviceGroupsRequest&;
+    using Resp = DescribeDeviceGroupsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeDeviceGroups", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BhClient::DescribeDeviceGroupsOutcomeCallable BhClient::DescribeDeviceGroupsCallable(const DescribeDeviceGroupsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeDeviceGroupsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDeviceGroups(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeDeviceGroupsOutcome>>();
+    DescribeDeviceGroupsAsync(
+    request,
+    [prom](
+        const BhClient*,
+        const DescribeDeviceGroupsRequest&,
+        DescribeDeviceGroupsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BhClient::DescribeDevicesOutcome BhClient::DescribeDevices(const DescribeDevicesRequest &request)
@@ -1825,25 +2112,32 @@ BhClient::DescribeDevicesOutcome BhClient::DescribeDevices(const DescribeDevices
 
 void BhClient::DescribeDevicesAsync(const DescribeDevicesRequest& request, const DescribeDevicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDevices(request), context);
-    };
+    using Req = const DescribeDevicesRequest&;
+    using Resp = DescribeDevicesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeDevices", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BhClient::DescribeDevicesOutcomeCallable BhClient::DescribeDevicesCallable(const DescribeDevicesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeDevicesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDevices(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeDevicesOutcome>>();
+    DescribeDevicesAsync(
+    request,
+    [prom](
+        const BhClient*,
+        const DescribeDevicesRequest&,
+        DescribeDevicesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BhClient::DescribeDomainsOutcome BhClient::DescribeDomains(const DescribeDomainsRequest &request)
@@ -1868,25 +2162,32 @@ BhClient::DescribeDomainsOutcome BhClient::DescribeDomains(const DescribeDomains
 
 void BhClient::DescribeDomainsAsync(const DescribeDomainsRequest& request, const DescribeDomainsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDomains(request), context);
-    };
+    using Req = const DescribeDomainsRequest&;
+    using Resp = DescribeDomainsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeDomains", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BhClient::DescribeDomainsOutcomeCallable BhClient::DescribeDomainsCallable(const DescribeDomainsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeDomainsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDomains(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeDomainsOutcome>>();
+    DescribeDomainsAsync(
+    request,
+    [prom](
+        const BhClient*,
+        const DescribeDomainsRequest&,
+        DescribeDomainsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BhClient::DescribeLDAPUnitSetOutcome BhClient::DescribeLDAPUnitSet(const DescribeLDAPUnitSetRequest &request)
@@ -1911,25 +2212,32 @@ BhClient::DescribeLDAPUnitSetOutcome BhClient::DescribeLDAPUnitSet(const Describ
 
 void BhClient::DescribeLDAPUnitSetAsync(const DescribeLDAPUnitSetRequest& request, const DescribeLDAPUnitSetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeLDAPUnitSet(request), context);
-    };
+    using Req = const DescribeLDAPUnitSetRequest&;
+    using Resp = DescribeLDAPUnitSetResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeLDAPUnitSet", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BhClient::DescribeLDAPUnitSetOutcomeCallable BhClient::DescribeLDAPUnitSetCallable(const DescribeLDAPUnitSetRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeLDAPUnitSetOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeLDAPUnitSet(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeLDAPUnitSetOutcome>>();
+    DescribeLDAPUnitSetAsync(
+    request,
+    [prom](
+        const BhClient*,
+        const DescribeLDAPUnitSetRequest&,
+        DescribeLDAPUnitSetOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BhClient::DescribeLoginEventOutcome BhClient::DescribeLoginEvent(const DescribeLoginEventRequest &request)
@@ -1954,25 +2262,32 @@ BhClient::DescribeLoginEventOutcome BhClient::DescribeLoginEvent(const DescribeL
 
 void BhClient::DescribeLoginEventAsync(const DescribeLoginEventRequest& request, const DescribeLoginEventAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeLoginEvent(request), context);
-    };
+    using Req = const DescribeLoginEventRequest&;
+    using Resp = DescribeLoginEventResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeLoginEvent", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BhClient::DescribeLoginEventOutcomeCallable BhClient::DescribeLoginEventCallable(const DescribeLoginEventRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeLoginEventOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeLoginEvent(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeLoginEventOutcome>>();
+    DescribeLoginEventAsync(
+    request,
+    [prom](
+        const BhClient*,
+        const DescribeLoginEventRequest&,
+        DescribeLoginEventOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BhClient::DescribeOperationEventOutcome BhClient::DescribeOperationEvent(const DescribeOperationEventRequest &request)
@@ -1997,25 +2312,32 @@ BhClient::DescribeOperationEventOutcome BhClient::DescribeOperationEvent(const D
 
 void BhClient::DescribeOperationEventAsync(const DescribeOperationEventRequest& request, const DescribeOperationEventAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeOperationEvent(request), context);
-    };
+    using Req = const DescribeOperationEventRequest&;
+    using Resp = DescribeOperationEventResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeOperationEvent", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BhClient::DescribeOperationEventOutcomeCallable BhClient::DescribeOperationEventCallable(const DescribeOperationEventRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeOperationEventOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeOperationEvent(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeOperationEventOutcome>>();
+    DescribeOperationEventAsync(
+    request,
+    [prom](
+        const BhClient*,
+        const DescribeOperationEventRequest&,
+        DescribeOperationEventOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BhClient::DescribeOperationTaskOutcome BhClient::DescribeOperationTask(const DescribeOperationTaskRequest &request)
@@ -2040,25 +2362,32 @@ BhClient::DescribeOperationTaskOutcome BhClient::DescribeOperationTask(const Des
 
 void BhClient::DescribeOperationTaskAsync(const DescribeOperationTaskRequest& request, const DescribeOperationTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeOperationTask(request), context);
-    };
+    using Req = const DescribeOperationTaskRequest&;
+    using Resp = DescribeOperationTaskResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeOperationTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BhClient::DescribeOperationTaskOutcomeCallable BhClient::DescribeOperationTaskCallable(const DescribeOperationTaskRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeOperationTaskOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeOperationTask(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeOperationTaskOutcome>>();
+    DescribeOperationTaskAsync(
+    request,
+    [prom](
+        const BhClient*,
+        const DescribeOperationTaskRequest&,
+        DescribeOperationTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BhClient::DescribeResourcesOutcome BhClient::DescribeResources(const DescribeResourcesRequest &request)
@@ -2083,25 +2412,32 @@ BhClient::DescribeResourcesOutcome BhClient::DescribeResources(const DescribeRes
 
 void BhClient::DescribeResourcesAsync(const DescribeResourcesRequest& request, const DescribeResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeResources(request), context);
-    };
+    using Req = const DescribeResourcesRequest&;
+    using Resp = DescribeResourcesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeResources", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BhClient::DescribeResourcesOutcomeCallable BhClient::DescribeResourcesCallable(const DescribeResourcesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeResourcesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeResources(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeResourcesOutcome>>();
+    DescribeResourcesAsync(
+    request,
+    [prom](
+        const BhClient*,
+        const DescribeResourcesRequest&,
+        DescribeResourcesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BhClient::DescribeSecuritySettingOutcome BhClient::DescribeSecuritySetting(const DescribeSecuritySettingRequest &request)
@@ -2126,25 +2462,32 @@ BhClient::DescribeSecuritySettingOutcome BhClient::DescribeSecuritySetting(const
 
 void BhClient::DescribeSecuritySettingAsync(const DescribeSecuritySettingRequest& request, const DescribeSecuritySettingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeSecuritySetting(request), context);
-    };
+    using Req = const DescribeSecuritySettingRequest&;
+    using Resp = DescribeSecuritySettingResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeSecuritySetting", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BhClient::DescribeSecuritySettingOutcomeCallable BhClient::DescribeSecuritySettingCallable(const DescribeSecuritySettingRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeSecuritySettingOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeSecuritySetting(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeSecuritySettingOutcome>>();
+    DescribeSecuritySettingAsync(
+    request,
+    [prom](
+        const BhClient*,
+        const DescribeSecuritySettingRequest&,
+        DescribeSecuritySettingOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BhClient::DescribeUserGroupMembersOutcome BhClient::DescribeUserGroupMembers(const DescribeUserGroupMembersRequest &request)
@@ -2169,25 +2512,32 @@ BhClient::DescribeUserGroupMembersOutcome BhClient::DescribeUserGroupMembers(con
 
 void BhClient::DescribeUserGroupMembersAsync(const DescribeUserGroupMembersRequest& request, const DescribeUserGroupMembersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeUserGroupMembers(request), context);
-    };
+    using Req = const DescribeUserGroupMembersRequest&;
+    using Resp = DescribeUserGroupMembersResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeUserGroupMembers", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BhClient::DescribeUserGroupMembersOutcomeCallable BhClient::DescribeUserGroupMembersCallable(const DescribeUserGroupMembersRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeUserGroupMembersOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeUserGroupMembers(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeUserGroupMembersOutcome>>();
+    DescribeUserGroupMembersAsync(
+    request,
+    [prom](
+        const BhClient*,
+        const DescribeUserGroupMembersRequest&,
+        DescribeUserGroupMembersOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BhClient::DescribeUserGroupsOutcome BhClient::DescribeUserGroups(const DescribeUserGroupsRequest &request)
@@ -2212,25 +2562,32 @@ BhClient::DescribeUserGroupsOutcome BhClient::DescribeUserGroups(const DescribeU
 
 void BhClient::DescribeUserGroupsAsync(const DescribeUserGroupsRequest& request, const DescribeUserGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeUserGroups(request), context);
-    };
+    using Req = const DescribeUserGroupsRequest&;
+    using Resp = DescribeUserGroupsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeUserGroups", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BhClient::DescribeUserGroupsOutcomeCallable BhClient::DescribeUserGroupsCallable(const DescribeUserGroupsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeUserGroupsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeUserGroups(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeUserGroupsOutcome>>();
+    DescribeUserGroupsAsync(
+    request,
+    [prom](
+        const BhClient*,
+        const DescribeUserGroupsRequest&,
+        DescribeUserGroupsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BhClient::DescribeUsersOutcome BhClient::DescribeUsers(const DescribeUsersRequest &request)
@@ -2255,25 +2612,32 @@ BhClient::DescribeUsersOutcome BhClient::DescribeUsers(const DescribeUsersReques
 
 void BhClient::DescribeUsersAsync(const DescribeUsersRequest& request, const DescribeUsersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeUsers(request), context);
-    };
+    using Req = const DescribeUsersRequest&;
+    using Resp = DescribeUsersResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeUsers", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BhClient::DescribeUsersOutcomeCallable BhClient::DescribeUsersCallable(const DescribeUsersRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeUsersOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeUsers(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeUsersOutcome>>();
+    DescribeUsersAsync(
+    request,
+    [prom](
+        const BhClient*,
+        const DescribeUsersRequest&,
+        DescribeUsersOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BhClient::DisableExternalAccessOutcome BhClient::DisableExternalAccess(const DisableExternalAccessRequest &request)
@@ -2298,25 +2662,32 @@ BhClient::DisableExternalAccessOutcome BhClient::DisableExternalAccess(const Dis
 
 void BhClient::DisableExternalAccessAsync(const DisableExternalAccessRequest& request, const DisableExternalAccessAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DisableExternalAccess(request), context);
-    };
+    using Req = const DisableExternalAccessRequest&;
+    using Resp = DisableExternalAccessResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DisableExternalAccess", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BhClient::DisableExternalAccessOutcomeCallable BhClient::DisableExternalAccessCallable(const DisableExternalAccessRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DisableExternalAccessOutcome()>>(
-        [this, request]()
-        {
-            return this->DisableExternalAccess(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DisableExternalAccessOutcome>>();
+    DisableExternalAccessAsync(
+    request,
+    [prom](
+        const BhClient*,
+        const DisableExternalAccessRequest&,
+        DisableExternalAccessOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BhClient::DisableIntranetAccessOutcome BhClient::DisableIntranetAccess(const DisableIntranetAccessRequest &request)
@@ -2341,25 +2712,32 @@ BhClient::DisableIntranetAccessOutcome BhClient::DisableIntranetAccess(const Dis
 
 void BhClient::DisableIntranetAccessAsync(const DisableIntranetAccessRequest& request, const DisableIntranetAccessAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DisableIntranetAccess(request), context);
-    };
+    using Req = const DisableIntranetAccessRequest&;
+    using Resp = DisableIntranetAccessResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DisableIntranetAccess", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BhClient::DisableIntranetAccessOutcomeCallable BhClient::DisableIntranetAccessCallable(const DisableIntranetAccessRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DisableIntranetAccessOutcome()>>(
-        [this, request]()
-        {
-            return this->DisableIntranetAccess(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DisableIntranetAccessOutcome>>();
+    DisableIntranetAccessAsync(
+    request,
+    [prom](
+        const BhClient*,
+        const DisableIntranetAccessRequest&,
+        DisableIntranetAccessOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BhClient::EnableExternalAccessOutcome BhClient::EnableExternalAccess(const EnableExternalAccessRequest &request)
@@ -2384,25 +2762,32 @@ BhClient::EnableExternalAccessOutcome BhClient::EnableExternalAccess(const Enabl
 
 void BhClient::EnableExternalAccessAsync(const EnableExternalAccessRequest& request, const EnableExternalAccessAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->EnableExternalAccess(request), context);
-    };
+    using Req = const EnableExternalAccessRequest&;
+    using Resp = EnableExternalAccessResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "EnableExternalAccess", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BhClient::EnableExternalAccessOutcomeCallable BhClient::EnableExternalAccessCallable(const EnableExternalAccessRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<EnableExternalAccessOutcome()>>(
-        [this, request]()
-        {
-            return this->EnableExternalAccess(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<EnableExternalAccessOutcome>>();
+    EnableExternalAccessAsync(
+    request,
+    [prom](
+        const BhClient*,
+        const EnableExternalAccessRequest&,
+        EnableExternalAccessOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BhClient::EnableIntranetAccessOutcome BhClient::EnableIntranetAccess(const EnableIntranetAccessRequest &request)
@@ -2427,25 +2812,32 @@ BhClient::EnableIntranetAccessOutcome BhClient::EnableIntranetAccess(const Enabl
 
 void BhClient::EnableIntranetAccessAsync(const EnableIntranetAccessRequest& request, const EnableIntranetAccessAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->EnableIntranetAccess(request), context);
-    };
+    using Req = const EnableIntranetAccessRequest&;
+    using Resp = EnableIntranetAccessResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "EnableIntranetAccess", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BhClient::EnableIntranetAccessOutcomeCallable BhClient::EnableIntranetAccessCallable(const EnableIntranetAccessRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<EnableIntranetAccessOutcome()>>(
-        [this, request]()
-        {
-            return this->EnableIntranetAccess(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<EnableIntranetAccessOutcome>>();
+    EnableIntranetAccessAsync(
+    request,
+    [prom](
+        const BhClient*,
+        const EnableIntranetAccessRequest&,
+        EnableIntranetAccessOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BhClient::ImportExternalDeviceOutcome BhClient::ImportExternalDevice(const ImportExternalDeviceRequest &request)
@@ -2470,25 +2862,32 @@ BhClient::ImportExternalDeviceOutcome BhClient::ImportExternalDevice(const Impor
 
 void BhClient::ImportExternalDeviceAsync(const ImportExternalDeviceRequest& request, const ImportExternalDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ImportExternalDevice(request), context);
-    };
+    using Req = const ImportExternalDeviceRequest&;
+    using Resp = ImportExternalDeviceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ImportExternalDevice", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BhClient::ImportExternalDeviceOutcomeCallable BhClient::ImportExternalDeviceCallable(const ImportExternalDeviceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ImportExternalDeviceOutcome()>>(
-        [this, request]()
-        {
-            return this->ImportExternalDevice(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ImportExternalDeviceOutcome>>();
+    ImportExternalDeviceAsync(
+    request,
+    [prom](
+        const BhClient*,
+        const ImportExternalDeviceRequest&,
+        ImportExternalDeviceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BhClient::ModifyAccessWhiteListAutoStatusOutcome BhClient::ModifyAccessWhiteListAutoStatus(const ModifyAccessWhiteListAutoStatusRequest &request)
@@ -2513,25 +2912,32 @@ BhClient::ModifyAccessWhiteListAutoStatusOutcome BhClient::ModifyAccessWhiteList
 
 void BhClient::ModifyAccessWhiteListAutoStatusAsync(const ModifyAccessWhiteListAutoStatusRequest& request, const ModifyAccessWhiteListAutoStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyAccessWhiteListAutoStatus(request), context);
-    };
+    using Req = const ModifyAccessWhiteListAutoStatusRequest&;
+    using Resp = ModifyAccessWhiteListAutoStatusResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyAccessWhiteListAutoStatus", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BhClient::ModifyAccessWhiteListAutoStatusOutcomeCallable BhClient::ModifyAccessWhiteListAutoStatusCallable(const ModifyAccessWhiteListAutoStatusRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyAccessWhiteListAutoStatusOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyAccessWhiteListAutoStatus(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyAccessWhiteListAutoStatusOutcome>>();
+    ModifyAccessWhiteListAutoStatusAsync(
+    request,
+    [prom](
+        const BhClient*,
+        const ModifyAccessWhiteListAutoStatusRequest&,
+        ModifyAccessWhiteListAutoStatusOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BhClient::ModifyAccessWhiteListRuleOutcome BhClient::ModifyAccessWhiteListRule(const ModifyAccessWhiteListRuleRequest &request)
@@ -2556,25 +2962,32 @@ BhClient::ModifyAccessWhiteListRuleOutcome BhClient::ModifyAccessWhiteListRule(c
 
 void BhClient::ModifyAccessWhiteListRuleAsync(const ModifyAccessWhiteListRuleRequest& request, const ModifyAccessWhiteListRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyAccessWhiteListRule(request), context);
-    };
+    using Req = const ModifyAccessWhiteListRuleRequest&;
+    using Resp = ModifyAccessWhiteListRuleResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyAccessWhiteListRule", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BhClient::ModifyAccessWhiteListRuleOutcomeCallable BhClient::ModifyAccessWhiteListRuleCallable(const ModifyAccessWhiteListRuleRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyAccessWhiteListRuleOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyAccessWhiteListRule(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyAccessWhiteListRuleOutcome>>();
+    ModifyAccessWhiteListRuleAsync(
+    request,
+    [prom](
+        const BhClient*,
+        const ModifyAccessWhiteListRuleRequest&,
+        ModifyAccessWhiteListRuleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BhClient::ModifyAccessWhiteListStatusOutcome BhClient::ModifyAccessWhiteListStatus(const ModifyAccessWhiteListStatusRequest &request)
@@ -2599,25 +3012,32 @@ BhClient::ModifyAccessWhiteListStatusOutcome BhClient::ModifyAccessWhiteListStat
 
 void BhClient::ModifyAccessWhiteListStatusAsync(const ModifyAccessWhiteListStatusRequest& request, const ModifyAccessWhiteListStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyAccessWhiteListStatus(request), context);
-    };
+    using Req = const ModifyAccessWhiteListStatusRequest&;
+    using Resp = ModifyAccessWhiteListStatusResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyAccessWhiteListStatus", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BhClient::ModifyAccessWhiteListStatusOutcomeCallable BhClient::ModifyAccessWhiteListStatusCallable(const ModifyAccessWhiteListStatusRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyAccessWhiteListStatusOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyAccessWhiteListStatus(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyAccessWhiteListStatusOutcome>>();
+    ModifyAccessWhiteListStatusAsync(
+    request,
+    [prom](
+        const BhClient*,
+        const ModifyAccessWhiteListStatusRequest&,
+        ModifyAccessWhiteListStatusOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BhClient::ModifyAclOutcome BhClient::ModifyAcl(const ModifyAclRequest &request)
@@ -2642,25 +3062,32 @@ BhClient::ModifyAclOutcome BhClient::ModifyAcl(const ModifyAclRequest &request)
 
 void BhClient::ModifyAclAsync(const ModifyAclRequest& request, const ModifyAclAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyAcl(request), context);
-    };
+    using Req = const ModifyAclRequest&;
+    using Resp = ModifyAclResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyAcl", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BhClient::ModifyAclOutcomeCallable BhClient::ModifyAclCallable(const ModifyAclRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyAclOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyAcl(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyAclOutcome>>();
+    ModifyAclAsync(
+    request,
+    [prom](
+        const BhClient*,
+        const ModifyAclRequest&,
+        ModifyAclOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BhClient::ModifyAssetSyncFlagOutcome BhClient::ModifyAssetSyncFlag(const ModifyAssetSyncFlagRequest &request)
@@ -2685,25 +3112,32 @@ BhClient::ModifyAssetSyncFlagOutcome BhClient::ModifyAssetSyncFlag(const ModifyA
 
 void BhClient::ModifyAssetSyncFlagAsync(const ModifyAssetSyncFlagRequest& request, const ModifyAssetSyncFlagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyAssetSyncFlag(request), context);
-    };
+    using Req = const ModifyAssetSyncFlagRequest&;
+    using Resp = ModifyAssetSyncFlagResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyAssetSyncFlag", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BhClient::ModifyAssetSyncFlagOutcomeCallable BhClient::ModifyAssetSyncFlagCallable(const ModifyAssetSyncFlagRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyAssetSyncFlagOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyAssetSyncFlag(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyAssetSyncFlagOutcome>>();
+    ModifyAssetSyncFlagAsync(
+    request,
+    [prom](
+        const BhClient*,
+        const ModifyAssetSyncFlagRequest&,
+        ModifyAssetSyncFlagOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BhClient::ModifyAuthModeSettingOutcome BhClient::ModifyAuthModeSetting(const ModifyAuthModeSettingRequest &request)
@@ -2728,25 +3162,32 @@ BhClient::ModifyAuthModeSettingOutcome BhClient::ModifyAuthModeSetting(const Mod
 
 void BhClient::ModifyAuthModeSettingAsync(const ModifyAuthModeSettingRequest& request, const ModifyAuthModeSettingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyAuthModeSetting(request), context);
-    };
+    using Req = const ModifyAuthModeSettingRequest&;
+    using Resp = ModifyAuthModeSettingResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyAuthModeSetting", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BhClient::ModifyAuthModeSettingOutcomeCallable BhClient::ModifyAuthModeSettingCallable(const ModifyAuthModeSettingRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyAuthModeSettingOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyAuthModeSetting(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyAuthModeSettingOutcome>>();
+    ModifyAuthModeSettingAsync(
+    request,
+    [prom](
+        const BhClient*,
+        const ModifyAuthModeSettingRequest&,
+        ModifyAuthModeSettingOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BhClient::ModifyChangePwdTaskOutcome BhClient::ModifyChangePwdTask(const ModifyChangePwdTaskRequest &request)
@@ -2771,25 +3212,32 @@ BhClient::ModifyChangePwdTaskOutcome BhClient::ModifyChangePwdTask(const ModifyC
 
 void BhClient::ModifyChangePwdTaskAsync(const ModifyChangePwdTaskRequest& request, const ModifyChangePwdTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyChangePwdTask(request), context);
-    };
+    using Req = const ModifyChangePwdTaskRequest&;
+    using Resp = ModifyChangePwdTaskResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyChangePwdTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BhClient::ModifyChangePwdTaskOutcomeCallable BhClient::ModifyChangePwdTaskCallable(const ModifyChangePwdTaskRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyChangePwdTaskOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyChangePwdTask(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyChangePwdTaskOutcome>>();
+    ModifyChangePwdTaskAsync(
+    request,
+    [prom](
+        const BhClient*,
+        const ModifyChangePwdTaskRequest&,
+        ModifyChangePwdTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BhClient::ModifyCmdTemplateOutcome BhClient::ModifyCmdTemplate(const ModifyCmdTemplateRequest &request)
@@ -2814,25 +3262,32 @@ BhClient::ModifyCmdTemplateOutcome BhClient::ModifyCmdTemplate(const ModifyCmdTe
 
 void BhClient::ModifyCmdTemplateAsync(const ModifyCmdTemplateRequest& request, const ModifyCmdTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyCmdTemplate(request), context);
-    };
+    using Req = const ModifyCmdTemplateRequest&;
+    using Resp = ModifyCmdTemplateResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyCmdTemplate", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BhClient::ModifyCmdTemplateOutcomeCallable BhClient::ModifyCmdTemplateCallable(const ModifyCmdTemplateRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyCmdTemplateOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyCmdTemplate(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyCmdTemplateOutcome>>();
+    ModifyCmdTemplateAsync(
+    request,
+    [prom](
+        const BhClient*,
+        const ModifyCmdTemplateRequest&,
+        ModifyCmdTemplateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BhClient::ModifyDeviceOutcome BhClient::ModifyDevice(const ModifyDeviceRequest &request)
@@ -2857,25 +3312,32 @@ BhClient::ModifyDeviceOutcome BhClient::ModifyDevice(const ModifyDeviceRequest &
 
 void BhClient::ModifyDeviceAsync(const ModifyDeviceRequest& request, const ModifyDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyDevice(request), context);
-    };
+    using Req = const ModifyDeviceRequest&;
+    using Resp = ModifyDeviceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyDevice", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BhClient::ModifyDeviceOutcomeCallable BhClient::ModifyDeviceCallable(const ModifyDeviceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyDeviceOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyDevice(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyDeviceOutcome>>();
+    ModifyDeviceAsync(
+    request,
+    [prom](
+        const BhClient*,
+        const ModifyDeviceRequest&,
+        ModifyDeviceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BhClient::ModifyDeviceGroupOutcome BhClient::ModifyDeviceGroup(const ModifyDeviceGroupRequest &request)
@@ -2900,25 +3362,32 @@ BhClient::ModifyDeviceGroupOutcome BhClient::ModifyDeviceGroup(const ModifyDevic
 
 void BhClient::ModifyDeviceGroupAsync(const ModifyDeviceGroupRequest& request, const ModifyDeviceGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyDeviceGroup(request), context);
-    };
+    using Req = const ModifyDeviceGroupRequest&;
+    using Resp = ModifyDeviceGroupResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyDeviceGroup", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BhClient::ModifyDeviceGroupOutcomeCallable BhClient::ModifyDeviceGroupCallable(const ModifyDeviceGroupRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyDeviceGroupOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyDeviceGroup(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyDeviceGroupOutcome>>();
+    ModifyDeviceGroupAsync(
+    request,
+    [prom](
+        const BhClient*,
+        const ModifyDeviceGroupRequest&,
+        ModifyDeviceGroupOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BhClient::ModifyLDAPSettingOutcome BhClient::ModifyLDAPSetting(const ModifyLDAPSettingRequest &request)
@@ -2943,25 +3412,32 @@ BhClient::ModifyLDAPSettingOutcome BhClient::ModifyLDAPSetting(const ModifyLDAPS
 
 void BhClient::ModifyLDAPSettingAsync(const ModifyLDAPSettingRequest& request, const ModifyLDAPSettingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyLDAPSetting(request), context);
-    };
+    using Req = const ModifyLDAPSettingRequest&;
+    using Resp = ModifyLDAPSettingResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyLDAPSetting", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BhClient::ModifyLDAPSettingOutcomeCallable BhClient::ModifyLDAPSettingCallable(const ModifyLDAPSettingRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyLDAPSettingOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyLDAPSetting(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyLDAPSettingOutcome>>();
+    ModifyLDAPSettingAsync(
+    request,
+    [prom](
+        const BhClient*,
+        const ModifyLDAPSettingRequest&,
+        ModifyLDAPSettingOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BhClient::ModifyOAuthSettingOutcome BhClient::ModifyOAuthSetting(const ModifyOAuthSettingRequest &request)
@@ -2986,25 +3462,32 @@ BhClient::ModifyOAuthSettingOutcome BhClient::ModifyOAuthSetting(const ModifyOAu
 
 void BhClient::ModifyOAuthSettingAsync(const ModifyOAuthSettingRequest& request, const ModifyOAuthSettingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyOAuthSetting(request), context);
-    };
+    using Req = const ModifyOAuthSettingRequest&;
+    using Resp = ModifyOAuthSettingResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyOAuthSetting", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BhClient::ModifyOAuthSettingOutcomeCallable BhClient::ModifyOAuthSettingCallable(const ModifyOAuthSettingRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyOAuthSettingOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyOAuthSetting(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyOAuthSettingOutcome>>();
+    ModifyOAuthSettingAsync(
+    request,
+    [prom](
+        const BhClient*,
+        const ModifyOAuthSettingRequest&,
+        ModifyOAuthSettingOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BhClient::ModifyOperationTaskOutcome BhClient::ModifyOperationTask(const ModifyOperationTaskRequest &request)
@@ -3029,25 +3512,32 @@ BhClient::ModifyOperationTaskOutcome BhClient::ModifyOperationTask(const ModifyO
 
 void BhClient::ModifyOperationTaskAsync(const ModifyOperationTaskRequest& request, const ModifyOperationTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyOperationTask(request), context);
-    };
+    using Req = const ModifyOperationTaskRequest&;
+    using Resp = ModifyOperationTaskResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyOperationTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BhClient::ModifyOperationTaskOutcomeCallable BhClient::ModifyOperationTaskCallable(const ModifyOperationTaskRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyOperationTaskOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyOperationTask(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyOperationTaskOutcome>>();
+    ModifyOperationTaskAsync(
+    request,
+    [prom](
+        const BhClient*,
+        const ModifyOperationTaskRequest&,
+        ModifyOperationTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BhClient::ModifyReconnectionSettingOutcome BhClient::ModifyReconnectionSetting(const ModifyReconnectionSettingRequest &request)
@@ -3072,25 +3562,32 @@ BhClient::ModifyReconnectionSettingOutcome BhClient::ModifyReconnectionSetting(c
 
 void BhClient::ModifyReconnectionSettingAsync(const ModifyReconnectionSettingRequest& request, const ModifyReconnectionSettingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyReconnectionSetting(request), context);
-    };
+    using Req = const ModifyReconnectionSettingRequest&;
+    using Resp = ModifyReconnectionSettingResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyReconnectionSetting", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BhClient::ModifyReconnectionSettingOutcomeCallable BhClient::ModifyReconnectionSettingCallable(const ModifyReconnectionSettingRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyReconnectionSettingOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyReconnectionSetting(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyReconnectionSettingOutcome>>();
+    ModifyReconnectionSettingAsync(
+    request,
+    [prom](
+        const BhClient*,
+        const ModifyReconnectionSettingRequest&,
+        ModifyReconnectionSettingOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BhClient::ModifyResourceOutcome BhClient::ModifyResource(const ModifyResourceRequest &request)
@@ -3115,25 +3612,32 @@ BhClient::ModifyResourceOutcome BhClient::ModifyResource(const ModifyResourceReq
 
 void BhClient::ModifyResourceAsync(const ModifyResourceRequest& request, const ModifyResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyResource(request), context);
-    };
+    using Req = const ModifyResourceRequest&;
+    using Resp = ModifyResourceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyResource", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BhClient::ModifyResourceOutcomeCallable BhClient::ModifyResourceCallable(const ModifyResourceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyResourceOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyResource(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyResourceOutcome>>();
+    ModifyResourceAsync(
+    request,
+    [prom](
+        const BhClient*,
+        const ModifyResourceRequest&,
+        ModifyResourceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BhClient::ModifyUserOutcome BhClient::ModifyUser(const ModifyUserRequest &request)
@@ -3158,25 +3662,32 @@ BhClient::ModifyUserOutcome BhClient::ModifyUser(const ModifyUserRequest &reques
 
 void BhClient::ModifyUserAsync(const ModifyUserRequest& request, const ModifyUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyUser(request), context);
-    };
+    using Req = const ModifyUserRequest&;
+    using Resp = ModifyUserResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyUser", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BhClient::ModifyUserOutcomeCallable BhClient::ModifyUserCallable(const ModifyUserRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyUserOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyUser(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyUserOutcome>>();
+    ModifyUserAsync(
+    request,
+    [prom](
+        const BhClient*,
+        const ModifyUserRequest&,
+        ModifyUserOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BhClient::ModifyUserGroupOutcome BhClient::ModifyUserGroup(const ModifyUserGroupRequest &request)
@@ -3201,25 +3712,32 @@ BhClient::ModifyUserGroupOutcome BhClient::ModifyUserGroup(const ModifyUserGroup
 
 void BhClient::ModifyUserGroupAsync(const ModifyUserGroupRequest& request, const ModifyUserGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyUserGroup(request), context);
-    };
+    using Req = const ModifyUserGroupRequest&;
+    using Resp = ModifyUserGroupResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyUserGroup", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BhClient::ModifyUserGroupOutcomeCallable BhClient::ModifyUserGroupCallable(const ModifyUserGroupRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyUserGroupOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyUserGroup(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyUserGroupOutcome>>();
+    ModifyUserGroupAsync(
+    request,
+    [prom](
+        const BhClient*,
+        const ModifyUserGroupRequest&,
+        ModifyUserGroupOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BhClient::ReplaySessionOutcome BhClient::ReplaySession(const ReplaySessionRequest &request)
@@ -3244,25 +3762,32 @@ BhClient::ReplaySessionOutcome BhClient::ReplaySession(const ReplaySessionReques
 
 void BhClient::ReplaySessionAsync(const ReplaySessionRequest& request, const ReplaySessionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ReplaySession(request), context);
-    };
+    using Req = const ReplaySessionRequest&;
+    using Resp = ReplaySessionResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ReplaySession", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BhClient::ReplaySessionOutcomeCallable BhClient::ReplaySessionCallable(const ReplaySessionRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ReplaySessionOutcome()>>(
-        [this, request]()
-        {
-            return this->ReplaySession(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ReplaySessionOutcome>>();
+    ReplaySessionAsync(
+    request,
+    [prom](
+        const BhClient*,
+        const ReplaySessionRequest&,
+        ReplaySessionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BhClient::ResetDeviceAccountPasswordOutcome BhClient::ResetDeviceAccountPassword(const ResetDeviceAccountPasswordRequest &request)
@@ -3287,25 +3812,32 @@ BhClient::ResetDeviceAccountPasswordOutcome BhClient::ResetDeviceAccountPassword
 
 void BhClient::ResetDeviceAccountPasswordAsync(const ResetDeviceAccountPasswordRequest& request, const ResetDeviceAccountPasswordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ResetDeviceAccountPassword(request), context);
-    };
+    using Req = const ResetDeviceAccountPasswordRequest&;
+    using Resp = ResetDeviceAccountPasswordResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ResetDeviceAccountPassword", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BhClient::ResetDeviceAccountPasswordOutcomeCallable BhClient::ResetDeviceAccountPasswordCallable(const ResetDeviceAccountPasswordRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ResetDeviceAccountPasswordOutcome()>>(
-        [this, request]()
-        {
-            return this->ResetDeviceAccountPassword(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ResetDeviceAccountPasswordOutcome>>();
+    ResetDeviceAccountPasswordAsync(
+    request,
+    [prom](
+        const BhClient*,
+        const ResetDeviceAccountPasswordRequest&,
+        ResetDeviceAccountPasswordOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BhClient::ResetDeviceAccountPrivateKeyOutcome BhClient::ResetDeviceAccountPrivateKey(const ResetDeviceAccountPrivateKeyRequest &request)
@@ -3330,25 +3862,32 @@ BhClient::ResetDeviceAccountPrivateKeyOutcome BhClient::ResetDeviceAccountPrivat
 
 void BhClient::ResetDeviceAccountPrivateKeyAsync(const ResetDeviceAccountPrivateKeyRequest& request, const ResetDeviceAccountPrivateKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ResetDeviceAccountPrivateKey(request), context);
-    };
+    using Req = const ResetDeviceAccountPrivateKeyRequest&;
+    using Resp = ResetDeviceAccountPrivateKeyResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ResetDeviceAccountPrivateKey", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BhClient::ResetDeviceAccountPrivateKeyOutcomeCallable BhClient::ResetDeviceAccountPrivateKeyCallable(const ResetDeviceAccountPrivateKeyRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ResetDeviceAccountPrivateKeyOutcome()>>(
-        [this, request]()
-        {
-            return this->ResetDeviceAccountPrivateKey(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ResetDeviceAccountPrivateKeyOutcome>>();
+    ResetDeviceAccountPrivateKeyAsync(
+    request,
+    [prom](
+        const BhClient*,
+        const ResetDeviceAccountPrivateKeyRequest&,
+        ResetDeviceAccountPrivateKeyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BhClient::ResetUserOutcome BhClient::ResetUser(const ResetUserRequest &request)
@@ -3373,25 +3912,32 @@ BhClient::ResetUserOutcome BhClient::ResetUser(const ResetUserRequest &request)
 
 void BhClient::ResetUserAsync(const ResetUserRequest& request, const ResetUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ResetUser(request), context);
-    };
+    using Req = const ResetUserRequest&;
+    using Resp = ResetUserResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ResetUser", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BhClient::ResetUserOutcomeCallable BhClient::ResetUserCallable(const ResetUserRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ResetUserOutcome()>>(
-        [this, request]()
-        {
-            return this->ResetUser(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ResetUserOutcome>>();
+    ResetUserAsync(
+    request,
+    [prom](
+        const BhClient*,
+        const ResetUserRequest&,
+        ResetUserOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BhClient::RunChangePwdTaskOutcome BhClient::RunChangePwdTask(const RunChangePwdTaskRequest &request)
@@ -3416,25 +3962,32 @@ BhClient::RunChangePwdTaskOutcome BhClient::RunChangePwdTask(const RunChangePwdT
 
 void BhClient::RunChangePwdTaskAsync(const RunChangePwdTaskRequest& request, const RunChangePwdTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->RunChangePwdTask(request), context);
-    };
+    using Req = const RunChangePwdTaskRequest&;
+    using Resp = RunChangePwdTaskResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "RunChangePwdTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BhClient::RunChangePwdTaskOutcomeCallable BhClient::RunChangePwdTaskCallable(const RunChangePwdTaskRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<RunChangePwdTaskOutcome()>>(
-        [this, request]()
-        {
-            return this->RunChangePwdTask(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<RunChangePwdTaskOutcome>>();
+    RunChangePwdTaskAsync(
+    request,
+    [prom](
+        const BhClient*,
+        const RunChangePwdTaskRequest&,
+        RunChangePwdTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BhClient::RunOperationTaskOutcome BhClient::RunOperationTask(const RunOperationTaskRequest &request)
@@ -3459,25 +4012,32 @@ BhClient::RunOperationTaskOutcome BhClient::RunOperationTask(const RunOperationT
 
 void BhClient::RunOperationTaskAsync(const RunOperationTaskRequest& request, const RunOperationTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->RunOperationTask(request), context);
-    };
+    using Req = const RunOperationTaskRequest&;
+    using Resp = RunOperationTaskResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "RunOperationTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BhClient::RunOperationTaskOutcomeCallable BhClient::RunOperationTaskCallable(const RunOperationTaskRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<RunOperationTaskOutcome()>>(
-        [this, request]()
-        {
-            return this->RunOperationTask(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<RunOperationTaskOutcome>>();
+    RunOperationTaskAsync(
+    request,
+    [prom](
+        const BhClient*,
+        const RunOperationTaskRequest&,
+        RunOperationTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BhClient::SearchAuditLogOutcome BhClient::SearchAuditLog(const SearchAuditLogRequest &request)
@@ -3502,25 +4062,32 @@ BhClient::SearchAuditLogOutcome BhClient::SearchAuditLog(const SearchAuditLogReq
 
 void BhClient::SearchAuditLogAsync(const SearchAuditLogRequest& request, const SearchAuditLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->SearchAuditLog(request), context);
-    };
+    using Req = const SearchAuditLogRequest&;
+    using Resp = SearchAuditLogResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "SearchAuditLog", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BhClient::SearchAuditLogOutcomeCallable BhClient::SearchAuditLogCallable(const SearchAuditLogRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<SearchAuditLogOutcome()>>(
-        [this, request]()
-        {
-            return this->SearchAuditLog(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<SearchAuditLogOutcome>>();
+    SearchAuditLogAsync(
+    request,
+    [prom](
+        const BhClient*,
+        const SearchAuditLogRequest&,
+        SearchAuditLogOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BhClient::SearchCommandOutcome BhClient::SearchCommand(const SearchCommandRequest &request)
@@ -3545,25 +4112,32 @@ BhClient::SearchCommandOutcome BhClient::SearchCommand(const SearchCommandReques
 
 void BhClient::SearchCommandAsync(const SearchCommandRequest& request, const SearchCommandAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->SearchCommand(request), context);
-    };
+    using Req = const SearchCommandRequest&;
+    using Resp = SearchCommandResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "SearchCommand", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BhClient::SearchCommandOutcomeCallable BhClient::SearchCommandCallable(const SearchCommandRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<SearchCommandOutcome()>>(
-        [this, request]()
-        {
-            return this->SearchCommand(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<SearchCommandOutcome>>();
+    SearchCommandAsync(
+    request,
+    [prom](
+        const BhClient*,
+        const SearchCommandRequest&,
+        SearchCommandOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BhClient::SearchCommandBySidOutcome BhClient::SearchCommandBySid(const SearchCommandBySidRequest &request)
@@ -3588,25 +4162,32 @@ BhClient::SearchCommandBySidOutcome BhClient::SearchCommandBySid(const SearchCom
 
 void BhClient::SearchCommandBySidAsync(const SearchCommandBySidRequest& request, const SearchCommandBySidAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->SearchCommandBySid(request), context);
-    };
+    using Req = const SearchCommandBySidRequest&;
+    using Resp = SearchCommandBySidResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "SearchCommandBySid", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BhClient::SearchCommandBySidOutcomeCallable BhClient::SearchCommandBySidCallable(const SearchCommandBySidRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<SearchCommandBySidOutcome()>>(
-        [this, request]()
-        {
-            return this->SearchCommandBySid(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<SearchCommandBySidOutcome>>();
+    SearchCommandBySidAsync(
+    request,
+    [prom](
+        const BhClient*,
+        const SearchCommandBySidRequest&,
+        SearchCommandBySidOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BhClient::SearchFileOutcome BhClient::SearchFile(const SearchFileRequest &request)
@@ -3631,25 +4212,32 @@ BhClient::SearchFileOutcome BhClient::SearchFile(const SearchFileRequest &reques
 
 void BhClient::SearchFileAsync(const SearchFileRequest& request, const SearchFileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->SearchFile(request), context);
-    };
+    using Req = const SearchFileRequest&;
+    using Resp = SearchFileResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "SearchFile", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BhClient::SearchFileOutcomeCallable BhClient::SearchFileCallable(const SearchFileRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<SearchFileOutcome()>>(
-        [this, request]()
-        {
-            return this->SearchFile(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<SearchFileOutcome>>();
+    SearchFileAsync(
+    request,
+    [prom](
+        const BhClient*,
+        const SearchFileRequest&,
+        SearchFileOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BhClient::SearchFileBySidOutcome BhClient::SearchFileBySid(const SearchFileBySidRequest &request)
@@ -3674,25 +4262,32 @@ BhClient::SearchFileBySidOutcome BhClient::SearchFileBySid(const SearchFileBySid
 
 void BhClient::SearchFileBySidAsync(const SearchFileBySidRequest& request, const SearchFileBySidAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->SearchFileBySid(request), context);
-    };
+    using Req = const SearchFileBySidRequest&;
+    using Resp = SearchFileBySidResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "SearchFileBySid", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BhClient::SearchFileBySidOutcomeCallable BhClient::SearchFileBySidCallable(const SearchFileBySidRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<SearchFileBySidOutcome()>>(
-        [this, request]()
-        {
-            return this->SearchFileBySid(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<SearchFileBySidOutcome>>();
+    SearchFileBySidAsync(
+    request,
+    [prom](
+        const BhClient*,
+        const SearchFileBySidRequest&,
+        SearchFileBySidOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BhClient::SearchSessionOutcome BhClient::SearchSession(const SearchSessionRequest &request)
@@ -3717,25 +4312,32 @@ BhClient::SearchSessionOutcome BhClient::SearchSession(const SearchSessionReques
 
 void BhClient::SearchSessionAsync(const SearchSessionRequest& request, const SearchSessionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->SearchSession(request), context);
-    };
+    using Req = const SearchSessionRequest&;
+    using Resp = SearchSessionResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "SearchSession", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BhClient::SearchSessionOutcomeCallable BhClient::SearchSessionCallable(const SearchSessionRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<SearchSessionOutcome()>>(
-        [this, request]()
-        {
-            return this->SearchSession(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<SearchSessionOutcome>>();
+    SearchSessionAsync(
+    request,
+    [prom](
+        const BhClient*,
+        const SearchSessionRequest&,
+        SearchSessionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BhClient::SearchSessionCommandOutcome BhClient::SearchSessionCommand(const SearchSessionCommandRequest &request)
@@ -3760,25 +4362,32 @@ BhClient::SearchSessionCommandOutcome BhClient::SearchSessionCommand(const Searc
 
 void BhClient::SearchSessionCommandAsync(const SearchSessionCommandRequest& request, const SearchSessionCommandAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->SearchSessionCommand(request), context);
-    };
+    using Req = const SearchSessionCommandRequest&;
+    using Resp = SearchSessionCommandResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "SearchSessionCommand", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BhClient::SearchSessionCommandOutcomeCallable BhClient::SearchSessionCommandCallable(const SearchSessionCommandRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<SearchSessionCommandOutcome()>>(
-        [this, request]()
-        {
-            return this->SearchSessionCommand(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<SearchSessionCommandOutcome>>();
+    SearchSessionCommandAsync(
+    request,
+    [prom](
+        const BhClient*,
+        const SearchSessionCommandRequest&,
+        SearchSessionCommandOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BhClient::SearchSubtaskResultByIdOutcome BhClient::SearchSubtaskResultById(const SearchSubtaskResultByIdRequest &request)
@@ -3803,25 +4412,32 @@ BhClient::SearchSubtaskResultByIdOutcome BhClient::SearchSubtaskResultById(const
 
 void BhClient::SearchSubtaskResultByIdAsync(const SearchSubtaskResultByIdRequest& request, const SearchSubtaskResultByIdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->SearchSubtaskResultById(request), context);
-    };
+    using Req = const SearchSubtaskResultByIdRequest&;
+    using Resp = SearchSubtaskResultByIdResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "SearchSubtaskResultById", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BhClient::SearchSubtaskResultByIdOutcomeCallable BhClient::SearchSubtaskResultByIdCallable(const SearchSubtaskResultByIdRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<SearchSubtaskResultByIdOutcome()>>(
-        [this, request]()
-        {
-            return this->SearchSubtaskResultById(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<SearchSubtaskResultByIdOutcome>>();
+    SearchSubtaskResultByIdAsync(
+    request,
+    [prom](
+        const BhClient*,
+        const SearchSubtaskResultByIdRequest&,
+        SearchSubtaskResultByIdOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BhClient::SearchTaskResultOutcome BhClient::SearchTaskResult(const SearchTaskResultRequest &request)
@@ -3846,25 +4462,32 @@ BhClient::SearchTaskResultOutcome BhClient::SearchTaskResult(const SearchTaskRes
 
 void BhClient::SearchTaskResultAsync(const SearchTaskResultRequest& request, const SearchTaskResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->SearchTaskResult(request), context);
-    };
+    using Req = const SearchTaskResultRequest&;
+    using Resp = SearchTaskResultResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "SearchTaskResult", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BhClient::SearchTaskResultOutcomeCallable BhClient::SearchTaskResultCallable(const SearchTaskResultRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<SearchTaskResultOutcome()>>(
-        [this, request]()
-        {
-            return this->SearchTaskResult(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<SearchTaskResultOutcome>>();
+    SearchTaskResultAsync(
+    request,
+    [prom](
+        const BhClient*,
+        const SearchTaskResultRequest&,
+        SearchTaskResultOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BhClient::SetLDAPSyncFlagOutcome BhClient::SetLDAPSyncFlag(const SetLDAPSyncFlagRequest &request)
@@ -3889,25 +4512,32 @@ BhClient::SetLDAPSyncFlagOutcome BhClient::SetLDAPSyncFlag(const SetLDAPSyncFlag
 
 void BhClient::SetLDAPSyncFlagAsync(const SetLDAPSyncFlagRequest& request, const SetLDAPSyncFlagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->SetLDAPSyncFlag(request), context);
-    };
+    using Req = const SetLDAPSyncFlagRequest&;
+    using Resp = SetLDAPSyncFlagResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "SetLDAPSyncFlag", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BhClient::SetLDAPSyncFlagOutcomeCallable BhClient::SetLDAPSyncFlagCallable(const SetLDAPSyncFlagRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<SetLDAPSyncFlagOutcome()>>(
-        [this, request]()
-        {
-            return this->SetLDAPSyncFlag(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<SetLDAPSyncFlagOutcome>>();
+    SetLDAPSyncFlagAsync(
+    request,
+    [prom](
+        const BhClient*,
+        const SetLDAPSyncFlagRequest&,
+        SetLDAPSyncFlagOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BhClient::UnlockUserOutcome BhClient::UnlockUser(const UnlockUserRequest &request)
@@ -3932,24 +4562,31 @@ BhClient::UnlockUserOutcome BhClient::UnlockUser(const UnlockUserRequest &reques
 
 void BhClient::UnlockUserAsync(const UnlockUserRequest& request, const UnlockUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UnlockUser(request), context);
-    };
+    using Req = const UnlockUserRequest&;
+    using Resp = UnlockUserResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UnlockUser", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BhClient::UnlockUserOutcomeCallable BhClient::UnlockUserCallable(const UnlockUserRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UnlockUserOutcome()>>(
-        [this, request]()
-        {
-            return this->UnlockUser(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UnlockUserOutcome>>();
+    UnlockUserAsync(
+    request,
+    [prom](
+        const BhClient*,
+        const UnlockUserRequest&,
+        UnlockUserOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 

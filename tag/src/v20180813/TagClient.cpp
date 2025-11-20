@@ -62,25 +62,32 @@ TagClient::AddProjectOutcome TagClient::AddProject(const AddProjectRequest &requ
 
 void TagClient::AddProjectAsync(const AddProjectRequest& request, const AddProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->AddProject(request), context);
-    };
+    using Req = const AddProjectRequest&;
+    using Resp = AddProjectResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "AddProject", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TagClient::AddProjectOutcomeCallable TagClient::AddProjectCallable(const AddProjectRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<AddProjectOutcome()>>(
-        [this, request]()
-        {
-            return this->AddProject(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<AddProjectOutcome>>();
+    AddProjectAsync(
+    request,
+    [prom](
+        const TagClient*,
+        const AddProjectRequest&,
+        AddProjectOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TagClient::AddResourceTagOutcome TagClient::AddResourceTag(const AddResourceTagRequest &request)
@@ -105,25 +112,32 @@ TagClient::AddResourceTagOutcome TagClient::AddResourceTag(const AddResourceTagR
 
 void TagClient::AddResourceTagAsync(const AddResourceTagRequest& request, const AddResourceTagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->AddResourceTag(request), context);
-    };
+    using Req = const AddResourceTagRequest&;
+    using Resp = AddResourceTagResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "AddResourceTag", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TagClient::AddResourceTagOutcomeCallable TagClient::AddResourceTagCallable(const AddResourceTagRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<AddResourceTagOutcome()>>(
-        [this, request]()
-        {
-            return this->AddResourceTag(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<AddResourceTagOutcome>>();
+    AddResourceTagAsync(
+    request,
+    [prom](
+        const TagClient*,
+        const AddResourceTagRequest&,
+        AddResourceTagOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TagClient::AttachResourcesTagOutcome TagClient::AttachResourcesTag(const AttachResourcesTagRequest &request)
@@ -148,25 +162,32 @@ TagClient::AttachResourcesTagOutcome TagClient::AttachResourcesTag(const AttachR
 
 void TagClient::AttachResourcesTagAsync(const AttachResourcesTagRequest& request, const AttachResourcesTagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->AttachResourcesTag(request), context);
-    };
+    using Req = const AttachResourcesTagRequest&;
+    using Resp = AttachResourcesTagResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "AttachResourcesTag", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TagClient::AttachResourcesTagOutcomeCallable TagClient::AttachResourcesTagCallable(const AttachResourcesTagRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<AttachResourcesTagOutcome()>>(
-        [this, request]()
-        {
-            return this->AttachResourcesTag(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<AttachResourcesTagOutcome>>();
+    AttachResourcesTagAsync(
+    request,
+    [prom](
+        const TagClient*,
+        const AttachResourcesTagRequest&,
+        AttachResourcesTagOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TagClient::CreateTagOutcome TagClient::CreateTag(const CreateTagRequest &request)
@@ -191,25 +212,32 @@ TagClient::CreateTagOutcome TagClient::CreateTag(const CreateTagRequest &request
 
 void TagClient::CreateTagAsync(const CreateTagRequest& request, const CreateTagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateTag(request), context);
-    };
+    using Req = const CreateTagRequest&;
+    using Resp = CreateTagResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateTag", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TagClient::CreateTagOutcomeCallable TagClient::CreateTagCallable(const CreateTagRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateTagOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateTag(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateTagOutcome>>();
+    CreateTagAsync(
+    request,
+    [prom](
+        const TagClient*,
+        const CreateTagRequest&,
+        CreateTagOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TagClient::CreateTagsOutcome TagClient::CreateTags(const CreateTagsRequest &request)
@@ -234,25 +262,32 @@ TagClient::CreateTagsOutcome TagClient::CreateTags(const CreateTagsRequest &requ
 
 void TagClient::CreateTagsAsync(const CreateTagsRequest& request, const CreateTagsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateTags(request), context);
-    };
+    using Req = const CreateTagsRequest&;
+    using Resp = CreateTagsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateTags", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TagClient::CreateTagsOutcomeCallable TagClient::CreateTagsCallable(const CreateTagsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateTagsOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateTags(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateTagsOutcome>>();
+    CreateTagsAsync(
+    request,
+    [prom](
+        const TagClient*,
+        const CreateTagsRequest&,
+        CreateTagsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TagClient::DeleteResourceTagOutcome TagClient::DeleteResourceTag(const DeleteResourceTagRequest &request)
@@ -277,25 +312,32 @@ TagClient::DeleteResourceTagOutcome TagClient::DeleteResourceTag(const DeleteRes
 
 void TagClient::DeleteResourceTagAsync(const DeleteResourceTagRequest& request, const DeleteResourceTagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteResourceTag(request), context);
-    };
+    using Req = const DeleteResourceTagRequest&;
+    using Resp = DeleteResourceTagResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteResourceTag", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TagClient::DeleteResourceTagOutcomeCallable TagClient::DeleteResourceTagCallable(const DeleteResourceTagRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteResourceTagOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteResourceTag(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteResourceTagOutcome>>();
+    DeleteResourceTagAsync(
+    request,
+    [prom](
+        const TagClient*,
+        const DeleteResourceTagRequest&,
+        DeleteResourceTagOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TagClient::DeleteTagOutcome TagClient::DeleteTag(const DeleteTagRequest &request)
@@ -320,25 +362,32 @@ TagClient::DeleteTagOutcome TagClient::DeleteTag(const DeleteTagRequest &request
 
 void TagClient::DeleteTagAsync(const DeleteTagRequest& request, const DeleteTagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteTag(request), context);
-    };
+    using Req = const DeleteTagRequest&;
+    using Resp = DeleteTagResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteTag", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TagClient::DeleteTagOutcomeCallable TagClient::DeleteTagCallable(const DeleteTagRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteTagOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteTag(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteTagOutcome>>();
+    DeleteTagAsync(
+    request,
+    [prom](
+        const TagClient*,
+        const DeleteTagRequest&,
+        DeleteTagOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TagClient::DeleteTagsOutcome TagClient::DeleteTags(const DeleteTagsRequest &request)
@@ -363,25 +412,32 @@ TagClient::DeleteTagsOutcome TagClient::DeleteTags(const DeleteTagsRequest &requ
 
 void TagClient::DeleteTagsAsync(const DeleteTagsRequest& request, const DeleteTagsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteTags(request), context);
-    };
+    using Req = const DeleteTagsRequest&;
+    using Resp = DeleteTagsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteTags", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TagClient::DeleteTagsOutcomeCallable TagClient::DeleteTagsCallable(const DeleteTagsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteTagsOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteTags(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteTagsOutcome>>();
+    DeleteTagsAsync(
+    request,
+    [prom](
+        const TagClient*,
+        const DeleteTagsRequest&,
+        DeleteTagsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TagClient::DescribeProjectsOutcome TagClient::DescribeProjects(const DescribeProjectsRequest &request)
@@ -406,25 +462,32 @@ TagClient::DescribeProjectsOutcome TagClient::DescribeProjects(const DescribePro
 
 void TagClient::DescribeProjectsAsync(const DescribeProjectsRequest& request, const DescribeProjectsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeProjects(request), context);
-    };
+    using Req = const DescribeProjectsRequest&;
+    using Resp = DescribeProjectsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeProjects", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TagClient::DescribeProjectsOutcomeCallable TagClient::DescribeProjectsCallable(const DescribeProjectsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeProjectsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeProjects(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeProjectsOutcome>>();
+    DescribeProjectsAsync(
+    request,
+    [prom](
+        const TagClient*,
+        const DescribeProjectsRequest&,
+        DescribeProjectsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TagClient::DescribeResourceTagsOutcome TagClient::DescribeResourceTags(const DescribeResourceTagsRequest &request)
@@ -449,25 +512,32 @@ TagClient::DescribeResourceTagsOutcome TagClient::DescribeResourceTags(const Des
 
 void TagClient::DescribeResourceTagsAsync(const DescribeResourceTagsRequest& request, const DescribeResourceTagsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeResourceTags(request), context);
-    };
+    using Req = const DescribeResourceTagsRequest&;
+    using Resp = DescribeResourceTagsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeResourceTags", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TagClient::DescribeResourceTagsOutcomeCallable TagClient::DescribeResourceTagsCallable(const DescribeResourceTagsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeResourceTagsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeResourceTags(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeResourceTagsOutcome>>();
+    DescribeResourceTagsAsync(
+    request,
+    [prom](
+        const TagClient*,
+        const DescribeResourceTagsRequest&,
+        DescribeResourceTagsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TagClient::DescribeResourceTagsByResourceIdsOutcome TagClient::DescribeResourceTagsByResourceIds(const DescribeResourceTagsByResourceIdsRequest &request)
@@ -492,25 +562,32 @@ TagClient::DescribeResourceTagsByResourceIdsOutcome TagClient::DescribeResourceT
 
 void TagClient::DescribeResourceTagsByResourceIdsAsync(const DescribeResourceTagsByResourceIdsRequest& request, const DescribeResourceTagsByResourceIdsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeResourceTagsByResourceIds(request), context);
-    };
+    using Req = const DescribeResourceTagsByResourceIdsRequest&;
+    using Resp = DescribeResourceTagsByResourceIdsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeResourceTagsByResourceIds", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TagClient::DescribeResourceTagsByResourceIdsOutcomeCallable TagClient::DescribeResourceTagsByResourceIdsCallable(const DescribeResourceTagsByResourceIdsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeResourceTagsByResourceIdsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeResourceTagsByResourceIds(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeResourceTagsByResourceIdsOutcome>>();
+    DescribeResourceTagsByResourceIdsAsync(
+    request,
+    [prom](
+        const TagClient*,
+        const DescribeResourceTagsByResourceIdsRequest&,
+        DescribeResourceTagsByResourceIdsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TagClient::DescribeResourceTagsByResourceIdsSeqOutcome TagClient::DescribeResourceTagsByResourceIdsSeq(const DescribeResourceTagsByResourceIdsSeqRequest &request)
@@ -535,25 +612,32 @@ TagClient::DescribeResourceTagsByResourceIdsSeqOutcome TagClient::DescribeResour
 
 void TagClient::DescribeResourceTagsByResourceIdsSeqAsync(const DescribeResourceTagsByResourceIdsSeqRequest& request, const DescribeResourceTagsByResourceIdsSeqAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeResourceTagsByResourceIdsSeq(request), context);
-    };
+    using Req = const DescribeResourceTagsByResourceIdsSeqRequest&;
+    using Resp = DescribeResourceTagsByResourceIdsSeqResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeResourceTagsByResourceIdsSeq", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TagClient::DescribeResourceTagsByResourceIdsSeqOutcomeCallable TagClient::DescribeResourceTagsByResourceIdsSeqCallable(const DescribeResourceTagsByResourceIdsSeqRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeResourceTagsByResourceIdsSeqOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeResourceTagsByResourceIdsSeq(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeResourceTagsByResourceIdsSeqOutcome>>();
+    DescribeResourceTagsByResourceIdsSeqAsync(
+    request,
+    [prom](
+        const TagClient*,
+        const DescribeResourceTagsByResourceIdsSeqRequest&,
+        DescribeResourceTagsByResourceIdsSeqOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TagClient::DescribeResourceTagsByTagKeysOutcome TagClient::DescribeResourceTagsByTagKeys(const DescribeResourceTagsByTagKeysRequest &request)
@@ -578,25 +662,32 @@ TagClient::DescribeResourceTagsByTagKeysOutcome TagClient::DescribeResourceTagsB
 
 void TagClient::DescribeResourceTagsByTagKeysAsync(const DescribeResourceTagsByTagKeysRequest& request, const DescribeResourceTagsByTagKeysAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeResourceTagsByTagKeys(request), context);
-    };
+    using Req = const DescribeResourceTagsByTagKeysRequest&;
+    using Resp = DescribeResourceTagsByTagKeysResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeResourceTagsByTagKeys", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TagClient::DescribeResourceTagsByTagKeysOutcomeCallable TagClient::DescribeResourceTagsByTagKeysCallable(const DescribeResourceTagsByTagKeysRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeResourceTagsByTagKeysOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeResourceTagsByTagKeys(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeResourceTagsByTagKeysOutcome>>();
+    DescribeResourceTagsByTagKeysAsync(
+    request,
+    [prom](
+        const TagClient*,
+        const DescribeResourceTagsByTagKeysRequest&,
+        DescribeResourceTagsByTagKeysOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TagClient::DescribeResourcesByTagsOutcome TagClient::DescribeResourcesByTags(const DescribeResourcesByTagsRequest &request)
@@ -621,25 +712,32 @@ TagClient::DescribeResourcesByTagsOutcome TagClient::DescribeResourcesByTags(con
 
 void TagClient::DescribeResourcesByTagsAsync(const DescribeResourcesByTagsRequest& request, const DescribeResourcesByTagsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeResourcesByTags(request), context);
-    };
+    using Req = const DescribeResourcesByTagsRequest&;
+    using Resp = DescribeResourcesByTagsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeResourcesByTags", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TagClient::DescribeResourcesByTagsOutcomeCallable TagClient::DescribeResourcesByTagsCallable(const DescribeResourcesByTagsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeResourcesByTagsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeResourcesByTags(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeResourcesByTagsOutcome>>();
+    DescribeResourcesByTagsAsync(
+    request,
+    [prom](
+        const TagClient*,
+        const DescribeResourcesByTagsRequest&,
+        DescribeResourcesByTagsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TagClient::DescribeResourcesByTagsUnionOutcome TagClient::DescribeResourcesByTagsUnion(const DescribeResourcesByTagsUnionRequest &request)
@@ -664,25 +762,32 @@ TagClient::DescribeResourcesByTagsUnionOutcome TagClient::DescribeResourcesByTag
 
 void TagClient::DescribeResourcesByTagsUnionAsync(const DescribeResourcesByTagsUnionRequest& request, const DescribeResourcesByTagsUnionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeResourcesByTagsUnion(request), context);
-    };
+    using Req = const DescribeResourcesByTagsUnionRequest&;
+    using Resp = DescribeResourcesByTagsUnionResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeResourcesByTagsUnion", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TagClient::DescribeResourcesByTagsUnionOutcomeCallable TagClient::DescribeResourcesByTagsUnionCallable(const DescribeResourcesByTagsUnionRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeResourcesByTagsUnionOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeResourcesByTagsUnion(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeResourcesByTagsUnionOutcome>>();
+    DescribeResourcesByTagsUnionAsync(
+    request,
+    [prom](
+        const TagClient*,
+        const DescribeResourcesByTagsUnionRequest&,
+        DescribeResourcesByTagsUnionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TagClient::DescribeTagKeysOutcome TagClient::DescribeTagKeys(const DescribeTagKeysRequest &request)
@@ -707,25 +812,32 @@ TagClient::DescribeTagKeysOutcome TagClient::DescribeTagKeys(const DescribeTagKe
 
 void TagClient::DescribeTagKeysAsync(const DescribeTagKeysRequest& request, const DescribeTagKeysAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeTagKeys(request), context);
-    };
+    using Req = const DescribeTagKeysRequest&;
+    using Resp = DescribeTagKeysResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeTagKeys", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TagClient::DescribeTagKeysOutcomeCallable TagClient::DescribeTagKeysCallable(const DescribeTagKeysRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeTagKeysOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeTagKeys(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeTagKeysOutcome>>();
+    DescribeTagKeysAsync(
+    request,
+    [prom](
+        const TagClient*,
+        const DescribeTagKeysRequest&,
+        DescribeTagKeysOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TagClient::DescribeTagValuesOutcome TagClient::DescribeTagValues(const DescribeTagValuesRequest &request)
@@ -750,25 +862,32 @@ TagClient::DescribeTagValuesOutcome TagClient::DescribeTagValues(const DescribeT
 
 void TagClient::DescribeTagValuesAsync(const DescribeTagValuesRequest& request, const DescribeTagValuesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeTagValues(request), context);
-    };
+    using Req = const DescribeTagValuesRequest&;
+    using Resp = DescribeTagValuesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeTagValues", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TagClient::DescribeTagValuesOutcomeCallable TagClient::DescribeTagValuesCallable(const DescribeTagValuesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeTagValuesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeTagValues(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeTagValuesOutcome>>();
+    DescribeTagValuesAsync(
+    request,
+    [prom](
+        const TagClient*,
+        const DescribeTagValuesRequest&,
+        DescribeTagValuesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TagClient::DescribeTagValuesSeqOutcome TagClient::DescribeTagValuesSeq(const DescribeTagValuesSeqRequest &request)
@@ -793,25 +912,32 @@ TagClient::DescribeTagValuesSeqOutcome TagClient::DescribeTagValuesSeq(const Des
 
 void TagClient::DescribeTagValuesSeqAsync(const DescribeTagValuesSeqRequest& request, const DescribeTagValuesSeqAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeTagValuesSeq(request), context);
-    };
+    using Req = const DescribeTagValuesSeqRequest&;
+    using Resp = DescribeTagValuesSeqResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeTagValuesSeq", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TagClient::DescribeTagValuesSeqOutcomeCallable TagClient::DescribeTagValuesSeqCallable(const DescribeTagValuesSeqRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeTagValuesSeqOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeTagValuesSeq(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeTagValuesSeqOutcome>>();
+    DescribeTagValuesSeqAsync(
+    request,
+    [prom](
+        const TagClient*,
+        const DescribeTagValuesSeqRequest&,
+        DescribeTagValuesSeqOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TagClient::DescribeTagsOutcome TagClient::DescribeTags(const DescribeTagsRequest &request)
@@ -836,25 +962,32 @@ TagClient::DescribeTagsOutcome TagClient::DescribeTags(const DescribeTagsRequest
 
 void TagClient::DescribeTagsAsync(const DescribeTagsRequest& request, const DescribeTagsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeTags(request), context);
-    };
+    using Req = const DescribeTagsRequest&;
+    using Resp = DescribeTagsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeTags", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TagClient::DescribeTagsOutcomeCallable TagClient::DescribeTagsCallable(const DescribeTagsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeTagsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeTags(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeTagsOutcome>>();
+    DescribeTagsAsync(
+    request,
+    [prom](
+        const TagClient*,
+        const DescribeTagsRequest&,
+        DescribeTagsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TagClient::DescribeTagsSeqOutcome TagClient::DescribeTagsSeq(const DescribeTagsSeqRequest &request)
@@ -879,25 +1012,32 @@ TagClient::DescribeTagsSeqOutcome TagClient::DescribeTagsSeq(const DescribeTagsS
 
 void TagClient::DescribeTagsSeqAsync(const DescribeTagsSeqRequest& request, const DescribeTagsSeqAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeTagsSeq(request), context);
-    };
+    using Req = const DescribeTagsSeqRequest&;
+    using Resp = DescribeTagsSeqResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeTagsSeq", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TagClient::DescribeTagsSeqOutcomeCallable TagClient::DescribeTagsSeqCallable(const DescribeTagsSeqRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeTagsSeqOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeTagsSeq(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeTagsSeqOutcome>>();
+    DescribeTagsSeqAsync(
+    request,
+    [prom](
+        const TagClient*,
+        const DescribeTagsSeqRequest&,
+        DescribeTagsSeqOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TagClient::DetachResourcesTagOutcome TagClient::DetachResourcesTag(const DetachResourcesTagRequest &request)
@@ -922,25 +1062,32 @@ TagClient::DetachResourcesTagOutcome TagClient::DetachResourcesTag(const DetachR
 
 void TagClient::DetachResourcesTagAsync(const DetachResourcesTagRequest& request, const DetachResourcesTagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DetachResourcesTag(request), context);
-    };
+    using Req = const DetachResourcesTagRequest&;
+    using Resp = DetachResourcesTagResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DetachResourcesTag", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TagClient::DetachResourcesTagOutcomeCallable TagClient::DetachResourcesTagCallable(const DetachResourcesTagRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DetachResourcesTagOutcome()>>(
-        [this, request]()
-        {
-            return this->DetachResourcesTag(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DetachResourcesTagOutcome>>();
+    DetachResourcesTagAsync(
+    request,
+    [prom](
+        const TagClient*,
+        const DetachResourcesTagRequest&,
+        DetachResourcesTagOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TagClient::GetResourcesOutcome TagClient::GetResources(const GetResourcesRequest &request)
@@ -965,25 +1112,32 @@ TagClient::GetResourcesOutcome TagClient::GetResources(const GetResourcesRequest
 
 void TagClient::GetResourcesAsync(const GetResourcesRequest& request, const GetResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->GetResources(request), context);
-    };
+    using Req = const GetResourcesRequest&;
+    using Resp = GetResourcesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "GetResources", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TagClient::GetResourcesOutcomeCallable TagClient::GetResourcesCallable(const GetResourcesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<GetResourcesOutcome()>>(
-        [this, request]()
-        {
-            return this->GetResources(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<GetResourcesOutcome>>();
+    GetResourcesAsync(
+    request,
+    [prom](
+        const TagClient*,
+        const GetResourcesRequest&,
+        GetResourcesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TagClient::GetTagKeysOutcome TagClient::GetTagKeys(const GetTagKeysRequest &request)
@@ -1008,25 +1162,32 @@ TagClient::GetTagKeysOutcome TagClient::GetTagKeys(const GetTagKeysRequest &requ
 
 void TagClient::GetTagKeysAsync(const GetTagKeysRequest& request, const GetTagKeysAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->GetTagKeys(request), context);
-    };
+    using Req = const GetTagKeysRequest&;
+    using Resp = GetTagKeysResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "GetTagKeys", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TagClient::GetTagKeysOutcomeCallable TagClient::GetTagKeysCallable(const GetTagKeysRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<GetTagKeysOutcome()>>(
-        [this, request]()
-        {
-            return this->GetTagKeys(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<GetTagKeysOutcome>>();
+    GetTagKeysAsync(
+    request,
+    [prom](
+        const TagClient*,
+        const GetTagKeysRequest&,
+        GetTagKeysOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TagClient::GetTagValuesOutcome TagClient::GetTagValues(const GetTagValuesRequest &request)
@@ -1051,25 +1212,32 @@ TagClient::GetTagValuesOutcome TagClient::GetTagValues(const GetTagValuesRequest
 
 void TagClient::GetTagValuesAsync(const GetTagValuesRequest& request, const GetTagValuesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->GetTagValues(request), context);
-    };
+    using Req = const GetTagValuesRequest&;
+    using Resp = GetTagValuesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "GetTagValues", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TagClient::GetTagValuesOutcomeCallable TagClient::GetTagValuesCallable(const GetTagValuesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<GetTagValuesOutcome()>>(
-        [this, request]()
-        {
-            return this->GetTagValues(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<GetTagValuesOutcome>>();
+    GetTagValuesAsync(
+    request,
+    [prom](
+        const TagClient*,
+        const GetTagValuesRequest&,
+        GetTagValuesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TagClient::GetTagsOutcome TagClient::GetTags(const GetTagsRequest &request)
@@ -1094,25 +1262,32 @@ TagClient::GetTagsOutcome TagClient::GetTags(const GetTagsRequest &request)
 
 void TagClient::GetTagsAsync(const GetTagsRequest& request, const GetTagsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->GetTags(request), context);
-    };
+    using Req = const GetTagsRequest&;
+    using Resp = GetTagsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "GetTags", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TagClient::GetTagsOutcomeCallable TagClient::GetTagsCallable(const GetTagsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<GetTagsOutcome()>>(
-        [this, request]()
-        {
-            return this->GetTags(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<GetTagsOutcome>>();
+    GetTagsAsync(
+    request,
+    [prom](
+        const TagClient*,
+        const GetTagsRequest&,
+        GetTagsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TagClient::ModifyResourceTagsOutcome TagClient::ModifyResourceTags(const ModifyResourceTagsRequest &request)
@@ -1137,25 +1312,32 @@ TagClient::ModifyResourceTagsOutcome TagClient::ModifyResourceTags(const ModifyR
 
 void TagClient::ModifyResourceTagsAsync(const ModifyResourceTagsRequest& request, const ModifyResourceTagsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyResourceTags(request), context);
-    };
+    using Req = const ModifyResourceTagsRequest&;
+    using Resp = ModifyResourceTagsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyResourceTags", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TagClient::ModifyResourceTagsOutcomeCallable TagClient::ModifyResourceTagsCallable(const ModifyResourceTagsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyResourceTagsOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyResourceTags(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyResourceTagsOutcome>>();
+    ModifyResourceTagsAsync(
+    request,
+    [prom](
+        const TagClient*,
+        const ModifyResourceTagsRequest&,
+        ModifyResourceTagsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TagClient::ModifyResourcesTagValueOutcome TagClient::ModifyResourcesTagValue(const ModifyResourcesTagValueRequest &request)
@@ -1180,25 +1362,32 @@ TagClient::ModifyResourcesTagValueOutcome TagClient::ModifyResourcesTagValue(con
 
 void TagClient::ModifyResourcesTagValueAsync(const ModifyResourcesTagValueRequest& request, const ModifyResourcesTagValueAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyResourcesTagValue(request), context);
-    };
+    using Req = const ModifyResourcesTagValueRequest&;
+    using Resp = ModifyResourcesTagValueResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyResourcesTagValue", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TagClient::ModifyResourcesTagValueOutcomeCallable TagClient::ModifyResourcesTagValueCallable(const ModifyResourcesTagValueRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyResourcesTagValueOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyResourcesTagValue(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyResourcesTagValueOutcome>>();
+    ModifyResourcesTagValueAsync(
+    request,
+    [prom](
+        const TagClient*,
+        const ModifyResourcesTagValueRequest&,
+        ModifyResourcesTagValueOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TagClient::TagResourcesOutcome TagClient::TagResources(const TagResourcesRequest &request)
@@ -1223,25 +1412,32 @@ TagClient::TagResourcesOutcome TagClient::TagResources(const TagResourcesRequest
 
 void TagClient::TagResourcesAsync(const TagResourcesRequest& request, const TagResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->TagResources(request), context);
-    };
+    using Req = const TagResourcesRequest&;
+    using Resp = TagResourcesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "TagResources", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TagClient::TagResourcesOutcomeCallable TagClient::TagResourcesCallable(const TagResourcesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<TagResourcesOutcome()>>(
-        [this, request]()
-        {
-            return this->TagResources(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<TagResourcesOutcome>>();
+    TagResourcesAsync(
+    request,
+    [prom](
+        const TagClient*,
+        const TagResourcesRequest&,
+        TagResourcesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TagClient::UnTagResourcesOutcome TagClient::UnTagResources(const UnTagResourcesRequest &request)
@@ -1266,25 +1462,32 @@ TagClient::UnTagResourcesOutcome TagClient::UnTagResources(const UnTagResourcesR
 
 void TagClient::UnTagResourcesAsync(const UnTagResourcesRequest& request, const UnTagResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UnTagResources(request), context);
-    };
+    using Req = const UnTagResourcesRequest&;
+    using Resp = UnTagResourcesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UnTagResources", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TagClient::UnTagResourcesOutcomeCallable TagClient::UnTagResourcesCallable(const UnTagResourcesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UnTagResourcesOutcome()>>(
-        [this, request]()
-        {
-            return this->UnTagResources(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UnTagResourcesOutcome>>();
+    UnTagResourcesAsync(
+    request,
+    [prom](
+        const TagClient*,
+        const UnTagResourcesRequest&,
+        UnTagResourcesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TagClient::UpdateProjectOutcome TagClient::UpdateProject(const UpdateProjectRequest &request)
@@ -1309,25 +1512,32 @@ TagClient::UpdateProjectOutcome TagClient::UpdateProject(const UpdateProjectRequ
 
 void TagClient::UpdateProjectAsync(const UpdateProjectRequest& request, const UpdateProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UpdateProject(request), context);
-    };
+    using Req = const UpdateProjectRequest&;
+    using Resp = UpdateProjectResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UpdateProject", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TagClient::UpdateProjectOutcomeCallable TagClient::UpdateProjectCallable(const UpdateProjectRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UpdateProjectOutcome()>>(
-        [this, request]()
-        {
-            return this->UpdateProject(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UpdateProjectOutcome>>();
+    UpdateProjectAsync(
+    request,
+    [prom](
+        const TagClient*,
+        const UpdateProjectRequest&,
+        UpdateProjectOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TagClient::UpdateResourceTagValueOutcome TagClient::UpdateResourceTagValue(const UpdateResourceTagValueRequest &request)
@@ -1352,24 +1562,31 @@ TagClient::UpdateResourceTagValueOutcome TagClient::UpdateResourceTagValue(const
 
 void TagClient::UpdateResourceTagValueAsync(const UpdateResourceTagValueRequest& request, const UpdateResourceTagValueAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UpdateResourceTagValue(request), context);
-    };
+    using Req = const UpdateResourceTagValueRequest&;
+    using Resp = UpdateResourceTagValueResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UpdateResourceTagValue", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TagClient::UpdateResourceTagValueOutcomeCallable TagClient::UpdateResourceTagValueCallable(const UpdateResourceTagValueRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UpdateResourceTagValueOutcome()>>(
-        [this, request]()
-        {
-            return this->UpdateResourceTagValue(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UpdateResourceTagValueOutcome>>();
+    UpdateResourceTagValueAsync(
+    request,
+    [prom](
+        const TagClient*,
+        const UpdateResourceTagValueRequest&,
+        UpdateResourceTagValueOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 

@@ -62,24 +62,31 @@ WsaClient::SearchProOutcome WsaClient::SearchPro(const SearchProRequest &request
 
 void WsaClient::SearchProAsync(const SearchProRequest& request, const SearchProAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->SearchPro(request), context);
-    };
+    using Req = const SearchProRequest&;
+    using Resp = SearchProResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "SearchPro", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WsaClient::SearchProOutcomeCallable WsaClient::SearchProCallable(const SearchProRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<SearchProOutcome()>>(
-        [this, request]()
-        {
-            return this->SearchPro(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<SearchProOutcome>>();
+    SearchProAsync(
+    request,
+    [prom](
+        const WsaClient*,
+        const SearchProRequest&,
+        SearchProOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 

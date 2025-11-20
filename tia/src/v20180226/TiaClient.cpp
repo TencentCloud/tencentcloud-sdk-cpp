@@ -62,25 +62,32 @@ TiaClient::CreateJobOutcome TiaClient::CreateJob(const CreateJobRequest &request
 
 void TiaClient::CreateJobAsync(const CreateJobRequest& request, const CreateJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateJob(request), context);
-    };
+    using Req = const CreateJobRequest&;
+    using Resp = CreateJobResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateJob", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TiaClient::CreateJobOutcomeCallable TiaClient::CreateJobCallable(const CreateJobRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateJobOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateJob(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateJobOutcome>>();
+    CreateJobAsync(
+    request,
+    [prom](
+        const TiaClient*,
+        const CreateJobRequest&,
+        CreateJobOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TiaClient::CreateModelOutcome TiaClient::CreateModel(const CreateModelRequest &request)
@@ -105,25 +112,32 @@ TiaClient::CreateModelOutcome TiaClient::CreateModel(const CreateModelRequest &r
 
 void TiaClient::CreateModelAsync(const CreateModelRequest& request, const CreateModelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateModel(request), context);
-    };
+    using Req = const CreateModelRequest&;
+    using Resp = CreateModelResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateModel", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TiaClient::CreateModelOutcomeCallable TiaClient::CreateModelCallable(const CreateModelRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateModelOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateModel(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateModelOutcome>>();
+    CreateModelAsync(
+    request,
+    [prom](
+        const TiaClient*,
+        const CreateModelRequest&,
+        CreateModelOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TiaClient::DeleteJobOutcome TiaClient::DeleteJob(const DeleteJobRequest &request)
@@ -148,25 +162,32 @@ TiaClient::DeleteJobOutcome TiaClient::DeleteJob(const DeleteJobRequest &request
 
 void TiaClient::DeleteJobAsync(const DeleteJobRequest& request, const DeleteJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteJob(request), context);
-    };
+    using Req = const DeleteJobRequest&;
+    using Resp = DeleteJobResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteJob", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TiaClient::DeleteJobOutcomeCallable TiaClient::DeleteJobCallable(const DeleteJobRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteJobOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteJob(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteJobOutcome>>();
+    DeleteJobAsync(
+    request,
+    [prom](
+        const TiaClient*,
+        const DeleteJobRequest&,
+        DeleteJobOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TiaClient::DeleteModelOutcome TiaClient::DeleteModel(const DeleteModelRequest &request)
@@ -191,25 +212,32 @@ TiaClient::DeleteModelOutcome TiaClient::DeleteModel(const DeleteModelRequest &r
 
 void TiaClient::DeleteModelAsync(const DeleteModelRequest& request, const DeleteModelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteModel(request), context);
-    };
+    using Req = const DeleteModelRequest&;
+    using Resp = DeleteModelResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteModel", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TiaClient::DeleteModelOutcomeCallable TiaClient::DeleteModelCallable(const DeleteModelRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteModelOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteModel(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteModelOutcome>>();
+    DeleteModelAsync(
+    request,
+    [prom](
+        const TiaClient*,
+        const DeleteModelRequest&,
+        DeleteModelOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TiaClient::DescribeJobOutcome TiaClient::DescribeJob(const DescribeJobRequest &request)
@@ -234,25 +262,32 @@ TiaClient::DescribeJobOutcome TiaClient::DescribeJob(const DescribeJobRequest &r
 
 void TiaClient::DescribeJobAsync(const DescribeJobRequest& request, const DescribeJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeJob(request), context);
-    };
+    using Req = const DescribeJobRequest&;
+    using Resp = DescribeJobResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeJob", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TiaClient::DescribeJobOutcomeCallable TiaClient::DescribeJobCallable(const DescribeJobRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeJobOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeJob(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeJobOutcome>>();
+    DescribeJobAsync(
+    request,
+    [prom](
+        const TiaClient*,
+        const DescribeJobRequest&,
+        DescribeJobOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TiaClient::DescribeModelOutcome TiaClient::DescribeModel(const DescribeModelRequest &request)
@@ -277,25 +312,32 @@ TiaClient::DescribeModelOutcome TiaClient::DescribeModel(const DescribeModelRequ
 
 void TiaClient::DescribeModelAsync(const DescribeModelRequest& request, const DescribeModelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeModel(request), context);
-    };
+    using Req = const DescribeModelRequest&;
+    using Resp = DescribeModelResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeModel", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TiaClient::DescribeModelOutcomeCallable TiaClient::DescribeModelCallable(const DescribeModelRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeModelOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeModel(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeModelOutcome>>();
+    DescribeModelAsync(
+    request,
+    [prom](
+        const TiaClient*,
+        const DescribeModelRequest&,
+        DescribeModelOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TiaClient::InstallAgentOutcome TiaClient::InstallAgent(const InstallAgentRequest &request)
@@ -320,25 +362,32 @@ TiaClient::InstallAgentOutcome TiaClient::InstallAgent(const InstallAgentRequest
 
 void TiaClient::InstallAgentAsync(const InstallAgentRequest& request, const InstallAgentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->InstallAgent(request), context);
-    };
+    using Req = const InstallAgentRequest&;
+    using Resp = InstallAgentResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "InstallAgent", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TiaClient::InstallAgentOutcomeCallable TiaClient::InstallAgentCallable(const InstallAgentRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<InstallAgentOutcome()>>(
-        [this, request]()
-        {
-            return this->InstallAgent(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<InstallAgentOutcome>>();
+    InstallAgentAsync(
+    request,
+    [prom](
+        const TiaClient*,
+        const InstallAgentRequest&,
+        InstallAgentOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TiaClient::ListJobsOutcome TiaClient::ListJobs(const ListJobsRequest &request)
@@ -363,25 +412,32 @@ TiaClient::ListJobsOutcome TiaClient::ListJobs(const ListJobsRequest &request)
 
 void TiaClient::ListJobsAsync(const ListJobsRequest& request, const ListJobsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ListJobs(request), context);
-    };
+    using Req = const ListJobsRequest&;
+    using Resp = ListJobsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ListJobs", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TiaClient::ListJobsOutcomeCallable TiaClient::ListJobsCallable(const ListJobsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ListJobsOutcome()>>(
-        [this, request]()
-        {
-            return this->ListJobs(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ListJobsOutcome>>();
+    ListJobsAsync(
+    request,
+    [prom](
+        const TiaClient*,
+        const ListJobsRequest&,
+        ListJobsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TiaClient::ListModelsOutcome TiaClient::ListModels(const ListModelsRequest &request)
@@ -406,25 +462,32 @@ TiaClient::ListModelsOutcome TiaClient::ListModels(const ListModelsRequest &requ
 
 void TiaClient::ListModelsAsync(const ListModelsRequest& request, const ListModelsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ListModels(request), context);
-    };
+    using Req = const ListModelsRequest&;
+    using Resp = ListModelsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ListModels", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TiaClient::ListModelsOutcomeCallable TiaClient::ListModelsCallable(const ListModelsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ListModelsOutcome()>>(
-        [this, request]()
-        {
-            return this->ListModels(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ListModelsOutcome>>();
+    ListModelsAsync(
+    request,
+    [prom](
+        const TiaClient*,
+        const ListModelsRequest&,
+        ListModelsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TiaClient::QueryLogsOutcome TiaClient::QueryLogs(const QueryLogsRequest &request)
@@ -449,24 +512,31 @@ TiaClient::QueryLogsOutcome TiaClient::QueryLogs(const QueryLogsRequest &request
 
 void TiaClient::QueryLogsAsync(const QueryLogsRequest& request, const QueryLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->QueryLogs(request), context);
-    };
+    using Req = const QueryLogsRequest&;
+    using Resp = QueryLogsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "QueryLogs", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TiaClient::QueryLogsOutcomeCallable TiaClient::QueryLogsCallable(const QueryLogsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<QueryLogsOutcome()>>(
-        [this, request]()
-        {
-            return this->QueryLogs(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<QueryLogsOutcome>>();
+    QueryLogsAsync(
+    request,
+    [prom](
+        const TiaClient*,
+        const QueryLogsRequest&,
+        QueryLogsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 

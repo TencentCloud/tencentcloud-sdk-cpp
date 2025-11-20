@@ -62,25 +62,32 @@ CdsClient::DescribeDbauditInstanceTypeOutcome CdsClient::DescribeDbauditInstance
 
 void CdsClient::DescribeDbauditInstanceTypeAsync(const DescribeDbauditInstanceTypeRequest& request, const DescribeDbauditInstanceTypeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDbauditInstanceType(request), context);
-    };
+    using Req = const DescribeDbauditInstanceTypeRequest&;
+    using Resp = DescribeDbauditInstanceTypeResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeDbauditInstanceType", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CdsClient::DescribeDbauditInstanceTypeOutcomeCallable CdsClient::DescribeDbauditInstanceTypeCallable(const DescribeDbauditInstanceTypeRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeDbauditInstanceTypeOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDbauditInstanceType(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeDbauditInstanceTypeOutcome>>();
+    DescribeDbauditInstanceTypeAsync(
+    request,
+    [prom](
+        const CdsClient*,
+        const DescribeDbauditInstanceTypeRequest&,
+        DescribeDbauditInstanceTypeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CdsClient::DescribeDbauditInstancesOutcome CdsClient::DescribeDbauditInstances(const DescribeDbauditInstancesRequest &request)
@@ -105,25 +112,32 @@ CdsClient::DescribeDbauditInstancesOutcome CdsClient::DescribeDbauditInstances(c
 
 void CdsClient::DescribeDbauditInstancesAsync(const DescribeDbauditInstancesRequest& request, const DescribeDbauditInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDbauditInstances(request), context);
-    };
+    using Req = const DescribeDbauditInstancesRequest&;
+    using Resp = DescribeDbauditInstancesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeDbauditInstances", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CdsClient::DescribeDbauditInstancesOutcomeCallable CdsClient::DescribeDbauditInstancesCallable(const DescribeDbauditInstancesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeDbauditInstancesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDbauditInstances(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeDbauditInstancesOutcome>>();
+    DescribeDbauditInstancesAsync(
+    request,
+    [prom](
+        const CdsClient*,
+        const DescribeDbauditInstancesRequest&,
+        DescribeDbauditInstancesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CdsClient::DescribeDbauditUsedRegionsOutcome CdsClient::DescribeDbauditUsedRegions(const DescribeDbauditUsedRegionsRequest &request)
@@ -148,25 +162,32 @@ CdsClient::DescribeDbauditUsedRegionsOutcome CdsClient::DescribeDbauditUsedRegio
 
 void CdsClient::DescribeDbauditUsedRegionsAsync(const DescribeDbauditUsedRegionsRequest& request, const DescribeDbauditUsedRegionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDbauditUsedRegions(request), context);
-    };
+    using Req = const DescribeDbauditUsedRegionsRequest&;
+    using Resp = DescribeDbauditUsedRegionsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeDbauditUsedRegions", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CdsClient::DescribeDbauditUsedRegionsOutcomeCallable CdsClient::DescribeDbauditUsedRegionsCallable(const DescribeDbauditUsedRegionsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeDbauditUsedRegionsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDbauditUsedRegions(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeDbauditUsedRegionsOutcome>>();
+    DescribeDbauditUsedRegionsAsync(
+    request,
+    [prom](
+        const CdsClient*,
+        const DescribeDbauditUsedRegionsRequest&,
+        DescribeDbauditUsedRegionsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CdsClient::InquiryPriceDbauditInstanceOutcome CdsClient::InquiryPriceDbauditInstance(const InquiryPriceDbauditInstanceRequest &request)
@@ -191,25 +212,32 @@ CdsClient::InquiryPriceDbauditInstanceOutcome CdsClient::InquiryPriceDbauditInst
 
 void CdsClient::InquiryPriceDbauditInstanceAsync(const InquiryPriceDbauditInstanceRequest& request, const InquiryPriceDbauditInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->InquiryPriceDbauditInstance(request), context);
-    };
+    using Req = const InquiryPriceDbauditInstanceRequest&;
+    using Resp = InquiryPriceDbauditInstanceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "InquiryPriceDbauditInstance", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CdsClient::InquiryPriceDbauditInstanceOutcomeCallable CdsClient::InquiryPriceDbauditInstanceCallable(const InquiryPriceDbauditInstanceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<InquiryPriceDbauditInstanceOutcome()>>(
-        [this, request]()
-        {
-            return this->InquiryPriceDbauditInstance(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<InquiryPriceDbauditInstanceOutcome>>();
+    InquiryPriceDbauditInstanceAsync(
+    request,
+    [prom](
+        const CdsClient*,
+        const InquiryPriceDbauditInstanceRequest&,
+        InquiryPriceDbauditInstanceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CdsClient::ModifyDbauditInstancesRenewFlagOutcome CdsClient::ModifyDbauditInstancesRenewFlag(const ModifyDbauditInstancesRenewFlagRequest &request)
@@ -234,24 +262,31 @@ CdsClient::ModifyDbauditInstancesRenewFlagOutcome CdsClient::ModifyDbauditInstan
 
 void CdsClient::ModifyDbauditInstancesRenewFlagAsync(const ModifyDbauditInstancesRenewFlagRequest& request, const ModifyDbauditInstancesRenewFlagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyDbauditInstancesRenewFlag(request), context);
-    };
+    using Req = const ModifyDbauditInstancesRenewFlagRequest&;
+    using Resp = ModifyDbauditInstancesRenewFlagResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyDbauditInstancesRenewFlag", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CdsClient::ModifyDbauditInstancesRenewFlagOutcomeCallable CdsClient::ModifyDbauditInstancesRenewFlagCallable(const ModifyDbauditInstancesRenewFlagRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyDbauditInstancesRenewFlagOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyDbauditInstancesRenewFlag(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyDbauditInstancesRenewFlagOutcome>>();
+    ModifyDbauditInstancesRenewFlagAsync(
+    request,
+    [prom](
+        const CdsClient*,
+        const ModifyDbauditInstancesRenewFlagRequest&,
+        ModifyDbauditInstancesRenewFlagOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 

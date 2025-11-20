@@ -62,25 +62,32 @@ KeewidbClient::AssociateSecurityGroupsOutcome KeewidbClient::AssociateSecurityGr
 
 void KeewidbClient::AssociateSecurityGroupsAsync(const AssociateSecurityGroupsRequest& request, const AssociateSecurityGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->AssociateSecurityGroups(request), context);
-    };
+    using Req = const AssociateSecurityGroupsRequest&;
+    using Resp = AssociateSecurityGroupsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "AssociateSecurityGroups", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 KeewidbClient::AssociateSecurityGroupsOutcomeCallable KeewidbClient::AssociateSecurityGroupsCallable(const AssociateSecurityGroupsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<AssociateSecurityGroupsOutcome()>>(
-        [this, request]()
-        {
-            return this->AssociateSecurityGroups(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<AssociateSecurityGroupsOutcome>>();
+    AssociateSecurityGroupsAsync(
+    request,
+    [prom](
+        const KeewidbClient*,
+        const AssociateSecurityGroupsRequest&,
+        AssociateSecurityGroupsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 KeewidbClient::ChangeInstanceMasterOutcome KeewidbClient::ChangeInstanceMaster(const ChangeInstanceMasterRequest &request)
@@ -105,25 +112,32 @@ KeewidbClient::ChangeInstanceMasterOutcome KeewidbClient::ChangeInstanceMaster(c
 
 void KeewidbClient::ChangeInstanceMasterAsync(const ChangeInstanceMasterRequest& request, const ChangeInstanceMasterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ChangeInstanceMaster(request), context);
-    };
+    using Req = const ChangeInstanceMasterRequest&;
+    using Resp = ChangeInstanceMasterResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ChangeInstanceMaster", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 KeewidbClient::ChangeInstanceMasterOutcomeCallable KeewidbClient::ChangeInstanceMasterCallable(const ChangeInstanceMasterRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ChangeInstanceMasterOutcome()>>(
-        [this, request]()
-        {
-            return this->ChangeInstanceMaster(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ChangeInstanceMasterOutcome>>();
+    ChangeInstanceMasterAsync(
+    request,
+    [prom](
+        const KeewidbClient*,
+        const ChangeInstanceMasterRequest&,
+        ChangeInstanceMasterOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 KeewidbClient::CleanUpInstanceOutcome KeewidbClient::CleanUpInstance(const CleanUpInstanceRequest &request)
@@ -148,25 +162,32 @@ KeewidbClient::CleanUpInstanceOutcome KeewidbClient::CleanUpInstance(const Clean
 
 void KeewidbClient::CleanUpInstanceAsync(const CleanUpInstanceRequest& request, const CleanUpInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CleanUpInstance(request), context);
-    };
+    using Req = const CleanUpInstanceRequest&;
+    using Resp = CleanUpInstanceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CleanUpInstance", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 KeewidbClient::CleanUpInstanceOutcomeCallable KeewidbClient::CleanUpInstanceCallable(const CleanUpInstanceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CleanUpInstanceOutcome()>>(
-        [this, request]()
-        {
-            return this->CleanUpInstance(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CleanUpInstanceOutcome>>();
+    CleanUpInstanceAsync(
+    request,
+    [prom](
+        const KeewidbClient*,
+        const CleanUpInstanceRequest&,
+        CleanUpInstanceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 KeewidbClient::ClearInstanceOutcome KeewidbClient::ClearInstance(const ClearInstanceRequest &request)
@@ -191,25 +212,32 @@ KeewidbClient::ClearInstanceOutcome KeewidbClient::ClearInstance(const ClearInst
 
 void KeewidbClient::ClearInstanceAsync(const ClearInstanceRequest& request, const ClearInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ClearInstance(request), context);
-    };
+    using Req = const ClearInstanceRequest&;
+    using Resp = ClearInstanceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ClearInstance", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 KeewidbClient::ClearInstanceOutcomeCallable KeewidbClient::ClearInstanceCallable(const ClearInstanceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ClearInstanceOutcome()>>(
-        [this, request]()
-        {
-            return this->ClearInstance(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ClearInstanceOutcome>>();
+    ClearInstanceAsync(
+    request,
+    [prom](
+        const KeewidbClient*,
+        const ClearInstanceRequest&,
+        ClearInstanceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 KeewidbClient::CreateBackupManuallyOutcome KeewidbClient::CreateBackupManually(const CreateBackupManuallyRequest &request)
@@ -234,25 +262,32 @@ KeewidbClient::CreateBackupManuallyOutcome KeewidbClient::CreateBackupManually(c
 
 void KeewidbClient::CreateBackupManuallyAsync(const CreateBackupManuallyRequest& request, const CreateBackupManuallyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateBackupManually(request), context);
-    };
+    using Req = const CreateBackupManuallyRequest&;
+    using Resp = CreateBackupManuallyResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateBackupManually", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 KeewidbClient::CreateBackupManuallyOutcomeCallable KeewidbClient::CreateBackupManuallyCallable(const CreateBackupManuallyRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateBackupManuallyOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateBackupManually(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateBackupManuallyOutcome>>();
+    CreateBackupManuallyAsync(
+    request,
+    [prom](
+        const KeewidbClient*,
+        const CreateBackupManuallyRequest&,
+        CreateBackupManuallyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 KeewidbClient::CreateInstancesOutcome KeewidbClient::CreateInstances(const CreateInstancesRequest &request)
@@ -277,25 +312,32 @@ KeewidbClient::CreateInstancesOutcome KeewidbClient::CreateInstances(const Creat
 
 void KeewidbClient::CreateInstancesAsync(const CreateInstancesRequest& request, const CreateInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateInstances(request), context);
-    };
+    using Req = const CreateInstancesRequest&;
+    using Resp = CreateInstancesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateInstances", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 KeewidbClient::CreateInstancesOutcomeCallable KeewidbClient::CreateInstancesCallable(const CreateInstancesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateInstancesOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateInstances(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateInstancesOutcome>>();
+    CreateInstancesAsync(
+    request,
+    [prom](
+        const KeewidbClient*,
+        const CreateInstancesRequest&,
+        CreateInstancesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 KeewidbClient::DescribeAutoBackupConfigOutcome KeewidbClient::DescribeAutoBackupConfig(const DescribeAutoBackupConfigRequest &request)
@@ -320,25 +362,32 @@ KeewidbClient::DescribeAutoBackupConfigOutcome KeewidbClient::DescribeAutoBackup
 
 void KeewidbClient::DescribeAutoBackupConfigAsync(const DescribeAutoBackupConfigRequest& request, const DescribeAutoBackupConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAutoBackupConfig(request), context);
-    };
+    using Req = const DescribeAutoBackupConfigRequest&;
+    using Resp = DescribeAutoBackupConfigResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAutoBackupConfig", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 KeewidbClient::DescribeAutoBackupConfigOutcomeCallable KeewidbClient::DescribeAutoBackupConfigCallable(const DescribeAutoBackupConfigRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAutoBackupConfigOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAutoBackupConfig(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAutoBackupConfigOutcome>>();
+    DescribeAutoBackupConfigAsync(
+    request,
+    [prom](
+        const KeewidbClient*,
+        const DescribeAutoBackupConfigRequest&,
+        DescribeAutoBackupConfigOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 KeewidbClient::DescribeConnectionConfigOutcome KeewidbClient::DescribeConnectionConfig(const DescribeConnectionConfigRequest &request)
@@ -363,25 +412,32 @@ KeewidbClient::DescribeConnectionConfigOutcome KeewidbClient::DescribeConnection
 
 void KeewidbClient::DescribeConnectionConfigAsync(const DescribeConnectionConfigRequest& request, const DescribeConnectionConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeConnectionConfig(request), context);
-    };
+    using Req = const DescribeConnectionConfigRequest&;
+    using Resp = DescribeConnectionConfigResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeConnectionConfig", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 KeewidbClient::DescribeConnectionConfigOutcomeCallable KeewidbClient::DescribeConnectionConfigCallable(const DescribeConnectionConfigRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeConnectionConfigOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeConnectionConfig(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeConnectionConfigOutcome>>();
+    DescribeConnectionConfigAsync(
+    request,
+    [prom](
+        const KeewidbClient*,
+        const DescribeConnectionConfigRequest&,
+        DescribeConnectionConfigOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 KeewidbClient::DescribeDBSecurityGroupsOutcome KeewidbClient::DescribeDBSecurityGroups(const DescribeDBSecurityGroupsRequest &request)
@@ -406,25 +462,32 @@ KeewidbClient::DescribeDBSecurityGroupsOutcome KeewidbClient::DescribeDBSecurity
 
 void KeewidbClient::DescribeDBSecurityGroupsAsync(const DescribeDBSecurityGroupsRequest& request, const DescribeDBSecurityGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDBSecurityGroups(request), context);
-    };
+    using Req = const DescribeDBSecurityGroupsRequest&;
+    using Resp = DescribeDBSecurityGroupsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeDBSecurityGroups", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 KeewidbClient::DescribeDBSecurityGroupsOutcomeCallable KeewidbClient::DescribeDBSecurityGroupsCallable(const DescribeDBSecurityGroupsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeDBSecurityGroupsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDBSecurityGroups(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeDBSecurityGroupsOutcome>>();
+    DescribeDBSecurityGroupsAsync(
+    request,
+    [prom](
+        const KeewidbClient*,
+        const DescribeDBSecurityGroupsRequest&,
+        DescribeDBSecurityGroupsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 KeewidbClient::DescribeInstanceBackupsOutcome KeewidbClient::DescribeInstanceBackups(const DescribeInstanceBackupsRequest &request)
@@ -449,25 +512,32 @@ KeewidbClient::DescribeInstanceBackupsOutcome KeewidbClient::DescribeInstanceBac
 
 void KeewidbClient::DescribeInstanceBackupsAsync(const DescribeInstanceBackupsRequest& request, const DescribeInstanceBackupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeInstanceBackups(request), context);
-    };
+    using Req = const DescribeInstanceBackupsRequest&;
+    using Resp = DescribeInstanceBackupsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeInstanceBackups", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 KeewidbClient::DescribeInstanceBackupsOutcomeCallable KeewidbClient::DescribeInstanceBackupsCallable(const DescribeInstanceBackupsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeInstanceBackupsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeInstanceBackups(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeInstanceBackupsOutcome>>();
+    DescribeInstanceBackupsAsync(
+    request,
+    [prom](
+        const KeewidbClient*,
+        const DescribeInstanceBackupsRequest&,
+        DescribeInstanceBackupsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 KeewidbClient::DescribeInstanceBinlogsOutcome KeewidbClient::DescribeInstanceBinlogs(const DescribeInstanceBinlogsRequest &request)
@@ -492,25 +562,32 @@ KeewidbClient::DescribeInstanceBinlogsOutcome KeewidbClient::DescribeInstanceBin
 
 void KeewidbClient::DescribeInstanceBinlogsAsync(const DescribeInstanceBinlogsRequest& request, const DescribeInstanceBinlogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeInstanceBinlogs(request), context);
-    };
+    using Req = const DescribeInstanceBinlogsRequest&;
+    using Resp = DescribeInstanceBinlogsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeInstanceBinlogs", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 KeewidbClient::DescribeInstanceBinlogsOutcomeCallable KeewidbClient::DescribeInstanceBinlogsCallable(const DescribeInstanceBinlogsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeInstanceBinlogsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeInstanceBinlogs(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeInstanceBinlogsOutcome>>();
+    DescribeInstanceBinlogsAsync(
+    request,
+    [prom](
+        const KeewidbClient*,
+        const DescribeInstanceBinlogsRequest&,
+        DescribeInstanceBinlogsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 KeewidbClient::DescribeInstanceDealDetailOutcome KeewidbClient::DescribeInstanceDealDetail(const DescribeInstanceDealDetailRequest &request)
@@ -535,25 +612,32 @@ KeewidbClient::DescribeInstanceDealDetailOutcome KeewidbClient::DescribeInstance
 
 void KeewidbClient::DescribeInstanceDealDetailAsync(const DescribeInstanceDealDetailRequest& request, const DescribeInstanceDealDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeInstanceDealDetail(request), context);
-    };
+    using Req = const DescribeInstanceDealDetailRequest&;
+    using Resp = DescribeInstanceDealDetailResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeInstanceDealDetail", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 KeewidbClient::DescribeInstanceDealDetailOutcomeCallable KeewidbClient::DescribeInstanceDealDetailCallable(const DescribeInstanceDealDetailRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeInstanceDealDetailOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeInstanceDealDetail(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeInstanceDealDetailOutcome>>();
+    DescribeInstanceDealDetailAsync(
+    request,
+    [prom](
+        const KeewidbClient*,
+        const DescribeInstanceDealDetailRequest&,
+        DescribeInstanceDealDetailOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 KeewidbClient::DescribeInstanceNodeInfoOutcome KeewidbClient::DescribeInstanceNodeInfo(const DescribeInstanceNodeInfoRequest &request)
@@ -578,25 +662,32 @@ KeewidbClient::DescribeInstanceNodeInfoOutcome KeewidbClient::DescribeInstanceNo
 
 void KeewidbClient::DescribeInstanceNodeInfoAsync(const DescribeInstanceNodeInfoRequest& request, const DescribeInstanceNodeInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeInstanceNodeInfo(request), context);
-    };
+    using Req = const DescribeInstanceNodeInfoRequest&;
+    using Resp = DescribeInstanceNodeInfoResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeInstanceNodeInfo", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 KeewidbClient::DescribeInstanceNodeInfoOutcomeCallable KeewidbClient::DescribeInstanceNodeInfoCallable(const DescribeInstanceNodeInfoRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeInstanceNodeInfoOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeInstanceNodeInfo(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeInstanceNodeInfoOutcome>>();
+    DescribeInstanceNodeInfoAsync(
+    request,
+    [prom](
+        const KeewidbClient*,
+        const DescribeInstanceNodeInfoRequest&,
+        DescribeInstanceNodeInfoOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 KeewidbClient::DescribeInstanceParamRecordsOutcome KeewidbClient::DescribeInstanceParamRecords(const DescribeInstanceParamRecordsRequest &request)
@@ -621,25 +712,32 @@ KeewidbClient::DescribeInstanceParamRecordsOutcome KeewidbClient::DescribeInstan
 
 void KeewidbClient::DescribeInstanceParamRecordsAsync(const DescribeInstanceParamRecordsRequest& request, const DescribeInstanceParamRecordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeInstanceParamRecords(request), context);
-    };
+    using Req = const DescribeInstanceParamRecordsRequest&;
+    using Resp = DescribeInstanceParamRecordsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeInstanceParamRecords", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 KeewidbClient::DescribeInstanceParamRecordsOutcomeCallable KeewidbClient::DescribeInstanceParamRecordsCallable(const DescribeInstanceParamRecordsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeInstanceParamRecordsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeInstanceParamRecords(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeInstanceParamRecordsOutcome>>();
+    DescribeInstanceParamRecordsAsync(
+    request,
+    [prom](
+        const KeewidbClient*,
+        const DescribeInstanceParamRecordsRequest&,
+        DescribeInstanceParamRecordsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 KeewidbClient::DescribeInstanceParamsOutcome KeewidbClient::DescribeInstanceParams(const DescribeInstanceParamsRequest &request)
@@ -664,25 +762,32 @@ KeewidbClient::DescribeInstanceParamsOutcome KeewidbClient::DescribeInstancePara
 
 void KeewidbClient::DescribeInstanceParamsAsync(const DescribeInstanceParamsRequest& request, const DescribeInstanceParamsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeInstanceParams(request), context);
-    };
+    using Req = const DescribeInstanceParamsRequest&;
+    using Resp = DescribeInstanceParamsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeInstanceParams", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 KeewidbClient::DescribeInstanceParamsOutcomeCallable KeewidbClient::DescribeInstanceParamsCallable(const DescribeInstanceParamsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeInstanceParamsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeInstanceParams(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeInstanceParamsOutcome>>();
+    DescribeInstanceParamsAsync(
+    request,
+    [prom](
+        const KeewidbClient*,
+        const DescribeInstanceParamsRequest&,
+        DescribeInstanceParamsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 KeewidbClient::DescribeInstanceReplicasOutcome KeewidbClient::DescribeInstanceReplicas(const DescribeInstanceReplicasRequest &request)
@@ -707,25 +812,32 @@ KeewidbClient::DescribeInstanceReplicasOutcome KeewidbClient::DescribeInstanceRe
 
 void KeewidbClient::DescribeInstanceReplicasAsync(const DescribeInstanceReplicasRequest& request, const DescribeInstanceReplicasAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeInstanceReplicas(request), context);
-    };
+    using Req = const DescribeInstanceReplicasRequest&;
+    using Resp = DescribeInstanceReplicasResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeInstanceReplicas", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 KeewidbClient::DescribeInstanceReplicasOutcomeCallable KeewidbClient::DescribeInstanceReplicasCallable(const DescribeInstanceReplicasRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeInstanceReplicasOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeInstanceReplicas(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeInstanceReplicasOutcome>>();
+    DescribeInstanceReplicasAsync(
+    request,
+    [prom](
+        const KeewidbClient*,
+        const DescribeInstanceReplicasRequest&,
+        DescribeInstanceReplicasOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 KeewidbClient::DescribeInstancesOutcome KeewidbClient::DescribeInstances(const DescribeInstancesRequest &request)
@@ -750,25 +862,32 @@ KeewidbClient::DescribeInstancesOutcome KeewidbClient::DescribeInstances(const D
 
 void KeewidbClient::DescribeInstancesAsync(const DescribeInstancesRequest& request, const DescribeInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeInstances(request), context);
-    };
+    using Req = const DescribeInstancesRequest&;
+    using Resp = DescribeInstancesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeInstances", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 KeewidbClient::DescribeInstancesOutcomeCallable KeewidbClient::DescribeInstancesCallable(const DescribeInstancesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeInstancesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeInstances(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeInstancesOutcome>>();
+    DescribeInstancesAsync(
+    request,
+    [prom](
+        const KeewidbClient*,
+        const DescribeInstancesRequest&,
+        DescribeInstancesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 KeewidbClient::DescribeMaintenanceWindowOutcome KeewidbClient::DescribeMaintenanceWindow(const DescribeMaintenanceWindowRequest &request)
@@ -793,25 +912,32 @@ KeewidbClient::DescribeMaintenanceWindowOutcome KeewidbClient::DescribeMaintenan
 
 void KeewidbClient::DescribeMaintenanceWindowAsync(const DescribeMaintenanceWindowRequest& request, const DescribeMaintenanceWindowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeMaintenanceWindow(request), context);
-    };
+    using Req = const DescribeMaintenanceWindowRequest&;
+    using Resp = DescribeMaintenanceWindowResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeMaintenanceWindow", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 KeewidbClient::DescribeMaintenanceWindowOutcomeCallable KeewidbClient::DescribeMaintenanceWindowCallable(const DescribeMaintenanceWindowRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeMaintenanceWindowOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeMaintenanceWindow(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeMaintenanceWindowOutcome>>();
+    DescribeMaintenanceWindowAsync(
+    request,
+    [prom](
+        const KeewidbClient*,
+        const DescribeMaintenanceWindowRequest&,
+        DescribeMaintenanceWindowOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 KeewidbClient::DescribeProductInfoOutcome KeewidbClient::DescribeProductInfo(const DescribeProductInfoRequest &request)
@@ -836,25 +962,32 @@ KeewidbClient::DescribeProductInfoOutcome KeewidbClient::DescribeProductInfo(con
 
 void KeewidbClient::DescribeProductInfoAsync(const DescribeProductInfoRequest& request, const DescribeProductInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeProductInfo(request), context);
-    };
+    using Req = const DescribeProductInfoRequest&;
+    using Resp = DescribeProductInfoResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeProductInfo", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 KeewidbClient::DescribeProductInfoOutcomeCallable KeewidbClient::DescribeProductInfoCallable(const DescribeProductInfoRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeProductInfoOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeProductInfo(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeProductInfoOutcome>>();
+    DescribeProductInfoAsync(
+    request,
+    [prom](
+        const KeewidbClient*,
+        const DescribeProductInfoRequest&,
+        DescribeProductInfoOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 KeewidbClient::DescribeProjectSecurityGroupsOutcome KeewidbClient::DescribeProjectSecurityGroups(const DescribeProjectSecurityGroupsRequest &request)
@@ -879,25 +1012,32 @@ KeewidbClient::DescribeProjectSecurityGroupsOutcome KeewidbClient::DescribeProje
 
 void KeewidbClient::DescribeProjectSecurityGroupsAsync(const DescribeProjectSecurityGroupsRequest& request, const DescribeProjectSecurityGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeProjectSecurityGroups(request), context);
-    };
+    using Req = const DescribeProjectSecurityGroupsRequest&;
+    using Resp = DescribeProjectSecurityGroupsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeProjectSecurityGroups", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 KeewidbClient::DescribeProjectSecurityGroupsOutcomeCallable KeewidbClient::DescribeProjectSecurityGroupsCallable(const DescribeProjectSecurityGroupsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeProjectSecurityGroupsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeProjectSecurityGroups(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeProjectSecurityGroupsOutcome>>();
+    DescribeProjectSecurityGroupsAsync(
+    request,
+    [prom](
+        const KeewidbClient*,
+        const DescribeProjectSecurityGroupsRequest&,
+        DescribeProjectSecurityGroupsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 KeewidbClient::DescribeProxySlowLogOutcome KeewidbClient::DescribeProxySlowLog(const DescribeProxySlowLogRequest &request)
@@ -922,25 +1062,32 @@ KeewidbClient::DescribeProxySlowLogOutcome KeewidbClient::DescribeProxySlowLog(c
 
 void KeewidbClient::DescribeProxySlowLogAsync(const DescribeProxySlowLogRequest& request, const DescribeProxySlowLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeProxySlowLog(request), context);
-    };
+    using Req = const DescribeProxySlowLogRequest&;
+    using Resp = DescribeProxySlowLogResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeProxySlowLog", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 KeewidbClient::DescribeProxySlowLogOutcomeCallable KeewidbClient::DescribeProxySlowLogCallable(const DescribeProxySlowLogRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeProxySlowLogOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeProxySlowLog(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeProxySlowLogOutcome>>();
+    DescribeProxySlowLogAsync(
+    request,
+    [prom](
+        const KeewidbClient*,
+        const DescribeProxySlowLogRequest&,
+        DescribeProxySlowLogOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 KeewidbClient::DescribeTaskInfoOutcome KeewidbClient::DescribeTaskInfo(const DescribeTaskInfoRequest &request)
@@ -965,25 +1112,32 @@ KeewidbClient::DescribeTaskInfoOutcome KeewidbClient::DescribeTaskInfo(const Des
 
 void KeewidbClient::DescribeTaskInfoAsync(const DescribeTaskInfoRequest& request, const DescribeTaskInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeTaskInfo(request), context);
-    };
+    using Req = const DescribeTaskInfoRequest&;
+    using Resp = DescribeTaskInfoResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeTaskInfo", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 KeewidbClient::DescribeTaskInfoOutcomeCallable KeewidbClient::DescribeTaskInfoCallable(const DescribeTaskInfoRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeTaskInfoOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeTaskInfo(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeTaskInfoOutcome>>();
+    DescribeTaskInfoAsync(
+    request,
+    [prom](
+        const KeewidbClient*,
+        const DescribeTaskInfoRequest&,
+        DescribeTaskInfoOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 KeewidbClient::DescribeTaskListOutcome KeewidbClient::DescribeTaskList(const DescribeTaskListRequest &request)
@@ -1008,25 +1162,32 @@ KeewidbClient::DescribeTaskListOutcome KeewidbClient::DescribeTaskList(const Des
 
 void KeewidbClient::DescribeTaskListAsync(const DescribeTaskListRequest& request, const DescribeTaskListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeTaskList(request), context);
-    };
+    using Req = const DescribeTaskListRequest&;
+    using Resp = DescribeTaskListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeTaskList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 KeewidbClient::DescribeTaskListOutcomeCallable KeewidbClient::DescribeTaskListCallable(const DescribeTaskListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeTaskListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeTaskList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeTaskListOutcome>>();
+    DescribeTaskListAsync(
+    request,
+    [prom](
+        const KeewidbClient*,
+        const DescribeTaskListRequest&,
+        DescribeTaskListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 KeewidbClient::DescribeTendisSlowLogOutcome KeewidbClient::DescribeTendisSlowLog(const DescribeTendisSlowLogRequest &request)
@@ -1051,25 +1212,32 @@ KeewidbClient::DescribeTendisSlowLogOutcome KeewidbClient::DescribeTendisSlowLog
 
 void KeewidbClient::DescribeTendisSlowLogAsync(const DescribeTendisSlowLogRequest& request, const DescribeTendisSlowLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeTendisSlowLog(request), context);
-    };
+    using Req = const DescribeTendisSlowLogRequest&;
+    using Resp = DescribeTendisSlowLogResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeTendisSlowLog", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 KeewidbClient::DescribeTendisSlowLogOutcomeCallable KeewidbClient::DescribeTendisSlowLogCallable(const DescribeTendisSlowLogRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeTendisSlowLogOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeTendisSlowLog(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeTendisSlowLogOutcome>>();
+    DescribeTendisSlowLogAsync(
+    request,
+    [prom](
+        const KeewidbClient*,
+        const DescribeTendisSlowLogRequest&,
+        DescribeTendisSlowLogOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 KeewidbClient::DestroyPostpaidInstanceOutcome KeewidbClient::DestroyPostpaidInstance(const DestroyPostpaidInstanceRequest &request)
@@ -1094,25 +1262,32 @@ KeewidbClient::DestroyPostpaidInstanceOutcome KeewidbClient::DestroyPostpaidInst
 
 void KeewidbClient::DestroyPostpaidInstanceAsync(const DestroyPostpaidInstanceRequest& request, const DestroyPostpaidInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DestroyPostpaidInstance(request), context);
-    };
+    using Req = const DestroyPostpaidInstanceRequest&;
+    using Resp = DestroyPostpaidInstanceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DestroyPostpaidInstance", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 KeewidbClient::DestroyPostpaidInstanceOutcomeCallable KeewidbClient::DestroyPostpaidInstanceCallable(const DestroyPostpaidInstanceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DestroyPostpaidInstanceOutcome()>>(
-        [this, request]()
-        {
-            return this->DestroyPostpaidInstance(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DestroyPostpaidInstanceOutcome>>();
+    DestroyPostpaidInstanceAsync(
+    request,
+    [prom](
+        const KeewidbClient*,
+        const DestroyPostpaidInstanceRequest&,
+        DestroyPostpaidInstanceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 KeewidbClient::DestroyPrepaidInstanceOutcome KeewidbClient::DestroyPrepaidInstance(const DestroyPrepaidInstanceRequest &request)
@@ -1137,25 +1312,32 @@ KeewidbClient::DestroyPrepaidInstanceOutcome KeewidbClient::DestroyPrepaidInstan
 
 void KeewidbClient::DestroyPrepaidInstanceAsync(const DestroyPrepaidInstanceRequest& request, const DestroyPrepaidInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DestroyPrepaidInstance(request), context);
-    };
+    using Req = const DestroyPrepaidInstanceRequest&;
+    using Resp = DestroyPrepaidInstanceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DestroyPrepaidInstance", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 KeewidbClient::DestroyPrepaidInstanceOutcomeCallable KeewidbClient::DestroyPrepaidInstanceCallable(const DestroyPrepaidInstanceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DestroyPrepaidInstanceOutcome()>>(
-        [this, request]()
-        {
-            return this->DestroyPrepaidInstance(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DestroyPrepaidInstanceOutcome>>();
+    DestroyPrepaidInstanceAsync(
+    request,
+    [prom](
+        const KeewidbClient*,
+        const DestroyPrepaidInstanceRequest&,
+        DestroyPrepaidInstanceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 KeewidbClient::DisassociateSecurityGroupsOutcome KeewidbClient::DisassociateSecurityGroups(const DisassociateSecurityGroupsRequest &request)
@@ -1180,25 +1362,32 @@ KeewidbClient::DisassociateSecurityGroupsOutcome KeewidbClient::DisassociateSecu
 
 void KeewidbClient::DisassociateSecurityGroupsAsync(const DisassociateSecurityGroupsRequest& request, const DisassociateSecurityGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DisassociateSecurityGroups(request), context);
-    };
+    using Req = const DisassociateSecurityGroupsRequest&;
+    using Resp = DisassociateSecurityGroupsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DisassociateSecurityGroups", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 KeewidbClient::DisassociateSecurityGroupsOutcomeCallable KeewidbClient::DisassociateSecurityGroupsCallable(const DisassociateSecurityGroupsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DisassociateSecurityGroupsOutcome()>>(
-        [this, request]()
-        {
-            return this->DisassociateSecurityGroups(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DisassociateSecurityGroupsOutcome>>();
+    DisassociateSecurityGroupsAsync(
+    request,
+    [prom](
+        const KeewidbClient*,
+        const DisassociateSecurityGroupsRequest&,
+        DisassociateSecurityGroupsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 KeewidbClient::ModifyAutoBackupConfigOutcome KeewidbClient::ModifyAutoBackupConfig(const ModifyAutoBackupConfigRequest &request)
@@ -1223,25 +1412,32 @@ KeewidbClient::ModifyAutoBackupConfigOutcome KeewidbClient::ModifyAutoBackupConf
 
 void KeewidbClient::ModifyAutoBackupConfigAsync(const ModifyAutoBackupConfigRequest& request, const ModifyAutoBackupConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyAutoBackupConfig(request), context);
-    };
+    using Req = const ModifyAutoBackupConfigRequest&;
+    using Resp = ModifyAutoBackupConfigResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyAutoBackupConfig", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 KeewidbClient::ModifyAutoBackupConfigOutcomeCallable KeewidbClient::ModifyAutoBackupConfigCallable(const ModifyAutoBackupConfigRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyAutoBackupConfigOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyAutoBackupConfig(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyAutoBackupConfigOutcome>>();
+    ModifyAutoBackupConfigAsync(
+    request,
+    [prom](
+        const KeewidbClient*,
+        const ModifyAutoBackupConfigRequest&,
+        ModifyAutoBackupConfigOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 KeewidbClient::ModifyConnectionConfigOutcome KeewidbClient::ModifyConnectionConfig(const ModifyConnectionConfigRequest &request)
@@ -1266,25 +1462,32 @@ KeewidbClient::ModifyConnectionConfigOutcome KeewidbClient::ModifyConnectionConf
 
 void KeewidbClient::ModifyConnectionConfigAsync(const ModifyConnectionConfigRequest& request, const ModifyConnectionConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyConnectionConfig(request), context);
-    };
+    using Req = const ModifyConnectionConfigRequest&;
+    using Resp = ModifyConnectionConfigResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyConnectionConfig", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 KeewidbClient::ModifyConnectionConfigOutcomeCallable KeewidbClient::ModifyConnectionConfigCallable(const ModifyConnectionConfigRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyConnectionConfigOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyConnectionConfig(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyConnectionConfigOutcome>>();
+    ModifyConnectionConfigAsync(
+    request,
+    [prom](
+        const KeewidbClient*,
+        const ModifyConnectionConfigRequest&,
+        ModifyConnectionConfigOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 KeewidbClient::ModifyDBInstanceSecurityGroupsOutcome KeewidbClient::ModifyDBInstanceSecurityGroups(const ModifyDBInstanceSecurityGroupsRequest &request)
@@ -1309,25 +1512,32 @@ KeewidbClient::ModifyDBInstanceSecurityGroupsOutcome KeewidbClient::ModifyDBInst
 
 void KeewidbClient::ModifyDBInstanceSecurityGroupsAsync(const ModifyDBInstanceSecurityGroupsRequest& request, const ModifyDBInstanceSecurityGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyDBInstanceSecurityGroups(request), context);
-    };
+    using Req = const ModifyDBInstanceSecurityGroupsRequest&;
+    using Resp = ModifyDBInstanceSecurityGroupsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyDBInstanceSecurityGroups", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 KeewidbClient::ModifyDBInstanceSecurityGroupsOutcomeCallable KeewidbClient::ModifyDBInstanceSecurityGroupsCallable(const ModifyDBInstanceSecurityGroupsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyDBInstanceSecurityGroupsOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyDBInstanceSecurityGroups(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyDBInstanceSecurityGroupsOutcome>>();
+    ModifyDBInstanceSecurityGroupsAsync(
+    request,
+    [prom](
+        const KeewidbClient*,
+        const ModifyDBInstanceSecurityGroupsRequest&,
+        ModifyDBInstanceSecurityGroupsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 KeewidbClient::ModifyInstanceOutcome KeewidbClient::ModifyInstance(const ModifyInstanceRequest &request)
@@ -1352,25 +1562,32 @@ KeewidbClient::ModifyInstanceOutcome KeewidbClient::ModifyInstance(const ModifyI
 
 void KeewidbClient::ModifyInstanceAsync(const ModifyInstanceRequest& request, const ModifyInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyInstance(request), context);
-    };
+    using Req = const ModifyInstanceRequest&;
+    using Resp = ModifyInstanceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyInstance", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 KeewidbClient::ModifyInstanceOutcomeCallable KeewidbClient::ModifyInstanceCallable(const ModifyInstanceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyInstanceOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyInstance(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyInstanceOutcome>>();
+    ModifyInstanceAsync(
+    request,
+    [prom](
+        const KeewidbClient*,
+        const ModifyInstanceRequest&,
+        ModifyInstanceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 KeewidbClient::ModifyInstanceParamsOutcome KeewidbClient::ModifyInstanceParams(const ModifyInstanceParamsRequest &request)
@@ -1395,25 +1612,32 @@ KeewidbClient::ModifyInstanceParamsOutcome KeewidbClient::ModifyInstanceParams(c
 
 void KeewidbClient::ModifyInstanceParamsAsync(const ModifyInstanceParamsRequest& request, const ModifyInstanceParamsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyInstanceParams(request), context);
-    };
+    using Req = const ModifyInstanceParamsRequest&;
+    using Resp = ModifyInstanceParamsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyInstanceParams", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 KeewidbClient::ModifyInstanceParamsOutcomeCallable KeewidbClient::ModifyInstanceParamsCallable(const ModifyInstanceParamsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyInstanceParamsOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyInstanceParams(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyInstanceParamsOutcome>>();
+    ModifyInstanceParamsAsync(
+    request,
+    [prom](
+        const KeewidbClient*,
+        const ModifyInstanceParamsRequest&,
+        ModifyInstanceParamsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 KeewidbClient::ModifyMaintenanceWindowOutcome KeewidbClient::ModifyMaintenanceWindow(const ModifyMaintenanceWindowRequest &request)
@@ -1438,25 +1662,32 @@ KeewidbClient::ModifyMaintenanceWindowOutcome KeewidbClient::ModifyMaintenanceWi
 
 void KeewidbClient::ModifyMaintenanceWindowAsync(const ModifyMaintenanceWindowRequest& request, const ModifyMaintenanceWindowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyMaintenanceWindow(request), context);
-    };
+    using Req = const ModifyMaintenanceWindowRequest&;
+    using Resp = ModifyMaintenanceWindowResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyMaintenanceWindow", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 KeewidbClient::ModifyMaintenanceWindowOutcomeCallable KeewidbClient::ModifyMaintenanceWindowCallable(const ModifyMaintenanceWindowRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyMaintenanceWindowOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyMaintenanceWindow(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyMaintenanceWindowOutcome>>();
+    ModifyMaintenanceWindowAsync(
+    request,
+    [prom](
+        const KeewidbClient*,
+        const ModifyMaintenanceWindowRequest&,
+        ModifyMaintenanceWindowOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 KeewidbClient::ModifyNetworkConfigOutcome KeewidbClient::ModifyNetworkConfig(const ModifyNetworkConfigRequest &request)
@@ -1481,25 +1712,32 @@ KeewidbClient::ModifyNetworkConfigOutcome KeewidbClient::ModifyNetworkConfig(con
 
 void KeewidbClient::ModifyNetworkConfigAsync(const ModifyNetworkConfigRequest& request, const ModifyNetworkConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyNetworkConfig(request), context);
-    };
+    using Req = const ModifyNetworkConfigRequest&;
+    using Resp = ModifyNetworkConfigResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyNetworkConfig", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 KeewidbClient::ModifyNetworkConfigOutcomeCallable KeewidbClient::ModifyNetworkConfigCallable(const ModifyNetworkConfigRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyNetworkConfigOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyNetworkConfig(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyNetworkConfigOutcome>>();
+    ModifyNetworkConfigAsync(
+    request,
+    [prom](
+        const KeewidbClient*,
+        const ModifyNetworkConfigRequest&,
+        ModifyNetworkConfigOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 KeewidbClient::RenewInstanceOutcome KeewidbClient::RenewInstance(const RenewInstanceRequest &request)
@@ -1524,25 +1762,32 @@ KeewidbClient::RenewInstanceOutcome KeewidbClient::RenewInstance(const RenewInst
 
 void KeewidbClient::RenewInstanceAsync(const RenewInstanceRequest& request, const RenewInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->RenewInstance(request), context);
-    };
+    using Req = const RenewInstanceRequest&;
+    using Resp = RenewInstanceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "RenewInstance", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 KeewidbClient::RenewInstanceOutcomeCallable KeewidbClient::RenewInstanceCallable(const RenewInstanceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<RenewInstanceOutcome()>>(
-        [this, request]()
-        {
-            return this->RenewInstance(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<RenewInstanceOutcome>>();
+    RenewInstanceAsync(
+    request,
+    [prom](
+        const KeewidbClient*,
+        const RenewInstanceRequest&,
+        RenewInstanceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 KeewidbClient::ResetPasswordOutcome KeewidbClient::ResetPassword(const ResetPasswordRequest &request)
@@ -1567,25 +1812,32 @@ KeewidbClient::ResetPasswordOutcome KeewidbClient::ResetPassword(const ResetPass
 
 void KeewidbClient::ResetPasswordAsync(const ResetPasswordRequest& request, const ResetPasswordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ResetPassword(request), context);
-    };
+    using Req = const ResetPasswordRequest&;
+    using Resp = ResetPasswordResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ResetPassword", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 KeewidbClient::ResetPasswordOutcomeCallable KeewidbClient::ResetPasswordCallable(const ResetPasswordRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ResetPasswordOutcome()>>(
-        [this, request]()
-        {
-            return this->ResetPassword(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ResetPasswordOutcome>>();
+    ResetPasswordAsync(
+    request,
+    [prom](
+        const KeewidbClient*,
+        const ResetPasswordRequest&,
+        ResetPasswordOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 KeewidbClient::StartUpInstanceOutcome KeewidbClient::StartUpInstance(const StartUpInstanceRequest &request)
@@ -1610,25 +1862,32 @@ KeewidbClient::StartUpInstanceOutcome KeewidbClient::StartUpInstance(const Start
 
 void KeewidbClient::StartUpInstanceAsync(const StartUpInstanceRequest& request, const StartUpInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->StartUpInstance(request), context);
-    };
+    using Req = const StartUpInstanceRequest&;
+    using Resp = StartUpInstanceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "StartUpInstance", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 KeewidbClient::StartUpInstanceOutcomeCallable KeewidbClient::StartUpInstanceCallable(const StartUpInstanceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<StartUpInstanceOutcome()>>(
-        [this, request]()
-        {
-            return this->StartUpInstance(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<StartUpInstanceOutcome>>();
+    StartUpInstanceAsync(
+    request,
+    [prom](
+        const KeewidbClient*,
+        const StartUpInstanceRequest&,
+        StartUpInstanceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 KeewidbClient::UpgradeInstanceOutcome KeewidbClient::UpgradeInstance(const UpgradeInstanceRequest &request)
@@ -1653,24 +1912,31 @@ KeewidbClient::UpgradeInstanceOutcome KeewidbClient::UpgradeInstance(const Upgra
 
 void KeewidbClient::UpgradeInstanceAsync(const UpgradeInstanceRequest& request, const UpgradeInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UpgradeInstance(request), context);
-    };
+    using Req = const UpgradeInstanceRequest&;
+    using Resp = UpgradeInstanceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UpgradeInstance", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 KeewidbClient::UpgradeInstanceOutcomeCallable KeewidbClient::UpgradeInstanceCallable(const UpgradeInstanceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UpgradeInstanceOutcome()>>(
-        [this, request]()
-        {
-            return this->UpgradeInstance(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UpgradeInstanceOutcome>>();
+    UpgradeInstanceAsync(
+    request,
+    [prom](
+        const KeewidbClient*,
+        const UpgradeInstanceRequest&,
+        UpgradeInstanceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 

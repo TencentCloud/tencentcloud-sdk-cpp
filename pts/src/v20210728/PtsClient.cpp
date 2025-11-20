@@ -62,25 +62,32 @@ PtsClient::AbortCronJobsOutcome PtsClient::AbortCronJobs(const AbortCronJobsRequ
 
 void PtsClient::AbortCronJobsAsync(const AbortCronJobsRequest& request, const AbortCronJobsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->AbortCronJobs(request), context);
-    };
+    using Req = const AbortCronJobsRequest&;
+    using Resp = AbortCronJobsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "AbortCronJobs", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 PtsClient::AbortCronJobsOutcomeCallable PtsClient::AbortCronJobsCallable(const AbortCronJobsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<AbortCronJobsOutcome()>>(
-        [this, request]()
-        {
-            return this->AbortCronJobs(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<AbortCronJobsOutcome>>();
+    AbortCronJobsAsync(
+    request,
+    [prom](
+        const PtsClient*,
+        const AbortCronJobsRequest&,
+        AbortCronJobsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 PtsClient::AbortJobOutcome PtsClient::AbortJob(const AbortJobRequest &request)
@@ -105,25 +112,32 @@ PtsClient::AbortJobOutcome PtsClient::AbortJob(const AbortJobRequest &request)
 
 void PtsClient::AbortJobAsync(const AbortJobRequest& request, const AbortJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->AbortJob(request), context);
-    };
+    using Req = const AbortJobRequest&;
+    using Resp = AbortJobResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "AbortJob", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 PtsClient::AbortJobOutcomeCallable PtsClient::AbortJobCallable(const AbortJobRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<AbortJobOutcome()>>(
-        [this, request]()
-        {
-            return this->AbortJob(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<AbortJobOutcome>>();
+    AbortJobAsync(
+    request,
+    [prom](
+        const PtsClient*,
+        const AbortJobRequest&,
+        AbortJobOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 PtsClient::AdjustJobSpeedOutcome PtsClient::AdjustJobSpeed(const AdjustJobSpeedRequest &request)
@@ -148,25 +162,32 @@ PtsClient::AdjustJobSpeedOutcome PtsClient::AdjustJobSpeed(const AdjustJobSpeedR
 
 void PtsClient::AdjustJobSpeedAsync(const AdjustJobSpeedRequest& request, const AdjustJobSpeedAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->AdjustJobSpeed(request), context);
-    };
+    using Req = const AdjustJobSpeedRequest&;
+    using Resp = AdjustJobSpeedResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "AdjustJobSpeed", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 PtsClient::AdjustJobSpeedOutcomeCallable PtsClient::AdjustJobSpeedCallable(const AdjustJobSpeedRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<AdjustJobSpeedOutcome()>>(
-        [this, request]()
-        {
-            return this->AdjustJobSpeed(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<AdjustJobSpeedOutcome>>();
+    AdjustJobSpeedAsync(
+    request,
+    [prom](
+        const PtsClient*,
+        const AdjustJobSpeedRequest&,
+        AdjustJobSpeedOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 PtsClient::CopyScenarioOutcome PtsClient::CopyScenario(const CopyScenarioRequest &request)
@@ -191,25 +212,32 @@ PtsClient::CopyScenarioOutcome PtsClient::CopyScenario(const CopyScenarioRequest
 
 void PtsClient::CopyScenarioAsync(const CopyScenarioRequest& request, const CopyScenarioAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CopyScenario(request), context);
-    };
+    using Req = const CopyScenarioRequest&;
+    using Resp = CopyScenarioResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CopyScenario", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 PtsClient::CopyScenarioOutcomeCallable PtsClient::CopyScenarioCallable(const CopyScenarioRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CopyScenarioOutcome()>>(
-        [this, request]()
-        {
-            return this->CopyScenario(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CopyScenarioOutcome>>();
+    CopyScenarioAsync(
+    request,
+    [prom](
+        const PtsClient*,
+        const CopyScenarioRequest&,
+        CopyScenarioOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 PtsClient::CreateAlertChannelOutcome PtsClient::CreateAlertChannel(const CreateAlertChannelRequest &request)
@@ -234,25 +262,32 @@ PtsClient::CreateAlertChannelOutcome PtsClient::CreateAlertChannel(const CreateA
 
 void PtsClient::CreateAlertChannelAsync(const CreateAlertChannelRequest& request, const CreateAlertChannelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateAlertChannel(request), context);
-    };
+    using Req = const CreateAlertChannelRequest&;
+    using Resp = CreateAlertChannelResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateAlertChannel", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 PtsClient::CreateAlertChannelOutcomeCallable PtsClient::CreateAlertChannelCallable(const CreateAlertChannelRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateAlertChannelOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateAlertChannel(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateAlertChannelOutcome>>();
+    CreateAlertChannelAsync(
+    request,
+    [prom](
+        const PtsClient*,
+        const CreateAlertChannelRequest&,
+        CreateAlertChannelOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 PtsClient::CreateCronJobOutcome PtsClient::CreateCronJob(const CreateCronJobRequest &request)
@@ -277,25 +312,32 @@ PtsClient::CreateCronJobOutcome PtsClient::CreateCronJob(const CreateCronJobRequ
 
 void PtsClient::CreateCronJobAsync(const CreateCronJobRequest& request, const CreateCronJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateCronJob(request), context);
-    };
+    using Req = const CreateCronJobRequest&;
+    using Resp = CreateCronJobResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateCronJob", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 PtsClient::CreateCronJobOutcomeCallable PtsClient::CreateCronJobCallable(const CreateCronJobRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateCronJobOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateCronJob(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateCronJobOutcome>>();
+    CreateCronJobAsync(
+    request,
+    [prom](
+        const PtsClient*,
+        const CreateCronJobRequest&,
+        CreateCronJobOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 PtsClient::CreateEnvironmentOutcome PtsClient::CreateEnvironment(const CreateEnvironmentRequest &request)
@@ -320,25 +362,32 @@ PtsClient::CreateEnvironmentOutcome PtsClient::CreateEnvironment(const CreateEnv
 
 void PtsClient::CreateEnvironmentAsync(const CreateEnvironmentRequest& request, const CreateEnvironmentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateEnvironment(request), context);
-    };
+    using Req = const CreateEnvironmentRequest&;
+    using Resp = CreateEnvironmentResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateEnvironment", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 PtsClient::CreateEnvironmentOutcomeCallable PtsClient::CreateEnvironmentCallable(const CreateEnvironmentRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateEnvironmentOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateEnvironment(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateEnvironmentOutcome>>();
+    CreateEnvironmentAsync(
+    request,
+    [prom](
+        const PtsClient*,
+        const CreateEnvironmentRequest&,
+        CreateEnvironmentOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 PtsClient::CreateFileOutcome PtsClient::CreateFile(const CreateFileRequest &request)
@@ -363,25 +412,32 @@ PtsClient::CreateFileOutcome PtsClient::CreateFile(const CreateFileRequest &requ
 
 void PtsClient::CreateFileAsync(const CreateFileRequest& request, const CreateFileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateFile(request), context);
-    };
+    using Req = const CreateFileRequest&;
+    using Resp = CreateFileResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateFile", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 PtsClient::CreateFileOutcomeCallable PtsClient::CreateFileCallable(const CreateFileRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateFileOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateFile(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateFileOutcome>>();
+    CreateFileAsync(
+    request,
+    [prom](
+        const PtsClient*,
+        const CreateFileRequest&,
+        CreateFileOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 PtsClient::CreateProjectOutcome PtsClient::CreateProject(const CreateProjectRequest &request)
@@ -406,25 +462,32 @@ PtsClient::CreateProjectOutcome PtsClient::CreateProject(const CreateProjectRequ
 
 void PtsClient::CreateProjectAsync(const CreateProjectRequest& request, const CreateProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateProject(request), context);
-    };
+    using Req = const CreateProjectRequest&;
+    using Resp = CreateProjectResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateProject", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 PtsClient::CreateProjectOutcomeCallable PtsClient::CreateProjectCallable(const CreateProjectRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateProjectOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateProject(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateProjectOutcome>>();
+    CreateProjectAsync(
+    request,
+    [prom](
+        const PtsClient*,
+        const CreateProjectRequest&,
+        CreateProjectOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 PtsClient::CreateScenarioOutcome PtsClient::CreateScenario(const CreateScenarioRequest &request)
@@ -449,25 +512,32 @@ PtsClient::CreateScenarioOutcome PtsClient::CreateScenario(const CreateScenarioR
 
 void PtsClient::CreateScenarioAsync(const CreateScenarioRequest& request, const CreateScenarioAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateScenario(request), context);
-    };
+    using Req = const CreateScenarioRequest&;
+    using Resp = CreateScenarioResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateScenario", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 PtsClient::CreateScenarioOutcomeCallable PtsClient::CreateScenarioCallable(const CreateScenarioRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateScenarioOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateScenario(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateScenarioOutcome>>();
+    CreateScenarioAsync(
+    request,
+    [prom](
+        const PtsClient*,
+        const CreateScenarioRequest&,
+        CreateScenarioOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 PtsClient::DeleteAlertChannelOutcome PtsClient::DeleteAlertChannel(const DeleteAlertChannelRequest &request)
@@ -492,25 +562,32 @@ PtsClient::DeleteAlertChannelOutcome PtsClient::DeleteAlertChannel(const DeleteA
 
 void PtsClient::DeleteAlertChannelAsync(const DeleteAlertChannelRequest& request, const DeleteAlertChannelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteAlertChannel(request), context);
-    };
+    using Req = const DeleteAlertChannelRequest&;
+    using Resp = DeleteAlertChannelResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteAlertChannel", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 PtsClient::DeleteAlertChannelOutcomeCallable PtsClient::DeleteAlertChannelCallable(const DeleteAlertChannelRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteAlertChannelOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteAlertChannel(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteAlertChannelOutcome>>();
+    DeleteAlertChannelAsync(
+    request,
+    [prom](
+        const PtsClient*,
+        const DeleteAlertChannelRequest&,
+        DeleteAlertChannelOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 PtsClient::DeleteCronJobsOutcome PtsClient::DeleteCronJobs(const DeleteCronJobsRequest &request)
@@ -535,25 +612,32 @@ PtsClient::DeleteCronJobsOutcome PtsClient::DeleteCronJobs(const DeleteCronJobsR
 
 void PtsClient::DeleteCronJobsAsync(const DeleteCronJobsRequest& request, const DeleteCronJobsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteCronJobs(request), context);
-    };
+    using Req = const DeleteCronJobsRequest&;
+    using Resp = DeleteCronJobsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteCronJobs", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 PtsClient::DeleteCronJobsOutcomeCallable PtsClient::DeleteCronJobsCallable(const DeleteCronJobsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteCronJobsOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteCronJobs(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteCronJobsOutcome>>();
+    DeleteCronJobsAsync(
+    request,
+    [prom](
+        const PtsClient*,
+        const DeleteCronJobsRequest&,
+        DeleteCronJobsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 PtsClient::DeleteEnvironmentsOutcome PtsClient::DeleteEnvironments(const DeleteEnvironmentsRequest &request)
@@ -578,25 +662,32 @@ PtsClient::DeleteEnvironmentsOutcome PtsClient::DeleteEnvironments(const DeleteE
 
 void PtsClient::DeleteEnvironmentsAsync(const DeleteEnvironmentsRequest& request, const DeleteEnvironmentsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteEnvironments(request), context);
-    };
+    using Req = const DeleteEnvironmentsRequest&;
+    using Resp = DeleteEnvironmentsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteEnvironments", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 PtsClient::DeleteEnvironmentsOutcomeCallable PtsClient::DeleteEnvironmentsCallable(const DeleteEnvironmentsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteEnvironmentsOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteEnvironments(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteEnvironmentsOutcome>>();
+    DeleteEnvironmentsAsync(
+    request,
+    [prom](
+        const PtsClient*,
+        const DeleteEnvironmentsRequest&,
+        DeleteEnvironmentsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 PtsClient::DeleteFilesOutcome PtsClient::DeleteFiles(const DeleteFilesRequest &request)
@@ -621,25 +712,32 @@ PtsClient::DeleteFilesOutcome PtsClient::DeleteFiles(const DeleteFilesRequest &r
 
 void PtsClient::DeleteFilesAsync(const DeleteFilesRequest& request, const DeleteFilesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteFiles(request), context);
-    };
+    using Req = const DeleteFilesRequest&;
+    using Resp = DeleteFilesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteFiles", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 PtsClient::DeleteFilesOutcomeCallable PtsClient::DeleteFilesCallable(const DeleteFilesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteFilesOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteFiles(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteFilesOutcome>>();
+    DeleteFilesAsync(
+    request,
+    [prom](
+        const PtsClient*,
+        const DeleteFilesRequest&,
+        DeleteFilesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 PtsClient::DeleteJobsOutcome PtsClient::DeleteJobs(const DeleteJobsRequest &request)
@@ -664,25 +762,32 @@ PtsClient::DeleteJobsOutcome PtsClient::DeleteJobs(const DeleteJobsRequest &requ
 
 void PtsClient::DeleteJobsAsync(const DeleteJobsRequest& request, const DeleteJobsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteJobs(request), context);
-    };
+    using Req = const DeleteJobsRequest&;
+    using Resp = DeleteJobsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteJobs", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 PtsClient::DeleteJobsOutcomeCallable PtsClient::DeleteJobsCallable(const DeleteJobsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteJobsOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteJobs(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteJobsOutcome>>();
+    DeleteJobsAsync(
+    request,
+    [prom](
+        const PtsClient*,
+        const DeleteJobsRequest&,
+        DeleteJobsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 PtsClient::DeleteProjectsOutcome PtsClient::DeleteProjects(const DeleteProjectsRequest &request)
@@ -707,25 +812,32 @@ PtsClient::DeleteProjectsOutcome PtsClient::DeleteProjects(const DeleteProjectsR
 
 void PtsClient::DeleteProjectsAsync(const DeleteProjectsRequest& request, const DeleteProjectsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteProjects(request), context);
-    };
+    using Req = const DeleteProjectsRequest&;
+    using Resp = DeleteProjectsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteProjects", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 PtsClient::DeleteProjectsOutcomeCallable PtsClient::DeleteProjectsCallable(const DeleteProjectsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteProjectsOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteProjects(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteProjectsOutcome>>();
+    DeleteProjectsAsync(
+    request,
+    [prom](
+        const PtsClient*,
+        const DeleteProjectsRequest&,
+        DeleteProjectsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 PtsClient::DeleteScenariosOutcome PtsClient::DeleteScenarios(const DeleteScenariosRequest &request)
@@ -750,25 +862,32 @@ PtsClient::DeleteScenariosOutcome PtsClient::DeleteScenarios(const DeleteScenari
 
 void PtsClient::DeleteScenariosAsync(const DeleteScenariosRequest& request, const DeleteScenariosAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteScenarios(request), context);
-    };
+    using Req = const DeleteScenariosRequest&;
+    using Resp = DeleteScenariosResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteScenarios", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 PtsClient::DeleteScenariosOutcomeCallable PtsClient::DeleteScenariosCallable(const DeleteScenariosRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteScenariosOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteScenarios(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteScenariosOutcome>>();
+    DeleteScenariosAsync(
+    request,
+    [prom](
+        const PtsClient*,
+        const DeleteScenariosRequest&,
+        DeleteScenariosOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 PtsClient::DescribeAlertChannelsOutcome PtsClient::DescribeAlertChannels(const DescribeAlertChannelsRequest &request)
@@ -793,25 +912,32 @@ PtsClient::DescribeAlertChannelsOutcome PtsClient::DescribeAlertChannels(const D
 
 void PtsClient::DescribeAlertChannelsAsync(const DescribeAlertChannelsRequest& request, const DescribeAlertChannelsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAlertChannels(request), context);
-    };
+    using Req = const DescribeAlertChannelsRequest&;
+    using Resp = DescribeAlertChannelsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAlertChannels", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 PtsClient::DescribeAlertChannelsOutcomeCallable PtsClient::DescribeAlertChannelsCallable(const DescribeAlertChannelsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAlertChannelsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAlertChannels(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAlertChannelsOutcome>>();
+    DescribeAlertChannelsAsync(
+    request,
+    [prom](
+        const PtsClient*,
+        const DescribeAlertChannelsRequest&,
+        DescribeAlertChannelsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 PtsClient::DescribeAlertRecordsOutcome PtsClient::DescribeAlertRecords(const DescribeAlertRecordsRequest &request)
@@ -836,25 +962,32 @@ PtsClient::DescribeAlertRecordsOutcome PtsClient::DescribeAlertRecords(const Des
 
 void PtsClient::DescribeAlertRecordsAsync(const DescribeAlertRecordsRequest& request, const DescribeAlertRecordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAlertRecords(request), context);
-    };
+    using Req = const DescribeAlertRecordsRequest&;
+    using Resp = DescribeAlertRecordsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAlertRecords", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 PtsClient::DescribeAlertRecordsOutcomeCallable PtsClient::DescribeAlertRecordsCallable(const DescribeAlertRecordsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAlertRecordsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAlertRecords(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAlertRecordsOutcome>>();
+    DescribeAlertRecordsAsync(
+    request,
+    [prom](
+        const PtsClient*,
+        const DescribeAlertRecordsRequest&,
+        DescribeAlertRecordsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 PtsClient::DescribeAvailableMetricsOutcome PtsClient::DescribeAvailableMetrics(const DescribeAvailableMetricsRequest &request)
@@ -879,25 +1012,32 @@ PtsClient::DescribeAvailableMetricsOutcome PtsClient::DescribeAvailableMetrics(c
 
 void PtsClient::DescribeAvailableMetricsAsync(const DescribeAvailableMetricsRequest& request, const DescribeAvailableMetricsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAvailableMetrics(request), context);
-    };
+    using Req = const DescribeAvailableMetricsRequest&;
+    using Resp = DescribeAvailableMetricsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAvailableMetrics", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 PtsClient::DescribeAvailableMetricsOutcomeCallable PtsClient::DescribeAvailableMetricsCallable(const DescribeAvailableMetricsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAvailableMetricsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAvailableMetrics(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAvailableMetricsOutcome>>();
+    DescribeAvailableMetricsAsync(
+    request,
+    [prom](
+        const PtsClient*,
+        const DescribeAvailableMetricsRequest&,
+        DescribeAvailableMetricsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 PtsClient::DescribeCheckSummaryOutcome PtsClient::DescribeCheckSummary(const DescribeCheckSummaryRequest &request)
@@ -922,25 +1062,32 @@ PtsClient::DescribeCheckSummaryOutcome PtsClient::DescribeCheckSummary(const Des
 
 void PtsClient::DescribeCheckSummaryAsync(const DescribeCheckSummaryRequest& request, const DescribeCheckSummaryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeCheckSummary(request), context);
-    };
+    using Req = const DescribeCheckSummaryRequest&;
+    using Resp = DescribeCheckSummaryResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeCheckSummary", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 PtsClient::DescribeCheckSummaryOutcomeCallable PtsClient::DescribeCheckSummaryCallable(const DescribeCheckSummaryRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeCheckSummaryOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeCheckSummary(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeCheckSummaryOutcome>>();
+    DescribeCheckSummaryAsync(
+    request,
+    [prom](
+        const PtsClient*,
+        const DescribeCheckSummaryRequest&,
+        DescribeCheckSummaryOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 PtsClient::DescribeCronJobsOutcome PtsClient::DescribeCronJobs(const DescribeCronJobsRequest &request)
@@ -965,25 +1112,32 @@ PtsClient::DescribeCronJobsOutcome PtsClient::DescribeCronJobs(const DescribeCro
 
 void PtsClient::DescribeCronJobsAsync(const DescribeCronJobsRequest& request, const DescribeCronJobsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeCronJobs(request), context);
-    };
+    using Req = const DescribeCronJobsRequest&;
+    using Resp = DescribeCronJobsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeCronJobs", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 PtsClient::DescribeCronJobsOutcomeCallable PtsClient::DescribeCronJobsCallable(const DescribeCronJobsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeCronJobsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeCronJobs(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeCronJobsOutcome>>();
+    DescribeCronJobsAsync(
+    request,
+    [prom](
+        const PtsClient*,
+        const DescribeCronJobsRequest&,
+        DescribeCronJobsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 PtsClient::DescribeEnvironmentsOutcome PtsClient::DescribeEnvironments(const DescribeEnvironmentsRequest &request)
@@ -1008,25 +1162,32 @@ PtsClient::DescribeEnvironmentsOutcome PtsClient::DescribeEnvironments(const Des
 
 void PtsClient::DescribeEnvironmentsAsync(const DescribeEnvironmentsRequest& request, const DescribeEnvironmentsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeEnvironments(request), context);
-    };
+    using Req = const DescribeEnvironmentsRequest&;
+    using Resp = DescribeEnvironmentsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeEnvironments", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 PtsClient::DescribeEnvironmentsOutcomeCallable PtsClient::DescribeEnvironmentsCallable(const DescribeEnvironmentsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeEnvironmentsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeEnvironments(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeEnvironmentsOutcome>>();
+    DescribeEnvironmentsAsync(
+    request,
+    [prom](
+        const PtsClient*,
+        const DescribeEnvironmentsRequest&,
+        DescribeEnvironmentsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 PtsClient::DescribeErrorSummaryOutcome PtsClient::DescribeErrorSummary(const DescribeErrorSummaryRequest &request)
@@ -1051,25 +1212,32 @@ PtsClient::DescribeErrorSummaryOutcome PtsClient::DescribeErrorSummary(const Des
 
 void PtsClient::DescribeErrorSummaryAsync(const DescribeErrorSummaryRequest& request, const DescribeErrorSummaryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeErrorSummary(request), context);
-    };
+    using Req = const DescribeErrorSummaryRequest&;
+    using Resp = DescribeErrorSummaryResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeErrorSummary", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 PtsClient::DescribeErrorSummaryOutcomeCallable PtsClient::DescribeErrorSummaryCallable(const DescribeErrorSummaryRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeErrorSummaryOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeErrorSummary(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeErrorSummaryOutcome>>();
+    DescribeErrorSummaryAsync(
+    request,
+    [prom](
+        const PtsClient*,
+        const DescribeErrorSummaryRequest&,
+        DescribeErrorSummaryOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 PtsClient::DescribeFilesOutcome PtsClient::DescribeFiles(const DescribeFilesRequest &request)
@@ -1094,25 +1262,32 @@ PtsClient::DescribeFilesOutcome PtsClient::DescribeFiles(const DescribeFilesRequ
 
 void PtsClient::DescribeFilesAsync(const DescribeFilesRequest& request, const DescribeFilesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeFiles(request), context);
-    };
+    using Req = const DescribeFilesRequest&;
+    using Resp = DescribeFilesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeFiles", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 PtsClient::DescribeFilesOutcomeCallable PtsClient::DescribeFilesCallable(const DescribeFilesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeFilesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeFiles(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeFilesOutcome>>();
+    DescribeFilesAsync(
+    request,
+    [prom](
+        const PtsClient*,
+        const DescribeFilesRequest&,
+        DescribeFilesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 PtsClient::DescribeJobsOutcome PtsClient::DescribeJobs(const DescribeJobsRequest &request)
@@ -1137,25 +1312,32 @@ PtsClient::DescribeJobsOutcome PtsClient::DescribeJobs(const DescribeJobsRequest
 
 void PtsClient::DescribeJobsAsync(const DescribeJobsRequest& request, const DescribeJobsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeJobs(request), context);
-    };
+    using Req = const DescribeJobsRequest&;
+    using Resp = DescribeJobsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeJobs", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 PtsClient::DescribeJobsOutcomeCallable PtsClient::DescribeJobsCallable(const DescribeJobsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeJobsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeJobs(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeJobsOutcome>>();
+    DescribeJobsAsync(
+    request,
+    [prom](
+        const PtsClient*,
+        const DescribeJobsRequest&,
+        DescribeJobsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 PtsClient::DescribeLabelValuesOutcome PtsClient::DescribeLabelValues(const DescribeLabelValuesRequest &request)
@@ -1180,25 +1362,32 @@ PtsClient::DescribeLabelValuesOutcome PtsClient::DescribeLabelValues(const Descr
 
 void PtsClient::DescribeLabelValuesAsync(const DescribeLabelValuesRequest& request, const DescribeLabelValuesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeLabelValues(request), context);
-    };
+    using Req = const DescribeLabelValuesRequest&;
+    using Resp = DescribeLabelValuesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeLabelValues", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 PtsClient::DescribeLabelValuesOutcomeCallable PtsClient::DescribeLabelValuesCallable(const DescribeLabelValuesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeLabelValuesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeLabelValues(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeLabelValuesOutcome>>();
+    DescribeLabelValuesAsync(
+    request,
+    [prom](
+        const PtsClient*,
+        const DescribeLabelValuesRequest&,
+        DescribeLabelValuesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 PtsClient::DescribeMetricLabelWithValuesOutcome PtsClient::DescribeMetricLabelWithValues(const DescribeMetricLabelWithValuesRequest &request)
@@ -1223,25 +1412,32 @@ PtsClient::DescribeMetricLabelWithValuesOutcome PtsClient::DescribeMetricLabelWi
 
 void PtsClient::DescribeMetricLabelWithValuesAsync(const DescribeMetricLabelWithValuesRequest& request, const DescribeMetricLabelWithValuesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeMetricLabelWithValues(request), context);
-    };
+    using Req = const DescribeMetricLabelWithValuesRequest&;
+    using Resp = DescribeMetricLabelWithValuesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeMetricLabelWithValues", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 PtsClient::DescribeMetricLabelWithValuesOutcomeCallable PtsClient::DescribeMetricLabelWithValuesCallable(const DescribeMetricLabelWithValuesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeMetricLabelWithValuesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeMetricLabelWithValues(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeMetricLabelWithValuesOutcome>>();
+    DescribeMetricLabelWithValuesAsync(
+    request,
+    [prom](
+        const PtsClient*,
+        const DescribeMetricLabelWithValuesRequest&,
+        DescribeMetricLabelWithValuesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 PtsClient::DescribeNormalLogsOutcome PtsClient::DescribeNormalLogs(const DescribeNormalLogsRequest &request)
@@ -1266,25 +1462,32 @@ PtsClient::DescribeNormalLogsOutcome PtsClient::DescribeNormalLogs(const Describ
 
 void PtsClient::DescribeNormalLogsAsync(const DescribeNormalLogsRequest& request, const DescribeNormalLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeNormalLogs(request), context);
-    };
+    using Req = const DescribeNormalLogsRequest&;
+    using Resp = DescribeNormalLogsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeNormalLogs", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 PtsClient::DescribeNormalLogsOutcomeCallable PtsClient::DescribeNormalLogsCallable(const DescribeNormalLogsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeNormalLogsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeNormalLogs(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeNormalLogsOutcome>>();
+    DescribeNormalLogsAsync(
+    request,
+    [prom](
+        const PtsClient*,
+        const DescribeNormalLogsRequest&,
+        DescribeNormalLogsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 PtsClient::DescribeProjectsOutcome PtsClient::DescribeProjects(const DescribeProjectsRequest &request)
@@ -1309,25 +1512,32 @@ PtsClient::DescribeProjectsOutcome PtsClient::DescribeProjects(const DescribePro
 
 void PtsClient::DescribeProjectsAsync(const DescribeProjectsRequest& request, const DescribeProjectsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeProjects(request), context);
-    };
+    using Req = const DescribeProjectsRequest&;
+    using Resp = DescribeProjectsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeProjects", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 PtsClient::DescribeProjectsOutcomeCallable PtsClient::DescribeProjectsCallable(const DescribeProjectsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeProjectsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeProjects(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeProjectsOutcome>>();
+    DescribeProjectsAsync(
+    request,
+    [prom](
+        const PtsClient*,
+        const DescribeProjectsRequest&,
+        DescribeProjectsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 PtsClient::DescribeRegionsOutcome PtsClient::DescribeRegions(const DescribeRegionsRequest &request)
@@ -1352,25 +1562,32 @@ PtsClient::DescribeRegionsOutcome PtsClient::DescribeRegions(const DescribeRegio
 
 void PtsClient::DescribeRegionsAsync(const DescribeRegionsRequest& request, const DescribeRegionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeRegions(request), context);
-    };
+    using Req = const DescribeRegionsRequest&;
+    using Resp = DescribeRegionsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeRegions", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 PtsClient::DescribeRegionsOutcomeCallable PtsClient::DescribeRegionsCallable(const DescribeRegionsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeRegionsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeRegions(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeRegionsOutcome>>();
+    DescribeRegionsAsync(
+    request,
+    [prom](
+        const PtsClient*,
+        const DescribeRegionsRequest&,
+        DescribeRegionsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 PtsClient::DescribeRequestSummaryOutcome PtsClient::DescribeRequestSummary(const DescribeRequestSummaryRequest &request)
@@ -1395,25 +1612,32 @@ PtsClient::DescribeRequestSummaryOutcome PtsClient::DescribeRequestSummary(const
 
 void PtsClient::DescribeRequestSummaryAsync(const DescribeRequestSummaryRequest& request, const DescribeRequestSummaryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeRequestSummary(request), context);
-    };
+    using Req = const DescribeRequestSummaryRequest&;
+    using Resp = DescribeRequestSummaryResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeRequestSummary", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 PtsClient::DescribeRequestSummaryOutcomeCallable PtsClient::DescribeRequestSummaryCallable(const DescribeRequestSummaryRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeRequestSummaryOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeRequestSummary(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeRequestSummaryOutcome>>();
+    DescribeRequestSummaryAsync(
+    request,
+    [prom](
+        const PtsClient*,
+        const DescribeRequestSummaryRequest&,
+        DescribeRequestSummaryOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 PtsClient::DescribeSampleBatchQueryOutcome PtsClient::DescribeSampleBatchQuery(const DescribeSampleBatchQueryRequest &request)
@@ -1438,25 +1662,32 @@ PtsClient::DescribeSampleBatchQueryOutcome PtsClient::DescribeSampleBatchQuery(c
 
 void PtsClient::DescribeSampleBatchQueryAsync(const DescribeSampleBatchQueryRequest& request, const DescribeSampleBatchQueryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeSampleBatchQuery(request), context);
-    };
+    using Req = const DescribeSampleBatchQueryRequest&;
+    using Resp = DescribeSampleBatchQueryResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeSampleBatchQuery", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 PtsClient::DescribeSampleBatchQueryOutcomeCallable PtsClient::DescribeSampleBatchQueryCallable(const DescribeSampleBatchQueryRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeSampleBatchQueryOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeSampleBatchQuery(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeSampleBatchQueryOutcome>>();
+    DescribeSampleBatchQueryAsync(
+    request,
+    [prom](
+        const PtsClient*,
+        const DescribeSampleBatchQueryRequest&,
+        DescribeSampleBatchQueryOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 PtsClient::DescribeSampleLogsOutcome PtsClient::DescribeSampleLogs(const DescribeSampleLogsRequest &request)
@@ -1481,25 +1712,32 @@ PtsClient::DescribeSampleLogsOutcome PtsClient::DescribeSampleLogs(const Describ
 
 void PtsClient::DescribeSampleLogsAsync(const DescribeSampleLogsRequest& request, const DescribeSampleLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeSampleLogs(request), context);
-    };
+    using Req = const DescribeSampleLogsRequest&;
+    using Resp = DescribeSampleLogsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeSampleLogs", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 PtsClient::DescribeSampleLogsOutcomeCallable PtsClient::DescribeSampleLogsCallable(const DescribeSampleLogsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeSampleLogsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeSampleLogs(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeSampleLogsOutcome>>();
+    DescribeSampleLogsAsync(
+    request,
+    [prom](
+        const PtsClient*,
+        const DescribeSampleLogsRequest&,
+        DescribeSampleLogsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 PtsClient::DescribeSampleMatrixBatchQueryOutcome PtsClient::DescribeSampleMatrixBatchQuery(const DescribeSampleMatrixBatchQueryRequest &request)
@@ -1524,25 +1762,32 @@ PtsClient::DescribeSampleMatrixBatchQueryOutcome PtsClient::DescribeSampleMatrix
 
 void PtsClient::DescribeSampleMatrixBatchQueryAsync(const DescribeSampleMatrixBatchQueryRequest& request, const DescribeSampleMatrixBatchQueryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeSampleMatrixBatchQuery(request), context);
-    };
+    using Req = const DescribeSampleMatrixBatchQueryRequest&;
+    using Resp = DescribeSampleMatrixBatchQueryResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeSampleMatrixBatchQuery", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 PtsClient::DescribeSampleMatrixBatchQueryOutcomeCallable PtsClient::DescribeSampleMatrixBatchQueryCallable(const DescribeSampleMatrixBatchQueryRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeSampleMatrixBatchQueryOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeSampleMatrixBatchQuery(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeSampleMatrixBatchQueryOutcome>>();
+    DescribeSampleMatrixBatchQueryAsync(
+    request,
+    [prom](
+        const PtsClient*,
+        const DescribeSampleMatrixBatchQueryRequest&,
+        DescribeSampleMatrixBatchQueryOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 PtsClient::DescribeSampleMatrixQueryOutcome PtsClient::DescribeSampleMatrixQuery(const DescribeSampleMatrixQueryRequest &request)
@@ -1567,25 +1812,32 @@ PtsClient::DescribeSampleMatrixQueryOutcome PtsClient::DescribeSampleMatrixQuery
 
 void PtsClient::DescribeSampleMatrixQueryAsync(const DescribeSampleMatrixQueryRequest& request, const DescribeSampleMatrixQueryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeSampleMatrixQuery(request), context);
-    };
+    using Req = const DescribeSampleMatrixQueryRequest&;
+    using Resp = DescribeSampleMatrixQueryResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeSampleMatrixQuery", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 PtsClient::DescribeSampleMatrixQueryOutcomeCallable PtsClient::DescribeSampleMatrixQueryCallable(const DescribeSampleMatrixQueryRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeSampleMatrixQueryOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeSampleMatrixQuery(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeSampleMatrixQueryOutcome>>();
+    DescribeSampleMatrixQueryAsync(
+    request,
+    [prom](
+        const PtsClient*,
+        const DescribeSampleMatrixQueryRequest&,
+        DescribeSampleMatrixQueryOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 PtsClient::DescribeSampleQueryOutcome PtsClient::DescribeSampleQuery(const DescribeSampleQueryRequest &request)
@@ -1610,25 +1862,32 @@ PtsClient::DescribeSampleQueryOutcome PtsClient::DescribeSampleQuery(const Descr
 
 void PtsClient::DescribeSampleQueryAsync(const DescribeSampleQueryRequest& request, const DescribeSampleQueryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeSampleQuery(request), context);
-    };
+    using Req = const DescribeSampleQueryRequest&;
+    using Resp = DescribeSampleQueryResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeSampleQuery", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 PtsClient::DescribeSampleQueryOutcomeCallable PtsClient::DescribeSampleQueryCallable(const DescribeSampleQueryRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeSampleQueryOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeSampleQuery(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeSampleQueryOutcome>>();
+    DescribeSampleQueryAsync(
+    request,
+    [prom](
+        const PtsClient*,
+        const DescribeSampleQueryRequest&,
+        DescribeSampleQueryOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 PtsClient::DescribeScenarioWithJobsOutcome PtsClient::DescribeScenarioWithJobs(const DescribeScenarioWithJobsRequest &request)
@@ -1653,25 +1912,32 @@ PtsClient::DescribeScenarioWithJobsOutcome PtsClient::DescribeScenarioWithJobs(c
 
 void PtsClient::DescribeScenarioWithJobsAsync(const DescribeScenarioWithJobsRequest& request, const DescribeScenarioWithJobsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeScenarioWithJobs(request), context);
-    };
+    using Req = const DescribeScenarioWithJobsRequest&;
+    using Resp = DescribeScenarioWithJobsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeScenarioWithJobs", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 PtsClient::DescribeScenarioWithJobsOutcomeCallable PtsClient::DescribeScenarioWithJobsCallable(const DescribeScenarioWithJobsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeScenarioWithJobsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeScenarioWithJobs(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeScenarioWithJobsOutcome>>();
+    DescribeScenarioWithJobsAsync(
+    request,
+    [prom](
+        const PtsClient*,
+        const DescribeScenarioWithJobsRequest&,
+        DescribeScenarioWithJobsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 PtsClient::DescribeScenariosOutcome PtsClient::DescribeScenarios(const DescribeScenariosRequest &request)
@@ -1696,25 +1962,32 @@ PtsClient::DescribeScenariosOutcome PtsClient::DescribeScenarios(const DescribeS
 
 void PtsClient::DescribeScenariosAsync(const DescribeScenariosRequest& request, const DescribeScenariosAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeScenarios(request), context);
-    };
+    using Req = const DescribeScenariosRequest&;
+    using Resp = DescribeScenariosResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeScenarios", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 PtsClient::DescribeScenariosOutcomeCallable PtsClient::DescribeScenariosCallable(const DescribeScenariosRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeScenariosOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeScenarios(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeScenariosOutcome>>();
+    DescribeScenariosAsync(
+    request,
+    [prom](
+        const PtsClient*,
+        const DescribeScenariosRequest&,
+        DescribeScenariosOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 PtsClient::GenerateTmpKeyOutcome PtsClient::GenerateTmpKey(const GenerateTmpKeyRequest &request)
@@ -1739,25 +2012,32 @@ PtsClient::GenerateTmpKeyOutcome PtsClient::GenerateTmpKey(const GenerateTmpKeyR
 
 void PtsClient::GenerateTmpKeyAsync(const GenerateTmpKeyRequest& request, const GenerateTmpKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->GenerateTmpKey(request), context);
-    };
+    using Req = const GenerateTmpKeyRequest&;
+    using Resp = GenerateTmpKeyResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "GenerateTmpKey", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 PtsClient::GenerateTmpKeyOutcomeCallable PtsClient::GenerateTmpKeyCallable(const GenerateTmpKeyRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<GenerateTmpKeyOutcome()>>(
-        [this, request]()
-        {
-            return this->GenerateTmpKey(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<GenerateTmpKeyOutcome>>();
+    GenerateTmpKeyAsync(
+    request,
+    [prom](
+        const PtsClient*,
+        const GenerateTmpKeyRequest&,
+        GenerateTmpKeyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 PtsClient::RestartCronJobsOutcome PtsClient::RestartCronJobs(const RestartCronJobsRequest &request)
@@ -1782,25 +2062,32 @@ PtsClient::RestartCronJobsOutcome PtsClient::RestartCronJobs(const RestartCronJo
 
 void PtsClient::RestartCronJobsAsync(const RestartCronJobsRequest& request, const RestartCronJobsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->RestartCronJobs(request), context);
-    };
+    using Req = const RestartCronJobsRequest&;
+    using Resp = RestartCronJobsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "RestartCronJobs", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 PtsClient::RestartCronJobsOutcomeCallable PtsClient::RestartCronJobsCallable(const RestartCronJobsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<RestartCronJobsOutcome()>>(
-        [this, request]()
-        {
-            return this->RestartCronJobs(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<RestartCronJobsOutcome>>();
+    RestartCronJobsAsync(
+    request,
+    [prom](
+        const PtsClient*,
+        const RestartCronJobsRequest&,
+        RestartCronJobsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 PtsClient::StartJobOutcome PtsClient::StartJob(const StartJobRequest &request)
@@ -1825,25 +2112,32 @@ PtsClient::StartJobOutcome PtsClient::StartJob(const StartJobRequest &request)
 
 void PtsClient::StartJobAsync(const StartJobRequest& request, const StartJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->StartJob(request), context);
-    };
+    using Req = const StartJobRequest&;
+    using Resp = StartJobResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "StartJob", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 PtsClient::StartJobOutcomeCallable PtsClient::StartJobCallable(const StartJobRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<StartJobOutcome()>>(
-        [this, request]()
-        {
-            return this->StartJob(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<StartJobOutcome>>();
+    StartJobAsync(
+    request,
+    [prom](
+        const PtsClient*,
+        const StartJobRequest&,
+        StartJobOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 PtsClient::UpdateCronJobOutcome PtsClient::UpdateCronJob(const UpdateCronJobRequest &request)
@@ -1868,25 +2162,32 @@ PtsClient::UpdateCronJobOutcome PtsClient::UpdateCronJob(const UpdateCronJobRequ
 
 void PtsClient::UpdateCronJobAsync(const UpdateCronJobRequest& request, const UpdateCronJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UpdateCronJob(request), context);
-    };
+    using Req = const UpdateCronJobRequest&;
+    using Resp = UpdateCronJobResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UpdateCronJob", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 PtsClient::UpdateCronJobOutcomeCallable PtsClient::UpdateCronJobCallable(const UpdateCronJobRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UpdateCronJobOutcome()>>(
-        [this, request]()
-        {
-            return this->UpdateCronJob(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UpdateCronJobOutcome>>();
+    UpdateCronJobAsync(
+    request,
+    [prom](
+        const PtsClient*,
+        const UpdateCronJobRequest&,
+        UpdateCronJobOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 PtsClient::UpdateEnvironmentOutcome PtsClient::UpdateEnvironment(const UpdateEnvironmentRequest &request)
@@ -1911,25 +2212,32 @@ PtsClient::UpdateEnvironmentOutcome PtsClient::UpdateEnvironment(const UpdateEnv
 
 void PtsClient::UpdateEnvironmentAsync(const UpdateEnvironmentRequest& request, const UpdateEnvironmentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UpdateEnvironment(request), context);
-    };
+    using Req = const UpdateEnvironmentRequest&;
+    using Resp = UpdateEnvironmentResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UpdateEnvironment", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 PtsClient::UpdateEnvironmentOutcomeCallable PtsClient::UpdateEnvironmentCallable(const UpdateEnvironmentRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UpdateEnvironmentOutcome()>>(
-        [this, request]()
-        {
-            return this->UpdateEnvironment(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UpdateEnvironmentOutcome>>();
+    UpdateEnvironmentAsync(
+    request,
+    [prom](
+        const PtsClient*,
+        const UpdateEnvironmentRequest&,
+        UpdateEnvironmentOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 PtsClient::UpdateFileScenarioRelationOutcome PtsClient::UpdateFileScenarioRelation(const UpdateFileScenarioRelationRequest &request)
@@ -1954,25 +2262,32 @@ PtsClient::UpdateFileScenarioRelationOutcome PtsClient::UpdateFileScenarioRelati
 
 void PtsClient::UpdateFileScenarioRelationAsync(const UpdateFileScenarioRelationRequest& request, const UpdateFileScenarioRelationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UpdateFileScenarioRelation(request), context);
-    };
+    using Req = const UpdateFileScenarioRelationRequest&;
+    using Resp = UpdateFileScenarioRelationResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UpdateFileScenarioRelation", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 PtsClient::UpdateFileScenarioRelationOutcomeCallable PtsClient::UpdateFileScenarioRelationCallable(const UpdateFileScenarioRelationRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UpdateFileScenarioRelationOutcome()>>(
-        [this, request]()
-        {
-            return this->UpdateFileScenarioRelation(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UpdateFileScenarioRelationOutcome>>();
+    UpdateFileScenarioRelationAsync(
+    request,
+    [prom](
+        const PtsClient*,
+        const UpdateFileScenarioRelationRequest&,
+        UpdateFileScenarioRelationOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 PtsClient::UpdateJobOutcome PtsClient::UpdateJob(const UpdateJobRequest &request)
@@ -1997,25 +2312,32 @@ PtsClient::UpdateJobOutcome PtsClient::UpdateJob(const UpdateJobRequest &request
 
 void PtsClient::UpdateJobAsync(const UpdateJobRequest& request, const UpdateJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UpdateJob(request), context);
-    };
+    using Req = const UpdateJobRequest&;
+    using Resp = UpdateJobResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UpdateJob", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 PtsClient::UpdateJobOutcomeCallable PtsClient::UpdateJobCallable(const UpdateJobRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UpdateJobOutcome()>>(
-        [this, request]()
-        {
-            return this->UpdateJob(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UpdateJobOutcome>>();
+    UpdateJobAsync(
+    request,
+    [prom](
+        const PtsClient*,
+        const UpdateJobRequest&,
+        UpdateJobOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 PtsClient::UpdateProjectOutcome PtsClient::UpdateProject(const UpdateProjectRequest &request)
@@ -2040,25 +2362,32 @@ PtsClient::UpdateProjectOutcome PtsClient::UpdateProject(const UpdateProjectRequ
 
 void PtsClient::UpdateProjectAsync(const UpdateProjectRequest& request, const UpdateProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UpdateProject(request), context);
-    };
+    using Req = const UpdateProjectRequest&;
+    using Resp = UpdateProjectResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UpdateProject", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 PtsClient::UpdateProjectOutcomeCallable PtsClient::UpdateProjectCallable(const UpdateProjectRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UpdateProjectOutcome()>>(
-        [this, request]()
-        {
-            return this->UpdateProject(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UpdateProjectOutcome>>();
+    UpdateProjectAsync(
+    request,
+    [prom](
+        const PtsClient*,
+        const UpdateProjectRequest&,
+        UpdateProjectOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 PtsClient::UpdateScenarioOutcome PtsClient::UpdateScenario(const UpdateScenarioRequest &request)
@@ -2083,24 +2412,31 @@ PtsClient::UpdateScenarioOutcome PtsClient::UpdateScenario(const UpdateScenarioR
 
 void PtsClient::UpdateScenarioAsync(const UpdateScenarioRequest& request, const UpdateScenarioAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UpdateScenario(request), context);
-    };
+    using Req = const UpdateScenarioRequest&;
+    using Resp = UpdateScenarioResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UpdateScenario", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 PtsClient::UpdateScenarioOutcomeCallable PtsClient::UpdateScenarioCallable(const UpdateScenarioRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UpdateScenarioOutcome()>>(
-        [this, request]()
-        {
-            return this->UpdateScenario(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UpdateScenarioOutcome>>();
+    UpdateScenarioAsync(
+    request,
+    [prom](
+        const PtsClient*,
+        const UpdateScenarioRequest&,
+        UpdateScenarioOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 

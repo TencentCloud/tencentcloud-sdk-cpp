@@ -62,25 +62,32 @@ CiiClient::CreateStructureTaskOutcome CiiClient::CreateStructureTask(const Creat
 
 void CiiClient::CreateStructureTaskAsync(const CreateStructureTaskRequest& request, const CreateStructureTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateStructureTask(request), context);
-    };
+    using Req = const CreateStructureTaskRequest&;
+    using Resp = CreateStructureTaskResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateStructureTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CiiClient::CreateStructureTaskOutcomeCallable CiiClient::CreateStructureTaskCallable(const CreateStructureTaskRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateStructureTaskOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateStructureTask(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateStructureTaskOutcome>>();
+    CreateStructureTaskAsync(
+    request,
+    [prom](
+        const CiiClient*,
+        const CreateStructureTaskRequest&,
+        CreateStructureTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CiiClient::DescribeStructCompareDataOutcome CiiClient::DescribeStructCompareData(const DescribeStructCompareDataRequest &request)
@@ -105,25 +112,32 @@ CiiClient::DescribeStructCompareDataOutcome CiiClient::DescribeStructCompareData
 
 void CiiClient::DescribeStructCompareDataAsync(const DescribeStructCompareDataRequest& request, const DescribeStructCompareDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeStructCompareData(request), context);
-    };
+    using Req = const DescribeStructCompareDataRequest&;
+    using Resp = DescribeStructCompareDataResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeStructCompareData", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CiiClient::DescribeStructCompareDataOutcomeCallable CiiClient::DescribeStructCompareDataCallable(const DescribeStructCompareDataRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeStructCompareDataOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeStructCompareData(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeStructCompareDataOutcome>>();
+    DescribeStructCompareDataAsync(
+    request,
+    [prom](
+        const CiiClient*,
+        const DescribeStructCompareDataRequest&,
+        DescribeStructCompareDataOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CiiClient::DescribeStructureTaskResultOutcome CiiClient::DescribeStructureTaskResult(const DescribeStructureTaskResultRequest &request)
@@ -148,24 +162,31 @@ CiiClient::DescribeStructureTaskResultOutcome CiiClient::DescribeStructureTaskRe
 
 void CiiClient::DescribeStructureTaskResultAsync(const DescribeStructureTaskResultRequest& request, const DescribeStructureTaskResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeStructureTaskResult(request), context);
-    };
+    using Req = const DescribeStructureTaskResultRequest&;
+    using Resp = DescribeStructureTaskResultResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeStructureTaskResult", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CiiClient::DescribeStructureTaskResultOutcomeCallable CiiClient::DescribeStructureTaskResultCallable(const DescribeStructureTaskResultRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeStructureTaskResultOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeStructureTaskResult(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeStructureTaskResultOutcome>>();
+    DescribeStructureTaskResultAsync(
+    request,
+    [prom](
+        const CiiClient*,
+        const DescribeStructureTaskResultRequest&,
+        DescribeStructureTaskResultOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 

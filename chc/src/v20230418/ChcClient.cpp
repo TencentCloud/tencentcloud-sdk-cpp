@@ -62,25 +62,32 @@ ChcClient::ConfirmCommonServiceWorkOrderOutcome ChcClient::ConfirmCommonServiceW
 
 void ChcClient::ConfirmCommonServiceWorkOrderAsync(const ConfirmCommonServiceWorkOrderRequest& request, const ConfirmCommonServiceWorkOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ConfirmCommonServiceWorkOrder(request), context);
-    };
+    using Req = const ConfirmCommonServiceWorkOrderRequest&;
+    using Resp = ConfirmCommonServiceWorkOrderResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ConfirmCommonServiceWorkOrder", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ChcClient::ConfirmCommonServiceWorkOrderOutcomeCallable ChcClient::ConfirmCommonServiceWorkOrderCallable(const ConfirmCommonServiceWorkOrderRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ConfirmCommonServiceWorkOrderOutcome()>>(
-        [this, request]()
-        {
-            return this->ConfirmCommonServiceWorkOrder(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ConfirmCommonServiceWorkOrderOutcome>>();
+    ConfirmCommonServiceWorkOrderAsync(
+    request,
+    [prom](
+        const ChcClient*,
+        const ConfirmCommonServiceWorkOrderRequest&,
+        ConfirmCommonServiceWorkOrderOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ChcClient::CreateCommonServiceWorkOrderOutcome ChcClient::CreateCommonServiceWorkOrder(const CreateCommonServiceWorkOrderRequest &request)
@@ -105,25 +112,32 @@ ChcClient::CreateCommonServiceWorkOrderOutcome ChcClient::CreateCommonServiceWor
 
 void ChcClient::CreateCommonServiceWorkOrderAsync(const CreateCommonServiceWorkOrderRequest& request, const CreateCommonServiceWorkOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateCommonServiceWorkOrder(request), context);
-    };
+    using Req = const CreateCommonServiceWorkOrderRequest&;
+    using Resp = CreateCommonServiceWorkOrderResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateCommonServiceWorkOrder", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ChcClient::CreateCommonServiceWorkOrderOutcomeCallable ChcClient::CreateCommonServiceWorkOrderCallable(const CreateCommonServiceWorkOrderRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateCommonServiceWorkOrderOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateCommonServiceWorkOrder(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateCommonServiceWorkOrderOutcome>>();
+    CreateCommonServiceWorkOrderAsync(
+    request,
+    [prom](
+        const ChcClient*,
+        const CreateCommonServiceWorkOrderRequest&,
+        CreateCommonServiceWorkOrderOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ChcClient::CreateModelEvaluationWorkOrderOutcome ChcClient::CreateModelEvaluationWorkOrder(const CreateModelEvaluationWorkOrderRequest &request)
@@ -148,25 +162,32 @@ ChcClient::CreateModelEvaluationWorkOrderOutcome ChcClient::CreateModelEvaluatio
 
 void ChcClient::CreateModelEvaluationWorkOrderAsync(const CreateModelEvaluationWorkOrderRequest& request, const CreateModelEvaluationWorkOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateModelEvaluationWorkOrder(request), context);
-    };
+    using Req = const CreateModelEvaluationWorkOrderRequest&;
+    using Resp = CreateModelEvaluationWorkOrderResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateModelEvaluationWorkOrder", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ChcClient::CreateModelEvaluationWorkOrderOutcomeCallable ChcClient::CreateModelEvaluationWorkOrderCallable(const CreateModelEvaluationWorkOrderRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateModelEvaluationWorkOrderOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateModelEvaluationWorkOrder(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateModelEvaluationWorkOrderOutcome>>();
+    CreateModelEvaluationWorkOrderAsync(
+    request,
+    [prom](
+        const ChcClient*,
+        const CreateModelEvaluationWorkOrderRequest&,
+        CreateModelEvaluationWorkOrderOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ChcClient::CreateMovingWorkOrderOutcome ChcClient::CreateMovingWorkOrder(const CreateMovingWorkOrderRequest &request)
@@ -191,25 +212,32 @@ ChcClient::CreateMovingWorkOrderOutcome ChcClient::CreateMovingWorkOrder(const C
 
 void ChcClient::CreateMovingWorkOrderAsync(const CreateMovingWorkOrderRequest& request, const CreateMovingWorkOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateMovingWorkOrder(request), context);
-    };
+    using Req = const CreateMovingWorkOrderRequest&;
+    using Resp = CreateMovingWorkOrderResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateMovingWorkOrder", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ChcClient::CreateMovingWorkOrderOutcomeCallable ChcClient::CreateMovingWorkOrderCallable(const CreateMovingWorkOrderRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateMovingWorkOrderOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateMovingWorkOrder(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateMovingWorkOrderOutcome>>();
+    CreateMovingWorkOrderAsync(
+    request,
+    [prom](
+        const ChcClient*,
+        const CreateMovingWorkOrderRequest&,
+        CreateMovingWorkOrderOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ChcClient::CreateNetDeviceModelOutcome ChcClient::CreateNetDeviceModel(const CreateNetDeviceModelRequest &request)
@@ -234,25 +262,32 @@ ChcClient::CreateNetDeviceModelOutcome ChcClient::CreateNetDeviceModel(const Cre
 
 void ChcClient::CreateNetDeviceModelAsync(const CreateNetDeviceModelRequest& request, const CreateNetDeviceModelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateNetDeviceModel(request), context);
-    };
+    using Req = const CreateNetDeviceModelRequest&;
+    using Resp = CreateNetDeviceModelResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateNetDeviceModel", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ChcClient::CreateNetDeviceModelOutcomeCallable ChcClient::CreateNetDeviceModelCallable(const CreateNetDeviceModelRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateNetDeviceModelOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateNetDeviceModel(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateNetDeviceModelOutcome>>();
+    CreateNetDeviceModelAsync(
+    request,
+    [prom](
+        const ChcClient*,
+        const CreateNetDeviceModelRequest&,
+        CreateNetDeviceModelOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ChcClient::CreatePersonnelVisitWorkOrderOutcome ChcClient::CreatePersonnelVisitWorkOrder(const CreatePersonnelVisitWorkOrderRequest &request)
@@ -277,25 +312,32 @@ ChcClient::CreatePersonnelVisitWorkOrderOutcome ChcClient::CreatePersonnelVisitW
 
 void ChcClient::CreatePersonnelVisitWorkOrderAsync(const CreatePersonnelVisitWorkOrderRequest& request, const CreatePersonnelVisitWorkOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreatePersonnelVisitWorkOrder(request), context);
-    };
+    using Req = const CreatePersonnelVisitWorkOrderRequest&;
+    using Resp = CreatePersonnelVisitWorkOrderResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreatePersonnelVisitWorkOrder", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ChcClient::CreatePersonnelVisitWorkOrderOutcomeCallable ChcClient::CreatePersonnelVisitWorkOrderCallable(const CreatePersonnelVisitWorkOrderRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreatePersonnelVisitWorkOrderOutcome()>>(
-        [this, request]()
-        {
-            return this->CreatePersonnelVisitWorkOrder(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreatePersonnelVisitWorkOrderOutcome>>();
+    CreatePersonnelVisitWorkOrderAsync(
+    request,
+    [prom](
+        const ChcClient*,
+        const CreatePersonnelVisitWorkOrderRequest&,
+        CreatePersonnelVisitWorkOrderOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ChcClient::CreatePowerOffWorkOrderOutcome ChcClient::CreatePowerOffWorkOrder(const CreatePowerOffWorkOrderRequest &request)
@@ -320,25 +362,32 @@ ChcClient::CreatePowerOffWorkOrderOutcome ChcClient::CreatePowerOffWorkOrder(con
 
 void ChcClient::CreatePowerOffWorkOrderAsync(const CreatePowerOffWorkOrderRequest& request, const CreatePowerOffWorkOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreatePowerOffWorkOrder(request), context);
-    };
+    using Req = const CreatePowerOffWorkOrderRequest&;
+    using Resp = CreatePowerOffWorkOrderResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreatePowerOffWorkOrder", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ChcClient::CreatePowerOffWorkOrderOutcomeCallable ChcClient::CreatePowerOffWorkOrderCallable(const CreatePowerOffWorkOrderRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreatePowerOffWorkOrderOutcome()>>(
-        [this, request]()
-        {
-            return this->CreatePowerOffWorkOrder(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreatePowerOffWorkOrderOutcome>>();
+    CreatePowerOffWorkOrderAsync(
+    request,
+    [prom](
+        const ChcClient*,
+        const CreatePowerOffWorkOrderRequest&,
+        CreatePowerOffWorkOrderOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ChcClient::CreatePowerOnWorkOrderOutcome ChcClient::CreatePowerOnWorkOrder(const CreatePowerOnWorkOrderRequest &request)
@@ -363,25 +412,32 @@ ChcClient::CreatePowerOnWorkOrderOutcome ChcClient::CreatePowerOnWorkOrder(const
 
 void ChcClient::CreatePowerOnWorkOrderAsync(const CreatePowerOnWorkOrderRequest& request, const CreatePowerOnWorkOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreatePowerOnWorkOrder(request), context);
-    };
+    using Req = const CreatePowerOnWorkOrderRequest&;
+    using Resp = CreatePowerOnWorkOrderResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreatePowerOnWorkOrder", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ChcClient::CreatePowerOnWorkOrderOutcomeCallable ChcClient::CreatePowerOnWorkOrderCallable(const CreatePowerOnWorkOrderRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreatePowerOnWorkOrderOutcome()>>(
-        [this, request]()
-        {
-            return this->CreatePowerOnWorkOrder(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreatePowerOnWorkOrderOutcome>>();
+    CreatePowerOnWorkOrderAsync(
+    request,
+    [prom](
+        const ChcClient*,
+        const CreatePowerOnWorkOrderRequest&,
+        CreatePowerOnWorkOrderOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ChcClient::CreateQuitWorkOrderOutcome ChcClient::CreateQuitWorkOrder(const CreateQuitWorkOrderRequest &request)
@@ -406,25 +462,32 @@ ChcClient::CreateQuitWorkOrderOutcome ChcClient::CreateQuitWorkOrder(const Creat
 
 void ChcClient::CreateQuitWorkOrderAsync(const CreateQuitWorkOrderRequest& request, const CreateQuitWorkOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateQuitWorkOrder(request), context);
-    };
+    using Req = const CreateQuitWorkOrderRequest&;
+    using Resp = CreateQuitWorkOrderResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateQuitWorkOrder", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ChcClient::CreateQuitWorkOrderOutcomeCallable ChcClient::CreateQuitWorkOrderCallable(const CreateQuitWorkOrderRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateQuitWorkOrderOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateQuitWorkOrder(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateQuitWorkOrderOutcome>>();
+    CreateQuitWorkOrderAsync(
+    request,
+    [prom](
+        const ChcClient*,
+        const CreateQuitWorkOrderRequest&,
+        CreateQuitWorkOrderOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ChcClient::CreateRackOffWorkOrderOutcome ChcClient::CreateRackOffWorkOrder(const CreateRackOffWorkOrderRequest &request)
@@ -449,25 +512,32 @@ ChcClient::CreateRackOffWorkOrderOutcome ChcClient::CreateRackOffWorkOrder(const
 
 void ChcClient::CreateRackOffWorkOrderAsync(const CreateRackOffWorkOrderRequest& request, const CreateRackOffWorkOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateRackOffWorkOrder(request), context);
-    };
+    using Req = const CreateRackOffWorkOrderRequest&;
+    using Resp = CreateRackOffWorkOrderResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateRackOffWorkOrder", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ChcClient::CreateRackOffWorkOrderOutcomeCallable ChcClient::CreateRackOffWorkOrderCallable(const CreateRackOffWorkOrderRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateRackOffWorkOrderOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateRackOffWorkOrder(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateRackOffWorkOrderOutcome>>();
+    CreateRackOffWorkOrderAsync(
+    request,
+    [prom](
+        const ChcClient*,
+        const CreateRackOffWorkOrderRequest&,
+        CreateRackOffWorkOrderOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ChcClient::CreateRackOnWorkOrderOutcome ChcClient::CreateRackOnWorkOrder(const CreateRackOnWorkOrderRequest &request)
@@ -492,25 +562,32 @@ ChcClient::CreateRackOnWorkOrderOutcome ChcClient::CreateRackOnWorkOrder(const C
 
 void ChcClient::CreateRackOnWorkOrderAsync(const CreateRackOnWorkOrderRequest& request, const CreateRackOnWorkOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateRackOnWorkOrder(request), context);
-    };
+    using Req = const CreateRackOnWorkOrderRequest&;
+    using Resp = CreateRackOnWorkOrderResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateRackOnWorkOrder", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ChcClient::CreateRackOnWorkOrderOutcomeCallable ChcClient::CreateRackOnWorkOrderCallable(const CreateRackOnWorkOrderRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateRackOnWorkOrderOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateRackOnWorkOrder(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateRackOnWorkOrderOutcome>>();
+    CreateRackOnWorkOrderAsync(
+    request,
+    [prom](
+        const ChcClient*,
+        const CreateRackOnWorkOrderRequest&,
+        CreateRackOnWorkOrderOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ChcClient::CreateReceivingWorkOrderOutcome ChcClient::CreateReceivingWorkOrder(const CreateReceivingWorkOrderRequest &request)
@@ -535,25 +612,32 @@ ChcClient::CreateReceivingWorkOrderOutcome ChcClient::CreateReceivingWorkOrder(c
 
 void ChcClient::CreateReceivingWorkOrderAsync(const CreateReceivingWorkOrderRequest& request, const CreateReceivingWorkOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateReceivingWorkOrder(request), context);
-    };
+    using Req = const CreateReceivingWorkOrderRequest&;
+    using Resp = CreateReceivingWorkOrderResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateReceivingWorkOrder", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ChcClient::CreateReceivingWorkOrderOutcomeCallable ChcClient::CreateReceivingWorkOrderCallable(const CreateReceivingWorkOrderRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateReceivingWorkOrderOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateReceivingWorkOrder(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateReceivingWorkOrderOutcome>>();
+    CreateReceivingWorkOrderAsync(
+    request,
+    [prom](
+        const ChcClient*,
+        const CreateReceivingWorkOrderRequest&,
+        CreateReceivingWorkOrderOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ChcClient::CreateServerModelOutcome ChcClient::CreateServerModel(const CreateServerModelRequest &request)
@@ -578,25 +662,32 @@ ChcClient::CreateServerModelOutcome ChcClient::CreateServerModel(const CreateSer
 
 void ChcClient::CreateServerModelAsync(const CreateServerModelRequest& request, const CreateServerModelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateServerModel(request), context);
-    };
+    using Req = const CreateServerModelRequest&;
+    using Resp = CreateServerModelResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateServerModel", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ChcClient::CreateServerModelOutcomeCallable ChcClient::CreateServerModelCallable(const CreateServerModelRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateServerModelOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateServerModel(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateServerModelOutcome>>();
+    CreateServerModelAsync(
+    request,
+    [prom](
+        const ChcClient*,
+        const CreateServerModelRequest&,
+        CreateServerModelOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ChcClient::CreateSpeciallyQuitWorkOrderOutcome ChcClient::CreateSpeciallyQuitWorkOrder(const CreateSpeciallyQuitWorkOrderRequest &request)
@@ -621,25 +712,32 @@ ChcClient::CreateSpeciallyQuitWorkOrderOutcome ChcClient::CreateSpeciallyQuitWor
 
 void ChcClient::CreateSpeciallyQuitWorkOrderAsync(const CreateSpeciallyQuitWorkOrderRequest& request, const CreateSpeciallyQuitWorkOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateSpeciallyQuitWorkOrder(request), context);
-    };
+    using Req = const CreateSpeciallyQuitWorkOrderRequest&;
+    using Resp = CreateSpeciallyQuitWorkOrderResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateSpeciallyQuitWorkOrder", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ChcClient::CreateSpeciallyQuitWorkOrderOutcomeCallable ChcClient::CreateSpeciallyQuitWorkOrderCallable(const CreateSpeciallyQuitWorkOrderRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateSpeciallyQuitWorkOrderOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateSpeciallyQuitWorkOrder(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateSpeciallyQuitWorkOrderOutcome>>();
+    CreateSpeciallyQuitWorkOrderAsync(
+    request,
+    [prom](
+        const ChcClient*,
+        const CreateSpeciallyQuitWorkOrderRequest&,
+        CreateSpeciallyQuitWorkOrderOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ChcClient::DescribeAvailableModelListOutcome ChcClient::DescribeAvailableModelList(const DescribeAvailableModelListRequest &request)
@@ -664,25 +762,32 @@ ChcClient::DescribeAvailableModelListOutcome ChcClient::DescribeAvailableModelLi
 
 void ChcClient::DescribeAvailableModelListAsync(const DescribeAvailableModelListRequest& request, const DescribeAvailableModelListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAvailableModelList(request), context);
-    };
+    using Req = const DescribeAvailableModelListRequest&;
+    using Resp = DescribeAvailableModelListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAvailableModelList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ChcClient::DescribeAvailableModelListOutcomeCallable ChcClient::DescribeAvailableModelListCallable(const DescribeAvailableModelListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAvailableModelListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAvailableModelList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAvailableModelListOutcome>>();
+    DescribeAvailableModelListAsync(
+    request,
+    [prom](
+        const ChcClient*,
+        const DescribeAvailableModelListRequest&,
+        DescribeAvailableModelListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ChcClient::DescribeCampusListOutcome ChcClient::DescribeCampusList(const DescribeCampusListRequest &request)
@@ -707,25 +812,32 @@ ChcClient::DescribeCampusListOutcome ChcClient::DescribeCampusList(const Describ
 
 void ChcClient::DescribeCampusListAsync(const DescribeCampusListRequest& request, const DescribeCampusListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeCampusList(request), context);
-    };
+    using Req = const DescribeCampusListRequest&;
+    using Resp = DescribeCampusListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeCampusList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ChcClient::DescribeCampusListOutcomeCallable ChcClient::DescribeCampusListCallable(const DescribeCampusListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeCampusListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeCampusList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeCampusListOutcome>>();
+    DescribeCampusListAsync(
+    request,
+    [prom](
+        const ChcClient*,
+        const DescribeCampusListRequest&,
+        DescribeCampusListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ChcClient::DescribeCommonServiceWorkOrderDetailOutcome ChcClient::DescribeCommonServiceWorkOrderDetail(const DescribeCommonServiceWorkOrderDetailRequest &request)
@@ -750,25 +862,32 @@ ChcClient::DescribeCommonServiceWorkOrderDetailOutcome ChcClient::DescribeCommon
 
 void ChcClient::DescribeCommonServiceWorkOrderDetailAsync(const DescribeCommonServiceWorkOrderDetailRequest& request, const DescribeCommonServiceWorkOrderDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeCommonServiceWorkOrderDetail(request), context);
-    };
+    using Req = const DescribeCommonServiceWorkOrderDetailRequest&;
+    using Resp = DescribeCommonServiceWorkOrderDetailResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeCommonServiceWorkOrderDetail", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ChcClient::DescribeCommonServiceWorkOrderDetailOutcomeCallable ChcClient::DescribeCommonServiceWorkOrderDetailCallable(const DescribeCommonServiceWorkOrderDetailRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeCommonServiceWorkOrderDetailOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeCommonServiceWorkOrderDetail(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeCommonServiceWorkOrderDetailOutcome>>();
+    DescribeCommonServiceWorkOrderDetailAsync(
+    request,
+    [prom](
+        const ChcClient*,
+        const DescribeCommonServiceWorkOrderDetailRequest&,
+        DescribeCommonServiceWorkOrderDetailOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ChcClient::DescribeCustomerInfoOutcome ChcClient::DescribeCustomerInfo(const DescribeCustomerInfoRequest &request)
@@ -793,25 +912,32 @@ ChcClient::DescribeCustomerInfoOutcome ChcClient::DescribeCustomerInfo(const Des
 
 void ChcClient::DescribeCustomerInfoAsync(const DescribeCustomerInfoRequest& request, const DescribeCustomerInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeCustomerInfo(request), context);
-    };
+    using Req = const DescribeCustomerInfoRequest&;
+    using Resp = DescribeCustomerInfoResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeCustomerInfo", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ChcClient::DescribeCustomerInfoOutcomeCallable ChcClient::DescribeCustomerInfoCallable(const DescribeCustomerInfoRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeCustomerInfoOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeCustomerInfo(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeCustomerInfoOutcome>>();
+    DescribeCustomerInfoAsync(
+    request,
+    [prom](
+        const ChcClient*,
+        const DescribeCustomerInfoRequest&,
+        DescribeCustomerInfoOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ChcClient::DescribeDeviceListOutcome ChcClient::DescribeDeviceList(const DescribeDeviceListRequest &request)
@@ -836,25 +962,32 @@ ChcClient::DescribeDeviceListOutcome ChcClient::DescribeDeviceList(const Describ
 
 void ChcClient::DescribeDeviceListAsync(const DescribeDeviceListRequest& request, const DescribeDeviceListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDeviceList(request), context);
-    };
+    using Req = const DescribeDeviceListRequest&;
+    using Resp = DescribeDeviceListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeDeviceList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ChcClient::DescribeDeviceListOutcomeCallable ChcClient::DescribeDeviceListCallable(const DescribeDeviceListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeDeviceListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDeviceList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeDeviceListOutcome>>();
+    DescribeDeviceListAsync(
+    request,
+    [prom](
+        const ChcClient*,
+        const DescribeDeviceListRequest&,
+        DescribeDeviceListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ChcClient::DescribeDeviceWorkOrderDetailOutcome ChcClient::DescribeDeviceWorkOrderDetail(const DescribeDeviceWorkOrderDetailRequest &request)
@@ -879,25 +1012,32 @@ ChcClient::DescribeDeviceWorkOrderDetailOutcome ChcClient::DescribeDeviceWorkOrd
 
 void ChcClient::DescribeDeviceWorkOrderDetailAsync(const DescribeDeviceWorkOrderDetailRequest& request, const DescribeDeviceWorkOrderDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDeviceWorkOrderDetail(request), context);
-    };
+    using Req = const DescribeDeviceWorkOrderDetailRequest&;
+    using Resp = DescribeDeviceWorkOrderDetailResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeDeviceWorkOrderDetail", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ChcClient::DescribeDeviceWorkOrderDetailOutcomeCallable ChcClient::DescribeDeviceWorkOrderDetailCallable(const DescribeDeviceWorkOrderDetailRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeDeviceWorkOrderDetailOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDeviceWorkOrderDetail(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeDeviceWorkOrderDetailOutcome>>();
+    DescribeDeviceWorkOrderDetailAsync(
+    request,
+    [prom](
+        const ChcClient*,
+        const DescribeDeviceWorkOrderDetailRequest&,
+        DescribeDeviceWorkOrderDetailOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ChcClient::DescribeIdcUnitAssetDetailOutcome ChcClient::DescribeIdcUnitAssetDetail(const DescribeIdcUnitAssetDetailRequest &request)
@@ -922,25 +1062,32 @@ ChcClient::DescribeIdcUnitAssetDetailOutcome ChcClient::DescribeIdcUnitAssetDeta
 
 void ChcClient::DescribeIdcUnitAssetDetailAsync(const DescribeIdcUnitAssetDetailRequest& request, const DescribeIdcUnitAssetDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeIdcUnitAssetDetail(request), context);
-    };
+    using Req = const DescribeIdcUnitAssetDetailRequest&;
+    using Resp = DescribeIdcUnitAssetDetailResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeIdcUnitAssetDetail", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ChcClient::DescribeIdcUnitAssetDetailOutcomeCallable ChcClient::DescribeIdcUnitAssetDetailCallable(const DescribeIdcUnitAssetDetailRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeIdcUnitAssetDetailOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeIdcUnitAssetDetail(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeIdcUnitAssetDetailOutcome>>();
+    DescribeIdcUnitAssetDetailAsync(
+    request,
+    [prom](
+        const ChcClient*,
+        const DescribeIdcUnitAssetDetailRequest&,
+        DescribeIdcUnitAssetDetailOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ChcClient::DescribeIdcUnitDetailOutcome ChcClient::DescribeIdcUnitDetail(const DescribeIdcUnitDetailRequest &request)
@@ -965,25 +1112,32 @@ ChcClient::DescribeIdcUnitDetailOutcome ChcClient::DescribeIdcUnitDetail(const D
 
 void ChcClient::DescribeIdcUnitDetailAsync(const DescribeIdcUnitDetailRequest& request, const DescribeIdcUnitDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeIdcUnitDetail(request), context);
-    };
+    using Req = const DescribeIdcUnitDetailRequest&;
+    using Resp = DescribeIdcUnitDetailResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeIdcUnitDetail", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ChcClient::DescribeIdcUnitDetailOutcomeCallable ChcClient::DescribeIdcUnitDetailCallable(const DescribeIdcUnitDetailRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeIdcUnitDetailOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeIdcUnitDetail(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeIdcUnitDetailOutcome>>();
+    DescribeIdcUnitDetailAsync(
+    request,
+    [prom](
+        const ChcClient*,
+        const DescribeIdcUnitDetailRequest&,
+        DescribeIdcUnitDetailOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ChcClient::DescribeIdcsOutcome ChcClient::DescribeIdcs(const DescribeIdcsRequest &request)
@@ -1008,25 +1162,32 @@ ChcClient::DescribeIdcsOutcome ChcClient::DescribeIdcs(const DescribeIdcsRequest
 
 void ChcClient::DescribeIdcsAsync(const DescribeIdcsRequest& request, const DescribeIdcsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeIdcs(request), context);
-    };
+    using Req = const DescribeIdcsRequest&;
+    using Resp = DescribeIdcsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeIdcs", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ChcClient::DescribeIdcsOutcomeCallable ChcClient::DescribeIdcsCallable(const DescribeIdcsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeIdcsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeIdcs(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeIdcsOutcome>>();
+    DescribeIdcsAsync(
+    request,
+    [prom](
+        const ChcClient*,
+        const DescribeIdcsRequest&,
+        DescribeIdcsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ChcClient::DescribeModelOutcome ChcClient::DescribeModel(const DescribeModelRequest &request)
@@ -1051,25 +1212,32 @@ ChcClient::DescribeModelOutcome ChcClient::DescribeModel(const DescribeModelRequ
 
 void ChcClient::DescribeModelAsync(const DescribeModelRequest& request, const DescribeModelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeModel(request), context);
-    };
+    using Req = const DescribeModelRequest&;
+    using Resp = DescribeModelResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeModel", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ChcClient::DescribeModelOutcomeCallable ChcClient::DescribeModelCallable(const DescribeModelRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeModelOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeModel(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeModelOutcome>>();
+    DescribeModelAsync(
+    request,
+    [prom](
+        const ChcClient*,
+        const DescribeModelRequest&,
+        DescribeModelOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ChcClient::DescribeModelEvaluationWorkOrderDetailOutcome ChcClient::DescribeModelEvaluationWorkOrderDetail(const DescribeModelEvaluationWorkOrderDetailRequest &request)
@@ -1094,25 +1262,32 @@ ChcClient::DescribeModelEvaluationWorkOrderDetailOutcome ChcClient::DescribeMode
 
 void ChcClient::DescribeModelEvaluationWorkOrderDetailAsync(const DescribeModelEvaluationWorkOrderDetailRequest& request, const DescribeModelEvaluationWorkOrderDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeModelEvaluationWorkOrderDetail(request), context);
-    };
+    using Req = const DescribeModelEvaluationWorkOrderDetailRequest&;
+    using Resp = DescribeModelEvaluationWorkOrderDetailResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeModelEvaluationWorkOrderDetail", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ChcClient::DescribeModelEvaluationWorkOrderDetailOutcomeCallable ChcClient::DescribeModelEvaluationWorkOrderDetailCallable(const DescribeModelEvaluationWorkOrderDetailRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeModelEvaluationWorkOrderDetailOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeModelEvaluationWorkOrderDetail(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeModelEvaluationWorkOrderDetailOutcome>>();
+    DescribeModelEvaluationWorkOrderDetailAsync(
+    request,
+    [prom](
+        const ChcClient*,
+        const DescribeModelEvaluationWorkOrderDetailRequest&,
+        DescribeModelEvaluationWorkOrderDetailOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ChcClient::DescribeModelTemplateOutcome ChcClient::DescribeModelTemplate(const DescribeModelTemplateRequest &request)
@@ -1137,25 +1312,32 @@ ChcClient::DescribeModelTemplateOutcome ChcClient::DescribeModelTemplate(const D
 
 void ChcClient::DescribeModelTemplateAsync(const DescribeModelTemplateRequest& request, const DescribeModelTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeModelTemplate(request), context);
-    };
+    using Req = const DescribeModelTemplateRequest&;
+    using Resp = DescribeModelTemplateResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeModelTemplate", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ChcClient::DescribeModelTemplateOutcomeCallable ChcClient::DescribeModelTemplateCallable(const DescribeModelTemplateRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeModelTemplateOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeModelTemplate(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeModelTemplateOutcome>>();
+    DescribeModelTemplateAsync(
+    request,
+    [prom](
+        const ChcClient*,
+        const DescribeModelTemplateRequest&,
+        DescribeModelTemplateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ChcClient::DescribeModelVersionListOutcome ChcClient::DescribeModelVersionList(const DescribeModelVersionListRequest &request)
@@ -1180,25 +1362,32 @@ ChcClient::DescribeModelVersionListOutcome ChcClient::DescribeModelVersionList(c
 
 void ChcClient::DescribeModelVersionListAsync(const DescribeModelVersionListRequest& request, const DescribeModelVersionListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeModelVersionList(request), context);
-    };
+    using Req = const DescribeModelVersionListRequest&;
+    using Resp = DescribeModelVersionListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeModelVersionList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ChcClient::DescribeModelVersionListOutcomeCallable ChcClient::DescribeModelVersionListCallable(const DescribeModelVersionListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeModelVersionListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeModelVersionList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeModelVersionListOutcome>>();
+    DescribeModelVersionListAsync(
+    request,
+    [prom](
+        const ChcClient*,
+        const DescribeModelVersionListRequest&,
+        DescribeModelVersionListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ChcClient::DescribePersonnelVisitWorkOrderDetailOutcome ChcClient::DescribePersonnelVisitWorkOrderDetail(const DescribePersonnelVisitWorkOrderDetailRequest &request)
@@ -1223,25 +1412,32 @@ ChcClient::DescribePersonnelVisitWorkOrderDetailOutcome ChcClient::DescribePerso
 
 void ChcClient::DescribePersonnelVisitWorkOrderDetailAsync(const DescribePersonnelVisitWorkOrderDetailRequest& request, const DescribePersonnelVisitWorkOrderDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribePersonnelVisitWorkOrderDetail(request), context);
-    };
+    using Req = const DescribePersonnelVisitWorkOrderDetailRequest&;
+    using Resp = DescribePersonnelVisitWorkOrderDetailResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribePersonnelVisitWorkOrderDetail", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ChcClient::DescribePersonnelVisitWorkOrderDetailOutcomeCallable ChcClient::DescribePersonnelVisitWorkOrderDetailCallable(const DescribePersonnelVisitWorkOrderDetailRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribePersonnelVisitWorkOrderDetailOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribePersonnelVisitWorkOrderDetail(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribePersonnelVisitWorkOrderDetailOutcome>>();
+    DescribePersonnelVisitWorkOrderDetailAsync(
+    request,
+    [prom](
+        const ChcClient*,
+        const DescribePersonnelVisitWorkOrderDetailRequest&,
+        DescribePersonnelVisitWorkOrderDetailOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ChcClient::DescribePositionStatusSummaryOutcome ChcClient::DescribePositionStatusSummary(const DescribePositionStatusSummaryRequest &request)
@@ -1266,25 +1462,32 @@ ChcClient::DescribePositionStatusSummaryOutcome ChcClient::DescribePositionStatu
 
 void ChcClient::DescribePositionStatusSummaryAsync(const DescribePositionStatusSummaryRequest& request, const DescribePositionStatusSummaryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribePositionStatusSummary(request), context);
-    };
+    using Req = const DescribePositionStatusSummaryRequest&;
+    using Resp = DescribePositionStatusSummaryResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribePositionStatusSummary", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ChcClient::DescribePositionStatusSummaryOutcomeCallable ChcClient::DescribePositionStatusSummaryCallable(const DescribePositionStatusSummaryRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribePositionStatusSummaryOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribePositionStatusSummary(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribePositionStatusSummaryOutcome>>();
+    DescribePositionStatusSummaryAsync(
+    request,
+    [prom](
+        const ChcClient*,
+        const DescribePositionStatusSummaryRequest&,
+        DescribePositionStatusSummaryOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ChcClient::DescribePositionsOutcome ChcClient::DescribePositions(const DescribePositionsRequest &request)
@@ -1309,25 +1512,32 @@ ChcClient::DescribePositionsOutcome ChcClient::DescribePositions(const DescribeP
 
 void ChcClient::DescribePositionsAsync(const DescribePositionsRequest& request, const DescribePositionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribePositions(request), context);
-    };
+    using Req = const DescribePositionsRequest&;
+    using Resp = DescribePositionsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribePositions", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ChcClient::DescribePositionsOutcomeCallable ChcClient::DescribePositionsCallable(const DescribePositionsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribePositionsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribePositions(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribePositionsOutcome>>();
+    DescribePositionsAsync(
+    request,
+    [prom](
+        const ChcClient*,
+        const DescribePositionsRequest&,
+        DescribePositionsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ChcClient::DescribeRacksOutcome ChcClient::DescribeRacks(const DescribeRacksRequest &request)
@@ -1352,25 +1562,32 @@ ChcClient::DescribeRacksOutcome ChcClient::DescribeRacks(const DescribeRacksRequ
 
 void ChcClient::DescribeRacksAsync(const DescribeRacksRequest& request, const DescribeRacksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeRacks(request), context);
-    };
+    using Req = const DescribeRacksRequest&;
+    using Resp = DescribeRacksResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeRacks", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ChcClient::DescribeRacksOutcomeCallable ChcClient::DescribeRacksCallable(const DescribeRacksRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeRacksOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeRacks(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeRacksOutcome>>();
+    DescribeRacksAsync(
+    request,
+    [prom](
+        const ChcClient*,
+        const DescribeRacksRequest&,
+        DescribeRacksOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ChcClient::DescribeRacksDistributionOutcome ChcClient::DescribeRacksDistribution(const DescribeRacksDistributionRequest &request)
@@ -1395,25 +1612,32 @@ ChcClient::DescribeRacksDistributionOutcome ChcClient::DescribeRacksDistribution
 
 void ChcClient::DescribeRacksDistributionAsync(const DescribeRacksDistributionRequest& request, const DescribeRacksDistributionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeRacksDistribution(request), context);
-    };
+    using Req = const DescribeRacksDistributionRequest&;
+    using Resp = DescribeRacksDistributionResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeRacksDistribution", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ChcClient::DescribeRacksDistributionOutcomeCallable ChcClient::DescribeRacksDistributionCallable(const DescribeRacksDistributionRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeRacksDistributionOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeRacksDistribution(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeRacksDistributionOutcome>>();
+    DescribeRacksDistributionAsync(
+    request,
+    [prom](
+        const ChcClient*,
+        const DescribeRacksDistributionRequest&,
+        DescribeRacksDistributionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ChcClient::DescribeResourceUsageOutcome ChcClient::DescribeResourceUsage(const DescribeResourceUsageRequest &request)
@@ -1438,25 +1662,32 @@ ChcClient::DescribeResourceUsageOutcome ChcClient::DescribeResourceUsage(const D
 
 void ChcClient::DescribeResourceUsageAsync(const DescribeResourceUsageRequest& request, const DescribeResourceUsageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeResourceUsage(request), context);
-    };
+    using Req = const DescribeResourceUsageRequest&;
+    using Resp = DescribeResourceUsageResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeResourceUsage", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ChcClient::DescribeResourceUsageOutcomeCallable ChcClient::DescribeResourceUsageCallable(const DescribeResourceUsageRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeResourceUsageOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeResourceUsage(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeResourceUsageOutcome>>();
+    DescribeResourceUsageAsync(
+    request,
+    [prom](
+        const ChcClient*,
+        const DescribeResourceUsageRequest&,
+        DescribeResourceUsageOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ChcClient::DescribeWorkOrderListOutcome ChcClient::DescribeWorkOrderList(const DescribeWorkOrderListRequest &request)
@@ -1481,25 +1712,32 @@ ChcClient::DescribeWorkOrderListOutcome ChcClient::DescribeWorkOrderList(const D
 
 void ChcClient::DescribeWorkOrderListAsync(const DescribeWorkOrderListRequest& request, const DescribeWorkOrderListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeWorkOrderList(request), context);
-    };
+    using Req = const DescribeWorkOrderListRequest&;
+    using Resp = DescribeWorkOrderListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeWorkOrderList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ChcClient::DescribeWorkOrderListOutcomeCallable ChcClient::DescribeWorkOrderListCallable(const DescribeWorkOrderListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeWorkOrderListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeWorkOrderList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeWorkOrderListOutcome>>();
+    DescribeWorkOrderListAsync(
+    request,
+    [prom](
+        const ChcClient*,
+        const DescribeWorkOrderListRequest&,
+        DescribeWorkOrderListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ChcClient::DescribeWorkOrderStatisticsOutcome ChcClient::DescribeWorkOrderStatistics(const DescribeWorkOrderStatisticsRequest &request)
@@ -1524,25 +1762,32 @@ ChcClient::DescribeWorkOrderStatisticsOutcome ChcClient::DescribeWorkOrderStatis
 
 void ChcClient::DescribeWorkOrderStatisticsAsync(const DescribeWorkOrderStatisticsRequest& request, const DescribeWorkOrderStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeWorkOrderStatistics(request), context);
-    };
+    using Req = const DescribeWorkOrderStatisticsRequest&;
+    using Resp = DescribeWorkOrderStatisticsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeWorkOrderStatistics", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ChcClient::DescribeWorkOrderStatisticsOutcomeCallable ChcClient::DescribeWorkOrderStatisticsCallable(const DescribeWorkOrderStatisticsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeWorkOrderStatisticsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeWorkOrderStatistics(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeWorkOrderStatisticsOutcome>>();
+    DescribeWorkOrderStatisticsAsync(
+    request,
+    [prom](
+        const ChcClient*,
+        const DescribeWorkOrderStatisticsRequest&,
+        DescribeWorkOrderStatisticsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ChcClient::DescribeWorkOrderTypesOutcome ChcClient::DescribeWorkOrderTypes(const DescribeWorkOrderTypesRequest &request)
@@ -1567,25 +1812,32 @@ ChcClient::DescribeWorkOrderTypesOutcome ChcClient::DescribeWorkOrderTypes(const
 
 void ChcClient::DescribeWorkOrderTypesAsync(const DescribeWorkOrderTypesRequest& request, const DescribeWorkOrderTypesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeWorkOrderTypes(request), context);
-    };
+    using Req = const DescribeWorkOrderTypesRequest&;
+    using Resp = DescribeWorkOrderTypesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeWorkOrderTypes", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ChcClient::DescribeWorkOrderTypesOutcomeCallable ChcClient::DescribeWorkOrderTypesCallable(const DescribeWorkOrderTypesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeWorkOrderTypesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeWorkOrderTypes(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeWorkOrderTypesOutcome>>();
+    DescribeWorkOrderTypesAsync(
+    request,
+    [prom](
+        const ChcClient*,
+        const DescribeWorkOrderTypesRequest&,
+        DescribeWorkOrderTypesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ChcClient::ExportCustomerWorkOrderDetailOutcome ChcClient::ExportCustomerWorkOrderDetail(const ExportCustomerWorkOrderDetailRequest &request)
@@ -1610,25 +1862,32 @@ ChcClient::ExportCustomerWorkOrderDetailOutcome ChcClient::ExportCustomerWorkOrd
 
 void ChcClient::ExportCustomerWorkOrderDetailAsync(const ExportCustomerWorkOrderDetailRequest& request, const ExportCustomerWorkOrderDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ExportCustomerWorkOrderDetail(request), context);
-    };
+    using Req = const ExportCustomerWorkOrderDetailRequest&;
+    using Resp = ExportCustomerWorkOrderDetailResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ExportCustomerWorkOrderDetail", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ChcClient::ExportCustomerWorkOrderDetailOutcomeCallable ChcClient::ExportCustomerWorkOrderDetailCallable(const ExportCustomerWorkOrderDetailRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ExportCustomerWorkOrderDetailOutcome()>>(
-        [this, request]()
-        {
-            return this->ExportCustomerWorkOrderDetail(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ExportCustomerWorkOrderDetailOutcome>>();
+    ExportCustomerWorkOrderDetailAsync(
+    request,
+    [prom](
+        const ChcClient*,
+        const ExportCustomerWorkOrderDetailRequest&,
+        ExportCustomerWorkOrderDetailOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ChcClient::ModifyWorkOrderTypeCollectFlagOutcome ChcClient::ModifyWorkOrderTypeCollectFlag(const ModifyWorkOrderTypeCollectFlagRequest &request)
@@ -1653,24 +1912,31 @@ ChcClient::ModifyWorkOrderTypeCollectFlagOutcome ChcClient::ModifyWorkOrderTypeC
 
 void ChcClient::ModifyWorkOrderTypeCollectFlagAsync(const ModifyWorkOrderTypeCollectFlagRequest& request, const ModifyWorkOrderTypeCollectFlagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyWorkOrderTypeCollectFlag(request), context);
-    };
+    using Req = const ModifyWorkOrderTypeCollectFlagRequest&;
+    using Resp = ModifyWorkOrderTypeCollectFlagResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyWorkOrderTypeCollectFlag", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ChcClient::ModifyWorkOrderTypeCollectFlagOutcomeCallable ChcClient::ModifyWorkOrderTypeCollectFlagCallable(const ModifyWorkOrderTypeCollectFlagRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyWorkOrderTypeCollectFlagOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyWorkOrderTypeCollectFlag(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyWorkOrderTypeCollectFlagOutcome>>();
+    ModifyWorkOrderTypeCollectFlagAsync(
+    request,
+    [prom](
+        const ChcClient*,
+        const ModifyWorkOrderTypeCollectFlagRequest&,
+        ModifyWorkOrderTypeCollectFlagOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 

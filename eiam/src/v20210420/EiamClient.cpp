@@ -62,25 +62,32 @@ EiamClient::AddAccountToAccountGroupOutcome EiamClient::AddAccountToAccountGroup
 
 void EiamClient::AddAccountToAccountGroupAsync(const AddAccountToAccountGroupRequest& request, const AddAccountToAccountGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->AddAccountToAccountGroup(request), context);
-    };
+    using Req = const AddAccountToAccountGroupRequest&;
+    using Resp = AddAccountToAccountGroupResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "AddAccountToAccountGroup", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EiamClient::AddAccountToAccountGroupOutcomeCallable EiamClient::AddAccountToAccountGroupCallable(const AddAccountToAccountGroupRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<AddAccountToAccountGroupOutcome()>>(
-        [this, request]()
-        {
-            return this->AddAccountToAccountGroup(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<AddAccountToAccountGroupOutcome>>();
+    AddAccountToAccountGroupAsync(
+    request,
+    [prom](
+        const EiamClient*,
+        const AddAccountToAccountGroupRequest&,
+        AddAccountToAccountGroupOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EiamClient::AddUserToUserGroupOutcome EiamClient::AddUserToUserGroup(const AddUserToUserGroupRequest &request)
@@ -105,25 +112,32 @@ EiamClient::AddUserToUserGroupOutcome EiamClient::AddUserToUserGroup(const AddUs
 
 void EiamClient::AddUserToUserGroupAsync(const AddUserToUserGroupRequest& request, const AddUserToUserGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->AddUserToUserGroup(request), context);
-    };
+    using Req = const AddUserToUserGroupRequest&;
+    using Resp = AddUserToUserGroupResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "AddUserToUserGroup", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EiamClient::AddUserToUserGroupOutcomeCallable EiamClient::AddUserToUserGroupCallable(const AddUserToUserGroupRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<AddUserToUserGroupOutcome()>>(
-        [this, request]()
-        {
-            return this->AddUserToUserGroup(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<AddUserToUserGroupOutcome>>();
+    AddUserToUserGroupAsync(
+    request,
+    [prom](
+        const EiamClient*,
+        const AddUserToUserGroupRequest&,
+        AddUserToUserGroupOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EiamClient::CreateAccountGroupOutcome EiamClient::CreateAccountGroup(const CreateAccountGroupRequest &request)
@@ -148,25 +162,32 @@ EiamClient::CreateAccountGroupOutcome EiamClient::CreateAccountGroup(const Creat
 
 void EiamClient::CreateAccountGroupAsync(const CreateAccountGroupRequest& request, const CreateAccountGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateAccountGroup(request), context);
-    };
+    using Req = const CreateAccountGroupRequest&;
+    using Resp = CreateAccountGroupResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateAccountGroup", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EiamClient::CreateAccountGroupOutcomeCallable EiamClient::CreateAccountGroupCallable(const CreateAccountGroupRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateAccountGroupOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateAccountGroup(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateAccountGroupOutcome>>();
+    CreateAccountGroupAsync(
+    request,
+    [prom](
+        const EiamClient*,
+        const CreateAccountGroupRequest&,
+        CreateAccountGroupOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EiamClient::CreateAppAccountOutcome EiamClient::CreateAppAccount(const CreateAppAccountRequest &request)
@@ -191,25 +212,32 @@ EiamClient::CreateAppAccountOutcome EiamClient::CreateAppAccount(const CreateApp
 
 void EiamClient::CreateAppAccountAsync(const CreateAppAccountRequest& request, const CreateAppAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateAppAccount(request), context);
-    };
+    using Req = const CreateAppAccountRequest&;
+    using Resp = CreateAppAccountResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateAppAccount", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EiamClient::CreateAppAccountOutcomeCallable EiamClient::CreateAppAccountCallable(const CreateAppAccountRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateAppAccountOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateAppAccount(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateAppAccountOutcome>>();
+    CreateAppAccountAsync(
+    request,
+    [prom](
+        const EiamClient*,
+        const CreateAppAccountRequest&,
+        CreateAppAccountOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EiamClient::CreateOrgNodeOutcome EiamClient::CreateOrgNode(const CreateOrgNodeRequest &request)
@@ -234,25 +262,32 @@ EiamClient::CreateOrgNodeOutcome EiamClient::CreateOrgNode(const CreateOrgNodeRe
 
 void EiamClient::CreateOrgNodeAsync(const CreateOrgNodeRequest& request, const CreateOrgNodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateOrgNode(request), context);
-    };
+    using Req = const CreateOrgNodeRequest&;
+    using Resp = CreateOrgNodeResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateOrgNode", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EiamClient::CreateOrgNodeOutcomeCallable EiamClient::CreateOrgNodeCallable(const CreateOrgNodeRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateOrgNodeOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateOrgNode(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateOrgNodeOutcome>>();
+    CreateOrgNodeAsync(
+    request,
+    [prom](
+        const EiamClient*,
+        const CreateOrgNodeRequest&,
+        CreateOrgNodeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EiamClient::CreateUserOutcome EiamClient::CreateUser(const CreateUserRequest &request)
@@ -277,25 +312,32 @@ EiamClient::CreateUserOutcome EiamClient::CreateUser(const CreateUserRequest &re
 
 void EiamClient::CreateUserAsync(const CreateUserRequest& request, const CreateUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateUser(request), context);
-    };
+    using Req = const CreateUserRequest&;
+    using Resp = CreateUserResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateUser", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EiamClient::CreateUserOutcomeCallable EiamClient::CreateUserCallable(const CreateUserRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateUserOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateUser(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateUserOutcome>>();
+    CreateUserAsync(
+    request,
+    [prom](
+        const EiamClient*,
+        const CreateUserRequest&,
+        CreateUserOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EiamClient::CreateUserGroupOutcome EiamClient::CreateUserGroup(const CreateUserGroupRequest &request)
@@ -320,25 +362,32 @@ EiamClient::CreateUserGroupOutcome EiamClient::CreateUserGroup(const CreateUserG
 
 void EiamClient::CreateUserGroupAsync(const CreateUserGroupRequest& request, const CreateUserGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateUserGroup(request), context);
-    };
+    using Req = const CreateUserGroupRequest&;
+    using Resp = CreateUserGroupResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateUserGroup", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EiamClient::CreateUserGroupOutcomeCallable EiamClient::CreateUserGroupCallable(const CreateUserGroupRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateUserGroupOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateUserGroup(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateUserGroupOutcome>>();
+    CreateUserGroupAsync(
+    request,
+    [prom](
+        const EiamClient*,
+        const CreateUserGroupRequest&,
+        CreateUserGroupOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EiamClient::DeleteAccountGroupOutcome EiamClient::DeleteAccountGroup(const DeleteAccountGroupRequest &request)
@@ -363,25 +412,32 @@ EiamClient::DeleteAccountGroupOutcome EiamClient::DeleteAccountGroup(const Delet
 
 void EiamClient::DeleteAccountGroupAsync(const DeleteAccountGroupRequest& request, const DeleteAccountGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteAccountGroup(request), context);
-    };
+    using Req = const DeleteAccountGroupRequest&;
+    using Resp = DeleteAccountGroupResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteAccountGroup", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EiamClient::DeleteAccountGroupOutcomeCallable EiamClient::DeleteAccountGroupCallable(const DeleteAccountGroupRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteAccountGroupOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteAccountGroup(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteAccountGroupOutcome>>();
+    DeleteAccountGroupAsync(
+    request,
+    [prom](
+        const EiamClient*,
+        const DeleteAccountGroupRequest&,
+        DeleteAccountGroupOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EiamClient::DeleteAppAccountOutcome EiamClient::DeleteAppAccount(const DeleteAppAccountRequest &request)
@@ -406,25 +462,32 @@ EiamClient::DeleteAppAccountOutcome EiamClient::DeleteAppAccount(const DeleteApp
 
 void EiamClient::DeleteAppAccountAsync(const DeleteAppAccountRequest& request, const DeleteAppAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteAppAccount(request), context);
-    };
+    using Req = const DeleteAppAccountRequest&;
+    using Resp = DeleteAppAccountResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteAppAccount", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EiamClient::DeleteAppAccountOutcomeCallable EiamClient::DeleteAppAccountCallable(const DeleteAppAccountRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteAppAccountOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteAppAccount(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteAppAccountOutcome>>();
+    DeleteAppAccountAsync(
+    request,
+    [prom](
+        const EiamClient*,
+        const DeleteAppAccountRequest&,
+        DeleteAppAccountOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EiamClient::DeleteOrgNodeOutcome EiamClient::DeleteOrgNode(const DeleteOrgNodeRequest &request)
@@ -449,25 +512,32 @@ EiamClient::DeleteOrgNodeOutcome EiamClient::DeleteOrgNode(const DeleteOrgNodeRe
 
 void EiamClient::DeleteOrgNodeAsync(const DeleteOrgNodeRequest& request, const DeleteOrgNodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteOrgNode(request), context);
-    };
+    using Req = const DeleteOrgNodeRequest&;
+    using Resp = DeleteOrgNodeResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteOrgNode", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EiamClient::DeleteOrgNodeOutcomeCallable EiamClient::DeleteOrgNodeCallable(const DeleteOrgNodeRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteOrgNodeOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteOrgNode(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteOrgNodeOutcome>>();
+    DeleteOrgNodeAsync(
+    request,
+    [prom](
+        const EiamClient*,
+        const DeleteOrgNodeRequest&,
+        DeleteOrgNodeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EiamClient::DeleteUserOutcome EiamClient::DeleteUser(const DeleteUserRequest &request)
@@ -492,25 +562,32 @@ EiamClient::DeleteUserOutcome EiamClient::DeleteUser(const DeleteUserRequest &re
 
 void EiamClient::DeleteUserAsync(const DeleteUserRequest& request, const DeleteUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteUser(request), context);
-    };
+    using Req = const DeleteUserRequest&;
+    using Resp = DeleteUserResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteUser", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EiamClient::DeleteUserOutcomeCallable EiamClient::DeleteUserCallable(const DeleteUserRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteUserOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteUser(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteUserOutcome>>();
+    DeleteUserAsync(
+    request,
+    [prom](
+        const EiamClient*,
+        const DeleteUserRequest&,
+        DeleteUserOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EiamClient::DeleteUserGroupOutcome EiamClient::DeleteUserGroup(const DeleteUserGroupRequest &request)
@@ -535,25 +612,32 @@ EiamClient::DeleteUserGroupOutcome EiamClient::DeleteUserGroup(const DeleteUserG
 
 void EiamClient::DeleteUserGroupAsync(const DeleteUserGroupRequest& request, const DeleteUserGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteUserGroup(request), context);
-    };
+    using Req = const DeleteUserGroupRequest&;
+    using Resp = DeleteUserGroupResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteUserGroup", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EiamClient::DeleteUserGroupOutcomeCallable EiamClient::DeleteUserGroupCallable(const DeleteUserGroupRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteUserGroupOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteUserGroup(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteUserGroupOutcome>>();
+    DeleteUserGroupAsync(
+    request,
+    [prom](
+        const EiamClient*,
+        const DeleteUserGroupRequest&,
+        DeleteUserGroupOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EiamClient::DeleteUsersOutcome EiamClient::DeleteUsers(const DeleteUsersRequest &request)
@@ -578,25 +662,32 @@ EiamClient::DeleteUsersOutcome EiamClient::DeleteUsers(const DeleteUsersRequest 
 
 void EiamClient::DeleteUsersAsync(const DeleteUsersRequest& request, const DeleteUsersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteUsers(request), context);
-    };
+    using Req = const DeleteUsersRequest&;
+    using Resp = DeleteUsersResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteUsers", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EiamClient::DeleteUsersOutcomeCallable EiamClient::DeleteUsersCallable(const DeleteUsersRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteUsersOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteUsers(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteUsersOutcome>>();
+    DeleteUsersAsync(
+    request,
+    [prom](
+        const EiamClient*,
+        const DeleteUsersRequest&,
+        DeleteUsersOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EiamClient::DescribeAccountGroupOutcome EiamClient::DescribeAccountGroup(const DescribeAccountGroupRequest &request)
@@ -621,25 +712,32 @@ EiamClient::DescribeAccountGroupOutcome EiamClient::DescribeAccountGroup(const D
 
 void EiamClient::DescribeAccountGroupAsync(const DescribeAccountGroupRequest& request, const DescribeAccountGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAccountGroup(request), context);
-    };
+    using Req = const DescribeAccountGroupRequest&;
+    using Resp = DescribeAccountGroupResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAccountGroup", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EiamClient::DescribeAccountGroupOutcomeCallable EiamClient::DescribeAccountGroupCallable(const DescribeAccountGroupRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAccountGroupOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAccountGroup(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAccountGroupOutcome>>();
+    DescribeAccountGroupAsync(
+    request,
+    [prom](
+        const EiamClient*,
+        const DescribeAccountGroupRequest&,
+        DescribeAccountGroupOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EiamClient::DescribeAppAccountOutcome EiamClient::DescribeAppAccount(const DescribeAppAccountRequest &request)
@@ -664,25 +762,32 @@ EiamClient::DescribeAppAccountOutcome EiamClient::DescribeAppAccount(const Descr
 
 void EiamClient::DescribeAppAccountAsync(const DescribeAppAccountRequest& request, const DescribeAppAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAppAccount(request), context);
-    };
+    using Req = const DescribeAppAccountRequest&;
+    using Resp = DescribeAppAccountResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAppAccount", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EiamClient::DescribeAppAccountOutcomeCallable EiamClient::DescribeAppAccountCallable(const DescribeAppAccountRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAppAccountOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAppAccount(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAppAccountOutcome>>();
+    DescribeAppAccountAsync(
+    request,
+    [prom](
+        const EiamClient*,
+        const DescribeAppAccountRequest&,
+        DescribeAppAccountOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EiamClient::DescribeApplicationOutcome EiamClient::DescribeApplication(const DescribeApplicationRequest &request)
@@ -707,25 +812,32 @@ EiamClient::DescribeApplicationOutcome EiamClient::DescribeApplication(const Des
 
 void EiamClient::DescribeApplicationAsync(const DescribeApplicationRequest& request, const DescribeApplicationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeApplication(request), context);
-    };
+    using Req = const DescribeApplicationRequest&;
+    using Resp = DescribeApplicationResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeApplication", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EiamClient::DescribeApplicationOutcomeCallable EiamClient::DescribeApplicationCallable(const DescribeApplicationRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeApplicationOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeApplication(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeApplicationOutcome>>();
+    DescribeApplicationAsync(
+    request,
+    [prom](
+        const EiamClient*,
+        const DescribeApplicationRequest&,
+        DescribeApplicationOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EiamClient::DescribeOrgNodeOutcome EiamClient::DescribeOrgNode(const DescribeOrgNodeRequest &request)
@@ -750,25 +862,32 @@ EiamClient::DescribeOrgNodeOutcome EiamClient::DescribeOrgNode(const DescribeOrg
 
 void EiamClient::DescribeOrgNodeAsync(const DescribeOrgNodeRequest& request, const DescribeOrgNodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeOrgNode(request), context);
-    };
+    using Req = const DescribeOrgNodeRequest&;
+    using Resp = DescribeOrgNodeResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeOrgNode", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EiamClient::DescribeOrgNodeOutcomeCallable EiamClient::DescribeOrgNodeCallable(const DescribeOrgNodeRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeOrgNodeOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeOrgNode(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeOrgNodeOutcome>>();
+    DescribeOrgNodeAsync(
+    request,
+    [prom](
+        const EiamClient*,
+        const DescribeOrgNodeRequest&,
+        DescribeOrgNodeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EiamClient::DescribeOrgResourcesAuthorizationOutcome EiamClient::DescribeOrgResourcesAuthorization(const DescribeOrgResourcesAuthorizationRequest &request)
@@ -793,25 +912,32 @@ EiamClient::DescribeOrgResourcesAuthorizationOutcome EiamClient::DescribeOrgReso
 
 void EiamClient::DescribeOrgResourcesAuthorizationAsync(const DescribeOrgResourcesAuthorizationRequest& request, const DescribeOrgResourcesAuthorizationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeOrgResourcesAuthorization(request), context);
-    };
+    using Req = const DescribeOrgResourcesAuthorizationRequest&;
+    using Resp = DescribeOrgResourcesAuthorizationResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeOrgResourcesAuthorization", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EiamClient::DescribeOrgResourcesAuthorizationOutcomeCallable EiamClient::DescribeOrgResourcesAuthorizationCallable(const DescribeOrgResourcesAuthorizationRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeOrgResourcesAuthorizationOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeOrgResourcesAuthorization(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeOrgResourcesAuthorizationOutcome>>();
+    DescribeOrgResourcesAuthorizationAsync(
+    request,
+    [prom](
+        const EiamClient*,
+        const DescribeOrgResourcesAuthorizationRequest&,
+        DescribeOrgResourcesAuthorizationOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EiamClient::DescribePublicKeyOutcome EiamClient::DescribePublicKey(const DescribePublicKeyRequest &request)
@@ -836,25 +962,32 @@ EiamClient::DescribePublicKeyOutcome EiamClient::DescribePublicKey(const Describ
 
 void EiamClient::DescribePublicKeyAsync(const DescribePublicKeyRequest& request, const DescribePublicKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribePublicKey(request), context);
-    };
+    using Req = const DescribePublicKeyRequest&;
+    using Resp = DescribePublicKeyResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribePublicKey", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EiamClient::DescribePublicKeyOutcomeCallable EiamClient::DescribePublicKeyCallable(const DescribePublicKeyRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribePublicKeyOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribePublicKey(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribePublicKeyOutcome>>();
+    DescribePublicKeyAsync(
+    request,
+    [prom](
+        const EiamClient*,
+        const DescribePublicKeyRequest&,
+        DescribePublicKeyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EiamClient::DescribeUserGroupOutcome EiamClient::DescribeUserGroup(const DescribeUserGroupRequest &request)
@@ -879,25 +1012,32 @@ EiamClient::DescribeUserGroupOutcome EiamClient::DescribeUserGroup(const Describ
 
 void EiamClient::DescribeUserGroupAsync(const DescribeUserGroupRequest& request, const DescribeUserGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeUserGroup(request), context);
-    };
+    using Req = const DescribeUserGroupRequest&;
+    using Resp = DescribeUserGroupResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeUserGroup", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EiamClient::DescribeUserGroupOutcomeCallable EiamClient::DescribeUserGroupCallable(const DescribeUserGroupRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeUserGroupOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeUserGroup(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeUserGroupOutcome>>();
+    DescribeUserGroupAsync(
+    request,
+    [prom](
+        const EiamClient*,
+        const DescribeUserGroupRequest&,
+        DescribeUserGroupOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EiamClient::DescribeUserGroupResourcesAuthorizationOutcome EiamClient::DescribeUserGroupResourcesAuthorization(const DescribeUserGroupResourcesAuthorizationRequest &request)
@@ -922,25 +1062,32 @@ EiamClient::DescribeUserGroupResourcesAuthorizationOutcome EiamClient::DescribeU
 
 void EiamClient::DescribeUserGroupResourcesAuthorizationAsync(const DescribeUserGroupResourcesAuthorizationRequest& request, const DescribeUserGroupResourcesAuthorizationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeUserGroupResourcesAuthorization(request), context);
-    };
+    using Req = const DescribeUserGroupResourcesAuthorizationRequest&;
+    using Resp = DescribeUserGroupResourcesAuthorizationResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeUserGroupResourcesAuthorization", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EiamClient::DescribeUserGroupResourcesAuthorizationOutcomeCallable EiamClient::DescribeUserGroupResourcesAuthorizationCallable(const DescribeUserGroupResourcesAuthorizationRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeUserGroupResourcesAuthorizationOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeUserGroupResourcesAuthorization(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeUserGroupResourcesAuthorizationOutcome>>();
+    DescribeUserGroupResourcesAuthorizationAsync(
+    request,
+    [prom](
+        const EiamClient*,
+        const DescribeUserGroupResourcesAuthorizationRequest&,
+        DescribeUserGroupResourcesAuthorizationOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EiamClient::DescribeUserInfoOutcome EiamClient::DescribeUserInfo(const DescribeUserInfoRequest &request)
@@ -965,25 +1112,32 @@ EiamClient::DescribeUserInfoOutcome EiamClient::DescribeUserInfo(const DescribeU
 
 void EiamClient::DescribeUserInfoAsync(const DescribeUserInfoRequest& request, const DescribeUserInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeUserInfo(request), context);
-    };
+    using Req = const DescribeUserInfoRequest&;
+    using Resp = DescribeUserInfoResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeUserInfo", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EiamClient::DescribeUserInfoOutcomeCallable EiamClient::DescribeUserInfoCallable(const DescribeUserInfoRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeUserInfoOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeUserInfo(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeUserInfoOutcome>>();
+    DescribeUserInfoAsync(
+    request,
+    [prom](
+        const EiamClient*,
+        const DescribeUserInfoRequest&,
+        DescribeUserInfoOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EiamClient::DescribeUserResourcesAuthorizationOutcome EiamClient::DescribeUserResourcesAuthorization(const DescribeUserResourcesAuthorizationRequest &request)
@@ -1008,25 +1162,32 @@ EiamClient::DescribeUserResourcesAuthorizationOutcome EiamClient::DescribeUserRe
 
 void EiamClient::DescribeUserResourcesAuthorizationAsync(const DescribeUserResourcesAuthorizationRequest& request, const DescribeUserResourcesAuthorizationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeUserResourcesAuthorization(request), context);
-    };
+    using Req = const DescribeUserResourcesAuthorizationRequest&;
+    using Resp = DescribeUserResourcesAuthorizationResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeUserResourcesAuthorization", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EiamClient::DescribeUserResourcesAuthorizationOutcomeCallable EiamClient::DescribeUserResourcesAuthorizationCallable(const DescribeUserResourcesAuthorizationRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeUserResourcesAuthorizationOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeUserResourcesAuthorization(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeUserResourcesAuthorizationOutcome>>();
+    DescribeUserResourcesAuthorizationAsync(
+    request,
+    [prom](
+        const EiamClient*,
+        const DescribeUserResourcesAuthorizationRequest&,
+        DescribeUserResourcesAuthorizationOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EiamClient::DescribeUserThirdPartyAccountInfoOutcome EiamClient::DescribeUserThirdPartyAccountInfo(const DescribeUserThirdPartyAccountInfoRequest &request)
@@ -1051,25 +1212,32 @@ EiamClient::DescribeUserThirdPartyAccountInfoOutcome EiamClient::DescribeUserThi
 
 void EiamClient::DescribeUserThirdPartyAccountInfoAsync(const DescribeUserThirdPartyAccountInfoRequest& request, const DescribeUserThirdPartyAccountInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeUserThirdPartyAccountInfo(request), context);
-    };
+    using Req = const DescribeUserThirdPartyAccountInfoRequest&;
+    using Resp = DescribeUserThirdPartyAccountInfoResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeUserThirdPartyAccountInfo", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EiamClient::DescribeUserThirdPartyAccountInfoOutcomeCallable EiamClient::DescribeUserThirdPartyAccountInfoCallable(const DescribeUserThirdPartyAccountInfoRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeUserThirdPartyAccountInfoOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeUserThirdPartyAccountInfo(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeUserThirdPartyAccountInfoOutcome>>();
+    DescribeUserThirdPartyAccountInfoAsync(
+    request,
+    [prom](
+        const EiamClient*,
+        const DescribeUserThirdPartyAccountInfoRequest&,
+        DescribeUserThirdPartyAccountInfoOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EiamClient::ListAccountInAccountGroupOutcome EiamClient::ListAccountInAccountGroup(const ListAccountInAccountGroupRequest &request)
@@ -1094,25 +1262,32 @@ EiamClient::ListAccountInAccountGroupOutcome EiamClient::ListAccountInAccountGro
 
 void EiamClient::ListAccountInAccountGroupAsync(const ListAccountInAccountGroupRequest& request, const ListAccountInAccountGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ListAccountInAccountGroup(request), context);
-    };
+    using Req = const ListAccountInAccountGroupRequest&;
+    using Resp = ListAccountInAccountGroupResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ListAccountInAccountGroup", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EiamClient::ListAccountInAccountGroupOutcomeCallable EiamClient::ListAccountInAccountGroupCallable(const ListAccountInAccountGroupRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ListAccountInAccountGroupOutcome()>>(
-        [this, request]()
-        {
-            return this->ListAccountInAccountGroup(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ListAccountInAccountGroupOutcome>>();
+    ListAccountInAccountGroupAsync(
+    request,
+    [prom](
+        const EiamClient*,
+        const ListAccountInAccountGroupRequest&,
+        ListAccountInAccountGroupOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EiamClient::ListApplicationAuthorizationsOutcome EiamClient::ListApplicationAuthorizations(const ListApplicationAuthorizationsRequest &request)
@@ -1137,25 +1312,32 @@ EiamClient::ListApplicationAuthorizationsOutcome EiamClient::ListApplicationAuth
 
 void EiamClient::ListApplicationAuthorizationsAsync(const ListApplicationAuthorizationsRequest& request, const ListApplicationAuthorizationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ListApplicationAuthorizations(request), context);
-    };
+    using Req = const ListApplicationAuthorizationsRequest&;
+    using Resp = ListApplicationAuthorizationsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ListApplicationAuthorizations", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EiamClient::ListApplicationAuthorizationsOutcomeCallable EiamClient::ListApplicationAuthorizationsCallable(const ListApplicationAuthorizationsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ListApplicationAuthorizationsOutcome()>>(
-        [this, request]()
-        {
-            return this->ListApplicationAuthorizations(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ListApplicationAuthorizationsOutcome>>();
+    ListApplicationAuthorizationsAsync(
+    request,
+    [prom](
+        const EiamClient*,
+        const ListApplicationAuthorizationsRequest&,
+        ListApplicationAuthorizationsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EiamClient::ListApplicationsOutcome EiamClient::ListApplications(const ListApplicationsRequest &request)
@@ -1180,25 +1362,32 @@ EiamClient::ListApplicationsOutcome EiamClient::ListApplications(const ListAppli
 
 void EiamClient::ListApplicationsAsync(const ListApplicationsRequest& request, const ListApplicationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ListApplications(request), context);
-    };
+    using Req = const ListApplicationsRequest&;
+    using Resp = ListApplicationsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ListApplications", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EiamClient::ListApplicationsOutcomeCallable EiamClient::ListApplicationsCallable(const ListApplicationsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ListApplicationsOutcome()>>(
-        [this, request]()
-        {
-            return this->ListApplications(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ListApplicationsOutcome>>();
+    ListApplicationsAsync(
+    request,
+    [prom](
+        const EiamClient*,
+        const ListApplicationsRequest&,
+        ListApplicationsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EiamClient::ListAuthorizedApplicationsToOrgNodeOutcome EiamClient::ListAuthorizedApplicationsToOrgNode(const ListAuthorizedApplicationsToOrgNodeRequest &request)
@@ -1223,25 +1412,32 @@ EiamClient::ListAuthorizedApplicationsToOrgNodeOutcome EiamClient::ListAuthorize
 
 void EiamClient::ListAuthorizedApplicationsToOrgNodeAsync(const ListAuthorizedApplicationsToOrgNodeRequest& request, const ListAuthorizedApplicationsToOrgNodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ListAuthorizedApplicationsToOrgNode(request), context);
-    };
+    using Req = const ListAuthorizedApplicationsToOrgNodeRequest&;
+    using Resp = ListAuthorizedApplicationsToOrgNodeResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ListAuthorizedApplicationsToOrgNode", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EiamClient::ListAuthorizedApplicationsToOrgNodeOutcomeCallable EiamClient::ListAuthorizedApplicationsToOrgNodeCallable(const ListAuthorizedApplicationsToOrgNodeRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ListAuthorizedApplicationsToOrgNodeOutcome()>>(
-        [this, request]()
-        {
-            return this->ListAuthorizedApplicationsToOrgNode(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ListAuthorizedApplicationsToOrgNodeOutcome>>();
+    ListAuthorizedApplicationsToOrgNodeAsync(
+    request,
+    [prom](
+        const EiamClient*,
+        const ListAuthorizedApplicationsToOrgNodeRequest&,
+        ListAuthorizedApplicationsToOrgNodeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EiamClient::ListAuthorizedApplicationsToUserOutcome EiamClient::ListAuthorizedApplicationsToUser(const ListAuthorizedApplicationsToUserRequest &request)
@@ -1266,25 +1462,32 @@ EiamClient::ListAuthorizedApplicationsToUserOutcome EiamClient::ListAuthorizedAp
 
 void EiamClient::ListAuthorizedApplicationsToUserAsync(const ListAuthorizedApplicationsToUserRequest& request, const ListAuthorizedApplicationsToUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ListAuthorizedApplicationsToUser(request), context);
-    };
+    using Req = const ListAuthorizedApplicationsToUserRequest&;
+    using Resp = ListAuthorizedApplicationsToUserResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ListAuthorizedApplicationsToUser", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EiamClient::ListAuthorizedApplicationsToUserOutcomeCallable EiamClient::ListAuthorizedApplicationsToUserCallable(const ListAuthorizedApplicationsToUserRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ListAuthorizedApplicationsToUserOutcome()>>(
-        [this, request]()
-        {
-            return this->ListAuthorizedApplicationsToUser(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ListAuthorizedApplicationsToUserOutcome>>();
+    ListAuthorizedApplicationsToUserAsync(
+    request,
+    [prom](
+        const EiamClient*,
+        const ListAuthorizedApplicationsToUserRequest&,
+        ListAuthorizedApplicationsToUserOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EiamClient::ListAuthorizedApplicationsToUserGroupOutcome EiamClient::ListAuthorizedApplicationsToUserGroup(const ListAuthorizedApplicationsToUserGroupRequest &request)
@@ -1309,25 +1512,32 @@ EiamClient::ListAuthorizedApplicationsToUserGroupOutcome EiamClient::ListAuthori
 
 void EiamClient::ListAuthorizedApplicationsToUserGroupAsync(const ListAuthorizedApplicationsToUserGroupRequest& request, const ListAuthorizedApplicationsToUserGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ListAuthorizedApplicationsToUserGroup(request), context);
-    };
+    using Req = const ListAuthorizedApplicationsToUserGroupRequest&;
+    using Resp = ListAuthorizedApplicationsToUserGroupResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ListAuthorizedApplicationsToUserGroup", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EiamClient::ListAuthorizedApplicationsToUserGroupOutcomeCallable EiamClient::ListAuthorizedApplicationsToUserGroupCallable(const ListAuthorizedApplicationsToUserGroupRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ListAuthorizedApplicationsToUserGroupOutcome()>>(
-        [this, request]()
-        {
-            return this->ListAuthorizedApplicationsToUserGroup(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ListAuthorizedApplicationsToUserGroupOutcome>>();
+    ListAuthorizedApplicationsToUserGroupAsync(
+    request,
+    [prom](
+        const EiamClient*,
+        const ListAuthorizedApplicationsToUserGroupRequest&,
+        ListAuthorizedApplicationsToUserGroupOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EiamClient::ListUserGroupsOutcome EiamClient::ListUserGroups(const ListUserGroupsRequest &request)
@@ -1352,25 +1562,32 @@ EiamClient::ListUserGroupsOutcome EiamClient::ListUserGroups(const ListUserGroup
 
 void EiamClient::ListUserGroupsAsync(const ListUserGroupsRequest& request, const ListUserGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ListUserGroups(request), context);
-    };
+    using Req = const ListUserGroupsRequest&;
+    using Resp = ListUserGroupsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ListUserGroups", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EiamClient::ListUserGroupsOutcomeCallable EiamClient::ListUserGroupsCallable(const ListUserGroupsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ListUserGroupsOutcome()>>(
-        [this, request]()
-        {
-            return this->ListUserGroups(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ListUserGroupsOutcome>>();
+    ListUserGroupsAsync(
+    request,
+    [prom](
+        const EiamClient*,
+        const ListUserGroupsRequest&,
+        ListUserGroupsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EiamClient::ListUserGroupsOfUserOutcome EiamClient::ListUserGroupsOfUser(const ListUserGroupsOfUserRequest &request)
@@ -1395,25 +1612,32 @@ EiamClient::ListUserGroupsOfUserOutcome EiamClient::ListUserGroupsOfUser(const L
 
 void EiamClient::ListUserGroupsOfUserAsync(const ListUserGroupsOfUserRequest& request, const ListUserGroupsOfUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ListUserGroupsOfUser(request), context);
-    };
+    using Req = const ListUserGroupsOfUserRequest&;
+    using Resp = ListUserGroupsOfUserResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ListUserGroupsOfUser", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EiamClient::ListUserGroupsOfUserOutcomeCallable EiamClient::ListUserGroupsOfUserCallable(const ListUserGroupsOfUserRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ListUserGroupsOfUserOutcome()>>(
-        [this, request]()
-        {
-            return this->ListUserGroupsOfUser(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ListUserGroupsOfUserOutcome>>();
+    ListUserGroupsOfUserAsync(
+    request,
+    [prom](
+        const EiamClient*,
+        const ListUserGroupsOfUserRequest&,
+        ListUserGroupsOfUserOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EiamClient::ListUsersOutcome EiamClient::ListUsers(const ListUsersRequest &request)
@@ -1438,25 +1662,32 @@ EiamClient::ListUsersOutcome EiamClient::ListUsers(const ListUsersRequest &reque
 
 void EiamClient::ListUsersAsync(const ListUsersRequest& request, const ListUsersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ListUsers(request), context);
-    };
+    using Req = const ListUsersRequest&;
+    using Resp = ListUsersResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ListUsers", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EiamClient::ListUsersOutcomeCallable EiamClient::ListUsersCallable(const ListUsersRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ListUsersOutcome()>>(
-        [this, request]()
-        {
-            return this->ListUsers(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ListUsersOutcome>>();
+    ListUsersAsync(
+    request,
+    [prom](
+        const EiamClient*,
+        const ListUsersRequest&,
+        ListUsersOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EiamClient::ListUsersInOrgNodeOutcome EiamClient::ListUsersInOrgNode(const ListUsersInOrgNodeRequest &request)
@@ -1481,25 +1712,32 @@ EiamClient::ListUsersInOrgNodeOutcome EiamClient::ListUsersInOrgNode(const ListU
 
 void EiamClient::ListUsersInOrgNodeAsync(const ListUsersInOrgNodeRequest& request, const ListUsersInOrgNodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ListUsersInOrgNode(request), context);
-    };
+    using Req = const ListUsersInOrgNodeRequest&;
+    using Resp = ListUsersInOrgNodeResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ListUsersInOrgNode", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EiamClient::ListUsersInOrgNodeOutcomeCallable EiamClient::ListUsersInOrgNodeCallable(const ListUsersInOrgNodeRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ListUsersInOrgNodeOutcome()>>(
-        [this, request]()
-        {
-            return this->ListUsersInOrgNode(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ListUsersInOrgNodeOutcome>>();
+    ListUsersInOrgNodeAsync(
+    request,
+    [prom](
+        const EiamClient*,
+        const ListUsersInOrgNodeRequest&,
+        ListUsersInOrgNodeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EiamClient::ListUsersInUserGroupOutcome EiamClient::ListUsersInUserGroup(const ListUsersInUserGroupRequest &request)
@@ -1524,25 +1762,32 @@ EiamClient::ListUsersInUserGroupOutcome EiamClient::ListUsersInUserGroup(const L
 
 void EiamClient::ListUsersInUserGroupAsync(const ListUsersInUserGroupRequest& request, const ListUsersInUserGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ListUsersInUserGroup(request), context);
-    };
+    using Req = const ListUsersInUserGroupRequest&;
+    using Resp = ListUsersInUserGroupResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ListUsersInUserGroup", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EiamClient::ListUsersInUserGroupOutcomeCallable EiamClient::ListUsersInUserGroupCallable(const ListUsersInUserGroupRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ListUsersInUserGroupOutcome()>>(
-        [this, request]()
-        {
-            return this->ListUsersInUserGroup(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ListUsersInUserGroupOutcome>>();
+    ListUsersInUserGroupAsync(
+    request,
+    [prom](
+        const EiamClient*,
+        const ListUsersInUserGroupRequest&,
+        ListUsersInUserGroupOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EiamClient::ModifyAccountGroupOutcome EiamClient::ModifyAccountGroup(const ModifyAccountGroupRequest &request)
@@ -1567,25 +1812,32 @@ EiamClient::ModifyAccountGroupOutcome EiamClient::ModifyAccountGroup(const Modif
 
 void EiamClient::ModifyAccountGroupAsync(const ModifyAccountGroupRequest& request, const ModifyAccountGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyAccountGroup(request), context);
-    };
+    using Req = const ModifyAccountGroupRequest&;
+    using Resp = ModifyAccountGroupResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyAccountGroup", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EiamClient::ModifyAccountGroupOutcomeCallable EiamClient::ModifyAccountGroupCallable(const ModifyAccountGroupRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyAccountGroupOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyAccountGroup(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyAccountGroupOutcome>>();
+    ModifyAccountGroupAsync(
+    request,
+    [prom](
+        const EiamClient*,
+        const ModifyAccountGroupRequest&,
+        ModifyAccountGroupOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EiamClient::ModifyAppAccountOutcome EiamClient::ModifyAppAccount(const ModifyAppAccountRequest &request)
@@ -1610,25 +1862,32 @@ EiamClient::ModifyAppAccountOutcome EiamClient::ModifyAppAccount(const ModifyApp
 
 void EiamClient::ModifyAppAccountAsync(const ModifyAppAccountRequest& request, const ModifyAppAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyAppAccount(request), context);
-    };
+    using Req = const ModifyAppAccountRequest&;
+    using Resp = ModifyAppAccountResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyAppAccount", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EiamClient::ModifyAppAccountOutcomeCallable EiamClient::ModifyAppAccountCallable(const ModifyAppAccountRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyAppAccountOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyAppAccount(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyAppAccountOutcome>>();
+    ModifyAppAccountAsync(
+    request,
+    [prom](
+        const EiamClient*,
+        const ModifyAppAccountRequest&,
+        ModifyAppAccountOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EiamClient::ModifyApplicationOutcome EiamClient::ModifyApplication(const ModifyApplicationRequest &request)
@@ -1653,25 +1912,32 @@ EiamClient::ModifyApplicationOutcome EiamClient::ModifyApplication(const ModifyA
 
 void EiamClient::ModifyApplicationAsync(const ModifyApplicationRequest& request, const ModifyApplicationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyApplication(request), context);
-    };
+    using Req = const ModifyApplicationRequest&;
+    using Resp = ModifyApplicationResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyApplication", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EiamClient::ModifyApplicationOutcomeCallable EiamClient::ModifyApplicationCallable(const ModifyApplicationRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyApplicationOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyApplication(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyApplicationOutcome>>();
+    ModifyApplicationAsync(
+    request,
+    [prom](
+        const EiamClient*,
+        const ModifyApplicationRequest&,
+        ModifyApplicationOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EiamClient::ModifyUserInfoOutcome EiamClient::ModifyUserInfo(const ModifyUserInfoRequest &request)
@@ -1696,25 +1962,32 @@ EiamClient::ModifyUserInfoOutcome EiamClient::ModifyUserInfo(const ModifyUserInf
 
 void EiamClient::ModifyUserInfoAsync(const ModifyUserInfoRequest& request, const ModifyUserInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyUserInfo(request), context);
-    };
+    using Req = const ModifyUserInfoRequest&;
+    using Resp = ModifyUserInfoResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyUserInfo", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EiamClient::ModifyUserInfoOutcomeCallable EiamClient::ModifyUserInfoCallable(const ModifyUserInfoRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyUserInfoOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyUserInfo(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyUserInfoOutcome>>();
+    ModifyUserInfoAsync(
+    request,
+    [prom](
+        const EiamClient*,
+        const ModifyUserInfoRequest&,
+        ModifyUserInfoOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EiamClient::RemoveAccountFromAccountGroupOutcome EiamClient::RemoveAccountFromAccountGroup(const RemoveAccountFromAccountGroupRequest &request)
@@ -1739,25 +2012,32 @@ EiamClient::RemoveAccountFromAccountGroupOutcome EiamClient::RemoveAccountFromAc
 
 void EiamClient::RemoveAccountFromAccountGroupAsync(const RemoveAccountFromAccountGroupRequest& request, const RemoveAccountFromAccountGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->RemoveAccountFromAccountGroup(request), context);
-    };
+    using Req = const RemoveAccountFromAccountGroupRequest&;
+    using Resp = RemoveAccountFromAccountGroupResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "RemoveAccountFromAccountGroup", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EiamClient::RemoveAccountFromAccountGroupOutcomeCallable EiamClient::RemoveAccountFromAccountGroupCallable(const RemoveAccountFromAccountGroupRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<RemoveAccountFromAccountGroupOutcome()>>(
-        [this, request]()
-        {
-            return this->RemoveAccountFromAccountGroup(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<RemoveAccountFromAccountGroupOutcome>>();
+    RemoveAccountFromAccountGroupAsync(
+    request,
+    [prom](
+        const EiamClient*,
+        const RemoveAccountFromAccountGroupRequest&,
+        RemoveAccountFromAccountGroupOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EiamClient::RemoveUserFromUserGroupOutcome EiamClient::RemoveUserFromUserGroup(const RemoveUserFromUserGroupRequest &request)
@@ -1782,25 +2062,32 @@ EiamClient::RemoveUserFromUserGroupOutcome EiamClient::RemoveUserFromUserGroup(c
 
 void EiamClient::RemoveUserFromUserGroupAsync(const RemoveUserFromUserGroupRequest& request, const RemoveUserFromUserGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->RemoveUserFromUserGroup(request), context);
-    };
+    using Req = const RemoveUserFromUserGroupRequest&;
+    using Resp = RemoveUserFromUserGroupResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "RemoveUserFromUserGroup", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EiamClient::RemoveUserFromUserGroupOutcomeCallable EiamClient::RemoveUserFromUserGroupCallable(const RemoveUserFromUserGroupRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<RemoveUserFromUserGroupOutcome()>>(
-        [this, request]()
-        {
-            return this->RemoveUserFromUserGroup(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<RemoveUserFromUserGroupOutcome>>();
+    RemoveUserFromUserGroupAsync(
+    request,
+    [prom](
+        const EiamClient*,
+        const RemoveUserFromUserGroupRequest&,
+        RemoveUserFromUserGroupOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EiamClient::UpdateOrgNodeOutcome EiamClient::UpdateOrgNode(const UpdateOrgNodeRequest &request)
@@ -1825,24 +2112,31 @@ EiamClient::UpdateOrgNodeOutcome EiamClient::UpdateOrgNode(const UpdateOrgNodeRe
 
 void EiamClient::UpdateOrgNodeAsync(const UpdateOrgNodeRequest& request, const UpdateOrgNodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UpdateOrgNode(request), context);
-    };
+    using Req = const UpdateOrgNodeRequest&;
+    using Resp = UpdateOrgNodeResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UpdateOrgNode", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EiamClient::UpdateOrgNodeOutcomeCallable EiamClient::UpdateOrgNodeCallable(const UpdateOrgNodeRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UpdateOrgNodeOutcome()>>(
-        [this, request]()
-        {
-            return this->UpdateOrgNode(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UpdateOrgNodeOutcome>>();
+    UpdateOrgNodeAsync(
+    request,
+    [prom](
+        const EiamClient*,
+        const UpdateOrgNodeRequest&,
+        UpdateOrgNodeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 

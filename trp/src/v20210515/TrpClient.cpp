@@ -62,25 +62,32 @@ TrpClient::AuthorizedTransferOutcome TrpClient::AuthorizedTransfer(const Authori
 
 void TrpClient::AuthorizedTransferAsync(const AuthorizedTransferRequest& request, const AuthorizedTransferAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->AuthorizedTransfer(request), context);
-    };
+    using Req = const AuthorizedTransferRequest&;
+    using Resp = AuthorizedTransferResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "AuthorizedTransfer", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TrpClient::AuthorizedTransferOutcomeCallable TrpClient::AuthorizedTransferCallable(const AuthorizedTransferRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<AuthorizedTransferOutcome()>>(
-        [this, request]()
-        {
-            return this->AuthorizedTransfer(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<AuthorizedTransferOutcome>>();
+    AuthorizedTransferAsync(
+    request,
+    [prom](
+        const TrpClient*,
+        const AuthorizedTransferRequest&,
+        AuthorizedTransferOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TrpClient::CreateChainBatchOutcome TrpClient::CreateChainBatch(const CreateChainBatchRequest &request)
@@ -105,25 +112,32 @@ TrpClient::CreateChainBatchOutcome TrpClient::CreateChainBatch(const CreateChain
 
 void TrpClient::CreateChainBatchAsync(const CreateChainBatchRequest& request, const CreateChainBatchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateChainBatch(request), context);
-    };
+    using Req = const CreateChainBatchRequest&;
+    using Resp = CreateChainBatchResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateChainBatch", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TrpClient::CreateChainBatchOutcomeCallable TrpClient::CreateChainBatchCallable(const CreateChainBatchRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateChainBatchOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateChainBatch(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateChainBatchOutcome>>();
+    CreateChainBatchAsync(
+    request,
+    [prom](
+        const TrpClient*,
+        const CreateChainBatchRequest&,
+        CreateChainBatchOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TrpClient::CreateCodeBatchOutcome TrpClient::CreateCodeBatch(const CreateCodeBatchRequest &request)
@@ -148,25 +162,32 @@ TrpClient::CreateCodeBatchOutcome TrpClient::CreateCodeBatch(const CreateCodeBat
 
 void TrpClient::CreateCodeBatchAsync(const CreateCodeBatchRequest& request, const CreateCodeBatchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateCodeBatch(request), context);
-    };
+    using Req = const CreateCodeBatchRequest&;
+    using Resp = CreateCodeBatchResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateCodeBatch", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TrpClient::CreateCodeBatchOutcomeCallable TrpClient::CreateCodeBatchCallable(const CreateCodeBatchRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateCodeBatchOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateCodeBatch(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateCodeBatchOutcome>>();
+    CreateCodeBatchAsync(
+    request,
+    [prom](
+        const TrpClient*,
+        const CreateCodeBatchRequest&,
+        CreateCodeBatchOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TrpClient::CreateCodePackOutcome TrpClient::CreateCodePack(const CreateCodePackRequest &request)
@@ -191,25 +212,32 @@ TrpClient::CreateCodePackOutcome TrpClient::CreateCodePack(const CreateCodePackR
 
 void TrpClient::CreateCodePackAsync(const CreateCodePackRequest& request, const CreateCodePackAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateCodePack(request), context);
-    };
+    using Req = const CreateCodePackRequest&;
+    using Resp = CreateCodePackResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateCodePack", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TrpClient::CreateCodePackOutcomeCallable TrpClient::CreateCodePackCallable(const CreateCodePackRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateCodePackOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateCodePack(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateCodePackOutcome>>();
+    CreateCodePackAsync(
+    request,
+    [prom](
+        const TrpClient*,
+        const CreateCodePackRequest&,
+        CreateCodePackOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TrpClient::CreateCorporationOrderOutcome TrpClient::CreateCorporationOrder(const CreateCorporationOrderRequest &request)
@@ -234,25 +262,32 @@ TrpClient::CreateCorporationOrderOutcome TrpClient::CreateCorporationOrder(const
 
 void TrpClient::CreateCorporationOrderAsync(const CreateCorporationOrderRequest& request, const CreateCorporationOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateCorporationOrder(request), context);
-    };
+    using Req = const CreateCorporationOrderRequest&;
+    using Resp = CreateCorporationOrderResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateCorporationOrder", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TrpClient::CreateCorporationOrderOutcomeCallable TrpClient::CreateCorporationOrderCallable(const CreateCorporationOrderRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateCorporationOrderOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateCorporationOrder(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateCorporationOrderOutcome>>();
+    CreateCorporationOrderAsync(
+    request,
+    [prom](
+        const TrpClient*,
+        const CreateCorporationOrderRequest&,
+        CreateCorporationOrderOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TrpClient::CreateCustomPackOutcome TrpClient::CreateCustomPack(const CreateCustomPackRequest &request)
@@ -277,25 +312,32 @@ TrpClient::CreateCustomPackOutcome TrpClient::CreateCustomPack(const CreateCusto
 
 void TrpClient::CreateCustomPackAsync(const CreateCustomPackRequest& request, const CreateCustomPackAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateCustomPack(request), context);
-    };
+    using Req = const CreateCustomPackRequest&;
+    using Resp = CreateCustomPackResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateCustomPack", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TrpClient::CreateCustomPackOutcomeCallable TrpClient::CreateCustomPackCallable(const CreateCustomPackRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateCustomPackOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateCustomPack(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateCustomPackOutcome>>();
+    CreateCustomPackAsync(
+    request,
+    [prom](
+        const TrpClient*,
+        const CreateCustomPackRequest&,
+        CreateCustomPackOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TrpClient::CreateCustomRuleOutcome TrpClient::CreateCustomRule(const CreateCustomRuleRequest &request)
@@ -320,25 +362,32 @@ TrpClient::CreateCustomRuleOutcome TrpClient::CreateCustomRule(const CreateCusto
 
 void TrpClient::CreateCustomRuleAsync(const CreateCustomRuleRequest& request, const CreateCustomRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateCustomRule(request), context);
-    };
+    using Req = const CreateCustomRuleRequest&;
+    using Resp = CreateCustomRuleResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateCustomRule", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TrpClient::CreateCustomRuleOutcomeCallable TrpClient::CreateCustomRuleCallable(const CreateCustomRuleRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateCustomRuleOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateCustomRule(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateCustomRuleOutcome>>();
+    CreateCustomRuleAsync(
+    request,
+    [prom](
+        const TrpClient*,
+        const CreateCustomRuleRequest&,
+        CreateCustomRuleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TrpClient::CreateMerchantOutcome TrpClient::CreateMerchant(const CreateMerchantRequest &request)
@@ -363,25 +412,32 @@ TrpClient::CreateMerchantOutcome TrpClient::CreateMerchant(const CreateMerchantR
 
 void TrpClient::CreateMerchantAsync(const CreateMerchantRequest& request, const CreateMerchantAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateMerchant(request), context);
-    };
+    using Req = const CreateMerchantRequest&;
+    using Resp = CreateMerchantResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateMerchant", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TrpClient::CreateMerchantOutcomeCallable TrpClient::CreateMerchantCallable(const CreateMerchantRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateMerchantOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateMerchant(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateMerchantOutcome>>();
+    CreateMerchantAsync(
+    request,
+    [prom](
+        const TrpClient*,
+        const CreateMerchantRequest&,
+        CreateMerchantOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TrpClient::CreateProductOutcome TrpClient::CreateProduct(const CreateProductRequest &request)
@@ -406,25 +462,32 @@ TrpClient::CreateProductOutcome TrpClient::CreateProduct(const CreateProductRequ
 
 void TrpClient::CreateProductAsync(const CreateProductRequest& request, const CreateProductAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateProduct(request), context);
-    };
+    using Req = const CreateProductRequest&;
+    using Resp = CreateProductResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateProduct", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TrpClient::CreateProductOutcomeCallable TrpClient::CreateProductCallable(const CreateProductRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateProductOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateProduct(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateProductOutcome>>();
+    CreateProductAsync(
+    request,
+    [prom](
+        const TrpClient*,
+        const CreateProductRequest&,
+        CreateProductOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TrpClient::CreateTraceChainOutcome TrpClient::CreateTraceChain(const CreateTraceChainRequest &request)
@@ -449,25 +512,32 @@ TrpClient::CreateTraceChainOutcome TrpClient::CreateTraceChain(const CreateTrace
 
 void TrpClient::CreateTraceChainAsync(const CreateTraceChainRequest& request, const CreateTraceChainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateTraceChain(request), context);
-    };
+    using Req = const CreateTraceChainRequest&;
+    using Resp = CreateTraceChainResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateTraceChain", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TrpClient::CreateTraceChainOutcomeCallable TrpClient::CreateTraceChainCallable(const CreateTraceChainRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateTraceChainOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateTraceChain(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateTraceChainOutcome>>();
+    CreateTraceChainAsync(
+    request,
+    [prom](
+        const TrpClient*,
+        const CreateTraceChainRequest&,
+        CreateTraceChainOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TrpClient::CreateTraceCodesOutcome TrpClient::CreateTraceCodes(const CreateTraceCodesRequest &request)
@@ -492,25 +562,32 @@ TrpClient::CreateTraceCodesOutcome TrpClient::CreateTraceCodes(const CreateTrace
 
 void TrpClient::CreateTraceCodesAsync(const CreateTraceCodesRequest& request, const CreateTraceCodesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateTraceCodes(request), context);
-    };
+    using Req = const CreateTraceCodesRequest&;
+    using Resp = CreateTraceCodesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateTraceCodes", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TrpClient::CreateTraceCodesOutcomeCallable TrpClient::CreateTraceCodesCallable(const CreateTraceCodesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateTraceCodesOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateTraceCodes(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateTraceCodesOutcome>>();
+    CreateTraceCodesAsync(
+    request,
+    [prom](
+        const TrpClient*,
+        const CreateTraceCodesRequest&,
+        CreateTraceCodesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TrpClient::CreateTraceCodesAsyncOutcome TrpClient::CreateTraceCodesAsync(const CreateTraceCodesAsyncRequest &request)
@@ -535,25 +612,32 @@ TrpClient::CreateTraceCodesAsyncOutcome TrpClient::CreateTraceCodesAsync(const C
 
 void TrpClient::CreateTraceCodesAsyncAsync(const CreateTraceCodesAsyncRequest& request, const CreateTraceCodesAsyncAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateTraceCodesAsync(request), context);
-    };
+    using Req = const CreateTraceCodesAsyncRequest&;
+    using Resp = CreateTraceCodesAsyncResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateTraceCodesAsync", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TrpClient::CreateTraceCodesAsyncOutcomeCallable TrpClient::CreateTraceCodesAsyncCallable(const CreateTraceCodesAsyncRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateTraceCodesAsyncOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateTraceCodesAsync(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateTraceCodesAsyncOutcome>>();
+    CreateTraceCodesAsyncAsync(
+    request,
+    [prom](
+        const TrpClient*,
+        const CreateTraceCodesAsyncRequest&,
+        CreateTraceCodesAsyncOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TrpClient::CreateTraceDataOutcome TrpClient::CreateTraceData(const CreateTraceDataRequest &request)
@@ -578,25 +662,32 @@ TrpClient::CreateTraceDataOutcome TrpClient::CreateTraceData(const CreateTraceDa
 
 void TrpClient::CreateTraceDataAsync(const CreateTraceDataRequest& request, const CreateTraceDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateTraceData(request), context);
-    };
+    using Req = const CreateTraceDataRequest&;
+    using Resp = CreateTraceDataResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateTraceData", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TrpClient::CreateTraceDataOutcomeCallable TrpClient::CreateTraceDataCallable(const CreateTraceDataRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateTraceDataOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateTraceData(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateTraceDataOutcome>>();
+    CreateTraceDataAsync(
+    request,
+    [prom](
+        const TrpClient*,
+        const CreateTraceDataRequest&,
+        CreateTraceDataOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TrpClient::DeleteCodeBatchOutcome TrpClient::DeleteCodeBatch(const DeleteCodeBatchRequest &request)
@@ -621,25 +712,32 @@ TrpClient::DeleteCodeBatchOutcome TrpClient::DeleteCodeBatch(const DeleteCodeBat
 
 void TrpClient::DeleteCodeBatchAsync(const DeleteCodeBatchRequest& request, const DeleteCodeBatchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteCodeBatch(request), context);
-    };
+    using Req = const DeleteCodeBatchRequest&;
+    using Resp = DeleteCodeBatchResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteCodeBatch", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TrpClient::DeleteCodeBatchOutcomeCallable TrpClient::DeleteCodeBatchCallable(const DeleteCodeBatchRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteCodeBatchOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteCodeBatch(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteCodeBatchOutcome>>();
+    DeleteCodeBatchAsync(
+    request,
+    [prom](
+        const TrpClient*,
+        const DeleteCodeBatchRequest&,
+        DeleteCodeBatchOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TrpClient::DeleteMerchantOutcome TrpClient::DeleteMerchant(const DeleteMerchantRequest &request)
@@ -664,25 +762,32 @@ TrpClient::DeleteMerchantOutcome TrpClient::DeleteMerchant(const DeleteMerchantR
 
 void TrpClient::DeleteMerchantAsync(const DeleteMerchantRequest& request, const DeleteMerchantAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteMerchant(request), context);
-    };
+    using Req = const DeleteMerchantRequest&;
+    using Resp = DeleteMerchantResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteMerchant", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TrpClient::DeleteMerchantOutcomeCallable TrpClient::DeleteMerchantCallable(const DeleteMerchantRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteMerchantOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteMerchant(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteMerchantOutcome>>();
+    DeleteMerchantAsync(
+    request,
+    [prom](
+        const TrpClient*,
+        const DeleteMerchantRequest&,
+        DeleteMerchantOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TrpClient::DeleteProductOutcome TrpClient::DeleteProduct(const DeleteProductRequest &request)
@@ -707,25 +812,32 @@ TrpClient::DeleteProductOutcome TrpClient::DeleteProduct(const DeleteProductRequ
 
 void TrpClient::DeleteProductAsync(const DeleteProductRequest& request, const DeleteProductAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteProduct(request), context);
-    };
+    using Req = const DeleteProductRequest&;
+    using Resp = DeleteProductResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteProduct", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TrpClient::DeleteProductOutcomeCallable TrpClient::DeleteProductCallable(const DeleteProductRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteProductOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteProduct(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteProductOutcome>>();
+    DeleteProductAsync(
+    request,
+    [prom](
+        const TrpClient*,
+        const DeleteProductRequest&,
+        DeleteProductOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TrpClient::DeleteTraceDataOutcome TrpClient::DeleteTraceData(const DeleteTraceDataRequest &request)
@@ -750,25 +862,32 @@ TrpClient::DeleteTraceDataOutcome TrpClient::DeleteTraceData(const DeleteTraceDa
 
 void TrpClient::DeleteTraceDataAsync(const DeleteTraceDataRequest& request, const DeleteTraceDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteTraceData(request), context);
-    };
+    using Req = const DeleteTraceDataRequest&;
+    using Resp = DeleteTraceDataResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteTraceData", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TrpClient::DeleteTraceDataOutcomeCallable TrpClient::DeleteTraceDataCallable(const DeleteTraceDataRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteTraceDataOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteTraceData(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteTraceDataOutcome>>();
+    DeleteTraceDataAsync(
+    request,
+    [prom](
+        const TrpClient*,
+        const DeleteTraceDataRequest&,
+        DeleteTraceDataOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TrpClient::DescribeAgentCorpsOutcome TrpClient::DescribeAgentCorps(const DescribeAgentCorpsRequest &request)
@@ -793,25 +912,32 @@ TrpClient::DescribeAgentCorpsOutcome TrpClient::DescribeAgentCorps(const Describ
 
 void TrpClient::DescribeAgentCorpsAsync(const DescribeAgentCorpsRequest& request, const DescribeAgentCorpsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAgentCorps(request), context);
-    };
+    using Req = const DescribeAgentCorpsRequest&;
+    using Resp = DescribeAgentCorpsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAgentCorps", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TrpClient::DescribeAgentCorpsOutcomeCallable TrpClient::DescribeAgentCorpsCallable(const DescribeAgentCorpsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAgentCorpsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAgentCorps(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAgentCorpsOutcome>>();
+    DescribeAgentCorpsAsync(
+    request,
+    [prom](
+        const TrpClient*,
+        const DescribeAgentCorpsRequest&,
+        DescribeAgentCorpsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TrpClient::DescribeCodeBatchByIdOutcome TrpClient::DescribeCodeBatchById(const DescribeCodeBatchByIdRequest &request)
@@ -836,25 +962,32 @@ TrpClient::DescribeCodeBatchByIdOutcome TrpClient::DescribeCodeBatchById(const D
 
 void TrpClient::DescribeCodeBatchByIdAsync(const DescribeCodeBatchByIdRequest& request, const DescribeCodeBatchByIdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeCodeBatchById(request), context);
-    };
+    using Req = const DescribeCodeBatchByIdRequest&;
+    using Resp = DescribeCodeBatchByIdResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeCodeBatchById", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TrpClient::DescribeCodeBatchByIdOutcomeCallable TrpClient::DescribeCodeBatchByIdCallable(const DescribeCodeBatchByIdRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeCodeBatchByIdOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeCodeBatchById(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeCodeBatchByIdOutcome>>();
+    DescribeCodeBatchByIdAsync(
+    request,
+    [prom](
+        const TrpClient*,
+        const DescribeCodeBatchByIdRequest&,
+        DescribeCodeBatchByIdOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TrpClient::DescribeCodeBatchesOutcome TrpClient::DescribeCodeBatches(const DescribeCodeBatchesRequest &request)
@@ -879,25 +1012,32 @@ TrpClient::DescribeCodeBatchesOutcome TrpClient::DescribeCodeBatches(const Descr
 
 void TrpClient::DescribeCodeBatchesAsync(const DescribeCodeBatchesRequest& request, const DescribeCodeBatchesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeCodeBatches(request), context);
-    };
+    using Req = const DescribeCodeBatchesRequest&;
+    using Resp = DescribeCodeBatchesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeCodeBatches", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TrpClient::DescribeCodeBatchesOutcomeCallable TrpClient::DescribeCodeBatchesCallable(const DescribeCodeBatchesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeCodeBatchesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeCodeBatches(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeCodeBatchesOutcome>>();
+    DescribeCodeBatchesAsync(
+    request,
+    [prom](
+        const TrpClient*,
+        const DescribeCodeBatchesRequest&,
+        DescribeCodeBatchesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TrpClient::DescribeCodeBatchsOutcome TrpClient::DescribeCodeBatchs(const DescribeCodeBatchsRequest &request)
@@ -922,25 +1062,32 @@ TrpClient::DescribeCodeBatchsOutcome TrpClient::DescribeCodeBatchs(const Describ
 
 void TrpClient::DescribeCodeBatchsAsync(const DescribeCodeBatchsRequest& request, const DescribeCodeBatchsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeCodeBatchs(request), context);
-    };
+    using Req = const DescribeCodeBatchsRequest&;
+    using Resp = DescribeCodeBatchsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeCodeBatchs", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TrpClient::DescribeCodeBatchsOutcomeCallable TrpClient::DescribeCodeBatchsCallable(const DescribeCodeBatchsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeCodeBatchsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeCodeBatchs(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeCodeBatchsOutcome>>();
+    DescribeCodeBatchsAsync(
+    request,
+    [prom](
+        const TrpClient*,
+        const DescribeCodeBatchsRequest&,
+        DescribeCodeBatchsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TrpClient::DescribeCodePackStatusOutcome TrpClient::DescribeCodePackStatus(const DescribeCodePackStatusRequest &request)
@@ -965,25 +1112,32 @@ TrpClient::DescribeCodePackStatusOutcome TrpClient::DescribeCodePackStatus(const
 
 void TrpClient::DescribeCodePackStatusAsync(const DescribeCodePackStatusRequest& request, const DescribeCodePackStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeCodePackStatus(request), context);
-    };
+    using Req = const DescribeCodePackStatusRequest&;
+    using Resp = DescribeCodePackStatusResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeCodePackStatus", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TrpClient::DescribeCodePackStatusOutcomeCallable TrpClient::DescribeCodePackStatusCallable(const DescribeCodePackStatusRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeCodePackStatusOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeCodePackStatus(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeCodePackStatusOutcome>>();
+    DescribeCodePackStatusAsync(
+    request,
+    [prom](
+        const TrpClient*,
+        const DescribeCodePackStatusRequest&,
+        DescribeCodePackStatusOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TrpClient::DescribeCodePackUrlOutcome TrpClient::DescribeCodePackUrl(const DescribeCodePackUrlRequest &request)
@@ -1008,25 +1162,32 @@ TrpClient::DescribeCodePackUrlOutcome TrpClient::DescribeCodePackUrl(const Descr
 
 void TrpClient::DescribeCodePackUrlAsync(const DescribeCodePackUrlRequest& request, const DescribeCodePackUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeCodePackUrl(request), context);
-    };
+    using Req = const DescribeCodePackUrlRequest&;
+    using Resp = DescribeCodePackUrlResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeCodePackUrl", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TrpClient::DescribeCodePackUrlOutcomeCallable TrpClient::DescribeCodePackUrlCallable(const DescribeCodePackUrlRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeCodePackUrlOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeCodePackUrl(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeCodePackUrlOutcome>>();
+    DescribeCodePackUrlAsync(
+    request,
+    [prom](
+        const TrpClient*,
+        const DescribeCodePackUrlRequest&,
+        DescribeCodePackUrlOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TrpClient::DescribeCodePacksOutcome TrpClient::DescribeCodePacks(const DescribeCodePacksRequest &request)
@@ -1051,25 +1212,32 @@ TrpClient::DescribeCodePacksOutcome TrpClient::DescribeCodePacks(const DescribeC
 
 void TrpClient::DescribeCodePacksAsync(const DescribeCodePacksRequest& request, const DescribeCodePacksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeCodePacks(request), context);
-    };
+    using Req = const DescribeCodePacksRequest&;
+    using Resp = DescribeCodePacksResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeCodePacks", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TrpClient::DescribeCodePacksOutcomeCallable TrpClient::DescribeCodePacksCallable(const DescribeCodePacksRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeCodePacksOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeCodePacks(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeCodePacksOutcome>>();
+    DescribeCodePacksAsync(
+    request,
+    [prom](
+        const TrpClient*,
+        const DescribeCodePacksRequest&,
+        DescribeCodePacksOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TrpClient::DescribeCodesByPackOutcome TrpClient::DescribeCodesByPack(const DescribeCodesByPackRequest &request)
@@ -1094,25 +1262,32 @@ TrpClient::DescribeCodesByPackOutcome TrpClient::DescribeCodesByPack(const Descr
 
 void TrpClient::DescribeCodesByPackAsync(const DescribeCodesByPackRequest& request, const DescribeCodesByPackAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeCodesByPack(request), context);
-    };
+    using Req = const DescribeCodesByPackRequest&;
+    using Resp = DescribeCodesByPackResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeCodesByPack", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TrpClient::DescribeCodesByPackOutcomeCallable TrpClient::DescribeCodesByPackCallable(const DescribeCodesByPackRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeCodesByPackOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeCodesByPack(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeCodesByPackOutcome>>();
+    DescribeCodesByPackAsync(
+    request,
+    [prom](
+        const TrpClient*,
+        const DescribeCodesByPackRequest&,
+        DescribeCodesByPackOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TrpClient::DescribeCorpQuotasOutcome TrpClient::DescribeCorpQuotas(const DescribeCorpQuotasRequest &request)
@@ -1137,25 +1312,32 @@ TrpClient::DescribeCorpQuotasOutcome TrpClient::DescribeCorpQuotas(const Describ
 
 void TrpClient::DescribeCorpQuotasAsync(const DescribeCorpQuotasRequest& request, const DescribeCorpQuotasAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeCorpQuotas(request), context);
-    };
+    using Req = const DescribeCorpQuotasRequest&;
+    using Resp = DescribeCorpQuotasResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeCorpQuotas", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TrpClient::DescribeCorpQuotasOutcomeCallable TrpClient::DescribeCorpQuotasCallable(const DescribeCorpQuotasRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeCorpQuotasOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeCorpQuotas(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeCorpQuotasOutcome>>();
+    DescribeCorpQuotasAsync(
+    request,
+    [prom](
+        const TrpClient*,
+        const DescribeCorpQuotasRequest&,
+        DescribeCorpQuotasOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TrpClient::DescribeCustomRuleByIdOutcome TrpClient::DescribeCustomRuleById(const DescribeCustomRuleByIdRequest &request)
@@ -1180,25 +1362,32 @@ TrpClient::DescribeCustomRuleByIdOutcome TrpClient::DescribeCustomRuleById(const
 
 void TrpClient::DescribeCustomRuleByIdAsync(const DescribeCustomRuleByIdRequest& request, const DescribeCustomRuleByIdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeCustomRuleById(request), context);
-    };
+    using Req = const DescribeCustomRuleByIdRequest&;
+    using Resp = DescribeCustomRuleByIdResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeCustomRuleById", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TrpClient::DescribeCustomRuleByIdOutcomeCallable TrpClient::DescribeCustomRuleByIdCallable(const DescribeCustomRuleByIdRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeCustomRuleByIdOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeCustomRuleById(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeCustomRuleByIdOutcome>>();
+    DescribeCustomRuleByIdAsync(
+    request,
+    [prom](
+        const TrpClient*,
+        const DescribeCustomRuleByIdRequest&,
+        DescribeCustomRuleByIdOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TrpClient::DescribeCustomRulesOutcome TrpClient::DescribeCustomRules(const DescribeCustomRulesRequest &request)
@@ -1223,25 +1412,32 @@ TrpClient::DescribeCustomRulesOutcome TrpClient::DescribeCustomRules(const Descr
 
 void TrpClient::DescribeCustomRulesAsync(const DescribeCustomRulesRequest& request, const DescribeCustomRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeCustomRules(request), context);
-    };
+    using Req = const DescribeCustomRulesRequest&;
+    using Resp = DescribeCustomRulesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeCustomRules", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TrpClient::DescribeCustomRulesOutcomeCallable TrpClient::DescribeCustomRulesCallable(const DescribeCustomRulesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeCustomRulesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeCustomRules(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeCustomRulesOutcome>>();
+    DescribeCustomRulesAsync(
+    request,
+    [prom](
+        const TrpClient*,
+        const DescribeCustomRulesRequest&,
+        DescribeCustomRulesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TrpClient::DescribeJobFileUrlOutcome TrpClient::DescribeJobFileUrl(const DescribeJobFileUrlRequest &request)
@@ -1266,25 +1462,32 @@ TrpClient::DescribeJobFileUrlOutcome TrpClient::DescribeJobFileUrl(const Describ
 
 void TrpClient::DescribeJobFileUrlAsync(const DescribeJobFileUrlRequest& request, const DescribeJobFileUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeJobFileUrl(request), context);
-    };
+    using Req = const DescribeJobFileUrlRequest&;
+    using Resp = DescribeJobFileUrlResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeJobFileUrl", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TrpClient::DescribeJobFileUrlOutcomeCallable TrpClient::DescribeJobFileUrlCallable(const DescribeJobFileUrlRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeJobFileUrlOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeJobFileUrl(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeJobFileUrlOutcome>>();
+    DescribeJobFileUrlAsync(
+    request,
+    [prom](
+        const TrpClient*,
+        const DescribeJobFileUrlRequest&,
+        DescribeJobFileUrlOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TrpClient::DescribeMerchantByIdOutcome TrpClient::DescribeMerchantById(const DescribeMerchantByIdRequest &request)
@@ -1309,25 +1512,32 @@ TrpClient::DescribeMerchantByIdOutcome TrpClient::DescribeMerchantById(const Des
 
 void TrpClient::DescribeMerchantByIdAsync(const DescribeMerchantByIdRequest& request, const DescribeMerchantByIdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeMerchantById(request), context);
-    };
+    using Req = const DescribeMerchantByIdRequest&;
+    using Resp = DescribeMerchantByIdResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeMerchantById", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TrpClient::DescribeMerchantByIdOutcomeCallable TrpClient::DescribeMerchantByIdCallable(const DescribeMerchantByIdRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeMerchantByIdOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeMerchantById(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeMerchantByIdOutcome>>();
+    DescribeMerchantByIdAsync(
+    request,
+    [prom](
+        const TrpClient*,
+        const DescribeMerchantByIdRequest&,
+        DescribeMerchantByIdOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TrpClient::DescribeMerchantsOutcome TrpClient::DescribeMerchants(const DescribeMerchantsRequest &request)
@@ -1352,25 +1562,32 @@ TrpClient::DescribeMerchantsOutcome TrpClient::DescribeMerchants(const DescribeM
 
 void TrpClient::DescribeMerchantsAsync(const DescribeMerchantsRequest& request, const DescribeMerchantsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeMerchants(request), context);
-    };
+    using Req = const DescribeMerchantsRequest&;
+    using Resp = DescribeMerchantsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeMerchants", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TrpClient::DescribeMerchantsOutcomeCallable TrpClient::DescribeMerchantsCallable(const DescribeMerchantsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeMerchantsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeMerchants(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeMerchantsOutcome>>();
+    DescribeMerchantsAsync(
+    request,
+    [prom](
+        const TrpClient*,
+        const DescribeMerchantsRequest&,
+        DescribeMerchantsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TrpClient::DescribePlanQRCodeScanRecordsOutcome TrpClient::DescribePlanQRCodeScanRecords(const DescribePlanQRCodeScanRecordsRequest &request)
@@ -1395,25 +1612,32 @@ TrpClient::DescribePlanQRCodeScanRecordsOutcome TrpClient::DescribePlanQRCodeSca
 
 void TrpClient::DescribePlanQRCodeScanRecordsAsync(const DescribePlanQRCodeScanRecordsRequest& request, const DescribePlanQRCodeScanRecordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribePlanQRCodeScanRecords(request), context);
-    };
+    using Req = const DescribePlanQRCodeScanRecordsRequest&;
+    using Resp = DescribePlanQRCodeScanRecordsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribePlanQRCodeScanRecords", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TrpClient::DescribePlanQRCodeScanRecordsOutcomeCallable TrpClient::DescribePlanQRCodeScanRecordsCallable(const DescribePlanQRCodeScanRecordsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribePlanQRCodeScanRecordsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribePlanQRCodeScanRecords(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribePlanQRCodeScanRecordsOutcome>>();
+    DescribePlanQRCodeScanRecordsAsync(
+    request,
+    [prom](
+        const TrpClient*,
+        const DescribePlanQRCodeScanRecordsRequest&,
+        DescribePlanQRCodeScanRecordsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TrpClient::DescribePlanQRCodesOutcome TrpClient::DescribePlanQRCodes(const DescribePlanQRCodesRequest &request)
@@ -1438,25 +1662,32 @@ TrpClient::DescribePlanQRCodesOutcome TrpClient::DescribePlanQRCodes(const Descr
 
 void TrpClient::DescribePlanQRCodesAsync(const DescribePlanQRCodesRequest& request, const DescribePlanQRCodesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribePlanQRCodes(request), context);
-    };
+    using Req = const DescribePlanQRCodesRequest&;
+    using Resp = DescribePlanQRCodesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribePlanQRCodes", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TrpClient::DescribePlanQRCodesOutcomeCallable TrpClient::DescribePlanQRCodesCallable(const DescribePlanQRCodesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribePlanQRCodesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribePlanQRCodes(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribePlanQRCodesOutcome>>();
+    DescribePlanQRCodesAsync(
+    request,
+    [prom](
+        const TrpClient*,
+        const DescribePlanQRCodesRequest&,
+        DescribePlanQRCodesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TrpClient::DescribeProductByIdOutcome TrpClient::DescribeProductById(const DescribeProductByIdRequest &request)
@@ -1481,25 +1712,32 @@ TrpClient::DescribeProductByIdOutcome TrpClient::DescribeProductById(const Descr
 
 void TrpClient::DescribeProductByIdAsync(const DescribeProductByIdRequest& request, const DescribeProductByIdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeProductById(request), context);
-    };
+    using Req = const DescribeProductByIdRequest&;
+    using Resp = DescribeProductByIdResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeProductById", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TrpClient::DescribeProductByIdOutcomeCallable TrpClient::DescribeProductByIdCallable(const DescribeProductByIdRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeProductByIdOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeProductById(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeProductByIdOutcome>>();
+    DescribeProductByIdAsync(
+    request,
+    [prom](
+        const TrpClient*,
+        const DescribeProductByIdRequest&,
+        DescribeProductByIdOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TrpClient::DescribeProductsOutcome TrpClient::DescribeProducts(const DescribeProductsRequest &request)
@@ -1524,25 +1762,32 @@ TrpClient::DescribeProductsOutcome TrpClient::DescribeProducts(const DescribePro
 
 void TrpClient::DescribeProductsAsync(const DescribeProductsRequest& request, const DescribeProductsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeProducts(request), context);
-    };
+    using Req = const DescribeProductsRequest&;
+    using Resp = DescribeProductsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeProducts", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TrpClient::DescribeProductsOutcomeCallable TrpClient::DescribeProductsCallable(const DescribeProductsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeProductsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeProducts(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeProductsOutcome>>();
+    DescribeProductsAsync(
+    request,
+    [prom](
+        const TrpClient*,
+        const DescribeProductsRequest&,
+        DescribeProductsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TrpClient::DescribeRawScanLogsOutcome TrpClient::DescribeRawScanLogs(const DescribeRawScanLogsRequest &request)
@@ -1567,25 +1812,32 @@ TrpClient::DescribeRawScanLogsOutcome TrpClient::DescribeRawScanLogs(const Descr
 
 void TrpClient::DescribeRawScanLogsAsync(const DescribeRawScanLogsRequest& request, const DescribeRawScanLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeRawScanLogs(request), context);
-    };
+    using Req = const DescribeRawScanLogsRequest&;
+    using Resp = DescribeRawScanLogsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeRawScanLogs", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TrpClient::DescribeRawScanLogsOutcomeCallable TrpClient::DescribeRawScanLogsCallable(const DescribeRawScanLogsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeRawScanLogsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeRawScanLogs(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeRawScanLogsOutcome>>();
+    DescribeRawScanLogsAsync(
+    request,
+    [prom](
+        const TrpClient*,
+        const DescribeRawScanLogsRequest&,
+        DescribeRawScanLogsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TrpClient::DescribeScanLogsOutcome TrpClient::DescribeScanLogs(const DescribeScanLogsRequest &request)
@@ -1610,25 +1862,32 @@ TrpClient::DescribeScanLogsOutcome TrpClient::DescribeScanLogs(const DescribeSca
 
 void TrpClient::DescribeScanLogsAsync(const DescribeScanLogsRequest& request, const DescribeScanLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeScanLogs(request), context);
-    };
+    using Req = const DescribeScanLogsRequest&;
+    using Resp = DescribeScanLogsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeScanLogs", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TrpClient::DescribeScanLogsOutcomeCallable TrpClient::DescribeScanLogsCallable(const DescribeScanLogsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeScanLogsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeScanLogs(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeScanLogsOutcome>>();
+    DescribeScanLogsAsync(
+    request,
+    [prom](
+        const TrpClient*,
+        const DescribeScanLogsRequest&,
+        DescribeScanLogsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TrpClient::DescribeScanStatsOutcome TrpClient::DescribeScanStats(const DescribeScanStatsRequest &request)
@@ -1653,25 +1912,32 @@ TrpClient::DescribeScanStatsOutcome TrpClient::DescribeScanStats(const DescribeS
 
 void TrpClient::DescribeScanStatsAsync(const DescribeScanStatsRequest& request, const DescribeScanStatsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeScanStats(request), context);
-    };
+    using Req = const DescribeScanStatsRequest&;
+    using Resp = DescribeScanStatsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeScanStats", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TrpClient::DescribeScanStatsOutcomeCallable TrpClient::DescribeScanStatsCallable(const DescribeScanStatsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeScanStatsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeScanStats(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeScanStatsOutcome>>();
+    DescribeScanStatsAsync(
+    request,
+    [prom](
+        const TrpClient*,
+        const DescribeScanStatsRequest&,
+        DescribeScanStatsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TrpClient::DescribeTmpTokenOutcome TrpClient::DescribeTmpToken(const DescribeTmpTokenRequest &request)
@@ -1696,25 +1962,32 @@ TrpClient::DescribeTmpTokenOutcome TrpClient::DescribeTmpToken(const DescribeTmp
 
 void TrpClient::DescribeTmpTokenAsync(const DescribeTmpTokenRequest& request, const DescribeTmpTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeTmpToken(request), context);
-    };
+    using Req = const DescribeTmpTokenRequest&;
+    using Resp = DescribeTmpTokenResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeTmpToken", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TrpClient::DescribeTmpTokenOutcomeCallable TrpClient::DescribeTmpTokenCallable(const DescribeTmpTokenRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeTmpTokenOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeTmpToken(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeTmpTokenOutcome>>();
+    DescribeTmpTokenAsync(
+    request,
+    [prom](
+        const TrpClient*,
+        const DescribeTmpTokenRequest&,
+        DescribeTmpTokenOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TrpClient::DescribeTraceCodeByIdOutcome TrpClient::DescribeTraceCodeById(const DescribeTraceCodeByIdRequest &request)
@@ -1739,25 +2012,32 @@ TrpClient::DescribeTraceCodeByIdOutcome TrpClient::DescribeTraceCodeById(const D
 
 void TrpClient::DescribeTraceCodeByIdAsync(const DescribeTraceCodeByIdRequest& request, const DescribeTraceCodeByIdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeTraceCodeById(request), context);
-    };
+    using Req = const DescribeTraceCodeByIdRequest&;
+    using Resp = DescribeTraceCodeByIdResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeTraceCodeById", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TrpClient::DescribeTraceCodeByIdOutcomeCallable TrpClient::DescribeTraceCodeByIdCallable(const DescribeTraceCodeByIdRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeTraceCodeByIdOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeTraceCodeById(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeTraceCodeByIdOutcome>>();
+    DescribeTraceCodeByIdAsync(
+    request,
+    [prom](
+        const TrpClient*,
+        const DescribeTraceCodeByIdRequest&,
+        DescribeTraceCodeByIdOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TrpClient::DescribeTraceCodesOutcome TrpClient::DescribeTraceCodes(const DescribeTraceCodesRequest &request)
@@ -1782,25 +2062,32 @@ TrpClient::DescribeTraceCodesOutcome TrpClient::DescribeTraceCodes(const Describ
 
 void TrpClient::DescribeTraceCodesAsync(const DescribeTraceCodesRequest& request, const DescribeTraceCodesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeTraceCodes(request), context);
-    };
+    using Req = const DescribeTraceCodesRequest&;
+    using Resp = DescribeTraceCodesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeTraceCodes", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TrpClient::DescribeTraceCodesOutcomeCallable TrpClient::DescribeTraceCodesCallable(const DescribeTraceCodesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeTraceCodesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeTraceCodes(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeTraceCodesOutcome>>();
+    DescribeTraceCodesAsync(
+    request,
+    [prom](
+        const TrpClient*,
+        const DescribeTraceCodesRequest&,
+        DescribeTraceCodesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TrpClient::DescribeTraceDataByIdOutcome TrpClient::DescribeTraceDataById(const DescribeTraceDataByIdRequest &request)
@@ -1825,25 +2112,32 @@ TrpClient::DescribeTraceDataByIdOutcome TrpClient::DescribeTraceDataById(const D
 
 void TrpClient::DescribeTraceDataByIdAsync(const DescribeTraceDataByIdRequest& request, const DescribeTraceDataByIdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeTraceDataById(request), context);
-    };
+    using Req = const DescribeTraceDataByIdRequest&;
+    using Resp = DescribeTraceDataByIdResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeTraceDataById", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TrpClient::DescribeTraceDataByIdOutcomeCallable TrpClient::DescribeTraceDataByIdCallable(const DescribeTraceDataByIdRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeTraceDataByIdOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeTraceDataById(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeTraceDataByIdOutcome>>();
+    DescribeTraceDataByIdAsync(
+    request,
+    [prom](
+        const TrpClient*,
+        const DescribeTraceDataByIdRequest&,
+        DescribeTraceDataByIdOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TrpClient::DescribeTraceDataListOutcome TrpClient::DescribeTraceDataList(const DescribeTraceDataListRequest &request)
@@ -1868,25 +2162,32 @@ TrpClient::DescribeTraceDataListOutcome TrpClient::DescribeTraceDataList(const D
 
 void TrpClient::DescribeTraceDataListAsync(const DescribeTraceDataListRequest& request, const DescribeTraceDataListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeTraceDataList(request), context);
-    };
+    using Req = const DescribeTraceDataListRequest&;
+    using Resp = DescribeTraceDataListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeTraceDataList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TrpClient::DescribeTraceDataListOutcomeCallable TrpClient::DescribeTraceDataListCallable(const DescribeTraceDataListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeTraceDataListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeTraceDataList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeTraceDataListOutcome>>();
+    DescribeTraceDataListAsync(
+    request,
+    [prom](
+        const TrpClient*,
+        const DescribeTraceDataListRequest&,
+        DescribeTraceDataListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TrpClient::EffectFeedbackOutcome TrpClient::EffectFeedback(const EffectFeedbackRequest &request)
@@ -1911,25 +2212,32 @@ TrpClient::EffectFeedbackOutcome TrpClient::EffectFeedback(const EffectFeedbackR
 
 void TrpClient::EffectFeedbackAsync(const EffectFeedbackRequest& request, const EffectFeedbackAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->EffectFeedback(request), context);
-    };
+    using Req = const EffectFeedbackRequest&;
+    using Resp = EffectFeedbackResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "EffectFeedback", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TrpClient::EffectFeedbackOutcomeCallable TrpClient::EffectFeedbackCallable(const EffectFeedbackRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<EffectFeedbackOutcome()>>(
-        [this, request]()
-        {
-            return this->EffectFeedback(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<EffectFeedbackOutcome>>();
+    EffectFeedbackAsync(
+    request,
+    [prom](
+        const TrpClient*,
+        const EffectFeedbackRequest&,
+        EffectFeedbackOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TrpClient::ModifyCodeBatchOutcome TrpClient::ModifyCodeBatch(const ModifyCodeBatchRequest &request)
@@ -1954,25 +2262,32 @@ TrpClient::ModifyCodeBatchOutcome TrpClient::ModifyCodeBatch(const ModifyCodeBat
 
 void TrpClient::ModifyCodeBatchAsync(const ModifyCodeBatchRequest& request, const ModifyCodeBatchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyCodeBatch(request), context);
-    };
+    using Req = const ModifyCodeBatchRequest&;
+    using Resp = ModifyCodeBatchResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyCodeBatch", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TrpClient::ModifyCodeBatchOutcomeCallable TrpClient::ModifyCodeBatchCallable(const ModifyCodeBatchRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyCodeBatchOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyCodeBatch(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyCodeBatchOutcome>>();
+    ModifyCodeBatchAsync(
+    request,
+    [prom](
+        const TrpClient*,
+        const ModifyCodeBatchRequest&,
+        ModifyCodeBatchOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TrpClient::ModifyCustomRuleOutcome TrpClient::ModifyCustomRule(const ModifyCustomRuleRequest &request)
@@ -1997,25 +2312,32 @@ TrpClient::ModifyCustomRuleOutcome TrpClient::ModifyCustomRule(const ModifyCusto
 
 void TrpClient::ModifyCustomRuleAsync(const ModifyCustomRuleRequest& request, const ModifyCustomRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyCustomRule(request), context);
-    };
+    using Req = const ModifyCustomRuleRequest&;
+    using Resp = ModifyCustomRuleResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyCustomRule", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TrpClient::ModifyCustomRuleOutcomeCallable TrpClient::ModifyCustomRuleCallable(const ModifyCustomRuleRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyCustomRuleOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyCustomRule(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyCustomRuleOutcome>>();
+    ModifyCustomRuleAsync(
+    request,
+    [prom](
+        const TrpClient*,
+        const ModifyCustomRuleRequest&,
+        ModifyCustomRuleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TrpClient::ModifyCustomRuleStatusOutcome TrpClient::ModifyCustomRuleStatus(const ModifyCustomRuleStatusRequest &request)
@@ -2040,25 +2362,32 @@ TrpClient::ModifyCustomRuleStatusOutcome TrpClient::ModifyCustomRuleStatus(const
 
 void TrpClient::ModifyCustomRuleStatusAsync(const ModifyCustomRuleStatusRequest& request, const ModifyCustomRuleStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyCustomRuleStatus(request), context);
-    };
+    using Req = const ModifyCustomRuleStatusRequest&;
+    using Resp = ModifyCustomRuleStatusResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyCustomRuleStatus", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TrpClient::ModifyCustomRuleStatusOutcomeCallable TrpClient::ModifyCustomRuleStatusCallable(const ModifyCustomRuleStatusRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyCustomRuleStatusOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyCustomRuleStatus(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyCustomRuleStatusOutcome>>();
+    ModifyCustomRuleStatusAsync(
+    request,
+    [prom](
+        const TrpClient*,
+        const ModifyCustomRuleStatusRequest&,
+        ModifyCustomRuleStatusOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TrpClient::ModifyMerchantOutcome TrpClient::ModifyMerchant(const ModifyMerchantRequest &request)
@@ -2083,25 +2412,32 @@ TrpClient::ModifyMerchantOutcome TrpClient::ModifyMerchant(const ModifyMerchantR
 
 void TrpClient::ModifyMerchantAsync(const ModifyMerchantRequest& request, const ModifyMerchantAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyMerchant(request), context);
-    };
+    using Req = const ModifyMerchantRequest&;
+    using Resp = ModifyMerchantResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyMerchant", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TrpClient::ModifyMerchantOutcomeCallable TrpClient::ModifyMerchantCallable(const ModifyMerchantRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyMerchantOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyMerchant(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyMerchantOutcome>>();
+    ModifyMerchantAsync(
+    request,
+    [prom](
+        const TrpClient*,
+        const ModifyMerchantRequest&,
+        ModifyMerchantOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TrpClient::ModifyProductOutcome TrpClient::ModifyProduct(const ModifyProductRequest &request)
@@ -2126,25 +2462,32 @@ TrpClient::ModifyProductOutcome TrpClient::ModifyProduct(const ModifyProductRequ
 
 void TrpClient::ModifyProductAsync(const ModifyProductRequest& request, const ModifyProductAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyProduct(request), context);
-    };
+    using Req = const ModifyProductRequest&;
+    using Resp = ModifyProductResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyProduct", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TrpClient::ModifyProductOutcomeCallable TrpClient::ModifyProductCallable(const ModifyProductRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyProductOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyProduct(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyProductOutcome>>();
+    ModifyProductAsync(
+    request,
+    [prom](
+        const TrpClient*,
+        const ModifyProductRequest&,
+        ModifyProductOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TrpClient::ModifyTraceCodeOutcome TrpClient::ModifyTraceCode(const ModifyTraceCodeRequest &request)
@@ -2169,25 +2512,32 @@ TrpClient::ModifyTraceCodeOutcome TrpClient::ModifyTraceCode(const ModifyTraceCo
 
 void TrpClient::ModifyTraceCodeAsync(const ModifyTraceCodeRequest& request, const ModifyTraceCodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyTraceCode(request), context);
-    };
+    using Req = const ModifyTraceCodeRequest&;
+    using Resp = ModifyTraceCodeResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyTraceCode", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TrpClient::ModifyTraceCodeOutcomeCallable TrpClient::ModifyTraceCodeCallable(const ModifyTraceCodeRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyTraceCodeOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyTraceCode(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyTraceCodeOutcome>>();
+    ModifyTraceCodeAsync(
+    request,
+    [prom](
+        const TrpClient*,
+        const ModifyTraceCodeRequest&,
+        ModifyTraceCodeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TrpClient::ModifyTraceCodeUnlinkOutcome TrpClient::ModifyTraceCodeUnlink(const ModifyTraceCodeUnlinkRequest &request)
@@ -2212,25 +2562,32 @@ TrpClient::ModifyTraceCodeUnlinkOutcome TrpClient::ModifyTraceCodeUnlink(const M
 
 void TrpClient::ModifyTraceCodeUnlinkAsync(const ModifyTraceCodeUnlinkRequest& request, const ModifyTraceCodeUnlinkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyTraceCodeUnlink(request), context);
-    };
+    using Req = const ModifyTraceCodeUnlinkRequest&;
+    using Resp = ModifyTraceCodeUnlinkResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyTraceCodeUnlink", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TrpClient::ModifyTraceCodeUnlinkOutcomeCallable TrpClient::ModifyTraceCodeUnlinkCallable(const ModifyTraceCodeUnlinkRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyTraceCodeUnlinkOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyTraceCodeUnlink(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyTraceCodeUnlinkOutcome>>();
+    ModifyTraceCodeUnlinkAsync(
+    request,
+    [prom](
+        const TrpClient*,
+        const ModifyTraceCodeUnlinkRequest&,
+        ModifyTraceCodeUnlinkOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TrpClient::ModifyTraceDataOutcome TrpClient::ModifyTraceData(const ModifyTraceDataRequest &request)
@@ -2255,25 +2612,32 @@ TrpClient::ModifyTraceDataOutcome TrpClient::ModifyTraceData(const ModifyTraceDa
 
 void TrpClient::ModifyTraceDataAsync(const ModifyTraceDataRequest& request, const ModifyTraceDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyTraceData(request), context);
-    };
+    using Req = const ModifyTraceDataRequest&;
+    using Resp = ModifyTraceDataResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyTraceData", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TrpClient::ModifyTraceDataOutcomeCallable TrpClient::ModifyTraceDataCallable(const ModifyTraceDataRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyTraceDataOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyTraceData(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyTraceDataOutcome>>();
+    ModifyTraceDataAsync(
+    request,
+    [prom](
+        const TrpClient*,
+        const ModifyTraceDataRequest&,
+        ModifyTraceDataOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TrpClient::ModifyTraceDataRanksOutcome TrpClient::ModifyTraceDataRanks(const ModifyTraceDataRanksRequest &request)
@@ -2298,25 +2662,32 @@ TrpClient::ModifyTraceDataRanksOutcome TrpClient::ModifyTraceDataRanks(const Mod
 
 void TrpClient::ModifyTraceDataRanksAsync(const ModifyTraceDataRanksRequest& request, const ModifyTraceDataRanksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyTraceDataRanks(request), context);
-    };
+    using Req = const ModifyTraceDataRanksRequest&;
+    using Resp = ModifyTraceDataRanksResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyTraceDataRanks", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TrpClient::ModifyTraceDataRanksOutcomeCallable TrpClient::ModifyTraceDataRanksCallable(const ModifyTraceDataRanksRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyTraceDataRanksOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyTraceDataRanks(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyTraceDataRanksOutcome>>();
+    ModifyTraceDataRanksAsync(
+    request,
+    [prom](
+        const TrpClient*,
+        const ModifyTraceDataRanksRequest&,
+        ModifyTraceDataRanksOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TrpClient::ReportBatchCallbackStatusOutcome TrpClient::ReportBatchCallbackStatus(const ReportBatchCallbackStatusRequest &request)
@@ -2341,24 +2712,31 @@ TrpClient::ReportBatchCallbackStatusOutcome TrpClient::ReportBatchCallbackStatus
 
 void TrpClient::ReportBatchCallbackStatusAsync(const ReportBatchCallbackStatusRequest& request, const ReportBatchCallbackStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ReportBatchCallbackStatus(request), context);
-    };
+    using Req = const ReportBatchCallbackStatusRequest&;
+    using Resp = ReportBatchCallbackStatusResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ReportBatchCallbackStatus", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TrpClient::ReportBatchCallbackStatusOutcomeCallable TrpClient::ReportBatchCallbackStatusCallable(const ReportBatchCallbackStatusRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ReportBatchCallbackStatusOutcome()>>(
-        [this, request]()
-        {
-            return this->ReportBatchCallbackStatus(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ReportBatchCallbackStatusOutcome>>();
+    ReportBatchCallbackStatusAsync(
+    request,
+    [prom](
+        const TrpClient*,
+        const ReportBatchCallbackStatusRequest&,
+        ReportBatchCallbackStatusOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 

@@ -62,25 +62,32 @@ CfsClient::ApplyPathLifecyclePolicyOutcome CfsClient::ApplyPathLifecyclePolicy(c
 
 void CfsClient::ApplyPathLifecyclePolicyAsync(const ApplyPathLifecyclePolicyRequest& request, const ApplyPathLifecyclePolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ApplyPathLifecyclePolicy(request), context);
-    };
+    using Req = const ApplyPathLifecyclePolicyRequest&;
+    using Resp = ApplyPathLifecyclePolicyResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ApplyPathLifecyclePolicy", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CfsClient::ApplyPathLifecyclePolicyOutcomeCallable CfsClient::ApplyPathLifecyclePolicyCallable(const ApplyPathLifecyclePolicyRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ApplyPathLifecyclePolicyOutcome()>>(
-        [this, request]()
-        {
-            return this->ApplyPathLifecyclePolicy(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ApplyPathLifecyclePolicyOutcome>>();
+    ApplyPathLifecyclePolicyAsync(
+    request,
+    [prom](
+        const CfsClient*,
+        const ApplyPathLifecyclePolicyRequest&,
+        ApplyPathLifecyclePolicyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CfsClient::BindAutoSnapshotPolicyOutcome CfsClient::BindAutoSnapshotPolicy(const BindAutoSnapshotPolicyRequest &request)
@@ -105,25 +112,32 @@ CfsClient::BindAutoSnapshotPolicyOutcome CfsClient::BindAutoSnapshotPolicy(const
 
 void CfsClient::BindAutoSnapshotPolicyAsync(const BindAutoSnapshotPolicyRequest& request, const BindAutoSnapshotPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->BindAutoSnapshotPolicy(request), context);
-    };
+    using Req = const BindAutoSnapshotPolicyRequest&;
+    using Resp = BindAutoSnapshotPolicyResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "BindAutoSnapshotPolicy", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CfsClient::BindAutoSnapshotPolicyOutcomeCallable CfsClient::BindAutoSnapshotPolicyCallable(const BindAutoSnapshotPolicyRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<BindAutoSnapshotPolicyOutcome()>>(
-        [this, request]()
-        {
-            return this->BindAutoSnapshotPolicy(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<BindAutoSnapshotPolicyOutcome>>();
+    BindAutoSnapshotPolicyAsync(
+    request,
+    [prom](
+        const CfsClient*,
+        const BindAutoSnapshotPolicyRequest&,
+        BindAutoSnapshotPolicyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CfsClient::CreateAccessCertOutcome CfsClient::CreateAccessCert(const CreateAccessCertRequest &request)
@@ -148,25 +162,32 @@ CfsClient::CreateAccessCertOutcome CfsClient::CreateAccessCert(const CreateAcces
 
 void CfsClient::CreateAccessCertAsync(const CreateAccessCertRequest& request, const CreateAccessCertAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateAccessCert(request), context);
-    };
+    using Req = const CreateAccessCertRequest&;
+    using Resp = CreateAccessCertResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateAccessCert", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CfsClient::CreateAccessCertOutcomeCallable CfsClient::CreateAccessCertCallable(const CreateAccessCertRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateAccessCertOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateAccessCert(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateAccessCertOutcome>>();
+    CreateAccessCertAsync(
+    request,
+    [prom](
+        const CfsClient*,
+        const CreateAccessCertRequest&,
+        CreateAccessCertOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CfsClient::CreateAutoSnapshotPolicyOutcome CfsClient::CreateAutoSnapshotPolicy(const CreateAutoSnapshotPolicyRequest &request)
@@ -191,25 +212,32 @@ CfsClient::CreateAutoSnapshotPolicyOutcome CfsClient::CreateAutoSnapshotPolicy(c
 
 void CfsClient::CreateAutoSnapshotPolicyAsync(const CreateAutoSnapshotPolicyRequest& request, const CreateAutoSnapshotPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateAutoSnapshotPolicy(request), context);
-    };
+    using Req = const CreateAutoSnapshotPolicyRequest&;
+    using Resp = CreateAutoSnapshotPolicyResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateAutoSnapshotPolicy", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CfsClient::CreateAutoSnapshotPolicyOutcomeCallable CfsClient::CreateAutoSnapshotPolicyCallable(const CreateAutoSnapshotPolicyRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateAutoSnapshotPolicyOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateAutoSnapshotPolicy(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateAutoSnapshotPolicyOutcome>>();
+    CreateAutoSnapshotPolicyAsync(
+    request,
+    [prom](
+        const CfsClient*,
+        const CreateAutoSnapshotPolicyRequest&,
+        CreateAutoSnapshotPolicyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CfsClient::CreateCfsFileSystemOutcome CfsClient::CreateCfsFileSystem(const CreateCfsFileSystemRequest &request)
@@ -234,25 +262,32 @@ CfsClient::CreateCfsFileSystemOutcome CfsClient::CreateCfsFileSystem(const Creat
 
 void CfsClient::CreateCfsFileSystemAsync(const CreateCfsFileSystemRequest& request, const CreateCfsFileSystemAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateCfsFileSystem(request), context);
-    };
+    using Req = const CreateCfsFileSystemRequest&;
+    using Resp = CreateCfsFileSystemResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateCfsFileSystem", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CfsClient::CreateCfsFileSystemOutcomeCallable CfsClient::CreateCfsFileSystemCallable(const CreateCfsFileSystemRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateCfsFileSystemOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateCfsFileSystem(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateCfsFileSystemOutcome>>();
+    CreateCfsFileSystemAsync(
+    request,
+    [prom](
+        const CfsClient*,
+        const CreateCfsFileSystemRequest&,
+        CreateCfsFileSystemOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CfsClient::CreateCfsPGroupOutcome CfsClient::CreateCfsPGroup(const CreateCfsPGroupRequest &request)
@@ -277,25 +312,32 @@ CfsClient::CreateCfsPGroupOutcome CfsClient::CreateCfsPGroup(const CreateCfsPGro
 
 void CfsClient::CreateCfsPGroupAsync(const CreateCfsPGroupRequest& request, const CreateCfsPGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateCfsPGroup(request), context);
-    };
+    using Req = const CreateCfsPGroupRequest&;
+    using Resp = CreateCfsPGroupResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateCfsPGroup", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CfsClient::CreateCfsPGroupOutcomeCallable CfsClient::CreateCfsPGroupCallable(const CreateCfsPGroupRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateCfsPGroupOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateCfsPGroup(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateCfsPGroupOutcome>>();
+    CreateCfsPGroupAsync(
+    request,
+    [prom](
+        const CfsClient*,
+        const CreateCfsPGroupRequest&,
+        CreateCfsPGroupOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CfsClient::CreateCfsRuleOutcome CfsClient::CreateCfsRule(const CreateCfsRuleRequest &request)
@@ -320,25 +362,32 @@ CfsClient::CreateCfsRuleOutcome CfsClient::CreateCfsRule(const CreateCfsRuleRequ
 
 void CfsClient::CreateCfsRuleAsync(const CreateCfsRuleRequest& request, const CreateCfsRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateCfsRule(request), context);
-    };
+    using Req = const CreateCfsRuleRequest&;
+    using Resp = CreateCfsRuleResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateCfsRule", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CfsClient::CreateCfsRuleOutcomeCallable CfsClient::CreateCfsRuleCallable(const CreateCfsRuleRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateCfsRuleOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateCfsRule(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateCfsRuleOutcome>>();
+    CreateCfsRuleAsync(
+    request,
+    [prom](
+        const CfsClient*,
+        const CreateCfsRuleRequest&,
+        CreateCfsRuleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CfsClient::CreateCfsSnapshotOutcome CfsClient::CreateCfsSnapshot(const CreateCfsSnapshotRequest &request)
@@ -363,25 +412,32 @@ CfsClient::CreateCfsSnapshotOutcome CfsClient::CreateCfsSnapshot(const CreateCfs
 
 void CfsClient::CreateCfsSnapshotAsync(const CreateCfsSnapshotRequest& request, const CreateCfsSnapshotAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateCfsSnapshot(request), context);
-    };
+    using Req = const CreateCfsSnapshotRequest&;
+    using Resp = CreateCfsSnapshotResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateCfsSnapshot", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CfsClient::CreateCfsSnapshotOutcomeCallable CfsClient::CreateCfsSnapshotCallable(const CreateCfsSnapshotRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateCfsSnapshotOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateCfsSnapshot(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateCfsSnapshotOutcome>>();
+    CreateCfsSnapshotAsync(
+    request,
+    [prom](
+        const CfsClient*,
+        const CreateCfsSnapshotRequest&,
+        CreateCfsSnapshotOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CfsClient::CreateDataFlowOutcome CfsClient::CreateDataFlow(const CreateDataFlowRequest &request)
@@ -406,25 +462,32 @@ CfsClient::CreateDataFlowOutcome CfsClient::CreateDataFlow(const CreateDataFlowR
 
 void CfsClient::CreateDataFlowAsync(const CreateDataFlowRequest& request, const CreateDataFlowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateDataFlow(request), context);
-    };
+    using Req = const CreateDataFlowRequest&;
+    using Resp = CreateDataFlowResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateDataFlow", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CfsClient::CreateDataFlowOutcomeCallable CfsClient::CreateDataFlowCallable(const CreateDataFlowRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateDataFlowOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateDataFlow(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateDataFlowOutcome>>();
+    CreateDataFlowAsync(
+    request,
+    [prom](
+        const CfsClient*,
+        const CreateDataFlowRequest&,
+        CreateDataFlowOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CfsClient::CreateLifecycleDataTaskOutcome CfsClient::CreateLifecycleDataTask(const CreateLifecycleDataTaskRequest &request)
@@ -449,25 +512,32 @@ CfsClient::CreateLifecycleDataTaskOutcome CfsClient::CreateLifecycleDataTask(con
 
 void CfsClient::CreateLifecycleDataTaskAsync(const CreateLifecycleDataTaskRequest& request, const CreateLifecycleDataTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateLifecycleDataTask(request), context);
-    };
+    using Req = const CreateLifecycleDataTaskRequest&;
+    using Resp = CreateLifecycleDataTaskResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateLifecycleDataTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CfsClient::CreateLifecycleDataTaskOutcomeCallable CfsClient::CreateLifecycleDataTaskCallable(const CreateLifecycleDataTaskRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateLifecycleDataTaskOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateLifecycleDataTask(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateLifecycleDataTaskOutcome>>();
+    CreateLifecycleDataTaskAsync(
+    request,
+    [prom](
+        const CfsClient*,
+        const CreateLifecycleDataTaskRequest&,
+        CreateLifecycleDataTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CfsClient::CreateLifecyclePolicyOutcome CfsClient::CreateLifecyclePolicy(const CreateLifecyclePolicyRequest &request)
@@ -492,25 +562,32 @@ CfsClient::CreateLifecyclePolicyOutcome CfsClient::CreateLifecyclePolicy(const C
 
 void CfsClient::CreateLifecyclePolicyAsync(const CreateLifecyclePolicyRequest& request, const CreateLifecyclePolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateLifecyclePolicy(request), context);
-    };
+    using Req = const CreateLifecyclePolicyRequest&;
+    using Resp = CreateLifecyclePolicyResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateLifecyclePolicy", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CfsClient::CreateLifecyclePolicyOutcomeCallable CfsClient::CreateLifecyclePolicyCallable(const CreateLifecyclePolicyRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateLifecyclePolicyOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateLifecyclePolicy(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateLifecyclePolicyOutcome>>();
+    CreateLifecyclePolicyAsync(
+    request,
+    [prom](
+        const CfsClient*,
+        const CreateLifecyclePolicyRequest&,
+        CreateLifecyclePolicyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CfsClient::CreateLifecyclePolicyDownloadTaskOutcome CfsClient::CreateLifecyclePolicyDownloadTask(const CreateLifecyclePolicyDownloadTaskRequest &request)
@@ -535,25 +612,32 @@ CfsClient::CreateLifecyclePolicyDownloadTaskOutcome CfsClient::CreateLifecyclePo
 
 void CfsClient::CreateLifecyclePolicyDownloadTaskAsync(const CreateLifecyclePolicyDownloadTaskRequest& request, const CreateLifecyclePolicyDownloadTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateLifecyclePolicyDownloadTask(request), context);
-    };
+    using Req = const CreateLifecyclePolicyDownloadTaskRequest&;
+    using Resp = CreateLifecyclePolicyDownloadTaskResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateLifecyclePolicyDownloadTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CfsClient::CreateLifecyclePolicyDownloadTaskOutcomeCallable CfsClient::CreateLifecyclePolicyDownloadTaskCallable(const CreateLifecyclePolicyDownloadTaskRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateLifecyclePolicyDownloadTaskOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateLifecyclePolicyDownloadTask(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateLifecyclePolicyDownloadTaskOutcome>>();
+    CreateLifecyclePolicyDownloadTaskAsync(
+    request,
+    [prom](
+        const CfsClient*,
+        const CreateLifecyclePolicyDownloadTaskRequest&,
+        CreateLifecyclePolicyDownloadTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CfsClient::CreateMigrationTaskOutcome CfsClient::CreateMigrationTask(const CreateMigrationTaskRequest &request)
@@ -578,25 +662,32 @@ CfsClient::CreateMigrationTaskOutcome CfsClient::CreateMigrationTask(const Creat
 
 void CfsClient::CreateMigrationTaskAsync(const CreateMigrationTaskRequest& request, const CreateMigrationTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateMigrationTask(request), context);
-    };
+    using Req = const CreateMigrationTaskRequest&;
+    using Resp = CreateMigrationTaskResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateMigrationTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CfsClient::CreateMigrationTaskOutcomeCallable CfsClient::CreateMigrationTaskCallable(const CreateMigrationTaskRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateMigrationTaskOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateMigrationTask(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateMigrationTaskOutcome>>();
+    CreateMigrationTaskAsync(
+    request,
+    [prom](
+        const CfsClient*,
+        const CreateMigrationTaskRequest&,
+        CreateMigrationTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CfsClient::DeleteAutoSnapshotPolicyOutcome CfsClient::DeleteAutoSnapshotPolicy(const DeleteAutoSnapshotPolicyRequest &request)
@@ -621,25 +712,32 @@ CfsClient::DeleteAutoSnapshotPolicyOutcome CfsClient::DeleteAutoSnapshotPolicy(c
 
 void CfsClient::DeleteAutoSnapshotPolicyAsync(const DeleteAutoSnapshotPolicyRequest& request, const DeleteAutoSnapshotPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteAutoSnapshotPolicy(request), context);
-    };
+    using Req = const DeleteAutoSnapshotPolicyRequest&;
+    using Resp = DeleteAutoSnapshotPolicyResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteAutoSnapshotPolicy", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CfsClient::DeleteAutoSnapshotPolicyOutcomeCallable CfsClient::DeleteAutoSnapshotPolicyCallable(const DeleteAutoSnapshotPolicyRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteAutoSnapshotPolicyOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteAutoSnapshotPolicy(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteAutoSnapshotPolicyOutcome>>();
+    DeleteAutoSnapshotPolicyAsync(
+    request,
+    [prom](
+        const CfsClient*,
+        const DeleteAutoSnapshotPolicyRequest&,
+        DeleteAutoSnapshotPolicyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CfsClient::DeleteCfsFileSystemOutcome CfsClient::DeleteCfsFileSystem(const DeleteCfsFileSystemRequest &request)
@@ -664,25 +762,32 @@ CfsClient::DeleteCfsFileSystemOutcome CfsClient::DeleteCfsFileSystem(const Delet
 
 void CfsClient::DeleteCfsFileSystemAsync(const DeleteCfsFileSystemRequest& request, const DeleteCfsFileSystemAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteCfsFileSystem(request), context);
-    };
+    using Req = const DeleteCfsFileSystemRequest&;
+    using Resp = DeleteCfsFileSystemResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteCfsFileSystem", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CfsClient::DeleteCfsFileSystemOutcomeCallable CfsClient::DeleteCfsFileSystemCallable(const DeleteCfsFileSystemRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteCfsFileSystemOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteCfsFileSystem(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteCfsFileSystemOutcome>>();
+    DeleteCfsFileSystemAsync(
+    request,
+    [prom](
+        const CfsClient*,
+        const DeleteCfsFileSystemRequest&,
+        DeleteCfsFileSystemOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CfsClient::DeleteCfsPGroupOutcome CfsClient::DeleteCfsPGroup(const DeleteCfsPGroupRequest &request)
@@ -707,25 +812,32 @@ CfsClient::DeleteCfsPGroupOutcome CfsClient::DeleteCfsPGroup(const DeleteCfsPGro
 
 void CfsClient::DeleteCfsPGroupAsync(const DeleteCfsPGroupRequest& request, const DeleteCfsPGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteCfsPGroup(request), context);
-    };
+    using Req = const DeleteCfsPGroupRequest&;
+    using Resp = DeleteCfsPGroupResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteCfsPGroup", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CfsClient::DeleteCfsPGroupOutcomeCallable CfsClient::DeleteCfsPGroupCallable(const DeleteCfsPGroupRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteCfsPGroupOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteCfsPGroup(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteCfsPGroupOutcome>>();
+    DeleteCfsPGroupAsync(
+    request,
+    [prom](
+        const CfsClient*,
+        const DeleteCfsPGroupRequest&,
+        DeleteCfsPGroupOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CfsClient::DeleteCfsRuleOutcome CfsClient::DeleteCfsRule(const DeleteCfsRuleRequest &request)
@@ -750,25 +862,32 @@ CfsClient::DeleteCfsRuleOutcome CfsClient::DeleteCfsRule(const DeleteCfsRuleRequ
 
 void CfsClient::DeleteCfsRuleAsync(const DeleteCfsRuleRequest& request, const DeleteCfsRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteCfsRule(request), context);
-    };
+    using Req = const DeleteCfsRuleRequest&;
+    using Resp = DeleteCfsRuleResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteCfsRule", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CfsClient::DeleteCfsRuleOutcomeCallable CfsClient::DeleteCfsRuleCallable(const DeleteCfsRuleRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteCfsRuleOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteCfsRule(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteCfsRuleOutcome>>();
+    DeleteCfsRuleAsync(
+    request,
+    [prom](
+        const CfsClient*,
+        const DeleteCfsRuleRequest&,
+        DeleteCfsRuleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CfsClient::DeleteCfsSnapshotOutcome CfsClient::DeleteCfsSnapshot(const DeleteCfsSnapshotRequest &request)
@@ -793,25 +912,32 @@ CfsClient::DeleteCfsSnapshotOutcome CfsClient::DeleteCfsSnapshot(const DeleteCfs
 
 void CfsClient::DeleteCfsSnapshotAsync(const DeleteCfsSnapshotRequest& request, const DeleteCfsSnapshotAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteCfsSnapshot(request), context);
-    };
+    using Req = const DeleteCfsSnapshotRequest&;
+    using Resp = DeleteCfsSnapshotResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteCfsSnapshot", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CfsClient::DeleteCfsSnapshotOutcomeCallable CfsClient::DeleteCfsSnapshotCallable(const DeleteCfsSnapshotRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteCfsSnapshotOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteCfsSnapshot(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteCfsSnapshotOutcome>>();
+    DeleteCfsSnapshotAsync(
+    request,
+    [prom](
+        const CfsClient*,
+        const DeleteCfsSnapshotRequest&,
+        DeleteCfsSnapshotOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CfsClient::DeleteDataFlowOutcome CfsClient::DeleteDataFlow(const DeleteDataFlowRequest &request)
@@ -836,25 +962,32 @@ CfsClient::DeleteDataFlowOutcome CfsClient::DeleteDataFlow(const DeleteDataFlowR
 
 void CfsClient::DeleteDataFlowAsync(const DeleteDataFlowRequest& request, const DeleteDataFlowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteDataFlow(request), context);
-    };
+    using Req = const DeleteDataFlowRequest&;
+    using Resp = DeleteDataFlowResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteDataFlow", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CfsClient::DeleteDataFlowOutcomeCallable CfsClient::DeleteDataFlowCallable(const DeleteDataFlowRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteDataFlowOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteDataFlow(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteDataFlowOutcome>>();
+    DeleteDataFlowAsync(
+    request,
+    [prom](
+        const CfsClient*,
+        const DeleteDataFlowRequest&,
+        DeleteDataFlowOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CfsClient::DeleteLifecyclePolicyOutcome CfsClient::DeleteLifecyclePolicy(const DeleteLifecyclePolicyRequest &request)
@@ -879,25 +1012,32 @@ CfsClient::DeleteLifecyclePolicyOutcome CfsClient::DeleteLifecyclePolicy(const D
 
 void CfsClient::DeleteLifecyclePolicyAsync(const DeleteLifecyclePolicyRequest& request, const DeleteLifecyclePolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteLifecyclePolicy(request), context);
-    };
+    using Req = const DeleteLifecyclePolicyRequest&;
+    using Resp = DeleteLifecyclePolicyResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteLifecyclePolicy", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CfsClient::DeleteLifecyclePolicyOutcomeCallable CfsClient::DeleteLifecyclePolicyCallable(const DeleteLifecyclePolicyRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteLifecyclePolicyOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteLifecyclePolicy(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteLifecyclePolicyOutcome>>();
+    DeleteLifecyclePolicyAsync(
+    request,
+    [prom](
+        const CfsClient*,
+        const DeleteLifecyclePolicyRequest&,
+        DeleteLifecyclePolicyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CfsClient::DeleteMigrationTaskOutcome CfsClient::DeleteMigrationTask(const DeleteMigrationTaskRequest &request)
@@ -922,25 +1062,32 @@ CfsClient::DeleteMigrationTaskOutcome CfsClient::DeleteMigrationTask(const Delet
 
 void CfsClient::DeleteMigrationTaskAsync(const DeleteMigrationTaskRequest& request, const DeleteMigrationTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteMigrationTask(request), context);
-    };
+    using Req = const DeleteMigrationTaskRequest&;
+    using Resp = DeleteMigrationTaskResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteMigrationTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CfsClient::DeleteMigrationTaskOutcomeCallable CfsClient::DeleteMigrationTaskCallable(const DeleteMigrationTaskRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteMigrationTaskOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteMigrationTask(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteMigrationTaskOutcome>>();
+    DeleteMigrationTaskAsync(
+    request,
+    [prom](
+        const CfsClient*,
+        const DeleteMigrationTaskRequest&,
+        DeleteMigrationTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CfsClient::DeleteUserQuotaOutcome CfsClient::DeleteUserQuota(const DeleteUserQuotaRequest &request)
@@ -965,25 +1112,32 @@ CfsClient::DeleteUserQuotaOutcome CfsClient::DeleteUserQuota(const DeleteUserQuo
 
 void CfsClient::DeleteUserQuotaAsync(const DeleteUserQuotaRequest& request, const DeleteUserQuotaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteUserQuota(request), context);
-    };
+    using Req = const DeleteUserQuotaRequest&;
+    using Resp = DeleteUserQuotaResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteUserQuota", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CfsClient::DeleteUserQuotaOutcomeCallable CfsClient::DeleteUserQuotaCallable(const DeleteUserQuotaRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteUserQuotaOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteUserQuota(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteUserQuotaOutcome>>();
+    DeleteUserQuotaAsync(
+    request,
+    [prom](
+        const CfsClient*,
+        const DeleteUserQuotaRequest&,
+        DeleteUserQuotaOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CfsClient::DescribeAutoSnapshotPoliciesOutcome CfsClient::DescribeAutoSnapshotPolicies(const DescribeAutoSnapshotPoliciesRequest &request)
@@ -1008,25 +1162,32 @@ CfsClient::DescribeAutoSnapshotPoliciesOutcome CfsClient::DescribeAutoSnapshotPo
 
 void CfsClient::DescribeAutoSnapshotPoliciesAsync(const DescribeAutoSnapshotPoliciesRequest& request, const DescribeAutoSnapshotPoliciesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAutoSnapshotPolicies(request), context);
-    };
+    using Req = const DescribeAutoSnapshotPoliciesRequest&;
+    using Resp = DescribeAutoSnapshotPoliciesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAutoSnapshotPolicies", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CfsClient::DescribeAutoSnapshotPoliciesOutcomeCallable CfsClient::DescribeAutoSnapshotPoliciesCallable(const DescribeAutoSnapshotPoliciesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAutoSnapshotPoliciesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAutoSnapshotPolicies(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAutoSnapshotPoliciesOutcome>>();
+    DescribeAutoSnapshotPoliciesAsync(
+    request,
+    [prom](
+        const CfsClient*,
+        const DescribeAutoSnapshotPoliciesRequest&,
+        DescribeAutoSnapshotPoliciesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CfsClient::DescribeAvailableZoneInfoOutcome CfsClient::DescribeAvailableZoneInfo(const DescribeAvailableZoneInfoRequest &request)
@@ -1051,25 +1212,32 @@ CfsClient::DescribeAvailableZoneInfoOutcome CfsClient::DescribeAvailableZoneInfo
 
 void CfsClient::DescribeAvailableZoneInfoAsync(const DescribeAvailableZoneInfoRequest& request, const DescribeAvailableZoneInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAvailableZoneInfo(request), context);
-    };
+    using Req = const DescribeAvailableZoneInfoRequest&;
+    using Resp = DescribeAvailableZoneInfoResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAvailableZoneInfo", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CfsClient::DescribeAvailableZoneInfoOutcomeCallable CfsClient::DescribeAvailableZoneInfoCallable(const DescribeAvailableZoneInfoRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAvailableZoneInfoOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAvailableZoneInfo(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAvailableZoneInfoOutcome>>();
+    DescribeAvailableZoneInfoAsync(
+    request,
+    [prom](
+        const CfsClient*,
+        const DescribeAvailableZoneInfoRequest&,
+        DescribeAvailableZoneInfoOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CfsClient::DescribeBucketListOutcome CfsClient::DescribeBucketList(const DescribeBucketListRequest &request)
@@ -1094,25 +1262,32 @@ CfsClient::DescribeBucketListOutcome CfsClient::DescribeBucketList(const Describ
 
 void CfsClient::DescribeBucketListAsync(const DescribeBucketListRequest& request, const DescribeBucketListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeBucketList(request), context);
-    };
+    using Req = const DescribeBucketListRequest&;
+    using Resp = DescribeBucketListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeBucketList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CfsClient::DescribeBucketListOutcomeCallable CfsClient::DescribeBucketListCallable(const DescribeBucketListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeBucketListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeBucketList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeBucketListOutcome>>();
+    DescribeBucketListAsync(
+    request,
+    [prom](
+        const CfsClient*,
+        const DescribeBucketListRequest&,
+        DescribeBucketListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CfsClient::DescribeCfsFileSystemClientsOutcome CfsClient::DescribeCfsFileSystemClients(const DescribeCfsFileSystemClientsRequest &request)
@@ -1137,25 +1312,32 @@ CfsClient::DescribeCfsFileSystemClientsOutcome CfsClient::DescribeCfsFileSystemC
 
 void CfsClient::DescribeCfsFileSystemClientsAsync(const DescribeCfsFileSystemClientsRequest& request, const DescribeCfsFileSystemClientsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeCfsFileSystemClients(request), context);
-    };
+    using Req = const DescribeCfsFileSystemClientsRequest&;
+    using Resp = DescribeCfsFileSystemClientsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeCfsFileSystemClients", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CfsClient::DescribeCfsFileSystemClientsOutcomeCallable CfsClient::DescribeCfsFileSystemClientsCallable(const DescribeCfsFileSystemClientsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeCfsFileSystemClientsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeCfsFileSystemClients(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeCfsFileSystemClientsOutcome>>();
+    DescribeCfsFileSystemClientsAsync(
+    request,
+    [prom](
+        const CfsClient*,
+        const DescribeCfsFileSystemClientsRequest&,
+        DescribeCfsFileSystemClientsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CfsClient::DescribeCfsFileSystemsOutcome CfsClient::DescribeCfsFileSystems(const DescribeCfsFileSystemsRequest &request)
@@ -1180,25 +1362,32 @@ CfsClient::DescribeCfsFileSystemsOutcome CfsClient::DescribeCfsFileSystems(const
 
 void CfsClient::DescribeCfsFileSystemsAsync(const DescribeCfsFileSystemsRequest& request, const DescribeCfsFileSystemsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeCfsFileSystems(request), context);
-    };
+    using Req = const DescribeCfsFileSystemsRequest&;
+    using Resp = DescribeCfsFileSystemsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeCfsFileSystems", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CfsClient::DescribeCfsFileSystemsOutcomeCallable CfsClient::DescribeCfsFileSystemsCallable(const DescribeCfsFileSystemsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeCfsFileSystemsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeCfsFileSystems(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeCfsFileSystemsOutcome>>();
+    DescribeCfsFileSystemsAsync(
+    request,
+    [prom](
+        const CfsClient*,
+        const DescribeCfsFileSystemsRequest&,
+        DescribeCfsFileSystemsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CfsClient::DescribeCfsPGroupsOutcome CfsClient::DescribeCfsPGroups(const DescribeCfsPGroupsRequest &request)
@@ -1223,25 +1412,32 @@ CfsClient::DescribeCfsPGroupsOutcome CfsClient::DescribeCfsPGroups(const Describ
 
 void CfsClient::DescribeCfsPGroupsAsync(const DescribeCfsPGroupsRequest& request, const DescribeCfsPGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeCfsPGroups(request), context);
-    };
+    using Req = const DescribeCfsPGroupsRequest&;
+    using Resp = DescribeCfsPGroupsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeCfsPGroups", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CfsClient::DescribeCfsPGroupsOutcomeCallable CfsClient::DescribeCfsPGroupsCallable(const DescribeCfsPGroupsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeCfsPGroupsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeCfsPGroups(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeCfsPGroupsOutcome>>();
+    DescribeCfsPGroupsAsync(
+    request,
+    [prom](
+        const CfsClient*,
+        const DescribeCfsPGroupsRequest&,
+        DescribeCfsPGroupsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CfsClient::DescribeCfsRulesOutcome CfsClient::DescribeCfsRules(const DescribeCfsRulesRequest &request)
@@ -1266,25 +1462,32 @@ CfsClient::DescribeCfsRulesOutcome CfsClient::DescribeCfsRules(const DescribeCfs
 
 void CfsClient::DescribeCfsRulesAsync(const DescribeCfsRulesRequest& request, const DescribeCfsRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeCfsRules(request), context);
-    };
+    using Req = const DescribeCfsRulesRequest&;
+    using Resp = DescribeCfsRulesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeCfsRules", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CfsClient::DescribeCfsRulesOutcomeCallable CfsClient::DescribeCfsRulesCallable(const DescribeCfsRulesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeCfsRulesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeCfsRules(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeCfsRulesOutcome>>();
+    DescribeCfsRulesAsync(
+    request,
+    [prom](
+        const CfsClient*,
+        const DescribeCfsRulesRequest&,
+        DescribeCfsRulesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CfsClient::DescribeCfsServiceStatusOutcome CfsClient::DescribeCfsServiceStatus(const DescribeCfsServiceStatusRequest &request)
@@ -1309,25 +1512,32 @@ CfsClient::DescribeCfsServiceStatusOutcome CfsClient::DescribeCfsServiceStatus(c
 
 void CfsClient::DescribeCfsServiceStatusAsync(const DescribeCfsServiceStatusRequest& request, const DescribeCfsServiceStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeCfsServiceStatus(request), context);
-    };
+    using Req = const DescribeCfsServiceStatusRequest&;
+    using Resp = DescribeCfsServiceStatusResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeCfsServiceStatus", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CfsClient::DescribeCfsServiceStatusOutcomeCallable CfsClient::DescribeCfsServiceStatusCallable(const DescribeCfsServiceStatusRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeCfsServiceStatusOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeCfsServiceStatus(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeCfsServiceStatusOutcome>>();
+    DescribeCfsServiceStatusAsync(
+    request,
+    [prom](
+        const CfsClient*,
+        const DescribeCfsServiceStatusRequest&,
+        DescribeCfsServiceStatusOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CfsClient::DescribeCfsSnapshotOverviewOutcome CfsClient::DescribeCfsSnapshotOverview(const DescribeCfsSnapshotOverviewRequest &request)
@@ -1352,25 +1562,32 @@ CfsClient::DescribeCfsSnapshotOverviewOutcome CfsClient::DescribeCfsSnapshotOver
 
 void CfsClient::DescribeCfsSnapshotOverviewAsync(const DescribeCfsSnapshotOverviewRequest& request, const DescribeCfsSnapshotOverviewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeCfsSnapshotOverview(request), context);
-    };
+    using Req = const DescribeCfsSnapshotOverviewRequest&;
+    using Resp = DescribeCfsSnapshotOverviewResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeCfsSnapshotOverview", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CfsClient::DescribeCfsSnapshotOverviewOutcomeCallable CfsClient::DescribeCfsSnapshotOverviewCallable(const DescribeCfsSnapshotOverviewRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeCfsSnapshotOverviewOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeCfsSnapshotOverview(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeCfsSnapshotOverviewOutcome>>();
+    DescribeCfsSnapshotOverviewAsync(
+    request,
+    [prom](
+        const CfsClient*,
+        const DescribeCfsSnapshotOverviewRequest&,
+        DescribeCfsSnapshotOverviewOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CfsClient::DescribeCfsSnapshotsOutcome CfsClient::DescribeCfsSnapshots(const DescribeCfsSnapshotsRequest &request)
@@ -1395,25 +1612,32 @@ CfsClient::DescribeCfsSnapshotsOutcome CfsClient::DescribeCfsSnapshots(const Des
 
 void CfsClient::DescribeCfsSnapshotsAsync(const DescribeCfsSnapshotsRequest& request, const DescribeCfsSnapshotsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeCfsSnapshots(request), context);
-    };
+    using Req = const DescribeCfsSnapshotsRequest&;
+    using Resp = DescribeCfsSnapshotsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeCfsSnapshots", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CfsClient::DescribeCfsSnapshotsOutcomeCallable CfsClient::DescribeCfsSnapshotsCallable(const DescribeCfsSnapshotsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeCfsSnapshotsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeCfsSnapshots(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeCfsSnapshotsOutcome>>();
+    DescribeCfsSnapshotsAsync(
+    request,
+    [prom](
+        const CfsClient*,
+        const DescribeCfsSnapshotsRequest&,
+        DescribeCfsSnapshotsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CfsClient::DescribeDataFlowOutcome CfsClient::DescribeDataFlow(const DescribeDataFlowRequest &request)
@@ -1438,25 +1662,32 @@ CfsClient::DescribeDataFlowOutcome CfsClient::DescribeDataFlow(const DescribeDat
 
 void CfsClient::DescribeDataFlowAsync(const DescribeDataFlowRequest& request, const DescribeDataFlowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDataFlow(request), context);
-    };
+    using Req = const DescribeDataFlowRequest&;
+    using Resp = DescribeDataFlowResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeDataFlow", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CfsClient::DescribeDataFlowOutcomeCallable CfsClient::DescribeDataFlowCallable(const DescribeDataFlowRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeDataFlowOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDataFlow(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeDataFlowOutcome>>();
+    DescribeDataFlowAsync(
+    request,
+    [prom](
+        const CfsClient*,
+        const DescribeDataFlowRequest&,
+        DescribeDataFlowOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CfsClient::DescribeLifecycleDataTaskOutcome CfsClient::DescribeLifecycleDataTask(const DescribeLifecycleDataTaskRequest &request)
@@ -1481,25 +1712,32 @@ CfsClient::DescribeLifecycleDataTaskOutcome CfsClient::DescribeLifecycleDataTask
 
 void CfsClient::DescribeLifecycleDataTaskAsync(const DescribeLifecycleDataTaskRequest& request, const DescribeLifecycleDataTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeLifecycleDataTask(request), context);
-    };
+    using Req = const DescribeLifecycleDataTaskRequest&;
+    using Resp = DescribeLifecycleDataTaskResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeLifecycleDataTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CfsClient::DescribeLifecycleDataTaskOutcomeCallable CfsClient::DescribeLifecycleDataTaskCallable(const DescribeLifecycleDataTaskRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeLifecycleDataTaskOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeLifecycleDataTask(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeLifecycleDataTaskOutcome>>();
+    DescribeLifecycleDataTaskAsync(
+    request,
+    [prom](
+        const CfsClient*,
+        const DescribeLifecycleDataTaskRequest&,
+        DescribeLifecycleDataTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CfsClient::DescribeLifecyclePoliciesOutcome CfsClient::DescribeLifecyclePolicies(const DescribeLifecyclePoliciesRequest &request)
@@ -1524,25 +1762,32 @@ CfsClient::DescribeLifecyclePoliciesOutcome CfsClient::DescribeLifecyclePolicies
 
 void CfsClient::DescribeLifecyclePoliciesAsync(const DescribeLifecyclePoliciesRequest& request, const DescribeLifecyclePoliciesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeLifecyclePolicies(request), context);
-    };
+    using Req = const DescribeLifecyclePoliciesRequest&;
+    using Resp = DescribeLifecyclePoliciesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeLifecyclePolicies", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CfsClient::DescribeLifecyclePoliciesOutcomeCallable CfsClient::DescribeLifecyclePoliciesCallable(const DescribeLifecyclePoliciesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeLifecyclePoliciesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeLifecyclePolicies(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeLifecyclePoliciesOutcome>>();
+    DescribeLifecyclePoliciesAsync(
+    request,
+    [prom](
+        const CfsClient*,
+        const DescribeLifecyclePoliciesRequest&,
+        DescribeLifecyclePoliciesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CfsClient::DescribeMigrationTasksOutcome CfsClient::DescribeMigrationTasks(const DescribeMigrationTasksRequest &request)
@@ -1567,25 +1812,32 @@ CfsClient::DescribeMigrationTasksOutcome CfsClient::DescribeMigrationTasks(const
 
 void CfsClient::DescribeMigrationTasksAsync(const DescribeMigrationTasksRequest& request, const DescribeMigrationTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeMigrationTasks(request), context);
-    };
+    using Req = const DescribeMigrationTasksRequest&;
+    using Resp = DescribeMigrationTasksResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeMigrationTasks", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CfsClient::DescribeMigrationTasksOutcomeCallable CfsClient::DescribeMigrationTasksCallable(const DescribeMigrationTasksRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeMigrationTasksOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeMigrationTasks(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeMigrationTasksOutcome>>();
+    DescribeMigrationTasksAsync(
+    request,
+    [prom](
+        const CfsClient*,
+        const DescribeMigrationTasksRequest&,
+        DescribeMigrationTasksOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CfsClient::DescribeMountTargetsOutcome CfsClient::DescribeMountTargets(const DescribeMountTargetsRequest &request)
@@ -1610,25 +1862,32 @@ CfsClient::DescribeMountTargetsOutcome CfsClient::DescribeMountTargets(const Des
 
 void CfsClient::DescribeMountTargetsAsync(const DescribeMountTargetsRequest& request, const DescribeMountTargetsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeMountTargets(request), context);
-    };
+    using Req = const DescribeMountTargetsRequest&;
+    using Resp = DescribeMountTargetsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeMountTargets", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CfsClient::DescribeMountTargetsOutcomeCallable CfsClient::DescribeMountTargetsCallable(const DescribeMountTargetsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeMountTargetsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeMountTargets(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeMountTargetsOutcome>>();
+    DescribeMountTargetsAsync(
+    request,
+    [prom](
+        const CfsClient*,
+        const DescribeMountTargetsRequest&,
+        DescribeMountTargetsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CfsClient::DescribeSnapshotOperationLogsOutcome CfsClient::DescribeSnapshotOperationLogs(const DescribeSnapshotOperationLogsRequest &request)
@@ -1653,25 +1912,32 @@ CfsClient::DescribeSnapshotOperationLogsOutcome CfsClient::DescribeSnapshotOpera
 
 void CfsClient::DescribeSnapshotOperationLogsAsync(const DescribeSnapshotOperationLogsRequest& request, const DescribeSnapshotOperationLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeSnapshotOperationLogs(request), context);
-    };
+    using Req = const DescribeSnapshotOperationLogsRequest&;
+    using Resp = DescribeSnapshotOperationLogsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeSnapshotOperationLogs", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CfsClient::DescribeSnapshotOperationLogsOutcomeCallable CfsClient::DescribeSnapshotOperationLogsCallable(const DescribeSnapshotOperationLogsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeSnapshotOperationLogsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeSnapshotOperationLogs(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeSnapshotOperationLogsOutcome>>();
+    DescribeSnapshotOperationLogsAsync(
+    request,
+    [prom](
+        const CfsClient*,
+        const DescribeSnapshotOperationLogsRequest&,
+        DescribeSnapshotOperationLogsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CfsClient::DescribeUserQuotaOutcome CfsClient::DescribeUserQuota(const DescribeUserQuotaRequest &request)
@@ -1696,25 +1962,32 @@ CfsClient::DescribeUserQuotaOutcome CfsClient::DescribeUserQuota(const DescribeU
 
 void CfsClient::DescribeUserQuotaAsync(const DescribeUserQuotaRequest& request, const DescribeUserQuotaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeUserQuota(request), context);
-    };
+    using Req = const DescribeUserQuotaRequest&;
+    using Resp = DescribeUserQuotaResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeUserQuota", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CfsClient::DescribeUserQuotaOutcomeCallable CfsClient::DescribeUserQuotaCallable(const DescribeUserQuotaRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeUserQuotaOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeUserQuota(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeUserQuotaOutcome>>();
+    DescribeUserQuotaAsync(
+    request,
+    [prom](
+        const CfsClient*,
+        const DescribeUserQuotaRequest&,
+        DescribeUserQuotaOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CfsClient::DoDirectoryOperationOutcome CfsClient::DoDirectoryOperation(const DoDirectoryOperationRequest &request)
@@ -1739,25 +2012,32 @@ CfsClient::DoDirectoryOperationOutcome CfsClient::DoDirectoryOperation(const DoD
 
 void CfsClient::DoDirectoryOperationAsync(const DoDirectoryOperationRequest& request, const DoDirectoryOperationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DoDirectoryOperation(request), context);
-    };
+    using Req = const DoDirectoryOperationRequest&;
+    using Resp = DoDirectoryOperationResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DoDirectoryOperation", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CfsClient::DoDirectoryOperationOutcomeCallable CfsClient::DoDirectoryOperationCallable(const DoDirectoryOperationRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DoDirectoryOperationOutcome()>>(
-        [this, request]()
-        {
-            return this->DoDirectoryOperation(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DoDirectoryOperationOutcome>>();
+    DoDirectoryOperationAsync(
+    request,
+    [prom](
+        const CfsClient*,
+        const DoDirectoryOperationRequest&,
+        DoDirectoryOperationOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CfsClient::ModifyDataFlowOutcome CfsClient::ModifyDataFlow(const ModifyDataFlowRequest &request)
@@ -1782,25 +2062,32 @@ CfsClient::ModifyDataFlowOutcome CfsClient::ModifyDataFlow(const ModifyDataFlowR
 
 void CfsClient::ModifyDataFlowAsync(const ModifyDataFlowRequest& request, const ModifyDataFlowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyDataFlow(request), context);
-    };
+    using Req = const ModifyDataFlowRequest&;
+    using Resp = ModifyDataFlowResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyDataFlow", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CfsClient::ModifyDataFlowOutcomeCallable CfsClient::ModifyDataFlowCallable(const ModifyDataFlowRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyDataFlowOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyDataFlow(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyDataFlowOutcome>>();
+    ModifyDataFlowAsync(
+    request,
+    [prom](
+        const CfsClient*,
+        const ModifyDataFlowRequest&,
+        ModifyDataFlowOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CfsClient::ModifyFileSystemAutoScaleUpRuleOutcome CfsClient::ModifyFileSystemAutoScaleUpRule(const ModifyFileSystemAutoScaleUpRuleRequest &request)
@@ -1825,25 +2112,32 @@ CfsClient::ModifyFileSystemAutoScaleUpRuleOutcome CfsClient::ModifyFileSystemAut
 
 void CfsClient::ModifyFileSystemAutoScaleUpRuleAsync(const ModifyFileSystemAutoScaleUpRuleRequest& request, const ModifyFileSystemAutoScaleUpRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyFileSystemAutoScaleUpRule(request), context);
-    };
+    using Req = const ModifyFileSystemAutoScaleUpRuleRequest&;
+    using Resp = ModifyFileSystemAutoScaleUpRuleResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyFileSystemAutoScaleUpRule", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CfsClient::ModifyFileSystemAutoScaleUpRuleOutcomeCallable CfsClient::ModifyFileSystemAutoScaleUpRuleCallable(const ModifyFileSystemAutoScaleUpRuleRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyFileSystemAutoScaleUpRuleOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyFileSystemAutoScaleUpRule(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyFileSystemAutoScaleUpRuleOutcome>>();
+    ModifyFileSystemAutoScaleUpRuleAsync(
+    request,
+    [prom](
+        const CfsClient*,
+        const ModifyFileSystemAutoScaleUpRuleRequest&,
+        ModifyFileSystemAutoScaleUpRuleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CfsClient::ModifyLifecyclePolicyOutcome CfsClient::ModifyLifecyclePolicy(const ModifyLifecyclePolicyRequest &request)
@@ -1868,25 +2162,32 @@ CfsClient::ModifyLifecyclePolicyOutcome CfsClient::ModifyLifecyclePolicy(const M
 
 void CfsClient::ModifyLifecyclePolicyAsync(const ModifyLifecyclePolicyRequest& request, const ModifyLifecyclePolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyLifecyclePolicy(request), context);
-    };
+    using Req = const ModifyLifecyclePolicyRequest&;
+    using Resp = ModifyLifecyclePolicyResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyLifecyclePolicy", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CfsClient::ModifyLifecyclePolicyOutcomeCallable CfsClient::ModifyLifecyclePolicyCallable(const ModifyLifecyclePolicyRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyLifecyclePolicyOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyLifecyclePolicy(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyLifecyclePolicyOutcome>>();
+    ModifyLifecyclePolicyAsync(
+    request,
+    [prom](
+        const CfsClient*,
+        const ModifyLifecyclePolicyRequest&,
+        ModifyLifecyclePolicyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CfsClient::ScaleUpFileSystemOutcome CfsClient::ScaleUpFileSystem(const ScaleUpFileSystemRequest &request)
@@ -1911,25 +2212,32 @@ CfsClient::ScaleUpFileSystemOutcome CfsClient::ScaleUpFileSystem(const ScaleUpFi
 
 void CfsClient::ScaleUpFileSystemAsync(const ScaleUpFileSystemRequest& request, const ScaleUpFileSystemAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ScaleUpFileSystem(request), context);
-    };
+    using Req = const ScaleUpFileSystemRequest&;
+    using Resp = ScaleUpFileSystemResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ScaleUpFileSystem", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CfsClient::ScaleUpFileSystemOutcomeCallable CfsClient::ScaleUpFileSystemCallable(const ScaleUpFileSystemRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ScaleUpFileSystemOutcome()>>(
-        [this, request]()
-        {
-            return this->ScaleUpFileSystem(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ScaleUpFileSystemOutcome>>();
+    ScaleUpFileSystemAsync(
+    request,
+    [prom](
+        const CfsClient*,
+        const ScaleUpFileSystemRequest&,
+        ScaleUpFileSystemOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CfsClient::SetUserQuotaOutcome CfsClient::SetUserQuota(const SetUserQuotaRequest &request)
@@ -1954,25 +2262,32 @@ CfsClient::SetUserQuotaOutcome CfsClient::SetUserQuota(const SetUserQuotaRequest
 
 void CfsClient::SetUserQuotaAsync(const SetUserQuotaRequest& request, const SetUserQuotaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->SetUserQuota(request), context);
-    };
+    using Req = const SetUserQuotaRequest&;
+    using Resp = SetUserQuotaResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "SetUserQuota", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CfsClient::SetUserQuotaOutcomeCallable CfsClient::SetUserQuotaCallable(const SetUserQuotaRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<SetUserQuotaOutcome()>>(
-        [this, request]()
-        {
-            return this->SetUserQuota(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<SetUserQuotaOutcome>>();
+    SetUserQuotaAsync(
+    request,
+    [prom](
+        const CfsClient*,
+        const SetUserQuotaRequest&,
+        SetUserQuotaOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CfsClient::SignUpCfsServiceOutcome CfsClient::SignUpCfsService(const SignUpCfsServiceRequest &request)
@@ -1997,25 +2312,32 @@ CfsClient::SignUpCfsServiceOutcome CfsClient::SignUpCfsService(const SignUpCfsSe
 
 void CfsClient::SignUpCfsServiceAsync(const SignUpCfsServiceRequest& request, const SignUpCfsServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->SignUpCfsService(request), context);
-    };
+    using Req = const SignUpCfsServiceRequest&;
+    using Resp = SignUpCfsServiceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "SignUpCfsService", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CfsClient::SignUpCfsServiceOutcomeCallable CfsClient::SignUpCfsServiceCallable(const SignUpCfsServiceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<SignUpCfsServiceOutcome()>>(
-        [this, request]()
-        {
-            return this->SignUpCfsService(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<SignUpCfsServiceOutcome>>();
+    SignUpCfsServiceAsync(
+    request,
+    [prom](
+        const CfsClient*,
+        const SignUpCfsServiceRequest&,
+        SignUpCfsServiceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CfsClient::StopLifecycleDataTaskOutcome CfsClient::StopLifecycleDataTask(const StopLifecycleDataTaskRequest &request)
@@ -2040,25 +2362,32 @@ CfsClient::StopLifecycleDataTaskOutcome CfsClient::StopLifecycleDataTask(const S
 
 void CfsClient::StopLifecycleDataTaskAsync(const StopLifecycleDataTaskRequest& request, const StopLifecycleDataTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->StopLifecycleDataTask(request), context);
-    };
+    using Req = const StopLifecycleDataTaskRequest&;
+    using Resp = StopLifecycleDataTaskResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "StopLifecycleDataTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CfsClient::StopLifecycleDataTaskOutcomeCallable CfsClient::StopLifecycleDataTaskCallable(const StopLifecycleDataTaskRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<StopLifecycleDataTaskOutcome()>>(
-        [this, request]()
-        {
-            return this->StopLifecycleDataTask(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<StopLifecycleDataTaskOutcome>>();
+    StopLifecycleDataTaskAsync(
+    request,
+    [prom](
+        const CfsClient*,
+        const StopLifecycleDataTaskRequest&,
+        StopLifecycleDataTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CfsClient::StopMigrationTaskOutcome CfsClient::StopMigrationTask(const StopMigrationTaskRequest &request)
@@ -2083,25 +2412,32 @@ CfsClient::StopMigrationTaskOutcome CfsClient::StopMigrationTask(const StopMigra
 
 void CfsClient::StopMigrationTaskAsync(const StopMigrationTaskRequest& request, const StopMigrationTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->StopMigrationTask(request), context);
-    };
+    using Req = const StopMigrationTaskRequest&;
+    using Resp = StopMigrationTaskResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "StopMigrationTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CfsClient::StopMigrationTaskOutcomeCallable CfsClient::StopMigrationTaskCallable(const StopMigrationTaskRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<StopMigrationTaskOutcome()>>(
-        [this, request]()
-        {
-            return this->StopMigrationTask(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<StopMigrationTaskOutcome>>();
+    StopMigrationTaskAsync(
+    request,
+    [prom](
+        const CfsClient*,
+        const StopMigrationTaskRequest&,
+        StopMigrationTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CfsClient::UnbindAutoSnapshotPolicyOutcome CfsClient::UnbindAutoSnapshotPolicy(const UnbindAutoSnapshotPolicyRequest &request)
@@ -2126,25 +2462,32 @@ CfsClient::UnbindAutoSnapshotPolicyOutcome CfsClient::UnbindAutoSnapshotPolicy(c
 
 void CfsClient::UnbindAutoSnapshotPolicyAsync(const UnbindAutoSnapshotPolicyRequest& request, const UnbindAutoSnapshotPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UnbindAutoSnapshotPolicy(request), context);
-    };
+    using Req = const UnbindAutoSnapshotPolicyRequest&;
+    using Resp = UnbindAutoSnapshotPolicyResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UnbindAutoSnapshotPolicy", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CfsClient::UnbindAutoSnapshotPolicyOutcomeCallable CfsClient::UnbindAutoSnapshotPolicyCallable(const UnbindAutoSnapshotPolicyRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UnbindAutoSnapshotPolicyOutcome()>>(
-        [this, request]()
-        {
-            return this->UnbindAutoSnapshotPolicy(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UnbindAutoSnapshotPolicyOutcome>>();
+    UnbindAutoSnapshotPolicyAsync(
+    request,
+    [prom](
+        const CfsClient*,
+        const UnbindAutoSnapshotPolicyRequest&,
+        UnbindAutoSnapshotPolicyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CfsClient::UpdateAutoSnapshotPolicyOutcome CfsClient::UpdateAutoSnapshotPolicy(const UpdateAutoSnapshotPolicyRequest &request)
@@ -2169,25 +2512,32 @@ CfsClient::UpdateAutoSnapshotPolicyOutcome CfsClient::UpdateAutoSnapshotPolicy(c
 
 void CfsClient::UpdateAutoSnapshotPolicyAsync(const UpdateAutoSnapshotPolicyRequest& request, const UpdateAutoSnapshotPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UpdateAutoSnapshotPolicy(request), context);
-    };
+    using Req = const UpdateAutoSnapshotPolicyRequest&;
+    using Resp = UpdateAutoSnapshotPolicyResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UpdateAutoSnapshotPolicy", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CfsClient::UpdateAutoSnapshotPolicyOutcomeCallable CfsClient::UpdateAutoSnapshotPolicyCallable(const UpdateAutoSnapshotPolicyRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UpdateAutoSnapshotPolicyOutcome()>>(
-        [this, request]()
-        {
-            return this->UpdateAutoSnapshotPolicy(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UpdateAutoSnapshotPolicyOutcome>>();
+    UpdateAutoSnapshotPolicyAsync(
+    request,
+    [prom](
+        const CfsClient*,
+        const UpdateAutoSnapshotPolicyRequest&,
+        UpdateAutoSnapshotPolicyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CfsClient::UpdateCfsFileSystemNameOutcome CfsClient::UpdateCfsFileSystemName(const UpdateCfsFileSystemNameRequest &request)
@@ -2212,25 +2562,32 @@ CfsClient::UpdateCfsFileSystemNameOutcome CfsClient::UpdateCfsFileSystemName(con
 
 void CfsClient::UpdateCfsFileSystemNameAsync(const UpdateCfsFileSystemNameRequest& request, const UpdateCfsFileSystemNameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UpdateCfsFileSystemName(request), context);
-    };
+    using Req = const UpdateCfsFileSystemNameRequest&;
+    using Resp = UpdateCfsFileSystemNameResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UpdateCfsFileSystemName", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CfsClient::UpdateCfsFileSystemNameOutcomeCallable CfsClient::UpdateCfsFileSystemNameCallable(const UpdateCfsFileSystemNameRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UpdateCfsFileSystemNameOutcome()>>(
-        [this, request]()
-        {
-            return this->UpdateCfsFileSystemName(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UpdateCfsFileSystemNameOutcome>>();
+    UpdateCfsFileSystemNameAsync(
+    request,
+    [prom](
+        const CfsClient*,
+        const UpdateCfsFileSystemNameRequest&,
+        UpdateCfsFileSystemNameOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CfsClient::UpdateCfsFileSystemPGroupOutcome CfsClient::UpdateCfsFileSystemPGroup(const UpdateCfsFileSystemPGroupRequest &request)
@@ -2255,25 +2612,32 @@ CfsClient::UpdateCfsFileSystemPGroupOutcome CfsClient::UpdateCfsFileSystemPGroup
 
 void CfsClient::UpdateCfsFileSystemPGroupAsync(const UpdateCfsFileSystemPGroupRequest& request, const UpdateCfsFileSystemPGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UpdateCfsFileSystemPGroup(request), context);
-    };
+    using Req = const UpdateCfsFileSystemPGroupRequest&;
+    using Resp = UpdateCfsFileSystemPGroupResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UpdateCfsFileSystemPGroup", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CfsClient::UpdateCfsFileSystemPGroupOutcomeCallable CfsClient::UpdateCfsFileSystemPGroupCallable(const UpdateCfsFileSystemPGroupRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UpdateCfsFileSystemPGroupOutcome()>>(
-        [this, request]()
-        {
-            return this->UpdateCfsFileSystemPGroup(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UpdateCfsFileSystemPGroupOutcome>>();
+    UpdateCfsFileSystemPGroupAsync(
+    request,
+    [prom](
+        const CfsClient*,
+        const UpdateCfsFileSystemPGroupRequest&,
+        UpdateCfsFileSystemPGroupOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CfsClient::UpdateCfsFileSystemSizeLimitOutcome CfsClient::UpdateCfsFileSystemSizeLimit(const UpdateCfsFileSystemSizeLimitRequest &request)
@@ -2298,25 +2662,32 @@ CfsClient::UpdateCfsFileSystemSizeLimitOutcome CfsClient::UpdateCfsFileSystemSiz
 
 void CfsClient::UpdateCfsFileSystemSizeLimitAsync(const UpdateCfsFileSystemSizeLimitRequest& request, const UpdateCfsFileSystemSizeLimitAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UpdateCfsFileSystemSizeLimit(request), context);
-    };
+    using Req = const UpdateCfsFileSystemSizeLimitRequest&;
+    using Resp = UpdateCfsFileSystemSizeLimitResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UpdateCfsFileSystemSizeLimit", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CfsClient::UpdateCfsFileSystemSizeLimitOutcomeCallable CfsClient::UpdateCfsFileSystemSizeLimitCallable(const UpdateCfsFileSystemSizeLimitRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UpdateCfsFileSystemSizeLimitOutcome()>>(
-        [this, request]()
-        {
-            return this->UpdateCfsFileSystemSizeLimit(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UpdateCfsFileSystemSizeLimitOutcome>>();
+    UpdateCfsFileSystemSizeLimitAsync(
+    request,
+    [prom](
+        const CfsClient*,
+        const UpdateCfsFileSystemSizeLimitRequest&,
+        UpdateCfsFileSystemSizeLimitOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CfsClient::UpdateCfsPGroupOutcome CfsClient::UpdateCfsPGroup(const UpdateCfsPGroupRequest &request)
@@ -2341,25 +2712,32 @@ CfsClient::UpdateCfsPGroupOutcome CfsClient::UpdateCfsPGroup(const UpdateCfsPGro
 
 void CfsClient::UpdateCfsPGroupAsync(const UpdateCfsPGroupRequest& request, const UpdateCfsPGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UpdateCfsPGroup(request), context);
-    };
+    using Req = const UpdateCfsPGroupRequest&;
+    using Resp = UpdateCfsPGroupResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UpdateCfsPGroup", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CfsClient::UpdateCfsPGroupOutcomeCallable CfsClient::UpdateCfsPGroupCallable(const UpdateCfsPGroupRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UpdateCfsPGroupOutcome()>>(
-        [this, request]()
-        {
-            return this->UpdateCfsPGroup(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UpdateCfsPGroupOutcome>>();
+    UpdateCfsPGroupAsync(
+    request,
+    [prom](
+        const CfsClient*,
+        const UpdateCfsPGroupRequest&,
+        UpdateCfsPGroupOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CfsClient::UpdateCfsRuleOutcome CfsClient::UpdateCfsRule(const UpdateCfsRuleRequest &request)
@@ -2384,25 +2762,32 @@ CfsClient::UpdateCfsRuleOutcome CfsClient::UpdateCfsRule(const UpdateCfsRuleRequ
 
 void CfsClient::UpdateCfsRuleAsync(const UpdateCfsRuleRequest& request, const UpdateCfsRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UpdateCfsRule(request), context);
-    };
+    using Req = const UpdateCfsRuleRequest&;
+    using Resp = UpdateCfsRuleResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UpdateCfsRule", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CfsClient::UpdateCfsRuleOutcomeCallable CfsClient::UpdateCfsRuleCallable(const UpdateCfsRuleRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UpdateCfsRuleOutcome()>>(
-        [this, request]()
-        {
-            return this->UpdateCfsRule(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UpdateCfsRuleOutcome>>();
+    UpdateCfsRuleAsync(
+    request,
+    [prom](
+        const CfsClient*,
+        const UpdateCfsRuleRequest&,
+        UpdateCfsRuleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CfsClient::UpdateCfsSnapshotAttributeOutcome CfsClient::UpdateCfsSnapshotAttribute(const UpdateCfsSnapshotAttributeRequest &request)
@@ -2427,25 +2812,32 @@ CfsClient::UpdateCfsSnapshotAttributeOutcome CfsClient::UpdateCfsSnapshotAttribu
 
 void CfsClient::UpdateCfsSnapshotAttributeAsync(const UpdateCfsSnapshotAttributeRequest& request, const UpdateCfsSnapshotAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UpdateCfsSnapshotAttribute(request), context);
-    };
+    using Req = const UpdateCfsSnapshotAttributeRequest&;
+    using Resp = UpdateCfsSnapshotAttributeResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UpdateCfsSnapshotAttribute", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CfsClient::UpdateCfsSnapshotAttributeOutcomeCallable CfsClient::UpdateCfsSnapshotAttributeCallable(const UpdateCfsSnapshotAttributeRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UpdateCfsSnapshotAttributeOutcome()>>(
-        [this, request]()
-        {
-            return this->UpdateCfsSnapshotAttribute(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UpdateCfsSnapshotAttributeOutcome>>();
+    UpdateCfsSnapshotAttributeAsync(
+    request,
+    [prom](
+        const CfsClient*,
+        const UpdateCfsSnapshotAttributeRequest&,
+        UpdateCfsSnapshotAttributeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CfsClient::UpdateFileSystemBandwidthLimitOutcome CfsClient::UpdateFileSystemBandwidthLimit(const UpdateFileSystemBandwidthLimitRequest &request)
@@ -2470,24 +2862,31 @@ CfsClient::UpdateFileSystemBandwidthLimitOutcome CfsClient::UpdateFileSystemBand
 
 void CfsClient::UpdateFileSystemBandwidthLimitAsync(const UpdateFileSystemBandwidthLimitRequest& request, const UpdateFileSystemBandwidthLimitAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UpdateFileSystemBandwidthLimit(request), context);
-    };
+    using Req = const UpdateFileSystemBandwidthLimitRequest&;
+    using Resp = UpdateFileSystemBandwidthLimitResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UpdateFileSystemBandwidthLimit", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CfsClient::UpdateFileSystemBandwidthLimitOutcomeCallable CfsClient::UpdateFileSystemBandwidthLimitCallable(const UpdateFileSystemBandwidthLimitRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UpdateFileSystemBandwidthLimitOutcome()>>(
-        [this, request]()
-        {
-            return this->UpdateFileSystemBandwidthLimit(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UpdateFileSystemBandwidthLimitOutcome>>();
+    UpdateFileSystemBandwidthLimitAsync(
+    request,
+    [prom](
+        const CfsClient*,
+        const UpdateFileSystemBandwidthLimitRequest&,
+        UpdateFileSystemBandwidthLimitOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 

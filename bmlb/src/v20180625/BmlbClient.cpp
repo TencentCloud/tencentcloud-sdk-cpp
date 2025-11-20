@@ -62,25 +62,32 @@ BmlbClient::BindL4BackendsOutcome BmlbClient::BindL4Backends(const BindL4Backend
 
 void BmlbClient::BindL4BackendsAsync(const BindL4BackendsRequest& request, const BindL4BackendsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->BindL4Backends(request), context);
-    };
+    using Req = const BindL4BackendsRequest&;
+    using Resp = BindL4BackendsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "BindL4Backends", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BmlbClient::BindL4BackendsOutcomeCallable BmlbClient::BindL4BackendsCallable(const BindL4BackendsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<BindL4BackendsOutcome()>>(
-        [this, request]()
-        {
-            return this->BindL4Backends(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<BindL4BackendsOutcome>>();
+    BindL4BackendsAsync(
+    request,
+    [prom](
+        const BmlbClient*,
+        const BindL4BackendsRequest&,
+        BindL4BackendsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BmlbClient::BindL7BackendsOutcome BmlbClient::BindL7Backends(const BindL7BackendsRequest &request)
@@ -105,25 +112,32 @@ BmlbClient::BindL7BackendsOutcome BmlbClient::BindL7Backends(const BindL7Backend
 
 void BmlbClient::BindL7BackendsAsync(const BindL7BackendsRequest& request, const BindL7BackendsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->BindL7Backends(request), context);
-    };
+    using Req = const BindL7BackendsRequest&;
+    using Resp = BindL7BackendsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "BindL7Backends", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BmlbClient::BindL7BackendsOutcomeCallable BmlbClient::BindL7BackendsCallable(const BindL7BackendsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<BindL7BackendsOutcome()>>(
-        [this, request]()
-        {
-            return this->BindL7Backends(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<BindL7BackendsOutcome>>();
+    BindL7BackendsAsync(
+    request,
+    [prom](
+        const BmlbClient*,
+        const BindL7BackendsRequest&,
+        BindL7BackendsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BmlbClient::BindTrafficMirrorListenersOutcome BmlbClient::BindTrafficMirrorListeners(const BindTrafficMirrorListenersRequest &request)
@@ -148,25 +162,32 @@ BmlbClient::BindTrafficMirrorListenersOutcome BmlbClient::BindTrafficMirrorListe
 
 void BmlbClient::BindTrafficMirrorListenersAsync(const BindTrafficMirrorListenersRequest& request, const BindTrafficMirrorListenersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->BindTrafficMirrorListeners(request), context);
-    };
+    using Req = const BindTrafficMirrorListenersRequest&;
+    using Resp = BindTrafficMirrorListenersResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "BindTrafficMirrorListeners", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BmlbClient::BindTrafficMirrorListenersOutcomeCallable BmlbClient::BindTrafficMirrorListenersCallable(const BindTrafficMirrorListenersRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<BindTrafficMirrorListenersOutcome()>>(
-        [this, request]()
-        {
-            return this->BindTrafficMirrorListeners(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<BindTrafficMirrorListenersOutcome>>();
+    BindTrafficMirrorListenersAsync(
+    request,
+    [prom](
+        const BmlbClient*,
+        const BindTrafficMirrorListenersRequest&,
+        BindTrafficMirrorListenersOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BmlbClient::BindTrafficMirrorReceiversOutcome BmlbClient::BindTrafficMirrorReceivers(const BindTrafficMirrorReceiversRequest &request)
@@ -191,25 +212,32 @@ BmlbClient::BindTrafficMirrorReceiversOutcome BmlbClient::BindTrafficMirrorRecei
 
 void BmlbClient::BindTrafficMirrorReceiversAsync(const BindTrafficMirrorReceiversRequest& request, const BindTrafficMirrorReceiversAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->BindTrafficMirrorReceivers(request), context);
-    };
+    using Req = const BindTrafficMirrorReceiversRequest&;
+    using Resp = BindTrafficMirrorReceiversResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "BindTrafficMirrorReceivers", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BmlbClient::BindTrafficMirrorReceiversOutcomeCallable BmlbClient::BindTrafficMirrorReceiversCallable(const BindTrafficMirrorReceiversRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<BindTrafficMirrorReceiversOutcome()>>(
-        [this, request]()
-        {
-            return this->BindTrafficMirrorReceivers(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<BindTrafficMirrorReceiversOutcome>>();
+    BindTrafficMirrorReceiversAsync(
+    request,
+    [prom](
+        const BmlbClient*,
+        const BindTrafficMirrorReceiversRequest&,
+        BindTrafficMirrorReceiversOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BmlbClient::CreateL4ListenersOutcome BmlbClient::CreateL4Listeners(const CreateL4ListenersRequest &request)
@@ -234,25 +262,32 @@ BmlbClient::CreateL4ListenersOutcome BmlbClient::CreateL4Listeners(const CreateL
 
 void BmlbClient::CreateL4ListenersAsync(const CreateL4ListenersRequest& request, const CreateL4ListenersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateL4Listeners(request), context);
-    };
+    using Req = const CreateL4ListenersRequest&;
+    using Resp = CreateL4ListenersResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateL4Listeners", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BmlbClient::CreateL4ListenersOutcomeCallable BmlbClient::CreateL4ListenersCallable(const CreateL4ListenersRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateL4ListenersOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateL4Listeners(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateL4ListenersOutcome>>();
+    CreateL4ListenersAsync(
+    request,
+    [prom](
+        const BmlbClient*,
+        const CreateL4ListenersRequest&,
+        CreateL4ListenersOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BmlbClient::CreateL7ListenersOutcome BmlbClient::CreateL7Listeners(const CreateL7ListenersRequest &request)
@@ -277,25 +312,32 @@ BmlbClient::CreateL7ListenersOutcome BmlbClient::CreateL7Listeners(const CreateL
 
 void BmlbClient::CreateL7ListenersAsync(const CreateL7ListenersRequest& request, const CreateL7ListenersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateL7Listeners(request), context);
-    };
+    using Req = const CreateL7ListenersRequest&;
+    using Resp = CreateL7ListenersResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateL7Listeners", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BmlbClient::CreateL7ListenersOutcomeCallable BmlbClient::CreateL7ListenersCallable(const CreateL7ListenersRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateL7ListenersOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateL7Listeners(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateL7ListenersOutcome>>();
+    CreateL7ListenersAsync(
+    request,
+    [prom](
+        const BmlbClient*,
+        const CreateL7ListenersRequest&,
+        CreateL7ListenersOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BmlbClient::CreateL7RulesOutcome BmlbClient::CreateL7Rules(const CreateL7RulesRequest &request)
@@ -320,25 +362,32 @@ BmlbClient::CreateL7RulesOutcome BmlbClient::CreateL7Rules(const CreateL7RulesRe
 
 void BmlbClient::CreateL7RulesAsync(const CreateL7RulesRequest& request, const CreateL7RulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateL7Rules(request), context);
-    };
+    using Req = const CreateL7RulesRequest&;
+    using Resp = CreateL7RulesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateL7Rules", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BmlbClient::CreateL7RulesOutcomeCallable BmlbClient::CreateL7RulesCallable(const CreateL7RulesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateL7RulesOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateL7Rules(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateL7RulesOutcome>>();
+    CreateL7RulesAsync(
+    request,
+    [prom](
+        const BmlbClient*,
+        const CreateL7RulesRequest&,
+        CreateL7RulesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BmlbClient::CreateLoadBalancersOutcome BmlbClient::CreateLoadBalancers(const CreateLoadBalancersRequest &request)
@@ -363,25 +412,32 @@ BmlbClient::CreateLoadBalancersOutcome BmlbClient::CreateLoadBalancers(const Cre
 
 void BmlbClient::CreateLoadBalancersAsync(const CreateLoadBalancersRequest& request, const CreateLoadBalancersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateLoadBalancers(request), context);
-    };
+    using Req = const CreateLoadBalancersRequest&;
+    using Resp = CreateLoadBalancersResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateLoadBalancers", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BmlbClient::CreateLoadBalancersOutcomeCallable BmlbClient::CreateLoadBalancersCallable(const CreateLoadBalancersRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateLoadBalancersOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateLoadBalancers(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateLoadBalancersOutcome>>();
+    CreateLoadBalancersAsync(
+    request,
+    [prom](
+        const BmlbClient*,
+        const CreateLoadBalancersRequest&,
+        CreateLoadBalancersOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BmlbClient::CreateTrafficMirrorOutcome BmlbClient::CreateTrafficMirror(const CreateTrafficMirrorRequest &request)
@@ -406,25 +462,32 @@ BmlbClient::CreateTrafficMirrorOutcome BmlbClient::CreateTrafficMirror(const Cre
 
 void BmlbClient::CreateTrafficMirrorAsync(const CreateTrafficMirrorRequest& request, const CreateTrafficMirrorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateTrafficMirror(request), context);
-    };
+    using Req = const CreateTrafficMirrorRequest&;
+    using Resp = CreateTrafficMirrorResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateTrafficMirror", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BmlbClient::CreateTrafficMirrorOutcomeCallable BmlbClient::CreateTrafficMirrorCallable(const CreateTrafficMirrorRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateTrafficMirrorOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateTrafficMirror(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateTrafficMirrorOutcome>>();
+    CreateTrafficMirrorAsync(
+    request,
+    [prom](
+        const BmlbClient*,
+        const CreateTrafficMirrorRequest&,
+        CreateTrafficMirrorOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BmlbClient::DeleteL7DomainsOutcome BmlbClient::DeleteL7Domains(const DeleteL7DomainsRequest &request)
@@ -449,25 +512,32 @@ BmlbClient::DeleteL7DomainsOutcome BmlbClient::DeleteL7Domains(const DeleteL7Dom
 
 void BmlbClient::DeleteL7DomainsAsync(const DeleteL7DomainsRequest& request, const DeleteL7DomainsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteL7Domains(request), context);
-    };
+    using Req = const DeleteL7DomainsRequest&;
+    using Resp = DeleteL7DomainsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteL7Domains", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BmlbClient::DeleteL7DomainsOutcomeCallable BmlbClient::DeleteL7DomainsCallable(const DeleteL7DomainsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteL7DomainsOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteL7Domains(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteL7DomainsOutcome>>();
+    DeleteL7DomainsAsync(
+    request,
+    [prom](
+        const BmlbClient*,
+        const DeleteL7DomainsRequest&,
+        DeleteL7DomainsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BmlbClient::DeleteL7RulesOutcome BmlbClient::DeleteL7Rules(const DeleteL7RulesRequest &request)
@@ -492,25 +562,32 @@ BmlbClient::DeleteL7RulesOutcome BmlbClient::DeleteL7Rules(const DeleteL7RulesRe
 
 void BmlbClient::DeleteL7RulesAsync(const DeleteL7RulesRequest& request, const DeleteL7RulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteL7Rules(request), context);
-    };
+    using Req = const DeleteL7RulesRequest&;
+    using Resp = DeleteL7RulesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteL7Rules", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BmlbClient::DeleteL7RulesOutcomeCallable BmlbClient::DeleteL7RulesCallable(const DeleteL7RulesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteL7RulesOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteL7Rules(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteL7RulesOutcome>>();
+    DeleteL7RulesAsync(
+    request,
+    [prom](
+        const BmlbClient*,
+        const DeleteL7RulesRequest&,
+        DeleteL7RulesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BmlbClient::DeleteListenersOutcome BmlbClient::DeleteListeners(const DeleteListenersRequest &request)
@@ -535,25 +612,32 @@ BmlbClient::DeleteListenersOutcome BmlbClient::DeleteListeners(const DeleteListe
 
 void BmlbClient::DeleteListenersAsync(const DeleteListenersRequest& request, const DeleteListenersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteListeners(request), context);
-    };
+    using Req = const DeleteListenersRequest&;
+    using Resp = DeleteListenersResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteListeners", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BmlbClient::DeleteListenersOutcomeCallable BmlbClient::DeleteListenersCallable(const DeleteListenersRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteListenersOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteListeners(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteListenersOutcome>>();
+    DeleteListenersAsync(
+    request,
+    [prom](
+        const BmlbClient*,
+        const DeleteListenersRequest&,
+        DeleteListenersOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BmlbClient::DeleteLoadBalancerOutcome BmlbClient::DeleteLoadBalancer(const DeleteLoadBalancerRequest &request)
@@ -578,25 +662,32 @@ BmlbClient::DeleteLoadBalancerOutcome BmlbClient::DeleteLoadBalancer(const Delet
 
 void BmlbClient::DeleteLoadBalancerAsync(const DeleteLoadBalancerRequest& request, const DeleteLoadBalancerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteLoadBalancer(request), context);
-    };
+    using Req = const DeleteLoadBalancerRequest&;
+    using Resp = DeleteLoadBalancerResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteLoadBalancer", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BmlbClient::DeleteLoadBalancerOutcomeCallable BmlbClient::DeleteLoadBalancerCallable(const DeleteLoadBalancerRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteLoadBalancerOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteLoadBalancer(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteLoadBalancerOutcome>>();
+    DeleteLoadBalancerAsync(
+    request,
+    [prom](
+        const BmlbClient*,
+        const DeleteLoadBalancerRequest&,
+        DeleteLoadBalancerOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BmlbClient::DeleteTrafficMirrorOutcome BmlbClient::DeleteTrafficMirror(const DeleteTrafficMirrorRequest &request)
@@ -621,25 +712,32 @@ BmlbClient::DeleteTrafficMirrorOutcome BmlbClient::DeleteTrafficMirror(const Del
 
 void BmlbClient::DeleteTrafficMirrorAsync(const DeleteTrafficMirrorRequest& request, const DeleteTrafficMirrorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteTrafficMirror(request), context);
-    };
+    using Req = const DeleteTrafficMirrorRequest&;
+    using Resp = DeleteTrafficMirrorResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteTrafficMirror", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BmlbClient::DeleteTrafficMirrorOutcomeCallable BmlbClient::DeleteTrafficMirrorCallable(const DeleteTrafficMirrorRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteTrafficMirrorOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteTrafficMirror(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteTrafficMirrorOutcome>>();
+    DeleteTrafficMirrorAsync(
+    request,
+    [prom](
+        const BmlbClient*,
+        const DeleteTrafficMirrorRequest&,
+        DeleteTrafficMirrorOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BmlbClient::DescribeCertDetailOutcome BmlbClient::DescribeCertDetail(const DescribeCertDetailRequest &request)
@@ -664,25 +762,32 @@ BmlbClient::DescribeCertDetailOutcome BmlbClient::DescribeCertDetail(const Descr
 
 void BmlbClient::DescribeCertDetailAsync(const DescribeCertDetailRequest& request, const DescribeCertDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeCertDetail(request), context);
-    };
+    using Req = const DescribeCertDetailRequest&;
+    using Resp = DescribeCertDetailResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeCertDetail", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BmlbClient::DescribeCertDetailOutcomeCallable BmlbClient::DescribeCertDetailCallable(const DescribeCertDetailRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeCertDetailOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeCertDetail(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeCertDetailOutcome>>();
+    DescribeCertDetailAsync(
+    request,
+    [prom](
+        const BmlbClient*,
+        const DescribeCertDetailRequest&,
+        DescribeCertDetailOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BmlbClient::DescribeDevicesBindInfoOutcome BmlbClient::DescribeDevicesBindInfo(const DescribeDevicesBindInfoRequest &request)
@@ -707,25 +812,32 @@ BmlbClient::DescribeDevicesBindInfoOutcome BmlbClient::DescribeDevicesBindInfo(c
 
 void BmlbClient::DescribeDevicesBindInfoAsync(const DescribeDevicesBindInfoRequest& request, const DescribeDevicesBindInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDevicesBindInfo(request), context);
-    };
+    using Req = const DescribeDevicesBindInfoRequest&;
+    using Resp = DescribeDevicesBindInfoResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeDevicesBindInfo", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BmlbClient::DescribeDevicesBindInfoOutcomeCallable BmlbClient::DescribeDevicesBindInfoCallable(const DescribeDevicesBindInfoRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeDevicesBindInfoOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDevicesBindInfo(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeDevicesBindInfoOutcome>>();
+    DescribeDevicesBindInfoAsync(
+    request,
+    [prom](
+        const BmlbClient*,
+        const DescribeDevicesBindInfoRequest&,
+        DescribeDevicesBindInfoOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BmlbClient::DescribeL4BackendsOutcome BmlbClient::DescribeL4Backends(const DescribeL4BackendsRequest &request)
@@ -750,25 +862,32 @@ BmlbClient::DescribeL4BackendsOutcome BmlbClient::DescribeL4Backends(const Descr
 
 void BmlbClient::DescribeL4BackendsAsync(const DescribeL4BackendsRequest& request, const DescribeL4BackendsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeL4Backends(request), context);
-    };
+    using Req = const DescribeL4BackendsRequest&;
+    using Resp = DescribeL4BackendsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeL4Backends", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BmlbClient::DescribeL4BackendsOutcomeCallable BmlbClient::DescribeL4BackendsCallable(const DescribeL4BackendsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeL4BackendsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeL4Backends(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeL4BackendsOutcome>>();
+    DescribeL4BackendsAsync(
+    request,
+    [prom](
+        const BmlbClient*,
+        const DescribeL4BackendsRequest&,
+        DescribeL4BackendsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BmlbClient::DescribeL4ListenerInfoOutcome BmlbClient::DescribeL4ListenerInfo(const DescribeL4ListenerInfoRequest &request)
@@ -793,25 +912,32 @@ BmlbClient::DescribeL4ListenerInfoOutcome BmlbClient::DescribeL4ListenerInfo(con
 
 void BmlbClient::DescribeL4ListenerInfoAsync(const DescribeL4ListenerInfoRequest& request, const DescribeL4ListenerInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeL4ListenerInfo(request), context);
-    };
+    using Req = const DescribeL4ListenerInfoRequest&;
+    using Resp = DescribeL4ListenerInfoResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeL4ListenerInfo", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BmlbClient::DescribeL4ListenerInfoOutcomeCallable BmlbClient::DescribeL4ListenerInfoCallable(const DescribeL4ListenerInfoRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeL4ListenerInfoOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeL4ListenerInfo(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeL4ListenerInfoOutcome>>();
+    DescribeL4ListenerInfoAsync(
+    request,
+    [prom](
+        const BmlbClient*,
+        const DescribeL4ListenerInfoRequest&,
+        DescribeL4ListenerInfoOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BmlbClient::DescribeL4ListenersOutcome BmlbClient::DescribeL4Listeners(const DescribeL4ListenersRequest &request)
@@ -836,25 +962,32 @@ BmlbClient::DescribeL4ListenersOutcome BmlbClient::DescribeL4Listeners(const Des
 
 void BmlbClient::DescribeL4ListenersAsync(const DescribeL4ListenersRequest& request, const DescribeL4ListenersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeL4Listeners(request), context);
-    };
+    using Req = const DescribeL4ListenersRequest&;
+    using Resp = DescribeL4ListenersResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeL4Listeners", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BmlbClient::DescribeL4ListenersOutcomeCallable BmlbClient::DescribeL4ListenersCallable(const DescribeL4ListenersRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeL4ListenersOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeL4Listeners(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeL4ListenersOutcome>>();
+    DescribeL4ListenersAsync(
+    request,
+    [prom](
+        const BmlbClient*,
+        const DescribeL4ListenersRequest&,
+        DescribeL4ListenersOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BmlbClient::DescribeL7BackendsOutcome BmlbClient::DescribeL7Backends(const DescribeL7BackendsRequest &request)
@@ -879,25 +1012,32 @@ BmlbClient::DescribeL7BackendsOutcome BmlbClient::DescribeL7Backends(const Descr
 
 void BmlbClient::DescribeL7BackendsAsync(const DescribeL7BackendsRequest& request, const DescribeL7BackendsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeL7Backends(request), context);
-    };
+    using Req = const DescribeL7BackendsRequest&;
+    using Resp = DescribeL7BackendsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeL7Backends", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BmlbClient::DescribeL7BackendsOutcomeCallable BmlbClient::DescribeL7BackendsCallable(const DescribeL7BackendsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeL7BackendsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeL7Backends(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeL7BackendsOutcome>>();
+    DescribeL7BackendsAsync(
+    request,
+    [prom](
+        const BmlbClient*,
+        const DescribeL7BackendsRequest&,
+        DescribeL7BackendsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BmlbClient::DescribeL7ListenerInfoOutcome BmlbClient::DescribeL7ListenerInfo(const DescribeL7ListenerInfoRequest &request)
@@ -922,25 +1062,32 @@ BmlbClient::DescribeL7ListenerInfoOutcome BmlbClient::DescribeL7ListenerInfo(con
 
 void BmlbClient::DescribeL7ListenerInfoAsync(const DescribeL7ListenerInfoRequest& request, const DescribeL7ListenerInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeL7ListenerInfo(request), context);
-    };
+    using Req = const DescribeL7ListenerInfoRequest&;
+    using Resp = DescribeL7ListenerInfoResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeL7ListenerInfo", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BmlbClient::DescribeL7ListenerInfoOutcomeCallable BmlbClient::DescribeL7ListenerInfoCallable(const DescribeL7ListenerInfoRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeL7ListenerInfoOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeL7ListenerInfo(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeL7ListenerInfoOutcome>>();
+    DescribeL7ListenerInfoAsync(
+    request,
+    [prom](
+        const BmlbClient*,
+        const DescribeL7ListenerInfoRequest&,
+        DescribeL7ListenerInfoOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BmlbClient::DescribeL7ListenersOutcome BmlbClient::DescribeL7Listeners(const DescribeL7ListenersRequest &request)
@@ -965,25 +1112,32 @@ BmlbClient::DescribeL7ListenersOutcome BmlbClient::DescribeL7Listeners(const Des
 
 void BmlbClient::DescribeL7ListenersAsync(const DescribeL7ListenersRequest& request, const DescribeL7ListenersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeL7Listeners(request), context);
-    };
+    using Req = const DescribeL7ListenersRequest&;
+    using Resp = DescribeL7ListenersResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeL7Listeners", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BmlbClient::DescribeL7ListenersOutcomeCallable BmlbClient::DescribeL7ListenersCallable(const DescribeL7ListenersRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeL7ListenersOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeL7Listeners(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeL7ListenersOutcome>>();
+    DescribeL7ListenersAsync(
+    request,
+    [prom](
+        const BmlbClient*,
+        const DescribeL7ListenersRequest&,
+        DescribeL7ListenersOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BmlbClient::DescribeL7ListenersExOutcome BmlbClient::DescribeL7ListenersEx(const DescribeL7ListenersExRequest &request)
@@ -1008,25 +1162,32 @@ BmlbClient::DescribeL7ListenersExOutcome BmlbClient::DescribeL7ListenersEx(const
 
 void BmlbClient::DescribeL7ListenersExAsync(const DescribeL7ListenersExRequest& request, const DescribeL7ListenersExAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeL7ListenersEx(request), context);
-    };
+    using Req = const DescribeL7ListenersExRequest&;
+    using Resp = DescribeL7ListenersExResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeL7ListenersEx", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BmlbClient::DescribeL7ListenersExOutcomeCallable BmlbClient::DescribeL7ListenersExCallable(const DescribeL7ListenersExRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeL7ListenersExOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeL7ListenersEx(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeL7ListenersExOutcome>>();
+    DescribeL7ListenersExAsync(
+    request,
+    [prom](
+        const BmlbClient*,
+        const DescribeL7ListenersExRequest&,
+        DescribeL7ListenersExOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BmlbClient::DescribeL7RulesOutcome BmlbClient::DescribeL7Rules(const DescribeL7RulesRequest &request)
@@ -1051,25 +1212,32 @@ BmlbClient::DescribeL7RulesOutcome BmlbClient::DescribeL7Rules(const DescribeL7R
 
 void BmlbClient::DescribeL7RulesAsync(const DescribeL7RulesRequest& request, const DescribeL7RulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeL7Rules(request), context);
-    };
+    using Req = const DescribeL7RulesRequest&;
+    using Resp = DescribeL7RulesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeL7Rules", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BmlbClient::DescribeL7RulesOutcomeCallable BmlbClient::DescribeL7RulesCallable(const DescribeL7RulesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeL7RulesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeL7Rules(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeL7RulesOutcome>>();
+    DescribeL7RulesAsync(
+    request,
+    [prom](
+        const BmlbClient*,
+        const DescribeL7RulesRequest&,
+        DescribeL7RulesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BmlbClient::DescribeLoadBalancerPortInfoOutcome BmlbClient::DescribeLoadBalancerPortInfo(const DescribeLoadBalancerPortInfoRequest &request)
@@ -1094,25 +1262,32 @@ BmlbClient::DescribeLoadBalancerPortInfoOutcome BmlbClient::DescribeLoadBalancer
 
 void BmlbClient::DescribeLoadBalancerPortInfoAsync(const DescribeLoadBalancerPortInfoRequest& request, const DescribeLoadBalancerPortInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeLoadBalancerPortInfo(request), context);
-    };
+    using Req = const DescribeLoadBalancerPortInfoRequest&;
+    using Resp = DescribeLoadBalancerPortInfoResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeLoadBalancerPortInfo", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BmlbClient::DescribeLoadBalancerPortInfoOutcomeCallable BmlbClient::DescribeLoadBalancerPortInfoCallable(const DescribeLoadBalancerPortInfoRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeLoadBalancerPortInfoOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeLoadBalancerPortInfo(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeLoadBalancerPortInfoOutcome>>();
+    DescribeLoadBalancerPortInfoAsync(
+    request,
+    [prom](
+        const BmlbClient*,
+        const DescribeLoadBalancerPortInfoRequest&,
+        DescribeLoadBalancerPortInfoOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BmlbClient::DescribeLoadBalancerTaskResultOutcome BmlbClient::DescribeLoadBalancerTaskResult(const DescribeLoadBalancerTaskResultRequest &request)
@@ -1137,25 +1312,32 @@ BmlbClient::DescribeLoadBalancerTaskResultOutcome BmlbClient::DescribeLoadBalanc
 
 void BmlbClient::DescribeLoadBalancerTaskResultAsync(const DescribeLoadBalancerTaskResultRequest& request, const DescribeLoadBalancerTaskResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeLoadBalancerTaskResult(request), context);
-    };
+    using Req = const DescribeLoadBalancerTaskResultRequest&;
+    using Resp = DescribeLoadBalancerTaskResultResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeLoadBalancerTaskResult", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BmlbClient::DescribeLoadBalancerTaskResultOutcomeCallable BmlbClient::DescribeLoadBalancerTaskResultCallable(const DescribeLoadBalancerTaskResultRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeLoadBalancerTaskResultOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeLoadBalancerTaskResult(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeLoadBalancerTaskResultOutcome>>();
+    DescribeLoadBalancerTaskResultAsync(
+    request,
+    [prom](
+        const BmlbClient*,
+        const DescribeLoadBalancerTaskResultRequest&,
+        DescribeLoadBalancerTaskResultOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BmlbClient::DescribeLoadBalancersOutcome BmlbClient::DescribeLoadBalancers(const DescribeLoadBalancersRequest &request)
@@ -1180,25 +1362,32 @@ BmlbClient::DescribeLoadBalancersOutcome BmlbClient::DescribeLoadBalancers(const
 
 void BmlbClient::DescribeLoadBalancersAsync(const DescribeLoadBalancersRequest& request, const DescribeLoadBalancersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeLoadBalancers(request), context);
-    };
+    using Req = const DescribeLoadBalancersRequest&;
+    using Resp = DescribeLoadBalancersResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeLoadBalancers", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BmlbClient::DescribeLoadBalancersOutcomeCallable BmlbClient::DescribeLoadBalancersCallable(const DescribeLoadBalancersRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeLoadBalancersOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeLoadBalancers(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeLoadBalancersOutcome>>();
+    DescribeLoadBalancersAsync(
+    request,
+    [prom](
+        const BmlbClient*,
+        const DescribeLoadBalancersRequest&,
+        DescribeLoadBalancersOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BmlbClient::DescribeTrafficMirrorListenersOutcome BmlbClient::DescribeTrafficMirrorListeners(const DescribeTrafficMirrorListenersRequest &request)
@@ -1223,25 +1412,32 @@ BmlbClient::DescribeTrafficMirrorListenersOutcome BmlbClient::DescribeTrafficMir
 
 void BmlbClient::DescribeTrafficMirrorListenersAsync(const DescribeTrafficMirrorListenersRequest& request, const DescribeTrafficMirrorListenersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeTrafficMirrorListeners(request), context);
-    };
+    using Req = const DescribeTrafficMirrorListenersRequest&;
+    using Resp = DescribeTrafficMirrorListenersResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeTrafficMirrorListeners", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BmlbClient::DescribeTrafficMirrorListenersOutcomeCallable BmlbClient::DescribeTrafficMirrorListenersCallable(const DescribeTrafficMirrorListenersRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeTrafficMirrorListenersOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeTrafficMirrorListeners(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeTrafficMirrorListenersOutcome>>();
+    DescribeTrafficMirrorListenersAsync(
+    request,
+    [prom](
+        const BmlbClient*,
+        const DescribeTrafficMirrorListenersRequest&,
+        DescribeTrafficMirrorListenersOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BmlbClient::DescribeTrafficMirrorReceiverHealthStatusOutcome BmlbClient::DescribeTrafficMirrorReceiverHealthStatus(const DescribeTrafficMirrorReceiverHealthStatusRequest &request)
@@ -1266,25 +1462,32 @@ BmlbClient::DescribeTrafficMirrorReceiverHealthStatusOutcome BmlbClient::Describ
 
 void BmlbClient::DescribeTrafficMirrorReceiverHealthStatusAsync(const DescribeTrafficMirrorReceiverHealthStatusRequest& request, const DescribeTrafficMirrorReceiverHealthStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeTrafficMirrorReceiverHealthStatus(request), context);
-    };
+    using Req = const DescribeTrafficMirrorReceiverHealthStatusRequest&;
+    using Resp = DescribeTrafficMirrorReceiverHealthStatusResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeTrafficMirrorReceiverHealthStatus", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BmlbClient::DescribeTrafficMirrorReceiverHealthStatusOutcomeCallable BmlbClient::DescribeTrafficMirrorReceiverHealthStatusCallable(const DescribeTrafficMirrorReceiverHealthStatusRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeTrafficMirrorReceiverHealthStatusOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeTrafficMirrorReceiverHealthStatus(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeTrafficMirrorReceiverHealthStatusOutcome>>();
+    DescribeTrafficMirrorReceiverHealthStatusAsync(
+    request,
+    [prom](
+        const BmlbClient*,
+        const DescribeTrafficMirrorReceiverHealthStatusRequest&,
+        DescribeTrafficMirrorReceiverHealthStatusOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BmlbClient::DescribeTrafficMirrorReceiversOutcome BmlbClient::DescribeTrafficMirrorReceivers(const DescribeTrafficMirrorReceiversRequest &request)
@@ -1309,25 +1512,32 @@ BmlbClient::DescribeTrafficMirrorReceiversOutcome BmlbClient::DescribeTrafficMir
 
 void BmlbClient::DescribeTrafficMirrorReceiversAsync(const DescribeTrafficMirrorReceiversRequest& request, const DescribeTrafficMirrorReceiversAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeTrafficMirrorReceivers(request), context);
-    };
+    using Req = const DescribeTrafficMirrorReceiversRequest&;
+    using Resp = DescribeTrafficMirrorReceiversResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeTrafficMirrorReceivers", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BmlbClient::DescribeTrafficMirrorReceiversOutcomeCallable BmlbClient::DescribeTrafficMirrorReceiversCallable(const DescribeTrafficMirrorReceiversRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeTrafficMirrorReceiversOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeTrafficMirrorReceivers(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeTrafficMirrorReceiversOutcome>>();
+    DescribeTrafficMirrorReceiversAsync(
+    request,
+    [prom](
+        const BmlbClient*,
+        const DescribeTrafficMirrorReceiversRequest&,
+        DescribeTrafficMirrorReceiversOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BmlbClient::DescribeTrafficMirrorsOutcome BmlbClient::DescribeTrafficMirrors(const DescribeTrafficMirrorsRequest &request)
@@ -1352,25 +1562,32 @@ BmlbClient::DescribeTrafficMirrorsOutcome BmlbClient::DescribeTrafficMirrors(con
 
 void BmlbClient::DescribeTrafficMirrorsAsync(const DescribeTrafficMirrorsRequest& request, const DescribeTrafficMirrorsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeTrafficMirrors(request), context);
-    };
+    using Req = const DescribeTrafficMirrorsRequest&;
+    using Resp = DescribeTrafficMirrorsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeTrafficMirrors", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BmlbClient::DescribeTrafficMirrorsOutcomeCallable BmlbClient::DescribeTrafficMirrorsCallable(const DescribeTrafficMirrorsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeTrafficMirrorsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeTrafficMirrors(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeTrafficMirrorsOutcome>>();
+    DescribeTrafficMirrorsAsync(
+    request,
+    [prom](
+        const BmlbClient*,
+        const DescribeTrafficMirrorsRequest&,
+        DescribeTrafficMirrorsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BmlbClient::ModifyL4BackendPortOutcome BmlbClient::ModifyL4BackendPort(const ModifyL4BackendPortRequest &request)
@@ -1395,25 +1612,32 @@ BmlbClient::ModifyL4BackendPortOutcome BmlbClient::ModifyL4BackendPort(const Mod
 
 void BmlbClient::ModifyL4BackendPortAsync(const ModifyL4BackendPortRequest& request, const ModifyL4BackendPortAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyL4BackendPort(request), context);
-    };
+    using Req = const ModifyL4BackendPortRequest&;
+    using Resp = ModifyL4BackendPortResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyL4BackendPort", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BmlbClient::ModifyL4BackendPortOutcomeCallable BmlbClient::ModifyL4BackendPortCallable(const ModifyL4BackendPortRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyL4BackendPortOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyL4BackendPort(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyL4BackendPortOutcome>>();
+    ModifyL4BackendPortAsync(
+    request,
+    [prom](
+        const BmlbClient*,
+        const ModifyL4BackendPortRequest&,
+        ModifyL4BackendPortOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BmlbClient::ModifyL4BackendProbePortOutcome BmlbClient::ModifyL4BackendProbePort(const ModifyL4BackendProbePortRequest &request)
@@ -1438,25 +1662,32 @@ BmlbClient::ModifyL4BackendProbePortOutcome BmlbClient::ModifyL4BackendProbePort
 
 void BmlbClient::ModifyL4BackendProbePortAsync(const ModifyL4BackendProbePortRequest& request, const ModifyL4BackendProbePortAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyL4BackendProbePort(request), context);
-    };
+    using Req = const ModifyL4BackendProbePortRequest&;
+    using Resp = ModifyL4BackendProbePortResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyL4BackendProbePort", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BmlbClient::ModifyL4BackendProbePortOutcomeCallable BmlbClient::ModifyL4BackendProbePortCallable(const ModifyL4BackendProbePortRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyL4BackendProbePortOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyL4BackendProbePort(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyL4BackendProbePortOutcome>>();
+    ModifyL4BackendProbePortAsync(
+    request,
+    [prom](
+        const BmlbClient*,
+        const ModifyL4BackendProbePortRequest&,
+        ModifyL4BackendProbePortOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BmlbClient::ModifyL4BackendWeightOutcome BmlbClient::ModifyL4BackendWeight(const ModifyL4BackendWeightRequest &request)
@@ -1481,25 +1712,32 @@ BmlbClient::ModifyL4BackendWeightOutcome BmlbClient::ModifyL4BackendWeight(const
 
 void BmlbClient::ModifyL4BackendWeightAsync(const ModifyL4BackendWeightRequest& request, const ModifyL4BackendWeightAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyL4BackendWeight(request), context);
-    };
+    using Req = const ModifyL4BackendWeightRequest&;
+    using Resp = ModifyL4BackendWeightResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyL4BackendWeight", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BmlbClient::ModifyL4BackendWeightOutcomeCallable BmlbClient::ModifyL4BackendWeightCallable(const ModifyL4BackendWeightRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyL4BackendWeightOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyL4BackendWeight(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyL4BackendWeightOutcome>>();
+    ModifyL4BackendWeightAsync(
+    request,
+    [prom](
+        const BmlbClient*,
+        const ModifyL4BackendWeightRequest&,
+        ModifyL4BackendWeightOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BmlbClient::ModifyL4ListenerOutcome BmlbClient::ModifyL4Listener(const ModifyL4ListenerRequest &request)
@@ -1524,25 +1762,32 @@ BmlbClient::ModifyL4ListenerOutcome BmlbClient::ModifyL4Listener(const ModifyL4L
 
 void BmlbClient::ModifyL4ListenerAsync(const ModifyL4ListenerRequest& request, const ModifyL4ListenerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyL4Listener(request), context);
-    };
+    using Req = const ModifyL4ListenerRequest&;
+    using Resp = ModifyL4ListenerResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyL4Listener", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BmlbClient::ModifyL4ListenerOutcomeCallable BmlbClient::ModifyL4ListenerCallable(const ModifyL4ListenerRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyL4ListenerOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyL4Listener(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyL4ListenerOutcome>>();
+    ModifyL4ListenerAsync(
+    request,
+    [prom](
+        const BmlbClient*,
+        const ModifyL4ListenerRequest&,
+        ModifyL4ListenerOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BmlbClient::ModifyL7BackendPortOutcome BmlbClient::ModifyL7BackendPort(const ModifyL7BackendPortRequest &request)
@@ -1567,25 +1812,32 @@ BmlbClient::ModifyL7BackendPortOutcome BmlbClient::ModifyL7BackendPort(const Mod
 
 void BmlbClient::ModifyL7BackendPortAsync(const ModifyL7BackendPortRequest& request, const ModifyL7BackendPortAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyL7BackendPort(request), context);
-    };
+    using Req = const ModifyL7BackendPortRequest&;
+    using Resp = ModifyL7BackendPortResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyL7BackendPort", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BmlbClient::ModifyL7BackendPortOutcomeCallable BmlbClient::ModifyL7BackendPortCallable(const ModifyL7BackendPortRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyL7BackendPortOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyL7BackendPort(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyL7BackendPortOutcome>>();
+    ModifyL7BackendPortAsync(
+    request,
+    [prom](
+        const BmlbClient*,
+        const ModifyL7BackendPortRequest&,
+        ModifyL7BackendPortOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BmlbClient::ModifyL7BackendWeightOutcome BmlbClient::ModifyL7BackendWeight(const ModifyL7BackendWeightRequest &request)
@@ -1610,25 +1862,32 @@ BmlbClient::ModifyL7BackendWeightOutcome BmlbClient::ModifyL7BackendWeight(const
 
 void BmlbClient::ModifyL7BackendWeightAsync(const ModifyL7BackendWeightRequest& request, const ModifyL7BackendWeightAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyL7BackendWeight(request), context);
-    };
+    using Req = const ModifyL7BackendWeightRequest&;
+    using Resp = ModifyL7BackendWeightResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyL7BackendWeight", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BmlbClient::ModifyL7BackendWeightOutcomeCallable BmlbClient::ModifyL7BackendWeightCallable(const ModifyL7BackendWeightRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyL7BackendWeightOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyL7BackendWeight(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyL7BackendWeightOutcome>>();
+    ModifyL7BackendWeightAsync(
+    request,
+    [prom](
+        const BmlbClient*,
+        const ModifyL7BackendWeightRequest&,
+        ModifyL7BackendWeightOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BmlbClient::ModifyL7ListenerOutcome BmlbClient::ModifyL7Listener(const ModifyL7ListenerRequest &request)
@@ -1653,25 +1912,32 @@ BmlbClient::ModifyL7ListenerOutcome BmlbClient::ModifyL7Listener(const ModifyL7L
 
 void BmlbClient::ModifyL7ListenerAsync(const ModifyL7ListenerRequest& request, const ModifyL7ListenerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyL7Listener(request), context);
-    };
+    using Req = const ModifyL7ListenerRequest&;
+    using Resp = ModifyL7ListenerResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyL7Listener", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BmlbClient::ModifyL7ListenerOutcomeCallable BmlbClient::ModifyL7ListenerCallable(const ModifyL7ListenerRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyL7ListenerOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyL7Listener(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyL7ListenerOutcome>>();
+    ModifyL7ListenerAsync(
+    request,
+    [prom](
+        const BmlbClient*,
+        const ModifyL7ListenerRequest&,
+        ModifyL7ListenerOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BmlbClient::ModifyL7LocationsOutcome BmlbClient::ModifyL7Locations(const ModifyL7LocationsRequest &request)
@@ -1696,25 +1962,32 @@ BmlbClient::ModifyL7LocationsOutcome BmlbClient::ModifyL7Locations(const ModifyL
 
 void BmlbClient::ModifyL7LocationsAsync(const ModifyL7LocationsRequest& request, const ModifyL7LocationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyL7Locations(request), context);
-    };
+    using Req = const ModifyL7LocationsRequest&;
+    using Resp = ModifyL7LocationsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyL7Locations", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BmlbClient::ModifyL7LocationsOutcomeCallable BmlbClient::ModifyL7LocationsCallable(const ModifyL7LocationsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyL7LocationsOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyL7Locations(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyL7LocationsOutcome>>();
+    ModifyL7LocationsAsync(
+    request,
+    [prom](
+        const BmlbClient*,
+        const ModifyL7LocationsRequest&,
+        ModifyL7LocationsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BmlbClient::ModifyLoadBalancerOutcome BmlbClient::ModifyLoadBalancer(const ModifyLoadBalancerRequest &request)
@@ -1739,25 +2012,32 @@ BmlbClient::ModifyLoadBalancerOutcome BmlbClient::ModifyLoadBalancer(const Modif
 
 void BmlbClient::ModifyLoadBalancerAsync(const ModifyLoadBalancerRequest& request, const ModifyLoadBalancerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyLoadBalancer(request), context);
-    };
+    using Req = const ModifyLoadBalancerRequest&;
+    using Resp = ModifyLoadBalancerResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyLoadBalancer", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BmlbClient::ModifyLoadBalancerOutcomeCallable BmlbClient::ModifyLoadBalancerCallable(const ModifyLoadBalancerRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyLoadBalancerOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyLoadBalancer(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyLoadBalancerOutcome>>();
+    ModifyLoadBalancerAsync(
+    request,
+    [prom](
+        const BmlbClient*,
+        const ModifyLoadBalancerRequest&,
+        ModifyLoadBalancerOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BmlbClient::ModifyLoadBalancerChargeModeOutcome BmlbClient::ModifyLoadBalancerChargeMode(const ModifyLoadBalancerChargeModeRequest &request)
@@ -1782,25 +2062,32 @@ BmlbClient::ModifyLoadBalancerChargeModeOutcome BmlbClient::ModifyLoadBalancerCh
 
 void BmlbClient::ModifyLoadBalancerChargeModeAsync(const ModifyLoadBalancerChargeModeRequest& request, const ModifyLoadBalancerChargeModeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyLoadBalancerChargeMode(request), context);
-    };
+    using Req = const ModifyLoadBalancerChargeModeRequest&;
+    using Resp = ModifyLoadBalancerChargeModeResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyLoadBalancerChargeMode", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BmlbClient::ModifyLoadBalancerChargeModeOutcomeCallable BmlbClient::ModifyLoadBalancerChargeModeCallable(const ModifyLoadBalancerChargeModeRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyLoadBalancerChargeModeOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyLoadBalancerChargeMode(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyLoadBalancerChargeModeOutcome>>();
+    ModifyLoadBalancerChargeModeAsync(
+    request,
+    [prom](
+        const BmlbClient*,
+        const ModifyLoadBalancerChargeModeRequest&,
+        ModifyLoadBalancerChargeModeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BmlbClient::ReplaceCertOutcome BmlbClient::ReplaceCert(const ReplaceCertRequest &request)
@@ -1825,25 +2112,32 @@ BmlbClient::ReplaceCertOutcome BmlbClient::ReplaceCert(const ReplaceCertRequest 
 
 void BmlbClient::ReplaceCertAsync(const ReplaceCertRequest& request, const ReplaceCertAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ReplaceCert(request), context);
-    };
+    using Req = const ReplaceCertRequest&;
+    using Resp = ReplaceCertResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ReplaceCert", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BmlbClient::ReplaceCertOutcomeCallable BmlbClient::ReplaceCertCallable(const ReplaceCertRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ReplaceCertOutcome()>>(
-        [this, request]()
-        {
-            return this->ReplaceCert(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ReplaceCertOutcome>>();
+    ReplaceCertAsync(
+    request,
+    [prom](
+        const BmlbClient*,
+        const ReplaceCertRequest&,
+        ReplaceCertOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BmlbClient::SetTrafficMirrorAliasOutcome BmlbClient::SetTrafficMirrorAlias(const SetTrafficMirrorAliasRequest &request)
@@ -1868,25 +2162,32 @@ BmlbClient::SetTrafficMirrorAliasOutcome BmlbClient::SetTrafficMirrorAlias(const
 
 void BmlbClient::SetTrafficMirrorAliasAsync(const SetTrafficMirrorAliasRequest& request, const SetTrafficMirrorAliasAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->SetTrafficMirrorAlias(request), context);
-    };
+    using Req = const SetTrafficMirrorAliasRequest&;
+    using Resp = SetTrafficMirrorAliasResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "SetTrafficMirrorAlias", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BmlbClient::SetTrafficMirrorAliasOutcomeCallable BmlbClient::SetTrafficMirrorAliasCallable(const SetTrafficMirrorAliasRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<SetTrafficMirrorAliasOutcome()>>(
-        [this, request]()
-        {
-            return this->SetTrafficMirrorAlias(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<SetTrafficMirrorAliasOutcome>>();
+    SetTrafficMirrorAliasAsync(
+    request,
+    [prom](
+        const BmlbClient*,
+        const SetTrafficMirrorAliasRequest&,
+        SetTrafficMirrorAliasOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BmlbClient::SetTrafficMirrorHealthSwitchOutcome BmlbClient::SetTrafficMirrorHealthSwitch(const SetTrafficMirrorHealthSwitchRequest &request)
@@ -1911,25 +2212,32 @@ BmlbClient::SetTrafficMirrorHealthSwitchOutcome BmlbClient::SetTrafficMirrorHeal
 
 void BmlbClient::SetTrafficMirrorHealthSwitchAsync(const SetTrafficMirrorHealthSwitchRequest& request, const SetTrafficMirrorHealthSwitchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->SetTrafficMirrorHealthSwitch(request), context);
-    };
+    using Req = const SetTrafficMirrorHealthSwitchRequest&;
+    using Resp = SetTrafficMirrorHealthSwitchResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "SetTrafficMirrorHealthSwitch", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BmlbClient::SetTrafficMirrorHealthSwitchOutcomeCallable BmlbClient::SetTrafficMirrorHealthSwitchCallable(const SetTrafficMirrorHealthSwitchRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<SetTrafficMirrorHealthSwitchOutcome()>>(
-        [this, request]()
-        {
-            return this->SetTrafficMirrorHealthSwitch(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<SetTrafficMirrorHealthSwitchOutcome>>();
+    SetTrafficMirrorHealthSwitchAsync(
+    request,
+    [prom](
+        const BmlbClient*,
+        const SetTrafficMirrorHealthSwitchRequest&,
+        SetTrafficMirrorHealthSwitchOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BmlbClient::UnbindL4BackendsOutcome BmlbClient::UnbindL4Backends(const UnbindL4BackendsRequest &request)
@@ -1954,25 +2262,32 @@ BmlbClient::UnbindL4BackendsOutcome BmlbClient::UnbindL4Backends(const UnbindL4B
 
 void BmlbClient::UnbindL4BackendsAsync(const UnbindL4BackendsRequest& request, const UnbindL4BackendsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UnbindL4Backends(request), context);
-    };
+    using Req = const UnbindL4BackendsRequest&;
+    using Resp = UnbindL4BackendsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UnbindL4Backends", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BmlbClient::UnbindL4BackendsOutcomeCallable BmlbClient::UnbindL4BackendsCallable(const UnbindL4BackendsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UnbindL4BackendsOutcome()>>(
-        [this, request]()
-        {
-            return this->UnbindL4Backends(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UnbindL4BackendsOutcome>>();
+    UnbindL4BackendsAsync(
+    request,
+    [prom](
+        const BmlbClient*,
+        const UnbindL4BackendsRequest&,
+        UnbindL4BackendsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BmlbClient::UnbindL7BackendsOutcome BmlbClient::UnbindL7Backends(const UnbindL7BackendsRequest &request)
@@ -1997,25 +2312,32 @@ BmlbClient::UnbindL7BackendsOutcome BmlbClient::UnbindL7Backends(const UnbindL7B
 
 void BmlbClient::UnbindL7BackendsAsync(const UnbindL7BackendsRequest& request, const UnbindL7BackendsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UnbindL7Backends(request), context);
-    };
+    using Req = const UnbindL7BackendsRequest&;
+    using Resp = UnbindL7BackendsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UnbindL7Backends", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BmlbClient::UnbindL7BackendsOutcomeCallable BmlbClient::UnbindL7BackendsCallable(const UnbindL7BackendsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UnbindL7BackendsOutcome()>>(
-        [this, request]()
-        {
-            return this->UnbindL7Backends(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UnbindL7BackendsOutcome>>();
+    UnbindL7BackendsAsync(
+    request,
+    [prom](
+        const BmlbClient*,
+        const UnbindL7BackendsRequest&,
+        UnbindL7BackendsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BmlbClient::UnbindTrafficMirrorListenersOutcome BmlbClient::UnbindTrafficMirrorListeners(const UnbindTrafficMirrorListenersRequest &request)
@@ -2040,25 +2362,32 @@ BmlbClient::UnbindTrafficMirrorListenersOutcome BmlbClient::UnbindTrafficMirrorL
 
 void BmlbClient::UnbindTrafficMirrorListenersAsync(const UnbindTrafficMirrorListenersRequest& request, const UnbindTrafficMirrorListenersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UnbindTrafficMirrorListeners(request), context);
-    };
+    using Req = const UnbindTrafficMirrorListenersRequest&;
+    using Resp = UnbindTrafficMirrorListenersResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UnbindTrafficMirrorListeners", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BmlbClient::UnbindTrafficMirrorListenersOutcomeCallable BmlbClient::UnbindTrafficMirrorListenersCallable(const UnbindTrafficMirrorListenersRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UnbindTrafficMirrorListenersOutcome()>>(
-        [this, request]()
-        {
-            return this->UnbindTrafficMirrorListeners(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UnbindTrafficMirrorListenersOutcome>>();
+    UnbindTrafficMirrorListenersAsync(
+    request,
+    [prom](
+        const BmlbClient*,
+        const UnbindTrafficMirrorListenersRequest&,
+        UnbindTrafficMirrorListenersOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BmlbClient::UnbindTrafficMirrorReceiversOutcome BmlbClient::UnbindTrafficMirrorReceivers(const UnbindTrafficMirrorReceiversRequest &request)
@@ -2083,25 +2412,32 @@ BmlbClient::UnbindTrafficMirrorReceiversOutcome BmlbClient::UnbindTrafficMirrorR
 
 void BmlbClient::UnbindTrafficMirrorReceiversAsync(const UnbindTrafficMirrorReceiversRequest& request, const UnbindTrafficMirrorReceiversAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UnbindTrafficMirrorReceivers(request), context);
-    };
+    using Req = const UnbindTrafficMirrorReceiversRequest&;
+    using Resp = UnbindTrafficMirrorReceiversResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UnbindTrafficMirrorReceivers", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BmlbClient::UnbindTrafficMirrorReceiversOutcomeCallable BmlbClient::UnbindTrafficMirrorReceiversCallable(const UnbindTrafficMirrorReceiversRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UnbindTrafficMirrorReceiversOutcome()>>(
-        [this, request]()
-        {
-            return this->UnbindTrafficMirrorReceivers(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UnbindTrafficMirrorReceiversOutcome>>();
+    UnbindTrafficMirrorReceiversAsync(
+    request,
+    [prom](
+        const BmlbClient*,
+        const UnbindTrafficMirrorReceiversRequest&,
+        UnbindTrafficMirrorReceiversOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BmlbClient::UploadCertOutcome BmlbClient::UploadCert(const UploadCertRequest &request)
@@ -2126,24 +2462,31 @@ BmlbClient::UploadCertOutcome BmlbClient::UploadCert(const UploadCertRequest &re
 
 void BmlbClient::UploadCertAsync(const UploadCertRequest& request, const UploadCertAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UploadCert(request), context);
-    };
+    using Req = const UploadCertRequest&;
+    using Resp = UploadCertResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UploadCert", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BmlbClient::UploadCertOutcomeCallable BmlbClient::UploadCertCallable(const UploadCertRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UploadCertOutcome()>>(
-        [this, request]()
-        {
-            return this->UploadCert(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UploadCertOutcome>>();
+    UploadCertAsync(
+    request,
+    [prom](
+        const BmlbClient*,
+        const UploadCertRequest&,
+        UploadCertOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 

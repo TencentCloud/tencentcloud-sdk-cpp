@@ -62,24 +62,31 @@ HcmClient::EvaluationOutcome HcmClient::Evaluation(const EvaluationRequest &requ
 
 void HcmClient::EvaluationAsync(const EvaluationRequest& request, const EvaluationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->Evaluation(request), context);
-    };
+    using Req = const EvaluationRequest&;
+    using Resp = EvaluationResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "Evaluation", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 HcmClient::EvaluationOutcomeCallable HcmClient::EvaluationCallable(const EvaluationRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<EvaluationOutcome()>>(
-        [this, request]()
-        {
-            return this->Evaluation(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<EvaluationOutcome>>();
+    EvaluationAsync(
+    request,
+    [prom](
+        const HcmClient*,
+        const EvaluationRequest&,
+        EvaluationOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 

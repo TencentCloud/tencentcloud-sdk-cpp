@@ -62,25 +62,32 @@ HasimClient::CreateRuleOutcome HasimClient::CreateRule(const CreateRuleRequest &
 
 void HasimClient::CreateRuleAsync(const CreateRuleRequest& request, const CreateRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateRule(request), context);
-    };
+    using Req = const CreateRuleRequest&;
+    using Resp = CreateRuleResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateRule", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 HasimClient::CreateRuleOutcomeCallable HasimClient::CreateRuleCallable(const CreateRuleRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateRuleOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateRule(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateRuleOutcome>>();
+    CreateRuleAsync(
+    request,
+    [prom](
+        const HasimClient*,
+        const CreateRuleRequest&,
+        CreateRuleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 HasimClient::CreateTacticOutcome HasimClient::CreateTactic(const CreateTacticRequest &request)
@@ -105,25 +112,32 @@ HasimClient::CreateTacticOutcome HasimClient::CreateTactic(const CreateTacticReq
 
 void HasimClient::CreateTacticAsync(const CreateTacticRequest& request, const CreateTacticAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateTactic(request), context);
-    };
+    using Req = const CreateTacticRequest&;
+    using Resp = CreateTacticResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateTactic", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 HasimClient::CreateTacticOutcomeCallable HasimClient::CreateTacticCallable(const CreateTacticRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateTacticOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateTactic(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateTacticOutcome>>();
+    CreateTacticAsync(
+    request,
+    [prom](
+        const HasimClient*,
+        const CreateTacticRequest&,
+        CreateTacticOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 HasimClient::CreateTagOutcome HasimClient::CreateTag(const CreateTagRequest &request)
@@ -148,25 +162,32 @@ HasimClient::CreateTagOutcome HasimClient::CreateTag(const CreateTagRequest &req
 
 void HasimClient::CreateTagAsync(const CreateTagRequest& request, const CreateTagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateTag(request), context);
-    };
+    using Req = const CreateTagRequest&;
+    using Resp = CreateTagResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateTag", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 HasimClient::CreateTagOutcomeCallable HasimClient::CreateTagCallable(const CreateTagRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateTagOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateTag(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateTagOutcome>>();
+    CreateTagAsync(
+    request,
+    [prom](
+        const HasimClient*,
+        const CreateTagRequest&,
+        CreateTagOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 HasimClient::DeleteRuleOutcome HasimClient::DeleteRule(const DeleteRuleRequest &request)
@@ -191,25 +212,32 @@ HasimClient::DeleteRuleOutcome HasimClient::DeleteRule(const DeleteRuleRequest &
 
 void HasimClient::DeleteRuleAsync(const DeleteRuleRequest& request, const DeleteRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteRule(request), context);
-    };
+    using Req = const DeleteRuleRequest&;
+    using Resp = DeleteRuleResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteRule", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 HasimClient::DeleteRuleOutcomeCallable HasimClient::DeleteRuleCallable(const DeleteRuleRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteRuleOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteRule(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteRuleOutcome>>();
+    DeleteRuleAsync(
+    request,
+    [prom](
+        const HasimClient*,
+        const DeleteRuleRequest&,
+        DeleteRuleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 HasimClient::DeleteTacticOutcome HasimClient::DeleteTactic(const DeleteTacticRequest &request)
@@ -234,25 +262,32 @@ HasimClient::DeleteTacticOutcome HasimClient::DeleteTactic(const DeleteTacticReq
 
 void HasimClient::DeleteTacticAsync(const DeleteTacticRequest& request, const DeleteTacticAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteTactic(request), context);
-    };
+    using Req = const DeleteTacticRequest&;
+    using Resp = DeleteTacticResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteTactic", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 HasimClient::DeleteTacticOutcomeCallable HasimClient::DeleteTacticCallable(const DeleteTacticRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteTacticOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteTactic(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteTacticOutcome>>();
+    DeleteTacticAsync(
+    request,
+    [prom](
+        const HasimClient*,
+        const DeleteTacticRequest&,
+        DeleteTacticOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 HasimClient::DeleteTagOutcome HasimClient::DeleteTag(const DeleteTagRequest &request)
@@ -277,25 +312,32 @@ HasimClient::DeleteTagOutcome HasimClient::DeleteTag(const DeleteTagRequest &req
 
 void HasimClient::DeleteTagAsync(const DeleteTagRequest& request, const DeleteTagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteTag(request), context);
-    };
+    using Req = const DeleteTagRequest&;
+    using Resp = DeleteTagResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteTag", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 HasimClient::DeleteTagOutcomeCallable HasimClient::DeleteTagCallable(const DeleteTagRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteTagOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteTag(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteTagOutcome>>();
+    DeleteTagAsync(
+    request,
+    [prom](
+        const HasimClient*,
+        const DeleteTagRequest&,
+        DeleteTagOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 HasimClient::DescribeLinkOutcome HasimClient::DescribeLink(const DescribeLinkRequest &request)
@@ -320,25 +362,32 @@ HasimClient::DescribeLinkOutcome HasimClient::DescribeLink(const DescribeLinkReq
 
 void HasimClient::DescribeLinkAsync(const DescribeLinkRequest& request, const DescribeLinkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeLink(request), context);
-    };
+    using Req = const DescribeLinkRequest&;
+    using Resp = DescribeLinkResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeLink", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 HasimClient::DescribeLinkOutcomeCallable HasimClient::DescribeLinkCallable(const DescribeLinkRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeLinkOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeLink(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeLinkOutcome>>();
+    DescribeLinkAsync(
+    request,
+    [prom](
+        const HasimClient*,
+        const DescribeLinkRequest&,
+        DescribeLinkOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 HasimClient::DescribeLinksOutcome HasimClient::DescribeLinks(const DescribeLinksRequest &request)
@@ -363,25 +412,32 @@ HasimClient::DescribeLinksOutcome HasimClient::DescribeLinks(const DescribeLinks
 
 void HasimClient::DescribeLinksAsync(const DescribeLinksRequest& request, const DescribeLinksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeLinks(request), context);
-    };
+    using Req = const DescribeLinksRequest&;
+    using Resp = DescribeLinksResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeLinks", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 HasimClient::DescribeLinksOutcomeCallable HasimClient::DescribeLinksCallable(const DescribeLinksRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeLinksOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeLinks(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeLinksOutcome>>();
+    DescribeLinksAsync(
+    request,
+    [prom](
+        const HasimClient*,
+        const DescribeLinksRequest&,
+        DescribeLinksOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 HasimClient::DescribeOrdersOutcome HasimClient::DescribeOrders(const DescribeOrdersRequest &request)
@@ -406,25 +462,32 @@ HasimClient::DescribeOrdersOutcome HasimClient::DescribeOrders(const DescribeOrd
 
 void HasimClient::DescribeOrdersAsync(const DescribeOrdersRequest& request, const DescribeOrdersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeOrders(request), context);
-    };
+    using Req = const DescribeOrdersRequest&;
+    using Resp = DescribeOrdersResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeOrders", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 HasimClient::DescribeOrdersOutcomeCallable HasimClient::DescribeOrdersCallable(const DescribeOrdersRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeOrdersOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeOrders(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeOrdersOutcome>>();
+    DescribeOrdersAsync(
+    request,
+    [prom](
+        const HasimClient*,
+        const DescribeOrdersRequest&,
+        DescribeOrdersOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 HasimClient::DescribeRuleOutcome HasimClient::DescribeRule(const DescribeRuleRequest &request)
@@ -449,25 +512,32 @@ HasimClient::DescribeRuleOutcome HasimClient::DescribeRule(const DescribeRuleReq
 
 void HasimClient::DescribeRuleAsync(const DescribeRuleRequest& request, const DescribeRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeRule(request), context);
-    };
+    using Req = const DescribeRuleRequest&;
+    using Resp = DescribeRuleResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeRule", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 HasimClient::DescribeRuleOutcomeCallable HasimClient::DescribeRuleCallable(const DescribeRuleRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeRuleOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeRule(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeRuleOutcome>>();
+    DescribeRuleAsync(
+    request,
+    [prom](
+        const HasimClient*,
+        const DescribeRuleRequest&,
+        DescribeRuleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 HasimClient::DescribeRulesOutcome HasimClient::DescribeRules(const DescribeRulesRequest &request)
@@ -492,25 +562,32 @@ HasimClient::DescribeRulesOutcome HasimClient::DescribeRules(const DescribeRules
 
 void HasimClient::DescribeRulesAsync(const DescribeRulesRequest& request, const DescribeRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeRules(request), context);
-    };
+    using Req = const DescribeRulesRequest&;
+    using Resp = DescribeRulesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeRules", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 HasimClient::DescribeRulesOutcomeCallable HasimClient::DescribeRulesCallable(const DescribeRulesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeRulesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeRules(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeRulesOutcome>>();
+    DescribeRulesAsync(
+    request,
+    [prom](
+        const HasimClient*,
+        const DescribeRulesRequest&,
+        DescribeRulesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 HasimClient::DescribeTacticOutcome HasimClient::DescribeTactic(const DescribeTacticRequest &request)
@@ -535,25 +612,32 @@ HasimClient::DescribeTacticOutcome HasimClient::DescribeTactic(const DescribeTac
 
 void HasimClient::DescribeTacticAsync(const DescribeTacticRequest& request, const DescribeTacticAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeTactic(request), context);
-    };
+    using Req = const DescribeTacticRequest&;
+    using Resp = DescribeTacticResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeTactic", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 HasimClient::DescribeTacticOutcomeCallable HasimClient::DescribeTacticCallable(const DescribeTacticRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeTacticOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeTactic(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeTacticOutcome>>();
+    DescribeTacticAsync(
+    request,
+    [prom](
+        const HasimClient*,
+        const DescribeTacticRequest&,
+        DescribeTacticOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 HasimClient::DescribeTacticsOutcome HasimClient::DescribeTactics(const DescribeTacticsRequest &request)
@@ -578,25 +662,32 @@ HasimClient::DescribeTacticsOutcome HasimClient::DescribeTactics(const DescribeT
 
 void HasimClient::DescribeTacticsAsync(const DescribeTacticsRequest& request, const DescribeTacticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeTactics(request), context);
-    };
+    using Req = const DescribeTacticsRequest&;
+    using Resp = DescribeTacticsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeTactics", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 HasimClient::DescribeTacticsOutcomeCallable HasimClient::DescribeTacticsCallable(const DescribeTacticsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeTacticsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeTactics(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeTacticsOutcome>>();
+    DescribeTacticsAsync(
+    request,
+    [prom](
+        const HasimClient*,
+        const DescribeTacticsRequest&,
+        DescribeTacticsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 HasimClient::DescribeTagsOutcome HasimClient::DescribeTags(const DescribeTagsRequest &request)
@@ -621,25 +712,32 @@ HasimClient::DescribeTagsOutcome HasimClient::DescribeTags(const DescribeTagsReq
 
 void HasimClient::DescribeTagsAsync(const DescribeTagsRequest& request, const DescribeTagsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeTags(request), context);
-    };
+    using Req = const DescribeTagsRequest&;
+    using Resp = DescribeTagsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeTags", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 HasimClient::DescribeTagsOutcomeCallable HasimClient::DescribeTagsCallable(const DescribeTagsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeTagsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeTags(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeTagsOutcome>>();
+    DescribeTagsAsync(
+    request,
+    [prom](
+        const HasimClient*,
+        const DescribeTagsRequest&,
+        DescribeTagsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 HasimClient::ModifyLinkAdvancedLogOutcome HasimClient::ModifyLinkAdvancedLog(const ModifyLinkAdvancedLogRequest &request)
@@ -664,25 +762,32 @@ HasimClient::ModifyLinkAdvancedLogOutcome HasimClient::ModifyLinkAdvancedLog(con
 
 void HasimClient::ModifyLinkAdvancedLogAsync(const ModifyLinkAdvancedLogRequest& request, const ModifyLinkAdvancedLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyLinkAdvancedLog(request), context);
-    };
+    using Req = const ModifyLinkAdvancedLogRequest&;
+    using Resp = ModifyLinkAdvancedLogResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyLinkAdvancedLog", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 HasimClient::ModifyLinkAdvancedLogOutcomeCallable HasimClient::ModifyLinkAdvancedLogCallable(const ModifyLinkAdvancedLogRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyLinkAdvancedLogOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyLinkAdvancedLog(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyLinkAdvancedLogOutcome>>();
+    ModifyLinkAdvancedLogAsync(
+    request,
+    [prom](
+        const HasimClient*,
+        const ModifyLinkAdvancedLogRequest&,
+        ModifyLinkAdvancedLogOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 HasimClient::ModifyLinkTacticOutcome HasimClient::ModifyLinkTactic(const ModifyLinkTacticRequest &request)
@@ -707,25 +812,32 @@ HasimClient::ModifyLinkTacticOutcome HasimClient::ModifyLinkTactic(const ModifyL
 
 void HasimClient::ModifyLinkTacticAsync(const ModifyLinkTacticRequest& request, const ModifyLinkTacticAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyLinkTactic(request), context);
-    };
+    using Req = const ModifyLinkTacticRequest&;
+    using Resp = ModifyLinkTacticResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyLinkTactic", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 HasimClient::ModifyLinkTacticOutcomeCallable HasimClient::ModifyLinkTacticCallable(const ModifyLinkTacticRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyLinkTacticOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyLinkTactic(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyLinkTacticOutcome>>();
+    ModifyLinkTacticAsync(
+    request,
+    [prom](
+        const HasimClient*,
+        const ModifyLinkTacticRequest&,
+        ModifyLinkTacticOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 HasimClient::ModifyLinkTeleOutcome HasimClient::ModifyLinkTele(const ModifyLinkTeleRequest &request)
@@ -750,25 +862,32 @@ HasimClient::ModifyLinkTeleOutcome HasimClient::ModifyLinkTele(const ModifyLinkT
 
 void HasimClient::ModifyLinkTeleAsync(const ModifyLinkTeleRequest& request, const ModifyLinkTeleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyLinkTele(request), context);
-    };
+    using Req = const ModifyLinkTeleRequest&;
+    using Resp = ModifyLinkTeleResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyLinkTele", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 HasimClient::ModifyLinkTeleOutcomeCallable HasimClient::ModifyLinkTeleCallable(const ModifyLinkTeleRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyLinkTeleOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyLinkTele(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyLinkTeleOutcome>>();
+    ModifyLinkTeleAsync(
+    request,
+    [prom](
+        const HasimClient*,
+        const ModifyLinkTeleRequest&,
+        ModifyLinkTeleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 HasimClient::ModifyRuleOutcome HasimClient::ModifyRule(const ModifyRuleRequest &request)
@@ -793,25 +912,32 @@ HasimClient::ModifyRuleOutcome HasimClient::ModifyRule(const ModifyRuleRequest &
 
 void HasimClient::ModifyRuleAsync(const ModifyRuleRequest& request, const ModifyRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyRule(request), context);
-    };
+    using Req = const ModifyRuleRequest&;
+    using Resp = ModifyRuleResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyRule", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 HasimClient::ModifyRuleOutcomeCallable HasimClient::ModifyRuleCallable(const ModifyRuleRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyRuleOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyRule(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyRuleOutcome>>();
+    ModifyRuleAsync(
+    request,
+    [prom](
+        const HasimClient*,
+        const ModifyRuleRequest&,
+        ModifyRuleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 HasimClient::ModifyRuleStatusOutcome HasimClient::ModifyRuleStatus(const ModifyRuleStatusRequest &request)
@@ -836,25 +962,32 @@ HasimClient::ModifyRuleStatusOutcome HasimClient::ModifyRuleStatus(const ModifyR
 
 void HasimClient::ModifyRuleStatusAsync(const ModifyRuleStatusRequest& request, const ModifyRuleStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyRuleStatus(request), context);
-    };
+    using Req = const ModifyRuleStatusRequest&;
+    using Resp = ModifyRuleStatusResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyRuleStatus", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 HasimClient::ModifyRuleStatusOutcomeCallable HasimClient::ModifyRuleStatusCallable(const ModifyRuleStatusRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyRuleStatusOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyRuleStatus(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyRuleStatusOutcome>>();
+    ModifyRuleStatusAsync(
+    request,
+    [prom](
+        const HasimClient*,
+        const ModifyRuleStatusRequest&,
+        ModifyRuleStatusOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 HasimClient::ModifyTacticOutcome HasimClient::ModifyTactic(const ModifyTacticRequest &request)
@@ -879,25 +1012,32 @@ HasimClient::ModifyTacticOutcome HasimClient::ModifyTactic(const ModifyTacticReq
 
 void HasimClient::ModifyTacticAsync(const ModifyTacticRequest& request, const ModifyTacticAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyTactic(request), context);
-    };
+    using Req = const ModifyTacticRequest&;
+    using Resp = ModifyTacticResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyTactic", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 HasimClient::ModifyTacticOutcomeCallable HasimClient::ModifyTacticCallable(const ModifyTacticRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyTacticOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyTactic(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyTacticOutcome>>();
+    ModifyTacticAsync(
+    request,
+    [prom](
+        const HasimClient*,
+        const ModifyTacticRequest&,
+        ModifyTacticOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 HasimClient::ModifyTagOutcome HasimClient::ModifyTag(const ModifyTagRequest &request)
@@ -922,25 +1062,32 @@ HasimClient::ModifyTagOutcome HasimClient::ModifyTag(const ModifyTagRequest &req
 
 void HasimClient::ModifyTagAsync(const ModifyTagRequest& request, const ModifyTagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyTag(request), context);
-    };
+    using Req = const ModifyTagRequest&;
+    using Resp = ModifyTagResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyTag", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 HasimClient::ModifyTagOutcomeCallable HasimClient::ModifyTagCallable(const ModifyTagRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyTagOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyTag(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyTagOutcome>>();
+    ModifyTagAsync(
+    request,
+    [prom](
+        const HasimClient*,
+        const ModifyTagRequest&,
+        ModifyTagOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 HasimClient::RenewLinkInfoOutcome HasimClient::RenewLinkInfo(const RenewLinkInfoRequest &request)
@@ -965,24 +1112,31 @@ HasimClient::RenewLinkInfoOutcome HasimClient::RenewLinkInfo(const RenewLinkInfo
 
 void HasimClient::RenewLinkInfoAsync(const RenewLinkInfoRequest& request, const RenewLinkInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->RenewLinkInfo(request), context);
-    };
+    using Req = const RenewLinkInfoRequest&;
+    using Resp = RenewLinkInfoResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "RenewLinkInfo", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 HasimClient::RenewLinkInfoOutcomeCallable HasimClient::RenewLinkInfoCallable(const RenewLinkInfoRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<RenewLinkInfoOutcome()>>(
-        [this, request]()
-        {
-            return this->RenewLinkInfo(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<RenewLinkInfoOutcome>>();
+    RenewLinkInfoAsync(
+    request,
+    [prom](
+        const HasimClient*,
+        const RenewLinkInfoRequest&,
+        RenewLinkInfoOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 

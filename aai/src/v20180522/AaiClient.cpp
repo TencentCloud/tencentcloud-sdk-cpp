@@ -62,25 +62,32 @@ AaiClient::ChatOutcome AaiClient::Chat(const ChatRequest &request)
 
 void AaiClient::ChatAsync(const ChatRequest& request, const ChatAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->Chat(request), context);
-    };
+    using Req = const ChatRequest&;
+    using Resp = ChatResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "Chat", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 AaiClient::ChatOutcomeCallable AaiClient::ChatCallable(const ChatRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ChatOutcome()>>(
-        [this, request]()
-        {
-            return this->Chat(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ChatOutcome>>();
+    ChatAsync(
+    request,
+    [prom](
+        const AaiClient*,
+        const ChatRequest&,
+        ChatOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 AaiClient::SentenceRecognitionOutcome AaiClient::SentenceRecognition(const SentenceRecognitionRequest &request)
@@ -105,25 +112,32 @@ AaiClient::SentenceRecognitionOutcome AaiClient::SentenceRecognition(const Sente
 
 void AaiClient::SentenceRecognitionAsync(const SentenceRecognitionRequest& request, const SentenceRecognitionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->SentenceRecognition(request), context);
-    };
+    using Req = const SentenceRecognitionRequest&;
+    using Resp = SentenceRecognitionResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "SentenceRecognition", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 AaiClient::SentenceRecognitionOutcomeCallable AaiClient::SentenceRecognitionCallable(const SentenceRecognitionRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<SentenceRecognitionOutcome()>>(
-        [this, request]()
-        {
-            return this->SentenceRecognition(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<SentenceRecognitionOutcome>>();
+    SentenceRecognitionAsync(
+    request,
+    [prom](
+        const AaiClient*,
+        const SentenceRecognitionRequest&,
+        SentenceRecognitionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 AaiClient::SimultaneousInterpretingOutcome AaiClient::SimultaneousInterpreting(const SimultaneousInterpretingRequest &request)
@@ -148,25 +162,32 @@ AaiClient::SimultaneousInterpretingOutcome AaiClient::SimultaneousInterpreting(c
 
 void AaiClient::SimultaneousInterpretingAsync(const SimultaneousInterpretingRequest& request, const SimultaneousInterpretingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->SimultaneousInterpreting(request), context);
-    };
+    using Req = const SimultaneousInterpretingRequest&;
+    using Resp = SimultaneousInterpretingResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "SimultaneousInterpreting", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 AaiClient::SimultaneousInterpretingOutcomeCallable AaiClient::SimultaneousInterpretingCallable(const SimultaneousInterpretingRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<SimultaneousInterpretingOutcome()>>(
-        [this, request]()
-        {
-            return this->SimultaneousInterpreting(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<SimultaneousInterpretingOutcome>>();
+    SimultaneousInterpretingAsync(
+    request,
+    [prom](
+        const AaiClient*,
+        const SimultaneousInterpretingRequest&,
+        SimultaneousInterpretingOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 AaiClient::TextToVoiceOutcome AaiClient::TextToVoice(const TextToVoiceRequest &request)
@@ -191,24 +212,31 @@ AaiClient::TextToVoiceOutcome AaiClient::TextToVoice(const TextToVoiceRequest &r
 
 void AaiClient::TextToVoiceAsync(const TextToVoiceRequest& request, const TextToVoiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->TextToVoice(request), context);
-    };
+    using Req = const TextToVoiceRequest&;
+    using Resp = TextToVoiceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "TextToVoice", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 AaiClient::TextToVoiceOutcomeCallable AaiClient::TextToVoiceCallable(const TextToVoiceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<TextToVoiceOutcome()>>(
-        [this, request]()
-        {
-            return this->TextToVoice(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<TextToVoiceOutcome>>();
+    TextToVoiceAsync(
+    request,
+    [prom](
+        const AaiClient*,
+        const TextToVoiceRequest&,
+        TextToVoiceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 

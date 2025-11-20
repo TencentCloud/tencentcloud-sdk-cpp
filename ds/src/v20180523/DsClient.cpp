@@ -62,25 +62,32 @@ DsClient::CheckVcodeOutcome DsClient::CheckVcode(const CheckVcodeRequest &reques
 
 void DsClient::CheckVcodeAsync(const CheckVcodeRequest& request, const CheckVcodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CheckVcode(request), context);
-    };
+    using Req = const CheckVcodeRequest&;
+    using Resp = CheckVcodeResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CheckVcode", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DsClient::CheckVcodeOutcomeCallable DsClient::CheckVcodeCallable(const CheckVcodeRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CheckVcodeOutcome()>>(
-        [this, request]()
-        {
-            return this->CheckVcode(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CheckVcodeOutcome>>();
+    CheckVcodeAsync(
+    request,
+    [prom](
+        const DsClient*,
+        const CheckVcodeRequest&,
+        CheckVcodeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DsClient::CreateContractByUploadOutcome DsClient::CreateContractByUpload(const CreateContractByUploadRequest &request)
@@ -105,25 +112,32 @@ DsClient::CreateContractByUploadOutcome DsClient::CreateContractByUpload(const C
 
 void DsClient::CreateContractByUploadAsync(const CreateContractByUploadRequest& request, const CreateContractByUploadAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateContractByUpload(request), context);
-    };
+    using Req = const CreateContractByUploadRequest&;
+    using Resp = CreateContractByUploadResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateContractByUpload", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DsClient::CreateContractByUploadOutcomeCallable DsClient::CreateContractByUploadCallable(const CreateContractByUploadRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateContractByUploadOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateContractByUpload(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateContractByUploadOutcome>>();
+    CreateContractByUploadAsync(
+    request,
+    [prom](
+        const DsClient*,
+        const CreateContractByUploadRequest&,
+        CreateContractByUploadOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DsClient::CreateEnterpriseAccountOutcome DsClient::CreateEnterpriseAccount(const CreateEnterpriseAccountRequest &request)
@@ -148,25 +162,32 @@ DsClient::CreateEnterpriseAccountOutcome DsClient::CreateEnterpriseAccount(const
 
 void DsClient::CreateEnterpriseAccountAsync(const CreateEnterpriseAccountRequest& request, const CreateEnterpriseAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateEnterpriseAccount(request), context);
-    };
+    using Req = const CreateEnterpriseAccountRequest&;
+    using Resp = CreateEnterpriseAccountResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateEnterpriseAccount", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DsClient::CreateEnterpriseAccountOutcomeCallable DsClient::CreateEnterpriseAccountCallable(const CreateEnterpriseAccountRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateEnterpriseAccountOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateEnterpriseAccount(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateEnterpriseAccountOutcome>>();
+    CreateEnterpriseAccountAsync(
+    request,
+    [prom](
+        const DsClient*,
+        const CreateEnterpriseAccountRequest&,
+        CreateEnterpriseAccountOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DsClient::CreatePersonalAccountOutcome DsClient::CreatePersonalAccount(const CreatePersonalAccountRequest &request)
@@ -191,25 +212,32 @@ DsClient::CreatePersonalAccountOutcome DsClient::CreatePersonalAccount(const Cre
 
 void DsClient::CreatePersonalAccountAsync(const CreatePersonalAccountRequest& request, const CreatePersonalAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreatePersonalAccount(request), context);
-    };
+    using Req = const CreatePersonalAccountRequest&;
+    using Resp = CreatePersonalAccountResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreatePersonalAccount", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DsClient::CreatePersonalAccountOutcomeCallable DsClient::CreatePersonalAccountCallable(const CreatePersonalAccountRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreatePersonalAccountOutcome()>>(
-        [this, request]()
-        {
-            return this->CreatePersonalAccount(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreatePersonalAccountOutcome>>();
+    CreatePersonalAccountAsync(
+    request,
+    [prom](
+        const DsClient*,
+        const CreatePersonalAccountRequest&,
+        CreatePersonalAccountOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DsClient::CreateSealOutcome DsClient::CreateSeal(const CreateSealRequest &request)
@@ -234,25 +262,32 @@ DsClient::CreateSealOutcome DsClient::CreateSeal(const CreateSealRequest &reques
 
 void DsClient::CreateSealAsync(const CreateSealRequest& request, const CreateSealAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateSeal(request), context);
-    };
+    using Req = const CreateSealRequest&;
+    using Resp = CreateSealResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateSeal", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DsClient::CreateSealOutcomeCallable DsClient::CreateSealCallable(const CreateSealRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateSealOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateSeal(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateSealOutcome>>();
+    CreateSealAsync(
+    request,
+    [prom](
+        const DsClient*,
+        const CreateSealRequest&,
+        CreateSealOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DsClient::DeleteAccountOutcome DsClient::DeleteAccount(const DeleteAccountRequest &request)
@@ -277,25 +312,32 @@ DsClient::DeleteAccountOutcome DsClient::DeleteAccount(const DeleteAccountReques
 
 void DsClient::DeleteAccountAsync(const DeleteAccountRequest& request, const DeleteAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteAccount(request), context);
-    };
+    using Req = const DeleteAccountRequest&;
+    using Resp = DeleteAccountResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteAccount", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DsClient::DeleteAccountOutcomeCallable DsClient::DeleteAccountCallable(const DeleteAccountRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteAccountOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteAccount(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteAccountOutcome>>();
+    DeleteAccountAsync(
+    request,
+    [prom](
+        const DsClient*,
+        const DeleteAccountRequest&,
+        DeleteAccountOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DsClient::DeleteSealOutcome DsClient::DeleteSeal(const DeleteSealRequest &request)
@@ -320,25 +362,32 @@ DsClient::DeleteSealOutcome DsClient::DeleteSeal(const DeleteSealRequest &reques
 
 void DsClient::DeleteSealAsync(const DeleteSealRequest& request, const DeleteSealAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteSeal(request), context);
-    };
+    using Req = const DeleteSealRequest&;
+    using Resp = DeleteSealResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteSeal", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DsClient::DeleteSealOutcomeCallable DsClient::DeleteSealCallable(const DeleteSealRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteSealOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteSeal(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteSealOutcome>>();
+    DeleteSealAsync(
+    request,
+    [prom](
+        const DsClient*,
+        const DeleteSealRequest&,
+        DeleteSealOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DsClient::DescribeTaskStatusOutcome DsClient::DescribeTaskStatus(const DescribeTaskStatusRequest &request)
@@ -363,25 +412,32 @@ DsClient::DescribeTaskStatusOutcome DsClient::DescribeTaskStatus(const DescribeT
 
 void DsClient::DescribeTaskStatusAsync(const DescribeTaskStatusRequest& request, const DescribeTaskStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeTaskStatus(request), context);
-    };
+    using Req = const DescribeTaskStatusRequest&;
+    using Resp = DescribeTaskStatusResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeTaskStatus", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DsClient::DescribeTaskStatusOutcomeCallable DsClient::DescribeTaskStatusCallable(const DescribeTaskStatusRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeTaskStatusOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeTaskStatus(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeTaskStatusOutcome>>();
+    DescribeTaskStatusAsync(
+    request,
+    [prom](
+        const DsClient*,
+        const DescribeTaskStatusRequest&,
+        DescribeTaskStatusOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DsClient::DownloadContractOutcome DsClient::DownloadContract(const DownloadContractRequest &request)
@@ -406,25 +462,32 @@ DsClient::DownloadContractOutcome DsClient::DownloadContract(const DownloadContr
 
 void DsClient::DownloadContractAsync(const DownloadContractRequest& request, const DownloadContractAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DownloadContract(request), context);
-    };
+    using Req = const DownloadContractRequest&;
+    using Resp = DownloadContractResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DownloadContract", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DsClient::DownloadContractOutcomeCallable DsClient::DownloadContractCallable(const DownloadContractRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DownloadContractOutcome()>>(
-        [this, request]()
-        {
-            return this->DownloadContract(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DownloadContractOutcome>>();
+    DownloadContractAsync(
+    request,
+    [prom](
+        const DsClient*,
+        const DownloadContractRequest&,
+        DownloadContractOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DsClient::SendVcodeOutcome DsClient::SendVcode(const SendVcodeRequest &request)
@@ -449,25 +512,32 @@ DsClient::SendVcodeOutcome DsClient::SendVcode(const SendVcodeRequest &request)
 
 void DsClient::SendVcodeAsync(const SendVcodeRequest& request, const SendVcodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->SendVcode(request), context);
-    };
+    using Req = const SendVcodeRequest&;
+    using Resp = SendVcodeResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "SendVcode", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DsClient::SendVcodeOutcomeCallable DsClient::SendVcodeCallable(const SendVcodeRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<SendVcodeOutcome()>>(
-        [this, request]()
-        {
-            return this->SendVcode(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<SendVcodeOutcome>>();
+    SendVcodeAsync(
+    request,
+    [prom](
+        const DsClient*,
+        const SendVcodeRequest&,
+        SendVcodeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DsClient::SignContractByCoordinateOutcome DsClient::SignContractByCoordinate(const SignContractByCoordinateRequest &request)
@@ -492,25 +562,32 @@ DsClient::SignContractByCoordinateOutcome DsClient::SignContractByCoordinate(con
 
 void DsClient::SignContractByCoordinateAsync(const SignContractByCoordinateRequest& request, const SignContractByCoordinateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->SignContractByCoordinate(request), context);
-    };
+    using Req = const SignContractByCoordinateRequest&;
+    using Resp = SignContractByCoordinateResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "SignContractByCoordinate", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DsClient::SignContractByCoordinateOutcomeCallable DsClient::SignContractByCoordinateCallable(const SignContractByCoordinateRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<SignContractByCoordinateOutcome()>>(
-        [this, request]()
-        {
-            return this->SignContractByCoordinate(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<SignContractByCoordinateOutcome>>();
+    SignContractByCoordinateAsync(
+    request,
+    [prom](
+        const DsClient*,
+        const SignContractByCoordinateRequest&,
+        SignContractByCoordinateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DsClient::SignContractByKeywordOutcome DsClient::SignContractByKeyword(const SignContractByKeywordRequest &request)
@@ -535,24 +612,31 @@ DsClient::SignContractByKeywordOutcome DsClient::SignContractByKeyword(const Sig
 
 void DsClient::SignContractByKeywordAsync(const SignContractByKeywordRequest& request, const SignContractByKeywordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->SignContractByKeyword(request), context);
-    };
+    using Req = const SignContractByKeywordRequest&;
+    using Resp = SignContractByKeywordResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "SignContractByKeyword", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DsClient::SignContractByKeywordOutcomeCallable DsClient::SignContractByKeywordCallable(const SignContractByKeywordRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<SignContractByKeywordOutcome()>>(
-        [this, request]()
-        {
-            return this->SignContractByKeyword(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<SignContractByKeywordOutcome>>();
+    SignContractByKeywordAsync(
+    request,
+    [prom](
+        const DsClient*,
+        const SignContractByKeywordRequest&,
+        SignContractByKeywordOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 

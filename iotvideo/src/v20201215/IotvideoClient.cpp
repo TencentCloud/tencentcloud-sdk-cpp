@@ -62,25 +62,32 @@ IotvideoClient::ApplyAIModelOutcome IotvideoClient::ApplyAIModel(const ApplyAIMo
 
 void IotvideoClient::ApplyAIModelAsync(const ApplyAIModelRequest& request, const ApplyAIModelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ApplyAIModel(request), context);
-    };
+    using Req = const ApplyAIModelRequest&;
+    using Resp = ApplyAIModelResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ApplyAIModel", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IotvideoClient::ApplyAIModelOutcomeCallable IotvideoClient::ApplyAIModelCallable(const ApplyAIModelRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ApplyAIModelOutcome()>>(
-        [this, request]()
-        {
-            return this->ApplyAIModel(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ApplyAIModelOutcome>>();
+    ApplyAIModelAsync(
+    request,
+    [prom](
+        const IotvideoClient*,
+        const ApplyAIModelRequest&,
+        ApplyAIModelOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IotvideoClient::BatchUpdateFirmwareOutcome IotvideoClient::BatchUpdateFirmware(const BatchUpdateFirmwareRequest &request)
@@ -105,25 +112,32 @@ IotvideoClient::BatchUpdateFirmwareOutcome IotvideoClient::BatchUpdateFirmware(c
 
 void IotvideoClient::BatchUpdateFirmwareAsync(const BatchUpdateFirmwareRequest& request, const BatchUpdateFirmwareAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->BatchUpdateFirmware(request), context);
-    };
+    using Req = const BatchUpdateFirmwareRequest&;
+    using Resp = BatchUpdateFirmwareResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "BatchUpdateFirmware", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IotvideoClient::BatchUpdateFirmwareOutcomeCallable IotvideoClient::BatchUpdateFirmwareCallable(const BatchUpdateFirmwareRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<BatchUpdateFirmwareOutcome()>>(
-        [this, request]()
-        {
-            return this->BatchUpdateFirmware(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<BatchUpdateFirmwareOutcome>>();
+    BatchUpdateFirmwareAsync(
+    request,
+    [prom](
+        const IotvideoClient*,
+        const BatchUpdateFirmwareRequest&,
+        BatchUpdateFirmwareOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IotvideoClient::BindCloudStorageUserOutcome IotvideoClient::BindCloudStorageUser(const BindCloudStorageUserRequest &request)
@@ -148,25 +162,32 @@ IotvideoClient::BindCloudStorageUserOutcome IotvideoClient::BindCloudStorageUser
 
 void IotvideoClient::BindCloudStorageUserAsync(const BindCloudStorageUserRequest& request, const BindCloudStorageUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->BindCloudStorageUser(request), context);
-    };
+    using Req = const BindCloudStorageUserRequest&;
+    using Resp = BindCloudStorageUserResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "BindCloudStorageUser", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IotvideoClient::BindCloudStorageUserOutcomeCallable IotvideoClient::BindCloudStorageUserCallable(const BindCloudStorageUserRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<BindCloudStorageUserOutcome()>>(
-        [this, request]()
-        {
-            return this->BindCloudStorageUser(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<BindCloudStorageUserOutcome>>();
+    BindCloudStorageUserAsync(
+    request,
+    [prom](
+        const IotvideoClient*,
+        const BindCloudStorageUserRequest&,
+        BindCloudStorageUserOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IotvideoClient::CancelAIModelApplicationOutcome IotvideoClient::CancelAIModelApplication(const CancelAIModelApplicationRequest &request)
@@ -191,25 +212,32 @@ IotvideoClient::CancelAIModelApplicationOutcome IotvideoClient::CancelAIModelApp
 
 void IotvideoClient::CancelAIModelApplicationAsync(const CancelAIModelApplicationRequest& request, const CancelAIModelApplicationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CancelAIModelApplication(request), context);
-    };
+    using Req = const CancelAIModelApplicationRequest&;
+    using Resp = CancelAIModelApplicationResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CancelAIModelApplication", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IotvideoClient::CancelAIModelApplicationOutcomeCallable IotvideoClient::CancelAIModelApplicationCallable(const CancelAIModelApplicationRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CancelAIModelApplicationOutcome()>>(
-        [this, request]()
-        {
-            return this->CancelAIModelApplication(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CancelAIModelApplicationOutcome>>();
+    CancelAIModelApplicationAsync(
+    request,
+    [prom](
+        const IotvideoClient*,
+        const CancelAIModelApplicationRequest&,
+        CancelAIModelApplicationOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IotvideoClient::CancelDeviceFirmwareTaskOutcome IotvideoClient::CancelDeviceFirmwareTask(const CancelDeviceFirmwareTaskRequest &request)
@@ -234,25 +262,32 @@ IotvideoClient::CancelDeviceFirmwareTaskOutcome IotvideoClient::CancelDeviceFirm
 
 void IotvideoClient::CancelDeviceFirmwareTaskAsync(const CancelDeviceFirmwareTaskRequest& request, const CancelDeviceFirmwareTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CancelDeviceFirmwareTask(request), context);
-    };
+    using Req = const CancelDeviceFirmwareTaskRequest&;
+    using Resp = CancelDeviceFirmwareTaskResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CancelDeviceFirmwareTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IotvideoClient::CancelDeviceFirmwareTaskOutcomeCallable IotvideoClient::CancelDeviceFirmwareTaskCallable(const CancelDeviceFirmwareTaskRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CancelDeviceFirmwareTaskOutcome()>>(
-        [this, request]()
-        {
-            return this->CancelDeviceFirmwareTask(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CancelDeviceFirmwareTaskOutcome>>();
+    CancelDeviceFirmwareTaskAsync(
+    request,
+    [prom](
+        const IotvideoClient*,
+        const CancelDeviceFirmwareTaskRequest&,
+        CancelDeviceFirmwareTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IotvideoClient::CheckForwardAuthOutcome IotvideoClient::CheckForwardAuth(const CheckForwardAuthRequest &request)
@@ -277,25 +312,32 @@ IotvideoClient::CheckForwardAuthOutcome IotvideoClient::CheckForwardAuth(const C
 
 void IotvideoClient::CheckForwardAuthAsync(const CheckForwardAuthRequest& request, const CheckForwardAuthAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CheckForwardAuth(request), context);
-    };
+    using Req = const CheckForwardAuthRequest&;
+    using Resp = CheckForwardAuthResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CheckForwardAuth", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IotvideoClient::CheckForwardAuthOutcomeCallable IotvideoClient::CheckForwardAuthCallable(const CheckForwardAuthRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CheckForwardAuthOutcome()>>(
-        [this, request]()
-        {
-            return this->CheckForwardAuth(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CheckForwardAuthOutcome>>();
+    CheckForwardAuthAsync(
+    request,
+    [prom](
+        const IotvideoClient*,
+        const CheckForwardAuthRequest&,
+        CheckForwardAuthOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IotvideoClient::ControlDeviceDataOutcome IotvideoClient::ControlDeviceData(const ControlDeviceDataRequest &request)
@@ -320,25 +362,32 @@ IotvideoClient::ControlDeviceDataOutcome IotvideoClient::ControlDeviceData(const
 
 void IotvideoClient::ControlDeviceDataAsync(const ControlDeviceDataRequest& request, const ControlDeviceDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ControlDeviceData(request), context);
-    };
+    using Req = const ControlDeviceDataRequest&;
+    using Resp = ControlDeviceDataResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ControlDeviceData", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IotvideoClient::ControlDeviceDataOutcomeCallable IotvideoClient::ControlDeviceDataCallable(const ControlDeviceDataRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ControlDeviceDataOutcome()>>(
-        [this, request]()
-        {
-            return this->ControlDeviceData(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ControlDeviceDataOutcome>>();
+    ControlDeviceDataAsync(
+    request,
+    [prom](
+        const IotvideoClient*,
+        const ControlDeviceDataRequest&,
+        ControlDeviceDataOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IotvideoClient::CreateAIDetectionOutcome IotvideoClient::CreateAIDetection(const CreateAIDetectionRequest &request)
@@ -363,25 +412,32 @@ IotvideoClient::CreateAIDetectionOutcome IotvideoClient::CreateAIDetection(const
 
 void IotvideoClient::CreateAIDetectionAsync(const CreateAIDetectionRequest& request, const CreateAIDetectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateAIDetection(request), context);
-    };
+    using Req = const CreateAIDetectionRequest&;
+    using Resp = CreateAIDetectionResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateAIDetection", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IotvideoClient::CreateAIDetectionOutcomeCallable IotvideoClient::CreateAIDetectionCallable(const CreateAIDetectionRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateAIDetectionOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateAIDetection(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateAIDetectionOutcome>>();
+    CreateAIDetectionAsync(
+    request,
+    [prom](
+        const IotvideoClient*,
+        const CreateAIDetectionRequest&,
+        CreateAIDetectionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IotvideoClient::CreateBatchOutcome IotvideoClient::CreateBatch(const CreateBatchRequest &request)
@@ -406,25 +462,32 @@ IotvideoClient::CreateBatchOutcome IotvideoClient::CreateBatch(const CreateBatch
 
 void IotvideoClient::CreateBatchAsync(const CreateBatchRequest& request, const CreateBatchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateBatch(request), context);
-    };
+    using Req = const CreateBatchRequest&;
+    using Resp = CreateBatchResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateBatch", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IotvideoClient::CreateBatchOutcomeCallable IotvideoClient::CreateBatchCallable(const CreateBatchRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateBatchOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateBatch(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateBatchOutcome>>();
+    CreateBatchAsync(
+    request,
+    [prom](
+        const IotvideoClient*,
+        const CreateBatchRequest&,
+        CreateBatchOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IotvideoClient::CreateCOSCredentialsOutcome IotvideoClient::CreateCOSCredentials(const CreateCOSCredentialsRequest &request)
@@ -449,25 +512,32 @@ IotvideoClient::CreateCOSCredentialsOutcome IotvideoClient::CreateCOSCredentials
 
 void IotvideoClient::CreateCOSCredentialsAsync(const CreateCOSCredentialsRequest& request, const CreateCOSCredentialsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateCOSCredentials(request), context);
-    };
+    using Req = const CreateCOSCredentialsRequest&;
+    using Resp = CreateCOSCredentialsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateCOSCredentials", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IotvideoClient::CreateCOSCredentialsOutcomeCallable IotvideoClient::CreateCOSCredentialsCallable(const CreateCOSCredentialsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateCOSCredentialsOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateCOSCredentials(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateCOSCredentialsOutcome>>();
+    CreateCOSCredentialsAsync(
+    request,
+    [prom](
+        const IotvideoClient*,
+        const CreateCOSCredentialsRequest&,
+        CreateCOSCredentialsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IotvideoClient::CreateCloudStorageOutcome IotvideoClient::CreateCloudStorage(const CreateCloudStorageRequest &request)
@@ -492,25 +562,32 @@ IotvideoClient::CreateCloudStorageOutcome IotvideoClient::CreateCloudStorage(con
 
 void IotvideoClient::CreateCloudStorageAsync(const CreateCloudStorageRequest& request, const CreateCloudStorageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateCloudStorage(request), context);
-    };
+    using Req = const CreateCloudStorageRequest&;
+    using Resp = CreateCloudStorageResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateCloudStorage", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IotvideoClient::CreateCloudStorageOutcomeCallable IotvideoClient::CreateCloudStorageCallable(const CreateCloudStorageRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateCloudStorageOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateCloudStorage(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateCloudStorageOutcome>>();
+    CreateCloudStorageAsync(
+    request,
+    [prom](
+        const IotvideoClient*,
+        const CreateCloudStorageRequest&,
+        CreateCloudStorageOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IotvideoClient::CreateDataForwardOutcome IotvideoClient::CreateDataForward(const CreateDataForwardRequest &request)
@@ -535,25 +612,32 @@ IotvideoClient::CreateDataForwardOutcome IotvideoClient::CreateDataForward(const
 
 void IotvideoClient::CreateDataForwardAsync(const CreateDataForwardRequest& request, const CreateDataForwardAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateDataForward(request), context);
-    };
+    using Req = const CreateDataForwardRequest&;
+    using Resp = CreateDataForwardResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateDataForward", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IotvideoClient::CreateDataForwardOutcomeCallable IotvideoClient::CreateDataForwardCallable(const CreateDataForwardRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateDataForwardOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateDataForward(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateDataForwardOutcome>>();
+    CreateDataForwardAsync(
+    request,
+    [prom](
+        const IotvideoClient*,
+        const CreateDataForwardRequest&,
+        CreateDataForwardOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IotvideoClient::CreateForwardRuleOutcome IotvideoClient::CreateForwardRule(const CreateForwardRuleRequest &request)
@@ -578,25 +662,32 @@ IotvideoClient::CreateForwardRuleOutcome IotvideoClient::CreateForwardRule(const
 
 void IotvideoClient::CreateForwardRuleAsync(const CreateForwardRuleRequest& request, const CreateForwardRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateForwardRule(request), context);
-    };
+    using Req = const CreateForwardRuleRequest&;
+    using Resp = CreateForwardRuleResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateForwardRule", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IotvideoClient::CreateForwardRuleOutcomeCallable IotvideoClient::CreateForwardRuleCallable(const CreateForwardRuleRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateForwardRuleOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateForwardRule(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateForwardRuleOutcome>>();
+    CreateForwardRuleAsync(
+    request,
+    [prom](
+        const IotvideoClient*,
+        const CreateForwardRuleRequest&,
+        CreateForwardRuleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IotvideoClient::CreateProductOutcome IotvideoClient::CreateProduct(const CreateProductRequest &request)
@@ -621,25 +712,32 @@ IotvideoClient::CreateProductOutcome IotvideoClient::CreateProduct(const CreateP
 
 void IotvideoClient::CreateProductAsync(const CreateProductRequest& request, const CreateProductAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateProduct(request), context);
-    };
+    using Req = const CreateProductRequest&;
+    using Resp = CreateProductResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateProduct", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IotvideoClient::CreateProductOutcomeCallable IotvideoClient::CreateProductCallable(const CreateProductRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateProductOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateProduct(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateProductOutcome>>();
+    CreateProductAsync(
+    request,
+    [prom](
+        const IotvideoClient*,
+        const CreateProductRequest&,
+        CreateProductOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IotvideoClient::CreateTaskFileUrlOutcome IotvideoClient::CreateTaskFileUrl(const CreateTaskFileUrlRequest &request)
@@ -664,25 +762,32 @@ IotvideoClient::CreateTaskFileUrlOutcome IotvideoClient::CreateTaskFileUrl(const
 
 void IotvideoClient::CreateTaskFileUrlAsync(const CreateTaskFileUrlRequest& request, const CreateTaskFileUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateTaskFileUrl(request), context);
-    };
+    using Req = const CreateTaskFileUrlRequest&;
+    using Resp = CreateTaskFileUrlResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateTaskFileUrl", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IotvideoClient::CreateTaskFileUrlOutcomeCallable IotvideoClient::CreateTaskFileUrlCallable(const CreateTaskFileUrlRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateTaskFileUrlOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateTaskFileUrl(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateTaskFileUrlOutcome>>();
+    CreateTaskFileUrlAsync(
+    request,
+    [prom](
+        const IotvideoClient*,
+        const CreateTaskFileUrlRequest&,
+        CreateTaskFileUrlOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IotvideoClient::DeleteDeviceOutcome IotvideoClient::DeleteDevice(const DeleteDeviceRequest &request)
@@ -707,25 +812,32 @@ IotvideoClient::DeleteDeviceOutcome IotvideoClient::DeleteDevice(const DeleteDev
 
 void IotvideoClient::DeleteDeviceAsync(const DeleteDeviceRequest& request, const DeleteDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteDevice(request), context);
-    };
+    using Req = const DeleteDeviceRequest&;
+    using Resp = DeleteDeviceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteDevice", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IotvideoClient::DeleteDeviceOutcomeCallable IotvideoClient::DeleteDeviceCallable(const DeleteDeviceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteDeviceOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteDevice(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteDeviceOutcome>>();
+    DeleteDeviceAsync(
+    request,
+    [prom](
+        const IotvideoClient*,
+        const DeleteDeviceRequest&,
+        DeleteDeviceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IotvideoClient::DeleteFirmwareOutcome IotvideoClient::DeleteFirmware(const DeleteFirmwareRequest &request)
@@ -750,25 +862,32 @@ IotvideoClient::DeleteFirmwareOutcome IotvideoClient::DeleteFirmware(const Delet
 
 void IotvideoClient::DeleteFirmwareAsync(const DeleteFirmwareRequest& request, const DeleteFirmwareAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteFirmware(request), context);
-    };
+    using Req = const DeleteFirmwareRequest&;
+    using Resp = DeleteFirmwareResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteFirmware", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IotvideoClient::DeleteFirmwareOutcomeCallable IotvideoClient::DeleteFirmwareCallable(const DeleteFirmwareRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteFirmwareOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteFirmware(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteFirmwareOutcome>>();
+    DeleteFirmwareAsync(
+    request,
+    [prom](
+        const IotvideoClient*,
+        const DeleteFirmwareRequest&,
+        DeleteFirmwareOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IotvideoClient::DeleteForwardRuleOutcome IotvideoClient::DeleteForwardRule(const DeleteForwardRuleRequest &request)
@@ -793,25 +912,32 @@ IotvideoClient::DeleteForwardRuleOutcome IotvideoClient::DeleteForwardRule(const
 
 void IotvideoClient::DeleteForwardRuleAsync(const DeleteForwardRuleRequest& request, const DeleteForwardRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteForwardRule(request), context);
-    };
+    using Req = const DeleteForwardRuleRequest&;
+    using Resp = DeleteForwardRuleResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteForwardRule", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IotvideoClient::DeleteForwardRuleOutcomeCallable IotvideoClient::DeleteForwardRuleCallable(const DeleteForwardRuleRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteForwardRuleOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteForwardRule(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteForwardRuleOutcome>>();
+    DeleteForwardRuleAsync(
+    request,
+    [prom](
+        const IotvideoClient*,
+        const DeleteForwardRuleRequest&,
+        DeleteForwardRuleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IotvideoClient::DeleteProductOutcome IotvideoClient::DeleteProduct(const DeleteProductRequest &request)
@@ -836,25 +962,32 @@ IotvideoClient::DeleteProductOutcome IotvideoClient::DeleteProduct(const DeleteP
 
 void IotvideoClient::DeleteProductAsync(const DeleteProductRequest& request, const DeleteProductAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteProduct(request), context);
-    };
+    using Req = const DeleteProductRequest&;
+    using Resp = DeleteProductResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteProduct", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IotvideoClient::DeleteProductOutcomeCallable IotvideoClient::DeleteProductCallable(const DeleteProductRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteProductOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteProduct(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteProductOutcome>>();
+    DeleteProductAsync(
+    request,
+    [prom](
+        const IotvideoClient*,
+        const DeleteProductRequest&,
+        DeleteProductOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IotvideoClient::DescribeAIModelApplicationsOutcome IotvideoClient::DescribeAIModelApplications(const DescribeAIModelApplicationsRequest &request)
@@ -879,25 +1012,32 @@ IotvideoClient::DescribeAIModelApplicationsOutcome IotvideoClient::DescribeAIMod
 
 void IotvideoClient::DescribeAIModelApplicationsAsync(const DescribeAIModelApplicationsRequest& request, const DescribeAIModelApplicationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAIModelApplications(request), context);
-    };
+    using Req = const DescribeAIModelApplicationsRequest&;
+    using Resp = DescribeAIModelApplicationsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAIModelApplications", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IotvideoClient::DescribeAIModelApplicationsOutcomeCallable IotvideoClient::DescribeAIModelApplicationsCallable(const DescribeAIModelApplicationsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAIModelApplicationsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAIModelApplications(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAIModelApplicationsOutcome>>();
+    DescribeAIModelApplicationsAsync(
+    request,
+    [prom](
+        const IotvideoClient*,
+        const DescribeAIModelApplicationsRequest&,
+        DescribeAIModelApplicationsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IotvideoClient::DescribeAIModelChannelOutcome IotvideoClient::DescribeAIModelChannel(const DescribeAIModelChannelRequest &request)
@@ -922,25 +1062,32 @@ IotvideoClient::DescribeAIModelChannelOutcome IotvideoClient::DescribeAIModelCha
 
 void IotvideoClient::DescribeAIModelChannelAsync(const DescribeAIModelChannelRequest& request, const DescribeAIModelChannelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAIModelChannel(request), context);
-    };
+    using Req = const DescribeAIModelChannelRequest&;
+    using Resp = DescribeAIModelChannelResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAIModelChannel", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IotvideoClient::DescribeAIModelChannelOutcomeCallable IotvideoClient::DescribeAIModelChannelCallable(const DescribeAIModelChannelRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAIModelChannelOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAIModelChannel(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAIModelChannelOutcome>>();
+    DescribeAIModelChannelAsync(
+    request,
+    [prom](
+        const IotvideoClient*,
+        const DescribeAIModelChannelRequest&,
+        DescribeAIModelChannelOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IotvideoClient::DescribeAIModelUsageOutcome IotvideoClient::DescribeAIModelUsage(const DescribeAIModelUsageRequest &request)
@@ -965,25 +1112,32 @@ IotvideoClient::DescribeAIModelUsageOutcome IotvideoClient::DescribeAIModelUsage
 
 void IotvideoClient::DescribeAIModelUsageAsync(const DescribeAIModelUsageRequest& request, const DescribeAIModelUsageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAIModelUsage(request), context);
-    };
+    using Req = const DescribeAIModelUsageRequest&;
+    using Resp = DescribeAIModelUsageResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAIModelUsage", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IotvideoClient::DescribeAIModelUsageOutcomeCallable IotvideoClient::DescribeAIModelUsageCallable(const DescribeAIModelUsageRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAIModelUsageOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAIModelUsage(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAIModelUsageOutcome>>();
+    DescribeAIModelUsageAsync(
+    request,
+    [prom](
+        const IotvideoClient*,
+        const DescribeAIModelUsageRequest&,
+        DescribeAIModelUsageOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IotvideoClient::DescribeAIModelsOutcome IotvideoClient::DescribeAIModels(const DescribeAIModelsRequest &request)
@@ -1008,25 +1162,32 @@ IotvideoClient::DescribeAIModelsOutcome IotvideoClient::DescribeAIModels(const D
 
 void IotvideoClient::DescribeAIModelsAsync(const DescribeAIModelsRequest& request, const DescribeAIModelsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAIModels(request), context);
-    };
+    using Req = const DescribeAIModelsRequest&;
+    using Resp = DescribeAIModelsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAIModels", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IotvideoClient::DescribeAIModelsOutcomeCallable IotvideoClient::DescribeAIModelsCallable(const DescribeAIModelsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAIModelsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAIModels(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAIModelsOutcome>>();
+    DescribeAIModelsAsync(
+    request,
+    [prom](
+        const IotvideoClient*,
+        const DescribeAIModelsRequest&,
+        DescribeAIModelsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IotvideoClient::DescribeBalanceOutcome IotvideoClient::DescribeBalance(const DescribeBalanceRequest &request)
@@ -1051,25 +1212,32 @@ IotvideoClient::DescribeBalanceOutcome IotvideoClient::DescribeBalance(const Des
 
 void IotvideoClient::DescribeBalanceAsync(const DescribeBalanceRequest& request, const DescribeBalanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeBalance(request), context);
-    };
+    using Req = const DescribeBalanceRequest&;
+    using Resp = DescribeBalanceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeBalance", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IotvideoClient::DescribeBalanceOutcomeCallable IotvideoClient::DescribeBalanceCallable(const DescribeBalanceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeBalanceOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeBalance(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeBalanceOutcome>>();
+    DescribeBalanceAsync(
+    request,
+    [prom](
+        const IotvideoClient*,
+        const DescribeBalanceRequest&,
+        DescribeBalanceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IotvideoClient::DescribeBalanceTransactionsOutcome IotvideoClient::DescribeBalanceTransactions(const DescribeBalanceTransactionsRequest &request)
@@ -1094,25 +1262,32 @@ IotvideoClient::DescribeBalanceTransactionsOutcome IotvideoClient::DescribeBalan
 
 void IotvideoClient::DescribeBalanceTransactionsAsync(const DescribeBalanceTransactionsRequest& request, const DescribeBalanceTransactionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeBalanceTransactions(request), context);
-    };
+    using Req = const DescribeBalanceTransactionsRequest&;
+    using Resp = DescribeBalanceTransactionsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeBalanceTransactions", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IotvideoClient::DescribeBalanceTransactionsOutcomeCallable IotvideoClient::DescribeBalanceTransactionsCallable(const DescribeBalanceTransactionsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeBalanceTransactionsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeBalanceTransactions(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeBalanceTransactionsOutcome>>();
+    DescribeBalanceTransactionsAsync(
+    request,
+    [prom](
+        const IotvideoClient*,
+        const DescribeBalanceTransactionsRequest&,
+        DescribeBalanceTransactionsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IotvideoClient::DescribeBatchOutcome IotvideoClient::DescribeBatch(const DescribeBatchRequest &request)
@@ -1137,25 +1312,32 @@ IotvideoClient::DescribeBatchOutcome IotvideoClient::DescribeBatch(const Describ
 
 void IotvideoClient::DescribeBatchAsync(const DescribeBatchRequest& request, const DescribeBatchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeBatch(request), context);
-    };
+    using Req = const DescribeBatchRequest&;
+    using Resp = DescribeBatchResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeBatch", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IotvideoClient::DescribeBatchOutcomeCallable IotvideoClient::DescribeBatchCallable(const DescribeBatchRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeBatchOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeBatch(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeBatchOutcome>>();
+    DescribeBatchAsync(
+    request,
+    [prom](
+        const IotvideoClient*,
+        const DescribeBatchRequest&,
+        DescribeBatchOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IotvideoClient::DescribeBatchsOutcome IotvideoClient::DescribeBatchs(const DescribeBatchsRequest &request)
@@ -1180,25 +1362,32 @@ IotvideoClient::DescribeBatchsOutcome IotvideoClient::DescribeBatchs(const Descr
 
 void IotvideoClient::DescribeBatchsAsync(const DescribeBatchsRequest& request, const DescribeBatchsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeBatchs(request), context);
-    };
+    using Req = const DescribeBatchsRequest&;
+    using Resp = DescribeBatchsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeBatchs", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IotvideoClient::DescribeBatchsOutcomeCallable IotvideoClient::DescribeBatchsCallable(const DescribeBatchsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeBatchsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeBatchs(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeBatchsOutcome>>();
+    DescribeBatchsAsync(
+    request,
+    [prom](
+        const IotvideoClient*,
+        const DescribeBatchsRequest&,
+        DescribeBatchsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IotvideoClient::DescribeCategoryOutcome IotvideoClient::DescribeCategory(const DescribeCategoryRequest &request)
@@ -1223,25 +1412,32 @@ IotvideoClient::DescribeCategoryOutcome IotvideoClient::DescribeCategory(const D
 
 void IotvideoClient::DescribeCategoryAsync(const DescribeCategoryRequest& request, const DescribeCategoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeCategory(request), context);
-    };
+    using Req = const DescribeCategoryRequest&;
+    using Resp = DescribeCategoryResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeCategory", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IotvideoClient::DescribeCategoryOutcomeCallable IotvideoClient::DescribeCategoryCallable(const DescribeCategoryRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeCategoryOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeCategory(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeCategoryOutcome>>();
+    DescribeCategoryAsync(
+    request,
+    [prom](
+        const IotvideoClient*,
+        const DescribeCategoryRequest&,
+        DescribeCategoryOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IotvideoClient::DescribeCloudStorageOutcome IotvideoClient::DescribeCloudStorage(const DescribeCloudStorageRequest &request)
@@ -1266,25 +1462,32 @@ IotvideoClient::DescribeCloudStorageOutcome IotvideoClient::DescribeCloudStorage
 
 void IotvideoClient::DescribeCloudStorageAsync(const DescribeCloudStorageRequest& request, const DescribeCloudStorageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeCloudStorage(request), context);
-    };
+    using Req = const DescribeCloudStorageRequest&;
+    using Resp = DescribeCloudStorageResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeCloudStorage", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IotvideoClient::DescribeCloudStorageOutcomeCallable IotvideoClient::DescribeCloudStorageCallable(const DescribeCloudStorageRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeCloudStorageOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeCloudStorage(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeCloudStorageOutcome>>();
+    DescribeCloudStorageAsync(
+    request,
+    [prom](
+        const IotvideoClient*,
+        const DescribeCloudStorageRequest&,
+        DescribeCloudStorageOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IotvideoClient::DescribeCloudStorageDateOutcome IotvideoClient::DescribeCloudStorageDate(const DescribeCloudStorageDateRequest &request)
@@ -1309,25 +1512,32 @@ IotvideoClient::DescribeCloudStorageDateOutcome IotvideoClient::DescribeCloudSto
 
 void IotvideoClient::DescribeCloudStorageDateAsync(const DescribeCloudStorageDateRequest& request, const DescribeCloudStorageDateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeCloudStorageDate(request), context);
-    };
+    using Req = const DescribeCloudStorageDateRequest&;
+    using Resp = DescribeCloudStorageDateResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeCloudStorageDate", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IotvideoClient::DescribeCloudStorageDateOutcomeCallable IotvideoClient::DescribeCloudStorageDateCallable(const DescribeCloudStorageDateRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeCloudStorageDateOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeCloudStorageDate(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeCloudStorageDateOutcome>>();
+    DescribeCloudStorageDateAsync(
+    request,
+    [prom](
+        const IotvideoClient*,
+        const DescribeCloudStorageDateRequest&,
+        DescribeCloudStorageDateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IotvideoClient::DescribeCloudStorageEventsOutcome IotvideoClient::DescribeCloudStorageEvents(const DescribeCloudStorageEventsRequest &request)
@@ -1352,25 +1562,32 @@ IotvideoClient::DescribeCloudStorageEventsOutcome IotvideoClient::DescribeCloudS
 
 void IotvideoClient::DescribeCloudStorageEventsAsync(const DescribeCloudStorageEventsRequest& request, const DescribeCloudStorageEventsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeCloudStorageEvents(request), context);
-    };
+    using Req = const DescribeCloudStorageEventsRequest&;
+    using Resp = DescribeCloudStorageEventsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeCloudStorageEvents", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IotvideoClient::DescribeCloudStorageEventsOutcomeCallable IotvideoClient::DescribeCloudStorageEventsCallable(const DescribeCloudStorageEventsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeCloudStorageEventsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeCloudStorageEvents(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeCloudStorageEventsOutcome>>();
+    DescribeCloudStorageEventsAsync(
+    request,
+    [prom](
+        const IotvideoClient*,
+        const DescribeCloudStorageEventsRequest&,
+        DescribeCloudStorageEventsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IotvideoClient::DescribeCloudStorageThumbnailOutcome IotvideoClient::DescribeCloudStorageThumbnail(const DescribeCloudStorageThumbnailRequest &request)
@@ -1395,25 +1612,32 @@ IotvideoClient::DescribeCloudStorageThumbnailOutcome IotvideoClient::DescribeClo
 
 void IotvideoClient::DescribeCloudStorageThumbnailAsync(const DescribeCloudStorageThumbnailRequest& request, const DescribeCloudStorageThumbnailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeCloudStorageThumbnail(request), context);
-    };
+    using Req = const DescribeCloudStorageThumbnailRequest&;
+    using Resp = DescribeCloudStorageThumbnailResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeCloudStorageThumbnail", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IotvideoClient::DescribeCloudStorageThumbnailOutcomeCallable IotvideoClient::DescribeCloudStorageThumbnailCallable(const DescribeCloudStorageThumbnailRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeCloudStorageThumbnailOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeCloudStorageThumbnail(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeCloudStorageThumbnailOutcome>>();
+    DescribeCloudStorageThumbnailAsync(
+    request,
+    [prom](
+        const IotvideoClient*,
+        const DescribeCloudStorageThumbnailRequest&,
+        DescribeCloudStorageThumbnailOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IotvideoClient::DescribeCloudStorageTimeOutcome IotvideoClient::DescribeCloudStorageTime(const DescribeCloudStorageTimeRequest &request)
@@ -1438,25 +1662,32 @@ IotvideoClient::DescribeCloudStorageTimeOutcome IotvideoClient::DescribeCloudSto
 
 void IotvideoClient::DescribeCloudStorageTimeAsync(const DescribeCloudStorageTimeRequest& request, const DescribeCloudStorageTimeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeCloudStorageTime(request), context);
-    };
+    using Req = const DescribeCloudStorageTimeRequest&;
+    using Resp = DescribeCloudStorageTimeResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeCloudStorageTime", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IotvideoClient::DescribeCloudStorageTimeOutcomeCallable IotvideoClient::DescribeCloudStorageTimeCallable(const DescribeCloudStorageTimeRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeCloudStorageTimeOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeCloudStorageTime(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeCloudStorageTimeOutcome>>();
+    DescribeCloudStorageTimeAsync(
+    request,
+    [prom](
+        const IotvideoClient*,
+        const DescribeCloudStorageTimeRequest&,
+        DescribeCloudStorageTimeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IotvideoClient::DescribeCloudStorageUsersOutcome IotvideoClient::DescribeCloudStorageUsers(const DescribeCloudStorageUsersRequest &request)
@@ -1481,25 +1712,32 @@ IotvideoClient::DescribeCloudStorageUsersOutcome IotvideoClient::DescribeCloudSt
 
 void IotvideoClient::DescribeCloudStorageUsersAsync(const DescribeCloudStorageUsersRequest& request, const DescribeCloudStorageUsersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeCloudStorageUsers(request), context);
-    };
+    using Req = const DescribeCloudStorageUsersRequest&;
+    using Resp = DescribeCloudStorageUsersResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeCloudStorageUsers", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IotvideoClient::DescribeCloudStorageUsersOutcomeCallable IotvideoClient::DescribeCloudStorageUsersCallable(const DescribeCloudStorageUsersRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeCloudStorageUsersOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeCloudStorageUsers(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeCloudStorageUsersOutcome>>();
+    DescribeCloudStorageUsersAsync(
+    request,
+    [prom](
+        const IotvideoClient*,
+        const DescribeCloudStorageUsersRequest&,
+        DescribeCloudStorageUsersOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IotvideoClient::DescribeDataForwardListOutcome IotvideoClient::DescribeDataForwardList(const DescribeDataForwardListRequest &request)
@@ -1524,25 +1762,32 @@ IotvideoClient::DescribeDataForwardListOutcome IotvideoClient::DescribeDataForwa
 
 void IotvideoClient::DescribeDataForwardListAsync(const DescribeDataForwardListRequest& request, const DescribeDataForwardListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDataForwardList(request), context);
-    };
+    using Req = const DescribeDataForwardListRequest&;
+    using Resp = DescribeDataForwardListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeDataForwardList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IotvideoClient::DescribeDataForwardListOutcomeCallable IotvideoClient::DescribeDataForwardListCallable(const DescribeDataForwardListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeDataForwardListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDataForwardList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeDataForwardListOutcome>>();
+    DescribeDataForwardListAsync(
+    request,
+    [prom](
+        const IotvideoClient*,
+        const DescribeDataForwardListRequest&,
+        DescribeDataForwardListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IotvideoClient::DescribeDeviceOutcome IotvideoClient::DescribeDevice(const DescribeDeviceRequest &request)
@@ -1567,25 +1812,32 @@ IotvideoClient::DescribeDeviceOutcome IotvideoClient::DescribeDevice(const Descr
 
 void IotvideoClient::DescribeDeviceAsync(const DescribeDeviceRequest& request, const DescribeDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDevice(request), context);
-    };
+    using Req = const DescribeDeviceRequest&;
+    using Resp = DescribeDeviceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeDevice", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IotvideoClient::DescribeDeviceOutcomeCallable IotvideoClient::DescribeDeviceCallable(const DescribeDeviceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeDeviceOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDevice(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeDeviceOutcome>>();
+    DescribeDeviceAsync(
+    request,
+    [prom](
+        const IotvideoClient*,
+        const DescribeDeviceRequest&,
+        DescribeDeviceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IotvideoClient::DescribeDeviceActionHistoryOutcome IotvideoClient::DescribeDeviceActionHistory(const DescribeDeviceActionHistoryRequest &request)
@@ -1610,25 +1862,32 @@ IotvideoClient::DescribeDeviceActionHistoryOutcome IotvideoClient::DescribeDevic
 
 void IotvideoClient::DescribeDeviceActionHistoryAsync(const DescribeDeviceActionHistoryRequest& request, const DescribeDeviceActionHistoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDeviceActionHistory(request), context);
-    };
+    using Req = const DescribeDeviceActionHistoryRequest&;
+    using Resp = DescribeDeviceActionHistoryResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeDeviceActionHistory", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IotvideoClient::DescribeDeviceActionHistoryOutcomeCallable IotvideoClient::DescribeDeviceActionHistoryCallable(const DescribeDeviceActionHistoryRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeDeviceActionHistoryOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDeviceActionHistory(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeDeviceActionHistoryOutcome>>();
+    DescribeDeviceActionHistoryAsync(
+    request,
+    [prom](
+        const IotvideoClient*,
+        const DescribeDeviceActionHistoryRequest&,
+        DescribeDeviceActionHistoryOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IotvideoClient::DescribeDeviceCommLogOutcome IotvideoClient::DescribeDeviceCommLog(const DescribeDeviceCommLogRequest &request)
@@ -1653,25 +1912,32 @@ IotvideoClient::DescribeDeviceCommLogOutcome IotvideoClient::DescribeDeviceCommL
 
 void IotvideoClient::DescribeDeviceCommLogAsync(const DescribeDeviceCommLogRequest& request, const DescribeDeviceCommLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDeviceCommLog(request), context);
-    };
+    using Req = const DescribeDeviceCommLogRequest&;
+    using Resp = DescribeDeviceCommLogResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeDeviceCommLog", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IotvideoClient::DescribeDeviceCommLogOutcomeCallable IotvideoClient::DescribeDeviceCommLogCallable(const DescribeDeviceCommLogRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeDeviceCommLogOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDeviceCommLog(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeDeviceCommLogOutcome>>();
+    DescribeDeviceCommLogAsync(
+    request,
+    [prom](
+        const IotvideoClient*,
+        const DescribeDeviceCommLogRequest&,
+        DescribeDeviceCommLogOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IotvideoClient::DescribeDeviceDataOutcome IotvideoClient::DescribeDeviceData(const DescribeDeviceDataRequest &request)
@@ -1696,25 +1962,32 @@ IotvideoClient::DescribeDeviceDataOutcome IotvideoClient::DescribeDeviceData(con
 
 void IotvideoClient::DescribeDeviceDataAsync(const DescribeDeviceDataRequest& request, const DescribeDeviceDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDeviceData(request), context);
-    };
+    using Req = const DescribeDeviceDataRequest&;
+    using Resp = DescribeDeviceDataResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeDeviceData", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IotvideoClient::DescribeDeviceDataOutcomeCallable IotvideoClient::DescribeDeviceDataCallable(const DescribeDeviceDataRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeDeviceDataOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDeviceData(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeDeviceDataOutcome>>();
+    DescribeDeviceDataAsync(
+    request,
+    [prom](
+        const IotvideoClient*,
+        const DescribeDeviceDataRequest&,
+        DescribeDeviceDataOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IotvideoClient::DescribeDeviceDataHistoryOutcome IotvideoClient::DescribeDeviceDataHistory(const DescribeDeviceDataHistoryRequest &request)
@@ -1739,25 +2012,32 @@ IotvideoClient::DescribeDeviceDataHistoryOutcome IotvideoClient::DescribeDeviceD
 
 void IotvideoClient::DescribeDeviceDataHistoryAsync(const DescribeDeviceDataHistoryRequest& request, const DescribeDeviceDataHistoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDeviceDataHistory(request), context);
-    };
+    using Req = const DescribeDeviceDataHistoryRequest&;
+    using Resp = DescribeDeviceDataHistoryResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeDeviceDataHistory", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IotvideoClient::DescribeDeviceDataHistoryOutcomeCallable IotvideoClient::DescribeDeviceDataHistoryCallable(const DescribeDeviceDataHistoryRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeDeviceDataHistoryOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDeviceDataHistory(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeDeviceDataHistoryOutcome>>();
+    DescribeDeviceDataHistoryAsync(
+    request,
+    [prom](
+        const IotvideoClient*,
+        const DescribeDeviceDataHistoryRequest&,
+        DescribeDeviceDataHistoryOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IotvideoClient::DescribeDeviceEventHistoryOutcome IotvideoClient::DescribeDeviceEventHistory(const DescribeDeviceEventHistoryRequest &request)
@@ -1782,25 +2062,32 @@ IotvideoClient::DescribeDeviceEventHistoryOutcome IotvideoClient::DescribeDevice
 
 void IotvideoClient::DescribeDeviceEventHistoryAsync(const DescribeDeviceEventHistoryRequest& request, const DescribeDeviceEventHistoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDeviceEventHistory(request), context);
-    };
+    using Req = const DescribeDeviceEventHistoryRequest&;
+    using Resp = DescribeDeviceEventHistoryResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeDeviceEventHistory", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IotvideoClient::DescribeDeviceEventHistoryOutcomeCallable IotvideoClient::DescribeDeviceEventHistoryCallable(const DescribeDeviceEventHistoryRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeDeviceEventHistoryOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDeviceEventHistory(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeDeviceEventHistoryOutcome>>();
+    DescribeDeviceEventHistoryAsync(
+    request,
+    [prom](
+        const IotvideoClient*,
+        const DescribeDeviceEventHistoryRequest&,
+        DescribeDeviceEventHistoryOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IotvideoClient::DescribeDeviceStatusLogOutcome IotvideoClient::DescribeDeviceStatusLog(const DescribeDeviceStatusLogRequest &request)
@@ -1825,25 +2112,32 @@ IotvideoClient::DescribeDeviceStatusLogOutcome IotvideoClient::DescribeDeviceSta
 
 void IotvideoClient::DescribeDeviceStatusLogAsync(const DescribeDeviceStatusLogRequest& request, const DescribeDeviceStatusLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDeviceStatusLog(request), context);
-    };
+    using Req = const DescribeDeviceStatusLogRequest&;
+    using Resp = DescribeDeviceStatusLogResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeDeviceStatusLog", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IotvideoClient::DescribeDeviceStatusLogOutcomeCallable IotvideoClient::DescribeDeviceStatusLogCallable(const DescribeDeviceStatusLogRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeDeviceStatusLogOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDeviceStatusLog(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeDeviceStatusLogOutcome>>();
+    DescribeDeviceStatusLogAsync(
+    request,
+    [prom](
+        const IotvideoClient*,
+        const DescribeDeviceStatusLogRequest&,
+        DescribeDeviceStatusLogOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IotvideoClient::DescribeDevicesOutcome IotvideoClient::DescribeDevices(const DescribeDevicesRequest &request)
@@ -1868,25 +2162,32 @@ IotvideoClient::DescribeDevicesOutcome IotvideoClient::DescribeDevices(const Des
 
 void IotvideoClient::DescribeDevicesAsync(const DescribeDevicesRequest& request, const DescribeDevicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDevices(request), context);
-    };
+    using Req = const DescribeDevicesRequest&;
+    using Resp = DescribeDevicesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeDevices", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IotvideoClient::DescribeDevicesOutcomeCallable IotvideoClient::DescribeDevicesCallable(const DescribeDevicesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeDevicesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDevices(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeDevicesOutcome>>();
+    DescribeDevicesAsync(
+    request,
+    [prom](
+        const IotvideoClient*,
+        const DescribeDevicesRequest&,
+        DescribeDevicesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IotvideoClient::DescribeFirmwareOutcome IotvideoClient::DescribeFirmware(const DescribeFirmwareRequest &request)
@@ -1911,25 +2212,32 @@ IotvideoClient::DescribeFirmwareOutcome IotvideoClient::DescribeFirmware(const D
 
 void IotvideoClient::DescribeFirmwareAsync(const DescribeFirmwareRequest& request, const DescribeFirmwareAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeFirmware(request), context);
-    };
+    using Req = const DescribeFirmwareRequest&;
+    using Resp = DescribeFirmwareResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeFirmware", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IotvideoClient::DescribeFirmwareOutcomeCallable IotvideoClient::DescribeFirmwareCallable(const DescribeFirmwareRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeFirmwareOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeFirmware(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeFirmwareOutcome>>();
+    DescribeFirmwareAsync(
+    request,
+    [prom](
+        const IotvideoClient*,
+        const DescribeFirmwareRequest&,
+        DescribeFirmwareOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IotvideoClient::DescribeFirmwareTaskOutcome IotvideoClient::DescribeFirmwareTask(const DescribeFirmwareTaskRequest &request)
@@ -1954,25 +2262,32 @@ IotvideoClient::DescribeFirmwareTaskOutcome IotvideoClient::DescribeFirmwareTask
 
 void IotvideoClient::DescribeFirmwareTaskAsync(const DescribeFirmwareTaskRequest& request, const DescribeFirmwareTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeFirmwareTask(request), context);
-    };
+    using Req = const DescribeFirmwareTaskRequest&;
+    using Resp = DescribeFirmwareTaskResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeFirmwareTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IotvideoClient::DescribeFirmwareTaskOutcomeCallable IotvideoClient::DescribeFirmwareTaskCallable(const DescribeFirmwareTaskRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeFirmwareTaskOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeFirmwareTask(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeFirmwareTaskOutcome>>();
+    DescribeFirmwareTaskAsync(
+    request,
+    [prom](
+        const IotvideoClient*,
+        const DescribeFirmwareTaskRequest&,
+        DescribeFirmwareTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IotvideoClient::DescribeFirmwareTaskDevicesOutcome IotvideoClient::DescribeFirmwareTaskDevices(const DescribeFirmwareTaskDevicesRequest &request)
@@ -1997,25 +2312,32 @@ IotvideoClient::DescribeFirmwareTaskDevicesOutcome IotvideoClient::DescribeFirmw
 
 void IotvideoClient::DescribeFirmwareTaskDevicesAsync(const DescribeFirmwareTaskDevicesRequest& request, const DescribeFirmwareTaskDevicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeFirmwareTaskDevices(request), context);
-    };
+    using Req = const DescribeFirmwareTaskDevicesRequest&;
+    using Resp = DescribeFirmwareTaskDevicesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeFirmwareTaskDevices", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IotvideoClient::DescribeFirmwareTaskDevicesOutcomeCallable IotvideoClient::DescribeFirmwareTaskDevicesCallable(const DescribeFirmwareTaskDevicesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeFirmwareTaskDevicesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeFirmwareTaskDevices(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeFirmwareTaskDevicesOutcome>>();
+    DescribeFirmwareTaskDevicesAsync(
+    request,
+    [prom](
+        const IotvideoClient*,
+        const DescribeFirmwareTaskDevicesRequest&,
+        DescribeFirmwareTaskDevicesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IotvideoClient::DescribeFirmwareTaskDistributionOutcome IotvideoClient::DescribeFirmwareTaskDistribution(const DescribeFirmwareTaskDistributionRequest &request)
@@ -2040,25 +2362,32 @@ IotvideoClient::DescribeFirmwareTaskDistributionOutcome IotvideoClient::Describe
 
 void IotvideoClient::DescribeFirmwareTaskDistributionAsync(const DescribeFirmwareTaskDistributionRequest& request, const DescribeFirmwareTaskDistributionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeFirmwareTaskDistribution(request), context);
-    };
+    using Req = const DescribeFirmwareTaskDistributionRequest&;
+    using Resp = DescribeFirmwareTaskDistributionResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeFirmwareTaskDistribution", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IotvideoClient::DescribeFirmwareTaskDistributionOutcomeCallable IotvideoClient::DescribeFirmwareTaskDistributionCallable(const DescribeFirmwareTaskDistributionRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeFirmwareTaskDistributionOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeFirmwareTaskDistribution(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeFirmwareTaskDistributionOutcome>>();
+    DescribeFirmwareTaskDistributionAsync(
+    request,
+    [prom](
+        const IotvideoClient*,
+        const DescribeFirmwareTaskDistributionRequest&,
+        DescribeFirmwareTaskDistributionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IotvideoClient::DescribeFirmwareTaskStatisticsOutcome IotvideoClient::DescribeFirmwareTaskStatistics(const DescribeFirmwareTaskStatisticsRequest &request)
@@ -2083,25 +2412,32 @@ IotvideoClient::DescribeFirmwareTaskStatisticsOutcome IotvideoClient::DescribeFi
 
 void IotvideoClient::DescribeFirmwareTaskStatisticsAsync(const DescribeFirmwareTaskStatisticsRequest& request, const DescribeFirmwareTaskStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeFirmwareTaskStatistics(request), context);
-    };
+    using Req = const DescribeFirmwareTaskStatisticsRequest&;
+    using Resp = DescribeFirmwareTaskStatisticsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeFirmwareTaskStatistics", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IotvideoClient::DescribeFirmwareTaskStatisticsOutcomeCallable IotvideoClient::DescribeFirmwareTaskStatisticsCallable(const DescribeFirmwareTaskStatisticsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeFirmwareTaskStatisticsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeFirmwareTaskStatistics(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeFirmwareTaskStatisticsOutcome>>();
+    DescribeFirmwareTaskStatisticsAsync(
+    request,
+    [prom](
+        const IotvideoClient*,
+        const DescribeFirmwareTaskStatisticsRequest&,
+        DescribeFirmwareTaskStatisticsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IotvideoClient::DescribeFirmwareTasksOutcome IotvideoClient::DescribeFirmwareTasks(const DescribeFirmwareTasksRequest &request)
@@ -2126,25 +2462,32 @@ IotvideoClient::DescribeFirmwareTasksOutcome IotvideoClient::DescribeFirmwareTas
 
 void IotvideoClient::DescribeFirmwareTasksAsync(const DescribeFirmwareTasksRequest& request, const DescribeFirmwareTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeFirmwareTasks(request), context);
-    };
+    using Req = const DescribeFirmwareTasksRequest&;
+    using Resp = DescribeFirmwareTasksResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeFirmwareTasks", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IotvideoClient::DescribeFirmwareTasksOutcomeCallable IotvideoClient::DescribeFirmwareTasksCallable(const DescribeFirmwareTasksRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeFirmwareTasksOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeFirmwareTasks(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeFirmwareTasksOutcome>>();
+    DescribeFirmwareTasksAsync(
+    request,
+    [prom](
+        const IotvideoClient*,
+        const DescribeFirmwareTasksRequest&,
+        DescribeFirmwareTasksOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IotvideoClient::DescribeForwardRuleOutcome IotvideoClient::DescribeForwardRule(const DescribeForwardRuleRequest &request)
@@ -2169,25 +2512,32 @@ IotvideoClient::DescribeForwardRuleOutcome IotvideoClient::DescribeForwardRule(c
 
 void IotvideoClient::DescribeForwardRuleAsync(const DescribeForwardRuleRequest& request, const DescribeForwardRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeForwardRule(request), context);
-    };
+    using Req = const DescribeForwardRuleRequest&;
+    using Resp = DescribeForwardRuleResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeForwardRule", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IotvideoClient::DescribeForwardRuleOutcomeCallable IotvideoClient::DescribeForwardRuleCallable(const DescribeForwardRuleRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeForwardRuleOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeForwardRule(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeForwardRuleOutcome>>();
+    DescribeForwardRuleAsync(
+    request,
+    [prom](
+        const IotvideoClient*,
+        const DescribeForwardRuleRequest&,
+        DescribeForwardRuleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IotvideoClient::DescribeModelDefinitionOutcome IotvideoClient::DescribeModelDefinition(const DescribeModelDefinitionRequest &request)
@@ -2212,25 +2562,32 @@ IotvideoClient::DescribeModelDefinitionOutcome IotvideoClient::DescribeModelDefi
 
 void IotvideoClient::DescribeModelDefinitionAsync(const DescribeModelDefinitionRequest& request, const DescribeModelDefinitionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeModelDefinition(request), context);
-    };
+    using Req = const DescribeModelDefinitionRequest&;
+    using Resp = DescribeModelDefinitionResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeModelDefinition", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IotvideoClient::DescribeModelDefinitionOutcomeCallable IotvideoClient::DescribeModelDefinitionCallable(const DescribeModelDefinitionRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeModelDefinitionOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeModelDefinition(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeModelDefinitionOutcome>>();
+    DescribeModelDefinitionAsync(
+    request,
+    [prom](
+        const IotvideoClient*,
+        const DescribeModelDefinitionRequest&,
+        DescribeModelDefinitionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IotvideoClient::DescribeProductOutcome IotvideoClient::DescribeProduct(const DescribeProductRequest &request)
@@ -2255,25 +2612,32 @@ IotvideoClient::DescribeProductOutcome IotvideoClient::DescribeProduct(const Des
 
 void IotvideoClient::DescribeProductAsync(const DescribeProductRequest& request, const DescribeProductAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeProduct(request), context);
-    };
+    using Req = const DescribeProductRequest&;
+    using Resp = DescribeProductResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeProduct", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IotvideoClient::DescribeProductOutcomeCallable IotvideoClient::DescribeProductCallable(const DescribeProductRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeProductOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeProduct(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeProductOutcome>>();
+    DescribeProductAsync(
+    request,
+    [prom](
+        const IotvideoClient*,
+        const DescribeProductRequest&,
+        DescribeProductOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IotvideoClient::DescribeProductDynamicRegisterOutcome IotvideoClient::DescribeProductDynamicRegister(const DescribeProductDynamicRegisterRequest &request)
@@ -2298,25 +2662,32 @@ IotvideoClient::DescribeProductDynamicRegisterOutcome IotvideoClient::DescribePr
 
 void IotvideoClient::DescribeProductDynamicRegisterAsync(const DescribeProductDynamicRegisterRequest& request, const DescribeProductDynamicRegisterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeProductDynamicRegister(request), context);
-    };
+    using Req = const DescribeProductDynamicRegisterRequest&;
+    using Resp = DescribeProductDynamicRegisterResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeProductDynamicRegister", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IotvideoClient::DescribeProductDynamicRegisterOutcomeCallable IotvideoClient::DescribeProductDynamicRegisterCallable(const DescribeProductDynamicRegisterRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeProductDynamicRegisterOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeProductDynamicRegister(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeProductDynamicRegisterOutcome>>();
+    DescribeProductDynamicRegisterAsync(
+    request,
+    [prom](
+        const IotvideoClient*,
+        const DescribeProductDynamicRegisterRequest&,
+        DescribeProductDynamicRegisterOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IotvideoClient::DescribeProductsOutcome IotvideoClient::DescribeProducts(const DescribeProductsRequest &request)
@@ -2341,25 +2712,32 @@ IotvideoClient::DescribeProductsOutcome IotvideoClient::DescribeProducts(const D
 
 void IotvideoClient::DescribeProductsAsync(const DescribeProductsRequest& request, const DescribeProductsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeProducts(request), context);
-    };
+    using Req = const DescribeProductsRequest&;
+    using Resp = DescribeProductsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeProducts", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IotvideoClient::DescribeProductsOutcomeCallable IotvideoClient::DescribeProductsCallable(const DescribeProductsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeProductsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeProducts(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeProductsOutcome>>();
+    DescribeProductsAsync(
+    request,
+    [prom](
+        const IotvideoClient*,
+        const DescribeProductsRequest&,
+        DescribeProductsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IotvideoClient::DescribeSDKLogOutcome IotvideoClient::DescribeSDKLog(const DescribeSDKLogRequest &request)
@@ -2384,25 +2762,32 @@ IotvideoClient::DescribeSDKLogOutcome IotvideoClient::DescribeSDKLog(const Descr
 
 void IotvideoClient::DescribeSDKLogAsync(const DescribeSDKLogRequest& request, const DescribeSDKLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeSDKLog(request), context);
-    };
+    using Req = const DescribeSDKLogRequest&;
+    using Resp = DescribeSDKLogResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeSDKLog", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IotvideoClient::DescribeSDKLogOutcomeCallable IotvideoClient::DescribeSDKLogCallable(const DescribeSDKLogRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeSDKLogOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeSDKLog(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeSDKLogOutcome>>();
+    DescribeSDKLogAsync(
+    request,
+    [prom](
+        const IotvideoClient*,
+        const DescribeSDKLogRequest&,
+        DescribeSDKLogOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IotvideoClient::EditFirmwareOutcome IotvideoClient::EditFirmware(const EditFirmwareRequest &request)
@@ -2427,25 +2812,32 @@ IotvideoClient::EditFirmwareOutcome IotvideoClient::EditFirmware(const EditFirmw
 
 void IotvideoClient::EditFirmwareAsync(const EditFirmwareRequest& request, const EditFirmwareAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->EditFirmware(request), context);
-    };
+    using Req = const EditFirmwareRequest&;
+    using Resp = EditFirmwareResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "EditFirmware", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IotvideoClient::EditFirmwareOutcomeCallable IotvideoClient::EditFirmwareCallable(const EditFirmwareRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<EditFirmwareOutcome()>>(
-        [this, request]()
-        {
-            return this->EditFirmware(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<EditFirmwareOutcome>>();
+    EditFirmwareAsync(
+    request,
+    [prom](
+        const IotvideoClient*,
+        const EditFirmwareRequest&,
+        EditFirmwareOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IotvideoClient::GenerateSignedVideoURLOutcome IotvideoClient::GenerateSignedVideoURL(const GenerateSignedVideoURLRequest &request)
@@ -2470,25 +2862,32 @@ IotvideoClient::GenerateSignedVideoURLOutcome IotvideoClient::GenerateSignedVide
 
 void IotvideoClient::GenerateSignedVideoURLAsync(const GenerateSignedVideoURLRequest& request, const GenerateSignedVideoURLAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->GenerateSignedVideoURL(request), context);
-    };
+    using Req = const GenerateSignedVideoURLRequest&;
+    using Resp = GenerateSignedVideoURLResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "GenerateSignedVideoURL", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IotvideoClient::GenerateSignedVideoURLOutcomeCallable IotvideoClient::GenerateSignedVideoURLCallable(const GenerateSignedVideoURLRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<GenerateSignedVideoURLOutcome()>>(
-        [this, request]()
-        {
-            return this->GenerateSignedVideoURL(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<GenerateSignedVideoURLOutcome>>();
+    GenerateSignedVideoURLAsync(
+    request,
+    [prom](
+        const IotvideoClient*,
+        const GenerateSignedVideoURLRequest&,
+        GenerateSignedVideoURLOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IotvideoClient::GetAllFirmwareVersionOutcome IotvideoClient::GetAllFirmwareVersion(const GetAllFirmwareVersionRequest &request)
@@ -2513,25 +2912,32 @@ IotvideoClient::GetAllFirmwareVersionOutcome IotvideoClient::GetAllFirmwareVersi
 
 void IotvideoClient::GetAllFirmwareVersionAsync(const GetAllFirmwareVersionRequest& request, const GetAllFirmwareVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->GetAllFirmwareVersion(request), context);
-    };
+    using Req = const GetAllFirmwareVersionRequest&;
+    using Resp = GetAllFirmwareVersionResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "GetAllFirmwareVersion", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IotvideoClient::GetAllFirmwareVersionOutcomeCallable IotvideoClient::GetAllFirmwareVersionCallable(const GetAllFirmwareVersionRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<GetAllFirmwareVersionOutcome()>>(
-        [this, request]()
-        {
-            return this->GetAllFirmwareVersion(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<GetAllFirmwareVersionOutcome>>();
+    GetAllFirmwareVersionAsync(
+    request,
+    [prom](
+        const IotvideoClient*,
+        const GetAllFirmwareVersionRequest&,
+        GetAllFirmwareVersionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IotvideoClient::GetFirmwareURLOutcome IotvideoClient::GetFirmwareURL(const GetFirmwareURLRequest &request)
@@ -2556,25 +2962,32 @@ IotvideoClient::GetFirmwareURLOutcome IotvideoClient::GetFirmwareURL(const GetFi
 
 void IotvideoClient::GetFirmwareURLAsync(const GetFirmwareURLRequest& request, const GetFirmwareURLAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->GetFirmwareURL(request), context);
-    };
+    using Req = const GetFirmwareURLRequest&;
+    using Resp = GetFirmwareURLResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "GetFirmwareURL", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IotvideoClient::GetFirmwareURLOutcomeCallable IotvideoClient::GetFirmwareURLCallable(const GetFirmwareURLRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<GetFirmwareURLOutcome()>>(
-        [this, request]()
-        {
-            return this->GetFirmwareURL(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<GetFirmwareURLOutcome>>();
+    GetFirmwareURLAsync(
+    request,
+    [prom](
+        const IotvideoClient*,
+        const GetFirmwareURLRequest&,
+        GetFirmwareURLOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IotvideoClient::ImportModelDefinitionOutcome IotvideoClient::ImportModelDefinition(const ImportModelDefinitionRequest &request)
@@ -2599,25 +3012,32 @@ IotvideoClient::ImportModelDefinitionOutcome IotvideoClient::ImportModelDefiniti
 
 void IotvideoClient::ImportModelDefinitionAsync(const ImportModelDefinitionRequest& request, const ImportModelDefinitionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ImportModelDefinition(request), context);
-    };
+    using Req = const ImportModelDefinitionRequest&;
+    using Resp = ImportModelDefinitionResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ImportModelDefinition", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IotvideoClient::ImportModelDefinitionOutcomeCallable IotvideoClient::ImportModelDefinitionCallable(const ImportModelDefinitionRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ImportModelDefinitionOutcome()>>(
-        [this, request]()
-        {
-            return this->ImportModelDefinition(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ImportModelDefinitionOutcome>>();
+    ImportModelDefinitionAsync(
+    request,
+    [prom](
+        const IotvideoClient*,
+        const ImportModelDefinitionRequest&,
+        ImportModelDefinitionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IotvideoClient::InheritCloudStorageUserOutcome IotvideoClient::InheritCloudStorageUser(const InheritCloudStorageUserRequest &request)
@@ -2642,25 +3062,32 @@ IotvideoClient::InheritCloudStorageUserOutcome IotvideoClient::InheritCloudStora
 
 void IotvideoClient::InheritCloudStorageUserAsync(const InheritCloudStorageUserRequest& request, const InheritCloudStorageUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->InheritCloudStorageUser(request), context);
-    };
+    using Req = const InheritCloudStorageUserRequest&;
+    using Resp = InheritCloudStorageUserResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "InheritCloudStorageUser", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IotvideoClient::InheritCloudStorageUserOutcomeCallable IotvideoClient::InheritCloudStorageUserCallable(const InheritCloudStorageUserRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<InheritCloudStorageUserOutcome()>>(
-        [this, request]()
-        {
-            return this->InheritCloudStorageUser(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<InheritCloudStorageUserOutcome>>();
+    InheritCloudStorageUserAsync(
+    request,
+    [prom](
+        const IotvideoClient*,
+        const InheritCloudStorageUserRequest&,
+        InheritCloudStorageUserOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IotvideoClient::ListFirmwaresOutcome IotvideoClient::ListFirmwares(const ListFirmwaresRequest &request)
@@ -2685,25 +3112,32 @@ IotvideoClient::ListFirmwaresOutcome IotvideoClient::ListFirmwares(const ListFir
 
 void IotvideoClient::ListFirmwaresAsync(const ListFirmwaresRequest& request, const ListFirmwaresAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ListFirmwares(request), context);
-    };
+    using Req = const ListFirmwaresRequest&;
+    using Resp = ListFirmwaresResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ListFirmwares", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IotvideoClient::ListFirmwaresOutcomeCallable IotvideoClient::ListFirmwaresCallable(const ListFirmwaresRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ListFirmwaresOutcome()>>(
-        [this, request]()
-        {
-            return this->ListFirmwares(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ListFirmwaresOutcome>>();
+    ListFirmwaresAsync(
+    request,
+    [prom](
+        const IotvideoClient*,
+        const ListFirmwaresRequest&,
+        ListFirmwaresOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IotvideoClient::ModifyDataForwardOutcome IotvideoClient::ModifyDataForward(const ModifyDataForwardRequest &request)
@@ -2728,25 +3162,32 @@ IotvideoClient::ModifyDataForwardOutcome IotvideoClient::ModifyDataForward(const
 
 void IotvideoClient::ModifyDataForwardAsync(const ModifyDataForwardRequest& request, const ModifyDataForwardAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyDataForward(request), context);
-    };
+    using Req = const ModifyDataForwardRequest&;
+    using Resp = ModifyDataForwardResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyDataForward", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IotvideoClient::ModifyDataForwardOutcomeCallable IotvideoClient::ModifyDataForwardCallable(const ModifyDataForwardRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyDataForwardOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyDataForward(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyDataForwardOutcome>>();
+    ModifyDataForwardAsync(
+    request,
+    [prom](
+        const IotvideoClient*,
+        const ModifyDataForwardRequest&,
+        ModifyDataForwardOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IotvideoClient::ModifyDataForwardStatusOutcome IotvideoClient::ModifyDataForwardStatus(const ModifyDataForwardStatusRequest &request)
@@ -2771,25 +3212,32 @@ IotvideoClient::ModifyDataForwardStatusOutcome IotvideoClient::ModifyDataForward
 
 void IotvideoClient::ModifyDataForwardStatusAsync(const ModifyDataForwardStatusRequest& request, const ModifyDataForwardStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyDataForwardStatus(request), context);
-    };
+    using Req = const ModifyDataForwardStatusRequest&;
+    using Resp = ModifyDataForwardStatusResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyDataForwardStatus", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IotvideoClient::ModifyDataForwardStatusOutcomeCallable IotvideoClient::ModifyDataForwardStatusCallable(const ModifyDataForwardStatusRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyDataForwardStatusOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyDataForwardStatus(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyDataForwardStatusOutcome>>();
+    ModifyDataForwardStatusAsync(
+    request,
+    [prom](
+        const IotvideoClient*,
+        const ModifyDataForwardStatusRequest&,
+        ModifyDataForwardStatusOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IotvideoClient::ModifyDeviceOutcome IotvideoClient::ModifyDevice(const ModifyDeviceRequest &request)
@@ -2814,25 +3262,32 @@ IotvideoClient::ModifyDeviceOutcome IotvideoClient::ModifyDevice(const ModifyDev
 
 void IotvideoClient::ModifyDeviceAsync(const ModifyDeviceRequest& request, const ModifyDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyDevice(request), context);
-    };
+    using Req = const ModifyDeviceRequest&;
+    using Resp = ModifyDeviceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyDevice", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IotvideoClient::ModifyDeviceOutcomeCallable IotvideoClient::ModifyDeviceCallable(const ModifyDeviceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyDeviceOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyDevice(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyDeviceOutcome>>();
+    ModifyDeviceAsync(
+    request,
+    [prom](
+        const IotvideoClient*,
+        const ModifyDeviceRequest&,
+        ModifyDeviceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IotvideoClient::ModifyDeviceLogLevelOutcome IotvideoClient::ModifyDeviceLogLevel(const ModifyDeviceLogLevelRequest &request)
@@ -2857,25 +3312,32 @@ IotvideoClient::ModifyDeviceLogLevelOutcome IotvideoClient::ModifyDeviceLogLevel
 
 void IotvideoClient::ModifyDeviceLogLevelAsync(const ModifyDeviceLogLevelRequest& request, const ModifyDeviceLogLevelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyDeviceLogLevel(request), context);
-    };
+    using Req = const ModifyDeviceLogLevelRequest&;
+    using Resp = ModifyDeviceLogLevelResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyDeviceLogLevel", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IotvideoClient::ModifyDeviceLogLevelOutcomeCallable IotvideoClient::ModifyDeviceLogLevelCallable(const ModifyDeviceLogLevelRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyDeviceLogLevelOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyDeviceLogLevel(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyDeviceLogLevelOutcome>>();
+    ModifyDeviceLogLevelAsync(
+    request,
+    [prom](
+        const IotvideoClient*,
+        const ModifyDeviceLogLevelRequest&,
+        ModifyDeviceLogLevelOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IotvideoClient::ModifyForwardRuleOutcome IotvideoClient::ModifyForwardRule(const ModifyForwardRuleRequest &request)
@@ -2900,25 +3362,32 @@ IotvideoClient::ModifyForwardRuleOutcome IotvideoClient::ModifyForwardRule(const
 
 void IotvideoClient::ModifyForwardRuleAsync(const ModifyForwardRuleRequest& request, const ModifyForwardRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyForwardRule(request), context);
-    };
+    using Req = const ModifyForwardRuleRequest&;
+    using Resp = ModifyForwardRuleResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyForwardRule", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IotvideoClient::ModifyForwardRuleOutcomeCallable IotvideoClient::ModifyForwardRuleCallable(const ModifyForwardRuleRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyForwardRuleOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyForwardRule(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyForwardRuleOutcome>>();
+    ModifyForwardRuleAsync(
+    request,
+    [prom](
+        const IotvideoClient*,
+        const ModifyForwardRuleRequest&,
+        ModifyForwardRuleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IotvideoClient::ModifyModelDefinitionOutcome IotvideoClient::ModifyModelDefinition(const ModifyModelDefinitionRequest &request)
@@ -2943,25 +3412,32 @@ IotvideoClient::ModifyModelDefinitionOutcome IotvideoClient::ModifyModelDefiniti
 
 void IotvideoClient::ModifyModelDefinitionAsync(const ModifyModelDefinitionRequest& request, const ModifyModelDefinitionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyModelDefinition(request), context);
-    };
+    using Req = const ModifyModelDefinitionRequest&;
+    using Resp = ModifyModelDefinitionResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyModelDefinition", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IotvideoClient::ModifyModelDefinitionOutcomeCallable IotvideoClient::ModifyModelDefinitionCallable(const ModifyModelDefinitionRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyModelDefinitionOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyModelDefinition(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyModelDefinitionOutcome>>();
+    ModifyModelDefinitionAsync(
+    request,
+    [prom](
+        const IotvideoClient*,
+        const ModifyModelDefinitionRequest&,
+        ModifyModelDefinitionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IotvideoClient::ModifyProductOutcome IotvideoClient::ModifyProduct(const ModifyProductRequest &request)
@@ -2986,25 +3462,32 @@ IotvideoClient::ModifyProductOutcome IotvideoClient::ModifyProduct(const ModifyP
 
 void IotvideoClient::ModifyProductAsync(const ModifyProductRequest& request, const ModifyProductAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyProduct(request), context);
-    };
+    using Req = const ModifyProductRequest&;
+    using Resp = ModifyProductResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyProduct", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IotvideoClient::ModifyProductOutcomeCallable IotvideoClient::ModifyProductCallable(const ModifyProductRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyProductOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyProduct(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyProductOutcome>>();
+    ModifyProductAsync(
+    request,
+    [prom](
+        const IotvideoClient*,
+        const ModifyProductRequest&,
+        ModifyProductOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IotvideoClient::ModifyProductDynamicRegisterOutcome IotvideoClient::ModifyProductDynamicRegister(const ModifyProductDynamicRegisterRequest &request)
@@ -3029,25 +3512,32 @@ IotvideoClient::ModifyProductDynamicRegisterOutcome IotvideoClient::ModifyProduc
 
 void IotvideoClient::ModifyProductDynamicRegisterAsync(const ModifyProductDynamicRegisterRequest& request, const ModifyProductDynamicRegisterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyProductDynamicRegister(request), context);
-    };
+    using Req = const ModifyProductDynamicRegisterRequest&;
+    using Resp = ModifyProductDynamicRegisterResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyProductDynamicRegister", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IotvideoClient::ModifyProductDynamicRegisterOutcomeCallable IotvideoClient::ModifyProductDynamicRegisterCallable(const ModifyProductDynamicRegisterRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyProductDynamicRegisterOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyProductDynamicRegister(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyProductDynamicRegisterOutcome>>();
+    ModifyProductDynamicRegisterAsync(
+    request,
+    [prom](
+        const IotvideoClient*,
+        const ModifyProductDynamicRegisterRequest&,
+        ModifyProductDynamicRegisterOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IotvideoClient::PublishMessageOutcome IotvideoClient::PublishMessage(const PublishMessageRequest &request)
@@ -3072,25 +3562,32 @@ IotvideoClient::PublishMessageOutcome IotvideoClient::PublishMessage(const Publi
 
 void IotvideoClient::PublishMessageAsync(const PublishMessageRequest& request, const PublishMessageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->PublishMessage(request), context);
-    };
+    using Req = const PublishMessageRequest&;
+    using Resp = PublishMessageResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "PublishMessage", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IotvideoClient::PublishMessageOutcomeCallable IotvideoClient::PublishMessageCallable(const PublishMessageRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<PublishMessageOutcome()>>(
-        [this, request]()
-        {
-            return this->PublishMessage(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<PublishMessageOutcome>>();
+    PublishMessageAsync(
+    request,
+    [prom](
+        const IotvideoClient*,
+        const PublishMessageRequest&,
+        PublishMessageOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IotvideoClient::ReportAliveDeviceOutcome IotvideoClient::ReportAliveDevice(const ReportAliveDeviceRequest &request)
@@ -3115,25 +3612,32 @@ IotvideoClient::ReportAliveDeviceOutcome IotvideoClient::ReportAliveDevice(const
 
 void IotvideoClient::ReportAliveDeviceAsync(const ReportAliveDeviceRequest& request, const ReportAliveDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ReportAliveDevice(request), context);
-    };
+    using Req = const ReportAliveDeviceRequest&;
+    using Resp = ReportAliveDeviceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ReportAliveDevice", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IotvideoClient::ReportAliveDeviceOutcomeCallable IotvideoClient::ReportAliveDeviceCallable(const ReportAliveDeviceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ReportAliveDeviceOutcome()>>(
-        [this, request]()
-        {
-            return this->ReportAliveDevice(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ReportAliveDeviceOutcome>>();
+    ReportAliveDeviceAsync(
+    request,
+    [prom](
+        const IotvideoClient*,
+        const ReportAliveDeviceRequest&,
+        ReportAliveDeviceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IotvideoClient::ResetCloudStorageOutcome IotvideoClient::ResetCloudStorage(const ResetCloudStorageRequest &request)
@@ -3158,25 +3662,32 @@ IotvideoClient::ResetCloudStorageOutcome IotvideoClient::ResetCloudStorage(const
 
 void IotvideoClient::ResetCloudStorageAsync(const ResetCloudStorageRequest& request, const ResetCloudStorageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ResetCloudStorage(request), context);
-    };
+    using Req = const ResetCloudStorageRequest&;
+    using Resp = ResetCloudStorageResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ResetCloudStorage", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IotvideoClient::ResetCloudStorageOutcomeCallable IotvideoClient::ResetCloudStorageCallable(const ResetCloudStorageRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ResetCloudStorageOutcome()>>(
-        [this, request]()
-        {
-            return this->ResetCloudStorage(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ResetCloudStorageOutcome>>();
+    ResetCloudStorageAsync(
+    request,
+    [prom](
+        const IotvideoClient*,
+        const ResetCloudStorageRequest&,
+        ResetCloudStorageOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IotvideoClient::RetryDeviceFirmwareTaskOutcome IotvideoClient::RetryDeviceFirmwareTask(const RetryDeviceFirmwareTaskRequest &request)
@@ -3201,25 +3712,32 @@ IotvideoClient::RetryDeviceFirmwareTaskOutcome IotvideoClient::RetryDeviceFirmwa
 
 void IotvideoClient::RetryDeviceFirmwareTaskAsync(const RetryDeviceFirmwareTaskRequest& request, const RetryDeviceFirmwareTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->RetryDeviceFirmwareTask(request), context);
-    };
+    using Req = const RetryDeviceFirmwareTaskRequest&;
+    using Resp = RetryDeviceFirmwareTaskResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "RetryDeviceFirmwareTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IotvideoClient::RetryDeviceFirmwareTaskOutcomeCallable IotvideoClient::RetryDeviceFirmwareTaskCallable(const RetryDeviceFirmwareTaskRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<RetryDeviceFirmwareTaskOutcome()>>(
-        [this, request]()
-        {
-            return this->RetryDeviceFirmwareTask(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<RetryDeviceFirmwareTaskOutcome>>();
+    RetryDeviceFirmwareTaskAsync(
+    request,
+    [prom](
+        const IotvideoClient*,
+        const RetryDeviceFirmwareTaskRequest&,
+        RetryDeviceFirmwareTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IotvideoClient::SetForwardAuthOutcome IotvideoClient::SetForwardAuth(const SetForwardAuthRequest &request)
@@ -3244,25 +3762,32 @@ IotvideoClient::SetForwardAuthOutcome IotvideoClient::SetForwardAuth(const SetFo
 
 void IotvideoClient::SetForwardAuthAsync(const SetForwardAuthRequest& request, const SetForwardAuthAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->SetForwardAuth(request), context);
-    };
+    using Req = const SetForwardAuthRequest&;
+    using Resp = SetForwardAuthResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "SetForwardAuth", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IotvideoClient::SetForwardAuthOutcomeCallable IotvideoClient::SetForwardAuthCallable(const SetForwardAuthRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<SetForwardAuthOutcome()>>(
-        [this, request]()
-        {
-            return this->SetForwardAuth(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<SetForwardAuthOutcome>>();
+    SetForwardAuthAsync(
+    request,
+    [prom](
+        const IotvideoClient*,
+        const SetForwardAuthRequest&,
+        SetForwardAuthOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IotvideoClient::TransferCloudStorageOutcome IotvideoClient::TransferCloudStorage(const TransferCloudStorageRequest &request)
@@ -3287,25 +3812,32 @@ IotvideoClient::TransferCloudStorageOutcome IotvideoClient::TransferCloudStorage
 
 void IotvideoClient::TransferCloudStorageAsync(const TransferCloudStorageRequest& request, const TransferCloudStorageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->TransferCloudStorage(request), context);
-    };
+    using Req = const TransferCloudStorageRequest&;
+    using Resp = TransferCloudStorageResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "TransferCloudStorage", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IotvideoClient::TransferCloudStorageOutcomeCallable IotvideoClient::TransferCloudStorageCallable(const TransferCloudStorageRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<TransferCloudStorageOutcome()>>(
-        [this, request]()
-        {
-            return this->TransferCloudStorage(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<TransferCloudStorageOutcome>>();
+    TransferCloudStorageAsync(
+    request,
+    [prom](
+        const IotvideoClient*,
+        const TransferCloudStorageRequest&,
+        TransferCloudStorageOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IotvideoClient::UpdateAIModelChannelOutcome IotvideoClient::UpdateAIModelChannel(const UpdateAIModelChannelRequest &request)
@@ -3330,25 +3862,32 @@ IotvideoClient::UpdateAIModelChannelOutcome IotvideoClient::UpdateAIModelChannel
 
 void IotvideoClient::UpdateAIModelChannelAsync(const UpdateAIModelChannelRequest& request, const UpdateAIModelChannelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UpdateAIModelChannel(request), context);
-    };
+    using Req = const UpdateAIModelChannelRequest&;
+    using Resp = UpdateAIModelChannelResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UpdateAIModelChannel", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IotvideoClient::UpdateAIModelChannelOutcomeCallable IotvideoClient::UpdateAIModelChannelCallable(const UpdateAIModelChannelRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UpdateAIModelChannelOutcome()>>(
-        [this, request]()
-        {
-            return this->UpdateAIModelChannel(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UpdateAIModelChannelOutcome>>();
+    UpdateAIModelChannelAsync(
+    request,
+    [prom](
+        const IotvideoClient*,
+        const UpdateAIModelChannelRequest&,
+        UpdateAIModelChannelOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IotvideoClient::UploadFirmwareOutcome IotvideoClient::UploadFirmware(const UploadFirmwareRequest &request)
@@ -3373,25 +3912,32 @@ IotvideoClient::UploadFirmwareOutcome IotvideoClient::UploadFirmware(const Uploa
 
 void IotvideoClient::UploadFirmwareAsync(const UploadFirmwareRequest& request, const UploadFirmwareAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UploadFirmware(request), context);
-    };
+    using Req = const UploadFirmwareRequest&;
+    using Resp = UploadFirmwareResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UploadFirmware", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IotvideoClient::UploadFirmwareOutcomeCallable IotvideoClient::UploadFirmwareCallable(const UploadFirmwareRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UploadFirmwareOutcome()>>(
-        [this, request]()
-        {
-            return this->UploadFirmware(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UploadFirmwareOutcome>>();
+    UploadFirmwareAsync(
+    request,
+    [prom](
+        const IotvideoClient*,
+        const UploadFirmwareRequest&,
+        UploadFirmwareOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IotvideoClient::WakeUpDeviceOutcome IotvideoClient::WakeUpDevice(const WakeUpDeviceRequest &request)
@@ -3416,24 +3962,31 @@ IotvideoClient::WakeUpDeviceOutcome IotvideoClient::WakeUpDevice(const WakeUpDev
 
 void IotvideoClient::WakeUpDeviceAsync(const WakeUpDeviceRequest& request, const WakeUpDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->WakeUpDevice(request), context);
-    };
+    using Req = const WakeUpDeviceRequest&;
+    using Resp = WakeUpDeviceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "WakeUpDevice", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IotvideoClient::WakeUpDeviceOutcomeCallable IotvideoClient::WakeUpDeviceCallable(const WakeUpDeviceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<WakeUpDeviceOutcome()>>(
-        [this, request]()
-        {
-            return this->WakeUpDevice(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<WakeUpDeviceOutcome>>();
+    WakeUpDeviceAsync(
+    request,
+    [prom](
+        const IotvideoClient*,
+        const WakeUpDeviceRequest&,
+        WakeUpDeviceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 

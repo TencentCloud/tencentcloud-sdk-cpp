@@ -62,25 +62,32 @@ GsClient::BackUpAndroidInstanceOutcome GsClient::BackUpAndroidInstance(const Bac
 
 void GsClient::BackUpAndroidInstanceAsync(const BackUpAndroidInstanceRequest& request, const BackUpAndroidInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->BackUpAndroidInstance(request), context);
-    };
+    using Req = const BackUpAndroidInstanceRequest&;
+    using Resp = BackUpAndroidInstanceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "BackUpAndroidInstance", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 GsClient::BackUpAndroidInstanceOutcomeCallable GsClient::BackUpAndroidInstanceCallable(const BackUpAndroidInstanceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<BackUpAndroidInstanceOutcome()>>(
-        [this, request]()
-        {
-            return this->BackUpAndroidInstance(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<BackUpAndroidInstanceOutcome>>();
+    BackUpAndroidInstanceAsync(
+    request,
+    [prom](
+        const GsClient*,
+        const BackUpAndroidInstanceRequest&,
+        BackUpAndroidInstanceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 GsClient::BackUpAndroidInstanceToStorageOutcome GsClient::BackUpAndroidInstanceToStorage(const BackUpAndroidInstanceToStorageRequest &request)
@@ -105,25 +112,32 @@ GsClient::BackUpAndroidInstanceToStorageOutcome GsClient::BackUpAndroidInstanceT
 
 void GsClient::BackUpAndroidInstanceToStorageAsync(const BackUpAndroidInstanceToStorageRequest& request, const BackUpAndroidInstanceToStorageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->BackUpAndroidInstanceToStorage(request), context);
-    };
+    using Req = const BackUpAndroidInstanceToStorageRequest&;
+    using Resp = BackUpAndroidInstanceToStorageResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "BackUpAndroidInstanceToStorage", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 GsClient::BackUpAndroidInstanceToStorageOutcomeCallable GsClient::BackUpAndroidInstanceToStorageCallable(const BackUpAndroidInstanceToStorageRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<BackUpAndroidInstanceToStorageOutcome()>>(
-        [this, request]()
-        {
-            return this->BackUpAndroidInstanceToStorage(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<BackUpAndroidInstanceToStorageOutcome>>();
+    BackUpAndroidInstanceToStorageAsync(
+    request,
+    [prom](
+        const GsClient*,
+        const BackUpAndroidInstanceToStorageRequest&,
+        BackUpAndroidInstanceToStorageOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 GsClient::CleanAndroidInstancesAppDataOutcome GsClient::CleanAndroidInstancesAppData(const CleanAndroidInstancesAppDataRequest &request)
@@ -148,25 +162,32 @@ GsClient::CleanAndroidInstancesAppDataOutcome GsClient::CleanAndroidInstancesApp
 
 void GsClient::CleanAndroidInstancesAppDataAsync(const CleanAndroidInstancesAppDataRequest& request, const CleanAndroidInstancesAppDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CleanAndroidInstancesAppData(request), context);
-    };
+    using Req = const CleanAndroidInstancesAppDataRequest&;
+    using Resp = CleanAndroidInstancesAppDataResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CleanAndroidInstancesAppData", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 GsClient::CleanAndroidInstancesAppDataOutcomeCallable GsClient::CleanAndroidInstancesAppDataCallable(const CleanAndroidInstancesAppDataRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CleanAndroidInstancesAppDataOutcome()>>(
-        [this, request]()
-        {
-            return this->CleanAndroidInstancesAppData(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CleanAndroidInstancesAppDataOutcome>>();
+    CleanAndroidInstancesAppDataAsync(
+    request,
+    [prom](
+        const GsClient*,
+        const CleanAndroidInstancesAppDataRequest&,
+        CleanAndroidInstancesAppDataOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 GsClient::ConnectAndroidInstanceOutcome GsClient::ConnectAndroidInstance(const ConnectAndroidInstanceRequest &request)
@@ -191,25 +212,32 @@ GsClient::ConnectAndroidInstanceOutcome GsClient::ConnectAndroidInstance(const C
 
 void GsClient::ConnectAndroidInstanceAsync(const ConnectAndroidInstanceRequest& request, const ConnectAndroidInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ConnectAndroidInstance(request), context);
-    };
+    using Req = const ConnectAndroidInstanceRequest&;
+    using Resp = ConnectAndroidInstanceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ConnectAndroidInstance", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 GsClient::ConnectAndroidInstanceOutcomeCallable GsClient::ConnectAndroidInstanceCallable(const ConnectAndroidInstanceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ConnectAndroidInstanceOutcome()>>(
-        [this, request]()
-        {
-            return this->ConnectAndroidInstance(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ConnectAndroidInstanceOutcome>>();
+    ConnectAndroidInstanceAsync(
+    request,
+    [prom](
+        const GsClient*,
+        const ConnectAndroidInstanceRequest&,
+        ConnectAndroidInstanceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 GsClient::CopyAndroidInstanceOutcome GsClient::CopyAndroidInstance(const CopyAndroidInstanceRequest &request)
@@ -234,25 +262,32 @@ GsClient::CopyAndroidInstanceOutcome GsClient::CopyAndroidInstance(const CopyAnd
 
 void GsClient::CopyAndroidInstanceAsync(const CopyAndroidInstanceRequest& request, const CopyAndroidInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CopyAndroidInstance(request), context);
-    };
+    using Req = const CopyAndroidInstanceRequest&;
+    using Resp = CopyAndroidInstanceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CopyAndroidInstance", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 GsClient::CopyAndroidInstanceOutcomeCallable GsClient::CopyAndroidInstanceCallable(const CopyAndroidInstanceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CopyAndroidInstanceOutcome()>>(
-        [this, request]()
-        {
-            return this->CopyAndroidInstance(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CopyAndroidInstanceOutcome>>();
+    CopyAndroidInstanceAsync(
+    request,
+    [prom](
+        const GsClient*,
+        const CopyAndroidInstanceRequest&,
+        CopyAndroidInstanceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 GsClient::CreateAndroidAppOutcome GsClient::CreateAndroidApp(const CreateAndroidAppRequest &request)
@@ -277,25 +312,32 @@ GsClient::CreateAndroidAppOutcome GsClient::CreateAndroidApp(const CreateAndroid
 
 void GsClient::CreateAndroidAppAsync(const CreateAndroidAppRequest& request, const CreateAndroidAppAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateAndroidApp(request), context);
-    };
+    using Req = const CreateAndroidAppRequest&;
+    using Resp = CreateAndroidAppResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateAndroidApp", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 GsClient::CreateAndroidAppOutcomeCallable GsClient::CreateAndroidAppCallable(const CreateAndroidAppRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateAndroidAppOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateAndroidApp(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateAndroidAppOutcome>>();
+    CreateAndroidAppAsync(
+    request,
+    [prom](
+        const GsClient*,
+        const CreateAndroidAppRequest&,
+        CreateAndroidAppOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 GsClient::CreateAndroidAppVersionOutcome GsClient::CreateAndroidAppVersion(const CreateAndroidAppVersionRequest &request)
@@ -320,25 +362,32 @@ GsClient::CreateAndroidAppVersionOutcome GsClient::CreateAndroidAppVersion(const
 
 void GsClient::CreateAndroidAppVersionAsync(const CreateAndroidAppVersionRequest& request, const CreateAndroidAppVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateAndroidAppVersion(request), context);
-    };
+    using Req = const CreateAndroidAppVersionRequest&;
+    using Resp = CreateAndroidAppVersionResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateAndroidAppVersion", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 GsClient::CreateAndroidAppVersionOutcomeCallable GsClient::CreateAndroidAppVersionCallable(const CreateAndroidAppVersionRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateAndroidAppVersionOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateAndroidAppVersion(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateAndroidAppVersionOutcome>>();
+    CreateAndroidAppVersionAsync(
+    request,
+    [prom](
+        const GsClient*,
+        const CreateAndroidAppVersionRequest&,
+        CreateAndroidAppVersionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 GsClient::CreateAndroidInstanceADBOutcome GsClient::CreateAndroidInstanceADB(const CreateAndroidInstanceADBRequest &request)
@@ -363,25 +412,32 @@ GsClient::CreateAndroidInstanceADBOutcome GsClient::CreateAndroidInstanceADB(con
 
 void GsClient::CreateAndroidInstanceADBAsync(const CreateAndroidInstanceADBRequest& request, const CreateAndroidInstanceADBAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateAndroidInstanceADB(request), context);
-    };
+    using Req = const CreateAndroidInstanceADBRequest&;
+    using Resp = CreateAndroidInstanceADBResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateAndroidInstanceADB", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 GsClient::CreateAndroidInstanceADBOutcomeCallable GsClient::CreateAndroidInstanceADBCallable(const CreateAndroidInstanceADBRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateAndroidInstanceADBOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateAndroidInstanceADB(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateAndroidInstanceADBOutcome>>();
+    CreateAndroidInstanceADBAsync(
+    request,
+    [prom](
+        const GsClient*,
+        const CreateAndroidInstanceADBRequest&,
+        CreateAndroidInstanceADBOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 GsClient::CreateAndroidInstanceImageOutcome GsClient::CreateAndroidInstanceImage(const CreateAndroidInstanceImageRequest &request)
@@ -406,25 +462,32 @@ GsClient::CreateAndroidInstanceImageOutcome GsClient::CreateAndroidInstanceImage
 
 void GsClient::CreateAndroidInstanceImageAsync(const CreateAndroidInstanceImageRequest& request, const CreateAndroidInstanceImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateAndroidInstanceImage(request), context);
-    };
+    using Req = const CreateAndroidInstanceImageRequest&;
+    using Resp = CreateAndroidInstanceImageResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateAndroidInstanceImage", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 GsClient::CreateAndroidInstanceImageOutcomeCallable GsClient::CreateAndroidInstanceImageCallable(const CreateAndroidInstanceImageRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateAndroidInstanceImageOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateAndroidInstanceImage(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateAndroidInstanceImageOutcome>>();
+    CreateAndroidInstanceImageAsync(
+    request,
+    [prom](
+        const GsClient*,
+        const CreateAndroidInstanceImageRequest&,
+        CreateAndroidInstanceImageOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 GsClient::CreateAndroidInstanceLabelOutcome GsClient::CreateAndroidInstanceLabel(const CreateAndroidInstanceLabelRequest &request)
@@ -449,25 +512,32 @@ GsClient::CreateAndroidInstanceLabelOutcome GsClient::CreateAndroidInstanceLabel
 
 void GsClient::CreateAndroidInstanceLabelAsync(const CreateAndroidInstanceLabelRequest& request, const CreateAndroidInstanceLabelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateAndroidInstanceLabel(request), context);
-    };
+    using Req = const CreateAndroidInstanceLabelRequest&;
+    using Resp = CreateAndroidInstanceLabelResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateAndroidInstanceLabel", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 GsClient::CreateAndroidInstanceLabelOutcomeCallable GsClient::CreateAndroidInstanceLabelCallable(const CreateAndroidInstanceLabelRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateAndroidInstanceLabelOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateAndroidInstanceLabel(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateAndroidInstanceLabelOutcome>>();
+    CreateAndroidInstanceLabelAsync(
+    request,
+    [prom](
+        const GsClient*,
+        const CreateAndroidInstanceLabelRequest&,
+        CreateAndroidInstanceLabelOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 GsClient::CreateAndroidInstanceSSHOutcome GsClient::CreateAndroidInstanceSSH(const CreateAndroidInstanceSSHRequest &request)
@@ -492,25 +562,32 @@ GsClient::CreateAndroidInstanceSSHOutcome GsClient::CreateAndroidInstanceSSH(con
 
 void GsClient::CreateAndroidInstanceSSHAsync(const CreateAndroidInstanceSSHRequest& request, const CreateAndroidInstanceSSHAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateAndroidInstanceSSH(request), context);
-    };
+    using Req = const CreateAndroidInstanceSSHRequest&;
+    using Resp = CreateAndroidInstanceSSHResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateAndroidInstanceSSH", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 GsClient::CreateAndroidInstanceSSHOutcomeCallable GsClient::CreateAndroidInstanceSSHCallable(const CreateAndroidInstanceSSHRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateAndroidInstanceSSHOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateAndroidInstanceSSH(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateAndroidInstanceSSHOutcome>>();
+    CreateAndroidInstanceSSHAsync(
+    request,
+    [prom](
+        const GsClient*,
+        const CreateAndroidInstanceSSHRequest&,
+        CreateAndroidInstanceSSHOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 GsClient::CreateAndroidInstanceWebShellOutcome GsClient::CreateAndroidInstanceWebShell(const CreateAndroidInstanceWebShellRequest &request)
@@ -535,25 +612,32 @@ GsClient::CreateAndroidInstanceWebShellOutcome GsClient::CreateAndroidInstanceWe
 
 void GsClient::CreateAndroidInstanceWebShellAsync(const CreateAndroidInstanceWebShellRequest& request, const CreateAndroidInstanceWebShellAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateAndroidInstanceWebShell(request), context);
-    };
+    using Req = const CreateAndroidInstanceWebShellRequest&;
+    using Resp = CreateAndroidInstanceWebShellResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateAndroidInstanceWebShell", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 GsClient::CreateAndroidInstanceWebShellOutcomeCallable GsClient::CreateAndroidInstanceWebShellCallable(const CreateAndroidInstanceWebShellRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateAndroidInstanceWebShellOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateAndroidInstanceWebShell(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateAndroidInstanceWebShellOutcome>>();
+    CreateAndroidInstanceWebShellAsync(
+    request,
+    [prom](
+        const GsClient*,
+        const CreateAndroidInstanceWebShellRequest&,
+        CreateAndroidInstanceWebShellOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 GsClient::CreateAndroidInstancesOutcome GsClient::CreateAndroidInstances(const CreateAndroidInstancesRequest &request)
@@ -578,25 +662,32 @@ GsClient::CreateAndroidInstancesOutcome GsClient::CreateAndroidInstances(const C
 
 void GsClient::CreateAndroidInstancesAsync(const CreateAndroidInstancesRequest& request, const CreateAndroidInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateAndroidInstances(request), context);
-    };
+    using Req = const CreateAndroidInstancesRequest&;
+    using Resp = CreateAndroidInstancesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateAndroidInstances", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 GsClient::CreateAndroidInstancesOutcomeCallable GsClient::CreateAndroidInstancesCallable(const CreateAndroidInstancesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateAndroidInstancesOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateAndroidInstances(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateAndroidInstancesOutcome>>();
+    CreateAndroidInstancesAsync(
+    request,
+    [prom](
+        const GsClient*,
+        const CreateAndroidInstancesRequest&,
+        CreateAndroidInstancesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 GsClient::CreateAndroidInstancesAccessTokenOutcome GsClient::CreateAndroidInstancesAccessToken(const CreateAndroidInstancesAccessTokenRequest &request)
@@ -621,25 +712,32 @@ GsClient::CreateAndroidInstancesAccessTokenOutcome GsClient::CreateAndroidInstan
 
 void GsClient::CreateAndroidInstancesAccessTokenAsync(const CreateAndroidInstancesAccessTokenRequest& request, const CreateAndroidInstancesAccessTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateAndroidInstancesAccessToken(request), context);
-    };
+    using Req = const CreateAndroidInstancesAccessTokenRequest&;
+    using Resp = CreateAndroidInstancesAccessTokenResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateAndroidInstancesAccessToken", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 GsClient::CreateAndroidInstancesAccessTokenOutcomeCallable GsClient::CreateAndroidInstancesAccessTokenCallable(const CreateAndroidInstancesAccessTokenRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateAndroidInstancesAccessTokenOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateAndroidInstancesAccessToken(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateAndroidInstancesAccessTokenOutcome>>();
+    CreateAndroidInstancesAccessTokenAsync(
+    request,
+    [prom](
+        const GsClient*,
+        const CreateAndroidInstancesAccessTokenRequest&,
+        CreateAndroidInstancesAccessTokenOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 GsClient::CreateAndroidInstancesScreenshotOutcome GsClient::CreateAndroidInstancesScreenshot(const CreateAndroidInstancesScreenshotRequest &request)
@@ -664,25 +762,32 @@ GsClient::CreateAndroidInstancesScreenshotOutcome GsClient::CreateAndroidInstanc
 
 void GsClient::CreateAndroidInstancesScreenshotAsync(const CreateAndroidInstancesScreenshotRequest& request, const CreateAndroidInstancesScreenshotAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateAndroidInstancesScreenshot(request), context);
-    };
+    using Req = const CreateAndroidInstancesScreenshotRequest&;
+    using Resp = CreateAndroidInstancesScreenshotResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateAndroidInstancesScreenshot", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 GsClient::CreateAndroidInstancesScreenshotOutcomeCallable GsClient::CreateAndroidInstancesScreenshotCallable(const CreateAndroidInstancesScreenshotRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateAndroidInstancesScreenshotOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateAndroidInstancesScreenshot(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateAndroidInstancesScreenshotOutcome>>();
+    CreateAndroidInstancesScreenshotAsync(
+    request,
+    [prom](
+        const GsClient*,
+        const CreateAndroidInstancesScreenshotRequest&,
+        CreateAndroidInstancesScreenshotOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 GsClient::CreateCosCredentialOutcome GsClient::CreateCosCredential(const CreateCosCredentialRequest &request)
@@ -707,25 +812,32 @@ GsClient::CreateCosCredentialOutcome GsClient::CreateCosCredential(const CreateC
 
 void GsClient::CreateCosCredentialAsync(const CreateCosCredentialRequest& request, const CreateCosCredentialAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateCosCredential(request), context);
-    };
+    using Req = const CreateCosCredentialRequest&;
+    using Resp = CreateCosCredentialResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateCosCredential", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 GsClient::CreateCosCredentialOutcomeCallable GsClient::CreateCosCredentialCallable(const CreateCosCredentialRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateCosCredentialOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateCosCredential(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateCosCredentialOutcome>>();
+    CreateCosCredentialAsync(
+    request,
+    [prom](
+        const GsClient*,
+        const CreateCosCredentialRequest&,
+        CreateCosCredentialOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 GsClient::CreateSessionOutcome GsClient::CreateSession(const CreateSessionRequest &request)
@@ -750,25 +862,32 @@ GsClient::CreateSessionOutcome GsClient::CreateSession(const CreateSessionReques
 
 void GsClient::CreateSessionAsync(const CreateSessionRequest& request, const CreateSessionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateSession(request), context);
-    };
+    using Req = const CreateSessionRequest&;
+    using Resp = CreateSessionResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateSession", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 GsClient::CreateSessionOutcomeCallable GsClient::CreateSessionCallable(const CreateSessionRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateSessionOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateSession(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateSessionOutcome>>();
+    CreateSessionAsync(
+    request,
+    [prom](
+        const GsClient*,
+        const CreateSessionRequest&,
+        CreateSessionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 GsClient::DeleteAndroidAppOutcome GsClient::DeleteAndroidApp(const DeleteAndroidAppRequest &request)
@@ -793,25 +912,32 @@ GsClient::DeleteAndroidAppOutcome GsClient::DeleteAndroidApp(const DeleteAndroid
 
 void GsClient::DeleteAndroidAppAsync(const DeleteAndroidAppRequest& request, const DeleteAndroidAppAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteAndroidApp(request), context);
-    };
+    using Req = const DeleteAndroidAppRequest&;
+    using Resp = DeleteAndroidAppResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteAndroidApp", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 GsClient::DeleteAndroidAppOutcomeCallable GsClient::DeleteAndroidAppCallable(const DeleteAndroidAppRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteAndroidAppOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteAndroidApp(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteAndroidAppOutcome>>();
+    DeleteAndroidAppAsync(
+    request,
+    [prom](
+        const GsClient*,
+        const DeleteAndroidAppRequest&,
+        DeleteAndroidAppOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 GsClient::DeleteAndroidAppVersionOutcome GsClient::DeleteAndroidAppVersion(const DeleteAndroidAppVersionRequest &request)
@@ -836,25 +962,32 @@ GsClient::DeleteAndroidAppVersionOutcome GsClient::DeleteAndroidAppVersion(const
 
 void GsClient::DeleteAndroidAppVersionAsync(const DeleteAndroidAppVersionRequest& request, const DeleteAndroidAppVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteAndroidAppVersion(request), context);
-    };
+    using Req = const DeleteAndroidAppVersionRequest&;
+    using Resp = DeleteAndroidAppVersionResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteAndroidAppVersion", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 GsClient::DeleteAndroidAppVersionOutcomeCallable GsClient::DeleteAndroidAppVersionCallable(const DeleteAndroidAppVersionRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteAndroidAppVersionOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteAndroidAppVersion(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteAndroidAppVersionOutcome>>();
+    DeleteAndroidAppVersionAsync(
+    request,
+    [prom](
+        const GsClient*,
+        const DeleteAndroidAppVersionRequest&,
+        DeleteAndroidAppVersionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 GsClient::DeleteAndroidInstanceBackupFilesOutcome GsClient::DeleteAndroidInstanceBackupFiles(const DeleteAndroidInstanceBackupFilesRequest &request)
@@ -879,25 +1012,32 @@ GsClient::DeleteAndroidInstanceBackupFilesOutcome GsClient::DeleteAndroidInstanc
 
 void GsClient::DeleteAndroidInstanceBackupFilesAsync(const DeleteAndroidInstanceBackupFilesRequest& request, const DeleteAndroidInstanceBackupFilesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteAndroidInstanceBackupFiles(request), context);
-    };
+    using Req = const DeleteAndroidInstanceBackupFilesRequest&;
+    using Resp = DeleteAndroidInstanceBackupFilesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteAndroidInstanceBackupFiles", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 GsClient::DeleteAndroidInstanceBackupFilesOutcomeCallable GsClient::DeleteAndroidInstanceBackupFilesCallable(const DeleteAndroidInstanceBackupFilesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteAndroidInstanceBackupFilesOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteAndroidInstanceBackupFiles(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteAndroidInstanceBackupFilesOutcome>>();
+    DeleteAndroidInstanceBackupFilesAsync(
+    request,
+    [prom](
+        const GsClient*,
+        const DeleteAndroidInstanceBackupFilesRequest&,
+        DeleteAndroidInstanceBackupFilesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 GsClient::DeleteAndroidInstanceBackupsOutcome GsClient::DeleteAndroidInstanceBackups(const DeleteAndroidInstanceBackupsRequest &request)
@@ -922,25 +1062,32 @@ GsClient::DeleteAndroidInstanceBackupsOutcome GsClient::DeleteAndroidInstanceBac
 
 void GsClient::DeleteAndroidInstanceBackupsAsync(const DeleteAndroidInstanceBackupsRequest& request, const DeleteAndroidInstanceBackupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteAndroidInstanceBackups(request), context);
-    };
+    using Req = const DeleteAndroidInstanceBackupsRequest&;
+    using Resp = DeleteAndroidInstanceBackupsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteAndroidInstanceBackups", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 GsClient::DeleteAndroidInstanceBackupsOutcomeCallable GsClient::DeleteAndroidInstanceBackupsCallable(const DeleteAndroidInstanceBackupsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteAndroidInstanceBackupsOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteAndroidInstanceBackups(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteAndroidInstanceBackupsOutcome>>();
+    DeleteAndroidInstanceBackupsAsync(
+    request,
+    [prom](
+        const GsClient*,
+        const DeleteAndroidInstanceBackupsRequest&,
+        DeleteAndroidInstanceBackupsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 GsClient::DeleteAndroidInstanceImagesOutcome GsClient::DeleteAndroidInstanceImages(const DeleteAndroidInstanceImagesRequest &request)
@@ -965,25 +1112,32 @@ GsClient::DeleteAndroidInstanceImagesOutcome GsClient::DeleteAndroidInstanceImag
 
 void GsClient::DeleteAndroidInstanceImagesAsync(const DeleteAndroidInstanceImagesRequest& request, const DeleteAndroidInstanceImagesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteAndroidInstanceImages(request), context);
-    };
+    using Req = const DeleteAndroidInstanceImagesRequest&;
+    using Resp = DeleteAndroidInstanceImagesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteAndroidInstanceImages", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 GsClient::DeleteAndroidInstanceImagesOutcomeCallable GsClient::DeleteAndroidInstanceImagesCallable(const DeleteAndroidInstanceImagesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteAndroidInstanceImagesOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteAndroidInstanceImages(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteAndroidInstanceImagesOutcome>>();
+    DeleteAndroidInstanceImagesAsync(
+    request,
+    [prom](
+        const GsClient*,
+        const DeleteAndroidInstanceImagesRequest&,
+        DeleteAndroidInstanceImagesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 GsClient::DeleteAndroidInstanceLabelOutcome GsClient::DeleteAndroidInstanceLabel(const DeleteAndroidInstanceLabelRequest &request)
@@ -1008,25 +1162,32 @@ GsClient::DeleteAndroidInstanceLabelOutcome GsClient::DeleteAndroidInstanceLabel
 
 void GsClient::DeleteAndroidInstanceLabelAsync(const DeleteAndroidInstanceLabelRequest& request, const DeleteAndroidInstanceLabelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteAndroidInstanceLabel(request), context);
-    };
+    using Req = const DeleteAndroidInstanceLabelRequest&;
+    using Resp = DeleteAndroidInstanceLabelResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteAndroidInstanceLabel", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 GsClient::DeleteAndroidInstanceLabelOutcomeCallable GsClient::DeleteAndroidInstanceLabelCallable(const DeleteAndroidInstanceLabelRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteAndroidInstanceLabelOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteAndroidInstanceLabel(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteAndroidInstanceLabelOutcome>>();
+    DeleteAndroidInstanceLabelAsync(
+    request,
+    [prom](
+        const GsClient*,
+        const DeleteAndroidInstanceLabelRequest&,
+        DeleteAndroidInstanceLabelOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 GsClient::DescribeAndroidAppsOutcome GsClient::DescribeAndroidApps(const DescribeAndroidAppsRequest &request)
@@ -1051,25 +1212,32 @@ GsClient::DescribeAndroidAppsOutcome GsClient::DescribeAndroidApps(const Describ
 
 void GsClient::DescribeAndroidAppsAsync(const DescribeAndroidAppsRequest& request, const DescribeAndroidAppsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAndroidApps(request), context);
-    };
+    using Req = const DescribeAndroidAppsRequest&;
+    using Resp = DescribeAndroidAppsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAndroidApps", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 GsClient::DescribeAndroidAppsOutcomeCallable GsClient::DescribeAndroidAppsCallable(const DescribeAndroidAppsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAndroidAppsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAndroidApps(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAndroidAppsOutcome>>();
+    DescribeAndroidAppsAsync(
+    request,
+    [prom](
+        const GsClient*,
+        const DescribeAndroidAppsRequest&,
+        DescribeAndroidAppsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 GsClient::DescribeAndroidInstanceAppsOutcome GsClient::DescribeAndroidInstanceApps(const DescribeAndroidInstanceAppsRequest &request)
@@ -1094,25 +1262,32 @@ GsClient::DescribeAndroidInstanceAppsOutcome GsClient::DescribeAndroidInstanceAp
 
 void GsClient::DescribeAndroidInstanceAppsAsync(const DescribeAndroidInstanceAppsRequest& request, const DescribeAndroidInstanceAppsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAndroidInstanceApps(request), context);
-    };
+    using Req = const DescribeAndroidInstanceAppsRequest&;
+    using Resp = DescribeAndroidInstanceAppsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAndroidInstanceApps", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 GsClient::DescribeAndroidInstanceAppsOutcomeCallable GsClient::DescribeAndroidInstanceAppsCallable(const DescribeAndroidInstanceAppsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAndroidInstanceAppsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAndroidInstanceApps(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAndroidInstanceAppsOutcome>>();
+    DescribeAndroidInstanceAppsAsync(
+    request,
+    [prom](
+        const GsClient*,
+        const DescribeAndroidInstanceAppsRequest&,
+        DescribeAndroidInstanceAppsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 GsClient::DescribeAndroidInstanceBackupsOutcome GsClient::DescribeAndroidInstanceBackups(const DescribeAndroidInstanceBackupsRequest &request)
@@ -1137,25 +1312,32 @@ GsClient::DescribeAndroidInstanceBackupsOutcome GsClient::DescribeAndroidInstanc
 
 void GsClient::DescribeAndroidInstanceBackupsAsync(const DescribeAndroidInstanceBackupsRequest& request, const DescribeAndroidInstanceBackupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAndroidInstanceBackups(request), context);
-    };
+    using Req = const DescribeAndroidInstanceBackupsRequest&;
+    using Resp = DescribeAndroidInstanceBackupsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAndroidInstanceBackups", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 GsClient::DescribeAndroidInstanceBackupsOutcomeCallable GsClient::DescribeAndroidInstanceBackupsCallable(const DescribeAndroidInstanceBackupsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAndroidInstanceBackupsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAndroidInstanceBackups(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAndroidInstanceBackupsOutcome>>();
+    DescribeAndroidInstanceBackupsAsync(
+    request,
+    [prom](
+        const GsClient*,
+        const DescribeAndroidInstanceBackupsRequest&,
+        DescribeAndroidInstanceBackupsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 GsClient::DescribeAndroidInstanceImagesOutcome GsClient::DescribeAndroidInstanceImages(const DescribeAndroidInstanceImagesRequest &request)
@@ -1180,25 +1362,32 @@ GsClient::DescribeAndroidInstanceImagesOutcome GsClient::DescribeAndroidInstance
 
 void GsClient::DescribeAndroidInstanceImagesAsync(const DescribeAndroidInstanceImagesRequest& request, const DescribeAndroidInstanceImagesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAndroidInstanceImages(request), context);
-    };
+    using Req = const DescribeAndroidInstanceImagesRequest&;
+    using Resp = DescribeAndroidInstanceImagesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAndroidInstanceImages", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 GsClient::DescribeAndroidInstanceImagesOutcomeCallable GsClient::DescribeAndroidInstanceImagesCallable(const DescribeAndroidInstanceImagesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAndroidInstanceImagesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAndroidInstanceImages(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAndroidInstanceImagesOutcome>>();
+    DescribeAndroidInstanceImagesAsync(
+    request,
+    [prom](
+        const GsClient*,
+        const DescribeAndroidInstanceImagesRequest&,
+        DescribeAndroidInstanceImagesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 GsClient::DescribeAndroidInstanceLabelsOutcome GsClient::DescribeAndroidInstanceLabels(const DescribeAndroidInstanceLabelsRequest &request)
@@ -1223,25 +1412,32 @@ GsClient::DescribeAndroidInstanceLabelsOutcome GsClient::DescribeAndroidInstance
 
 void GsClient::DescribeAndroidInstanceLabelsAsync(const DescribeAndroidInstanceLabelsRequest& request, const DescribeAndroidInstanceLabelsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAndroidInstanceLabels(request), context);
-    };
+    using Req = const DescribeAndroidInstanceLabelsRequest&;
+    using Resp = DescribeAndroidInstanceLabelsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAndroidInstanceLabels", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 GsClient::DescribeAndroidInstanceLabelsOutcomeCallable GsClient::DescribeAndroidInstanceLabelsCallable(const DescribeAndroidInstanceLabelsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAndroidInstanceLabelsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAndroidInstanceLabels(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAndroidInstanceLabelsOutcome>>();
+    DescribeAndroidInstanceLabelsAsync(
+    request,
+    [prom](
+        const GsClient*,
+        const DescribeAndroidInstanceLabelsRequest&,
+        DescribeAndroidInstanceLabelsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 GsClient::DescribeAndroidInstanceTasksStatusOutcome GsClient::DescribeAndroidInstanceTasksStatus(const DescribeAndroidInstanceTasksStatusRequest &request)
@@ -1266,25 +1462,32 @@ GsClient::DescribeAndroidInstanceTasksStatusOutcome GsClient::DescribeAndroidIns
 
 void GsClient::DescribeAndroidInstanceTasksStatusAsync(const DescribeAndroidInstanceTasksStatusRequest& request, const DescribeAndroidInstanceTasksStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAndroidInstanceTasksStatus(request), context);
-    };
+    using Req = const DescribeAndroidInstanceTasksStatusRequest&;
+    using Resp = DescribeAndroidInstanceTasksStatusResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAndroidInstanceTasksStatus", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 GsClient::DescribeAndroidInstanceTasksStatusOutcomeCallable GsClient::DescribeAndroidInstanceTasksStatusCallable(const DescribeAndroidInstanceTasksStatusRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAndroidInstanceTasksStatusOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAndroidInstanceTasksStatus(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAndroidInstanceTasksStatusOutcome>>();
+    DescribeAndroidInstanceTasksStatusAsync(
+    request,
+    [prom](
+        const GsClient*,
+        const DescribeAndroidInstanceTasksStatusRequest&,
+        DescribeAndroidInstanceTasksStatusOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 GsClient::DescribeAndroidInstancesOutcome GsClient::DescribeAndroidInstances(const DescribeAndroidInstancesRequest &request)
@@ -1309,25 +1512,32 @@ GsClient::DescribeAndroidInstancesOutcome GsClient::DescribeAndroidInstances(con
 
 void GsClient::DescribeAndroidInstancesAsync(const DescribeAndroidInstancesRequest& request, const DescribeAndroidInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAndroidInstances(request), context);
-    };
+    using Req = const DescribeAndroidInstancesRequest&;
+    using Resp = DescribeAndroidInstancesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAndroidInstances", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 GsClient::DescribeAndroidInstancesOutcomeCallable GsClient::DescribeAndroidInstancesCallable(const DescribeAndroidInstancesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAndroidInstancesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAndroidInstances(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAndroidInstancesOutcome>>();
+    DescribeAndroidInstancesAsync(
+    request,
+    [prom](
+        const GsClient*,
+        const DescribeAndroidInstancesRequest&,
+        DescribeAndroidInstancesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 GsClient::DescribeAndroidInstancesAppBlacklistOutcome GsClient::DescribeAndroidInstancesAppBlacklist(const DescribeAndroidInstancesAppBlacklistRequest &request)
@@ -1352,25 +1562,32 @@ GsClient::DescribeAndroidInstancesAppBlacklistOutcome GsClient::DescribeAndroidI
 
 void GsClient::DescribeAndroidInstancesAppBlacklistAsync(const DescribeAndroidInstancesAppBlacklistRequest& request, const DescribeAndroidInstancesAppBlacklistAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAndroidInstancesAppBlacklist(request), context);
-    };
+    using Req = const DescribeAndroidInstancesAppBlacklistRequest&;
+    using Resp = DescribeAndroidInstancesAppBlacklistResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAndroidInstancesAppBlacklist", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 GsClient::DescribeAndroidInstancesAppBlacklistOutcomeCallable GsClient::DescribeAndroidInstancesAppBlacklistCallable(const DescribeAndroidInstancesAppBlacklistRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAndroidInstancesAppBlacklistOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAndroidInstancesAppBlacklist(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAndroidInstancesAppBlacklistOutcome>>();
+    DescribeAndroidInstancesAppBlacklistAsync(
+    request,
+    [prom](
+        const GsClient*,
+        const DescribeAndroidInstancesAppBlacklistRequest&,
+        DescribeAndroidInstancesAppBlacklistOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 GsClient::DescribeAndroidInstancesByAppsOutcome GsClient::DescribeAndroidInstancesByApps(const DescribeAndroidInstancesByAppsRequest &request)
@@ -1395,25 +1612,32 @@ GsClient::DescribeAndroidInstancesByAppsOutcome GsClient::DescribeAndroidInstanc
 
 void GsClient::DescribeAndroidInstancesByAppsAsync(const DescribeAndroidInstancesByAppsRequest& request, const DescribeAndroidInstancesByAppsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAndroidInstancesByApps(request), context);
-    };
+    using Req = const DescribeAndroidInstancesByAppsRequest&;
+    using Resp = DescribeAndroidInstancesByAppsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAndroidInstancesByApps", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 GsClient::DescribeAndroidInstancesByAppsOutcomeCallable GsClient::DescribeAndroidInstancesByAppsCallable(const DescribeAndroidInstancesByAppsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAndroidInstancesByAppsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAndroidInstancesByApps(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAndroidInstancesByAppsOutcome>>();
+    DescribeAndroidInstancesByAppsAsync(
+    request,
+    [prom](
+        const GsClient*,
+        const DescribeAndroidInstancesByAppsRequest&,
+        DescribeAndroidInstancesByAppsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 GsClient::DescribeInstancesCountOutcome GsClient::DescribeInstancesCount(const DescribeInstancesCountRequest &request)
@@ -1438,25 +1662,32 @@ GsClient::DescribeInstancesCountOutcome GsClient::DescribeInstancesCount(const D
 
 void GsClient::DescribeInstancesCountAsync(const DescribeInstancesCountRequest& request, const DescribeInstancesCountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeInstancesCount(request), context);
-    };
+    using Req = const DescribeInstancesCountRequest&;
+    using Resp = DescribeInstancesCountResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeInstancesCount", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 GsClient::DescribeInstancesCountOutcomeCallable GsClient::DescribeInstancesCountCallable(const DescribeInstancesCountRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeInstancesCountOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeInstancesCount(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeInstancesCountOutcome>>();
+    DescribeInstancesCountAsync(
+    request,
+    [prom](
+        const GsClient*,
+        const DescribeInstancesCountRequest&,
+        DescribeInstancesCountOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 GsClient::DestroyAndroidInstancesOutcome GsClient::DestroyAndroidInstances(const DestroyAndroidInstancesRequest &request)
@@ -1481,25 +1712,32 @@ GsClient::DestroyAndroidInstancesOutcome GsClient::DestroyAndroidInstances(const
 
 void GsClient::DestroyAndroidInstancesAsync(const DestroyAndroidInstancesRequest& request, const DestroyAndroidInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DestroyAndroidInstances(request), context);
-    };
+    using Req = const DestroyAndroidInstancesRequest&;
+    using Resp = DestroyAndroidInstancesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DestroyAndroidInstances", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 GsClient::DestroyAndroidInstancesOutcomeCallable GsClient::DestroyAndroidInstancesCallable(const DestroyAndroidInstancesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DestroyAndroidInstancesOutcome()>>(
-        [this, request]()
-        {
-            return this->DestroyAndroidInstances(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DestroyAndroidInstancesOutcome>>();
+    DestroyAndroidInstancesAsync(
+    request,
+    [prom](
+        const GsClient*,
+        const DestroyAndroidInstancesRequest&,
+        DestroyAndroidInstancesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 GsClient::DisableAndroidInstancesAppOutcome GsClient::DisableAndroidInstancesApp(const DisableAndroidInstancesAppRequest &request)
@@ -1524,25 +1762,32 @@ GsClient::DisableAndroidInstancesAppOutcome GsClient::DisableAndroidInstancesApp
 
 void GsClient::DisableAndroidInstancesAppAsync(const DisableAndroidInstancesAppRequest& request, const DisableAndroidInstancesAppAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DisableAndroidInstancesApp(request), context);
-    };
+    using Req = const DisableAndroidInstancesAppRequest&;
+    using Resp = DisableAndroidInstancesAppResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DisableAndroidInstancesApp", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 GsClient::DisableAndroidInstancesAppOutcomeCallable GsClient::DisableAndroidInstancesAppCallable(const DisableAndroidInstancesAppRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DisableAndroidInstancesAppOutcome()>>(
-        [this, request]()
-        {
-            return this->DisableAndroidInstancesApp(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DisableAndroidInstancesAppOutcome>>();
+    DisableAndroidInstancesAppAsync(
+    request,
+    [prom](
+        const GsClient*,
+        const DisableAndroidInstancesAppRequest&,
+        DisableAndroidInstancesAppOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 GsClient::DisconnectAndroidInstanceOutcome GsClient::DisconnectAndroidInstance(const DisconnectAndroidInstanceRequest &request)
@@ -1567,25 +1812,32 @@ GsClient::DisconnectAndroidInstanceOutcome GsClient::DisconnectAndroidInstance(c
 
 void GsClient::DisconnectAndroidInstanceAsync(const DisconnectAndroidInstanceRequest& request, const DisconnectAndroidInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DisconnectAndroidInstance(request), context);
-    };
+    using Req = const DisconnectAndroidInstanceRequest&;
+    using Resp = DisconnectAndroidInstanceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DisconnectAndroidInstance", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 GsClient::DisconnectAndroidInstanceOutcomeCallable GsClient::DisconnectAndroidInstanceCallable(const DisconnectAndroidInstanceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DisconnectAndroidInstanceOutcome()>>(
-        [this, request]()
-        {
-            return this->DisconnectAndroidInstance(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DisconnectAndroidInstanceOutcome>>();
+    DisconnectAndroidInstanceAsync(
+    request,
+    [prom](
+        const GsClient*,
+        const DisconnectAndroidInstanceRequest&,
+        DisconnectAndroidInstanceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 GsClient::DistributeAndroidInstanceImageToHostsOutcome GsClient::DistributeAndroidInstanceImageToHosts(const DistributeAndroidInstanceImageToHostsRequest &request)
@@ -1610,25 +1862,32 @@ GsClient::DistributeAndroidInstanceImageToHostsOutcome GsClient::DistributeAndro
 
 void GsClient::DistributeAndroidInstanceImageToHostsAsync(const DistributeAndroidInstanceImageToHostsRequest& request, const DistributeAndroidInstanceImageToHostsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DistributeAndroidInstanceImageToHosts(request), context);
-    };
+    using Req = const DistributeAndroidInstanceImageToHostsRequest&;
+    using Resp = DistributeAndroidInstanceImageToHostsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DistributeAndroidInstanceImageToHosts", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 GsClient::DistributeAndroidInstanceImageToHostsOutcomeCallable GsClient::DistributeAndroidInstanceImageToHostsCallable(const DistributeAndroidInstanceImageToHostsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DistributeAndroidInstanceImageToHostsOutcome()>>(
-        [this, request]()
-        {
-            return this->DistributeAndroidInstanceImageToHosts(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DistributeAndroidInstanceImageToHostsOutcome>>();
+    DistributeAndroidInstanceImageToHostsAsync(
+    request,
+    [prom](
+        const GsClient*,
+        const DistributeAndroidInstanceImageToHostsRequest&,
+        DistributeAndroidInstanceImageToHostsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 GsClient::DistributeFileToAndroidInstancesOutcome GsClient::DistributeFileToAndroidInstances(const DistributeFileToAndroidInstancesRequest &request)
@@ -1653,25 +1912,32 @@ GsClient::DistributeFileToAndroidInstancesOutcome GsClient::DistributeFileToAndr
 
 void GsClient::DistributeFileToAndroidInstancesAsync(const DistributeFileToAndroidInstancesRequest& request, const DistributeFileToAndroidInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DistributeFileToAndroidInstances(request), context);
-    };
+    using Req = const DistributeFileToAndroidInstancesRequest&;
+    using Resp = DistributeFileToAndroidInstancesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DistributeFileToAndroidInstances", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 GsClient::DistributeFileToAndroidInstancesOutcomeCallable GsClient::DistributeFileToAndroidInstancesCallable(const DistributeFileToAndroidInstancesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DistributeFileToAndroidInstancesOutcome()>>(
-        [this, request]()
-        {
-            return this->DistributeFileToAndroidInstances(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DistributeFileToAndroidInstancesOutcome>>();
+    DistributeFileToAndroidInstancesAsync(
+    request,
+    [prom](
+        const GsClient*,
+        const DistributeFileToAndroidInstancesRequest&,
+        DistributeFileToAndroidInstancesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 GsClient::DistributePhotoToAndroidInstancesOutcome GsClient::DistributePhotoToAndroidInstances(const DistributePhotoToAndroidInstancesRequest &request)
@@ -1696,25 +1962,32 @@ GsClient::DistributePhotoToAndroidInstancesOutcome GsClient::DistributePhotoToAn
 
 void GsClient::DistributePhotoToAndroidInstancesAsync(const DistributePhotoToAndroidInstancesRequest& request, const DistributePhotoToAndroidInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DistributePhotoToAndroidInstances(request), context);
-    };
+    using Req = const DistributePhotoToAndroidInstancesRequest&;
+    using Resp = DistributePhotoToAndroidInstancesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DistributePhotoToAndroidInstances", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 GsClient::DistributePhotoToAndroidInstancesOutcomeCallable GsClient::DistributePhotoToAndroidInstancesCallable(const DistributePhotoToAndroidInstancesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DistributePhotoToAndroidInstancesOutcome()>>(
-        [this, request]()
-        {
-            return this->DistributePhotoToAndroidInstances(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DistributePhotoToAndroidInstancesOutcome>>();
+    DistributePhotoToAndroidInstancesAsync(
+    request,
+    [prom](
+        const GsClient*,
+        const DistributePhotoToAndroidInstancesRequest&,
+        DistributePhotoToAndroidInstancesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 GsClient::EnableAndroidInstancesAppOutcome GsClient::EnableAndroidInstancesApp(const EnableAndroidInstancesAppRequest &request)
@@ -1739,25 +2012,32 @@ GsClient::EnableAndroidInstancesAppOutcome GsClient::EnableAndroidInstancesApp(c
 
 void GsClient::EnableAndroidInstancesAppAsync(const EnableAndroidInstancesAppRequest& request, const EnableAndroidInstancesAppAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->EnableAndroidInstancesApp(request), context);
-    };
+    using Req = const EnableAndroidInstancesAppRequest&;
+    using Resp = EnableAndroidInstancesAppResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "EnableAndroidInstancesApp", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 GsClient::EnableAndroidInstancesAppOutcomeCallable GsClient::EnableAndroidInstancesAppCallable(const EnableAndroidInstancesAppRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<EnableAndroidInstancesAppOutcome()>>(
-        [this, request]()
-        {
-            return this->EnableAndroidInstancesApp(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<EnableAndroidInstancesAppOutcome>>();
+    EnableAndroidInstancesAppAsync(
+    request,
+    [prom](
+        const GsClient*,
+        const EnableAndroidInstancesAppRequest&,
+        EnableAndroidInstancesAppOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 GsClient::ExecuteCommandOnAndroidInstancesOutcome GsClient::ExecuteCommandOnAndroidInstances(const ExecuteCommandOnAndroidInstancesRequest &request)
@@ -1782,25 +2062,32 @@ GsClient::ExecuteCommandOnAndroidInstancesOutcome GsClient::ExecuteCommandOnAndr
 
 void GsClient::ExecuteCommandOnAndroidInstancesAsync(const ExecuteCommandOnAndroidInstancesRequest& request, const ExecuteCommandOnAndroidInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ExecuteCommandOnAndroidInstances(request), context);
-    };
+    using Req = const ExecuteCommandOnAndroidInstancesRequest&;
+    using Resp = ExecuteCommandOnAndroidInstancesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ExecuteCommandOnAndroidInstances", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 GsClient::ExecuteCommandOnAndroidInstancesOutcomeCallable GsClient::ExecuteCommandOnAndroidInstancesCallable(const ExecuteCommandOnAndroidInstancesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ExecuteCommandOnAndroidInstancesOutcome()>>(
-        [this, request]()
-        {
-            return this->ExecuteCommandOnAndroidInstances(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ExecuteCommandOnAndroidInstancesOutcome>>();
+    ExecuteCommandOnAndroidInstancesAsync(
+    request,
+    [prom](
+        const GsClient*,
+        const ExecuteCommandOnAndroidInstancesRequest&,
+        ExecuteCommandOnAndroidInstancesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 GsClient::FetchAndroidInstancesLogsOutcome GsClient::FetchAndroidInstancesLogs(const FetchAndroidInstancesLogsRequest &request)
@@ -1825,25 +2112,32 @@ GsClient::FetchAndroidInstancesLogsOutcome GsClient::FetchAndroidInstancesLogs(c
 
 void GsClient::FetchAndroidInstancesLogsAsync(const FetchAndroidInstancesLogsRequest& request, const FetchAndroidInstancesLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->FetchAndroidInstancesLogs(request), context);
-    };
+    using Req = const FetchAndroidInstancesLogsRequest&;
+    using Resp = FetchAndroidInstancesLogsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "FetchAndroidInstancesLogs", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 GsClient::FetchAndroidInstancesLogsOutcomeCallable GsClient::FetchAndroidInstancesLogsCallable(const FetchAndroidInstancesLogsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<FetchAndroidInstancesLogsOutcome()>>(
-        [this, request]()
-        {
-            return this->FetchAndroidInstancesLogs(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<FetchAndroidInstancesLogsOutcome>>();
+    FetchAndroidInstancesLogsAsync(
+    request,
+    [prom](
+        const GsClient*,
+        const FetchAndroidInstancesLogsRequest&,
+        FetchAndroidInstancesLogsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 GsClient::ImportAndroidInstanceImageOutcome GsClient::ImportAndroidInstanceImage(const ImportAndroidInstanceImageRequest &request)
@@ -1868,25 +2162,32 @@ GsClient::ImportAndroidInstanceImageOutcome GsClient::ImportAndroidInstanceImage
 
 void GsClient::ImportAndroidInstanceImageAsync(const ImportAndroidInstanceImageRequest& request, const ImportAndroidInstanceImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ImportAndroidInstanceImage(request), context);
-    };
+    using Req = const ImportAndroidInstanceImageRequest&;
+    using Resp = ImportAndroidInstanceImageResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ImportAndroidInstanceImage", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 GsClient::ImportAndroidInstanceImageOutcomeCallable GsClient::ImportAndroidInstanceImageCallable(const ImportAndroidInstanceImageRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ImportAndroidInstanceImageOutcome()>>(
-        [this, request]()
-        {
-            return this->ImportAndroidInstanceImage(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ImportAndroidInstanceImageOutcome>>();
+    ImportAndroidInstanceImageAsync(
+    request,
+    [prom](
+        const GsClient*,
+        const ImportAndroidInstanceImageRequest&,
+        ImportAndroidInstanceImageOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 GsClient::InstallAndroidInstancesAppOutcome GsClient::InstallAndroidInstancesApp(const InstallAndroidInstancesAppRequest &request)
@@ -1911,25 +2212,32 @@ GsClient::InstallAndroidInstancesAppOutcome GsClient::InstallAndroidInstancesApp
 
 void GsClient::InstallAndroidInstancesAppAsync(const InstallAndroidInstancesAppRequest& request, const InstallAndroidInstancesAppAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->InstallAndroidInstancesApp(request), context);
-    };
+    using Req = const InstallAndroidInstancesAppRequest&;
+    using Resp = InstallAndroidInstancesAppResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "InstallAndroidInstancesApp", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 GsClient::InstallAndroidInstancesAppOutcomeCallable GsClient::InstallAndroidInstancesAppCallable(const InstallAndroidInstancesAppRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<InstallAndroidInstancesAppOutcome()>>(
-        [this, request]()
-        {
-            return this->InstallAndroidInstancesApp(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<InstallAndroidInstancesAppOutcome>>();
+    InstallAndroidInstancesAppAsync(
+    request,
+    [prom](
+        const GsClient*,
+        const InstallAndroidInstancesAppRequest&,
+        InstallAndroidInstancesAppOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 GsClient::InstallAndroidInstancesAppWithURLOutcome GsClient::InstallAndroidInstancesAppWithURL(const InstallAndroidInstancesAppWithURLRequest &request)
@@ -1954,25 +2262,32 @@ GsClient::InstallAndroidInstancesAppWithURLOutcome GsClient::InstallAndroidInsta
 
 void GsClient::InstallAndroidInstancesAppWithURLAsync(const InstallAndroidInstancesAppWithURLRequest& request, const InstallAndroidInstancesAppWithURLAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->InstallAndroidInstancesAppWithURL(request), context);
-    };
+    using Req = const InstallAndroidInstancesAppWithURLRequest&;
+    using Resp = InstallAndroidInstancesAppWithURLResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "InstallAndroidInstancesAppWithURL", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 GsClient::InstallAndroidInstancesAppWithURLOutcomeCallable GsClient::InstallAndroidInstancesAppWithURLCallable(const InstallAndroidInstancesAppWithURLRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<InstallAndroidInstancesAppWithURLOutcome()>>(
-        [this, request]()
-        {
-            return this->InstallAndroidInstancesAppWithURL(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<InstallAndroidInstancesAppWithURLOutcome>>();
+    InstallAndroidInstancesAppWithURLAsync(
+    request,
+    [prom](
+        const GsClient*,
+        const InstallAndroidInstancesAppWithURLRequest&,
+        InstallAndroidInstancesAppWithURLOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 GsClient::ModifyAndroidAppOutcome GsClient::ModifyAndroidApp(const ModifyAndroidAppRequest &request)
@@ -1997,25 +2312,32 @@ GsClient::ModifyAndroidAppOutcome GsClient::ModifyAndroidApp(const ModifyAndroid
 
 void GsClient::ModifyAndroidAppAsync(const ModifyAndroidAppRequest& request, const ModifyAndroidAppAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyAndroidApp(request), context);
-    };
+    using Req = const ModifyAndroidAppRequest&;
+    using Resp = ModifyAndroidAppResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyAndroidApp", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 GsClient::ModifyAndroidAppOutcomeCallable GsClient::ModifyAndroidAppCallable(const ModifyAndroidAppRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyAndroidAppOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyAndroidApp(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyAndroidAppOutcome>>();
+    ModifyAndroidAppAsync(
+    request,
+    [prom](
+        const GsClient*,
+        const ModifyAndroidAppRequest&,
+        ModifyAndroidAppOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 GsClient::ModifyAndroidAppVersionOutcome GsClient::ModifyAndroidAppVersion(const ModifyAndroidAppVersionRequest &request)
@@ -2040,25 +2362,32 @@ GsClient::ModifyAndroidAppVersionOutcome GsClient::ModifyAndroidAppVersion(const
 
 void GsClient::ModifyAndroidAppVersionAsync(const ModifyAndroidAppVersionRequest& request, const ModifyAndroidAppVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyAndroidAppVersion(request), context);
-    };
+    using Req = const ModifyAndroidAppVersionRequest&;
+    using Resp = ModifyAndroidAppVersionResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyAndroidAppVersion", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 GsClient::ModifyAndroidAppVersionOutcomeCallable GsClient::ModifyAndroidAppVersionCallable(const ModifyAndroidAppVersionRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyAndroidAppVersionOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyAndroidAppVersion(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyAndroidAppVersionOutcome>>();
+    ModifyAndroidAppVersionAsync(
+    request,
+    [prom](
+        const GsClient*,
+        const ModifyAndroidAppVersionRequest&,
+        ModifyAndroidAppVersionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 GsClient::ModifyAndroidInstanceInformationOutcome GsClient::ModifyAndroidInstanceInformation(const ModifyAndroidInstanceInformationRequest &request)
@@ -2083,25 +2412,32 @@ GsClient::ModifyAndroidInstanceInformationOutcome GsClient::ModifyAndroidInstanc
 
 void GsClient::ModifyAndroidInstanceInformationAsync(const ModifyAndroidInstanceInformationRequest& request, const ModifyAndroidInstanceInformationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyAndroidInstanceInformation(request), context);
-    };
+    using Req = const ModifyAndroidInstanceInformationRequest&;
+    using Resp = ModifyAndroidInstanceInformationResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyAndroidInstanceInformation", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 GsClient::ModifyAndroidInstanceInformationOutcomeCallable GsClient::ModifyAndroidInstanceInformationCallable(const ModifyAndroidInstanceInformationRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyAndroidInstanceInformationOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyAndroidInstanceInformation(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyAndroidInstanceInformationOutcome>>();
+    ModifyAndroidInstanceInformationAsync(
+    request,
+    [prom](
+        const GsClient*,
+        const ModifyAndroidInstanceInformationRequest&,
+        ModifyAndroidInstanceInformationOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 GsClient::ModifyAndroidInstanceResolutionOutcome GsClient::ModifyAndroidInstanceResolution(const ModifyAndroidInstanceResolutionRequest &request)
@@ -2126,25 +2462,32 @@ GsClient::ModifyAndroidInstanceResolutionOutcome GsClient::ModifyAndroidInstance
 
 void GsClient::ModifyAndroidInstanceResolutionAsync(const ModifyAndroidInstanceResolutionRequest& request, const ModifyAndroidInstanceResolutionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyAndroidInstanceResolution(request), context);
-    };
+    using Req = const ModifyAndroidInstanceResolutionRequest&;
+    using Resp = ModifyAndroidInstanceResolutionResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyAndroidInstanceResolution", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 GsClient::ModifyAndroidInstanceResolutionOutcomeCallable GsClient::ModifyAndroidInstanceResolutionCallable(const ModifyAndroidInstanceResolutionRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyAndroidInstanceResolutionOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyAndroidInstanceResolution(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyAndroidInstanceResolutionOutcome>>();
+    ModifyAndroidInstanceResolutionAsync(
+    request,
+    [prom](
+        const GsClient*,
+        const ModifyAndroidInstanceResolutionRequest&,
+        ModifyAndroidInstanceResolutionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 GsClient::ModifyAndroidInstancesAppBlacklistOutcome GsClient::ModifyAndroidInstancesAppBlacklist(const ModifyAndroidInstancesAppBlacklistRequest &request)
@@ -2169,25 +2512,32 @@ GsClient::ModifyAndroidInstancesAppBlacklistOutcome GsClient::ModifyAndroidInsta
 
 void GsClient::ModifyAndroidInstancesAppBlacklistAsync(const ModifyAndroidInstancesAppBlacklistRequest& request, const ModifyAndroidInstancesAppBlacklistAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyAndroidInstancesAppBlacklist(request), context);
-    };
+    using Req = const ModifyAndroidInstancesAppBlacklistRequest&;
+    using Resp = ModifyAndroidInstancesAppBlacklistResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyAndroidInstancesAppBlacklist", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 GsClient::ModifyAndroidInstancesAppBlacklistOutcomeCallable GsClient::ModifyAndroidInstancesAppBlacklistCallable(const ModifyAndroidInstancesAppBlacklistRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyAndroidInstancesAppBlacklistOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyAndroidInstancesAppBlacklist(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyAndroidInstancesAppBlacklistOutcome>>();
+    ModifyAndroidInstancesAppBlacklistAsync(
+    request,
+    [prom](
+        const GsClient*,
+        const ModifyAndroidInstancesAppBlacklistRequest&,
+        ModifyAndroidInstancesAppBlacklistOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 GsClient::ModifyAndroidInstancesInformationOutcome GsClient::ModifyAndroidInstancesInformation(const ModifyAndroidInstancesInformationRequest &request)
@@ -2212,25 +2562,32 @@ GsClient::ModifyAndroidInstancesInformationOutcome GsClient::ModifyAndroidInstan
 
 void GsClient::ModifyAndroidInstancesInformationAsync(const ModifyAndroidInstancesInformationRequest& request, const ModifyAndroidInstancesInformationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyAndroidInstancesInformation(request), context);
-    };
+    using Req = const ModifyAndroidInstancesInformationRequest&;
+    using Resp = ModifyAndroidInstancesInformationResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyAndroidInstancesInformation", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 GsClient::ModifyAndroidInstancesInformationOutcomeCallable GsClient::ModifyAndroidInstancesInformationCallable(const ModifyAndroidInstancesInformationRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyAndroidInstancesInformationOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyAndroidInstancesInformation(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyAndroidInstancesInformationOutcome>>();
+    ModifyAndroidInstancesInformationAsync(
+    request,
+    [prom](
+        const GsClient*,
+        const ModifyAndroidInstancesInformationRequest&,
+        ModifyAndroidInstancesInformationOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 GsClient::ModifyAndroidInstancesLabelsOutcome GsClient::ModifyAndroidInstancesLabels(const ModifyAndroidInstancesLabelsRequest &request)
@@ -2255,25 +2612,32 @@ GsClient::ModifyAndroidInstancesLabelsOutcome GsClient::ModifyAndroidInstancesLa
 
 void GsClient::ModifyAndroidInstancesLabelsAsync(const ModifyAndroidInstancesLabelsRequest& request, const ModifyAndroidInstancesLabelsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyAndroidInstancesLabels(request), context);
-    };
+    using Req = const ModifyAndroidInstancesLabelsRequest&;
+    using Resp = ModifyAndroidInstancesLabelsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyAndroidInstancesLabels", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 GsClient::ModifyAndroidInstancesLabelsOutcomeCallable GsClient::ModifyAndroidInstancesLabelsCallable(const ModifyAndroidInstancesLabelsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyAndroidInstancesLabelsOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyAndroidInstancesLabels(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyAndroidInstancesLabelsOutcome>>();
+    ModifyAndroidInstancesLabelsAsync(
+    request,
+    [prom](
+        const GsClient*,
+        const ModifyAndroidInstancesLabelsRequest&,
+        ModifyAndroidInstancesLabelsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 GsClient::ModifyAndroidInstancesPropertiesOutcome GsClient::ModifyAndroidInstancesProperties(const ModifyAndroidInstancesPropertiesRequest &request)
@@ -2298,25 +2662,32 @@ GsClient::ModifyAndroidInstancesPropertiesOutcome GsClient::ModifyAndroidInstanc
 
 void GsClient::ModifyAndroidInstancesPropertiesAsync(const ModifyAndroidInstancesPropertiesRequest& request, const ModifyAndroidInstancesPropertiesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyAndroidInstancesProperties(request), context);
-    };
+    using Req = const ModifyAndroidInstancesPropertiesRequest&;
+    using Resp = ModifyAndroidInstancesPropertiesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyAndroidInstancesProperties", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 GsClient::ModifyAndroidInstancesPropertiesOutcomeCallable GsClient::ModifyAndroidInstancesPropertiesCallable(const ModifyAndroidInstancesPropertiesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyAndroidInstancesPropertiesOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyAndroidInstancesProperties(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyAndroidInstancesPropertiesOutcome>>();
+    ModifyAndroidInstancesPropertiesAsync(
+    request,
+    [prom](
+        const GsClient*,
+        const ModifyAndroidInstancesPropertiesRequest&,
+        ModifyAndroidInstancesPropertiesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 GsClient::ModifyAndroidInstancesResolutionOutcome GsClient::ModifyAndroidInstancesResolution(const ModifyAndroidInstancesResolutionRequest &request)
@@ -2341,25 +2712,32 @@ GsClient::ModifyAndroidInstancesResolutionOutcome GsClient::ModifyAndroidInstanc
 
 void GsClient::ModifyAndroidInstancesResolutionAsync(const ModifyAndroidInstancesResolutionRequest& request, const ModifyAndroidInstancesResolutionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyAndroidInstancesResolution(request), context);
-    };
+    using Req = const ModifyAndroidInstancesResolutionRequest&;
+    using Resp = ModifyAndroidInstancesResolutionResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyAndroidInstancesResolution", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 GsClient::ModifyAndroidInstancesResolutionOutcomeCallable GsClient::ModifyAndroidInstancesResolutionCallable(const ModifyAndroidInstancesResolutionRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyAndroidInstancesResolutionOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyAndroidInstancesResolution(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyAndroidInstancesResolutionOutcome>>();
+    ModifyAndroidInstancesResolutionAsync(
+    request,
+    [prom](
+        const GsClient*,
+        const ModifyAndroidInstancesResolutionRequest&,
+        ModifyAndroidInstancesResolutionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 GsClient::ModifyAndroidInstancesResourcesOutcome GsClient::ModifyAndroidInstancesResources(const ModifyAndroidInstancesResourcesRequest &request)
@@ -2384,25 +2762,32 @@ GsClient::ModifyAndroidInstancesResourcesOutcome GsClient::ModifyAndroidInstance
 
 void GsClient::ModifyAndroidInstancesResourcesAsync(const ModifyAndroidInstancesResourcesRequest& request, const ModifyAndroidInstancesResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyAndroidInstancesResources(request), context);
-    };
+    using Req = const ModifyAndroidInstancesResourcesRequest&;
+    using Resp = ModifyAndroidInstancesResourcesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyAndroidInstancesResources", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 GsClient::ModifyAndroidInstancesResourcesOutcomeCallable GsClient::ModifyAndroidInstancesResourcesCallable(const ModifyAndroidInstancesResourcesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyAndroidInstancesResourcesOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyAndroidInstancesResources(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyAndroidInstancesResourcesOutcome>>();
+    ModifyAndroidInstancesResourcesAsync(
+    request,
+    [prom](
+        const GsClient*,
+        const ModifyAndroidInstancesResourcesRequest&,
+        ModifyAndroidInstancesResourcesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 GsClient::ModifyAndroidInstancesUserIdOutcome GsClient::ModifyAndroidInstancesUserId(const ModifyAndroidInstancesUserIdRequest &request)
@@ -2427,25 +2812,32 @@ GsClient::ModifyAndroidInstancesUserIdOutcome GsClient::ModifyAndroidInstancesUs
 
 void GsClient::ModifyAndroidInstancesUserIdAsync(const ModifyAndroidInstancesUserIdRequest& request, const ModifyAndroidInstancesUserIdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyAndroidInstancesUserId(request), context);
-    };
+    using Req = const ModifyAndroidInstancesUserIdRequest&;
+    using Resp = ModifyAndroidInstancesUserIdResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyAndroidInstancesUserId", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 GsClient::ModifyAndroidInstancesUserIdOutcomeCallable GsClient::ModifyAndroidInstancesUserIdCallable(const ModifyAndroidInstancesUserIdRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyAndroidInstancesUserIdOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyAndroidInstancesUserId(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyAndroidInstancesUserIdOutcome>>();
+    ModifyAndroidInstancesUserIdAsync(
+    request,
+    [prom](
+        const GsClient*,
+        const ModifyAndroidInstancesUserIdRequest&,
+        ModifyAndroidInstancesUserIdOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 GsClient::RebootAndroidInstanceHostsOutcome GsClient::RebootAndroidInstanceHosts(const RebootAndroidInstanceHostsRequest &request)
@@ -2470,25 +2862,32 @@ GsClient::RebootAndroidInstanceHostsOutcome GsClient::RebootAndroidInstanceHosts
 
 void GsClient::RebootAndroidInstanceHostsAsync(const RebootAndroidInstanceHostsRequest& request, const RebootAndroidInstanceHostsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->RebootAndroidInstanceHosts(request), context);
-    };
+    using Req = const RebootAndroidInstanceHostsRequest&;
+    using Resp = RebootAndroidInstanceHostsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "RebootAndroidInstanceHosts", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 GsClient::RebootAndroidInstanceHostsOutcomeCallable GsClient::RebootAndroidInstanceHostsCallable(const RebootAndroidInstanceHostsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<RebootAndroidInstanceHostsOutcome()>>(
-        [this, request]()
-        {
-            return this->RebootAndroidInstanceHosts(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<RebootAndroidInstanceHostsOutcome>>();
+    RebootAndroidInstanceHostsAsync(
+    request,
+    [prom](
+        const GsClient*,
+        const RebootAndroidInstanceHostsRequest&,
+        RebootAndroidInstanceHostsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 GsClient::RebootAndroidInstancesOutcome GsClient::RebootAndroidInstances(const RebootAndroidInstancesRequest &request)
@@ -2513,25 +2912,32 @@ GsClient::RebootAndroidInstancesOutcome GsClient::RebootAndroidInstances(const R
 
 void GsClient::RebootAndroidInstancesAsync(const RebootAndroidInstancesRequest& request, const RebootAndroidInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->RebootAndroidInstances(request), context);
-    };
+    using Req = const RebootAndroidInstancesRequest&;
+    using Resp = RebootAndroidInstancesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "RebootAndroidInstances", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 GsClient::RebootAndroidInstancesOutcomeCallable GsClient::RebootAndroidInstancesCallable(const RebootAndroidInstancesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<RebootAndroidInstancesOutcome()>>(
-        [this, request]()
-        {
-            return this->RebootAndroidInstances(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<RebootAndroidInstancesOutcome>>();
+    RebootAndroidInstancesAsync(
+    request,
+    [prom](
+        const GsClient*,
+        const RebootAndroidInstancesRequest&,
+        RebootAndroidInstancesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 GsClient::RenewAndroidInstancesAccessTokenOutcome GsClient::RenewAndroidInstancesAccessToken(const RenewAndroidInstancesAccessTokenRequest &request)
@@ -2556,25 +2962,32 @@ GsClient::RenewAndroidInstancesAccessTokenOutcome GsClient::RenewAndroidInstance
 
 void GsClient::RenewAndroidInstancesAccessTokenAsync(const RenewAndroidInstancesAccessTokenRequest& request, const RenewAndroidInstancesAccessTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->RenewAndroidInstancesAccessToken(request), context);
-    };
+    using Req = const RenewAndroidInstancesAccessTokenRequest&;
+    using Resp = RenewAndroidInstancesAccessTokenResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "RenewAndroidInstancesAccessToken", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 GsClient::RenewAndroidInstancesAccessTokenOutcomeCallable GsClient::RenewAndroidInstancesAccessTokenCallable(const RenewAndroidInstancesAccessTokenRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<RenewAndroidInstancesAccessTokenOutcome()>>(
-        [this, request]()
-        {
-            return this->RenewAndroidInstancesAccessToken(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<RenewAndroidInstancesAccessTokenOutcome>>();
+    RenewAndroidInstancesAccessTokenAsync(
+    request,
+    [prom](
+        const GsClient*,
+        const RenewAndroidInstancesAccessTokenRequest&,
+        RenewAndroidInstancesAccessTokenOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 GsClient::ResetAndroidInstancesOutcome GsClient::ResetAndroidInstances(const ResetAndroidInstancesRequest &request)
@@ -2599,25 +3012,32 @@ GsClient::ResetAndroidInstancesOutcome GsClient::ResetAndroidInstances(const Res
 
 void GsClient::ResetAndroidInstancesAsync(const ResetAndroidInstancesRequest& request, const ResetAndroidInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ResetAndroidInstances(request), context);
-    };
+    using Req = const ResetAndroidInstancesRequest&;
+    using Resp = ResetAndroidInstancesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ResetAndroidInstances", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 GsClient::ResetAndroidInstancesOutcomeCallable GsClient::ResetAndroidInstancesCallable(const ResetAndroidInstancesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ResetAndroidInstancesOutcome()>>(
-        [this, request]()
-        {
-            return this->ResetAndroidInstances(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ResetAndroidInstancesOutcome>>();
+    ResetAndroidInstancesAsync(
+    request,
+    [prom](
+        const GsClient*,
+        const ResetAndroidInstancesRequest&,
+        ResetAndroidInstancesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 GsClient::RestartAndroidInstancesAppOutcome GsClient::RestartAndroidInstancesApp(const RestartAndroidInstancesAppRequest &request)
@@ -2642,25 +3062,32 @@ GsClient::RestartAndroidInstancesAppOutcome GsClient::RestartAndroidInstancesApp
 
 void GsClient::RestartAndroidInstancesAppAsync(const RestartAndroidInstancesAppRequest& request, const RestartAndroidInstancesAppAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->RestartAndroidInstancesApp(request), context);
-    };
+    using Req = const RestartAndroidInstancesAppRequest&;
+    using Resp = RestartAndroidInstancesAppResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "RestartAndroidInstancesApp", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 GsClient::RestartAndroidInstancesAppOutcomeCallable GsClient::RestartAndroidInstancesAppCallable(const RestartAndroidInstancesAppRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<RestartAndroidInstancesAppOutcome()>>(
-        [this, request]()
-        {
-            return this->RestartAndroidInstancesApp(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<RestartAndroidInstancesAppOutcome>>();
+    RestartAndroidInstancesAppAsync(
+    request,
+    [prom](
+        const GsClient*,
+        const RestartAndroidInstancesAppRequest&,
+        RestartAndroidInstancesAppOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 GsClient::RestoreAndroidInstanceOutcome GsClient::RestoreAndroidInstance(const RestoreAndroidInstanceRequest &request)
@@ -2685,25 +3112,32 @@ GsClient::RestoreAndroidInstanceOutcome GsClient::RestoreAndroidInstance(const R
 
 void GsClient::RestoreAndroidInstanceAsync(const RestoreAndroidInstanceRequest& request, const RestoreAndroidInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->RestoreAndroidInstance(request), context);
-    };
+    using Req = const RestoreAndroidInstanceRequest&;
+    using Resp = RestoreAndroidInstanceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "RestoreAndroidInstance", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 GsClient::RestoreAndroidInstanceOutcomeCallable GsClient::RestoreAndroidInstanceCallable(const RestoreAndroidInstanceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<RestoreAndroidInstanceOutcome()>>(
-        [this, request]()
-        {
-            return this->RestoreAndroidInstance(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<RestoreAndroidInstanceOutcome>>();
+    RestoreAndroidInstanceAsync(
+    request,
+    [prom](
+        const GsClient*,
+        const RestoreAndroidInstanceRequest&,
+        RestoreAndroidInstanceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 GsClient::RestoreAndroidInstanceFromStorageOutcome GsClient::RestoreAndroidInstanceFromStorage(const RestoreAndroidInstanceFromStorageRequest &request)
@@ -2728,25 +3162,32 @@ GsClient::RestoreAndroidInstanceFromStorageOutcome GsClient::RestoreAndroidInsta
 
 void GsClient::RestoreAndroidInstanceFromStorageAsync(const RestoreAndroidInstanceFromStorageRequest& request, const RestoreAndroidInstanceFromStorageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->RestoreAndroidInstanceFromStorage(request), context);
-    };
+    using Req = const RestoreAndroidInstanceFromStorageRequest&;
+    using Resp = RestoreAndroidInstanceFromStorageResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "RestoreAndroidInstanceFromStorage", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 GsClient::RestoreAndroidInstanceFromStorageOutcomeCallable GsClient::RestoreAndroidInstanceFromStorageCallable(const RestoreAndroidInstanceFromStorageRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<RestoreAndroidInstanceFromStorageOutcome()>>(
-        [this, request]()
-        {
-            return this->RestoreAndroidInstanceFromStorage(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<RestoreAndroidInstanceFromStorageOutcome>>();
+    RestoreAndroidInstanceFromStorageAsync(
+    request,
+    [prom](
+        const GsClient*,
+        const RestoreAndroidInstanceFromStorageRequest&,
+        RestoreAndroidInstanceFromStorageOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 GsClient::SaveGameArchiveOutcome GsClient::SaveGameArchive(const SaveGameArchiveRequest &request)
@@ -2771,25 +3212,32 @@ GsClient::SaveGameArchiveOutcome GsClient::SaveGameArchive(const SaveGameArchive
 
 void GsClient::SaveGameArchiveAsync(const SaveGameArchiveRequest& request, const SaveGameArchiveAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->SaveGameArchive(request), context);
-    };
+    using Req = const SaveGameArchiveRequest&;
+    using Resp = SaveGameArchiveResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "SaveGameArchive", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 GsClient::SaveGameArchiveOutcomeCallable GsClient::SaveGameArchiveCallable(const SaveGameArchiveRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<SaveGameArchiveOutcome()>>(
-        [this, request]()
-        {
-            return this->SaveGameArchive(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<SaveGameArchiveOutcome>>();
+    SaveGameArchiveAsync(
+    request,
+    [prom](
+        const GsClient*,
+        const SaveGameArchiveRequest&,
+        SaveGameArchiveOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 GsClient::SetAndroidInstancesBGAppKeepAliveOutcome GsClient::SetAndroidInstancesBGAppKeepAlive(const SetAndroidInstancesBGAppKeepAliveRequest &request)
@@ -2814,25 +3262,32 @@ GsClient::SetAndroidInstancesBGAppKeepAliveOutcome GsClient::SetAndroidInstances
 
 void GsClient::SetAndroidInstancesBGAppKeepAliveAsync(const SetAndroidInstancesBGAppKeepAliveRequest& request, const SetAndroidInstancesBGAppKeepAliveAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->SetAndroidInstancesBGAppKeepAlive(request), context);
-    };
+    using Req = const SetAndroidInstancesBGAppKeepAliveRequest&;
+    using Resp = SetAndroidInstancesBGAppKeepAliveResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "SetAndroidInstancesBGAppKeepAlive", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 GsClient::SetAndroidInstancesBGAppKeepAliveOutcomeCallable GsClient::SetAndroidInstancesBGAppKeepAliveCallable(const SetAndroidInstancesBGAppKeepAliveRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<SetAndroidInstancesBGAppKeepAliveOutcome()>>(
-        [this, request]()
-        {
-            return this->SetAndroidInstancesBGAppKeepAlive(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<SetAndroidInstancesBGAppKeepAliveOutcome>>();
+    SetAndroidInstancesBGAppKeepAliveAsync(
+    request,
+    [prom](
+        const GsClient*,
+        const SetAndroidInstancesBGAppKeepAliveRequest&,
+        SetAndroidInstancesBGAppKeepAliveOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 GsClient::SetAndroidInstancesFGAppKeepAliveOutcome GsClient::SetAndroidInstancesFGAppKeepAlive(const SetAndroidInstancesFGAppKeepAliveRequest &request)
@@ -2857,25 +3312,32 @@ GsClient::SetAndroidInstancesFGAppKeepAliveOutcome GsClient::SetAndroidInstances
 
 void GsClient::SetAndroidInstancesFGAppKeepAliveAsync(const SetAndroidInstancesFGAppKeepAliveRequest& request, const SetAndroidInstancesFGAppKeepAliveAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->SetAndroidInstancesFGAppKeepAlive(request), context);
-    };
+    using Req = const SetAndroidInstancesFGAppKeepAliveRequest&;
+    using Resp = SetAndroidInstancesFGAppKeepAliveResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "SetAndroidInstancesFGAppKeepAlive", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 GsClient::SetAndroidInstancesFGAppKeepAliveOutcomeCallable GsClient::SetAndroidInstancesFGAppKeepAliveCallable(const SetAndroidInstancesFGAppKeepAliveRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<SetAndroidInstancesFGAppKeepAliveOutcome()>>(
-        [this, request]()
-        {
-            return this->SetAndroidInstancesFGAppKeepAlive(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<SetAndroidInstancesFGAppKeepAliveOutcome>>();
+    SetAndroidInstancesFGAppKeepAliveAsync(
+    request,
+    [prom](
+        const GsClient*,
+        const SetAndroidInstancesFGAppKeepAliveRequest&,
+        SetAndroidInstancesFGAppKeepAliveOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 GsClient::StartAndroidInstancesOutcome GsClient::StartAndroidInstances(const StartAndroidInstancesRequest &request)
@@ -2900,25 +3362,32 @@ GsClient::StartAndroidInstancesOutcome GsClient::StartAndroidInstances(const Sta
 
 void GsClient::StartAndroidInstancesAsync(const StartAndroidInstancesRequest& request, const StartAndroidInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->StartAndroidInstances(request), context);
-    };
+    using Req = const StartAndroidInstancesRequest&;
+    using Resp = StartAndroidInstancesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "StartAndroidInstances", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 GsClient::StartAndroidInstancesOutcomeCallable GsClient::StartAndroidInstancesCallable(const StartAndroidInstancesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<StartAndroidInstancesOutcome()>>(
-        [this, request]()
-        {
-            return this->StartAndroidInstances(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<StartAndroidInstancesOutcome>>();
+    StartAndroidInstancesAsync(
+    request,
+    [prom](
+        const GsClient*,
+        const StartAndroidInstancesRequest&,
+        StartAndroidInstancesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 GsClient::StartAndroidInstancesAppOutcome GsClient::StartAndroidInstancesApp(const StartAndroidInstancesAppRequest &request)
@@ -2943,25 +3412,32 @@ GsClient::StartAndroidInstancesAppOutcome GsClient::StartAndroidInstancesApp(con
 
 void GsClient::StartAndroidInstancesAppAsync(const StartAndroidInstancesAppRequest& request, const StartAndroidInstancesAppAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->StartAndroidInstancesApp(request), context);
-    };
+    using Req = const StartAndroidInstancesAppRequest&;
+    using Resp = StartAndroidInstancesAppResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "StartAndroidInstancesApp", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 GsClient::StartAndroidInstancesAppOutcomeCallable GsClient::StartAndroidInstancesAppCallable(const StartAndroidInstancesAppRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<StartAndroidInstancesAppOutcome()>>(
-        [this, request]()
-        {
-            return this->StartAndroidInstancesApp(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<StartAndroidInstancesAppOutcome>>();
+    StartAndroidInstancesAppAsync(
+    request,
+    [prom](
+        const GsClient*,
+        const StartAndroidInstancesAppRequest&,
+        StartAndroidInstancesAppOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 GsClient::StartPublishStreamOutcome GsClient::StartPublishStream(const StartPublishStreamRequest &request)
@@ -2986,25 +3462,32 @@ GsClient::StartPublishStreamOutcome GsClient::StartPublishStream(const StartPubl
 
 void GsClient::StartPublishStreamAsync(const StartPublishStreamRequest& request, const StartPublishStreamAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->StartPublishStream(request), context);
-    };
+    using Req = const StartPublishStreamRequest&;
+    using Resp = StartPublishStreamResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "StartPublishStream", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 GsClient::StartPublishStreamOutcomeCallable GsClient::StartPublishStreamCallable(const StartPublishStreamRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<StartPublishStreamOutcome()>>(
-        [this, request]()
-        {
-            return this->StartPublishStream(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<StartPublishStreamOutcome>>();
+    StartPublishStreamAsync(
+    request,
+    [prom](
+        const GsClient*,
+        const StartPublishStreamRequest&,
+        StartPublishStreamOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 GsClient::StartPublishStreamToCSSOutcome GsClient::StartPublishStreamToCSS(const StartPublishStreamToCSSRequest &request)
@@ -3029,25 +3512,32 @@ GsClient::StartPublishStreamToCSSOutcome GsClient::StartPublishStreamToCSS(const
 
 void GsClient::StartPublishStreamToCSSAsync(const StartPublishStreamToCSSRequest& request, const StartPublishStreamToCSSAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->StartPublishStreamToCSS(request), context);
-    };
+    using Req = const StartPublishStreamToCSSRequest&;
+    using Resp = StartPublishStreamToCSSResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "StartPublishStreamToCSS", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 GsClient::StartPublishStreamToCSSOutcomeCallable GsClient::StartPublishStreamToCSSCallable(const StartPublishStreamToCSSRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<StartPublishStreamToCSSOutcome()>>(
-        [this, request]()
-        {
-            return this->StartPublishStreamToCSS(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<StartPublishStreamToCSSOutcome>>();
+    StartPublishStreamToCSSAsync(
+    request,
+    [prom](
+        const GsClient*,
+        const StartPublishStreamToCSSRequest&,
+        StartPublishStreamToCSSOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 GsClient::StopAndroidInstancesOutcome GsClient::StopAndroidInstances(const StopAndroidInstancesRequest &request)
@@ -3072,25 +3562,32 @@ GsClient::StopAndroidInstancesOutcome GsClient::StopAndroidInstances(const StopA
 
 void GsClient::StopAndroidInstancesAsync(const StopAndroidInstancesRequest& request, const StopAndroidInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->StopAndroidInstances(request), context);
-    };
+    using Req = const StopAndroidInstancesRequest&;
+    using Resp = StopAndroidInstancesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "StopAndroidInstances", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 GsClient::StopAndroidInstancesOutcomeCallable GsClient::StopAndroidInstancesCallable(const StopAndroidInstancesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<StopAndroidInstancesOutcome()>>(
-        [this, request]()
-        {
-            return this->StopAndroidInstances(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<StopAndroidInstancesOutcome>>();
+    StopAndroidInstancesAsync(
+    request,
+    [prom](
+        const GsClient*,
+        const StopAndroidInstancesRequest&,
+        StopAndroidInstancesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 GsClient::StopAndroidInstancesAppOutcome GsClient::StopAndroidInstancesApp(const StopAndroidInstancesAppRequest &request)
@@ -3115,25 +3612,32 @@ GsClient::StopAndroidInstancesAppOutcome GsClient::StopAndroidInstancesApp(const
 
 void GsClient::StopAndroidInstancesAppAsync(const StopAndroidInstancesAppRequest& request, const StopAndroidInstancesAppAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->StopAndroidInstancesApp(request), context);
-    };
+    using Req = const StopAndroidInstancesAppRequest&;
+    using Resp = StopAndroidInstancesAppResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "StopAndroidInstancesApp", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 GsClient::StopAndroidInstancesAppOutcomeCallable GsClient::StopAndroidInstancesAppCallable(const StopAndroidInstancesAppRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<StopAndroidInstancesAppOutcome()>>(
-        [this, request]()
-        {
-            return this->StopAndroidInstancesApp(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<StopAndroidInstancesAppOutcome>>();
+    StopAndroidInstancesAppAsync(
+    request,
+    [prom](
+        const GsClient*,
+        const StopAndroidInstancesAppRequest&,
+        StopAndroidInstancesAppOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 GsClient::StopGameOutcome GsClient::StopGame(const StopGameRequest &request)
@@ -3158,25 +3662,32 @@ GsClient::StopGameOutcome GsClient::StopGame(const StopGameRequest &request)
 
 void GsClient::StopGameAsync(const StopGameRequest& request, const StopGameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->StopGame(request), context);
-    };
+    using Req = const StopGameRequest&;
+    using Resp = StopGameResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "StopGame", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 GsClient::StopGameOutcomeCallable GsClient::StopGameCallable(const StopGameRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<StopGameOutcome()>>(
-        [this, request]()
-        {
-            return this->StopGame(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<StopGameOutcome>>();
+    StopGameAsync(
+    request,
+    [prom](
+        const GsClient*,
+        const StopGameRequest&,
+        StopGameOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 GsClient::StopPublishStreamOutcome GsClient::StopPublishStream(const StopPublishStreamRequest &request)
@@ -3201,25 +3712,32 @@ GsClient::StopPublishStreamOutcome GsClient::StopPublishStream(const StopPublish
 
 void GsClient::StopPublishStreamAsync(const StopPublishStreamRequest& request, const StopPublishStreamAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->StopPublishStream(request), context);
-    };
+    using Req = const StopPublishStreamRequest&;
+    using Resp = StopPublishStreamResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "StopPublishStream", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 GsClient::StopPublishStreamOutcomeCallable GsClient::StopPublishStreamCallable(const StopPublishStreamRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<StopPublishStreamOutcome()>>(
-        [this, request]()
-        {
-            return this->StopPublishStream(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<StopPublishStreamOutcome>>();
+    StopPublishStreamAsync(
+    request,
+    [prom](
+        const GsClient*,
+        const StopPublishStreamRequest&,
+        StopPublishStreamOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 GsClient::SwitchGameArchiveOutcome GsClient::SwitchGameArchive(const SwitchGameArchiveRequest &request)
@@ -3244,25 +3762,32 @@ GsClient::SwitchGameArchiveOutcome GsClient::SwitchGameArchive(const SwitchGameA
 
 void GsClient::SwitchGameArchiveAsync(const SwitchGameArchiveRequest& request, const SwitchGameArchiveAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->SwitchGameArchive(request), context);
-    };
+    using Req = const SwitchGameArchiveRequest&;
+    using Resp = SwitchGameArchiveResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "SwitchGameArchive", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 GsClient::SwitchGameArchiveOutcomeCallable GsClient::SwitchGameArchiveCallable(const SwitchGameArchiveRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<SwitchGameArchiveOutcome()>>(
-        [this, request]()
-        {
-            return this->SwitchGameArchive(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<SwitchGameArchiveOutcome>>();
+    SwitchGameArchiveAsync(
+    request,
+    [prom](
+        const GsClient*,
+        const SwitchGameArchiveRequest&,
+        SwitchGameArchiveOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 GsClient::SyncAndroidInstanceImageOutcome GsClient::SyncAndroidInstanceImage(const SyncAndroidInstanceImageRequest &request)
@@ -3287,25 +3812,32 @@ GsClient::SyncAndroidInstanceImageOutcome GsClient::SyncAndroidInstanceImage(con
 
 void GsClient::SyncAndroidInstanceImageAsync(const SyncAndroidInstanceImageRequest& request, const SyncAndroidInstanceImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->SyncAndroidInstanceImage(request), context);
-    };
+    using Req = const SyncAndroidInstanceImageRequest&;
+    using Resp = SyncAndroidInstanceImageResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "SyncAndroidInstanceImage", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 GsClient::SyncAndroidInstanceImageOutcomeCallable GsClient::SyncAndroidInstanceImageCallable(const SyncAndroidInstanceImageRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<SyncAndroidInstanceImageOutcome()>>(
-        [this, request]()
-        {
-            return this->SyncAndroidInstanceImage(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<SyncAndroidInstanceImageOutcome>>();
+    SyncAndroidInstanceImageAsync(
+    request,
+    [prom](
+        const GsClient*,
+        const SyncAndroidInstanceImageRequest&,
+        SyncAndroidInstanceImageOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 GsClient::SyncExecuteCommandOnAndroidInstancesOutcome GsClient::SyncExecuteCommandOnAndroidInstances(const SyncExecuteCommandOnAndroidInstancesRequest &request)
@@ -3330,25 +3862,32 @@ GsClient::SyncExecuteCommandOnAndroidInstancesOutcome GsClient::SyncExecuteComma
 
 void GsClient::SyncExecuteCommandOnAndroidInstancesAsync(const SyncExecuteCommandOnAndroidInstancesRequest& request, const SyncExecuteCommandOnAndroidInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->SyncExecuteCommandOnAndroidInstances(request), context);
-    };
+    using Req = const SyncExecuteCommandOnAndroidInstancesRequest&;
+    using Resp = SyncExecuteCommandOnAndroidInstancesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "SyncExecuteCommandOnAndroidInstances", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 GsClient::SyncExecuteCommandOnAndroidInstancesOutcomeCallable GsClient::SyncExecuteCommandOnAndroidInstancesCallable(const SyncExecuteCommandOnAndroidInstancesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<SyncExecuteCommandOnAndroidInstancesOutcome()>>(
-        [this, request]()
-        {
-            return this->SyncExecuteCommandOnAndroidInstances(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<SyncExecuteCommandOnAndroidInstancesOutcome>>();
+    SyncExecuteCommandOnAndroidInstancesAsync(
+    request,
+    [prom](
+        const GsClient*,
+        const SyncExecuteCommandOnAndroidInstancesRequest&,
+        SyncExecuteCommandOnAndroidInstancesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 GsClient::TrylockWorkerOutcome GsClient::TrylockWorker(const TrylockWorkerRequest &request)
@@ -3373,25 +3912,32 @@ GsClient::TrylockWorkerOutcome GsClient::TrylockWorker(const TrylockWorkerReques
 
 void GsClient::TrylockWorkerAsync(const TrylockWorkerRequest& request, const TrylockWorkerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->TrylockWorker(request), context);
-    };
+    using Req = const TrylockWorkerRequest&;
+    using Resp = TrylockWorkerResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "TrylockWorker", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 GsClient::TrylockWorkerOutcomeCallable GsClient::TrylockWorkerCallable(const TrylockWorkerRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<TrylockWorkerOutcome()>>(
-        [this, request]()
-        {
-            return this->TrylockWorker(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<TrylockWorkerOutcome>>();
+    TrylockWorkerAsync(
+    request,
+    [prom](
+        const GsClient*,
+        const TrylockWorkerRequest&,
+        TrylockWorkerOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 GsClient::UninstallAndroidInstancesAppOutcome GsClient::UninstallAndroidInstancesApp(const UninstallAndroidInstancesAppRequest &request)
@@ -3416,25 +3962,32 @@ GsClient::UninstallAndroidInstancesAppOutcome GsClient::UninstallAndroidInstance
 
 void GsClient::UninstallAndroidInstancesAppAsync(const UninstallAndroidInstancesAppRequest& request, const UninstallAndroidInstancesAppAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UninstallAndroidInstancesApp(request), context);
-    };
+    using Req = const UninstallAndroidInstancesAppRequest&;
+    using Resp = UninstallAndroidInstancesAppResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UninstallAndroidInstancesApp", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 GsClient::UninstallAndroidInstancesAppOutcomeCallable GsClient::UninstallAndroidInstancesAppCallable(const UninstallAndroidInstancesAppRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UninstallAndroidInstancesAppOutcome()>>(
-        [this, request]()
-        {
-            return this->UninstallAndroidInstancesApp(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UninstallAndroidInstancesAppOutcome>>();
+    UninstallAndroidInstancesAppAsync(
+    request,
+    [prom](
+        const GsClient*,
+        const UninstallAndroidInstancesAppRequest&,
+        UninstallAndroidInstancesAppOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 GsClient::UploadFileToAndroidInstancesOutcome GsClient::UploadFileToAndroidInstances(const UploadFileToAndroidInstancesRequest &request)
@@ -3459,25 +4012,32 @@ GsClient::UploadFileToAndroidInstancesOutcome GsClient::UploadFileToAndroidInsta
 
 void GsClient::UploadFileToAndroidInstancesAsync(const UploadFileToAndroidInstancesRequest& request, const UploadFileToAndroidInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UploadFileToAndroidInstances(request), context);
-    };
+    using Req = const UploadFileToAndroidInstancesRequest&;
+    using Resp = UploadFileToAndroidInstancesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UploadFileToAndroidInstances", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 GsClient::UploadFileToAndroidInstancesOutcomeCallable GsClient::UploadFileToAndroidInstancesCallable(const UploadFileToAndroidInstancesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UploadFileToAndroidInstancesOutcome()>>(
-        [this, request]()
-        {
-            return this->UploadFileToAndroidInstances(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UploadFileToAndroidInstancesOutcome>>();
+    UploadFileToAndroidInstancesAsync(
+    request,
+    [prom](
+        const GsClient*,
+        const UploadFileToAndroidInstancesRequest&,
+        UploadFileToAndroidInstancesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 GsClient::UploadFilesToAndroidInstancesOutcome GsClient::UploadFilesToAndroidInstances(const UploadFilesToAndroidInstancesRequest &request)
@@ -3502,24 +4062,31 @@ GsClient::UploadFilesToAndroidInstancesOutcome GsClient::UploadFilesToAndroidIns
 
 void GsClient::UploadFilesToAndroidInstancesAsync(const UploadFilesToAndroidInstancesRequest& request, const UploadFilesToAndroidInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UploadFilesToAndroidInstances(request), context);
-    };
+    using Req = const UploadFilesToAndroidInstancesRequest&;
+    using Resp = UploadFilesToAndroidInstancesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UploadFilesToAndroidInstances", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 GsClient::UploadFilesToAndroidInstancesOutcomeCallable GsClient::UploadFilesToAndroidInstancesCallable(const UploadFilesToAndroidInstancesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UploadFilesToAndroidInstancesOutcome()>>(
-        [this, request]()
-        {
-            return this->UploadFilesToAndroidInstances(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UploadFilesToAndroidInstancesOutcome>>();
+    UploadFilesToAndroidInstancesAsync(
+    request,
+    [prom](
+        const GsClient*,
+        const UploadFilesToAndroidInstancesRequest&,
+        UploadFilesToAndroidInstancesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 

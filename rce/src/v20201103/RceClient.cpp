@@ -62,25 +62,32 @@ RceClient::CreateNameListOutcome RceClient::CreateNameList(const CreateNameListR
 
 void RceClient::CreateNameListAsync(const CreateNameListRequest& request, const CreateNameListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateNameList(request), context);
-    };
+    using Req = const CreateNameListRequest&;
+    using Resp = CreateNameListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateNameList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 RceClient::CreateNameListOutcomeCallable RceClient::CreateNameListCallable(const CreateNameListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateNameListOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateNameList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateNameListOutcome>>();
+    CreateNameListAsync(
+    request,
+    [prom](
+        const RceClient*,
+        const CreateNameListRequest&,
+        CreateNameListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 RceClient::DeleteNameListOutcome RceClient::DeleteNameList(const DeleteNameListRequest &request)
@@ -105,25 +112,32 @@ RceClient::DeleteNameListOutcome RceClient::DeleteNameList(const DeleteNameListR
 
 void RceClient::DeleteNameListAsync(const DeleteNameListRequest& request, const DeleteNameListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteNameList(request), context);
-    };
+    using Req = const DeleteNameListRequest&;
+    using Resp = DeleteNameListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteNameList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 RceClient::DeleteNameListOutcomeCallable RceClient::DeleteNameListCallable(const DeleteNameListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteNameListOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteNameList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteNameListOutcome>>();
+    DeleteNameListAsync(
+    request,
+    [prom](
+        const RceClient*,
+        const DeleteNameListRequest&,
+        DeleteNameListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 RceClient::DeleteNameListDataOutcome RceClient::DeleteNameListData(const DeleteNameListDataRequest &request)
@@ -148,25 +162,32 @@ RceClient::DeleteNameListDataOutcome RceClient::DeleteNameListData(const DeleteN
 
 void RceClient::DeleteNameListDataAsync(const DeleteNameListDataRequest& request, const DeleteNameListDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteNameListData(request), context);
-    };
+    using Req = const DeleteNameListDataRequest&;
+    using Resp = DeleteNameListDataResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteNameListData", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 RceClient::DeleteNameListDataOutcomeCallable RceClient::DeleteNameListDataCallable(const DeleteNameListDataRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteNameListDataOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteNameListData(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteNameListDataOutcome>>();
+    DeleteNameListDataAsync(
+    request,
+    [prom](
+        const RceClient*,
+        const DeleteNameListDataRequest&,
+        DeleteNameListDataOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 RceClient::DescribeNameListOutcome RceClient::DescribeNameList(const DescribeNameListRequest &request)
@@ -191,25 +212,32 @@ RceClient::DescribeNameListOutcome RceClient::DescribeNameList(const DescribeNam
 
 void RceClient::DescribeNameListAsync(const DescribeNameListRequest& request, const DescribeNameListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeNameList(request), context);
-    };
+    using Req = const DescribeNameListRequest&;
+    using Resp = DescribeNameListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeNameList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 RceClient::DescribeNameListOutcomeCallable RceClient::DescribeNameListCallable(const DescribeNameListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeNameListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeNameList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeNameListOutcome>>();
+    DescribeNameListAsync(
+    request,
+    [prom](
+        const RceClient*,
+        const DescribeNameListRequest&,
+        DescribeNameListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 RceClient::DescribeNameListDataListOutcome RceClient::DescribeNameListDataList(const DescribeNameListDataListRequest &request)
@@ -234,25 +262,32 @@ RceClient::DescribeNameListDataListOutcome RceClient::DescribeNameListDataList(c
 
 void RceClient::DescribeNameListDataListAsync(const DescribeNameListDataListRequest& request, const DescribeNameListDataListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeNameListDataList(request), context);
-    };
+    using Req = const DescribeNameListDataListRequest&;
+    using Resp = DescribeNameListDataListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeNameListDataList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 RceClient::DescribeNameListDataListOutcomeCallable RceClient::DescribeNameListDataListCallable(const DescribeNameListDataListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeNameListDataListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeNameListDataList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeNameListDataListOutcome>>();
+    DescribeNameListDataListAsync(
+    request,
+    [prom](
+        const RceClient*,
+        const DescribeNameListDataListRequest&,
+        DescribeNameListDataListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 RceClient::DescribeNameListDetailOutcome RceClient::DescribeNameListDetail(const DescribeNameListDetailRequest &request)
@@ -277,25 +312,32 @@ RceClient::DescribeNameListDetailOutcome RceClient::DescribeNameListDetail(const
 
 void RceClient::DescribeNameListDetailAsync(const DescribeNameListDetailRequest& request, const DescribeNameListDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeNameListDetail(request), context);
-    };
+    using Req = const DescribeNameListDetailRequest&;
+    using Resp = DescribeNameListDetailResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeNameListDetail", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 RceClient::DescribeNameListDetailOutcomeCallable RceClient::DescribeNameListDetailCallable(const DescribeNameListDetailRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeNameListDetailOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeNameListDetail(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeNameListDetailOutcome>>();
+    DescribeNameListDetailAsync(
+    request,
+    [prom](
+        const RceClient*,
+        const DescribeNameListDetailRequest&,
+        DescribeNameListDetailOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 RceClient::DescribeUserUsageCntOutcome RceClient::DescribeUserUsageCnt(const DescribeUserUsageCntRequest &request)
@@ -320,25 +362,32 @@ RceClient::DescribeUserUsageCntOutcome RceClient::DescribeUserUsageCnt(const Des
 
 void RceClient::DescribeUserUsageCntAsync(const DescribeUserUsageCntRequest& request, const DescribeUserUsageCntAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeUserUsageCnt(request), context);
-    };
+    using Req = const DescribeUserUsageCntRequest&;
+    using Resp = DescribeUserUsageCntResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeUserUsageCnt", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 RceClient::DescribeUserUsageCntOutcomeCallable RceClient::DescribeUserUsageCntCallable(const DescribeUserUsageCntRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeUserUsageCntOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeUserUsageCnt(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeUserUsageCntOutcome>>();
+    DescribeUserUsageCntAsync(
+    request,
+    [prom](
+        const RceClient*,
+        const DescribeUserUsageCntRequest&,
+        DescribeUserUsageCntOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 RceClient::ImportNameListDataOutcome RceClient::ImportNameListData(const ImportNameListDataRequest &request)
@@ -363,25 +412,32 @@ RceClient::ImportNameListDataOutcome RceClient::ImportNameListData(const ImportN
 
 void RceClient::ImportNameListDataAsync(const ImportNameListDataRequest& request, const ImportNameListDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ImportNameListData(request), context);
-    };
+    using Req = const ImportNameListDataRequest&;
+    using Resp = ImportNameListDataResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ImportNameListData", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 RceClient::ImportNameListDataOutcomeCallable RceClient::ImportNameListDataCallable(const ImportNameListDataRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ImportNameListDataOutcome()>>(
-        [this, request]()
-        {
-            return this->ImportNameListData(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ImportNameListDataOutcome>>();
+    ImportNameListDataAsync(
+    request,
+    [prom](
+        const RceClient*,
+        const ImportNameListDataRequest&,
+        ImportNameListDataOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 RceClient::ManageMarketingRiskOutcome RceClient::ManageMarketingRisk(const ManageMarketingRiskRequest &request)
@@ -406,25 +462,32 @@ RceClient::ManageMarketingRiskOutcome RceClient::ManageMarketingRisk(const Manag
 
 void RceClient::ManageMarketingRiskAsync(const ManageMarketingRiskRequest& request, const ManageMarketingRiskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ManageMarketingRisk(request), context);
-    };
+    using Req = const ManageMarketingRiskRequest&;
+    using Resp = ManageMarketingRiskResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ManageMarketingRisk", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 RceClient::ManageMarketingRiskOutcomeCallable RceClient::ManageMarketingRiskCallable(const ManageMarketingRiskRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ManageMarketingRiskOutcome()>>(
-        [this, request]()
-        {
-            return this->ManageMarketingRisk(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ManageMarketingRiskOutcome>>();
+    ManageMarketingRiskAsync(
+    request,
+    [prom](
+        const RceClient*,
+        const ManageMarketingRiskRequest&,
+        ManageMarketingRiskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 RceClient::ModifyNameListOutcome RceClient::ModifyNameList(const ModifyNameListRequest &request)
@@ -449,25 +512,32 @@ RceClient::ModifyNameListOutcome RceClient::ModifyNameList(const ModifyNameListR
 
 void RceClient::ModifyNameListAsync(const ModifyNameListRequest& request, const ModifyNameListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyNameList(request), context);
-    };
+    using Req = const ModifyNameListRequest&;
+    using Resp = ModifyNameListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyNameList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 RceClient::ModifyNameListOutcomeCallable RceClient::ModifyNameListCallable(const ModifyNameListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyNameListOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyNameList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyNameListOutcome>>();
+    ModifyNameListAsync(
+    request,
+    [prom](
+        const RceClient*,
+        const ModifyNameListRequest&,
+        ModifyNameListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 RceClient::ModifyNameListDataOutcome RceClient::ModifyNameListData(const ModifyNameListDataRequest &request)
@@ -492,24 +562,31 @@ RceClient::ModifyNameListDataOutcome RceClient::ModifyNameListData(const ModifyN
 
 void RceClient::ModifyNameListDataAsync(const ModifyNameListDataRequest& request, const ModifyNameListDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyNameListData(request), context);
-    };
+    using Req = const ModifyNameListDataRequest&;
+    using Resp = ModifyNameListDataResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyNameListData", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 RceClient::ModifyNameListDataOutcomeCallable RceClient::ModifyNameListDataCallable(const ModifyNameListDataRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyNameListDataOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyNameListData(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyNameListDataOutcome>>();
+    ModifyNameListDataAsync(
+    request,
+    [prom](
+        const RceClient*,
+        const ModifyNameListDataRequest&,
+        ModifyNameListDataOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 

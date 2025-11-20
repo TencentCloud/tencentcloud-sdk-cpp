@@ -62,25 +62,32 @@ SesClient::BatchSendEmailOutcome SesClient::BatchSendEmail(const BatchSendEmailR
 
 void SesClient::BatchSendEmailAsync(const BatchSendEmailRequest& request, const BatchSendEmailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->BatchSendEmail(request), context);
-    };
+    using Req = const BatchSendEmailRequest&;
+    using Resp = BatchSendEmailResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "BatchSendEmail", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SesClient::BatchSendEmailOutcomeCallable SesClient::BatchSendEmailCallable(const BatchSendEmailRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<BatchSendEmailOutcome()>>(
-        [this, request]()
-        {
-            return this->BatchSendEmail(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<BatchSendEmailOutcome>>();
+    BatchSendEmailAsync(
+    request,
+    [prom](
+        const SesClient*,
+        const BatchSendEmailRequest&,
+        BatchSendEmailOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SesClient::CreateAddressUnsubscribeConfigOutcome SesClient::CreateAddressUnsubscribeConfig(const CreateAddressUnsubscribeConfigRequest &request)
@@ -105,25 +112,32 @@ SesClient::CreateAddressUnsubscribeConfigOutcome SesClient::CreateAddressUnsubsc
 
 void SesClient::CreateAddressUnsubscribeConfigAsync(const CreateAddressUnsubscribeConfigRequest& request, const CreateAddressUnsubscribeConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateAddressUnsubscribeConfig(request), context);
-    };
+    using Req = const CreateAddressUnsubscribeConfigRequest&;
+    using Resp = CreateAddressUnsubscribeConfigResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateAddressUnsubscribeConfig", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SesClient::CreateAddressUnsubscribeConfigOutcomeCallable SesClient::CreateAddressUnsubscribeConfigCallable(const CreateAddressUnsubscribeConfigRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateAddressUnsubscribeConfigOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateAddressUnsubscribeConfig(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateAddressUnsubscribeConfigOutcome>>();
+    CreateAddressUnsubscribeConfigAsync(
+    request,
+    [prom](
+        const SesClient*,
+        const CreateAddressUnsubscribeConfigRequest&,
+        CreateAddressUnsubscribeConfigOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SesClient::CreateCustomBlacklistOutcome SesClient::CreateCustomBlacklist(const CreateCustomBlacklistRequest &request)
@@ -148,25 +162,32 @@ SesClient::CreateCustomBlacklistOutcome SesClient::CreateCustomBlacklist(const C
 
 void SesClient::CreateCustomBlacklistAsync(const CreateCustomBlacklistRequest& request, const CreateCustomBlacklistAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateCustomBlacklist(request), context);
-    };
+    using Req = const CreateCustomBlacklistRequest&;
+    using Resp = CreateCustomBlacklistResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateCustomBlacklist", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SesClient::CreateCustomBlacklistOutcomeCallable SesClient::CreateCustomBlacklistCallable(const CreateCustomBlacklistRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateCustomBlacklistOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateCustomBlacklist(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateCustomBlacklistOutcome>>();
+    CreateCustomBlacklistAsync(
+    request,
+    [prom](
+        const SesClient*,
+        const CreateCustomBlacklistRequest&,
+        CreateCustomBlacklistOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SesClient::CreateEmailAddressOutcome SesClient::CreateEmailAddress(const CreateEmailAddressRequest &request)
@@ -191,25 +212,32 @@ SesClient::CreateEmailAddressOutcome SesClient::CreateEmailAddress(const CreateE
 
 void SesClient::CreateEmailAddressAsync(const CreateEmailAddressRequest& request, const CreateEmailAddressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateEmailAddress(request), context);
-    };
+    using Req = const CreateEmailAddressRequest&;
+    using Resp = CreateEmailAddressResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateEmailAddress", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SesClient::CreateEmailAddressOutcomeCallable SesClient::CreateEmailAddressCallable(const CreateEmailAddressRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateEmailAddressOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateEmailAddress(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateEmailAddressOutcome>>();
+    CreateEmailAddressAsync(
+    request,
+    [prom](
+        const SesClient*,
+        const CreateEmailAddressRequest&,
+        CreateEmailAddressOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SesClient::CreateEmailIdentityOutcome SesClient::CreateEmailIdentity(const CreateEmailIdentityRequest &request)
@@ -234,25 +262,32 @@ SesClient::CreateEmailIdentityOutcome SesClient::CreateEmailIdentity(const Creat
 
 void SesClient::CreateEmailIdentityAsync(const CreateEmailIdentityRequest& request, const CreateEmailIdentityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateEmailIdentity(request), context);
-    };
+    using Req = const CreateEmailIdentityRequest&;
+    using Resp = CreateEmailIdentityResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateEmailIdentity", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SesClient::CreateEmailIdentityOutcomeCallable SesClient::CreateEmailIdentityCallable(const CreateEmailIdentityRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateEmailIdentityOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateEmailIdentity(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateEmailIdentityOutcome>>();
+    CreateEmailIdentityAsync(
+    request,
+    [prom](
+        const SesClient*,
+        const CreateEmailIdentityRequest&,
+        CreateEmailIdentityOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SesClient::CreateEmailTemplateOutcome SesClient::CreateEmailTemplate(const CreateEmailTemplateRequest &request)
@@ -277,25 +312,32 @@ SesClient::CreateEmailTemplateOutcome SesClient::CreateEmailTemplate(const Creat
 
 void SesClient::CreateEmailTemplateAsync(const CreateEmailTemplateRequest& request, const CreateEmailTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateEmailTemplate(request), context);
-    };
+    using Req = const CreateEmailTemplateRequest&;
+    using Resp = CreateEmailTemplateResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateEmailTemplate", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SesClient::CreateEmailTemplateOutcomeCallable SesClient::CreateEmailTemplateCallable(const CreateEmailTemplateRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateEmailTemplateOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateEmailTemplate(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateEmailTemplateOutcome>>();
+    CreateEmailTemplateAsync(
+    request,
+    [prom](
+        const SesClient*,
+        const CreateEmailTemplateRequest&,
+        CreateEmailTemplateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SesClient::CreateReceiverOutcome SesClient::CreateReceiver(const CreateReceiverRequest &request)
@@ -320,25 +362,32 @@ SesClient::CreateReceiverOutcome SesClient::CreateReceiver(const CreateReceiverR
 
 void SesClient::CreateReceiverAsync(const CreateReceiverRequest& request, const CreateReceiverAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateReceiver(request), context);
-    };
+    using Req = const CreateReceiverRequest&;
+    using Resp = CreateReceiverResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateReceiver", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SesClient::CreateReceiverOutcomeCallable SesClient::CreateReceiverCallable(const CreateReceiverRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateReceiverOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateReceiver(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateReceiverOutcome>>();
+    CreateReceiverAsync(
+    request,
+    [prom](
+        const SesClient*,
+        const CreateReceiverRequest&,
+        CreateReceiverOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SesClient::CreateReceiverDetailOutcome SesClient::CreateReceiverDetail(const CreateReceiverDetailRequest &request)
@@ -363,25 +412,32 @@ SesClient::CreateReceiverDetailOutcome SesClient::CreateReceiverDetail(const Cre
 
 void SesClient::CreateReceiverDetailAsync(const CreateReceiverDetailRequest& request, const CreateReceiverDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateReceiverDetail(request), context);
-    };
+    using Req = const CreateReceiverDetailRequest&;
+    using Resp = CreateReceiverDetailResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateReceiverDetail", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SesClient::CreateReceiverDetailOutcomeCallable SesClient::CreateReceiverDetailCallable(const CreateReceiverDetailRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateReceiverDetailOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateReceiverDetail(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateReceiverDetailOutcome>>();
+    CreateReceiverDetailAsync(
+    request,
+    [prom](
+        const SesClient*,
+        const CreateReceiverDetailRequest&,
+        CreateReceiverDetailOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SesClient::CreateReceiverDetailWithDataOutcome SesClient::CreateReceiverDetailWithData(const CreateReceiverDetailWithDataRequest &request)
@@ -406,25 +462,32 @@ SesClient::CreateReceiverDetailWithDataOutcome SesClient::CreateReceiverDetailWi
 
 void SesClient::CreateReceiverDetailWithDataAsync(const CreateReceiverDetailWithDataRequest& request, const CreateReceiverDetailWithDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateReceiverDetailWithData(request), context);
-    };
+    using Req = const CreateReceiverDetailWithDataRequest&;
+    using Resp = CreateReceiverDetailWithDataResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateReceiverDetailWithData", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SesClient::CreateReceiverDetailWithDataOutcomeCallable SesClient::CreateReceiverDetailWithDataCallable(const CreateReceiverDetailWithDataRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateReceiverDetailWithDataOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateReceiverDetailWithData(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateReceiverDetailWithDataOutcome>>();
+    CreateReceiverDetailWithDataAsync(
+    request,
+    [prom](
+        const SesClient*,
+        const CreateReceiverDetailWithDataRequest&,
+        CreateReceiverDetailWithDataOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SesClient::DeleteAddressUnsubscribeConfigOutcome SesClient::DeleteAddressUnsubscribeConfig(const DeleteAddressUnsubscribeConfigRequest &request)
@@ -449,25 +512,32 @@ SesClient::DeleteAddressUnsubscribeConfigOutcome SesClient::DeleteAddressUnsubsc
 
 void SesClient::DeleteAddressUnsubscribeConfigAsync(const DeleteAddressUnsubscribeConfigRequest& request, const DeleteAddressUnsubscribeConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteAddressUnsubscribeConfig(request), context);
-    };
+    using Req = const DeleteAddressUnsubscribeConfigRequest&;
+    using Resp = DeleteAddressUnsubscribeConfigResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteAddressUnsubscribeConfig", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SesClient::DeleteAddressUnsubscribeConfigOutcomeCallable SesClient::DeleteAddressUnsubscribeConfigCallable(const DeleteAddressUnsubscribeConfigRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteAddressUnsubscribeConfigOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteAddressUnsubscribeConfig(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteAddressUnsubscribeConfigOutcome>>();
+    DeleteAddressUnsubscribeConfigAsync(
+    request,
+    [prom](
+        const SesClient*,
+        const DeleteAddressUnsubscribeConfigRequest&,
+        DeleteAddressUnsubscribeConfigOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SesClient::DeleteBlackListOutcome SesClient::DeleteBlackList(const DeleteBlackListRequest &request)
@@ -492,25 +562,32 @@ SesClient::DeleteBlackListOutcome SesClient::DeleteBlackList(const DeleteBlackLi
 
 void SesClient::DeleteBlackListAsync(const DeleteBlackListRequest& request, const DeleteBlackListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteBlackList(request), context);
-    };
+    using Req = const DeleteBlackListRequest&;
+    using Resp = DeleteBlackListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteBlackList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SesClient::DeleteBlackListOutcomeCallable SesClient::DeleteBlackListCallable(const DeleteBlackListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteBlackListOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteBlackList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteBlackListOutcome>>();
+    DeleteBlackListAsync(
+    request,
+    [prom](
+        const SesClient*,
+        const DeleteBlackListRequest&,
+        DeleteBlackListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SesClient::DeleteCustomBlackListOutcome SesClient::DeleteCustomBlackList(const DeleteCustomBlackListRequest &request)
@@ -535,25 +612,32 @@ SesClient::DeleteCustomBlackListOutcome SesClient::DeleteCustomBlackList(const D
 
 void SesClient::DeleteCustomBlackListAsync(const DeleteCustomBlackListRequest& request, const DeleteCustomBlackListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteCustomBlackList(request), context);
-    };
+    using Req = const DeleteCustomBlackListRequest&;
+    using Resp = DeleteCustomBlackListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteCustomBlackList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SesClient::DeleteCustomBlackListOutcomeCallable SesClient::DeleteCustomBlackListCallable(const DeleteCustomBlackListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteCustomBlackListOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteCustomBlackList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteCustomBlackListOutcome>>();
+    DeleteCustomBlackListAsync(
+    request,
+    [prom](
+        const SesClient*,
+        const DeleteCustomBlackListRequest&,
+        DeleteCustomBlackListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SesClient::DeleteEmailAddressOutcome SesClient::DeleteEmailAddress(const DeleteEmailAddressRequest &request)
@@ -578,25 +662,32 @@ SesClient::DeleteEmailAddressOutcome SesClient::DeleteEmailAddress(const DeleteE
 
 void SesClient::DeleteEmailAddressAsync(const DeleteEmailAddressRequest& request, const DeleteEmailAddressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteEmailAddress(request), context);
-    };
+    using Req = const DeleteEmailAddressRequest&;
+    using Resp = DeleteEmailAddressResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteEmailAddress", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SesClient::DeleteEmailAddressOutcomeCallable SesClient::DeleteEmailAddressCallable(const DeleteEmailAddressRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteEmailAddressOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteEmailAddress(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteEmailAddressOutcome>>();
+    DeleteEmailAddressAsync(
+    request,
+    [prom](
+        const SesClient*,
+        const DeleteEmailAddressRequest&,
+        DeleteEmailAddressOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SesClient::DeleteEmailIdentityOutcome SesClient::DeleteEmailIdentity(const DeleteEmailIdentityRequest &request)
@@ -621,25 +712,32 @@ SesClient::DeleteEmailIdentityOutcome SesClient::DeleteEmailIdentity(const Delet
 
 void SesClient::DeleteEmailIdentityAsync(const DeleteEmailIdentityRequest& request, const DeleteEmailIdentityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteEmailIdentity(request), context);
-    };
+    using Req = const DeleteEmailIdentityRequest&;
+    using Resp = DeleteEmailIdentityResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteEmailIdentity", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SesClient::DeleteEmailIdentityOutcomeCallable SesClient::DeleteEmailIdentityCallable(const DeleteEmailIdentityRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteEmailIdentityOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteEmailIdentity(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteEmailIdentityOutcome>>();
+    DeleteEmailIdentityAsync(
+    request,
+    [prom](
+        const SesClient*,
+        const DeleteEmailIdentityRequest&,
+        DeleteEmailIdentityOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SesClient::DeleteEmailTemplateOutcome SesClient::DeleteEmailTemplate(const DeleteEmailTemplateRequest &request)
@@ -664,25 +762,32 @@ SesClient::DeleteEmailTemplateOutcome SesClient::DeleteEmailTemplate(const Delet
 
 void SesClient::DeleteEmailTemplateAsync(const DeleteEmailTemplateRequest& request, const DeleteEmailTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteEmailTemplate(request), context);
-    };
+    using Req = const DeleteEmailTemplateRequest&;
+    using Resp = DeleteEmailTemplateResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteEmailTemplate", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SesClient::DeleteEmailTemplateOutcomeCallable SesClient::DeleteEmailTemplateCallable(const DeleteEmailTemplateRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteEmailTemplateOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteEmailTemplate(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteEmailTemplateOutcome>>();
+    DeleteEmailTemplateAsync(
+    request,
+    [prom](
+        const SesClient*,
+        const DeleteEmailTemplateRequest&,
+        DeleteEmailTemplateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SesClient::DeleteReceiverOutcome SesClient::DeleteReceiver(const DeleteReceiverRequest &request)
@@ -707,25 +812,32 @@ SesClient::DeleteReceiverOutcome SesClient::DeleteReceiver(const DeleteReceiverR
 
 void SesClient::DeleteReceiverAsync(const DeleteReceiverRequest& request, const DeleteReceiverAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteReceiver(request), context);
-    };
+    using Req = const DeleteReceiverRequest&;
+    using Resp = DeleteReceiverResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteReceiver", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SesClient::DeleteReceiverOutcomeCallable SesClient::DeleteReceiverCallable(const DeleteReceiverRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteReceiverOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteReceiver(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteReceiverOutcome>>();
+    DeleteReceiverAsync(
+    request,
+    [prom](
+        const SesClient*,
+        const DeleteReceiverRequest&,
+        DeleteReceiverOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SesClient::GetEmailIdentityOutcome SesClient::GetEmailIdentity(const GetEmailIdentityRequest &request)
@@ -750,25 +862,32 @@ SesClient::GetEmailIdentityOutcome SesClient::GetEmailIdentity(const GetEmailIde
 
 void SesClient::GetEmailIdentityAsync(const GetEmailIdentityRequest& request, const GetEmailIdentityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->GetEmailIdentity(request), context);
-    };
+    using Req = const GetEmailIdentityRequest&;
+    using Resp = GetEmailIdentityResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "GetEmailIdentity", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SesClient::GetEmailIdentityOutcomeCallable SesClient::GetEmailIdentityCallable(const GetEmailIdentityRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<GetEmailIdentityOutcome()>>(
-        [this, request]()
-        {
-            return this->GetEmailIdentity(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<GetEmailIdentityOutcome>>();
+    GetEmailIdentityAsync(
+    request,
+    [prom](
+        const SesClient*,
+        const GetEmailIdentityRequest&,
+        GetEmailIdentityOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SesClient::GetEmailTemplateOutcome SesClient::GetEmailTemplate(const GetEmailTemplateRequest &request)
@@ -793,25 +912,32 @@ SesClient::GetEmailTemplateOutcome SesClient::GetEmailTemplate(const GetEmailTem
 
 void SesClient::GetEmailTemplateAsync(const GetEmailTemplateRequest& request, const GetEmailTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->GetEmailTemplate(request), context);
-    };
+    using Req = const GetEmailTemplateRequest&;
+    using Resp = GetEmailTemplateResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "GetEmailTemplate", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SesClient::GetEmailTemplateOutcomeCallable SesClient::GetEmailTemplateCallable(const GetEmailTemplateRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<GetEmailTemplateOutcome()>>(
-        [this, request]()
-        {
-            return this->GetEmailTemplate(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<GetEmailTemplateOutcome>>();
+    GetEmailTemplateAsync(
+    request,
+    [prom](
+        const SesClient*,
+        const GetEmailTemplateRequest&,
+        GetEmailTemplateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SesClient::GetSendEmailStatusOutcome SesClient::GetSendEmailStatus(const GetSendEmailStatusRequest &request)
@@ -836,25 +962,32 @@ SesClient::GetSendEmailStatusOutcome SesClient::GetSendEmailStatus(const GetSend
 
 void SesClient::GetSendEmailStatusAsync(const GetSendEmailStatusRequest& request, const GetSendEmailStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->GetSendEmailStatus(request), context);
-    };
+    using Req = const GetSendEmailStatusRequest&;
+    using Resp = GetSendEmailStatusResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "GetSendEmailStatus", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SesClient::GetSendEmailStatusOutcomeCallable SesClient::GetSendEmailStatusCallable(const GetSendEmailStatusRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<GetSendEmailStatusOutcome()>>(
-        [this, request]()
-        {
-            return this->GetSendEmailStatus(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<GetSendEmailStatusOutcome>>();
+    GetSendEmailStatusAsync(
+    request,
+    [prom](
+        const SesClient*,
+        const GetSendEmailStatusRequest&,
+        GetSendEmailStatusOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SesClient::GetStatisticsReportOutcome SesClient::GetStatisticsReport(const GetStatisticsReportRequest &request)
@@ -879,25 +1012,32 @@ SesClient::GetStatisticsReportOutcome SesClient::GetStatisticsReport(const GetSt
 
 void SesClient::GetStatisticsReportAsync(const GetStatisticsReportRequest& request, const GetStatisticsReportAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->GetStatisticsReport(request), context);
-    };
+    using Req = const GetStatisticsReportRequest&;
+    using Resp = GetStatisticsReportResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "GetStatisticsReport", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SesClient::GetStatisticsReportOutcomeCallable SesClient::GetStatisticsReportCallable(const GetStatisticsReportRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<GetStatisticsReportOutcome()>>(
-        [this, request]()
-        {
-            return this->GetStatisticsReport(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<GetStatisticsReportOutcome>>();
+    GetStatisticsReportAsync(
+    request,
+    [prom](
+        const SesClient*,
+        const GetStatisticsReportRequest&,
+        GetStatisticsReportOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SesClient::ListAddressUnsubscribeConfigOutcome SesClient::ListAddressUnsubscribeConfig(const ListAddressUnsubscribeConfigRequest &request)
@@ -922,25 +1062,32 @@ SesClient::ListAddressUnsubscribeConfigOutcome SesClient::ListAddressUnsubscribe
 
 void SesClient::ListAddressUnsubscribeConfigAsync(const ListAddressUnsubscribeConfigRequest& request, const ListAddressUnsubscribeConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ListAddressUnsubscribeConfig(request), context);
-    };
+    using Req = const ListAddressUnsubscribeConfigRequest&;
+    using Resp = ListAddressUnsubscribeConfigResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ListAddressUnsubscribeConfig", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SesClient::ListAddressUnsubscribeConfigOutcomeCallable SesClient::ListAddressUnsubscribeConfigCallable(const ListAddressUnsubscribeConfigRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ListAddressUnsubscribeConfigOutcome()>>(
-        [this, request]()
-        {
-            return this->ListAddressUnsubscribeConfig(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ListAddressUnsubscribeConfigOutcome>>();
+    ListAddressUnsubscribeConfigAsync(
+    request,
+    [prom](
+        const SesClient*,
+        const ListAddressUnsubscribeConfigRequest&,
+        ListAddressUnsubscribeConfigOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SesClient::ListBlackEmailAddressOutcome SesClient::ListBlackEmailAddress(const ListBlackEmailAddressRequest &request)
@@ -965,25 +1112,32 @@ SesClient::ListBlackEmailAddressOutcome SesClient::ListBlackEmailAddress(const L
 
 void SesClient::ListBlackEmailAddressAsync(const ListBlackEmailAddressRequest& request, const ListBlackEmailAddressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ListBlackEmailAddress(request), context);
-    };
+    using Req = const ListBlackEmailAddressRequest&;
+    using Resp = ListBlackEmailAddressResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ListBlackEmailAddress", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SesClient::ListBlackEmailAddressOutcomeCallable SesClient::ListBlackEmailAddressCallable(const ListBlackEmailAddressRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ListBlackEmailAddressOutcome()>>(
-        [this, request]()
-        {
-            return this->ListBlackEmailAddress(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ListBlackEmailAddressOutcome>>();
+    ListBlackEmailAddressAsync(
+    request,
+    [prom](
+        const SesClient*,
+        const ListBlackEmailAddressRequest&,
+        ListBlackEmailAddressOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SesClient::ListCustomBlacklistOutcome SesClient::ListCustomBlacklist(const ListCustomBlacklistRequest &request)
@@ -1008,25 +1162,32 @@ SesClient::ListCustomBlacklistOutcome SesClient::ListCustomBlacklist(const ListC
 
 void SesClient::ListCustomBlacklistAsync(const ListCustomBlacklistRequest& request, const ListCustomBlacklistAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ListCustomBlacklist(request), context);
-    };
+    using Req = const ListCustomBlacklistRequest&;
+    using Resp = ListCustomBlacklistResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ListCustomBlacklist", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SesClient::ListCustomBlacklistOutcomeCallable SesClient::ListCustomBlacklistCallable(const ListCustomBlacklistRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ListCustomBlacklistOutcome()>>(
-        [this, request]()
-        {
-            return this->ListCustomBlacklist(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ListCustomBlacklistOutcome>>();
+    ListCustomBlacklistAsync(
+    request,
+    [prom](
+        const SesClient*,
+        const ListCustomBlacklistRequest&,
+        ListCustomBlacklistOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SesClient::ListEmailAddressOutcome SesClient::ListEmailAddress(const ListEmailAddressRequest &request)
@@ -1051,25 +1212,32 @@ SesClient::ListEmailAddressOutcome SesClient::ListEmailAddress(const ListEmailAd
 
 void SesClient::ListEmailAddressAsync(const ListEmailAddressRequest& request, const ListEmailAddressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ListEmailAddress(request), context);
-    };
+    using Req = const ListEmailAddressRequest&;
+    using Resp = ListEmailAddressResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ListEmailAddress", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SesClient::ListEmailAddressOutcomeCallable SesClient::ListEmailAddressCallable(const ListEmailAddressRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ListEmailAddressOutcome()>>(
-        [this, request]()
-        {
-            return this->ListEmailAddress(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ListEmailAddressOutcome>>();
+    ListEmailAddressAsync(
+    request,
+    [prom](
+        const SesClient*,
+        const ListEmailAddressRequest&,
+        ListEmailAddressOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SesClient::ListEmailIdentitiesOutcome SesClient::ListEmailIdentities(const ListEmailIdentitiesRequest &request)
@@ -1094,25 +1262,32 @@ SesClient::ListEmailIdentitiesOutcome SesClient::ListEmailIdentities(const ListE
 
 void SesClient::ListEmailIdentitiesAsync(const ListEmailIdentitiesRequest& request, const ListEmailIdentitiesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ListEmailIdentities(request), context);
-    };
+    using Req = const ListEmailIdentitiesRequest&;
+    using Resp = ListEmailIdentitiesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ListEmailIdentities", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SesClient::ListEmailIdentitiesOutcomeCallable SesClient::ListEmailIdentitiesCallable(const ListEmailIdentitiesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ListEmailIdentitiesOutcome()>>(
-        [this, request]()
-        {
-            return this->ListEmailIdentities(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ListEmailIdentitiesOutcome>>();
+    ListEmailIdentitiesAsync(
+    request,
+    [prom](
+        const SesClient*,
+        const ListEmailIdentitiesRequest&,
+        ListEmailIdentitiesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SesClient::ListEmailTemplatesOutcome SesClient::ListEmailTemplates(const ListEmailTemplatesRequest &request)
@@ -1137,25 +1312,32 @@ SesClient::ListEmailTemplatesOutcome SesClient::ListEmailTemplates(const ListEma
 
 void SesClient::ListEmailTemplatesAsync(const ListEmailTemplatesRequest& request, const ListEmailTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ListEmailTemplates(request), context);
-    };
+    using Req = const ListEmailTemplatesRequest&;
+    using Resp = ListEmailTemplatesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ListEmailTemplates", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SesClient::ListEmailTemplatesOutcomeCallable SesClient::ListEmailTemplatesCallable(const ListEmailTemplatesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ListEmailTemplatesOutcome()>>(
-        [this, request]()
-        {
-            return this->ListEmailTemplates(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ListEmailTemplatesOutcome>>();
+    ListEmailTemplatesAsync(
+    request,
+    [prom](
+        const SesClient*,
+        const ListEmailTemplatesRequest&,
+        ListEmailTemplatesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SesClient::ListReceiverDetailsOutcome SesClient::ListReceiverDetails(const ListReceiverDetailsRequest &request)
@@ -1180,25 +1362,32 @@ SesClient::ListReceiverDetailsOutcome SesClient::ListReceiverDetails(const ListR
 
 void SesClient::ListReceiverDetailsAsync(const ListReceiverDetailsRequest& request, const ListReceiverDetailsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ListReceiverDetails(request), context);
-    };
+    using Req = const ListReceiverDetailsRequest&;
+    using Resp = ListReceiverDetailsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ListReceiverDetails", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SesClient::ListReceiverDetailsOutcomeCallable SesClient::ListReceiverDetailsCallable(const ListReceiverDetailsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ListReceiverDetailsOutcome()>>(
-        [this, request]()
-        {
-            return this->ListReceiverDetails(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ListReceiverDetailsOutcome>>();
+    ListReceiverDetailsAsync(
+    request,
+    [prom](
+        const SesClient*,
+        const ListReceiverDetailsRequest&,
+        ListReceiverDetailsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SesClient::ListReceiversOutcome SesClient::ListReceivers(const ListReceiversRequest &request)
@@ -1223,25 +1412,32 @@ SesClient::ListReceiversOutcome SesClient::ListReceivers(const ListReceiversRequ
 
 void SesClient::ListReceiversAsync(const ListReceiversRequest& request, const ListReceiversAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ListReceivers(request), context);
-    };
+    using Req = const ListReceiversRequest&;
+    using Resp = ListReceiversResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ListReceivers", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SesClient::ListReceiversOutcomeCallable SesClient::ListReceiversCallable(const ListReceiversRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ListReceiversOutcome()>>(
-        [this, request]()
-        {
-            return this->ListReceivers(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ListReceiversOutcome>>();
+    ListReceiversAsync(
+    request,
+    [prom](
+        const SesClient*,
+        const ListReceiversRequest&,
+        ListReceiversOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SesClient::ListSendTasksOutcome SesClient::ListSendTasks(const ListSendTasksRequest &request)
@@ -1266,25 +1462,32 @@ SesClient::ListSendTasksOutcome SesClient::ListSendTasks(const ListSendTasksRequ
 
 void SesClient::ListSendTasksAsync(const ListSendTasksRequest& request, const ListSendTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ListSendTasks(request), context);
-    };
+    using Req = const ListSendTasksRequest&;
+    using Resp = ListSendTasksResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ListSendTasks", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SesClient::ListSendTasksOutcomeCallable SesClient::ListSendTasksCallable(const ListSendTasksRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ListSendTasksOutcome()>>(
-        [this, request]()
-        {
-            return this->ListSendTasks(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ListSendTasksOutcome>>();
+    ListSendTasksAsync(
+    request,
+    [prom](
+        const SesClient*,
+        const ListSendTasksRequest&,
+        ListSendTasksOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SesClient::SendEmailOutcome SesClient::SendEmail(const SendEmailRequest &request)
@@ -1309,25 +1512,32 @@ SesClient::SendEmailOutcome SesClient::SendEmail(const SendEmailRequest &request
 
 void SesClient::SendEmailAsync(const SendEmailRequest& request, const SendEmailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->SendEmail(request), context);
-    };
+    using Req = const SendEmailRequest&;
+    using Resp = SendEmailResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "SendEmail", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SesClient::SendEmailOutcomeCallable SesClient::SendEmailCallable(const SendEmailRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<SendEmailOutcome()>>(
-        [this, request]()
-        {
-            return this->SendEmail(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<SendEmailOutcome>>();
+    SendEmailAsync(
+    request,
+    [prom](
+        const SesClient*,
+        const SendEmailRequest&,
+        SendEmailOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SesClient::UpdateAddressUnsubscribeConfigOutcome SesClient::UpdateAddressUnsubscribeConfig(const UpdateAddressUnsubscribeConfigRequest &request)
@@ -1352,25 +1562,32 @@ SesClient::UpdateAddressUnsubscribeConfigOutcome SesClient::UpdateAddressUnsubsc
 
 void SesClient::UpdateAddressUnsubscribeConfigAsync(const UpdateAddressUnsubscribeConfigRequest& request, const UpdateAddressUnsubscribeConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UpdateAddressUnsubscribeConfig(request), context);
-    };
+    using Req = const UpdateAddressUnsubscribeConfigRequest&;
+    using Resp = UpdateAddressUnsubscribeConfigResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UpdateAddressUnsubscribeConfig", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SesClient::UpdateAddressUnsubscribeConfigOutcomeCallable SesClient::UpdateAddressUnsubscribeConfigCallable(const UpdateAddressUnsubscribeConfigRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UpdateAddressUnsubscribeConfigOutcome()>>(
-        [this, request]()
-        {
-            return this->UpdateAddressUnsubscribeConfig(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UpdateAddressUnsubscribeConfigOutcome>>();
+    UpdateAddressUnsubscribeConfigAsync(
+    request,
+    [prom](
+        const SesClient*,
+        const UpdateAddressUnsubscribeConfigRequest&,
+        UpdateAddressUnsubscribeConfigOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SesClient::UpdateCustomBlackListOutcome SesClient::UpdateCustomBlackList(const UpdateCustomBlackListRequest &request)
@@ -1395,25 +1612,32 @@ SesClient::UpdateCustomBlackListOutcome SesClient::UpdateCustomBlackList(const U
 
 void SesClient::UpdateCustomBlackListAsync(const UpdateCustomBlackListRequest& request, const UpdateCustomBlackListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UpdateCustomBlackList(request), context);
-    };
+    using Req = const UpdateCustomBlackListRequest&;
+    using Resp = UpdateCustomBlackListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UpdateCustomBlackList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SesClient::UpdateCustomBlackListOutcomeCallable SesClient::UpdateCustomBlackListCallable(const UpdateCustomBlackListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UpdateCustomBlackListOutcome()>>(
-        [this, request]()
-        {
-            return this->UpdateCustomBlackList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UpdateCustomBlackListOutcome>>();
+    UpdateCustomBlackListAsync(
+    request,
+    [prom](
+        const SesClient*,
+        const UpdateCustomBlackListRequest&,
+        UpdateCustomBlackListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SesClient::UpdateEmailIdentityOutcome SesClient::UpdateEmailIdentity(const UpdateEmailIdentityRequest &request)
@@ -1438,25 +1662,32 @@ SesClient::UpdateEmailIdentityOutcome SesClient::UpdateEmailIdentity(const Updat
 
 void SesClient::UpdateEmailIdentityAsync(const UpdateEmailIdentityRequest& request, const UpdateEmailIdentityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UpdateEmailIdentity(request), context);
-    };
+    using Req = const UpdateEmailIdentityRequest&;
+    using Resp = UpdateEmailIdentityResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UpdateEmailIdentity", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SesClient::UpdateEmailIdentityOutcomeCallable SesClient::UpdateEmailIdentityCallable(const UpdateEmailIdentityRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UpdateEmailIdentityOutcome()>>(
-        [this, request]()
-        {
-            return this->UpdateEmailIdentity(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UpdateEmailIdentityOutcome>>();
+    UpdateEmailIdentityAsync(
+    request,
+    [prom](
+        const SesClient*,
+        const UpdateEmailIdentityRequest&,
+        UpdateEmailIdentityOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SesClient::UpdateEmailSmtpPassWordOutcome SesClient::UpdateEmailSmtpPassWord(const UpdateEmailSmtpPassWordRequest &request)
@@ -1481,25 +1712,32 @@ SesClient::UpdateEmailSmtpPassWordOutcome SesClient::UpdateEmailSmtpPassWord(con
 
 void SesClient::UpdateEmailSmtpPassWordAsync(const UpdateEmailSmtpPassWordRequest& request, const UpdateEmailSmtpPassWordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UpdateEmailSmtpPassWord(request), context);
-    };
+    using Req = const UpdateEmailSmtpPassWordRequest&;
+    using Resp = UpdateEmailSmtpPassWordResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UpdateEmailSmtpPassWord", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SesClient::UpdateEmailSmtpPassWordOutcomeCallable SesClient::UpdateEmailSmtpPassWordCallable(const UpdateEmailSmtpPassWordRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UpdateEmailSmtpPassWordOutcome()>>(
-        [this, request]()
-        {
-            return this->UpdateEmailSmtpPassWord(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UpdateEmailSmtpPassWordOutcome>>();
+    UpdateEmailSmtpPassWordAsync(
+    request,
+    [prom](
+        const SesClient*,
+        const UpdateEmailSmtpPassWordRequest&,
+        UpdateEmailSmtpPassWordOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SesClient::UpdateEmailTemplateOutcome SesClient::UpdateEmailTemplate(const UpdateEmailTemplateRequest &request)
@@ -1524,24 +1762,31 @@ SesClient::UpdateEmailTemplateOutcome SesClient::UpdateEmailTemplate(const Updat
 
 void SesClient::UpdateEmailTemplateAsync(const UpdateEmailTemplateRequest& request, const UpdateEmailTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UpdateEmailTemplate(request), context);
-    };
+    using Req = const UpdateEmailTemplateRequest&;
+    using Resp = UpdateEmailTemplateResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UpdateEmailTemplate", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SesClient::UpdateEmailTemplateOutcomeCallable SesClient::UpdateEmailTemplateCallable(const UpdateEmailTemplateRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UpdateEmailTemplateOutcome()>>(
-        [this, request]()
-        {
-            return this->UpdateEmailTemplate(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UpdateEmailTemplateOutcome>>();
+    UpdateEmailTemplateAsync(
+    request,
+    [prom](
+        const SesClient*,
+        const UpdateEmailTemplateRequest&,
+        UpdateEmailTemplateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 

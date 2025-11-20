@@ -62,25 +62,32 @@ SvpClient::CreateSavingPlanOrderOutcome SvpClient::CreateSavingPlanOrder(const C
 
 void SvpClient::CreateSavingPlanOrderAsync(const CreateSavingPlanOrderRequest& request, const CreateSavingPlanOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateSavingPlanOrder(request), context);
-    };
+    using Req = const CreateSavingPlanOrderRequest&;
+    using Resp = CreateSavingPlanOrderResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateSavingPlanOrder", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SvpClient::CreateSavingPlanOrderOutcomeCallable SvpClient::CreateSavingPlanOrderCallable(const CreateSavingPlanOrderRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateSavingPlanOrderOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateSavingPlanOrder(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateSavingPlanOrderOutcome>>();
+    CreateSavingPlanOrderAsync(
+    request,
+    [prom](
+        const SvpClient*,
+        const CreateSavingPlanOrderRequest&,
+        CreateSavingPlanOrderOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SvpClient::DescribeSavingPlanCoverageOutcome SvpClient::DescribeSavingPlanCoverage(const DescribeSavingPlanCoverageRequest &request)
@@ -105,25 +112,32 @@ SvpClient::DescribeSavingPlanCoverageOutcome SvpClient::DescribeSavingPlanCovera
 
 void SvpClient::DescribeSavingPlanCoverageAsync(const DescribeSavingPlanCoverageRequest& request, const DescribeSavingPlanCoverageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeSavingPlanCoverage(request), context);
-    };
+    using Req = const DescribeSavingPlanCoverageRequest&;
+    using Resp = DescribeSavingPlanCoverageResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeSavingPlanCoverage", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SvpClient::DescribeSavingPlanCoverageOutcomeCallable SvpClient::DescribeSavingPlanCoverageCallable(const DescribeSavingPlanCoverageRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeSavingPlanCoverageOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeSavingPlanCoverage(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeSavingPlanCoverageOutcome>>();
+    DescribeSavingPlanCoverageAsync(
+    request,
+    [prom](
+        const SvpClient*,
+        const DescribeSavingPlanCoverageRequest&,
+        DescribeSavingPlanCoverageOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SvpClient::DescribeSavingPlanDeductOutcome SvpClient::DescribeSavingPlanDeduct(const DescribeSavingPlanDeductRequest &request)
@@ -148,25 +162,32 @@ SvpClient::DescribeSavingPlanDeductOutcome SvpClient::DescribeSavingPlanDeduct(c
 
 void SvpClient::DescribeSavingPlanDeductAsync(const DescribeSavingPlanDeductRequest& request, const DescribeSavingPlanDeductAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeSavingPlanDeduct(request), context);
-    };
+    using Req = const DescribeSavingPlanDeductRequest&;
+    using Resp = DescribeSavingPlanDeductResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeSavingPlanDeduct", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SvpClient::DescribeSavingPlanDeductOutcomeCallable SvpClient::DescribeSavingPlanDeductCallable(const DescribeSavingPlanDeductRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeSavingPlanDeductOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeSavingPlanDeduct(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeSavingPlanDeductOutcome>>();
+    DescribeSavingPlanDeductAsync(
+    request,
+    [prom](
+        const SvpClient*,
+        const DescribeSavingPlanDeductRequest&,
+        DescribeSavingPlanDeductOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SvpClient::DescribeSavingPlanOverviewOutcome SvpClient::DescribeSavingPlanOverview(const DescribeSavingPlanOverviewRequest &request)
@@ -191,25 +212,32 @@ SvpClient::DescribeSavingPlanOverviewOutcome SvpClient::DescribeSavingPlanOvervi
 
 void SvpClient::DescribeSavingPlanOverviewAsync(const DescribeSavingPlanOverviewRequest& request, const DescribeSavingPlanOverviewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeSavingPlanOverview(request), context);
-    };
+    using Req = const DescribeSavingPlanOverviewRequest&;
+    using Resp = DescribeSavingPlanOverviewResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeSavingPlanOverview", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SvpClient::DescribeSavingPlanOverviewOutcomeCallable SvpClient::DescribeSavingPlanOverviewCallable(const DescribeSavingPlanOverviewRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeSavingPlanOverviewOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeSavingPlanOverview(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeSavingPlanOverviewOutcome>>();
+    DescribeSavingPlanOverviewAsync(
+    request,
+    [prom](
+        const SvpClient*,
+        const DescribeSavingPlanOverviewRequest&,
+        DescribeSavingPlanOverviewOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SvpClient::DescribeSavingPlanUsageOutcome SvpClient::DescribeSavingPlanUsage(const DescribeSavingPlanUsageRequest &request)
@@ -234,24 +262,31 @@ SvpClient::DescribeSavingPlanUsageOutcome SvpClient::DescribeSavingPlanUsage(con
 
 void SvpClient::DescribeSavingPlanUsageAsync(const DescribeSavingPlanUsageRequest& request, const DescribeSavingPlanUsageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeSavingPlanUsage(request), context);
-    };
+    using Req = const DescribeSavingPlanUsageRequest&;
+    using Resp = DescribeSavingPlanUsageResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeSavingPlanUsage", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SvpClient::DescribeSavingPlanUsageOutcomeCallable SvpClient::DescribeSavingPlanUsageCallable(const DescribeSavingPlanUsageRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeSavingPlanUsageOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeSavingPlanUsage(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeSavingPlanUsageOutcome>>();
+    DescribeSavingPlanUsageAsync(
+    request,
+    [prom](
+        const SvpClient*,
+        const DescribeSavingPlanUsageRequest&,
+        DescribeSavingPlanUsageOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 

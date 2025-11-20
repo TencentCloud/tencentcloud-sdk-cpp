@@ -62,25 +62,32 @@ TcmClient::CreateMeshOutcome TcmClient::CreateMesh(const CreateMeshRequest &requ
 
 void TcmClient::CreateMeshAsync(const CreateMeshRequest& request, const CreateMeshAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateMesh(request), context);
-    };
+    using Req = const CreateMeshRequest&;
+    using Resp = CreateMeshResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateMesh", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TcmClient::CreateMeshOutcomeCallable TcmClient::CreateMeshCallable(const CreateMeshRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateMeshOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateMesh(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateMeshOutcome>>();
+    CreateMeshAsync(
+    request,
+    [prom](
+        const TcmClient*,
+        const CreateMeshRequest&,
+        CreateMeshOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TcmClient::DeleteMeshOutcome TcmClient::DeleteMesh(const DeleteMeshRequest &request)
@@ -105,25 +112,32 @@ TcmClient::DeleteMeshOutcome TcmClient::DeleteMesh(const DeleteMeshRequest &requ
 
 void TcmClient::DeleteMeshAsync(const DeleteMeshRequest& request, const DeleteMeshAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteMesh(request), context);
-    };
+    using Req = const DeleteMeshRequest&;
+    using Resp = DeleteMeshResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteMesh", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TcmClient::DeleteMeshOutcomeCallable TcmClient::DeleteMeshCallable(const DeleteMeshRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteMeshOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteMesh(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteMeshOutcome>>();
+    DeleteMeshAsync(
+    request,
+    [prom](
+        const TcmClient*,
+        const DeleteMeshRequest&,
+        DeleteMeshOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TcmClient::DescribeAccessLogConfigOutcome TcmClient::DescribeAccessLogConfig(const DescribeAccessLogConfigRequest &request)
@@ -148,25 +162,32 @@ TcmClient::DescribeAccessLogConfigOutcome TcmClient::DescribeAccessLogConfig(con
 
 void TcmClient::DescribeAccessLogConfigAsync(const DescribeAccessLogConfigRequest& request, const DescribeAccessLogConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAccessLogConfig(request), context);
-    };
+    using Req = const DescribeAccessLogConfigRequest&;
+    using Resp = DescribeAccessLogConfigResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAccessLogConfig", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TcmClient::DescribeAccessLogConfigOutcomeCallable TcmClient::DescribeAccessLogConfigCallable(const DescribeAccessLogConfigRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAccessLogConfigOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAccessLogConfig(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAccessLogConfigOutcome>>();
+    DescribeAccessLogConfigAsync(
+    request,
+    [prom](
+        const TcmClient*,
+        const DescribeAccessLogConfigRequest&,
+        DescribeAccessLogConfigOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TcmClient::DescribeMeshOutcome TcmClient::DescribeMesh(const DescribeMeshRequest &request)
@@ -191,25 +212,32 @@ TcmClient::DescribeMeshOutcome TcmClient::DescribeMesh(const DescribeMeshRequest
 
 void TcmClient::DescribeMeshAsync(const DescribeMeshRequest& request, const DescribeMeshAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeMesh(request), context);
-    };
+    using Req = const DescribeMeshRequest&;
+    using Resp = DescribeMeshResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeMesh", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TcmClient::DescribeMeshOutcomeCallable TcmClient::DescribeMeshCallable(const DescribeMeshRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeMeshOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeMesh(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeMeshOutcome>>();
+    DescribeMeshAsync(
+    request,
+    [prom](
+        const TcmClient*,
+        const DescribeMeshRequest&,
+        DescribeMeshOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TcmClient::DescribeMeshListOutcome TcmClient::DescribeMeshList(const DescribeMeshListRequest &request)
@@ -234,25 +262,32 @@ TcmClient::DescribeMeshListOutcome TcmClient::DescribeMeshList(const DescribeMes
 
 void TcmClient::DescribeMeshListAsync(const DescribeMeshListRequest& request, const DescribeMeshListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeMeshList(request), context);
-    };
+    using Req = const DescribeMeshListRequest&;
+    using Resp = DescribeMeshListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeMeshList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TcmClient::DescribeMeshListOutcomeCallable TcmClient::DescribeMeshListCallable(const DescribeMeshListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeMeshListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeMeshList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeMeshListOutcome>>();
+    DescribeMeshListAsync(
+    request,
+    [prom](
+        const TcmClient*,
+        const DescribeMeshListRequest&,
+        DescribeMeshListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TcmClient::LinkClusterListOutcome TcmClient::LinkClusterList(const LinkClusterListRequest &request)
@@ -277,25 +312,32 @@ TcmClient::LinkClusterListOutcome TcmClient::LinkClusterList(const LinkClusterLi
 
 void TcmClient::LinkClusterListAsync(const LinkClusterListRequest& request, const LinkClusterListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->LinkClusterList(request), context);
-    };
+    using Req = const LinkClusterListRequest&;
+    using Resp = LinkClusterListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "LinkClusterList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TcmClient::LinkClusterListOutcomeCallable TcmClient::LinkClusterListCallable(const LinkClusterListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<LinkClusterListOutcome()>>(
-        [this, request]()
-        {
-            return this->LinkClusterList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<LinkClusterListOutcome>>();
+    LinkClusterListAsync(
+    request,
+    [prom](
+        const TcmClient*,
+        const LinkClusterListRequest&,
+        LinkClusterListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TcmClient::LinkPrometheusOutcome TcmClient::LinkPrometheus(const LinkPrometheusRequest &request)
@@ -320,25 +362,32 @@ TcmClient::LinkPrometheusOutcome TcmClient::LinkPrometheus(const LinkPrometheusR
 
 void TcmClient::LinkPrometheusAsync(const LinkPrometheusRequest& request, const LinkPrometheusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->LinkPrometheus(request), context);
-    };
+    using Req = const LinkPrometheusRequest&;
+    using Resp = LinkPrometheusResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "LinkPrometheus", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TcmClient::LinkPrometheusOutcomeCallable TcmClient::LinkPrometheusCallable(const LinkPrometheusRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<LinkPrometheusOutcome()>>(
-        [this, request]()
-        {
-            return this->LinkPrometheus(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<LinkPrometheusOutcome>>();
+    LinkPrometheusAsync(
+    request,
+    [prom](
+        const TcmClient*,
+        const LinkPrometheusRequest&,
+        LinkPrometheusOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TcmClient::ModifyAccessLogConfigOutcome TcmClient::ModifyAccessLogConfig(const ModifyAccessLogConfigRequest &request)
@@ -363,25 +412,32 @@ TcmClient::ModifyAccessLogConfigOutcome TcmClient::ModifyAccessLogConfig(const M
 
 void TcmClient::ModifyAccessLogConfigAsync(const ModifyAccessLogConfigRequest& request, const ModifyAccessLogConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyAccessLogConfig(request), context);
-    };
+    using Req = const ModifyAccessLogConfigRequest&;
+    using Resp = ModifyAccessLogConfigResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyAccessLogConfig", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TcmClient::ModifyAccessLogConfigOutcomeCallable TcmClient::ModifyAccessLogConfigCallable(const ModifyAccessLogConfigRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyAccessLogConfigOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyAccessLogConfig(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyAccessLogConfigOutcome>>();
+    ModifyAccessLogConfigAsync(
+    request,
+    [prom](
+        const TcmClient*,
+        const ModifyAccessLogConfigRequest&,
+        ModifyAccessLogConfigOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TcmClient::ModifyMeshOutcome TcmClient::ModifyMesh(const ModifyMeshRequest &request)
@@ -406,25 +462,32 @@ TcmClient::ModifyMeshOutcome TcmClient::ModifyMesh(const ModifyMeshRequest &requ
 
 void TcmClient::ModifyMeshAsync(const ModifyMeshRequest& request, const ModifyMeshAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyMesh(request), context);
-    };
+    using Req = const ModifyMeshRequest&;
+    using Resp = ModifyMeshResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyMesh", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TcmClient::ModifyMeshOutcomeCallable TcmClient::ModifyMeshCallable(const ModifyMeshRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyMeshOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyMesh(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyMeshOutcome>>();
+    ModifyMeshAsync(
+    request,
+    [prom](
+        const TcmClient*,
+        const ModifyMeshRequest&,
+        ModifyMeshOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TcmClient::ModifyTracingConfigOutcome TcmClient::ModifyTracingConfig(const ModifyTracingConfigRequest &request)
@@ -449,25 +512,32 @@ TcmClient::ModifyTracingConfigOutcome TcmClient::ModifyTracingConfig(const Modif
 
 void TcmClient::ModifyTracingConfigAsync(const ModifyTracingConfigRequest& request, const ModifyTracingConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyTracingConfig(request), context);
-    };
+    using Req = const ModifyTracingConfigRequest&;
+    using Resp = ModifyTracingConfigResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyTracingConfig", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TcmClient::ModifyTracingConfigOutcomeCallable TcmClient::ModifyTracingConfigCallable(const ModifyTracingConfigRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyTracingConfigOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyTracingConfig(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyTracingConfigOutcome>>();
+    ModifyTracingConfigAsync(
+    request,
+    [prom](
+        const TcmClient*,
+        const ModifyTracingConfigRequest&,
+        ModifyTracingConfigOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TcmClient::UnlinkClusterOutcome TcmClient::UnlinkCluster(const UnlinkClusterRequest &request)
@@ -492,25 +562,32 @@ TcmClient::UnlinkClusterOutcome TcmClient::UnlinkCluster(const UnlinkClusterRequ
 
 void TcmClient::UnlinkClusterAsync(const UnlinkClusterRequest& request, const UnlinkClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UnlinkCluster(request), context);
-    };
+    using Req = const UnlinkClusterRequest&;
+    using Resp = UnlinkClusterResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UnlinkCluster", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TcmClient::UnlinkClusterOutcomeCallable TcmClient::UnlinkClusterCallable(const UnlinkClusterRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UnlinkClusterOutcome()>>(
-        [this, request]()
-        {
-            return this->UnlinkCluster(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UnlinkClusterOutcome>>();
+    UnlinkClusterAsync(
+    request,
+    [prom](
+        const TcmClient*,
+        const UnlinkClusterRequest&,
+        UnlinkClusterOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TcmClient::UnlinkPrometheusOutcome TcmClient::UnlinkPrometheus(const UnlinkPrometheusRequest &request)
@@ -535,24 +612,31 @@ TcmClient::UnlinkPrometheusOutcome TcmClient::UnlinkPrometheus(const UnlinkProme
 
 void TcmClient::UnlinkPrometheusAsync(const UnlinkPrometheusRequest& request, const UnlinkPrometheusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UnlinkPrometheus(request), context);
-    };
+    using Req = const UnlinkPrometheusRequest&;
+    using Resp = UnlinkPrometheusResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UnlinkPrometheus", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TcmClient::UnlinkPrometheusOutcomeCallable TcmClient::UnlinkPrometheusCallable(const UnlinkPrometheusRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UnlinkPrometheusOutcome()>>(
-        [this, request]()
-        {
-            return this->UnlinkPrometheus(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UnlinkPrometheusOutcome>>();
+    UnlinkPrometheusAsync(
+    request,
+    [prom](
+        const TcmClient*,
+        const UnlinkPrometheusRequest&,
+        UnlinkPrometheusOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 

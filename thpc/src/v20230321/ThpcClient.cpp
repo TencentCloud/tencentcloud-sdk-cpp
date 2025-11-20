@@ -62,25 +62,32 @@ ThpcClient::AddClusterStorageOptionOutcome ThpcClient::AddClusterStorageOption(c
 
 void ThpcClient::AddClusterStorageOptionAsync(const AddClusterStorageOptionRequest& request, const AddClusterStorageOptionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->AddClusterStorageOption(request), context);
-    };
+    using Req = const AddClusterStorageOptionRequest&;
+    using Resp = AddClusterStorageOptionResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "AddClusterStorageOption", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ThpcClient::AddClusterStorageOptionOutcomeCallable ThpcClient::AddClusterStorageOptionCallable(const AddClusterStorageOptionRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<AddClusterStorageOptionOutcome()>>(
-        [this, request]()
-        {
-            return this->AddClusterStorageOption(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<AddClusterStorageOptionOutcome>>();
+    AddClusterStorageOptionAsync(
+    request,
+    [prom](
+        const ThpcClient*,
+        const AddClusterStorageOptionRequest&,
+        AddClusterStorageOptionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ThpcClient::AddNodesOutcome ThpcClient::AddNodes(const AddNodesRequest &request)
@@ -105,25 +112,32 @@ ThpcClient::AddNodesOutcome ThpcClient::AddNodes(const AddNodesRequest &request)
 
 void ThpcClient::AddNodesAsync(const AddNodesRequest& request, const AddNodesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->AddNodes(request), context);
-    };
+    using Req = const AddNodesRequest&;
+    using Resp = AddNodesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "AddNodes", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ThpcClient::AddNodesOutcomeCallable ThpcClient::AddNodesCallable(const AddNodesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<AddNodesOutcome()>>(
-        [this, request]()
-        {
-            return this->AddNodes(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<AddNodesOutcome>>();
+    AddNodesAsync(
+    request,
+    [prom](
+        const ThpcClient*,
+        const AddNodesRequest&,
+        AddNodesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ThpcClient::AddQueueOutcome ThpcClient::AddQueue(const AddQueueRequest &request)
@@ -148,25 +162,32 @@ ThpcClient::AddQueueOutcome ThpcClient::AddQueue(const AddQueueRequest &request)
 
 void ThpcClient::AddQueueAsync(const AddQueueRequest& request, const AddQueueAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->AddQueue(request), context);
-    };
+    using Req = const AddQueueRequest&;
+    using Resp = AddQueueResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "AddQueue", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ThpcClient::AddQueueOutcomeCallable ThpcClient::AddQueueCallable(const AddQueueRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<AddQueueOutcome()>>(
-        [this, request]()
-        {
-            return this->AddQueue(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<AddQueueOutcome>>();
+    AddQueueAsync(
+    request,
+    [prom](
+        const ThpcClient*,
+        const AddQueueRequest&,
+        AddQueueOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ThpcClient::AttachNodesOutcome ThpcClient::AttachNodes(const AttachNodesRequest &request)
@@ -191,25 +212,32 @@ ThpcClient::AttachNodesOutcome ThpcClient::AttachNodes(const AttachNodesRequest 
 
 void ThpcClient::AttachNodesAsync(const AttachNodesRequest& request, const AttachNodesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->AttachNodes(request), context);
-    };
+    using Req = const AttachNodesRequest&;
+    using Resp = AttachNodesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "AttachNodes", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ThpcClient::AttachNodesOutcomeCallable ThpcClient::AttachNodesCallable(const AttachNodesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<AttachNodesOutcome()>>(
-        [this, request]()
-        {
-            return this->AttachNodes(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<AttachNodesOutcome>>();
+    AttachNodesAsync(
+    request,
+    [prom](
+        const ThpcClient*,
+        const AttachNodesRequest&,
+        AttachNodesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ThpcClient::CreateClusterOutcome ThpcClient::CreateCluster(const CreateClusterRequest &request)
@@ -234,25 +262,32 @@ ThpcClient::CreateClusterOutcome ThpcClient::CreateCluster(const CreateClusterRe
 
 void ThpcClient::CreateClusterAsync(const CreateClusterRequest& request, const CreateClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateCluster(request), context);
-    };
+    using Req = const CreateClusterRequest&;
+    using Resp = CreateClusterResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateCluster", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ThpcClient::CreateClusterOutcomeCallable ThpcClient::CreateClusterCallable(const CreateClusterRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateClusterOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateCluster(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateClusterOutcome>>();
+    CreateClusterAsync(
+    request,
+    [prom](
+        const ThpcClient*,
+        const CreateClusterRequest&,
+        CreateClusterOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ThpcClient::CreateWorkspacesOutcome ThpcClient::CreateWorkspaces(const CreateWorkspacesRequest &request)
@@ -277,25 +312,32 @@ ThpcClient::CreateWorkspacesOutcome ThpcClient::CreateWorkspaces(const CreateWor
 
 void ThpcClient::CreateWorkspacesAsync(const CreateWorkspacesRequest& request, const CreateWorkspacesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateWorkspaces(request), context);
-    };
+    using Req = const CreateWorkspacesRequest&;
+    using Resp = CreateWorkspacesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateWorkspaces", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ThpcClient::CreateWorkspacesOutcomeCallable ThpcClient::CreateWorkspacesCallable(const CreateWorkspacesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateWorkspacesOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateWorkspaces(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateWorkspacesOutcome>>();
+    CreateWorkspacesAsync(
+    request,
+    [prom](
+        const ThpcClient*,
+        const CreateWorkspacesRequest&,
+        CreateWorkspacesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ThpcClient::DeleteClusterOutcome ThpcClient::DeleteCluster(const DeleteClusterRequest &request)
@@ -320,25 +362,32 @@ ThpcClient::DeleteClusterOutcome ThpcClient::DeleteCluster(const DeleteClusterRe
 
 void ThpcClient::DeleteClusterAsync(const DeleteClusterRequest& request, const DeleteClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteCluster(request), context);
-    };
+    using Req = const DeleteClusterRequest&;
+    using Resp = DeleteClusterResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteCluster", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ThpcClient::DeleteClusterOutcomeCallable ThpcClient::DeleteClusterCallable(const DeleteClusterRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteClusterOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteCluster(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteClusterOutcome>>();
+    DeleteClusterAsync(
+    request,
+    [prom](
+        const ThpcClient*,
+        const DeleteClusterRequest&,
+        DeleteClusterOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ThpcClient::DeleteClusterStorageOptionOutcome ThpcClient::DeleteClusterStorageOption(const DeleteClusterStorageOptionRequest &request)
@@ -363,25 +412,32 @@ ThpcClient::DeleteClusterStorageOptionOutcome ThpcClient::DeleteClusterStorageOp
 
 void ThpcClient::DeleteClusterStorageOptionAsync(const DeleteClusterStorageOptionRequest& request, const DeleteClusterStorageOptionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteClusterStorageOption(request), context);
-    };
+    using Req = const DeleteClusterStorageOptionRequest&;
+    using Resp = DeleteClusterStorageOptionResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteClusterStorageOption", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ThpcClient::DeleteClusterStorageOptionOutcomeCallable ThpcClient::DeleteClusterStorageOptionCallable(const DeleteClusterStorageOptionRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteClusterStorageOptionOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteClusterStorageOption(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteClusterStorageOptionOutcome>>();
+    DeleteClusterStorageOptionAsync(
+    request,
+    [prom](
+        const ThpcClient*,
+        const DeleteClusterStorageOptionRequest&,
+        DeleteClusterStorageOptionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ThpcClient::DeleteJobOutcome ThpcClient::DeleteJob(const DeleteJobRequest &request)
@@ -406,25 +462,32 @@ ThpcClient::DeleteJobOutcome ThpcClient::DeleteJob(const DeleteJobRequest &reque
 
 void ThpcClient::DeleteJobAsync(const DeleteJobRequest& request, const DeleteJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteJob(request), context);
-    };
+    using Req = const DeleteJobRequest&;
+    using Resp = DeleteJobResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteJob", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ThpcClient::DeleteJobOutcomeCallable ThpcClient::DeleteJobCallable(const DeleteJobRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteJobOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteJob(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteJobOutcome>>();
+    DeleteJobAsync(
+    request,
+    [prom](
+        const ThpcClient*,
+        const DeleteJobRequest&,
+        DeleteJobOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ThpcClient::DeleteNodesOutcome ThpcClient::DeleteNodes(const DeleteNodesRequest &request)
@@ -449,25 +512,32 @@ ThpcClient::DeleteNodesOutcome ThpcClient::DeleteNodes(const DeleteNodesRequest 
 
 void ThpcClient::DeleteNodesAsync(const DeleteNodesRequest& request, const DeleteNodesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteNodes(request), context);
-    };
+    using Req = const DeleteNodesRequest&;
+    using Resp = DeleteNodesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteNodes", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ThpcClient::DeleteNodesOutcomeCallable ThpcClient::DeleteNodesCallable(const DeleteNodesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteNodesOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteNodes(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteNodesOutcome>>();
+    DeleteNodesAsync(
+    request,
+    [prom](
+        const ThpcClient*,
+        const DeleteNodesRequest&,
+        DeleteNodesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ThpcClient::DeleteQueueOutcome ThpcClient::DeleteQueue(const DeleteQueueRequest &request)
@@ -492,25 +562,32 @@ ThpcClient::DeleteQueueOutcome ThpcClient::DeleteQueue(const DeleteQueueRequest 
 
 void ThpcClient::DeleteQueueAsync(const DeleteQueueRequest& request, const DeleteQueueAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteQueue(request), context);
-    };
+    using Req = const DeleteQueueRequest&;
+    using Resp = DeleteQueueResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteQueue", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ThpcClient::DeleteQueueOutcomeCallable ThpcClient::DeleteQueueCallable(const DeleteQueueRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteQueueOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteQueue(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteQueueOutcome>>();
+    DeleteQueueAsync(
+    request,
+    [prom](
+        const ThpcClient*,
+        const DeleteQueueRequest&,
+        DeleteQueueOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ThpcClient::DescribeAutoScalingConfigurationOutcome ThpcClient::DescribeAutoScalingConfiguration(const DescribeAutoScalingConfigurationRequest &request)
@@ -535,25 +612,32 @@ ThpcClient::DescribeAutoScalingConfigurationOutcome ThpcClient::DescribeAutoScal
 
 void ThpcClient::DescribeAutoScalingConfigurationAsync(const DescribeAutoScalingConfigurationRequest& request, const DescribeAutoScalingConfigurationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAutoScalingConfiguration(request), context);
-    };
+    using Req = const DescribeAutoScalingConfigurationRequest&;
+    using Resp = DescribeAutoScalingConfigurationResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAutoScalingConfiguration", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ThpcClient::DescribeAutoScalingConfigurationOutcomeCallable ThpcClient::DescribeAutoScalingConfigurationCallable(const DescribeAutoScalingConfigurationRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAutoScalingConfigurationOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAutoScalingConfiguration(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAutoScalingConfigurationOutcome>>();
+    DescribeAutoScalingConfigurationAsync(
+    request,
+    [prom](
+        const ThpcClient*,
+        const DescribeAutoScalingConfigurationRequest&,
+        DescribeAutoScalingConfigurationOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ThpcClient::DescribeClusterActivitiesOutcome ThpcClient::DescribeClusterActivities(const DescribeClusterActivitiesRequest &request)
@@ -578,25 +662,32 @@ ThpcClient::DescribeClusterActivitiesOutcome ThpcClient::DescribeClusterActiviti
 
 void ThpcClient::DescribeClusterActivitiesAsync(const DescribeClusterActivitiesRequest& request, const DescribeClusterActivitiesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeClusterActivities(request), context);
-    };
+    using Req = const DescribeClusterActivitiesRequest&;
+    using Resp = DescribeClusterActivitiesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeClusterActivities", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ThpcClient::DescribeClusterActivitiesOutcomeCallable ThpcClient::DescribeClusterActivitiesCallable(const DescribeClusterActivitiesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeClusterActivitiesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeClusterActivities(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeClusterActivitiesOutcome>>();
+    DescribeClusterActivitiesAsync(
+    request,
+    [prom](
+        const ThpcClient*,
+        const DescribeClusterActivitiesRequest&,
+        DescribeClusterActivitiesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ThpcClient::DescribeClusterStorageOptionOutcome ThpcClient::DescribeClusterStorageOption(const DescribeClusterStorageOptionRequest &request)
@@ -621,25 +712,32 @@ ThpcClient::DescribeClusterStorageOptionOutcome ThpcClient::DescribeClusterStora
 
 void ThpcClient::DescribeClusterStorageOptionAsync(const DescribeClusterStorageOptionRequest& request, const DescribeClusterStorageOptionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeClusterStorageOption(request), context);
-    };
+    using Req = const DescribeClusterStorageOptionRequest&;
+    using Resp = DescribeClusterStorageOptionResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeClusterStorageOption", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ThpcClient::DescribeClusterStorageOptionOutcomeCallable ThpcClient::DescribeClusterStorageOptionCallable(const DescribeClusterStorageOptionRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeClusterStorageOptionOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeClusterStorageOption(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeClusterStorageOptionOutcome>>();
+    DescribeClusterStorageOptionAsync(
+    request,
+    [prom](
+        const ThpcClient*,
+        const DescribeClusterStorageOptionRequest&,
+        DescribeClusterStorageOptionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ThpcClient::DescribeClustersOutcome ThpcClient::DescribeClusters(const DescribeClustersRequest &request)
@@ -664,25 +762,32 @@ ThpcClient::DescribeClustersOutcome ThpcClient::DescribeClusters(const DescribeC
 
 void ThpcClient::DescribeClustersAsync(const DescribeClustersRequest& request, const DescribeClustersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeClusters(request), context);
-    };
+    using Req = const DescribeClustersRequest&;
+    using Resp = DescribeClustersResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeClusters", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ThpcClient::DescribeClustersOutcomeCallable ThpcClient::DescribeClustersCallable(const DescribeClustersRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeClustersOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeClusters(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeClustersOutcome>>();
+    DescribeClustersAsync(
+    request,
+    [prom](
+        const ThpcClient*,
+        const DescribeClustersRequest&,
+        DescribeClustersOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ThpcClient::DescribeInitNodeScriptsOutcome ThpcClient::DescribeInitNodeScripts(const DescribeInitNodeScriptsRequest &request)
@@ -707,25 +812,32 @@ ThpcClient::DescribeInitNodeScriptsOutcome ThpcClient::DescribeInitNodeScripts(c
 
 void ThpcClient::DescribeInitNodeScriptsAsync(const DescribeInitNodeScriptsRequest& request, const DescribeInitNodeScriptsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeInitNodeScripts(request), context);
-    };
+    using Req = const DescribeInitNodeScriptsRequest&;
+    using Resp = DescribeInitNodeScriptsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeInitNodeScripts", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ThpcClient::DescribeInitNodeScriptsOutcomeCallable ThpcClient::DescribeInitNodeScriptsCallable(const DescribeInitNodeScriptsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeInitNodeScriptsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeInitNodeScripts(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeInitNodeScriptsOutcome>>();
+    DescribeInitNodeScriptsAsync(
+    request,
+    [prom](
+        const ThpcClient*,
+        const DescribeInitNodeScriptsRequest&,
+        DescribeInitNodeScriptsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ThpcClient::DescribeJobSubmitInfoOutcome ThpcClient::DescribeJobSubmitInfo(const DescribeJobSubmitInfoRequest &request)
@@ -750,25 +862,32 @@ ThpcClient::DescribeJobSubmitInfoOutcome ThpcClient::DescribeJobSubmitInfo(const
 
 void ThpcClient::DescribeJobSubmitInfoAsync(const DescribeJobSubmitInfoRequest& request, const DescribeJobSubmitInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeJobSubmitInfo(request), context);
-    };
+    using Req = const DescribeJobSubmitInfoRequest&;
+    using Resp = DescribeJobSubmitInfoResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeJobSubmitInfo", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ThpcClient::DescribeJobSubmitInfoOutcomeCallable ThpcClient::DescribeJobSubmitInfoCallable(const DescribeJobSubmitInfoRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeJobSubmitInfoOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeJobSubmitInfo(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeJobSubmitInfoOutcome>>();
+    DescribeJobSubmitInfoAsync(
+    request,
+    [prom](
+        const ThpcClient*,
+        const DescribeJobSubmitInfoRequest&,
+        DescribeJobSubmitInfoOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ThpcClient::DescribeJobsOutcome ThpcClient::DescribeJobs(const DescribeJobsRequest &request)
@@ -793,25 +912,32 @@ ThpcClient::DescribeJobsOutcome ThpcClient::DescribeJobs(const DescribeJobsReque
 
 void ThpcClient::DescribeJobsAsync(const DescribeJobsRequest& request, const DescribeJobsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeJobs(request), context);
-    };
+    using Req = const DescribeJobsRequest&;
+    using Resp = DescribeJobsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeJobs", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ThpcClient::DescribeJobsOutcomeCallable ThpcClient::DescribeJobsCallable(const DescribeJobsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeJobsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeJobs(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeJobsOutcome>>();
+    DescribeJobsAsync(
+    request,
+    [prom](
+        const ThpcClient*,
+        const DescribeJobsRequest&,
+        DescribeJobsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ThpcClient::DescribeJobsOverviewOutcome ThpcClient::DescribeJobsOverview(const DescribeJobsOverviewRequest &request)
@@ -836,25 +962,32 @@ ThpcClient::DescribeJobsOverviewOutcome ThpcClient::DescribeJobsOverview(const D
 
 void ThpcClient::DescribeJobsOverviewAsync(const DescribeJobsOverviewRequest& request, const DescribeJobsOverviewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeJobsOverview(request), context);
-    };
+    using Req = const DescribeJobsOverviewRequest&;
+    using Resp = DescribeJobsOverviewResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeJobsOverview", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ThpcClient::DescribeJobsOverviewOutcomeCallable ThpcClient::DescribeJobsOverviewCallable(const DescribeJobsOverviewRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeJobsOverviewOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeJobsOverview(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeJobsOverviewOutcome>>();
+    DescribeJobsOverviewAsync(
+    request,
+    [prom](
+        const ThpcClient*,
+        const DescribeJobsOverviewRequest&,
+        DescribeJobsOverviewOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ThpcClient::DescribeNodesOutcome ThpcClient::DescribeNodes(const DescribeNodesRequest &request)
@@ -879,25 +1012,32 @@ ThpcClient::DescribeNodesOutcome ThpcClient::DescribeNodes(const DescribeNodesRe
 
 void ThpcClient::DescribeNodesAsync(const DescribeNodesRequest& request, const DescribeNodesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeNodes(request), context);
-    };
+    using Req = const DescribeNodesRequest&;
+    using Resp = DescribeNodesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeNodes", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ThpcClient::DescribeNodesOutcomeCallable ThpcClient::DescribeNodesCallable(const DescribeNodesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeNodesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeNodes(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeNodesOutcome>>();
+    DescribeNodesAsync(
+    request,
+    [prom](
+        const ThpcClient*,
+        const DescribeNodesRequest&,
+        DescribeNodesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ThpcClient::DescribeQueuesOutcome ThpcClient::DescribeQueues(const DescribeQueuesRequest &request)
@@ -922,25 +1062,32 @@ ThpcClient::DescribeQueuesOutcome ThpcClient::DescribeQueues(const DescribeQueue
 
 void ThpcClient::DescribeQueuesAsync(const DescribeQueuesRequest& request, const DescribeQueuesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeQueues(request), context);
-    };
+    using Req = const DescribeQueuesRequest&;
+    using Resp = DescribeQueuesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeQueues", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ThpcClient::DescribeQueuesOutcomeCallable ThpcClient::DescribeQueuesCallable(const DescribeQueuesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeQueuesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeQueues(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeQueuesOutcome>>();
+    DescribeQueuesAsync(
+    request,
+    [prom](
+        const ThpcClient*,
+        const DescribeQueuesRequest&,
+        DescribeQueuesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ThpcClient::DescribeWorkspacesOutcome ThpcClient::DescribeWorkspaces(const DescribeWorkspacesRequest &request)
@@ -965,25 +1112,32 @@ ThpcClient::DescribeWorkspacesOutcome ThpcClient::DescribeWorkspaces(const Descr
 
 void ThpcClient::DescribeWorkspacesAsync(const DescribeWorkspacesRequest& request, const DescribeWorkspacesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeWorkspaces(request), context);
-    };
+    using Req = const DescribeWorkspacesRequest&;
+    using Resp = DescribeWorkspacesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeWorkspaces", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ThpcClient::DescribeWorkspacesOutcomeCallable ThpcClient::DescribeWorkspacesCallable(const DescribeWorkspacesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeWorkspacesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeWorkspaces(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeWorkspacesOutcome>>();
+    DescribeWorkspacesAsync(
+    request,
+    [prom](
+        const ThpcClient*,
+        const DescribeWorkspacesRequest&,
+        DescribeWorkspacesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ThpcClient::DetachNodesOutcome ThpcClient::DetachNodes(const DetachNodesRequest &request)
@@ -1008,25 +1162,32 @@ ThpcClient::DetachNodesOutcome ThpcClient::DetachNodes(const DetachNodesRequest 
 
 void ThpcClient::DetachNodesAsync(const DetachNodesRequest& request, const DetachNodesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DetachNodes(request), context);
-    };
+    using Req = const DetachNodesRequest&;
+    using Resp = DetachNodesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DetachNodes", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ThpcClient::DetachNodesOutcomeCallable ThpcClient::DetachNodesCallable(const DetachNodesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DetachNodesOutcome()>>(
-        [this, request]()
-        {
-            return this->DetachNodes(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DetachNodesOutcome>>();
+    DetachNodesAsync(
+    request,
+    [prom](
+        const ThpcClient*,
+        const DetachNodesRequest&,
+        DetachNodesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ThpcClient::ModifyClusterDeletionProtectionOutcome ThpcClient::ModifyClusterDeletionProtection(const ModifyClusterDeletionProtectionRequest &request)
@@ -1051,25 +1212,32 @@ ThpcClient::ModifyClusterDeletionProtectionOutcome ThpcClient::ModifyClusterDele
 
 void ThpcClient::ModifyClusterDeletionProtectionAsync(const ModifyClusterDeletionProtectionRequest& request, const ModifyClusterDeletionProtectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyClusterDeletionProtection(request), context);
-    };
+    using Req = const ModifyClusterDeletionProtectionRequest&;
+    using Resp = ModifyClusterDeletionProtectionResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyClusterDeletionProtection", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ThpcClient::ModifyClusterDeletionProtectionOutcomeCallable ThpcClient::ModifyClusterDeletionProtectionCallable(const ModifyClusterDeletionProtectionRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyClusterDeletionProtectionOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyClusterDeletionProtection(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyClusterDeletionProtectionOutcome>>();
+    ModifyClusterDeletionProtectionAsync(
+    request,
+    [prom](
+        const ThpcClient*,
+        const ModifyClusterDeletionProtectionRequest&,
+        ModifyClusterDeletionProtectionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ThpcClient::ModifyInitNodeScriptsOutcome ThpcClient::ModifyInitNodeScripts(const ModifyInitNodeScriptsRequest &request)
@@ -1094,25 +1262,32 @@ ThpcClient::ModifyInitNodeScriptsOutcome ThpcClient::ModifyInitNodeScripts(const
 
 void ThpcClient::ModifyInitNodeScriptsAsync(const ModifyInitNodeScriptsRequest& request, const ModifyInitNodeScriptsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyInitNodeScripts(request), context);
-    };
+    using Req = const ModifyInitNodeScriptsRequest&;
+    using Resp = ModifyInitNodeScriptsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyInitNodeScripts", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ThpcClient::ModifyInitNodeScriptsOutcomeCallable ThpcClient::ModifyInitNodeScriptsCallable(const ModifyInitNodeScriptsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyInitNodeScriptsOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyInitNodeScripts(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyInitNodeScriptsOutcome>>();
+    ModifyInitNodeScriptsAsync(
+    request,
+    [prom](
+        const ThpcClient*,
+        const ModifyInitNodeScriptsRequest&,
+        ModifyInitNodeScriptsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ThpcClient::ModifyWorkspacesAttributeOutcome ThpcClient::ModifyWorkspacesAttribute(const ModifyWorkspacesAttributeRequest &request)
@@ -1137,25 +1312,32 @@ ThpcClient::ModifyWorkspacesAttributeOutcome ThpcClient::ModifyWorkspacesAttribu
 
 void ThpcClient::ModifyWorkspacesAttributeAsync(const ModifyWorkspacesAttributeRequest& request, const ModifyWorkspacesAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyWorkspacesAttribute(request), context);
-    };
+    using Req = const ModifyWorkspacesAttributeRequest&;
+    using Resp = ModifyWorkspacesAttributeResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyWorkspacesAttribute", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ThpcClient::ModifyWorkspacesAttributeOutcomeCallable ThpcClient::ModifyWorkspacesAttributeCallable(const ModifyWorkspacesAttributeRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyWorkspacesAttributeOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyWorkspacesAttribute(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyWorkspacesAttributeOutcome>>();
+    ModifyWorkspacesAttributeAsync(
+    request,
+    [prom](
+        const ThpcClient*,
+        const ModifyWorkspacesAttributeRequest&,
+        ModifyWorkspacesAttributeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ThpcClient::ModifyWorkspacesRenewFlagOutcome ThpcClient::ModifyWorkspacesRenewFlag(const ModifyWorkspacesRenewFlagRequest &request)
@@ -1180,25 +1362,32 @@ ThpcClient::ModifyWorkspacesRenewFlagOutcome ThpcClient::ModifyWorkspacesRenewFl
 
 void ThpcClient::ModifyWorkspacesRenewFlagAsync(const ModifyWorkspacesRenewFlagRequest& request, const ModifyWorkspacesRenewFlagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyWorkspacesRenewFlag(request), context);
-    };
+    using Req = const ModifyWorkspacesRenewFlagRequest&;
+    using Resp = ModifyWorkspacesRenewFlagResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyWorkspacesRenewFlag", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ThpcClient::ModifyWorkspacesRenewFlagOutcomeCallable ThpcClient::ModifyWorkspacesRenewFlagCallable(const ModifyWorkspacesRenewFlagRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyWorkspacesRenewFlagOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyWorkspacesRenewFlag(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyWorkspacesRenewFlagOutcome>>();
+    ModifyWorkspacesRenewFlagAsync(
+    request,
+    [prom](
+        const ThpcClient*,
+        const ModifyWorkspacesRenewFlagRequest&,
+        ModifyWorkspacesRenewFlagOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ThpcClient::SetAutoScalingConfigurationOutcome ThpcClient::SetAutoScalingConfiguration(const SetAutoScalingConfigurationRequest &request)
@@ -1223,25 +1412,32 @@ ThpcClient::SetAutoScalingConfigurationOutcome ThpcClient::SetAutoScalingConfigu
 
 void ThpcClient::SetAutoScalingConfigurationAsync(const SetAutoScalingConfigurationRequest& request, const SetAutoScalingConfigurationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->SetAutoScalingConfiguration(request), context);
-    };
+    using Req = const SetAutoScalingConfigurationRequest&;
+    using Resp = SetAutoScalingConfigurationResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "SetAutoScalingConfiguration", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ThpcClient::SetAutoScalingConfigurationOutcomeCallable ThpcClient::SetAutoScalingConfigurationCallable(const SetAutoScalingConfigurationRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<SetAutoScalingConfigurationOutcome()>>(
-        [this, request]()
-        {
-            return this->SetAutoScalingConfiguration(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<SetAutoScalingConfigurationOutcome>>();
+    SetAutoScalingConfigurationAsync(
+    request,
+    [prom](
+        const ThpcClient*,
+        const SetAutoScalingConfigurationRequest&,
+        SetAutoScalingConfigurationOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ThpcClient::SubmitJobOutcome ThpcClient::SubmitJob(const SubmitJobRequest &request)
@@ -1266,25 +1462,32 @@ ThpcClient::SubmitJobOutcome ThpcClient::SubmitJob(const SubmitJobRequest &reque
 
 void ThpcClient::SubmitJobAsync(const SubmitJobRequest& request, const SubmitJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->SubmitJob(request), context);
-    };
+    using Req = const SubmitJobRequest&;
+    using Resp = SubmitJobResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "SubmitJob", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ThpcClient::SubmitJobOutcomeCallable ThpcClient::SubmitJobCallable(const SubmitJobRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<SubmitJobOutcome()>>(
-        [this, request]()
-        {
-            return this->SubmitJob(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<SubmitJobOutcome>>();
+    SubmitJobAsync(
+    request,
+    [prom](
+        const ThpcClient*,
+        const SubmitJobRequest&,
+        SubmitJobOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ThpcClient::TerminateJobOutcome ThpcClient::TerminateJob(const TerminateJobRequest &request)
@@ -1309,25 +1512,32 @@ ThpcClient::TerminateJobOutcome ThpcClient::TerminateJob(const TerminateJobReque
 
 void ThpcClient::TerminateJobAsync(const TerminateJobRequest& request, const TerminateJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->TerminateJob(request), context);
-    };
+    using Req = const TerminateJobRequest&;
+    using Resp = TerminateJobResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "TerminateJob", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ThpcClient::TerminateJobOutcomeCallable ThpcClient::TerminateJobCallable(const TerminateJobRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<TerminateJobOutcome()>>(
-        [this, request]()
-        {
-            return this->TerminateJob(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<TerminateJobOutcome>>();
+    TerminateJobAsync(
+    request,
+    [prom](
+        const ThpcClient*,
+        const TerminateJobRequest&,
+        TerminateJobOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ThpcClient::TerminateWorkspacesOutcome ThpcClient::TerminateWorkspaces(const TerminateWorkspacesRequest &request)
@@ -1352,24 +1562,31 @@ ThpcClient::TerminateWorkspacesOutcome ThpcClient::TerminateWorkspaces(const Ter
 
 void ThpcClient::TerminateWorkspacesAsync(const TerminateWorkspacesRequest& request, const TerminateWorkspacesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->TerminateWorkspaces(request), context);
-    };
+    using Req = const TerminateWorkspacesRequest&;
+    using Resp = TerminateWorkspacesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "TerminateWorkspaces", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ThpcClient::TerminateWorkspacesOutcomeCallable ThpcClient::TerminateWorkspacesCallable(const TerminateWorkspacesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<TerminateWorkspacesOutcome()>>(
-        [this, request]()
-        {
-            return this->TerminateWorkspaces(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<TerminateWorkspacesOutcome>>();
+    TerminateWorkspacesAsync(
+    request,
+    [prom](
+        const ThpcClient*,
+        const TerminateWorkspacesRequest&,
+        TerminateWorkspacesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 

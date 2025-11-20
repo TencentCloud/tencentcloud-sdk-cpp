@@ -62,25 +62,32 @@ AmsClient::CancelTaskOutcome AmsClient::CancelTask(const CancelTaskRequest &requ
 
 void AmsClient::CancelTaskAsync(const CancelTaskRequest& request, const CancelTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CancelTask(request), context);
-    };
+    using Req = const CancelTaskRequest&;
+    using Resp = CancelTaskResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CancelTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 AmsClient::CancelTaskOutcomeCallable AmsClient::CancelTaskCallable(const CancelTaskRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CancelTaskOutcome()>>(
-        [this, request]()
-        {
-            return this->CancelTask(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CancelTaskOutcome>>();
+    CancelTaskAsync(
+    request,
+    [prom](
+        const AmsClient*,
+        const CancelTaskRequest&,
+        CancelTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 AmsClient::CreateAudioModerationTaskOutcome AmsClient::CreateAudioModerationTask(const CreateAudioModerationTaskRequest &request)
@@ -105,25 +112,32 @@ AmsClient::CreateAudioModerationTaskOutcome AmsClient::CreateAudioModerationTask
 
 void AmsClient::CreateAudioModerationTaskAsync(const CreateAudioModerationTaskRequest& request, const CreateAudioModerationTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateAudioModerationTask(request), context);
-    };
+    using Req = const CreateAudioModerationTaskRequest&;
+    using Resp = CreateAudioModerationTaskResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateAudioModerationTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 AmsClient::CreateAudioModerationTaskOutcomeCallable AmsClient::CreateAudioModerationTaskCallable(const CreateAudioModerationTaskRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateAudioModerationTaskOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateAudioModerationTask(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateAudioModerationTaskOutcome>>();
+    CreateAudioModerationTaskAsync(
+    request,
+    [prom](
+        const AmsClient*,
+        const CreateAudioModerationTaskRequest&,
+        CreateAudioModerationTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 AmsClient::CreateBizConfigOutcome AmsClient::CreateBizConfig(const CreateBizConfigRequest &request)
@@ -148,25 +162,32 @@ AmsClient::CreateBizConfigOutcome AmsClient::CreateBizConfig(const CreateBizConf
 
 void AmsClient::CreateBizConfigAsync(const CreateBizConfigRequest& request, const CreateBizConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateBizConfig(request), context);
-    };
+    using Req = const CreateBizConfigRequest&;
+    using Resp = CreateBizConfigResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateBizConfig", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 AmsClient::CreateBizConfigOutcomeCallable AmsClient::CreateBizConfigCallable(const CreateBizConfigRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateBizConfigOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateBizConfig(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateBizConfigOutcome>>();
+    CreateBizConfigAsync(
+    request,
+    [prom](
+        const AmsClient*,
+        const CreateBizConfigRequest&,
+        CreateBizConfigOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 AmsClient::DescribeAmsListOutcome AmsClient::DescribeAmsList(const DescribeAmsListRequest &request)
@@ -191,25 +212,32 @@ AmsClient::DescribeAmsListOutcome AmsClient::DescribeAmsList(const DescribeAmsLi
 
 void AmsClient::DescribeAmsListAsync(const DescribeAmsListRequest& request, const DescribeAmsListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAmsList(request), context);
-    };
+    using Req = const DescribeAmsListRequest&;
+    using Resp = DescribeAmsListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAmsList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 AmsClient::DescribeAmsListOutcomeCallable AmsClient::DescribeAmsListCallable(const DescribeAmsListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAmsListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAmsList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAmsListOutcome>>();
+    DescribeAmsListAsync(
+    request,
+    [prom](
+        const AmsClient*,
+        const DescribeAmsListRequest&,
+        DescribeAmsListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 AmsClient::DescribeAudioStatOutcome AmsClient::DescribeAudioStat(const DescribeAudioStatRequest &request)
@@ -234,25 +262,32 @@ AmsClient::DescribeAudioStatOutcome AmsClient::DescribeAudioStat(const DescribeA
 
 void AmsClient::DescribeAudioStatAsync(const DescribeAudioStatRequest& request, const DescribeAudioStatAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAudioStat(request), context);
-    };
+    using Req = const DescribeAudioStatRequest&;
+    using Resp = DescribeAudioStatResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAudioStat", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 AmsClient::DescribeAudioStatOutcomeCallable AmsClient::DescribeAudioStatCallable(const DescribeAudioStatRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAudioStatOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAudioStat(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAudioStatOutcome>>();
+    DescribeAudioStatAsync(
+    request,
+    [prom](
+        const AmsClient*,
+        const DescribeAudioStatRequest&,
+        DescribeAudioStatOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 AmsClient::DescribeBizConfigOutcome AmsClient::DescribeBizConfig(const DescribeBizConfigRequest &request)
@@ -277,25 +312,32 @@ AmsClient::DescribeBizConfigOutcome AmsClient::DescribeBizConfig(const DescribeB
 
 void AmsClient::DescribeBizConfigAsync(const DescribeBizConfigRequest& request, const DescribeBizConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeBizConfig(request), context);
-    };
+    using Req = const DescribeBizConfigRequest&;
+    using Resp = DescribeBizConfigResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeBizConfig", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 AmsClient::DescribeBizConfigOutcomeCallable AmsClient::DescribeBizConfigCallable(const DescribeBizConfigRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeBizConfigOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeBizConfig(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeBizConfigOutcome>>();
+    DescribeBizConfigAsync(
+    request,
+    [prom](
+        const AmsClient*,
+        const DescribeBizConfigRequest&,
+        DescribeBizConfigOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 AmsClient::DescribeTaskDetailOutcome AmsClient::DescribeTaskDetail(const DescribeTaskDetailRequest &request)
@@ -320,24 +362,31 @@ AmsClient::DescribeTaskDetailOutcome AmsClient::DescribeTaskDetail(const Describ
 
 void AmsClient::DescribeTaskDetailAsync(const DescribeTaskDetailRequest& request, const DescribeTaskDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeTaskDetail(request), context);
-    };
+    using Req = const DescribeTaskDetailRequest&;
+    using Resp = DescribeTaskDetailResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeTaskDetail", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 AmsClient::DescribeTaskDetailOutcomeCallable AmsClient::DescribeTaskDetailCallable(const DescribeTaskDetailRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeTaskDetailOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeTaskDetail(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeTaskDetailOutcome>>();
+    DescribeTaskDetailAsync(
+    request,
+    [prom](
+        const AmsClient*,
+        const DescribeTaskDetailRequest&,
+        DescribeTaskDetailOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 

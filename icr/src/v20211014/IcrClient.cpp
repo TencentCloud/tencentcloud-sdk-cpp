@@ -62,24 +62,31 @@ IcrClient::GetIndustryV1HomeMembersOutcome IcrClient::GetIndustryV1HomeMembers(c
 
 void IcrClient::GetIndustryV1HomeMembersAsync(const GetIndustryV1HomeMembersRequest& request, const GetIndustryV1HomeMembersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->GetIndustryV1HomeMembers(request), context);
-    };
+    using Req = const GetIndustryV1HomeMembersRequest&;
+    using Resp = GetIndustryV1HomeMembersResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "GetIndustryV1HomeMembers", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IcrClient::GetIndustryV1HomeMembersOutcomeCallable IcrClient::GetIndustryV1HomeMembersCallable(const GetIndustryV1HomeMembersRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<GetIndustryV1HomeMembersOutcome()>>(
-        [this, request]()
-        {
-            return this->GetIndustryV1HomeMembers(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<GetIndustryV1HomeMembersOutcome>>();
+    GetIndustryV1HomeMembersAsync(
+    request,
+    [prom](
+        const IcrClient*,
+        const GetIndustryV1HomeMembersRequest&,
+        GetIndustryV1HomeMembersOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 

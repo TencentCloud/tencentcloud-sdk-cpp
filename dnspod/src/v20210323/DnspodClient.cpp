@@ -62,25 +62,32 @@ DnspodClient::CheckRecordSnapshotRollbackOutcome DnspodClient::CheckRecordSnapsh
 
 void DnspodClient::CheckRecordSnapshotRollbackAsync(const CheckRecordSnapshotRollbackRequest& request, const CheckRecordSnapshotRollbackAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CheckRecordSnapshotRollback(request), context);
-    };
+    using Req = const CheckRecordSnapshotRollbackRequest&;
+    using Resp = CheckRecordSnapshotRollbackResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CheckRecordSnapshotRollback", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DnspodClient::CheckRecordSnapshotRollbackOutcomeCallable DnspodClient::CheckRecordSnapshotRollbackCallable(const CheckRecordSnapshotRollbackRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CheckRecordSnapshotRollbackOutcome()>>(
-        [this, request]()
-        {
-            return this->CheckRecordSnapshotRollback(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CheckRecordSnapshotRollbackOutcome>>();
+    CheckRecordSnapshotRollbackAsync(
+    request,
+    [prom](
+        const DnspodClient*,
+        const CheckRecordSnapshotRollbackRequest&,
+        CheckRecordSnapshotRollbackOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DnspodClient::CheckSnapshotRollbackOutcome DnspodClient::CheckSnapshotRollback(const CheckSnapshotRollbackRequest &request)
@@ -105,25 +112,32 @@ DnspodClient::CheckSnapshotRollbackOutcome DnspodClient::CheckSnapshotRollback(c
 
 void DnspodClient::CheckSnapshotRollbackAsync(const CheckSnapshotRollbackRequest& request, const CheckSnapshotRollbackAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CheckSnapshotRollback(request), context);
-    };
+    using Req = const CheckSnapshotRollbackRequest&;
+    using Resp = CheckSnapshotRollbackResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CheckSnapshotRollback", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DnspodClient::CheckSnapshotRollbackOutcomeCallable DnspodClient::CheckSnapshotRollbackCallable(const CheckSnapshotRollbackRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CheckSnapshotRollbackOutcome()>>(
-        [this, request]()
-        {
-            return this->CheckSnapshotRollback(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CheckSnapshotRollbackOutcome>>();
+    CheckSnapshotRollbackAsync(
+    request,
+    [prom](
+        const DnspodClient*,
+        const CheckSnapshotRollbackRequest&,
+        CheckSnapshotRollbackOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DnspodClient::CreateDealOutcome DnspodClient::CreateDeal(const CreateDealRequest &request)
@@ -148,25 +162,32 @@ DnspodClient::CreateDealOutcome DnspodClient::CreateDeal(const CreateDealRequest
 
 void DnspodClient::CreateDealAsync(const CreateDealRequest& request, const CreateDealAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateDeal(request), context);
-    };
+    using Req = const CreateDealRequest&;
+    using Resp = CreateDealResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateDeal", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DnspodClient::CreateDealOutcomeCallable DnspodClient::CreateDealCallable(const CreateDealRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateDealOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateDeal(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateDealOutcome>>();
+    CreateDealAsync(
+    request,
+    [prom](
+        const DnspodClient*,
+        const CreateDealRequest&,
+        CreateDealOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DnspodClient::CreateDomainOutcome DnspodClient::CreateDomain(const CreateDomainRequest &request)
@@ -191,25 +212,32 @@ DnspodClient::CreateDomainOutcome DnspodClient::CreateDomain(const CreateDomainR
 
 void DnspodClient::CreateDomainAsync(const CreateDomainRequest& request, const CreateDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateDomain(request), context);
-    };
+    using Req = const CreateDomainRequest&;
+    using Resp = CreateDomainResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateDomain", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DnspodClient::CreateDomainOutcomeCallable DnspodClient::CreateDomainCallable(const CreateDomainRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateDomainOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateDomain(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateDomainOutcome>>();
+    CreateDomainAsync(
+    request,
+    [prom](
+        const DnspodClient*,
+        const CreateDomainRequest&,
+        CreateDomainOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DnspodClient::CreateDomainAliasOutcome DnspodClient::CreateDomainAlias(const CreateDomainAliasRequest &request)
@@ -234,25 +262,32 @@ DnspodClient::CreateDomainAliasOutcome DnspodClient::CreateDomainAlias(const Cre
 
 void DnspodClient::CreateDomainAliasAsync(const CreateDomainAliasRequest& request, const CreateDomainAliasAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateDomainAlias(request), context);
-    };
+    using Req = const CreateDomainAliasRequest&;
+    using Resp = CreateDomainAliasResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateDomainAlias", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DnspodClient::CreateDomainAliasOutcomeCallable DnspodClient::CreateDomainAliasCallable(const CreateDomainAliasRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateDomainAliasOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateDomainAlias(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateDomainAliasOutcome>>();
+    CreateDomainAliasAsync(
+    request,
+    [prom](
+        const DnspodClient*,
+        const CreateDomainAliasRequest&,
+        CreateDomainAliasOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DnspodClient::CreateDomainBatchOutcome DnspodClient::CreateDomainBatch(const CreateDomainBatchRequest &request)
@@ -277,25 +312,32 @@ DnspodClient::CreateDomainBatchOutcome DnspodClient::CreateDomainBatch(const Cre
 
 void DnspodClient::CreateDomainBatchAsync(const CreateDomainBatchRequest& request, const CreateDomainBatchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateDomainBatch(request), context);
-    };
+    using Req = const CreateDomainBatchRequest&;
+    using Resp = CreateDomainBatchResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateDomainBatch", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DnspodClient::CreateDomainBatchOutcomeCallable DnspodClient::CreateDomainBatchCallable(const CreateDomainBatchRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateDomainBatchOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateDomainBatch(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateDomainBatchOutcome>>();
+    CreateDomainBatchAsync(
+    request,
+    [prom](
+        const DnspodClient*,
+        const CreateDomainBatchRequest&,
+        CreateDomainBatchOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DnspodClient::CreateDomainCustomLineOutcome DnspodClient::CreateDomainCustomLine(const CreateDomainCustomLineRequest &request)
@@ -320,25 +362,32 @@ DnspodClient::CreateDomainCustomLineOutcome DnspodClient::CreateDomainCustomLine
 
 void DnspodClient::CreateDomainCustomLineAsync(const CreateDomainCustomLineRequest& request, const CreateDomainCustomLineAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateDomainCustomLine(request), context);
-    };
+    using Req = const CreateDomainCustomLineRequest&;
+    using Resp = CreateDomainCustomLineResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateDomainCustomLine", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DnspodClient::CreateDomainCustomLineOutcomeCallable DnspodClient::CreateDomainCustomLineCallable(const CreateDomainCustomLineRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateDomainCustomLineOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateDomainCustomLine(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateDomainCustomLineOutcome>>();
+    CreateDomainCustomLineAsync(
+    request,
+    [prom](
+        const DnspodClient*,
+        const CreateDomainCustomLineRequest&,
+        CreateDomainCustomLineOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DnspodClient::CreateDomainGroupOutcome DnspodClient::CreateDomainGroup(const CreateDomainGroupRequest &request)
@@ -363,25 +412,32 @@ DnspodClient::CreateDomainGroupOutcome DnspodClient::CreateDomainGroup(const Cre
 
 void DnspodClient::CreateDomainGroupAsync(const CreateDomainGroupRequest& request, const CreateDomainGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateDomainGroup(request), context);
-    };
+    using Req = const CreateDomainGroupRequest&;
+    using Resp = CreateDomainGroupResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateDomainGroup", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DnspodClient::CreateDomainGroupOutcomeCallable DnspodClient::CreateDomainGroupCallable(const CreateDomainGroupRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateDomainGroupOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateDomainGroup(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateDomainGroupOutcome>>();
+    CreateDomainGroupAsync(
+    request,
+    [prom](
+        const DnspodClient*,
+        const CreateDomainGroupRequest&,
+        CreateDomainGroupOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DnspodClient::CreateDomainsAnalyticsFileOutcome DnspodClient::CreateDomainsAnalyticsFile(const CreateDomainsAnalyticsFileRequest &request)
@@ -406,25 +462,32 @@ DnspodClient::CreateDomainsAnalyticsFileOutcome DnspodClient::CreateDomainsAnaly
 
 void DnspodClient::CreateDomainsAnalyticsFileAsync(const CreateDomainsAnalyticsFileRequest& request, const CreateDomainsAnalyticsFileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateDomainsAnalyticsFile(request), context);
-    };
+    using Req = const CreateDomainsAnalyticsFileRequest&;
+    using Resp = CreateDomainsAnalyticsFileResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateDomainsAnalyticsFile", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DnspodClient::CreateDomainsAnalyticsFileOutcomeCallable DnspodClient::CreateDomainsAnalyticsFileCallable(const CreateDomainsAnalyticsFileRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateDomainsAnalyticsFileOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateDomainsAnalyticsFile(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateDomainsAnalyticsFileOutcome>>();
+    CreateDomainsAnalyticsFileAsync(
+    request,
+    [prom](
+        const DnspodClient*,
+        const CreateDomainsAnalyticsFileRequest&,
+        CreateDomainsAnalyticsFileOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DnspodClient::CreateLineGroupOutcome DnspodClient::CreateLineGroup(const CreateLineGroupRequest &request)
@@ -449,25 +512,32 @@ DnspodClient::CreateLineGroupOutcome DnspodClient::CreateLineGroup(const CreateL
 
 void DnspodClient::CreateLineGroupAsync(const CreateLineGroupRequest& request, const CreateLineGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateLineGroup(request), context);
-    };
+    using Req = const CreateLineGroupRequest&;
+    using Resp = CreateLineGroupResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateLineGroup", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DnspodClient::CreateLineGroupOutcomeCallable DnspodClient::CreateLineGroupCallable(const CreateLineGroupRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateLineGroupOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateLineGroup(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateLineGroupOutcome>>();
+    CreateLineGroupAsync(
+    request,
+    [prom](
+        const DnspodClient*,
+        const CreateLineGroupRequest&,
+        CreateLineGroupOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DnspodClient::CreateLineGroupCopyOutcome DnspodClient::CreateLineGroupCopy(const CreateLineGroupCopyRequest &request)
@@ -492,25 +562,32 @@ DnspodClient::CreateLineGroupCopyOutcome DnspodClient::CreateLineGroupCopy(const
 
 void DnspodClient::CreateLineGroupCopyAsync(const CreateLineGroupCopyRequest& request, const CreateLineGroupCopyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateLineGroupCopy(request), context);
-    };
+    using Req = const CreateLineGroupCopyRequest&;
+    using Resp = CreateLineGroupCopyResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateLineGroupCopy", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DnspodClient::CreateLineGroupCopyOutcomeCallable DnspodClient::CreateLineGroupCopyCallable(const CreateLineGroupCopyRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateLineGroupCopyOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateLineGroupCopy(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateLineGroupCopyOutcome>>();
+    CreateLineGroupCopyAsync(
+    request,
+    [prom](
+        const DnspodClient*,
+        const CreateLineGroupCopyRequest&,
+        CreateLineGroupCopyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DnspodClient::CreateRecordOutcome DnspodClient::CreateRecord(const CreateRecordRequest &request)
@@ -535,25 +612,32 @@ DnspodClient::CreateRecordOutcome DnspodClient::CreateRecord(const CreateRecordR
 
 void DnspodClient::CreateRecordAsync(const CreateRecordRequest& request, const CreateRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateRecord(request), context);
-    };
+    using Req = const CreateRecordRequest&;
+    using Resp = CreateRecordResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateRecord", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DnspodClient::CreateRecordOutcomeCallable DnspodClient::CreateRecordCallable(const CreateRecordRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateRecordOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateRecord(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateRecordOutcome>>();
+    CreateRecordAsync(
+    request,
+    [prom](
+        const DnspodClient*,
+        const CreateRecordRequest&,
+        CreateRecordOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DnspodClient::CreateRecordBatchOutcome DnspodClient::CreateRecordBatch(const CreateRecordBatchRequest &request)
@@ -578,25 +662,32 @@ DnspodClient::CreateRecordBatchOutcome DnspodClient::CreateRecordBatch(const Cre
 
 void DnspodClient::CreateRecordBatchAsync(const CreateRecordBatchRequest& request, const CreateRecordBatchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateRecordBatch(request), context);
-    };
+    using Req = const CreateRecordBatchRequest&;
+    using Resp = CreateRecordBatchResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateRecordBatch", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DnspodClient::CreateRecordBatchOutcomeCallable DnspodClient::CreateRecordBatchCallable(const CreateRecordBatchRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateRecordBatchOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateRecordBatch(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateRecordBatchOutcome>>();
+    CreateRecordBatchAsync(
+    request,
+    [prom](
+        const DnspodClient*,
+        const CreateRecordBatchRequest&,
+        CreateRecordBatchOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DnspodClient::CreateRecordGroupOutcome DnspodClient::CreateRecordGroup(const CreateRecordGroupRequest &request)
@@ -621,25 +712,32 @@ DnspodClient::CreateRecordGroupOutcome DnspodClient::CreateRecordGroup(const Cre
 
 void DnspodClient::CreateRecordGroupAsync(const CreateRecordGroupRequest& request, const CreateRecordGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateRecordGroup(request), context);
-    };
+    using Req = const CreateRecordGroupRequest&;
+    using Resp = CreateRecordGroupResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateRecordGroup", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DnspodClient::CreateRecordGroupOutcomeCallable DnspodClient::CreateRecordGroupCallable(const CreateRecordGroupRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateRecordGroupOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateRecordGroup(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateRecordGroupOutcome>>();
+    CreateRecordGroupAsync(
+    request,
+    [prom](
+        const DnspodClient*,
+        const CreateRecordGroupRequest&,
+        CreateRecordGroupOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DnspodClient::CreateSnapshotOutcome DnspodClient::CreateSnapshot(const CreateSnapshotRequest &request)
@@ -664,25 +762,32 @@ DnspodClient::CreateSnapshotOutcome DnspodClient::CreateSnapshot(const CreateSna
 
 void DnspodClient::CreateSnapshotAsync(const CreateSnapshotRequest& request, const CreateSnapshotAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateSnapshot(request), context);
-    };
+    using Req = const CreateSnapshotRequest&;
+    using Resp = CreateSnapshotResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateSnapshot", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DnspodClient::CreateSnapshotOutcomeCallable DnspodClient::CreateSnapshotCallable(const CreateSnapshotRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateSnapshotOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateSnapshot(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateSnapshotOutcome>>();
+    CreateSnapshotAsync(
+    request,
+    [prom](
+        const DnspodClient*,
+        const CreateSnapshotRequest&,
+        CreateSnapshotOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DnspodClient::CreateSubDomainsAnalyticsFileOutcome DnspodClient::CreateSubDomainsAnalyticsFile(const CreateSubDomainsAnalyticsFileRequest &request)
@@ -707,25 +812,32 @@ DnspodClient::CreateSubDomainsAnalyticsFileOutcome DnspodClient::CreateSubDomain
 
 void DnspodClient::CreateSubDomainsAnalyticsFileAsync(const CreateSubDomainsAnalyticsFileRequest& request, const CreateSubDomainsAnalyticsFileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateSubDomainsAnalyticsFile(request), context);
-    };
+    using Req = const CreateSubDomainsAnalyticsFileRequest&;
+    using Resp = CreateSubDomainsAnalyticsFileResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateSubDomainsAnalyticsFile", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DnspodClient::CreateSubDomainsAnalyticsFileOutcomeCallable DnspodClient::CreateSubDomainsAnalyticsFileCallable(const CreateSubDomainsAnalyticsFileRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateSubDomainsAnalyticsFileOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateSubDomainsAnalyticsFile(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateSubDomainsAnalyticsFileOutcome>>();
+    CreateSubDomainsAnalyticsFileAsync(
+    request,
+    [prom](
+        const DnspodClient*,
+        const CreateSubDomainsAnalyticsFileRequest&,
+        CreateSubDomainsAnalyticsFileOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DnspodClient::CreateSubdomainValidateTXTValueOutcome DnspodClient::CreateSubdomainValidateTXTValue(const CreateSubdomainValidateTXTValueRequest &request)
@@ -750,25 +862,32 @@ DnspodClient::CreateSubdomainValidateTXTValueOutcome DnspodClient::CreateSubdoma
 
 void DnspodClient::CreateSubdomainValidateTXTValueAsync(const CreateSubdomainValidateTXTValueRequest& request, const CreateSubdomainValidateTXTValueAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateSubdomainValidateTXTValue(request), context);
-    };
+    using Req = const CreateSubdomainValidateTXTValueRequest&;
+    using Resp = CreateSubdomainValidateTXTValueResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateSubdomainValidateTXTValue", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DnspodClient::CreateSubdomainValidateTXTValueOutcomeCallable DnspodClient::CreateSubdomainValidateTXTValueCallable(const CreateSubdomainValidateTXTValueRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateSubdomainValidateTXTValueOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateSubdomainValidateTXTValue(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateSubdomainValidateTXTValueOutcome>>();
+    CreateSubdomainValidateTXTValueAsync(
+    request,
+    [prom](
+        const DnspodClient*,
+        const CreateSubdomainValidateTXTValueRequest&,
+        CreateSubdomainValidateTXTValueOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DnspodClient::CreateTXTRecordOutcome DnspodClient::CreateTXTRecord(const CreateTXTRecordRequest &request)
@@ -793,25 +912,32 @@ DnspodClient::CreateTXTRecordOutcome DnspodClient::CreateTXTRecord(const CreateT
 
 void DnspodClient::CreateTXTRecordAsync(const CreateTXTRecordRequest& request, const CreateTXTRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateTXTRecord(request), context);
-    };
+    using Req = const CreateTXTRecordRequest&;
+    using Resp = CreateTXTRecordResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateTXTRecord", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DnspodClient::CreateTXTRecordOutcomeCallable DnspodClient::CreateTXTRecordCallable(const CreateTXTRecordRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateTXTRecordOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateTXTRecord(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateTXTRecordOutcome>>();
+    CreateTXTRecordAsync(
+    request,
+    [prom](
+        const DnspodClient*,
+        const CreateTXTRecordRequest&,
+        CreateTXTRecordOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DnspodClient::DeleteDomainOutcome DnspodClient::DeleteDomain(const DeleteDomainRequest &request)
@@ -836,25 +962,32 @@ DnspodClient::DeleteDomainOutcome DnspodClient::DeleteDomain(const DeleteDomainR
 
 void DnspodClient::DeleteDomainAsync(const DeleteDomainRequest& request, const DeleteDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteDomain(request), context);
-    };
+    using Req = const DeleteDomainRequest&;
+    using Resp = DeleteDomainResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteDomain", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DnspodClient::DeleteDomainOutcomeCallable DnspodClient::DeleteDomainCallable(const DeleteDomainRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteDomainOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteDomain(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteDomainOutcome>>();
+    DeleteDomainAsync(
+    request,
+    [prom](
+        const DnspodClient*,
+        const DeleteDomainRequest&,
+        DeleteDomainOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DnspodClient::DeleteDomainAliasOutcome DnspodClient::DeleteDomainAlias(const DeleteDomainAliasRequest &request)
@@ -879,25 +1012,32 @@ DnspodClient::DeleteDomainAliasOutcome DnspodClient::DeleteDomainAlias(const Del
 
 void DnspodClient::DeleteDomainAliasAsync(const DeleteDomainAliasRequest& request, const DeleteDomainAliasAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteDomainAlias(request), context);
-    };
+    using Req = const DeleteDomainAliasRequest&;
+    using Resp = DeleteDomainAliasResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteDomainAlias", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DnspodClient::DeleteDomainAliasOutcomeCallable DnspodClient::DeleteDomainAliasCallable(const DeleteDomainAliasRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteDomainAliasOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteDomainAlias(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteDomainAliasOutcome>>();
+    DeleteDomainAliasAsync(
+    request,
+    [prom](
+        const DnspodClient*,
+        const DeleteDomainAliasRequest&,
+        DeleteDomainAliasOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DnspodClient::DeleteDomainBatchOutcome DnspodClient::DeleteDomainBatch(const DeleteDomainBatchRequest &request)
@@ -922,25 +1062,32 @@ DnspodClient::DeleteDomainBatchOutcome DnspodClient::DeleteDomainBatch(const Del
 
 void DnspodClient::DeleteDomainBatchAsync(const DeleteDomainBatchRequest& request, const DeleteDomainBatchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteDomainBatch(request), context);
-    };
+    using Req = const DeleteDomainBatchRequest&;
+    using Resp = DeleteDomainBatchResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteDomainBatch", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DnspodClient::DeleteDomainBatchOutcomeCallable DnspodClient::DeleteDomainBatchCallable(const DeleteDomainBatchRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteDomainBatchOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteDomainBatch(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteDomainBatchOutcome>>();
+    DeleteDomainBatchAsync(
+    request,
+    [prom](
+        const DnspodClient*,
+        const DeleteDomainBatchRequest&,
+        DeleteDomainBatchOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DnspodClient::DeleteDomainCustomLineOutcome DnspodClient::DeleteDomainCustomLine(const DeleteDomainCustomLineRequest &request)
@@ -965,25 +1112,32 @@ DnspodClient::DeleteDomainCustomLineOutcome DnspodClient::DeleteDomainCustomLine
 
 void DnspodClient::DeleteDomainCustomLineAsync(const DeleteDomainCustomLineRequest& request, const DeleteDomainCustomLineAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteDomainCustomLine(request), context);
-    };
+    using Req = const DeleteDomainCustomLineRequest&;
+    using Resp = DeleteDomainCustomLineResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteDomainCustomLine", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DnspodClient::DeleteDomainCustomLineOutcomeCallable DnspodClient::DeleteDomainCustomLineCallable(const DeleteDomainCustomLineRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteDomainCustomLineOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteDomainCustomLine(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteDomainCustomLineOutcome>>();
+    DeleteDomainCustomLineAsync(
+    request,
+    [prom](
+        const DnspodClient*,
+        const DeleteDomainCustomLineRequest&,
+        DeleteDomainCustomLineOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DnspodClient::DeleteLineGroupOutcome DnspodClient::DeleteLineGroup(const DeleteLineGroupRequest &request)
@@ -1008,25 +1162,32 @@ DnspodClient::DeleteLineGroupOutcome DnspodClient::DeleteLineGroup(const DeleteL
 
 void DnspodClient::DeleteLineGroupAsync(const DeleteLineGroupRequest& request, const DeleteLineGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteLineGroup(request), context);
-    };
+    using Req = const DeleteLineGroupRequest&;
+    using Resp = DeleteLineGroupResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteLineGroup", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DnspodClient::DeleteLineGroupOutcomeCallable DnspodClient::DeleteLineGroupCallable(const DeleteLineGroupRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteLineGroupOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteLineGroup(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteLineGroupOutcome>>();
+    DeleteLineGroupAsync(
+    request,
+    [prom](
+        const DnspodClient*,
+        const DeleteLineGroupRequest&,
+        DeleteLineGroupOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DnspodClient::DeleteRecordOutcome DnspodClient::DeleteRecord(const DeleteRecordRequest &request)
@@ -1051,25 +1212,32 @@ DnspodClient::DeleteRecordOutcome DnspodClient::DeleteRecord(const DeleteRecordR
 
 void DnspodClient::DeleteRecordAsync(const DeleteRecordRequest& request, const DeleteRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteRecord(request), context);
-    };
+    using Req = const DeleteRecordRequest&;
+    using Resp = DeleteRecordResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteRecord", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DnspodClient::DeleteRecordOutcomeCallable DnspodClient::DeleteRecordCallable(const DeleteRecordRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteRecordOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteRecord(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteRecordOutcome>>();
+    DeleteRecordAsync(
+    request,
+    [prom](
+        const DnspodClient*,
+        const DeleteRecordRequest&,
+        DeleteRecordOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DnspodClient::DeleteRecordBatchOutcome DnspodClient::DeleteRecordBatch(const DeleteRecordBatchRequest &request)
@@ -1094,25 +1262,32 @@ DnspodClient::DeleteRecordBatchOutcome DnspodClient::DeleteRecordBatch(const Del
 
 void DnspodClient::DeleteRecordBatchAsync(const DeleteRecordBatchRequest& request, const DeleteRecordBatchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteRecordBatch(request), context);
-    };
+    using Req = const DeleteRecordBatchRequest&;
+    using Resp = DeleteRecordBatchResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteRecordBatch", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DnspodClient::DeleteRecordBatchOutcomeCallable DnspodClient::DeleteRecordBatchCallable(const DeleteRecordBatchRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteRecordBatchOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteRecordBatch(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteRecordBatchOutcome>>();
+    DeleteRecordBatchAsync(
+    request,
+    [prom](
+        const DnspodClient*,
+        const DeleteRecordBatchRequest&,
+        DeleteRecordBatchOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DnspodClient::DeleteRecordGroupOutcome DnspodClient::DeleteRecordGroup(const DeleteRecordGroupRequest &request)
@@ -1137,25 +1312,32 @@ DnspodClient::DeleteRecordGroupOutcome DnspodClient::DeleteRecordGroup(const Del
 
 void DnspodClient::DeleteRecordGroupAsync(const DeleteRecordGroupRequest& request, const DeleteRecordGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteRecordGroup(request), context);
-    };
+    using Req = const DeleteRecordGroupRequest&;
+    using Resp = DeleteRecordGroupResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteRecordGroup", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DnspodClient::DeleteRecordGroupOutcomeCallable DnspodClient::DeleteRecordGroupCallable(const DeleteRecordGroupRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteRecordGroupOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteRecordGroup(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteRecordGroupOutcome>>();
+    DeleteRecordGroupAsync(
+    request,
+    [prom](
+        const DnspodClient*,
+        const DeleteRecordGroupRequest&,
+        DeleteRecordGroupOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DnspodClient::DeleteShareDomainOutcome DnspodClient::DeleteShareDomain(const DeleteShareDomainRequest &request)
@@ -1180,25 +1362,32 @@ DnspodClient::DeleteShareDomainOutcome DnspodClient::DeleteShareDomain(const Del
 
 void DnspodClient::DeleteShareDomainAsync(const DeleteShareDomainRequest& request, const DeleteShareDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteShareDomain(request), context);
-    };
+    using Req = const DeleteShareDomainRequest&;
+    using Resp = DeleteShareDomainResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteShareDomain", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DnspodClient::DeleteShareDomainOutcomeCallable DnspodClient::DeleteShareDomainCallable(const DeleteShareDomainRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteShareDomainOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteShareDomain(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteShareDomainOutcome>>();
+    DeleteShareDomainAsync(
+    request,
+    [prom](
+        const DnspodClient*,
+        const DeleteShareDomainRequest&,
+        DeleteShareDomainOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DnspodClient::DeleteSnapshotOutcome DnspodClient::DeleteSnapshot(const DeleteSnapshotRequest &request)
@@ -1223,25 +1412,32 @@ DnspodClient::DeleteSnapshotOutcome DnspodClient::DeleteSnapshot(const DeleteSna
 
 void DnspodClient::DeleteSnapshotAsync(const DeleteSnapshotRequest& request, const DeleteSnapshotAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteSnapshot(request), context);
-    };
+    using Req = const DeleteSnapshotRequest&;
+    using Resp = DeleteSnapshotResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteSnapshot", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DnspodClient::DeleteSnapshotOutcomeCallable DnspodClient::DeleteSnapshotCallable(const DeleteSnapshotRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteSnapshotOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteSnapshot(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteSnapshotOutcome>>();
+    DeleteSnapshotAsync(
+    request,
+    [prom](
+        const DnspodClient*,
+        const DeleteSnapshotRequest&,
+        DeleteSnapshotOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DnspodClient::DescribeBatchTaskOutcome DnspodClient::DescribeBatchTask(const DescribeBatchTaskRequest &request)
@@ -1266,25 +1462,32 @@ DnspodClient::DescribeBatchTaskOutcome DnspodClient::DescribeBatchTask(const Des
 
 void DnspodClient::DescribeBatchTaskAsync(const DescribeBatchTaskRequest& request, const DescribeBatchTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeBatchTask(request), context);
-    };
+    using Req = const DescribeBatchTaskRequest&;
+    using Resp = DescribeBatchTaskResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeBatchTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DnspodClient::DescribeBatchTaskOutcomeCallable DnspodClient::DescribeBatchTaskCallable(const DescribeBatchTaskRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeBatchTaskOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeBatchTask(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeBatchTaskOutcome>>();
+    DescribeBatchTaskAsync(
+    request,
+    [prom](
+        const DnspodClient*,
+        const DescribeBatchTaskRequest&,
+        DescribeBatchTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DnspodClient::DescribeDomainOutcome DnspodClient::DescribeDomain(const DescribeDomainRequest &request)
@@ -1309,25 +1512,32 @@ DnspodClient::DescribeDomainOutcome DnspodClient::DescribeDomain(const DescribeD
 
 void DnspodClient::DescribeDomainAsync(const DescribeDomainRequest& request, const DescribeDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDomain(request), context);
-    };
+    using Req = const DescribeDomainRequest&;
+    using Resp = DescribeDomainResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeDomain", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DnspodClient::DescribeDomainOutcomeCallable DnspodClient::DescribeDomainCallable(const DescribeDomainRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeDomainOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDomain(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeDomainOutcome>>();
+    DescribeDomainAsync(
+    request,
+    [prom](
+        const DnspodClient*,
+        const DescribeDomainRequest&,
+        DescribeDomainOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DnspodClient::DescribeDomainAliasListOutcome DnspodClient::DescribeDomainAliasList(const DescribeDomainAliasListRequest &request)
@@ -1352,25 +1562,32 @@ DnspodClient::DescribeDomainAliasListOutcome DnspodClient::DescribeDomainAliasLi
 
 void DnspodClient::DescribeDomainAliasListAsync(const DescribeDomainAliasListRequest& request, const DescribeDomainAliasListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDomainAliasList(request), context);
-    };
+    using Req = const DescribeDomainAliasListRequest&;
+    using Resp = DescribeDomainAliasListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeDomainAliasList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DnspodClient::DescribeDomainAliasListOutcomeCallable DnspodClient::DescribeDomainAliasListCallable(const DescribeDomainAliasListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeDomainAliasListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDomainAliasList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeDomainAliasListOutcome>>();
+    DescribeDomainAliasListAsync(
+    request,
+    [prom](
+        const DnspodClient*,
+        const DescribeDomainAliasListRequest&,
+        DescribeDomainAliasListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DnspodClient::DescribeDomainAnalyticsOutcome DnspodClient::DescribeDomainAnalytics(const DescribeDomainAnalyticsRequest &request)
@@ -1395,25 +1612,32 @@ DnspodClient::DescribeDomainAnalyticsOutcome DnspodClient::DescribeDomainAnalyti
 
 void DnspodClient::DescribeDomainAnalyticsAsync(const DescribeDomainAnalyticsRequest& request, const DescribeDomainAnalyticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDomainAnalytics(request), context);
-    };
+    using Req = const DescribeDomainAnalyticsRequest&;
+    using Resp = DescribeDomainAnalyticsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeDomainAnalytics", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DnspodClient::DescribeDomainAnalyticsOutcomeCallable DnspodClient::DescribeDomainAnalyticsCallable(const DescribeDomainAnalyticsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeDomainAnalyticsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDomainAnalytics(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeDomainAnalyticsOutcome>>();
+    DescribeDomainAnalyticsAsync(
+    request,
+    [prom](
+        const DnspodClient*,
+        const DescribeDomainAnalyticsRequest&,
+        DescribeDomainAnalyticsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DnspodClient::DescribeDomainAndRecordListOutcome DnspodClient::DescribeDomainAndRecordList(const DescribeDomainAndRecordListRequest &request)
@@ -1438,25 +1662,32 @@ DnspodClient::DescribeDomainAndRecordListOutcome DnspodClient::DescribeDomainAnd
 
 void DnspodClient::DescribeDomainAndRecordListAsync(const DescribeDomainAndRecordListRequest& request, const DescribeDomainAndRecordListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDomainAndRecordList(request), context);
-    };
+    using Req = const DescribeDomainAndRecordListRequest&;
+    using Resp = DescribeDomainAndRecordListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeDomainAndRecordList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DnspodClient::DescribeDomainAndRecordListOutcomeCallable DnspodClient::DescribeDomainAndRecordListCallable(const DescribeDomainAndRecordListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeDomainAndRecordListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDomainAndRecordList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeDomainAndRecordListOutcome>>();
+    DescribeDomainAndRecordListAsync(
+    request,
+    [prom](
+        const DnspodClient*,
+        const DescribeDomainAndRecordListRequest&,
+        DescribeDomainAndRecordListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DnspodClient::DescribeDomainCustomLineListOutcome DnspodClient::DescribeDomainCustomLineList(const DescribeDomainCustomLineListRequest &request)
@@ -1481,25 +1712,32 @@ DnspodClient::DescribeDomainCustomLineListOutcome DnspodClient::DescribeDomainCu
 
 void DnspodClient::DescribeDomainCustomLineListAsync(const DescribeDomainCustomLineListRequest& request, const DescribeDomainCustomLineListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDomainCustomLineList(request), context);
-    };
+    using Req = const DescribeDomainCustomLineListRequest&;
+    using Resp = DescribeDomainCustomLineListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeDomainCustomLineList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DnspodClient::DescribeDomainCustomLineListOutcomeCallable DnspodClient::DescribeDomainCustomLineListCallable(const DescribeDomainCustomLineListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeDomainCustomLineListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDomainCustomLineList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeDomainCustomLineListOutcome>>();
+    DescribeDomainCustomLineListAsync(
+    request,
+    [prom](
+        const DnspodClient*,
+        const DescribeDomainCustomLineListRequest&,
+        DescribeDomainCustomLineListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DnspodClient::DescribeDomainFilterListOutcome DnspodClient::DescribeDomainFilterList(const DescribeDomainFilterListRequest &request)
@@ -1524,25 +1762,32 @@ DnspodClient::DescribeDomainFilterListOutcome DnspodClient::DescribeDomainFilter
 
 void DnspodClient::DescribeDomainFilterListAsync(const DescribeDomainFilterListRequest& request, const DescribeDomainFilterListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDomainFilterList(request), context);
-    };
+    using Req = const DescribeDomainFilterListRequest&;
+    using Resp = DescribeDomainFilterListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeDomainFilterList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DnspodClient::DescribeDomainFilterListOutcomeCallable DnspodClient::DescribeDomainFilterListCallable(const DescribeDomainFilterListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeDomainFilterListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDomainFilterList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeDomainFilterListOutcome>>();
+    DescribeDomainFilterListAsync(
+    request,
+    [prom](
+        const DnspodClient*,
+        const DescribeDomainFilterListRequest&,
+        DescribeDomainFilterListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DnspodClient::DescribeDomainGroupListOutcome DnspodClient::DescribeDomainGroupList(const DescribeDomainGroupListRequest &request)
@@ -1567,25 +1812,32 @@ DnspodClient::DescribeDomainGroupListOutcome DnspodClient::DescribeDomainGroupLi
 
 void DnspodClient::DescribeDomainGroupListAsync(const DescribeDomainGroupListRequest& request, const DescribeDomainGroupListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDomainGroupList(request), context);
-    };
+    using Req = const DescribeDomainGroupListRequest&;
+    using Resp = DescribeDomainGroupListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeDomainGroupList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DnspodClient::DescribeDomainGroupListOutcomeCallable DnspodClient::DescribeDomainGroupListCallable(const DescribeDomainGroupListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeDomainGroupListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDomainGroupList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeDomainGroupListOutcome>>();
+    DescribeDomainGroupListAsync(
+    request,
+    [prom](
+        const DnspodClient*,
+        const DescribeDomainGroupListRequest&,
+        DescribeDomainGroupListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DnspodClient::DescribeDomainListOutcome DnspodClient::DescribeDomainList(const DescribeDomainListRequest &request)
@@ -1610,25 +1862,32 @@ DnspodClient::DescribeDomainListOutcome DnspodClient::DescribeDomainList(const D
 
 void DnspodClient::DescribeDomainListAsync(const DescribeDomainListRequest& request, const DescribeDomainListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDomainList(request), context);
-    };
+    using Req = const DescribeDomainListRequest&;
+    using Resp = DescribeDomainListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeDomainList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DnspodClient::DescribeDomainListOutcomeCallable DnspodClient::DescribeDomainListCallable(const DescribeDomainListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeDomainListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDomainList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeDomainListOutcome>>();
+    DescribeDomainListAsync(
+    request,
+    [prom](
+        const DnspodClient*,
+        const DescribeDomainListRequest&,
+        DescribeDomainListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DnspodClient::DescribeDomainLogListOutcome DnspodClient::DescribeDomainLogList(const DescribeDomainLogListRequest &request)
@@ -1653,25 +1912,32 @@ DnspodClient::DescribeDomainLogListOutcome DnspodClient::DescribeDomainLogList(c
 
 void DnspodClient::DescribeDomainLogListAsync(const DescribeDomainLogListRequest& request, const DescribeDomainLogListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDomainLogList(request), context);
-    };
+    using Req = const DescribeDomainLogListRequest&;
+    using Resp = DescribeDomainLogListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeDomainLogList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DnspodClient::DescribeDomainLogListOutcomeCallable DnspodClient::DescribeDomainLogListCallable(const DescribeDomainLogListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeDomainLogListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDomainLogList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeDomainLogListOutcome>>();
+    DescribeDomainLogListAsync(
+    request,
+    [prom](
+        const DnspodClient*,
+        const DescribeDomainLogListRequest&,
+        DescribeDomainLogListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DnspodClient::DescribeDomainPreviewOutcome DnspodClient::DescribeDomainPreview(const DescribeDomainPreviewRequest &request)
@@ -1696,25 +1962,32 @@ DnspodClient::DescribeDomainPreviewOutcome DnspodClient::DescribeDomainPreview(c
 
 void DnspodClient::DescribeDomainPreviewAsync(const DescribeDomainPreviewRequest& request, const DescribeDomainPreviewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDomainPreview(request), context);
-    };
+    using Req = const DescribeDomainPreviewRequest&;
+    using Resp = DescribeDomainPreviewResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeDomainPreview", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DnspodClient::DescribeDomainPreviewOutcomeCallable DnspodClient::DescribeDomainPreviewCallable(const DescribeDomainPreviewRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeDomainPreviewOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDomainPreview(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeDomainPreviewOutcome>>();
+    DescribeDomainPreviewAsync(
+    request,
+    [prom](
+        const DnspodClient*,
+        const DescribeDomainPreviewRequest&,
+        DescribeDomainPreviewOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DnspodClient::DescribeDomainPurviewOutcome DnspodClient::DescribeDomainPurview(const DescribeDomainPurviewRequest &request)
@@ -1739,25 +2012,32 @@ DnspodClient::DescribeDomainPurviewOutcome DnspodClient::DescribeDomainPurview(c
 
 void DnspodClient::DescribeDomainPurviewAsync(const DescribeDomainPurviewRequest& request, const DescribeDomainPurviewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDomainPurview(request), context);
-    };
+    using Req = const DescribeDomainPurviewRequest&;
+    using Resp = DescribeDomainPurviewResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeDomainPurview", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DnspodClient::DescribeDomainPurviewOutcomeCallable DnspodClient::DescribeDomainPurviewCallable(const DescribeDomainPurviewRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeDomainPurviewOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDomainPurview(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeDomainPurviewOutcome>>();
+    DescribeDomainPurviewAsync(
+    request,
+    [prom](
+        const DnspodClient*,
+        const DescribeDomainPurviewRequest&,
+        DescribeDomainPurviewOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DnspodClient::DescribeDomainShareInfoOutcome DnspodClient::DescribeDomainShareInfo(const DescribeDomainShareInfoRequest &request)
@@ -1782,25 +2062,32 @@ DnspodClient::DescribeDomainShareInfoOutcome DnspodClient::DescribeDomainShareIn
 
 void DnspodClient::DescribeDomainShareInfoAsync(const DescribeDomainShareInfoRequest& request, const DescribeDomainShareInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDomainShareInfo(request), context);
-    };
+    using Req = const DescribeDomainShareInfoRequest&;
+    using Resp = DescribeDomainShareInfoResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeDomainShareInfo", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DnspodClient::DescribeDomainShareInfoOutcomeCallable DnspodClient::DescribeDomainShareInfoCallable(const DescribeDomainShareInfoRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeDomainShareInfoOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDomainShareInfo(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeDomainShareInfoOutcome>>();
+    DescribeDomainShareInfoAsync(
+    request,
+    [prom](
+        const DnspodClient*,
+        const DescribeDomainShareInfoRequest&,
+        DescribeDomainShareInfoOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DnspodClient::DescribeDomainShareUserListOutcome DnspodClient::DescribeDomainShareUserList(const DescribeDomainShareUserListRequest &request)
@@ -1825,25 +2112,32 @@ DnspodClient::DescribeDomainShareUserListOutcome DnspodClient::DescribeDomainSha
 
 void DnspodClient::DescribeDomainShareUserListAsync(const DescribeDomainShareUserListRequest& request, const DescribeDomainShareUserListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDomainShareUserList(request), context);
-    };
+    using Req = const DescribeDomainShareUserListRequest&;
+    using Resp = DescribeDomainShareUserListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeDomainShareUserList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DnspodClient::DescribeDomainShareUserListOutcomeCallable DnspodClient::DescribeDomainShareUserListCallable(const DescribeDomainShareUserListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeDomainShareUserListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDomainShareUserList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeDomainShareUserListOutcome>>();
+    DescribeDomainShareUserListAsync(
+    request,
+    [prom](
+        const DnspodClient*,
+        const DescribeDomainShareUserListRequest&,
+        DescribeDomainShareUserListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DnspodClient::DescribeDomainVipListOutcome DnspodClient::DescribeDomainVipList(const DescribeDomainVipListRequest &request)
@@ -1868,25 +2162,32 @@ DnspodClient::DescribeDomainVipListOutcome DnspodClient::DescribeDomainVipList(c
 
 void DnspodClient::DescribeDomainVipListAsync(const DescribeDomainVipListRequest& request, const DescribeDomainVipListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDomainVipList(request), context);
-    };
+    using Req = const DescribeDomainVipListRequest&;
+    using Resp = DescribeDomainVipListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeDomainVipList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DnspodClient::DescribeDomainVipListOutcomeCallable DnspodClient::DescribeDomainVipListCallable(const DescribeDomainVipListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeDomainVipListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDomainVipList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeDomainVipListOutcome>>();
+    DescribeDomainVipListAsync(
+    request,
+    [prom](
+        const DnspodClient*,
+        const DescribeDomainVipListRequest&,
+        DescribeDomainVipListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DnspodClient::DescribeDomainWhoisOutcome DnspodClient::DescribeDomainWhois(const DescribeDomainWhoisRequest &request)
@@ -1911,25 +2212,32 @@ DnspodClient::DescribeDomainWhoisOutcome DnspodClient::DescribeDomainWhois(const
 
 void DnspodClient::DescribeDomainWhoisAsync(const DescribeDomainWhoisRequest& request, const DescribeDomainWhoisAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDomainWhois(request), context);
-    };
+    using Req = const DescribeDomainWhoisRequest&;
+    using Resp = DescribeDomainWhoisResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeDomainWhois", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DnspodClient::DescribeDomainWhoisOutcomeCallable DnspodClient::DescribeDomainWhoisCallable(const DescribeDomainWhoisRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeDomainWhoisOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDomainWhois(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeDomainWhoisOutcome>>();
+    DescribeDomainWhoisAsync(
+    request,
+    [prom](
+        const DnspodClient*,
+        const DescribeDomainWhoisRequest&,
+        DescribeDomainWhoisOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DnspodClient::DescribeFileInfoByJobIdOutcome DnspodClient::DescribeFileInfoByJobId(const DescribeFileInfoByJobIdRequest &request)
@@ -1954,25 +2262,32 @@ DnspodClient::DescribeFileInfoByJobIdOutcome DnspodClient::DescribeFileInfoByJob
 
 void DnspodClient::DescribeFileInfoByJobIdAsync(const DescribeFileInfoByJobIdRequest& request, const DescribeFileInfoByJobIdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeFileInfoByJobId(request), context);
-    };
+    using Req = const DescribeFileInfoByJobIdRequest&;
+    using Resp = DescribeFileInfoByJobIdResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeFileInfoByJobId", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DnspodClient::DescribeFileInfoByJobIdOutcomeCallable DnspodClient::DescribeFileInfoByJobIdCallable(const DescribeFileInfoByJobIdRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeFileInfoByJobIdOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeFileInfoByJobId(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeFileInfoByJobIdOutcome>>();
+    DescribeFileInfoByJobIdAsync(
+    request,
+    [prom](
+        const DnspodClient*,
+        const DescribeFileInfoByJobIdRequest&,
+        DescribeFileInfoByJobIdOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DnspodClient::DescribeLineGroupListOutcome DnspodClient::DescribeLineGroupList(const DescribeLineGroupListRequest &request)
@@ -1997,25 +2312,32 @@ DnspodClient::DescribeLineGroupListOutcome DnspodClient::DescribeLineGroupList(c
 
 void DnspodClient::DescribeLineGroupListAsync(const DescribeLineGroupListRequest& request, const DescribeLineGroupListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeLineGroupList(request), context);
-    };
+    using Req = const DescribeLineGroupListRequest&;
+    using Resp = DescribeLineGroupListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeLineGroupList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DnspodClient::DescribeLineGroupListOutcomeCallable DnspodClient::DescribeLineGroupListCallable(const DescribeLineGroupListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeLineGroupListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeLineGroupList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeLineGroupListOutcome>>();
+    DescribeLineGroupListAsync(
+    request,
+    [prom](
+        const DnspodClient*,
+        const DescribeLineGroupListRequest&,
+        DescribeLineGroupListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DnspodClient::DescribePackageDetailOutcome DnspodClient::DescribePackageDetail(const DescribePackageDetailRequest &request)
@@ -2040,25 +2362,32 @@ DnspodClient::DescribePackageDetailOutcome DnspodClient::DescribePackageDetail(c
 
 void DnspodClient::DescribePackageDetailAsync(const DescribePackageDetailRequest& request, const DescribePackageDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribePackageDetail(request), context);
-    };
+    using Req = const DescribePackageDetailRequest&;
+    using Resp = DescribePackageDetailResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribePackageDetail", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DnspodClient::DescribePackageDetailOutcomeCallable DnspodClient::DescribePackageDetailCallable(const DescribePackageDetailRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribePackageDetailOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribePackageDetail(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribePackageDetailOutcome>>();
+    DescribePackageDetailAsync(
+    request,
+    [prom](
+        const DnspodClient*,
+        const DescribePackageDetailRequest&,
+        DescribePackageDetailOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DnspodClient::DescribeRecordOutcome DnspodClient::DescribeRecord(const DescribeRecordRequest &request)
@@ -2083,25 +2412,32 @@ DnspodClient::DescribeRecordOutcome DnspodClient::DescribeRecord(const DescribeR
 
 void DnspodClient::DescribeRecordAsync(const DescribeRecordRequest& request, const DescribeRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeRecord(request), context);
-    };
+    using Req = const DescribeRecordRequest&;
+    using Resp = DescribeRecordResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeRecord", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DnspodClient::DescribeRecordOutcomeCallable DnspodClient::DescribeRecordCallable(const DescribeRecordRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeRecordOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeRecord(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeRecordOutcome>>();
+    DescribeRecordAsync(
+    request,
+    [prom](
+        const DnspodClient*,
+        const DescribeRecordRequest&,
+        DescribeRecordOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DnspodClient::DescribeRecordExistExceptDefaultNSOutcome DnspodClient::DescribeRecordExistExceptDefaultNS(const DescribeRecordExistExceptDefaultNSRequest &request)
@@ -2126,25 +2462,32 @@ DnspodClient::DescribeRecordExistExceptDefaultNSOutcome DnspodClient::DescribeRe
 
 void DnspodClient::DescribeRecordExistExceptDefaultNSAsync(const DescribeRecordExistExceptDefaultNSRequest& request, const DescribeRecordExistExceptDefaultNSAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeRecordExistExceptDefaultNS(request), context);
-    };
+    using Req = const DescribeRecordExistExceptDefaultNSRequest&;
+    using Resp = DescribeRecordExistExceptDefaultNSResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeRecordExistExceptDefaultNS", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DnspodClient::DescribeRecordExistExceptDefaultNSOutcomeCallable DnspodClient::DescribeRecordExistExceptDefaultNSCallable(const DescribeRecordExistExceptDefaultNSRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeRecordExistExceptDefaultNSOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeRecordExistExceptDefaultNS(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeRecordExistExceptDefaultNSOutcome>>();
+    DescribeRecordExistExceptDefaultNSAsync(
+    request,
+    [prom](
+        const DnspodClient*,
+        const DescribeRecordExistExceptDefaultNSRequest&,
+        DescribeRecordExistExceptDefaultNSOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DnspodClient::DescribeRecordFilterListOutcome DnspodClient::DescribeRecordFilterList(const DescribeRecordFilterListRequest &request)
@@ -2169,25 +2512,32 @@ DnspodClient::DescribeRecordFilterListOutcome DnspodClient::DescribeRecordFilter
 
 void DnspodClient::DescribeRecordFilterListAsync(const DescribeRecordFilterListRequest& request, const DescribeRecordFilterListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeRecordFilterList(request), context);
-    };
+    using Req = const DescribeRecordFilterListRequest&;
+    using Resp = DescribeRecordFilterListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeRecordFilterList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DnspodClient::DescribeRecordFilterListOutcomeCallable DnspodClient::DescribeRecordFilterListCallable(const DescribeRecordFilterListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeRecordFilterListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeRecordFilterList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeRecordFilterListOutcome>>();
+    DescribeRecordFilterListAsync(
+    request,
+    [prom](
+        const DnspodClient*,
+        const DescribeRecordFilterListRequest&,
+        DescribeRecordFilterListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DnspodClient::DescribeRecordGroupListOutcome DnspodClient::DescribeRecordGroupList(const DescribeRecordGroupListRequest &request)
@@ -2212,25 +2562,32 @@ DnspodClient::DescribeRecordGroupListOutcome DnspodClient::DescribeRecordGroupLi
 
 void DnspodClient::DescribeRecordGroupListAsync(const DescribeRecordGroupListRequest& request, const DescribeRecordGroupListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeRecordGroupList(request), context);
-    };
+    using Req = const DescribeRecordGroupListRequest&;
+    using Resp = DescribeRecordGroupListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeRecordGroupList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DnspodClient::DescribeRecordGroupListOutcomeCallable DnspodClient::DescribeRecordGroupListCallable(const DescribeRecordGroupListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeRecordGroupListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeRecordGroupList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeRecordGroupListOutcome>>();
+    DescribeRecordGroupListAsync(
+    request,
+    [prom](
+        const DnspodClient*,
+        const DescribeRecordGroupListRequest&,
+        DescribeRecordGroupListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DnspodClient::DescribeRecordLineCategoryListOutcome DnspodClient::DescribeRecordLineCategoryList(const DescribeRecordLineCategoryListRequest &request)
@@ -2255,25 +2612,32 @@ DnspodClient::DescribeRecordLineCategoryListOutcome DnspodClient::DescribeRecord
 
 void DnspodClient::DescribeRecordLineCategoryListAsync(const DescribeRecordLineCategoryListRequest& request, const DescribeRecordLineCategoryListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeRecordLineCategoryList(request), context);
-    };
+    using Req = const DescribeRecordLineCategoryListRequest&;
+    using Resp = DescribeRecordLineCategoryListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeRecordLineCategoryList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DnspodClient::DescribeRecordLineCategoryListOutcomeCallable DnspodClient::DescribeRecordLineCategoryListCallable(const DescribeRecordLineCategoryListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeRecordLineCategoryListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeRecordLineCategoryList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeRecordLineCategoryListOutcome>>();
+    DescribeRecordLineCategoryListAsync(
+    request,
+    [prom](
+        const DnspodClient*,
+        const DescribeRecordLineCategoryListRequest&,
+        DescribeRecordLineCategoryListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DnspodClient::DescribeRecordLineListOutcome DnspodClient::DescribeRecordLineList(const DescribeRecordLineListRequest &request)
@@ -2298,25 +2662,32 @@ DnspodClient::DescribeRecordLineListOutcome DnspodClient::DescribeRecordLineList
 
 void DnspodClient::DescribeRecordLineListAsync(const DescribeRecordLineListRequest& request, const DescribeRecordLineListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeRecordLineList(request), context);
-    };
+    using Req = const DescribeRecordLineListRequest&;
+    using Resp = DescribeRecordLineListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeRecordLineList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DnspodClient::DescribeRecordLineListOutcomeCallable DnspodClient::DescribeRecordLineListCallable(const DescribeRecordLineListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeRecordLineListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeRecordLineList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeRecordLineListOutcome>>();
+    DescribeRecordLineListAsync(
+    request,
+    [prom](
+        const DnspodClient*,
+        const DescribeRecordLineListRequest&,
+        DescribeRecordLineListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DnspodClient::DescribeRecordListOutcome DnspodClient::DescribeRecordList(const DescribeRecordListRequest &request)
@@ -2341,25 +2712,32 @@ DnspodClient::DescribeRecordListOutcome DnspodClient::DescribeRecordList(const D
 
 void DnspodClient::DescribeRecordListAsync(const DescribeRecordListRequest& request, const DescribeRecordListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeRecordList(request), context);
-    };
+    using Req = const DescribeRecordListRequest&;
+    using Resp = DescribeRecordListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeRecordList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DnspodClient::DescribeRecordListOutcomeCallable DnspodClient::DescribeRecordListCallable(const DescribeRecordListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeRecordListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeRecordList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeRecordListOutcome>>();
+    DescribeRecordListAsync(
+    request,
+    [prom](
+        const DnspodClient*,
+        const DescribeRecordListRequest&,
+        DescribeRecordListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DnspodClient::DescribeRecordSnapshotRollbackResultOutcome DnspodClient::DescribeRecordSnapshotRollbackResult(const DescribeRecordSnapshotRollbackResultRequest &request)
@@ -2384,25 +2762,32 @@ DnspodClient::DescribeRecordSnapshotRollbackResultOutcome DnspodClient::Describe
 
 void DnspodClient::DescribeRecordSnapshotRollbackResultAsync(const DescribeRecordSnapshotRollbackResultRequest& request, const DescribeRecordSnapshotRollbackResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeRecordSnapshotRollbackResult(request), context);
-    };
+    using Req = const DescribeRecordSnapshotRollbackResultRequest&;
+    using Resp = DescribeRecordSnapshotRollbackResultResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeRecordSnapshotRollbackResult", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DnspodClient::DescribeRecordSnapshotRollbackResultOutcomeCallable DnspodClient::DescribeRecordSnapshotRollbackResultCallable(const DescribeRecordSnapshotRollbackResultRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeRecordSnapshotRollbackResultOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeRecordSnapshotRollbackResult(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeRecordSnapshotRollbackResultOutcome>>();
+    DescribeRecordSnapshotRollbackResultAsync(
+    request,
+    [prom](
+        const DnspodClient*,
+        const DescribeRecordSnapshotRollbackResultRequest&,
+        DescribeRecordSnapshotRollbackResultOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DnspodClient::DescribeRecordTypeOutcome DnspodClient::DescribeRecordType(const DescribeRecordTypeRequest &request)
@@ -2427,25 +2812,32 @@ DnspodClient::DescribeRecordTypeOutcome DnspodClient::DescribeRecordType(const D
 
 void DnspodClient::DescribeRecordTypeAsync(const DescribeRecordTypeRequest& request, const DescribeRecordTypeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeRecordType(request), context);
-    };
+    using Req = const DescribeRecordTypeRequest&;
+    using Resp = DescribeRecordTypeResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeRecordType", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DnspodClient::DescribeRecordTypeOutcomeCallable DnspodClient::DescribeRecordTypeCallable(const DescribeRecordTypeRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeRecordTypeOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeRecordType(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeRecordTypeOutcome>>();
+    DescribeRecordTypeAsync(
+    request,
+    [prom](
+        const DnspodClient*,
+        const DescribeRecordTypeRequest&,
+        DescribeRecordTypeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DnspodClient::DescribeResolveCountOutcome DnspodClient::DescribeResolveCount(const DescribeResolveCountRequest &request)
@@ -2470,25 +2862,32 @@ DnspodClient::DescribeResolveCountOutcome DnspodClient::DescribeResolveCount(con
 
 void DnspodClient::DescribeResolveCountAsync(const DescribeResolveCountRequest& request, const DescribeResolveCountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeResolveCount(request), context);
-    };
+    using Req = const DescribeResolveCountRequest&;
+    using Resp = DescribeResolveCountResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeResolveCount", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DnspodClient::DescribeResolveCountOutcomeCallable DnspodClient::DescribeResolveCountCallable(const DescribeResolveCountRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeResolveCountOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeResolveCount(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeResolveCountOutcome>>();
+    DescribeResolveCountAsync(
+    request,
+    [prom](
+        const DnspodClient*,
+        const DescribeResolveCountRequest&,
+        DescribeResolveCountOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DnspodClient::DescribeSnapshotConfigOutcome DnspodClient::DescribeSnapshotConfig(const DescribeSnapshotConfigRequest &request)
@@ -2513,25 +2912,32 @@ DnspodClient::DescribeSnapshotConfigOutcome DnspodClient::DescribeSnapshotConfig
 
 void DnspodClient::DescribeSnapshotConfigAsync(const DescribeSnapshotConfigRequest& request, const DescribeSnapshotConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeSnapshotConfig(request), context);
-    };
+    using Req = const DescribeSnapshotConfigRequest&;
+    using Resp = DescribeSnapshotConfigResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeSnapshotConfig", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DnspodClient::DescribeSnapshotConfigOutcomeCallable DnspodClient::DescribeSnapshotConfigCallable(const DescribeSnapshotConfigRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeSnapshotConfigOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeSnapshotConfig(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeSnapshotConfigOutcome>>();
+    DescribeSnapshotConfigAsync(
+    request,
+    [prom](
+        const DnspodClient*,
+        const DescribeSnapshotConfigRequest&,
+        DescribeSnapshotConfigOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DnspodClient::DescribeSnapshotListOutcome DnspodClient::DescribeSnapshotList(const DescribeSnapshotListRequest &request)
@@ -2556,25 +2962,32 @@ DnspodClient::DescribeSnapshotListOutcome DnspodClient::DescribeSnapshotList(con
 
 void DnspodClient::DescribeSnapshotListAsync(const DescribeSnapshotListRequest& request, const DescribeSnapshotListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeSnapshotList(request), context);
-    };
+    using Req = const DescribeSnapshotListRequest&;
+    using Resp = DescribeSnapshotListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeSnapshotList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DnspodClient::DescribeSnapshotListOutcomeCallable DnspodClient::DescribeSnapshotListCallable(const DescribeSnapshotListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeSnapshotListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeSnapshotList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeSnapshotListOutcome>>();
+    DescribeSnapshotListAsync(
+    request,
+    [prom](
+        const DnspodClient*,
+        const DescribeSnapshotListRequest&,
+        DescribeSnapshotListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DnspodClient::DescribeSnapshotRollbackResultOutcome DnspodClient::DescribeSnapshotRollbackResult(const DescribeSnapshotRollbackResultRequest &request)
@@ -2599,25 +3012,32 @@ DnspodClient::DescribeSnapshotRollbackResultOutcome DnspodClient::DescribeSnapsh
 
 void DnspodClient::DescribeSnapshotRollbackResultAsync(const DescribeSnapshotRollbackResultRequest& request, const DescribeSnapshotRollbackResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeSnapshotRollbackResult(request), context);
-    };
+    using Req = const DescribeSnapshotRollbackResultRequest&;
+    using Resp = DescribeSnapshotRollbackResultResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeSnapshotRollbackResult", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DnspodClient::DescribeSnapshotRollbackResultOutcomeCallable DnspodClient::DescribeSnapshotRollbackResultCallable(const DescribeSnapshotRollbackResultRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeSnapshotRollbackResultOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeSnapshotRollbackResult(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeSnapshotRollbackResultOutcome>>();
+    DescribeSnapshotRollbackResultAsync(
+    request,
+    [prom](
+        const DnspodClient*,
+        const DescribeSnapshotRollbackResultRequest&,
+        DescribeSnapshotRollbackResultOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DnspodClient::DescribeSnapshotRollbackTaskOutcome DnspodClient::DescribeSnapshotRollbackTask(const DescribeSnapshotRollbackTaskRequest &request)
@@ -2642,25 +3062,32 @@ DnspodClient::DescribeSnapshotRollbackTaskOutcome DnspodClient::DescribeSnapshot
 
 void DnspodClient::DescribeSnapshotRollbackTaskAsync(const DescribeSnapshotRollbackTaskRequest& request, const DescribeSnapshotRollbackTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeSnapshotRollbackTask(request), context);
-    };
+    using Req = const DescribeSnapshotRollbackTaskRequest&;
+    using Resp = DescribeSnapshotRollbackTaskResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeSnapshotRollbackTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DnspodClient::DescribeSnapshotRollbackTaskOutcomeCallable DnspodClient::DescribeSnapshotRollbackTaskCallable(const DescribeSnapshotRollbackTaskRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeSnapshotRollbackTaskOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeSnapshotRollbackTask(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeSnapshotRollbackTaskOutcome>>();
+    DescribeSnapshotRollbackTaskAsync(
+    request,
+    [prom](
+        const DnspodClient*,
+        const DescribeSnapshotRollbackTaskRequest&,
+        DescribeSnapshotRollbackTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DnspodClient::DescribeSubdomainAnalyticsOutcome DnspodClient::DescribeSubdomainAnalytics(const DescribeSubdomainAnalyticsRequest &request)
@@ -2685,25 +3112,32 @@ DnspodClient::DescribeSubdomainAnalyticsOutcome DnspodClient::DescribeSubdomainA
 
 void DnspodClient::DescribeSubdomainAnalyticsAsync(const DescribeSubdomainAnalyticsRequest& request, const DescribeSubdomainAnalyticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeSubdomainAnalytics(request), context);
-    };
+    using Req = const DescribeSubdomainAnalyticsRequest&;
+    using Resp = DescribeSubdomainAnalyticsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeSubdomainAnalytics", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DnspodClient::DescribeSubdomainAnalyticsOutcomeCallable DnspodClient::DescribeSubdomainAnalyticsCallable(const DescribeSubdomainAnalyticsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeSubdomainAnalyticsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeSubdomainAnalytics(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeSubdomainAnalyticsOutcome>>();
+    DescribeSubdomainAnalyticsAsync(
+    request,
+    [prom](
+        const DnspodClient*,
+        const DescribeSubdomainAnalyticsRequest&,
+        DescribeSubdomainAnalyticsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DnspodClient::DescribeSubdomainValidateStatusOutcome DnspodClient::DescribeSubdomainValidateStatus(const DescribeSubdomainValidateStatusRequest &request)
@@ -2728,25 +3162,32 @@ DnspodClient::DescribeSubdomainValidateStatusOutcome DnspodClient::DescribeSubdo
 
 void DnspodClient::DescribeSubdomainValidateStatusAsync(const DescribeSubdomainValidateStatusRequest& request, const DescribeSubdomainValidateStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeSubdomainValidateStatus(request), context);
-    };
+    using Req = const DescribeSubdomainValidateStatusRequest&;
+    using Resp = DescribeSubdomainValidateStatusResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeSubdomainValidateStatus", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DnspodClient::DescribeSubdomainValidateStatusOutcomeCallable DnspodClient::DescribeSubdomainValidateStatusCallable(const DescribeSubdomainValidateStatusRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeSubdomainValidateStatusOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeSubdomainValidateStatus(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeSubdomainValidateStatusOutcome>>();
+    DescribeSubdomainValidateStatusAsync(
+    request,
+    [prom](
+        const DnspodClient*,
+        const DescribeSubdomainValidateStatusRequest&,
+        DescribeSubdomainValidateStatusOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DnspodClient::DescribeUserDetailOutcome DnspodClient::DescribeUserDetail(const DescribeUserDetailRequest &request)
@@ -2771,25 +3212,32 @@ DnspodClient::DescribeUserDetailOutcome DnspodClient::DescribeUserDetail(const D
 
 void DnspodClient::DescribeUserDetailAsync(const DescribeUserDetailRequest& request, const DescribeUserDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeUserDetail(request), context);
-    };
+    using Req = const DescribeUserDetailRequest&;
+    using Resp = DescribeUserDetailResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeUserDetail", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DnspodClient::DescribeUserDetailOutcomeCallable DnspodClient::DescribeUserDetailCallable(const DescribeUserDetailRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeUserDetailOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeUserDetail(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeUserDetailOutcome>>();
+    DescribeUserDetailAsync(
+    request,
+    [prom](
+        const DnspodClient*,
+        const DescribeUserDetailRequest&,
+        DescribeUserDetailOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DnspodClient::DescribeVASStatisticOutcome DnspodClient::DescribeVASStatistic(const DescribeVASStatisticRequest &request)
@@ -2814,25 +3262,32 @@ DnspodClient::DescribeVASStatisticOutcome DnspodClient::DescribeVASStatistic(con
 
 void DnspodClient::DescribeVASStatisticAsync(const DescribeVASStatisticRequest& request, const DescribeVASStatisticAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeVASStatistic(request), context);
-    };
+    using Req = const DescribeVASStatisticRequest&;
+    using Resp = DescribeVASStatisticResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeVASStatistic", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DnspodClient::DescribeVASStatisticOutcomeCallable DnspodClient::DescribeVASStatisticCallable(const DescribeVASStatisticRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeVASStatisticOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeVASStatistic(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeVASStatisticOutcome>>();
+    DescribeVASStatisticAsync(
+    request,
+    [prom](
+        const DnspodClient*,
+        const DescribeVASStatisticRequest&,
+        DescribeVASStatisticOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DnspodClient::DescribeVasListOutcome DnspodClient::DescribeVasList(const DescribeVasListRequest &request)
@@ -2857,25 +3312,32 @@ DnspodClient::DescribeVasListOutcome DnspodClient::DescribeVasList(const Describ
 
 void DnspodClient::DescribeVasListAsync(const DescribeVasListRequest& request, const DescribeVasListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeVasList(request), context);
-    };
+    using Req = const DescribeVasListRequest&;
+    using Resp = DescribeVasListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeVasList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DnspodClient::DescribeVasListOutcomeCallable DnspodClient::DescribeVasListCallable(const DescribeVasListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeVasListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeVasList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeVasListOutcome>>();
+    DescribeVasListAsync(
+    request,
+    [prom](
+        const DnspodClient*,
+        const DescribeVasListRequest&,
+        DescribeVasListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DnspodClient::DownloadSnapshotOutcome DnspodClient::DownloadSnapshot(const DownloadSnapshotRequest &request)
@@ -2900,25 +3362,32 @@ DnspodClient::DownloadSnapshotOutcome DnspodClient::DownloadSnapshot(const Downl
 
 void DnspodClient::DownloadSnapshotAsync(const DownloadSnapshotRequest& request, const DownloadSnapshotAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DownloadSnapshot(request), context);
-    };
+    using Req = const DownloadSnapshotRequest&;
+    using Resp = DownloadSnapshotResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DownloadSnapshot", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DnspodClient::DownloadSnapshotOutcomeCallable DnspodClient::DownloadSnapshotCallable(const DownloadSnapshotRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DownloadSnapshotOutcome()>>(
-        [this, request]()
-        {
-            return this->DownloadSnapshot(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DownloadSnapshotOutcome>>();
+    DownloadSnapshotAsync(
+    request,
+    [prom](
+        const DnspodClient*,
+        const DownloadSnapshotRequest&,
+        DownloadSnapshotOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DnspodClient::ModifyDomainCNAMESpeedupStatusBatchOutcome DnspodClient::ModifyDomainCNAMESpeedupStatusBatch(const ModifyDomainCNAMESpeedupStatusBatchRequest &request)
@@ -2943,25 +3412,32 @@ DnspodClient::ModifyDomainCNAMESpeedupStatusBatchOutcome DnspodClient::ModifyDom
 
 void DnspodClient::ModifyDomainCNAMESpeedupStatusBatchAsync(const ModifyDomainCNAMESpeedupStatusBatchRequest& request, const ModifyDomainCNAMESpeedupStatusBatchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyDomainCNAMESpeedupStatusBatch(request), context);
-    };
+    using Req = const ModifyDomainCNAMESpeedupStatusBatchRequest&;
+    using Resp = ModifyDomainCNAMESpeedupStatusBatchResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyDomainCNAMESpeedupStatusBatch", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DnspodClient::ModifyDomainCNAMESpeedupStatusBatchOutcomeCallable DnspodClient::ModifyDomainCNAMESpeedupStatusBatchCallable(const ModifyDomainCNAMESpeedupStatusBatchRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyDomainCNAMESpeedupStatusBatchOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyDomainCNAMESpeedupStatusBatch(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyDomainCNAMESpeedupStatusBatchOutcome>>();
+    ModifyDomainCNAMESpeedupStatusBatchAsync(
+    request,
+    [prom](
+        const DnspodClient*,
+        const ModifyDomainCNAMESpeedupStatusBatchRequest&,
+        ModifyDomainCNAMESpeedupStatusBatchOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DnspodClient::ModifyDomainCustomLineOutcome DnspodClient::ModifyDomainCustomLine(const ModifyDomainCustomLineRequest &request)
@@ -2986,25 +3462,32 @@ DnspodClient::ModifyDomainCustomLineOutcome DnspodClient::ModifyDomainCustomLine
 
 void DnspodClient::ModifyDomainCustomLineAsync(const ModifyDomainCustomLineRequest& request, const ModifyDomainCustomLineAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyDomainCustomLine(request), context);
-    };
+    using Req = const ModifyDomainCustomLineRequest&;
+    using Resp = ModifyDomainCustomLineResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyDomainCustomLine", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DnspodClient::ModifyDomainCustomLineOutcomeCallable DnspodClient::ModifyDomainCustomLineCallable(const ModifyDomainCustomLineRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyDomainCustomLineOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyDomainCustomLine(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyDomainCustomLineOutcome>>();
+    ModifyDomainCustomLineAsync(
+    request,
+    [prom](
+        const DnspodClient*,
+        const ModifyDomainCustomLineRequest&,
+        ModifyDomainCustomLineOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DnspodClient::ModifyDomainLockOutcome DnspodClient::ModifyDomainLock(const ModifyDomainLockRequest &request)
@@ -3029,25 +3512,32 @@ DnspodClient::ModifyDomainLockOutcome DnspodClient::ModifyDomainLock(const Modif
 
 void DnspodClient::ModifyDomainLockAsync(const ModifyDomainLockRequest& request, const ModifyDomainLockAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyDomainLock(request), context);
-    };
+    using Req = const ModifyDomainLockRequest&;
+    using Resp = ModifyDomainLockResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyDomainLock", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DnspodClient::ModifyDomainLockOutcomeCallable DnspodClient::ModifyDomainLockCallable(const ModifyDomainLockRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyDomainLockOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyDomainLock(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyDomainLockOutcome>>();
+    ModifyDomainLockAsync(
+    request,
+    [prom](
+        const DnspodClient*,
+        const ModifyDomainLockRequest&,
+        ModifyDomainLockOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DnspodClient::ModifyDomainOwnerOutcome DnspodClient::ModifyDomainOwner(const ModifyDomainOwnerRequest &request)
@@ -3072,25 +3562,32 @@ DnspodClient::ModifyDomainOwnerOutcome DnspodClient::ModifyDomainOwner(const Mod
 
 void DnspodClient::ModifyDomainOwnerAsync(const ModifyDomainOwnerRequest& request, const ModifyDomainOwnerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyDomainOwner(request), context);
-    };
+    using Req = const ModifyDomainOwnerRequest&;
+    using Resp = ModifyDomainOwnerResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyDomainOwner", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DnspodClient::ModifyDomainOwnerOutcomeCallable DnspodClient::ModifyDomainOwnerCallable(const ModifyDomainOwnerRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyDomainOwnerOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyDomainOwner(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyDomainOwnerOutcome>>();
+    ModifyDomainOwnerAsync(
+    request,
+    [prom](
+        const DnspodClient*,
+        const ModifyDomainOwnerRequest&,
+        ModifyDomainOwnerOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DnspodClient::ModifyDomainRecursiveStatusBatchOutcome DnspodClient::ModifyDomainRecursiveStatusBatch(const ModifyDomainRecursiveStatusBatchRequest &request)
@@ -3115,25 +3612,32 @@ DnspodClient::ModifyDomainRecursiveStatusBatchOutcome DnspodClient::ModifyDomain
 
 void DnspodClient::ModifyDomainRecursiveStatusBatchAsync(const ModifyDomainRecursiveStatusBatchRequest& request, const ModifyDomainRecursiveStatusBatchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyDomainRecursiveStatusBatch(request), context);
-    };
+    using Req = const ModifyDomainRecursiveStatusBatchRequest&;
+    using Resp = ModifyDomainRecursiveStatusBatchResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyDomainRecursiveStatusBatch", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DnspodClient::ModifyDomainRecursiveStatusBatchOutcomeCallable DnspodClient::ModifyDomainRecursiveStatusBatchCallable(const ModifyDomainRecursiveStatusBatchRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyDomainRecursiveStatusBatchOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyDomainRecursiveStatusBatch(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyDomainRecursiveStatusBatchOutcome>>();
+    ModifyDomainRecursiveStatusBatchAsync(
+    request,
+    [prom](
+        const DnspodClient*,
+        const ModifyDomainRecursiveStatusBatchRequest&,
+        ModifyDomainRecursiveStatusBatchOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DnspodClient::ModifyDomainRemarkOutcome DnspodClient::ModifyDomainRemark(const ModifyDomainRemarkRequest &request)
@@ -3158,25 +3662,32 @@ DnspodClient::ModifyDomainRemarkOutcome DnspodClient::ModifyDomainRemark(const M
 
 void DnspodClient::ModifyDomainRemarkAsync(const ModifyDomainRemarkRequest& request, const ModifyDomainRemarkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyDomainRemark(request), context);
-    };
+    using Req = const ModifyDomainRemarkRequest&;
+    using Resp = ModifyDomainRemarkResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyDomainRemark", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DnspodClient::ModifyDomainRemarkOutcomeCallable DnspodClient::ModifyDomainRemarkCallable(const ModifyDomainRemarkRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyDomainRemarkOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyDomainRemark(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyDomainRemarkOutcome>>();
+    ModifyDomainRemarkAsync(
+    request,
+    [prom](
+        const DnspodClient*,
+        const ModifyDomainRemarkRequest&,
+        ModifyDomainRemarkOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DnspodClient::ModifyDomainStatusOutcome DnspodClient::ModifyDomainStatus(const ModifyDomainStatusRequest &request)
@@ -3201,25 +3712,32 @@ DnspodClient::ModifyDomainStatusOutcome DnspodClient::ModifyDomainStatus(const M
 
 void DnspodClient::ModifyDomainStatusAsync(const ModifyDomainStatusRequest& request, const ModifyDomainStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyDomainStatus(request), context);
-    };
+    using Req = const ModifyDomainStatusRequest&;
+    using Resp = ModifyDomainStatusResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyDomainStatus", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DnspodClient::ModifyDomainStatusOutcomeCallable DnspodClient::ModifyDomainStatusCallable(const ModifyDomainStatusRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyDomainStatusOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyDomainStatus(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyDomainStatusOutcome>>();
+    ModifyDomainStatusAsync(
+    request,
+    [prom](
+        const DnspodClient*,
+        const ModifyDomainStatusRequest&,
+        ModifyDomainStatusOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DnspodClient::ModifyDomainToGroupOutcome DnspodClient::ModifyDomainToGroup(const ModifyDomainToGroupRequest &request)
@@ -3244,25 +3762,32 @@ DnspodClient::ModifyDomainToGroupOutcome DnspodClient::ModifyDomainToGroup(const
 
 void DnspodClient::ModifyDomainToGroupAsync(const ModifyDomainToGroupRequest& request, const ModifyDomainToGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyDomainToGroup(request), context);
-    };
+    using Req = const ModifyDomainToGroupRequest&;
+    using Resp = ModifyDomainToGroupResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyDomainToGroup", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DnspodClient::ModifyDomainToGroupOutcomeCallable DnspodClient::ModifyDomainToGroupCallable(const ModifyDomainToGroupRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyDomainToGroupOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyDomainToGroup(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyDomainToGroupOutcome>>();
+    ModifyDomainToGroupAsync(
+    request,
+    [prom](
+        const DnspodClient*,
+        const ModifyDomainToGroupRequest&,
+        ModifyDomainToGroupOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DnspodClient::ModifyDomainUnlockOutcome DnspodClient::ModifyDomainUnlock(const ModifyDomainUnlockRequest &request)
@@ -3287,25 +3812,32 @@ DnspodClient::ModifyDomainUnlockOutcome DnspodClient::ModifyDomainUnlock(const M
 
 void DnspodClient::ModifyDomainUnlockAsync(const ModifyDomainUnlockRequest& request, const ModifyDomainUnlockAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyDomainUnlock(request), context);
-    };
+    using Req = const ModifyDomainUnlockRequest&;
+    using Resp = ModifyDomainUnlockResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyDomainUnlock", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DnspodClient::ModifyDomainUnlockOutcomeCallable DnspodClient::ModifyDomainUnlockCallable(const ModifyDomainUnlockRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyDomainUnlockOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyDomainUnlock(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyDomainUnlockOutcome>>();
+    ModifyDomainUnlockAsync(
+    request,
+    [prom](
+        const DnspodClient*,
+        const ModifyDomainUnlockRequest&,
+        ModifyDomainUnlockOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DnspodClient::ModifyDynamicDNSOutcome DnspodClient::ModifyDynamicDNS(const ModifyDynamicDNSRequest &request)
@@ -3330,25 +3862,32 @@ DnspodClient::ModifyDynamicDNSOutcome DnspodClient::ModifyDynamicDNS(const Modif
 
 void DnspodClient::ModifyDynamicDNSAsync(const ModifyDynamicDNSRequest& request, const ModifyDynamicDNSAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyDynamicDNS(request), context);
-    };
+    using Req = const ModifyDynamicDNSRequest&;
+    using Resp = ModifyDynamicDNSResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyDynamicDNS", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DnspodClient::ModifyDynamicDNSOutcomeCallable DnspodClient::ModifyDynamicDNSCallable(const ModifyDynamicDNSRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyDynamicDNSOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyDynamicDNS(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyDynamicDNSOutcome>>();
+    ModifyDynamicDNSAsync(
+    request,
+    [prom](
+        const DnspodClient*,
+        const ModifyDynamicDNSRequest&,
+        ModifyDynamicDNSOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DnspodClient::ModifyLineGroupOutcome DnspodClient::ModifyLineGroup(const ModifyLineGroupRequest &request)
@@ -3373,25 +3912,32 @@ DnspodClient::ModifyLineGroupOutcome DnspodClient::ModifyLineGroup(const ModifyL
 
 void DnspodClient::ModifyLineGroupAsync(const ModifyLineGroupRequest& request, const ModifyLineGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyLineGroup(request), context);
-    };
+    using Req = const ModifyLineGroupRequest&;
+    using Resp = ModifyLineGroupResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyLineGroup", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DnspodClient::ModifyLineGroupOutcomeCallable DnspodClient::ModifyLineGroupCallable(const ModifyLineGroupRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyLineGroupOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyLineGroup(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyLineGroupOutcome>>();
+    ModifyLineGroupAsync(
+    request,
+    [prom](
+        const DnspodClient*,
+        const ModifyLineGroupRequest&,
+        ModifyLineGroupOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DnspodClient::ModifyPackageAutoRenewOutcome DnspodClient::ModifyPackageAutoRenew(const ModifyPackageAutoRenewRequest &request)
@@ -3416,25 +3962,32 @@ DnspodClient::ModifyPackageAutoRenewOutcome DnspodClient::ModifyPackageAutoRenew
 
 void DnspodClient::ModifyPackageAutoRenewAsync(const ModifyPackageAutoRenewRequest& request, const ModifyPackageAutoRenewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyPackageAutoRenew(request), context);
-    };
+    using Req = const ModifyPackageAutoRenewRequest&;
+    using Resp = ModifyPackageAutoRenewResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyPackageAutoRenew", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DnspodClient::ModifyPackageAutoRenewOutcomeCallable DnspodClient::ModifyPackageAutoRenewCallable(const ModifyPackageAutoRenewRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyPackageAutoRenewOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyPackageAutoRenew(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyPackageAutoRenewOutcome>>();
+    ModifyPackageAutoRenewAsync(
+    request,
+    [prom](
+        const DnspodClient*,
+        const ModifyPackageAutoRenewRequest&,
+        ModifyPackageAutoRenewOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DnspodClient::ModifyRecordOutcome DnspodClient::ModifyRecord(const ModifyRecordRequest &request)
@@ -3459,25 +4012,32 @@ DnspodClient::ModifyRecordOutcome DnspodClient::ModifyRecord(const ModifyRecordR
 
 void DnspodClient::ModifyRecordAsync(const ModifyRecordRequest& request, const ModifyRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyRecord(request), context);
-    };
+    using Req = const ModifyRecordRequest&;
+    using Resp = ModifyRecordResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyRecord", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DnspodClient::ModifyRecordOutcomeCallable DnspodClient::ModifyRecordCallable(const ModifyRecordRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyRecordOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyRecord(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyRecordOutcome>>();
+    ModifyRecordAsync(
+    request,
+    [prom](
+        const DnspodClient*,
+        const ModifyRecordRequest&,
+        ModifyRecordOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DnspodClient::ModifyRecordBatchOutcome DnspodClient::ModifyRecordBatch(const ModifyRecordBatchRequest &request)
@@ -3502,25 +4062,32 @@ DnspodClient::ModifyRecordBatchOutcome DnspodClient::ModifyRecordBatch(const Mod
 
 void DnspodClient::ModifyRecordBatchAsync(const ModifyRecordBatchRequest& request, const ModifyRecordBatchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyRecordBatch(request), context);
-    };
+    using Req = const ModifyRecordBatchRequest&;
+    using Resp = ModifyRecordBatchResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyRecordBatch", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DnspodClient::ModifyRecordBatchOutcomeCallable DnspodClient::ModifyRecordBatchCallable(const ModifyRecordBatchRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyRecordBatchOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyRecordBatch(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyRecordBatchOutcome>>();
+    ModifyRecordBatchAsync(
+    request,
+    [prom](
+        const DnspodClient*,
+        const ModifyRecordBatchRequest&,
+        ModifyRecordBatchOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DnspodClient::ModifyRecordFieldsOutcome DnspodClient::ModifyRecordFields(const ModifyRecordFieldsRequest &request)
@@ -3545,25 +4112,32 @@ DnspodClient::ModifyRecordFieldsOutcome DnspodClient::ModifyRecordFields(const M
 
 void DnspodClient::ModifyRecordFieldsAsync(const ModifyRecordFieldsRequest& request, const ModifyRecordFieldsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyRecordFields(request), context);
-    };
+    using Req = const ModifyRecordFieldsRequest&;
+    using Resp = ModifyRecordFieldsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyRecordFields", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DnspodClient::ModifyRecordFieldsOutcomeCallable DnspodClient::ModifyRecordFieldsCallable(const ModifyRecordFieldsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyRecordFieldsOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyRecordFields(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyRecordFieldsOutcome>>();
+    ModifyRecordFieldsAsync(
+    request,
+    [prom](
+        const DnspodClient*,
+        const ModifyRecordFieldsRequest&,
+        ModifyRecordFieldsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DnspodClient::ModifyRecordGroupOutcome DnspodClient::ModifyRecordGroup(const ModifyRecordGroupRequest &request)
@@ -3588,25 +4162,32 @@ DnspodClient::ModifyRecordGroupOutcome DnspodClient::ModifyRecordGroup(const Mod
 
 void DnspodClient::ModifyRecordGroupAsync(const ModifyRecordGroupRequest& request, const ModifyRecordGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyRecordGroup(request), context);
-    };
+    using Req = const ModifyRecordGroupRequest&;
+    using Resp = ModifyRecordGroupResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyRecordGroup", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DnspodClient::ModifyRecordGroupOutcomeCallable DnspodClient::ModifyRecordGroupCallable(const ModifyRecordGroupRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyRecordGroupOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyRecordGroup(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyRecordGroupOutcome>>();
+    ModifyRecordGroupAsync(
+    request,
+    [prom](
+        const DnspodClient*,
+        const ModifyRecordGroupRequest&,
+        ModifyRecordGroupOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DnspodClient::ModifyRecordRemarkOutcome DnspodClient::ModifyRecordRemark(const ModifyRecordRemarkRequest &request)
@@ -3631,25 +4212,32 @@ DnspodClient::ModifyRecordRemarkOutcome DnspodClient::ModifyRecordRemark(const M
 
 void DnspodClient::ModifyRecordRemarkAsync(const ModifyRecordRemarkRequest& request, const ModifyRecordRemarkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyRecordRemark(request), context);
-    };
+    using Req = const ModifyRecordRemarkRequest&;
+    using Resp = ModifyRecordRemarkResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyRecordRemark", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DnspodClient::ModifyRecordRemarkOutcomeCallable DnspodClient::ModifyRecordRemarkCallable(const ModifyRecordRemarkRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyRecordRemarkOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyRecordRemark(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyRecordRemarkOutcome>>();
+    ModifyRecordRemarkAsync(
+    request,
+    [prom](
+        const DnspodClient*,
+        const ModifyRecordRemarkRequest&,
+        ModifyRecordRemarkOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DnspodClient::ModifyRecordStatusOutcome DnspodClient::ModifyRecordStatus(const ModifyRecordStatusRequest &request)
@@ -3674,25 +4262,32 @@ DnspodClient::ModifyRecordStatusOutcome DnspodClient::ModifyRecordStatus(const M
 
 void DnspodClient::ModifyRecordStatusAsync(const ModifyRecordStatusRequest& request, const ModifyRecordStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyRecordStatus(request), context);
-    };
+    using Req = const ModifyRecordStatusRequest&;
+    using Resp = ModifyRecordStatusResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyRecordStatus", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DnspodClient::ModifyRecordStatusOutcomeCallable DnspodClient::ModifyRecordStatusCallable(const ModifyRecordStatusRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyRecordStatusOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyRecordStatus(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyRecordStatusOutcome>>();
+    ModifyRecordStatusAsync(
+    request,
+    [prom](
+        const DnspodClient*,
+        const ModifyRecordStatusRequest&,
+        ModifyRecordStatusOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DnspodClient::ModifyRecordToGroupOutcome DnspodClient::ModifyRecordToGroup(const ModifyRecordToGroupRequest &request)
@@ -3717,25 +4312,32 @@ DnspodClient::ModifyRecordToGroupOutcome DnspodClient::ModifyRecordToGroup(const
 
 void DnspodClient::ModifyRecordToGroupAsync(const ModifyRecordToGroupRequest& request, const ModifyRecordToGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyRecordToGroup(request), context);
-    };
+    using Req = const ModifyRecordToGroupRequest&;
+    using Resp = ModifyRecordToGroupResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyRecordToGroup", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DnspodClient::ModifyRecordToGroupOutcomeCallable DnspodClient::ModifyRecordToGroupCallable(const ModifyRecordToGroupRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyRecordToGroupOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyRecordToGroup(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyRecordToGroupOutcome>>();
+    ModifyRecordToGroupAsync(
+    request,
+    [prom](
+        const DnspodClient*,
+        const ModifyRecordToGroupRequest&,
+        ModifyRecordToGroupOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DnspodClient::ModifySnapshotConfigOutcome DnspodClient::ModifySnapshotConfig(const ModifySnapshotConfigRequest &request)
@@ -3760,25 +4362,32 @@ DnspodClient::ModifySnapshotConfigOutcome DnspodClient::ModifySnapshotConfig(con
 
 void DnspodClient::ModifySnapshotConfigAsync(const ModifySnapshotConfigRequest& request, const ModifySnapshotConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifySnapshotConfig(request), context);
-    };
+    using Req = const ModifySnapshotConfigRequest&;
+    using Resp = ModifySnapshotConfigResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifySnapshotConfig", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DnspodClient::ModifySnapshotConfigOutcomeCallable DnspodClient::ModifySnapshotConfigCallable(const ModifySnapshotConfigRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifySnapshotConfigOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifySnapshotConfig(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifySnapshotConfigOutcome>>();
+    ModifySnapshotConfigAsync(
+    request,
+    [prom](
+        const DnspodClient*,
+        const ModifySnapshotConfigRequest&,
+        ModifySnapshotConfigOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DnspodClient::ModifySubdomainStatusOutcome DnspodClient::ModifySubdomainStatus(const ModifySubdomainStatusRequest &request)
@@ -3803,25 +4412,32 @@ DnspodClient::ModifySubdomainStatusOutcome DnspodClient::ModifySubdomainStatus(c
 
 void DnspodClient::ModifySubdomainStatusAsync(const ModifySubdomainStatusRequest& request, const ModifySubdomainStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifySubdomainStatus(request), context);
-    };
+    using Req = const ModifySubdomainStatusRequest&;
+    using Resp = ModifySubdomainStatusResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifySubdomainStatus", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DnspodClient::ModifySubdomainStatusOutcomeCallable DnspodClient::ModifySubdomainStatusCallable(const ModifySubdomainStatusRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifySubdomainStatusOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifySubdomainStatus(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifySubdomainStatusOutcome>>();
+    ModifySubdomainStatusAsync(
+    request,
+    [prom](
+        const DnspodClient*,
+        const ModifySubdomainStatusRequest&,
+        ModifySubdomainStatusOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DnspodClient::ModifyTXTRecordOutcome DnspodClient::ModifyTXTRecord(const ModifyTXTRecordRequest &request)
@@ -3846,25 +4462,32 @@ DnspodClient::ModifyTXTRecordOutcome DnspodClient::ModifyTXTRecord(const ModifyT
 
 void DnspodClient::ModifyTXTRecordAsync(const ModifyTXTRecordRequest& request, const ModifyTXTRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyTXTRecord(request), context);
-    };
+    using Req = const ModifyTXTRecordRequest&;
+    using Resp = ModifyTXTRecordResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyTXTRecord", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DnspodClient::ModifyTXTRecordOutcomeCallable DnspodClient::ModifyTXTRecordCallable(const ModifyTXTRecordRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyTXTRecordOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyTXTRecord(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyTXTRecordOutcome>>();
+    ModifyTXTRecordAsync(
+    request,
+    [prom](
+        const DnspodClient*,
+        const ModifyTXTRecordRequest&,
+        ModifyTXTRecordOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DnspodClient::ModifyVasAutoRenewStatusOutcome DnspodClient::ModifyVasAutoRenewStatus(const ModifyVasAutoRenewStatusRequest &request)
@@ -3889,25 +4512,32 @@ DnspodClient::ModifyVasAutoRenewStatusOutcome DnspodClient::ModifyVasAutoRenewSt
 
 void DnspodClient::ModifyVasAutoRenewStatusAsync(const ModifyVasAutoRenewStatusRequest& request, const ModifyVasAutoRenewStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyVasAutoRenewStatus(request), context);
-    };
+    using Req = const ModifyVasAutoRenewStatusRequest&;
+    using Resp = ModifyVasAutoRenewStatusResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyVasAutoRenewStatus", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DnspodClient::ModifyVasAutoRenewStatusOutcomeCallable DnspodClient::ModifyVasAutoRenewStatusCallable(const ModifyVasAutoRenewStatusRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyVasAutoRenewStatusOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyVasAutoRenewStatus(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyVasAutoRenewStatusOutcome>>();
+    ModifyVasAutoRenewStatusAsync(
+    request,
+    [prom](
+        const DnspodClient*,
+        const ModifyVasAutoRenewStatusRequest&,
+        ModifyVasAutoRenewStatusOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DnspodClient::PayOrderWithBalanceOutcome DnspodClient::PayOrderWithBalance(const PayOrderWithBalanceRequest &request)
@@ -3932,25 +4562,32 @@ DnspodClient::PayOrderWithBalanceOutcome DnspodClient::PayOrderWithBalance(const
 
 void DnspodClient::PayOrderWithBalanceAsync(const PayOrderWithBalanceRequest& request, const PayOrderWithBalanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->PayOrderWithBalance(request), context);
-    };
+    using Req = const PayOrderWithBalanceRequest&;
+    using Resp = PayOrderWithBalanceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "PayOrderWithBalance", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DnspodClient::PayOrderWithBalanceOutcomeCallable DnspodClient::PayOrderWithBalanceCallable(const PayOrderWithBalanceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<PayOrderWithBalanceOutcome()>>(
-        [this, request]()
-        {
-            return this->PayOrderWithBalance(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<PayOrderWithBalanceOutcome>>();
+    PayOrderWithBalanceAsync(
+    request,
+    [prom](
+        const DnspodClient*,
+        const PayOrderWithBalanceRequest&,
+        PayOrderWithBalanceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DnspodClient::RollbackRecordSnapshotOutcome DnspodClient::RollbackRecordSnapshot(const RollbackRecordSnapshotRequest &request)
@@ -3975,25 +4612,32 @@ DnspodClient::RollbackRecordSnapshotOutcome DnspodClient::RollbackRecordSnapshot
 
 void DnspodClient::RollbackRecordSnapshotAsync(const RollbackRecordSnapshotRequest& request, const RollbackRecordSnapshotAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->RollbackRecordSnapshot(request), context);
-    };
+    using Req = const RollbackRecordSnapshotRequest&;
+    using Resp = RollbackRecordSnapshotResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "RollbackRecordSnapshot", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DnspodClient::RollbackRecordSnapshotOutcomeCallable DnspodClient::RollbackRecordSnapshotCallable(const RollbackRecordSnapshotRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<RollbackRecordSnapshotOutcome()>>(
-        [this, request]()
-        {
-            return this->RollbackRecordSnapshot(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<RollbackRecordSnapshotOutcome>>();
+    RollbackRecordSnapshotAsync(
+    request,
+    [prom](
+        const DnspodClient*,
+        const RollbackRecordSnapshotRequest&,
+        RollbackRecordSnapshotOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DnspodClient::RollbackSnapshotOutcome DnspodClient::RollbackSnapshot(const RollbackSnapshotRequest &request)
@@ -4018,24 +4662,31 @@ DnspodClient::RollbackSnapshotOutcome DnspodClient::RollbackSnapshot(const Rollb
 
 void DnspodClient::RollbackSnapshotAsync(const RollbackSnapshotRequest& request, const RollbackSnapshotAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->RollbackSnapshot(request), context);
-    };
+    using Req = const RollbackSnapshotRequest&;
+    using Resp = RollbackSnapshotResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "RollbackSnapshot", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DnspodClient::RollbackSnapshotOutcomeCallable DnspodClient::RollbackSnapshotCallable(const RollbackSnapshotRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<RollbackSnapshotOutcome()>>(
-        [this, request]()
-        {
-            return this->RollbackSnapshot(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<RollbackSnapshotOutcome>>();
+    RollbackSnapshotAsync(
+    request,
+    [prom](
+        const DnspodClient*,
+        const RollbackSnapshotRequest&,
+        RollbackSnapshotOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 

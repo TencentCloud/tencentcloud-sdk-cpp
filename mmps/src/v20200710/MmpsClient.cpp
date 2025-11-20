@@ -62,25 +62,32 @@ MmpsClient::CreateAppScanTaskOutcome MmpsClient::CreateAppScanTask(const CreateA
 
 void MmpsClient::CreateAppScanTaskAsync(const CreateAppScanTaskRequest& request, const CreateAppScanTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateAppScanTask(request), context);
-    };
+    using Req = const CreateAppScanTaskRequest&;
+    using Resp = CreateAppScanTaskResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateAppScanTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MmpsClient::CreateAppScanTaskOutcomeCallable MmpsClient::CreateAppScanTaskCallable(const CreateAppScanTaskRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateAppScanTaskOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateAppScanTask(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateAppScanTaskOutcome>>();
+    CreateAppScanTaskAsync(
+    request,
+    [prom](
+        const MmpsClient*,
+        const CreateAppScanTaskRequest&,
+        CreateAppScanTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MmpsClient::CreateAppScanTaskRepeatOutcome MmpsClient::CreateAppScanTaskRepeat(const CreateAppScanTaskRepeatRequest &request)
@@ -105,25 +112,32 @@ MmpsClient::CreateAppScanTaskRepeatOutcome MmpsClient::CreateAppScanTaskRepeat(c
 
 void MmpsClient::CreateAppScanTaskRepeatAsync(const CreateAppScanTaskRepeatRequest& request, const CreateAppScanTaskRepeatAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateAppScanTaskRepeat(request), context);
-    };
+    using Req = const CreateAppScanTaskRepeatRequest&;
+    using Resp = CreateAppScanTaskRepeatResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateAppScanTaskRepeat", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MmpsClient::CreateAppScanTaskRepeatOutcomeCallable MmpsClient::CreateAppScanTaskRepeatCallable(const CreateAppScanTaskRepeatRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateAppScanTaskRepeatOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateAppScanTaskRepeat(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateAppScanTaskRepeatOutcome>>();
+    CreateAppScanTaskRepeatAsync(
+    request,
+    [prom](
+        const MmpsClient*,
+        const CreateAppScanTaskRepeatRequest&,
+        CreateAppScanTaskRepeatOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MmpsClient::CreateFlySecMiniAppProfessionalScanTaskOutcome MmpsClient::CreateFlySecMiniAppProfessionalScanTask(const CreateFlySecMiniAppProfessionalScanTaskRequest &request)
@@ -148,25 +162,32 @@ MmpsClient::CreateFlySecMiniAppProfessionalScanTaskOutcome MmpsClient::CreateFly
 
 void MmpsClient::CreateFlySecMiniAppProfessionalScanTaskAsync(const CreateFlySecMiniAppProfessionalScanTaskRequest& request, const CreateFlySecMiniAppProfessionalScanTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateFlySecMiniAppProfessionalScanTask(request), context);
-    };
+    using Req = const CreateFlySecMiniAppProfessionalScanTaskRequest&;
+    using Resp = CreateFlySecMiniAppProfessionalScanTaskResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateFlySecMiniAppProfessionalScanTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MmpsClient::CreateFlySecMiniAppProfessionalScanTaskOutcomeCallable MmpsClient::CreateFlySecMiniAppProfessionalScanTaskCallable(const CreateFlySecMiniAppProfessionalScanTaskRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateFlySecMiniAppProfessionalScanTaskOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateFlySecMiniAppProfessionalScanTask(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateFlySecMiniAppProfessionalScanTaskOutcome>>();
+    CreateFlySecMiniAppProfessionalScanTaskAsync(
+    request,
+    [prom](
+        const MmpsClient*,
+        const CreateFlySecMiniAppProfessionalScanTaskRequest&,
+        CreateFlySecMiniAppProfessionalScanTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MmpsClient::CreateFlySecMiniAppScanTaskOutcome MmpsClient::CreateFlySecMiniAppScanTask(const CreateFlySecMiniAppScanTaskRequest &request)
@@ -191,25 +212,32 @@ MmpsClient::CreateFlySecMiniAppScanTaskOutcome MmpsClient::CreateFlySecMiniAppSc
 
 void MmpsClient::CreateFlySecMiniAppScanTaskAsync(const CreateFlySecMiniAppScanTaskRequest& request, const CreateFlySecMiniAppScanTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateFlySecMiniAppScanTask(request), context);
-    };
+    using Req = const CreateFlySecMiniAppScanTaskRequest&;
+    using Resp = CreateFlySecMiniAppScanTaskResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateFlySecMiniAppScanTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MmpsClient::CreateFlySecMiniAppScanTaskOutcomeCallable MmpsClient::CreateFlySecMiniAppScanTaskCallable(const CreateFlySecMiniAppScanTaskRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateFlySecMiniAppScanTaskOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateFlySecMiniAppScanTask(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateFlySecMiniAppScanTaskOutcome>>();
+    CreateFlySecMiniAppScanTaskAsync(
+    request,
+    [prom](
+        const MmpsClient*,
+        const CreateFlySecMiniAppScanTaskRequest&,
+        CreateFlySecMiniAppScanTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MmpsClient::CreateFlySecMiniAppScanTaskRepeatOutcome MmpsClient::CreateFlySecMiniAppScanTaskRepeat(const CreateFlySecMiniAppScanTaskRepeatRequest &request)
@@ -234,25 +262,32 @@ MmpsClient::CreateFlySecMiniAppScanTaskRepeatOutcome MmpsClient::CreateFlySecMin
 
 void MmpsClient::CreateFlySecMiniAppScanTaskRepeatAsync(const CreateFlySecMiniAppScanTaskRepeatRequest& request, const CreateFlySecMiniAppScanTaskRepeatAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateFlySecMiniAppScanTaskRepeat(request), context);
-    };
+    using Req = const CreateFlySecMiniAppScanTaskRepeatRequest&;
+    using Resp = CreateFlySecMiniAppScanTaskRepeatResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateFlySecMiniAppScanTaskRepeat", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MmpsClient::CreateFlySecMiniAppScanTaskRepeatOutcomeCallable MmpsClient::CreateFlySecMiniAppScanTaskRepeatCallable(const CreateFlySecMiniAppScanTaskRepeatRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateFlySecMiniAppScanTaskRepeatOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateFlySecMiniAppScanTaskRepeat(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateFlySecMiniAppScanTaskRepeatOutcome>>();
+    CreateFlySecMiniAppScanTaskRepeatAsync(
+    request,
+    [prom](
+        const MmpsClient*,
+        const CreateFlySecMiniAppScanTaskRepeatRequest&,
+        CreateFlySecMiniAppScanTaskRepeatOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MmpsClient::DescribeBasicDiagnosisResourceUsageInfoOutcome MmpsClient::DescribeBasicDiagnosisResourceUsageInfo(const DescribeBasicDiagnosisResourceUsageInfoRequest &request)
@@ -277,25 +312,32 @@ MmpsClient::DescribeBasicDiagnosisResourceUsageInfoOutcome MmpsClient::DescribeB
 
 void MmpsClient::DescribeBasicDiagnosisResourceUsageInfoAsync(const DescribeBasicDiagnosisResourceUsageInfoRequest& request, const DescribeBasicDiagnosisResourceUsageInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeBasicDiagnosisResourceUsageInfo(request), context);
-    };
+    using Req = const DescribeBasicDiagnosisResourceUsageInfoRequest&;
+    using Resp = DescribeBasicDiagnosisResourceUsageInfoResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeBasicDiagnosisResourceUsageInfo", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MmpsClient::DescribeBasicDiagnosisResourceUsageInfoOutcomeCallable MmpsClient::DescribeBasicDiagnosisResourceUsageInfoCallable(const DescribeBasicDiagnosisResourceUsageInfoRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeBasicDiagnosisResourceUsageInfoOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeBasicDiagnosisResourceUsageInfo(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeBasicDiagnosisResourceUsageInfoOutcome>>();
+    DescribeBasicDiagnosisResourceUsageInfoAsync(
+    request,
+    [prom](
+        const MmpsClient*,
+        const DescribeBasicDiagnosisResourceUsageInfoRequest&,
+        DescribeBasicDiagnosisResourceUsageInfoOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MmpsClient::DescribeFlySecMiniAppReportUrlOutcome MmpsClient::DescribeFlySecMiniAppReportUrl(const DescribeFlySecMiniAppReportUrlRequest &request)
@@ -320,25 +362,32 @@ MmpsClient::DescribeFlySecMiniAppReportUrlOutcome MmpsClient::DescribeFlySecMini
 
 void MmpsClient::DescribeFlySecMiniAppReportUrlAsync(const DescribeFlySecMiniAppReportUrlRequest& request, const DescribeFlySecMiniAppReportUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeFlySecMiniAppReportUrl(request), context);
-    };
+    using Req = const DescribeFlySecMiniAppReportUrlRequest&;
+    using Resp = DescribeFlySecMiniAppReportUrlResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeFlySecMiniAppReportUrl", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MmpsClient::DescribeFlySecMiniAppReportUrlOutcomeCallable MmpsClient::DescribeFlySecMiniAppReportUrlCallable(const DescribeFlySecMiniAppReportUrlRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeFlySecMiniAppReportUrlOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeFlySecMiniAppReportUrl(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeFlySecMiniAppReportUrlOutcome>>();
+    DescribeFlySecMiniAppReportUrlAsync(
+    request,
+    [prom](
+        const MmpsClient*,
+        const DescribeFlySecMiniAppReportUrlRequest&,
+        DescribeFlySecMiniAppReportUrlOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MmpsClient::DescribeFlySecMiniAppScanReportListOutcome MmpsClient::DescribeFlySecMiniAppScanReportList(const DescribeFlySecMiniAppScanReportListRequest &request)
@@ -363,25 +412,32 @@ MmpsClient::DescribeFlySecMiniAppScanReportListOutcome MmpsClient::DescribeFlySe
 
 void MmpsClient::DescribeFlySecMiniAppScanReportListAsync(const DescribeFlySecMiniAppScanReportListRequest& request, const DescribeFlySecMiniAppScanReportListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeFlySecMiniAppScanReportList(request), context);
-    };
+    using Req = const DescribeFlySecMiniAppScanReportListRequest&;
+    using Resp = DescribeFlySecMiniAppScanReportListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeFlySecMiniAppScanReportList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MmpsClient::DescribeFlySecMiniAppScanReportListOutcomeCallable MmpsClient::DescribeFlySecMiniAppScanReportListCallable(const DescribeFlySecMiniAppScanReportListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeFlySecMiniAppScanReportListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeFlySecMiniAppScanReportList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeFlySecMiniAppScanReportListOutcome>>();
+    DescribeFlySecMiniAppScanReportListAsync(
+    request,
+    [prom](
+        const MmpsClient*,
+        const DescribeFlySecMiniAppScanReportListRequest&,
+        DescribeFlySecMiniAppScanReportListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MmpsClient::DescribeFlySecMiniAppScanTaskListOutcome MmpsClient::DescribeFlySecMiniAppScanTaskList(const DescribeFlySecMiniAppScanTaskListRequest &request)
@@ -406,25 +462,32 @@ MmpsClient::DescribeFlySecMiniAppScanTaskListOutcome MmpsClient::DescribeFlySecM
 
 void MmpsClient::DescribeFlySecMiniAppScanTaskListAsync(const DescribeFlySecMiniAppScanTaskListRequest& request, const DescribeFlySecMiniAppScanTaskListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeFlySecMiniAppScanTaskList(request), context);
-    };
+    using Req = const DescribeFlySecMiniAppScanTaskListRequest&;
+    using Resp = DescribeFlySecMiniAppScanTaskListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeFlySecMiniAppScanTaskList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MmpsClient::DescribeFlySecMiniAppScanTaskListOutcomeCallable MmpsClient::DescribeFlySecMiniAppScanTaskListCallable(const DescribeFlySecMiniAppScanTaskListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeFlySecMiniAppScanTaskListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeFlySecMiniAppScanTaskList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeFlySecMiniAppScanTaskListOutcome>>();
+    DescribeFlySecMiniAppScanTaskListAsync(
+    request,
+    [prom](
+        const MmpsClient*,
+        const DescribeFlySecMiniAppScanTaskListRequest&,
+        DescribeFlySecMiniAppScanTaskListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MmpsClient::DescribeFlySecMiniAppScanTaskParamOutcome MmpsClient::DescribeFlySecMiniAppScanTaskParam(const DescribeFlySecMiniAppScanTaskParamRequest &request)
@@ -449,25 +512,32 @@ MmpsClient::DescribeFlySecMiniAppScanTaskParamOutcome MmpsClient::DescribeFlySec
 
 void MmpsClient::DescribeFlySecMiniAppScanTaskParamAsync(const DescribeFlySecMiniAppScanTaskParamRequest& request, const DescribeFlySecMiniAppScanTaskParamAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeFlySecMiniAppScanTaskParam(request), context);
-    };
+    using Req = const DescribeFlySecMiniAppScanTaskParamRequest&;
+    using Resp = DescribeFlySecMiniAppScanTaskParamResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeFlySecMiniAppScanTaskParam", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MmpsClient::DescribeFlySecMiniAppScanTaskParamOutcomeCallable MmpsClient::DescribeFlySecMiniAppScanTaskParamCallable(const DescribeFlySecMiniAppScanTaskParamRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeFlySecMiniAppScanTaskParamOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeFlySecMiniAppScanTaskParam(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeFlySecMiniAppScanTaskParamOutcome>>();
+    DescribeFlySecMiniAppScanTaskParamAsync(
+    request,
+    [prom](
+        const MmpsClient*,
+        const DescribeFlySecMiniAppScanTaskParamRequest&,
+        DescribeFlySecMiniAppScanTaskParamOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MmpsClient::DescribeFlySecMiniAppScanTaskStatusOutcome MmpsClient::DescribeFlySecMiniAppScanTaskStatus(const DescribeFlySecMiniAppScanTaskStatusRequest &request)
@@ -492,25 +562,32 @@ MmpsClient::DescribeFlySecMiniAppScanTaskStatusOutcome MmpsClient::DescribeFlySe
 
 void MmpsClient::DescribeFlySecMiniAppScanTaskStatusAsync(const DescribeFlySecMiniAppScanTaskStatusRequest& request, const DescribeFlySecMiniAppScanTaskStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeFlySecMiniAppScanTaskStatus(request), context);
-    };
+    using Req = const DescribeFlySecMiniAppScanTaskStatusRequest&;
+    using Resp = DescribeFlySecMiniAppScanTaskStatusResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeFlySecMiniAppScanTaskStatus", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MmpsClient::DescribeFlySecMiniAppScanTaskStatusOutcomeCallable MmpsClient::DescribeFlySecMiniAppScanTaskStatusCallable(const DescribeFlySecMiniAppScanTaskStatusRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeFlySecMiniAppScanTaskStatusOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeFlySecMiniAppScanTaskStatus(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeFlySecMiniAppScanTaskStatusOutcome>>();
+    DescribeFlySecMiniAppScanTaskStatusAsync(
+    request,
+    [prom](
+        const MmpsClient*,
+        const DescribeFlySecMiniAppScanTaskStatusRequest&,
+        DescribeFlySecMiniAppScanTaskStatusOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MmpsClient::DescribeResourceUsageInfoOutcome MmpsClient::DescribeResourceUsageInfo(const DescribeResourceUsageInfoRequest &request)
@@ -535,25 +612,32 @@ MmpsClient::DescribeResourceUsageInfoOutcome MmpsClient::DescribeResourceUsageIn
 
 void MmpsClient::DescribeResourceUsageInfoAsync(const DescribeResourceUsageInfoRequest& request, const DescribeResourceUsageInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeResourceUsageInfo(request), context);
-    };
+    using Req = const DescribeResourceUsageInfoRequest&;
+    using Resp = DescribeResourceUsageInfoResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeResourceUsageInfo", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MmpsClient::DescribeResourceUsageInfoOutcomeCallable MmpsClient::DescribeResourceUsageInfoCallable(const DescribeResourceUsageInfoRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeResourceUsageInfoOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeResourceUsageInfo(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeResourceUsageInfoOutcome>>();
+    DescribeResourceUsageInfoAsync(
+    request,
+    [prom](
+        const MmpsClient*,
+        const DescribeResourceUsageInfoRequest&,
+        DescribeResourceUsageInfoOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MmpsClient::DescribeScanTaskListOutcome MmpsClient::DescribeScanTaskList(const DescribeScanTaskListRequest &request)
@@ -578,25 +662,32 @@ MmpsClient::DescribeScanTaskListOutcome MmpsClient::DescribeScanTaskList(const D
 
 void MmpsClient::DescribeScanTaskListAsync(const DescribeScanTaskListRequest& request, const DescribeScanTaskListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeScanTaskList(request), context);
-    };
+    using Req = const DescribeScanTaskListRequest&;
+    using Resp = DescribeScanTaskListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeScanTaskList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MmpsClient::DescribeScanTaskListOutcomeCallable MmpsClient::DescribeScanTaskListCallable(const DescribeScanTaskListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeScanTaskListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeScanTaskList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeScanTaskListOutcome>>();
+    DescribeScanTaskListAsync(
+    request,
+    [prom](
+        const MmpsClient*,
+        const DescribeScanTaskListRequest&,
+        DescribeScanTaskListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MmpsClient::DescribeScanTaskReportUrlOutcome MmpsClient::DescribeScanTaskReportUrl(const DescribeScanTaskReportUrlRequest &request)
@@ -621,25 +712,32 @@ MmpsClient::DescribeScanTaskReportUrlOutcome MmpsClient::DescribeScanTaskReportU
 
 void MmpsClient::DescribeScanTaskReportUrlAsync(const DescribeScanTaskReportUrlRequest& request, const DescribeScanTaskReportUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeScanTaskReportUrl(request), context);
-    };
+    using Req = const DescribeScanTaskReportUrlRequest&;
+    using Resp = DescribeScanTaskReportUrlResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeScanTaskReportUrl", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MmpsClient::DescribeScanTaskReportUrlOutcomeCallable MmpsClient::DescribeScanTaskReportUrlCallable(const DescribeScanTaskReportUrlRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeScanTaskReportUrlOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeScanTaskReportUrl(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeScanTaskReportUrlOutcome>>();
+    DescribeScanTaskReportUrlAsync(
+    request,
+    [prom](
+        const MmpsClient*,
+        const DescribeScanTaskReportUrlRequest&,
+        DescribeScanTaskReportUrlOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MmpsClient::DescribeScanTaskStatusOutcome MmpsClient::DescribeScanTaskStatus(const DescribeScanTaskStatusRequest &request)
@@ -664,24 +762,31 @@ MmpsClient::DescribeScanTaskStatusOutcome MmpsClient::DescribeScanTaskStatus(con
 
 void MmpsClient::DescribeScanTaskStatusAsync(const DescribeScanTaskStatusRequest& request, const DescribeScanTaskStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeScanTaskStatus(request), context);
-    };
+    using Req = const DescribeScanTaskStatusRequest&;
+    using Resp = DescribeScanTaskStatusResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeScanTaskStatus", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MmpsClient::DescribeScanTaskStatusOutcomeCallable MmpsClient::DescribeScanTaskStatusCallable(const DescribeScanTaskStatusRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeScanTaskStatusOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeScanTaskStatus(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeScanTaskStatusOutcome>>();
+    DescribeScanTaskStatusAsync(
+    request,
+    [prom](
+        const MmpsClient*,
+        const DescribeScanTaskStatusRequest&,
+        DescribeScanTaskStatusOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 

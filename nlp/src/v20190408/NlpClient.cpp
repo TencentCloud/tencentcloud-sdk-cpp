@@ -62,25 +62,32 @@ NlpClient::AnalyzeSentimentOutcome NlpClient::AnalyzeSentiment(const AnalyzeSent
 
 void NlpClient::AnalyzeSentimentAsync(const AnalyzeSentimentRequest& request, const AnalyzeSentimentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->AnalyzeSentiment(request), context);
-    };
+    using Req = const AnalyzeSentimentRequest&;
+    using Resp = AnalyzeSentimentResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "AnalyzeSentiment", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 NlpClient::AnalyzeSentimentOutcomeCallable NlpClient::AnalyzeSentimentCallable(const AnalyzeSentimentRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<AnalyzeSentimentOutcome()>>(
-        [this, request]()
-        {
-            return this->AnalyzeSentiment(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<AnalyzeSentimentOutcome>>();
+    AnalyzeSentimentAsync(
+    request,
+    [prom](
+        const NlpClient*,
+        const AnalyzeSentimentRequest&,
+        AnalyzeSentimentOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 NlpClient::ClassifyContentOutcome NlpClient::ClassifyContent(const ClassifyContentRequest &request)
@@ -105,25 +112,32 @@ NlpClient::ClassifyContentOutcome NlpClient::ClassifyContent(const ClassifyConte
 
 void NlpClient::ClassifyContentAsync(const ClassifyContentRequest& request, const ClassifyContentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ClassifyContent(request), context);
-    };
+    using Req = const ClassifyContentRequest&;
+    using Resp = ClassifyContentResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ClassifyContent", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 NlpClient::ClassifyContentOutcomeCallable NlpClient::ClassifyContentCallable(const ClassifyContentRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ClassifyContentOutcome()>>(
-        [this, request]()
-        {
-            return this->ClassifyContent(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ClassifyContentOutcome>>();
+    ClassifyContentAsync(
+    request,
+    [prom](
+        const NlpClient*,
+        const ClassifyContentRequest&,
+        ClassifyContentOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 NlpClient::ComposeCoupletOutcome NlpClient::ComposeCouplet(const ComposeCoupletRequest &request)
@@ -148,25 +162,32 @@ NlpClient::ComposeCoupletOutcome NlpClient::ComposeCouplet(const ComposeCoupletR
 
 void NlpClient::ComposeCoupletAsync(const ComposeCoupletRequest& request, const ComposeCoupletAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ComposeCouplet(request), context);
-    };
+    using Req = const ComposeCoupletRequest&;
+    using Resp = ComposeCoupletResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ComposeCouplet", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 NlpClient::ComposeCoupletOutcomeCallable NlpClient::ComposeCoupletCallable(const ComposeCoupletRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ComposeCoupletOutcome()>>(
-        [this, request]()
-        {
-            return this->ComposeCouplet(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ComposeCoupletOutcome>>();
+    ComposeCoupletAsync(
+    request,
+    [prom](
+        const NlpClient*,
+        const ComposeCoupletRequest&,
+        ComposeCoupletOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 NlpClient::EvaluateSentenceSimilarityOutcome NlpClient::EvaluateSentenceSimilarity(const EvaluateSentenceSimilarityRequest &request)
@@ -191,25 +212,32 @@ NlpClient::EvaluateSentenceSimilarityOutcome NlpClient::EvaluateSentenceSimilari
 
 void NlpClient::EvaluateSentenceSimilarityAsync(const EvaluateSentenceSimilarityRequest& request, const EvaluateSentenceSimilarityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->EvaluateSentenceSimilarity(request), context);
-    };
+    using Req = const EvaluateSentenceSimilarityRequest&;
+    using Resp = EvaluateSentenceSimilarityResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "EvaluateSentenceSimilarity", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 NlpClient::EvaluateSentenceSimilarityOutcomeCallable NlpClient::EvaluateSentenceSimilarityCallable(const EvaluateSentenceSimilarityRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<EvaluateSentenceSimilarityOutcome()>>(
-        [this, request]()
-        {
-            return this->EvaluateSentenceSimilarity(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<EvaluateSentenceSimilarityOutcome>>();
+    EvaluateSentenceSimilarityAsync(
+    request,
+    [prom](
+        const NlpClient*,
+        const EvaluateSentenceSimilarityRequest&,
+        EvaluateSentenceSimilarityOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 NlpClient::ParseWordsOutcome NlpClient::ParseWords(const ParseWordsRequest &request)
@@ -234,25 +262,32 @@ NlpClient::ParseWordsOutcome NlpClient::ParseWords(const ParseWordsRequest &requ
 
 void NlpClient::ParseWordsAsync(const ParseWordsRequest& request, const ParseWordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ParseWords(request), context);
-    };
+    using Req = const ParseWordsRequest&;
+    using Resp = ParseWordsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ParseWords", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 NlpClient::ParseWordsOutcomeCallable NlpClient::ParseWordsCallable(const ParseWordsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ParseWordsOutcome()>>(
-        [this, request]()
-        {
-            return this->ParseWords(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ParseWordsOutcome>>();
+    ParseWordsAsync(
+    request,
+    [prom](
+        const NlpClient*,
+        const ParseWordsRequest&,
+        ParseWordsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 NlpClient::SentenceCorrectionOutcome NlpClient::SentenceCorrection(const SentenceCorrectionRequest &request)
@@ -277,24 +312,31 @@ NlpClient::SentenceCorrectionOutcome NlpClient::SentenceCorrection(const Sentenc
 
 void NlpClient::SentenceCorrectionAsync(const SentenceCorrectionRequest& request, const SentenceCorrectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->SentenceCorrection(request), context);
-    };
+    using Req = const SentenceCorrectionRequest&;
+    using Resp = SentenceCorrectionResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "SentenceCorrection", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 NlpClient::SentenceCorrectionOutcomeCallable NlpClient::SentenceCorrectionCallable(const SentenceCorrectionRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<SentenceCorrectionOutcome()>>(
-        [this, request]()
-        {
-            return this->SentenceCorrection(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<SentenceCorrectionOutcome>>();
+    SentenceCorrectionAsync(
+    request,
+    [prom](
+        const NlpClient*,
+        const SentenceCorrectionRequest&,
+        SentenceCorrectionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 

@@ -62,25 +62,32 @@ IcClient::DescribeAppOutcome IcClient::DescribeApp(const DescribeAppRequest &req
 
 void IcClient::DescribeAppAsync(const DescribeAppRequest& request, const DescribeAppAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeApp(request), context);
-    };
+    using Req = const DescribeAppRequest&;
+    using Resp = DescribeAppResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeApp", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IcClient::DescribeAppOutcomeCallable IcClient::DescribeAppCallable(const DescribeAppRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAppOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeApp(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAppOutcome>>();
+    DescribeAppAsync(
+    request,
+    [prom](
+        const IcClient*,
+        const DescribeAppRequest&,
+        DescribeAppOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IcClient::DescribeCardOutcome IcClient::DescribeCard(const DescribeCardRequest &request)
@@ -105,25 +112,32 @@ IcClient::DescribeCardOutcome IcClient::DescribeCard(const DescribeCardRequest &
 
 void IcClient::DescribeCardAsync(const DescribeCardRequest& request, const DescribeCardAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeCard(request), context);
-    };
+    using Req = const DescribeCardRequest&;
+    using Resp = DescribeCardResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeCard", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IcClient::DescribeCardOutcomeCallable IcClient::DescribeCardCallable(const DescribeCardRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeCardOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeCard(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeCardOutcome>>();
+    DescribeCardAsync(
+    request,
+    [prom](
+        const IcClient*,
+        const DescribeCardRequest&,
+        DescribeCardOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IcClient::DescribeCardsOutcome IcClient::DescribeCards(const DescribeCardsRequest &request)
@@ -148,25 +162,32 @@ IcClient::DescribeCardsOutcome IcClient::DescribeCards(const DescribeCardsReques
 
 void IcClient::DescribeCardsAsync(const DescribeCardsRequest& request, const DescribeCardsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeCards(request), context);
-    };
+    using Req = const DescribeCardsRequest&;
+    using Resp = DescribeCardsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeCards", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IcClient::DescribeCardsOutcomeCallable IcClient::DescribeCardsCallable(const DescribeCardsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeCardsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeCards(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeCardsOutcome>>();
+    DescribeCardsAsync(
+    request,
+    [prom](
+        const IcClient*,
+        const DescribeCardsRequest&,
+        DescribeCardsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IcClient::DescribeSmsOutcome IcClient::DescribeSms(const DescribeSmsRequest &request)
@@ -191,25 +212,32 @@ IcClient::DescribeSmsOutcome IcClient::DescribeSms(const DescribeSmsRequest &req
 
 void IcClient::DescribeSmsAsync(const DescribeSmsRequest& request, const DescribeSmsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeSms(request), context);
-    };
+    using Req = const DescribeSmsRequest&;
+    using Resp = DescribeSmsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeSms", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IcClient::DescribeSmsOutcomeCallable IcClient::DescribeSmsCallable(const DescribeSmsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeSmsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeSms(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeSmsOutcome>>();
+    DescribeSmsAsync(
+    request,
+    [prom](
+        const IcClient*,
+        const DescribeSmsRequest&,
+        DescribeSmsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IcClient::ModifyUserCardRemarkOutcome IcClient::ModifyUserCardRemark(const ModifyUserCardRemarkRequest &request)
@@ -234,25 +262,32 @@ IcClient::ModifyUserCardRemarkOutcome IcClient::ModifyUserCardRemark(const Modif
 
 void IcClient::ModifyUserCardRemarkAsync(const ModifyUserCardRemarkRequest& request, const ModifyUserCardRemarkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyUserCardRemark(request), context);
-    };
+    using Req = const ModifyUserCardRemarkRequest&;
+    using Resp = ModifyUserCardRemarkResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyUserCardRemark", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IcClient::ModifyUserCardRemarkOutcomeCallable IcClient::ModifyUserCardRemarkCallable(const ModifyUserCardRemarkRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyUserCardRemarkOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyUserCardRemark(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyUserCardRemarkOutcome>>();
+    ModifyUserCardRemarkAsync(
+    request,
+    [prom](
+        const IcClient*,
+        const ModifyUserCardRemarkRequest&,
+        ModifyUserCardRemarkOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IcClient::PayForExtendDataOutcome IcClient::PayForExtendData(const PayForExtendDataRequest &request)
@@ -277,25 +312,32 @@ IcClient::PayForExtendDataOutcome IcClient::PayForExtendData(const PayForExtendD
 
 void IcClient::PayForExtendDataAsync(const PayForExtendDataRequest& request, const PayForExtendDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->PayForExtendData(request), context);
-    };
+    using Req = const PayForExtendDataRequest&;
+    using Resp = PayForExtendDataResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "PayForExtendData", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IcClient::PayForExtendDataOutcomeCallable IcClient::PayForExtendDataCallable(const PayForExtendDataRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<PayForExtendDataOutcome()>>(
-        [this, request]()
-        {
-            return this->PayForExtendData(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<PayForExtendDataOutcome>>();
+    PayForExtendDataAsync(
+    request,
+    [prom](
+        const IcClient*,
+        const PayForExtendDataRequest&,
+        PayForExtendDataOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IcClient::RenewCardsOutcome IcClient::RenewCards(const RenewCardsRequest &request)
@@ -320,25 +362,32 @@ IcClient::RenewCardsOutcome IcClient::RenewCards(const RenewCardsRequest &reques
 
 void IcClient::RenewCardsAsync(const RenewCardsRequest& request, const RenewCardsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->RenewCards(request), context);
-    };
+    using Req = const RenewCardsRequest&;
+    using Resp = RenewCardsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "RenewCards", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IcClient::RenewCardsOutcomeCallable IcClient::RenewCardsCallable(const RenewCardsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<RenewCardsOutcome()>>(
-        [this, request]()
-        {
-            return this->RenewCards(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<RenewCardsOutcome>>();
+    RenewCardsAsync(
+    request,
+    [prom](
+        const IcClient*,
+        const RenewCardsRequest&,
+        RenewCardsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IcClient::SendMultiSmsOutcome IcClient::SendMultiSms(const SendMultiSmsRequest &request)
@@ -363,25 +412,32 @@ IcClient::SendMultiSmsOutcome IcClient::SendMultiSms(const SendMultiSmsRequest &
 
 void IcClient::SendMultiSmsAsync(const SendMultiSmsRequest& request, const SendMultiSmsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->SendMultiSms(request), context);
-    };
+    using Req = const SendMultiSmsRequest&;
+    using Resp = SendMultiSmsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "SendMultiSms", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IcClient::SendMultiSmsOutcomeCallable IcClient::SendMultiSmsCallable(const SendMultiSmsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<SendMultiSmsOutcome()>>(
-        [this, request]()
-        {
-            return this->SendMultiSms(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<SendMultiSmsOutcome>>();
+    SendMultiSmsAsync(
+    request,
+    [prom](
+        const IcClient*,
+        const SendMultiSmsRequest&,
+        SendMultiSmsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IcClient::SendSmsOutcome IcClient::SendSms(const SendSmsRequest &request)
@@ -406,24 +462,31 @@ IcClient::SendSmsOutcome IcClient::SendSms(const SendSmsRequest &request)
 
 void IcClient::SendSmsAsync(const SendSmsRequest& request, const SendSmsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->SendSms(request), context);
-    };
+    using Req = const SendSmsRequest&;
+    using Resp = SendSmsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "SendSms", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IcClient::SendSmsOutcomeCallable IcClient::SendSmsCallable(const SendSmsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<SendSmsOutcome()>>(
-        [this, request]()
-        {
-            return this->SendSms(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<SendSmsOutcome>>();
+    SendSmsAsync(
+    request,
+    [prom](
+        const IcClient*,
+        const SendSmsRequest&,
+        SendSmsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 

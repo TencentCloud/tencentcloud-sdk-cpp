@@ -62,24 +62,31 @@ MallClient::DescribeDrawResourceListOutcome MallClient::DescribeDrawResourceList
 
 void MallClient::DescribeDrawResourceListAsync(const DescribeDrawResourceListRequest& request, const DescribeDrawResourceListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDrawResourceList(request), context);
-    };
+    using Req = const DescribeDrawResourceListRequest&;
+    using Resp = DescribeDrawResourceListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeDrawResourceList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MallClient::DescribeDrawResourceListOutcomeCallable MallClient::DescribeDrawResourceListCallable(const DescribeDrawResourceListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeDrawResourceListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDrawResourceList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeDrawResourceListOutcome>>();
+    DescribeDrawResourceListAsync(
+    request,
+    [prom](
+        const MallClient*,
+        const DescribeDrawResourceListRequest&,
+        DescribeDrawResourceListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 

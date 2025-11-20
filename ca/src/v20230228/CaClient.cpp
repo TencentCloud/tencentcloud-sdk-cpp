@@ -62,25 +62,32 @@ CaClient::CreateVerifyReportOutcome CaClient::CreateVerifyReport(const CreateVer
 
 void CaClient::CreateVerifyReportAsync(const CreateVerifyReportRequest& request, const CreateVerifyReportAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateVerifyReport(request), context);
-    };
+    using Req = const CreateVerifyReportRequest&;
+    using Resp = CreateVerifyReportResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateVerifyReport", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CaClient::CreateVerifyReportOutcomeCallable CaClient::CreateVerifyReportCallable(const CreateVerifyReportRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateVerifyReportOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateVerifyReport(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateVerifyReportOutcome>>();
+    CreateVerifyReportAsync(
+    request,
+    [prom](
+        const CaClient*,
+        const CreateVerifyReportRequest&,
+        CreateVerifyReportOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CaClient::DescribeVerifyReportOutcome CaClient::DescribeVerifyReport(const DescribeVerifyReportRequest &request)
@@ -105,25 +112,32 @@ CaClient::DescribeVerifyReportOutcome CaClient::DescribeVerifyReport(const Descr
 
 void CaClient::DescribeVerifyReportAsync(const DescribeVerifyReportRequest& request, const DescribeVerifyReportAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeVerifyReport(request), context);
-    };
+    using Req = const DescribeVerifyReportRequest&;
+    using Resp = DescribeVerifyReportResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeVerifyReport", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CaClient::DescribeVerifyReportOutcomeCallable CaClient::DescribeVerifyReportCallable(const DescribeVerifyReportRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeVerifyReportOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeVerifyReport(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeVerifyReportOutcome>>();
+    DescribeVerifyReportAsync(
+    request,
+    [prom](
+        const CaClient*,
+        const DescribeVerifyReportRequest&,
+        DescribeVerifyReportOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CaClient::UploadFileOutcome CaClient::UploadFile(const UploadFileRequest &request)
@@ -148,24 +162,31 @@ CaClient::UploadFileOutcome CaClient::UploadFile(const UploadFileRequest &reques
 
 void CaClient::UploadFileAsync(const UploadFileRequest& request, const UploadFileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UploadFile(request), context);
-    };
+    using Req = const UploadFileRequest&;
+    using Resp = UploadFileResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UploadFile", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CaClient::UploadFileOutcomeCallable CaClient::UploadFileCallable(const UploadFileRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UploadFileOutcome()>>(
-        [this, request]()
-        {
-            return this->UploadFile(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UploadFileOutcome>>();
+    UploadFileAsync(
+    request,
+    [prom](
+        const CaClient*,
+        const UploadFileRequest&,
+        UploadFileOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 

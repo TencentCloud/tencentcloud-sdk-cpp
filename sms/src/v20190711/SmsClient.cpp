@@ -62,25 +62,32 @@ SmsClient::AddSmsSignOutcome SmsClient::AddSmsSign(const AddSmsSignRequest &requ
 
 void SmsClient::AddSmsSignAsync(const AddSmsSignRequest& request, const AddSmsSignAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->AddSmsSign(request), context);
-    };
+    using Req = const AddSmsSignRequest&;
+    using Resp = AddSmsSignResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "AddSmsSign", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SmsClient::AddSmsSignOutcomeCallable SmsClient::AddSmsSignCallable(const AddSmsSignRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<AddSmsSignOutcome()>>(
-        [this, request]()
-        {
-            return this->AddSmsSign(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<AddSmsSignOutcome>>();
+    AddSmsSignAsync(
+    request,
+    [prom](
+        const SmsClient*,
+        const AddSmsSignRequest&,
+        AddSmsSignOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SmsClient::AddSmsTemplateOutcome SmsClient::AddSmsTemplate(const AddSmsTemplateRequest &request)
@@ -105,25 +112,32 @@ SmsClient::AddSmsTemplateOutcome SmsClient::AddSmsTemplate(const AddSmsTemplateR
 
 void SmsClient::AddSmsTemplateAsync(const AddSmsTemplateRequest& request, const AddSmsTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->AddSmsTemplate(request), context);
-    };
+    using Req = const AddSmsTemplateRequest&;
+    using Resp = AddSmsTemplateResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "AddSmsTemplate", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SmsClient::AddSmsTemplateOutcomeCallable SmsClient::AddSmsTemplateCallable(const AddSmsTemplateRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<AddSmsTemplateOutcome()>>(
-        [this, request]()
-        {
-            return this->AddSmsTemplate(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<AddSmsTemplateOutcome>>();
+    AddSmsTemplateAsync(
+    request,
+    [prom](
+        const SmsClient*,
+        const AddSmsTemplateRequest&,
+        AddSmsTemplateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SmsClient::CallbackStatusStatisticsOutcome SmsClient::CallbackStatusStatistics(const CallbackStatusStatisticsRequest &request)
@@ -148,25 +162,32 @@ SmsClient::CallbackStatusStatisticsOutcome SmsClient::CallbackStatusStatistics(c
 
 void SmsClient::CallbackStatusStatisticsAsync(const CallbackStatusStatisticsRequest& request, const CallbackStatusStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CallbackStatusStatistics(request), context);
-    };
+    using Req = const CallbackStatusStatisticsRequest&;
+    using Resp = CallbackStatusStatisticsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CallbackStatusStatistics", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SmsClient::CallbackStatusStatisticsOutcomeCallable SmsClient::CallbackStatusStatisticsCallable(const CallbackStatusStatisticsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CallbackStatusStatisticsOutcome()>>(
-        [this, request]()
-        {
-            return this->CallbackStatusStatistics(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CallbackStatusStatisticsOutcome>>();
+    CallbackStatusStatisticsAsync(
+    request,
+    [prom](
+        const SmsClient*,
+        const CallbackStatusStatisticsRequest&,
+        CallbackStatusStatisticsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SmsClient::DeleteSmsSignOutcome SmsClient::DeleteSmsSign(const DeleteSmsSignRequest &request)
@@ -191,25 +212,32 @@ SmsClient::DeleteSmsSignOutcome SmsClient::DeleteSmsSign(const DeleteSmsSignRequ
 
 void SmsClient::DeleteSmsSignAsync(const DeleteSmsSignRequest& request, const DeleteSmsSignAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteSmsSign(request), context);
-    };
+    using Req = const DeleteSmsSignRequest&;
+    using Resp = DeleteSmsSignResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteSmsSign", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SmsClient::DeleteSmsSignOutcomeCallable SmsClient::DeleteSmsSignCallable(const DeleteSmsSignRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteSmsSignOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteSmsSign(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteSmsSignOutcome>>();
+    DeleteSmsSignAsync(
+    request,
+    [prom](
+        const SmsClient*,
+        const DeleteSmsSignRequest&,
+        DeleteSmsSignOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SmsClient::DeleteSmsTemplateOutcome SmsClient::DeleteSmsTemplate(const DeleteSmsTemplateRequest &request)
@@ -234,25 +262,32 @@ SmsClient::DeleteSmsTemplateOutcome SmsClient::DeleteSmsTemplate(const DeleteSms
 
 void SmsClient::DeleteSmsTemplateAsync(const DeleteSmsTemplateRequest& request, const DeleteSmsTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteSmsTemplate(request), context);
-    };
+    using Req = const DeleteSmsTemplateRequest&;
+    using Resp = DeleteSmsTemplateResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteSmsTemplate", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SmsClient::DeleteSmsTemplateOutcomeCallable SmsClient::DeleteSmsTemplateCallable(const DeleteSmsTemplateRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteSmsTemplateOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteSmsTemplate(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteSmsTemplateOutcome>>();
+    DeleteSmsTemplateAsync(
+    request,
+    [prom](
+        const SmsClient*,
+        const DeleteSmsTemplateRequest&,
+        DeleteSmsTemplateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SmsClient::DescribeSmsSignListOutcome SmsClient::DescribeSmsSignList(const DescribeSmsSignListRequest &request)
@@ -277,25 +312,32 @@ SmsClient::DescribeSmsSignListOutcome SmsClient::DescribeSmsSignList(const Descr
 
 void SmsClient::DescribeSmsSignListAsync(const DescribeSmsSignListRequest& request, const DescribeSmsSignListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeSmsSignList(request), context);
-    };
+    using Req = const DescribeSmsSignListRequest&;
+    using Resp = DescribeSmsSignListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeSmsSignList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SmsClient::DescribeSmsSignListOutcomeCallable SmsClient::DescribeSmsSignListCallable(const DescribeSmsSignListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeSmsSignListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeSmsSignList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeSmsSignListOutcome>>();
+    DescribeSmsSignListAsync(
+    request,
+    [prom](
+        const SmsClient*,
+        const DescribeSmsSignListRequest&,
+        DescribeSmsSignListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SmsClient::DescribeSmsTemplateListOutcome SmsClient::DescribeSmsTemplateList(const DescribeSmsTemplateListRequest &request)
@@ -320,25 +362,32 @@ SmsClient::DescribeSmsTemplateListOutcome SmsClient::DescribeSmsTemplateList(con
 
 void SmsClient::DescribeSmsTemplateListAsync(const DescribeSmsTemplateListRequest& request, const DescribeSmsTemplateListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeSmsTemplateList(request), context);
-    };
+    using Req = const DescribeSmsTemplateListRequest&;
+    using Resp = DescribeSmsTemplateListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeSmsTemplateList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SmsClient::DescribeSmsTemplateListOutcomeCallable SmsClient::DescribeSmsTemplateListCallable(const DescribeSmsTemplateListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeSmsTemplateListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeSmsTemplateList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeSmsTemplateListOutcome>>();
+    DescribeSmsTemplateListAsync(
+    request,
+    [prom](
+        const SmsClient*,
+        const DescribeSmsTemplateListRequest&,
+        DescribeSmsTemplateListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SmsClient::ModifySmsSignOutcome SmsClient::ModifySmsSign(const ModifySmsSignRequest &request)
@@ -363,25 +412,32 @@ SmsClient::ModifySmsSignOutcome SmsClient::ModifySmsSign(const ModifySmsSignRequ
 
 void SmsClient::ModifySmsSignAsync(const ModifySmsSignRequest& request, const ModifySmsSignAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifySmsSign(request), context);
-    };
+    using Req = const ModifySmsSignRequest&;
+    using Resp = ModifySmsSignResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifySmsSign", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SmsClient::ModifySmsSignOutcomeCallable SmsClient::ModifySmsSignCallable(const ModifySmsSignRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifySmsSignOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifySmsSign(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifySmsSignOutcome>>();
+    ModifySmsSignAsync(
+    request,
+    [prom](
+        const SmsClient*,
+        const ModifySmsSignRequest&,
+        ModifySmsSignOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SmsClient::ModifySmsTemplateOutcome SmsClient::ModifySmsTemplate(const ModifySmsTemplateRequest &request)
@@ -406,25 +462,32 @@ SmsClient::ModifySmsTemplateOutcome SmsClient::ModifySmsTemplate(const ModifySms
 
 void SmsClient::ModifySmsTemplateAsync(const ModifySmsTemplateRequest& request, const ModifySmsTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifySmsTemplate(request), context);
-    };
+    using Req = const ModifySmsTemplateRequest&;
+    using Resp = ModifySmsTemplateResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifySmsTemplate", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SmsClient::ModifySmsTemplateOutcomeCallable SmsClient::ModifySmsTemplateCallable(const ModifySmsTemplateRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifySmsTemplateOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifySmsTemplate(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifySmsTemplateOutcome>>();
+    ModifySmsTemplateAsync(
+    request,
+    [prom](
+        const SmsClient*,
+        const ModifySmsTemplateRequest&,
+        ModifySmsTemplateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SmsClient::PullSmsReplyStatusOutcome SmsClient::PullSmsReplyStatus(const PullSmsReplyStatusRequest &request)
@@ -449,25 +512,32 @@ SmsClient::PullSmsReplyStatusOutcome SmsClient::PullSmsReplyStatus(const PullSms
 
 void SmsClient::PullSmsReplyStatusAsync(const PullSmsReplyStatusRequest& request, const PullSmsReplyStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->PullSmsReplyStatus(request), context);
-    };
+    using Req = const PullSmsReplyStatusRequest&;
+    using Resp = PullSmsReplyStatusResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "PullSmsReplyStatus", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SmsClient::PullSmsReplyStatusOutcomeCallable SmsClient::PullSmsReplyStatusCallable(const PullSmsReplyStatusRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<PullSmsReplyStatusOutcome()>>(
-        [this, request]()
-        {
-            return this->PullSmsReplyStatus(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<PullSmsReplyStatusOutcome>>();
+    PullSmsReplyStatusAsync(
+    request,
+    [prom](
+        const SmsClient*,
+        const PullSmsReplyStatusRequest&,
+        PullSmsReplyStatusOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SmsClient::PullSmsReplyStatusByPhoneNumberOutcome SmsClient::PullSmsReplyStatusByPhoneNumber(const PullSmsReplyStatusByPhoneNumberRequest &request)
@@ -492,25 +562,32 @@ SmsClient::PullSmsReplyStatusByPhoneNumberOutcome SmsClient::PullSmsReplyStatusB
 
 void SmsClient::PullSmsReplyStatusByPhoneNumberAsync(const PullSmsReplyStatusByPhoneNumberRequest& request, const PullSmsReplyStatusByPhoneNumberAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->PullSmsReplyStatusByPhoneNumber(request), context);
-    };
+    using Req = const PullSmsReplyStatusByPhoneNumberRequest&;
+    using Resp = PullSmsReplyStatusByPhoneNumberResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "PullSmsReplyStatusByPhoneNumber", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SmsClient::PullSmsReplyStatusByPhoneNumberOutcomeCallable SmsClient::PullSmsReplyStatusByPhoneNumberCallable(const PullSmsReplyStatusByPhoneNumberRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<PullSmsReplyStatusByPhoneNumberOutcome()>>(
-        [this, request]()
-        {
-            return this->PullSmsReplyStatusByPhoneNumber(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<PullSmsReplyStatusByPhoneNumberOutcome>>();
+    PullSmsReplyStatusByPhoneNumberAsync(
+    request,
+    [prom](
+        const SmsClient*,
+        const PullSmsReplyStatusByPhoneNumberRequest&,
+        PullSmsReplyStatusByPhoneNumberOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SmsClient::PullSmsSendStatusOutcome SmsClient::PullSmsSendStatus(const PullSmsSendStatusRequest &request)
@@ -535,25 +612,32 @@ SmsClient::PullSmsSendStatusOutcome SmsClient::PullSmsSendStatus(const PullSmsSe
 
 void SmsClient::PullSmsSendStatusAsync(const PullSmsSendStatusRequest& request, const PullSmsSendStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->PullSmsSendStatus(request), context);
-    };
+    using Req = const PullSmsSendStatusRequest&;
+    using Resp = PullSmsSendStatusResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "PullSmsSendStatus", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SmsClient::PullSmsSendStatusOutcomeCallable SmsClient::PullSmsSendStatusCallable(const PullSmsSendStatusRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<PullSmsSendStatusOutcome()>>(
-        [this, request]()
-        {
-            return this->PullSmsSendStatus(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<PullSmsSendStatusOutcome>>();
+    PullSmsSendStatusAsync(
+    request,
+    [prom](
+        const SmsClient*,
+        const PullSmsSendStatusRequest&,
+        PullSmsSendStatusOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SmsClient::PullSmsSendStatusByPhoneNumberOutcome SmsClient::PullSmsSendStatusByPhoneNumber(const PullSmsSendStatusByPhoneNumberRequest &request)
@@ -578,25 +662,32 @@ SmsClient::PullSmsSendStatusByPhoneNumberOutcome SmsClient::PullSmsSendStatusByP
 
 void SmsClient::PullSmsSendStatusByPhoneNumberAsync(const PullSmsSendStatusByPhoneNumberRequest& request, const PullSmsSendStatusByPhoneNumberAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->PullSmsSendStatusByPhoneNumber(request), context);
-    };
+    using Req = const PullSmsSendStatusByPhoneNumberRequest&;
+    using Resp = PullSmsSendStatusByPhoneNumberResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "PullSmsSendStatusByPhoneNumber", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SmsClient::PullSmsSendStatusByPhoneNumberOutcomeCallable SmsClient::PullSmsSendStatusByPhoneNumberCallable(const PullSmsSendStatusByPhoneNumberRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<PullSmsSendStatusByPhoneNumberOutcome()>>(
-        [this, request]()
-        {
-            return this->PullSmsSendStatusByPhoneNumber(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<PullSmsSendStatusByPhoneNumberOutcome>>();
+    PullSmsSendStatusByPhoneNumberAsync(
+    request,
+    [prom](
+        const SmsClient*,
+        const PullSmsSendStatusByPhoneNumberRequest&,
+        PullSmsSendStatusByPhoneNumberOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SmsClient::SendSmsOutcome SmsClient::SendSms(const SendSmsRequest &request)
@@ -621,25 +712,32 @@ SmsClient::SendSmsOutcome SmsClient::SendSms(const SendSmsRequest &request)
 
 void SmsClient::SendSmsAsync(const SendSmsRequest& request, const SendSmsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->SendSms(request), context);
-    };
+    using Req = const SendSmsRequest&;
+    using Resp = SendSmsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "SendSms", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SmsClient::SendSmsOutcomeCallable SmsClient::SendSmsCallable(const SendSmsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<SendSmsOutcome()>>(
-        [this, request]()
-        {
-            return this->SendSms(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<SendSmsOutcome>>();
+    SendSmsAsync(
+    request,
+    [prom](
+        const SmsClient*,
+        const SendSmsRequest&,
+        SendSmsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SmsClient::SendStatusStatisticsOutcome SmsClient::SendStatusStatistics(const SendStatusStatisticsRequest &request)
@@ -664,25 +762,32 @@ SmsClient::SendStatusStatisticsOutcome SmsClient::SendStatusStatistics(const Sen
 
 void SmsClient::SendStatusStatisticsAsync(const SendStatusStatisticsRequest& request, const SendStatusStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->SendStatusStatistics(request), context);
-    };
+    using Req = const SendStatusStatisticsRequest&;
+    using Resp = SendStatusStatisticsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "SendStatusStatistics", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SmsClient::SendStatusStatisticsOutcomeCallable SmsClient::SendStatusStatisticsCallable(const SendStatusStatisticsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<SendStatusStatisticsOutcome()>>(
-        [this, request]()
-        {
-            return this->SendStatusStatistics(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<SendStatusStatisticsOutcome>>();
+    SendStatusStatisticsAsync(
+    request,
+    [prom](
+        const SmsClient*,
+        const SendStatusStatisticsRequest&,
+        SendStatusStatisticsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SmsClient::SmsPackagesStatisticsOutcome SmsClient::SmsPackagesStatistics(const SmsPackagesStatisticsRequest &request)
@@ -707,24 +812,31 @@ SmsClient::SmsPackagesStatisticsOutcome SmsClient::SmsPackagesStatistics(const S
 
 void SmsClient::SmsPackagesStatisticsAsync(const SmsPackagesStatisticsRequest& request, const SmsPackagesStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->SmsPackagesStatistics(request), context);
-    };
+    using Req = const SmsPackagesStatisticsRequest&;
+    using Resp = SmsPackagesStatisticsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "SmsPackagesStatistics", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SmsClient::SmsPackagesStatisticsOutcomeCallable SmsClient::SmsPackagesStatisticsCallable(const SmsPackagesStatisticsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<SmsPackagesStatisticsOutcome()>>(
-        [this, request]()
-        {
-            return this->SmsPackagesStatistics(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<SmsPackagesStatisticsOutcome>>();
+    SmsPackagesStatisticsAsync(
+    request,
+    [prom](
+        const SmsClient*,
+        const SmsPackagesStatisticsRequest&,
+        SmsPackagesStatisticsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 

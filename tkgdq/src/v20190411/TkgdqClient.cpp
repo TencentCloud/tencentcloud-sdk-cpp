@@ -62,25 +62,32 @@ TkgdqClient::DescribeEntityOutcome TkgdqClient::DescribeEntity(const DescribeEnt
 
 void TkgdqClient::DescribeEntityAsync(const DescribeEntityRequest& request, const DescribeEntityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeEntity(request), context);
-    };
+    using Req = const DescribeEntityRequest&;
+    using Resp = DescribeEntityResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeEntity", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkgdqClient::DescribeEntityOutcomeCallable TkgdqClient::DescribeEntityCallable(const DescribeEntityRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeEntityOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeEntity(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeEntityOutcome>>();
+    DescribeEntityAsync(
+    request,
+    [prom](
+        const TkgdqClient*,
+        const DescribeEntityRequest&,
+        DescribeEntityOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkgdqClient::DescribeRelationOutcome TkgdqClient::DescribeRelation(const DescribeRelationRequest &request)
@@ -105,25 +112,32 @@ TkgdqClient::DescribeRelationOutcome TkgdqClient::DescribeRelation(const Describ
 
 void TkgdqClient::DescribeRelationAsync(const DescribeRelationRequest& request, const DescribeRelationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeRelation(request), context);
-    };
+    using Req = const DescribeRelationRequest&;
+    using Resp = DescribeRelationResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeRelation", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkgdqClient::DescribeRelationOutcomeCallable TkgdqClient::DescribeRelationCallable(const DescribeRelationRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeRelationOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeRelation(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeRelationOutcome>>();
+    DescribeRelationAsync(
+    request,
+    [prom](
+        const TkgdqClient*,
+        const DescribeRelationRequest&,
+        DescribeRelationOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkgdqClient::DescribeTripleOutcome TkgdqClient::DescribeTriple(const DescribeTripleRequest &request)
@@ -148,24 +162,31 @@ TkgdqClient::DescribeTripleOutcome TkgdqClient::DescribeTriple(const DescribeTri
 
 void TkgdqClient::DescribeTripleAsync(const DescribeTripleRequest& request, const DescribeTripleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeTriple(request), context);
-    };
+    using Req = const DescribeTripleRequest&;
+    using Resp = DescribeTripleResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeTriple", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkgdqClient::DescribeTripleOutcomeCallable TkgdqClient::DescribeTripleCallable(const DescribeTripleRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeTripleOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeTriple(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeTripleOutcome>>();
+    DescribeTripleAsync(
+    request,
+    [prom](
+        const TkgdqClient*,
+        const DescribeTripleRequest&,
+        DescribeTripleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 

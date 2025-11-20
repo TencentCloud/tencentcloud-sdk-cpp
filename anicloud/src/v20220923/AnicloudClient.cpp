@@ -62,25 +62,32 @@ AnicloudClient::CheckAppidExistOutcome AnicloudClient::CheckAppidExist(const Che
 
 void AnicloudClient::CheckAppidExistAsync(const CheckAppidExistRequest& request, const CheckAppidExistAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CheckAppidExist(request), context);
-    };
+    using Req = const CheckAppidExistRequest&;
+    using Resp = CheckAppidExistResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CheckAppidExist", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 AnicloudClient::CheckAppidExistOutcomeCallable AnicloudClient::CheckAppidExistCallable(const CheckAppidExistRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CheckAppidExistOutcome()>>(
-        [this, request]()
-        {
-            return this->CheckAppidExist(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CheckAppidExistOutcome>>();
+    CheckAppidExistAsync(
+    request,
+    [prom](
+        const AnicloudClient*,
+        const CheckAppidExistRequest&,
+        CheckAppidExistOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 AnicloudClient::QueryResourceOutcome AnicloudClient::QueryResource(const QueryResourceRequest &request)
@@ -105,25 +112,32 @@ AnicloudClient::QueryResourceOutcome AnicloudClient::QueryResource(const QueryRe
 
 void AnicloudClient::QueryResourceAsync(const QueryResourceRequest& request, const QueryResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->QueryResource(request), context);
-    };
+    using Req = const QueryResourceRequest&;
+    using Resp = QueryResourceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "QueryResource", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 AnicloudClient::QueryResourceOutcomeCallable AnicloudClient::QueryResourceCallable(const QueryResourceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<QueryResourceOutcome()>>(
-        [this, request]()
-        {
-            return this->QueryResource(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<QueryResourceOutcome>>();
+    QueryResourceAsync(
+    request,
+    [prom](
+        const AnicloudClient*,
+        const QueryResourceRequest&,
+        QueryResourceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 AnicloudClient::QueryResourceInfoOutcome AnicloudClient::QueryResourceInfo(const QueryResourceInfoRequest &request)
@@ -148,24 +162,31 @@ AnicloudClient::QueryResourceInfoOutcome AnicloudClient::QueryResourceInfo(const
 
 void AnicloudClient::QueryResourceInfoAsync(const QueryResourceInfoRequest& request, const QueryResourceInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->QueryResourceInfo(request), context);
-    };
+    using Req = const QueryResourceInfoRequest&;
+    using Resp = QueryResourceInfoResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "QueryResourceInfo", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 AnicloudClient::QueryResourceInfoOutcomeCallable AnicloudClient::QueryResourceInfoCallable(const QueryResourceInfoRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<QueryResourceInfoOutcome()>>(
-        [this, request]()
-        {
-            return this->QueryResourceInfo(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<QueryResourceInfoOutcome>>();
+    QueryResourceInfoAsync(
+    request,
+    [prom](
+        const AnicloudClient*,
+        const QueryResourceInfoRequest&,
+        QueryResourceInfoOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 

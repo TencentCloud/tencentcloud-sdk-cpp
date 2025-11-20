@@ -62,25 +62,32 @@ EsClient::CheckMigrateIndexMetaDataOutcome EsClient::CheckMigrateIndexMetaData(c
 
 void EsClient::CheckMigrateIndexMetaDataAsync(const CheckMigrateIndexMetaDataRequest& request, const CheckMigrateIndexMetaDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CheckMigrateIndexMetaData(request), context);
-    };
+    using Req = const CheckMigrateIndexMetaDataRequest&;
+    using Resp = CheckMigrateIndexMetaDataResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CheckMigrateIndexMetaData", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EsClient::CheckMigrateIndexMetaDataOutcomeCallable EsClient::CheckMigrateIndexMetaDataCallable(const CheckMigrateIndexMetaDataRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CheckMigrateIndexMetaDataOutcome()>>(
-        [this, request]()
-        {
-            return this->CheckMigrateIndexMetaData(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CheckMigrateIndexMetaDataOutcome>>();
+    CheckMigrateIndexMetaDataAsync(
+    request,
+    [prom](
+        const EsClient*,
+        const CheckMigrateIndexMetaDataRequest&,
+        CheckMigrateIndexMetaDataOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EsClient::CreateClusterSnapshotOutcome EsClient::CreateClusterSnapshot(const CreateClusterSnapshotRequest &request)
@@ -105,25 +112,32 @@ EsClient::CreateClusterSnapshotOutcome EsClient::CreateClusterSnapshot(const Cre
 
 void EsClient::CreateClusterSnapshotAsync(const CreateClusterSnapshotRequest& request, const CreateClusterSnapshotAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateClusterSnapshot(request), context);
-    };
+    using Req = const CreateClusterSnapshotRequest&;
+    using Resp = CreateClusterSnapshotResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateClusterSnapshot", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EsClient::CreateClusterSnapshotOutcomeCallable EsClient::CreateClusterSnapshotCallable(const CreateClusterSnapshotRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateClusterSnapshotOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateClusterSnapshot(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateClusterSnapshotOutcome>>();
+    CreateClusterSnapshotAsync(
+    request,
+    [prom](
+        const EsClient*,
+        const CreateClusterSnapshotRequest&,
+        CreateClusterSnapshotOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EsClient::CreateCosMigrateToServerlessInstanceOutcome EsClient::CreateCosMigrateToServerlessInstance(const CreateCosMigrateToServerlessInstanceRequest &request)
@@ -148,25 +162,32 @@ EsClient::CreateCosMigrateToServerlessInstanceOutcome EsClient::CreateCosMigrate
 
 void EsClient::CreateCosMigrateToServerlessInstanceAsync(const CreateCosMigrateToServerlessInstanceRequest& request, const CreateCosMigrateToServerlessInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateCosMigrateToServerlessInstance(request), context);
-    };
+    using Req = const CreateCosMigrateToServerlessInstanceRequest&;
+    using Resp = CreateCosMigrateToServerlessInstanceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateCosMigrateToServerlessInstance", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EsClient::CreateCosMigrateToServerlessInstanceOutcomeCallable EsClient::CreateCosMigrateToServerlessInstanceCallable(const CreateCosMigrateToServerlessInstanceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateCosMigrateToServerlessInstanceOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateCosMigrateToServerlessInstance(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateCosMigrateToServerlessInstanceOutcome>>();
+    CreateCosMigrateToServerlessInstanceAsync(
+    request,
+    [prom](
+        const EsClient*,
+        const CreateCosMigrateToServerlessInstanceRequest&,
+        CreateCosMigrateToServerlessInstanceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EsClient::CreateIndexOutcome EsClient::CreateIndex(const CreateIndexRequest &request)
@@ -191,25 +212,32 @@ EsClient::CreateIndexOutcome EsClient::CreateIndex(const CreateIndexRequest &req
 
 void EsClient::CreateIndexAsync(const CreateIndexRequest& request, const CreateIndexAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateIndex(request), context);
-    };
+    using Req = const CreateIndexRequest&;
+    using Resp = CreateIndexResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateIndex", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EsClient::CreateIndexOutcomeCallable EsClient::CreateIndexCallable(const CreateIndexRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateIndexOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateIndex(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateIndexOutcome>>();
+    CreateIndexAsync(
+    request,
+    [prom](
+        const EsClient*,
+        const CreateIndexRequest&,
+        CreateIndexOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EsClient::CreateInstanceOutcome EsClient::CreateInstance(const CreateInstanceRequest &request)
@@ -234,25 +262,32 @@ EsClient::CreateInstanceOutcome EsClient::CreateInstance(const CreateInstanceReq
 
 void EsClient::CreateInstanceAsync(const CreateInstanceRequest& request, const CreateInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateInstance(request), context);
-    };
+    using Req = const CreateInstanceRequest&;
+    using Resp = CreateInstanceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateInstance", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EsClient::CreateInstanceOutcomeCallable EsClient::CreateInstanceCallable(const CreateInstanceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateInstanceOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateInstance(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateInstanceOutcome>>();
+    CreateInstanceAsync(
+    request,
+    [prom](
+        const EsClient*,
+        const CreateInstanceRequest&,
+        CreateInstanceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EsClient::CreateLogstashInstanceOutcome EsClient::CreateLogstashInstance(const CreateLogstashInstanceRequest &request)
@@ -277,25 +312,32 @@ EsClient::CreateLogstashInstanceOutcome EsClient::CreateLogstashInstance(const C
 
 void EsClient::CreateLogstashInstanceAsync(const CreateLogstashInstanceRequest& request, const CreateLogstashInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateLogstashInstance(request), context);
-    };
+    using Req = const CreateLogstashInstanceRequest&;
+    using Resp = CreateLogstashInstanceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateLogstashInstance", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EsClient::CreateLogstashInstanceOutcomeCallable EsClient::CreateLogstashInstanceCallable(const CreateLogstashInstanceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateLogstashInstanceOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateLogstashInstance(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateLogstashInstanceOutcome>>();
+    CreateLogstashInstanceAsync(
+    request,
+    [prom](
+        const EsClient*,
+        const CreateLogstashInstanceRequest&,
+        CreateLogstashInstanceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EsClient::CreateServerlessInstanceOutcome EsClient::CreateServerlessInstance(const CreateServerlessInstanceRequest &request)
@@ -320,25 +362,32 @@ EsClient::CreateServerlessInstanceOutcome EsClient::CreateServerlessInstance(con
 
 void EsClient::CreateServerlessInstanceAsync(const CreateServerlessInstanceRequest& request, const CreateServerlessInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateServerlessInstance(request), context);
-    };
+    using Req = const CreateServerlessInstanceRequest&;
+    using Resp = CreateServerlessInstanceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateServerlessInstance", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EsClient::CreateServerlessInstanceOutcomeCallable EsClient::CreateServerlessInstanceCallable(const CreateServerlessInstanceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateServerlessInstanceOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateServerlessInstance(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateServerlessInstanceOutcome>>();
+    CreateServerlessInstanceAsync(
+    request,
+    [prom](
+        const EsClient*,
+        const CreateServerlessInstanceRequest&,
+        CreateServerlessInstanceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EsClient::CreateServerlessSpaceV2Outcome EsClient::CreateServerlessSpaceV2(const CreateServerlessSpaceV2Request &request)
@@ -363,25 +412,32 @@ EsClient::CreateServerlessSpaceV2Outcome EsClient::CreateServerlessSpaceV2(const
 
 void EsClient::CreateServerlessSpaceV2Async(const CreateServerlessSpaceV2Request& request, const CreateServerlessSpaceV2AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateServerlessSpaceV2(request), context);
-    };
+    using Req = const CreateServerlessSpaceV2Request&;
+    using Resp = CreateServerlessSpaceV2Response;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateServerlessSpaceV2", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EsClient::CreateServerlessSpaceV2OutcomeCallable EsClient::CreateServerlessSpaceV2Callable(const CreateServerlessSpaceV2Request &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateServerlessSpaceV2Outcome()>>(
-        [this, request]()
-        {
-            return this->CreateServerlessSpaceV2(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateServerlessSpaceV2Outcome>>();
+    CreateServerlessSpaceV2Async(
+    request,
+    [prom](
+        const EsClient*,
+        const CreateServerlessSpaceV2Request&,
+        CreateServerlessSpaceV2Outcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EsClient::DeleteClusterSnapshotOutcome EsClient::DeleteClusterSnapshot(const DeleteClusterSnapshotRequest &request)
@@ -406,25 +462,32 @@ EsClient::DeleteClusterSnapshotOutcome EsClient::DeleteClusterSnapshot(const Del
 
 void EsClient::DeleteClusterSnapshotAsync(const DeleteClusterSnapshotRequest& request, const DeleteClusterSnapshotAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteClusterSnapshot(request), context);
-    };
+    using Req = const DeleteClusterSnapshotRequest&;
+    using Resp = DeleteClusterSnapshotResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteClusterSnapshot", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EsClient::DeleteClusterSnapshotOutcomeCallable EsClient::DeleteClusterSnapshotCallable(const DeleteClusterSnapshotRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteClusterSnapshotOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteClusterSnapshot(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteClusterSnapshotOutcome>>();
+    DeleteClusterSnapshotAsync(
+    request,
+    [prom](
+        const EsClient*,
+        const DeleteClusterSnapshotRequest&,
+        DeleteClusterSnapshotOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EsClient::DeleteIndexOutcome EsClient::DeleteIndex(const DeleteIndexRequest &request)
@@ -449,25 +512,32 @@ EsClient::DeleteIndexOutcome EsClient::DeleteIndex(const DeleteIndexRequest &req
 
 void EsClient::DeleteIndexAsync(const DeleteIndexRequest& request, const DeleteIndexAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteIndex(request), context);
-    };
+    using Req = const DeleteIndexRequest&;
+    using Resp = DeleteIndexResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteIndex", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EsClient::DeleteIndexOutcomeCallable EsClient::DeleteIndexCallable(const DeleteIndexRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteIndexOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteIndex(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteIndexOutcome>>();
+    DeleteIndexAsync(
+    request,
+    [prom](
+        const EsClient*,
+        const DeleteIndexRequest&,
+        DeleteIndexOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EsClient::DeleteInstanceOutcome EsClient::DeleteInstance(const DeleteInstanceRequest &request)
@@ -492,25 +562,32 @@ EsClient::DeleteInstanceOutcome EsClient::DeleteInstance(const DeleteInstanceReq
 
 void EsClient::DeleteInstanceAsync(const DeleteInstanceRequest& request, const DeleteInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteInstance(request), context);
-    };
+    using Req = const DeleteInstanceRequest&;
+    using Resp = DeleteInstanceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteInstance", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EsClient::DeleteInstanceOutcomeCallable EsClient::DeleteInstanceCallable(const DeleteInstanceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteInstanceOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteInstance(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteInstanceOutcome>>();
+    DeleteInstanceAsync(
+    request,
+    [prom](
+        const EsClient*,
+        const DeleteInstanceRequest&,
+        DeleteInstanceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EsClient::DeleteLogstashInstanceOutcome EsClient::DeleteLogstashInstance(const DeleteLogstashInstanceRequest &request)
@@ -535,25 +612,32 @@ EsClient::DeleteLogstashInstanceOutcome EsClient::DeleteLogstashInstance(const D
 
 void EsClient::DeleteLogstashInstanceAsync(const DeleteLogstashInstanceRequest& request, const DeleteLogstashInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteLogstashInstance(request), context);
-    };
+    using Req = const DeleteLogstashInstanceRequest&;
+    using Resp = DeleteLogstashInstanceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteLogstashInstance", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EsClient::DeleteLogstashInstanceOutcomeCallable EsClient::DeleteLogstashInstanceCallable(const DeleteLogstashInstanceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteLogstashInstanceOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteLogstashInstance(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteLogstashInstanceOutcome>>();
+    DeleteLogstashInstanceAsync(
+    request,
+    [prom](
+        const EsClient*,
+        const DeleteLogstashInstanceRequest&,
+        DeleteLogstashInstanceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EsClient::DeleteLogstashPipelinesOutcome EsClient::DeleteLogstashPipelines(const DeleteLogstashPipelinesRequest &request)
@@ -578,25 +662,32 @@ EsClient::DeleteLogstashPipelinesOutcome EsClient::DeleteLogstashPipelines(const
 
 void EsClient::DeleteLogstashPipelinesAsync(const DeleteLogstashPipelinesRequest& request, const DeleteLogstashPipelinesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteLogstashPipelines(request), context);
-    };
+    using Req = const DeleteLogstashPipelinesRequest&;
+    using Resp = DeleteLogstashPipelinesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteLogstashPipelines", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EsClient::DeleteLogstashPipelinesOutcomeCallable EsClient::DeleteLogstashPipelinesCallable(const DeleteLogstashPipelinesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteLogstashPipelinesOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteLogstashPipelines(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteLogstashPipelinesOutcome>>();
+    DeleteLogstashPipelinesAsync(
+    request,
+    [prom](
+        const EsClient*,
+        const DeleteLogstashPipelinesRequest&,
+        DeleteLogstashPipelinesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EsClient::DeleteServerlessInstanceOutcome EsClient::DeleteServerlessInstance(const DeleteServerlessInstanceRequest &request)
@@ -621,25 +712,32 @@ EsClient::DeleteServerlessInstanceOutcome EsClient::DeleteServerlessInstance(con
 
 void EsClient::DeleteServerlessInstanceAsync(const DeleteServerlessInstanceRequest& request, const DeleteServerlessInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteServerlessInstance(request), context);
-    };
+    using Req = const DeleteServerlessInstanceRequest&;
+    using Resp = DeleteServerlessInstanceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteServerlessInstance", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EsClient::DeleteServerlessInstanceOutcomeCallable EsClient::DeleteServerlessInstanceCallable(const DeleteServerlessInstanceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteServerlessInstanceOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteServerlessInstance(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteServerlessInstanceOutcome>>();
+    DeleteServerlessInstanceAsync(
+    request,
+    [prom](
+        const EsClient*,
+        const DeleteServerlessInstanceRequest&,
+        DeleteServerlessInstanceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EsClient::DeleteServerlessSpaceUserOutcome EsClient::DeleteServerlessSpaceUser(const DeleteServerlessSpaceUserRequest &request)
@@ -664,25 +762,32 @@ EsClient::DeleteServerlessSpaceUserOutcome EsClient::DeleteServerlessSpaceUser(c
 
 void EsClient::DeleteServerlessSpaceUserAsync(const DeleteServerlessSpaceUserRequest& request, const DeleteServerlessSpaceUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteServerlessSpaceUser(request), context);
-    };
+    using Req = const DeleteServerlessSpaceUserRequest&;
+    using Resp = DeleteServerlessSpaceUserResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteServerlessSpaceUser", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EsClient::DeleteServerlessSpaceUserOutcomeCallable EsClient::DeleteServerlessSpaceUserCallable(const DeleteServerlessSpaceUserRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteServerlessSpaceUserOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteServerlessSpaceUser(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteServerlessSpaceUserOutcome>>();
+    DeleteServerlessSpaceUserAsync(
+    request,
+    [prom](
+        const EsClient*,
+        const DeleteServerlessSpaceUserRequest&,
+        DeleteServerlessSpaceUserOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EsClient::DescribeClusterSnapshotOutcome EsClient::DescribeClusterSnapshot(const DescribeClusterSnapshotRequest &request)
@@ -707,25 +812,32 @@ EsClient::DescribeClusterSnapshotOutcome EsClient::DescribeClusterSnapshot(const
 
 void EsClient::DescribeClusterSnapshotAsync(const DescribeClusterSnapshotRequest& request, const DescribeClusterSnapshotAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeClusterSnapshot(request), context);
-    };
+    using Req = const DescribeClusterSnapshotRequest&;
+    using Resp = DescribeClusterSnapshotResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeClusterSnapshot", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EsClient::DescribeClusterSnapshotOutcomeCallable EsClient::DescribeClusterSnapshotCallable(const DescribeClusterSnapshotRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeClusterSnapshotOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeClusterSnapshot(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeClusterSnapshotOutcome>>();
+    DescribeClusterSnapshotAsync(
+    request,
+    [prom](
+        const EsClient*,
+        const DescribeClusterSnapshotRequest&,
+        DescribeClusterSnapshotOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EsClient::DescribeDiagnoseOutcome EsClient::DescribeDiagnose(const DescribeDiagnoseRequest &request)
@@ -750,25 +862,32 @@ EsClient::DescribeDiagnoseOutcome EsClient::DescribeDiagnose(const DescribeDiagn
 
 void EsClient::DescribeDiagnoseAsync(const DescribeDiagnoseRequest& request, const DescribeDiagnoseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDiagnose(request), context);
-    };
+    using Req = const DescribeDiagnoseRequest&;
+    using Resp = DescribeDiagnoseResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeDiagnose", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EsClient::DescribeDiagnoseOutcomeCallable EsClient::DescribeDiagnoseCallable(const DescribeDiagnoseRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeDiagnoseOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDiagnose(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeDiagnoseOutcome>>();
+    DescribeDiagnoseAsync(
+    request,
+    [prom](
+        const EsClient*,
+        const DescribeDiagnoseRequest&,
+        DescribeDiagnoseOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EsClient::DescribeIndexListOutcome EsClient::DescribeIndexList(const DescribeIndexListRequest &request)
@@ -793,25 +912,32 @@ EsClient::DescribeIndexListOutcome EsClient::DescribeIndexList(const DescribeInd
 
 void EsClient::DescribeIndexListAsync(const DescribeIndexListRequest& request, const DescribeIndexListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeIndexList(request), context);
-    };
+    using Req = const DescribeIndexListRequest&;
+    using Resp = DescribeIndexListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeIndexList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EsClient::DescribeIndexListOutcomeCallable EsClient::DescribeIndexListCallable(const DescribeIndexListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeIndexListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeIndexList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeIndexListOutcome>>();
+    DescribeIndexListAsync(
+    request,
+    [prom](
+        const EsClient*,
+        const DescribeIndexListRequest&,
+        DescribeIndexListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EsClient::DescribeIndexMetaOutcome EsClient::DescribeIndexMeta(const DescribeIndexMetaRequest &request)
@@ -836,25 +962,32 @@ EsClient::DescribeIndexMetaOutcome EsClient::DescribeIndexMeta(const DescribeInd
 
 void EsClient::DescribeIndexMetaAsync(const DescribeIndexMetaRequest& request, const DescribeIndexMetaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeIndexMeta(request), context);
-    };
+    using Req = const DescribeIndexMetaRequest&;
+    using Resp = DescribeIndexMetaResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeIndexMeta", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EsClient::DescribeIndexMetaOutcomeCallable EsClient::DescribeIndexMetaCallable(const DescribeIndexMetaRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeIndexMetaOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeIndexMeta(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeIndexMetaOutcome>>();
+    DescribeIndexMetaAsync(
+    request,
+    [prom](
+        const EsClient*,
+        const DescribeIndexMetaRequest&,
+        DescribeIndexMetaOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EsClient::DescribeInstanceLogsOutcome EsClient::DescribeInstanceLogs(const DescribeInstanceLogsRequest &request)
@@ -879,25 +1012,32 @@ EsClient::DescribeInstanceLogsOutcome EsClient::DescribeInstanceLogs(const Descr
 
 void EsClient::DescribeInstanceLogsAsync(const DescribeInstanceLogsRequest& request, const DescribeInstanceLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeInstanceLogs(request), context);
-    };
+    using Req = const DescribeInstanceLogsRequest&;
+    using Resp = DescribeInstanceLogsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeInstanceLogs", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EsClient::DescribeInstanceLogsOutcomeCallable EsClient::DescribeInstanceLogsCallable(const DescribeInstanceLogsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeInstanceLogsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeInstanceLogs(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeInstanceLogsOutcome>>();
+    DescribeInstanceLogsAsync(
+    request,
+    [prom](
+        const EsClient*,
+        const DescribeInstanceLogsRequest&,
+        DescribeInstanceLogsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EsClient::DescribeInstanceOperationsOutcome EsClient::DescribeInstanceOperations(const DescribeInstanceOperationsRequest &request)
@@ -922,25 +1062,32 @@ EsClient::DescribeInstanceOperationsOutcome EsClient::DescribeInstanceOperations
 
 void EsClient::DescribeInstanceOperationsAsync(const DescribeInstanceOperationsRequest& request, const DescribeInstanceOperationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeInstanceOperations(request), context);
-    };
+    using Req = const DescribeInstanceOperationsRequest&;
+    using Resp = DescribeInstanceOperationsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeInstanceOperations", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EsClient::DescribeInstanceOperationsOutcomeCallable EsClient::DescribeInstanceOperationsCallable(const DescribeInstanceOperationsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeInstanceOperationsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeInstanceOperations(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeInstanceOperationsOutcome>>();
+    DescribeInstanceOperationsAsync(
+    request,
+    [prom](
+        const EsClient*,
+        const DescribeInstanceOperationsRequest&,
+        DescribeInstanceOperationsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EsClient::DescribeInstancePluginListOutcome EsClient::DescribeInstancePluginList(const DescribeInstancePluginListRequest &request)
@@ -965,25 +1112,32 @@ EsClient::DescribeInstancePluginListOutcome EsClient::DescribeInstancePluginList
 
 void EsClient::DescribeInstancePluginListAsync(const DescribeInstancePluginListRequest& request, const DescribeInstancePluginListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeInstancePluginList(request), context);
-    };
+    using Req = const DescribeInstancePluginListRequest&;
+    using Resp = DescribeInstancePluginListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeInstancePluginList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EsClient::DescribeInstancePluginListOutcomeCallable EsClient::DescribeInstancePluginListCallable(const DescribeInstancePluginListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeInstancePluginListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeInstancePluginList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeInstancePluginListOutcome>>();
+    DescribeInstancePluginListAsync(
+    request,
+    [prom](
+        const EsClient*,
+        const DescribeInstancePluginListRequest&,
+        DescribeInstancePluginListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EsClient::DescribeInstancesOutcome EsClient::DescribeInstances(const DescribeInstancesRequest &request)
@@ -1008,25 +1162,32 @@ EsClient::DescribeInstancesOutcome EsClient::DescribeInstances(const DescribeIns
 
 void EsClient::DescribeInstancesAsync(const DescribeInstancesRequest& request, const DescribeInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeInstances(request), context);
-    };
+    using Req = const DescribeInstancesRequest&;
+    using Resp = DescribeInstancesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeInstances", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EsClient::DescribeInstancesOutcomeCallable EsClient::DescribeInstancesCallable(const DescribeInstancesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeInstancesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeInstances(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeInstancesOutcome>>();
+    DescribeInstancesAsync(
+    request,
+    [prom](
+        const EsClient*,
+        const DescribeInstancesRequest&,
+        DescribeInstancesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EsClient::DescribeLogstashInstanceLogsOutcome EsClient::DescribeLogstashInstanceLogs(const DescribeLogstashInstanceLogsRequest &request)
@@ -1051,25 +1212,32 @@ EsClient::DescribeLogstashInstanceLogsOutcome EsClient::DescribeLogstashInstance
 
 void EsClient::DescribeLogstashInstanceLogsAsync(const DescribeLogstashInstanceLogsRequest& request, const DescribeLogstashInstanceLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeLogstashInstanceLogs(request), context);
-    };
+    using Req = const DescribeLogstashInstanceLogsRequest&;
+    using Resp = DescribeLogstashInstanceLogsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeLogstashInstanceLogs", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EsClient::DescribeLogstashInstanceLogsOutcomeCallable EsClient::DescribeLogstashInstanceLogsCallable(const DescribeLogstashInstanceLogsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeLogstashInstanceLogsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeLogstashInstanceLogs(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeLogstashInstanceLogsOutcome>>();
+    DescribeLogstashInstanceLogsAsync(
+    request,
+    [prom](
+        const EsClient*,
+        const DescribeLogstashInstanceLogsRequest&,
+        DescribeLogstashInstanceLogsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EsClient::DescribeLogstashInstanceOperationsOutcome EsClient::DescribeLogstashInstanceOperations(const DescribeLogstashInstanceOperationsRequest &request)
@@ -1094,25 +1262,32 @@ EsClient::DescribeLogstashInstanceOperationsOutcome EsClient::DescribeLogstashIn
 
 void EsClient::DescribeLogstashInstanceOperationsAsync(const DescribeLogstashInstanceOperationsRequest& request, const DescribeLogstashInstanceOperationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeLogstashInstanceOperations(request), context);
-    };
+    using Req = const DescribeLogstashInstanceOperationsRequest&;
+    using Resp = DescribeLogstashInstanceOperationsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeLogstashInstanceOperations", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EsClient::DescribeLogstashInstanceOperationsOutcomeCallable EsClient::DescribeLogstashInstanceOperationsCallable(const DescribeLogstashInstanceOperationsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeLogstashInstanceOperationsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeLogstashInstanceOperations(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeLogstashInstanceOperationsOutcome>>();
+    DescribeLogstashInstanceOperationsAsync(
+    request,
+    [prom](
+        const EsClient*,
+        const DescribeLogstashInstanceOperationsRequest&,
+        DescribeLogstashInstanceOperationsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EsClient::DescribeLogstashInstancesOutcome EsClient::DescribeLogstashInstances(const DescribeLogstashInstancesRequest &request)
@@ -1137,25 +1312,32 @@ EsClient::DescribeLogstashInstancesOutcome EsClient::DescribeLogstashInstances(c
 
 void EsClient::DescribeLogstashInstancesAsync(const DescribeLogstashInstancesRequest& request, const DescribeLogstashInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeLogstashInstances(request), context);
-    };
+    using Req = const DescribeLogstashInstancesRequest&;
+    using Resp = DescribeLogstashInstancesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeLogstashInstances", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EsClient::DescribeLogstashInstancesOutcomeCallable EsClient::DescribeLogstashInstancesCallable(const DescribeLogstashInstancesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeLogstashInstancesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeLogstashInstances(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeLogstashInstancesOutcome>>();
+    DescribeLogstashInstancesAsync(
+    request,
+    [prom](
+        const EsClient*,
+        const DescribeLogstashInstancesRequest&,
+        DescribeLogstashInstancesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EsClient::DescribeLogstashPipelinesOutcome EsClient::DescribeLogstashPipelines(const DescribeLogstashPipelinesRequest &request)
@@ -1180,25 +1362,32 @@ EsClient::DescribeLogstashPipelinesOutcome EsClient::DescribeLogstashPipelines(c
 
 void EsClient::DescribeLogstashPipelinesAsync(const DescribeLogstashPipelinesRequest& request, const DescribeLogstashPipelinesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeLogstashPipelines(request), context);
-    };
+    using Req = const DescribeLogstashPipelinesRequest&;
+    using Resp = DescribeLogstashPipelinesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeLogstashPipelines", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EsClient::DescribeLogstashPipelinesOutcomeCallable EsClient::DescribeLogstashPipelinesCallable(const DescribeLogstashPipelinesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeLogstashPipelinesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeLogstashPipelines(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeLogstashPipelinesOutcome>>();
+    DescribeLogstashPipelinesAsync(
+    request,
+    [prom](
+        const EsClient*,
+        const DescribeLogstashPipelinesRequest&,
+        DescribeLogstashPipelinesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EsClient::DescribeServerlessInstancesOutcome EsClient::DescribeServerlessInstances(const DescribeServerlessInstancesRequest &request)
@@ -1223,25 +1412,32 @@ EsClient::DescribeServerlessInstancesOutcome EsClient::DescribeServerlessInstanc
 
 void EsClient::DescribeServerlessInstancesAsync(const DescribeServerlessInstancesRequest& request, const DescribeServerlessInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeServerlessInstances(request), context);
-    };
+    using Req = const DescribeServerlessInstancesRequest&;
+    using Resp = DescribeServerlessInstancesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeServerlessInstances", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EsClient::DescribeServerlessInstancesOutcomeCallable EsClient::DescribeServerlessInstancesCallable(const DescribeServerlessInstancesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeServerlessInstancesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeServerlessInstances(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeServerlessInstancesOutcome>>();
+    DescribeServerlessInstancesAsync(
+    request,
+    [prom](
+        const EsClient*,
+        const DescribeServerlessInstancesRequest&,
+        DescribeServerlessInstancesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EsClient::DescribeServerlessMetricsOutcome EsClient::DescribeServerlessMetrics(const DescribeServerlessMetricsRequest &request)
@@ -1266,25 +1462,32 @@ EsClient::DescribeServerlessMetricsOutcome EsClient::DescribeServerlessMetrics(c
 
 void EsClient::DescribeServerlessMetricsAsync(const DescribeServerlessMetricsRequest& request, const DescribeServerlessMetricsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeServerlessMetrics(request), context);
-    };
+    using Req = const DescribeServerlessMetricsRequest&;
+    using Resp = DescribeServerlessMetricsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeServerlessMetrics", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EsClient::DescribeServerlessMetricsOutcomeCallable EsClient::DescribeServerlessMetricsCallable(const DescribeServerlessMetricsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeServerlessMetricsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeServerlessMetrics(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeServerlessMetricsOutcome>>();
+    DescribeServerlessMetricsAsync(
+    request,
+    [prom](
+        const EsClient*,
+        const DescribeServerlessMetricsRequest&,
+        DescribeServerlessMetricsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EsClient::DescribeServerlessSpaceUserOutcome EsClient::DescribeServerlessSpaceUser(const DescribeServerlessSpaceUserRequest &request)
@@ -1309,25 +1512,32 @@ EsClient::DescribeServerlessSpaceUserOutcome EsClient::DescribeServerlessSpaceUs
 
 void EsClient::DescribeServerlessSpaceUserAsync(const DescribeServerlessSpaceUserRequest& request, const DescribeServerlessSpaceUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeServerlessSpaceUser(request), context);
-    };
+    using Req = const DescribeServerlessSpaceUserRequest&;
+    using Resp = DescribeServerlessSpaceUserResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeServerlessSpaceUser", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EsClient::DescribeServerlessSpaceUserOutcomeCallable EsClient::DescribeServerlessSpaceUserCallable(const DescribeServerlessSpaceUserRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeServerlessSpaceUserOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeServerlessSpaceUser(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeServerlessSpaceUserOutcome>>();
+    DescribeServerlessSpaceUserAsync(
+    request,
+    [prom](
+        const EsClient*,
+        const DescribeServerlessSpaceUserRequest&,
+        DescribeServerlessSpaceUserOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EsClient::DescribeServerlessSpacesOutcome EsClient::DescribeServerlessSpaces(const DescribeServerlessSpacesRequest &request)
@@ -1352,25 +1562,32 @@ EsClient::DescribeServerlessSpacesOutcome EsClient::DescribeServerlessSpaces(con
 
 void EsClient::DescribeServerlessSpacesAsync(const DescribeServerlessSpacesRequest& request, const DescribeServerlessSpacesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeServerlessSpaces(request), context);
-    };
+    using Req = const DescribeServerlessSpacesRequest&;
+    using Resp = DescribeServerlessSpacesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeServerlessSpaces", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EsClient::DescribeServerlessSpacesOutcomeCallable EsClient::DescribeServerlessSpacesCallable(const DescribeServerlessSpacesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeServerlessSpacesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeServerlessSpaces(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeServerlessSpacesOutcome>>();
+    DescribeServerlessSpacesAsync(
+    request,
+    [prom](
+        const EsClient*,
+        const DescribeServerlessSpacesRequest&,
+        DescribeServerlessSpacesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EsClient::DescribeSpaceKibanaToolsOutcome EsClient::DescribeSpaceKibanaTools(const DescribeSpaceKibanaToolsRequest &request)
@@ -1395,25 +1612,32 @@ EsClient::DescribeSpaceKibanaToolsOutcome EsClient::DescribeSpaceKibanaTools(con
 
 void EsClient::DescribeSpaceKibanaToolsAsync(const DescribeSpaceKibanaToolsRequest& request, const DescribeSpaceKibanaToolsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeSpaceKibanaTools(request), context);
-    };
+    using Req = const DescribeSpaceKibanaToolsRequest&;
+    using Resp = DescribeSpaceKibanaToolsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeSpaceKibanaTools", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EsClient::DescribeSpaceKibanaToolsOutcomeCallable EsClient::DescribeSpaceKibanaToolsCallable(const DescribeSpaceKibanaToolsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeSpaceKibanaToolsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeSpaceKibanaTools(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeSpaceKibanaToolsOutcome>>();
+    DescribeSpaceKibanaToolsAsync(
+    request,
+    [prom](
+        const EsClient*,
+        const DescribeSpaceKibanaToolsRequest&,
+        DescribeSpaceKibanaToolsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EsClient::DescribeUserCosSnapshotListOutcome EsClient::DescribeUserCosSnapshotList(const DescribeUserCosSnapshotListRequest &request)
@@ -1438,25 +1662,32 @@ EsClient::DescribeUserCosSnapshotListOutcome EsClient::DescribeUserCosSnapshotLi
 
 void EsClient::DescribeUserCosSnapshotListAsync(const DescribeUserCosSnapshotListRequest& request, const DescribeUserCosSnapshotListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeUserCosSnapshotList(request), context);
-    };
+    using Req = const DescribeUserCosSnapshotListRequest&;
+    using Resp = DescribeUserCosSnapshotListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeUserCosSnapshotList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EsClient::DescribeUserCosSnapshotListOutcomeCallable EsClient::DescribeUserCosSnapshotListCallable(const DescribeUserCosSnapshotListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeUserCosSnapshotListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeUserCosSnapshotList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeUserCosSnapshotListOutcome>>();
+    DescribeUserCosSnapshotListAsync(
+    request,
+    [prom](
+        const EsClient*,
+        const DescribeUserCosSnapshotListRequest&,
+        DescribeUserCosSnapshotListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EsClient::DescribeViewsOutcome EsClient::DescribeViews(const DescribeViewsRequest &request)
@@ -1481,25 +1712,32 @@ EsClient::DescribeViewsOutcome EsClient::DescribeViews(const DescribeViewsReques
 
 void EsClient::DescribeViewsAsync(const DescribeViewsRequest& request, const DescribeViewsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeViews(request), context);
-    };
+    using Req = const DescribeViewsRequest&;
+    using Resp = DescribeViewsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeViews", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EsClient::DescribeViewsOutcomeCallable EsClient::DescribeViewsCallable(const DescribeViewsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeViewsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeViews(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeViewsOutcome>>();
+    DescribeViewsAsync(
+    request,
+    [prom](
+        const EsClient*,
+        const DescribeViewsRequest&,
+        DescribeViewsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EsClient::DiagnoseInstanceOutcome EsClient::DiagnoseInstance(const DiagnoseInstanceRequest &request)
@@ -1524,25 +1762,32 @@ EsClient::DiagnoseInstanceOutcome EsClient::DiagnoseInstance(const DiagnoseInsta
 
 void EsClient::DiagnoseInstanceAsync(const DiagnoseInstanceRequest& request, const DiagnoseInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DiagnoseInstance(request), context);
-    };
+    using Req = const DiagnoseInstanceRequest&;
+    using Resp = DiagnoseInstanceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DiagnoseInstance", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EsClient::DiagnoseInstanceOutcomeCallable EsClient::DiagnoseInstanceCallable(const DiagnoseInstanceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DiagnoseInstanceOutcome()>>(
-        [this, request]()
-        {
-            return this->DiagnoseInstance(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DiagnoseInstanceOutcome>>();
+    DiagnoseInstanceAsync(
+    request,
+    [prom](
+        const EsClient*,
+        const DiagnoseInstanceRequest&,
+        DiagnoseInstanceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EsClient::ExportIpTraceLogOutcome EsClient::ExportIpTraceLog(const ExportIpTraceLogRequest &request)
@@ -1567,25 +1812,32 @@ EsClient::ExportIpTraceLogOutcome EsClient::ExportIpTraceLog(const ExportIpTrace
 
 void EsClient::ExportIpTraceLogAsync(const ExportIpTraceLogRequest& request, const ExportIpTraceLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ExportIpTraceLog(request), context);
-    };
+    using Req = const ExportIpTraceLogRequest&;
+    using Resp = ExportIpTraceLogResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ExportIpTraceLog", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EsClient::ExportIpTraceLogOutcomeCallable EsClient::ExportIpTraceLogCallable(const ExportIpTraceLogRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ExportIpTraceLogOutcome()>>(
-        [this, request]()
-        {
-            return this->ExportIpTraceLog(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ExportIpTraceLogOutcome>>();
+    ExportIpTraceLogAsync(
+    request,
+    [prom](
+        const EsClient*,
+        const ExportIpTraceLogRequest&,
+        ExportIpTraceLogOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EsClient::GetDiagnoseSettingsOutcome EsClient::GetDiagnoseSettings(const GetDiagnoseSettingsRequest &request)
@@ -1610,25 +1862,32 @@ EsClient::GetDiagnoseSettingsOutcome EsClient::GetDiagnoseSettings(const GetDiag
 
 void EsClient::GetDiagnoseSettingsAsync(const GetDiagnoseSettingsRequest& request, const GetDiagnoseSettingsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->GetDiagnoseSettings(request), context);
-    };
+    using Req = const GetDiagnoseSettingsRequest&;
+    using Resp = GetDiagnoseSettingsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "GetDiagnoseSettings", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EsClient::GetDiagnoseSettingsOutcomeCallable EsClient::GetDiagnoseSettingsCallable(const GetDiagnoseSettingsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<GetDiagnoseSettingsOutcome()>>(
-        [this, request]()
-        {
-            return this->GetDiagnoseSettings(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<GetDiagnoseSettingsOutcome>>();
+    GetDiagnoseSettingsAsync(
+    request,
+    [prom](
+        const EsClient*,
+        const GetDiagnoseSettingsRequest&,
+        GetDiagnoseSettingsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EsClient::GetIpTraceStatusOutcome EsClient::GetIpTraceStatus(const GetIpTraceStatusRequest &request)
@@ -1653,25 +1912,32 @@ EsClient::GetIpTraceStatusOutcome EsClient::GetIpTraceStatus(const GetIpTraceSta
 
 void EsClient::GetIpTraceStatusAsync(const GetIpTraceStatusRequest& request, const GetIpTraceStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->GetIpTraceStatus(request), context);
-    };
+    using Req = const GetIpTraceStatusRequest&;
+    using Resp = GetIpTraceStatusResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "GetIpTraceStatus", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EsClient::GetIpTraceStatusOutcomeCallable EsClient::GetIpTraceStatusCallable(const GetIpTraceStatusRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<GetIpTraceStatusOutcome()>>(
-        [this, request]()
-        {
-            return this->GetIpTraceStatus(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<GetIpTraceStatusOutcome>>();
+    GetIpTraceStatusAsync(
+    request,
+    [prom](
+        const EsClient*,
+        const GetIpTraceStatusRequest&,
+        GetIpTraceStatusOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EsClient::GetRequestTargetNodeTypesOutcome EsClient::GetRequestTargetNodeTypes(const GetRequestTargetNodeTypesRequest &request)
@@ -1696,25 +1962,32 @@ EsClient::GetRequestTargetNodeTypesOutcome EsClient::GetRequestTargetNodeTypes(c
 
 void EsClient::GetRequestTargetNodeTypesAsync(const GetRequestTargetNodeTypesRequest& request, const GetRequestTargetNodeTypesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->GetRequestTargetNodeTypes(request), context);
-    };
+    using Req = const GetRequestTargetNodeTypesRequest&;
+    using Resp = GetRequestTargetNodeTypesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "GetRequestTargetNodeTypes", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EsClient::GetRequestTargetNodeTypesOutcomeCallable EsClient::GetRequestTargetNodeTypesCallable(const GetRequestTargetNodeTypesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<GetRequestTargetNodeTypesOutcome()>>(
-        [this, request]()
-        {
-            return this->GetRequestTargetNodeTypes(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<GetRequestTargetNodeTypesOutcome>>();
+    GetRequestTargetNodeTypesAsync(
+    request,
+    [prom](
+        const EsClient*,
+        const GetRequestTargetNodeTypesRequest&,
+        GetRequestTargetNodeTypesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EsClient::InquirePriceRenewInstanceOutcome EsClient::InquirePriceRenewInstance(const InquirePriceRenewInstanceRequest &request)
@@ -1739,25 +2012,32 @@ EsClient::InquirePriceRenewInstanceOutcome EsClient::InquirePriceRenewInstance(c
 
 void EsClient::InquirePriceRenewInstanceAsync(const InquirePriceRenewInstanceRequest& request, const InquirePriceRenewInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->InquirePriceRenewInstance(request), context);
-    };
+    using Req = const InquirePriceRenewInstanceRequest&;
+    using Resp = InquirePriceRenewInstanceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "InquirePriceRenewInstance", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EsClient::InquirePriceRenewInstanceOutcomeCallable EsClient::InquirePriceRenewInstanceCallable(const InquirePriceRenewInstanceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<InquirePriceRenewInstanceOutcome()>>(
-        [this, request]()
-        {
-            return this->InquirePriceRenewInstance(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<InquirePriceRenewInstanceOutcome>>();
+    InquirePriceRenewInstanceAsync(
+    request,
+    [prom](
+        const EsClient*,
+        const InquirePriceRenewInstanceRequest&,
+        InquirePriceRenewInstanceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EsClient::InstallInstanceModelOutcome EsClient::InstallInstanceModel(const InstallInstanceModelRequest &request)
@@ -1782,25 +2062,32 @@ EsClient::InstallInstanceModelOutcome EsClient::InstallInstanceModel(const Insta
 
 void EsClient::InstallInstanceModelAsync(const InstallInstanceModelRequest& request, const InstallInstanceModelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->InstallInstanceModel(request), context);
-    };
+    using Req = const InstallInstanceModelRequest&;
+    using Resp = InstallInstanceModelResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "InstallInstanceModel", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EsClient::InstallInstanceModelOutcomeCallable EsClient::InstallInstanceModelCallable(const InstallInstanceModelRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<InstallInstanceModelOutcome()>>(
-        [this, request]()
-        {
-            return this->InstallInstanceModel(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<InstallInstanceModelOutcome>>();
+    InstallInstanceModelAsync(
+    request,
+    [prom](
+        const EsClient*,
+        const InstallInstanceModelRequest&,
+        InstallInstanceModelOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EsClient::ModifyEsVipSecurityGroupOutcome EsClient::ModifyEsVipSecurityGroup(const ModifyEsVipSecurityGroupRequest &request)
@@ -1825,25 +2112,32 @@ EsClient::ModifyEsVipSecurityGroupOutcome EsClient::ModifyEsVipSecurityGroup(con
 
 void EsClient::ModifyEsVipSecurityGroupAsync(const ModifyEsVipSecurityGroupRequest& request, const ModifyEsVipSecurityGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyEsVipSecurityGroup(request), context);
-    };
+    using Req = const ModifyEsVipSecurityGroupRequest&;
+    using Resp = ModifyEsVipSecurityGroupResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyEsVipSecurityGroup", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EsClient::ModifyEsVipSecurityGroupOutcomeCallable EsClient::ModifyEsVipSecurityGroupCallable(const ModifyEsVipSecurityGroupRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyEsVipSecurityGroupOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyEsVipSecurityGroup(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyEsVipSecurityGroupOutcome>>();
+    ModifyEsVipSecurityGroupAsync(
+    request,
+    [prom](
+        const EsClient*,
+        const ModifyEsVipSecurityGroupRequest&,
+        ModifyEsVipSecurityGroupOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EsClient::QueryIpTraceLogOutcome EsClient::QueryIpTraceLog(const QueryIpTraceLogRequest &request)
@@ -1868,25 +2162,32 @@ EsClient::QueryIpTraceLogOutcome EsClient::QueryIpTraceLog(const QueryIpTraceLog
 
 void EsClient::QueryIpTraceLogAsync(const QueryIpTraceLogRequest& request, const QueryIpTraceLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->QueryIpTraceLog(request), context);
-    };
+    using Req = const QueryIpTraceLogRequest&;
+    using Resp = QueryIpTraceLogResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "QueryIpTraceLog", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EsClient::QueryIpTraceLogOutcomeCallable EsClient::QueryIpTraceLogCallable(const QueryIpTraceLogRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<QueryIpTraceLogOutcome()>>(
-        [this, request]()
-        {
-            return this->QueryIpTraceLog(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<QueryIpTraceLogOutcome>>();
+    QueryIpTraceLogAsync(
+    request,
+    [prom](
+        const EsClient*,
+        const QueryIpTraceLogRequest&,
+        QueryIpTraceLogOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EsClient::RestartInstanceOutcome EsClient::RestartInstance(const RestartInstanceRequest &request)
@@ -1911,25 +2212,32 @@ EsClient::RestartInstanceOutcome EsClient::RestartInstance(const RestartInstance
 
 void EsClient::RestartInstanceAsync(const RestartInstanceRequest& request, const RestartInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->RestartInstance(request), context);
-    };
+    using Req = const RestartInstanceRequest&;
+    using Resp = RestartInstanceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "RestartInstance", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EsClient::RestartInstanceOutcomeCallable EsClient::RestartInstanceCallable(const RestartInstanceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<RestartInstanceOutcome()>>(
-        [this, request]()
-        {
-            return this->RestartInstance(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<RestartInstanceOutcome>>();
+    RestartInstanceAsync(
+    request,
+    [prom](
+        const EsClient*,
+        const RestartInstanceRequest&,
+        RestartInstanceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EsClient::RestartKibanaOutcome EsClient::RestartKibana(const RestartKibanaRequest &request)
@@ -1954,25 +2262,32 @@ EsClient::RestartKibanaOutcome EsClient::RestartKibana(const RestartKibanaReques
 
 void EsClient::RestartKibanaAsync(const RestartKibanaRequest& request, const RestartKibanaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->RestartKibana(request), context);
-    };
+    using Req = const RestartKibanaRequest&;
+    using Resp = RestartKibanaResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "RestartKibana", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EsClient::RestartKibanaOutcomeCallable EsClient::RestartKibanaCallable(const RestartKibanaRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<RestartKibanaOutcome()>>(
-        [this, request]()
-        {
-            return this->RestartKibana(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<RestartKibanaOutcome>>();
+    RestartKibanaAsync(
+    request,
+    [prom](
+        const EsClient*,
+        const RestartKibanaRequest&,
+        RestartKibanaOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EsClient::RestartLogstashInstanceOutcome EsClient::RestartLogstashInstance(const RestartLogstashInstanceRequest &request)
@@ -1997,25 +2312,32 @@ EsClient::RestartLogstashInstanceOutcome EsClient::RestartLogstashInstance(const
 
 void EsClient::RestartLogstashInstanceAsync(const RestartLogstashInstanceRequest& request, const RestartLogstashInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->RestartLogstashInstance(request), context);
-    };
+    using Req = const RestartLogstashInstanceRequest&;
+    using Resp = RestartLogstashInstanceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "RestartLogstashInstance", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EsClient::RestartLogstashInstanceOutcomeCallable EsClient::RestartLogstashInstanceCallable(const RestartLogstashInstanceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<RestartLogstashInstanceOutcome()>>(
-        [this, request]()
-        {
-            return this->RestartLogstashInstance(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<RestartLogstashInstanceOutcome>>();
+    RestartLogstashInstanceAsync(
+    request,
+    [prom](
+        const EsClient*,
+        const RestartLogstashInstanceRequest&,
+        RestartLogstashInstanceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EsClient::RestartNodesOutcome EsClient::RestartNodes(const RestartNodesRequest &request)
@@ -2040,25 +2362,32 @@ EsClient::RestartNodesOutcome EsClient::RestartNodes(const RestartNodesRequest &
 
 void EsClient::RestartNodesAsync(const RestartNodesRequest& request, const RestartNodesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->RestartNodes(request), context);
-    };
+    using Req = const RestartNodesRequest&;
+    using Resp = RestartNodesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "RestartNodes", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EsClient::RestartNodesOutcomeCallable EsClient::RestartNodesCallable(const RestartNodesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<RestartNodesOutcome()>>(
-        [this, request]()
-        {
-            return this->RestartNodes(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<RestartNodesOutcome>>();
+    RestartNodesAsync(
+    request,
+    [prom](
+        const EsClient*,
+        const RestartNodesRequest&,
+        RestartNodesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EsClient::RestoreClusterSnapshotOutcome EsClient::RestoreClusterSnapshot(const RestoreClusterSnapshotRequest &request)
@@ -2083,25 +2412,32 @@ EsClient::RestoreClusterSnapshotOutcome EsClient::RestoreClusterSnapshot(const R
 
 void EsClient::RestoreClusterSnapshotAsync(const RestoreClusterSnapshotRequest& request, const RestoreClusterSnapshotAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->RestoreClusterSnapshot(request), context);
-    };
+    using Req = const RestoreClusterSnapshotRequest&;
+    using Resp = RestoreClusterSnapshotResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "RestoreClusterSnapshot", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EsClient::RestoreClusterSnapshotOutcomeCallable EsClient::RestoreClusterSnapshotCallable(const RestoreClusterSnapshotRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<RestoreClusterSnapshotOutcome()>>(
-        [this, request]()
-        {
-            return this->RestoreClusterSnapshot(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<RestoreClusterSnapshotOutcome>>();
+    RestoreClusterSnapshotAsync(
+    request,
+    [prom](
+        const EsClient*,
+        const RestoreClusterSnapshotRequest&,
+        RestoreClusterSnapshotOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EsClient::SaveAndDeployLogstashPipelineOutcome EsClient::SaveAndDeployLogstashPipeline(const SaveAndDeployLogstashPipelineRequest &request)
@@ -2126,25 +2462,32 @@ EsClient::SaveAndDeployLogstashPipelineOutcome EsClient::SaveAndDeployLogstashPi
 
 void EsClient::SaveAndDeployLogstashPipelineAsync(const SaveAndDeployLogstashPipelineRequest& request, const SaveAndDeployLogstashPipelineAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->SaveAndDeployLogstashPipeline(request), context);
-    };
+    using Req = const SaveAndDeployLogstashPipelineRequest&;
+    using Resp = SaveAndDeployLogstashPipelineResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "SaveAndDeployLogstashPipeline", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EsClient::SaveAndDeployLogstashPipelineOutcomeCallable EsClient::SaveAndDeployLogstashPipelineCallable(const SaveAndDeployLogstashPipelineRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<SaveAndDeployLogstashPipelineOutcome()>>(
-        [this, request]()
-        {
-            return this->SaveAndDeployLogstashPipeline(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<SaveAndDeployLogstashPipelineOutcome>>();
+    SaveAndDeployLogstashPipelineAsync(
+    request,
+    [prom](
+        const EsClient*,
+        const SaveAndDeployLogstashPipelineRequest&,
+        SaveAndDeployLogstashPipelineOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EsClient::StartLogstashPipelinesOutcome EsClient::StartLogstashPipelines(const StartLogstashPipelinesRequest &request)
@@ -2169,25 +2512,32 @@ EsClient::StartLogstashPipelinesOutcome EsClient::StartLogstashPipelines(const S
 
 void EsClient::StartLogstashPipelinesAsync(const StartLogstashPipelinesRequest& request, const StartLogstashPipelinesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->StartLogstashPipelines(request), context);
-    };
+    using Req = const StartLogstashPipelinesRequest&;
+    using Resp = StartLogstashPipelinesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "StartLogstashPipelines", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EsClient::StartLogstashPipelinesOutcomeCallable EsClient::StartLogstashPipelinesCallable(const StartLogstashPipelinesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<StartLogstashPipelinesOutcome()>>(
-        [this, request]()
-        {
-            return this->StartLogstashPipelines(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<StartLogstashPipelinesOutcome>>();
+    StartLogstashPipelinesAsync(
+    request,
+    [prom](
+        const EsClient*,
+        const StartLogstashPipelinesRequest&,
+        StartLogstashPipelinesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EsClient::StopLogstashPipelinesOutcome EsClient::StopLogstashPipelines(const StopLogstashPipelinesRequest &request)
@@ -2212,25 +2562,32 @@ EsClient::StopLogstashPipelinesOutcome EsClient::StopLogstashPipelines(const Sto
 
 void EsClient::StopLogstashPipelinesAsync(const StopLogstashPipelinesRequest& request, const StopLogstashPipelinesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->StopLogstashPipelines(request), context);
-    };
+    using Req = const StopLogstashPipelinesRequest&;
+    using Resp = StopLogstashPipelinesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "StopLogstashPipelines", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EsClient::StopLogstashPipelinesOutcomeCallable EsClient::StopLogstashPipelinesCallable(const StopLogstashPipelinesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<StopLogstashPipelinesOutcome()>>(
-        [this, request]()
-        {
-            return this->StopLogstashPipelines(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<StopLogstashPipelinesOutcome>>();
+    StopLogstashPipelinesAsync(
+    request,
+    [prom](
+        const EsClient*,
+        const StopLogstashPipelinesRequest&,
+        StopLogstashPipelinesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EsClient::UpdateDiagnoseSettingsOutcome EsClient::UpdateDiagnoseSettings(const UpdateDiagnoseSettingsRequest &request)
@@ -2255,25 +2612,32 @@ EsClient::UpdateDiagnoseSettingsOutcome EsClient::UpdateDiagnoseSettings(const U
 
 void EsClient::UpdateDiagnoseSettingsAsync(const UpdateDiagnoseSettingsRequest& request, const UpdateDiagnoseSettingsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UpdateDiagnoseSettings(request), context);
-    };
+    using Req = const UpdateDiagnoseSettingsRequest&;
+    using Resp = UpdateDiagnoseSettingsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UpdateDiagnoseSettings", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EsClient::UpdateDiagnoseSettingsOutcomeCallable EsClient::UpdateDiagnoseSettingsCallable(const UpdateDiagnoseSettingsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UpdateDiagnoseSettingsOutcome()>>(
-        [this, request]()
-        {
-            return this->UpdateDiagnoseSettings(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UpdateDiagnoseSettingsOutcome>>();
+    UpdateDiagnoseSettingsAsync(
+    request,
+    [prom](
+        const EsClient*,
+        const UpdateDiagnoseSettingsRequest&,
+        UpdateDiagnoseSettingsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EsClient::UpdateDictionariesOutcome EsClient::UpdateDictionaries(const UpdateDictionariesRequest &request)
@@ -2298,25 +2662,32 @@ EsClient::UpdateDictionariesOutcome EsClient::UpdateDictionaries(const UpdateDic
 
 void EsClient::UpdateDictionariesAsync(const UpdateDictionariesRequest& request, const UpdateDictionariesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UpdateDictionaries(request), context);
-    };
+    using Req = const UpdateDictionariesRequest&;
+    using Resp = UpdateDictionariesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UpdateDictionaries", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EsClient::UpdateDictionariesOutcomeCallable EsClient::UpdateDictionariesCallable(const UpdateDictionariesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UpdateDictionariesOutcome()>>(
-        [this, request]()
-        {
-            return this->UpdateDictionaries(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UpdateDictionariesOutcome>>();
+    UpdateDictionariesAsync(
+    request,
+    [prom](
+        const EsClient*,
+        const UpdateDictionariesRequest&,
+        UpdateDictionariesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EsClient::UpdateIndexOutcome EsClient::UpdateIndex(const UpdateIndexRequest &request)
@@ -2341,25 +2712,32 @@ EsClient::UpdateIndexOutcome EsClient::UpdateIndex(const UpdateIndexRequest &req
 
 void EsClient::UpdateIndexAsync(const UpdateIndexRequest& request, const UpdateIndexAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UpdateIndex(request), context);
-    };
+    using Req = const UpdateIndexRequest&;
+    using Resp = UpdateIndexResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UpdateIndex", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EsClient::UpdateIndexOutcomeCallable EsClient::UpdateIndexCallable(const UpdateIndexRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UpdateIndexOutcome()>>(
-        [this, request]()
-        {
-            return this->UpdateIndex(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UpdateIndexOutcome>>();
+    UpdateIndexAsync(
+    request,
+    [prom](
+        const EsClient*,
+        const UpdateIndexRequest&,
+        UpdateIndexOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EsClient::UpdateInstanceOutcome EsClient::UpdateInstance(const UpdateInstanceRequest &request)
@@ -2384,25 +2762,32 @@ EsClient::UpdateInstanceOutcome EsClient::UpdateInstance(const UpdateInstanceReq
 
 void EsClient::UpdateInstanceAsync(const UpdateInstanceRequest& request, const UpdateInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UpdateInstance(request), context);
-    };
+    using Req = const UpdateInstanceRequest&;
+    using Resp = UpdateInstanceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UpdateInstance", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EsClient::UpdateInstanceOutcomeCallable EsClient::UpdateInstanceCallable(const UpdateInstanceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UpdateInstanceOutcome()>>(
-        [this, request]()
-        {
-            return this->UpdateInstance(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UpdateInstanceOutcome>>();
+    UpdateInstanceAsync(
+    request,
+    [prom](
+        const EsClient*,
+        const UpdateInstanceRequest&,
+        UpdateInstanceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EsClient::UpdateIpTraceStatusOutcome EsClient::UpdateIpTraceStatus(const UpdateIpTraceStatusRequest &request)
@@ -2427,25 +2812,32 @@ EsClient::UpdateIpTraceStatusOutcome EsClient::UpdateIpTraceStatus(const UpdateI
 
 void EsClient::UpdateIpTraceStatusAsync(const UpdateIpTraceStatusRequest& request, const UpdateIpTraceStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UpdateIpTraceStatus(request), context);
-    };
+    using Req = const UpdateIpTraceStatusRequest&;
+    using Resp = UpdateIpTraceStatusResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UpdateIpTraceStatus", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EsClient::UpdateIpTraceStatusOutcomeCallable EsClient::UpdateIpTraceStatusCallable(const UpdateIpTraceStatusRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UpdateIpTraceStatusOutcome()>>(
-        [this, request]()
-        {
-            return this->UpdateIpTraceStatus(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UpdateIpTraceStatusOutcome>>();
+    UpdateIpTraceStatusAsync(
+    request,
+    [prom](
+        const EsClient*,
+        const UpdateIpTraceStatusRequest&,
+        UpdateIpTraceStatusOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EsClient::UpdateJdkOutcome EsClient::UpdateJdk(const UpdateJdkRequest &request)
@@ -2470,25 +2862,32 @@ EsClient::UpdateJdkOutcome EsClient::UpdateJdk(const UpdateJdkRequest &request)
 
 void EsClient::UpdateJdkAsync(const UpdateJdkRequest& request, const UpdateJdkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UpdateJdk(request), context);
-    };
+    using Req = const UpdateJdkRequest&;
+    using Resp = UpdateJdkResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UpdateJdk", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EsClient::UpdateJdkOutcomeCallable EsClient::UpdateJdkCallable(const UpdateJdkRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UpdateJdkOutcome()>>(
-        [this, request]()
-        {
-            return this->UpdateJdk(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UpdateJdkOutcome>>();
+    UpdateJdkAsync(
+    request,
+    [prom](
+        const EsClient*,
+        const UpdateJdkRequest&,
+        UpdateJdkOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EsClient::UpdateLogstashInstanceOutcome EsClient::UpdateLogstashInstance(const UpdateLogstashInstanceRequest &request)
@@ -2513,25 +2912,32 @@ EsClient::UpdateLogstashInstanceOutcome EsClient::UpdateLogstashInstance(const U
 
 void EsClient::UpdateLogstashInstanceAsync(const UpdateLogstashInstanceRequest& request, const UpdateLogstashInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UpdateLogstashInstance(request), context);
-    };
+    using Req = const UpdateLogstashInstanceRequest&;
+    using Resp = UpdateLogstashInstanceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UpdateLogstashInstance", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EsClient::UpdateLogstashInstanceOutcomeCallable EsClient::UpdateLogstashInstanceCallable(const UpdateLogstashInstanceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UpdateLogstashInstanceOutcome()>>(
-        [this, request]()
-        {
-            return this->UpdateLogstashInstance(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UpdateLogstashInstanceOutcome>>();
+    UpdateLogstashInstanceAsync(
+    request,
+    [prom](
+        const EsClient*,
+        const UpdateLogstashInstanceRequest&,
+        UpdateLogstashInstanceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EsClient::UpdateLogstashPipelineDescOutcome EsClient::UpdateLogstashPipelineDesc(const UpdateLogstashPipelineDescRequest &request)
@@ -2556,25 +2962,32 @@ EsClient::UpdateLogstashPipelineDescOutcome EsClient::UpdateLogstashPipelineDesc
 
 void EsClient::UpdateLogstashPipelineDescAsync(const UpdateLogstashPipelineDescRequest& request, const UpdateLogstashPipelineDescAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UpdateLogstashPipelineDesc(request), context);
-    };
+    using Req = const UpdateLogstashPipelineDescRequest&;
+    using Resp = UpdateLogstashPipelineDescResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UpdateLogstashPipelineDesc", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EsClient::UpdateLogstashPipelineDescOutcomeCallable EsClient::UpdateLogstashPipelineDescCallable(const UpdateLogstashPipelineDescRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UpdateLogstashPipelineDescOutcome()>>(
-        [this, request]()
-        {
-            return this->UpdateLogstashPipelineDesc(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UpdateLogstashPipelineDescOutcome>>();
+    UpdateLogstashPipelineDescAsync(
+    request,
+    [prom](
+        const EsClient*,
+        const UpdateLogstashPipelineDescRequest&,
+        UpdateLogstashPipelineDescOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EsClient::UpdatePluginsOutcome EsClient::UpdatePlugins(const UpdatePluginsRequest &request)
@@ -2599,25 +3012,32 @@ EsClient::UpdatePluginsOutcome EsClient::UpdatePlugins(const UpdatePluginsReques
 
 void EsClient::UpdatePluginsAsync(const UpdatePluginsRequest& request, const UpdatePluginsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UpdatePlugins(request), context);
-    };
+    using Req = const UpdatePluginsRequest&;
+    using Resp = UpdatePluginsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UpdatePlugins", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EsClient::UpdatePluginsOutcomeCallable EsClient::UpdatePluginsCallable(const UpdatePluginsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UpdatePluginsOutcome()>>(
-        [this, request]()
-        {
-            return this->UpdatePlugins(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UpdatePluginsOutcome>>();
+    UpdatePluginsAsync(
+    request,
+    [prom](
+        const EsClient*,
+        const UpdatePluginsRequest&,
+        UpdatePluginsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EsClient::UpdateRequestTargetNodeTypesOutcome EsClient::UpdateRequestTargetNodeTypes(const UpdateRequestTargetNodeTypesRequest &request)
@@ -2642,25 +3062,32 @@ EsClient::UpdateRequestTargetNodeTypesOutcome EsClient::UpdateRequestTargetNodeT
 
 void EsClient::UpdateRequestTargetNodeTypesAsync(const UpdateRequestTargetNodeTypesRequest& request, const UpdateRequestTargetNodeTypesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UpdateRequestTargetNodeTypes(request), context);
-    };
+    using Req = const UpdateRequestTargetNodeTypesRequest&;
+    using Resp = UpdateRequestTargetNodeTypesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UpdateRequestTargetNodeTypes", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EsClient::UpdateRequestTargetNodeTypesOutcomeCallable EsClient::UpdateRequestTargetNodeTypesCallable(const UpdateRequestTargetNodeTypesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UpdateRequestTargetNodeTypesOutcome()>>(
-        [this, request]()
-        {
-            return this->UpdateRequestTargetNodeTypes(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UpdateRequestTargetNodeTypesOutcome>>();
+    UpdateRequestTargetNodeTypesAsync(
+    request,
+    [prom](
+        const EsClient*,
+        const UpdateRequestTargetNodeTypesRequest&,
+        UpdateRequestTargetNodeTypesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EsClient::UpdateServerlessInstanceOutcome EsClient::UpdateServerlessInstance(const UpdateServerlessInstanceRequest &request)
@@ -2685,25 +3112,32 @@ EsClient::UpdateServerlessInstanceOutcome EsClient::UpdateServerlessInstance(con
 
 void EsClient::UpdateServerlessInstanceAsync(const UpdateServerlessInstanceRequest& request, const UpdateServerlessInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UpdateServerlessInstance(request), context);
-    };
+    using Req = const UpdateServerlessInstanceRequest&;
+    using Resp = UpdateServerlessInstanceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UpdateServerlessInstance", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EsClient::UpdateServerlessInstanceOutcomeCallable EsClient::UpdateServerlessInstanceCallable(const UpdateServerlessInstanceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UpdateServerlessInstanceOutcome()>>(
-        [this, request]()
-        {
-            return this->UpdateServerlessInstance(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UpdateServerlessInstanceOutcome>>();
+    UpdateServerlessInstanceAsync(
+    request,
+    [prom](
+        const EsClient*,
+        const UpdateServerlessInstanceRequest&,
+        UpdateServerlessInstanceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EsClient::UpdateServerlessSpaceOutcome EsClient::UpdateServerlessSpace(const UpdateServerlessSpaceRequest &request)
@@ -2728,25 +3162,32 @@ EsClient::UpdateServerlessSpaceOutcome EsClient::UpdateServerlessSpace(const Upd
 
 void EsClient::UpdateServerlessSpaceAsync(const UpdateServerlessSpaceRequest& request, const UpdateServerlessSpaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UpdateServerlessSpace(request), context);
-    };
+    using Req = const UpdateServerlessSpaceRequest&;
+    using Resp = UpdateServerlessSpaceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UpdateServerlessSpace", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EsClient::UpdateServerlessSpaceOutcomeCallable EsClient::UpdateServerlessSpaceCallable(const UpdateServerlessSpaceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UpdateServerlessSpaceOutcome()>>(
-        [this, request]()
-        {
-            return this->UpdateServerlessSpace(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UpdateServerlessSpaceOutcome>>();
+    UpdateServerlessSpaceAsync(
+    request,
+    [prom](
+        const EsClient*,
+        const UpdateServerlessSpaceRequest&,
+        UpdateServerlessSpaceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EsClient::UpgradeInstanceOutcome EsClient::UpgradeInstance(const UpgradeInstanceRequest &request)
@@ -2771,25 +3212,32 @@ EsClient::UpgradeInstanceOutcome EsClient::UpgradeInstance(const UpgradeInstance
 
 void EsClient::UpgradeInstanceAsync(const UpgradeInstanceRequest& request, const UpgradeInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UpgradeInstance(request), context);
-    };
+    using Req = const UpgradeInstanceRequest&;
+    using Resp = UpgradeInstanceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UpgradeInstance", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EsClient::UpgradeInstanceOutcomeCallable EsClient::UpgradeInstanceCallable(const UpgradeInstanceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UpgradeInstanceOutcome()>>(
-        [this, request]()
-        {
-            return this->UpgradeInstance(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UpgradeInstanceOutcome>>();
+    UpgradeInstanceAsync(
+    request,
+    [prom](
+        const EsClient*,
+        const UpgradeInstanceRequest&,
+        UpgradeInstanceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EsClient::UpgradeLicenseOutcome EsClient::UpgradeLicense(const UpgradeLicenseRequest &request)
@@ -2814,24 +3262,31 @@ EsClient::UpgradeLicenseOutcome EsClient::UpgradeLicense(const UpgradeLicenseReq
 
 void EsClient::UpgradeLicenseAsync(const UpgradeLicenseRequest& request, const UpgradeLicenseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UpgradeLicense(request), context);
-    };
+    using Req = const UpgradeLicenseRequest&;
+    using Resp = UpgradeLicenseResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UpgradeLicense", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EsClient::UpgradeLicenseOutcomeCallable EsClient::UpgradeLicenseCallable(const UpgradeLicenseRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UpgradeLicenseOutcome()>>(
-        [this, request]()
-        {
-            return this->UpgradeLicense(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UpgradeLicenseOutcome>>();
+    UpgradeLicenseAsync(
+    request,
+    [prom](
+        const EsClient*,
+        const UpgradeLicenseRequest&,
+        UpgradeLicenseOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 

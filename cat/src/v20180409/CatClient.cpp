@@ -62,25 +62,32 @@ CatClient::CreateProbeTasksOutcome CatClient::CreateProbeTasks(const CreateProbe
 
 void CatClient::CreateProbeTasksAsync(const CreateProbeTasksRequest& request, const CreateProbeTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateProbeTasks(request), context);
-    };
+    using Req = const CreateProbeTasksRequest&;
+    using Resp = CreateProbeTasksResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateProbeTasks", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CatClient::CreateProbeTasksOutcomeCallable CatClient::CreateProbeTasksCallable(const CreateProbeTasksRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateProbeTasksOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateProbeTasks(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateProbeTasksOutcome>>();
+    CreateProbeTasksAsync(
+    request,
+    [prom](
+        const CatClient*,
+        const CreateProbeTasksRequest&,
+        CreateProbeTasksOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CatClient::DeleteProbeTaskOutcome CatClient::DeleteProbeTask(const DeleteProbeTaskRequest &request)
@@ -105,25 +112,32 @@ CatClient::DeleteProbeTaskOutcome CatClient::DeleteProbeTask(const DeleteProbeTa
 
 void CatClient::DeleteProbeTaskAsync(const DeleteProbeTaskRequest& request, const DeleteProbeTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteProbeTask(request), context);
-    };
+    using Req = const DeleteProbeTaskRequest&;
+    using Resp = DeleteProbeTaskResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteProbeTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CatClient::DeleteProbeTaskOutcomeCallable CatClient::DeleteProbeTaskCallable(const DeleteProbeTaskRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteProbeTaskOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteProbeTask(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteProbeTaskOutcome>>();
+    DeleteProbeTaskAsync(
+    request,
+    [prom](
+        const CatClient*,
+        const DeleteProbeTaskRequest&,
+        DeleteProbeTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CatClient::DescribeDetailedSingleProbeDataOutcome CatClient::DescribeDetailedSingleProbeData(const DescribeDetailedSingleProbeDataRequest &request)
@@ -148,25 +162,32 @@ CatClient::DescribeDetailedSingleProbeDataOutcome CatClient::DescribeDetailedSin
 
 void CatClient::DescribeDetailedSingleProbeDataAsync(const DescribeDetailedSingleProbeDataRequest& request, const DescribeDetailedSingleProbeDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDetailedSingleProbeData(request), context);
-    };
+    using Req = const DescribeDetailedSingleProbeDataRequest&;
+    using Resp = DescribeDetailedSingleProbeDataResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeDetailedSingleProbeData", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CatClient::DescribeDetailedSingleProbeDataOutcomeCallable CatClient::DescribeDetailedSingleProbeDataCallable(const DescribeDetailedSingleProbeDataRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeDetailedSingleProbeDataOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDetailedSingleProbeData(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeDetailedSingleProbeDataOutcome>>();
+    DescribeDetailedSingleProbeDataAsync(
+    request,
+    [prom](
+        const CatClient*,
+        const DescribeDetailedSingleProbeDataRequest&,
+        DescribeDetailedSingleProbeDataOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CatClient::DescribeInstantTasksOutcome CatClient::DescribeInstantTasks(const DescribeInstantTasksRequest &request)
@@ -191,25 +212,32 @@ CatClient::DescribeInstantTasksOutcome CatClient::DescribeInstantTasks(const Des
 
 void CatClient::DescribeInstantTasksAsync(const DescribeInstantTasksRequest& request, const DescribeInstantTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeInstantTasks(request), context);
-    };
+    using Req = const DescribeInstantTasksRequest&;
+    using Resp = DescribeInstantTasksResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeInstantTasks", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CatClient::DescribeInstantTasksOutcomeCallable CatClient::DescribeInstantTasksCallable(const DescribeInstantTasksRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeInstantTasksOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeInstantTasks(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeInstantTasksOutcome>>();
+    DescribeInstantTasksAsync(
+    request,
+    [prom](
+        const CatClient*,
+        const DescribeInstantTasksRequest&,
+        DescribeInstantTasksOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CatClient::DescribeNodeGroupsOutcome CatClient::DescribeNodeGroups(const DescribeNodeGroupsRequest &request)
@@ -234,25 +262,32 @@ CatClient::DescribeNodeGroupsOutcome CatClient::DescribeNodeGroups(const Describ
 
 void CatClient::DescribeNodeGroupsAsync(const DescribeNodeGroupsRequest& request, const DescribeNodeGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeNodeGroups(request), context);
-    };
+    using Req = const DescribeNodeGroupsRequest&;
+    using Resp = DescribeNodeGroupsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeNodeGroups", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CatClient::DescribeNodeGroupsOutcomeCallable CatClient::DescribeNodeGroupsCallable(const DescribeNodeGroupsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeNodeGroupsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeNodeGroups(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeNodeGroupsOutcome>>();
+    DescribeNodeGroupsAsync(
+    request,
+    [prom](
+        const CatClient*,
+        const DescribeNodeGroupsRequest&,
+        DescribeNodeGroupsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CatClient::DescribeNodesOutcome CatClient::DescribeNodes(const DescribeNodesRequest &request)
@@ -277,25 +312,32 @@ CatClient::DescribeNodesOutcome CatClient::DescribeNodes(const DescribeNodesRequ
 
 void CatClient::DescribeNodesAsync(const DescribeNodesRequest& request, const DescribeNodesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeNodes(request), context);
-    };
+    using Req = const DescribeNodesRequest&;
+    using Resp = DescribeNodesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeNodes", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CatClient::DescribeNodesOutcomeCallable CatClient::DescribeNodesCallable(const DescribeNodesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeNodesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeNodes(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeNodesOutcome>>();
+    DescribeNodesAsync(
+    request,
+    [prom](
+        const CatClient*,
+        const DescribeNodesRequest&,
+        DescribeNodesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CatClient::DescribeProbeMetricDataOutcome CatClient::DescribeProbeMetricData(const DescribeProbeMetricDataRequest &request)
@@ -320,25 +362,32 @@ CatClient::DescribeProbeMetricDataOutcome CatClient::DescribeProbeMetricData(con
 
 void CatClient::DescribeProbeMetricDataAsync(const DescribeProbeMetricDataRequest& request, const DescribeProbeMetricDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeProbeMetricData(request), context);
-    };
+    using Req = const DescribeProbeMetricDataRequest&;
+    using Resp = DescribeProbeMetricDataResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeProbeMetricData", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CatClient::DescribeProbeMetricDataOutcomeCallable CatClient::DescribeProbeMetricDataCallable(const DescribeProbeMetricDataRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeProbeMetricDataOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeProbeMetricData(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeProbeMetricDataOutcome>>();
+    DescribeProbeMetricDataAsync(
+    request,
+    [prom](
+        const CatClient*,
+        const DescribeProbeMetricDataRequest&,
+        DescribeProbeMetricDataOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CatClient::DescribeProbeMetricTagValuesOutcome CatClient::DescribeProbeMetricTagValues(const DescribeProbeMetricTagValuesRequest &request)
@@ -363,25 +412,32 @@ CatClient::DescribeProbeMetricTagValuesOutcome CatClient::DescribeProbeMetricTag
 
 void CatClient::DescribeProbeMetricTagValuesAsync(const DescribeProbeMetricTagValuesRequest& request, const DescribeProbeMetricTagValuesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeProbeMetricTagValues(request), context);
-    };
+    using Req = const DescribeProbeMetricTagValuesRequest&;
+    using Resp = DescribeProbeMetricTagValuesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeProbeMetricTagValues", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CatClient::DescribeProbeMetricTagValuesOutcomeCallable CatClient::DescribeProbeMetricTagValuesCallable(const DescribeProbeMetricTagValuesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeProbeMetricTagValuesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeProbeMetricTagValues(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeProbeMetricTagValuesOutcome>>();
+    DescribeProbeMetricTagValuesAsync(
+    request,
+    [prom](
+        const CatClient*,
+        const DescribeProbeMetricTagValuesRequest&,
+        DescribeProbeMetricTagValuesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CatClient::DescribeProbeNodesOutcome CatClient::DescribeProbeNodes(const DescribeProbeNodesRequest &request)
@@ -406,25 +462,32 @@ CatClient::DescribeProbeNodesOutcome CatClient::DescribeProbeNodes(const Describ
 
 void CatClient::DescribeProbeNodesAsync(const DescribeProbeNodesRequest& request, const DescribeProbeNodesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeProbeNodes(request), context);
-    };
+    using Req = const DescribeProbeNodesRequest&;
+    using Resp = DescribeProbeNodesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeProbeNodes", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CatClient::DescribeProbeNodesOutcomeCallable CatClient::DescribeProbeNodesCallable(const DescribeProbeNodesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeProbeNodesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeProbeNodes(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeProbeNodesOutcome>>();
+    DescribeProbeNodesAsync(
+    request,
+    [prom](
+        const CatClient*,
+        const DescribeProbeNodesRequest&,
+        DescribeProbeNodesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CatClient::DescribeProbeTasksOutcome CatClient::DescribeProbeTasks(const DescribeProbeTasksRequest &request)
@@ -449,25 +512,32 @@ CatClient::DescribeProbeTasksOutcome CatClient::DescribeProbeTasks(const Describ
 
 void CatClient::DescribeProbeTasksAsync(const DescribeProbeTasksRequest& request, const DescribeProbeTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeProbeTasks(request), context);
-    };
+    using Req = const DescribeProbeTasksRequest&;
+    using Resp = DescribeProbeTasksResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeProbeTasks", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CatClient::DescribeProbeTasksOutcomeCallable CatClient::DescribeProbeTasksCallable(const DescribeProbeTasksRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeProbeTasksOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeProbeTasks(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeProbeTasksOutcome>>();
+    DescribeProbeTasksAsync(
+    request,
+    [prom](
+        const CatClient*,
+        const DescribeProbeTasksRequest&,
+        DescribeProbeTasksOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CatClient::ResumeProbeTaskOutcome CatClient::ResumeProbeTask(const ResumeProbeTaskRequest &request)
@@ -492,25 +562,32 @@ CatClient::ResumeProbeTaskOutcome CatClient::ResumeProbeTask(const ResumeProbeTa
 
 void CatClient::ResumeProbeTaskAsync(const ResumeProbeTaskRequest& request, const ResumeProbeTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ResumeProbeTask(request), context);
-    };
+    using Req = const ResumeProbeTaskRequest&;
+    using Resp = ResumeProbeTaskResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ResumeProbeTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CatClient::ResumeProbeTaskOutcomeCallable CatClient::ResumeProbeTaskCallable(const ResumeProbeTaskRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ResumeProbeTaskOutcome()>>(
-        [this, request]()
-        {
-            return this->ResumeProbeTask(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ResumeProbeTaskOutcome>>();
+    ResumeProbeTaskAsync(
+    request,
+    [prom](
+        const CatClient*,
+        const ResumeProbeTaskRequest&,
+        ResumeProbeTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CatClient::SuspendProbeTaskOutcome CatClient::SuspendProbeTask(const SuspendProbeTaskRequest &request)
@@ -535,25 +612,32 @@ CatClient::SuspendProbeTaskOutcome CatClient::SuspendProbeTask(const SuspendProb
 
 void CatClient::SuspendProbeTaskAsync(const SuspendProbeTaskRequest& request, const SuspendProbeTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->SuspendProbeTask(request), context);
-    };
+    using Req = const SuspendProbeTaskRequest&;
+    using Resp = SuspendProbeTaskResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "SuspendProbeTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CatClient::SuspendProbeTaskOutcomeCallable CatClient::SuspendProbeTaskCallable(const SuspendProbeTaskRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<SuspendProbeTaskOutcome()>>(
-        [this, request]()
-        {
-            return this->SuspendProbeTask(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<SuspendProbeTaskOutcome>>();
+    SuspendProbeTaskAsync(
+    request,
+    [prom](
+        const CatClient*,
+        const SuspendProbeTaskRequest&,
+        SuspendProbeTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CatClient::UpdateProbeTaskAttributesOutcome CatClient::UpdateProbeTaskAttributes(const UpdateProbeTaskAttributesRequest &request)
@@ -578,25 +662,32 @@ CatClient::UpdateProbeTaskAttributesOutcome CatClient::UpdateProbeTaskAttributes
 
 void CatClient::UpdateProbeTaskAttributesAsync(const UpdateProbeTaskAttributesRequest& request, const UpdateProbeTaskAttributesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UpdateProbeTaskAttributes(request), context);
-    };
+    using Req = const UpdateProbeTaskAttributesRequest&;
+    using Resp = UpdateProbeTaskAttributesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UpdateProbeTaskAttributes", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CatClient::UpdateProbeTaskAttributesOutcomeCallable CatClient::UpdateProbeTaskAttributesCallable(const UpdateProbeTaskAttributesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UpdateProbeTaskAttributesOutcome()>>(
-        [this, request]()
-        {
-            return this->UpdateProbeTaskAttributes(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UpdateProbeTaskAttributesOutcome>>();
+    UpdateProbeTaskAttributesAsync(
+    request,
+    [prom](
+        const CatClient*,
+        const UpdateProbeTaskAttributesRequest&,
+        UpdateProbeTaskAttributesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CatClient::UpdateProbeTaskConfigurationListOutcome CatClient::UpdateProbeTaskConfigurationList(const UpdateProbeTaskConfigurationListRequest &request)
@@ -621,24 +712,31 @@ CatClient::UpdateProbeTaskConfigurationListOutcome CatClient::UpdateProbeTaskCon
 
 void CatClient::UpdateProbeTaskConfigurationListAsync(const UpdateProbeTaskConfigurationListRequest& request, const UpdateProbeTaskConfigurationListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UpdateProbeTaskConfigurationList(request), context);
-    };
+    using Req = const UpdateProbeTaskConfigurationListRequest&;
+    using Resp = UpdateProbeTaskConfigurationListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UpdateProbeTaskConfigurationList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CatClient::UpdateProbeTaskConfigurationListOutcomeCallable CatClient::UpdateProbeTaskConfigurationListCallable(const UpdateProbeTaskConfigurationListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UpdateProbeTaskConfigurationListOutcome()>>(
-        [this, request]()
-        {
-            return this->UpdateProbeTaskConfigurationList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UpdateProbeTaskConfigurationListOutcome>>();
+    UpdateProbeTaskConfigurationListAsync(
+    request,
+    [prom](
+        const CatClient*,
+        const UpdateProbeTaskConfigurationListRequest&,
+        UpdateProbeTaskConfigurationListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 

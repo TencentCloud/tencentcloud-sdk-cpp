@@ -62,25 +62,32 @@ EisClient::DescribeEisConnectorConfigOutcome EisClient::DescribeEisConnectorConf
 
 void EisClient::DescribeEisConnectorConfigAsync(const DescribeEisConnectorConfigRequest& request, const DescribeEisConnectorConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeEisConnectorConfig(request), context);
-    };
+    using Req = const DescribeEisConnectorConfigRequest&;
+    using Resp = DescribeEisConnectorConfigResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeEisConnectorConfig", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EisClient::DescribeEisConnectorConfigOutcomeCallable EisClient::DescribeEisConnectorConfigCallable(const DescribeEisConnectorConfigRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeEisConnectorConfigOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeEisConnectorConfig(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeEisConnectorConfigOutcome>>();
+    DescribeEisConnectorConfigAsync(
+    request,
+    [prom](
+        const EisClient*,
+        const DescribeEisConnectorConfigRequest&,
+        DescribeEisConnectorConfigOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EisClient::ListEisConnectorOperationsOutcome EisClient::ListEisConnectorOperations(const ListEisConnectorOperationsRequest &request)
@@ -105,25 +112,32 @@ EisClient::ListEisConnectorOperationsOutcome EisClient::ListEisConnectorOperatio
 
 void EisClient::ListEisConnectorOperationsAsync(const ListEisConnectorOperationsRequest& request, const ListEisConnectorOperationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ListEisConnectorOperations(request), context);
-    };
+    using Req = const ListEisConnectorOperationsRequest&;
+    using Resp = ListEisConnectorOperationsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ListEisConnectorOperations", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EisClient::ListEisConnectorOperationsOutcomeCallable EisClient::ListEisConnectorOperationsCallable(const ListEisConnectorOperationsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ListEisConnectorOperationsOutcome()>>(
-        [this, request]()
-        {
-            return this->ListEisConnectorOperations(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ListEisConnectorOperationsOutcome>>();
+    ListEisConnectorOperationsAsync(
+    request,
+    [prom](
+        const EisClient*,
+        const ListEisConnectorOperationsRequest&,
+        ListEisConnectorOperationsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EisClient::ListEisConnectorsOutcome EisClient::ListEisConnectors(const ListEisConnectorsRequest &request)
@@ -148,24 +162,31 @@ EisClient::ListEisConnectorsOutcome EisClient::ListEisConnectors(const ListEisCo
 
 void EisClient::ListEisConnectorsAsync(const ListEisConnectorsRequest& request, const ListEisConnectorsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ListEisConnectors(request), context);
-    };
+    using Req = const ListEisConnectorsRequest&;
+    using Resp = ListEisConnectorsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ListEisConnectors", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EisClient::ListEisConnectorsOutcomeCallable EisClient::ListEisConnectorsCallable(const ListEisConnectorsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ListEisConnectorsOutcome()>>(
-        [this, request]()
-        {
-            return this->ListEisConnectors(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ListEisConnectorsOutcome>>();
+    ListEisConnectorsAsync(
+    request,
+    [prom](
+        const EisClient*,
+        const ListEisConnectorsRequest&,
+        ListEisConnectorsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 

@@ -62,25 +62,32 @@ IgtmClient::CreateAddressPoolOutcome IgtmClient::CreateAddressPool(const CreateA
 
 void IgtmClient::CreateAddressPoolAsync(const CreateAddressPoolRequest& request, const CreateAddressPoolAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateAddressPool(request), context);
-    };
+    using Req = const CreateAddressPoolRequest&;
+    using Resp = CreateAddressPoolResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateAddressPool", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IgtmClient::CreateAddressPoolOutcomeCallable IgtmClient::CreateAddressPoolCallable(const CreateAddressPoolRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateAddressPoolOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateAddressPool(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateAddressPoolOutcome>>();
+    CreateAddressPoolAsync(
+    request,
+    [prom](
+        const IgtmClient*,
+        const CreateAddressPoolRequest&,
+        CreateAddressPoolOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IgtmClient::CreateInstanceOutcome IgtmClient::CreateInstance(const CreateInstanceRequest &request)
@@ -105,25 +112,32 @@ IgtmClient::CreateInstanceOutcome IgtmClient::CreateInstance(const CreateInstanc
 
 void IgtmClient::CreateInstanceAsync(const CreateInstanceRequest& request, const CreateInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateInstance(request), context);
-    };
+    using Req = const CreateInstanceRequest&;
+    using Resp = CreateInstanceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateInstance", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IgtmClient::CreateInstanceOutcomeCallable IgtmClient::CreateInstanceCallable(const CreateInstanceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateInstanceOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateInstance(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateInstanceOutcome>>();
+    CreateInstanceAsync(
+    request,
+    [prom](
+        const IgtmClient*,
+        const CreateInstanceRequest&,
+        CreateInstanceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IgtmClient::CreateMonitorOutcome IgtmClient::CreateMonitor(const CreateMonitorRequest &request)
@@ -148,25 +162,32 @@ IgtmClient::CreateMonitorOutcome IgtmClient::CreateMonitor(const CreateMonitorRe
 
 void IgtmClient::CreateMonitorAsync(const CreateMonitorRequest& request, const CreateMonitorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateMonitor(request), context);
-    };
+    using Req = const CreateMonitorRequest&;
+    using Resp = CreateMonitorResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateMonitor", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IgtmClient::CreateMonitorOutcomeCallable IgtmClient::CreateMonitorCallable(const CreateMonitorRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateMonitorOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateMonitor(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateMonitorOutcome>>();
+    CreateMonitorAsync(
+    request,
+    [prom](
+        const IgtmClient*,
+        const CreateMonitorRequest&,
+        CreateMonitorOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IgtmClient::CreateStrategyOutcome IgtmClient::CreateStrategy(const CreateStrategyRequest &request)
@@ -191,25 +212,32 @@ IgtmClient::CreateStrategyOutcome IgtmClient::CreateStrategy(const CreateStrateg
 
 void IgtmClient::CreateStrategyAsync(const CreateStrategyRequest& request, const CreateStrategyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateStrategy(request), context);
-    };
+    using Req = const CreateStrategyRequest&;
+    using Resp = CreateStrategyResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateStrategy", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IgtmClient::CreateStrategyOutcomeCallable IgtmClient::CreateStrategyCallable(const CreateStrategyRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateStrategyOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateStrategy(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateStrategyOutcome>>();
+    CreateStrategyAsync(
+    request,
+    [prom](
+        const IgtmClient*,
+        const CreateStrategyRequest&,
+        CreateStrategyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IgtmClient::DeleteAddressPoolOutcome IgtmClient::DeleteAddressPool(const DeleteAddressPoolRequest &request)
@@ -234,25 +262,32 @@ IgtmClient::DeleteAddressPoolOutcome IgtmClient::DeleteAddressPool(const DeleteA
 
 void IgtmClient::DeleteAddressPoolAsync(const DeleteAddressPoolRequest& request, const DeleteAddressPoolAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteAddressPool(request), context);
-    };
+    using Req = const DeleteAddressPoolRequest&;
+    using Resp = DeleteAddressPoolResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteAddressPool", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IgtmClient::DeleteAddressPoolOutcomeCallable IgtmClient::DeleteAddressPoolCallable(const DeleteAddressPoolRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteAddressPoolOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteAddressPool(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteAddressPoolOutcome>>();
+    DeleteAddressPoolAsync(
+    request,
+    [prom](
+        const IgtmClient*,
+        const DeleteAddressPoolRequest&,
+        DeleteAddressPoolOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IgtmClient::DeleteMonitorOutcome IgtmClient::DeleteMonitor(const DeleteMonitorRequest &request)
@@ -277,25 +312,32 @@ IgtmClient::DeleteMonitorOutcome IgtmClient::DeleteMonitor(const DeleteMonitorRe
 
 void IgtmClient::DeleteMonitorAsync(const DeleteMonitorRequest& request, const DeleteMonitorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteMonitor(request), context);
-    };
+    using Req = const DeleteMonitorRequest&;
+    using Resp = DeleteMonitorResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteMonitor", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IgtmClient::DeleteMonitorOutcomeCallable IgtmClient::DeleteMonitorCallable(const DeleteMonitorRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteMonitorOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteMonitor(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteMonitorOutcome>>();
+    DeleteMonitorAsync(
+    request,
+    [prom](
+        const IgtmClient*,
+        const DeleteMonitorRequest&,
+        DeleteMonitorOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IgtmClient::DeleteStrategyOutcome IgtmClient::DeleteStrategy(const DeleteStrategyRequest &request)
@@ -320,25 +362,32 @@ IgtmClient::DeleteStrategyOutcome IgtmClient::DeleteStrategy(const DeleteStrateg
 
 void IgtmClient::DeleteStrategyAsync(const DeleteStrategyRequest& request, const DeleteStrategyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteStrategy(request), context);
-    };
+    using Req = const DeleteStrategyRequest&;
+    using Resp = DeleteStrategyResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteStrategy", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IgtmClient::DeleteStrategyOutcomeCallable IgtmClient::DeleteStrategyCallable(const DeleteStrategyRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteStrategyOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteStrategy(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteStrategyOutcome>>();
+    DeleteStrategyAsync(
+    request,
+    [prom](
+        const IgtmClient*,
+        const DeleteStrategyRequest&,
+        DeleteStrategyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IgtmClient::DescribeAddressLocationOutcome IgtmClient::DescribeAddressLocation(const DescribeAddressLocationRequest &request)
@@ -363,25 +412,32 @@ IgtmClient::DescribeAddressLocationOutcome IgtmClient::DescribeAddressLocation(c
 
 void IgtmClient::DescribeAddressLocationAsync(const DescribeAddressLocationRequest& request, const DescribeAddressLocationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAddressLocation(request), context);
-    };
+    using Req = const DescribeAddressLocationRequest&;
+    using Resp = DescribeAddressLocationResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAddressLocation", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IgtmClient::DescribeAddressLocationOutcomeCallable IgtmClient::DescribeAddressLocationCallable(const DescribeAddressLocationRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAddressLocationOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAddressLocation(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAddressLocationOutcome>>();
+    DescribeAddressLocationAsync(
+    request,
+    [prom](
+        const IgtmClient*,
+        const DescribeAddressLocationRequest&,
+        DescribeAddressLocationOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IgtmClient::DescribeAddressPoolDetailOutcome IgtmClient::DescribeAddressPoolDetail(const DescribeAddressPoolDetailRequest &request)
@@ -406,25 +462,32 @@ IgtmClient::DescribeAddressPoolDetailOutcome IgtmClient::DescribeAddressPoolDeta
 
 void IgtmClient::DescribeAddressPoolDetailAsync(const DescribeAddressPoolDetailRequest& request, const DescribeAddressPoolDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAddressPoolDetail(request), context);
-    };
+    using Req = const DescribeAddressPoolDetailRequest&;
+    using Resp = DescribeAddressPoolDetailResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAddressPoolDetail", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IgtmClient::DescribeAddressPoolDetailOutcomeCallable IgtmClient::DescribeAddressPoolDetailCallable(const DescribeAddressPoolDetailRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAddressPoolDetailOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAddressPoolDetail(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAddressPoolDetailOutcome>>();
+    DescribeAddressPoolDetailAsync(
+    request,
+    [prom](
+        const IgtmClient*,
+        const DescribeAddressPoolDetailRequest&,
+        DescribeAddressPoolDetailOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IgtmClient::DescribeAddressPoolListOutcome IgtmClient::DescribeAddressPoolList(const DescribeAddressPoolListRequest &request)
@@ -449,25 +512,32 @@ IgtmClient::DescribeAddressPoolListOutcome IgtmClient::DescribeAddressPoolList(c
 
 void IgtmClient::DescribeAddressPoolListAsync(const DescribeAddressPoolListRequest& request, const DescribeAddressPoolListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAddressPoolList(request), context);
-    };
+    using Req = const DescribeAddressPoolListRequest&;
+    using Resp = DescribeAddressPoolListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAddressPoolList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IgtmClient::DescribeAddressPoolListOutcomeCallable IgtmClient::DescribeAddressPoolListCallable(const DescribeAddressPoolListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAddressPoolListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAddressPoolList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAddressPoolListOutcome>>();
+    DescribeAddressPoolListAsync(
+    request,
+    [prom](
+        const IgtmClient*,
+        const DescribeAddressPoolListRequest&,
+        DescribeAddressPoolListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IgtmClient::DescribeDetectPackageDetailOutcome IgtmClient::DescribeDetectPackageDetail(const DescribeDetectPackageDetailRequest &request)
@@ -492,25 +562,32 @@ IgtmClient::DescribeDetectPackageDetailOutcome IgtmClient::DescribeDetectPackage
 
 void IgtmClient::DescribeDetectPackageDetailAsync(const DescribeDetectPackageDetailRequest& request, const DescribeDetectPackageDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDetectPackageDetail(request), context);
-    };
+    using Req = const DescribeDetectPackageDetailRequest&;
+    using Resp = DescribeDetectPackageDetailResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeDetectPackageDetail", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IgtmClient::DescribeDetectPackageDetailOutcomeCallable IgtmClient::DescribeDetectPackageDetailCallable(const DescribeDetectPackageDetailRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeDetectPackageDetailOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDetectPackageDetail(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeDetectPackageDetailOutcome>>();
+    DescribeDetectPackageDetailAsync(
+    request,
+    [prom](
+        const IgtmClient*,
+        const DescribeDetectPackageDetailRequest&,
+        DescribeDetectPackageDetailOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IgtmClient::DescribeDetectTaskPackageListOutcome IgtmClient::DescribeDetectTaskPackageList(const DescribeDetectTaskPackageListRequest &request)
@@ -535,25 +612,32 @@ IgtmClient::DescribeDetectTaskPackageListOutcome IgtmClient::DescribeDetectTaskP
 
 void IgtmClient::DescribeDetectTaskPackageListAsync(const DescribeDetectTaskPackageListRequest& request, const DescribeDetectTaskPackageListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDetectTaskPackageList(request), context);
-    };
+    using Req = const DescribeDetectTaskPackageListRequest&;
+    using Resp = DescribeDetectTaskPackageListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeDetectTaskPackageList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IgtmClient::DescribeDetectTaskPackageListOutcomeCallable IgtmClient::DescribeDetectTaskPackageListCallable(const DescribeDetectTaskPackageListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeDetectTaskPackageListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDetectTaskPackageList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeDetectTaskPackageListOutcome>>();
+    DescribeDetectTaskPackageListAsync(
+    request,
+    [prom](
+        const IgtmClient*,
+        const DescribeDetectTaskPackageListRequest&,
+        DescribeDetectTaskPackageListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IgtmClient::DescribeDetectorsOutcome IgtmClient::DescribeDetectors(const DescribeDetectorsRequest &request)
@@ -578,25 +662,32 @@ IgtmClient::DescribeDetectorsOutcome IgtmClient::DescribeDetectors(const Describ
 
 void IgtmClient::DescribeDetectorsAsync(const DescribeDetectorsRequest& request, const DescribeDetectorsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDetectors(request), context);
-    };
+    using Req = const DescribeDetectorsRequest&;
+    using Resp = DescribeDetectorsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeDetectors", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IgtmClient::DescribeDetectorsOutcomeCallable IgtmClient::DescribeDetectorsCallable(const DescribeDetectorsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeDetectorsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDetectors(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeDetectorsOutcome>>();
+    DescribeDetectorsAsync(
+    request,
+    [prom](
+        const IgtmClient*,
+        const DescribeDetectorsRequest&,
+        DescribeDetectorsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IgtmClient::DescribeDnsLineListOutcome IgtmClient::DescribeDnsLineList(const DescribeDnsLineListRequest &request)
@@ -621,25 +712,32 @@ IgtmClient::DescribeDnsLineListOutcome IgtmClient::DescribeDnsLineList(const Des
 
 void IgtmClient::DescribeDnsLineListAsync(const DescribeDnsLineListRequest& request, const DescribeDnsLineListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDnsLineList(request), context);
-    };
+    using Req = const DescribeDnsLineListRequest&;
+    using Resp = DescribeDnsLineListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeDnsLineList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IgtmClient::DescribeDnsLineListOutcomeCallable IgtmClient::DescribeDnsLineListCallable(const DescribeDnsLineListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeDnsLineListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDnsLineList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeDnsLineListOutcome>>();
+    DescribeDnsLineListAsync(
+    request,
+    [prom](
+        const IgtmClient*,
+        const DescribeDnsLineListRequest&,
+        DescribeDnsLineListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IgtmClient::DescribeInstanceDetailOutcome IgtmClient::DescribeInstanceDetail(const DescribeInstanceDetailRequest &request)
@@ -664,25 +762,32 @@ IgtmClient::DescribeInstanceDetailOutcome IgtmClient::DescribeInstanceDetail(con
 
 void IgtmClient::DescribeInstanceDetailAsync(const DescribeInstanceDetailRequest& request, const DescribeInstanceDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeInstanceDetail(request), context);
-    };
+    using Req = const DescribeInstanceDetailRequest&;
+    using Resp = DescribeInstanceDetailResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeInstanceDetail", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IgtmClient::DescribeInstanceDetailOutcomeCallable IgtmClient::DescribeInstanceDetailCallable(const DescribeInstanceDetailRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeInstanceDetailOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeInstanceDetail(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeInstanceDetailOutcome>>();
+    DescribeInstanceDetailAsync(
+    request,
+    [prom](
+        const IgtmClient*,
+        const DescribeInstanceDetailRequest&,
+        DescribeInstanceDetailOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IgtmClient::DescribeInstanceListOutcome IgtmClient::DescribeInstanceList(const DescribeInstanceListRequest &request)
@@ -707,25 +812,32 @@ IgtmClient::DescribeInstanceListOutcome IgtmClient::DescribeInstanceList(const D
 
 void IgtmClient::DescribeInstanceListAsync(const DescribeInstanceListRequest& request, const DescribeInstanceListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeInstanceList(request), context);
-    };
+    using Req = const DescribeInstanceListRequest&;
+    using Resp = DescribeInstanceListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeInstanceList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IgtmClient::DescribeInstanceListOutcomeCallable IgtmClient::DescribeInstanceListCallable(const DescribeInstanceListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeInstanceListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeInstanceList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeInstanceListOutcome>>();
+    DescribeInstanceListAsync(
+    request,
+    [prom](
+        const IgtmClient*,
+        const DescribeInstanceListRequest&,
+        DescribeInstanceListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IgtmClient::DescribeInstancePackageListOutcome IgtmClient::DescribeInstancePackageList(const DescribeInstancePackageListRequest &request)
@@ -750,25 +862,32 @@ IgtmClient::DescribeInstancePackageListOutcome IgtmClient::DescribeInstancePacka
 
 void IgtmClient::DescribeInstancePackageListAsync(const DescribeInstancePackageListRequest& request, const DescribeInstancePackageListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeInstancePackageList(request), context);
-    };
+    using Req = const DescribeInstancePackageListRequest&;
+    using Resp = DescribeInstancePackageListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeInstancePackageList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IgtmClient::DescribeInstancePackageListOutcomeCallable IgtmClient::DescribeInstancePackageListCallable(const DescribeInstancePackageListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeInstancePackageListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeInstancePackageList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeInstancePackageListOutcome>>();
+    DescribeInstancePackageListAsync(
+    request,
+    [prom](
+        const IgtmClient*,
+        const DescribeInstancePackageListRequest&,
+        DescribeInstancePackageListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IgtmClient::DescribeMonitorDetailOutcome IgtmClient::DescribeMonitorDetail(const DescribeMonitorDetailRequest &request)
@@ -793,25 +912,32 @@ IgtmClient::DescribeMonitorDetailOutcome IgtmClient::DescribeMonitorDetail(const
 
 void IgtmClient::DescribeMonitorDetailAsync(const DescribeMonitorDetailRequest& request, const DescribeMonitorDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeMonitorDetail(request), context);
-    };
+    using Req = const DescribeMonitorDetailRequest&;
+    using Resp = DescribeMonitorDetailResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeMonitorDetail", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IgtmClient::DescribeMonitorDetailOutcomeCallable IgtmClient::DescribeMonitorDetailCallable(const DescribeMonitorDetailRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeMonitorDetailOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeMonitorDetail(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeMonitorDetailOutcome>>();
+    DescribeMonitorDetailAsync(
+    request,
+    [prom](
+        const IgtmClient*,
+        const DescribeMonitorDetailRequest&,
+        DescribeMonitorDetailOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IgtmClient::DescribeMonitorsOutcome IgtmClient::DescribeMonitors(const DescribeMonitorsRequest &request)
@@ -836,25 +962,32 @@ IgtmClient::DescribeMonitorsOutcome IgtmClient::DescribeMonitors(const DescribeM
 
 void IgtmClient::DescribeMonitorsAsync(const DescribeMonitorsRequest& request, const DescribeMonitorsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeMonitors(request), context);
-    };
+    using Req = const DescribeMonitorsRequest&;
+    using Resp = DescribeMonitorsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeMonitors", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IgtmClient::DescribeMonitorsOutcomeCallable IgtmClient::DescribeMonitorsCallable(const DescribeMonitorsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeMonitorsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeMonitors(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeMonitorsOutcome>>();
+    DescribeMonitorsAsync(
+    request,
+    [prom](
+        const IgtmClient*,
+        const DescribeMonitorsRequest&,
+        DescribeMonitorsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IgtmClient::DescribeQuotasOutcome IgtmClient::DescribeQuotas(const DescribeQuotasRequest &request)
@@ -879,25 +1012,32 @@ IgtmClient::DescribeQuotasOutcome IgtmClient::DescribeQuotas(const DescribeQuota
 
 void IgtmClient::DescribeQuotasAsync(const DescribeQuotasRequest& request, const DescribeQuotasAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeQuotas(request), context);
-    };
+    using Req = const DescribeQuotasRequest&;
+    using Resp = DescribeQuotasResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeQuotas", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IgtmClient::DescribeQuotasOutcomeCallable IgtmClient::DescribeQuotasCallable(const DescribeQuotasRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeQuotasOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeQuotas(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeQuotasOutcome>>();
+    DescribeQuotasAsync(
+    request,
+    [prom](
+        const IgtmClient*,
+        const DescribeQuotasRequest&,
+        DescribeQuotasOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IgtmClient::DescribeStrategyDetailOutcome IgtmClient::DescribeStrategyDetail(const DescribeStrategyDetailRequest &request)
@@ -922,25 +1062,32 @@ IgtmClient::DescribeStrategyDetailOutcome IgtmClient::DescribeStrategyDetail(con
 
 void IgtmClient::DescribeStrategyDetailAsync(const DescribeStrategyDetailRequest& request, const DescribeStrategyDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeStrategyDetail(request), context);
-    };
+    using Req = const DescribeStrategyDetailRequest&;
+    using Resp = DescribeStrategyDetailResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeStrategyDetail", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IgtmClient::DescribeStrategyDetailOutcomeCallable IgtmClient::DescribeStrategyDetailCallable(const DescribeStrategyDetailRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeStrategyDetailOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeStrategyDetail(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeStrategyDetailOutcome>>();
+    DescribeStrategyDetailAsync(
+    request,
+    [prom](
+        const IgtmClient*,
+        const DescribeStrategyDetailRequest&,
+        DescribeStrategyDetailOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IgtmClient::DescribeStrategyListOutcome IgtmClient::DescribeStrategyList(const DescribeStrategyListRequest &request)
@@ -965,25 +1112,32 @@ IgtmClient::DescribeStrategyListOutcome IgtmClient::DescribeStrategyList(const D
 
 void IgtmClient::DescribeStrategyListAsync(const DescribeStrategyListRequest& request, const DescribeStrategyListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeStrategyList(request), context);
-    };
+    using Req = const DescribeStrategyListRequest&;
+    using Resp = DescribeStrategyListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeStrategyList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IgtmClient::DescribeStrategyListOutcomeCallable IgtmClient::DescribeStrategyListCallable(const DescribeStrategyListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeStrategyListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeStrategyList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeStrategyListOutcome>>();
+    DescribeStrategyListAsync(
+    request,
+    [prom](
+        const IgtmClient*,
+        const DescribeStrategyListRequest&,
+        DescribeStrategyListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IgtmClient::ModifyAddressPoolOutcome IgtmClient::ModifyAddressPool(const ModifyAddressPoolRequest &request)
@@ -1008,25 +1162,32 @@ IgtmClient::ModifyAddressPoolOutcome IgtmClient::ModifyAddressPool(const ModifyA
 
 void IgtmClient::ModifyAddressPoolAsync(const ModifyAddressPoolRequest& request, const ModifyAddressPoolAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyAddressPool(request), context);
-    };
+    using Req = const ModifyAddressPoolRequest&;
+    using Resp = ModifyAddressPoolResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyAddressPool", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IgtmClient::ModifyAddressPoolOutcomeCallable IgtmClient::ModifyAddressPoolCallable(const ModifyAddressPoolRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyAddressPoolOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyAddressPool(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyAddressPoolOutcome>>();
+    ModifyAddressPoolAsync(
+    request,
+    [prom](
+        const IgtmClient*,
+        const ModifyAddressPoolRequest&,
+        ModifyAddressPoolOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IgtmClient::ModifyInstanceConfigOutcome IgtmClient::ModifyInstanceConfig(const ModifyInstanceConfigRequest &request)
@@ -1051,25 +1212,32 @@ IgtmClient::ModifyInstanceConfigOutcome IgtmClient::ModifyInstanceConfig(const M
 
 void IgtmClient::ModifyInstanceConfigAsync(const ModifyInstanceConfigRequest& request, const ModifyInstanceConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyInstanceConfig(request), context);
-    };
+    using Req = const ModifyInstanceConfigRequest&;
+    using Resp = ModifyInstanceConfigResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyInstanceConfig", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IgtmClient::ModifyInstanceConfigOutcomeCallable IgtmClient::ModifyInstanceConfigCallable(const ModifyInstanceConfigRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyInstanceConfigOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyInstanceConfig(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyInstanceConfigOutcome>>();
+    ModifyInstanceConfigAsync(
+    request,
+    [prom](
+        const IgtmClient*,
+        const ModifyInstanceConfigRequest&,
+        ModifyInstanceConfigOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IgtmClient::ModifyMonitorOutcome IgtmClient::ModifyMonitor(const ModifyMonitorRequest &request)
@@ -1094,25 +1262,32 @@ IgtmClient::ModifyMonitorOutcome IgtmClient::ModifyMonitor(const ModifyMonitorRe
 
 void IgtmClient::ModifyMonitorAsync(const ModifyMonitorRequest& request, const ModifyMonitorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyMonitor(request), context);
-    };
+    using Req = const ModifyMonitorRequest&;
+    using Resp = ModifyMonitorResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyMonitor", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IgtmClient::ModifyMonitorOutcomeCallable IgtmClient::ModifyMonitorCallable(const ModifyMonitorRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyMonitorOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyMonitor(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyMonitorOutcome>>();
+    ModifyMonitorAsync(
+    request,
+    [prom](
+        const IgtmClient*,
+        const ModifyMonitorRequest&,
+        ModifyMonitorOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IgtmClient::ModifyStrategyOutcome IgtmClient::ModifyStrategy(const ModifyStrategyRequest &request)
@@ -1137,24 +1312,31 @@ IgtmClient::ModifyStrategyOutcome IgtmClient::ModifyStrategy(const ModifyStrateg
 
 void IgtmClient::ModifyStrategyAsync(const ModifyStrategyRequest& request, const ModifyStrategyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyStrategy(request), context);
-    };
+    using Req = const ModifyStrategyRequest&;
+    using Resp = ModifyStrategyResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyStrategy", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IgtmClient::ModifyStrategyOutcomeCallable IgtmClient::ModifyStrategyCallable(const ModifyStrategyRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyStrategyOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyStrategy(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyStrategyOutcome>>();
+    ModifyStrategyAsync(
+    request,
+    [prom](
+        const IgtmClient*,
+        const ModifyStrategyRequest&,
+        ModifyStrategyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 

@@ -62,25 +62,32 @@ DtsClient::CompleteMigrateJobOutcome DtsClient::CompleteMigrateJob(const Complet
 
 void DtsClient::CompleteMigrateJobAsync(const CompleteMigrateJobRequest& request, const CompleteMigrateJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CompleteMigrateJob(request), context);
-    };
+    using Req = const CompleteMigrateJobRequest&;
+    using Resp = CompleteMigrateJobResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CompleteMigrateJob", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DtsClient::CompleteMigrateJobOutcomeCallable DtsClient::CompleteMigrateJobCallable(const CompleteMigrateJobRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CompleteMigrateJobOutcome()>>(
-        [this, request]()
-        {
-            return this->CompleteMigrateJob(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CompleteMigrateJobOutcome>>();
+    CompleteMigrateJobAsync(
+    request,
+    [prom](
+        const DtsClient*,
+        const CompleteMigrateJobRequest&,
+        CompleteMigrateJobOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DtsClient::ConfigureSubscribeJobOutcome DtsClient::ConfigureSubscribeJob(const ConfigureSubscribeJobRequest &request)
@@ -105,25 +112,32 @@ DtsClient::ConfigureSubscribeJobOutcome DtsClient::ConfigureSubscribeJob(const C
 
 void DtsClient::ConfigureSubscribeJobAsync(const ConfigureSubscribeJobRequest& request, const ConfigureSubscribeJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ConfigureSubscribeJob(request), context);
-    };
+    using Req = const ConfigureSubscribeJobRequest&;
+    using Resp = ConfigureSubscribeJobResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ConfigureSubscribeJob", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DtsClient::ConfigureSubscribeJobOutcomeCallable DtsClient::ConfigureSubscribeJobCallable(const ConfigureSubscribeJobRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ConfigureSubscribeJobOutcome()>>(
-        [this, request]()
-        {
-            return this->ConfigureSubscribeJob(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ConfigureSubscribeJobOutcome>>();
+    ConfigureSubscribeJobAsync(
+    request,
+    [prom](
+        const DtsClient*,
+        const ConfigureSubscribeJobRequest&,
+        ConfigureSubscribeJobOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DtsClient::ConfigureSyncJobOutcome DtsClient::ConfigureSyncJob(const ConfigureSyncJobRequest &request)
@@ -148,25 +162,32 @@ DtsClient::ConfigureSyncJobOutcome DtsClient::ConfigureSyncJob(const ConfigureSy
 
 void DtsClient::ConfigureSyncJobAsync(const ConfigureSyncJobRequest& request, const ConfigureSyncJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ConfigureSyncJob(request), context);
-    };
+    using Req = const ConfigureSyncJobRequest&;
+    using Resp = ConfigureSyncJobResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ConfigureSyncJob", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DtsClient::ConfigureSyncJobOutcomeCallable DtsClient::ConfigureSyncJobCallable(const ConfigureSyncJobRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ConfigureSyncJobOutcome()>>(
-        [this, request]()
-        {
-            return this->ConfigureSyncJob(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ConfigureSyncJobOutcome>>();
+    ConfigureSyncJobAsync(
+    request,
+    [prom](
+        const DtsClient*,
+        const ConfigureSyncJobRequest&,
+        ConfigureSyncJobOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DtsClient::ContinueMigrateJobOutcome DtsClient::ContinueMigrateJob(const ContinueMigrateJobRequest &request)
@@ -191,25 +212,32 @@ DtsClient::ContinueMigrateJobOutcome DtsClient::ContinueMigrateJob(const Continu
 
 void DtsClient::ContinueMigrateJobAsync(const ContinueMigrateJobRequest& request, const ContinueMigrateJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ContinueMigrateJob(request), context);
-    };
+    using Req = const ContinueMigrateJobRequest&;
+    using Resp = ContinueMigrateJobResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ContinueMigrateJob", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DtsClient::ContinueMigrateJobOutcomeCallable DtsClient::ContinueMigrateJobCallable(const ContinueMigrateJobRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ContinueMigrateJobOutcome()>>(
-        [this, request]()
-        {
-            return this->ContinueMigrateJob(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ContinueMigrateJobOutcome>>();
+    ContinueMigrateJobAsync(
+    request,
+    [prom](
+        const DtsClient*,
+        const ContinueMigrateJobRequest&,
+        ContinueMigrateJobOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DtsClient::ContinueSyncJobOutcome DtsClient::ContinueSyncJob(const ContinueSyncJobRequest &request)
@@ -234,25 +262,32 @@ DtsClient::ContinueSyncJobOutcome DtsClient::ContinueSyncJob(const ContinueSyncJ
 
 void DtsClient::ContinueSyncJobAsync(const ContinueSyncJobRequest& request, const ContinueSyncJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ContinueSyncJob(request), context);
-    };
+    using Req = const ContinueSyncJobRequest&;
+    using Resp = ContinueSyncJobResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ContinueSyncJob", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DtsClient::ContinueSyncJobOutcomeCallable DtsClient::ContinueSyncJobCallable(const ContinueSyncJobRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ContinueSyncJobOutcome()>>(
-        [this, request]()
-        {
-            return this->ContinueSyncJob(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ContinueSyncJobOutcome>>();
+    ContinueSyncJobAsync(
+    request,
+    [prom](
+        const DtsClient*,
+        const ContinueSyncJobRequest&,
+        ContinueSyncJobOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DtsClient::CreateCheckSyncJobOutcome DtsClient::CreateCheckSyncJob(const CreateCheckSyncJobRequest &request)
@@ -277,25 +312,32 @@ DtsClient::CreateCheckSyncJobOutcome DtsClient::CreateCheckSyncJob(const CreateC
 
 void DtsClient::CreateCheckSyncJobAsync(const CreateCheckSyncJobRequest& request, const CreateCheckSyncJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateCheckSyncJob(request), context);
-    };
+    using Req = const CreateCheckSyncJobRequest&;
+    using Resp = CreateCheckSyncJobResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateCheckSyncJob", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DtsClient::CreateCheckSyncJobOutcomeCallable DtsClient::CreateCheckSyncJobCallable(const CreateCheckSyncJobRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateCheckSyncJobOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateCheckSyncJob(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateCheckSyncJobOutcome>>();
+    CreateCheckSyncJobAsync(
+    request,
+    [prom](
+        const DtsClient*,
+        const CreateCheckSyncJobRequest&,
+        CreateCheckSyncJobOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DtsClient::CreateCompareTaskOutcome DtsClient::CreateCompareTask(const CreateCompareTaskRequest &request)
@@ -320,25 +362,32 @@ DtsClient::CreateCompareTaskOutcome DtsClient::CreateCompareTask(const CreateCom
 
 void DtsClient::CreateCompareTaskAsync(const CreateCompareTaskRequest& request, const CreateCompareTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateCompareTask(request), context);
-    };
+    using Req = const CreateCompareTaskRequest&;
+    using Resp = CreateCompareTaskResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateCompareTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DtsClient::CreateCompareTaskOutcomeCallable DtsClient::CreateCompareTaskCallable(const CreateCompareTaskRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateCompareTaskOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateCompareTask(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateCompareTaskOutcome>>();
+    CreateCompareTaskAsync(
+    request,
+    [prom](
+        const DtsClient*,
+        const CreateCompareTaskRequest&,
+        CreateCompareTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DtsClient::CreateConsumerGroupOutcome DtsClient::CreateConsumerGroup(const CreateConsumerGroupRequest &request)
@@ -363,25 +412,32 @@ DtsClient::CreateConsumerGroupOutcome DtsClient::CreateConsumerGroup(const Creat
 
 void DtsClient::CreateConsumerGroupAsync(const CreateConsumerGroupRequest& request, const CreateConsumerGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateConsumerGroup(request), context);
-    };
+    using Req = const CreateConsumerGroupRequest&;
+    using Resp = CreateConsumerGroupResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateConsumerGroup", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DtsClient::CreateConsumerGroupOutcomeCallable DtsClient::CreateConsumerGroupCallable(const CreateConsumerGroupRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateConsumerGroupOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateConsumerGroup(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateConsumerGroupOutcome>>();
+    CreateConsumerGroupAsync(
+    request,
+    [prom](
+        const DtsClient*,
+        const CreateConsumerGroupRequest&,
+        CreateConsumerGroupOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DtsClient::CreateMigrateCheckJobOutcome DtsClient::CreateMigrateCheckJob(const CreateMigrateCheckJobRequest &request)
@@ -406,25 +462,32 @@ DtsClient::CreateMigrateCheckJobOutcome DtsClient::CreateMigrateCheckJob(const C
 
 void DtsClient::CreateMigrateCheckJobAsync(const CreateMigrateCheckJobRequest& request, const CreateMigrateCheckJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateMigrateCheckJob(request), context);
-    };
+    using Req = const CreateMigrateCheckJobRequest&;
+    using Resp = CreateMigrateCheckJobResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateMigrateCheckJob", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DtsClient::CreateMigrateCheckJobOutcomeCallable DtsClient::CreateMigrateCheckJobCallable(const CreateMigrateCheckJobRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateMigrateCheckJobOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateMigrateCheckJob(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateMigrateCheckJobOutcome>>();
+    CreateMigrateCheckJobAsync(
+    request,
+    [prom](
+        const DtsClient*,
+        const CreateMigrateCheckJobRequest&,
+        CreateMigrateCheckJobOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DtsClient::CreateMigrationServiceOutcome DtsClient::CreateMigrationService(const CreateMigrationServiceRequest &request)
@@ -449,25 +512,32 @@ DtsClient::CreateMigrationServiceOutcome DtsClient::CreateMigrationService(const
 
 void DtsClient::CreateMigrationServiceAsync(const CreateMigrationServiceRequest& request, const CreateMigrationServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateMigrationService(request), context);
-    };
+    using Req = const CreateMigrationServiceRequest&;
+    using Resp = CreateMigrationServiceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateMigrationService", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DtsClient::CreateMigrationServiceOutcomeCallable DtsClient::CreateMigrationServiceCallable(const CreateMigrationServiceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateMigrationServiceOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateMigrationService(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateMigrationServiceOutcome>>();
+    CreateMigrationServiceAsync(
+    request,
+    [prom](
+        const DtsClient*,
+        const CreateMigrationServiceRequest&,
+        CreateMigrationServiceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DtsClient::CreateModifyCheckSyncJobOutcome DtsClient::CreateModifyCheckSyncJob(const CreateModifyCheckSyncJobRequest &request)
@@ -492,25 +562,32 @@ DtsClient::CreateModifyCheckSyncJobOutcome DtsClient::CreateModifyCheckSyncJob(c
 
 void DtsClient::CreateModifyCheckSyncJobAsync(const CreateModifyCheckSyncJobRequest& request, const CreateModifyCheckSyncJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateModifyCheckSyncJob(request), context);
-    };
+    using Req = const CreateModifyCheckSyncJobRequest&;
+    using Resp = CreateModifyCheckSyncJobResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateModifyCheckSyncJob", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DtsClient::CreateModifyCheckSyncJobOutcomeCallable DtsClient::CreateModifyCheckSyncJobCallable(const CreateModifyCheckSyncJobRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateModifyCheckSyncJobOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateModifyCheckSyncJob(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateModifyCheckSyncJobOutcome>>();
+    CreateModifyCheckSyncJobAsync(
+    request,
+    [prom](
+        const DtsClient*,
+        const CreateModifyCheckSyncJobRequest&,
+        CreateModifyCheckSyncJobOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DtsClient::CreateSubscribeOutcome DtsClient::CreateSubscribe(const CreateSubscribeRequest &request)
@@ -535,25 +612,32 @@ DtsClient::CreateSubscribeOutcome DtsClient::CreateSubscribe(const CreateSubscri
 
 void DtsClient::CreateSubscribeAsync(const CreateSubscribeRequest& request, const CreateSubscribeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateSubscribe(request), context);
-    };
+    using Req = const CreateSubscribeRequest&;
+    using Resp = CreateSubscribeResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateSubscribe", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DtsClient::CreateSubscribeOutcomeCallable DtsClient::CreateSubscribeCallable(const CreateSubscribeRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateSubscribeOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateSubscribe(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateSubscribeOutcome>>();
+    CreateSubscribeAsync(
+    request,
+    [prom](
+        const DtsClient*,
+        const CreateSubscribeRequest&,
+        CreateSubscribeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DtsClient::CreateSubscribeCheckJobOutcome DtsClient::CreateSubscribeCheckJob(const CreateSubscribeCheckJobRequest &request)
@@ -578,25 +662,32 @@ DtsClient::CreateSubscribeCheckJobOutcome DtsClient::CreateSubscribeCheckJob(con
 
 void DtsClient::CreateSubscribeCheckJobAsync(const CreateSubscribeCheckJobRequest& request, const CreateSubscribeCheckJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateSubscribeCheckJob(request), context);
-    };
+    using Req = const CreateSubscribeCheckJobRequest&;
+    using Resp = CreateSubscribeCheckJobResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateSubscribeCheckJob", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DtsClient::CreateSubscribeCheckJobOutcomeCallable DtsClient::CreateSubscribeCheckJobCallable(const CreateSubscribeCheckJobRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateSubscribeCheckJobOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateSubscribeCheckJob(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateSubscribeCheckJobOutcome>>();
+    CreateSubscribeCheckJobAsync(
+    request,
+    [prom](
+        const DtsClient*,
+        const CreateSubscribeCheckJobRequest&,
+        CreateSubscribeCheckJobOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DtsClient::CreateSyncJobOutcome DtsClient::CreateSyncJob(const CreateSyncJobRequest &request)
@@ -621,25 +712,32 @@ DtsClient::CreateSyncJobOutcome DtsClient::CreateSyncJob(const CreateSyncJobRequ
 
 void DtsClient::CreateSyncJobAsync(const CreateSyncJobRequest& request, const CreateSyncJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateSyncJob(request), context);
-    };
+    using Req = const CreateSyncJobRequest&;
+    using Resp = CreateSyncJobResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateSyncJob", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DtsClient::CreateSyncJobOutcomeCallable DtsClient::CreateSyncJobCallable(const CreateSyncJobRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateSyncJobOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateSyncJob(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateSyncJobOutcome>>();
+    CreateSyncJobAsync(
+    request,
+    [prom](
+        const DtsClient*,
+        const CreateSyncJobRequest&,
+        CreateSyncJobOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DtsClient::DeleteCompareTaskOutcome DtsClient::DeleteCompareTask(const DeleteCompareTaskRequest &request)
@@ -664,25 +762,32 @@ DtsClient::DeleteCompareTaskOutcome DtsClient::DeleteCompareTask(const DeleteCom
 
 void DtsClient::DeleteCompareTaskAsync(const DeleteCompareTaskRequest& request, const DeleteCompareTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteCompareTask(request), context);
-    };
+    using Req = const DeleteCompareTaskRequest&;
+    using Resp = DeleteCompareTaskResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteCompareTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DtsClient::DeleteCompareTaskOutcomeCallable DtsClient::DeleteCompareTaskCallable(const DeleteCompareTaskRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteCompareTaskOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteCompareTask(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteCompareTaskOutcome>>();
+    DeleteCompareTaskAsync(
+    request,
+    [prom](
+        const DtsClient*,
+        const DeleteCompareTaskRequest&,
+        DeleteCompareTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DtsClient::DeleteConsumerGroupOutcome DtsClient::DeleteConsumerGroup(const DeleteConsumerGroupRequest &request)
@@ -707,25 +812,32 @@ DtsClient::DeleteConsumerGroupOutcome DtsClient::DeleteConsumerGroup(const Delet
 
 void DtsClient::DeleteConsumerGroupAsync(const DeleteConsumerGroupRequest& request, const DeleteConsumerGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteConsumerGroup(request), context);
-    };
+    using Req = const DeleteConsumerGroupRequest&;
+    using Resp = DeleteConsumerGroupResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteConsumerGroup", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DtsClient::DeleteConsumerGroupOutcomeCallable DtsClient::DeleteConsumerGroupCallable(const DeleteConsumerGroupRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteConsumerGroupOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteConsumerGroup(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteConsumerGroupOutcome>>();
+    DeleteConsumerGroupAsync(
+    request,
+    [prom](
+        const DtsClient*,
+        const DeleteConsumerGroupRequest&,
+        DeleteConsumerGroupOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DtsClient::DescribeCheckSyncJobResultOutcome DtsClient::DescribeCheckSyncJobResult(const DescribeCheckSyncJobResultRequest &request)
@@ -750,25 +862,32 @@ DtsClient::DescribeCheckSyncJobResultOutcome DtsClient::DescribeCheckSyncJobResu
 
 void DtsClient::DescribeCheckSyncJobResultAsync(const DescribeCheckSyncJobResultRequest& request, const DescribeCheckSyncJobResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeCheckSyncJobResult(request), context);
-    };
+    using Req = const DescribeCheckSyncJobResultRequest&;
+    using Resp = DescribeCheckSyncJobResultResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeCheckSyncJobResult", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DtsClient::DescribeCheckSyncJobResultOutcomeCallable DtsClient::DescribeCheckSyncJobResultCallable(const DescribeCheckSyncJobResultRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeCheckSyncJobResultOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeCheckSyncJobResult(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeCheckSyncJobResultOutcome>>();
+    DescribeCheckSyncJobResultAsync(
+    request,
+    [prom](
+        const DtsClient*,
+        const DescribeCheckSyncJobResultRequest&,
+        DescribeCheckSyncJobResultOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DtsClient::DescribeCompareReportOutcome DtsClient::DescribeCompareReport(const DescribeCompareReportRequest &request)
@@ -793,25 +912,32 @@ DtsClient::DescribeCompareReportOutcome DtsClient::DescribeCompareReport(const D
 
 void DtsClient::DescribeCompareReportAsync(const DescribeCompareReportRequest& request, const DescribeCompareReportAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeCompareReport(request), context);
-    };
+    using Req = const DescribeCompareReportRequest&;
+    using Resp = DescribeCompareReportResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeCompareReport", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DtsClient::DescribeCompareReportOutcomeCallable DtsClient::DescribeCompareReportCallable(const DescribeCompareReportRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeCompareReportOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeCompareReport(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeCompareReportOutcome>>();
+    DescribeCompareReportAsync(
+    request,
+    [prom](
+        const DtsClient*,
+        const DescribeCompareReportRequest&,
+        DescribeCompareReportOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DtsClient::DescribeCompareTasksOutcome DtsClient::DescribeCompareTasks(const DescribeCompareTasksRequest &request)
@@ -836,25 +962,32 @@ DtsClient::DescribeCompareTasksOutcome DtsClient::DescribeCompareTasks(const Des
 
 void DtsClient::DescribeCompareTasksAsync(const DescribeCompareTasksRequest& request, const DescribeCompareTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeCompareTasks(request), context);
-    };
+    using Req = const DescribeCompareTasksRequest&;
+    using Resp = DescribeCompareTasksResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeCompareTasks", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DtsClient::DescribeCompareTasksOutcomeCallable DtsClient::DescribeCompareTasksCallable(const DescribeCompareTasksRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeCompareTasksOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeCompareTasks(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeCompareTasksOutcome>>();
+    DescribeCompareTasksAsync(
+    request,
+    [prom](
+        const DtsClient*,
+        const DescribeCompareTasksRequest&,
+        DescribeCompareTasksOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DtsClient::DescribeConsumerGroupsOutcome DtsClient::DescribeConsumerGroups(const DescribeConsumerGroupsRequest &request)
@@ -879,25 +1012,32 @@ DtsClient::DescribeConsumerGroupsOutcome DtsClient::DescribeConsumerGroups(const
 
 void DtsClient::DescribeConsumerGroupsAsync(const DescribeConsumerGroupsRequest& request, const DescribeConsumerGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeConsumerGroups(request), context);
-    };
+    using Req = const DescribeConsumerGroupsRequest&;
+    using Resp = DescribeConsumerGroupsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeConsumerGroups", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DtsClient::DescribeConsumerGroupsOutcomeCallable DtsClient::DescribeConsumerGroupsCallable(const DescribeConsumerGroupsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeConsumerGroupsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeConsumerGroups(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeConsumerGroupsOutcome>>();
+    DescribeConsumerGroupsAsync(
+    request,
+    [prom](
+        const DtsClient*,
+        const DescribeConsumerGroupsRequest&,
+        DescribeConsumerGroupsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DtsClient::DescribeMigrateDBInstancesOutcome DtsClient::DescribeMigrateDBInstances(const DescribeMigrateDBInstancesRequest &request)
@@ -922,25 +1062,32 @@ DtsClient::DescribeMigrateDBInstancesOutcome DtsClient::DescribeMigrateDBInstanc
 
 void DtsClient::DescribeMigrateDBInstancesAsync(const DescribeMigrateDBInstancesRequest& request, const DescribeMigrateDBInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeMigrateDBInstances(request), context);
-    };
+    using Req = const DescribeMigrateDBInstancesRequest&;
+    using Resp = DescribeMigrateDBInstancesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeMigrateDBInstances", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DtsClient::DescribeMigrateDBInstancesOutcomeCallable DtsClient::DescribeMigrateDBInstancesCallable(const DescribeMigrateDBInstancesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeMigrateDBInstancesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeMigrateDBInstances(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeMigrateDBInstancesOutcome>>();
+    DescribeMigrateDBInstancesAsync(
+    request,
+    [prom](
+        const DtsClient*,
+        const DescribeMigrateDBInstancesRequest&,
+        DescribeMigrateDBInstancesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DtsClient::DescribeMigrationCheckJobOutcome DtsClient::DescribeMigrationCheckJob(const DescribeMigrationCheckJobRequest &request)
@@ -965,25 +1112,32 @@ DtsClient::DescribeMigrationCheckJobOutcome DtsClient::DescribeMigrationCheckJob
 
 void DtsClient::DescribeMigrationCheckJobAsync(const DescribeMigrationCheckJobRequest& request, const DescribeMigrationCheckJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeMigrationCheckJob(request), context);
-    };
+    using Req = const DescribeMigrationCheckJobRequest&;
+    using Resp = DescribeMigrationCheckJobResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeMigrationCheckJob", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DtsClient::DescribeMigrationCheckJobOutcomeCallable DtsClient::DescribeMigrationCheckJobCallable(const DescribeMigrationCheckJobRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeMigrationCheckJobOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeMigrationCheckJob(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeMigrationCheckJobOutcome>>();
+    DescribeMigrationCheckJobAsync(
+    request,
+    [prom](
+        const DtsClient*,
+        const DescribeMigrationCheckJobRequest&,
+        DescribeMigrationCheckJobOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DtsClient::DescribeMigrationDetailOutcome DtsClient::DescribeMigrationDetail(const DescribeMigrationDetailRequest &request)
@@ -1008,25 +1162,32 @@ DtsClient::DescribeMigrationDetailOutcome DtsClient::DescribeMigrationDetail(con
 
 void DtsClient::DescribeMigrationDetailAsync(const DescribeMigrationDetailRequest& request, const DescribeMigrationDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeMigrationDetail(request), context);
-    };
+    using Req = const DescribeMigrationDetailRequest&;
+    using Resp = DescribeMigrationDetailResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeMigrationDetail", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DtsClient::DescribeMigrationDetailOutcomeCallable DtsClient::DescribeMigrationDetailCallable(const DescribeMigrationDetailRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeMigrationDetailOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeMigrationDetail(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeMigrationDetailOutcome>>();
+    DescribeMigrationDetailAsync(
+    request,
+    [prom](
+        const DtsClient*,
+        const DescribeMigrationDetailRequest&,
+        DescribeMigrationDetailOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DtsClient::DescribeMigrationJobsOutcome DtsClient::DescribeMigrationJobs(const DescribeMigrationJobsRequest &request)
@@ -1051,25 +1212,32 @@ DtsClient::DescribeMigrationJobsOutcome DtsClient::DescribeMigrationJobs(const D
 
 void DtsClient::DescribeMigrationJobsAsync(const DescribeMigrationJobsRequest& request, const DescribeMigrationJobsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeMigrationJobs(request), context);
-    };
+    using Req = const DescribeMigrationJobsRequest&;
+    using Resp = DescribeMigrationJobsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeMigrationJobs", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DtsClient::DescribeMigrationJobsOutcomeCallable DtsClient::DescribeMigrationJobsCallable(const DescribeMigrationJobsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeMigrationJobsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeMigrationJobs(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeMigrationJobsOutcome>>();
+    DescribeMigrationJobsAsync(
+    request,
+    [prom](
+        const DtsClient*,
+        const DescribeMigrationJobsRequest&,
+        DescribeMigrationJobsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DtsClient::DescribeModifyCheckSyncJobResultOutcome DtsClient::DescribeModifyCheckSyncJobResult(const DescribeModifyCheckSyncJobResultRequest &request)
@@ -1094,25 +1262,32 @@ DtsClient::DescribeModifyCheckSyncJobResultOutcome DtsClient::DescribeModifyChec
 
 void DtsClient::DescribeModifyCheckSyncJobResultAsync(const DescribeModifyCheckSyncJobResultRequest& request, const DescribeModifyCheckSyncJobResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeModifyCheckSyncJobResult(request), context);
-    };
+    using Req = const DescribeModifyCheckSyncJobResultRequest&;
+    using Resp = DescribeModifyCheckSyncJobResultResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeModifyCheckSyncJobResult", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DtsClient::DescribeModifyCheckSyncJobResultOutcomeCallable DtsClient::DescribeModifyCheckSyncJobResultCallable(const DescribeModifyCheckSyncJobResultRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeModifyCheckSyncJobResultOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeModifyCheckSyncJobResult(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeModifyCheckSyncJobResultOutcome>>();
+    DescribeModifyCheckSyncJobResultAsync(
+    request,
+    [prom](
+        const DtsClient*,
+        const DescribeModifyCheckSyncJobResultRequest&,
+        DescribeModifyCheckSyncJobResultOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DtsClient::DescribeOffsetByTimeOutcome DtsClient::DescribeOffsetByTime(const DescribeOffsetByTimeRequest &request)
@@ -1137,25 +1312,32 @@ DtsClient::DescribeOffsetByTimeOutcome DtsClient::DescribeOffsetByTime(const Des
 
 void DtsClient::DescribeOffsetByTimeAsync(const DescribeOffsetByTimeRequest& request, const DescribeOffsetByTimeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeOffsetByTime(request), context);
-    };
+    using Req = const DescribeOffsetByTimeRequest&;
+    using Resp = DescribeOffsetByTimeResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeOffsetByTime", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DtsClient::DescribeOffsetByTimeOutcomeCallable DtsClient::DescribeOffsetByTimeCallable(const DescribeOffsetByTimeRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeOffsetByTimeOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeOffsetByTime(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeOffsetByTimeOutcome>>();
+    DescribeOffsetByTimeAsync(
+    request,
+    [prom](
+        const DtsClient*,
+        const DescribeOffsetByTimeRequest&,
+        DescribeOffsetByTimeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DtsClient::DescribeSubscribeCheckJobOutcome DtsClient::DescribeSubscribeCheckJob(const DescribeSubscribeCheckJobRequest &request)
@@ -1180,25 +1362,32 @@ DtsClient::DescribeSubscribeCheckJobOutcome DtsClient::DescribeSubscribeCheckJob
 
 void DtsClient::DescribeSubscribeCheckJobAsync(const DescribeSubscribeCheckJobRequest& request, const DescribeSubscribeCheckJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeSubscribeCheckJob(request), context);
-    };
+    using Req = const DescribeSubscribeCheckJobRequest&;
+    using Resp = DescribeSubscribeCheckJobResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeSubscribeCheckJob", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DtsClient::DescribeSubscribeCheckJobOutcomeCallable DtsClient::DescribeSubscribeCheckJobCallable(const DescribeSubscribeCheckJobRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeSubscribeCheckJobOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeSubscribeCheckJob(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeSubscribeCheckJobOutcome>>();
+    DescribeSubscribeCheckJobAsync(
+    request,
+    [prom](
+        const DtsClient*,
+        const DescribeSubscribeCheckJobRequest&,
+        DescribeSubscribeCheckJobOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DtsClient::DescribeSubscribeDetailOutcome DtsClient::DescribeSubscribeDetail(const DescribeSubscribeDetailRequest &request)
@@ -1223,25 +1412,32 @@ DtsClient::DescribeSubscribeDetailOutcome DtsClient::DescribeSubscribeDetail(con
 
 void DtsClient::DescribeSubscribeDetailAsync(const DescribeSubscribeDetailRequest& request, const DescribeSubscribeDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeSubscribeDetail(request), context);
-    };
+    using Req = const DescribeSubscribeDetailRequest&;
+    using Resp = DescribeSubscribeDetailResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeSubscribeDetail", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DtsClient::DescribeSubscribeDetailOutcomeCallable DtsClient::DescribeSubscribeDetailCallable(const DescribeSubscribeDetailRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeSubscribeDetailOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeSubscribeDetail(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeSubscribeDetailOutcome>>();
+    DescribeSubscribeDetailAsync(
+    request,
+    [prom](
+        const DtsClient*,
+        const DescribeSubscribeDetailRequest&,
+        DescribeSubscribeDetailOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DtsClient::DescribeSubscribeJobsOutcome DtsClient::DescribeSubscribeJobs(const DescribeSubscribeJobsRequest &request)
@@ -1266,25 +1462,32 @@ DtsClient::DescribeSubscribeJobsOutcome DtsClient::DescribeSubscribeJobs(const D
 
 void DtsClient::DescribeSubscribeJobsAsync(const DescribeSubscribeJobsRequest& request, const DescribeSubscribeJobsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeSubscribeJobs(request), context);
-    };
+    using Req = const DescribeSubscribeJobsRequest&;
+    using Resp = DescribeSubscribeJobsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeSubscribeJobs", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DtsClient::DescribeSubscribeJobsOutcomeCallable DtsClient::DescribeSubscribeJobsCallable(const DescribeSubscribeJobsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeSubscribeJobsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeSubscribeJobs(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeSubscribeJobsOutcome>>();
+    DescribeSubscribeJobsAsync(
+    request,
+    [prom](
+        const DtsClient*,
+        const DescribeSubscribeJobsRequest&,
+        DescribeSubscribeJobsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DtsClient::DescribeSubscribeReturnableOutcome DtsClient::DescribeSubscribeReturnable(const DescribeSubscribeReturnableRequest &request)
@@ -1309,25 +1512,32 @@ DtsClient::DescribeSubscribeReturnableOutcome DtsClient::DescribeSubscribeReturn
 
 void DtsClient::DescribeSubscribeReturnableAsync(const DescribeSubscribeReturnableRequest& request, const DescribeSubscribeReturnableAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeSubscribeReturnable(request), context);
-    };
+    using Req = const DescribeSubscribeReturnableRequest&;
+    using Resp = DescribeSubscribeReturnableResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeSubscribeReturnable", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DtsClient::DescribeSubscribeReturnableOutcomeCallable DtsClient::DescribeSubscribeReturnableCallable(const DescribeSubscribeReturnableRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeSubscribeReturnableOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeSubscribeReturnable(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeSubscribeReturnableOutcome>>();
+    DescribeSubscribeReturnableAsync(
+    request,
+    [prom](
+        const DtsClient*,
+        const DescribeSubscribeReturnableRequest&,
+        DescribeSubscribeReturnableOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DtsClient::DescribeSyncJobsOutcome DtsClient::DescribeSyncJobs(const DescribeSyncJobsRequest &request)
@@ -1352,25 +1562,32 @@ DtsClient::DescribeSyncJobsOutcome DtsClient::DescribeSyncJobs(const DescribeSyn
 
 void DtsClient::DescribeSyncJobsAsync(const DescribeSyncJobsRequest& request, const DescribeSyncJobsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeSyncJobs(request), context);
-    };
+    using Req = const DescribeSyncJobsRequest&;
+    using Resp = DescribeSyncJobsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeSyncJobs", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DtsClient::DescribeSyncJobsOutcomeCallable DtsClient::DescribeSyncJobsCallable(const DescribeSyncJobsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeSyncJobsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeSyncJobs(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeSyncJobsOutcome>>();
+    DescribeSyncJobsAsync(
+    request,
+    [prom](
+        const DtsClient*,
+        const DescribeSyncJobsRequest&,
+        DescribeSyncJobsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DtsClient::DestroyIsolatedSubscribeOutcome DtsClient::DestroyIsolatedSubscribe(const DestroyIsolatedSubscribeRequest &request)
@@ -1395,25 +1612,32 @@ DtsClient::DestroyIsolatedSubscribeOutcome DtsClient::DestroyIsolatedSubscribe(c
 
 void DtsClient::DestroyIsolatedSubscribeAsync(const DestroyIsolatedSubscribeRequest& request, const DestroyIsolatedSubscribeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DestroyIsolatedSubscribe(request), context);
-    };
+    using Req = const DestroyIsolatedSubscribeRequest&;
+    using Resp = DestroyIsolatedSubscribeResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DestroyIsolatedSubscribe", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DtsClient::DestroyIsolatedSubscribeOutcomeCallable DtsClient::DestroyIsolatedSubscribeCallable(const DestroyIsolatedSubscribeRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DestroyIsolatedSubscribeOutcome()>>(
-        [this, request]()
-        {
-            return this->DestroyIsolatedSubscribe(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DestroyIsolatedSubscribeOutcome>>();
+    DestroyIsolatedSubscribeAsync(
+    request,
+    [prom](
+        const DtsClient*,
+        const DestroyIsolatedSubscribeRequest&,
+        DestroyIsolatedSubscribeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DtsClient::DestroyMigrateJobOutcome DtsClient::DestroyMigrateJob(const DestroyMigrateJobRequest &request)
@@ -1438,25 +1662,32 @@ DtsClient::DestroyMigrateJobOutcome DtsClient::DestroyMigrateJob(const DestroyMi
 
 void DtsClient::DestroyMigrateJobAsync(const DestroyMigrateJobRequest& request, const DestroyMigrateJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DestroyMigrateJob(request), context);
-    };
+    using Req = const DestroyMigrateJobRequest&;
+    using Resp = DestroyMigrateJobResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DestroyMigrateJob", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DtsClient::DestroyMigrateJobOutcomeCallable DtsClient::DestroyMigrateJobCallable(const DestroyMigrateJobRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DestroyMigrateJobOutcome()>>(
-        [this, request]()
-        {
-            return this->DestroyMigrateJob(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DestroyMigrateJobOutcome>>();
+    DestroyMigrateJobAsync(
+    request,
+    [prom](
+        const DtsClient*,
+        const DestroyMigrateJobRequest&,
+        DestroyMigrateJobOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DtsClient::DestroySyncJobOutcome DtsClient::DestroySyncJob(const DestroySyncJobRequest &request)
@@ -1481,25 +1712,32 @@ DtsClient::DestroySyncJobOutcome DtsClient::DestroySyncJob(const DestroySyncJobR
 
 void DtsClient::DestroySyncJobAsync(const DestroySyncJobRequest& request, const DestroySyncJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DestroySyncJob(request), context);
-    };
+    using Req = const DestroySyncJobRequest&;
+    using Resp = DestroySyncJobResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DestroySyncJob", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DtsClient::DestroySyncJobOutcomeCallable DtsClient::DestroySyncJobCallable(const DestroySyncJobRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DestroySyncJobOutcome()>>(
-        [this, request]()
-        {
-            return this->DestroySyncJob(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DestroySyncJobOutcome>>();
+    DestroySyncJobAsync(
+    request,
+    [prom](
+        const DtsClient*,
+        const DestroySyncJobRequest&,
+        DestroySyncJobOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DtsClient::IsolateMigrateJobOutcome DtsClient::IsolateMigrateJob(const IsolateMigrateJobRequest &request)
@@ -1524,25 +1762,32 @@ DtsClient::IsolateMigrateJobOutcome DtsClient::IsolateMigrateJob(const IsolateMi
 
 void DtsClient::IsolateMigrateJobAsync(const IsolateMigrateJobRequest& request, const IsolateMigrateJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->IsolateMigrateJob(request), context);
-    };
+    using Req = const IsolateMigrateJobRequest&;
+    using Resp = IsolateMigrateJobResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "IsolateMigrateJob", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DtsClient::IsolateMigrateJobOutcomeCallable DtsClient::IsolateMigrateJobCallable(const IsolateMigrateJobRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<IsolateMigrateJobOutcome()>>(
-        [this, request]()
-        {
-            return this->IsolateMigrateJob(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<IsolateMigrateJobOutcome>>();
+    IsolateMigrateJobAsync(
+    request,
+    [prom](
+        const DtsClient*,
+        const IsolateMigrateJobRequest&,
+        IsolateMigrateJobOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DtsClient::IsolateSubscribeOutcome DtsClient::IsolateSubscribe(const IsolateSubscribeRequest &request)
@@ -1567,25 +1812,32 @@ DtsClient::IsolateSubscribeOutcome DtsClient::IsolateSubscribe(const IsolateSubs
 
 void DtsClient::IsolateSubscribeAsync(const IsolateSubscribeRequest& request, const IsolateSubscribeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->IsolateSubscribe(request), context);
-    };
+    using Req = const IsolateSubscribeRequest&;
+    using Resp = IsolateSubscribeResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "IsolateSubscribe", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DtsClient::IsolateSubscribeOutcomeCallable DtsClient::IsolateSubscribeCallable(const IsolateSubscribeRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<IsolateSubscribeOutcome()>>(
-        [this, request]()
-        {
-            return this->IsolateSubscribe(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<IsolateSubscribeOutcome>>();
+    IsolateSubscribeAsync(
+    request,
+    [prom](
+        const DtsClient*,
+        const IsolateSubscribeRequest&,
+        IsolateSubscribeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DtsClient::IsolateSyncJobOutcome DtsClient::IsolateSyncJob(const IsolateSyncJobRequest &request)
@@ -1610,25 +1862,32 @@ DtsClient::IsolateSyncJobOutcome DtsClient::IsolateSyncJob(const IsolateSyncJobR
 
 void DtsClient::IsolateSyncJobAsync(const IsolateSyncJobRequest& request, const IsolateSyncJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->IsolateSyncJob(request), context);
-    };
+    using Req = const IsolateSyncJobRequest&;
+    using Resp = IsolateSyncJobResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "IsolateSyncJob", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DtsClient::IsolateSyncJobOutcomeCallable DtsClient::IsolateSyncJobCallable(const IsolateSyncJobRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<IsolateSyncJobOutcome()>>(
-        [this, request]()
-        {
-            return this->IsolateSyncJob(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<IsolateSyncJobOutcome>>();
+    IsolateSyncJobAsync(
+    request,
+    [prom](
+        const DtsClient*,
+        const IsolateSyncJobRequest&,
+        IsolateSyncJobOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DtsClient::ModifyCompareTaskOutcome DtsClient::ModifyCompareTask(const ModifyCompareTaskRequest &request)
@@ -1653,25 +1912,32 @@ DtsClient::ModifyCompareTaskOutcome DtsClient::ModifyCompareTask(const ModifyCom
 
 void DtsClient::ModifyCompareTaskAsync(const ModifyCompareTaskRequest& request, const ModifyCompareTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyCompareTask(request), context);
-    };
+    using Req = const ModifyCompareTaskRequest&;
+    using Resp = ModifyCompareTaskResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyCompareTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DtsClient::ModifyCompareTaskOutcomeCallable DtsClient::ModifyCompareTaskCallable(const ModifyCompareTaskRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyCompareTaskOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyCompareTask(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyCompareTaskOutcome>>();
+    ModifyCompareTaskAsync(
+    request,
+    [prom](
+        const DtsClient*,
+        const ModifyCompareTaskRequest&,
+        ModifyCompareTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DtsClient::ModifyCompareTaskNameOutcome DtsClient::ModifyCompareTaskName(const ModifyCompareTaskNameRequest &request)
@@ -1696,25 +1962,32 @@ DtsClient::ModifyCompareTaskNameOutcome DtsClient::ModifyCompareTaskName(const M
 
 void DtsClient::ModifyCompareTaskNameAsync(const ModifyCompareTaskNameRequest& request, const ModifyCompareTaskNameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyCompareTaskName(request), context);
-    };
+    using Req = const ModifyCompareTaskNameRequest&;
+    using Resp = ModifyCompareTaskNameResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyCompareTaskName", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DtsClient::ModifyCompareTaskNameOutcomeCallable DtsClient::ModifyCompareTaskNameCallable(const ModifyCompareTaskNameRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyCompareTaskNameOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyCompareTaskName(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyCompareTaskNameOutcome>>();
+    ModifyCompareTaskNameAsync(
+    request,
+    [prom](
+        const DtsClient*,
+        const ModifyCompareTaskNameRequest&,
+        ModifyCompareTaskNameOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DtsClient::ModifyConsumerGroupDescriptionOutcome DtsClient::ModifyConsumerGroupDescription(const ModifyConsumerGroupDescriptionRequest &request)
@@ -1739,25 +2012,32 @@ DtsClient::ModifyConsumerGroupDescriptionOutcome DtsClient::ModifyConsumerGroupD
 
 void DtsClient::ModifyConsumerGroupDescriptionAsync(const ModifyConsumerGroupDescriptionRequest& request, const ModifyConsumerGroupDescriptionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyConsumerGroupDescription(request), context);
-    };
+    using Req = const ModifyConsumerGroupDescriptionRequest&;
+    using Resp = ModifyConsumerGroupDescriptionResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyConsumerGroupDescription", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DtsClient::ModifyConsumerGroupDescriptionOutcomeCallable DtsClient::ModifyConsumerGroupDescriptionCallable(const ModifyConsumerGroupDescriptionRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyConsumerGroupDescriptionOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyConsumerGroupDescription(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyConsumerGroupDescriptionOutcome>>();
+    ModifyConsumerGroupDescriptionAsync(
+    request,
+    [prom](
+        const DtsClient*,
+        const ModifyConsumerGroupDescriptionRequest&,
+        ModifyConsumerGroupDescriptionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DtsClient::ModifyConsumerGroupPasswordOutcome DtsClient::ModifyConsumerGroupPassword(const ModifyConsumerGroupPasswordRequest &request)
@@ -1782,25 +2062,32 @@ DtsClient::ModifyConsumerGroupPasswordOutcome DtsClient::ModifyConsumerGroupPass
 
 void DtsClient::ModifyConsumerGroupPasswordAsync(const ModifyConsumerGroupPasswordRequest& request, const ModifyConsumerGroupPasswordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyConsumerGroupPassword(request), context);
-    };
+    using Req = const ModifyConsumerGroupPasswordRequest&;
+    using Resp = ModifyConsumerGroupPasswordResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyConsumerGroupPassword", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DtsClient::ModifyConsumerGroupPasswordOutcomeCallable DtsClient::ModifyConsumerGroupPasswordCallable(const ModifyConsumerGroupPasswordRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyConsumerGroupPasswordOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyConsumerGroupPassword(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyConsumerGroupPasswordOutcome>>();
+    ModifyConsumerGroupPasswordAsync(
+    request,
+    [prom](
+        const DtsClient*,
+        const ModifyConsumerGroupPasswordRequest&,
+        ModifyConsumerGroupPasswordOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DtsClient::ModifyMigrateJobSpecOutcome DtsClient::ModifyMigrateJobSpec(const ModifyMigrateJobSpecRequest &request)
@@ -1825,25 +2112,32 @@ DtsClient::ModifyMigrateJobSpecOutcome DtsClient::ModifyMigrateJobSpec(const Mod
 
 void DtsClient::ModifyMigrateJobSpecAsync(const ModifyMigrateJobSpecRequest& request, const ModifyMigrateJobSpecAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyMigrateJobSpec(request), context);
-    };
+    using Req = const ModifyMigrateJobSpecRequest&;
+    using Resp = ModifyMigrateJobSpecResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyMigrateJobSpec", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DtsClient::ModifyMigrateJobSpecOutcomeCallable DtsClient::ModifyMigrateJobSpecCallable(const ModifyMigrateJobSpecRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyMigrateJobSpecOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyMigrateJobSpec(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyMigrateJobSpecOutcome>>();
+    ModifyMigrateJobSpecAsync(
+    request,
+    [prom](
+        const DtsClient*,
+        const ModifyMigrateJobSpecRequest&,
+        ModifyMigrateJobSpecOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DtsClient::ModifyMigrateNameOutcome DtsClient::ModifyMigrateName(const ModifyMigrateNameRequest &request)
@@ -1868,25 +2162,32 @@ DtsClient::ModifyMigrateNameOutcome DtsClient::ModifyMigrateName(const ModifyMig
 
 void DtsClient::ModifyMigrateNameAsync(const ModifyMigrateNameRequest& request, const ModifyMigrateNameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyMigrateName(request), context);
-    };
+    using Req = const ModifyMigrateNameRequest&;
+    using Resp = ModifyMigrateNameResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyMigrateName", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DtsClient::ModifyMigrateNameOutcomeCallable DtsClient::ModifyMigrateNameCallable(const ModifyMigrateNameRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyMigrateNameOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyMigrateName(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyMigrateNameOutcome>>();
+    ModifyMigrateNameAsync(
+    request,
+    [prom](
+        const DtsClient*,
+        const ModifyMigrateNameRequest&,
+        ModifyMigrateNameOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DtsClient::ModifyMigrateRateLimitOutcome DtsClient::ModifyMigrateRateLimit(const ModifyMigrateRateLimitRequest &request)
@@ -1911,25 +2212,32 @@ DtsClient::ModifyMigrateRateLimitOutcome DtsClient::ModifyMigrateRateLimit(const
 
 void DtsClient::ModifyMigrateRateLimitAsync(const ModifyMigrateRateLimitRequest& request, const ModifyMigrateRateLimitAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyMigrateRateLimit(request), context);
-    };
+    using Req = const ModifyMigrateRateLimitRequest&;
+    using Resp = ModifyMigrateRateLimitResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyMigrateRateLimit", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DtsClient::ModifyMigrateRateLimitOutcomeCallable DtsClient::ModifyMigrateRateLimitCallable(const ModifyMigrateRateLimitRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyMigrateRateLimitOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyMigrateRateLimit(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyMigrateRateLimitOutcome>>();
+    ModifyMigrateRateLimitAsync(
+    request,
+    [prom](
+        const DtsClient*,
+        const ModifyMigrateRateLimitRequest&,
+        ModifyMigrateRateLimitOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DtsClient::ModifyMigrateRuntimeAttributeOutcome DtsClient::ModifyMigrateRuntimeAttribute(const ModifyMigrateRuntimeAttributeRequest &request)
@@ -1954,25 +2262,32 @@ DtsClient::ModifyMigrateRuntimeAttributeOutcome DtsClient::ModifyMigrateRuntimeA
 
 void DtsClient::ModifyMigrateRuntimeAttributeAsync(const ModifyMigrateRuntimeAttributeRequest& request, const ModifyMigrateRuntimeAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyMigrateRuntimeAttribute(request), context);
-    };
+    using Req = const ModifyMigrateRuntimeAttributeRequest&;
+    using Resp = ModifyMigrateRuntimeAttributeResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyMigrateRuntimeAttribute", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DtsClient::ModifyMigrateRuntimeAttributeOutcomeCallable DtsClient::ModifyMigrateRuntimeAttributeCallable(const ModifyMigrateRuntimeAttributeRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyMigrateRuntimeAttributeOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyMigrateRuntimeAttribute(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyMigrateRuntimeAttributeOutcome>>();
+    ModifyMigrateRuntimeAttributeAsync(
+    request,
+    [prom](
+        const DtsClient*,
+        const ModifyMigrateRuntimeAttributeRequest&,
+        ModifyMigrateRuntimeAttributeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DtsClient::ModifyMigrationJobOutcome DtsClient::ModifyMigrationJob(const ModifyMigrationJobRequest &request)
@@ -1997,25 +2312,32 @@ DtsClient::ModifyMigrationJobOutcome DtsClient::ModifyMigrationJob(const ModifyM
 
 void DtsClient::ModifyMigrationJobAsync(const ModifyMigrationJobRequest& request, const ModifyMigrationJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyMigrationJob(request), context);
-    };
+    using Req = const ModifyMigrationJobRequest&;
+    using Resp = ModifyMigrationJobResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyMigrationJob", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DtsClient::ModifyMigrationJobOutcomeCallable DtsClient::ModifyMigrationJobCallable(const ModifyMigrationJobRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyMigrationJobOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyMigrationJob(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyMigrationJobOutcome>>();
+    ModifyMigrationJobAsync(
+    request,
+    [prom](
+        const DtsClient*,
+        const ModifyMigrationJobRequest&,
+        ModifyMigrationJobOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DtsClient::ModifySubscribeAutoRenewFlagOutcome DtsClient::ModifySubscribeAutoRenewFlag(const ModifySubscribeAutoRenewFlagRequest &request)
@@ -2040,25 +2362,32 @@ DtsClient::ModifySubscribeAutoRenewFlagOutcome DtsClient::ModifySubscribeAutoRen
 
 void DtsClient::ModifySubscribeAutoRenewFlagAsync(const ModifySubscribeAutoRenewFlagRequest& request, const ModifySubscribeAutoRenewFlagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifySubscribeAutoRenewFlag(request), context);
-    };
+    using Req = const ModifySubscribeAutoRenewFlagRequest&;
+    using Resp = ModifySubscribeAutoRenewFlagResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifySubscribeAutoRenewFlag", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DtsClient::ModifySubscribeAutoRenewFlagOutcomeCallable DtsClient::ModifySubscribeAutoRenewFlagCallable(const ModifySubscribeAutoRenewFlagRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifySubscribeAutoRenewFlagOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifySubscribeAutoRenewFlag(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifySubscribeAutoRenewFlagOutcome>>();
+    ModifySubscribeAutoRenewFlagAsync(
+    request,
+    [prom](
+        const DtsClient*,
+        const ModifySubscribeAutoRenewFlagRequest&,
+        ModifySubscribeAutoRenewFlagOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DtsClient::ModifySubscribeNameOutcome DtsClient::ModifySubscribeName(const ModifySubscribeNameRequest &request)
@@ -2083,25 +2412,32 @@ DtsClient::ModifySubscribeNameOutcome DtsClient::ModifySubscribeName(const Modif
 
 void DtsClient::ModifySubscribeNameAsync(const ModifySubscribeNameRequest& request, const ModifySubscribeNameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifySubscribeName(request), context);
-    };
+    using Req = const ModifySubscribeNameRequest&;
+    using Resp = ModifySubscribeNameResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifySubscribeName", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DtsClient::ModifySubscribeNameOutcomeCallable DtsClient::ModifySubscribeNameCallable(const ModifySubscribeNameRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifySubscribeNameOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifySubscribeName(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifySubscribeNameOutcome>>();
+    ModifySubscribeNameAsync(
+    request,
+    [prom](
+        const DtsClient*,
+        const ModifySubscribeNameRequest&,
+        ModifySubscribeNameOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DtsClient::ModifySubscribeObjectsOutcome DtsClient::ModifySubscribeObjects(const ModifySubscribeObjectsRequest &request)
@@ -2126,25 +2462,32 @@ DtsClient::ModifySubscribeObjectsOutcome DtsClient::ModifySubscribeObjects(const
 
 void DtsClient::ModifySubscribeObjectsAsync(const ModifySubscribeObjectsRequest& request, const ModifySubscribeObjectsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifySubscribeObjects(request), context);
-    };
+    using Req = const ModifySubscribeObjectsRequest&;
+    using Resp = ModifySubscribeObjectsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifySubscribeObjects", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DtsClient::ModifySubscribeObjectsOutcomeCallable DtsClient::ModifySubscribeObjectsCallable(const ModifySubscribeObjectsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifySubscribeObjectsOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifySubscribeObjects(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifySubscribeObjectsOutcome>>();
+    ModifySubscribeObjectsAsync(
+    request,
+    [prom](
+        const DtsClient*,
+        const ModifySubscribeObjectsRequest&,
+        ModifySubscribeObjectsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DtsClient::ModifySyncJobConfigOutcome DtsClient::ModifySyncJobConfig(const ModifySyncJobConfigRequest &request)
@@ -2169,25 +2512,32 @@ DtsClient::ModifySyncJobConfigOutcome DtsClient::ModifySyncJobConfig(const Modif
 
 void DtsClient::ModifySyncJobConfigAsync(const ModifySyncJobConfigRequest& request, const ModifySyncJobConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifySyncJobConfig(request), context);
-    };
+    using Req = const ModifySyncJobConfigRequest&;
+    using Resp = ModifySyncJobConfigResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifySyncJobConfig", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DtsClient::ModifySyncJobConfigOutcomeCallable DtsClient::ModifySyncJobConfigCallable(const ModifySyncJobConfigRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifySyncJobConfigOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifySyncJobConfig(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifySyncJobConfigOutcome>>();
+    ModifySyncJobConfigAsync(
+    request,
+    [prom](
+        const DtsClient*,
+        const ModifySyncJobConfigRequest&,
+        ModifySyncJobConfigOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DtsClient::ModifySyncRateLimitOutcome DtsClient::ModifySyncRateLimit(const ModifySyncRateLimitRequest &request)
@@ -2212,25 +2562,32 @@ DtsClient::ModifySyncRateLimitOutcome DtsClient::ModifySyncRateLimit(const Modif
 
 void DtsClient::ModifySyncRateLimitAsync(const ModifySyncRateLimitRequest& request, const ModifySyncRateLimitAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifySyncRateLimit(request), context);
-    };
+    using Req = const ModifySyncRateLimitRequest&;
+    using Resp = ModifySyncRateLimitResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifySyncRateLimit", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DtsClient::ModifySyncRateLimitOutcomeCallable DtsClient::ModifySyncRateLimitCallable(const ModifySyncRateLimitRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifySyncRateLimitOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifySyncRateLimit(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifySyncRateLimitOutcome>>();
+    ModifySyncRateLimitAsync(
+    request,
+    [prom](
+        const DtsClient*,
+        const ModifySyncRateLimitRequest&,
+        ModifySyncRateLimitOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DtsClient::PauseMigrateJobOutcome DtsClient::PauseMigrateJob(const PauseMigrateJobRequest &request)
@@ -2255,25 +2612,32 @@ DtsClient::PauseMigrateJobOutcome DtsClient::PauseMigrateJob(const PauseMigrateJ
 
 void DtsClient::PauseMigrateJobAsync(const PauseMigrateJobRequest& request, const PauseMigrateJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->PauseMigrateJob(request), context);
-    };
+    using Req = const PauseMigrateJobRequest&;
+    using Resp = PauseMigrateJobResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "PauseMigrateJob", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DtsClient::PauseMigrateJobOutcomeCallable DtsClient::PauseMigrateJobCallable(const PauseMigrateJobRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<PauseMigrateJobOutcome()>>(
-        [this, request]()
-        {
-            return this->PauseMigrateJob(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<PauseMigrateJobOutcome>>();
+    PauseMigrateJobAsync(
+    request,
+    [prom](
+        const DtsClient*,
+        const PauseMigrateJobRequest&,
+        PauseMigrateJobOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DtsClient::PauseSyncJobOutcome DtsClient::PauseSyncJob(const PauseSyncJobRequest &request)
@@ -2298,25 +2662,32 @@ DtsClient::PauseSyncJobOutcome DtsClient::PauseSyncJob(const PauseSyncJobRequest
 
 void DtsClient::PauseSyncJobAsync(const PauseSyncJobRequest& request, const PauseSyncJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->PauseSyncJob(request), context);
-    };
+    using Req = const PauseSyncJobRequest&;
+    using Resp = PauseSyncJobResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "PauseSyncJob", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DtsClient::PauseSyncJobOutcomeCallable DtsClient::PauseSyncJobCallable(const PauseSyncJobRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<PauseSyncJobOutcome()>>(
-        [this, request]()
-        {
-            return this->PauseSyncJob(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<PauseSyncJobOutcome>>();
+    PauseSyncJobAsync(
+    request,
+    [prom](
+        const DtsClient*,
+        const PauseSyncJobRequest&,
+        PauseSyncJobOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DtsClient::RecoverMigrateJobOutcome DtsClient::RecoverMigrateJob(const RecoverMigrateJobRequest &request)
@@ -2341,25 +2712,32 @@ DtsClient::RecoverMigrateJobOutcome DtsClient::RecoverMigrateJob(const RecoverMi
 
 void DtsClient::RecoverMigrateJobAsync(const RecoverMigrateJobRequest& request, const RecoverMigrateJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->RecoverMigrateJob(request), context);
-    };
+    using Req = const RecoverMigrateJobRequest&;
+    using Resp = RecoverMigrateJobResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "RecoverMigrateJob", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DtsClient::RecoverMigrateJobOutcomeCallable DtsClient::RecoverMigrateJobCallable(const RecoverMigrateJobRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<RecoverMigrateJobOutcome()>>(
-        [this, request]()
-        {
-            return this->RecoverMigrateJob(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<RecoverMigrateJobOutcome>>();
+    RecoverMigrateJobAsync(
+    request,
+    [prom](
+        const DtsClient*,
+        const RecoverMigrateJobRequest&,
+        RecoverMigrateJobOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DtsClient::RecoverSyncJobOutcome DtsClient::RecoverSyncJob(const RecoverSyncJobRequest &request)
@@ -2384,25 +2762,32 @@ DtsClient::RecoverSyncJobOutcome DtsClient::RecoverSyncJob(const RecoverSyncJobR
 
 void DtsClient::RecoverSyncJobAsync(const RecoverSyncJobRequest& request, const RecoverSyncJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->RecoverSyncJob(request), context);
-    };
+    using Req = const RecoverSyncJobRequest&;
+    using Resp = RecoverSyncJobResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "RecoverSyncJob", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DtsClient::RecoverSyncJobOutcomeCallable DtsClient::RecoverSyncJobCallable(const RecoverSyncJobRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<RecoverSyncJobOutcome()>>(
-        [this, request]()
-        {
-            return this->RecoverSyncJob(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<RecoverSyncJobOutcome>>();
+    RecoverSyncJobAsync(
+    request,
+    [prom](
+        const DtsClient*,
+        const RecoverSyncJobRequest&,
+        RecoverSyncJobOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DtsClient::ResetConsumerGroupOffsetOutcome DtsClient::ResetConsumerGroupOffset(const ResetConsumerGroupOffsetRequest &request)
@@ -2427,25 +2812,32 @@ DtsClient::ResetConsumerGroupOffsetOutcome DtsClient::ResetConsumerGroupOffset(c
 
 void DtsClient::ResetConsumerGroupOffsetAsync(const ResetConsumerGroupOffsetRequest& request, const ResetConsumerGroupOffsetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ResetConsumerGroupOffset(request), context);
-    };
+    using Req = const ResetConsumerGroupOffsetRequest&;
+    using Resp = ResetConsumerGroupOffsetResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ResetConsumerGroupOffset", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DtsClient::ResetConsumerGroupOffsetOutcomeCallable DtsClient::ResetConsumerGroupOffsetCallable(const ResetConsumerGroupOffsetRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ResetConsumerGroupOffsetOutcome()>>(
-        [this, request]()
-        {
-            return this->ResetConsumerGroupOffset(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ResetConsumerGroupOffsetOutcome>>();
+    ResetConsumerGroupOffsetAsync(
+    request,
+    [prom](
+        const DtsClient*,
+        const ResetConsumerGroupOffsetRequest&,
+        ResetConsumerGroupOffsetOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DtsClient::ResetSubscribeOutcome DtsClient::ResetSubscribe(const ResetSubscribeRequest &request)
@@ -2470,25 +2862,32 @@ DtsClient::ResetSubscribeOutcome DtsClient::ResetSubscribe(const ResetSubscribeR
 
 void DtsClient::ResetSubscribeAsync(const ResetSubscribeRequest& request, const ResetSubscribeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ResetSubscribe(request), context);
-    };
+    using Req = const ResetSubscribeRequest&;
+    using Resp = ResetSubscribeResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ResetSubscribe", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DtsClient::ResetSubscribeOutcomeCallable DtsClient::ResetSubscribeCallable(const ResetSubscribeRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ResetSubscribeOutcome()>>(
-        [this, request]()
-        {
-            return this->ResetSubscribe(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ResetSubscribeOutcome>>();
+    ResetSubscribeAsync(
+    request,
+    [prom](
+        const DtsClient*,
+        const ResetSubscribeRequest&,
+        ResetSubscribeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DtsClient::ResetSyncJobOutcome DtsClient::ResetSyncJob(const ResetSyncJobRequest &request)
@@ -2513,25 +2912,32 @@ DtsClient::ResetSyncJobOutcome DtsClient::ResetSyncJob(const ResetSyncJobRequest
 
 void DtsClient::ResetSyncJobAsync(const ResetSyncJobRequest& request, const ResetSyncJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ResetSyncJob(request), context);
-    };
+    using Req = const ResetSyncJobRequest&;
+    using Resp = ResetSyncJobResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ResetSyncJob", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DtsClient::ResetSyncJobOutcomeCallable DtsClient::ResetSyncJobCallable(const ResetSyncJobRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ResetSyncJobOutcome()>>(
-        [this, request]()
-        {
-            return this->ResetSyncJob(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ResetSyncJobOutcome>>();
+    ResetSyncJobAsync(
+    request,
+    [prom](
+        const DtsClient*,
+        const ResetSyncJobRequest&,
+        ResetSyncJobOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DtsClient::ResizeSyncJobOutcome DtsClient::ResizeSyncJob(const ResizeSyncJobRequest &request)
@@ -2556,25 +2962,32 @@ DtsClient::ResizeSyncJobOutcome DtsClient::ResizeSyncJob(const ResizeSyncJobRequ
 
 void DtsClient::ResizeSyncJobAsync(const ResizeSyncJobRequest& request, const ResizeSyncJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ResizeSyncJob(request), context);
-    };
+    using Req = const ResizeSyncJobRequest&;
+    using Resp = ResizeSyncJobResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ResizeSyncJob", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DtsClient::ResizeSyncJobOutcomeCallable DtsClient::ResizeSyncJobCallable(const ResizeSyncJobRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ResizeSyncJobOutcome()>>(
-        [this, request]()
-        {
-            return this->ResizeSyncJob(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ResizeSyncJobOutcome>>();
+    ResizeSyncJobAsync(
+    request,
+    [prom](
+        const DtsClient*,
+        const ResizeSyncJobRequest&,
+        ResizeSyncJobOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DtsClient::ResumeMigrateJobOutcome DtsClient::ResumeMigrateJob(const ResumeMigrateJobRequest &request)
@@ -2599,25 +3012,32 @@ DtsClient::ResumeMigrateJobOutcome DtsClient::ResumeMigrateJob(const ResumeMigra
 
 void DtsClient::ResumeMigrateJobAsync(const ResumeMigrateJobRequest& request, const ResumeMigrateJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ResumeMigrateJob(request), context);
-    };
+    using Req = const ResumeMigrateJobRequest&;
+    using Resp = ResumeMigrateJobResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ResumeMigrateJob", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DtsClient::ResumeMigrateJobOutcomeCallable DtsClient::ResumeMigrateJobCallable(const ResumeMigrateJobRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ResumeMigrateJobOutcome()>>(
-        [this, request]()
-        {
-            return this->ResumeMigrateJob(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ResumeMigrateJobOutcome>>();
+    ResumeMigrateJobAsync(
+    request,
+    [prom](
+        const DtsClient*,
+        const ResumeMigrateJobRequest&,
+        ResumeMigrateJobOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DtsClient::ResumeSubscribeOutcome DtsClient::ResumeSubscribe(const ResumeSubscribeRequest &request)
@@ -2642,25 +3062,32 @@ DtsClient::ResumeSubscribeOutcome DtsClient::ResumeSubscribe(const ResumeSubscri
 
 void DtsClient::ResumeSubscribeAsync(const ResumeSubscribeRequest& request, const ResumeSubscribeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ResumeSubscribe(request), context);
-    };
+    using Req = const ResumeSubscribeRequest&;
+    using Resp = ResumeSubscribeResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ResumeSubscribe", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DtsClient::ResumeSubscribeOutcomeCallable DtsClient::ResumeSubscribeCallable(const ResumeSubscribeRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ResumeSubscribeOutcome()>>(
-        [this, request]()
-        {
-            return this->ResumeSubscribe(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ResumeSubscribeOutcome>>();
+    ResumeSubscribeAsync(
+    request,
+    [prom](
+        const DtsClient*,
+        const ResumeSubscribeRequest&,
+        ResumeSubscribeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DtsClient::ResumeSyncJobOutcome DtsClient::ResumeSyncJob(const ResumeSyncJobRequest &request)
@@ -2685,25 +3112,32 @@ DtsClient::ResumeSyncJobOutcome DtsClient::ResumeSyncJob(const ResumeSyncJobRequ
 
 void DtsClient::ResumeSyncJobAsync(const ResumeSyncJobRequest& request, const ResumeSyncJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ResumeSyncJob(request), context);
-    };
+    using Req = const ResumeSyncJobRequest&;
+    using Resp = ResumeSyncJobResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ResumeSyncJob", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DtsClient::ResumeSyncJobOutcomeCallable DtsClient::ResumeSyncJobCallable(const ResumeSyncJobRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ResumeSyncJobOutcome()>>(
-        [this, request]()
-        {
-            return this->ResumeSyncJob(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ResumeSyncJobOutcome>>();
+    ResumeSyncJobAsync(
+    request,
+    [prom](
+        const DtsClient*,
+        const ResumeSyncJobRequest&,
+        ResumeSyncJobOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DtsClient::SkipCheckItemOutcome DtsClient::SkipCheckItem(const SkipCheckItemRequest &request)
@@ -2728,25 +3162,32 @@ DtsClient::SkipCheckItemOutcome DtsClient::SkipCheckItem(const SkipCheckItemRequ
 
 void DtsClient::SkipCheckItemAsync(const SkipCheckItemRequest& request, const SkipCheckItemAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->SkipCheckItem(request), context);
-    };
+    using Req = const SkipCheckItemRequest&;
+    using Resp = SkipCheckItemResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "SkipCheckItem", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DtsClient::SkipCheckItemOutcomeCallable DtsClient::SkipCheckItemCallable(const SkipCheckItemRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<SkipCheckItemOutcome()>>(
-        [this, request]()
-        {
-            return this->SkipCheckItem(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<SkipCheckItemOutcome>>();
+    SkipCheckItemAsync(
+    request,
+    [prom](
+        const DtsClient*,
+        const SkipCheckItemRequest&,
+        SkipCheckItemOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DtsClient::SkipSyncCheckItemOutcome DtsClient::SkipSyncCheckItem(const SkipSyncCheckItemRequest &request)
@@ -2771,25 +3212,32 @@ DtsClient::SkipSyncCheckItemOutcome DtsClient::SkipSyncCheckItem(const SkipSyncC
 
 void DtsClient::SkipSyncCheckItemAsync(const SkipSyncCheckItemRequest& request, const SkipSyncCheckItemAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->SkipSyncCheckItem(request), context);
-    };
+    using Req = const SkipSyncCheckItemRequest&;
+    using Resp = SkipSyncCheckItemResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "SkipSyncCheckItem", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DtsClient::SkipSyncCheckItemOutcomeCallable DtsClient::SkipSyncCheckItemCallable(const SkipSyncCheckItemRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<SkipSyncCheckItemOutcome()>>(
-        [this, request]()
-        {
-            return this->SkipSyncCheckItem(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<SkipSyncCheckItemOutcome>>();
+    SkipSyncCheckItemAsync(
+    request,
+    [prom](
+        const DtsClient*,
+        const SkipSyncCheckItemRequest&,
+        SkipSyncCheckItemOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DtsClient::StartCompareOutcome DtsClient::StartCompare(const StartCompareRequest &request)
@@ -2814,25 +3262,32 @@ DtsClient::StartCompareOutcome DtsClient::StartCompare(const StartCompareRequest
 
 void DtsClient::StartCompareAsync(const StartCompareRequest& request, const StartCompareAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->StartCompare(request), context);
-    };
+    using Req = const StartCompareRequest&;
+    using Resp = StartCompareResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "StartCompare", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DtsClient::StartCompareOutcomeCallable DtsClient::StartCompareCallable(const StartCompareRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<StartCompareOutcome()>>(
-        [this, request]()
-        {
-            return this->StartCompare(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<StartCompareOutcome>>();
+    StartCompareAsync(
+    request,
+    [prom](
+        const DtsClient*,
+        const StartCompareRequest&,
+        StartCompareOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DtsClient::StartMigrateJobOutcome DtsClient::StartMigrateJob(const StartMigrateJobRequest &request)
@@ -2857,25 +3312,32 @@ DtsClient::StartMigrateJobOutcome DtsClient::StartMigrateJob(const StartMigrateJ
 
 void DtsClient::StartMigrateJobAsync(const StartMigrateJobRequest& request, const StartMigrateJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->StartMigrateJob(request), context);
-    };
+    using Req = const StartMigrateJobRequest&;
+    using Resp = StartMigrateJobResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "StartMigrateJob", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DtsClient::StartMigrateJobOutcomeCallable DtsClient::StartMigrateJobCallable(const StartMigrateJobRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<StartMigrateJobOutcome()>>(
-        [this, request]()
-        {
-            return this->StartMigrateJob(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<StartMigrateJobOutcome>>();
+    StartMigrateJobAsync(
+    request,
+    [prom](
+        const DtsClient*,
+        const StartMigrateJobRequest&,
+        StartMigrateJobOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DtsClient::StartModifySyncJobOutcome DtsClient::StartModifySyncJob(const StartModifySyncJobRequest &request)
@@ -2900,25 +3362,32 @@ DtsClient::StartModifySyncJobOutcome DtsClient::StartModifySyncJob(const StartMo
 
 void DtsClient::StartModifySyncJobAsync(const StartModifySyncJobRequest& request, const StartModifySyncJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->StartModifySyncJob(request), context);
-    };
+    using Req = const StartModifySyncJobRequest&;
+    using Resp = StartModifySyncJobResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "StartModifySyncJob", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DtsClient::StartModifySyncJobOutcomeCallable DtsClient::StartModifySyncJobCallable(const StartModifySyncJobRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<StartModifySyncJobOutcome()>>(
-        [this, request]()
-        {
-            return this->StartModifySyncJob(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<StartModifySyncJobOutcome>>();
+    StartModifySyncJobAsync(
+    request,
+    [prom](
+        const DtsClient*,
+        const StartModifySyncJobRequest&,
+        StartModifySyncJobOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DtsClient::StartSubscribeOutcome DtsClient::StartSubscribe(const StartSubscribeRequest &request)
@@ -2943,25 +3412,32 @@ DtsClient::StartSubscribeOutcome DtsClient::StartSubscribe(const StartSubscribeR
 
 void DtsClient::StartSubscribeAsync(const StartSubscribeRequest& request, const StartSubscribeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->StartSubscribe(request), context);
-    };
+    using Req = const StartSubscribeRequest&;
+    using Resp = StartSubscribeResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "StartSubscribe", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DtsClient::StartSubscribeOutcomeCallable DtsClient::StartSubscribeCallable(const StartSubscribeRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<StartSubscribeOutcome()>>(
-        [this, request]()
-        {
-            return this->StartSubscribe(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<StartSubscribeOutcome>>();
+    StartSubscribeAsync(
+    request,
+    [prom](
+        const DtsClient*,
+        const StartSubscribeRequest&,
+        StartSubscribeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DtsClient::StartSyncJobOutcome DtsClient::StartSyncJob(const StartSyncJobRequest &request)
@@ -2986,25 +3462,32 @@ DtsClient::StartSyncJobOutcome DtsClient::StartSyncJob(const StartSyncJobRequest
 
 void DtsClient::StartSyncJobAsync(const StartSyncJobRequest& request, const StartSyncJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->StartSyncJob(request), context);
-    };
+    using Req = const StartSyncJobRequest&;
+    using Resp = StartSyncJobResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "StartSyncJob", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DtsClient::StartSyncJobOutcomeCallable DtsClient::StartSyncJobCallable(const StartSyncJobRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<StartSyncJobOutcome()>>(
-        [this, request]()
-        {
-            return this->StartSyncJob(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<StartSyncJobOutcome>>();
+    StartSyncJobAsync(
+    request,
+    [prom](
+        const DtsClient*,
+        const StartSyncJobRequest&,
+        StartSyncJobOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DtsClient::StopCompareOutcome DtsClient::StopCompare(const StopCompareRequest &request)
@@ -3029,25 +3512,32 @@ DtsClient::StopCompareOutcome DtsClient::StopCompare(const StopCompareRequest &r
 
 void DtsClient::StopCompareAsync(const StopCompareRequest& request, const StopCompareAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->StopCompare(request), context);
-    };
+    using Req = const StopCompareRequest&;
+    using Resp = StopCompareResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "StopCompare", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DtsClient::StopCompareOutcomeCallable DtsClient::StopCompareCallable(const StopCompareRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<StopCompareOutcome()>>(
-        [this, request]()
-        {
-            return this->StopCompare(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<StopCompareOutcome>>();
+    StopCompareAsync(
+    request,
+    [prom](
+        const DtsClient*,
+        const StopCompareRequest&,
+        StopCompareOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DtsClient::StopMigrateJobOutcome DtsClient::StopMigrateJob(const StopMigrateJobRequest &request)
@@ -3072,25 +3562,32 @@ DtsClient::StopMigrateJobOutcome DtsClient::StopMigrateJob(const StopMigrateJobR
 
 void DtsClient::StopMigrateJobAsync(const StopMigrateJobRequest& request, const StopMigrateJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->StopMigrateJob(request), context);
-    };
+    using Req = const StopMigrateJobRequest&;
+    using Resp = StopMigrateJobResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "StopMigrateJob", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DtsClient::StopMigrateJobOutcomeCallable DtsClient::StopMigrateJobCallable(const StopMigrateJobRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<StopMigrateJobOutcome()>>(
-        [this, request]()
-        {
-            return this->StopMigrateJob(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<StopMigrateJobOutcome>>();
+    StopMigrateJobAsync(
+    request,
+    [prom](
+        const DtsClient*,
+        const StopMigrateJobRequest&,
+        StopMigrateJobOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DtsClient::StopSyncJobOutcome DtsClient::StopSyncJob(const StopSyncJobRequest &request)
@@ -3115,24 +3612,31 @@ DtsClient::StopSyncJobOutcome DtsClient::StopSyncJob(const StopSyncJobRequest &r
 
 void DtsClient::StopSyncJobAsync(const StopSyncJobRequest& request, const StopSyncJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->StopSyncJob(request), context);
-    };
+    using Req = const StopSyncJobRequest&;
+    using Resp = StopSyncJobResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "StopSyncJob", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DtsClient::StopSyncJobOutcomeCallable DtsClient::StopSyncJobCallable(const StopSyncJobRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<StopSyncJobOutcome()>>(
-        [this, request]()
-        {
-            return this->StopSyncJob(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<StopSyncJobOutcome>>();
+    StopSyncJobAsync(
+    request,
+    [prom](
+        const DtsClient*,
+        const StopSyncJobRequest&,
+        StopSyncJobOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 

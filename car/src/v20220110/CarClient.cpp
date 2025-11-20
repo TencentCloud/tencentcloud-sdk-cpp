@@ -62,25 +62,32 @@ CarClient::ApplyConcurrentOutcome CarClient::ApplyConcurrent(const ApplyConcurre
 
 void CarClient::ApplyConcurrentAsync(const ApplyConcurrentRequest& request, const ApplyConcurrentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ApplyConcurrent(request), context);
-    };
+    using Req = const ApplyConcurrentRequest&;
+    using Resp = ApplyConcurrentResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ApplyConcurrent", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CarClient::ApplyConcurrentOutcomeCallable CarClient::ApplyConcurrentCallable(const ApplyConcurrentRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ApplyConcurrentOutcome()>>(
-        [this, request]()
-        {
-            return this->ApplyConcurrent(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ApplyConcurrentOutcome>>();
+    ApplyConcurrentAsync(
+    request,
+    [prom](
+        const CarClient*,
+        const ApplyConcurrentRequest&,
+        ApplyConcurrentOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CarClient::CreateSessionOutcome CarClient::CreateSession(const CreateSessionRequest &request)
@@ -105,25 +112,32 @@ CarClient::CreateSessionOutcome CarClient::CreateSession(const CreateSessionRequ
 
 void CarClient::CreateSessionAsync(const CreateSessionRequest& request, const CreateSessionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateSession(request), context);
-    };
+    using Req = const CreateSessionRequest&;
+    using Resp = CreateSessionResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateSession", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CarClient::CreateSessionOutcomeCallable CarClient::CreateSessionCallable(const CreateSessionRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateSessionOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateSession(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateSessionOutcome>>();
+    CreateSessionAsync(
+    request,
+    [prom](
+        const CarClient*,
+        const CreateSessionRequest&,
+        CreateSessionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CarClient::DestroySessionOutcome CarClient::DestroySession(const DestroySessionRequest &request)
@@ -148,25 +162,32 @@ CarClient::DestroySessionOutcome CarClient::DestroySession(const DestroySessionR
 
 void CarClient::DestroySessionAsync(const DestroySessionRequest& request, const DestroySessionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DestroySession(request), context);
-    };
+    using Req = const DestroySessionRequest&;
+    using Resp = DestroySessionResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DestroySession", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CarClient::DestroySessionOutcomeCallable CarClient::DestroySessionCallable(const DestroySessionRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DestroySessionOutcome()>>(
-        [this, request]()
-        {
-            return this->DestroySession(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DestroySessionOutcome>>();
+    DestroySessionAsync(
+    request,
+    [prom](
+        const CarClient*,
+        const DestroySessionRequest&,
+        DestroySessionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CarClient::StartPublishStreamOutcome CarClient::StartPublishStream(const StartPublishStreamRequest &request)
@@ -191,25 +212,32 @@ CarClient::StartPublishStreamOutcome CarClient::StartPublishStream(const StartPu
 
 void CarClient::StartPublishStreamAsync(const StartPublishStreamRequest& request, const StartPublishStreamAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->StartPublishStream(request), context);
-    };
+    using Req = const StartPublishStreamRequest&;
+    using Resp = StartPublishStreamResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "StartPublishStream", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CarClient::StartPublishStreamOutcomeCallable CarClient::StartPublishStreamCallable(const StartPublishStreamRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<StartPublishStreamOutcome()>>(
-        [this, request]()
-        {
-            return this->StartPublishStream(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<StartPublishStreamOutcome>>();
+    StartPublishStreamAsync(
+    request,
+    [prom](
+        const CarClient*,
+        const StartPublishStreamRequest&,
+        StartPublishStreamOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CarClient::StartPublishStreamWithURLOutcome CarClient::StartPublishStreamWithURL(const StartPublishStreamWithURLRequest &request)
@@ -234,25 +262,32 @@ CarClient::StartPublishStreamWithURLOutcome CarClient::StartPublishStreamWithURL
 
 void CarClient::StartPublishStreamWithURLAsync(const StartPublishStreamWithURLRequest& request, const StartPublishStreamWithURLAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->StartPublishStreamWithURL(request), context);
-    };
+    using Req = const StartPublishStreamWithURLRequest&;
+    using Resp = StartPublishStreamWithURLResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "StartPublishStreamWithURL", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CarClient::StartPublishStreamWithURLOutcomeCallable CarClient::StartPublishStreamWithURLCallable(const StartPublishStreamWithURLRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<StartPublishStreamWithURLOutcome()>>(
-        [this, request]()
-        {
-            return this->StartPublishStreamWithURL(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<StartPublishStreamWithURLOutcome>>();
+    StartPublishStreamWithURLAsync(
+    request,
+    [prom](
+        const CarClient*,
+        const StartPublishStreamWithURLRequest&,
+        StartPublishStreamWithURLOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CarClient::StopPublishStreamOutcome CarClient::StopPublishStream(const StopPublishStreamRequest &request)
@@ -277,24 +312,31 @@ CarClient::StopPublishStreamOutcome CarClient::StopPublishStream(const StopPubli
 
 void CarClient::StopPublishStreamAsync(const StopPublishStreamRequest& request, const StopPublishStreamAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->StopPublishStream(request), context);
-    };
+    using Req = const StopPublishStreamRequest&;
+    using Resp = StopPublishStreamResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "StopPublishStream", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CarClient::StopPublishStreamOutcomeCallable CarClient::StopPublishStreamCallable(const StopPublishStreamRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<StopPublishStreamOutcome()>>(
-        [this, request]()
-        {
-            return this->StopPublishStream(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<StopPublishStreamOutcome>>();
+    StopPublishStreamAsync(
+    request,
+    [prom](
+        const CarClient*,
+        const StopPublishStreamRequest&,
+        StopPublishStreamOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 

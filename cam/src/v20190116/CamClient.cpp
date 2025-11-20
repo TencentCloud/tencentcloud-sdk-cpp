@@ -62,25 +62,32 @@ CamClient::AddUserOutcome CamClient::AddUser(const AddUserRequest &request)
 
 void CamClient::AddUserAsync(const AddUserRequest& request, const AddUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->AddUser(request), context);
-    };
+    using Req = const AddUserRequest&;
+    using Resp = AddUserResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "AddUser", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CamClient::AddUserOutcomeCallable CamClient::AddUserCallable(const AddUserRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<AddUserOutcome()>>(
-        [this, request]()
-        {
-            return this->AddUser(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<AddUserOutcome>>();
+    AddUserAsync(
+    request,
+    [prom](
+        const CamClient*,
+        const AddUserRequest&,
+        AddUserOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CamClient::AddUserToGroupOutcome CamClient::AddUserToGroup(const AddUserToGroupRequest &request)
@@ -105,25 +112,32 @@ CamClient::AddUserToGroupOutcome CamClient::AddUserToGroup(const AddUserToGroupR
 
 void CamClient::AddUserToGroupAsync(const AddUserToGroupRequest& request, const AddUserToGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->AddUserToGroup(request), context);
-    };
+    using Req = const AddUserToGroupRequest&;
+    using Resp = AddUserToGroupResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "AddUserToGroup", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CamClient::AddUserToGroupOutcomeCallable CamClient::AddUserToGroupCallable(const AddUserToGroupRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<AddUserToGroupOutcome()>>(
-        [this, request]()
-        {
-            return this->AddUserToGroup(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<AddUserToGroupOutcome>>();
+    AddUserToGroupAsync(
+    request,
+    [prom](
+        const CamClient*,
+        const AddUserToGroupRequest&,
+        AddUserToGroupOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CamClient::AttachGroupPolicyOutcome CamClient::AttachGroupPolicy(const AttachGroupPolicyRequest &request)
@@ -148,25 +162,32 @@ CamClient::AttachGroupPolicyOutcome CamClient::AttachGroupPolicy(const AttachGro
 
 void CamClient::AttachGroupPolicyAsync(const AttachGroupPolicyRequest& request, const AttachGroupPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->AttachGroupPolicy(request), context);
-    };
+    using Req = const AttachGroupPolicyRequest&;
+    using Resp = AttachGroupPolicyResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "AttachGroupPolicy", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CamClient::AttachGroupPolicyOutcomeCallable CamClient::AttachGroupPolicyCallable(const AttachGroupPolicyRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<AttachGroupPolicyOutcome()>>(
-        [this, request]()
-        {
-            return this->AttachGroupPolicy(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<AttachGroupPolicyOutcome>>();
+    AttachGroupPolicyAsync(
+    request,
+    [prom](
+        const CamClient*,
+        const AttachGroupPolicyRequest&,
+        AttachGroupPolicyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CamClient::AttachRolePolicyOutcome CamClient::AttachRolePolicy(const AttachRolePolicyRequest &request)
@@ -191,25 +212,32 @@ CamClient::AttachRolePolicyOutcome CamClient::AttachRolePolicy(const AttachRoleP
 
 void CamClient::AttachRolePolicyAsync(const AttachRolePolicyRequest& request, const AttachRolePolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->AttachRolePolicy(request), context);
-    };
+    using Req = const AttachRolePolicyRequest&;
+    using Resp = AttachRolePolicyResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "AttachRolePolicy", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CamClient::AttachRolePolicyOutcomeCallable CamClient::AttachRolePolicyCallable(const AttachRolePolicyRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<AttachRolePolicyOutcome()>>(
-        [this, request]()
-        {
-            return this->AttachRolePolicy(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<AttachRolePolicyOutcome>>();
+    AttachRolePolicyAsync(
+    request,
+    [prom](
+        const CamClient*,
+        const AttachRolePolicyRequest&,
+        AttachRolePolicyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CamClient::AttachUserPolicyOutcome CamClient::AttachUserPolicy(const AttachUserPolicyRequest &request)
@@ -234,25 +262,32 @@ CamClient::AttachUserPolicyOutcome CamClient::AttachUserPolicy(const AttachUserP
 
 void CamClient::AttachUserPolicyAsync(const AttachUserPolicyRequest& request, const AttachUserPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->AttachUserPolicy(request), context);
-    };
+    using Req = const AttachUserPolicyRequest&;
+    using Resp = AttachUserPolicyResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "AttachUserPolicy", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CamClient::AttachUserPolicyOutcomeCallable CamClient::AttachUserPolicyCallable(const AttachUserPolicyRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<AttachUserPolicyOutcome()>>(
-        [this, request]()
-        {
-            return this->AttachUserPolicy(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<AttachUserPolicyOutcome>>();
+    AttachUserPolicyAsync(
+    request,
+    [prom](
+        const CamClient*,
+        const AttachUserPolicyRequest&,
+        AttachUserPolicyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CamClient::BuildDataFlowAuthTokenOutcome CamClient::BuildDataFlowAuthToken(const BuildDataFlowAuthTokenRequest &request)
@@ -277,25 +312,32 @@ CamClient::BuildDataFlowAuthTokenOutcome CamClient::BuildDataFlowAuthToken(const
 
 void CamClient::BuildDataFlowAuthTokenAsync(const BuildDataFlowAuthTokenRequest& request, const BuildDataFlowAuthTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->BuildDataFlowAuthToken(request), context);
-    };
+    using Req = const BuildDataFlowAuthTokenRequest&;
+    using Resp = BuildDataFlowAuthTokenResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "BuildDataFlowAuthToken", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CamClient::BuildDataFlowAuthTokenOutcomeCallable CamClient::BuildDataFlowAuthTokenCallable(const BuildDataFlowAuthTokenRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<BuildDataFlowAuthTokenOutcome()>>(
-        [this, request]()
-        {
-            return this->BuildDataFlowAuthToken(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<BuildDataFlowAuthTokenOutcome>>();
+    BuildDataFlowAuthTokenAsync(
+    request,
+    [prom](
+        const CamClient*,
+        const BuildDataFlowAuthTokenRequest&,
+        BuildDataFlowAuthTokenOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CamClient::ConsumeCustomMFATokenOutcome CamClient::ConsumeCustomMFAToken(const ConsumeCustomMFATokenRequest &request)
@@ -320,25 +362,32 @@ CamClient::ConsumeCustomMFATokenOutcome CamClient::ConsumeCustomMFAToken(const C
 
 void CamClient::ConsumeCustomMFATokenAsync(const ConsumeCustomMFATokenRequest& request, const ConsumeCustomMFATokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ConsumeCustomMFAToken(request), context);
-    };
+    using Req = const ConsumeCustomMFATokenRequest&;
+    using Resp = ConsumeCustomMFATokenResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ConsumeCustomMFAToken", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CamClient::ConsumeCustomMFATokenOutcomeCallable CamClient::ConsumeCustomMFATokenCallable(const ConsumeCustomMFATokenRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ConsumeCustomMFATokenOutcome()>>(
-        [this, request]()
-        {
-            return this->ConsumeCustomMFAToken(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ConsumeCustomMFATokenOutcome>>();
+    ConsumeCustomMFATokenAsync(
+    request,
+    [prom](
+        const CamClient*,
+        const ConsumeCustomMFATokenRequest&,
+        ConsumeCustomMFATokenOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CamClient::CreateAccessKeyOutcome CamClient::CreateAccessKey(const CreateAccessKeyRequest &request)
@@ -363,25 +412,32 @@ CamClient::CreateAccessKeyOutcome CamClient::CreateAccessKey(const CreateAccessK
 
 void CamClient::CreateAccessKeyAsync(const CreateAccessKeyRequest& request, const CreateAccessKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateAccessKey(request), context);
-    };
+    using Req = const CreateAccessKeyRequest&;
+    using Resp = CreateAccessKeyResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateAccessKey", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CamClient::CreateAccessKeyOutcomeCallable CamClient::CreateAccessKeyCallable(const CreateAccessKeyRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateAccessKeyOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateAccessKey(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateAccessKeyOutcome>>();
+    CreateAccessKeyAsync(
+    request,
+    [prom](
+        const CamClient*,
+        const CreateAccessKeyRequest&,
+        CreateAccessKeyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CamClient::CreateGroupOutcome CamClient::CreateGroup(const CreateGroupRequest &request)
@@ -406,25 +462,32 @@ CamClient::CreateGroupOutcome CamClient::CreateGroup(const CreateGroupRequest &r
 
 void CamClient::CreateGroupAsync(const CreateGroupRequest& request, const CreateGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateGroup(request), context);
-    };
+    using Req = const CreateGroupRequest&;
+    using Resp = CreateGroupResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateGroup", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CamClient::CreateGroupOutcomeCallable CamClient::CreateGroupCallable(const CreateGroupRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateGroupOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateGroup(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateGroupOutcome>>();
+    CreateGroupAsync(
+    request,
+    [prom](
+        const CamClient*,
+        const CreateGroupRequest&,
+        CreateGroupOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CamClient::CreateMessageReceiverOutcome CamClient::CreateMessageReceiver(const CreateMessageReceiverRequest &request)
@@ -449,25 +512,32 @@ CamClient::CreateMessageReceiverOutcome CamClient::CreateMessageReceiver(const C
 
 void CamClient::CreateMessageReceiverAsync(const CreateMessageReceiverRequest& request, const CreateMessageReceiverAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateMessageReceiver(request), context);
-    };
+    using Req = const CreateMessageReceiverRequest&;
+    using Resp = CreateMessageReceiverResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateMessageReceiver", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CamClient::CreateMessageReceiverOutcomeCallable CamClient::CreateMessageReceiverCallable(const CreateMessageReceiverRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateMessageReceiverOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateMessageReceiver(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateMessageReceiverOutcome>>();
+    CreateMessageReceiverAsync(
+    request,
+    [prom](
+        const CamClient*,
+        const CreateMessageReceiverRequest&,
+        CreateMessageReceiverOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CamClient::CreateOIDCConfigOutcome CamClient::CreateOIDCConfig(const CreateOIDCConfigRequest &request)
@@ -492,25 +562,32 @@ CamClient::CreateOIDCConfigOutcome CamClient::CreateOIDCConfig(const CreateOIDCC
 
 void CamClient::CreateOIDCConfigAsync(const CreateOIDCConfigRequest& request, const CreateOIDCConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateOIDCConfig(request), context);
-    };
+    using Req = const CreateOIDCConfigRequest&;
+    using Resp = CreateOIDCConfigResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateOIDCConfig", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CamClient::CreateOIDCConfigOutcomeCallable CamClient::CreateOIDCConfigCallable(const CreateOIDCConfigRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateOIDCConfigOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateOIDCConfig(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateOIDCConfigOutcome>>();
+    CreateOIDCConfigAsync(
+    request,
+    [prom](
+        const CamClient*,
+        const CreateOIDCConfigRequest&,
+        CreateOIDCConfigOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CamClient::CreatePolicyOutcome CamClient::CreatePolicy(const CreatePolicyRequest &request)
@@ -535,25 +612,32 @@ CamClient::CreatePolicyOutcome CamClient::CreatePolicy(const CreatePolicyRequest
 
 void CamClient::CreatePolicyAsync(const CreatePolicyRequest& request, const CreatePolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreatePolicy(request), context);
-    };
+    using Req = const CreatePolicyRequest&;
+    using Resp = CreatePolicyResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreatePolicy", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CamClient::CreatePolicyOutcomeCallable CamClient::CreatePolicyCallable(const CreatePolicyRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreatePolicyOutcome()>>(
-        [this, request]()
-        {
-            return this->CreatePolicy(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreatePolicyOutcome>>();
+    CreatePolicyAsync(
+    request,
+    [prom](
+        const CamClient*,
+        const CreatePolicyRequest&,
+        CreatePolicyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CamClient::CreatePolicyVersionOutcome CamClient::CreatePolicyVersion(const CreatePolicyVersionRequest &request)
@@ -578,25 +662,32 @@ CamClient::CreatePolicyVersionOutcome CamClient::CreatePolicyVersion(const Creat
 
 void CamClient::CreatePolicyVersionAsync(const CreatePolicyVersionRequest& request, const CreatePolicyVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreatePolicyVersion(request), context);
-    };
+    using Req = const CreatePolicyVersionRequest&;
+    using Resp = CreatePolicyVersionResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreatePolicyVersion", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CamClient::CreatePolicyVersionOutcomeCallable CamClient::CreatePolicyVersionCallable(const CreatePolicyVersionRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreatePolicyVersionOutcome()>>(
-        [this, request]()
-        {
-            return this->CreatePolicyVersion(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreatePolicyVersionOutcome>>();
+    CreatePolicyVersionAsync(
+    request,
+    [prom](
+        const CamClient*,
+        const CreatePolicyVersionRequest&,
+        CreatePolicyVersionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CamClient::CreateRoleOutcome CamClient::CreateRole(const CreateRoleRequest &request)
@@ -621,25 +712,32 @@ CamClient::CreateRoleOutcome CamClient::CreateRole(const CreateRoleRequest &requ
 
 void CamClient::CreateRoleAsync(const CreateRoleRequest& request, const CreateRoleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateRole(request), context);
-    };
+    using Req = const CreateRoleRequest&;
+    using Resp = CreateRoleResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateRole", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CamClient::CreateRoleOutcomeCallable CamClient::CreateRoleCallable(const CreateRoleRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateRoleOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateRole(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateRoleOutcome>>();
+    CreateRoleAsync(
+    request,
+    [prom](
+        const CamClient*,
+        const CreateRoleRequest&,
+        CreateRoleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CamClient::CreateSAMLProviderOutcome CamClient::CreateSAMLProvider(const CreateSAMLProviderRequest &request)
@@ -664,25 +762,32 @@ CamClient::CreateSAMLProviderOutcome CamClient::CreateSAMLProvider(const CreateS
 
 void CamClient::CreateSAMLProviderAsync(const CreateSAMLProviderRequest& request, const CreateSAMLProviderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateSAMLProvider(request), context);
-    };
+    using Req = const CreateSAMLProviderRequest&;
+    using Resp = CreateSAMLProviderResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateSAMLProvider", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CamClient::CreateSAMLProviderOutcomeCallable CamClient::CreateSAMLProviderCallable(const CreateSAMLProviderRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateSAMLProviderOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateSAMLProvider(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateSAMLProviderOutcome>>();
+    CreateSAMLProviderAsync(
+    request,
+    [prom](
+        const CamClient*,
+        const CreateSAMLProviderRequest&,
+        CreateSAMLProviderOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CamClient::CreateServiceLinkedRoleOutcome CamClient::CreateServiceLinkedRole(const CreateServiceLinkedRoleRequest &request)
@@ -707,25 +812,32 @@ CamClient::CreateServiceLinkedRoleOutcome CamClient::CreateServiceLinkedRole(con
 
 void CamClient::CreateServiceLinkedRoleAsync(const CreateServiceLinkedRoleRequest& request, const CreateServiceLinkedRoleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateServiceLinkedRole(request), context);
-    };
+    using Req = const CreateServiceLinkedRoleRequest&;
+    using Resp = CreateServiceLinkedRoleResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateServiceLinkedRole", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CamClient::CreateServiceLinkedRoleOutcomeCallable CamClient::CreateServiceLinkedRoleCallable(const CreateServiceLinkedRoleRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateServiceLinkedRoleOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateServiceLinkedRole(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateServiceLinkedRoleOutcome>>();
+    CreateServiceLinkedRoleAsync(
+    request,
+    [prom](
+        const CamClient*,
+        const CreateServiceLinkedRoleRequest&,
+        CreateServiceLinkedRoleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CamClient::CreateSubAccountLoginIpPolicyOutcome CamClient::CreateSubAccountLoginIpPolicy(const CreateSubAccountLoginIpPolicyRequest &request)
@@ -750,25 +862,32 @@ CamClient::CreateSubAccountLoginIpPolicyOutcome CamClient::CreateSubAccountLogin
 
 void CamClient::CreateSubAccountLoginIpPolicyAsync(const CreateSubAccountLoginIpPolicyRequest& request, const CreateSubAccountLoginIpPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateSubAccountLoginIpPolicy(request), context);
-    };
+    using Req = const CreateSubAccountLoginIpPolicyRequest&;
+    using Resp = CreateSubAccountLoginIpPolicyResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateSubAccountLoginIpPolicy", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CamClient::CreateSubAccountLoginIpPolicyOutcomeCallable CamClient::CreateSubAccountLoginIpPolicyCallable(const CreateSubAccountLoginIpPolicyRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateSubAccountLoginIpPolicyOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateSubAccountLoginIpPolicy(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateSubAccountLoginIpPolicyOutcome>>();
+    CreateSubAccountLoginIpPolicyAsync(
+    request,
+    [prom](
+        const CamClient*,
+        const CreateSubAccountLoginIpPolicyRequest&,
+        CreateSubAccountLoginIpPolicyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CamClient::CreateUserOIDCConfigOutcome CamClient::CreateUserOIDCConfig(const CreateUserOIDCConfigRequest &request)
@@ -793,25 +912,32 @@ CamClient::CreateUserOIDCConfigOutcome CamClient::CreateUserOIDCConfig(const Cre
 
 void CamClient::CreateUserOIDCConfigAsync(const CreateUserOIDCConfigRequest& request, const CreateUserOIDCConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateUserOIDCConfig(request), context);
-    };
+    using Req = const CreateUserOIDCConfigRequest&;
+    using Resp = CreateUserOIDCConfigResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateUserOIDCConfig", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CamClient::CreateUserOIDCConfigOutcomeCallable CamClient::CreateUserOIDCConfigCallable(const CreateUserOIDCConfigRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateUserOIDCConfigOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateUserOIDCConfig(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateUserOIDCConfigOutcome>>();
+    CreateUserOIDCConfigAsync(
+    request,
+    [prom](
+        const CamClient*,
+        const CreateUserOIDCConfigRequest&,
+        CreateUserOIDCConfigOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CamClient::CreateUserSAMLConfigOutcome CamClient::CreateUserSAMLConfig(const CreateUserSAMLConfigRequest &request)
@@ -836,25 +962,32 @@ CamClient::CreateUserSAMLConfigOutcome CamClient::CreateUserSAMLConfig(const Cre
 
 void CamClient::CreateUserSAMLConfigAsync(const CreateUserSAMLConfigRequest& request, const CreateUserSAMLConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateUserSAMLConfig(request), context);
-    };
+    using Req = const CreateUserSAMLConfigRequest&;
+    using Resp = CreateUserSAMLConfigResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateUserSAMLConfig", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CamClient::CreateUserSAMLConfigOutcomeCallable CamClient::CreateUserSAMLConfigCallable(const CreateUserSAMLConfigRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateUserSAMLConfigOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateUserSAMLConfig(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateUserSAMLConfigOutcome>>();
+    CreateUserSAMLConfigAsync(
+    request,
+    [prom](
+        const CamClient*,
+        const CreateUserSAMLConfigRequest&,
+        CreateUserSAMLConfigOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CamClient::DeleteAccessKeyOutcome CamClient::DeleteAccessKey(const DeleteAccessKeyRequest &request)
@@ -879,25 +1012,32 @@ CamClient::DeleteAccessKeyOutcome CamClient::DeleteAccessKey(const DeleteAccessK
 
 void CamClient::DeleteAccessKeyAsync(const DeleteAccessKeyRequest& request, const DeleteAccessKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteAccessKey(request), context);
-    };
+    using Req = const DeleteAccessKeyRequest&;
+    using Resp = DeleteAccessKeyResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteAccessKey", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CamClient::DeleteAccessKeyOutcomeCallable CamClient::DeleteAccessKeyCallable(const DeleteAccessKeyRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteAccessKeyOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteAccessKey(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteAccessKeyOutcome>>();
+    DeleteAccessKeyAsync(
+    request,
+    [prom](
+        const CamClient*,
+        const DeleteAccessKeyRequest&,
+        DeleteAccessKeyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CamClient::DeleteGroupOutcome CamClient::DeleteGroup(const DeleteGroupRequest &request)
@@ -922,25 +1062,32 @@ CamClient::DeleteGroupOutcome CamClient::DeleteGroup(const DeleteGroupRequest &r
 
 void CamClient::DeleteGroupAsync(const DeleteGroupRequest& request, const DeleteGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteGroup(request), context);
-    };
+    using Req = const DeleteGroupRequest&;
+    using Resp = DeleteGroupResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteGroup", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CamClient::DeleteGroupOutcomeCallable CamClient::DeleteGroupCallable(const DeleteGroupRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteGroupOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteGroup(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteGroupOutcome>>();
+    DeleteGroupAsync(
+    request,
+    [prom](
+        const CamClient*,
+        const DeleteGroupRequest&,
+        DeleteGroupOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CamClient::DeleteMessageReceiverOutcome CamClient::DeleteMessageReceiver(const DeleteMessageReceiverRequest &request)
@@ -965,25 +1112,32 @@ CamClient::DeleteMessageReceiverOutcome CamClient::DeleteMessageReceiver(const D
 
 void CamClient::DeleteMessageReceiverAsync(const DeleteMessageReceiverRequest& request, const DeleteMessageReceiverAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteMessageReceiver(request), context);
-    };
+    using Req = const DeleteMessageReceiverRequest&;
+    using Resp = DeleteMessageReceiverResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteMessageReceiver", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CamClient::DeleteMessageReceiverOutcomeCallable CamClient::DeleteMessageReceiverCallable(const DeleteMessageReceiverRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteMessageReceiverOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteMessageReceiver(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteMessageReceiverOutcome>>();
+    DeleteMessageReceiverAsync(
+    request,
+    [prom](
+        const CamClient*,
+        const DeleteMessageReceiverRequest&,
+        DeleteMessageReceiverOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CamClient::DeleteOIDCConfigOutcome CamClient::DeleteOIDCConfig(const DeleteOIDCConfigRequest &request)
@@ -1008,25 +1162,32 @@ CamClient::DeleteOIDCConfigOutcome CamClient::DeleteOIDCConfig(const DeleteOIDCC
 
 void CamClient::DeleteOIDCConfigAsync(const DeleteOIDCConfigRequest& request, const DeleteOIDCConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteOIDCConfig(request), context);
-    };
+    using Req = const DeleteOIDCConfigRequest&;
+    using Resp = DeleteOIDCConfigResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteOIDCConfig", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CamClient::DeleteOIDCConfigOutcomeCallable CamClient::DeleteOIDCConfigCallable(const DeleteOIDCConfigRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteOIDCConfigOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteOIDCConfig(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteOIDCConfigOutcome>>();
+    DeleteOIDCConfigAsync(
+    request,
+    [prom](
+        const CamClient*,
+        const DeleteOIDCConfigRequest&,
+        DeleteOIDCConfigOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CamClient::DeletePolicyOutcome CamClient::DeletePolicy(const DeletePolicyRequest &request)
@@ -1051,25 +1212,32 @@ CamClient::DeletePolicyOutcome CamClient::DeletePolicy(const DeletePolicyRequest
 
 void CamClient::DeletePolicyAsync(const DeletePolicyRequest& request, const DeletePolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeletePolicy(request), context);
-    };
+    using Req = const DeletePolicyRequest&;
+    using Resp = DeletePolicyResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeletePolicy", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CamClient::DeletePolicyOutcomeCallable CamClient::DeletePolicyCallable(const DeletePolicyRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeletePolicyOutcome()>>(
-        [this, request]()
-        {
-            return this->DeletePolicy(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeletePolicyOutcome>>();
+    DeletePolicyAsync(
+    request,
+    [prom](
+        const CamClient*,
+        const DeletePolicyRequest&,
+        DeletePolicyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CamClient::DeletePolicyVersionOutcome CamClient::DeletePolicyVersion(const DeletePolicyVersionRequest &request)
@@ -1094,25 +1262,32 @@ CamClient::DeletePolicyVersionOutcome CamClient::DeletePolicyVersion(const Delet
 
 void CamClient::DeletePolicyVersionAsync(const DeletePolicyVersionRequest& request, const DeletePolicyVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeletePolicyVersion(request), context);
-    };
+    using Req = const DeletePolicyVersionRequest&;
+    using Resp = DeletePolicyVersionResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeletePolicyVersion", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CamClient::DeletePolicyVersionOutcomeCallable CamClient::DeletePolicyVersionCallable(const DeletePolicyVersionRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeletePolicyVersionOutcome()>>(
-        [this, request]()
-        {
-            return this->DeletePolicyVersion(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeletePolicyVersionOutcome>>();
+    DeletePolicyVersionAsync(
+    request,
+    [prom](
+        const CamClient*,
+        const DeletePolicyVersionRequest&,
+        DeletePolicyVersionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CamClient::DeleteRoleOutcome CamClient::DeleteRole(const DeleteRoleRequest &request)
@@ -1137,25 +1312,32 @@ CamClient::DeleteRoleOutcome CamClient::DeleteRole(const DeleteRoleRequest &requ
 
 void CamClient::DeleteRoleAsync(const DeleteRoleRequest& request, const DeleteRoleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteRole(request), context);
-    };
+    using Req = const DeleteRoleRequest&;
+    using Resp = DeleteRoleResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteRole", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CamClient::DeleteRoleOutcomeCallable CamClient::DeleteRoleCallable(const DeleteRoleRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteRoleOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteRole(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteRoleOutcome>>();
+    DeleteRoleAsync(
+    request,
+    [prom](
+        const CamClient*,
+        const DeleteRoleRequest&,
+        DeleteRoleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CamClient::DeleteRolePermissionsBoundaryOutcome CamClient::DeleteRolePermissionsBoundary(const DeleteRolePermissionsBoundaryRequest &request)
@@ -1180,25 +1362,32 @@ CamClient::DeleteRolePermissionsBoundaryOutcome CamClient::DeleteRolePermissions
 
 void CamClient::DeleteRolePermissionsBoundaryAsync(const DeleteRolePermissionsBoundaryRequest& request, const DeleteRolePermissionsBoundaryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteRolePermissionsBoundary(request), context);
-    };
+    using Req = const DeleteRolePermissionsBoundaryRequest&;
+    using Resp = DeleteRolePermissionsBoundaryResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteRolePermissionsBoundary", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CamClient::DeleteRolePermissionsBoundaryOutcomeCallable CamClient::DeleteRolePermissionsBoundaryCallable(const DeleteRolePermissionsBoundaryRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteRolePermissionsBoundaryOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteRolePermissionsBoundary(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteRolePermissionsBoundaryOutcome>>();
+    DeleteRolePermissionsBoundaryAsync(
+    request,
+    [prom](
+        const CamClient*,
+        const DeleteRolePermissionsBoundaryRequest&,
+        DeleteRolePermissionsBoundaryOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CamClient::DeleteSAMLProviderOutcome CamClient::DeleteSAMLProvider(const DeleteSAMLProviderRequest &request)
@@ -1223,25 +1412,32 @@ CamClient::DeleteSAMLProviderOutcome CamClient::DeleteSAMLProvider(const DeleteS
 
 void CamClient::DeleteSAMLProviderAsync(const DeleteSAMLProviderRequest& request, const DeleteSAMLProviderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteSAMLProvider(request), context);
-    };
+    using Req = const DeleteSAMLProviderRequest&;
+    using Resp = DeleteSAMLProviderResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteSAMLProvider", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CamClient::DeleteSAMLProviderOutcomeCallable CamClient::DeleteSAMLProviderCallable(const DeleteSAMLProviderRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteSAMLProviderOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteSAMLProvider(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteSAMLProviderOutcome>>();
+    DeleteSAMLProviderAsync(
+    request,
+    [prom](
+        const CamClient*,
+        const DeleteSAMLProviderRequest&,
+        DeleteSAMLProviderOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CamClient::DeleteServiceLinkedRoleOutcome CamClient::DeleteServiceLinkedRole(const DeleteServiceLinkedRoleRequest &request)
@@ -1266,25 +1462,32 @@ CamClient::DeleteServiceLinkedRoleOutcome CamClient::DeleteServiceLinkedRole(con
 
 void CamClient::DeleteServiceLinkedRoleAsync(const DeleteServiceLinkedRoleRequest& request, const DeleteServiceLinkedRoleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteServiceLinkedRole(request), context);
-    };
+    using Req = const DeleteServiceLinkedRoleRequest&;
+    using Resp = DeleteServiceLinkedRoleResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteServiceLinkedRole", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CamClient::DeleteServiceLinkedRoleOutcomeCallable CamClient::DeleteServiceLinkedRoleCallable(const DeleteServiceLinkedRoleRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteServiceLinkedRoleOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteServiceLinkedRole(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteServiceLinkedRoleOutcome>>();
+    DeleteServiceLinkedRoleAsync(
+    request,
+    [prom](
+        const CamClient*,
+        const DeleteServiceLinkedRoleRequest&,
+        DeleteServiceLinkedRoleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CamClient::DeleteUserOutcome CamClient::DeleteUser(const DeleteUserRequest &request)
@@ -1309,25 +1512,32 @@ CamClient::DeleteUserOutcome CamClient::DeleteUser(const DeleteUserRequest &requ
 
 void CamClient::DeleteUserAsync(const DeleteUserRequest& request, const DeleteUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteUser(request), context);
-    };
+    using Req = const DeleteUserRequest&;
+    using Resp = DeleteUserResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteUser", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CamClient::DeleteUserOutcomeCallable CamClient::DeleteUserCallable(const DeleteUserRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteUserOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteUser(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteUserOutcome>>();
+    DeleteUserAsync(
+    request,
+    [prom](
+        const CamClient*,
+        const DeleteUserRequest&,
+        DeleteUserOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CamClient::DeleteUserPermissionsBoundaryOutcome CamClient::DeleteUserPermissionsBoundary(const DeleteUserPermissionsBoundaryRequest &request)
@@ -1352,25 +1562,32 @@ CamClient::DeleteUserPermissionsBoundaryOutcome CamClient::DeleteUserPermissions
 
 void CamClient::DeleteUserPermissionsBoundaryAsync(const DeleteUserPermissionsBoundaryRequest& request, const DeleteUserPermissionsBoundaryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteUserPermissionsBoundary(request), context);
-    };
+    using Req = const DeleteUserPermissionsBoundaryRequest&;
+    using Resp = DeleteUserPermissionsBoundaryResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteUserPermissionsBoundary", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CamClient::DeleteUserPermissionsBoundaryOutcomeCallable CamClient::DeleteUserPermissionsBoundaryCallable(const DeleteUserPermissionsBoundaryRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteUserPermissionsBoundaryOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteUserPermissionsBoundary(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteUserPermissionsBoundaryOutcome>>();
+    DeleteUserPermissionsBoundaryAsync(
+    request,
+    [prom](
+        const CamClient*,
+        const DeleteUserPermissionsBoundaryRequest&,
+        DeleteUserPermissionsBoundaryOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CamClient::DescribeOIDCConfigOutcome CamClient::DescribeOIDCConfig(const DescribeOIDCConfigRequest &request)
@@ -1395,25 +1612,32 @@ CamClient::DescribeOIDCConfigOutcome CamClient::DescribeOIDCConfig(const Describ
 
 void CamClient::DescribeOIDCConfigAsync(const DescribeOIDCConfigRequest& request, const DescribeOIDCConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeOIDCConfig(request), context);
-    };
+    using Req = const DescribeOIDCConfigRequest&;
+    using Resp = DescribeOIDCConfigResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeOIDCConfig", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CamClient::DescribeOIDCConfigOutcomeCallable CamClient::DescribeOIDCConfigCallable(const DescribeOIDCConfigRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeOIDCConfigOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeOIDCConfig(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeOIDCConfigOutcome>>();
+    DescribeOIDCConfigAsync(
+    request,
+    [prom](
+        const CamClient*,
+        const DescribeOIDCConfigRequest&,
+        DescribeOIDCConfigOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CamClient::DescribeRoleListOutcome CamClient::DescribeRoleList(const DescribeRoleListRequest &request)
@@ -1438,25 +1662,32 @@ CamClient::DescribeRoleListOutcome CamClient::DescribeRoleList(const DescribeRol
 
 void CamClient::DescribeRoleListAsync(const DescribeRoleListRequest& request, const DescribeRoleListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeRoleList(request), context);
-    };
+    using Req = const DescribeRoleListRequest&;
+    using Resp = DescribeRoleListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeRoleList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CamClient::DescribeRoleListOutcomeCallable CamClient::DescribeRoleListCallable(const DescribeRoleListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeRoleListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeRoleList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeRoleListOutcome>>();
+    DescribeRoleListAsync(
+    request,
+    [prom](
+        const CamClient*,
+        const DescribeRoleListRequest&,
+        DescribeRoleListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CamClient::DescribeSafeAuthFlagOutcome CamClient::DescribeSafeAuthFlag(const DescribeSafeAuthFlagRequest &request)
@@ -1481,25 +1712,32 @@ CamClient::DescribeSafeAuthFlagOutcome CamClient::DescribeSafeAuthFlag(const Des
 
 void CamClient::DescribeSafeAuthFlagAsync(const DescribeSafeAuthFlagRequest& request, const DescribeSafeAuthFlagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeSafeAuthFlag(request), context);
-    };
+    using Req = const DescribeSafeAuthFlagRequest&;
+    using Resp = DescribeSafeAuthFlagResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeSafeAuthFlag", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CamClient::DescribeSafeAuthFlagOutcomeCallable CamClient::DescribeSafeAuthFlagCallable(const DescribeSafeAuthFlagRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeSafeAuthFlagOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeSafeAuthFlag(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeSafeAuthFlagOutcome>>();
+    DescribeSafeAuthFlagAsync(
+    request,
+    [prom](
+        const CamClient*,
+        const DescribeSafeAuthFlagRequest&,
+        DescribeSafeAuthFlagOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CamClient::DescribeSafeAuthFlagCollOutcome CamClient::DescribeSafeAuthFlagColl(const DescribeSafeAuthFlagCollRequest &request)
@@ -1524,25 +1762,32 @@ CamClient::DescribeSafeAuthFlagCollOutcome CamClient::DescribeSafeAuthFlagColl(c
 
 void CamClient::DescribeSafeAuthFlagCollAsync(const DescribeSafeAuthFlagCollRequest& request, const DescribeSafeAuthFlagCollAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeSafeAuthFlagColl(request), context);
-    };
+    using Req = const DescribeSafeAuthFlagCollRequest&;
+    using Resp = DescribeSafeAuthFlagCollResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeSafeAuthFlagColl", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CamClient::DescribeSafeAuthFlagCollOutcomeCallable CamClient::DescribeSafeAuthFlagCollCallable(const DescribeSafeAuthFlagCollRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeSafeAuthFlagCollOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeSafeAuthFlagColl(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeSafeAuthFlagCollOutcome>>();
+    DescribeSafeAuthFlagCollAsync(
+    request,
+    [prom](
+        const CamClient*,
+        const DescribeSafeAuthFlagCollRequest&,
+        DescribeSafeAuthFlagCollOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CamClient::DescribeSafeAuthFlagIntlOutcome CamClient::DescribeSafeAuthFlagIntl(const DescribeSafeAuthFlagIntlRequest &request)
@@ -1567,25 +1812,32 @@ CamClient::DescribeSafeAuthFlagIntlOutcome CamClient::DescribeSafeAuthFlagIntl(c
 
 void CamClient::DescribeSafeAuthFlagIntlAsync(const DescribeSafeAuthFlagIntlRequest& request, const DescribeSafeAuthFlagIntlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeSafeAuthFlagIntl(request), context);
-    };
+    using Req = const DescribeSafeAuthFlagIntlRequest&;
+    using Resp = DescribeSafeAuthFlagIntlResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeSafeAuthFlagIntl", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CamClient::DescribeSafeAuthFlagIntlOutcomeCallable CamClient::DescribeSafeAuthFlagIntlCallable(const DescribeSafeAuthFlagIntlRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeSafeAuthFlagIntlOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeSafeAuthFlagIntl(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeSafeAuthFlagIntlOutcome>>();
+    DescribeSafeAuthFlagIntlAsync(
+    request,
+    [prom](
+        const CamClient*,
+        const DescribeSafeAuthFlagIntlRequest&,
+        DescribeSafeAuthFlagIntlOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CamClient::DescribeSubAccountsOutcome CamClient::DescribeSubAccounts(const DescribeSubAccountsRequest &request)
@@ -1610,25 +1862,32 @@ CamClient::DescribeSubAccountsOutcome CamClient::DescribeSubAccounts(const Descr
 
 void CamClient::DescribeSubAccountsAsync(const DescribeSubAccountsRequest& request, const DescribeSubAccountsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeSubAccounts(request), context);
-    };
+    using Req = const DescribeSubAccountsRequest&;
+    using Resp = DescribeSubAccountsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeSubAccounts", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CamClient::DescribeSubAccountsOutcomeCallable CamClient::DescribeSubAccountsCallable(const DescribeSubAccountsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeSubAccountsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeSubAccounts(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeSubAccountsOutcome>>();
+    DescribeSubAccountsAsync(
+    request,
+    [prom](
+        const CamClient*,
+        const DescribeSubAccountsRequest&,
+        DescribeSubAccountsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CamClient::DescribeUserOIDCConfigOutcome CamClient::DescribeUserOIDCConfig(const DescribeUserOIDCConfigRequest &request)
@@ -1653,25 +1912,32 @@ CamClient::DescribeUserOIDCConfigOutcome CamClient::DescribeUserOIDCConfig(const
 
 void CamClient::DescribeUserOIDCConfigAsync(const DescribeUserOIDCConfigRequest& request, const DescribeUserOIDCConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeUserOIDCConfig(request), context);
-    };
+    using Req = const DescribeUserOIDCConfigRequest&;
+    using Resp = DescribeUserOIDCConfigResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeUserOIDCConfig", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CamClient::DescribeUserOIDCConfigOutcomeCallable CamClient::DescribeUserOIDCConfigCallable(const DescribeUserOIDCConfigRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeUserOIDCConfigOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeUserOIDCConfig(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeUserOIDCConfigOutcome>>();
+    DescribeUserOIDCConfigAsync(
+    request,
+    [prom](
+        const CamClient*,
+        const DescribeUserOIDCConfigRequest&,
+        DescribeUserOIDCConfigOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CamClient::DescribeUserSAMLConfigOutcome CamClient::DescribeUserSAMLConfig(const DescribeUserSAMLConfigRequest &request)
@@ -1696,25 +1962,32 @@ CamClient::DescribeUserSAMLConfigOutcome CamClient::DescribeUserSAMLConfig(const
 
 void CamClient::DescribeUserSAMLConfigAsync(const DescribeUserSAMLConfigRequest& request, const DescribeUserSAMLConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeUserSAMLConfig(request), context);
-    };
+    using Req = const DescribeUserSAMLConfigRequest&;
+    using Resp = DescribeUserSAMLConfigResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeUserSAMLConfig", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CamClient::DescribeUserSAMLConfigOutcomeCallable CamClient::DescribeUserSAMLConfigCallable(const DescribeUserSAMLConfigRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeUserSAMLConfigOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeUserSAMLConfig(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeUserSAMLConfigOutcome>>();
+    DescribeUserSAMLConfigAsync(
+    request,
+    [prom](
+        const CamClient*,
+        const DescribeUserSAMLConfigRequest&,
+        DescribeUserSAMLConfigOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CamClient::DetachGroupPolicyOutcome CamClient::DetachGroupPolicy(const DetachGroupPolicyRequest &request)
@@ -1739,25 +2012,32 @@ CamClient::DetachGroupPolicyOutcome CamClient::DetachGroupPolicy(const DetachGro
 
 void CamClient::DetachGroupPolicyAsync(const DetachGroupPolicyRequest& request, const DetachGroupPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DetachGroupPolicy(request), context);
-    };
+    using Req = const DetachGroupPolicyRequest&;
+    using Resp = DetachGroupPolicyResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DetachGroupPolicy", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CamClient::DetachGroupPolicyOutcomeCallable CamClient::DetachGroupPolicyCallable(const DetachGroupPolicyRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DetachGroupPolicyOutcome()>>(
-        [this, request]()
-        {
-            return this->DetachGroupPolicy(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DetachGroupPolicyOutcome>>();
+    DetachGroupPolicyAsync(
+    request,
+    [prom](
+        const CamClient*,
+        const DetachGroupPolicyRequest&,
+        DetachGroupPolicyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CamClient::DetachRolePolicyOutcome CamClient::DetachRolePolicy(const DetachRolePolicyRequest &request)
@@ -1782,25 +2062,32 @@ CamClient::DetachRolePolicyOutcome CamClient::DetachRolePolicy(const DetachRoleP
 
 void CamClient::DetachRolePolicyAsync(const DetachRolePolicyRequest& request, const DetachRolePolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DetachRolePolicy(request), context);
-    };
+    using Req = const DetachRolePolicyRequest&;
+    using Resp = DetachRolePolicyResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DetachRolePolicy", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CamClient::DetachRolePolicyOutcomeCallable CamClient::DetachRolePolicyCallable(const DetachRolePolicyRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DetachRolePolicyOutcome()>>(
-        [this, request]()
-        {
-            return this->DetachRolePolicy(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DetachRolePolicyOutcome>>();
+    DetachRolePolicyAsync(
+    request,
+    [prom](
+        const CamClient*,
+        const DetachRolePolicyRequest&,
+        DetachRolePolicyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CamClient::DetachUserPolicyOutcome CamClient::DetachUserPolicy(const DetachUserPolicyRequest &request)
@@ -1825,25 +2112,32 @@ CamClient::DetachUserPolicyOutcome CamClient::DetachUserPolicy(const DetachUserP
 
 void CamClient::DetachUserPolicyAsync(const DetachUserPolicyRequest& request, const DetachUserPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DetachUserPolicy(request), context);
-    };
+    using Req = const DetachUserPolicyRequest&;
+    using Resp = DetachUserPolicyResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DetachUserPolicy", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CamClient::DetachUserPolicyOutcomeCallable CamClient::DetachUserPolicyCallable(const DetachUserPolicyRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DetachUserPolicyOutcome()>>(
-        [this, request]()
-        {
-            return this->DetachUserPolicy(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DetachUserPolicyOutcome>>();
+    DetachUserPolicyAsync(
+    request,
+    [prom](
+        const CamClient*,
+        const DetachUserPolicyRequest&,
+        DetachUserPolicyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CamClient::DisableUserSSOOutcome CamClient::DisableUserSSO(const DisableUserSSORequest &request)
@@ -1868,25 +2162,32 @@ CamClient::DisableUserSSOOutcome CamClient::DisableUserSSO(const DisableUserSSOR
 
 void CamClient::DisableUserSSOAsync(const DisableUserSSORequest& request, const DisableUserSSOAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DisableUserSSO(request), context);
-    };
+    using Req = const DisableUserSSORequest&;
+    using Resp = DisableUserSSOResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DisableUserSSO", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CamClient::DisableUserSSOOutcomeCallable CamClient::DisableUserSSOCallable(const DisableUserSSORequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DisableUserSSOOutcome()>>(
-        [this, request]()
-        {
-            return this->DisableUserSSO(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DisableUserSSOOutcome>>();
+    DisableUserSSOAsync(
+    request,
+    [prom](
+        const CamClient*,
+        const DisableUserSSORequest&,
+        DisableUserSSOOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CamClient::GetAccountSummaryOutcome CamClient::GetAccountSummary(const GetAccountSummaryRequest &request)
@@ -1911,25 +2212,32 @@ CamClient::GetAccountSummaryOutcome CamClient::GetAccountSummary(const GetAccoun
 
 void CamClient::GetAccountSummaryAsync(const GetAccountSummaryRequest& request, const GetAccountSummaryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->GetAccountSummary(request), context);
-    };
+    using Req = const GetAccountSummaryRequest&;
+    using Resp = GetAccountSummaryResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "GetAccountSummary", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CamClient::GetAccountSummaryOutcomeCallable CamClient::GetAccountSummaryCallable(const GetAccountSummaryRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<GetAccountSummaryOutcome()>>(
-        [this, request]()
-        {
-            return this->GetAccountSummary(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<GetAccountSummaryOutcome>>();
+    GetAccountSummaryAsync(
+    request,
+    [prom](
+        const CamClient*,
+        const GetAccountSummaryRequest&,
+        GetAccountSummaryOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CamClient::GetCustomMFATokenInfoOutcome CamClient::GetCustomMFATokenInfo(const GetCustomMFATokenInfoRequest &request)
@@ -1954,25 +2262,32 @@ CamClient::GetCustomMFATokenInfoOutcome CamClient::GetCustomMFATokenInfo(const G
 
 void CamClient::GetCustomMFATokenInfoAsync(const GetCustomMFATokenInfoRequest& request, const GetCustomMFATokenInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->GetCustomMFATokenInfo(request), context);
-    };
+    using Req = const GetCustomMFATokenInfoRequest&;
+    using Resp = GetCustomMFATokenInfoResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "GetCustomMFATokenInfo", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CamClient::GetCustomMFATokenInfoOutcomeCallable CamClient::GetCustomMFATokenInfoCallable(const GetCustomMFATokenInfoRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<GetCustomMFATokenInfoOutcome()>>(
-        [this, request]()
-        {
-            return this->GetCustomMFATokenInfo(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<GetCustomMFATokenInfoOutcome>>();
+    GetCustomMFATokenInfoAsync(
+    request,
+    [prom](
+        const CamClient*,
+        const GetCustomMFATokenInfoRequest&,
+        GetCustomMFATokenInfoOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CamClient::GetGroupOutcome CamClient::GetGroup(const GetGroupRequest &request)
@@ -1997,25 +2312,32 @@ CamClient::GetGroupOutcome CamClient::GetGroup(const GetGroupRequest &request)
 
 void CamClient::GetGroupAsync(const GetGroupRequest& request, const GetGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->GetGroup(request), context);
-    };
+    using Req = const GetGroupRequest&;
+    using Resp = GetGroupResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "GetGroup", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CamClient::GetGroupOutcomeCallable CamClient::GetGroupCallable(const GetGroupRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<GetGroupOutcome()>>(
-        [this, request]()
-        {
-            return this->GetGroup(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<GetGroupOutcome>>();
+    GetGroupAsync(
+    request,
+    [prom](
+        const CamClient*,
+        const GetGroupRequest&,
+        GetGroupOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CamClient::GetPolicyOutcome CamClient::GetPolicy(const GetPolicyRequest &request)
@@ -2040,25 +2362,32 @@ CamClient::GetPolicyOutcome CamClient::GetPolicy(const GetPolicyRequest &request
 
 void CamClient::GetPolicyAsync(const GetPolicyRequest& request, const GetPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->GetPolicy(request), context);
-    };
+    using Req = const GetPolicyRequest&;
+    using Resp = GetPolicyResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "GetPolicy", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CamClient::GetPolicyOutcomeCallable CamClient::GetPolicyCallable(const GetPolicyRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<GetPolicyOutcome()>>(
-        [this, request]()
-        {
-            return this->GetPolicy(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<GetPolicyOutcome>>();
+    GetPolicyAsync(
+    request,
+    [prom](
+        const CamClient*,
+        const GetPolicyRequest&,
+        GetPolicyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CamClient::GetPolicyVersionOutcome CamClient::GetPolicyVersion(const GetPolicyVersionRequest &request)
@@ -2083,25 +2412,32 @@ CamClient::GetPolicyVersionOutcome CamClient::GetPolicyVersion(const GetPolicyVe
 
 void CamClient::GetPolicyVersionAsync(const GetPolicyVersionRequest& request, const GetPolicyVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->GetPolicyVersion(request), context);
-    };
+    using Req = const GetPolicyVersionRequest&;
+    using Resp = GetPolicyVersionResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "GetPolicyVersion", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CamClient::GetPolicyVersionOutcomeCallable CamClient::GetPolicyVersionCallable(const GetPolicyVersionRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<GetPolicyVersionOutcome()>>(
-        [this, request]()
-        {
-            return this->GetPolicyVersion(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<GetPolicyVersionOutcome>>();
+    GetPolicyVersionAsync(
+    request,
+    [prom](
+        const CamClient*,
+        const GetPolicyVersionRequest&,
+        GetPolicyVersionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CamClient::GetRoleOutcome CamClient::GetRole(const GetRoleRequest &request)
@@ -2126,25 +2462,32 @@ CamClient::GetRoleOutcome CamClient::GetRole(const GetRoleRequest &request)
 
 void CamClient::GetRoleAsync(const GetRoleRequest& request, const GetRoleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->GetRole(request), context);
-    };
+    using Req = const GetRoleRequest&;
+    using Resp = GetRoleResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "GetRole", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CamClient::GetRoleOutcomeCallable CamClient::GetRoleCallable(const GetRoleRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<GetRoleOutcome()>>(
-        [this, request]()
-        {
-            return this->GetRole(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<GetRoleOutcome>>();
+    GetRoleAsync(
+    request,
+    [prom](
+        const CamClient*,
+        const GetRoleRequest&,
+        GetRoleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CamClient::GetRolePermissionBoundaryOutcome CamClient::GetRolePermissionBoundary(const GetRolePermissionBoundaryRequest &request)
@@ -2169,25 +2512,32 @@ CamClient::GetRolePermissionBoundaryOutcome CamClient::GetRolePermissionBoundary
 
 void CamClient::GetRolePermissionBoundaryAsync(const GetRolePermissionBoundaryRequest& request, const GetRolePermissionBoundaryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->GetRolePermissionBoundary(request), context);
-    };
+    using Req = const GetRolePermissionBoundaryRequest&;
+    using Resp = GetRolePermissionBoundaryResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "GetRolePermissionBoundary", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CamClient::GetRolePermissionBoundaryOutcomeCallable CamClient::GetRolePermissionBoundaryCallable(const GetRolePermissionBoundaryRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<GetRolePermissionBoundaryOutcome()>>(
-        [this, request]()
-        {
-            return this->GetRolePermissionBoundary(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<GetRolePermissionBoundaryOutcome>>();
+    GetRolePermissionBoundaryAsync(
+    request,
+    [prom](
+        const CamClient*,
+        const GetRolePermissionBoundaryRequest&,
+        GetRolePermissionBoundaryOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CamClient::GetSAMLProviderOutcome CamClient::GetSAMLProvider(const GetSAMLProviderRequest &request)
@@ -2212,25 +2562,32 @@ CamClient::GetSAMLProviderOutcome CamClient::GetSAMLProvider(const GetSAMLProvid
 
 void CamClient::GetSAMLProviderAsync(const GetSAMLProviderRequest& request, const GetSAMLProviderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->GetSAMLProvider(request), context);
-    };
+    using Req = const GetSAMLProviderRequest&;
+    using Resp = GetSAMLProviderResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "GetSAMLProvider", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CamClient::GetSAMLProviderOutcomeCallable CamClient::GetSAMLProviderCallable(const GetSAMLProviderRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<GetSAMLProviderOutcome()>>(
-        [this, request]()
-        {
-            return this->GetSAMLProvider(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<GetSAMLProviderOutcome>>();
+    GetSAMLProviderAsync(
+    request,
+    [prom](
+        const CamClient*,
+        const GetSAMLProviderRequest&,
+        GetSAMLProviderOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CamClient::GetSecurityLastUsedOutcome CamClient::GetSecurityLastUsed(const GetSecurityLastUsedRequest &request)
@@ -2255,25 +2612,32 @@ CamClient::GetSecurityLastUsedOutcome CamClient::GetSecurityLastUsed(const GetSe
 
 void CamClient::GetSecurityLastUsedAsync(const GetSecurityLastUsedRequest& request, const GetSecurityLastUsedAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->GetSecurityLastUsed(request), context);
-    };
+    using Req = const GetSecurityLastUsedRequest&;
+    using Resp = GetSecurityLastUsedResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "GetSecurityLastUsed", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CamClient::GetSecurityLastUsedOutcomeCallable CamClient::GetSecurityLastUsedCallable(const GetSecurityLastUsedRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<GetSecurityLastUsedOutcome()>>(
-        [this, request]()
-        {
-            return this->GetSecurityLastUsed(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<GetSecurityLastUsedOutcome>>();
+    GetSecurityLastUsedAsync(
+    request,
+    [prom](
+        const CamClient*,
+        const GetSecurityLastUsedRequest&,
+        GetSecurityLastUsedOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CamClient::GetServiceLinkedRoleDeletionStatusOutcome CamClient::GetServiceLinkedRoleDeletionStatus(const GetServiceLinkedRoleDeletionStatusRequest &request)
@@ -2298,25 +2662,32 @@ CamClient::GetServiceLinkedRoleDeletionStatusOutcome CamClient::GetServiceLinked
 
 void CamClient::GetServiceLinkedRoleDeletionStatusAsync(const GetServiceLinkedRoleDeletionStatusRequest& request, const GetServiceLinkedRoleDeletionStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->GetServiceLinkedRoleDeletionStatus(request), context);
-    };
+    using Req = const GetServiceLinkedRoleDeletionStatusRequest&;
+    using Resp = GetServiceLinkedRoleDeletionStatusResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "GetServiceLinkedRoleDeletionStatus", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CamClient::GetServiceLinkedRoleDeletionStatusOutcomeCallable CamClient::GetServiceLinkedRoleDeletionStatusCallable(const GetServiceLinkedRoleDeletionStatusRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<GetServiceLinkedRoleDeletionStatusOutcome()>>(
-        [this, request]()
-        {
-            return this->GetServiceLinkedRoleDeletionStatus(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<GetServiceLinkedRoleDeletionStatusOutcome>>();
+    GetServiceLinkedRoleDeletionStatusAsync(
+    request,
+    [prom](
+        const CamClient*,
+        const GetServiceLinkedRoleDeletionStatusRequest&,
+        GetServiceLinkedRoleDeletionStatusOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CamClient::GetUserOutcome CamClient::GetUser(const GetUserRequest &request)
@@ -2341,25 +2712,32 @@ CamClient::GetUserOutcome CamClient::GetUser(const GetUserRequest &request)
 
 void CamClient::GetUserAsync(const GetUserRequest& request, const GetUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->GetUser(request), context);
-    };
+    using Req = const GetUserRequest&;
+    using Resp = GetUserResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "GetUser", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CamClient::GetUserOutcomeCallable CamClient::GetUserCallable(const GetUserRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<GetUserOutcome()>>(
-        [this, request]()
-        {
-            return this->GetUser(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<GetUserOutcome>>();
+    GetUserAsync(
+    request,
+    [prom](
+        const CamClient*,
+        const GetUserRequest&,
+        GetUserOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CamClient::GetUserAppIdOutcome CamClient::GetUserAppId(const GetUserAppIdRequest &request)
@@ -2384,25 +2762,32 @@ CamClient::GetUserAppIdOutcome CamClient::GetUserAppId(const GetUserAppIdRequest
 
 void CamClient::GetUserAppIdAsync(const GetUserAppIdRequest& request, const GetUserAppIdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->GetUserAppId(request), context);
-    };
+    using Req = const GetUserAppIdRequest&;
+    using Resp = GetUserAppIdResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "GetUserAppId", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CamClient::GetUserAppIdOutcomeCallable CamClient::GetUserAppIdCallable(const GetUserAppIdRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<GetUserAppIdOutcome()>>(
-        [this, request]()
-        {
-            return this->GetUserAppId(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<GetUserAppIdOutcome>>();
+    GetUserAppIdAsync(
+    request,
+    [prom](
+        const CamClient*,
+        const GetUserAppIdRequest&,
+        GetUserAppIdOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CamClient::GetUserPermissionBoundaryOutcome CamClient::GetUserPermissionBoundary(const GetUserPermissionBoundaryRequest &request)
@@ -2427,25 +2812,32 @@ CamClient::GetUserPermissionBoundaryOutcome CamClient::GetUserPermissionBoundary
 
 void CamClient::GetUserPermissionBoundaryAsync(const GetUserPermissionBoundaryRequest& request, const GetUserPermissionBoundaryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->GetUserPermissionBoundary(request), context);
-    };
+    using Req = const GetUserPermissionBoundaryRequest&;
+    using Resp = GetUserPermissionBoundaryResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "GetUserPermissionBoundary", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CamClient::GetUserPermissionBoundaryOutcomeCallable CamClient::GetUserPermissionBoundaryCallable(const GetUserPermissionBoundaryRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<GetUserPermissionBoundaryOutcome()>>(
-        [this, request]()
-        {
-            return this->GetUserPermissionBoundary(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<GetUserPermissionBoundaryOutcome>>();
+    GetUserPermissionBoundaryAsync(
+    request,
+    [prom](
+        const CamClient*,
+        const GetUserPermissionBoundaryRequest&,
+        GetUserPermissionBoundaryOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CamClient::ListAccessKeysOutcome CamClient::ListAccessKeys(const ListAccessKeysRequest &request)
@@ -2470,25 +2862,32 @@ CamClient::ListAccessKeysOutcome CamClient::ListAccessKeys(const ListAccessKeysR
 
 void CamClient::ListAccessKeysAsync(const ListAccessKeysRequest& request, const ListAccessKeysAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ListAccessKeys(request), context);
-    };
+    using Req = const ListAccessKeysRequest&;
+    using Resp = ListAccessKeysResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ListAccessKeys", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CamClient::ListAccessKeysOutcomeCallable CamClient::ListAccessKeysCallable(const ListAccessKeysRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ListAccessKeysOutcome()>>(
-        [this, request]()
-        {
-            return this->ListAccessKeys(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ListAccessKeysOutcome>>();
+    ListAccessKeysAsync(
+    request,
+    [prom](
+        const CamClient*,
+        const ListAccessKeysRequest&,
+        ListAccessKeysOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CamClient::ListAttachedGroupPoliciesOutcome CamClient::ListAttachedGroupPolicies(const ListAttachedGroupPoliciesRequest &request)
@@ -2513,25 +2912,32 @@ CamClient::ListAttachedGroupPoliciesOutcome CamClient::ListAttachedGroupPolicies
 
 void CamClient::ListAttachedGroupPoliciesAsync(const ListAttachedGroupPoliciesRequest& request, const ListAttachedGroupPoliciesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ListAttachedGroupPolicies(request), context);
-    };
+    using Req = const ListAttachedGroupPoliciesRequest&;
+    using Resp = ListAttachedGroupPoliciesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ListAttachedGroupPolicies", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CamClient::ListAttachedGroupPoliciesOutcomeCallable CamClient::ListAttachedGroupPoliciesCallable(const ListAttachedGroupPoliciesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ListAttachedGroupPoliciesOutcome()>>(
-        [this, request]()
-        {
-            return this->ListAttachedGroupPolicies(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ListAttachedGroupPoliciesOutcome>>();
+    ListAttachedGroupPoliciesAsync(
+    request,
+    [prom](
+        const CamClient*,
+        const ListAttachedGroupPoliciesRequest&,
+        ListAttachedGroupPoliciesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CamClient::ListAttachedRolePoliciesOutcome CamClient::ListAttachedRolePolicies(const ListAttachedRolePoliciesRequest &request)
@@ -2556,25 +2962,32 @@ CamClient::ListAttachedRolePoliciesOutcome CamClient::ListAttachedRolePolicies(c
 
 void CamClient::ListAttachedRolePoliciesAsync(const ListAttachedRolePoliciesRequest& request, const ListAttachedRolePoliciesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ListAttachedRolePolicies(request), context);
-    };
+    using Req = const ListAttachedRolePoliciesRequest&;
+    using Resp = ListAttachedRolePoliciesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ListAttachedRolePolicies", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CamClient::ListAttachedRolePoliciesOutcomeCallable CamClient::ListAttachedRolePoliciesCallable(const ListAttachedRolePoliciesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ListAttachedRolePoliciesOutcome()>>(
-        [this, request]()
-        {
-            return this->ListAttachedRolePolicies(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ListAttachedRolePoliciesOutcome>>();
+    ListAttachedRolePoliciesAsync(
+    request,
+    [prom](
+        const CamClient*,
+        const ListAttachedRolePoliciesRequest&,
+        ListAttachedRolePoliciesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CamClient::ListAttachedUserAllPoliciesOutcome CamClient::ListAttachedUserAllPolicies(const ListAttachedUserAllPoliciesRequest &request)
@@ -2599,25 +3012,32 @@ CamClient::ListAttachedUserAllPoliciesOutcome CamClient::ListAttachedUserAllPoli
 
 void CamClient::ListAttachedUserAllPoliciesAsync(const ListAttachedUserAllPoliciesRequest& request, const ListAttachedUserAllPoliciesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ListAttachedUserAllPolicies(request), context);
-    };
+    using Req = const ListAttachedUserAllPoliciesRequest&;
+    using Resp = ListAttachedUserAllPoliciesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ListAttachedUserAllPolicies", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CamClient::ListAttachedUserAllPoliciesOutcomeCallable CamClient::ListAttachedUserAllPoliciesCallable(const ListAttachedUserAllPoliciesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ListAttachedUserAllPoliciesOutcome()>>(
-        [this, request]()
-        {
-            return this->ListAttachedUserAllPolicies(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ListAttachedUserAllPoliciesOutcome>>();
+    ListAttachedUserAllPoliciesAsync(
+    request,
+    [prom](
+        const CamClient*,
+        const ListAttachedUserAllPoliciesRequest&,
+        ListAttachedUserAllPoliciesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CamClient::ListAttachedUserPoliciesOutcome CamClient::ListAttachedUserPolicies(const ListAttachedUserPoliciesRequest &request)
@@ -2642,25 +3062,32 @@ CamClient::ListAttachedUserPoliciesOutcome CamClient::ListAttachedUserPolicies(c
 
 void CamClient::ListAttachedUserPoliciesAsync(const ListAttachedUserPoliciesRequest& request, const ListAttachedUserPoliciesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ListAttachedUserPolicies(request), context);
-    };
+    using Req = const ListAttachedUserPoliciesRequest&;
+    using Resp = ListAttachedUserPoliciesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ListAttachedUserPolicies", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CamClient::ListAttachedUserPoliciesOutcomeCallable CamClient::ListAttachedUserPoliciesCallable(const ListAttachedUserPoliciesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ListAttachedUserPoliciesOutcome()>>(
-        [this, request]()
-        {
-            return this->ListAttachedUserPolicies(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ListAttachedUserPoliciesOutcome>>();
+    ListAttachedUserPoliciesAsync(
+    request,
+    [prom](
+        const CamClient*,
+        const ListAttachedUserPoliciesRequest&,
+        ListAttachedUserPoliciesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CamClient::ListCollaboratorsOutcome CamClient::ListCollaborators(const ListCollaboratorsRequest &request)
@@ -2685,25 +3112,32 @@ CamClient::ListCollaboratorsOutcome CamClient::ListCollaborators(const ListColla
 
 void CamClient::ListCollaboratorsAsync(const ListCollaboratorsRequest& request, const ListCollaboratorsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ListCollaborators(request), context);
-    };
+    using Req = const ListCollaboratorsRequest&;
+    using Resp = ListCollaboratorsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ListCollaborators", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CamClient::ListCollaboratorsOutcomeCallable CamClient::ListCollaboratorsCallable(const ListCollaboratorsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ListCollaboratorsOutcome()>>(
-        [this, request]()
-        {
-            return this->ListCollaborators(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ListCollaboratorsOutcome>>();
+    ListCollaboratorsAsync(
+    request,
+    [prom](
+        const CamClient*,
+        const ListCollaboratorsRequest&,
+        ListCollaboratorsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CamClient::ListEntitiesForPolicyOutcome CamClient::ListEntitiesForPolicy(const ListEntitiesForPolicyRequest &request)
@@ -2728,25 +3162,32 @@ CamClient::ListEntitiesForPolicyOutcome CamClient::ListEntitiesForPolicy(const L
 
 void CamClient::ListEntitiesForPolicyAsync(const ListEntitiesForPolicyRequest& request, const ListEntitiesForPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ListEntitiesForPolicy(request), context);
-    };
+    using Req = const ListEntitiesForPolicyRequest&;
+    using Resp = ListEntitiesForPolicyResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ListEntitiesForPolicy", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CamClient::ListEntitiesForPolicyOutcomeCallable CamClient::ListEntitiesForPolicyCallable(const ListEntitiesForPolicyRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ListEntitiesForPolicyOutcome()>>(
-        [this, request]()
-        {
-            return this->ListEntitiesForPolicy(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ListEntitiesForPolicyOutcome>>();
+    ListEntitiesForPolicyAsync(
+    request,
+    [prom](
+        const CamClient*,
+        const ListEntitiesForPolicyRequest&,
+        ListEntitiesForPolicyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CamClient::ListGroupsOutcome CamClient::ListGroups(const ListGroupsRequest &request)
@@ -2771,25 +3212,32 @@ CamClient::ListGroupsOutcome CamClient::ListGroups(const ListGroupsRequest &requ
 
 void CamClient::ListGroupsAsync(const ListGroupsRequest& request, const ListGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ListGroups(request), context);
-    };
+    using Req = const ListGroupsRequest&;
+    using Resp = ListGroupsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ListGroups", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CamClient::ListGroupsOutcomeCallable CamClient::ListGroupsCallable(const ListGroupsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ListGroupsOutcome()>>(
-        [this, request]()
-        {
-            return this->ListGroups(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ListGroupsOutcome>>();
+    ListGroupsAsync(
+    request,
+    [prom](
+        const CamClient*,
+        const ListGroupsRequest&,
+        ListGroupsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CamClient::ListGroupsForUserOutcome CamClient::ListGroupsForUser(const ListGroupsForUserRequest &request)
@@ -2814,25 +3262,32 @@ CamClient::ListGroupsForUserOutcome CamClient::ListGroupsForUser(const ListGroup
 
 void CamClient::ListGroupsForUserAsync(const ListGroupsForUserRequest& request, const ListGroupsForUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ListGroupsForUser(request), context);
-    };
+    using Req = const ListGroupsForUserRequest&;
+    using Resp = ListGroupsForUserResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ListGroupsForUser", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CamClient::ListGroupsForUserOutcomeCallable CamClient::ListGroupsForUserCallable(const ListGroupsForUserRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ListGroupsForUserOutcome()>>(
-        [this, request]()
-        {
-            return this->ListGroupsForUser(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ListGroupsForUserOutcome>>();
+    ListGroupsForUserAsync(
+    request,
+    [prom](
+        const CamClient*,
+        const ListGroupsForUserRequest&,
+        ListGroupsForUserOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CamClient::ListPoliciesOutcome CamClient::ListPolicies(const ListPoliciesRequest &request)
@@ -2857,25 +3312,32 @@ CamClient::ListPoliciesOutcome CamClient::ListPolicies(const ListPoliciesRequest
 
 void CamClient::ListPoliciesAsync(const ListPoliciesRequest& request, const ListPoliciesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ListPolicies(request), context);
-    };
+    using Req = const ListPoliciesRequest&;
+    using Resp = ListPoliciesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ListPolicies", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CamClient::ListPoliciesOutcomeCallable CamClient::ListPoliciesCallable(const ListPoliciesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ListPoliciesOutcome()>>(
-        [this, request]()
-        {
-            return this->ListPolicies(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ListPoliciesOutcome>>();
+    ListPoliciesAsync(
+    request,
+    [prom](
+        const CamClient*,
+        const ListPoliciesRequest&,
+        ListPoliciesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CamClient::ListPoliciesGrantingServiceAccessOutcome CamClient::ListPoliciesGrantingServiceAccess(const ListPoliciesGrantingServiceAccessRequest &request)
@@ -2900,25 +3362,32 @@ CamClient::ListPoliciesGrantingServiceAccessOutcome CamClient::ListPoliciesGrant
 
 void CamClient::ListPoliciesGrantingServiceAccessAsync(const ListPoliciesGrantingServiceAccessRequest& request, const ListPoliciesGrantingServiceAccessAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ListPoliciesGrantingServiceAccess(request), context);
-    };
+    using Req = const ListPoliciesGrantingServiceAccessRequest&;
+    using Resp = ListPoliciesGrantingServiceAccessResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ListPoliciesGrantingServiceAccess", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CamClient::ListPoliciesGrantingServiceAccessOutcomeCallable CamClient::ListPoliciesGrantingServiceAccessCallable(const ListPoliciesGrantingServiceAccessRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ListPoliciesGrantingServiceAccessOutcome()>>(
-        [this, request]()
-        {
-            return this->ListPoliciesGrantingServiceAccess(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ListPoliciesGrantingServiceAccessOutcome>>();
+    ListPoliciesGrantingServiceAccessAsync(
+    request,
+    [prom](
+        const CamClient*,
+        const ListPoliciesGrantingServiceAccessRequest&,
+        ListPoliciesGrantingServiceAccessOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CamClient::ListPolicyVersionsOutcome CamClient::ListPolicyVersions(const ListPolicyVersionsRequest &request)
@@ -2943,25 +3412,32 @@ CamClient::ListPolicyVersionsOutcome CamClient::ListPolicyVersions(const ListPol
 
 void CamClient::ListPolicyVersionsAsync(const ListPolicyVersionsRequest& request, const ListPolicyVersionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ListPolicyVersions(request), context);
-    };
+    using Req = const ListPolicyVersionsRequest&;
+    using Resp = ListPolicyVersionsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ListPolicyVersions", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CamClient::ListPolicyVersionsOutcomeCallable CamClient::ListPolicyVersionsCallable(const ListPolicyVersionsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ListPolicyVersionsOutcome()>>(
-        [this, request]()
-        {
-            return this->ListPolicyVersions(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ListPolicyVersionsOutcome>>();
+    ListPolicyVersionsAsync(
+    request,
+    [prom](
+        const CamClient*,
+        const ListPolicyVersionsRequest&,
+        ListPolicyVersionsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CamClient::ListReceiverOutcome CamClient::ListReceiver(const ListReceiverRequest &request)
@@ -2986,25 +3462,32 @@ CamClient::ListReceiverOutcome CamClient::ListReceiver(const ListReceiverRequest
 
 void CamClient::ListReceiverAsync(const ListReceiverRequest& request, const ListReceiverAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ListReceiver(request), context);
-    };
+    using Req = const ListReceiverRequest&;
+    using Resp = ListReceiverResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ListReceiver", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CamClient::ListReceiverOutcomeCallable CamClient::ListReceiverCallable(const ListReceiverRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ListReceiverOutcome()>>(
-        [this, request]()
-        {
-            return this->ListReceiver(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ListReceiverOutcome>>();
+    ListReceiverAsync(
+    request,
+    [prom](
+        const CamClient*,
+        const ListReceiverRequest&,
+        ListReceiverOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CamClient::ListSAMLProvidersOutcome CamClient::ListSAMLProviders(const ListSAMLProvidersRequest &request)
@@ -3029,25 +3512,32 @@ CamClient::ListSAMLProvidersOutcome CamClient::ListSAMLProviders(const ListSAMLP
 
 void CamClient::ListSAMLProvidersAsync(const ListSAMLProvidersRequest& request, const ListSAMLProvidersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ListSAMLProviders(request), context);
-    };
+    using Req = const ListSAMLProvidersRequest&;
+    using Resp = ListSAMLProvidersResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ListSAMLProviders", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CamClient::ListSAMLProvidersOutcomeCallable CamClient::ListSAMLProvidersCallable(const ListSAMLProvidersRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ListSAMLProvidersOutcome()>>(
-        [this, request]()
-        {
-            return this->ListSAMLProviders(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ListSAMLProvidersOutcome>>();
+    ListSAMLProvidersAsync(
+    request,
+    [prom](
+        const CamClient*,
+        const ListSAMLProvidersRequest&,
+        ListSAMLProvidersOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CamClient::ListUsersOutcome CamClient::ListUsers(const ListUsersRequest &request)
@@ -3072,25 +3562,32 @@ CamClient::ListUsersOutcome CamClient::ListUsers(const ListUsersRequest &request
 
 void CamClient::ListUsersAsync(const ListUsersRequest& request, const ListUsersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ListUsers(request), context);
-    };
+    using Req = const ListUsersRequest&;
+    using Resp = ListUsersResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ListUsers", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CamClient::ListUsersOutcomeCallable CamClient::ListUsersCallable(const ListUsersRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ListUsersOutcome()>>(
-        [this, request]()
-        {
-            return this->ListUsers(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ListUsersOutcome>>();
+    ListUsersAsync(
+    request,
+    [prom](
+        const CamClient*,
+        const ListUsersRequest&,
+        ListUsersOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CamClient::ListUsersForGroupOutcome CamClient::ListUsersForGroup(const ListUsersForGroupRequest &request)
@@ -3115,25 +3612,32 @@ CamClient::ListUsersForGroupOutcome CamClient::ListUsersForGroup(const ListUsers
 
 void CamClient::ListUsersForGroupAsync(const ListUsersForGroupRequest& request, const ListUsersForGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ListUsersForGroup(request), context);
-    };
+    using Req = const ListUsersForGroupRequest&;
+    using Resp = ListUsersForGroupResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ListUsersForGroup", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CamClient::ListUsersForGroupOutcomeCallable CamClient::ListUsersForGroupCallable(const ListUsersForGroupRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ListUsersForGroupOutcome()>>(
-        [this, request]()
-        {
-            return this->ListUsersForGroup(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ListUsersForGroupOutcome>>();
+    ListUsersForGroupAsync(
+    request,
+    [prom](
+        const CamClient*,
+        const ListUsersForGroupRequest&,
+        ListUsersForGroupOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CamClient::ListWeChatWorkSubAccountsOutcome CamClient::ListWeChatWorkSubAccounts(const ListWeChatWorkSubAccountsRequest &request)
@@ -3158,25 +3662,32 @@ CamClient::ListWeChatWorkSubAccountsOutcome CamClient::ListWeChatWorkSubAccounts
 
 void CamClient::ListWeChatWorkSubAccountsAsync(const ListWeChatWorkSubAccountsRequest& request, const ListWeChatWorkSubAccountsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ListWeChatWorkSubAccounts(request), context);
-    };
+    using Req = const ListWeChatWorkSubAccountsRequest&;
+    using Resp = ListWeChatWorkSubAccountsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ListWeChatWorkSubAccounts", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CamClient::ListWeChatWorkSubAccountsOutcomeCallable CamClient::ListWeChatWorkSubAccountsCallable(const ListWeChatWorkSubAccountsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ListWeChatWorkSubAccountsOutcome()>>(
-        [this, request]()
-        {
-            return this->ListWeChatWorkSubAccounts(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ListWeChatWorkSubAccountsOutcome>>();
+    ListWeChatWorkSubAccountsAsync(
+    request,
+    [prom](
+        const CamClient*,
+        const ListWeChatWorkSubAccountsRequest&,
+        ListWeChatWorkSubAccountsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CamClient::PutRolePermissionsBoundaryOutcome CamClient::PutRolePermissionsBoundary(const PutRolePermissionsBoundaryRequest &request)
@@ -3201,25 +3712,32 @@ CamClient::PutRolePermissionsBoundaryOutcome CamClient::PutRolePermissionsBounda
 
 void CamClient::PutRolePermissionsBoundaryAsync(const PutRolePermissionsBoundaryRequest& request, const PutRolePermissionsBoundaryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->PutRolePermissionsBoundary(request), context);
-    };
+    using Req = const PutRolePermissionsBoundaryRequest&;
+    using Resp = PutRolePermissionsBoundaryResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "PutRolePermissionsBoundary", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CamClient::PutRolePermissionsBoundaryOutcomeCallable CamClient::PutRolePermissionsBoundaryCallable(const PutRolePermissionsBoundaryRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<PutRolePermissionsBoundaryOutcome()>>(
-        [this, request]()
-        {
-            return this->PutRolePermissionsBoundary(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<PutRolePermissionsBoundaryOutcome>>();
+    PutRolePermissionsBoundaryAsync(
+    request,
+    [prom](
+        const CamClient*,
+        const PutRolePermissionsBoundaryRequest&,
+        PutRolePermissionsBoundaryOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CamClient::PutUserPermissionsBoundaryOutcome CamClient::PutUserPermissionsBoundary(const PutUserPermissionsBoundaryRequest &request)
@@ -3244,25 +3762,32 @@ CamClient::PutUserPermissionsBoundaryOutcome CamClient::PutUserPermissionsBounda
 
 void CamClient::PutUserPermissionsBoundaryAsync(const PutUserPermissionsBoundaryRequest& request, const PutUserPermissionsBoundaryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->PutUserPermissionsBoundary(request), context);
-    };
+    using Req = const PutUserPermissionsBoundaryRequest&;
+    using Resp = PutUserPermissionsBoundaryResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "PutUserPermissionsBoundary", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CamClient::PutUserPermissionsBoundaryOutcomeCallable CamClient::PutUserPermissionsBoundaryCallable(const PutUserPermissionsBoundaryRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<PutUserPermissionsBoundaryOutcome()>>(
-        [this, request]()
-        {
-            return this->PutUserPermissionsBoundary(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<PutUserPermissionsBoundaryOutcome>>();
+    PutUserPermissionsBoundaryAsync(
+    request,
+    [prom](
+        const CamClient*,
+        const PutUserPermissionsBoundaryRequest&,
+        PutUserPermissionsBoundaryOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CamClient::RemoveUserFromGroupOutcome CamClient::RemoveUserFromGroup(const RemoveUserFromGroupRequest &request)
@@ -3287,25 +3812,32 @@ CamClient::RemoveUserFromGroupOutcome CamClient::RemoveUserFromGroup(const Remov
 
 void CamClient::RemoveUserFromGroupAsync(const RemoveUserFromGroupRequest& request, const RemoveUserFromGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->RemoveUserFromGroup(request), context);
-    };
+    using Req = const RemoveUserFromGroupRequest&;
+    using Resp = RemoveUserFromGroupResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "RemoveUserFromGroup", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CamClient::RemoveUserFromGroupOutcomeCallable CamClient::RemoveUserFromGroupCallable(const RemoveUserFromGroupRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<RemoveUserFromGroupOutcome()>>(
-        [this, request]()
-        {
-            return this->RemoveUserFromGroup(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<RemoveUserFromGroupOutcome>>();
+    RemoveUserFromGroupAsync(
+    request,
+    [prom](
+        const CamClient*,
+        const RemoveUserFromGroupRequest&,
+        RemoveUserFromGroupOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CamClient::SetDefaultPolicyVersionOutcome CamClient::SetDefaultPolicyVersion(const SetDefaultPolicyVersionRequest &request)
@@ -3330,25 +3862,32 @@ CamClient::SetDefaultPolicyVersionOutcome CamClient::SetDefaultPolicyVersion(con
 
 void CamClient::SetDefaultPolicyVersionAsync(const SetDefaultPolicyVersionRequest& request, const SetDefaultPolicyVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->SetDefaultPolicyVersion(request), context);
-    };
+    using Req = const SetDefaultPolicyVersionRequest&;
+    using Resp = SetDefaultPolicyVersionResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "SetDefaultPolicyVersion", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CamClient::SetDefaultPolicyVersionOutcomeCallable CamClient::SetDefaultPolicyVersionCallable(const SetDefaultPolicyVersionRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<SetDefaultPolicyVersionOutcome()>>(
-        [this, request]()
-        {
-            return this->SetDefaultPolicyVersion(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<SetDefaultPolicyVersionOutcome>>();
+    SetDefaultPolicyVersionAsync(
+    request,
+    [prom](
+        const CamClient*,
+        const SetDefaultPolicyVersionRequest&,
+        SetDefaultPolicyVersionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CamClient::SetMfaFlagOutcome CamClient::SetMfaFlag(const SetMfaFlagRequest &request)
@@ -3373,25 +3912,32 @@ CamClient::SetMfaFlagOutcome CamClient::SetMfaFlag(const SetMfaFlagRequest &requ
 
 void CamClient::SetMfaFlagAsync(const SetMfaFlagRequest& request, const SetMfaFlagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->SetMfaFlag(request), context);
-    };
+    using Req = const SetMfaFlagRequest&;
+    using Resp = SetMfaFlagResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "SetMfaFlag", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CamClient::SetMfaFlagOutcomeCallable CamClient::SetMfaFlagCallable(const SetMfaFlagRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<SetMfaFlagOutcome()>>(
-        [this, request]()
-        {
-            return this->SetMfaFlag(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<SetMfaFlagOutcome>>();
+    SetMfaFlagAsync(
+    request,
+    [prom](
+        const CamClient*,
+        const SetMfaFlagRequest&,
+        SetMfaFlagOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CamClient::TagRoleOutcome CamClient::TagRole(const TagRoleRequest &request)
@@ -3416,25 +3962,32 @@ CamClient::TagRoleOutcome CamClient::TagRole(const TagRoleRequest &request)
 
 void CamClient::TagRoleAsync(const TagRoleRequest& request, const TagRoleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->TagRole(request), context);
-    };
+    using Req = const TagRoleRequest&;
+    using Resp = TagRoleResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "TagRole", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CamClient::TagRoleOutcomeCallable CamClient::TagRoleCallable(const TagRoleRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<TagRoleOutcome()>>(
-        [this, request]()
-        {
-            return this->TagRole(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<TagRoleOutcome>>();
+    TagRoleAsync(
+    request,
+    [prom](
+        const CamClient*,
+        const TagRoleRequest&,
+        TagRoleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CamClient::UntagRoleOutcome CamClient::UntagRole(const UntagRoleRequest &request)
@@ -3459,25 +4012,32 @@ CamClient::UntagRoleOutcome CamClient::UntagRole(const UntagRoleRequest &request
 
 void CamClient::UntagRoleAsync(const UntagRoleRequest& request, const UntagRoleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UntagRole(request), context);
-    };
+    using Req = const UntagRoleRequest&;
+    using Resp = UntagRoleResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UntagRole", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CamClient::UntagRoleOutcomeCallable CamClient::UntagRoleCallable(const UntagRoleRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UntagRoleOutcome()>>(
-        [this, request]()
-        {
-            return this->UntagRole(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UntagRoleOutcome>>();
+    UntagRoleAsync(
+    request,
+    [prom](
+        const CamClient*,
+        const UntagRoleRequest&,
+        UntagRoleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CamClient::UpdateAccessKeyOutcome CamClient::UpdateAccessKey(const UpdateAccessKeyRequest &request)
@@ -3502,25 +4062,32 @@ CamClient::UpdateAccessKeyOutcome CamClient::UpdateAccessKey(const UpdateAccessK
 
 void CamClient::UpdateAccessKeyAsync(const UpdateAccessKeyRequest& request, const UpdateAccessKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UpdateAccessKey(request), context);
-    };
+    using Req = const UpdateAccessKeyRequest&;
+    using Resp = UpdateAccessKeyResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UpdateAccessKey", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CamClient::UpdateAccessKeyOutcomeCallable CamClient::UpdateAccessKeyCallable(const UpdateAccessKeyRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UpdateAccessKeyOutcome()>>(
-        [this, request]()
-        {
-            return this->UpdateAccessKey(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UpdateAccessKeyOutcome>>();
+    UpdateAccessKeyAsync(
+    request,
+    [prom](
+        const CamClient*,
+        const UpdateAccessKeyRequest&,
+        UpdateAccessKeyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CamClient::UpdateAssumeRolePolicyOutcome CamClient::UpdateAssumeRolePolicy(const UpdateAssumeRolePolicyRequest &request)
@@ -3545,25 +4112,32 @@ CamClient::UpdateAssumeRolePolicyOutcome CamClient::UpdateAssumeRolePolicy(const
 
 void CamClient::UpdateAssumeRolePolicyAsync(const UpdateAssumeRolePolicyRequest& request, const UpdateAssumeRolePolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UpdateAssumeRolePolicy(request), context);
-    };
+    using Req = const UpdateAssumeRolePolicyRequest&;
+    using Resp = UpdateAssumeRolePolicyResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UpdateAssumeRolePolicy", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CamClient::UpdateAssumeRolePolicyOutcomeCallable CamClient::UpdateAssumeRolePolicyCallable(const UpdateAssumeRolePolicyRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UpdateAssumeRolePolicyOutcome()>>(
-        [this, request]()
-        {
-            return this->UpdateAssumeRolePolicy(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UpdateAssumeRolePolicyOutcome>>();
+    UpdateAssumeRolePolicyAsync(
+    request,
+    [prom](
+        const CamClient*,
+        const UpdateAssumeRolePolicyRequest&,
+        UpdateAssumeRolePolicyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CamClient::UpdateGroupOutcome CamClient::UpdateGroup(const UpdateGroupRequest &request)
@@ -3588,25 +4162,32 @@ CamClient::UpdateGroupOutcome CamClient::UpdateGroup(const UpdateGroupRequest &r
 
 void CamClient::UpdateGroupAsync(const UpdateGroupRequest& request, const UpdateGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UpdateGroup(request), context);
-    };
+    using Req = const UpdateGroupRequest&;
+    using Resp = UpdateGroupResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UpdateGroup", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CamClient::UpdateGroupOutcomeCallable CamClient::UpdateGroupCallable(const UpdateGroupRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UpdateGroupOutcome()>>(
-        [this, request]()
-        {
-            return this->UpdateGroup(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UpdateGroupOutcome>>();
+    UpdateGroupAsync(
+    request,
+    [prom](
+        const CamClient*,
+        const UpdateGroupRequest&,
+        UpdateGroupOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CamClient::UpdateOIDCConfigOutcome CamClient::UpdateOIDCConfig(const UpdateOIDCConfigRequest &request)
@@ -3631,25 +4212,32 @@ CamClient::UpdateOIDCConfigOutcome CamClient::UpdateOIDCConfig(const UpdateOIDCC
 
 void CamClient::UpdateOIDCConfigAsync(const UpdateOIDCConfigRequest& request, const UpdateOIDCConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UpdateOIDCConfig(request), context);
-    };
+    using Req = const UpdateOIDCConfigRequest&;
+    using Resp = UpdateOIDCConfigResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UpdateOIDCConfig", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CamClient::UpdateOIDCConfigOutcomeCallable CamClient::UpdateOIDCConfigCallable(const UpdateOIDCConfigRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UpdateOIDCConfigOutcome()>>(
-        [this, request]()
-        {
-            return this->UpdateOIDCConfig(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UpdateOIDCConfigOutcome>>();
+    UpdateOIDCConfigAsync(
+    request,
+    [prom](
+        const CamClient*,
+        const UpdateOIDCConfigRequest&,
+        UpdateOIDCConfigOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CamClient::UpdatePolicyOutcome CamClient::UpdatePolicy(const UpdatePolicyRequest &request)
@@ -3674,25 +4262,32 @@ CamClient::UpdatePolicyOutcome CamClient::UpdatePolicy(const UpdatePolicyRequest
 
 void CamClient::UpdatePolicyAsync(const UpdatePolicyRequest& request, const UpdatePolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UpdatePolicy(request), context);
-    };
+    using Req = const UpdatePolicyRequest&;
+    using Resp = UpdatePolicyResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UpdatePolicy", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CamClient::UpdatePolicyOutcomeCallable CamClient::UpdatePolicyCallable(const UpdatePolicyRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UpdatePolicyOutcome()>>(
-        [this, request]()
-        {
-            return this->UpdatePolicy(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UpdatePolicyOutcome>>();
+    UpdatePolicyAsync(
+    request,
+    [prom](
+        const CamClient*,
+        const UpdatePolicyRequest&,
+        UpdatePolicyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CamClient::UpdateRoleConsoleLoginOutcome CamClient::UpdateRoleConsoleLogin(const UpdateRoleConsoleLoginRequest &request)
@@ -3717,25 +4312,32 @@ CamClient::UpdateRoleConsoleLoginOutcome CamClient::UpdateRoleConsoleLogin(const
 
 void CamClient::UpdateRoleConsoleLoginAsync(const UpdateRoleConsoleLoginRequest& request, const UpdateRoleConsoleLoginAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UpdateRoleConsoleLogin(request), context);
-    };
+    using Req = const UpdateRoleConsoleLoginRequest&;
+    using Resp = UpdateRoleConsoleLoginResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UpdateRoleConsoleLogin", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CamClient::UpdateRoleConsoleLoginOutcomeCallable CamClient::UpdateRoleConsoleLoginCallable(const UpdateRoleConsoleLoginRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UpdateRoleConsoleLoginOutcome()>>(
-        [this, request]()
-        {
-            return this->UpdateRoleConsoleLogin(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UpdateRoleConsoleLoginOutcome>>();
+    UpdateRoleConsoleLoginAsync(
+    request,
+    [prom](
+        const CamClient*,
+        const UpdateRoleConsoleLoginRequest&,
+        UpdateRoleConsoleLoginOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CamClient::UpdateRoleDescriptionOutcome CamClient::UpdateRoleDescription(const UpdateRoleDescriptionRequest &request)
@@ -3760,25 +4362,32 @@ CamClient::UpdateRoleDescriptionOutcome CamClient::UpdateRoleDescription(const U
 
 void CamClient::UpdateRoleDescriptionAsync(const UpdateRoleDescriptionRequest& request, const UpdateRoleDescriptionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UpdateRoleDescription(request), context);
-    };
+    using Req = const UpdateRoleDescriptionRequest&;
+    using Resp = UpdateRoleDescriptionResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UpdateRoleDescription", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CamClient::UpdateRoleDescriptionOutcomeCallable CamClient::UpdateRoleDescriptionCallable(const UpdateRoleDescriptionRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UpdateRoleDescriptionOutcome()>>(
-        [this, request]()
-        {
-            return this->UpdateRoleDescription(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UpdateRoleDescriptionOutcome>>();
+    UpdateRoleDescriptionAsync(
+    request,
+    [prom](
+        const CamClient*,
+        const UpdateRoleDescriptionRequest&,
+        UpdateRoleDescriptionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CamClient::UpdateRoleSessionDurationOutcome CamClient::UpdateRoleSessionDuration(const UpdateRoleSessionDurationRequest &request)
@@ -3803,25 +4412,32 @@ CamClient::UpdateRoleSessionDurationOutcome CamClient::UpdateRoleSessionDuration
 
 void CamClient::UpdateRoleSessionDurationAsync(const UpdateRoleSessionDurationRequest& request, const UpdateRoleSessionDurationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UpdateRoleSessionDuration(request), context);
-    };
+    using Req = const UpdateRoleSessionDurationRequest&;
+    using Resp = UpdateRoleSessionDurationResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UpdateRoleSessionDuration", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CamClient::UpdateRoleSessionDurationOutcomeCallable CamClient::UpdateRoleSessionDurationCallable(const UpdateRoleSessionDurationRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UpdateRoleSessionDurationOutcome()>>(
-        [this, request]()
-        {
-            return this->UpdateRoleSessionDuration(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UpdateRoleSessionDurationOutcome>>();
+    UpdateRoleSessionDurationAsync(
+    request,
+    [prom](
+        const CamClient*,
+        const UpdateRoleSessionDurationRequest&,
+        UpdateRoleSessionDurationOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CamClient::UpdateSAMLProviderOutcome CamClient::UpdateSAMLProvider(const UpdateSAMLProviderRequest &request)
@@ -3846,25 +4462,32 @@ CamClient::UpdateSAMLProviderOutcome CamClient::UpdateSAMLProvider(const UpdateS
 
 void CamClient::UpdateSAMLProviderAsync(const UpdateSAMLProviderRequest& request, const UpdateSAMLProviderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UpdateSAMLProvider(request), context);
-    };
+    using Req = const UpdateSAMLProviderRequest&;
+    using Resp = UpdateSAMLProviderResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UpdateSAMLProvider", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CamClient::UpdateSAMLProviderOutcomeCallable CamClient::UpdateSAMLProviderCallable(const UpdateSAMLProviderRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UpdateSAMLProviderOutcome()>>(
-        [this, request]()
-        {
-            return this->UpdateSAMLProvider(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UpdateSAMLProviderOutcome>>();
+    UpdateSAMLProviderAsync(
+    request,
+    [prom](
+        const CamClient*,
+        const UpdateSAMLProviderRequest&,
+        UpdateSAMLProviderOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CamClient::UpdateUserOutcome CamClient::UpdateUser(const UpdateUserRequest &request)
@@ -3889,25 +4512,32 @@ CamClient::UpdateUserOutcome CamClient::UpdateUser(const UpdateUserRequest &requ
 
 void CamClient::UpdateUserAsync(const UpdateUserRequest& request, const UpdateUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UpdateUser(request), context);
-    };
+    using Req = const UpdateUserRequest&;
+    using Resp = UpdateUserResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UpdateUser", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CamClient::UpdateUserOutcomeCallable CamClient::UpdateUserCallable(const UpdateUserRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UpdateUserOutcome()>>(
-        [this, request]()
-        {
-            return this->UpdateUser(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UpdateUserOutcome>>();
+    UpdateUserAsync(
+    request,
+    [prom](
+        const CamClient*,
+        const UpdateUserRequest&,
+        UpdateUserOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CamClient::UpdateUserOIDCConfigOutcome CamClient::UpdateUserOIDCConfig(const UpdateUserOIDCConfigRequest &request)
@@ -3932,25 +4562,32 @@ CamClient::UpdateUserOIDCConfigOutcome CamClient::UpdateUserOIDCConfig(const Upd
 
 void CamClient::UpdateUserOIDCConfigAsync(const UpdateUserOIDCConfigRequest& request, const UpdateUserOIDCConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UpdateUserOIDCConfig(request), context);
-    };
+    using Req = const UpdateUserOIDCConfigRequest&;
+    using Resp = UpdateUserOIDCConfigResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UpdateUserOIDCConfig", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CamClient::UpdateUserOIDCConfigOutcomeCallable CamClient::UpdateUserOIDCConfigCallable(const UpdateUserOIDCConfigRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UpdateUserOIDCConfigOutcome()>>(
-        [this, request]()
-        {
-            return this->UpdateUserOIDCConfig(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UpdateUserOIDCConfigOutcome>>();
+    UpdateUserOIDCConfigAsync(
+    request,
+    [prom](
+        const CamClient*,
+        const UpdateUserOIDCConfigRequest&,
+        UpdateUserOIDCConfigOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CamClient::UpdateUserSAMLConfigOutcome CamClient::UpdateUserSAMLConfig(const UpdateUserSAMLConfigRequest &request)
@@ -3975,24 +4612,31 @@ CamClient::UpdateUserSAMLConfigOutcome CamClient::UpdateUserSAMLConfig(const Upd
 
 void CamClient::UpdateUserSAMLConfigAsync(const UpdateUserSAMLConfigRequest& request, const UpdateUserSAMLConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UpdateUserSAMLConfig(request), context);
-    };
+    using Req = const UpdateUserSAMLConfigRequest&;
+    using Resp = UpdateUserSAMLConfigResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UpdateUserSAMLConfig", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CamClient::UpdateUserSAMLConfigOutcomeCallable CamClient::UpdateUserSAMLConfigCallable(const UpdateUserSAMLConfigRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UpdateUserSAMLConfigOutcome()>>(
-        [this, request]()
-        {
-            return this->UpdateUserSAMLConfig(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UpdateUserSAMLConfigOutcome>>();
+    UpdateUserSAMLConfigAsync(
+    request,
+    [prom](
+        const CamClient*,
+        const UpdateUserSAMLConfigRequest&,
+        UpdateUserSAMLConfigOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 

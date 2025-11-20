@@ -62,25 +62,32 @@ SoeClient::InitOralProcessOutcome SoeClient::InitOralProcess(const InitOralProce
 
 void SoeClient::InitOralProcessAsync(const InitOralProcessRequest& request, const InitOralProcessAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->InitOralProcess(request), context);
-    };
+    using Req = const InitOralProcessRequest&;
+    using Resp = InitOralProcessResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "InitOralProcess", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SoeClient::InitOralProcessOutcomeCallable SoeClient::InitOralProcessCallable(const InitOralProcessRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<InitOralProcessOutcome()>>(
-        [this, request]()
-        {
-            return this->InitOralProcess(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<InitOralProcessOutcome>>();
+    InitOralProcessAsync(
+    request,
+    [prom](
+        const SoeClient*,
+        const InitOralProcessRequest&,
+        InitOralProcessOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SoeClient::KeywordEvaluateOutcome SoeClient::KeywordEvaluate(const KeywordEvaluateRequest &request)
@@ -105,25 +112,32 @@ SoeClient::KeywordEvaluateOutcome SoeClient::KeywordEvaluate(const KeywordEvalua
 
 void SoeClient::KeywordEvaluateAsync(const KeywordEvaluateRequest& request, const KeywordEvaluateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->KeywordEvaluate(request), context);
-    };
+    using Req = const KeywordEvaluateRequest&;
+    using Resp = KeywordEvaluateResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "KeywordEvaluate", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SoeClient::KeywordEvaluateOutcomeCallable SoeClient::KeywordEvaluateCallable(const KeywordEvaluateRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<KeywordEvaluateOutcome()>>(
-        [this, request]()
-        {
-            return this->KeywordEvaluate(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<KeywordEvaluateOutcome>>();
+    KeywordEvaluateAsync(
+    request,
+    [prom](
+        const SoeClient*,
+        const KeywordEvaluateRequest&,
+        KeywordEvaluateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SoeClient::TransmitOralProcessOutcome SoeClient::TransmitOralProcess(const TransmitOralProcessRequest &request)
@@ -148,25 +162,32 @@ SoeClient::TransmitOralProcessOutcome SoeClient::TransmitOralProcess(const Trans
 
 void SoeClient::TransmitOralProcessAsync(const TransmitOralProcessRequest& request, const TransmitOralProcessAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->TransmitOralProcess(request), context);
-    };
+    using Req = const TransmitOralProcessRequest&;
+    using Resp = TransmitOralProcessResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "TransmitOralProcess", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SoeClient::TransmitOralProcessOutcomeCallable SoeClient::TransmitOralProcessCallable(const TransmitOralProcessRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<TransmitOralProcessOutcome()>>(
-        [this, request]()
-        {
-            return this->TransmitOralProcess(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<TransmitOralProcessOutcome>>();
+    TransmitOralProcessAsync(
+    request,
+    [prom](
+        const SoeClient*,
+        const TransmitOralProcessRequest&,
+        TransmitOralProcessOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SoeClient::TransmitOralProcessWithInitOutcome SoeClient::TransmitOralProcessWithInit(const TransmitOralProcessWithInitRequest &request)
@@ -191,24 +212,31 @@ SoeClient::TransmitOralProcessWithInitOutcome SoeClient::TransmitOralProcessWith
 
 void SoeClient::TransmitOralProcessWithInitAsync(const TransmitOralProcessWithInitRequest& request, const TransmitOralProcessWithInitAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->TransmitOralProcessWithInit(request), context);
-    };
+    using Req = const TransmitOralProcessWithInitRequest&;
+    using Resp = TransmitOralProcessWithInitResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "TransmitOralProcessWithInit", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SoeClient::TransmitOralProcessWithInitOutcomeCallable SoeClient::TransmitOralProcessWithInitCallable(const TransmitOralProcessWithInitRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<TransmitOralProcessWithInitOutcome()>>(
-        [this, request]()
-        {
-            return this->TransmitOralProcessWithInit(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<TransmitOralProcessWithInitOutcome>>();
+    TransmitOralProcessWithInitAsync(
+    request,
+    [prom](
+        const SoeClient*,
+        const TransmitOralProcessWithInitRequest&,
+        TransmitOralProcessWithInitOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 

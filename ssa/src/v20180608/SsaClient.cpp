@@ -62,25 +62,32 @@ SsaClient::DescribeAlarmStatOutcome SsaClient::DescribeAlarmStat(const DescribeA
 
 void SsaClient::DescribeAlarmStatAsync(const DescribeAlarmStatRequest& request, const DescribeAlarmStatAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAlarmStat(request), context);
-    };
+    using Req = const DescribeAlarmStatRequest&;
+    using Resp = DescribeAlarmStatResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAlarmStat", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SsaClient::DescribeAlarmStatOutcomeCallable SsaClient::DescribeAlarmStatCallable(const DescribeAlarmStatRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAlarmStatOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAlarmStat(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAlarmStatOutcome>>();
+    DescribeAlarmStatAsync(
+    request,
+    [prom](
+        const SsaClient*,
+        const DescribeAlarmStatRequest&,
+        DescribeAlarmStatOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SsaClient::DescribeAssetDetailOutcome SsaClient::DescribeAssetDetail(const DescribeAssetDetailRequest &request)
@@ -105,25 +112,32 @@ SsaClient::DescribeAssetDetailOutcome SsaClient::DescribeAssetDetail(const Descr
 
 void SsaClient::DescribeAssetDetailAsync(const DescribeAssetDetailRequest& request, const DescribeAssetDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAssetDetail(request), context);
-    };
+    using Req = const DescribeAssetDetailRequest&;
+    using Resp = DescribeAssetDetailResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAssetDetail", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SsaClient::DescribeAssetDetailOutcomeCallable SsaClient::DescribeAssetDetailCallable(const DescribeAssetDetailRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAssetDetailOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAssetDetail(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAssetDetailOutcome>>();
+    DescribeAssetDetailAsync(
+    request,
+    [prom](
+        const SsaClient*,
+        const DescribeAssetDetailRequest&,
+        DescribeAssetDetailOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SsaClient::DescribeAssetDetailListOutcome SsaClient::DescribeAssetDetailList(const DescribeAssetDetailListRequest &request)
@@ -148,25 +162,32 @@ SsaClient::DescribeAssetDetailListOutcome SsaClient::DescribeAssetDetailList(con
 
 void SsaClient::DescribeAssetDetailListAsync(const DescribeAssetDetailListRequest& request, const DescribeAssetDetailListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAssetDetailList(request), context);
-    };
+    using Req = const DescribeAssetDetailListRequest&;
+    using Resp = DescribeAssetDetailListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAssetDetailList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SsaClient::DescribeAssetDetailListOutcomeCallable SsaClient::DescribeAssetDetailListCallable(const DescribeAssetDetailListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAssetDetailListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAssetDetailList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAssetDetailListOutcome>>();
+    DescribeAssetDetailListAsync(
+    request,
+    [prom](
+        const SsaClient*,
+        const DescribeAssetDetailListRequest&,
+        DescribeAssetDetailListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SsaClient::DescribeAssetListOutcome SsaClient::DescribeAssetList(const DescribeAssetListRequest &request)
@@ -191,25 +212,32 @@ SsaClient::DescribeAssetListOutcome SsaClient::DescribeAssetList(const DescribeA
 
 void SsaClient::DescribeAssetListAsync(const DescribeAssetListRequest& request, const DescribeAssetListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAssetList(request), context);
-    };
+    using Req = const DescribeAssetListRequest&;
+    using Resp = DescribeAssetListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAssetList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SsaClient::DescribeAssetListOutcomeCallable SsaClient::DescribeAssetListCallable(const DescribeAssetListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAssetListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAssetList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAssetListOutcome>>();
+    DescribeAssetListAsync(
+    request,
+    [prom](
+        const SsaClient*,
+        const DescribeAssetListRequest&,
+        DescribeAssetListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SsaClient::DescribeCheckConfigAssetListOutcome SsaClient::DescribeCheckConfigAssetList(const DescribeCheckConfigAssetListRequest &request)
@@ -234,25 +262,32 @@ SsaClient::DescribeCheckConfigAssetListOutcome SsaClient::DescribeCheckConfigAss
 
 void SsaClient::DescribeCheckConfigAssetListAsync(const DescribeCheckConfigAssetListRequest& request, const DescribeCheckConfigAssetListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeCheckConfigAssetList(request), context);
-    };
+    using Req = const DescribeCheckConfigAssetListRequest&;
+    using Resp = DescribeCheckConfigAssetListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeCheckConfigAssetList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SsaClient::DescribeCheckConfigAssetListOutcomeCallable SsaClient::DescribeCheckConfigAssetListCallable(const DescribeCheckConfigAssetListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeCheckConfigAssetListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeCheckConfigAssetList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeCheckConfigAssetListOutcome>>();
+    DescribeCheckConfigAssetListAsync(
+    request,
+    [prom](
+        const SsaClient*,
+        const DescribeCheckConfigAssetListRequest&,
+        DescribeCheckConfigAssetListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SsaClient::DescribeCheckConfigDetailOutcome SsaClient::DescribeCheckConfigDetail(const DescribeCheckConfigDetailRequest &request)
@@ -277,25 +312,32 @@ SsaClient::DescribeCheckConfigDetailOutcome SsaClient::DescribeCheckConfigDetail
 
 void SsaClient::DescribeCheckConfigDetailAsync(const DescribeCheckConfigDetailRequest& request, const DescribeCheckConfigDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeCheckConfigDetail(request), context);
-    };
+    using Req = const DescribeCheckConfigDetailRequest&;
+    using Resp = DescribeCheckConfigDetailResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeCheckConfigDetail", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SsaClient::DescribeCheckConfigDetailOutcomeCallable SsaClient::DescribeCheckConfigDetailCallable(const DescribeCheckConfigDetailRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeCheckConfigDetailOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeCheckConfigDetail(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeCheckConfigDetailOutcome>>();
+    DescribeCheckConfigDetailAsync(
+    request,
+    [prom](
+        const SsaClient*,
+        const DescribeCheckConfigDetailRequest&,
+        DescribeCheckConfigDetailOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SsaClient::DescribeComplianceAssetListOutcome SsaClient::DescribeComplianceAssetList(const DescribeComplianceAssetListRequest &request)
@@ -320,25 +362,32 @@ SsaClient::DescribeComplianceAssetListOutcome SsaClient::DescribeComplianceAsset
 
 void SsaClient::DescribeComplianceAssetListAsync(const DescribeComplianceAssetListRequest& request, const DescribeComplianceAssetListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeComplianceAssetList(request), context);
-    };
+    using Req = const DescribeComplianceAssetListRequest&;
+    using Resp = DescribeComplianceAssetListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeComplianceAssetList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SsaClient::DescribeComplianceAssetListOutcomeCallable SsaClient::DescribeComplianceAssetListCallable(const DescribeComplianceAssetListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeComplianceAssetListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeComplianceAssetList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeComplianceAssetListOutcome>>();
+    DescribeComplianceAssetListAsync(
+    request,
+    [prom](
+        const SsaClient*,
+        const DescribeComplianceAssetListRequest&,
+        DescribeComplianceAssetListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SsaClient::DescribeComplianceDetailOutcome SsaClient::DescribeComplianceDetail(const DescribeComplianceDetailRequest &request)
@@ -363,25 +412,32 @@ SsaClient::DescribeComplianceDetailOutcome SsaClient::DescribeComplianceDetail(c
 
 void SsaClient::DescribeComplianceDetailAsync(const DescribeComplianceDetailRequest& request, const DescribeComplianceDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeComplianceDetail(request), context);
-    };
+    using Req = const DescribeComplianceDetailRequest&;
+    using Resp = DescribeComplianceDetailResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeComplianceDetail", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SsaClient::DescribeComplianceDetailOutcomeCallable SsaClient::DescribeComplianceDetailCallable(const DescribeComplianceDetailRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeComplianceDetailOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeComplianceDetail(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeComplianceDetailOutcome>>();
+    DescribeComplianceDetailAsync(
+    request,
+    [prom](
+        const SsaClient*,
+        const DescribeComplianceDetailRequest&,
+        DescribeComplianceDetailOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SsaClient::DescribeComplianceListOutcome SsaClient::DescribeComplianceList(const DescribeComplianceListRequest &request)
@@ -406,25 +462,32 @@ SsaClient::DescribeComplianceListOutcome SsaClient::DescribeComplianceList(const
 
 void SsaClient::DescribeComplianceListAsync(const DescribeComplianceListRequest& request, const DescribeComplianceListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeComplianceList(request), context);
-    };
+    using Req = const DescribeComplianceListRequest&;
+    using Resp = DescribeComplianceListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeComplianceList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SsaClient::DescribeComplianceListOutcomeCallable SsaClient::DescribeComplianceListCallable(const DescribeComplianceListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeComplianceListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeComplianceList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeComplianceListOutcome>>();
+    DescribeComplianceListAsync(
+    request,
+    [prom](
+        const SsaClient*,
+        const DescribeComplianceListRequest&,
+        DescribeComplianceListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SsaClient::DescribeConfigListOutcome SsaClient::DescribeConfigList(const DescribeConfigListRequest &request)
@@ -449,25 +512,32 @@ SsaClient::DescribeConfigListOutcome SsaClient::DescribeConfigList(const Describ
 
 void SsaClient::DescribeConfigListAsync(const DescribeConfigListRequest& request, const DescribeConfigListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeConfigList(request), context);
-    };
+    using Req = const DescribeConfigListRequest&;
+    using Resp = DescribeConfigListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeConfigList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SsaClient::DescribeConfigListOutcomeCallable SsaClient::DescribeConfigListCallable(const DescribeConfigListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeConfigListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeConfigList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeConfigListOutcome>>();
+    DescribeConfigListAsync(
+    request,
+    [prom](
+        const SsaClient*,
+        const DescribeConfigListRequest&,
+        DescribeConfigListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SsaClient::DescribeDomainListOutcome SsaClient::DescribeDomainList(const DescribeDomainListRequest &request)
@@ -492,25 +562,32 @@ SsaClient::DescribeDomainListOutcome SsaClient::DescribeDomainList(const Describ
 
 void SsaClient::DescribeDomainListAsync(const DescribeDomainListRequest& request, const DescribeDomainListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDomainList(request), context);
-    };
+    using Req = const DescribeDomainListRequest&;
+    using Resp = DescribeDomainListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeDomainList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SsaClient::DescribeDomainListOutcomeCallable SsaClient::DescribeDomainListCallable(const DescribeDomainListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeDomainListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDomainList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeDomainListOutcome>>();
+    DescribeDomainListAsync(
+    request,
+    [prom](
+        const SsaClient*,
+        const DescribeDomainListRequest&,
+        DescribeDomainListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SsaClient::DescribeEventDetailOutcome SsaClient::DescribeEventDetail(const DescribeEventDetailRequest &request)
@@ -535,25 +612,32 @@ SsaClient::DescribeEventDetailOutcome SsaClient::DescribeEventDetail(const Descr
 
 void SsaClient::DescribeEventDetailAsync(const DescribeEventDetailRequest& request, const DescribeEventDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeEventDetail(request), context);
-    };
+    using Req = const DescribeEventDetailRequest&;
+    using Resp = DescribeEventDetailResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeEventDetail", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SsaClient::DescribeEventDetailOutcomeCallable SsaClient::DescribeEventDetailCallable(const DescribeEventDetailRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeEventDetailOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeEventDetail(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeEventDetailOutcome>>();
+    DescribeEventDetailAsync(
+    request,
+    [prom](
+        const SsaClient*,
+        const DescribeEventDetailRequest&,
+        DescribeEventDetailOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SsaClient::DescribeLeakDetectionListOutcome SsaClient::DescribeLeakDetectionList(const DescribeLeakDetectionListRequest &request)
@@ -578,25 +662,32 @@ SsaClient::DescribeLeakDetectionListOutcome SsaClient::DescribeLeakDetectionList
 
 void SsaClient::DescribeLeakDetectionListAsync(const DescribeLeakDetectionListRequest& request, const DescribeLeakDetectionListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeLeakDetectionList(request), context);
-    };
+    using Req = const DescribeLeakDetectionListRequest&;
+    using Resp = DescribeLeakDetectionListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeLeakDetectionList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SsaClient::DescribeLeakDetectionListOutcomeCallable SsaClient::DescribeLeakDetectionListCallable(const DescribeLeakDetectionListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeLeakDetectionListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeLeakDetectionList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeLeakDetectionListOutcome>>();
+    DescribeLeakDetectionListAsync(
+    request,
+    [prom](
+        const SsaClient*,
+        const DescribeLeakDetectionListRequest&,
+        DescribeLeakDetectionListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SsaClient::DescribeMappingResultsOutcome SsaClient::DescribeMappingResults(const DescribeMappingResultsRequest &request)
@@ -621,25 +712,32 @@ SsaClient::DescribeMappingResultsOutcome SsaClient::DescribeMappingResults(const
 
 void SsaClient::DescribeMappingResultsAsync(const DescribeMappingResultsRequest& request, const DescribeMappingResultsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeMappingResults(request), context);
-    };
+    using Req = const DescribeMappingResultsRequest&;
+    using Resp = DescribeMappingResultsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeMappingResults", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SsaClient::DescribeMappingResultsOutcomeCallable SsaClient::DescribeMappingResultsCallable(const DescribeMappingResultsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeMappingResultsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeMappingResults(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeMappingResultsOutcome>>();
+    DescribeMappingResultsAsync(
+    request,
+    [prom](
+        const SsaClient*,
+        const DescribeMappingResultsRequest&,
+        DescribeMappingResultsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SsaClient::DescribeSocAlertDetailsOutcome SsaClient::DescribeSocAlertDetails(const DescribeSocAlertDetailsRequest &request)
@@ -664,25 +762,32 @@ SsaClient::DescribeSocAlertDetailsOutcome SsaClient::DescribeSocAlertDetails(con
 
 void SsaClient::DescribeSocAlertDetailsAsync(const DescribeSocAlertDetailsRequest& request, const DescribeSocAlertDetailsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeSocAlertDetails(request), context);
-    };
+    using Req = const DescribeSocAlertDetailsRequest&;
+    using Resp = DescribeSocAlertDetailsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeSocAlertDetails", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SsaClient::DescribeSocAlertDetailsOutcomeCallable SsaClient::DescribeSocAlertDetailsCallable(const DescribeSocAlertDetailsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeSocAlertDetailsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeSocAlertDetails(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeSocAlertDetailsOutcome>>();
+    DescribeSocAlertDetailsAsync(
+    request,
+    [prom](
+        const SsaClient*,
+        const DescribeSocAlertDetailsRequest&,
+        DescribeSocAlertDetailsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SsaClient::DescribeSocAlertListOutcome SsaClient::DescribeSocAlertList(const DescribeSocAlertListRequest &request)
@@ -707,25 +812,32 @@ SsaClient::DescribeSocAlertListOutcome SsaClient::DescribeSocAlertList(const Des
 
 void SsaClient::DescribeSocAlertListAsync(const DescribeSocAlertListRequest& request, const DescribeSocAlertListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeSocAlertList(request), context);
-    };
+    using Req = const DescribeSocAlertListRequest&;
+    using Resp = DescribeSocAlertListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeSocAlertList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SsaClient::DescribeSocAlertListOutcomeCallable SsaClient::DescribeSocAlertListCallable(const DescribeSocAlertListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeSocAlertListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeSocAlertList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeSocAlertListOutcome>>();
+    DescribeSocAlertListAsync(
+    request,
+    [prom](
+        const SsaClient*,
+        const DescribeSocAlertListRequest&,
+        DescribeSocAlertListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SsaClient::DescribeSocCheckItemListOutcome SsaClient::DescribeSocCheckItemList(const DescribeSocCheckItemListRequest &request)
@@ -750,25 +862,32 @@ SsaClient::DescribeSocCheckItemListOutcome SsaClient::DescribeSocCheckItemList(c
 
 void SsaClient::DescribeSocCheckItemListAsync(const DescribeSocCheckItemListRequest& request, const DescribeSocCheckItemListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeSocCheckItemList(request), context);
-    };
+    using Req = const DescribeSocCheckItemListRequest&;
+    using Resp = DescribeSocCheckItemListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeSocCheckItemList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SsaClient::DescribeSocCheckItemListOutcomeCallable SsaClient::DescribeSocCheckItemListCallable(const DescribeSocCheckItemListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeSocCheckItemListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeSocCheckItemList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeSocCheckItemListOutcome>>();
+    DescribeSocCheckItemListAsync(
+    request,
+    [prom](
+        const SsaClient*,
+        const DescribeSocCheckItemListRequest&,
+        DescribeSocCheckItemListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SsaClient::DescribeSocCheckResultListOutcome SsaClient::DescribeSocCheckResultList(const DescribeSocCheckResultListRequest &request)
@@ -793,25 +912,32 @@ SsaClient::DescribeSocCheckResultListOutcome SsaClient::DescribeSocCheckResultLi
 
 void SsaClient::DescribeSocCheckResultListAsync(const DescribeSocCheckResultListRequest& request, const DescribeSocCheckResultListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeSocCheckResultList(request), context);
-    };
+    using Req = const DescribeSocCheckResultListRequest&;
+    using Resp = DescribeSocCheckResultListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeSocCheckResultList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SsaClient::DescribeSocCheckResultListOutcomeCallable SsaClient::DescribeSocCheckResultListCallable(const DescribeSocCheckResultListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeSocCheckResultListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeSocCheckResultList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeSocCheckResultListOutcome>>();
+    DescribeSocCheckResultListAsync(
+    request,
+    [prom](
+        const SsaClient*,
+        const DescribeSocCheckResultListRequest&,
+        DescribeSocCheckResultListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SsaClient::DescribeSocCspmComplianceOutcome SsaClient::DescribeSocCspmCompliance(const DescribeSocCspmComplianceRequest &request)
@@ -836,25 +962,32 @@ SsaClient::DescribeSocCspmComplianceOutcome SsaClient::DescribeSocCspmCompliance
 
 void SsaClient::DescribeSocCspmComplianceAsync(const DescribeSocCspmComplianceRequest& request, const DescribeSocCspmComplianceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeSocCspmCompliance(request), context);
-    };
+    using Req = const DescribeSocCspmComplianceRequest&;
+    using Resp = DescribeSocCspmComplianceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeSocCspmCompliance", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SsaClient::DescribeSocCspmComplianceOutcomeCallable SsaClient::DescribeSocCspmComplianceCallable(const DescribeSocCspmComplianceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeSocCspmComplianceOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeSocCspmCompliance(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeSocCspmComplianceOutcome>>();
+    DescribeSocCspmComplianceAsync(
+    request,
+    [prom](
+        const SsaClient*,
+        const DescribeSocCspmComplianceRequest&,
+        DescribeSocCspmComplianceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SsaClient::DescribeVulDetailOutcome SsaClient::DescribeVulDetail(const DescribeVulDetailRequest &request)
@@ -879,25 +1012,32 @@ SsaClient::DescribeVulDetailOutcome SsaClient::DescribeVulDetail(const DescribeV
 
 void SsaClient::DescribeVulDetailAsync(const DescribeVulDetailRequest& request, const DescribeVulDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeVulDetail(request), context);
-    };
+    using Req = const DescribeVulDetailRequest&;
+    using Resp = DescribeVulDetailResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeVulDetail", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SsaClient::DescribeVulDetailOutcomeCallable SsaClient::DescribeVulDetailCallable(const DescribeVulDetailRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeVulDetailOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeVulDetail(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeVulDetailOutcome>>();
+    DescribeVulDetailAsync(
+    request,
+    [prom](
+        const SsaClient*,
+        const DescribeVulDetailRequest&,
+        DescribeVulDetailOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SsaClient::DescribeVulListOutcome SsaClient::DescribeVulList(const DescribeVulListRequest &request)
@@ -922,25 +1062,32 @@ SsaClient::DescribeVulListOutcome SsaClient::DescribeVulList(const DescribeVulLi
 
 void SsaClient::DescribeVulListAsync(const DescribeVulListRequest& request, const DescribeVulListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeVulList(request), context);
-    };
+    using Req = const DescribeVulListRequest&;
+    using Resp = DescribeVulListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeVulList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SsaClient::DescribeVulListOutcomeCallable SsaClient::DescribeVulListCallable(const DescribeVulListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeVulListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeVulList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeVulListOutcome>>();
+    DescribeVulListAsync(
+    request,
+    [prom](
+        const SsaClient*,
+        const DescribeVulListRequest&,
+        DescribeVulListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SsaClient::SaDivulgeScanRuleMutateOutcome SsaClient::SaDivulgeScanRuleMutate(const SaDivulgeScanRuleMutateRequest &request)
@@ -965,25 +1112,32 @@ SsaClient::SaDivulgeScanRuleMutateOutcome SsaClient::SaDivulgeScanRuleMutate(con
 
 void SsaClient::SaDivulgeScanRuleMutateAsync(const SaDivulgeScanRuleMutateRequest& request, const SaDivulgeScanRuleMutateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->SaDivulgeScanRuleMutate(request), context);
-    };
+    using Req = const SaDivulgeScanRuleMutateRequest&;
+    using Resp = SaDivulgeScanRuleMutateResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "SaDivulgeScanRuleMutate", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SsaClient::SaDivulgeScanRuleMutateOutcomeCallable SsaClient::SaDivulgeScanRuleMutateCallable(const SaDivulgeScanRuleMutateRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<SaDivulgeScanRuleMutateOutcome()>>(
-        [this, request]()
-        {
-            return this->SaDivulgeScanRuleMutate(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<SaDivulgeScanRuleMutateOutcome>>();
+    SaDivulgeScanRuleMutateAsync(
+    request,
+    [prom](
+        const SsaClient*,
+        const SaDivulgeScanRuleMutateRequest&,
+        SaDivulgeScanRuleMutateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SsaClient::SaEventPubOutcome SsaClient::SaEventPub(const SaEventPubRequest &request)
@@ -1008,24 +1162,31 @@ SsaClient::SaEventPubOutcome SsaClient::SaEventPub(const SaEventPubRequest &requ
 
 void SsaClient::SaEventPubAsync(const SaEventPubRequest& request, const SaEventPubAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->SaEventPub(request), context);
-    };
+    using Req = const SaEventPubRequest&;
+    using Resp = SaEventPubResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "SaEventPub", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SsaClient::SaEventPubOutcomeCallable SsaClient::SaEventPubCallable(const SaEventPubRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<SaEventPubOutcome()>>(
-        [this, request]()
-        {
-            return this->SaEventPub(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<SaEventPubOutcome>>();
+    SaEventPubAsync(
+    request,
+    [prom](
+        const SsaClient*,
+        const SaEventPubRequest&,
+        SaEventPubOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 

@@ -62,25 +62,32 @@ WedataClient::AddCalcEnginesToProjectOutcome WedataClient::AddCalcEnginesToProje
 
 void WedataClient::AddCalcEnginesToProjectAsync(const AddCalcEnginesToProjectRequest& request, const AddCalcEnginesToProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->AddCalcEnginesToProject(request), context);
-    };
+    using Req = const AddCalcEnginesToProjectRequest&;
+    using Resp = AddCalcEnginesToProjectResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "AddCalcEnginesToProject", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WedataClient::AddCalcEnginesToProjectOutcomeCallable WedataClient::AddCalcEnginesToProjectCallable(const AddCalcEnginesToProjectRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<AddCalcEnginesToProjectOutcome()>>(
-        [this, request]()
-        {
-            return this->AddCalcEnginesToProject(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<AddCalcEnginesToProjectOutcome>>();
+    AddCalcEnginesToProjectAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const AddCalcEnginesToProjectRequest&,
+        AddCalcEnginesToProjectOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WedataClient::AssociateResourceGroupToProjectOutcome WedataClient::AssociateResourceGroupToProject(const AssociateResourceGroupToProjectRequest &request)
@@ -105,25 +112,32 @@ WedataClient::AssociateResourceGroupToProjectOutcome WedataClient::AssociateReso
 
 void WedataClient::AssociateResourceGroupToProjectAsync(const AssociateResourceGroupToProjectRequest& request, const AssociateResourceGroupToProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->AssociateResourceGroupToProject(request), context);
-    };
+    using Req = const AssociateResourceGroupToProjectRequest&;
+    using Resp = AssociateResourceGroupToProjectResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "AssociateResourceGroupToProject", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WedataClient::AssociateResourceGroupToProjectOutcomeCallable WedataClient::AssociateResourceGroupToProjectCallable(const AssociateResourceGroupToProjectRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<AssociateResourceGroupToProjectOutcome()>>(
-        [this, request]()
-        {
-            return this->AssociateResourceGroupToProject(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<AssociateResourceGroupToProjectOutcome>>();
+    AssociateResourceGroupToProjectAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const AssociateResourceGroupToProjectRequest&,
+        AssociateResourceGroupToProjectOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WedataClient::CreateCodeFileOutcome WedataClient::CreateCodeFile(const CreateCodeFileRequest &request)
@@ -148,25 +162,32 @@ WedataClient::CreateCodeFileOutcome WedataClient::CreateCodeFile(const CreateCod
 
 void WedataClient::CreateCodeFileAsync(const CreateCodeFileRequest& request, const CreateCodeFileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateCodeFile(request), context);
-    };
+    using Req = const CreateCodeFileRequest&;
+    using Resp = CreateCodeFileResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateCodeFile", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WedataClient::CreateCodeFileOutcomeCallable WedataClient::CreateCodeFileCallable(const CreateCodeFileRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateCodeFileOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateCodeFile(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateCodeFileOutcome>>();
+    CreateCodeFileAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const CreateCodeFileRequest&,
+        CreateCodeFileOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WedataClient::CreateCodeFolderOutcome WedataClient::CreateCodeFolder(const CreateCodeFolderRequest &request)
@@ -191,25 +212,32 @@ WedataClient::CreateCodeFolderOutcome WedataClient::CreateCodeFolder(const Creat
 
 void WedataClient::CreateCodeFolderAsync(const CreateCodeFolderRequest& request, const CreateCodeFolderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateCodeFolder(request), context);
-    };
+    using Req = const CreateCodeFolderRequest&;
+    using Resp = CreateCodeFolderResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateCodeFolder", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WedataClient::CreateCodeFolderOutcomeCallable WedataClient::CreateCodeFolderCallable(const CreateCodeFolderRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateCodeFolderOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateCodeFolder(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateCodeFolderOutcome>>();
+    CreateCodeFolderAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const CreateCodeFolderRequest&,
+        CreateCodeFolderOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WedataClient::CreateDataBackfillPlanOutcome WedataClient::CreateDataBackfillPlan(const CreateDataBackfillPlanRequest &request)
@@ -234,25 +262,32 @@ WedataClient::CreateDataBackfillPlanOutcome WedataClient::CreateDataBackfillPlan
 
 void WedataClient::CreateDataBackfillPlanAsync(const CreateDataBackfillPlanRequest& request, const CreateDataBackfillPlanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateDataBackfillPlan(request), context);
-    };
+    using Req = const CreateDataBackfillPlanRequest&;
+    using Resp = CreateDataBackfillPlanResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateDataBackfillPlan", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WedataClient::CreateDataBackfillPlanOutcomeCallable WedataClient::CreateDataBackfillPlanCallable(const CreateDataBackfillPlanRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateDataBackfillPlanOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateDataBackfillPlan(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateDataBackfillPlanOutcome>>();
+    CreateDataBackfillPlanAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const CreateDataBackfillPlanRequest&,
+        CreateDataBackfillPlanOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WedataClient::CreateDataSourceOutcome WedataClient::CreateDataSource(const CreateDataSourceRequest &request)
@@ -277,25 +312,32 @@ WedataClient::CreateDataSourceOutcome WedataClient::CreateDataSource(const Creat
 
 void WedataClient::CreateDataSourceAsync(const CreateDataSourceRequest& request, const CreateDataSourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateDataSource(request), context);
-    };
+    using Req = const CreateDataSourceRequest&;
+    using Resp = CreateDataSourceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateDataSource", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WedataClient::CreateDataSourceOutcomeCallable WedataClient::CreateDataSourceCallable(const CreateDataSourceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateDataSourceOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateDataSource(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateDataSourceOutcome>>();
+    CreateDataSourceAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const CreateDataSourceRequest&,
+        CreateDataSourceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WedataClient::CreateOpsAlarmRuleOutcome WedataClient::CreateOpsAlarmRule(const CreateOpsAlarmRuleRequest &request)
@@ -320,25 +362,32 @@ WedataClient::CreateOpsAlarmRuleOutcome WedataClient::CreateOpsAlarmRule(const C
 
 void WedataClient::CreateOpsAlarmRuleAsync(const CreateOpsAlarmRuleRequest& request, const CreateOpsAlarmRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateOpsAlarmRule(request), context);
-    };
+    using Req = const CreateOpsAlarmRuleRequest&;
+    using Resp = CreateOpsAlarmRuleResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateOpsAlarmRule", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WedataClient::CreateOpsAlarmRuleOutcomeCallable WedataClient::CreateOpsAlarmRuleCallable(const CreateOpsAlarmRuleRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateOpsAlarmRuleOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateOpsAlarmRule(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateOpsAlarmRuleOutcome>>();
+    CreateOpsAlarmRuleAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const CreateOpsAlarmRuleRequest&,
+        CreateOpsAlarmRuleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WedataClient::CreateProjectOutcome WedataClient::CreateProject(const CreateProjectRequest &request)
@@ -363,25 +412,32 @@ WedataClient::CreateProjectOutcome WedataClient::CreateProject(const CreateProje
 
 void WedataClient::CreateProjectAsync(const CreateProjectRequest& request, const CreateProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateProject(request), context);
-    };
+    using Req = const CreateProjectRequest&;
+    using Resp = CreateProjectResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateProject", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WedataClient::CreateProjectOutcomeCallable WedataClient::CreateProjectCallable(const CreateProjectRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateProjectOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateProject(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateProjectOutcome>>();
+    CreateProjectAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const CreateProjectRequest&,
+        CreateProjectOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WedataClient::CreateProjectMemberOutcome WedataClient::CreateProjectMember(const CreateProjectMemberRequest &request)
@@ -406,25 +462,32 @@ WedataClient::CreateProjectMemberOutcome WedataClient::CreateProjectMember(const
 
 void WedataClient::CreateProjectMemberAsync(const CreateProjectMemberRequest& request, const CreateProjectMemberAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateProjectMember(request), context);
-    };
+    using Req = const CreateProjectMemberRequest&;
+    using Resp = CreateProjectMemberResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateProjectMember", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WedataClient::CreateProjectMemberOutcomeCallable WedataClient::CreateProjectMemberCallable(const CreateProjectMemberRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateProjectMemberOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateProjectMember(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateProjectMemberOutcome>>();
+    CreateProjectMemberAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const CreateProjectMemberRequest&,
+        CreateProjectMemberOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WedataClient::CreateResourceFileOutcome WedataClient::CreateResourceFile(const CreateResourceFileRequest &request)
@@ -449,25 +512,32 @@ WedataClient::CreateResourceFileOutcome WedataClient::CreateResourceFile(const C
 
 void WedataClient::CreateResourceFileAsync(const CreateResourceFileRequest& request, const CreateResourceFileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateResourceFile(request), context);
-    };
+    using Req = const CreateResourceFileRequest&;
+    using Resp = CreateResourceFileResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateResourceFile", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WedataClient::CreateResourceFileOutcomeCallable WedataClient::CreateResourceFileCallable(const CreateResourceFileRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateResourceFileOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateResourceFile(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateResourceFileOutcome>>();
+    CreateResourceFileAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const CreateResourceFileRequest&,
+        CreateResourceFileOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WedataClient::CreateResourceFolderOutcome WedataClient::CreateResourceFolder(const CreateResourceFolderRequest &request)
@@ -492,25 +562,32 @@ WedataClient::CreateResourceFolderOutcome WedataClient::CreateResourceFolder(con
 
 void WedataClient::CreateResourceFolderAsync(const CreateResourceFolderRequest& request, const CreateResourceFolderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateResourceFolder(request), context);
-    };
+    using Req = const CreateResourceFolderRequest&;
+    using Resp = CreateResourceFolderResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateResourceFolder", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WedataClient::CreateResourceFolderOutcomeCallable WedataClient::CreateResourceFolderCallable(const CreateResourceFolderRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateResourceFolderOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateResourceFolder(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateResourceFolderOutcome>>();
+    CreateResourceFolderAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const CreateResourceFolderRequest&,
+        CreateResourceFolderOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WedataClient::CreateResourceGroupOutcome WedataClient::CreateResourceGroup(const CreateResourceGroupRequest &request)
@@ -535,25 +612,32 @@ WedataClient::CreateResourceGroupOutcome WedataClient::CreateResourceGroup(const
 
 void WedataClient::CreateResourceGroupAsync(const CreateResourceGroupRequest& request, const CreateResourceGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateResourceGroup(request), context);
-    };
+    using Req = const CreateResourceGroupRequest&;
+    using Resp = CreateResourceGroupResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateResourceGroup", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WedataClient::CreateResourceGroupOutcomeCallable WedataClient::CreateResourceGroupCallable(const CreateResourceGroupRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateResourceGroupOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateResourceGroup(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateResourceGroupOutcome>>();
+    CreateResourceGroupAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const CreateResourceGroupRequest&,
+        CreateResourceGroupOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WedataClient::CreateSQLFolderOutcome WedataClient::CreateSQLFolder(const CreateSQLFolderRequest &request)
@@ -578,25 +662,32 @@ WedataClient::CreateSQLFolderOutcome WedataClient::CreateSQLFolder(const CreateS
 
 void WedataClient::CreateSQLFolderAsync(const CreateSQLFolderRequest& request, const CreateSQLFolderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateSQLFolder(request), context);
-    };
+    using Req = const CreateSQLFolderRequest&;
+    using Resp = CreateSQLFolderResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateSQLFolder", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WedataClient::CreateSQLFolderOutcomeCallable WedataClient::CreateSQLFolderCallable(const CreateSQLFolderRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateSQLFolderOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateSQLFolder(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateSQLFolderOutcome>>();
+    CreateSQLFolderAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const CreateSQLFolderRequest&,
+        CreateSQLFolderOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WedataClient::CreateSQLScriptOutcome WedataClient::CreateSQLScript(const CreateSQLScriptRequest &request)
@@ -621,25 +712,32 @@ WedataClient::CreateSQLScriptOutcome WedataClient::CreateSQLScript(const CreateS
 
 void WedataClient::CreateSQLScriptAsync(const CreateSQLScriptRequest& request, const CreateSQLScriptAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateSQLScript(request), context);
-    };
+    using Req = const CreateSQLScriptRequest&;
+    using Resp = CreateSQLScriptResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateSQLScript", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WedataClient::CreateSQLScriptOutcomeCallable WedataClient::CreateSQLScriptCallable(const CreateSQLScriptRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateSQLScriptOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateSQLScript(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateSQLScriptOutcome>>();
+    CreateSQLScriptAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const CreateSQLScriptRequest&,
+        CreateSQLScriptOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WedataClient::CreateTaskOutcome WedataClient::CreateTask(const CreateTaskRequest &request)
@@ -664,25 +762,32 @@ WedataClient::CreateTaskOutcome WedataClient::CreateTask(const CreateTaskRequest
 
 void WedataClient::CreateTaskAsync(const CreateTaskRequest& request, const CreateTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateTask(request), context);
-    };
+    using Req = const CreateTaskRequest&;
+    using Resp = CreateTaskResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WedataClient::CreateTaskOutcomeCallable WedataClient::CreateTaskCallable(const CreateTaskRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateTaskOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateTask(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateTaskOutcome>>();
+    CreateTaskAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const CreateTaskRequest&,
+        CreateTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WedataClient::CreateWorkflowOutcome WedataClient::CreateWorkflow(const CreateWorkflowRequest &request)
@@ -707,25 +812,32 @@ WedataClient::CreateWorkflowOutcome WedataClient::CreateWorkflow(const CreateWor
 
 void WedataClient::CreateWorkflowAsync(const CreateWorkflowRequest& request, const CreateWorkflowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateWorkflow(request), context);
-    };
+    using Req = const CreateWorkflowRequest&;
+    using Resp = CreateWorkflowResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateWorkflow", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WedataClient::CreateWorkflowOutcomeCallable WedataClient::CreateWorkflowCallable(const CreateWorkflowRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateWorkflowOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateWorkflow(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateWorkflowOutcome>>();
+    CreateWorkflowAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const CreateWorkflowRequest&,
+        CreateWorkflowOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WedataClient::CreateWorkflowFolderOutcome WedataClient::CreateWorkflowFolder(const CreateWorkflowFolderRequest &request)
@@ -750,25 +862,32 @@ WedataClient::CreateWorkflowFolderOutcome WedataClient::CreateWorkflowFolder(con
 
 void WedataClient::CreateWorkflowFolderAsync(const CreateWorkflowFolderRequest& request, const CreateWorkflowFolderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateWorkflowFolder(request), context);
-    };
+    using Req = const CreateWorkflowFolderRequest&;
+    using Resp = CreateWorkflowFolderResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateWorkflowFolder", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WedataClient::CreateWorkflowFolderOutcomeCallable WedataClient::CreateWorkflowFolderCallable(const CreateWorkflowFolderRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateWorkflowFolderOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateWorkflowFolder(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateWorkflowFolderOutcome>>();
+    CreateWorkflowFolderAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const CreateWorkflowFolderRequest&,
+        CreateWorkflowFolderOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WedataClient::DeleteCodeFileOutcome WedataClient::DeleteCodeFile(const DeleteCodeFileRequest &request)
@@ -793,25 +912,32 @@ WedataClient::DeleteCodeFileOutcome WedataClient::DeleteCodeFile(const DeleteCod
 
 void WedataClient::DeleteCodeFileAsync(const DeleteCodeFileRequest& request, const DeleteCodeFileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteCodeFile(request), context);
-    };
+    using Req = const DeleteCodeFileRequest&;
+    using Resp = DeleteCodeFileResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteCodeFile", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WedataClient::DeleteCodeFileOutcomeCallable WedataClient::DeleteCodeFileCallable(const DeleteCodeFileRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteCodeFileOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteCodeFile(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteCodeFileOutcome>>();
+    DeleteCodeFileAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const DeleteCodeFileRequest&,
+        DeleteCodeFileOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WedataClient::DeleteCodeFolderOutcome WedataClient::DeleteCodeFolder(const DeleteCodeFolderRequest &request)
@@ -836,25 +962,32 @@ WedataClient::DeleteCodeFolderOutcome WedataClient::DeleteCodeFolder(const Delet
 
 void WedataClient::DeleteCodeFolderAsync(const DeleteCodeFolderRequest& request, const DeleteCodeFolderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteCodeFolder(request), context);
-    };
+    using Req = const DeleteCodeFolderRequest&;
+    using Resp = DeleteCodeFolderResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteCodeFolder", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WedataClient::DeleteCodeFolderOutcomeCallable WedataClient::DeleteCodeFolderCallable(const DeleteCodeFolderRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteCodeFolderOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteCodeFolder(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteCodeFolderOutcome>>();
+    DeleteCodeFolderAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const DeleteCodeFolderRequest&,
+        DeleteCodeFolderOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WedataClient::DeleteDataSourceOutcome WedataClient::DeleteDataSource(const DeleteDataSourceRequest &request)
@@ -879,25 +1012,32 @@ WedataClient::DeleteDataSourceOutcome WedataClient::DeleteDataSource(const Delet
 
 void WedataClient::DeleteDataSourceAsync(const DeleteDataSourceRequest& request, const DeleteDataSourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteDataSource(request), context);
-    };
+    using Req = const DeleteDataSourceRequest&;
+    using Resp = DeleteDataSourceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteDataSource", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WedataClient::DeleteDataSourceOutcomeCallable WedataClient::DeleteDataSourceCallable(const DeleteDataSourceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteDataSourceOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteDataSource(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteDataSourceOutcome>>();
+    DeleteDataSourceAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const DeleteDataSourceRequest&,
+        DeleteDataSourceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WedataClient::DeleteLineageOutcome WedataClient::DeleteLineage(const DeleteLineageRequest &request)
@@ -922,25 +1062,32 @@ WedataClient::DeleteLineageOutcome WedataClient::DeleteLineage(const DeleteLinea
 
 void WedataClient::DeleteLineageAsync(const DeleteLineageRequest& request, const DeleteLineageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteLineage(request), context);
-    };
+    using Req = const DeleteLineageRequest&;
+    using Resp = DeleteLineageResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteLineage", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WedataClient::DeleteLineageOutcomeCallable WedataClient::DeleteLineageCallable(const DeleteLineageRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteLineageOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteLineage(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteLineageOutcome>>();
+    DeleteLineageAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const DeleteLineageRequest&,
+        DeleteLineageOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WedataClient::DeleteOpsAlarmRuleOutcome WedataClient::DeleteOpsAlarmRule(const DeleteOpsAlarmRuleRequest &request)
@@ -965,25 +1112,32 @@ WedataClient::DeleteOpsAlarmRuleOutcome WedataClient::DeleteOpsAlarmRule(const D
 
 void WedataClient::DeleteOpsAlarmRuleAsync(const DeleteOpsAlarmRuleRequest& request, const DeleteOpsAlarmRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteOpsAlarmRule(request), context);
-    };
+    using Req = const DeleteOpsAlarmRuleRequest&;
+    using Resp = DeleteOpsAlarmRuleResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteOpsAlarmRule", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WedataClient::DeleteOpsAlarmRuleOutcomeCallable WedataClient::DeleteOpsAlarmRuleCallable(const DeleteOpsAlarmRuleRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteOpsAlarmRuleOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteOpsAlarmRule(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteOpsAlarmRuleOutcome>>();
+    DeleteOpsAlarmRuleAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const DeleteOpsAlarmRuleRequest&,
+        DeleteOpsAlarmRuleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WedataClient::DeleteProjectMemberOutcome WedataClient::DeleteProjectMember(const DeleteProjectMemberRequest &request)
@@ -1008,25 +1162,32 @@ WedataClient::DeleteProjectMemberOutcome WedataClient::DeleteProjectMember(const
 
 void WedataClient::DeleteProjectMemberAsync(const DeleteProjectMemberRequest& request, const DeleteProjectMemberAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteProjectMember(request), context);
-    };
+    using Req = const DeleteProjectMemberRequest&;
+    using Resp = DeleteProjectMemberResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteProjectMember", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WedataClient::DeleteProjectMemberOutcomeCallable WedataClient::DeleteProjectMemberCallable(const DeleteProjectMemberRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteProjectMemberOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteProjectMember(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteProjectMemberOutcome>>();
+    DeleteProjectMemberAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const DeleteProjectMemberRequest&,
+        DeleteProjectMemberOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WedataClient::DeleteResourceFileOutcome WedataClient::DeleteResourceFile(const DeleteResourceFileRequest &request)
@@ -1051,25 +1212,32 @@ WedataClient::DeleteResourceFileOutcome WedataClient::DeleteResourceFile(const D
 
 void WedataClient::DeleteResourceFileAsync(const DeleteResourceFileRequest& request, const DeleteResourceFileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteResourceFile(request), context);
-    };
+    using Req = const DeleteResourceFileRequest&;
+    using Resp = DeleteResourceFileResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteResourceFile", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WedataClient::DeleteResourceFileOutcomeCallable WedataClient::DeleteResourceFileCallable(const DeleteResourceFileRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteResourceFileOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteResourceFile(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteResourceFileOutcome>>();
+    DeleteResourceFileAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const DeleteResourceFileRequest&,
+        DeleteResourceFileOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WedataClient::DeleteResourceFolderOutcome WedataClient::DeleteResourceFolder(const DeleteResourceFolderRequest &request)
@@ -1094,25 +1262,32 @@ WedataClient::DeleteResourceFolderOutcome WedataClient::DeleteResourceFolder(con
 
 void WedataClient::DeleteResourceFolderAsync(const DeleteResourceFolderRequest& request, const DeleteResourceFolderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteResourceFolder(request), context);
-    };
+    using Req = const DeleteResourceFolderRequest&;
+    using Resp = DeleteResourceFolderResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteResourceFolder", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WedataClient::DeleteResourceFolderOutcomeCallable WedataClient::DeleteResourceFolderCallable(const DeleteResourceFolderRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteResourceFolderOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteResourceFolder(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteResourceFolderOutcome>>();
+    DeleteResourceFolderAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const DeleteResourceFolderRequest&,
+        DeleteResourceFolderOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WedataClient::DeleteResourceGroupOutcome WedataClient::DeleteResourceGroup(const DeleteResourceGroupRequest &request)
@@ -1137,25 +1312,32 @@ WedataClient::DeleteResourceGroupOutcome WedataClient::DeleteResourceGroup(const
 
 void WedataClient::DeleteResourceGroupAsync(const DeleteResourceGroupRequest& request, const DeleteResourceGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteResourceGroup(request), context);
-    };
+    using Req = const DeleteResourceGroupRequest&;
+    using Resp = DeleteResourceGroupResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteResourceGroup", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WedataClient::DeleteResourceGroupOutcomeCallable WedataClient::DeleteResourceGroupCallable(const DeleteResourceGroupRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteResourceGroupOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteResourceGroup(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteResourceGroupOutcome>>();
+    DeleteResourceGroupAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const DeleteResourceGroupRequest&,
+        DeleteResourceGroupOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WedataClient::DeleteSQLFolderOutcome WedataClient::DeleteSQLFolder(const DeleteSQLFolderRequest &request)
@@ -1180,25 +1362,32 @@ WedataClient::DeleteSQLFolderOutcome WedataClient::DeleteSQLFolder(const DeleteS
 
 void WedataClient::DeleteSQLFolderAsync(const DeleteSQLFolderRequest& request, const DeleteSQLFolderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteSQLFolder(request), context);
-    };
+    using Req = const DeleteSQLFolderRequest&;
+    using Resp = DeleteSQLFolderResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteSQLFolder", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WedataClient::DeleteSQLFolderOutcomeCallable WedataClient::DeleteSQLFolderCallable(const DeleteSQLFolderRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteSQLFolderOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteSQLFolder(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteSQLFolderOutcome>>();
+    DeleteSQLFolderAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const DeleteSQLFolderRequest&,
+        DeleteSQLFolderOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WedataClient::DeleteSQLScriptOutcome WedataClient::DeleteSQLScript(const DeleteSQLScriptRequest &request)
@@ -1223,25 +1412,32 @@ WedataClient::DeleteSQLScriptOutcome WedataClient::DeleteSQLScript(const DeleteS
 
 void WedataClient::DeleteSQLScriptAsync(const DeleteSQLScriptRequest& request, const DeleteSQLScriptAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteSQLScript(request), context);
-    };
+    using Req = const DeleteSQLScriptRequest&;
+    using Resp = DeleteSQLScriptResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteSQLScript", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WedataClient::DeleteSQLScriptOutcomeCallable WedataClient::DeleteSQLScriptCallable(const DeleteSQLScriptRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteSQLScriptOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteSQLScript(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteSQLScriptOutcome>>();
+    DeleteSQLScriptAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const DeleteSQLScriptRequest&,
+        DeleteSQLScriptOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WedataClient::DeleteTaskOutcome WedataClient::DeleteTask(const DeleteTaskRequest &request)
@@ -1266,25 +1462,32 @@ WedataClient::DeleteTaskOutcome WedataClient::DeleteTask(const DeleteTaskRequest
 
 void WedataClient::DeleteTaskAsync(const DeleteTaskRequest& request, const DeleteTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteTask(request), context);
-    };
+    using Req = const DeleteTaskRequest&;
+    using Resp = DeleteTaskResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WedataClient::DeleteTaskOutcomeCallable WedataClient::DeleteTaskCallable(const DeleteTaskRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteTaskOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteTask(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteTaskOutcome>>();
+    DeleteTaskAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const DeleteTaskRequest&,
+        DeleteTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WedataClient::DeleteWorkflowOutcome WedataClient::DeleteWorkflow(const DeleteWorkflowRequest &request)
@@ -1309,25 +1512,32 @@ WedataClient::DeleteWorkflowOutcome WedataClient::DeleteWorkflow(const DeleteWor
 
 void WedataClient::DeleteWorkflowAsync(const DeleteWorkflowRequest& request, const DeleteWorkflowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteWorkflow(request), context);
-    };
+    using Req = const DeleteWorkflowRequest&;
+    using Resp = DeleteWorkflowResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteWorkflow", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WedataClient::DeleteWorkflowOutcomeCallable WedataClient::DeleteWorkflowCallable(const DeleteWorkflowRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteWorkflowOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteWorkflow(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteWorkflowOutcome>>();
+    DeleteWorkflowAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const DeleteWorkflowRequest&,
+        DeleteWorkflowOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WedataClient::DeleteWorkflowFolderOutcome WedataClient::DeleteWorkflowFolder(const DeleteWorkflowFolderRequest &request)
@@ -1352,25 +1562,32 @@ WedataClient::DeleteWorkflowFolderOutcome WedataClient::DeleteWorkflowFolder(con
 
 void WedataClient::DeleteWorkflowFolderAsync(const DeleteWorkflowFolderRequest& request, const DeleteWorkflowFolderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteWorkflowFolder(request), context);
-    };
+    using Req = const DeleteWorkflowFolderRequest&;
+    using Resp = DeleteWorkflowFolderResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteWorkflowFolder", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WedataClient::DeleteWorkflowFolderOutcomeCallable WedataClient::DeleteWorkflowFolderCallable(const DeleteWorkflowFolderRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteWorkflowFolderOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteWorkflowFolder(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteWorkflowFolderOutcome>>();
+    DeleteWorkflowFolderAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const DeleteWorkflowFolderRequest&,
+        DeleteWorkflowFolderOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WedataClient::DisableProjectOutcome WedataClient::DisableProject(const DisableProjectRequest &request)
@@ -1395,25 +1612,32 @@ WedataClient::DisableProjectOutcome WedataClient::DisableProject(const DisablePr
 
 void WedataClient::DisableProjectAsync(const DisableProjectRequest& request, const DisableProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DisableProject(request), context);
-    };
+    using Req = const DisableProjectRequest&;
+    using Resp = DisableProjectResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DisableProject", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WedataClient::DisableProjectOutcomeCallable WedataClient::DisableProjectCallable(const DisableProjectRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DisableProjectOutcome()>>(
-        [this, request]()
-        {
-            return this->DisableProject(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DisableProjectOutcome>>();
+    DisableProjectAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const DisableProjectRequest&,
+        DisableProjectOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WedataClient::DissociateResourceGroupFromProjectOutcome WedataClient::DissociateResourceGroupFromProject(const DissociateResourceGroupFromProjectRequest &request)
@@ -1438,25 +1662,32 @@ WedataClient::DissociateResourceGroupFromProjectOutcome WedataClient::Dissociate
 
 void WedataClient::DissociateResourceGroupFromProjectAsync(const DissociateResourceGroupFromProjectRequest& request, const DissociateResourceGroupFromProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DissociateResourceGroupFromProject(request), context);
-    };
+    using Req = const DissociateResourceGroupFromProjectRequest&;
+    using Resp = DissociateResourceGroupFromProjectResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DissociateResourceGroupFromProject", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WedataClient::DissociateResourceGroupFromProjectOutcomeCallable WedataClient::DissociateResourceGroupFromProjectCallable(const DissociateResourceGroupFromProjectRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DissociateResourceGroupFromProjectOutcome()>>(
-        [this, request]()
-        {
-            return this->DissociateResourceGroupFromProject(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DissociateResourceGroupFromProjectOutcome>>();
+    DissociateResourceGroupFromProjectAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const DissociateResourceGroupFromProjectRequest&,
+        DissociateResourceGroupFromProjectOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WedataClient::EnableProjectOutcome WedataClient::EnableProject(const EnableProjectRequest &request)
@@ -1481,25 +1712,32 @@ WedataClient::EnableProjectOutcome WedataClient::EnableProject(const EnableProje
 
 void WedataClient::EnableProjectAsync(const EnableProjectRequest& request, const EnableProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->EnableProject(request), context);
-    };
+    using Req = const EnableProjectRequest&;
+    using Resp = EnableProjectResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "EnableProject", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WedataClient::EnableProjectOutcomeCallable WedataClient::EnableProjectCallable(const EnableProjectRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<EnableProjectOutcome()>>(
-        [this, request]()
-        {
-            return this->EnableProject(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<EnableProjectOutcome>>();
+    EnableProjectAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const EnableProjectRequest&,
+        EnableProjectOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WedataClient::GetAlarmMessageOutcome WedataClient::GetAlarmMessage(const GetAlarmMessageRequest &request)
@@ -1524,25 +1762,32 @@ WedataClient::GetAlarmMessageOutcome WedataClient::GetAlarmMessage(const GetAlar
 
 void WedataClient::GetAlarmMessageAsync(const GetAlarmMessageRequest& request, const GetAlarmMessageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->GetAlarmMessage(request), context);
-    };
+    using Req = const GetAlarmMessageRequest&;
+    using Resp = GetAlarmMessageResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "GetAlarmMessage", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WedataClient::GetAlarmMessageOutcomeCallable WedataClient::GetAlarmMessageCallable(const GetAlarmMessageRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<GetAlarmMessageOutcome()>>(
-        [this, request]()
-        {
-            return this->GetAlarmMessage(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<GetAlarmMessageOutcome>>();
+    GetAlarmMessageAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const GetAlarmMessageRequest&,
+        GetAlarmMessageOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WedataClient::GetCodeFileOutcome WedataClient::GetCodeFile(const GetCodeFileRequest &request)
@@ -1567,25 +1812,32 @@ WedataClient::GetCodeFileOutcome WedataClient::GetCodeFile(const GetCodeFileRequ
 
 void WedataClient::GetCodeFileAsync(const GetCodeFileRequest& request, const GetCodeFileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->GetCodeFile(request), context);
-    };
+    using Req = const GetCodeFileRequest&;
+    using Resp = GetCodeFileResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "GetCodeFile", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WedataClient::GetCodeFileOutcomeCallable WedataClient::GetCodeFileCallable(const GetCodeFileRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<GetCodeFileOutcome()>>(
-        [this, request]()
-        {
-            return this->GetCodeFile(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<GetCodeFileOutcome>>();
+    GetCodeFileAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const GetCodeFileRequest&,
+        GetCodeFileOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WedataClient::GetCodeFolderOutcome WedataClient::GetCodeFolder(const GetCodeFolderRequest &request)
@@ -1610,25 +1862,32 @@ WedataClient::GetCodeFolderOutcome WedataClient::GetCodeFolder(const GetCodeFold
 
 void WedataClient::GetCodeFolderAsync(const GetCodeFolderRequest& request, const GetCodeFolderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->GetCodeFolder(request), context);
-    };
+    using Req = const GetCodeFolderRequest&;
+    using Resp = GetCodeFolderResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "GetCodeFolder", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WedataClient::GetCodeFolderOutcomeCallable WedataClient::GetCodeFolderCallable(const GetCodeFolderRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<GetCodeFolderOutcome()>>(
-        [this, request]()
-        {
-            return this->GetCodeFolder(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<GetCodeFolderOutcome>>();
+    GetCodeFolderAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const GetCodeFolderRequest&,
+        GetCodeFolderOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WedataClient::GetDataBackfillPlanOutcome WedataClient::GetDataBackfillPlan(const GetDataBackfillPlanRequest &request)
@@ -1653,25 +1912,32 @@ WedataClient::GetDataBackfillPlanOutcome WedataClient::GetDataBackfillPlan(const
 
 void WedataClient::GetDataBackfillPlanAsync(const GetDataBackfillPlanRequest& request, const GetDataBackfillPlanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->GetDataBackfillPlan(request), context);
-    };
+    using Req = const GetDataBackfillPlanRequest&;
+    using Resp = GetDataBackfillPlanResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "GetDataBackfillPlan", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WedataClient::GetDataBackfillPlanOutcomeCallable WedataClient::GetDataBackfillPlanCallable(const GetDataBackfillPlanRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<GetDataBackfillPlanOutcome()>>(
-        [this, request]()
-        {
-            return this->GetDataBackfillPlan(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<GetDataBackfillPlanOutcome>>();
+    GetDataBackfillPlanAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const GetDataBackfillPlanRequest&,
+        GetDataBackfillPlanOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WedataClient::GetDataSourceOutcome WedataClient::GetDataSource(const GetDataSourceRequest &request)
@@ -1696,25 +1962,32 @@ WedataClient::GetDataSourceOutcome WedataClient::GetDataSource(const GetDataSour
 
 void WedataClient::GetDataSourceAsync(const GetDataSourceRequest& request, const GetDataSourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->GetDataSource(request), context);
-    };
+    using Req = const GetDataSourceRequest&;
+    using Resp = GetDataSourceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "GetDataSource", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WedataClient::GetDataSourceOutcomeCallable WedataClient::GetDataSourceCallable(const GetDataSourceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<GetDataSourceOutcome()>>(
-        [this, request]()
-        {
-            return this->GetDataSource(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<GetDataSourceOutcome>>();
+    GetDataSourceAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const GetDataSourceRequest&,
+        GetDataSourceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WedataClient::GetDataSourceRelatedTasksOutcome WedataClient::GetDataSourceRelatedTasks(const GetDataSourceRelatedTasksRequest &request)
@@ -1739,25 +2012,32 @@ WedataClient::GetDataSourceRelatedTasksOutcome WedataClient::GetDataSourceRelate
 
 void WedataClient::GetDataSourceRelatedTasksAsync(const GetDataSourceRelatedTasksRequest& request, const GetDataSourceRelatedTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->GetDataSourceRelatedTasks(request), context);
-    };
+    using Req = const GetDataSourceRelatedTasksRequest&;
+    using Resp = GetDataSourceRelatedTasksResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "GetDataSourceRelatedTasks", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WedataClient::GetDataSourceRelatedTasksOutcomeCallable WedataClient::GetDataSourceRelatedTasksCallable(const GetDataSourceRelatedTasksRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<GetDataSourceRelatedTasksOutcome()>>(
-        [this, request]()
-        {
-            return this->GetDataSourceRelatedTasks(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<GetDataSourceRelatedTasksOutcome>>();
+    GetDataSourceRelatedTasksAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const GetDataSourceRelatedTasksRequest&,
+        GetDataSourceRelatedTasksOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WedataClient::GetOpsAlarmRuleOutcome WedataClient::GetOpsAlarmRule(const GetOpsAlarmRuleRequest &request)
@@ -1782,25 +2062,32 @@ WedataClient::GetOpsAlarmRuleOutcome WedataClient::GetOpsAlarmRule(const GetOpsA
 
 void WedataClient::GetOpsAlarmRuleAsync(const GetOpsAlarmRuleRequest& request, const GetOpsAlarmRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->GetOpsAlarmRule(request), context);
-    };
+    using Req = const GetOpsAlarmRuleRequest&;
+    using Resp = GetOpsAlarmRuleResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "GetOpsAlarmRule", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WedataClient::GetOpsAlarmRuleOutcomeCallable WedataClient::GetOpsAlarmRuleCallable(const GetOpsAlarmRuleRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<GetOpsAlarmRuleOutcome()>>(
-        [this, request]()
-        {
-            return this->GetOpsAlarmRule(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<GetOpsAlarmRuleOutcome>>();
+    GetOpsAlarmRuleAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const GetOpsAlarmRuleRequest&,
+        GetOpsAlarmRuleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WedataClient::GetOpsAsyncJobOutcome WedataClient::GetOpsAsyncJob(const GetOpsAsyncJobRequest &request)
@@ -1825,25 +2112,32 @@ WedataClient::GetOpsAsyncJobOutcome WedataClient::GetOpsAsyncJob(const GetOpsAsy
 
 void WedataClient::GetOpsAsyncJobAsync(const GetOpsAsyncJobRequest& request, const GetOpsAsyncJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->GetOpsAsyncJob(request), context);
-    };
+    using Req = const GetOpsAsyncJobRequest&;
+    using Resp = GetOpsAsyncJobResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "GetOpsAsyncJob", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WedataClient::GetOpsAsyncJobOutcomeCallable WedataClient::GetOpsAsyncJobCallable(const GetOpsAsyncJobRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<GetOpsAsyncJobOutcome()>>(
-        [this, request]()
-        {
-            return this->GetOpsAsyncJob(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<GetOpsAsyncJobOutcome>>();
+    GetOpsAsyncJobAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const GetOpsAsyncJobRequest&,
+        GetOpsAsyncJobOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WedataClient::GetOpsTaskOutcome WedataClient::GetOpsTask(const GetOpsTaskRequest &request)
@@ -1868,25 +2162,32 @@ WedataClient::GetOpsTaskOutcome WedataClient::GetOpsTask(const GetOpsTaskRequest
 
 void WedataClient::GetOpsTaskAsync(const GetOpsTaskRequest& request, const GetOpsTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->GetOpsTask(request), context);
-    };
+    using Req = const GetOpsTaskRequest&;
+    using Resp = GetOpsTaskResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "GetOpsTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WedataClient::GetOpsTaskOutcomeCallable WedataClient::GetOpsTaskCallable(const GetOpsTaskRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<GetOpsTaskOutcome()>>(
-        [this, request]()
-        {
-            return this->GetOpsTask(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<GetOpsTaskOutcome>>();
+    GetOpsTaskAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const GetOpsTaskRequest&,
+        GetOpsTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WedataClient::GetOpsTaskCodeOutcome WedataClient::GetOpsTaskCode(const GetOpsTaskCodeRequest &request)
@@ -1911,25 +2212,32 @@ WedataClient::GetOpsTaskCodeOutcome WedataClient::GetOpsTaskCode(const GetOpsTas
 
 void WedataClient::GetOpsTaskCodeAsync(const GetOpsTaskCodeRequest& request, const GetOpsTaskCodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->GetOpsTaskCode(request), context);
-    };
+    using Req = const GetOpsTaskCodeRequest&;
+    using Resp = GetOpsTaskCodeResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "GetOpsTaskCode", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WedataClient::GetOpsTaskCodeOutcomeCallable WedataClient::GetOpsTaskCodeCallable(const GetOpsTaskCodeRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<GetOpsTaskCodeOutcome()>>(
-        [this, request]()
-        {
-            return this->GetOpsTaskCode(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<GetOpsTaskCodeOutcome>>();
+    GetOpsTaskCodeAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const GetOpsTaskCodeRequest&,
+        GetOpsTaskCodeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WedataClient::GetOpsWorkflowOutcome WedataClient::GetOpsWorkflow(const GetOpsWorkflowRequest &request)
@@ -1954,25 +2262,32 @@ WedataClient::GetOpsWorkflowOutcome WedataClient::GetOpsWorkflow(const GetOpsWor
 
 void WedataClient::GetOpsWorkflowAsync(const GetOpsWorkflowRequest& request, const GetOpsWorkflowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->GetOpsWorkflow(request), context);
-    };
+    using Req = const GetOpsWorkflowRequest&;
+    using Resp = GetOpsWorkflowResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "GetOpsWorkflow", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WedataClient::GetOpsWorkflowOutcomeCallable WedataClient::GetOpsWorkflowCallable(const GetOpsWorkflowRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<GetOpsWorkflowOutcome()>>(
-        [this, request]()
-        {
-            return this->GetOpsWorkflow(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<GetOpsWorkflowOutcome>>();
+    GetOpsWorkflowAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const GetOpsWorkflowRequest&,
+        GetOpsWorkflowOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WedataClient::GetProjectOutcome WedataClient::GetProject(const GetProjectRequest &request)
@@ -1997,25 +2312,32 @@ WedataClient::GetProjectOutcome WedataClient::GetProject(const GetProjectRequest
 
 void WedataClient::GetProjectAsync(const GetProjectRequest& request, const GetProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->GetProject(request), context);
-    };
+    using Req = const GetProjectRequest&;
+    using Resp = GetProjectResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "GetProject", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WedataClient::GetProjectOutcomeCallable WedataClient::GetProjectCallable(const GetProjectRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<GetProjectOutcome()>>(
-        [this, request]()
-        {
-            return this->GetProject(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<GetProjectOutcome>>();
+    GetProjectAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const GetProjectRequest&,
+        GetProjectOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WedataClient::GetResourceFileOutcome WedataClient::GetResourceFile(const GetResourceFileRequest &request)
@@ -2040,25 +2362,32 @@ WedataClient::GetResourceFileOutcome WedataClient::GetResourceFile(const GetReso
 
 void WedataClient::GetResourceFileAsync(const GetResourceFileRequest& request, const GetResourceFileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->GetResourceFile(request), context);
-    };
+    using Req = const GetResourceFileRequest&;
+    using Resp = GetResourceFileResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "GetResourceFile", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WedataClient::GetResourceFileOutcomeCallable WedataClient::GetResourceFileCallable(const GetResourceFileRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<GetResourceFileOutcome()>>(
-        [this, request]()
-        {
-            return this->GetResourceFile(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<GetResourceFileOutcome>>();
+    GetResourceFileAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const GetResourceFileRequest&,
+        GetResourceFileOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WedataClient::GetResourceGroupMetricsOutcome WedataClient::GetResourceGroupMetrics(const GetResourceGroupMetricsRequest &request)
@@ -2083,25 +2412,32 @@ WedataClient::GetResourceGroupMetricsOutcome WedataClient::GetResourceGroupMetri
 
 void WedataClient::GetResourceGroupMetricsAsync(const GetResourceGroupMetricsRequest& request, const GetResourceGroupMetricsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->GetResourceGroupMetrics(request), context);
-    };
+    using Req = const GetResourceGroupMetricsRequest&;
+    using Resp = GetResourceGroupMetricsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "GetResourceGroupMetrics", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WedataClient::GetResourceGroupMetricsOutcomeCallable WedataClient::GetResourceGroupMetricsCallable(const GetResourceGroupMetricsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<GetResourceGroupMetricsOutcome()>>(
-        [this, request]()
-        {
-            return this->GetResourceGroupMetrics(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<GetResourceGroupMetricsOutcome>>();
+    GetResourceGroupMetricsAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const GetResourceGroupMetricsRequest&,
+        GetResourceGroupMetricsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WedataClient::GetSQLFolderOutcome WedataClient::GetSQLFolder(const GetSQLFolderRequest &request)
@@ -2126,25 +2462,32 @@ WedataClient::GetSQLFolderOutcome WedataClient::GetSQLFolder(const GetSQLFolderR
 
 void WedataClient::GetSQLFolderAsync(const GetSQLFolderRequest& request, const GetSQLFolderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->GetSQLFolder(request), context);
-    };
+    using Req = const GetSQLFolderRequest&;
+    using Resp = GetSQLFolderResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "GetSQLFolder", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WedataClient::GetSQLFolderOutcomeCallable WedataClient::GetSQLFolderCallable(const GetSQLFolderRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<GetSQLFolderOutcome()>>(
-        [this, request]()
-        {
-            return this->GetSQLFolder(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<GetSQLFolderOutcome>>();
+    GetSQLFolderAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const GetSQLFolderRequest&,
+        GetSQLFolderOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WedataClient::GetSQLScriptOutcome WedataClient::GetSQLScript(const GetSQLScriptRequest &request)
@@ -2169,25 +2512,32 @@ WedataClient::GetSQLScriptOutcome WedataClient::GetSQLScript(const GetSQLScriptR
 
 void WedataClient::GetSQLScriptAsync(const GetSQLScriptRequest& request, const GetSQLScriptAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->GetSQLScript(request), context);
-    };
+    using Req = const GetSQLScriptRequest&;
+    using Resp = GetSQLScriptResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "GetSQLScript", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WedataClient::GetSQLScriptOutcomeCallable WedataClient::GetSQLScriptCallable(const GetSQLScriptRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<GetSQLScriptOutcome()>>(
-        [this, request]()
-        {
-            return this->GetSQLScript(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<GetSQLScriptOutcome>>();
+    GetSQLScriptAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const GetSQLScriptRequest&,
+        GetSQLScriptOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WedataClient::GetTableOutcome WedataClient::GetTable(const GetTableRequest &request)
@@ -2212,25 +2562,32 @@ WedataClient::GetTableOutcome WedataClient::GetTable(const GetTableRequest &requ
 
 void WedataClient::GetTableAsync(const GetTableRequest& request, const GetTableAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->GetTable(request), context);
-    };
+    using Req = const GetTableRequest&;
+    using Resp = GetTableResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "GetTable", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WedataClient::GetTableOutcomeCallable WedataClient::GetTableCallable(const GetTableRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<GetTableOutcome()>>(
-        [this, request]()
-        {
-            return this->GetTable(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<GetTableOutcome>>();
+    GetTableAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const GetTableRequest&,
+        GetTableOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WedataClient::GetTableColumnsOutcome WedataClient::GetTableColumns(const GetTableColumnsRequest &request)
@@ -2255,25 +2612,32 @@ WedataClient::GetTableColumnsOutcome WedataClient::GetTableColumns(const GetTabl
 
 void WedataClient::GetTableColumnsAsync(const GetTableColumnsRequest& request, const GetTableColumnsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->GetTableColumns(request), context);
-    };
+    using Req = const GetTableColumnsRequest&;
+    using Resp = GetTableColumnsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "GetTableColumns", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WedataClient::GetTableColumnsOutcomeCallable WedataClient::GetTableColumnsCallable(const GetTableColumnsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<GetTableColumnsOutcome()>>(
-        [this, request]()
-        {
-            return this->GetTableColumns(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<GetTableColumnsOutcome>>();
+    GetTableColumnsAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const GetTableColumnsRequest&,
+        GetTableColumnsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WedataClient::GetTaskOutcome WedataClient::GetTask(const GetTaskRequest &request)
@@ -2298,25 +2662,32 @@ WedataClient::GetTaskOutcome WedataClient::GetTask(const GetTaskRequest &request
 
 void WedataClient::GetTaskAsync(const GetTaskRequest& request, const GetTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->GetTask(request), context);
-    };
+    using Req = const GetTaskRequest&;
+    using Resp = GetTaskResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "GetTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WedataClient::GetTaskOutcomeCallable WedataClient::GetTaskCallable(const GetTaskRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<GetTaskOutcome()>>(
-        [this, request]()
-        {
-            return this->GetTask(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<GetTaskOutcome>>();
+    GetTaskAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const GetTaskRequest&,
+        GetTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WedataClient::GetTaskCodeOutcome WedataClient::GetTaskCode(const GetTaskCodeRequest &request)
@@ -2341,25 +2712,32 @@ WedataClient::GetTaskCodeOutcome WedataClient::GetTaskCode(const GetTaskCodeRequ
 
 void WedataClient::GetTaskCodeAsync(const GetTaskCodeRequest& request, const GetTaskCodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->GetTaskCode(request), context);
-    };
+    using Req = const GetTaskCodeRequest&;
+    using Resp = GetTaskCodeResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "GetTaskCode", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WedataClient::GetTaskCodeOutcomeCallable WedataClient::GetTaskCodeCallable(const GetTaskCodeRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<GetTaskCodeOutcome()>>(
-        [this, request]()
-        {
-            return this->GetTaskCode(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<GetTaskCodeOutcome>>();
+    GetTaskCodeAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const GetTaskCodeRequest&,
+        GetTaskCodeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WedataClient::GetTaskInstanceOutcome WedataClient::GetTaskInstance(const GetTaskInstanceRequest &request)
@@ -2384,25 +2762,32 @@ WedataClient::GetTaskInstanceOutcome WedataClient::GetTaskInstance(const GetTask
 
 void WedataClient::GetTaskInstanceAsync(const GetTaskInstanceRequest& request, const GetTaskInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->GetTaskInstance(request), context);
-    };
+    using Req = const GetTaskInstanceRequest&;
+    using Resp = GetTaskInstanceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "GetTaskInstance", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WedataClient::GetTaskInstanceOutcomeCallable WedataClient::GetTaskInstanceCallable(const GetTaskInstanceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<GetTaskInstanceOutcome()>>(
-        [this, request]()
-        {
-            return this->GetTaskInstance(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<GetTaskInstanceOutcome>>();
+    GetTaskInstanceAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const GetTaskInstanceRequest&,
+        GetTaskInstanceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WedataClient::GetTaskInstanceLogOutcome WedataClient::GetTaskInstanceLog(const GetTaskInstanceLogRequest &request)
@@ -2427,25 +2812,32 @@ WedataClient::GetTaskInstanceLogOutcome WedataClient::GetTaskInstanceLog(const G
 
 void WedataClient::GetTaskInstanceLogAsync(const GetTaskInstanceLogRequest& request, const GetTaskInstanceLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->GetTaskInstanceLog(request), context);
-    };
+    using Req = const GetTaskInstanceLogRequest&;
+    using Resp = GetTaskInstanceLogResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "GetTaskInstanceLog", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WedataClient::GetTaskInstanceLogOutcomeCallable WedataClient::GetTaskInstanceLogCallable(const GetTaskInstanceLogRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<GetTaskInstanceLogOutcome()>>(
-        [this, request]()
-        {
-            return this->GetTaskInstanceLog(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<GetTaskInstanceLogOutcome>>();
+    GetTaskInstanceLogAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const GetTaskInstanceLogRequest&,
+        GetTaskInstanceLogOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WedataClient::GetTaskVersionOutcome WedataClient::GetTaskVersion(const GetTaskVersionRequest &request)
@@ -2470,25 +2862,32 @@ WedataClient::GetTaskVersionOutcome WedataClient::GetTaskVersion(const GetTaskVe
 
 void WedataClient::GetTaskVersionAsync(const GetTaskVersionRequest& request, const GetTaskVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->GetTaskVersion(request), context);
-    };
+    using Req = const GetTaskVersionRequest&;
+    using Resp = GetTaskVersionResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "GetTaskVersion", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WedataClient::GetTaskVersionOutcomeCallable WedataClient::GetTaskVersionCallable(const GetTaskVersionRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<GetTaskVersionOutcome()>>(
-        [this, request]()
-        {
-            return this->GetTaskVersion(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<GetTaskVersionOutcome>>();
+    GetTaskVersionAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const GetTaskVersionRequest&,
+        GetTaskVersionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WedataClient::GetWorkflowOutcome WedataClient::GetWorkflow(const GetWorkflowRequest &request)
@@ -2513,25 +2912,32 @@ WedataClient::GetWorkflowOutcome WedataClient::GetWorkflow(const GetWorkflowRequ
 
 void WedataClient::GetWorkflowAsync(const GetWorkflowRequest& request, const GetWorkflowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->GetWorkflow(request), context);
-    };
+    using Req = const GetWorkflowRequest&;
+    using Resp = GetWorkflowResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "GetWorkflow", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WedataClient::GetWorkflowOutcomeCallable WedataClient::GetWorkflowCallable(const GetWorkflowRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<GetWorkflowOutcome()>>(
-        [this, request]()
-        {
-            return this->GetWorkflow(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<GetWorkflowOutcome>>();
+    GetWorkflowAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const GetWorkflowRequest&,
+        GetWorkflowOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WedataClient::GrantMemberProjectRoleOutcome WedataClient::GrantMemberProjectRole(const GrantMemberProjectRoleRequest &request)
@@ -2556,25 +2962,32 @@ WedataClient::GrantMemberProjectRoleOutcome WedataClient::GrantMemberProjectRole
 
 void WedataClient::GrantMemberProjectRoleAsync(const GrantMemberProjectRoleRequest& request, const GrantMemberProjectRoleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->GrantMemberProjectRole(request), context);
-    };
+    using Req = const GrantMemberProjectRoleRequest&;
+    using Resp = GrantMemberProjectRoleResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "GrantMemberProjectRole", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WedataClient::GrantMemberProjectRoleOutcomeCallable WedataClient::GrantMemberProjectRoleCallable(const GrantMemberProjectRoleRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<GrantMemberProjectRoleOutcome()>>(
-        [this, request]()
-        {
-            return this->GrantMemberProjectRole(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<GrantMemberProjectRoleOutcome>>();
+    GrantMemberProjectRoleAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const GrantMemberProjectRoleRequest&,
+        GrantMemberProjectRoleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WedataClient::KillTaskInstancesAsyncOutcome WedataClient::KillTaskInstancesAsync(const KillTaskInstancesAsyncRequest &request)
@@ -2599,25 +3012,32 @@ WedataClient::KillTaskInstancesAsyncOutcome WedataClient::KillTaskInstancesAsync
 
 void WedataClient::KillTaskInstancesAsyncAsync(const KillTaskInstancesAsyncRequest& request, const KillTaskInstancesAsyncAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->KillTaskInstancesAsync(request), context);
-    };
+    using Req = const KillTaskInstancesAsyncRequest&;
+    using Resp = KillTaskInstancesAsyncResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "KillTaskInstancesAsync", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WedataClient::KillTaskInstancesAsyncOutcomeCallable WedataClient::KillTaskInstancesAsyncCallable(const KillTaskInstancesAsyncRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<KillTaskInstancesAsyncOutcome()>>(
-        [this, request]()
-        {
-            return this->KillTaskInstancesAsync(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<KillTaskInstancesAsyncOutcome>>();
+    KillTaskInstancesAsyncAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const KillTaskInstancesAsyncRequest&,
+        KillTaskInstancesAsyncOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WedataClient::ListAlarmMessagesOutcome WedataClient::ListAlarmMessages(const ListAlarmMessagesRequest &request)
@@ -2642,25 +3062,32 @@ WedataClient::ListAlarmMessagesOutcome WedataClient::ListAlarmMessages(const Lis
 
 void WedataClient::ListAlarmMessagesAsync(const ListAlarmMessagesRequest& request, const ListAlarmMessagesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ListAlarmMessages(request), context);
-    };
+    using Req = const ListAlarmMessagesRequest&;
+    using Resp = ListAlarmMessagesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ListAlarmMessages", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WedataClient::ListAlarmMessagesOutcomeCallable WedataClient::ListAlarmMessagesCallable(const ListAlarmMessagesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ListAlarmMessagesOutcome()>>(
-        [this, request]()
-        {
-            return this->ListAlarmMessages(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ListAlarmMessagesOutcome>>();
+    ListAlarmMessagesAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const ListAlarmMessagesRequest&,
+        ListAlarmMessagesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WedataClient::ListCatalogOutcome WedataClient::ListCatalog(const ListCatalogRequest &request)
@@ -2685,25 +3112,32 @@ WedataClient::ListCatalogOutcome WedataClient::ListCatalog(const ListCatalogRequ
 
 void WedataClient::ListCatalogAsync(const ListCatalogRequest& request, const ListCatalogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ListCatalog(request), context);
-    };
+    using Req = const ListCatalogRequest&;
+    using Resp = ListCatalogResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ListCatalog", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WedataClient::ListCatalogOutcomeCallable WedataClient::ListCatalogCallable(const ListCatalogRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ListCatalogOutcome()>>(
-        [this, request]()
-        {
-            return this->ListCatalog(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ListCatalogOutcome>>();
+    ListCatalogAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const ListCatalogRequest&,
+        ListCatalogOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WedataClient::ListCodeFolderContentsOutcome WedataClient::ListCodeFolderContents(const ListCodeFolderContentsRequest &request)
@@ -2728,25 +3162,32 @@ WedataClient::ListCodeFolderContentsOutcome WedataClient::ListCodeFolderContents
 
 void WedataClient::ListCodeFolderContentsAsync(const ListCodeFolderContentsRequest& request, const ListCodeFolderContentsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ListCodeFolderContents(request), context);
-    };
+    using Req = const ListCodeFolderContentsRequest&;
+    using Resp = ListCodeFolderContentsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ListCodeFolderContents", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WedataClient::ListCodeFolderContentsOutcomeCallable WedataClient::ListCodeFolderContentsCallable(const ListCodeFolderContentsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ListCodeFolderContentsOutcome()>>(
-        [this, request]()
-        {
-            return this->ListCodeFolderContents(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ListCodeFolderContentsOutcome>>();
+    ListCodeFolderContentsAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const ListCodeFolderContentsRequest&,
+        ListCodeFolderContentsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WedataClient::ListColumnLineageOutcome WedataClient::ListColumnLineage(const ListColumnLineageRequest &request)
@@ -2771,25 +3212,32 @@ WedataClient::ListColumnLineageOutcome WedataClient::ListColumnLineage(const Lis
 
 void WedataClient::ListColumnLineageAsync(const ListColumnLineageRequest& request, const ListColumnLineageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ListColumnLineage(request), context);
-    };
+    using Req = const ListColumnLineageRequest&;
+    using Resp = ListColumnLineageResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ListColumnLineage", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WedataClient::ListColumnLineageOutcomeCallable WedataClient::ListColumnLineageCallable(const ListColumnLineageRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ListColumnLineageOutcome()>>(
-        [this, request]()
-        {
-            return this->ListColumnLineage(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ListColumnLineageOutcome>>();
+    ListColumnLineageAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const ListColumnLineageRequest&,
+        ListColumnLineageOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WedataClient::ListDataBackfillInstancesOutcome WedataClient::ListDataBackfillInstances(const ListDataBackfillInstancesRequest &request)
@@ -2814,25 +3262,32 @@ WedataClient::ListDataBackfillInstancesOutcome WedataClient::ListDataBackfillIns
 
 void WedataClient::ListDataBackfillInstancesAsync(const ListDataBackfillInstancesRequest& request, const ListDataBackfillInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ListDataBackfillInstances(request), context);
-    };
+    using Req = const ListDataBackfillInstancesRequest&;
+    using Resp = ListDataBackfillInstancesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ListDataBackfillInstances", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WedataClient::ListDataBackfillInstancesOutcomeCallable WedataClient::ListDataBackfillInstancesCallable(const ListDataBackfillInstancesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ListDataBackfillInstancesOutcome()>>(
-        [this, request]()
-        {
-            return this->ListDataBackfillInstances(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ListDataBackfillInstancesOutcome>>();
+    ListDataBackfillInstancesAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const ListDataBackfillInstancesRequest&,
+        ListDataBackfillInstancesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WedataClient::ListDataSourcesOutcome WedataClient::ListDataSources(const ListDataSourcesRequest &request)
@@ -2857,25 +3312,32 @@ WedataClient::ListDataSourcesOutcome WedataClient::ListDataSources(const ListDat
 
 void WedataClient::ListDataSourcesAsync(const ListDataSourcesRequest& request, const ListDataSourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ListDataSources(request), context);
-    };
+    using Req = const ListDataSourcesRequest&;
+    using Resp = ListDataSourcesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ListDataSources", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WedataClient::ListDataSourcesOutcomeCallable WedataClient::ListDataSourcesCallable(const ListDataSourcesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ListDataSourcesOutcome()>>(
-        [this, request]()
-        {
-            return this->ListDataSources(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ListDataSourcesOutcome>>();
+    ListDataSourcesAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const ListDataSourcesRequest&,
+        ListDataSourcesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WedataClient::ListDatabaseOutcome WedataClient::ListDatabase(const ListDatabaseRequest &request)
@@ -2900,25 +3362,32 @@ WedataClient::ListDatabaseOutcome WedataClient::ListDatabase(const ListDatabaseR
 
 void WedataClient::ListDatabaseAsync(const ListDatabaseRequest& request, const ListDatabaseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ListDatabase(request), context);
-    };
+    using Req = const ListDatabaseRequest&;
+    using Resp = ListDatabaseResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ListDatabase", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WedataClient::ListDatabaseOutcomeCallable WedataClient::ListDatabaseCallable(const ListDatabaseRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ListDatabaseOutcome()>>(
-        [this, request]()
-        {
-            return this->ListDatabase(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ListDatabaseOutcome>>();
+    ListDatabaseAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const ListDatabaseRequest&,
+        ListDatabaseOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WedataClient::ListDownstreamOpsTasksOutcome WedataClient::ListDownstreamOpsTasks(const ListDownstreamOpsTasksRequest &request)
@@ -2943,25 +3412,32 @@ WedataClient::ListDownstreamOpsTasksOutcome WedataClient::ListDownstreamOpsTasks
 
 void WedataClient::ListDownstreamOpsTasksAsync(const ListDownstreamOpsTasksRequest& request, const ListDownstreamOpsTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ListDownstreamOpsTasks(request), context);
-    };
+    using Req = const ListDownstreamOpsTasksRequest&;
+    using Resp = ListDownstreamOpsTasksResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ListDownstreamOpsTasks", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WedataClient::ListDownstreamOpsTasksOutcomeCallable WedataClient::ListDownstreamOpsTasksCallable(const ListDownstreamOpsTasksRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ListDownstreamOpsTasksOutcome()>>(
-        [this, request]()
-        {
-            return this->ListDownstreamOpsTasks(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ListDownstreamOpsTasksOutcome>>();
+    ListDownstreamOpsTasksAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const ListDownstreamOpsTasksRequest&,
+        ListDownstreamOpsTasksOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WedataClient::ListDownstreamTaskInstancesOutcome WedataClient::ListDownstreamTaskInstances(const ListDownstreamTaskInstancesRequest &request)
@@ -2986,25 +3462,32 @@ WedataClient::ListDownstreamTaskInstancesOutcome WedataClient::ListDownstreamTas
 
 void WedataClient::ListDownstreamTaskInstancesAsync(const ListDownstreamTaskInstancesRequest& request, const ListDownstreamTaskInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ListDownstreamTaskInstances(request), context);
-    };
+    using Req = const ListDownstreamTaskInstancesRequest&;
+    using Resp = ListDownstreamTaskInstancesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ListDownstreamTaskInstances", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WedataClient::ListDownstreamTaskInstancesOutcomeCallable WedataClient::ListDownstreamTaskInstancesCallable(const ListDownstreamTaskInstancesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ListDownstreamTaskInstancesOutcome()>>(
-        [this, request]()
-        {
-            return this->ListDownstreamTaskInstances(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ListDownstreamTaskInstancesOutcome>>();
+    ListDownstreamTaskInstancesAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const ListDownstreamTaskInstancesRequest&,
+        ListDownstreamTaskInstancesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WedataClient::ListDownstreamTasksOutcome WedataClient::ListDownstreamTasks(const ListDownstreamTasksRequest &request)
@@ -3029,25 +3512,32 @@ WedataClient::ListDownstreamTasksOutcome WedataClient::ListDownstreamTasks(const
 
 void WedataClient::ListDownstreamTasksAsync(const ListDownstreamTasksRequest& request, const ListDownstreamTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ListDownstreamTasks(request), context);
-    };
+    using Req = const ListDownstreamTasksRequest&;
+    using Resp = ListDownstreamTasksResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ListDownstreamTasks", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WedataClient::ListDownstreamTasksOutcomeCallable WedataClient::ListDownstreamTasksCallable(const ListDownstreamTasksRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ListDownstreamTasksOutcome()>>(
-        [this, request]()
-        {
-            return this->ListDownstreamTasks(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ListDownstreamTasksOutcome>>();
+    ListDownstreamTasksAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const ListDownstreamTasksRequest&,
+        ListDownstreamTasksOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WedataClient::ListLineageOutcome WedataClient::ListLineage(const ListLineageRequest &request)
@@ -3072,25 +3562,32 @@ WedataClient::ListLineageOutcome WedataClient::ListLineage(const ListLineageRequ
 
 void WedataClient::ListLineageAsync(const ListLineageRequest& request, const ListLineageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ListLineage(request), context);
-    };
+    using Req = const ListLineageRequest&;
+    using Resp = ListLineageResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ListLineage", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WedataClient::ListLineageOutcomeCallable WedataClient::ListLineageCallable(const ListLineageRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ListLineageOutcome()>>(
-        [this, request]()
-        {
-            return this->ListLineage(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ListLineageOutcome>>();
+    ListLineageAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const ListLineageRequest&,
+        ListLineageOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WedataClient::ListOpsAlarmRulesOutcome WedataClient::ListOpsAlarmRules(const ListOpsAlarmRulesRequest &request)
@@ -3115,25 +3612,32 @@ WedataClient::ListOpsAlarmRulesOutcome WedataClient::ListOpsAlarmRules(const Lis
 
 void WedataClient::ListOpsAlarmRulesAsync(const ListOpsAlarmRulesRequest& request, const ListOpsAlarmRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ListOpsAlarmRules(request), context);
-    };
+    using Req = const ListOpsAlarmRulesRequest&;
+    using Resp = ListOpsAlarmRulesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ListOpsAlarmRules", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WedataClient::ListOpsAlarmRulesOutcomeCallable WedataClient::ListOpsAlarmRulesCallable(const ListOpsAlarmRulesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ListOpsAlarmRulesOutcome()>>(
-        [this, request]()
-        {
-            return this->ListOpsAlarmRules(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ListOpsAlarmRulesOutcome>>();
+    ListOpsAlarmRulesAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const ListOpsAlarmRulesRequest&,
+        ListOpsAlarmRulesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WedataClient::ListOpsTasksOutcome WedataClient::ListOpsTasks(const ListOpsTasksRequest &request)
@@ -3158,25 +3662,32 @@ WedataClient::ListOpsTasksOutcome WedataClient::ListOpsTasks(const ListOpsTasksR
 
 void WedataClient::ListOpsTasksAsync(const ListOpsTasksRequest& request, const ListOpsTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ListOpsTasks(request), context);
-    };
+    using Req = const ListOpsTasksRequest&;
+    using Resp = ListOpsTasksResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ListOpsTasks", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WedataClient::ListOpsTasksOutcomeCallable WedataClient::ListOpsTasksCallable(const ListOpsTasksRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ListOpsTasksOutcome()>>(
-        [this, request]()
-        {
-            return this->ListOpsTasks(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ListOpsTasksOutcome>>();
+    ListOpsTasksAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const ListOpsTasksRequest&,
+        ListOpsTasksOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WedataClient::ListOpsWorkflowsOutcome WedataClient::ListOpsWorkflows(const ListOpsWorkflowsRequest &request)
@@ -3201,25 +3712,32 @@ WedataClient::ListOpsWorkflowsOutcome WedataClient::ListOpsWorkflows(const ListO
 
 void WedataClient::ListOpsWorkflowsAsync(const ListOpsWorkflowsRequest& request, const ListOpsWorkflowsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ListOpsWorkflows(request), context);
-    };
+    using Req = const ListOpsWorkflowsRequest&;
+    using Resp = ListOpsWorkflowsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ListOpsWorkflows", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WedataClient::ListOpsWorkflowsOutcomeCallable WedataClient::ListOpsWorkflowsCallable(const ListOpsWorkflowsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ListOpsWorkflowsOutcome()>>(
-        [this, request]()
-        {
-            return this->ListOpsWorkflows(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ListOpsWorkflowsOutcome>>();
+    ListOpsWorkflowsAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const ListOpsWorkflowsRequest&,
+        ListOpsWorkflowsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WedataClient::ListProcessLineageOutcome WedataClient::ListProcessLineage(const ListProcessLineageRequest &request)
@@ -3244,25 +3762,32 @@ WedataClient::ListProcessLineageOutcome WedataClient::ListProcessLineage(const L
 
 void WedataClient::ListProcessLineageAsync(const ListProcessLineageRequest& request, const ListProcessLineageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ListProcessLineage(request), context);
-    };
+    using Req = const ListProcessLineageRequest&;
+    using Resp = ListProcessLineageResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ListProcessLineage", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WedataClient::ListProcessLineageOutcomeCallable WedataClient::ListProcessLineageCallable(const ListProcessLineageRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ListProcessLineageOutcome()>>(
-        [this, request]()
-        {
-            return this->ListProcessLineage(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ListProcessLineageOutcome>>();
+    ListProcessLineageAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const ListProcessLineageRequest&,
+        ListProcessLineageOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WedataClient::ListProjectMembersOutcome WedataClient::ListProjectMembers(const ListProjectMembersRequest &request)
@@ -3287,25 +3812,32 @@ WedataClient::ListProjectMembersOutcome WedataClient::ListProjectMembers(const L
 
 void WedataClient::ListProjectMembersAsync(const ListProjectMembersRequest& request, const ListProjectMembersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ListProjectMembers(request), context);
-    };
+    using Req = const ListProjectMembersRequest&;
+    using Resp = ListProjectMembersResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ListProjectMembers", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WedataClient::ListProjectMembersOutcomeCallable WedataClient::ListProjectMembersCallable(const ListProjectMembersRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ListProjectMembersOutcome()>>(
-        [this, request]()
-        {
-            return this->ListProjectMembers(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ListProjectMembersOutcome>>();
+    ListProjectMembersAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const ListProjectMembersRequest&,
+        ListProjectMembersOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WedataClient::ListProjectRolesOutcome WedataClient::ListProjectRoles(const ListProjectRolesRequest &request)
@@ -3330,25 +3862,32 @@ WedataClient::ListProjectRolesOutcome WedataClient::ListProjectRoles(const ListP
 
 void WedataClient::ListProjectRolesAsync(const ListProjectRolesRequest& request, const ListProjectRolesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ListProjectRoles(request), context);
-    };
+    using Req = const ListProjectRolesRequest&;
+    using Resp = ListProjectRolesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ListProjectRoles", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WedataClient::ListProjectRolesOutcomeCallable WedataClient::ListProjectRolesCallable(const ListProjectRolesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ListProjectRolesOutcome()>>(
-        [this, request]()
-        {
-            return this->ListProjectRoles(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ListProjectRolesOutcome>>();
+    ListProjectRolesAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const ListProjectRolesRequest&,
+        ListProjectRolesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WedataClient::ListProjectsOutcome WedataClient::ListProjects(const ListProjectsRequest &request)
@@ -3373,25 +3912,32 @@ WedataClient::ListProjectsOutcome WedataClient::ListProjects(const ListProjectsR
 
 void WedataClient::ListProjectsAsync(const ListProjectsRequest& request, const ListProjectsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ListProjects(request), context);
-    };
+    using Req = const ListProjectsRequest&;
+    using Resp = ListProjectsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ListProjects", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WedataClient::ListProjectsOutcomeCallable WedataClient::ListProjectsCallable(const ListProjectsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ListProjectsOutcome()>>(
-        [this, request]()
-        {
-            return this->ListProjects(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ListProjectsOutcome>>();
+    ListProjectsAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const ListProjectsRequest&,
+        ListProjectsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WedataClient::ListResourceFilesOutcome WedataClient::ListResourceFiles(const ListResourceFilesRequest &request)
@@ -3416,25 +3962,32 @@ WedataClient::ListResourceFilesOutcome WedataClient::ListResourceFiles(const Lis
 
 void WedataClient::ListResourceFilesAsync(const ListResourceFilesRequest& request, const ListResourceFilesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ListResourceFiles(request), context);
-    };
+    using Req = const ListResourceFilesRequest&;
+    using Resp = ListResourceFilesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ListResourceFiles", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WedataClient::ListResourceFilesOutcomeCallable WedataClient::ListResourceFilesCallable(const ListResourceFilesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ListResourceFilesOutcome()>>(
-        [this, request]()
-        {
-            return this->ListResourceFiles(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ListResourceFilesOutcome>>();
+    ListResourceFilesAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const ListResourceFilesRequest&,
+        ListResourceFilesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WedataClient::ListResourceFoldersOutcome WedataClient::ListResourceFolders(const ListResourceFoldersRequest &request)
@@ -3459,25 +4012,32 @@ WedataClient::ListResourceFoldersOutcome WedataClient::ListResourceFolders(const
 
 void WedataClient::ListResourceFoldersAsync(const ListResourceFoldersRequest& request, const ListResourceFoldersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ListResourceFolders(request), context);
-    };
+    using Req = const ListResourceFoldersRequest&;
+    using Resp = ListResourceFoldersResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ListResourceFolders", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WedataClient::ListResourceFoldersOutcomeCallable WedataClient::ListResourceFoldersCallable(const ListResourceFoldersRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ListResourceFoldersOutcome()>>(
-        [this, request]()
-        {
-            return this->ListResourceFolders(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ListResourceFoldersOutcome>>();
+    ListResourceFoldersAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const ListResourceFoldersRequest&,
+        ListResourceFoldersOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WedataClient::ListResourceGroupsOutcome WedataClient::ListResourceGroups(const ListResourceGroupsRequest &request)
@@ -3502,25 +4062,32 @@ WedataClient::ListResourceGroupsOutcome WedataClient::ListResourceGroups(const L
 
 void WedataClient::ListResourceGroupsAsync(const ListResourceGroupsRequest& request, const ListResourceGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ListResourceGroups(request), context);
-    };
+    using Req = const ListResourceGroupsRequest&;
+    using Resp = ListResourceGroupsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ListResourceGroups", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WedataClient::ListResourceGroupsOutcomeCallable WedataClient::ListResourceGroupsCallable(const ListResourceGroupsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ListResourceGroupsOutcome()>>(
-        [this, request]()
-        {
-            return this->ListResourceGroups(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ListResourceGroupsOutcome>>();
+    ListResourceGroupsAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const ListResourceGroupsRequest&,
+        ListResourceGroupsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WedataClient::ListSQLFolderContentsOutcome WedataClient::ListSQLFolderContents(const ListSQLFolderContentsRequest &request)
@@ -3545,25 +4112,32 @@ WedataClient::ListSQLFolderContentsOutcome WedataClient::ListSQLFolderContents(c
 
 void WedataClient::ListSQLFolderContentsAsync(const ListSQLFolderContentsRequest& request, const ListSQLFolderContentsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ListSQLFolderContents(request), context);
-    };
+    using Req = const ListSQLFolderContentsRequest&;
+    using Resp = ListSQLFolderContentsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ListSQLFolderContents", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WedataClient::ListSQLFolderContentsOutcomeCallable WedataClient::ListSQLFolderContentsCallable(const ListSQLFolderContentsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ListSQLFolderContentsOutcome()>>(
-        [this, request]()
-        {
-            return this->ListSQLFolderContents(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ListSQLFolderContentsOutcome>>();
+    ListSQLFolderContentsAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const ListSQLFolderContentsRequest&,
+        ListSQLFolderContentsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WedataClient::ListSQLScriptRunsOutcome WedataClient::ListSQLScriptRuns(const ListSQLScriptRunsRequest &request)
@@ -3588,25 +4162,32 @@ WedataClient::ListSQLScriptRunsOutcome WedataClient::ListSQLScriptRuns(const Lis
 
 void WedataClient::ListSQLScriptRunsAsync(const ListSQLScriptRunsRequest& request, const ListSQLScriptRunsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ListSQLScriptRuns(request), context);
-    };
+    using Req = const ListSQLScriptRunsRequest&;
+    using Resp = ListSQLScriptRunsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ListSQLScriptRuns", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WedataClient::ListSQLScriptRunsOutcomeCallable WedataClient::ListSQLScriptRunsCallable(const ListSQLScriptRunsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ListSQLScriptRunsOutcome()>>(
-        [this, request]()
-        {
-            return this->ListSQLScriptRuns(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ListSQLScriptRunsOutcome>>();
+    ListSQLScriptRunsAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const ListSQLScriptRunsRequest&,
+        ListSQLScriptRunsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WedataClient::ListSchemaOutcome WedataClient::ListSchema(const ListSchemaRequest &request)
@@ -3631,25 +4212,32 @@ WedataClient::ListSchemaOutcome WedataClient::ListSchema(const ListSchemaRequest
 
 void WedataClient::ListSchemaAsync(const ListSchemaRequest& request, const ListSchemaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ListSchema(request), context);
-    };
+    using Req = const ListSchemaRequest&;
+    using Resp = ListSchemaResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ListSchema", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WedataClient::ListSchemaOutcomeCallable WedataClient::ListSchemaCallable(const ListSchemaRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ListSchemaOutcome()>>(
-        [this, request]()
-        {
-            return this->ListSchema(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ListSchemaOutcome>>();
+    ListSchemaAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const ListSchemaRequest&,
+        ListSchemaOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WedataClient::ListTableOutcome WedataClient::ListTable(const ListTableRequest &request)
@@ -3674,25 +4262,32 @@ WedataClient::ListTableOutcome WedataClient::ListTable(const ListTableRequest &r
 
 void WedataClient::ListTableAsync(const ListTableRequest& request, const ListTableAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ListTable(request), context);
-    };
+    using Req = const ListTableRequest&;
+    using Resp = ListTableResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ListTable", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WedataClient::ListTableOutcomeCallable WedataClient::ListTableCallable(const ListTableRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ListTableOutcome()>>(
-        [this, request]()
-        {
-            return this->ListTable(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ListTableOutcome>>();
+    ListTableAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const ListTableRequest&,
+        ListTableOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WedataClient::ListTaskInstanceExecutionsOutcome WedataClient::ListTaskInstanceExecutions(const ListTaskInstanceExecutionsRequest &request)
@@ -3717,25 +4312,32 @@ WedataClient::ListTaskInstanceExecutionsOutcome WedataClient::ListTaskInstanceEx
 
 void WedataClient::ListTaskInstanceExecutionsAsync(const ListTaskInstanceExecutionsRequest& request, const ListTaskInstanceExecutionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ListTaskInstanceExecutions(request), context);
-    };
+    using Req = const ListTaskInstanceExecutionsRequest&;
+    using Resp = ListTaskInstanceExecutionsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ListTaskInstanceExecutions", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WedataClient::ListTaskInstanceExecutionsOutcomeCallable WedataClient::ListTaskInstanceExecutionsCallable(const ListTaskInstanceExecutionsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ListTaskInstanceExecutionsOutcome()>>(
-        [this, request]()
-        {
-            return this->ListTaskInstanceExecutions(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ListTaskInstanceExecutionsOutcome>>();
+    ListTaskInstanceExecutionsAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const ListTaskInstanceExecutionsRequest&,
+        ListTaskInstanceExecutionsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WedataClient::ListTaskInstancesOutcome WedataClient::ListTaskInstances(const ListTaskInstancesRequest &request)
@@ -3760,25 +4362,32 @@ WedataClient::ListTaskInstancesOutcome WedataClient::ListTaskInstances(const Lis
 
 void WedataClient::ListTaskInstancesAsync(const ListTaskInstancesRequest& request, const ListTaskInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ListTaskInstances(request), context);
-    };
+    using Req = const ListTaskInstancesRequest&;
+    using Resp = ListTaskInstancesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ListTaskInstances", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WedataClient::ListTaskInstancesOutcomeCallable WedataClient::ListTaskInstancesCallable(const ListTaskInstancesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ListTaskInstancesOutcome()>>(
-        [this, request]()
-        {
-            return this->ListTaskInstances(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ListTaskInstancesOutcome>>();
+    ListTaskInstancesAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const ListTaskInstancesRequest&,
+        ListTaskInstancesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WedataClient::ListTaskVersionsOutcome WedataClient::ListTaskVersions(const ListTaskVersionsRequest &request)
@@ -3803,25 +4412,32 @@ WedataClient::ListTaskVersionsOutcome WedataClient::ListTaskVersions(const ListT
 
 void WedataClient::ListTaskVersionsAsync(const ListTaskVersionsRequest& request, const ListTaskVersionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ListTaskVersions(request), context);
-    };
+    using Req = const ListTaskVersionsRequest&;
+    using Resp = ListTaskVersionsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ListTaskVersions", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WedataClient::ListTaskVersionsOutcomeCallable WedataClient::ListTaskVersionsCallable(const ListTaskVersionsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ListTaskVersionsOutcome()>>(
-        [this, request]()
-        {
-            return this->ListTaskVersions(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ListTaskVersionsOutcome>>();
+    ListTaskVersionsAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const ListTaskVersionsRequest&,
+        ListTaskVersionsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WedataClient::ListTasksOutcome WedataClient::ListTasks(const ListTasksRequest &request)
@@ -3846,25 +4462,32 @@ WedataClient::ListTasksOutcome WedataClient::ListTasks(const ListTasksRequest &r
 
 void WedataClient::ListTasksAsync(const ListTasksRequest& request, const ListTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ListTasks(request), context);
-    };
+    using Req = const ListTasksRequest&;
+    using Resp = ListTasksResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ListTasks", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WedataClient::ListTasksOutcomeCallable WedataClient::ListTasksCallable(const ListTasksRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ListTasksOutcome()>>(
-        [this, request]()
-        {
-            return this->ListTasks(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ListTasksOutcome>>();
+    ListTasksAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const ListTasksRequest&,
+        ListTasksOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WedataClient::ListTenantRolesOutcome WedataClient::ListTenantRoles(const ListTenantRolesRequest &request)
@@ -3889,25 +4512,32 @@ WedataClient::ListTenantRolesOutcome WedataClient::ListTenantRoles(const ListTen
 
 void WedataClient::ListTenantRolesAsync(const ListTenantRolesRequest& request, const ListTenantRolesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ListTenantRoles(request), context);
-    };
+    using Req = const ListTenantRolesRequest&;
+    using Resp = ListTenantRolesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ListTenantRoles", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WedataClient::ListTenantRolesOutcomeCallable WedataClient::ListTenantRolesCallable(const ListTenantRolesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ListTenantRolesOutcome()>>(
-        [this, request]()
-        {
-            return this->ListTenantRoles(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ListTenantRolesOutcome>>();
+    ListTenantRolesAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const ListTenantRolesRequest&,
+        ListTenantRolesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WedataClient::ListUpstreamOpsTasksOutcome WedataClient::ListUpstreamOpsTasks(const ListUpstreamOpsTasksRequest &request)
@@ -3932,25 +4562,32 @@ WedataClient::ListUpstreamOpsTasksOutcome WedataClient::ListUpstreamOpsTasks(con
 
 void WedataClient::ListUpstreamOpsTasksAsync(const ListUpstreamOpsTasksRequest& request, const ListUpstreamOpsTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ListUpstreamOpsTasks(request), context);
-    };
+    using Req = const ListUpstreamOpsTasksRequest&;
+    using Resp = ListUpstreamOpsTasksResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ListUpstreamOpsTasks", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WedataClient::ListUpstreamOpsTasksOutcomeCallable WedataClient::ListUpstreamOpsTasksCallable(const ListUpstreamOpsTasksRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ListUpstreamOpsTasksOutcome()>>(
-        [this, request]()
-        {
-            return this->ListUpstreamOpsTasks(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ListUpstreamOpsTasksOutcome>>();
+    ListUpstreamOpsTasksAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const ListUpstreamOpsTasksRequest&,
+        ListUpstreamOpsTasksOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WedataClient::ListUpstreamTaskInstancesOutcome WedataClient::ListUpstreamTaskInstances(const ListUpstreamTaskInstancesRequest &request)
@@ -3975,25 +4612,32 @@ WedataClient::ListUpstreamTaskInstancesOutcome WedataClient::ListUpstreamTaskIns
 
 void WedataClient::ListUpstreamTaskInstancesAsync(const ListUpstreamTaskInstancesRequest& request, const ListUpstreamTaskInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ListUpstreamTaskInstances(request), context);
-    };
+    using Req = const ListUpstreamTaskInstancesRequest&;
+    using Resp = ListUpstreamTaskInstancesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ListUpstreamTaskInstances", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WedataClient::ListUpstreamTaskInstancesOutcomeCallable WedataClient::ListUpstreamTaskInstancesCallable(const ListUpstreamTaskInstancesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ListUpstreamTaskInstancesOutcome()>>(
-        [this, request]()
-        {
-            return this->ListUpstreamTaskInstances(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ListUpstreamTaskInstancesOutcome>>();
+    ListUpstreamTaskInstancesAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const ListUpstreamTaskInstancesRequest&,
+        ListUpstreamTaskInstancesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WedataClient::ListUpstreamTasksOutcome WedataClient::ListUpstreamTasks(const ListUpstreamTasksRequest &request)
@@ -4018,25 +4662,32 @@ WedataClient::ListUpstreamTasksOutcome WedataClient::ListUpstreamTasks(const Lis
 
 void WedataClient::ListUpstreamTasksAsync(const ListUpstreamTasksRequest& request, const ListUpstreamTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ListUpstreamTasks(request), context);
-    };
+    using Req = const ListUpstreamTasksRequest&;
+    using Resp = ListUpstreamTasksResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ListUpstreamTasks", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WedataClient::ListUpstreamTasksOutcomeCallable WedataClient::ListUpstreamTasksCallable(const ListUpstreamTasksRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ListUpstreamTasksOutcome()>>(
-        [this, request]()
-        {
-            return this->ListUpstreamTasks(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ListUpstreamTasksOutcome>>();
+    ListUpstreamTasksAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const ListUpstreamTasksRequest&,
+        ListUpstreamTasksOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WedataClient::ListWorkflowFoldersOutcome WedataClient::ListWorkflowFolders(const ListWorkflowFoldersRequest &request)
@@ -4061,25 +4712,32 @@ WedataClient::ListWorkflowFoldersOutcome WedataClient::ListWorkflowFolders(const
 
 void WedataClient::ListWorkflowFoldersAsync(const ListWorkflowFoldersRequest& request, const ListWorkflowFoldersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ListWorkflowFolders(request), context);
-    };
+    using Req = const ListWorkflowFoldersRequest&;
+    using Resp = ListWorkflowFoldersResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ListWorkflowFolders", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WedataClient::ListWorkflowFoldersOutcomeCallable WedataClient::ListWorkflowFoldersCallable(const ListWorkflowFoldersRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ListWorkflowFoldersOutcome()>>(
-        [this, request]()
-        {
-            return this->ListWorkflowFolders(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ListWorkflowFoldersOutcome>>();
+    ListWorkflowFoldersAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const ListWorkflowFoldersRequest&,
+        ListWorkflowFoldersOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WedataClient::ListWorkflowsOutcome WedataClient::ListWorkflows(const ListWorkflowsRequest &request)
@@ -4104,25 +4762,32 @@ WedataClient::ListWorkflowsOutcome WedataClient::ListWorkflows(const ListWorkflo
 
 void WedataClient::ListWorkflowsAsync(const ListWorkflowsRequest& request, const ListWorkflowsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ListWorkflows(request), context);
-    };
+    using Req = const ListWorkflowsRequest&;
+    using Resp = ListWorkflowsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ListWorkflows", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WedataClient::ListWorkflowsOutcomeCallable WedataClient::ListWorkflowsCallable(const ListWorkflowsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ListWorkflowsOutcome()>>(
-        [this, request]()
-        {
-            return this->ListWorkflows(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ListWorkflowsOutcome>>();
+    ListWorkflowsAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const ListWorkflowsRequest&,
+        ListWorkflowsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WedataClient::PauseOpsTasksAsyncOutcome WedataClient::PauseOpsTasksAsync(const PauseOpsTasksAsyncRequest &request)
@@ -4147,25 +4812,32 @@ WedataClient::PauseOpsTasksAsyncOutcome WedataClient::PauseOpsTasksAsync(const P
 
 void WedataClient::PauseOpsTasksAsyncAsync(const PauseOpsTasksAsyncRequest& request, const PauseOpsTasksAsyncAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->PauseOpsTasksAsync(request), context);
-    };
+    using Req = const PauseOpsTasksAsyncRequest&;
+    using Resp = PauseOpsTasksAsyncResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "PauseOpsTasksAsync", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WedataClient::PauseOpsTasksAsyncOutcomeCallable WedataClient::PauseOpsTasksAsyncCallable(const PauseOpsTasksAsyncRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<PauseOpsTasksAsyncOutcome()>>(
-        [this, request]()
-        {
-            return this->PauseOpsTasksAsync(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<PauseOpsTasksAsyncOutcome>>();
+    PauseOpsTasksAsyncAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const PauseOpsTasksAsyncRequest&,
+        PauseOpsTasksAsyncOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WedataClient::RegisterLineageOutcome WedataClient::RegisterLineage(const RegisterLineageRequest &request)
@@ -4190,25 +4862,32 @@ WedataClient::RegisterLineageOutcome WedataClient::RegisterLineage(const Registe
 
 void WedataClient::RegisterLineageAsync(const RegisterLineageRequest& request, const RegisterLineageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->RegisterLineage(request), context);
-    };
+    using Req = const RegisterLineageRequest&;
+    using Resp = RegisterLineageResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "RegisterLineage", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WedataClient::RegisterLineageOutcomeCallable WedataClient::RegisterLineageCallable(const RegisterLineageRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<RegisterLineageOutcome()>>(
-        [this, request]()
-        {
-            return this->RegisterLineage(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<RegisterLineageOutcome>>();
+    RegisterLineageAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const RegisterLineageRequest&,
+        RegisterLineageOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WedataClient::RemoveMemberProjectRoleOutcome WedataClient::RemoveMemberProjectRole(const RemoveMemberProjectRoleRequest &request)
@@ -4233,25 +4912,32 @@ WedataClient::RemoveMemberProjectRoleOutcome WedataClient::RemoveMemberProjectRo
 
 void WedataClient::RemoveMemberProjectRoleAsync(const RemoveMemberProjectRoleRequest& request, const RemoveMemberProjectRoleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->RemoveMemberProjectRole(request), context);
-    };
+    using Req = const RemoveMemberProjectRoleRequest&;
+    using Resp = RemoveMemberProjectRoleResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "RemoveMemberProjectRole", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WedataClient::RemoveMemberProjectRoleOutcomeCallable WedataClient::RemoveMemberProjectRoleCallable(const RemoveMemberProjectRoleRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<RemoveMemberProjectRoleOutcome()>>(
-        [this, request]()
-        {
-            return this->RemoveMemberProjectRole(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<RemoveMemberProjectRoleOutcome>>();
+    RemoveMemberProjectRoleAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const RemoveMemberProjectRoleRequest&,
+        RemoveMemberProjectRoleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WedataClient::RerunTaskInstancesAsyncOutcome WedataClient::RerunTaskInstancesAsync(const RerunTaskInstancesAsyncRequest &request)
@@ -4276,25 +4962,32 @@ WedataClient::RerunTaskInstancesAsyncOutcome WedataClient::RerunTaskInstancesAsy
 
 void WedataClient::RerunTaskInstancesAsyncAsync(const RerunTaskInstancesAsyncRequest& request, const RerunTaskInstancesAsyncAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->RerunTaskInstancesAsync(request), context);
-    };
+    using Req = const RerunTaskInstancesAsyncRequest&;
+    using Resp = RerunTaskInstancesAsyncResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "RerunTaskInstancesAsync", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WedataClient::RerunTaskInstancesAsyncOutcomeCallable WedataClient::RerunTaskInstancesAsyncCallable(const RerunTaskInstancesAsyncRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<RerunTaskInstancesAsyncOutcome()>>(
-        [this, request]()
-        {
-            return this->RerunTaskInstancesAsync(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<RerunTaskInstancesAsyncOutcome>>();
+    RerunTaskInstancesAsyncAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const RerunTaskInstancesAsyncRequest&,
+        RerunTaskInstancesAsyncOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WedataClient::RunSQLScriptOutcome WedataClient::RunSQLScript(const RunSQLScriptRequest &request)
@@ -4319,25 +5012,32 @@ WedataClient::RunSQLScriptOutcome WedataClient::RunSQLScript(const RunSQLScriptR
 
 void WedataClient::RunSQLScriptAsync(const RunSQLScriptRequest& request, const RunSQLScriptAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->RunSQLScript(request), context);
-    };
+    using Req = const RunSQLScriptRequest&;
+    using Resp = RunSQLScriptResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "RunSQLScript", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WedataClient::RunSQLScriptOutcomeCallable WedataClient::RunSQLScriptCallable(const RunSQLScriptRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<RunSQLScriptOutcome()>>(
-        [this, request]()
-        {
-            return this->RunSQLScript(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<RunSQLScriptOutcome>>();
+    RunSQLScriptAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const RunSQLScriptRequest&,
+        RunSQLScriptOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WedataClient::SetSuccessTaskInstancesAsyncOutcome WedataClient::SetSuccessTaskInstancesAsync(const SetSuccessTaskInstancesAsyncRequest &request)
@@ -4362,25 +5062,32 @@ WedataClient::SetSuccessTaskInstancesAsyncOutcome WedataClient::SetSuccessTaskIn
 
 void WedataClient::SetSuccessTaskInstancesAsyncAsync(const SetSuccessTaskInstancesAsyncRequest& request, const SetSuccessTaskInstancesAsyncAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->SetSuccessTaskInstancesAsync(request), context);
-    };
+    using Req = const SetSuccessTaskInstancesAsyncRequest&;
+    using Resp = SetSuccessTaskInstancesAsyncResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "SetSuccessTaskInstancesAsync", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WedataClient::SetSuccessTaskInstancesAsyncOutcomeCallable WedataClient::SetSuccessTaskInstancesAsyncCallable(const SetSuccessTaskInstancesAsyncRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<SetSuccessTaskInstancesAsyncOutcome()>>(
-        [this, request]()
-        {
-            return this->SetSuccessTaskInstancesAsync(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<SetSuccessTaskInstancesAsyncOutcome>>();
+    SetSuccessTaskInstancesAsyncAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const SetSuccessTaskInstancesAsyncRequest&,
+        SetSuccessTaskInstancesAsyncOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WedataClient::StartOpsTasksOutcome WedataClient::StartOpsTasks(const StartOpsTasksRequest &request)
@@ -4405,25 +5112,32 @@ WedataClient::StartOpsTasksOutcome WedataClient::StartOpsTasks(const StartOpsTas
 
 void WedataClient::StartOpsTasksAsync(const StartOpsTasksRequest& request, const StartOpsTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->StartOpsTasks(request), context);
-    };
+    using Req = const StartOpsTasksRequest&;
+    using Resp = StartOpsTasksResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "StartOpsTasks", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WedataClient::StartOpsTasksOutcomeCallable WedataClient::StartOpsTasksCallable(const StartOpsTasksRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<StartOpsTasksOutcome()>>(
-        [this, request]()
-        {
-            return this->StartOpsTasks(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<StartOpsTasksOutcome>>();
+    StartOpsTasksAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const StartOpsTasksRequest&,
+        StartOpsTasksOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WedataClient::StopOpsTasksAsyncOutcome WedataClient::StopOpsTasksAsync(const StopOpsTasksAsyncRequest &request)
@@ -4448,25 +5162,32 @@ WedataClient::StopOpsTasksAsyncOutcome WedataClient::StopOpsTasksAsync(const Sto
 
 void WedataClient::StopOpsTasksAsyncAsync(const StopOpsTasksAsyncRequest& request, const StopOpsTasksAsyncAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->StopOpsTasksAsync(request), context);
-    };
+    using Req = const StopOpsTasksAsyncRequest&;
+    using Resp = StopOpsTasksAsyncResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "StopOpsTasksAsync", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WedataClient::StopOpsTasksAsyncOutcomeCallable WedataClient::StopOpsTasksAsyncCallable(const StopOpsTasksAsyncRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<StopOpsTasksAsyncOutcome()>>(
-        [this, request]()
-        {
-            return this->StopOpsTasksAsync(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<StopOpsTasksAsyncOutcome>>();
+    StopOpsTasksAsyncAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const StopOpsTasksAsyncRequest&,
+        StopOpsTasksAsyncOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WedataClient::StopSQLScriptRunOutcome WedataClient::StopSQLScriptRun(const StopSQLScriptRunRequest &request)
@@ -4491,25 +5212,32 @@ WedataClient::StopSQLScriptRunOutcome WedataClient::StopSQLScriptRun(const StopS
 
 void WedataClient::StopSQLScriptRunAsync(const StopSQLScriptRunRequest& request, const StopSQLScriptRunAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->StopSQLScriptRun(request), context);
-    };
+    using Req = const StopSQLScriptRunRequest&;
+    using Resp = StopSQLScriptRunResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "StopSQLScriptRun", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WedataClient::StopSQLScriptRunOutcomeCallable WedataClient::StopSQLScriptRunCallable(const StopSQLScriptRunRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<StopSQLScriptRunOutcome()>>(
-        [this, request]()
-        {
-            return this->StopSQLScriptRun(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<StopSQLScriptRunOutcome>>();
+    StopSQLScriptRunAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const StopSQLScriptRunRequest&,
+        StopSQLScriptRunOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WedataClient::SubmitTaskOutcome WedataClient::SubmitTask(const SubmitTaskRequest &request)
@@ -4534,25 +5262,32 @@ WedataClient::SubmitTaskOutcome WedataClient::SubmitTask(const SubmitTaskRequest
 
 void WedataClient::SubmitTaskAsync(const SubmitTaskRequest& request, const SubmitTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->SubmitTask(request), context);
-    };
+    using Req = const SubmitTaskRequest&;
+    using Resp = SubmitTaskResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "SubmitTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WedataClient::SubmitTaskOutcomeCallable WedataClient::SubmitTaskCallable(const SubmitTaskRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<SubmitTaskOutcome()>>(
-        [this, request]()
-        {
-            return this->SubmitTask(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<SubmitTaskOutcome>>();
+    SubmitTaskAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const SubmitTaskRequest&,
+        SubmitTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WedataClient::UpdateCodeFileOutcome WedataClient::UpdateCodeFile(const UpdateCodeFileRequest &request)
@@ -4577,25 +5312,32 @@ WedataClient::UpdateCodeFileOutcome WedataClient::UpdateCodeFile(const UpdateCod
 
 void WedataClient::UpdateCodeFileAsync(const UpdateCodeFileRequest& request, const UpdateCodeFileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UpdateCodeFile(request), context);
-    };
+    using Req = const UpdateCodeFileRequest&;
+    using Resp = UpdateCodeFileResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UpdateCodeFile", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WedataClient::UpdateCodeFileOutcomeCallable WedataClient::UpdateCodeFileCallable(const UpdateCodeFileRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UpdateCodeFileOutcome()>>(
-        [this, request]()
-        {
-            return this->UpdateCodeFile(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UpdateCodeFileOutcome>>();
+    UpdateCodeFileAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const UpdateCodeFileRequest&,
+        UpdateCodeFileOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WedataClient::UpdateCodeFolderOutcome WedataClient::UpdateCodeFolder(const UpdateCodeFolderRequest &request)
@@ -4620,25 +5362,32 @@ WedataClient::UpdateCodeFolderOutcome WedataClient::UpdateCodeFolder(const Updat
 
 void WedataClient::UpdateCodeFolderAsync(const UpdateCodeFolderRequest& request, const UpdateCodeFolderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UpdateCodeFolder(request), context);
-    };
+    using Req = const UpdateCodeFolderRequest&;
+    using Resp = UpdateCodeFolderResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UpdateCodeFolder", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WedataClient::UpdateCodeFolderOutcomeCallable WedataClient::UpdateCodeFolderCallable(const UpdateCodeFolderRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UpdateCodeFolderOutcome()>>(
-        [this, request]()
-        {
-            return this->UpdateCodeFolder(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UpdateCodeFolderOutcome>>();
+    UpdateCodeFolderAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const UpdateCodeFolderRequest&,
+        UpdateCodeFolderOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WedataClient::UpdateDataSourceOutcome WedataClient::UpdateDataSource(const UpdateDataSourceRequest &request)
@@ -4663,25 +5412,32 @@ WedataClient::UpdateDataSourceOutcome WedataClient::UpdateDataSource(const Updat
 
 void WedataClient::UpdateDataSourceAsync(const UpdateDataSourceRequest& request, const UpdateDataSourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UpdateDataSource(request), context);
-    };
+    using Req = const UpdateDataSourceRequest&;
+    using Resp = UpdateDataSourceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UpdateDataSource", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WedataClient::UpdateDataSourceOutcomeCallable WedataClient::UpdateDataSourceCallable(const UpdateDataSourceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UpdateDataSourceOutcome()>>(
-        [this, request]()
-        {
-            return this->UpdateDataSource(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UpdateDataSourceOutcome>>();
+    UpdateDataSourceAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const UpdateDataSourceRequest&,
+        UpdateDataSourceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WedataClient::UpdateOpsAlarmRuleOutcome WedataClient::UpdateOpsAlarmRule(const UpdateOpsAlarmRuleRequest &request)
@@ -4706,25 +5462,32 @@ WedataClient::UpdateOpsAlarmRuleOutcome WedataClient::UpdateOpsAlarmRule(const U
 
 void WedataClient::UpdateOpsAlarmRuleAsync(const UpdateOpsAlarmRuleRequest& request, const UpdateOpsAlarmRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UpdateOpsAlarmRule(request), context);
-    };
+    using Req = const UpdateOpsAlarmRuleRequest&;
+    using Resp = UpdateOpsAlarmRuleResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UpdateOpsAlarmRule", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WedataClient::UpdateOpsAlarmRuleOutcomeCallable WedataClient::UpdateOpsAlarmRuleCallable(const UpdateOpsAlarmRuleRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UpdateOpsAlarmRuleOutcome()>>(
-        [this, request]()
-        {
-            return this->UpdateOpsAlarmRule(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UpdateOpsAlarmRuleOutcome>>();
+    UpdateOpsAlarmRuleAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const UpdateOpsAlarmRuleRequest&,
+        UpdateOpsAlarmRuleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WedataClient::UpdateOpsTasksOwnerOutcome WedataClient::UpdateOpsTasksOwner(const UpdateOpsTasksOwnerRequest &request)
@@ -4749,25 +5512,32 @@ WedataClient::UpdateOpsTasksOwnerOutcome WedataClient::UpdateOpsTasksOwner(const
 
 void WedataClient::UpdateOpsTasksOwnerAsync(const UpdateOpsTasksOwnerRequest& request, const UpdateOpsTasksOwnerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UpdateOpsTasksOwner(request), context);
-    };
+    using Req = const UpdateOpsTasksOwnerRequest&;
+    using Resp = UpdateOpsTasksOwnerResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UpdateOpsTasksOwner", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WedataClient::UpdateOpsTasksOwnerOutcomeCallable WedataClient::UpdateOpsTasksOwnerCallable(const UpdateOpsTasksOwnerRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UpdateOpsTasksOwnerOutcome()>>(
-        [this, request]()
-        {
-            return this->UpdateOpsTasksOwner(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UpdateOpsTasksOwnerOutcome>>();
+    UpdateOpsTasksOwnerAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const UpdateOpsTasksOwnerRequest&,
+        UpdateOpsTasksOwnerOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WedataClient::UpdateProjectOutcome WedataClient::UpdateProject(const UpdateProjectRequest &request)
@@ -4792,25 +5562,32 @@ WedataClient::UpdateProjectOutcome WedataClient::UpdateProject(const UpdateProje
 
 void WedataClient::UpdateProjectAsync(const UpdateProjectRequest& request, const UpdateProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UpdateProject(request), context);
-    };
+    using Req = const UpdateProjectRequest&;
+    using Resp = UpdateProjectResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UpdateProject", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WedataClient::UpdateProjectOutcomeCallable WedataClient::UpdateProjectCallable(const UpdateProjectRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UpdateProjectOutcome()>>(
-        [this, request]()
-        {
-            return this->UpdateProject(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UpdateProjectOutcome>>();
+    UpdateProjectAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const UpdateProjectRequest&,
+        UpdateProjectOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WedataClient::UpdateResourceFileOutcome WedataClient::UpdateResourceFile(const UpdateResourceFileRequest &request)
@@ -4835,25 +5612,32 @@ WedataClient::UpdateResourceFileOutcome WedataClient::UpdateResourceFile(const U
 
 void WedataClient::UpdateResourceFileAsync(const UpdateResourceFileRequest& request, const UpdateResourceFileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UpdateResourceFile(request), context);
-    };
+    using Req = const UpdateResourceFileRequest&;
+    using Resp = UpdateResourceFileResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UpdateResourceFile", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WedataClient::UpdateResourceFileOutcomeCallable WedataClient::UpdateResourceFileCallable(const UpdateResourceFileRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UpdateResourceFileOutcome()>>(
-        [this, request]()
-        {
-            return this->UpdateResourceFile(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UpdateResourceFileOutcome>>();
+    UpdateResourceFileAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const UpdateResourceFileRequest&,
+        UpdateResourceFileOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WedataClient::UpdateResourceFolderOutcome WedataClient::UpdateResourceFolder(const UpdateResourceFolderRequest &request)
@@ -4878,25 +5662,32 @@ WedataClient::UpdateResourceFolderOutcome WedataClient::UpdateResourceFolder(con
 
 void WedataClient::UpdateResourceFolderAsync(const UpdateResourceFolderRequest& request, const UpdateResourceFolderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UpdateResourceFolder(request), context);
-    };
+    using Req = const UpdateResourceFolderRequest&;
+    using Resp = UpdateResourceFolderResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UpdateResourceFolder", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WedataClient::UpdateResourceFolderOutcomeCallable WedataClient::UpdateResourceFolderCallable(const UpdateResourceFolderRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UpdateResourceFolderOutcome()>>(
-        [this, request]()
-        {
-            return this->UpdateResourceFolder(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UpdateResourceFolderOutcome>>();
+    UpdateResourceFolderAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const UpdateResourceFolderRequest&,
+        UpdateResourceFolderOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WedataClient::UpdateResourceGroupOutcome WedataClient::UpdateResourceGroup(const UpdateResourceGroupRequest &request)
@@ -4921,25 +5712,32 @@ WedataClient::UpdateResourceGroupOutcome WedataClient::UpdateResourceGroup(const
 
 void WedataClient::UpdateResourceGroupAsync(const UpdateResourceGroupRequest& request, const UpdateResourceGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UpdateResourceGroup(request), context);
-    };
+    using Req = const UpdateResourceGroupRequest&;
+    using Resp = UpdateResourceGroupResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UpdateResourceGroup", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WedataClient::UpdateResourceGroupOutcomeCallable WedataClient::UpdateResourceGroupCallable(const UpdateResourceGroupRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UpdateResourceGroupOutcome()>>(
-        [this, request]()
-        {
-            return this->UpdateResourceGroup(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UpdateResourceGroupOutcome>>();
+    UpdateResourceGroupAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const UpdateResourceGroupRequest&,
+        UpdateResourceGroupOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WedataClient::UpdateSQLFolderOutcome WedataClient::UpdateSQLFolder(const UpdateSQLFolderRequest &request)
@@ -4964,25 +5762,32 @@ WedataClient::UpdateSQLFolderOutcome WedataClient::UpdateSQLFolder(const UpdateS
 
 void WedataClient::UpdateSQLFolderAsync(const UpdateSQLFolderRequest& request, const UpdateSQLFolderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UpdateSQLFolder(request), context);
-    };
+    using Req = const UpdateSQLFolderRequest&;
+    using Resp = UpdateSQLFolderResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UpdateSQLFolder", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WedataClient::UpdateSQLFolderOutcomeCallable WedataClient::UpdateSQLFolderCallable(const UpdateSQLFolderRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UpdateSQLFolderOutcome()>>(
-        [this, request]()
-        {
-            return this->UpdateSQLFolder(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UpdateSQLFolderOutcome>>();
+    UpdateSQLFolderAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const UpdateSQLFolderRequest&,
+        UpdateSQLFolderOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WedataClient::UpdateSQLScriptOutcome WedataClient::UpdateSQLScript(const UpdateSQLScriptRequest &request)
@@ -5007,25 +5812,32 @@ WedataClient::UpdateSQLScriptOutcome WedataClient::UpdateSQLScript(const UpdateS
 
 void WedataClient::UpdateSQLScriptAsync(const UpdateSQLScriptRequest& request, const UpdateSQLScriptAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UpdateSQLScript(request), context);
-    };
+    using Req = const UpdateSQLScriptRequest&;
+    using Resp = UpdateSQLScriptResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UpdateSQLScript", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WedataClient::UpdateSQLScriptOutcomeCallable WedataClient::UpdateSQLScriptCallable(const UpdateSQLScriptRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UpdateSQLScriptOutcome()>>(
-        [this, request]()
-        {
-            return this->UpdateSQLScript(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UpdateSQLScriptOutcome>>();
+    UpdateSQLScriptAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const UpdateSQLScriptRequest&,
+        UpdateSQLScriptOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WedataClient::UpdateTaskOutcome WedataClient::UpdateTask(const UpdateTaskRequest &request)
@@ -5050,25 +5862,32 @@ WedataClient::UpdateTaskOutcome WedataClient::UpdateTask(const UpdateTaskRequest
 
 void WedataClient::UpdateTaskAsync(const UpdateTaskRequest& request, const UpdateTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UpdateTask(request), context);
-    };
+    using Req = const UpdateTaskRequest&;
+    using Resp = UpdateTaskResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UpdateTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WedataClient::UpdateTaskOutcomeCallable WedataClient::UpdateTaskCallable(const UpdateTaskRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UpdateTaskOutcome()>>(
-        [this, request]()
-        {
-            return this->UpdateTask(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UpdateTaskOutcome>>();
+    UpdateTaskAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const UpdateTaskRequest&,
+        UpdateTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WedataClient::UpdateWorkflowOutcome WedataClient::UpdateWorkflow(const UpdateWorkflowRequest &request)
@@ -5093,25 +5912,32 @@ WedataClient::UpdateWorkflowOutcome WedataClient::UpdateWorkflow(const UpdateWor
 
 void WedataClient::UpdateWorkflowAsync(const UpdateWorkflowRequest& request, const UpdateWorkflowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UpdateWorkflow(request), context);
-    };
+    using Req = const UpdateWorkflowRequest&;
+    using Resp = UpdateWorkflowResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UpdateWorkflow", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WedataClient::UpdateWorkflowOutcomeCallable WedataClient::UpdateWorkflowCallable(const UpdateWorkflowRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UpdateWorkflowOutcome()>>(
-        [this, request]()
-        {
-            return this->UpdateWorkflow(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UpdateWorkflowOutcome>>();
+    UpdateWorkflowAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const UpdateWorkflowRequest&,
+        UpdateWorkflowOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WedataClient::UpdateWorkflowFolderOutcome WedataClient::UpdateWorkflowFolder(const UpdateWorkflowFolderRequest &request)
@@ -5136,24 +5962,31 @@ WedataClient::UpdateWorkflowFolderOutcome WedataClient::UpdateWorkflowFolder(con
 
 void WedataClient::UpdateWorkflowFolderAsync(const UpdateWorkflowFolderRequest& request, const UpdateWorkflowFolderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UpdateWorkflowFolder(request), context);
-    };
+    using Req = const UpdateWorkflowFolderRequest&;
+    using Resp = UpdateWorkflowFolderResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UpdateWorkflowFolder", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WedataClient::UpdateWorkflowFolderOutcomeCallable WedataClient::UpdateWorkflowFolderCallable(const UpdateWorkflowFolderRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UpdateWorkflowFolderOutcome()>>(
-        [this, request]()
-        {
-            return this->UpdateWorkflowFolder(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UpdateWorkflowFolderOutcome>>();
+    UpdateWorkflowFolderAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const UpdateWorkflowFolderRequest&,
+        UpdateWorkflowFolderOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 

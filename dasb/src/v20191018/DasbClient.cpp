@@ -62,25 +62,32 @@ DasbClient::AddDeviceGroupMembersOutcome DasbClient::AddDeviceGroupMembers(const
 
 void DasbClient::AddDeviceGroupMembersAsync(const AddDeviceGroupMembersRequest& request, const AddDeviceGroupMembersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->AddDeviceGroupMembers(request), context);
-    };
+    using Req = const AddDeviceGroupMembersRequest&;
+    using Resp = AddDeviceGroupMembersResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "AddDeviceGroupMembers", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DasbClient::AddDeviceGroupMembersOutcomeCallable DasbClient::AddDeviceGroupMembersCallable(const AddDeviceGroupMembersRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<AddDeviceGroupMembersOutcome()>>(
-        [this, request]()
-        {
-            return this->AddDeviceGroupMembers(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<AddDeviceGroupMembersOutcome>>();
+    AddDeviceGroupMembersAsync(
+    request,
+    [prom](
+        const DasbClient*,
+        const AddDeviceGroupMembersRequest&,
+        AddDeviceGroupMembersOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DasbClient::AddUserGroupMembersOutcome DasbClient::AddUserGroupMembers(const AddUserGroupMembersRequest &request)
@@ -105,25 +112,32 @@ DasbClient::AddUserGroupMembersOutcome DasbClient::AddUserGroupMembers(const Add
 
 void DasbClient::AddUserGroupMembersAsync(const AddUserGroupMembersRequest& request, const AddUserGroupMembersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->AddUserGroupMembers(request), context);
-    };
+    using Req = const AddUserGroupMembersRequest&;
+    using Resp = AddUserGroupMembersResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "AddUserGroupMembers", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DasbClient::AddUserGroupMembersOutcomeCallable DasbClient::AddUserGroupMembersCallable(const AddUserGroupMembersRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<AddUserGroupMembersOutcome()>>(
-        [this, request]()
-        {
-            return this->AddUserGroupMembers(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<AddUserGroupMembersOutcome>>();
+    AddUserGroupMembersAsync(
+    request,
+    [prom](
+        const DasbClient*,
+        const AddUserGroupMembersRequest&,
+        AddUserGroupMembersOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DasbClient::BindDeviceAccountPasswordOutcome DasbClient::BindDeviceAccountPassword(const BindDeviceAccountPasswordRequest &request)
@@ -148,25 +162,32 @@ DasbClient::BindDeviceAccountPasswordOutcome DasbClient::BindDeviceAccountPasswo
 
 void DasbClient::BindDeviceAccountPasswordAsync(const BindDeviceAccountPasswordRequest& request, const BindDeviceAccountPasswordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->BindDeviceAccountPassword(request), context);
-    };
+    using Req = const BindDeviceAccountPasswordRequest&;
+    using Resp = BindDeviceAccountPasswordResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "BindDeviceAccountPassword", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DasbClient::BindDeviceAccountPasswordOutcomeCallable DasbClient::BindDeviceAccountPasswordCallable(const BindDeviceAccountPasswordRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<BindDeviceAccountPasswordOutcome()>>(
-        [this, request]()
-        {
-            return this->BindDeviceAccountPassword(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<BindDeviceAccountPasswordOutcome>>();
+    BindDeviceAccountPasswordAsync(
+    request,
+    [prom](
+        const DasbClient*,
+        const BindDeviceAccountPasswordRequest&,
+        BindDeviceAccountPasswordOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DasbClient::BindDeviceAccountPrivateKeyOutcome DasbClient::BindDeviceAccountPrivateKey(const BindDeviceAccountPrivateKeyRequest &request)
@@ -191,25 +212,32 @@ DasbClient::BindDeviceAccountPrivateKeyOutcome DasbClient::BindDeviceAccountPriv
 
 void DasbClient::BindDeviceAccountPrivateKeyAsync(const BindDeviceAccountPrivateKeyRequest& request, const BindDeviceAccountPrivateKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->BindDeviceAccountPrivateKey(request), context);
-    };
+    using Req = const BindDeviceAccountPrivateKeyRequest&;
+    using Resp = BindDeviceAccountPrivateKeyResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "BindDeviceAccountPrivateKey", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DasbClient::BindDeviceAccountPrivateKeyOutcomeCallable DasbClient::BindDeviceAccountPrivateKeyCallable(const BindDeviceAccountPrivateKeyRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<BindDeviceAccountPrivateKeyOutcome()>>(
-        [this, request]()
-        {
-            return this->BindDeviceAccountPrivateKey(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<BindDeviceAccountPrivateKeyOutcome>>();
+    BindDeviceAccountPrivateKeyAsync(
+    request,
+    [prom](
+        const DasbClient*,
+        const BindDeviceAccountPrivateKeyRequest&,
+        BindDeviceAccountPrivateKeyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DasbClient::BindDeviceResourceOutcome DasbClient::BindDeviceResource(const BindDeviceResourceRequest &request)
@@ -234,25 +262,32 @@ DasbClient::BindDeviceResourceOutcome DasbClient::BindDeviceResource(const BindD
 
 void DasbClient::BindDeviceResourceAsync(const BindDeviceResourceRequest& request, const BindDeviceResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->BindDeviceResource(request), context);
-    };
+    using Req = const BindDeviceResourceRequest&;
+    using Resp = BindDeviceResourceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "BindDeviceResource", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DasbClient::BindDeviceResourceOutcomeCallable DasbClient::BindDeviceResourceCallable(const BindDeviceResourceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<BindDeviceResourceOutcome()>>(
-        [this, request]()
-        {
-            return this->BindDeviceResource(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<BindDeviceResourceOutcome>>();
+    BindDeviceResourceAsync(
+    request,
+    [prom](
+        const DasbClient*,
+        const BindDeviceResourceRequest&,
+        BindDeviceResourceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DasbClient::CreateAclOutcome DasbClient::CreateAcl(const CreateAclRequest &request)
@@ -277,25 +312,32 @@ DasbClient::CreateAclOutcome DasbClient::CreateAcl(const CreateAclRequest &reque
 
 void DasbClient::CreateAclAsync(const CreateAclRequest& request, const CreateAclAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateAcl(request), context);
-    };
+    using Req = const CreateAclRequest&;
+    using Resp = CreateAclResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateAcl", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DasbClient::CreateAclOutcomeCallable DasbClient::CreateAclCallable(const CreateAclRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateAclOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateAcl(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateAclOutcome>>();
+    CreateAclAsync(
+    request,
+    [prom](
+        const DasbClient*,
+        const CreateAclRequest&,
+        CreateAclOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DasbClient::CreateAssetSyncJobOutcome DasbClient::CreateAssetSyncJob(const CreateAssetSyncJobRequest &request)
@@ -320,25 +362,32 @@ DasbClient::CreateAssetSyncJobOutcome DasbClient::CreateAssetSyncJob(const Creat
 
 void DasbClient::CreateAssetSyncJobAsync(const CreateAssetSyncJobRequest& request, const CreateAssetSyncJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateAssetSyncJob(request), context);
-    };
+    using Req = const CreateAssetSyncJobRequest&;
+    using Resp = CreateAssetSyncJobResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateAssetSyncJob", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DasbClient::CreateAssetSyncJobOutcomeCallable DasbClient::CreateAssetSyncJobCallable(const CreateAssetSyncJobRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateAssetSyncJobOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateAssetSyncJob(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateAssetSyncJobOutcome>>();
+    CreateAssetSyncJobAsync(
+    request,
+    [prom](
+        const DasbClient*,
+        const CreateAssetSyncJobRequest&,
+        CreateAssetSyncJobOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DasbClient::CreateChangePwdTaskOutcome DasbClient::CreateChangePwdTask(const CreateChangePwdTaskRequest &request)
@@ -363,25 +412,32 @@ DasbClient::CreateChangePwdTaskOutcome DasbClient::CreateChangePwdTask(const Cre
 
 void DasbClient::CreateChangePwdTaskAsync(const CreateChangePwdTaskRequest& request, const CreateChangePwdTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateChangePwdTask(request), context);
-    };
+    using Req = const CreateChangePwdTaskRequest&;
+    using Resp = CreateChangePwdTaskResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateChangePwdTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DasbClient::CreateChangePwdTaskOutcomeCallable DasbClient::CreateChangePwdTaskCallable(const CreateChangePwdTaskRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateChangePwdTaskOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateChangePwdTask(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateChangePwdTaskOutcome>>();
+    CreateChangePwdTaskAsync(
+    request,
+    [prom](
+        const DasbClient*,
+        const CreateChangePwdTaskRequest&,
+        CreateChangePwdTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DasbClient::CreateCmdTemplateOutcome DasbClient::CreateCmdTemplate(const CreateCmdTemplateRequest &request)
@@ -406,25 +462,32 @@ DasbClient::CreateCmdTemplateOutcome DasbClient::CreateCmdTemplate(const CreateC
 
 void DasbClient::CreateCmdTemplateAsync(const CreateCmdTemplateRequest& request, const CreateCmdTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateCmdTemplate(request), context);
-    };
+    using Req = const CreateCmdTemplateRequest&;
+    using Resp = CreateCmdTemplateResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateCmdTemplate", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DasbClient::CreateCmdTemplateOutcomeCallable DasbClient::CreateCmdTemplateCallable(const CreateCmdTemplateRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateCmdTemplateOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateCmdTemplate(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateCmdTemplateOutcome>>();
+    CreateCmdTemplateAsync(
+    request,
+    [prom](
+        const DasbClient*,
+        const CreateCmdTemplateRequest&,
+        CreateCmdTemplateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DasbClient::CreateDeviceAccountOutcome DasbClient::CreateDeviceAccount(const CreateDeviceAccountRequest &request)
@@ -449,25 +512,32 @@ DasbClient::CreateDeviceAccountOutcome DasbClient::CreateDeviceAccount(const Cre
 
 void DasbClient::CreateDeviceAccountAsync(const CreateDeviceAccountRequest& request, const CreateDeviceAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateDeviceAccount(request), context);
-    };
+    using Req = const CreateDeviceAccountRequest&;
+    using Resp = CreateDeviceAccountResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateDeviceAccount", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DasbClient::CreateDeviceAccountOutcomeCallable DasbClient::CreateDeviceAccountCallable(const CreateDeviceAccountRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateDeviceAccountOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateDeviceAccount(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateDeviceAccountOutcome>>();
+    CreateDeviceAccountAsync(
+    request,
+    [prom](
+        const DasbClient*,
+        const CreateDeviceAccountRequest&,
+        CreateDeviceAccountOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DasbClient::CreateDeviceGroupOutcome DasbClient::CreateDeviceGroup(const CreateDeviceGroupRequest &request)
@@ -492,25 +562,32 @@ DasbClient::CreateDeviceGroupOutcome DasbClient::CreateDeviceGroup(const CreateD
 
 void DasbClient::CreateDeviceGroupAsync(const CreateDeviceGroupRequest& request, const CreateDeviceGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateDeviceGroup(request), context);
-    };
+    using Req = const CreateDeviceGroupRequest&;
+    using Resp = CreateDeviceGroupResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateDeviceGroup", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DasbClient::CreateDeviceGroupOutcomeCallable DasbClient::CreateDeviceGroupCallable(const CreateDeviceGroupRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateDeviceGroupOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateDeviceGroup(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateDeviceGroupOutcome>>();
+    CreateDeviceGroupAsync(
+    request,
+    [prom](
+        const DasbClient*,
+        const CreateDeviceGroupRequest&,
+        CreateDeviceGroupOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DasbClient::CreateResourceOutcome DasbClient::CreateResource(const CreateResourceRequest &request)
@@ -535,25 +612,32 @@ DasbClient::CreateResourceOutcome DasbClient::CreateResource(const CreateResourc
 
 void DasbClient::CreateResourceAsync(const CreateResourceRequest& request, const CreateResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateResource(request), context);
-    };
+    using Req = const CreateResourceRequest&;
+    using Resp = CreateResourceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateResource", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DasbClient::CreateResourceOutcomeCallable DasbClient::CreateResourceCallable(const CreateResourceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateResourceOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateResource(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateResourceOutcome>>();
+    CreateResourceAsync(
+    request,
+    [prom](
+        const DasbClient*,
+        const CreateResourceRequest&,
+        CreateResourceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DasbClient::CreateUserOutcome DasbClient::CreateUser(const CreateUserRequest &request)
@@ -578,25 +662,32 @@ DasbClient::CreateUserOutcome DasbClient::CreateUser(const CreateUserRequest &re
 
 void DasbClient::CreateUserAsync(const CreateUserRequest& request, const CreateUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateUser(request), context);
-    };
+    using Req = const CreateUserRequest&;
+    using Resp = CreateUserResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateUser", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DasbClient::CreateUserOutcomeCallable DasbClient::CreateUserCallable(const CreateUserRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateUserOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateUser(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateUserOutcome>>();
+    CreateUserAsync(
+    request,
+    [prom](
+        const DasbClient*,
+        const CreateUserRequest&,
+        CreateUserOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DasbClient::CreateUserGroupOutcome DasbClient::CreateUserGroup(const CreateUserGroupRequest &request)
@@ -621,25 +712,32 @@ DasbClient::CreateUserGroupOutcome DasbClient::CreateUserGroup(const CreateUserG
 
 void DasbClient::CreateUserGroupAsync(const CreateUserGroupRequest& request, const CreateUserGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateUserGroup(request), context);
-    };
+    using Req = const CreateUserGroupRequest&;
+    using Resp = CreateUserGroupResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateUserGroup", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DasbClient::CreateUserGroupOutcomeCallable DasbClient::CreateUserGroupCallable(const CreateUserGroupRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateUserGroupOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateUserGroup(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateUserGroupOutcome>>();
+    CreateUserGroupAsync(
+    request,
+    [prom](
+        const DasbClient*,
+        const CreateUserGroupRequest&,
+        CreateUserGroupOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DasbClient::DeleteAclsOutcome DasbClient::DeleteAcls(const DeleteAclsRequest &request)
@@ -664,25 +762,32 @@ DasbClient::DeleteAclsOutcome DasbClient::DeleteAcls(const DeleteAclsRequest &re
 
 void DasbClient::DeleteAclsAsync(const DeleteAclsRequest& request, const DeleteAclsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteAcls(request), context);
-    };
+    using Req = const DeleteAclsRequest&;
+    using Resp = DeleteAclsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteAcls", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DasbClient::DeleteAclsOutcomeCallable DasbClient::DeleteAclsCallable(const DeleteAclsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteAclsOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteAcls(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteAclsOutcome>>();
+    DeleteAclsAsync(
+    request,
+    [prom](
+        const DasbClient*,
+        const DeleteAclsRequest&,
+        DeleteAclsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DasbClient::DeleteChangePwdTaskOutcome DasbClient::DeleteChangePwdTask(const DeleteChangePwdTaskRequest &request)
@@ -707,25 +812,32 @@ DasbClient::DeleteChangePwdTaskOutcome DasbClient::DeleteChangePwdTask(const Del
 
 void DasbClient::DeleteChangePwdTaskAsync(const DeleteChangePwdTaskRequest& request, const DeleteChangePwdTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteChangePwdTask(request), context);
-    };
+    using Req = const DeleteChangePwdTaskRequest&;
+    using Resp = DeleteChangePwdTaskResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteChangePwdTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DasbClient::DeleteChangePwdTaskOutcomeCallable DasbClient::DeleteChangePwdTaskCallable(const DeleteChangePwdTaskRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteChangePwdTaskOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteChangePwdTask(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteChangePwdTaskOutcome>>();
+    DeleteChangePwdTaskAsync(
+    request,
+    [prom](
+        const DasbClient*,
+        const DeleteChangePwdTaskRequest&,
+        DeleteChangePwdTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DasbClient::DeleteCmdTemplatesOutcome DasbClient::DeleteCmdTemplates(const DeleteCmdTemplatesRequest &request)
@@ -750,25 +862,32 @@ DasbClient::DeleteCmdTemplatesOutcome DasbClient::DeleteCmdTemplates(const Delet
 
 void DasbClient::DeleteCmdTemplatesAsync(const DeleteCmdTemplatesRequest& request, const DeleteCmdTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteCmdTemplates(request), context);
-    };
+    using Req = const DeleteCmdTemplatesRequest&;
+    using Resp = DeleteCmdTemplatesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteCmdTemplates", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DasbClient::DeleteCmdTemplatesOutcomeCallable DasbClient::DeleteCmdTemplatesCallable(const DeleteCmdTemplatesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteCmdTemplatesOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteCmdTemplates(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteCmdTemplatesOutcome>>();
+    DeleteCmdTemplatesAsync(
+    request,
+    [prom](
+        const DasbClient*,
+        const DeleteCmdTemplatesRequest&,
+        DeleteCmdTemplatesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DasbClient::DeleteDeviceAccountsOutcome DasbClient::DeleteDeviceAccounts(const DeleteDeviceAccountsRequest &request)
@@ -793,25 +912,32 @@ DasbClient::DeleteDeviceAccountsOutcome DasbClient::DeleteDeviceAccounts(const D
 
 void DasbClient::DeleteDeviceAccountsAsync(const DeleteDeviceAccountsRequest& request, const DeleteDeviceAccountsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteDeviceAccounts(request), context);
-    };
+    using Req = const DeleteDeviceAccountsRequest&;
+    using Resp = DeleteDeviceAccountsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteDeviceAccounts", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DasbClient::DeleteDeviceAccountsOutcomeCallable DasbClient::DeleteDeviceAccountsCallable(const DeleteDeviceAccountsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteDeviceAccountsOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteDeviceAccounts(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteDeviceAccountsOutcome>>();
+    DeleteDeviceAccountsAsync(
+    request,
+    [prom](
+        const DasbClient*,
+        const DeleteDeviceAccountsRequest&,
+        DeleteDeviceAccountsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DasbClient::DeleteDeviceGroupMembersOutcome DasbClient::DeleteDeviceGroupMembers(const DeleteDeviceGroupMembersRequest &request)
@@ -836,25 +962,32 @@ DasbClient::DeleteDeviceGroupMembersOutcome DasbClient::DeleteDeviceGroupMembers
 
 void DasbClient::DeleteDeviceGroupMembersAsync(const DeleteDeviceGroupMembersRequest& request, const DeleteDeviceGroupMembersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteDeviceGroupMembers(request), context);
-    };
+    using Req = const DeleteDeviceGroupMembersRequest&;
+    using Resp = DeleteDeviceGroupMembersResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteDeviceGroupMembers", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DasbClient::DeleteDeviceGroupMembersOutcomeCallable DasbClient::DeleteDeviceGroupMembersCallable(const DeleteDeviceGroupMembersRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteDeviceGroupMembersOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteDeviceGroupMembers(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteDeviceGroupMembersOutcome>>();
+    DeleteDeviceGroupMembersAsync(
+    request,
+    [prom](
+        const DasbClient*,
+        const DeleteDeviceGroupMembersRequest&,
+        DeleteDeviceGroupMembersOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DasbClient::DeleteDeviceGroupsOutcome DasbClient::DeleteDeviceGroups(const DeleteDeviceGroupsRequest &request)
@@ -879,25 +1012,32 @@ DasbClient::DeleteDeviceGroupsOutcome DasbClient::DeleteDeviceGroups(const Delet
 
 void DasbClient::DeleteDeviceGroupsAsync(const DeleteDeviceGroupsRequest& request, const DeleteDeviceGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteDeviceGroups(request), context);
-    };
+    using Req = const DeleteDeviceGroupsRequest&;
+    using Resp = DeleteDeviceGroupsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteDeviceGroups", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DasbClient::DeleteDeviceGroupsOutcomeCallable DasbClient::DeleteDeviceGroupsCallable(const DeleteDeviceGroupsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteDeviceGroupsOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteDeviceGroups(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteDeviceGroupsOutcome>>();
+    DeleteDeviceGroupsAsync(
+    request,
+    [prom](
+        const DasbClient*,
+        const DeleteDeviceGroupsRequest&,
+        DeleteDeviceGroupsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DasbClient::DeleteDevicesOutcome DasbClient::DeleteDevices(const DeleteDevicesRequest &request)
@@ -922,25 +1062,32 @@ DasbClient::DeleteDevicesOutcome DasbClient::DeleteDevices(const DeleteDevicesRe
 
 void DasbClient::DeleteDevicesAsync(const DeleteDevicesRequest& request, const DeleteDevicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteDevices(request), context);
-    };
+    using Req = const DeleteDevicesRequest&;
+    using Resp = DeleteDevicesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteDevices", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DasbClient::DeleteDevicesOutcomeCallable DasbClient::DeleteDevicesCallable(const DeleteDevicesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteDevicesOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteDevices(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteDevicesOutcome>>();
+    DeleteDevicesAsync(
+    request,
+    [prom](
+        const DasbClient*,
+        const DeleteDevicesRequest&,
+        DeleteDevicesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DasbClient::DeleteUserGroupMembersOutcome DasbClient::DeleteUserGroupMembers(const DeleteUserGroupMembersRequest &request)
@@ -965,25 +1112,32 @@ DasbClient::DeleteUserGroupMembersOutcome DasbClient::DeleteUserGroupMembers(con
 
 void DasbClient::DeleteUserGroupMembersAsync(const DeleteUserGroupMembersRequest& request, const DeleteUserGroupMembersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteUserGroupMembers(request), context);
-    };
+    using Req = const DeleteUserGroupMembersRequest&;
+    using Resp = DeleteUserGroupMembersResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteUserGroupMembers", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DasbClient::DeleteUserGroupMembersOutcomeCallable DasbClient::DeleteUserGroupMembersCallable(const DeleteUserGroupMembersRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteUserGroupMembersOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteUserGroupMembers(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteUserGroupMembersOutcome>>();
+    DeleteUserGroupMembersAsync(
+    request,
+    [prom](
+        const DasbClient*,
+        const DeleteUserGroupMembersRequest&,
+        DeleteUserGroupMembersOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DasbClient::DeleteUserGroupsOutcome DasbClient::DeleteUserGroups(const DeleteUserGroupsRequest &request)
@@ -1008,25 +1162,32 @@ DasbClient::DeleteUserGroupsOutcome DasbClient::DeleteUserGroups(const DeleteUse
 
 void DasbClient::DeleteUserGroupsAsync(const DeleteUserGroupsRequest& request, const DeleteUserGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteUserGroups(request), context);
-    };
+    using Req = const DeleteUserGroupsRequest&;
+    using Resp = DeleteUserGroupsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteUserGroups", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DasbClient::DeleteUserGroupsOutcomeCallable DasbClient::DeleteUserGroupsCallable(const DeleteUserGroupsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteUserGroupsOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteUserGroups(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteUserGroupsOutcome>>();
+    DeleteUserGroupsAsync(
+    request,
+    [prom](
+        const DasbClient*,
+        const DeleteUserGroupsRequest&,
+        DeleteUserGroupsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DasbClient::DeleteUsersOutcome DasbClient::DeleteUsers(const DeleteUsersRequest &request)
@@ -1051,25 +1212,32 @@ DasbClient::DeleteUsersOutcome DasbClient::DeleteUsers(const DeleteUsersRequest 
 
 void DasbClient::DeleteUsersAsync(const DeleteUsersRequest& request, const DeleteUsersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteUsers(request), context);
-    };
+    using Req = const DeleteUsersRequest&;
+    using Resp = DeleteUsersResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteUsers", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DasbClient::DeleteUsersOutcomeCallable DasbClient::DeleteUsersCallable(const DeleteUsersRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteUsersOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteUsers(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteUsersOutcome>>();
+    DeleteUsersAsync(
+    request,
+    [prom](
+        const DasbClient*,
+        const DeleteUsersRequest&,
+        DeleteUsersOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DasbClient::DeployResourceOutcome DasbClient::DeployResource(const DeployResourceRequest &request)
@@ -1094,25 +1262,32 @@ DasbClient::DeployResourceOutcome DasbClient::DeployResource(const DeployResourc
 
 void DasbClient::DeployResourceAsync(const DeployResourceRequest& request, const DeployResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeployResource(request), context);
-    };
+    using Req = const DeployResourceRequest&;
+    using Resp = DeployResourceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeployResource", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DasbClient::DeployResourceOutcomeCallable DasbClient::DeployResourceCallable(const DeployResourceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeployResourceOutcome()>>(
-        [this, request]()
-        {
-            return this->DeployResource(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeployResourceOutcome>>();
+    DeployResourceAsync(
+    request,
+    [prom](
+        const DasbClient*,
+        const DeployResourceRequest&,
+        DeployResourceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DasbClient::DescribeAclsOutcome DasbClient::DescribeAcls(const DescribeAclsRequest &request)
@@ -1137,25 +1312,32 @@ DasbClient::DescribeAclsOutcome DasbClient::DescribeAcls(const DescribeAclsReque
 
 void DasbClient::DescribeAclsAsync(const DescribeAclsRequest& request, const DescribeAclsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAcls(request), context);
-    };
+    using Req = const DescribeAclsRequest&;
+    using Resp = DescribeAclsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAcls", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DasbClient::DescribeAclsOutcomeCallable DasbClient::DescribeAclsCallable(const DescribeAclsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAclsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAcls(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAclsOutcome>>();
+    DescribeAclsAsync(
+    request,
+    [prom](
+        const DasbClient*,
+        const DescribeAclsRequest&,
+        DescribeAclsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DasbClient::DescribeAssetSyncStatusOutcome DasbClient::DescribeAssetSyncStatus(const DescribeAssetSyncStatusRequest &request)
@@ -1180,25 +1362,32 @@ DasbClient::DescribeAssetSyncStatusOutcome DasbClient::DescribeAssetSyncStatus(c
 
 void DasbClient::DescribeAssetSyncStatusAsync(const DescribeAssetSyncStatusRequest& request, const DescribeAssetSyncStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAssetSyncStatus(request), context);
-    };
+    using Req = const DescribeAssetSyncStatusRequest&;
+    using Resp = DescribeAssetSyncStatusResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAssetSyncStatus", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DasbClient::DescribeAssetSyncStatusOutcomeCallable DasbClient::DescribeAssetSyncStatusCallable(const DescribeAssetSyncStatusRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAssetSyncStatusOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAssetSyncStatus(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAssetSyncStatusOutcome>>();
+    DescribeAssetSyncStatusAsync(
+    request,
+    [prom](
+        const DasbClient*,
+        const DescribeAssetSyncStatusRequest&,
+        DescribeAssetSyncStatusOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DasbClient::DescribeChangePwdTaskOutcome DasbClient::DescribeChangePwdTask(const DescribeChangePwdTaskRequest &request)
@@ -1223,25 +1412,32 @@ DasbClient::DescribeChangePwdTaskOutcome DasbClient::DescribeChangePwdTask(const
 
 void DasbClient::DescribeChangePwdTaskAsync(const DescribeChangePwdTaskRequest& request, const DescribeChangePwdTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeChangePwdTask(request), context);
-    };
+    using Req = const DescribeChangePwdTaskRequest&;
+    using Resp = DescribeChangePwdTaskResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeChangePwdTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DasbClient::DescribeChangePwdTaskOutcomeCallable DasbClient::DescribeChangePwdTaskCallable(const DescribeChangePwdTaskRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeChangePwdTaskOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeChangePwdTask(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeChangePwdTaskOutcome>>();
+    DescribeChangePwdTaskAsync(
+    request,
+    [prom](
+        const DasbClient*,
+        const DescribeChangePwdTaskRequest&,
+        DescribeChangePwdTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DasbClient::DescribeChangePwdTaskDetailOutcome DasbClient::DescribeChangePwdTaskDetail(const DescribeChangePwdTaskDetailRequest &request)
@@ -1266,25 +1462,32 @@ DasbClient::DescribeChangePwdTaskDetailOutcome DasbClient::DescribeChangePwdTask
 
 void DasbClient::DescribeChangePwdTaskDetailAsync(const DescribeChangePwdTaskDetailRequest& request, const DescribeChangePwdTaskDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeChangePwdTaskDetail(request), context);
-    };
+    using Req = const DescribeChangePwdTaskDetailRequest&;
+    using Resp = DescribeChangePwdTaskDetailResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeChangePwdTaskDetail", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DasbClient::DescribeChangePwdTaskDetailOutcomeCallable DasbClient::DescribeChangePwdTaskDetailCallable(const DescribeChangePwdTaskDetailRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeChangePwdTaskDetailOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeChangePwdTaskDetail(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeChangePwdTaskDetailOutcome>>();
+    DescribeChangePwdTaskDetailAsync(
+    request,
+    [prom](
+        const DasbClient*,
+        const DescribeChangePwdTaskDetailRequest&,
+        DescribeChangePwdTaskDetailOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DasbClient::DescribeCmdTemplatesOutcome DasbClient::DescribeCmdTemplates(const DescribeCmdTemplatesRequest &request)
@@ -1309,25 +1512,32 @@ DasbClient::DescribeCmdTemplatesOutcome DasbClient::DescribeCmdTemplates(const D
 
 void DasbClient::DescribeCmdTemplatesAsync(const DescribeCmdTemplatesRequest& request, const DescribeCmdTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeCmdTemplates(request), context);
-    };
+    using Req = const DescribeCmdTemplatesRequest&;
+    using Resp = DescribeCmdTemplatesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeCmdTemplates", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DasbClient::DescribeCmdTemplatesOutcomeCallable DasbClient::DescribeCmdTemplatesCallable(const DescribeCmdTemplatesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeCmdTemplatesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeCmdTemplates(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeCmdTemplatesOutcome>>();
+    DescribeCmdTemplatesAsync(
+    request,
+    [prom](
+        const DasbClient*,
+        const DescribeCmdTemplatesRequest&,
+        DescribeCmdTemplatesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DasbClient::DescribeDasbImageIdsOutcome DasbClient::DescribeDasbImageIds(const DescribeDasbImageIdsRequest &request)
@@ -1352,25 +1562,32 @@ DasbClient::DescribeDasbImageIdsOutcome DasbClient::DescribeDasbImageIds(const D
 
 void DasbClient::DescribeDasbImageIdsAsync(const DescribeDasbImageIdsRequest& request, const DescribeDasbImageIdsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDasbImageIds(request), context);
-    };
+    using Req = const DescribeDasbImageIdsRequest&;
+    using Resp = DescribeDasbImageIdsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeDasbImageIds", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DasbClient::DescribeDasbImageIdsOutcomeCallable DasbClient::DescribeDasbImageIdsCallable(const DescribeDasbImageIdsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeDasbImageIdsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDasbImageIds(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeDasbImageIdsOutcome>>();
+    DescribeDasbImageIdsAsync(
+    request,
+    [prom](
+        const DasbClient*,
+        const DescribeDasbImageIdsRequest&,
+        DescribeDasbImageIdsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DasbClient::DescribeDeviceAccountsOutcome DasbClient::DescribeDeviceAccounts(const DescribeDeviceAccountsRequest &request)
@@ -1395,25 +1612,32 @@ DasbClient::DescribeDeviceAccountsOutcome DasbClient::DescribeDeviceAccounts(con
 
 void DasbClient::DescribeDeviceAccountsAsync(const DescribeDeviceAccountsRequest& request, const DescribeDeviceAccountsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDeviceAccounts(request), context);
-    };
+    using Req = const DescribeDeviceAccountsRequest&;
+    using Resp = DescribeDeviceAccountsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeDeviceAccounts", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DasbClient::DescribeDeviceAccountsOutcomeCallable DasbClient::DescribeDeviceAccountsCallable(const DescribeDeviceAccountsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeDeviceAccountsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDeviceAccounts(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeDeviceAccountsOutcome>>();
+    DescribeDeviceAccountsAsync(
+    request,
+    [prom](
+        const DasbClient*,
+        const DescribeDeviceAccountsRequest&,
+        DescribeDeviceAccountsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DasbClient::DescribeDeviceGroupMembersOutcome DasbClient::DescribeDeviceGroupMembers(const DescribeDeviceGroupMembersRequest &request)
@@ -1438,25 +1662,32 @@ DasbClient::DescribeDeviceGroupMembersOutcome DasbClient::DescribeDeviceGroupMem
 
 void DasbClient::DescribeDeviceGroupMembersAsync(const DescribeDeviceGroupMembersRequest& request, const DescribeDeviceGroupMembersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDeviceGroupMembers(request), context);
-    };
+    using Req = const DescribeDeviceGroupMembersRequest&;
+    using Resp = DescribeDeviceGroupMembersResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeDeviceGroupMembers", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DasbClient::DescribeDeviceGroupMembersOutcomeCallable DasbClient::DescribeDeviceGroupMembersCallable(const DescribeDeviceGroupMembersRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeDeviceGroupMembersOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDeviceGroupMembers(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeDeviceGroupMembersOutcome>>();
+    DescribeDeviceGroupMembersAsync(
+    request,
+    [prom](
+        const DasbClient*,
+        const DescribeDeviceGroupMembersRequest&,
+        DescribeDeviceGroupMembersOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DasbClient::DescribeDeviceGroupsOutcome DasbClient::DescribeDeviceGroups(const DescribeDeviceGroupsRequest &request)
@@ -1481,25 +1712,32 @@ DasbClient::DescribeDeviceGroupsOutcome DasbClient::DescribeDeviceGroups(const D
 
 void DasbClient::DescribeDeviceGroupsAsync(const DescribeDeviceGroupsRequest& request, const DescribeDeviceGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDeviceGroups(request), context);
-    };
+    using Req = const DescribeDeviceGroupsRequest&;
+    using Resp = DescribeDeviceGroupsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeDeviceGroups", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DasbClient::DescribeDeviceGroupsOutcomeCallable DasbClient::DescribeDeviceGroupsCallable(const DescribeDeviceGroupsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeDeviceGroupsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDeviceGroups(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeDeviceGroupsOutcome>>();
+    DescribeDeviceGroupsAsync(
+    request,
+    [prom](
+        const DasbClient*,
+        const DescribeDeviceGroupsRequest&,
+        DescribeDeviceGroupsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DasbClient::DescribeDevicesOutcome DasbClient::DescribeDevices(const DescribeDevicesRequest &request)
@@ -1524,25 +1762,32 @@ DasbClient::DescribeDevicesOutcome DasbClient::DescribeDevices(const DescribeDev
 
 void DasbClient::DescribeDevicesAsync(const DescribeDevicesRequest& request, const DescribeDevicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDevices(request), context);
-    };
+    using Req = const DescribeDevicesRequest&;
+    using Resp = DescribeDevicesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeDevices", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DasbClient::DescribeDevicesOutcomeCallable DasbClient::DescribeDevicesCallable(const DescribeDevicesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeDevicesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDevices(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeDevicesOutcome>>();
+    DescribeDevicesAsync(
+    request,
+    [prom](
+        const DasbClient*,
+        const DescribeDevicesRequest&,
+        DescribeDevicesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DasbClient::DescribeDomainsOutcome DasbClient::DescribeDomains(const DescribeDomainsRequest &request)
@@ -1567,25 +1812,32 @@ DasbClient::DescribeDomainsOutcome DasbClient::DescribeDomains(const DescribeDom
 
 void DasbClient::DescribeDomainsAsync(const DescribeDomainsRequest& request, const DescribeDomainsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDomains(request), context);
-    };
+    using Req = const DescribeDomainsRequest&;
+    using Resp = DescribeDomainsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeDomains", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DasbClient::DescribeDomainsOutcomeCallable DasbClient::DescribeDomainsCallable(const DescribeDomainsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeDomainsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDomains(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeDomainsOutcome>>();
+    DescribeDomainsAsync(
+    request,
+    [prom](
+        const DasbClient*,
+        const DescribeDomainsRequest&,
+        DescribeDomainsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DasbClient::DescribeLoginEventOutcome DasbClient::DescribeLoginEvent(const DescribeLoginEventRequest &request)
@@ -1610,25 +1862,32 @@ DasbClient::DescribeLoginEventOutcome DasbClient::DescribeLoginEvent(const Descr
 
 void DasbClient::DescribeLoginEventAsync(const DescribeLoginEventRequest& request, const DescribeLoginEventAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeLoginEvent(request), context);
-    };
+    using Req = const DescribeLoginEventRequest&;
+    using Resp = DescribeLoginEventResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeLoginEvent", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DasbClient::DescribeLoginEventOutcomeCallable DasbClient::DescribeLoginEventCallable(const DescribeLoginEventRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeLoginEventOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeLoginEvent(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeLoginEventOutcome>>();
+    DescribeLoginEventAsync(
+    request,
+    [prom](
+        const DasbClient*,
+        const DescribeLoginEventRequest&,
+        DescribeLoginEventOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DasbClient::DescribeOperationEventOutcome DasbClient::DescribeOperationEvent(const DescribeOperationEventRequest &request)
@@ -1653,25 +1912,32 @@ DasbClient::DescribeOperationEventOutcome DasbClient::DescribeOperationEvent(con
 
 void DasbClient::DescribeOperationEventAsync(const DescribeOperationEventRequest& request, const DescribeOperationEventAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeOperationEvent(request), context);
-    };
+    using Req = const DescribeOperationEventRequest&;
+    using Resp = DescribeOperationEventResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeOperationEvent", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DasbClient::DescribeOperationEventOutcomeCallable DasbClient::DescribeOperationEventCallable(const DescribeOperationEventRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeOperationEventOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeOperationEvent(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeOperationEventOutcome>>();
+    DescribeOperationEventAsync(
+    request,
+    [prom](
+        const DasbClient*,
+        const DescribeOperationEventRequest&,
+        DescribeOperationEventOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DasbClient::DescribeResourcesOutcome DasbClient::DescribeResources(const DescribeResourcesRequest &request)
@@ -1696,25 +1962,32 @@ DasbClient::DescribeResourcesOutcome DasbClient::DescribeResources(const Describ
 
 void DasbClient::DescribeResourcesAsync(const DescribeResourcesRequest& request, const DescribeResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeResources(request), context);
-    };
+    using Req = const DescribeResourcesRequest&;
+    using Resp = DescribeResourcesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeResources", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DasbClient::DescribeResourcesOutcomeCallable DasbClient::DescribeResourcesCallable(const DescribeResourcesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeResourcesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeResources(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeResourcesOutcome>>();
+    DescribeResourcesAsync(
+    request,
+    [prom](
+        const DasbClient*,
+        const DescribeResourcesRequest&,
+        DescribeResourcesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DasbClient::DescribeUserGroupMembersOutcome DasbClient::DescribeUserGroupMembers(const DescribeUserGroupMembersRequest &request)
@@ -1739,25 +2012,32 @@ DasbClient::DescribeUserGroupMembersOutcome DasbClient::DescribeUserGroupMembers
 
 void DasbClient::DescribeUserGroupMembersAsync(const DescribeUserGroupMembersRequest& request, const DescribeUserGroupMembersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeUserGroupMembers(request), context);
-    };
+    using Req = const DescribeUserGroupMembersRequest&;
+    using Resp = DescribeUserGroupMembersResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeUserGroupMembers", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DasbClient::DescribeUserGroupMembersOutcomeCallable DasbClient::DescribeUserGroupMembersCallable(const DescribeUserGroupMembersRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeUserGroupMembersOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeUserGroupMembers(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeUserGroupMembersOutcome>>();
+    DescribeUserGroupMembersAsync(
+    request,
+    [prom](
+        const DasbClient*,
+        const DescribeUserGroupMembersRequest&,
+        DescribeUserGroupMembersOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DasbClient::DescribeUserGroupsOutcome DasbClient::DescribeUserGroups(const DescribeUserGroupsRequest &request)
@@ -1782,25 +2062,32 @@ DasbClient::DescribeUserGroupsOutcome DasbClient::DescribeUserGroups(const Descr
 
 void DasbClient::DescribeUserGroupsAsync(const DescribeUserGroupsRequest& request, const DescribeUserGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeUserGroups(request), context);
-    };
+    using Req = const DescribeUserGroupsRequest&;
+    using Resp = DescribeUserGroupsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeUserGroups", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DasbClient::DescribeUserGroupsOutcomeCallable DasbClient::DescribeUserGroupsCallable(const DescribeUserGroupsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeUserGroupsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeUserGroups(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeUserGroupsOutcome>>();
+    DescribeUserGroupsAsync(
+    request,
+    [prom](
+        const DasbClient*,
+        const DescribeUserGroupsRequest&,
+        DescribeUserGroupsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DasbClient::DescribeUsersOutcome DasbClient::DescribeUsers(const DescribeUsersRequest &request)
@@ -1825,25 +2112,32 @@ DasbClient::DescribeUsersOutcome DasbClient::DescribeUsers(const DescribeUsersRe
 
 void DasbClient::DescribeUsersAsync(const DescribeUsersRequest& request, const DescribeUsersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeUsers(request), context);
-    };
+    using Req = const DescribeUsersRequest&;
+    using Resp = DescribeUsersResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeUsers", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DasbClient::DescribeUsersOutcomeCallable DasbClient::DescribeUsersCallable(const DescribeUsersRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeUsersOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeUsers(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeUsersOutcome>>();
+    DescribeUsersAsync(
+    request,
+    [prom](
+        const DasbClient*,
+        const DescribeUsersRequest&,
+        DescribeUsersOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DasbClient::ImportExternalDeviceOutcome DasbClient::ImportExternalDevice(const ImportExternalDeviceRequest &request)
@@ -1868,25 +2162,32 @@ DasbClient::ImportExternalDeviceOutcome DasbClient::ImportExternalDevice(const I
 
 void DasbClient::ImportExternalDeviceAsync(const ImportExternalDeviceRequest& request, const ImportExternalDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ImportExternalDevice(request), context);
-    };
+    using Req = const ImportExternalDeviceRequest&;
+    using Resp = ImportExternalDeviceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ImportExternalDevice", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DasbClient::ImportExternalDeviceOutcomeCallable DasbClient::ImportExternalDeviceCallable(const ImportExternalDeviceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ImportExternalDeviceOutcome()>>(
-        [this, request]()
-        {
-            return this->ImportExternalDevice(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ImportExternalDeviceOutcome>>();
+    ImportExternalDeviceAsync(
+    request,
+    [prom](
+        const DasbClient*,
+        const ImportExternalDeviceRequest&,
+        ImportExternalDeviceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DasbClient::ModifyAclOutcome DasbClient::ModifyAcl(const ModifyAclRequest &request)
@@ -1911,25 +2212,32 @@ DasbClient::ModifyAclOutcome DasbClient::ModifyAcl(const ModifyAclRequest &reque
 
 void DasbClient::ModifyAclAsync(const ModifyAclRequest& request, const ModifyAclAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyAcl(request), context);
-    };
+    using Req = const ModifyAclRequest&;
+    using Resp = ModifyAclResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyAcl", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DasbClient::ModifyAclOutcomeCallable DasbClient::ModifyAclCallable(const ModifyAclRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyAclOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyAcl(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyAclOutcome>>();
+    ModifyAclAsync(
+    request,
+    [prom](
+        const DasbClient*,
+        const ModifyAclRequest&,
+        ModifyAclOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DasbClient::ModifyChangePwdTaskOutcome DasbClient::ModifyChangePwdTask(const ModifyChangePwdTaskRequest &request)
@@ -1954,25 +2262,32 @@ DasbClient::ModifyChangePwdTaskOutcome DasbClient::ModifyChangePwdTask(const Mod
 
 void DasbClient::ModifyChangePwdTaskAsync(const ModifyChangePwdTaskRequest& request, const ModifyChangePwdTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyChangePwdTask(request), context);
-    };
+    using Req = const ModifyChangePwdTaskRequest&;
+    using Resp = ModifyChangePwdTaskResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyChangePwdTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DasbClient::ModifyChangePwdTaskOutcomeCallable DasbClient::ModifyChangePwdTaskCallable(const ModifyChangePwdTaskRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyChangePwdTaskOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyChangePwdTask(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyChangePwdTaskOutcome>>();
+    ModifyChangePwdTaskAsync(
+    request,
+    [prom](
+        const DasbClient*,
+        const ModifyChangePwdTaskRequest&,
+        ModifyChangePwdTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DasbClient::ModifyCmdTemplateOutcome DasbClient::ModifyCmdTemplate(const ModifyCmdTemplateRequest &request)
@@ -1997,25 +2312,32 @@ DasbClient::ModifyCmdTemplateOutcome DasbClient::ModifyCmdTemplate(const ModifyC
 
 void DasbClient::ModifyCmdTemplateAsync(const ModifyCmdTemplateRequest& request, const ModifyCmdTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyCmdTemplate(request), context);
-    };
+    using Req = const ModifyCmdTemplateRequest&;
+    using Resp = ModifyCmdTemplateResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyCmdTemplate", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DasbClient::ModifyCmdTemplateOutcomeCallable DasbClient::ModifyCmdTemplateCallable(const ModifyCmdTemplateRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyCmdTemplateOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyCmdTemplate(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyCmdTemplateOutcome>>();
+    ModifyCmdTemplateAsync(
+    request,
+    [prom](
+        const DasbClient*,
+        const ModifyCmdTemplateRequest&,
+        ModifyCmdTemplateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DasbClient::ModifyDeviceOutcome DasbClient::ModifyDevice(const ModifyDeviceRequest &request)
@@ -2040,25 +2362,32 @@ DasbClient::ModifyDeviceOutcome DasbClient::ModifyDevice(const ModifyDeviceReque
 
 void DasbClient::ModifyDeviceAsync(const ModifyDeviceRequest& request, const ModifyDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyDevice(request), context);
-    };
+    using Req = const ModifyDeviceRequest&;
+    using Resp = ModifyDeviceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyDevice", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DasbClient::ModifyDeviceOutcomeCallable DasbClient::ModifyDeviceCallable(const ModifyDeviceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyDeviceOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyDevice(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyDeviceOutcome>>();
+    ModifyDeviceAsync(
+    request,
+    [prom](
+        const DasbClient*,
+        const ModifyDeviceRequest&,
+        ModifyDeviceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DasbClient::ModifyDeviceGroupOutcome DasbClient::ModifyDeviceGroup(const ModifyDeviceGroupRequest &request)
@@ -2083,25 +2412,32 @@ DasbClient::ModifyDeviceGroupOutcome DasbClient::ModifyDeviceGroup(const ModifyD
 
 void DasbClient::ModifyDeviceGroupAsync(const ModifyDeviceGroupRequest& request, const ModifyDeviceGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyDeviceGroup(request), context);
-    };
+    using Req = const ModifyDeviceGroupRequest&;
+    using Resp = ModifyDeviceGroupResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyDeviceGroup", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DasbClient::ModifyDeviceGroupOutcomeCallable DasbClient::ModifyDeviceGroupCallable(const ModifyDeviceGroupRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyDeviceGroupOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyDeviceGroup(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyDeviceGroupOutcome>>();
+    ModifyDeviceGroupAsync(
+    request,
+    [prom](
+        const DasbClient*,
+        const ModifyDeviceGroupRequest&,
+        ModifyDeviceGroupOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DasbClient::ModifyOAuthSettingOutcome DasbClient::ModifyOAuthSetting(const ModifyOAuthSettingRequest &request)
@@ -2126,25 +2462,32 @@ DasbClient::ModifyOAuthSettingOutcome DasbClient::ModifyOAuthSetting(const Modif
 
 void DasbClient::ModifyOAuthSettingAsync(const ModifyOAuthSettingRequest& request, const ModifyOAuthSettingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyOAuthSetting(request), context);
-    };
+    using Req = const ModifyOAuthSettingRequest&;
+    using Resp = ModifyOAuthSettingResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyOAuthSetting", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DasbClient::ModifyOAuthSettingOutcomeCallable DasbClient::ModifyOAuthSettingCallable(const ModifyOAuthSettingRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyOAuthSettingOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyOAuthSetting(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyOAuthSettingOutcome>>();
+    ModifyOAuthSettingAsync(
+    request,
+    [prom](
+        const DasbClient*,
+        const ModifyOAuthSettingRequest&,
+        ModifyOAuthSettingOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DasbClient::ModifyResourceOutcome DasbClient::ModifyResource(const ModifyResourceRequest &request)
@@ -2169,25 +2512,32 @@ DasbClient::ModifyResourceOutcome DasbClient::ModifyResource(const ModifyResourc
 
 void DasbClient::ModifyResourceAsync(const ModifyResourceRequest& request, const ModifyResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyResource(request), context);
-    };
+    using Req = const ModifyResourceRequest&;
+    using Resp = ModifyResourceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyResource", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DasbClient::ModifyResourceOutcomeCallable DasbClient::ModifyResourceCallable(const ModifyResourceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyResourceOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyResource(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyResourceOutcome>>();
+    ModifyResourceAsync(
+    request,
+    [prom](
+        const DasbClient*,
+        const ModifyResourceRequest&,
+        ModifyResourceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DasbClient::ModifyUserOutcome DasbClient::ModifyUser(const ModifyUserRequest &request)
@@ -2212,25 +2562,32 @@ DasbClient::ModifyUserOutcome DasbClient::ModifyUser(const ModifyUserRequest &re
 
 void DasbClient::ModifyUserAsync(const ModifyUserRequest& request, const ModifyUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyUser(request), context);
-    };
+    using Req = const ModifyUserRequest&;
+    using Resp = ModifyUserResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyUser", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DasbClient::ModifyUserOutcomeCallable DasbClient::ModifyUserCallable(const ModifyUserRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyUserOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyUser(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyUserOutcome>>();
+    ModifyUserAsync(
+    request,
+    [prom](
+        const DasbClient*,
+        const ModifyUserRequest&,
+        ModifyUserOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DasbClient::ModifyUserGroupOutcome DasbClient::ModifyUserGroup(const ModifyUserGroupRequest &request)
@@ -2255,25 +2612,32 @@ DasbClient::ModifyUserGroupOutcome DasbClient::ModifyUserGroup(const ModifyUserG
 
 void DasbClient::ModifyUserGroupAsync(const ModifyUserGroupRequest& request, const ModifyUserGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyUserGroup(request), context);
-    };
+    using Req = const ModifyUserGroupRequest&;
+    using Resp = ModifyUserGroupResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyUserGroup", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DasbClient::ModifyUserGroupOutcomeCallable DasbClient::ModifyUserGroupCallable(const ModifyUserGroupRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyUserGroupOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyUserGroup(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyUserGroupOutcome>>();
+    ModifyUserGroupAsync(
+    request,
+    [prom](
+        const DasbClient*,
+        const ModifyUserGroupRequest&,
+        ModifyUserGroupOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DasbClient::ResetDeviceAccountPasswordOutcome DasbClient::ResetDeviceAccountPassword(const ResetDeviceAccountPasswordRequest &request)
@@ -2298,25 +2662,32 @@ DasbClient::ResetDeviceAccountPasswordOutcome DasbClient::ResetDeviceAccountPass
 
 void DasbClient::ResetDeviceAccountPasswordAsync(const ResetDeviceAccountPasswordRequest& request, const ResetDeviceAccountPasswordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ResetDeviceAccountPassword(request), context);
-    };
+    using Req = const ResetDeviceAccountPasswordRequest&;
+    using Resp = ResetDeviceAccountPasswordResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ResetDeviceAccountPassword", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DasbClient::ResetDeviceAccountPasswordOutcomeCallable DasbClient::ResetDeviceAccountPasswordCallable(const ResetDeviceAccountPasswordRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ResetDeviceAccountPasswordOutcome()>>(
-        [this, request]()
-        {
-            return this->ResetDeviceAccountPassword(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ResetDeviceAccountPasswordOutcome>>();
+    ResetDeviceAccountPasswordAsync(
+    request,
+    [prom](
+        const DasbClient*,
+        const ResetDeviceAccountPasswordRequest&,
+        ResetDeviceAccountPasswordOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DasbClient::ResetDeviceAccountPrivateKeyOutcome DasbClient::ResetDeviceAccountPrivateKey(const ResetDeviceAccountPrivateKeyRequest &request)
@@ -2341,25 +2712,32 @@ DasbClient::ResetDeviceAccountPrivateKeyOutcome DasbClient::ResetDeviceAccountPr
 
 void DasbClient::ResetDeviceAccountPrivateKeyAsync(const ResetDeviceAccountPrivateKeyRequest& request, const ResetDeviceAccountPrivateKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ResetDeviceAccountPrivateKey(request), context);
-    };
+    using Req = const ResetDeviceAccountPrivateKeyRequest&;
+    using Resp = ResetDeviceAccountPrivateKeyResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ResetDeviceAccountPrivateKey", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DasbClient::ResetDeviceAccountPrivateKeyOutcomeCallable DasbClient::ResetDeviceAccountPrivateKeyCallable(const ResetDeviceAccountPrivateKeyRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ResetDeviceAccountPrivateKeyOutcome()>>(
-        [this, request]()
-        {
-            return this->ResetDeviceAccountPrivateKey(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ResetDeviceAccountPrivateKeyOutcome>>();
+    ResetDeviceAccountPrivateKeyAsync(
+    request,
+    [prom](
+        const DasbClient*,
+        const ResetDeviceAccountPrivateKeyRequest&,
+        ResetDeviceAccountPrivateKeyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DasbClient::ResetUserOutcome DasbClient::ResetUser(const ResetUserRequest &request)
@@ -2384,25 +2762,32 @@ DasbClient::ResetUserOutcome DasbClient::ResetUser(const ResetUserRequest &reque
 
 void DasbClient::ResetUserAsync(const ResetUserRequest& request, const ResetUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ResetUser(request), context);
-    };
+    using Req = const ResetUserRequest&;
+    using Resp = ResetUserResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ResetUser", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DasbClient::ResetUserOutcomeCallable DasbClient::ResetUserCallable(const ResetUserRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ResetUserOutcome()>>(
-        [this, request]()
-        {
-            return this->ResetUser(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ResetUserOutcome>>();
+    ResetUserAsync(
+    request,
+    [prom](
+        const DasbClient*,
+        const ResetUserRequest&,
+        ResetUserOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DasbClient::RunChangePwdTaskOutcome DasbClient::RunChangePwdTask(const RunChangePwdTaskRequest &request)
@@ -2427,25 +2812,32 @@ DasbClient::RunChangePwdTaskOutcome DasbClient::RunChangePwdTask(const RunChange
 
 void DasbClient::RunChangePwdTaskAsync(const RunChangePwdTaskRequest& request, const RunChangePwdTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->RunChangePwdTask(request), context);
-    };
+    using Req = const RunChangePwdTaskRequest&;
+    using Resp = RunChangePwdTaskResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "RunChangePwdTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DasbClient::RunChangePwdTaskOutcomeCallable DasbClient::RunChangePwdTaskCallable(const RunChangePwdTaskRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<RunChangePwdTaskOutcome()>>(
-        [this, request]()
-        {
-            return this->RunChangePwdTask(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<RunChangePwdTaskOutcome>>();
+    RunChangePwdTaskAsync(
+    request,
+    [prom](
+        const DasbClient*,
+        const RunChangePwdTaskRequest&,
+        RunChangePwdTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DasbClient::SearchAuditLogOutcome DasbClient::SearchAuditLog(const SearchAuditLogRequest &request)
@@ -2470,25 +2862,32 @@ DasbClient::SearchAuditLogOutcome DasbClient::SearchAuditLog(const SearchAuditLo
 
 void DasbClient::SearchAuditLogAsync(const SearchAuditLogRequest& request, const SearchAuditLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->SearchAuditLog(request), context);
-    };
+    using Req = const SearchAuditLogRequest&;
+    using Resp = SearchAuditLogResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "SearchAuditLog", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DasbClient::SearchAuditLogOutcomeCallable DasbClient::SearchAuditLogCallable(const SearchAuditLogRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<SearchAuditLogOutcome()>>(
-        [this, request]()
-        {
-            return this->SearchAuditLog(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<SearchAuditLogOutcome>>();
+    SearchAuditLogAsync(
+    request,
+    [prom](
+        const DasbClient*,
+        const SearchAuditLogRequest&,
+        SearchAuditLogOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DasbClient::SearchCommandOutcome DasbClient::SearchCommand(const SearchCommandRequest &request)
@@ -2513,25 +2912,32 @@ DasbClient::SearchCommandOutcome DasbClient::SearchCommand(const SearchCommandRe
 
 void DasbClient::SearchCommandAsync(const SearchCommandRequest& request, const SearchCommandAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->SearchCommand(request), context);
-    };
+    using Req = const SearchCommandRequest&;
+    using Resp = SearchCommandResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "SearchCommand", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DasbClient::SearchCommandOutcomeCallable DasbClient::SearchCommandCallable(const SearchCommandRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<SearchCommandOutcome()>>(
-        [this, request]()
-        {
-            return this->SearchCommand(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<SearchCommandOutcome>>();
+    SearchCommandAsync(
+    request,
+    [prom](
+        const DasbClient*,
+        const SearchCommandRequest&,
+        SearchCommandOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DasbClient::SearchCommandBySidOutcome DasbClient::SearchCommandBySid(const SearchCommandBySidRequest &request)
@@ -2556,25 +2962,32 @@ DasbClient::SearchCommandBySidOutcome DasbClient::SearchCommandBySid(const Searc
 
 void DasbClient::SearchCommandBySidAsync(const SearchCommandBySidRequest& request, const SearchCommandBySidAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->SearchCommandBySid(request), context);
-    };
+    using Req = const SearchCommandBySidRequest&;
+    using Resp = SearchCommandBySidResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "SearchCommandBySid", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DasbClient::SearchCommandBySidOutcomeCallable DasbClient::SearchCommandBySidCallable(const SearchCommandBySidRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<SearchCommandBySidOutcome()>>(
-        [this, request]()
-        {
-            return this->SearchCommandBySid(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<SearchCommandBySidOutcome>>();
+    SearchCommandBySidAsync(
+    request,
+    [prom](
+        const DasbClient*,
+        const SearchCommandBySidRequest&,
+        SearchCommandBySidOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DasbClient::SearchFileOutcome DasbClient::SearchFile(const SearchFileRequest &request)
@@ -2599,25 +3012,32 @@ DasbClient::SearchFileOutcome DasbClient::SearchFile(const SearchFileRequest &re
 
 void DasbClient::SearchFileAsync(const SearchFileRequest& request, const SearchFileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->SearchFile(request), context);
-    };
+    using Req = const SearchFileRequest&;
+    using Resp = SearchFileResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "SearchFile", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DasbClient::SearchFileOutcomeCallable DasbClient::SearchFileCallable(const SearchFileRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<SearchFileOutcome()>>(
-        [this, request]()
-        {
-            return this->SearchFile(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<SearchFileOutcome>>();
+    SearchFileAsync(
+    request,
+    [prom](
+        const DasbClient*,
+        const SearchFileRequest&,
+        SearchFileOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DasbClient::SearchFileBySidOutcome DasbClient::SearchFileBySid(const SearchFileBySidRequest &request)
@@ -2642,25 +3062,32 @@ DasbClient::SearchFileBySidOutcome DasbClient::SearchFileBySid(const SearchFileB
 
 void DasbClient::SearchFileBySidAsync(const SearchFileBySidRequest& request, const SearchFileBySidAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->SearchFileBySid(request), context);
-    };
+    using Req = const SearchFileBySidRequest&;
+    using Resp = SearchFileBySidResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "SearchFileBySid", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DasbClient::SearchFileBySidOutcomeCallable DasbClient::SearchFileBySidCallable(const SearchFileBySidRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<SearchFileBySidOutcome()>>(
-        [this, request]()
-        {
-            return this->SearchFileBySid(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<SearchFileBySidOutcome>>();
+    SearchFileBySidAsync(
+    request,
+    [prom](
+        const DasbClient*,
+        const SearchFileBySidRequest&,
+        SearchFileBySidOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DasbClient::SearchSessionOutcome DasbClient::SearchSession(const SearchSessionRequest &request)
@@ -2685,25 +3112,32 @@ DasbClient::SearchSessionOutcome DasbClient::SearchSession(const SearchSessionRe
 
 void DasbClient::SearchSessionAsync(const SearchSessionRequest& request, const SearchSessionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->SearchSession(request), context);
-    };
+    using Req = const SearchSessionRequest&;
+    using Resp = SearchSessionResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "SearchSession", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DasbClient::SearchSessionOutcomeCallable DasbClient::SearchSessionCallable(const SearchSessionRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<SearchSessionOutcome()>>(
-        [this, request]()
-        {
-            return this->SearchSession(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<SearchSessionOutcome>>();
+    SearchSessionAsync(
+    request,
+    [prom](
+        const DasbClient*,
+        const SearchSessionRequest&,
+        SearchSessionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DasbClient::SearchSessionCommandOutcome DasbClient::SearchSessionCommand(const SearchSessionCommandRequest &request)
@@ -2728,24 +3162,31 @@ DasbClient::SearchSessionCommandOutcome DasbClient::SearchSessionCommand(const S
 
 void DasbClient::SearchSessionCommandAsync(const SearchSessionCommandRequest& request, const SearchSessionCommandAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->SearchSessionCommand(request), context);
-    };
+    using Req = const SearchSessionCommandRequest&;
+    using Resp = SearchSessionCommandResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "SearchSessionCommand", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DasbClient::SearchSessionCommandOutcomeCallable DasbClient::SearchSessionCommandCallable(const SearchSessionCommandRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<SearchSessionCommandOutcome()>>(
-        [this, request]()
-        {
-            return this->SearchSessionCommand(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<SearchSessionCommandOutcome>>();
+    SearchSessionCommandAsync(
+    request,
+    [prom](
+        const DasbClient*,
+        const SearchSessionCommandRequest&,
+        SearchSessionCommandOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 

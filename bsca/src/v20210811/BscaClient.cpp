@@ -62,25 +62,32 @@ BscaClient::DescribeKBComponentOutcome BscaClient::DescribeKBComponent(const Des
 
 void BscaClient::DescribeKBComponentAsync(const DescribeKBComponentRequest& request, const DescribeKBComponentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeKBComponent(request), context);
-    };
+    using Req = const DescribeKBComponentRequest&;
+    using Resp = DescribeKBComponentResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeKBComponent", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BscaClient::DescribeKBComponentOutcomeCallable BscaClient::DescribeKBComponentCallable(const DescribeKBComponentRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeKBComponentOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeKBComponent(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeKBComponentOutcome>>();
+    DescribeKBComponentAsync(
+    request,
+    [prom](
+        const BscaClient*,
+        const DescribeKBComponentRequest&,
+        DescribeKBComponentOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BscaClient::DescribeKBComponentVersionListOutcome BscaClient::DescribeKBComponentVersionList(const DescribeKBComponentVersionListRequest &request)
@@ -105,25 +112,32 @@ BscaClient::DescribeKBComponentVersionListOutcome BscaClient::DescribeKBComponen
 
 void BscaClient::DescribeKBComponentVersionListAsync(const DescribeKBComponentVersionListRequest& request, const DescribeKBComponentVersionListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeKBComponentVersionList(request), context);
-    };
+    using Req = const DescribeKBComponentVersionListRequest&;
+    using Resp = DescribeKBComponentVersionListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeKBComponentVersionList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BscaClient::DescribeKBComponentVersionListOutcomeCallable BscaClient::DescribeKBComponentVersionListCallable(const DescribeKBComponentVersionListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeKBComponentVersionListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeKBComponentVersionList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeKBComponentVersionListOutcome>>();
+    DescribeKBComponentVersionListAsync(
+    request,
+    [prom](
+        const BscaClient*,
+        const DescribeKBComponentVersionListRequest&,
+        DescribeKBComponentVersionListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BscaClient::DescribeKBComponentVulnerabilityOutcome BscaClient::DescribeKBComponentVulnerability(const DescribeKBComponentVulnerabilityRequest &request)
@@ -148,25 +162,32 @@ BscaClient::DescribeKBComponentVulnerabilityOutcome BscaClient::DescribeKBCompon
 
 void BscaClient::DescribeKBComponentVulnerabilityAsync(const DescribeKBComponentVulnerabilityRequest& request, const DescribeKBComponentVulnerabilityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeKBComponentVulnerability(request), context);
-    };
+    using Req = const DescribeKBComponentVulnerabilityRequest&;
+    using Resp = DescribeKBComponentVulnerabilityResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeKBComponentVulnerability", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BscaClient::DescribeKBComponentVulnerabilityOutcomeCallable BscaClient::DescribeKBComponentVulnerabilityCallable(const DescribeKBComponentVulnerabilityRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeKBComponentVulnerabilityOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeKBComponentVulnerability(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeKBComponentVulnerabilityOutcome>>();
+    DescribeKBComponentVulnerabilityAsync(
+    request,
+    [prom](
+        const BscaClient*,
+        const DescribeKBComponentVulnerabilityRequest&,
+        DescribeKBComponentVulnerabilityOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BscaClient::DescribeKBLicenseOutcome BscaClient::DescribeKBLicense(const DescribeKBLicenseRequest &request)
@@ -191,25 +212,32 @@ BscaClient::DescribeKBLicenseOutcome BscaClient::DescribeKBLicense(const Describ
 
 void BscaClient::DescribeKBLicenseAsync(const DescribeKBLicenseRequest& request, const DescribeKBLicenseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeKBLicense(request), context);
-    };
+    using Req = const DescribeKBLicenseRequest&;
+    using Resp = DescribeKBLicenseResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeKBLicense", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BscaClient::DescribeKBLicenseOutcomeCallable BscaClient::DescribeKBLicenseCallable(const DescribeKBLicenseRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeKBLicenseOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeKBLicense(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeKBLicenseOutcome>>();
+    DescribeKBLicenseAsync(
+    request,
+    [prom](
+        const BscaClient*,
+        const DescribeKBLicenseRequest&,
+        DescribeKBLicenseOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BscaClient::DescribeKBVulnerabilityOutcome BscaClient::DescribeKBVulnerability(const DescribeKBVulnerabilityRequest &request)
@@ -234,25 +262,32 @@ BscaClient::DescribeKBVulnerabilityOutcome BscaClient::DescribeKBVulnerability(c
 
 void BscaClient::DescribeKBVulnerabilityAsync(const DescribeKBVulnerabilityRequest& request, const DescribeKBVulnerabilityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeKBVulnerability(request), context);
-    };
+    using Req = const DescribeKBVulnerabilityRequest&;
+    using Resp = DescribeKBVulnerabilityResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeKBVulnerability", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BscaClient::DescribeKBVulnerabilityOutcomeCallable BscaClient::DescribeKBVulnerabilityCallable(const DescribeKBVulnerabilityRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeKBVulnerabilityOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeKBVulnerability(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeKBVulnerabilityOutcome>>();
+    DescribeKBVulnerabilityAsync(
+    request,
+    [prom](
+        const BscaClient*,
+        const DescribeKBVulnerabilityRequest&,
+        DescribeKBVulnerabilityOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BscaClient::MatchKBPURLListOutcome BscaClient::MatchKBPURLList(const MatchKBPURLListRequest &request)
@@ -277,25 +312,32 @@ BscaClient::MatchKBPURLListOutcome BscaClient::MatchKBPURLList(const MatchKBPURL
 
 void BscaClient::MatchKBPURLListAsync(const MatchKBPURLListRequest& request, const MatchKBPURLListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->MatchKBPURLList(request), context);
-    };
+    using Req = const MatchKBPURLListRequest&;
+    using Resp = MatchKBPURLListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "MatchKBPURLList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BscaClient::MatchKBPURLListOutcomeCallable BscaClient::MatchKBPURLListCallable(const MatchKBPURLListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<MatchKBPURLListOutcome()>>(
-        [this, request]()
-        {
-            return this->MatchKBPURLList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<MatchKBPURLListOutcome>>();
+    MatchKBPURLListAsync(
+    request,
+    [prom](
+        const BscaClient*,
+        const MatchKBPURLListRequest&,
+        MatchKBPURLListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BscaClient::SearchKBComponentOutcome BscaClient::SearchKBComponent(const SearchKBComponentRequest &request)
@@ -320,24 +362,31 @@ BscaClient::SearchKBComponentOutcome BscaClient::SearchKBComponent(const SearchK
 
 void BscaClient::SearchKBComponentAsync(const SearchKBComponentRequest& request, const SearchKBComponentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->SearchKBComponent(request), context);
-    };
+    using Req = const SearchKBComponentRequest&;
+    using Resp = SearchKBComponentResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "SearchKBComponent", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BscaClient::SearchKBComponentOutcomeCallable BscaClient::SearchKBComponentCallable(const SearchKBComponentRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<SearchKBComponentOutcome()>>(
-        [this, request]()
-        {
-            return this->SearchKBComponent(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<SearchKBComponentOutcome>>();
+    SearchKBComponentAsync(
+    request,
+    [prom](
+        const BscaClient*,
+        const SearchKBComponentRequest&,
+        SearchKBComponentOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 

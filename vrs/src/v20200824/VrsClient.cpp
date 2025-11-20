@@ -62,25 +62,32 @@ VrsClient::CancelVRSTaskOutcome VrsClient::CancelVRSTask(const CancelVRSTaskRequ
 
 void VrsClient::CancelVRSTaskAsync(const CancelVRSTaskRequest& request, const CancelVRSTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CancelVRSTask(request), context);
-    };
+    using Req = const CancelVRSTaskRequest&;
+    using Resp = CancelVRSTaskResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CancelVRSTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VrsClient::CancelVRSTaskOutcomeCallable VrsClient::CancelVRSTaskCallable(const CancelVRSTaskRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CancelVRSTaskOutcome()>>(
-        [this, request]()
-        {
-            return this->CancelVRSTask(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CancelVRSTaskOutcome>>();
+    CancelVRSTaskAsync(
+    request,
+    [prom](
+        const VrsClient*,
+        const CancelVRSTaskRequest&,
+        CancelVRSTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VrsClient::CreateVRSTaskOutcome VrsClient::CreateVRSTask(const CreateVRSTaskRequest &request)
@@ -105,25 +112,32 @@ VrsClient::CreateVRSTaskOutcome VrsClient::CreateVRSTask(const CreateVRSTaskRequ
 
 void VrsClient::CreateVRSTaskAsync(const CreateVRSTaskRequest& request, const CreateVRSTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateVRSTask(request), context);
-    };
+    using Req = const CreateVRSTaskRequest&;
+    using Resp = CreateVRSTaskResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateVRSTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VrsClient::CreateVRSTaskOutcomeCallable VrsClient::CreateVRSTaskCallable(const CreateVRSTaskRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateVRSTaskOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateVRSTask(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateVRSTaskOutcome>>();
+    CreateVRSTaskAsync(
+    request,
+    [prom](
+        const VrsClient*,
+        const CreateVRSTaskRequest&,
+        CreateVRSTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VrsClient::DescribeVRSTaskStatusOutcome VrsClient::DescribeVRSTaskStatus(const DescribeVRSTaskStatusRequest &request)
@@ -148,25 +162,32 @@ VrsClient::DescribeVRSTaskStatusOutcome VrsClient::DescribeVRSTaskStatus(const D
 
 void VrsClient::DescribeVRSTaskStatusAsync(const DescribeVRSTaskStatusRequest& request, const DescribeVRSTaskStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeVRSTaskStatus(request), context);
-    };
+    using Req = const DescribeVRSTaskStatusRequest&;
+    using Resp = DescribeVRSTaskStatusResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeVRSTaskStatus", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VrsClient::DescribeVRSTaskStatusOutcomeCallable VrsClient::DescribeVRSTaskStatusCallable(const DescribeVRSTaskStatusRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeVRSTaskStatusOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeVRSTaskStatus(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeVRSTaskStatusOutcome>>();
+    DescribeVRSTaskStatusAsync(
+    request,
+    [prom](
+        const VrsClient*,
+        const DescribeVRSTaskStatusRequest&,
+        DescribeVRSTaskStatusOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VrsClient::DetectEnvAndSoundQualityOutcome VrsClient::DetectEnvAndSoundQuality(const DetectEnvAndSoundQualityRequest &request)
@@ -191,25 +212,32 @@ VrsClient::DetectEnvAndSoundQualityOutcome VrsClient::DetectEnvAndSoundQuality(c
 
 void VrsClient::DetectEnvAndSoundQualityAsync(const DetectEnvAndSoundQualityRequest& request, const DetectEnvAndSoundQualityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DetectEnvAndSoundQuality(request), context);
-    };
+    using Req = const DetectEnvAndSoundQualityRequest&;
+    using Resp = DetectEnvAndSoundQualityResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DetectEnvAndSoundQuality", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VrsClient::DetectEnvAndSoundQualityOutcomeCallable VrsClient::DetectEnvAndSoundQualityCallable(const DetectEnvAndSoundQualityRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DetectEnvAndSoundQualityOutcome()>>(
-        [this, request]()
-        {
-            return this->DetectEnvAndSoundQuality(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DetectEnvAndSoundQualityOutcome>>();
+    DetectEnvAndSoundQualityAsync(
+    request,
+    [prom](
+        const VrsClient*,
+        const DetectEnvAndSoundQualityRequest&,
+        DetectEnvAndSoundQualityOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VrsClient::DownloadVRSModelOutcome VrsClient::DownloadVRSModel(const DownloadVRSModelRequest &request)
@@ -234,25 +262,32 @@ VrsClient::DownloadVRSModelOutcome VrsClient::DownloadVRSModel(const DownloadVRS
 
 void VrsClient::DownloadVRSModelAsync(const DownloadVRSModelRequest& request, const DownloadVRSModelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DownloadVRSModel(request), context);
-    };
+    using Req = const DownloadVRSModelRequest&;
+    using Resp = DownloadVRSModelResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DownloadVRSModel", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VrsClient::DownloadVRSModelOutcomeCallable VrsClient::DownloadVRSModelCallable(const DownloadVRSModelRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DownloadVRSModelOutcome()>>(
-        [this, request]()
-        {
-            return this->DownloadVRSModel(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DownloadVRSModelOutcome>>();
+    DownloadVRSModelAsync(
+    request,
+    [prom](
+        const VrsClient*,
+        const DownloadVRSModelRequest&,
+        DownloadVRSModelOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VrsClient::GetTrainingTextOutcome VrsClient::GetTrainingText(const GetTrainingTextRequest &request)
@@ -277,25 +312,32 @@ VrsClient::GetTrainingTextOutcome VrsClient::GetTrainingText(const GetTrainingTe
 
 void VrsClient::GetTrainingTextAsync(const GetTrainingTextRequest& request, const GetTrainingTextAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->GetTrainingText(request), context);
-    };
+    using Req = const GetTrainingTextRequest&;
+    using Resp = GetTrainingTextResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "GetTrainingText", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VrsClient::GetTrainingTextOutcomeCallable VrsClient::GetTrainingTextCallable(const GetTrainingTextRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<GetTrainingTextOutcome()>>(
-        [this, request]()
-        {
-            return this->GetTrainingText(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<GetTrainingTextOutcome>>();
+    GetTrainingTextAsync(
+    request,
+    [prom](
+        const VrsClient*,
+        const GetTrainingTextRequest&,
+        GetTrainingTextOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VrsClient::GetVRSVoiceTypeInfoOutcome VrsClient::GetVRSVoiceTypeInfo(const GetVRSVoiceTypeInfoRequest &request)
@@ -320,25 +362,32 @@ VrsClient::GetVRSVoiceTypeInfoOutcome VrsClient::GetVRSVoiceTypeInfo(const GetVR
 
 void VrsClient::GetVRSVoiceTypeInfoAsync(const GetVRSVoiceTypeInfoRequest& request, const GetVRSVoiceTypeInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->GetVRSVoiceTypeInfo(request), context);
-    };
+    using Req = const GetVRSVoiceTypeInfoRequest&;
+    using Resp = GetVRSVoiceTypeInfoResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "GetVRSVoiceTypeInfo", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VrsClient::GetVRSVoiceTypeInfoOutcomeCallable VrsClient::GetVRSVoiceTypeInfoCallable(const GetVRSVoiceTypeInfoRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<GetVRSVoiceTypeInfoOutcome()>>(
-        [this, request]()
-        {
-            return this->GetVRSVoiceTypeInfo(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<GetVRSVoiceTypeInfoOutcome>>();
+    GetVRSVoiceTypeInfoAsync(
+    request,
+    [prom](
+        const VrsClient*,
+        const GetVRSVoiceTypeInfoRequest&,
+        GetVRSVoiceTypeInfoOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 VrsClient::GetVRSVoiceTypesOutcome VrsClient::GetVRSVoiceTypes(const GetVRSVoiceTypesRequest &request)
@@ -363,24 +412,31 @@ VrsClient::GetVRSVoiceTypesOutcome VrsClient::GetVRSVoiceTypes(const GetVRSVoice
 
 void VrsClient::GetVRSVoiceTypesAsync(const GetVRSVoiceTypesRequest& request, const GetVRSVoiceTypesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->GetVRSVoiceTypes(request), context);
-    };
+    using Req = const GetVRSVoiceTypesRequest&;
+    using Resp = GetVRSVoiceTypesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "GetVRSVoiceTypes", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 VrsClient::GetVRSVoiceTypesOutcomeCallable VrsClient::GetVRSVoiceTypesCallable(const GetVRSVoiceTypesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<GetVRSVoiceTypesOutcome()>>(
-        [this, request]()
-        {
-            return this->GetVRSVoiceTypes(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<GetVRSVoiceTypesOutcome>>();
+    GetVRSVoiceTypesAsync(
+    request,
+    [prom](
+        const VrsClient*,
+        const GetVRSVoiceTypesRequest&,
+        GetVRSVoiceTypesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 

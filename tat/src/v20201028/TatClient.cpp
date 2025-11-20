@@ -62,25 +62,32 @@ TatClient::CancelInvocationOutcome TatClient::CancelInvocation(const CancelInvoc
 
 void TatClient::CancelInvocationAsync(const CancelInvocationRequest& request, const CancelInvocationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CancelInvocation(request), context);
-    };
+    using Req = const CancelInvocationRequest&;
+    using Resp = CancelInvocationResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CancelInvocation", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TatClient::CancelInvocationOutcomeCallable TatClient::CancelInvocationCallable(const CancelInvocationRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CancelInvocationOutcome()>>(
-        [this, request]()
-        {
-            return this->CancelInvocation(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CancelInvocationOutcome>>();
+    CancelInvocationAsync(
+    request,
+    [prom](
+        const TatClient*,
+        const CancelInvocationRequest&,
+        CancelInvocationOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TatClient::CreateCommandOutcome TatClient::CreateCommand(const CreateCommandRequest &request)
@@ -105,25 +112,32 @@ TatClient::CreateCommandOutcome TatClient::CreateCommand(const CreateCommandRequ
 
 void TatClient::CreateCommandAsync(const CreateCommandRequest& request, const CreateCommandAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateCommand(request), context);
-    };
+    using Req = const CreateCommandRequest&;
+    using Resp = CreateCommandResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateCommand", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TatClient::CreateCommandOutcomeCallable TatClient::CreateCommandCallable(const CreateCommandRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateCommandOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateCommand(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateCommandOutcome>>();
+    CreateCommandAsync(
+    request,
+    [prom](
+        const TatClient*,
+        const CreateCommandRequest&,
+        CreateCommandOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TatClient::CreateInvokerOutcome TatClient::CreateInvoker(const CreateInvokerRequest &request)
@@ -148,25 +162,32 @@ TatClient::CreateInvokerOutcome TatClient::CreateInvoker(const CreateInvokerRequ
 
 void TatClient::CreateInvokerAsync(const CreateInvokerRequest& request, const CreateInvokerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateInvoker(request), context);
-    };
+    using Req = const CreateInvokerRequest&;
+    using Resp = CreateInvokerResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateInvoker", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TatClient::CreateInvokerOutcomeCallable TatClient::CreateInvokerCallable(const CreateInvokerRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateInvokerOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateInvoker(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateInvokerOutcome>>();
+    CreateInvokerAsync(
+    request,
+    [prom](
+        const TatClient*,
+        const CreateInvokerRequest&,
+        CreateInvokerOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TatClient::CreateRegisterCodeOutcome TatClient::CreateRegisterCode(const CreateRegisterCodeRequest &request)
@@ -191,25 +212,32 @@ TatClient::CreateRegisterCodeOutcome TatClient::CreateRegisterCode(const CreateR
 
 void TatClient::CreateRegisterCodeAsync(const CreateRegisterCodeRequest& request, const CreateRegisterCodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateRegisterCode(request), context);
-    };
+    using Req = const CreateRegisterCodeRequest&;
+    using Resp = CreateRegisterCodeResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateRegisterCode", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TatClient::CreateRegisterCodeOutcomeCallable TatClient::CreateRegisterCodeCallable(const CreateRegisterCodeRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateRegisterCodeOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateRegisterCode(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateRegisterCodeOutcome>>();
+    CreateRegisterCodeAsync(
+    request,
+    [prom](
+        const TatClient*,
+        const CreateRegisterCodeRequest&,
+        CreateRegisterCodeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TatClient::DeleteCommandOutcome TatClient::DeleteCommand(const DeleteCommandRequest &request)
@@ -234,25 +262,32 @@ TatClient::DeleteCommandOutcome TatClient::DeleteCommand(const DeleteCommandRequ
 
 void TatClient::DeleteCommandAsync(const DeleteCommandRequest& request, const DeleteCommandAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteCommand(request), context);
-    };
+    using Req = const DeleteCommandRequest&;
+    using Resp = DeleteCommandResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteCommand", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TatClient::DeleteCommandOutcomeCallable TatClient::DeleteCommandCallable(const DeleteCommandRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteCommandOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteCommand(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteCommandOutcome>>();
+    DeleteCommandAsync(
+    request,
+    [prom](
+        const TatClient*,
+        const DeleteCommandRequest&,
+        DeleteCommandOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TatClient::DeleteCommandsOutcome TatClient::DeleteCommands(const DeleteCommandsRequest &request)
@@ -277,25 +312,32 @@ TatClient::DeleteCommandsOutcome TatClient::DeleteCommands(const DeleteCommandsR
 
 void TatClient::DeleteCommandsAsync(const DeleteCommandsRequest& request, const DeleteCommandsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteCommands(request), context);
-    };
+    using Req = const DeleteCommandsRequest&;
+    using Resp = DeleteCommandsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteCommands", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TatClient::DeleteCommandsOutcomeCallable TatClient::DeleteCommandsCallable(const DeleteCommandsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteCommandsOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteCommands(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteCommandsOutcome>>();
+    DeleteCommandsAsync(
+    request,
+    [prom](
+        const TatClient*,
+        const DeleteCommandsRequest&,
+        DeleteCommandsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TatClient::DeleteInvokerOutcome TatClient::DeleteInvoker(const DeleteInvokerRequest &request)
@@ -320,25 +362,32 @@ TatClient::DeleteInvokerOutcome TatClient::DeleteInvoker(const DeleteInvokerRequ
 
 void TatClient::DeleteInvokerAsync(const DeleteInvokerRequest& request, const DeleteInvokerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteInvoker(request), context);
-    };
+    using Req = const DeleteInvokerRequest&;
+    using Resp = DeleteInvokerResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteInvoker", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TatClient::DeleteInvokerOutcomeCallable TatClient::DeleteInvokerCallable(const DeleteInvokerRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteInvokerOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteInvoker(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteInvokerOutcome>>();
+    DeleteInvokerAsync(
+    request,
+    [prom](
+        const TatClient*,
+        const DeleteInvokerRequest&,
+        DeleteInvokerOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TatClient::DeleteRegisterCodesOutcome TatClient::DeleteRegisterCodes(const DeleteRegisterCodesRequest &request)
@@ -363,25 +412,32 @@ TatClient::DeleteRegisterCodesOutcome TatClient::DeleteRegisterCodes(const Delet
 
 void TatClient::DeleteRegisterCodesAsync(const DeleteRegisterCodesRequest& request, const DeleteRegisterCodesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteRegisterCodes(request), context);
-    };
+    using Req = const DeleteRegisterCodesRequest&;
+    using Resp = DeleteRegisterCodesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteRegisterCodes", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TatClient::DeleteRegisterCodesOutcomeCallable TatClient::DeleteRegisterCodesCallable(const DeleteRegisterCodesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteRegisterCodesOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteRegisterCodes(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteRegisterCodesOutcome>>();
+    DeleteRegisterCodesAsync(
+    request,
+    [prom](
+        const TatClient*,
+        const DeleteRegisterCodesRequest&,
+        DeleteRegisterCodesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TatClient::DeleteRegisterInstanceOutcome TatClient::DeleteRegisterInstance(const DeleteRegisterInstanceRequest &request)
@@ -406,25 +462,32 @@ TatClient::DeleteRegisterInstanceOutcome TatClient::DeleteRegisterInstance(const
 
 void TatClient::DeleteRegisterInstanceAsync(const DeleteRegisterInstanceRequest& request, const DeleteRegisterInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteRegisterInstance(request), context);
-    };
+    using Req = const DeleteRegisterInstanceRequest&;
+    using Resp = DeleteRegisterInstanceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteRegisterInstance", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TatClient::DeleteRegisterInstanceOutcomeCallable TatClient::DeleteRegisterInstanceCallable(const DeleteRegisterInstanceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteRegisterInstanceOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteRegisterInstance(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteRegisterInstanceOutcome>>();
+    DeleteRegisterInstanceAsync(
+    request,
+    [prom](
+        const TatClient*,
+        const DeleteRegisterInstanceRequest&,
+        DeleteRegisterInstanceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TatClient::DescribeAutomationAgentStatusOutcome TatClient::DescribeAutomationAgentStatus(const DescribeAutomationAgentStatusRequest &request)
@@ -449,25 +512,32 @@ TatClient::DescribeAutomationAgentStatusOutcome TatClient::DescribeAutomationAge
 
 void TatClient::DescribeAutomationAgentStatusAsync(const DescribeAutomationAgentStatusRequest& request, const DescribeAutomationAgentStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAutomationAgentStatus(request), context);
-    };
+    using Req = const DescribeAutomationAgentStatusRequest&;
+    using Resp = DescribeAutomationAgentStatusResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAutomationAgentStatus", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TatClient::DescribeAutomationAgentStatusOutcomeCallable TatClient::DescribeAutomationAgentStatusCallable(const DescribeAutomationAgentStatusRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAutomationAgentStatusOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAutomationAgentStatus(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAutomationAgentStatusOutcome>>();
+    DescribeAutomationAgentStatusAsync(
+    request,
+    [prom](
+        const TatClient*,
+        const DescribeAutomationAgentStatusRequest&,
+        DescribeAutomationAgentStatusOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TatClient::DescribeCommandsOutcome TatClient::DescribeCommands(const DescribeCommandsRequest &request)
@@ -492,25 +562,32 @@ TatClient::DescribeCommandsOutcome TatClient::DescribeCommands(const DescribeCom
 
 void TatClient::DescribeCommandsAsync(const DescribeCommandsRequest& request, const DescribeCommandsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeCommands(request), context);
-    };
+    using Req = const DescribeCommandsRequest&;
+    using Resp = DescribeCommandsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeCommands", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TatClient::DescribeCommandsOutcomeCallable TatClient::DescribeCommandsCallable(const DescribeCommandsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeCommandsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeCommands(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeCommandsOutcome>>();
+    DescribeCommandsAsync(
+    request,
+    [prom](
+        const TatClient*,
+        const DescribeCommandsRequest&,
+        DescribeCommandsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TatClient::DescribeInvocationTasksOutcome TatClient::DescribeInvocationTasks(const DescribeInvocationTasksRequest &request)
@@ -535,25 +612,32 @@ TatClient::DescribeInvocationTasksOutcome TatClient::DescribeInvocationTasks(con
 
 void TatClient::DescribeInvocationTasksAsync(const DescribeInvocationTasksRequest& request, const DescribeInvocationTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeInvocationTasks(request), context);
-    };
+    using Req = const DescribeInvocationTasksRequest&;
+    using Resp = DescribeInvocationTasksResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeInvocationTasks", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TatClient::DescribeInvocationTasksOutcomeCallable TatClient::DescribeInvocationTasksCallable(const DescribeInvocationTasksRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeInvocationTasksOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeInvocationTasks(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeInvocationTasksOutcome>>();
+    DescribeInvocationTasksAsync(
+    request,
+    [prom](
+        const TatClient*,
+        const DescribeInvocationTasksRequest&,
+        DescribeInvocationTasksOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TatClient::DescribeInvocationsOutcome TatClient::DescribeInvocations(const DescribeInvocationsRequest &request)
@@ -578,25 +662,32 @@ TatClient::DescribeInvocationsOutcome TatClient::DescribeInvocations(const Descr
 
 void TatClient::DescribeInvocationsAsync(const DescribeInvocationsRequest& request, const DescribeInvocationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeInvocations(request), context);
-    };
+    using Req = const DescribeInvocationsRequest&;
+    using Resp = DescribeInvocationsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeInvocations", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TatClient::DescribeInvocationsOutcomeCallable TatClient::DescribeInvocationsCallable(const DescribeInvocationsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeInvocationsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeInvocations(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeInvocationsOutcome>>();
+    DescribeInvocationsAsync(
+    request,
+    [prom](
+        const TatClient*,
+        const DescribeInvocationsRequest&,
+        DescribeInvocationsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TatClient::DescribeInvokerRecordsOutcome TatClient::DescribeInvokerRecords(const DescribeInvokerRecordsRequest &request)
@@ -621,25 +712,32 @@ TatClient::DescribeInvokerRecordsOutcome TatClient::DescribeInvokerRecords(const
 
 void TatClient::DescribeInvokerRecordsAsync(const DescribeInvokerRecordsRequest& request, const DescribeInvokerRecordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeInvokerRecords(request), context);
-    };
+    using Req = const DescribeInvokerRecordsRequest&;
+    using Resp = DescribeInvokerRecordsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeInvokerRecords", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TatClient::DescribeInvokerRecordsOutcomeCallable TatClient::DescribeInvokerRecordsCallable(const DescribeInvokerRecordsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeInvokerRecordsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeInvokerRecords(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeInvokerRecordsOutcome>>();
+    DescribeInvokerRecordsAsync(
+    request,
+    [prom](
+        const TatClient*,
+        const DescribeInvokerRecordsRequest&,
+        DescribeInvokerRecordsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TatClient::DescribeInvokersOutcome TatClient::DescribeInvokers(const DescribeInvokersRequest &request)
@@ -664,25 +762,32 @@ TatClient::DescribeInvokersOutcome TatClient::DescribeInvokers(const DescribeInv
 
 void TatClient::DescribeInvokersAsync(const DescribeInvokersRequest& request, const DescribeInvokersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeInvokers(request), context);
-    };
+    using Req = const DescribeInvokersRequest&;
+    using Resp = DescribeInvokersResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeInvokers", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TatClient::DescribeInvokersOutcomeCallable TatClient::DescribeInvokersCallable(const DescribeInvokersRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeInvokersOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeInvokers(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeInvokersOutcome>>();
+    DescribeInvokersAsync(
+    request,
+    [prom](
+        const TatClient*,
+        const DescribeInvokersRequest&,
+        DescribeInvokersOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TatClient::DescribeQuotasOutcome TatClient::DescribeQuotas(const DescribeQuotasRequest &request)
@@ -707,25 +812,32 @@ TatClient::DescribeQuotasOutcome TatClient::DescribeQuotas(const DescribeQuotasR
 
 void TatClient::DescribeQuotasAsync(const DescribeQuotasRequest& request, const DescribeQuotasAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeQuotas(request), context);
-    };
+    using Req = const DescribeQuotasRequest&;
+    using Resp = DescribeQuotasResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeQuotas", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TatClient::DescribeQuotasOutcomeCallable TatClient::DescribeQuotasCallable(const DescribeQuotasRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeQuotasOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeQuotas(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeQuotasOutcome>>();
+    DescribeQuotasAsync(
+    request,
+    [prom](
+        const TatClient*,
+        const DescribeQuotasRequest&,
+        DescribeQuotasOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TatClient::DescribeRegionsOutcome TatClient::DescribeRegions(const DescribeRegionsRequest &request)
@@ -750,25 +862,32 @@ TatClient::DescribeRegionsOutcome TatClient::DescribeRegions(const DescribeRegio
 
 void TatClient::DescribeRegionsAsync(const DescribeRegionsRequest& request, const DescribeRegionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeRegions(request), context);
-    };
+    using Req = const DescribeRegionsRequest&;
+    using Resp = DescribeRegionsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeRegions", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TatClient::DescribeRegionsOutcomeCallable TatClient::DescribeRegionsCallable(const DescribeRegionsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeRegionsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeRegions(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeRegionsOutcome>>();
+    DescribeRegionsAsync(
+    request,
+    [prom](
+        const TatClient*,
+        const DescribeRegionsRequest&,
+        DescribeRegionsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TatClient::DescribeRegisterCodesOutcome TatClient::DescribeRegisterCodes(const DescribeRegisterCodesRequest &request)
@@ -793,25 +912,32 @@ TatClient::DescribeRegisterCodesOutcome TatClient::DescribeRegisterCodes(const D
 
 void TatClient::DescribeRegisterCodesAsync(const DescribeRegisterCodesRequest& request, const DescribeRegisterCodesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeRegisterCodes(request), context);
-    };
+    using Req = const DescribeRegisterCodesRequest&;
+    using Resp = DescribeRegisterCodesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeRegisterCodes", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TatClient::DescribeRegisterCodesOutcomeCallable TatClient::DescribeRegisterCodesCallable(const DescribeRegisterCodesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeRegisterCodesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeRegisterCodes(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeRegisterCodesOutcome>>();
+    DescribeRegisterCodesAsync(
+    request,
+    [prom](
+        const TatClient*,
+        const DescribeRegisterCodesRequest&,
+        DescribeRegisterCodesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TatClient::DescribeRegisterInstancesOutcome TatClient::DescribeRegisterInstances(const DescribeRegisterInstancesRequest &request)
@@ -836,25 +962,32 @@ TatClient::DescribeRegisterInstancesOutcome TatClient::DescribeRegisterInstances
 
 void TatClient::DescribeRegisterInstancesAsync(const DescribeRegisterInstancesRequest& request, const DescribeRegisterInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeRegisterInstances(request), context);
-    };
+    using Req = const DescribeRegisterInstancesRequest&;
+    using Resp = DescribeRegisterInstancesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeRegisterInstances", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TatClient::DescribeRegisterInstancesOutcomeCallable TatClient::DescribeRegisterInstancesCallable(const DescribeRegisterInstancesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeRegisterInstancesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeRegisterInstances(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeRegisterInstancesOutcome>>();
+    DescribeRegisterInstancesAsync(
+    request,
+    [prom](
+        const TatClient*,
+        const DescribeRegisterInstancesRequest&,
+        DescribeRegisterInstancesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TatClient::DescribeScenesOutcome TatClient::DescribeScenes(const DescribeScenesRequest &request)
@@ -879,25 +1012,32 @@ TatClient::DescribeScenesOutcome TatClient::DescribeScenes(const DescribeScenesR
 
 void TatClient::DescribeScenesAsync(const DescribeScenesRequest& request, const DescribeScenesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeScenes(request), context);
-    };
+    using Req = const DescribeScenesRequest&;
+    using Resp = DescribeScenesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeScenes", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TatClient::DescribeScenesOutcomeCallable TatClient::DescribeScenesCallable(const DescribeScenesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeScenesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeScenes(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeScenesOutcome>>();
+    DescribeScenesAsync(
+    request,
+    [prom](
+        const TatClient*,
+        const DescribeScenesRequest&,
+        DescribeScenesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TatClient::DisableInvokerOutcome TatClient::DisableInvoker(const DisableInvokerRequest &request)
@@ -922,25 +1062,32 @@ TatClient::DisableInvokerOutcome TatClient::DisableInvoker(const DisableInvokerR
 
 void TatClient::DisableInvokerAsync(const DisableInvokerRequest& request, const DisableInvokerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DisableInvoker(request), context);
-    };
+    using Req = const DisableInvokerRequest&;
+    using Resp = DisableInvokerResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DisableInvoker", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TatClient::DisableInvokerOutcomeCallable TatClient::DisableInvokerCallable(const DisableInvokerRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DisableInvokerOutcome()>>(
-        [this, request]()
-        {
-            return this->DisableInvoker(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DisableInvokerOutcome>>();
+    DisableInvokerAsync(
+    request,
+    [prom](
+        const TatClient*,
+        const DisableInvokerRequest&,
+        DisableInvokerOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TatClient::DisableRegisterCodesOutcome TatClient::DisableRegisterCodes(const DisableRegisterCodesRequest &request)
@@ -965,25 +1112,32 @@ TatClient::DisableRegisterCodesOutcome TatClient::DisableRegisterCodes(const Dis
 
 void TatClient::DisableRegisterCodesAsync(const DisableRegisterCodesRequest& request, const DisableRegisterCodesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DisableRegisterCodes(request), context);
-    };
+    using Req = const DisableRegisterCodesRequest&;
+    using Resp = DisableRegisterCodesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DisableRegisterCodes", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TatClient::DisableRegisterCodesOutcomeCallable TatClient::DisableRegisterCodesCallable(const DisableRegisterCodesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DisableRegisterCodesOutcome()>>(
-        [this, request]()
-        {
-            return this->DisableRegisterCodes(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DisableRegisterCodesOutcome>>();
+    DisableRegisterCodesAsync(
+    request,
+    [prom](
+        const TatClient*,
+        const DisableRegisterCodesRequest&,
+        DisableRegisterCodesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TatClient::EnableInvokerOutcome TatClient::EnableInvoker(const EnableInvokerRequest &request)
@@ -1008,25 +1162,32 @@ TatClient::EnableInvokerOutcome TatClient::EnableInvoker(const EnableInvokerRequ
 
 void TatClient::EnableInvokerAsync(const EnableInvokerRequest& request, const EnableInvokerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->EnableInvoker(request), context);
-    };
+    using Req = const EnableInvokerRequest&;
+    using Resp = EnableInvokerResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "EnableInvoker", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TatClient::EnableInvokerOutcomeCallable TatClient::EnableInvokerCallable(const EnableInvokerRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<EnableInvokerOutcome()>>(
-        [this, request]()
-        {
-            return this->EnableInvoker(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<EnableInvokerOutcome>>();
+    EnableInvokerAsync(
+    request,
+    [prom](
+        const TatClient*,
+        const EnableInvokerRequest&,
+        EnableInvokerOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TatClient::InvokeCommandOutcome TatClient::InvokeCommand(const InvokeCommandRequest &request)
@@ -1051,25 +1212,32 @@ TatClient::InvokeCommandOutcome TatClient::InvokeCommand(const InvokeCommandRequ
 
 void TatClient::InvokeCommandAsync(const InvokeCommandRequest& request, const InvokeCommandAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->InvokeCommand(request), context);
-    };
+    using Req = const InvokeCommandRequest&;
+    using Resp = InvokeCommandResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "InvokeCommand", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TatClient::InvokeCommandOutcomeCallable TatClient::InvokeCommandCallable(const InvokeCommandRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<InvokeCommandOutcome()>>(
-        [this, request]()
-        {
-            return this->InvokeCommand(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<InvokeCommandOutcome>>();
+    InvokeCommandAsync(
+    request,
+    [prom](
+        const TatClient*,
+        const InvokeCommandRequest&,
+        InvokeCommandOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TatClient::ModifyCommandOutcome TatClient::ModifyCommand(const ModifyCommandRequest &request)
@@ -1094,25 +1262,32 @@ TatClient::ModifyCommandOutcome TatClient::ModifyCommand(const ModifyCommandRequ
 
 void TatClient::ModifyCommandAsync(const ModifyCommandRequest& request, const ModifyCommandAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyCommand(request), context);
-    };
+    using Req = const ModifyCommandRequest&;
+    using Resp = ModifyCommandResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyCommand", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TatClient::ModifyCommandOutcomeCallable TatClient::ModifyCommandCallable(const ModifyCommandRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyCommandOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyCommand(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyCommandOutcome>>();
+    ModifyCommandAsync(
+    request,
+    [prom](
+        const TatClient*,
+        const ModifyCommandRequest&,
+        ModifyCommandOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TatClient::ModifyInvokerOutcome TatClient::ModifyInvoker(const ModifyInvokerRequest &request)
@@ -1137,25 +1312,32 @@ TatClient::ModifyInvokerOutcome TatClient::ModifyInvoker(const ModifyInvokerRequ
 
 void TatClient::ModifyInvokerAsync(const ModifyInvokerRequest& request, const ModifyInvokerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyInvoker(request), context);
-    };
+    using Req = const ModifyInvokerRequest&;
+    using Resp = ModifyInvokerResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyInvoker", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TatClient::ModifyInvokerOutcomeCallable TatClient::ModifyInvokerCallable(const ModifyInvokerRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyInvokerOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyInvoker(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyInvokerOutcome>>();
+    ModifyInvokerAsync(
+    request,
+    [prom](
+        const TatClient*,
+        const ModifyInvokerRequest&,
+        ModifyInvokerOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TatClient::ModifyRegisterInstanceOutcome TatClient::ModifyRegisterInstance(const ModifyRegisterInstanceRequest &request)
@@ -1180,25 +1362,32 @@ TatClient::ModifyRegisterInstanceOutcome TatClient::ModifyRegisterInstance(const
 
 void TatClient::ModifyRegisterInstanceAsync(const ModifyRegisterInstanceRequest& request, const ModifyRegisterInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyRegisterInstance(request), context);
-    };
+    using Req = const ModifyRegisterInstanceRequest&;
+    using Resp = ModifyRegisterInstanceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyRegisterInstance", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TatClient::ModifyRegisterInstanceOutcomeCallable TatClient::ModifyRegisterInstanceCallable(const ModifyRegisterInstanceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyRegisterInstanceOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyRegisterInstance(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyRegisterInstanceOutcome>>();
+    ModifyRegisterInstanceAsync(
+    request,
+    [prom](
+        const TatClient*,
+        const ModifyRegisterInstanceRequest&,
+        ModifyRegisterInstanceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TatClient::PreviewReplacedCommandContentOutcome TatClient::PreviewReplacedCommandContent(const PreviewReplacedCommandContentRequest &request)
@@ -1223,25 +1412,32 @@ TatClient::PreviewReplacedCommandContentOutcome TatClient::PreviewReplacedComman
 
 void TatClient::PreviewReplacedCommandContentAsync(const PreviewReplacedCommandContentRequest& request, const PreviewReplacedCommandContentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->PreviewReplacedCommandContent(request), context);
-    };
+    using Req = const PreviewReplacedCommandContentRequest&;
+    using Resp = PreviewReplacedCommandContentResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "PreviewReplacedCommandContent", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TatClient::PreviewReplacedCommandContentOutcomeCallable TatClient::PreviewReplacedCommandContentCallable(const PreviewReplacedCommandContentRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<PreviewReplacedCommandContentOutcome()>>(
-        [this, request]()
-        {
-            return this->PreviewReplacedCommandContent(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<PreviewReplacedCommandContentOutcome>>();
+    PreviewReplacedCommandContentAsync(
+    request,
+    [prom](
+        const TatClient*,
+        const PreviewReplacedCommandContentRequest&,
+        PreviewReplacedCommandContentOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TatClient::RunCommandOutcome TatClient::RunCommand(const RunCommandRequest &request)
@@ -1266,24 +1462,31 @@ TatClient::RunCommandOutcome TatClient::RunCommand(const RunCommandRequest &requ
 
 void TatClient::RunCommandAsync(const RunCommandRequest& request, const RunCommandAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->RunCommand(request), context);
-    };
+    using Req = const RunCommandRequest&;
+    using Resp = RunCommandResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "RunCommand", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TatClient::RunCommandOutcomeCallable TatClient::RunCommandCallable(const RunCommandRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<RunCommandOutcome()>>(
-        [this, request]()
-        {
-            return this->RunCommand(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<RunCommandOutcome>>();
+    RunCommandAsync(
+    request,
+    [prom](
+        const TatClient*,
+        const RunCommandRequest&,
+        RunCommandOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 

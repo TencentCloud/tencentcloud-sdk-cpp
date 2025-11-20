@@ -62,25 +62,32 @@ TkeClient::AcquireClusterAdminRoleOutcome TkeClient::AcquireClusterAdminRole(con
 
 void TkeClient::AcquireClusterAdminRoleAsync(const AcquireClusterAdminRoleRequest& request, const AcquireClusterAdminRoleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->AcquireClusterAdminRole(request), context);
-    };
+    using Req = const AcquireClusterAdminRoleRequest&;
+    using Resp = AcquireClusterAdminRoleResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "AcquireClusterAdminRole", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::AcquireClusterAdminRoleOutcomeCallable TkeClient::AcquireClusterAdminRoleCallable(const AcquireClusterAdminRoleRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<AcquireClusterAdminRoleOutcome()>>(
-        [this, request]()
-        {
-            return this->AcquireClusterAdminRole(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<AcquireClusterAdminRoleOutcome>>();
+    AcquireClusterAdminRoleAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const AcquireClusterAdminRoleRequest&,
+        AcquireClusterAdminRoleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::AddClusterCIDROutcome TkeClient::AddClusterCIDR(const AddClusterCIDRRequest &request)
@@ -105,25 +112,32 @@ TkeClient::AddClusterCIDROutcome TkeClient::AddClusterCIDR(const AddClusterCIDRR
 
 void TkeClient::AddClusterCIDRAsync(const AddClusterCIDRRequest& request, const AddClusterCIDRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->AddClusterCIDR(request), context);
-    };
+    using Req = const AddClusterCIDRRequest&;
+    using Resp = AddClusterCIDRResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "AddClusterCIDR", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::AddClusterCIDROutcomeCallable TkeClient::AddClusterCIDRCallable(const AddClusterCIDRRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<AddClusterCIDROutcome()>>(
-        [this, request]()
-        {
-            return this->AddClusterCIDR(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<AddClusterCIDROutcome>>();
+    AddClusterCIDRAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const AddClusterCIDRRequest&,
+        AddClusterCIDROutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::AddExistedInstancesOutcome TkeClient::AddExistedInstances(const AddExistedInstancesRequest &request)
@@ -148,25 +162,32 @@ TkeClient::AddExistedInstancesOutcome TkeClient::AddExistedInstances(const AddEx
 
 void TkeClient::AddExistedInstancesAsync(const AddExistedInstancesRequest& request, const AddExistedInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->AddExistedInstances(request), context);
-    };
+    using Req = const AddExistedInstancesRequest&;
+    using Resp = AddExistedInstancesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "AddExistedInstances", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::AddExistedInstancesOutcomeCallable TkeClient::AddExistedInstancesCallable(const AddExistedInstancesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<AddExistedInstancesOutcome()>>(
-        [this, request]()
-        {
-            return this->AddExistedInstances(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<AddExistedInstancesOutcome>>();
+    AddExistedInstancesAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const AddExistedInstancesRequest&,
+        AddExistedInstancesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::AddNodeToNodePoolOutcome TkeClient::AddNodeToNodePool(const AddNodeToNodePoolRequest &request)
@@ -191,25 +212,32 @@ TkeClient::AddNodeToNodePoolOutcome TkeClient::AddNodeToNodePool(const AddNodeTo
 
 void TkeClient::AddNodeToNodePoolAsync(const AddNodeToNodePoolRequest& request, const AddNodeToNodePoolAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->AddNodeToNodePool(request), context);
-    };
+    using Req = const AddNodeToNodePoolRequest&;
+    using Resp = AddNodeToNodePoolResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "AddNodeToNodePool", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::AddNodeToNodePoolOutcomeCallable TkeClient::AddNodeToNodePoolCallable(const AddNodeToNodePoolRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<AddNodeToNodePoolOutcome()>>(
-        [this, request]()
-        {
-            return this->AddNodeToNodePool(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<AddNodeToNodePoolOutcome>>();
+    AddNodeToNodePoolAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const AddNodeToNodePoolRequest&,
+        AddNodeToNodePoolOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::AddVpcCniSubnetsOutcome TkeClient::AddVpcCniSubnets(const AddVpcCniSubnetsRequest &request)
@@ -234,25 +262,32 @@ TkeClient::AddVpcCniSubnetsOutcome TkeClient::AddVpcCniSubnets(const AddVpcCniSu
 
 void TkeClient::AddVpcCniSubnetsAsync(const AddVpcCniSubnetsRequest& request, const AddVpcCniSubnetsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->AddVpcCniSubnets(request), context);
-    };
+    using Req = const AddVpcCniSubnetsRequest&;
+    using Resp = AddVpcCniSubnetsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "AddVpcCniSubnets", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::AddVpcCniSubnetsOutcomeCallable TkeClient::AddVpcCniSubnetsCallable(const AddVpcCniSubnetsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<AddVpcCniSubnetsOutcome()>>(
-        [this, request]()
-        {
-            return this->AddVpcCniSubnets(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<AddVpcCniSubnetsOutcome>>();
+    AddVpcCniSubnetsAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const AddVpcCniSubnetsRequest&,
+        AddVpcCniSubnetsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::CancelClusterReleaseOutcome TkeClient::CancelClusterRelease(const CancelClusterReleaseRequest &request)
@@ -277,25 +312,32 @@ TkeClient::CancelClusterReleaseOutcome TkeClient::CancelClusterRelease(const Can
 
 void TkeClient::CancelClusterReleaseAsync(const CancelClusterReleaseRequest& request, const CancelClusterReleaseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CancelClusterRelease(request), context);
-    };
+    using Req = const CancelClusterReleaseRequest&;
+    using Resp = CancelClusterReleaseResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CancelClusterRelease", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::CancelClusterReleaseOutcomeCallable TkeClient::CancelClusterReleaseCallable(const CancelClusterReleaseRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CancelClusterReleaseOutcome()>>(
-        [this, request]()
-        {
-            return this->CancelClusterRelease(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CancelClusterReleaseOutcome>>();
+    CancelClusterReleaseAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const CancelClusterReleaseRequest&,
+        CancelClusterReleaseOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::CheckEdgeClusterCIDROutcome TkeClient::CheckEdgeClusterCIDR(const CheckEdgeClusterCIDRRequest &request)
@@ -320,25 +362,32 @@ TkeClient::CheckEdgeClusterCIDROutcome TkeClient::CheckEdgeClusterCIDR(const Che
 
 void TkeClient::CheckEdgeClusterCIDRAsync(const CheckEdgeClusterCIDRRequest& request, const CheckEdgeClusterCIDRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CheckEdgeClusterCIDR(request), context);
-    };
+    using Req = const CheckEdgeClusterCIDRRequest&;
+    using Resp = CheckEdgeClusterCIDRResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CheckEdgeClusterCIDR", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::CheckEdgeClusterCIDROutcomeCallable TkeClient::CheckEdgeClusterCIDRCallable(const CheckEdgeClusterCIDRRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CheckEdgeClusterCIDROutcome()>>(
-        [this, request]()
-        {
-            return this->CheckEdgeClusterCIDR(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CheckEdgeClusterCIDROutcome>>();
+    CheckEdgeClusterCIDRAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const CheckEdgeClusterCIDRRequest&,
+        CheckEdgeClusterCIDROutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::CheckInstancesUpgradeAbleOutcome TkeClient::CheckInstancesUpgradeAble(const CheckInstancesUpgradeAbleRequest &request)
@@ -363,25 +412,32 @@ TkeClient::CheckInstancesUpgradeAbleOutcome TkeClient::CheckInstancesUpgradeAble
 
 void TkeClient::CheckInstancesUpgradeAbleAsync(const CheckInstancesUpgradeAbleRequest& request, const CheckInstancesUpgradeAbleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CheckInstancesUpgradeAble(request), context);
-    };
+    using Req = const CheckInstancesUpgradeAbleRequest&;
+    using Resp = CheckInstancesUpgradeAbleResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CheckInstancesUpgradeAble", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::CheckInstancesUpgradeAbleOutcomeCallable TkeClient::CheckInstancesUpgradeAbleCallable(const CheckInstancesUpgradeAbleRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CheckInstancesUpgradeAbleOutcome()>>(
-        [this, request]()
-        {
-            return this->CheckInstancesUpgradeAble(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CheckInstancesUpgradeAbleOutcome>>();
+    CheckInstancesUpgradeAbleAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const CheckInstancesUpgradeAbleRequest&,
+        CheckInstancesUpgradeAbleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::CreateBackupStorageLocationOutcome TkeClient::CreateBackupStorageLocation(const CreateBackupStorageLocationRequest &request)
@@ -406,25 +462,32 @@ TkeClient::CreateBackupStorageLocationOutcome TkeClient::CreateBackupStorageLoca
 
 void TkeClient::CreateBackupStorageLocationAsync(const CreateBackupStorageLocationRequest& request, const CreateBackupStorageLocationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateBackupStorageLocation(request), context);
-    };
+    using Req = const CreateBackupStorageLocationRequest&;
+    using Resp = CreateBackupStorageLocationResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateBackupStorageLocation", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::CreateBackupStorageLocationOutcomeCallable TkeClient::CreateBackupStorageLocationCallable(const CreateBackupStorageLocationRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateBackupStorageLocationOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateBackupStorageLocation(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateBackupStorageLocationOutcome>>();
+    CreateBackupStorageLocationAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const CreateBackupStorageLocationRequest&,
+        CreateBackupStorageLocationOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::CreateCLSLogConfigOutcome TkeClient::CreateCLSLogConfig(const CreateCLSLogConfigRequest &request)
@@ -449,25 +512,32 @@ TkeClient::CreateCLSLogConfigOutcome TkeClient::CreateCLSLogConfig(const CreateC
 
 void TkeClient::CreateCLSLogConfigAsync(const CreateCLSLogConfigRequest& request, const CreateCLSLogConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateCLSLogConfig(request), context);
-    };
+    using Req = const CreateCLSLogConfigRequest&;
+    using Resp = CreateCLSLogConfigResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateCLSLogConfig", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::CreateCLSLogConfigOutcomeCallable TkeClient::CreateCLSLogConfigCallable(const CreateCLSLogConfigRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateCLSLogConfigOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateCLSLogConfig(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateCLSLogConfigOutcome>>();
+    CreateCLSLogConfigAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const CreateCLSLogConfigRequest&,
+        CreateCLSLogConfigOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::CreateClusterOutcome TkeClient::CreateCluster(const CreateClusterRequest &request)
@@ -492,25 +562,32 @@ TkeClient::CreateClusterOutcome TkeClient::CreateCluster(const CreateClusterRequ
 
 void TkeClient::CreateClusterAsync(const CreateClusterRequest& request, const CreateClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateCluster(request), context);
-    };
+    using Req = const CreateClusterRequest&;
+    using Resp = CreateClusterResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateCluster", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::CreateClusterOutcomeCallable TkeClient::CreateClusterCallable(const CreateClusterRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateClusterOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateCluster(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateClusterOutcome>>();
+    CreateClusterAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const CreateClusterRequest&,
+        CreateClusterOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::CreateClusterEndpointOutcome TkeClient::CreateClusterEndpoint(const CreateClusterEndpointRequest &request)
@@ -535,25 +612,32 @@ TkeClient::CreateClusterEndpointOutcome TkeClient::CreateClusterEndpoint(const C
 
 void TkeClient::CreateClusterEndpointAsync(const CreateClusterEndpointRequest& request, const CreateClusterEndpointAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateClusterEndpoint(request), context);
-    };
+    using Req = const CreateClusterEndpointRequest&;
+    using Resp = CreateClusterEndpointResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateClusterEndpoint", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::CreateClusterEndpointOutcomeCallable TkeClient::CreateClusterEndpointCallable(const CreateClusterEndpointRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateClusterEndpointOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateClusterEndpoint(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateClusterEndpointOutcome>>();
+    CreateClusterEndpointAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const CreateClusterEndpointRequest&,
+        CreateClusterEndpointOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::CreateClusterEndpointVipOutcome TkeClient::CreateClusterEndpointVip(const CreateClusterEndpointVipRequest &request)
@@ -578,25 +662,32 @@ TkeClient::CreateClusterEndpointVipOutcome TkeClient::CreateClusterEndpointVip(c
 
 void TkeClient::CreateClusterEndpointVipAsync(const CreateClusterEndpointVipRequest& request, const CreateClusterEndpointVipAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateClusterEndpointVip(request), context);
-    };
+    using Req = const CreateClusterEndpointVipRequest&;
+    using Resp = CreateClusterEndpointVipResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateClusterEndpointVip", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::CreateClusterEndpointVipOutcomeCallable TkeClient::CreateClusterEndpointVipCallable(const CreateClusterEndpointVipRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateClusterEndpointVipOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateClusterEndpointVip(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateClusterEndpointVipOutcome>>();
+    CreateClusterEndpointVipAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const CreateClusterEndpointVipRequest&,
+        CreateClusterEndpointVipOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::CreateClusterInstancesOutcome TkeClient::CreateClusterInstances(const CreateClusterInstancesRequest &request)
@@ -621,25 +712,32 @@ TkeClient::CreateClusterInstancesOutcome TkeClient::CreateClusterInstances(const
 
 void TkeClient::CreateClusterInstancesAsync(const CreateClusterInstancesRequest& request, const CreateClusterInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateClusterInstances(request), context);
-    };
+    using Req = const CreateClusterInstancesRequest&;
+    using Resp = CreateClusterInstancesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateClusterInstances", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::CreateClusterInstancesOutcomeCallable TkeClient::CreateClusterInstancesCallable(const CreateClusterInstancesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateClusterInstancesOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateClusterInstances(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateClusterInstancesOutcome>>();
+    CreateClusterInstancesAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const CreateClusterInstancesRequest&,
+        CreateClusterInstancesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::CreateClusterNodePoolOutcome TkeClient::CreateClusterNodePool(const CreateClusterNodePoolRequest &request)
@@ -664,25 +762,32 @@ TkeClient::CreateClusterNodePoolOutcome TkeClient::CreateClusterNodePool(const C
 
 void TkeClient::CreateClusterNodePoolAsync(const CreateClusterNodePoolRequest& request, const CreateClusterNodePoolAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateClusterNodePool(request), context);
-    };
+    using Req = const CreateClusterNodePoolRequest&;
+    using Resp = CreateClusterNodePoolResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateClusterNodePool", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::CreateClusterNodePoolOutcomeCallable TkeClient::CreateClusterNodePoolCallable(const CreateClusterNodePoolRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateClusterNodePoolOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateClusterNodePool(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateClusterNodePoolOutcome>>();
+    CreateClusterNodePoolAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const CreateClusterNodePoolRequest&,
+        CreateClusterNodePoolOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::CreateClusterReleaseOutcome TkeClient::CreateClusterRelease(const CreateClusterReleaseRequest &request)
@@ -707,25 +812,32 @@ TkeClient::CreateClusterReleaseOutcome TkeClient::CreateClusterRelease(const Cre
 
 void TkeClient::CreateClusterReleaseAsync(const CreateClusterReleaseRequest& request, const CreateClusterReleaseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateClusterRelease(request), context);
-    };
+    using Req = const CreateClusterReleaseRequest&;
+    using Resp = CreateClusterReleaseResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateClusterRelease", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::CreateClusterReleaseOutcomeCallable TkeClient::CreateClusterReleaseCallable(const CreateClusterReleaseRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateClusterReleaseOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateClusterRelease(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateClusterReleaseOutcome>>();
+    CreateClusterReleaseAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const CreateClusterReleaseRequest&,
+        CreateClusterReleaseOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::CreateClusterRouteOutcome TkeClient::CreateClusterRoute(const CreateClusterRouteRequest &request)
@@ -750,25 +862,32 @@ TkeClient::CreateClusterRouteOutcome TkeClient::CreateClusterRoute(const CreateC
 
 void TkeClient::CreateClusterRouteAsync(const CreateClusterRouteRequest& request, const CreateClusterRouteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateClusterRoute(request), context);
-    };
+    using Req = const CreateClusterRouteRequest&;
+    using Resp = CreateClusterRouteResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateClusterRoute", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::CreateClusterRouteOutcomeCallable TkeClient::CreateClusterRouteCallable(const CreateClusterRouteRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateClusterRouteOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateClusterRoute(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateClusterRouteOutcome>>();
+    CreateClusterRouteAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const CreateClusterRouteRequest&,
+        CreateClusterRouteOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::CreateClusterRouteTableOutcome TkeClient::CreateClusterRouteTable(const CreateClusterRouteTableRequest &request)
@@ -793,25 +912,32 @@ TkeClient::CreateClusterRouteTableOutcome TkeClient::CreateClusterRouteTable(con
 
 void TkeClient::CreateClusterRouteTableAsync(const CreateClusterRouteTableRequest& request, const CreateClusterRouteTableAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateClusterRouteTable(request), context);
-    };
+    using Req = const CreateClusterRouteTableRequest&;
+    using Resp = CreateClusterRouteTableResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateClusterRouteTable", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::CreateClusterRouteTableOutcomeCallable TkeClient::CreateClusterRouteTableCallable(const CreateClusterRouteTableRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateClusterRouteTableOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateClusterRouteTable(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateClusterRouteTableOutcome>>();
+    CreateClusterRouteTableAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const CreateClusterRouteTableRequest&,
+        CreateClusterRouteTableOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::CreateClusterVirtualNodeOutcome TkeClient::CreateClusterVirtualNode(const CreateClusterVirtualNodeRequest &request)
@@ -836,25 +962,32 @@ TkeClient::CreateClusterVirtualNodeOutcome TkeClient::CreateClusterVirtualNode(c
 
 void TkeClient::CreateClusterVirtualNodeAsync(const CreateClusterVirtualNodeRequest& request, const CreateClusterVirtualNodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateClusterVirtualNode(request), context);
-    };
+    using Req = const CreateClusterVirtualNodeRequest&;
+    using Resp = CreateClusterVirtualNodeResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateClusterVirtualNode", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::CreateClusterVirtualNodeOutcomeCallable TkeClient::CreateClusterVirtualNodeCallable(const CreateClusterVirtualNodeRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateClusterVirtualNodeOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateClusterVirtualNode(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateClusterVirtualNodeOutcome>>();
+    CreateClusterVirtualNodeAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const CreateClusterVirtualNodeRequest&,
+        CreateClusterVirtualNodeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::CreateClusterVirtualNodePoolOutcome TkeClient::CreateClusterVirtualNodePool(const CreateClusterVirtualNodePoolRequest &request)
@@ -879,25 +1012,32 @@ TkeClient::CreateClusterVirtualNodePoolOutcome TkeClient::CreateClusterVirtualNo
 
 void TkeClient::CreateClusterVirtualNodePoolAsync(const CreateClusterVirtualNodePoolRequest& request, const CreateClusterVirtualNodePoolAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateClusterVirtualNodePool(request), context);
-    };
+    using Req = const CreateClusterVirtualNodePoolRequest&;
+    using Resp = CreateClusterVirtualNodePoolResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateClusterVirtualNodePool", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::CreateClusterVirtualNodePoolOutcomeCallable TkeClient::CreateClusterVirtualNodePoolCallable(const CreateClusterVirtualNodePoolRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateClusterVirtualNodePoolOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateClusterVirtualNodePool(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateClusterVirtualNodePoolOutcome>>();
+    CreateClusterVirtualNodePoolAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const CreateClusterVirtualNodePoolRequest&,
+        CreateClusterVirtualNodePoolOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::CreateECMInstancesOutcome TkeClient::CreateECMInstances(const CreateECMInstancesRequest &request)
@@ -922,25 +1062,32 @@ TkeClient::CreateECMInstancesOutcome TkeClient::CreateECMInstances(const CreateE
 
 void TkeClient::CreateECMInstancesAsync(const CreateECMInstancesRequest& request, const CreateECMInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateECMInstances(request), context);
-    };
+    using Req = const CreateECMInstancesRequest&;
+    using Resp = CreateECMInstancesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateECMInstances", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::CreateECMInstancesOutcomeCallable TkeClient::CreateECMInstancesCallable(const CreateECMInstancesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateECMInstancesOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateECMInstances(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateECMInstancesOutcome>>();
+    CreateECMInstancesAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const CreateECMInstancesRequest&,
+        CreateECMInstancesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::CreateEKSClusterOutcome TkeClient::CreateEKSCluster(const CreateEKSClusterRequest &request)
@@ -965,25 +1112,32 @@ TkeClient::CreateEKSClusterOutcome TkeClient::CreateEKSCluster(const CreateEKSCl
 
 void TkeClient::CreateEKSClusterAsync(const CreateEKSClusterRequest& request, const CreateEKSClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateEKSCluster(request), context);
-    };
+    using Req = const CreateEKSClusterRequest&;
+    using Resp = CreateEKSClusterResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateEKSCluster", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::CreateEKSClusterOutcomeCallable TkeClient::CreateEKSClusterCallable(const CreateEKSClusterRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateEKSClusterOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateEKSCluster(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateEKSClusterOutcome>>();
+    CreateEKSClusterAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const CreateEKSClusterRequest&,
+        CreateEKSClusterOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::CreateEKSContainerInstancesOutcome TkeClient::CreateEKSContainerInstances(const CreateEKSContainerInstancesRequest &request)
@@ -1008,25 +1162,32 @@ TkeClient::CreateEKSContainerInstancesOutcome TkeClient::CreateEKSContainerInsta
 
 void TkeClient::CreateEKSContainerInstancesAsync(const CreateEKSContainerInstancesRequest& request, const CreateEKSContainerInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateEKSContainerInstances(request), context);
-    };
+    using Req = const CreateEKSContainerInstancesRequest&;
+    using Resp = CreateEKSContainerInstancesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateEKSContainerInstances", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::CreateEKSContainerInstancesOutcomeCallable TkeClient::CreateEKSContainerInstancesCallable(const CreateEKSContainerInstancesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateEKSContainerInstancesOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateEKSContainerInstances(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateEKSContainerInstancesOutcome>>();
+    CreateEKSContainerInstancesAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const CreateEKSContainerInstancesRequest&,
+        CreateEKSContainerInstancesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::CreateEdgeCVMInstancesOutcome TkeClient::CreateEdgeCVMInstances(const CreateEdgeCVMInstancesRequest &request)
@@ -1051,25 +1212,32 @@ TkeClient::CreateEdgeCVMInstancesOutcome TkeClient::CreateEdgeCVMInstances(const
 
 void TkeClient::CreateEdgeCVMInstancesAsync(const CreateEdgeCVMInstancesRequest& request, const CreateEdgeCVMInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateEdgeCVMInstances(request), context);
-    };
+    using Req = const CreateEdgeCVMInstancesRequest&;
+    using Resp = CreateEdgeCVMInstancesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateEdgeCVMInstances", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::CreateEdgeCVMInstancesOutcomeCallable TkeClient::CreateEdgeCVMInstancesCallable(const CreateEdgeCVMInstancesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateEdgeCVMInstancesOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateEdgeCVMInstances(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateEdgeCVMInstancesOutcome>>();
+    CreateEdgeCVMInstancesAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const CreateEdgeCVMInstancesRequest&,
+        CreateEdgeCVMInstancesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::CreateEdgeLogConfigOutcome TkeClient::CreateEdgeLogConfig(const CreateEdgeLogConfigRequest &request)
@@ -1094,25 +1262,32 @@ TkeClient::CreateEdgeLogConfigOutcome TkeClient::CreateEdgeLogConfig(const Creat
 
 void TkeClient::CreateEdgeLogConfigAsync(const CreateEdgeLogConfigRequest& request, const CreateEdgeLogConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateEdgeLogConfig(request), context);
-    };
+    using Req = const CreateEdgeLogConfigRequest&;
+    using Resp = CreateEdgeLogConfigResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateEdgeLogConfig", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::CreateEdgeLogConfigOutcomeCallable TkeClient::CreateEdgeLogConfigCallable(const CreateEdgeLogConfigRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateEdgeLogConfigOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateEdgeLogConfig(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateEdgeLogConfigOutcome>>();
+    CreateEdgeLogConfigAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const CreateEdgeLogConfigRequest&,
+        CreateEdgeLogConfigOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::CreateEksLogConfigOutcome TkeClient::CreateEksLogConfig(const CreateEksLogConfigRequest &request)
@@ -1137,25 +1312,32 @@ TkeClient::CreateEksLogConfigOutcome TkeClient::CreateEksLogConfig(const CreateE
 
 void TkeClient::CreateEksLogConfigAsync(const CreateEksLogConfigRequest& request, const CreateEksLogConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateEksLogConfig(request), context);
-    };
+    using Req = const CreateEksLogConfigRequest&;
+    using Resp = CreateEksLogConfigResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateEksLogConfig", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::CreateEksLogConfigOutcomeCallable TkeClient::CreateEksLogConfigCallable(const CreateEksLogConfigRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateEksLogConfigOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateEksLogConfig(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateEksLogConfigOutcome>>();
+    CreateEksLogConfigAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const CreateEksLogConfigRequest&,
+        CreateEksLogConfigOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::CreateImageCacheOutcome TkeClient::CreateImageCache(const CreateImageCacheRequest &request)
@@ -1180,25 +1362,32 @@ TkeClient::CreateImageCacheOutcome TkeClient::CreateImageCache(const CreateImage
 
 void TkeClient::CreateImageCacheAsync(const CreateImageCacheRequest& request, const CreateImageCacheAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateImageCache(request), context);
-    };
+    using Req = const CreateImageCacheRequest&;
+    using Resp = CreateImageCacheResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateImageCache", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::CreateImageCacheOutcomeCallable TkeClient::CreateImageCacheCallable(const CreateImageCacheRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateImageCacheOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateImageCache(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateImageCacheOutcome>>();
+    CreateImageCacheAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const CreateImageCacheRequest&,
+        CreateImageCacheOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::CreatePrometheusAlertPolicyOutcome TkeClient::CreatePrometheusAlertPolicy(const CreatePrometheusAlertPolicyRequest &request)
@@ -1223,25 +1412,32 @@ TkeClient::CreatePrometheusAlertPolicyOutcome TkeClient::CreatePrometheusAlertPo
 
 void TkeClient::CreatePrometheusAlertPolicyAsync(const CreatePrometheusAlertPolicyRequest& request, const CreatePrometheusAlertPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreatePrometheusAlertPolicy(request), context);
-    };
+    using Req = const CreatePrometheusAlertPolicyRequest&;
+    using Resp = CreatePrometheusAlertPolicyResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreatePrometheusAlertPolicy", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::CreatePrometheusAlertPolicyOutcomeCallable TkeClient::CreatePrometheusAlertPolicyCallable(const CreatePrometheusAlertPolicyRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreatePrometheusAlertPolicyOutcome()>>(
-        [this, request]()
-        {
-            return this->CreatePrometheusAlertPolicy(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreatePrometheusAlertPolicyOutcome>>();
+    CreatePrometheusAlertPolicyAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const CreatePrometheusAlertPolicyRequest&,
+        CreatePrometheusAlertPolicyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::CreatePrometheusAlertRuleOutcome TkeClient::CreatePrometheusAlertRule(const CreatePrometheusAlertRuleRequest &request)
@@ -1266,25 +1462,32 @@ TkeClient::CreatePrometheusAlertRuleOutcome TkeClient::CreatePrometheusAlertRule
 
 void TkeClient::CreatePrometheusAlertRuleAsync(const CreatePrometheusAlertRuleRequest& request, const CreatePrometheusAlertRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreatePrometheusAlertRule(request), context);
-    };
+    using Req = const CreatePrometheusAlertRuleRequest&;
+    using Resp = CreatePrometheusAlertRuleResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreatePrometheusAlertRule", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::CreatePrometheusAlertRuleOutcomeCallable TkeClient::CreatePrometheusAlertRuleCallable(const CreatePrometheusAlertRuleRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreatePrometheusAlertRuleOutcome()>>(
-        [this, request]()
-        {
-            return this->CreatePrometheusAlertRule(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreatePrometheusAlertRuleOutcome>>();
+    CreatePrometheusAlertRuleAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const CreatePrometheusAlertRuleRequest&,
+        CreatePrometheusAlertRuleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::CreatePrometheusClusterAgentOutcome TkeClient::CreatePrometheusClusterAgent(const CreatePrometheusClusterAgentRequest &request)
@@ -1309,25 +1512,32 @@ TkeClient::CreatePrometheusClusterAgentOutcome TkeClient::CreatePrometheusCluste
 
 void TkeClient::CreatePrometheusClusterAgentAsync(const CreatePrometheusClusterAgentRequest& request, const CreatePrometheusClusterAgentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreatePrometheusClusterAgent(request), context);
-    };
+    using Req = const CreatePrometheusClusterAgentRequest&;
+    using Resp = CreatePrometheusClusterAgentResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreatePrometheusClusterAgent", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::CreatePrometheusClusterAgentOutcomeCallable TkeClient::CreatePrometheusClusterAgentCallable(const CreatePrometheusClusterAgentRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreatePrometheusClusterAgentOutcome()>>(
-        [this, request]()
-        {
-            return this->CreatePrometheusClusterAgent(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreatePrometheusClusterAgentOutcome>>();
+    CreatePrometheusClusterAgentAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const CreatePrometheusClusterAgentRequest&,
+        CreatePrometheusClusterAgentOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::CreatePrometheusConfigOutcome TkeClient::CreatePrometheusConfig(const CreatePrometheusConfigRequest &request)
@@ -1352,25 +1562,32 @@ TkeClient::CreatePrometheusConfigOutcome TkeClient::CreatePrometheusConfig(const
 
 void TkeClient::CreatePrometheusConfigAsync(const CreatePrometheusConfigRequest& request, const CreatePrometheusConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreatePrometheusConfig(request), context);
-    };
+    using Req = const CreatePrometheusConfigRequest&;
+    using Resp = CreatePrometheusConfigResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreatePrometheusConfig", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::CreatePrometheusConfigOutcomeCallable TkeClient::CreatePrometheusConfigCallable(const CreatePrometheusConfigRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreatePrometheusConfigOutcome()>>(
-        [this, request]()
-        {
-            return this->CreatePrometheusConfig(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreatePrometheusConfigOutcome>>();
+    CreatePrometheusConfigAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const CreatePrometheusConfigRequest&,
+        CreatePrometheusConfigOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::CreatePrometheusDashboardOutcome TkeClient::CreatePrometheusDashboard(const CreatePrometheusDashboardRequest &request)
@@ -1395,25 +1612,32 @@ TkeClient::CreatePrometheusDashboardOutcome TkeClient::CreatePrometheusDashboard
 
 void TkeClient::CreatePrometheusDashboardAsync(const CreatePrometheusDashboardRequest& request, const CreatePrometheusDashboardAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreatePrometheusDashboard(request), context);
-    };
+    using Req = const CreatePrometheusDashboardRequest&;
+    using Resp = CreatePrometheusDashboardResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreatePrometheusDashboard", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::CreatePrometheusDashboardOutcomeCallable TkeClient::CreatePrometheusDashboardCallable(const CreatePrometheusDashboardRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreatePrometheusDashboardOutcome()>>(
-        [this, request]()
-        {
-            return this->CreatePrometheusDashboard(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreatePrometheusDashboardOutcome>>();
+    CreatePrometheusDashboardAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const CreatePrometheusDashboardRequest&,
+        CreatePrometheusDashboardOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::CreatePrometheusGlobalNotificationOutcome TkeClient::CreatePrometheusGlobalNotification(const CreatePrometheusGlobalNotificationRequest &request)
@@ -1438,25 +1662,32 @@ TkeClient::CreatePrometheusGlobalNotificationOutcome TkeClient::CreatePrometheus
 
 void TkeClient::CreatePrometheusGlobalNotificationAsync(const CreatePrometheusGlobalNotificationRequest& request, const CreatePrometheusGlobalNotificationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreatePrometheusGlobalNotification(request), context);
-    };
+    using Req = const CreatePrometheusGlobalNotificationRequest&;
+    using Resp = CreatePrometheusGlobalNotificationResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreatePrometheusGlobalNotification", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::CreatePrometheusGlobalNotificationOutcomeCallable TkeClient::CreatePrometheusGlobalNotificationCallable(const CreatePrometheusGlobalNotificationRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreatePrometheusGlobalNotificationOutcome()>>(
-        [this, request]()
-        {
-            return this->CreatePrometheusGlobalNotification(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreatePrometheusGlobalNotificationOutcome>>();
+    CreatePrometheusGlobalNotificationAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const CreatePrometheusGlobalNotificationRequest&,
+        CreatePrometheusGlobalNotificationOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::CreatePrometheusRecordRuleYamlOutcome TkeClient::CreatePrometheusRecordRuleYaml(const CreatePrometheusRecordRuleYamlRequest &request)
@@ -1481,25 +1712,32 @@ TkeClient::CreatePrometheusRecordRuleYamlOutcome TkeClient::CreatePrometheusReco
 
 void TkeClient::CreatePrometheusRecordRuleYamlAsync(const CreatePrometheusRecordRuleYamlRequest& request, const CreatePrometheusRecordRuleYamlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreatePrometheusRecordRuleYaml(request), context);
-    };
+    using Req = const CreatePrometheusRecordRuleYamlRequest&;
+    using Resp = CreatePrometheusRecordRuleYamlResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreatePrometheusRecordRuleYaml", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::CreatePrometheusRecordRuleYamlOutcomeCallable TkeClient::CreatePrometheusRecordRuleYamlCallable(const CreatePrometheusRecordRuleYamlRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreatePrometheusRecordRuleYamlOutcome()>>(
-        [this, request]()
-        {
-            return this->CreatePrometheusRecordRuleYaml(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreatePrometheusRecordRuleYamlOutcome>>();
+    CreatePrometheusRecordRuleYamlAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const CreatePrometheusRecordRuleYamlRequest&,
+        CreatePrometheusRecordRuleYamlOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::CreatePrometheusTempOutcome TkeClient::CreatePrometheusTemp(const CreatePrometheusTempRequest &request)
@@ -1524,25 +1762,32 @@ TkeClient::CreatePrometheusTempOutcome TkeClient::CreatePrometheusTemp(const Cre
 
 void TkeClient::CreatePrometheusTempAsync(const CreatePrometheusTempRequest& request, const CreatePrometheusTempAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreatePrometheusTemp(request), context);
-    };
+    using Req = const CreatePrometheusTempRequest&;
+    using Resp = CreatePrometheusTempResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreatePrometheusTemp", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::CreatePrometheusTempOutcomeCallable TkeClient::CreatePrometheusTempCallable(const CreatePrometheusTempRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreatePrometheusTempOutcome()>>(
-        [this, request]()
-        {
-            return this->CreatePrometheusTemp(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreatePrometheusTempOutcome>>();
+    CreatePrometheusTempAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const CreatePrometheusTempRequest&,
+        CreatePrometheusTempOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::CreatePrometheusTemplateOutcome TkeClient::CreatePrometheusTemplate(const CreatePrometheusTemplateRequest &request)
@@ -1567,25 +1812,32 @@ TkeClient::CreatePrometheusTemplateOutcome TkeClient::CreatePrometheusTemplate(c
 
 void TkeClient::CreatePrometheusTemplateAsync(const CreatePrometheusTemplateRequest& request, const CreatePrometheusTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreatePrometheusTemplate(request), context);
-    };
+    using Req = const CreatePrometheusTemplateRequest&;
+    using Resp = CreatePrometheusTemplateResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreatePrometheusTemplate", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::CreatePrometheusTemplateOutcomeCallable TkeClient::CreatePrometheusTemplateCallable(const CreatePrometheusTemplateRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreatePrometheusTemplateOutcome()>>(
-        [this, request]()
-        {
-            return this->CreatePrometheusTemplate(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreatePrometheusTemplateOutcome>>();
+    CreatePrometheusTemplateAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const CreatePrometheusTemplateRequest&,
+        CreatePrometheusTemplateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::CreateReservedInstancesOutcome TkeClient::CreateReservedInstances(const CreateReservedInstancesRequest &request)
@@ -1610,25 +1862,32 @@ TkeClient::CreateReservedInstancesOutcome TkeClient::CreateReservedInstances(con
 
 void TkeClient::CreateReservedInstancesAsync(const CreateReservedInstancesRequest& request, const CreateReservedInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateReservedInstances(request), context);
-    };
+    using Req = const CreateReservedInstancesRequest&;
+    using Resp = CreateReservedInstancesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateReservedInstances", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::CreateReservedInstancesOutcomeCallable TkeClient::CreateReservedInstancesCallable(const CreateReservedInstancesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateReservedInstancesOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateReservedInstances(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateReservedInstancesOutcome>>();
+    CreateReservedInstancesAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const CreateReservedInstancesRequest&,
+        CreateReservedInstancesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::CreateTKEEdgeClusterOutcome TkeClient::CreateTKEEdgeCluster(const CreateTKEEdgeClusterRequest &request)
@@ -1653,25 +1912,32 @@ TkeClient::CreateTKEEdgeClusterOutcome TkeClient::CreateTKEEdgeCluster(const Cre
 
 void TkeClient::CreateTKEEdgeClusterAsync(const CreateTKEEdgeClusterRequest& request, const CreateTKEEdgeClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateTKEEdgeCluster(request), context);
-    };
+    using Req = const CreateTKEEdgeClusterRequest&;
+    using Resp = CreateTKEEdgeClusterResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateTKEEdgeCluster", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::CreateTKEEdgeClusterOutcomeCallable TkeClient::CreateTKEEdgeClusterCallable(const CreateTKEEdgeClusterRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateTKEEdgeClusterOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateTKEEdgeCluster(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateTKEEdgeClusterOutcome>>();
+    CreateTKEEdgeClusterAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const CreateTKEEdgeClusterRequest&,
+        CreateTKEEdgeClusterOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::DeleteAddonOutcome TkeClient::DeleteAddon(const DeleteAddonRequest &request)
@@ -1696,25 +1962,32 @@ TkeClient::DeleteAddonOutcome TkeClient::DeleteAddon(const DeleteAddonRequest &r
 
 void TkeClient::DeleteAddonAsync(const DeleteAddonRequest& request, const DeleteAddonAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteAddon(request), context);
-    };
+    using Req = const DeleteAddonRequest&;
+    using Resp = DeleteAddonResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteAddon", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::DeleteAddonOutcomeCallable TkeClient::DeleteAddonCallable(const DeleteAddonRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteAddonOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteAddon(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteAddonOutcome>>();
+    DeleteAddonAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const DeleteAddonRequest&,
+        DeleteAddonOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::DeleteBackupStorageLocationOutcome TkeClient::DeleteBackupStorageLocation(const DeleteBackupStorageLocationRequest &request)
@@ -1739,25 +2012,32 @@ TkeClient::DeleteBackupStorageLocationOutcome TkeClient::DeleteBackupStorageLoca
 
 void TkeClient::DeleteBackupStorageLocationAsync(const DeleteBackupStorageLocationRequest& request, const DeleteBackupStorageLocationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteBackupStorageLocation(request), context);
-    };
+    using Req = const DeleteBackupStorageLocationRequest&;
+    using Resp = DeleteBackupStorageLocationResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteBackupStorageLocation", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::DeleteBackupStorageLocationOutcomeCallable TkeClient::DeleteBackupStorageLocationCallable(const DeleteBackupStorageLocationRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteBackupStorageLocationOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteBackupStorageLocation(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteBackupStorageLocationOutcome>>();
+    DeleteBackupStorageLocationAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const DeleteBackupStorageLocationRequest&,
+        DeleteBackupStorageLocationOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::DeleteClusterOutcome TkeClient::DeleteCluster(const DeleteClusterRequest &request)
@@ -1782,25 +2062,32 @@ TkeClient::DeleteClusterOutcome TkeClient::DeleteCluster(const DeleteClusterRequ
 
 void TkeClient::DeleteClusterAsync(const DeleteClusterRequest& request, const DeleteClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteCluster(request), context);
-    };
+    using Req = const DeleteClusterRequest&;
+    using Resp = DeleteClusterResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteCluster", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::DeleteClusterOutcomeCallable TkeClient::DeleteClusterCallable(const DeleteClusterRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteClusterOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteCluster(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteClusterOutcome>>();
+    DeleteClusterAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const DeleteClusterRequest&,
+        DeleteClusterOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::DeleteClusterAsGroupsOutcome TkeClient::DeleteClusterAsGroups(const DeleteClusterAsGroupsRequest &request)
@@ -1825,25 +2112,32 @@ TkeClient::DeleteClusterAsGroupsOutcome TkeClient::DeleteClusterAsGroups(const D
 
 void TkeClient::DeleteClusterAsGroupsAsync(const DeleteClusterAsGroupsRequest& request, const DeleteClusterAsGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteClusterAsGroups(request), context);
-    };
+    using Req = const DeleteClusterAsGroupsRequest&;
+    using Resp = DeleteClusterAsGroupsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteClusterAsGroups", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::DeleteClusterAsGroupsOutcomeCallable TkeClient::DeleteClusterAsGroupsCallable(const DeleteClusterAsGroupsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteClusterAsGroupsOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteClusterAsGroups(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteClusterAsGroupsOutcome>>();
+    DeleteClusterAsGroupsAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const DeleteClusterAsGroupsRequest&,
+        DeleteClusterAsGroupsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::DeleteClusterEndpointOutcome TkeClient::DeleteClusterEndpoint(const DeleteClusterEndpointRequest &request)
@@ -1868,25 +2162,32 @@ TkeClient::DeleteClusterEndpointOutcome TkeClient::DeleteClusterEndpoint(const D
 
 void TkeClient::DeleteClusterEndpointAsync(const DeleteClusterEndpointRequest& request, const DeleteClusterEndpointAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteClusterEndpoint(request), context);
-    };
+    using Req = const DeleteClusterEndpointRequest&;
+    using Resp = DeleteClusterEndpointResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteClusterEndpoint", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::DeleteClusterEndpointOutcomeCallable TkeClient::DeleteClusterEndpointCallable(const DeleteClusterEndpointRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteClusterEndpointOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteClusterEndpoint(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteClusterEndpointOutcome>>();
+    DeleteClusterEndpointAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const DeleteClusterEndpointRequest&,
+        DeleteClusterEndpointOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::DeleteClusterEndpointVipOutcome TkeClient::DeleteClusterEndpointVip(const DeleteClusterEndpointVipRequest &request)
@@ -1911,25 +2212,32 @@ TkeClient::DeleteClusterEndpointVipOutcome TkeClient::DeleteClusterEndpointVip(c
 
 void TkeClient::DeleteClusterEndpointVipAsync(const DeleteClusterEndpointVipRequest& request, const DeleteClusterEndpointVipAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteClusterEndpointVip(request), context);
-    };
+    using Req = const DeleteClusterEndpointVipRequest&;
+    using Resp = DeleteClusterEndpointVipResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteClusterEndpointVip", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::DeleteClusterEndpointVipOutcomeCallable TkeClient::DeleteClusterEndpointVipCallable(const DeleteClusterEndpointVipRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteClusterEndpointVipOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteClusterEndpointVip(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteClusterEndpointVipOutcome>>();
+    DeleteClusterEndpointVipAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const DeleteClusterEndpointVipRequest&,
+        DeleteClusterEndpointVipOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::DeleteClusterInstancesOutcome TkeClient::DeleteClusterInstances(const DeleteClusterInstancesRequest &request)
@@ -1954,25 +2262,32 @@ TkeClient::DeleteClusterInstancesOutcome TkeClient::DeleteClusterInstances(const
 
 void TkeClient::DeleteClusterInstancesAsync(const DeleteClusterInstancesRequest& request, const DeleteClusterInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteClusterInstances(request), context);
-    };
+    using Req = const DeleteClusterInstancesRequest&;
+    using Resp = DeleteClusterInstancesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteClusterInstances", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::DeleteClusterInstancesOutcomeCallable TkeClient::DeleteClusterInstancesCallable(const DeleteClusterInstancesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteClusterInstancesOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteClusterInstances(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteClusterInstancesOutcome>>();
+    DeleteClusterInstancesAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const DeleteClusterInstancesRequest&,
+        DeleteClusterInstancesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::DeleteClusterNodePoolOutcome TkeClient::DeleteClusterNodePool(const DeleteClusterNodePoolRequest &request)
@@ -1997,25 +2312,32 @@ TkeClient::DeleteClusterNodePoolOutcome TkeClient::DeleteClusterNodePool(const D
 
 void TkeClient::DeleteClusterNodePoolAsync(const DeleteClusterNodePoolRequest& request, const DeleteClusterNodePoolAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteClusterNodePool(request), context);
-    };
+    using Req = const DeleteClusterNodePoolRequest&;
+    using Resp = DeleteClusterNodePoolResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteClusterNodePool", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::DeleteClusterNodePoolOutcomeCallable TkeClient::DeleteClusterNodePoolCallable(const DeleteClusterNodePoolRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteClusterNodePoolOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteClusterNodePool(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteClusterNodePoolOutcome>>();
+    DeleteClusterNodePoolAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const DeleteClusterNodePoolRequest&,
+        DeleteClusterNodePoolOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::DeleteClusterRouteOutcome TkeClient::DeleteClusterRoute(const DeleteClusterRouteRequest &request)
@@ -2040,25 +2362,32 @@ TkeClient::DeleteClusterRouteOutcome TkeClient::DeleteClusterRoute(const DeleteC
 
 void TkeClient::DeleteClusterRouteAsync(const DeleteClusterRouteRequest& request, const DeleteClusterRouteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteClusterRoute(request), context);
-    };
+    using Req = const DeleteClusterRouteRequest&;
+    using Resp = DeleteClusterRouteResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteClusterRoute", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::DeleteClusterRouteOutcomeCallable TkeClient::DeleteClusterRouteCallable(const DeleteClusterRouteRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteClusterRouteOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteClusterRoute(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteClusterRouteOutcome>>();
+    DeleteClusterRouteAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const DeleteClusterRouteRequest&,
+        DeleteClusterRouteOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::DeleteClusterRouteTableOutcome TkeClient::DeleteClusterRouteTable(const DeleteClusterRouteTableRequest &request)
@@ -2083,25 +2412,32 @@ TkeClient::DeleteClusterRouteTableOutcome TkeClient::DeleteClusterRouteTable(con
 
 void TkeClient::DeleteClusterRouteTableAsync(const DeleteClusterRouteTableRequest& request, const DeleteClusterRouteTableAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteClusterRouteTable(request), context);
-    };
+    using Req = const DeleteClusterRouteTableRequest&;
+    using Resp = DeleteClusterRouteTableResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteClusterRouteTable", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::DeleteClusterRouteTableOutcomeCallable TkeClient::DeleteClusterRouteTableCallable(const DeleteClusterRouteTableRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteClusterRouteTableOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteClusterRouteTable(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteClusterRouteTableOutcome>>();
+    DeleteClusterRouteTableAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const DeleteClusterRouteTableRequest&,
+        DeleteClusterRouteTableOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::DeleteClusterVirtualNodeOutcome TkeClient::DeleteClusterVirtualNode(const DeleteClusterVirtualNodeRequest &request)
@@ -2126,25 +2462,32 @@ TkeClient::DeleteClusterVirtualNodeOutcome TkeClient::DeleteClusterVirtualNode(c
 
 void TkeClient::DeleteClusterVirtualNodeAsync(const DeleteClusterVirtualNodeRequest& request, const DeleteClusterVirtualNodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteClusterVirtualNode(request), context);
-    };
+    using Req = const DeleteClusterVirtualNodeRequest&;
+    using Resp = DeleteClusterVirtualNodeResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteClusterVirtualNode", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::DeleteClusterVirtualNodeOutcomeCallable TkeClient::DeleteClusterVirtualNodeCallable(const DeleteClusterVirtualNodeRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteClusterVirtualNodeOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteClusterVirtualNode(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteClusterVirtualNodeOutcome>>();
+    DeleteClusterVirtualNodeAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const DeleteClusterVirtualNodeRequest&,
+        DeleteClusterVirtualNodeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::DeleteClusterVirtualNodePoolOutcome TkeClient::DeleteClusterVirtualNodePool(const DeleteClusterVirtualNodePoolRequest &request)
@@ -2169,25 +2512,32 @@ TkeClient::DeleteClusterVirtualNodePoolOutcome TkeClient::DeleteClusterVirtualNo
 
 void TkeClient::DeleteClusterVirtualNodePoolAsync(const DeleteClusterVirtualNodePoolRequest& request, const DeleteClusterVirtualNodePoolAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteClusterVirtualNodePool(request), context);
-    };
+    using Req = const DeleteClusterVirtualNodePoolRequest&;
+    using Resp = DeleteClusterVirtualNodePoolResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteClusterVirtualNodePool", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::DeleteClusterVirtualNodePoolOutcomeCallable TkeClient::DeleteClusterVirtualNodePoolCallable(const DeleteClusterVirtualNodePoolRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteClusterVirtualNodePoolOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteClusterVirtualNodePool(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteClusterVirtualNodePoolOutcome>>();
+    DeleteClusterVirtualNodePoolAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const DeleteClusterVirtualNodePoolRequest&,
+        DeleteClusterVirtualNodePoolOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::DeleteECMInstancesOutcome TkeClient::DeleteECMInstances(const DeleteECMInstancesRequest &request)
@@ -2212,25 +2562,32 @@ TkeClient::DeleteECMInstancesOutcome TkeClient::DeleteECMInstances(const DeleteE
 
 void TkeClient::DeleteECMInstancesAsync(const DeleteECMInstancesRequest& request, const DeleteECMInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteECMInstances(request), context);
-    };
+    using Req = const DeleteECMInstancesRequest&;
+    using Resp = DeleteECMInstancesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteECMInstances", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::DeleteECMInstancesOutcomeCallable TkeClient::DeleteECMInstancesCallable(const DeleteECMInstancesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteECMInstancesOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteECMInstances(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteECMInstancesOutcome>>();
+    DeleteECMInstancesAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const DeleteECMInstancesRequest&,
+        DeleteECMInstancesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::DeleteEKSClusterOutcome TkeClient::DeleteEKSCluster(const DeleteEKSClusterRequest &request)
@@ -2255,25 +2612,32 @@ TkeClient::DeleteEKSClusterOutcome TkeClient::DeleteEKSCluster(const DeleteEKSCl
 
 void TkeClient::DeleteEKSClusterAsync(const DeleteEKSClusterRequest& request, const DeleteEKSClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteEKSCluster(request), context);
-    };
+    using Req = const DeleteEKSClusterRequest&;
+    using Resp = DeleteEKSClusterResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteEKSCluster", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::DeleteEKSClusterOutcomeCallable TkeClient::DeleteEKSClusterCallable(const DeleteEKSClusterRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteEKSClusterOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteEKSCluster(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteEKSClusterOutcome>>();
+    DeleteEKSClusterAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const DeleteEKSClusterRequest&,
+        DeleteEKSClusterOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::DeleteEKSContainerInstancesOutcome TkeClient::DeleteEKSContainerInstances(const DeleteEKSContainerInstancesRequest &request)
@@ -2298,25 +2662,32 @@ TkeClient::DeleteEKSContainerInstancesOutcome TkeClient::DeleteEKSContainerInsta
 
 void TkeClient::DeleteEKSContainerInstancesAsync(const DeleteEKSContainerInstancesRequest& request, const DeleteEKSContainerInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteEKSContainerInstances(request), context);
-    };
+    using Req = const DeleteEKSContainerInstancesRequest&;
+    using Resp = DeleteEKSContainerInstancesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteEKSContainerInstances", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::DeleteEKSContainerInstancesOutcomeCallable TkeClient::DeleteEKSContainerInstancesCallable(const DeleteEKSContainerInstancesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteEKSContainerInstancesOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteEKSContainerInstances(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteEKSContainerInstancesOutcome>>();
+    DeleteEKSContainerInstancesAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const DeleteEKSContainerInstancesRequest&,
+        DeleteEKSContainerInstancesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::DeleteEdgeCVMInstancesOutcome TkeClient::DeleteEdgeCVMInstances(const DeleteEdgeCVMInstancesRequest &request)
@@ -2341,25 +2712,32 @@ TkeClient::DeleteEdgeCVMInstancesOutcome TkeClient::DeleteEdgeCVMInstances(const
 
 void TkeClient::DeleteEdgeCVMInstancesAsync(const DeleteEdgeCVMInstancesRequest& request, const DeleteEdgeCVMInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteEdgeCVMInstances(request), context);
-    };
+    using Req = const DeleteEdgeCVMInstancesRequest&;
+    using Resp = DeleteEdgeCVMInstancesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteEdgeCVMInstances", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::DeleteEdgeCVMInstancesOutcomeCallable TkeClient::DeleteEdgeCVMInstancesCallable(const DeleteEdgeCVMInstancesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteEdgeCVMInstancesOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteEdgeCVMInstances(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteEdgeCVMInstancesOutcome>>();
+    DeleteEdgeCVMInstancesAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const DeleteEdgeCVMInstancesRequest&,
+        DeleteEdgeCVMInstancesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::DeleteEdgeClusterInstancesOutcome TkeClient::DeleteEdgeClusterInstances(const DeleteEdgeClusterInstancesRequest &request)
@@ -2384,25 +2762,32 @@ TkeClient::DeleteEdgeClusterInstancesOutcome TkeClient::DeleteEdgeClusterInstanc
 
 void TkeClient::DeleteEdgeClusterInstancesAsync(const DeleteEdgeClusterInstancesRequest& request, const DeleteEdgeClusterInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteEdgeClusterInstances(request), context);
-    };
+    using Req = const DeleteEdgeClusterInstancesRequest&;
+    using Resp = DeleteEdgeClusterInstancesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteEdgeClusterInstances", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::DeleteEdgeClusterInstancesOutcomeCallable TkeClient::DeleteEdgeClusterInstancesCallable(const DeleteEdgeClusterInstancesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteEdgeClusterInstancesOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteEdgeClusterInstances(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteEdgeClusterInstancesOutcome>>();
+    DeleteEdgeClusterInstancesAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const DeleteEdgeClusterInstancesRequest&,
+        DeleteEdgeClusterInstancesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::DeleteImageCachesOutcome TkeClient::DeleteImageCaches(const DeleteImageCachesRequest &request)
@@ -2427,25 +2812,32 @@ TkeClient::DeleteImageCachesOutcome TkeClient::DeleteImageCaches(const DeleteIma
 
 void TkeClient::DeleteImageCachesAsync(const DeleteImageCachesRequest& request, const DeleteImageCachesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteImageCaches(request), context);
-    };
+    using Req = const DeleteImageCachesRequest&;
+    using Resp = DeleteImageCachesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteImageCaches", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::DeleteImageCachesOutcomeCallable TkeClient::DeleteImageCachesCallable(const DeleteImageCachesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteImageCachesOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteImageCaches(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteImageCachesOutcome>>();
+    DeleteImageCachesAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const DeleteImageCachesRequest&,
+        DeleteImageCachesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::DeleteLogConfigsOutcome TkeClient::DeleteLogConfigs(const DeleteLogConfigsRequest &request)
@@ -2470,25 +2862,32 @@ TkeClient::DeleteLogConfigsOutcome TkeClient::DeleteLogConfigs(const DeleteLogCo
 
 void TkeClient::DeleteLogConfigsAsync(const DeleteLogConfigsRequest& request, const DeleteLogConfigsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteLogConfigs(request), context);
-    };
+    using Req = const DeleteLogConfigsRequest&;
+    using Resp = DeleteLogConfigsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteLogConfigs", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::DeleteLogConfigsOutcomeCallable TkeClient::DeleteLogConfigsCallable(const DeleteLogConfigsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteLogConfigsOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteLogConfigs(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteLogConfigsOutcome>>();
+    DeleteLogConfigsAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const DeleteLogConfigsRequest&,
+        DeleteLogConfigsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::DeletePrometheusAlertPolicyOutcome TkeClient::DeletePrometheusAlertPolicy(const DeletePrometheusAlertPolicyRequest &request)
@@ -2513,25 +2912,32 @@ TkeClient::DeletePrometheusAlertPolicyOutcome TkeClient::DeletePrometheusAlertPo
 
 void TkeClient::DeletePrometheusAlertPolicyAsync(const DeletePrometheusAlertPolicyRequest& request, const DeletePrometheusAlertPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeletePrometheusAlertPolicy(request), context);
-    };
+    using Req = const DeletePrometheusAlertPolicyRequest&;
+    using Resp = DeletePrometheusAlertPolicyResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeletePrometheusAlertPolicy", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::DeletePrometheusAlertPolicyOutcomeCallable TkeClient::DeletePrometheusAlertPolicyCallable(const DeletePrometheusAlertPolicyRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeletePrometheusAlertPolicyOutcome()>>(
-        [this, request]()
-        {
-            return this->DeletePrometheusAlertPolicy(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeletePrometheusAlertPolicyOutcome>>();
+    DeletePrometheusAlertPolicyAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const DeletePrometheusAlertPolicyRequest&,
+        DeletePrometheusAlertPolicyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::DeletePrometheusAlertRuleOutcome TkeClient::DeletePrometheusAlertRule(const DeletePrometheusAlertRuleRequest &request)
@@ -2556,25 +2962,32 @@ TkeClient::DeletePrometheusAlertRuleOutcome TkeClient::DeletePrometheusAlertRule
 
 void TkeClient::DeletePrometheusAlertRuleAsync(const DeletePrometheusAlertRuleRequest& request, const DeletePrometheusAlertRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeletePrometheusAlertRule(request), context);
-    };
+    using Req = const DeletePrometheusAlertRuleRequest&;
+    using Resp = DeletePrometheusAlertRuleResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeletePrometheusAlertRule", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::DeletePrometheusAlertRuleOutcomeCallable TkeClient::DeletePrometheusAlertRuleCallable(const DeletePrometheusAlertRuleRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeletePrometheusAlertRuleOutcome()>>(
-        [this, request]()
-        {
-            return this->DeletePrometheusAlertRule(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeletePrometheusAlertRuleOutcome>>();
+    DeletePrometheusAlertRuleAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const DeletePrometheusAlertRuleRequest&,
+        DeletePrometheusAlertRuleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::DeletePrometheusClusterAgentOutcome TkeClient::DeletePrometheusClusterAgent(const DeletePrometheusClusterAgentRequest &request)
@@ -2599,25 +3012,32 @@ TkeClient::DeletePrometheusClusterAgentOutcome TkeClient::DeletePrometheusCluste
 
 void TkeClient::DeletePrometheusClusterAgentAsync(const DeletePrometheusClusterAgentRequest& request, const DeletePrometheusClusterAgentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeletePrometheusClusterAgent(request), context);
-    };
+    using Req = const DeletePrometheusClusterAgentRequest&;
+    using Resp = DeletePrometheusClusterAgentResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeletePrometheusClusterAgent", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::DeletePrometheusClusterAgentOutcomeCallable TkeClient::DeletePrometheusClusterAgentCallable(const DeletePrometheusClusterAgentRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeletePrometheusClusterAgentOutcome()>>(
-        [this, request]()
-        {
-            return this->DeletePrometheusClusterAgent(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeletePrometheusClusterAgentOutcome>>();
+    DeletePrometheusClusterAgentAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const DeletePrometheusClusterAgentRequest&,
+        DeletePrometheusClusterAgentOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::DeletePrometheusConfigOutcome TkeClient::DeletePrometheusConfig(const DeletePrometheusConfigRequest &request)
@@ -2642,25 +3062,32 @@ TkeClient::DeletePrometheusConfigOutcome TkeClient::DeletePrometheusConfig(const
 
 void TkeClient::DeletePrometheusConfigAsync(const DeletePrometheusConfigRequest& request, const DeletePrometheusConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeletePrometheusConfig(request), context);
-    };
+    using Req = const DeletePrometheusConfigRequest&;
+    using Resp = DeletePrometheusConfigResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeletePrometheusConfig", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::DeletePrometheusConfigOutcomeCallable TkeClient::DeletePrometheusConfigCallable(const DeletePrometheusConfigRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeletePrometheusConfigOutcome()>>(
-        [this, request]()
-        {
-            return this->DeletePrometheusConfig(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeletePrometheusConfigOutcome>>();
+    DeletePrometheusConfigAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const DeletePrometheusConfigRequest&,
+        DeletePrometheusConfigOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::DeletePrometheusRecordRuleYamlOutcome TkeClient::DeletePrometheusRecordRuleYaml(const DeletePrometheusRecordRuleYamlRequest &request)
@@ -2685,25 +3112,32 @@ TkeClient::DeletePrometheusRecordRuleYamlOutcome TkeClient::DeletePrometheusReco
 
 void TkeClient::DeletePrometheusRecordRuleYamlAsync(const DeletePrometheusRecordRuleYamlRequest& request, const DeletePrometheusRecordRuleYamlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeletePrometheusRecordRuleYaml(request), context);
-    };
+    using Req = const DeletePrometheusRecordRuleYamlRequest&;
+    using Resp = DeletePrometheusRecordRuleYamlResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeletePrometheusRecordRuleYaml", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::DeletePrometheusRecordRuleYamlOutcomeCallable TkeClient::DeletePrometheusRecordRuleYamlCallable(const DeletePrometheusRecordRuleYamlRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeletePrometheusRecordRuleYamlOutcome()>>(
-        [this, request]()
-        {
-            return this->DeletePrometheusRecordRuleYaml(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeletePrometheusRecordRuleYamlOutcome>>();
+    DeletePrometheusRecordRuleYamlAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const DeletePrometheusRecordRuleYamlRequest&,
+        DeletePrometheusRecordRuleYamlOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::DeletePrometheusTempOutcome TkeClient::DeletePrometheusTemp(const DeletePrometheusTempRequest &request)
@@ -2728,25 +3162,32 @@ TkeClient::DeletePrometheusTempOutcome TkeClient::DeletePrometheusTemp(const Del
 
 void TkeClient::DeletePrometheusTempAsync(const DeletePrometheusTempRequest& request, const DeletePrometheusTempAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeletePrometheusTemp(request), context);
-    };
+    using Req = const DeletePrometheusTempRequest&;
+    using Resp = DeletePrometheusTempResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeletePrometheusTemp", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::DeletePrometheusTempOutcomeCallable TkeClient::DeletePrometheusTempCallable(const DeletePrometheusTempRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeletePrometheusTempOutcome()>>(
-        [this, request]()
-        {
-            return this->DeletePrometheusTemp(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeletePrometheusTempOutcome>>();
+    DeletePrometheusTempAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const DeletePrometheusTempRequest&,
+        DeletePrometheusTempOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::DeletePrometheusTempSyncOutcome TkeClient::DeletePrometheusTempSync(const DeletePrometheusTempSyncRequest &request)
@@ -2771,25 +3212,32 @@ TkeClient::DeletePrometheusTempSyncOutcome TkeClient::DeletePrometheusTempSync(c
 
 void TkeClient::DeletePrometheusTempSyncAsync(const DeletePrometheusTempSyncRequest& request, const DeletePrometheusTempSyncAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeletePrometheusTempSync(request), context);
-    };
+    using Req = const DeletePrometheusTempSyncRequest&;
+    using Resp = DeletePrometheusTempSyncResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeletePrometheusTempSync", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::DeletePrometheusTempSyncOutcomeCallable TkeClient::DeletePrometheusTempSyncCallable(const DeletePrometheusTempSyncRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeletePrometheusTempSyncOutcome()>>(
-        [this, request]()
-        {
-            return this->DeletePrometheusTempSync(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeletePrometheusTempSyncOutcome>>();
+    DeletePrometheusTempSyncAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const DeletePrometheusTempSyncRequest&,
+        DeletePrometheusTempSyncOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::DeletePrometheusTemplateOutcome TkeClient::DeletePrometheusTemplate(const DeletePrometheusTemplateRequest &request)
@@ -2814,25 +3262,32 @@ TkeClient::DeletePrometheusTemplateOutcome TkeClient::DeletePrometheusTemplate(c
 
 void TkeClient::DeletePrometheusTemplateAsync(const DeletePrometheusTemplateRequest& request, const DeletePrometheusTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeletePrometheusTemplate(request), context);
-    };
+    using Req = const DeletePrometheusTemplateRequest&;
+    using Resp = DeletePrometheusTemplateResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeletePrometheusTemplate", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::DeletePrometheusTemplateOutcomeCallable TkeClient::DeletePrometheusTemplateCallable(const DeletePrometheusTemplateRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeletePrometheusTemplateOutcome()>>(
-        [this, request]()
-        {
-            return this->DeletePrometheusTemplate(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeletePrometheusTemplateOutcome>>();
+    DeletePrometheusTemplateAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const DeletePrometheusTemplateRequest&,
+        DeletePrometheusTemplateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::DeletePrometheusTemplateSyncOutcome TkeClient::DeletePrometheusTemplateSync(const DeletePrometheusTemplateSyncRequest &request)
@@ -2857,25 +3312,32 @@ TkeClient::DeletePrometheusTemplateSyncOutcome TkeClient::DeletePrometheusTempla
 
 void TkeClient::DeletePrometheusTemplateSyncAsync(const DeletePrometheusTemplateSyncRequest& request, const DeletePrometheusTemplateSyncAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeletePrometheusTemplateSync(request), context);
-    };
+    using Req = const DeletePrometheusTemplateSyncRequest&;
+    using Resp = DeletePrometheusTemplateSyncResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeletePrometheusTemplateSync", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::DeletePrometheusTemplateSyncOutcomeCallable TkeClient::DeletePrometheusTemplateSyncCallable(const DeletePrometheusTemplateSyncRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeletePrometheusTemplateSyncOutcome()>>(
-        [this, request]()
-        {
-            return this->DeletePrometheusTemplateSync(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeletePrometheusTemplateSyncOutcome>>();
+    DeletePrometheusTemplateSyncAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const DeletePrometheusTemplateSyncRequest&,
+        DeletePrometheusTemplateSyncOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::DeleteReservedInstancesOutcome TkeClient::DeleteReservedInstances(const DeleteReservedInstancesRequest &request)
@@ -2900,25 +3362,32 @@ TkeClient::DeleteReservedInstancesOutcome TkeClient::DeleteReservedInstances(con
 
 void TkeClient::DeleteReservedInstancesAsync(const DeleteReservedInstancesRequest& request, const DeleteReservedInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteReservedInstances(request), context);
-    };
+    using Req = const DeleteReservedInstancesRequest&;
+    using Resp = DeleteReservedInstancesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteReservedInstances", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::DeleteReservedInstancesOutcomeCallable TkeClient::DeleteReservedInstancesCallable(const DeleteReservedInstancesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteReservedInstancesOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteReservedInstances(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteReservedInstancesOutcome>>();
+    DeleteReservedInstancesAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const DeleteReservedInstancesRequest&,
+        DeleteReservedInstancesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::DeleteTKEEdgeClusterOutcome TkeClient::DeleteTKEEdgeCluster(const DeleteTKEEdgeClusterRequest &request)
@@ -2943,25 +3412,32 @@ TkeClient::DeleteTKEEdgeClusterOutcome TkeClient::DeleteTKEEdgeCluster(const Del
 
 void TkeClient::DeleteTKEEdgeClusterAsync(const DeleteTKEEdgeClusterRequest& request, const DeleteTKEEdgeClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteTKEEdgeCluster(request), context);
-    };
+    using Req = const DeleteTKEEdgeClusterRequest&;
+    using Resp = DeleteTKEEdgeClusterResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteTKEEdgeCluster", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::DeleteTKEEdgeClusterOutcomeCallable TkeClient::DeleteTKEEdgeClusterCallable(const DeleteTKEEdgeClusterRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteTKEEdgeClusterOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteTKEEdgeCluster(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteTKEEdgeClusterOutcome>>();
+    DeleteTKEEdgeClusterAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const DeleteTKEEdgeClusterRequest&,
+        DeleteTKEEdgeClusterOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::DescribeAddonOutcome TkeClient::DescribeAddon(const DescribeAddonRequest &request)
@@ -2986,25 +3462,32 @@ TkeClient::DescribeAddonOutcome TkeClient::DescribeAddon(const DescribeAddonRequ
 
 void TkeClient::DescribeAddonAsync(const DescribeAddonRequest& request, const DescribeAddonAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAddon(request), context);
-    };
+    using Req = const DescribeAddonRequest&;
+    using Resp = DescribeAddonResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAddon", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::DescribeAddonOutcomeCallable TkeClient::DescribeAddonCallable(const DescribeAddonRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAddonOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAddon(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAddonOutcome>>();
+    DescribeAddonAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const DescribeAddonRequest&,
+        DescribeAddonOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::DescribeAddonValuesOutcome TkeClient::DescribeAddonValues(const DescribeAddonValuesRequest &request)
@@ -3029,25 +3512,32 @@ TkeClient::DescribeAddonValuesOutcome TkeClient::DescribeAddonValues(const Descr
 
 void TkeClient::DescribeAddonValuesAsync(const DescribeAddonValuesRequest& request, const DescribeAddonValuesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAddonValues(request), context);
-    };
+    using Req = const DescribeAddonValuesRequest&;
+    using Resp = DescribeAddonValuesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAddonValues", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::DescribeAddonValuesOutcomeCallable TkeClient::DescribeAddonValuesCallable(const DescribeAddonValuesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAddonValuesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAddonValues(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAddonValuesOutcome>>();
+    DescribeAddonValuesAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const DescribeAddonValuesRequest&,
+        DescribeAddonValuesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::DescribeAvailableClusterVersionOutcome TkeClient::DescribeAvailableClusterVersion(const DescribeAvailableClusterVersionRequest &request)
@@ -3072,25 +3562,32 @@ TkeClient::DescribeAvailableClusterVersionOutcome TkeClient::DescribeAvailableCl
 
 void TkeClient::DescribeAvailableClusterVersionAsync(const DescribeAvailableClusterVersionRequest& request, const DescribeAvailableClusterVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAvailableClusterVersion(request), context);
-    };
+    using Req = const DescribeAvailableClusterVersionRequest&;
+    using Resp = DescribeAvailableClusterVersionResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAvailableClusterVersion", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::DescribeAvailableClusterVersionOutcomeCallable TkeClient::DescribeAvailableClusterVersionCallable(const DescribeAvailableClusterVersionRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAvailableClusterVersionOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAvailableClusterVersion(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAvailableClusterVersionOutcome>>();
+    DescribeAvailableClusterVersionAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const DescribeAvailableClusterVersionRequest&,
+        DescribeAvailableClusterVersionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::DescribeAvailableTKEEdgeVersionOutcome TkeClient::DescribeAvailableTKEEdgeVersion(const DescribeAvailableTKEEdgeVersionRequest &request)
@@ -3115,25 +3612,32 @@ TkeClient::DescribeAvailableTKEEdgeVersionOutcome TkeClient::DescribeAvailableTK
 
 void TkeClient::DescribeAvailableTKEEdgeVersionAsync(const DescribeAvailableTKEEdgeVersionRequest& request, const DescribeAvailableTKEEdgeVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAvailableTKEEdgeVersion(request), context);
-    };
+    using Req = const DescribeAvailableTKEEdgeVersionRequest&;
+    using Resp = DescribeAvailableTKEEdgeVersionResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAvailableTKEEdgeVersion", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::DescribeAvailableTKEEdgeVersionOutcomeCallable TkeClient::DescribeAvailableTKEEdgeVersionCallable(const DescribeAvailableTKEEdgeVersionRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAvailableTKEEdgeVersionOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAvailableTKEEdgeVersion(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAvailableTKEEdgeVersionOutcome>>();
+    DescribeAvailableTKEEdgeVersionAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const DescribeAvailableTKEEdgeVersionRequest&,
+        DescribeAvailableTKEEdgeVersionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::DescribeBackupStorageLocationsOutcome TkeClient::DescribeBackupStorageLocations(const DescribeBackupStorageLocationsRequest &request)
@@ -3158,25 +3662,32 @@ TkeClient::DescribeBackupStorageLocationsOutcome TkeClient::DescribeBackupStorag
 
 void TkeClient::DescribeBackupStorageLocationsAsync(const DescribeBackupStorageLocationsRequest& request, const DescribeBackupStorageLocationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeBackupStorageLocations(request), context);
-    };
+    using Req = const DescribeBackupStorageLocationsRequest&;
+    using Resp = DescribeBackupStorageLocationsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeBackupStorageLocations", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::DescribeBackupStorageLocationsOutcomeCallable TkeClient::DescribeBackupStorageLocationsCallable(const DescribeBackupStorageLocationsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeBackupStorageLocationsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeBackupStorageLocations(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeBackupStorageLocationsOutcome>>();
+    DescribeBackupStorageLocationsAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const DescribeBackupStorageLocationsRequest&,
+        DescribeBackupStorageLocationsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::DescribeBatchModifyTagsStatusOutcome TkeClient::DescribeBatchModifyTagsStatus(const DescribeBatchModifyTagsStatusRequest &request)
@@ -3201,25 +3712,32 @@ TkeClient::DescribeBatchModifyTagsStatusOutcome TkeClient::DescribeBatchModifyTa
 
 void TkeClient::DescribeBatchModifyTagsStatusAsync(const DescribeBatchModifyTagsStatusRequest& request, const DescribeBatchModifyTagsStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeBatchModifyTagsStatus(request), context);
-    };
+    using Req = const DescribeBatchModifyTagsStatusRequest&;
+    using Resp = DescribeBatchModifyTagsStatusResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeBatchModifyTagsStatus", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::DescribeBatchModifyTagsStatusOutcomeCallable TkeClient::DescribeBatchModifyTagsStatusCallable(const DescribeBatchModifyTagsStatusRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeBatchModifyTagsStatusOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeBatchModifyTagsStatus(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeBatchModifyTagsStatusOutcome>>();
+    DescribeBatchModifyTagsStatusAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const DescribeBatchModifyTagsStatusRequest&,
+        DescribeBatchModifyTagsStatusOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::DescribeClusterAsGroupOptionOutcome TkeClient::DescribeClusterAsGroupOption(const DescribeClusterAsGroupOptionRequest &request)
@@ -3244,25 +3762,32 @@ TkeClient::DescribeClusterAsGroupOptionOutcome TkeClient::DescribeClusterAsGroup
 
 void TkeClient::DescribeClusterAsGroupOptionAsync(const DescribeClusterAsGroupOptionRequest& request, const DescribeClusterAsGroupOptionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeClusterAsGroupOption(request), context);
-    };
+    using Req = const DescribeClusterAsGroupOptionRequest&;
+    using Resp = DescribeClusterAsGroupOptionResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeClusterAsGroupOption", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::DescribeClusterAsGroupOptionOutcomeCallable TkeClient::DescribeClusterAsGroupOptionCallable(const DescribeClusterAsGroupOptionRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeClusterAsGroupOptionOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeClusterAsGroupOption(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeClusterAsGroupOptionOutcome>>();
+    DescribeClusterAsGroupOptionAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const DescribeClusterAsGroupOptionRequest&,
+        DescribeClusterAsGroupOptionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::DescribeClusterAsGroupsOutcome TkeClient::DescribeClusterAsGroups(const DescribeClusterAsGroupsRequest &request)
@@ -3287,25 +3812,32 @@ TkeClient::DescribeClusterAsGroupsOutcome TkeClient::DescribeClusterAsGroups(con
 
 void TkeClient::DescribeClusterAsGroupsAsync(const DescribeClusterAsGroupsRequest& request, const DescribeClusterAsGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeClusterAsGroups(request), context);
-    };
+    using Req = const DescribeClusterAsGroupsRequest&;
+    using Resp = DescribeClusterAsGroupsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeClusterAsGroups", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::DescribeClusterAsGroupsOutcomeCallable TkeClient::DescribeClusterAsGroupsCallable(const DescribeClusterAsGroupsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeClusterAsGroupsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeClusterAsGroups(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeClusterAsGroupsOutcome>>();
+    DescribeClusterAsGroupsAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const DescribeClusterAsGroupsRequest&,
+        DescribeClusterAsGroupsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::DescribeClusterAuthenticationOptionsOutcome TkeClient::DescribeClusterAuthenticationOptions(const DescribeClusterAuthenticationOptionsRequest &request)
@@ -3330,25 +3862,32 @@ TkeClient::DescribeClusterAuthenticationOptionsOutcome TkeClient::DescribeCluste
 
 void TkeClient::DescribeClusterAuthenticationOptionsAsync(const DescribeClusterAuthenticationOptionsRequest& request, const DescribeClusterAuthenticationOptionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeClusterAuthenticationOptions(request), context);
-    };
+    using Req = const DescribeClusterAuthenticationOptionsRequest&;
+    using Resp = DescribeClusterAuthenticationOptionsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeClusterAuthenticationOptions", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::DescribeClusterAuthenticationOptionsOutcomeCallable TkeClient::DescribeClusterAuthenticationOptionsCallable(const DescribeClusterAuthenticationOptionsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeClusterAuthenticationOptionsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeClusterAuthenticationOptions(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeClusterAuthenticationOptionsOutcome>>();
+    DescribeClusterAuthenticationOptionsAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const DescribeClusterAuthenticationOptionsRequest&,
+        DescribeClusterAuthenticationOptionsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::DescribeClusterAvailableExtraArgsOutcome TkeClient::DescribeClusterAvailableExtraArgs(const DescribeClusterAvailableExtraArgsRequest &request)
@@ -3373,25 +3912,32 @@ TkeClient::DescribeClusterAvailableExtraArgsOutcome TkeClient::DescribeClusterAv
 
 void TkeClient::DescribeClusterAvailableExtraArgsAsync(const DescribeClusterAvailableExtraArgsRequest& request, const DescribeClusterAvailableExtraArgsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeClusterAvailableExtraArgs(request), context);
-    };
+    using Req = const DescribeClusterAvailableExtraArgsRequest&;
+    using Resp = DescribeClusterAvailableExtraArgsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeClusterAvailableExtraArgs", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::DescribeClusterAvailableExtraArgsOutcomeCallable TkeClient::DescribeClusterAvailableExtraArgsCallable(const DescribeClusterAvailableExtraArgsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeClusterAvailableExtraArgsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeClusterAvailableExtraArgs(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeClusterAvailableExtraArgsOutcome>>();
+    DescribeClusterAvailableExtraArgsAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const DescribeClusterAvailableExtraArgsRequest&,
+        DescribeClusterAvailableExtraArgsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::DescribeClusterCommonNamesOutcome TkeClient::DescribeClusterCommonNames(const DescribeClusterCommonNamesRequest &request)
@@ -3416,25 +3962,32 @@ TkeClient::DescribeClusterCommonNamesOutcome TkeClient::DescribeClusterCommonNam
 
 void TkeClient::DescribeClusterCommonNamesAsync(const DescribeClusterCommonNamesRequest& request, const DescribeClusterCommonNamesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeClusterCommonNames(request), context);
-    };
+    using Req = const DescribeClusterCommonNamesRequest&;
+    using Resp = DescribeClusterCommonNamesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeClusterCommonNames", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::DescribeClusterCommonNamesOutcomeCallable TkeClient::DescribeClusterCommonNamesCallable(const DescribeClusterCommonNamesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeClusterCommonNamesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeClusterCommonNames(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeClusterCommonNamesOutcome>>();
+    DescribeClusterCommonNamesAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const DescribeClusterCommonNamesRequest&,
+        DescribeClusterCommonNamesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::DescribeClusterControllersOutcome TkeClient::DescribeClusterControllers(const DescribeClusterControllersRequest &request)
@@ -3459,25 +4012,32 @@ TkeClient::DescribeClusterControllersOutcome TkeClient::DescribeClusterControlle
 
 void TkeClient::DescribeClusterControllersAsync(const DescribeClusterControllersRequest& request, const DescribeClusterControllersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeClusterControllers(request), context);
-    };
+    using Req = const DescribeClusterControllersRequest&;
+    using Resp = DescribeClusterControllersResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeClusterControllers", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::DescribeClusterControllersOutcomeCallable TkeClient::DescribeClusterControllersCallable(const DescribeClusterControllersRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeClusterControllersOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeClusterControllers(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeClusterControllersOutcome>>();
+    DescribeClusterControllersAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const DescribeClusterControllersRequest&,
+        DescribeClusterControllersOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::DescribeClusterEndpointStatusOutcome TkeClient::DescribeClusterEndpointStatus(const DescribeClusterEndpointStatusRequest &request)
@@ -3502,25 +4062,32 @@ TkeClient::DescribeClusterEndpointStatusOutcome TkeClient::DescribeClusterEndpoi
 
 void TkeClient::DescribeClusterEndpointStatusAsync(const DescribeClusterEndpointStatusRequest& request, const DescribeClusterEndpointStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeClusterEndpointStatus(request), context);
-    };
+    using Req = const DescribeClusterEndpointStatusRequest&;
+    using Resp = DescribeClusterEndpointStatusResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeClusterEndpointStatus", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::DescribeClusterEndpointStatusOutcomeCallable TkeClient::DescribeClusterEndpointStatusCallable(const DescribeClusterEndpointStatusRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeClusterEndpointStatusOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeClusterEndpointStatus(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeClusterEndpointStatusOutcome>>();
+    DescribeClusterEndpointStatusAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const DescribeClusterEndpointStatusRequest&,
+        DescribeClusterEndpointStatusOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::DescribeClusterEndpointVipStatusOutcome TkeClient::DescribeClusterEndpointVipStatus(const DescribeClusterEndpointVipStatusRequest &request)
@@ -3545,25 +4112,32 @@ TkeClient::DescribeClusterEndpointVipStatusOutcome TkeClient::DescribeClusterEnd
 
 void TkeClient::DescribeClusterEndpointVipStatusAsync(const DescribeClusterEndpointVipStatusRequest& request, const DescribeClusterEndpointVipStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeClusterEndpointVipStatus(request), context);
-    };
+    using Req = const DescribeClusterEndpointVipStatusRequest&;
+    using Resp = DescribeClusterEndpointVipStatusResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeClusterEndpointVipStatus", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::DescribeClusterEndpointVipStatusOutcomeCallable TkeClient::DescribeClusterEndpointVipStatusCallable(const DescribeClusterEndpointVipStatusRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeClusterEndpointVipStatusOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeClusterEndpointVipStatus(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeClusterEndpointVipStatusOutcome>>();
+    DescribeClusterEndpointVipStatusAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const DescribeClusterEndpointVipStatusRequest&,
+        DescribeClusterEndpointVipStatusOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::DescribeClusterEndpointsOutcome TkeClient::DescribeClusterEndpoints(const DescribeClusterEndpointsRequest &request)
@@ -3588,25 +4162,32 @@ TkeClient::DescribeClusterEndpointsOutcome TkeClient::DescribeClusterEndpoints(c
 
 void TkeClient::DescribeClusterEndpointsAsync(const DescribeClusterEndpointsRequest& request, const DescribeClusterEndpointsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeClusterEndpoints(request), context);
-    };
+    using Req = const DescribeClusterEndpointsRequest&;
+    using Resp = DescribeClusterEndpointsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeClusterEndpoints", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::DescribeClusterEndpointsOutcomeCallable TkeClient::DescribeClusterEndpointsCallable(const DescribeClusterEndpointsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeClusterEndpointsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeClusterEndpoints(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeClusterEndpointsOutcome>>();
+    DescribeClusterEndpointsAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const DescribeClusterEndpointsRequest&,
+        DescribeClusterEndpointsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::DescribeClusterExtraArgsOutcome TkeClient::DescribeClusterExtraArgs(const DescribeClusterExtraArgsRequest &request)
@@ -3631,25 +4212,32 @@ TkeClient::DescribeClusterExtraArgsOutcome TkeClient::DescribeClusterExtraArgs(c
 
 void TkeClient::DescribeClusterExtraArgsAsync(const DescribeClusterExtraArgsRequest& request, const DescribeClusterExtraArgsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeClusterExtraArgs(request), context);
-    };
+    using Req = const DescribeClusterExtraArgsRequest&;
+    using Resp = DescribeClusterExtraArgsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeClusterExtraArgs", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::DescribeClusterExtraArgsOutcomeCallable TkeClient::DescribeClusterExtraArgsCallable(const DescribeClusterExtraArgsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeClusterExtraArgsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeClusterExtraArgs(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeClusterExtraArgsOutcome>>();
+    DescribeClusterExtraArgsAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const DescribeClusterExtraArgsRequest&,
+        DescribeClusterExtraArgsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::DescribeClusterInspectionResultsOverviewOutcome TkeClient::DescribeClusterInspectionResultsOverview(const DescribeClusterInspectionResultsOverviewRequest &request)
@@ -3674,25 +4262,32 @@ TkeClient::DescribeClusterInspectionResultsOverviewOutcome TkeClient::DescribeCl
 
 void TkeClient::DescribeClusterInspectionResultsOverviewAsync(const DescribeClusterInspectionResultsOverviewRequest& request, const DescribeClusterInspectionResultsOverviewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeClusterInspectionResultsOverview(request), context);
-    };
+    using Req = const DescribeClusterInspectionResultsOverviewRequest&;
+    using Resp = DescribeClusterInspectionResultsOverviewResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeClusterInspectionResultsOverview", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::DescribeClusterInspectionResultsOverviewOutcomeCallable TkeClient::DescribeClusterInspectionResultsOverviewCallable(const DescribeClusterInspectionResultsOverviewRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeClusterInspectionResultsOverviewOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeClusterInspectionResultsOverview(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeClusterInspectionResultsOverviewOutcome>>();
+    DescribeClusterInspectionResultsOverviewAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const DescribeClusterInspectionResultsOverviewRequest&,
+        DescribeClusterInspectionResultsOverviewOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::DescribeClusterInstancesOutcome TkeClient::DescribeClusterInstances(const DescribeClusterInstancesRequest &request)
@@ -3717,25 +4312,32 @@ TkeClient::DescribeClusterInstancesOutcome TkeClient::DescribeClusterInstances(c
 
 void TkeClient::DescribeClusterInstancesAsync(const DescribeClusterInstancesRequest& request, const DescribeClusterInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeClusterInstances(request), context);
-    };
+    using Req = const DescribeClusterInstancesRequest&;
+    using Resp = DescribeClusterInstancesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeClusterInstances", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::DescribeClusterInstancesOutcomeCallable TkeClient::DescribeClusterInstancesCallable(const DescribeClusterInstancesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeClusterInstancesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeClusterInstances(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeClusterInstancesOutcome>>();
+    DescribeClusterInstancesAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const DescribeClusterInstancesRequest&,
+        DescribeClusterInstancesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::DescribeClusterKubeconfigOutcome TkeClient::DescribeClusterKubeconfig(const DescribeClusterKubeconfigRequest &request)
@@ -3760,25 +4362,32 @@ TkeClient::DescribeClusterKubeconfigOutcome TkeClient::DescribeClusterKubeconfig
 
 void TkeClient::DescribeClusterKubeconfigAsync(const DescribeClusterKubeconfigRequest& request, const DescribeClusterKubeconfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeClusterKubeconfig(request), context);
-    };
+    using Req = const DescribeClusterKubeconfigRequest&;
+    using Resp = DescribeClusterKubeconfigResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeClusterKubeconfig", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::DescribeClusterKubeconfigOutcomeCallable TkeClient::DescribeClusterKubeconfigCallable(const DescribeClusterKubeconfigRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeClusterKubeconfigOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeClusterKubeconfig(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeClusterKubeconfigOutcome>>();
+    DescribeClusterKubeconfigAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const DescribeClusterKubeconfigRequest&,
+        DescribeClusterKubeconfigOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::DescribeClusterLevelAttributeOutcome TkeClient::DescribeClusterLevelAttribute(const DescribeClusterLevelAttributeRequest &request)
@@ -3803,25 +4412,32 @@ TkeClient::DescribeClusterLevelAttributeOutcome TkeClient::DescribeClusterLevelA
 
 void TkeClient::DescribeClusterLevelAttributeAsync(const DescribeClusterLevelAttributeRequest& request, const DescribeClusterLevelAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeClusterLevelAttribute(request), context);
-    };
+    using Req = const DescribeClusterLevelAttributeRequest&;
+    using Resp = DescribeClusterLevelAttributeResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeClusterLevelAttribute", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::DescribeClusterLevelAttributeOutcomeCallable TkeClient::DescribeClusterLevelAttributeCallable(const DescribeClusterLevelAttributeRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeClusterLevelAttributeOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeClusterLevelAttribute(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeClusterLevelAttributeOutcome>>();
+    DescribeClusterLevelAttributeAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const DescribeClusterLevelAttributeRequest&,
+        DescribeClusterLevelAttributeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::DescribeClusterLevelChangeRecordsOutcome TkeClient::DescribeClusterLevelChangeRecords(const DescribeClusterLevelChangeRecordsRequest &request)
@@ -3846,25 +4462,32 @@ TkeClient::DescribeClusterLevelChangeRecordsOutcome TkeClient::DescribeClusterLe
 
 void TkeClient::DescribeClusterLevelChangeRecordsAsync(const DescribeClusterLevelChangeRecordsRequest& request, const DescribeClusterLevelChangeRecordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeClusterLevelChangeRecords(request), context);
-    };
+    using Req = const DescribeClusterLevelChangeRecordsRequest&;
+    using Resp = DescribeClusterLevelChangeRecordsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeClusterLevelChangeRecords", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::DescribeClusterLevelChangeRecordsOutcomeCallable TkeClient::DescribeClusterLevelChangeRecordsCallable(const DescribeClusterLevelChangeRecordsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeClusterLevelChangeRecordsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeClusterLevelChangeRecords(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeClusterLevelChangeRecordsOutcome>>();
+    DescribeClusterLevelChangeRecordsAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const DescribeClusterLevelChangeRecordsRequest&,
+        DescribeClusterLevelChangeRecordsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::DescribeClusterNodePoolDetailOutcome TkeClient::DescribeClusterNodePoolDetail(const DescribeClusterNodePoolDetailRequest &request)
@@ -3889,25 +4512,32 @@ TkeClient::DescribeClusterNodePoolDetailOutcome TkeClient::DescribeClusterNodePo
 
 void TkeClient::DescribeClusterNodePoolDetailAsync(const DescribeClusterNodePoolDetailRequest& request, const DescribeClusterNodePoolDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeClusterNodePoolDetail(request), context);
-    };
+    using Req = const DescribeClusterNodePoolDetailRequest&;
+    using Resp = DescribeClusterNodePoolDetailResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeClusterNodePoolDetail", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::DescribeClusterNodePoolDetailOutcomeCallable TkeClient::DescribeClusterNodePoolDetailCallable(const DescribeClusterNodePoolDetailRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeClusterNodePoolDetailOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeClusterNodePoolDetail(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeClusterNodePoolDetailOutcome>>();
+    DescribeClusterNodePoolDetailAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const DescribeClusterNodePoolDetailRequest&,
+        DescribeClusterNodePoolDetailOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::DescribeClusterNodePoolsOutcome TkeClient::DescribeClusterNodePools(const DescribeClusterNodePoolsRequest &request)
@@ -3932,25 +4562,32 @@ TkeClient::DescribeClusterNodePoolsOutcome TkeClient::DescribeClusterNodePools(c
 
 void TkeClient::DescribeClusterNodePoolsAsync(const DescribeClusterNodePoolsRequest& request, const DescribeClusterNodePoolsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeClusterNodePools(request), context);
-    };
+    using Req = const DescribeClusterNodePoolsRequest&;
+    using Resp = DescribeClusterNodePoolsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeClusterNodePools", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::DescribeClusterNodePoolsOutcomeCallable TkeClient::DescribeClusterNodePoolsCallable(const DescribeClusterNodePoolsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeClusterNodePoolsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeClusterNodePools(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeClusterNodePoolsOutcome>>();
+    DescribeClusterNodePoolsAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const DescribeClusterNodePoolsRequest&,
+        DescribeClusterNodePoolsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::DescribeClusterPendingReleasesOutcome TkeClient::DescribeClusterPendingReleases(const DescribeClusterPendingReleasesRequest &request)
@@ -3975,25 +4612,32 @@ TkeClient::DescribeClusterPendingReleasesOutcome TkeClient::DescribeClusterPendi
 
 void TkeClient::DescribeClusterPendingReleasesAsync(const DescribeClusterPendingReleasesRequest& request, const DescribeClusterPendingReleasesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeClusterPendingReleases(request), context);
-    };
+    using Req = const DescribeClusterPendingReleasesRequest&;
+    using Resp = DescribeClusterPendingReleasesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeClusterPendingReleases", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::DescribeClusterPendingReleasesOutcomeCallable TkeClient::DescribeClusterPendingReleasesCallable(const DescribeClusterPendingReleasesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeClusterPendingReleasesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeClusterPendingReleases(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeClusterPendingReleasesOutcome>>();
+    DescribeClusterPendingReleasesAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const DescribeClusterPendingReleasesRequest&,
+        DescribeClusterPendingReleasesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::DescribeClusterReleaseDetailsOutcome TkeClient::DescribeClusterReleaseDetails(const DescribeClusterReleaseDetailsRequest &request)
@@ -4018,25 +4662,32 @@ TkeClient::DescribeClusterReleaseDetailsOutcome TkeClient::DescribeClusterReleas
 
 void TkeClient::DescribeClusterReleaseDetailsAsync(const DescribeClusterReleaseDetailsRequest& request, const DescribeClusterReleaseDetailsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeClusterReleaseDetails(request), context);
-    };
+    using Req = const DescribeClusterReleaseDetailsRequest&;
+    using Resp = DescribeClusterReleaseDetailsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeClusterReleaseDetails", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::DescribeClusterReleaseDetailsOutcomeCallable TkeClient::DescribeClusterReleaseDetailsCallable(const DescribeClusterReleaseDetailsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeClusterReleaseDetailsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeClusterReleaseDetails(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeClusterReleaseDetailsOutcome>>();
+    DescribeClusterReleaseDetailsAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const DescribeClusterReleaseDetailsRequest&,
+        DescribeClusterReleaseDetailsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::DescribeClusterReleaseHistoryOutcome TkeClient::DescribeClusterReleaseHistory(const DescribeClusterReleaseHistoryRequest &request)
@@ -4061,25 +4712,32 @@ TkeClient::DescribeClusterReleaseHistoryOutcome TkeClient::DescribeClusterReleas
 
 void TkeClient::DescribeClusterReleaseHistoryAsync(const DescribeClusterReleaseHistoryRequest& request, const DescribeClusterReleaseHistoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeClusterReleaseHistory(request), context);
-    };
+    using Req = const DescribeClusterReleaseHistoryRequest&;
+    using Resp = DescribeClusterReleaseHistoryResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeClusterReleaseHistory", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::DescribeClusterReleaseHistoryOutcomeCallable TkeClient::DescribeClusterReleaseHistoryCallable(const DescribeClusterReleaseHistoryRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeClusterReleaseHistoryOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeClusterReleaseHistory(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeClusterReleaseHistoryOutcome>>();
+    DescribeClusterReleaseHistoryAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const DescribeClusterReleaseHistoryRequest&,
+        DescribeClusterReleaseHistoryOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::DescribeClusterReleasesOutcome TkeClient::DescribeClusterReleases(const DescribeClusterReleasesRequest &request)
@@ -4104,25 +4762,32 @@ TkeClient::DescribeClusterReleasesOutcome TkeClient::DescribeClusterReleases(con
 
 void TkeClient::DescribeClusterReleasesAsync(const DescribeClusterReleasesRequest& request, const DescribeClusterReleasesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeClusterReleases(request), context);
-    };
+    using Req = const DescribeClusterReleasesRequest&;
+    using Resp = DescribeClusterReleasesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeClusterReleases", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::DescribeClusterReleasesOutcomeCallable TkeClient::DescribeClusterReleasesCallable(const DescribeClusterReleasesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeClusterReleasesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeClusterReleases(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeClusterReleasesOutcome>>();
+    DescribeClusterReleasesAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const DescribeClusterReleasesRequest&,
+        DescribeClusterReleasesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::DescribeClusterRouteTablesOutcome TkeClient::DescribeClusterRouteTables(const DescribeClusterRouteTablesRequest &request)
@@ -4147,25 +4812,32 @@ TkeClient::DescribeClusterRouteTablesOutcome TkeClient::DescribeClusterRouteTabl
 
 void TkeClient::DescribeClusterRouteTablesAsync(const DescribeClusterRouteTablesRequest& request, const DescribeClusterRouteTablesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeClusterRouteTables(request), context);
-    };
+    using Req = const DescribeClusterRouteTablesRequest&;
+    using Resp = DescribeClusterRouteTablesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeClusterRouteTables", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::DescribeClusterRouteTablesOutcomeCallable TkeClient::DescribeClusterRouteTablesCallable(const DescribeClusterRouteTablesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeClusterRouteTablesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeClusterRouteTables(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeClusterRouteTablesOutcome>>();
+    DescribeClusterRouteTablesAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const DescribeClusterRouteTablesRequest&,
+        DescribeClusterRouteTablesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::DescribeClusterRoutesOutcome TkeClient::DescribeClusterRoutes(const DescribeClusterRoutesRequest &request)
@@ -4190,25 +4862,32 @@ TkeClient::DescribeClusterRoutesOutcome TkeClient::DescribeClusterRoutes(const D
 
 void TkeClient::DescribeClusterRoutesAsync(const DescribeClusterRoutesRequest& request, const DescribeClusterRoutesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeClusterRoutes(request), context);
-    };
+    using Req = const DescribeClusterRoutesRequest&;
+    using Resp = DescribeClusterRoutesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeClusterRoutes", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::DescribeClusterRoutesOutcomeCallable TkeClient::DescribeClusterRoutesCallable(const DescribeClusterRoutesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeClusterRoutesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeClusterRoutes(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeClusterRoutesOutcome>>();
+    DescribeClusterRoutesAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const DescribeClusterRoutesRequest&,
+        DescribeClusterRoutesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::DescribeClusterSecurityOutcome TkeClient::DescribeClusterSecurity(const DescribeClusterSecurityRequest &request)
@@ -4233,25 +4912,32 @@ TkeClient::DescribeClusterSecurityOutcome TkeClient::DescribeClusterSecurity(con
 
 void TkeClient::DescribeClusterSecurityAsync(const DescribeClusterSecurityRequest& request, const DescribeClusterSecurityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeClusterSecurity(request), context);
-    };
+    using Req = const DescribeClusterSecurityRequest&;
+    using Resp = DescribeClusterSecurityResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeClusterSecurity", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::DescribeClusterSecurityOutcomeCallable TkeClient::DescribeClusterSecurityCallable(const DescribeClusterSecurityRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeClusterSecurityOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeClusterSecurity(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeClusterSecurityOutcome>>();
+    DescribeClusterSecurityAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const DescribeClusterSecurityRequest&,
+        DescribeClusterSecurityOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::DescribeClusterStatusOutcome TkeClient::DescribeClusterStatus(const DescribeClusterStatusRequest &request)
@@ -4276,25 +4962,32 @@ TkeClient::DescribeClusterStatusOutcome TkeClient::DescribeClusterStatus(const D
 
 void TkeClient::DescribeClusterStatusAsync(const DescribeClusterStatusRequest& request, const DescribeClusterStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeClusterStatus(request), context);
-    };
+    using Req = const DescribeClusterStatusRequest&;
+    using Resp = DescribeClusterStatusResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeClusterStatus", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::DescribeClusterStatusOutcomeCallable TkeClient::DescribeClusterStatusCallable(const DescribeClusterStatusRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeClusterStatusOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeClusterStatus(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeClusterStatusOutcome>>();
+    DescribeClusterStatusAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const DescribeClusterStatusRequest&,
+        DescribeClusterStatusOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::DescribeClusterVirtualNodeOutcome TkeClient::DescribeClusterVirtualNode(const DescribeClusterVirtualNodeRequest &request)
@@ -4319,25 +5012,32 @@ TkeClient::DescribeClusterVirtualNodeOutcome TkeClient::DescribeClusterVirtualNo
 
 void TkeClient::DescribeClusterVirtualNodeAsync(const DescribeClusterVirtualNodeRequest& request, const DescribeClusterVirtualNodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeClusterVirtualNode(request), context);
-    };
+    using Req = const DescribeClusterVirtualNodeRequest&;
+    using Resp = DescribeClusterVirtualNodeResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeClusterVirtualNode", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::DescribeClusterVirtualNodeOutcomeCallable TkeClient::DescribeClusterVirtualNodeCallable(const DescribeClusterVirtualNodeRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeClusterVirtualNodeOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeClusterVirtualNode(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeClusterVirtualNodeOutcome>>();
+    DescribeClusterVirtualNodeAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const DescribeClusterVirtualNodeRequest&,
+        DescribeClusterVirtualNodeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::DescribeClusterVirtualNodePoolsOutcome TkeClient::DescribeClusterVirtualNodePools(const DescribeClusterVirtualNodePoolsRequest &request)
@@ -4362,25 +5062,32 @@ TkeClient::DescribeClusterVirtualNodePoolsOutcome TkeClient::DescribeClusterVirt
 
 void TkeClient::DescribeClusterVirtualNodePoolsAsync(const DescribeClusterVirtualNodePoolsRequest& request, const DescribeClusterVirtualNodePoolsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeClusterVirtualNodePools(request), context);
-    };
+    using Req = const DescribeClusterVirtualNodePoolsRequest&;
+    using Resp = DescribeClusterVirtualNodePoolsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeClusterVirtualNodePools", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::DescribeClusterVirtualNodePoolsOutcomeCallable TkeClient::DescribeClusterVirtualNodePoolsCallable(const DescribeClusterVirtualNodePoolsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeClusterVirtualNodePoolsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeClusterVirtualNodePools(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeClusterVirtualNodePoolsOutcome>>();
+    DescribeClusterVirtualNodePoolsAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const DescribeClusterVirtualNodePoolsRequest&,
+        DescribeClusterVirtualNodePoolsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::DescribeClustersOutcome TkeClient::DescribeClusters(const DescribeClustersRequest &request)
@@ -4405,25 +5112,32 @@ TkeClient::DescribeClustersOutcome TkeClient::DescribeClusters(const DescribeClu
 
 void TkeClient::DescribeClustersAsync(const DescribeClustersRequest& request, const DescribeClustersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeClusters(request), context);
-    };
+    using Req = const DescribeClustersRequest&;
+    using Resp = DescribeClustersResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeClusters", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::DescribeClustersOutcomeCallable TkeClient::DescribeClustersCallable(const DescribeClustersRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeClustersOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeClusters(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeClustersOutcome>>();
+    DescribeClustersAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const DescribeClustersRequest&,
+        DescribeClustersOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::DescribeECMInstancesOutcome TkeClient::DescribeECMInstances(const DescribeECMInstancesRequest &request)
@@ -4448,25 +5162,32 @@ TkeClient::DescribeECMInstancesOutcome TkeClient::DescribeECMInstances(const Des
 
 void TkeClient::DescribeECMInstancesAsync(const DescribeECMInstancesRequest& request, const DescribeECMInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeECMInstances(request), context);
-    };
+    using Req = const DescribeECMInstancesRequest&;
+    using Resp = DescribeECMInstancesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeECMInstances", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::DescribeECMInstancesOutcomeCallable TkeClient::DescribeECMInstancesCallable(const DescribeECMInstancesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeECMInstancesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeECMInstances(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeECMInstancesOutcome>>();
+    DescribeECMInstancesAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const DescribeECMInstancesRequest&,
+        DescribeECMInstancesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::DescribeEKSClusterCredentialOutcome TkeClient::DescribeEKSClusterCredential(const DescribeEKSClusterCredentialRequest &request)
@@ -4491,25 +5212,32 @@ TkeClient::DescribeEKSClusterCredentialOutcome TkeClient::DescribeEKSClusterCred
 
 void TkeClient::DescribeEKSClusterCredentialAsync(const DescribeEKSClusterCredentialRequest& request, const DescribeEKSClusterCredentialAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeEKSClusterCredential(request), context);
-    };
+    using Req = const DescribeEKSClusterCredentialRequest&;
+    using Resp = DescribeEKSClusterCredentialResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeEKSClusterCredential", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::DescribeEKSClusterCredentialOutcomeCallable TkeClient::DescribeEKSClusterCredentialCallable(const DescribeEKSClusterCredentialRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeEKSClusterCredentialOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeEKSClusterCredential(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeEKSClusterCredentialOutcome>>();
+    DescribeEKSClusterCredentialAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const DescribeEKSClusterCredentialRequest&,
+        DescribeEKSClusterCredentialOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::DescribeEKSClustersOutcome TkeClient::DescribeEKSClusters(const DescribeEKSClustersRequest &request)
@@ -4534,25 +5262,32 @@ TkeClient::DescribeEKSClustersOutcome TkeClient::DescribeEKSClusters(const Descr
 
 void TkeClient::DescribeEKSClustersAsync(const DescribeEKSClustersRequest& request, const DescribeEKSClustersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeEKSClusters(request), context);
-    };
+    using Req = const DescribeEKSClustersRequest&;
+    using Resp = DescribeEKSClustersResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeEKSClusters", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::DescribeEKSClustersOutcomeCallable TkeClient::DescribeEKSClustersCallable(const DescribeEKSClustersRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeEKSClustersOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeEKSClusters(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeEKSClustersOutcome>>();
+    DescribeEKSClustersAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const DescribeEKSClustersRequest&,
+        DescribeEKSClustersOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::DescribeEKSContainerInstanceEventOutcome TkeClient::DescribeEKSContainerInstanceEvent(const DescribeEKSContainerInstanceEventRequest &request)
@@ -4577,25 +5312,32 @@ TkeClient::DescribeEKSContainerInstanceEventOutcome TkeClient::DescribeEKSContai
 
 void TkeClient::DescribeEKSContainerInstanceEventAsync(const DescribeEKSContainerInstanceEventRequest& request, const DescribeEKSContainerInstanceEventAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeEKSContainerInstanceEvent(request), context);
-    };
+    using Req = const DescribeEKSContainerInstanceEventRequest&;
+    using Resp = DescribeEKSContainerInstanceEventResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeEKSContainerInstanceEvent", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::DescribeEKSContainerInstanceEventOutcomeCallable TkeClient::DescribeEKSContainerInstanceEventCallable(const DescribeEKSContainerInstanceEventRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeEKSContainerInstanceEventOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeEKSContainerInstanceEvent(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeEKSContainerInstanceEventOutcome>>();
+    DescribeEKSContainerInstanceEventAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const DescribeEKSContainerInstanceEventRequest&,
+        DescribeEKSContainerInstanceEventOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::DescribeEKSContainerInstanceRegionsOutcome TkeClient::DescribeEKSContainerInstanceRegions(const DescribeEKSContainerInstanceRegionsRequest &request)
@@ -4620,25 +5362,32 @@ TkeClient::DescribeEKSContainerInstanceRegionsOutcome TkeClient::DescribeEKSCont
 
 void TkeClient::DescribeEKSContainerInstanceRegionsAsync(const DescribeEKSContainerInstanceRegionsRequest& request, const DescribeEKSContainerInstanceRegionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeEKSContainerInstanceRegions(request), context);
-    };
+    using Req = const DescribeEKSContainerInstanceRegionsRequest&;
+    using Resp = DescribeEKSContainerInstanceRegionsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeEKSContainerInstanceRegions", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::DescribeEKSContainerInstanceRegionsOutcomeCallable TkeClient::DescribeEKSContainerInstanceRegionsCallable(const DescribeEKSContainerInstanceRegionsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeEKSContainerInstanceRegionsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeEKSContainerInstanceRegions(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeEKSContainerInstanceRegionsOutcome>>();
+    DescribeEKSContainerInstanceRegionsAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const DescribeEKSContainerInstanceRegionsRequest&,
+        DescribeEKSContainerInstanceRegionsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::DescribeEKSContainerInstancesOutcome TkeClient::DescribeEKSContainerInstances(const DescribeEKSContainerInstancesRequest &request)
@@ -4663,25 +5412,32 @@ TkeClient::DescribeEKSContainerInstancesOutcome TkeClient::DescribeEKSContainerI
 
 void TkeClient::DescribeEKSContainerInstancesAsync(const DescribeEKSContainerInstancesRequest& request, const DescribeEKSContainerInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeEKSContainerInstances(request), context);
-    };
+    using Req = const DescribeEKSContainerInstancesRequest&;
+    using Resp = DescribeEKSContainerInstancesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeEKSContainerInstances", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::DescribeEKSContainerInstancesOutcomeCallable TkeClient::DescribeEKSContainerInstancesCallable(const DescribeEKSContainerInstancesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeEKSContainerInstancesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeEKSContainerInstances(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeEKSContainerInstancesOutcome>>();
+    DescribeEKSContainerInstancesAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const DescribeEKSContainerInstancesRequest&,
+        DescribeEKSContainerInstancesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::DescribeEdgeAvailableExtraArgsOutcome TkeClient::DescribeEdgeAvailableExtraArgs(const DescribeEdgeAvailableExtraArgsRequest &request)
@@ -4706,25 +5462,32 @@ TkeClient::DescribeEdgeAvailableExtraArgsOutcome TkeClient::DescribeEdgeAvailabl
 
 void TkeClient::DescribeEdgeAvailableExtraArgsAsync(const DescribeEdgeAvailableExtraArgsRequest& request, const DescribeEdgeAvailableExtraArgsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeEdgeAvailableExtraArgs(request), context);
-    };
+    using Req = const DescribeEdgeAvailableExtraArgsRequest&;
+    using Resp = DescribeEdgeAvailableExtraArgsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeEdgeAvailableExtraArgs", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::DescribeEdgeAvailableExtraArgsOutcomeCallable TkeClient::DescribeEdgeAvailableExtraArgsCallable(const DescribeEdgeAvailableExtraArgsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeEdgeAvailableExtraArgsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeEdgeAvailableExtraArgs(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeEdgeAvailableExtraArgsOutcome>>();
+    DescribeEdgeAvailableExtraArgsAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const DescribeEdgeAvailableExtraArgsRequest&,
+        DescribeEdgeAvailableExtraArgsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::DescribeEdgeCVMInstancesOutcome TkeClient::DescribeEdgeCVMInstances(const DescribeEdgeCVMInstancesRequest &request)
@@ -4749,25 +5512,32 @@ TkeClient::DescribeEdgeCVMInstancesOutcome TkeClient::DescribeEdgeCVMInstances(c
 
 void TkeClient::DescribeEdgeCVMInstancesAsync(const DescribeEdgeCVMInstancesRequest& request, const DescribeEdgeCVMInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeEdgeCVMInstances(request), context);
-    };
+    using Req = const DescribeEdgeCVMInstancesRequest&;
+    using Resp = DescribeEdgeCVMInstancesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeEdgeCVMInstances", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::DescribeEdgeCVMInstancesOutcomeCallable TkeClient::DescribeEdgeCVMInstancesCallable(const DescribeEdgeCVMInstancesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeEdgeCVMInstancesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeEdgeCVMInstances(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeEdgeCVMInstancesOutcome>>();
+    DescribeEdgeCVMInstancesAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const DescribeEdgeCVMInstancesRequest&,
+        DescribeEdgeCVMInstancesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::DescribeEdgeClusterExtraArgsOutcome TkeClient::DescribeEdgeClusterExtraArgs(const DescribeEdgeClusterExtraArgsRequest &request)
@@ -4792,25 +5562,32 @@ TkeClient::DescribeEdgeClusterExtraArgsOutcome TkeClient::DescribeEdgeClusterExt
 
 void TkeClient::DescribeEdgeClusterExtraArgsAsync(const DescribeEdgeClusterExtraArgsRequest& request, const DescribeEdgeClusterExtraArgsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeEdgeClusterExtraArgs(request), context);
-    };
+    using Req = const DescribeEdgeClusterExtraArgsRequest&;
+    using Resp = DescribeEdgeClusterExtraArgsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeEdgeClusterExtraArgs", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::DescribeEdgeClusterExtraArgsOutcomeCallable TkeClient::DescribeEdgeClusterExtraArgsCallable(const DescribeEdgeClusterExtraArgsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeEdgeClusterExtraArgsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeEdgeClusterExtraArgs(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeEdgeClusterExtraArgsOutcome>>();
+    DescribeEdgeClusterExtraArgsAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const DescribeEdgeClusterExtraArgsRequest&,
+        DescribeEdgeClusterExtraArgsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::DescribeEdgeClusterInstancesOutcome TkeClient::DescribeEdgeClusterInstances(const DescribeEdgeClusterInstancesRequest &request)
@@ -4835,25 +5612,32 @@ TkeClient::DescribeEdgeClusterInstancesOutcome TkeClient::DescribeEdgeClusterIns
 
 void TkeClient::DescribeEdgeClusterInstancesAsync(const DescribeEdgeClusterInstancesRequest& request, const DescribeEdgeClusterInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeEdgeClusterInstances(request), context);
-    };
+    using Req = const DescribeEdgeClusterInstancesRequest&;
+    using Resp = DescribeEdgeClusterInstancesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeEdgeClusterInstances", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::DescribeEdgeClusterInstancesOutcomeCallable TkeClient::DescribeEdgeClusterInstancesCallable(const DescribeEdgeClusterInstancesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeEdgeClusterInstancesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeEdgeClusterInstances(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeEdgeClusterInstancesOutcome>>();
+    DescribeEdgeClusterInstancesAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const DescribeEdgeClusterInstancesRequest&,
+        DescribeEdgeClusterInstancesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::DescribeEdgeClusterUpgradeInfoOutcome TkeClient::DescribeEdgeClusterUpgradeInfo(const DescribeEdgeClusterUpgradeInfoRequest &request)
@@ -4878,25 +5662,32 @@ TkeClient::DescribeEdgeClusterUpgradeInfoOutcome TkeClient::DescribeEdgeClusterU
 
 void TkeClient::DescribeEdgeClusterUpgradeInfoAsync(const DescribeEdgeClusterUpgradeInfoRequest& request, const DescribeEdgeClusterUpgradeInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeEdgeClusterUpgradeInfo(request), context);
-    };
+    using Req = const DescribeEdgeClusterUpgradeInfoRequest&;
+    using Resp = DescribeEdgeClusterUpgradeInfoResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeEdgeClusterUpgradeInfo", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::DescribeEdgeClusterUpgradeInfoOutcomeCallable TkeClient::DescribeEdgeClusterUpgradeInfoCallable(const DescribeEdgeClusterUpgradeInfoRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeEdgeClusterUpgradeInfoOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeEdgeClusterUpgradeInfo(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeEdgeClusterUpgradeInfoOutcome>>();
+    DescribeEdgeClusterUpgradeInfoAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const DescribeEdgeClusterUpgradeInfoRequest&,
+        DescribeEdgeClusterUpgradeInfoOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::DescribeEdgeLogSwitchesOutcome TkeClient::DescribeEdgeLogSwitches(const DescribeEdgeLogSwitchesRequest &request)
@@ -4921,25 +5712,32 @@ TkeClient::DescribeEdgeLogSwitchesOutcome TkeClient::DescribeEdgeLogSwitches(con
 
 void TkeClient::DescribeEdgeLogSwitchesAsync(const DescribeEdgeLogSwitchesRequest& request, const DescribeEdgeLogSwitchesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeEdgeLogSwitches(request), context);
-    };
+    using Req = const DescribeEdgeLogSwitchesRequest&;
+    using Resp = DescribeEdgeLogSwitchesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeEdgeLogSwitches", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::DescribeEdgeLogSwitchesOutcomeCallable TkeClient::DescribeEdgeLogSwitchesCallable(const DescribeEdgeLogSwitchesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeEdgeLogSwitchesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeEdgeLogSwitches(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeEdgeLogSwitchesOutcome>>();
+    DescribeEdgeLogSwitchesAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const DescribeEdgeLogSwitchesRequest&,
+        DescribeEdgeLogSwitchesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::DescribeEksContainerInstanceLogOutcome TkeClient::DescribeEksContainerInstanceLog(const DescribeEksContainerInstanceLogRequest &request)
@@ -4964,25 +5762,32 @@ TkeClient::DescribeEksContainerInstanceLogOutcome TkeClient::DescribeEksContaine
 
 void TkeClient::DescribeEksContainerInstanceLogAsync(const DescribeEksContainerInstanceLogRequest& request, const DescribeEksContainerInstanceLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeEksContainerInstanceLog(request), context);
-    };
+    using Req = const DescribeEksContainerInstanceLogRequest&;
+    using Resp = DescribeEksContainerInstanceLogResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeEksContainerInstanceLog", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::DescribeEksContainerInstanceLogOutcomeCallable TkeClient::DescribeEksContainerInstanceLogCallable(const DescribeEksContainerInstanceLogRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeEksContainerInstanceLogOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeEksContainerInstanceLog(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeEksContainerInstanceLogOutcome>>();
+    DescribeEksContainerInstanceLogAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const DescribeEksContainerInstanceLogRequest&,
+        DescribeEksContainerInstanceLogOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::DescribeEnableVpcCniProgressOutcome TkeClient::DescribeEnableVpcCniProgress(const DescribeEnableVpcCniProgressRequest &request)
@@ -5007,25 +5812,32 @@ TkeClient::DescribeEnableVpcCniProgressOutcome TkeClient::DescribeEnableVpcCniPr
 
 void TkeClient::DescribeEnableVpcCniProgressAsync(const DescribeEnableVpcCniProgressRequest& request, const DescribeEnableVpcCniProgressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeEnableVpcCniProgress(request), context);
-    };
+    using Req = const DescribeEnableVpcCniProgressRequest&;
+    using Resp = DescribeEnableVpcCniProgressResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeEnableVpcCniProgress", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::DescribeEnableVpcCniProgressOutcomeCallable TkeClient::DescribeEnableVpcCniProgressCallable(const DescribeEnableVpcCniProgressRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeEnableVpcCniProgressOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeEnableVpcCniProgress(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeEnableVpcCniProgressOutcome>>();
+    DescribeEnableVpcCniProgressAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const DescribeEnableVpcCniProgressRequest&,
+        DescribeEnableVpcCniProgressOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::DescribeEncryptionStatusOutcome TkeClient::DescribeEncryptionStatus(const DescribeEncryptionStatusRequest &request)
@@ -5050,25 +5862,32 @@ TkeClient::DescribeEncryptionStatusOutcome TkeClient::DescribeEncryptionStatus(c
 
 void TkeClient::DescribeEncryptionStatusAsync(const DescribeEncryptionStatusRequest& request, const DescribeEncryptionStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeEncryptionStatus(request), context);
-    };
+    using Req = const DescribeEncryptionStatusRequest&;
+    using Resp = DescribeEncryptionStatusResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeEncryptionStatus", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::DescribeEncryptionStatusOutcomeCallable TkeClient::DescribeEncryptionStatusCallable(const DescribeEncryptionStatusRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeEncryptionStatusOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeEncryptionStatus(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeEncryptionStatusOutcome>>();
+    DescribeEncryptionStatusAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const DescribeEncryptionStatusRequest&,
+        DescribeEncryptionStatusOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::DescribeExistedInstancesOutcome TkeClient::DescribeExistedInstances(const DescribeExistedInstancesRequest &request)
@@ -5093,25 +5912,32 @@ TkeClient::DescribeExistedInstancesOutcome TkeClient::DescribeExistedInstances(c
 
 void TkeClient::DescribeExistedInstancesAsync(const DescribeExistedInstancesRequest& request, const DescribeExistedInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeExistedInstances(request), context);
-    };
+    using Req = const DescribeExistedInstancesRequest&;
+    using Resp = DescribeExistedInstancesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeExistedInstances", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::DescribeExistedInstancesOutcomeCallable TkeClient::DescribeExistedInstancesCallable(const DescribeExistedInstancesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeExistedInstancesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeExistedInstances(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeExistedInstancesOutcome>>();
+    DescribeExistedInstancesAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const DescribeExistedInstancesRequest&,
+        DescribeExistedInstancesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::DescribeExternalNodeSupportConfigOutcome TkeClient::DescribeExternalNodeSupportConfig(const DescribeExternalNodeSupportConfigRequest &request)
@@ -5136,25 +5962,32 @@ TkeClient::DescribeExternalNodeSupportConfigOutcome TkeClient::DescribeExternalN
 
 void TkeClient::DescribeExternalNodeSupportConfigAsync(const DescribeExternalNodeSupportConfigRequest& request, const DescribeExternalNodeSupportConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeExternalNodeSupportConfig(request), context);
-    };
+    using Req = const DescribeExternalNodeSupportConfigRequest&;
+    using Resp = DescribeExternalNodeSupportConfigResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeExternalNodeSupportConfig", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::DescribeExternalNodeSupportConfigOutcomeCallable TkeClient::DescribeExternalNodeSupportConfigCallable(const DescribeExternalNodeSupportConfigRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeExternalNodeSupportConfigOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeExternalNodeSupportConfig(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeExternalNodeSupportConfigOutcome>>();
+    DescribeExternalNodeSupportConfigAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const DescribeExternalNodeSupportConfigRequest&,
+        DescribeExternalNodeSupportConfigOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::DescribeIPAMDOutcome TkeClient::DescribeIPAMD(const DescribeIPAMDRequest &request)
@@ -5179,25 +6012,32 @@ TkeClient::DescribeIPAMDOutcome TkeClient::DescribeIPAMD(const DescribeIPAMDRequ
 
 void TkeClient::DescribeIPAMDAsync(const DescribeIPAMDRequest& request, const DescribeIPAMDAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeIPAMD(request), context);
-    };
+    using Req = const DescribeIPAMDRequest&;
+    using Resp = DescribeIPAMDResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeIPAMD", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::DescribeIPAMDOutcomeCallable TkeClient::DescribeIPAMDCallable(const DescribeIPAMDRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeIPAMDOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeIPAMD(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeIPAMDOutcome>>();
+    DescribeIPAMDAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const DescribeIPAMDRequest&,
+        DescribeIPAMDOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::DescribeImageCachesOutcome TkeClient::DescribeImageCaches(const DescribeImageCachesRequest &request)
@@ -5222,25 +6062,32 @@ TkeClient::DescribeImageCachesOutcome TkeClient::DescribeImageCaches(const Descr
 
 void TkeClient::DescribeImageCachesAsync(const DescribeImageCachesRequest& request, const DescribeImageCachesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeImageCaches(request), context);
-    };
+    using Req = const DescribeImageCachesRequest&;
+    using Resp = DescribeImageCachesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeImageCaches", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::DescribeImageCachesOutcomeCallable TkeClient::DescribeImageCachesCallable(const DescribeImageCachesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeImageCachesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeImageCaches(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeImageCachesOutcome>>();
+    DescribeImageCachesAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const DescribeImageCachesRequest&,
+        DescribeImageCachesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::DescribeImagesOutcome TkeClient::DescribeImages(const DescribeImagesRequest &request)
@@ -5265,25 +6112,32 @@ TkeClient::DescribeImagesOutcome TkeClient::DescribeImages(const DescribeImagesR
 
 void TkeClient::DescribeImagesAsync(const DescribeImagesRequest& request, const DescribeImagesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeImages(request), context);
-    };
+    using Req = const DescribeImagesRequest&;
+    using Resp = DescribeImagesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeImages", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::DescribeImagesOutcomeCallable TkeClient::DescribeImagesCallable(const DescribeImagesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeImagesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeImages(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeImagesOutcome>>();
+    DescribeImagesAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const DescribeImagesRequest&,
+        DescribeImagesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::DescribeLogConfigsOutcome TkeClient::DescribeLogConfigs(const DescribeLogConfigsRequest &request)
@@ -5308,25 +6162,32 @@ TkeClient::DescribeLogConfigsOutcome TkeClient::DescribeLogConfigs(const Describ
 
 void TkeClient::DescribeLogConfigsAsync(const DescribeLogConfigsRequest& request, const DescribeLogConfigsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeLogConfigs(request), context);
-    };
+    using Req = const DescribeLogConfigsRequest&;
+    using Resp = DescribeLogConfigsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeLogConfigs", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::DescribeLogConfigsOutcomeCallable TkeClient::DescribeLogConfigsCallable(const DescribeLogConfigsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeLogConfigsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeLogConfigs(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeLogConfigsOutcome>>();
+    DescribeLogConfigsAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const DescribeLogConfigsRequest&,
+        DescribeLogConfigsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::DescribeLogSwitchesOutcome TkeClient::DescribeLogSwitches(const DescribeLogSwitchesRequest &request)
@@ -5351,25 +6212,32 @@ TkeClient::DescribeLogSwitchesOutcome TkeClient::DescribeLogSwitches(const Descr
 
 void TkeClient::DescribeLogSwitchesAsync(const DescribeLogSwitchesRequest& request, const DescribeLogSwitchesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeLogSwitches(request), context);
-    };
+    using Req = const DescribeLogSwitchesRequest&;
+    using Resp = DescribeLogSwitchesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeLogSwitches", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::DescribeLogSwitchesOutcomeCallable TkeClient::DescribeLogSwitchesCallable(const DescribeLogSwitchesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeLogSwitchesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeLogSwitches(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeLogSwitchesOutcome>>();
+    DescribeLogSwitchesAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const DescribeLogSwitchesRequest&,
+        DescribeLogSwitchesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::DescribeMasterComponentOutcome TkeClient::DescribeMasterComponent(const DescribeMasterComponentRequest &request)
@@ -5394,25 +6262,32 @@ TkeClient::DescribeMasterComponentOutcome TkeClient::DescribeMasterComponent(con
 
 void TkeClient::DescribeMasterComponentAsync(const DescribeMasterComponentRequest& request, const DescribeMasterComponentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeMasterComponent(request), context);
-    };
+    using Req = const DescribeMasterComponentRequest&;
+    using Resp = DescribeMasterComponentResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeMasterComponent", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::DescribeMasterComponentOutcomeCallable TkeClient::DescribeMasterComponentCallable(const DescribeMasterComponentRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeMasterComponentOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeMasterComponent(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeMasterComponentOutcome>>();
+    DescribeMasterComponentAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const DescribeMasterComponentRequest&,
+        DescribeMasterComponentOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::DescribeOSImagesOutcome TkeClient::DescribeOSImages(const DescribeOSImagesRequest &request)
@@ -5437,25 +6312,32 @@ TkeClient::DescribeOSImagesOutcome TkeClient::DescribeOSImages(const DescribeOSI
 
 void TkeClient::DescribeOSImagesAsync(const DescribeOSImagesRequest& request, const DescribeOSImagesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeOSImages(request), context);
-    };
+    using Req = const DescribeOSImagesRequest&;
+    using Resp = DescribeOSImagesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeOSImages", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::DescribeOSImagesOutcomeCallable TkeClient::DescribeOSImagesCallable(const DescribeOSImagesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeOSImagesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeOSImages(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeOSImagesOutcome>>();
+    DescribeOSImagesAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const DescribeOSImagesRequest&,
+        DescribeOSImagesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::DescribeOpenPolicyListOutcome TkeClient::DescribeOpenPolicyList(const DescribeOpenPolicyListRequest &request)
@@ -5480,25 +6362,32 @@ TkeClient::DescribeOpenPolicyListOutcome TkeClient::DescribeOpenPolicyList(const
 
 void TkeClient::DescribeOpenPolicyListAsync(const DescribeOpenPolicyListRequest& request, const DescribeOpenPolicyListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeOpenPolicyList(request), context);
-    };
+    using Req = const DescribeOpenPolicyListRequest&;
+    using Resp = DescribeOpenPolicyListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeOpenPolicyList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::DescribeOpenPolicyListOutcomeCallable TkeClient::DescribeOpenPolicyListCallable(const DescribeOpenPolicyListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeOpenPolicyListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeOpenPolicyList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeOpenPolicyListOutcome>>();
+    DescribeOpenPolicyListAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const DescribeOpenPolicyListRequest&,
+        DescribeOpenPolicyListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::DescribePodChargeInfoOutcome TkeClient::DescribePodChargeInfo(const DescribePodChargeInfoRequest &request)
@@ -5523,25 +6412,32 @@ TkeClient::DescribePodChargeInfoOutcome TkeClient::DescribePodChargeInfo(const D
 
 void TkeClient::DescribePodChargeInfoAsync(const DescribePodChargeInfoRequest& request, const DescribePodChargeInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribePodChargeInfo(request), context);
-    };
+    using Req = const DescribePodChargeInfoRequest&;
+    using Resp = DescribePodChargeInfoResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribePodChargeInfo", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::DescribePodChargeInfoOutcomeCallable TkeClient::DescribePodChargeInfoCallable(const DescribePodChargeInfoRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribePodChargeInfoOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribePodChargeInfo(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribePodChargeInfoOutcome>>();
+    DescribePodChargeInfoAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const DescribePodChargeInfoRequest&,
+        DescribePodChargeInfoOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::DescribePodDeductionRateOutcome TkeClient::DescribePodDeductionRate(const DescribePodDeductionRateRequest &request)
@@ -5566,25 +6462,32 @@ TkeClient::DescribePodDeductionRateOutcome TkeClient::DescribePodDeductionRate(c
 
 void TkeClient::DescribePodDeductionRateAsync(const DescribePodDeductionRateRequest& request, const DescribePodDeductionRateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribePodDeductionRate(request), context);
-    };
+    using Req = const DescribePodDeductionRateRequest&;
+    using Resp = DescribePodDeductionRateResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribePodDeductionRate", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::DescribePodDeductionRateOutcomeCallable TkeClient::DescribePodDeductionRateCallable(const DescribePodDeductionRateRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribePodDeductionRateOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribePodDeductionRate(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribePodDeductionRateOutcome>>();
+    DescribePodDeductionRateAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const DescribePodDeductionRateRequest&,
+        DescribePodDeductionRateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::DescribePodsBySpecOutcome TkeClient::DescribePodsBySpec(const DescribePodsBySpecRequest &request)
@@ -5609,25 +6512,32 @@ TkeClient::DescribePodsBySpecOutcome TkeClient::DescribePodsBySpec(const Describ
 
 void TkeClient::DescribePodsBySpecAsync(const DescribePodsBySpecRequest& request, const DescribePodsBySpecAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribePodsBySpec(request), context);
-    };
+    using Req = const DescribePodsBySpecRequest&;
+    using Resp = DescribePodsBySpecResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribePodsBySpec", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::DescribePodsBySpecOutcomeCallable TkeClient::DescribePodsBySpecCallable(const DescribePodsBySpecRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribePodsBySpecOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribePodsBySpec(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribePodsBySpecOutcome>>();
+    DescribePodsBySpecAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const DescribePodsBySpecRequest&,
+        DescribePodsBySpecOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::DescribePostNodeResourcesOutcome TkeClient::DescribePostNodeResources(const DescribePostNodeResourcesRequest &request)
@@ -5652,25 +6562,32 @@ TkeClient::DescribePostNodeResourcesOutcome TkeClient::DescribePostNodeResources
 
 void TkeClient::DescribePostNodeResourcesAsync(const DescribePostNodeResourcesRequest& request, const DescribePostNodeResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribePostNodeResources(request), context);
-    };
+    using Req = const DescribePostNodeResourcesRequest&;
+    using Resp = DescribePostNodeResourcesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribePostNodeResources", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::DescribePostNodeResourcesOutcomeCallable TkeClient::DescribePostNodeResourcesCallable(const DescribePostNodeResourcesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribePostNodeResourcesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribePostNodeResources(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribePostNodeResourcesOutcome>>();
+    DescribePostNodeResourcesAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const DescribePostNodeResourcesRequest&,
+        DescribePostNodeResourcesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::DescribePrometheusAgentInstancesOutcome TkeClient::DescribePrometheusAgentInstances(const DescribePrometheusAgentInstancesRequest &request)
@@ -5695,25 +6612,32 @@ TkeClient::DescribePrometheusAgentInstancesOutcome TkeClient::DescribePrometheus
 
 void TkeClient::DescribePrometheusAgentInstancesAsync(const DescribePrometheusAgentInstancesRequest& request, const DescribePrometheusAgentInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribePrometheusAgentInstances(request), context);
-    };
+    using Req = const DescribePrometheusAgentInstancesRequest&;
+    using Resp = DescribePrometheusAgentInstancesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribePrometheusAgentInstances", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::DescribePrometheusAgentInstancesOutcomeCallable TkeClient::DescribePrometheusAgentInstancesCallable(const DescribePrometheusAgentInstancesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribePrometheusAgentInstancesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribePrometheusAgentInstances(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribePrometheusAgentInstancesOutcome>>();
+    DescribePrometheusAgentInstancesAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const DescribePrometheusAgentInstancesRequest&,
+        DescribePrometheusAgentInstancesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::DescribePrometheusAgentsOutcome TkeClient::DescribePrometheusAgents(const DescribePrometheusAgentsRequest &request)
@@ -5738,25 +6662,32 @@ TkeClient::DescribePrometheusAgentsOutcome TkeClient::DescribePrometheusAgents(c
 
 void TkeClient::DescribePrometheusAgentsAsync(const DescribePrometheusAgentsRequest& request, const DescribePrometheusAgentsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribePrometheusAgents(request), context);
-    };
+    using Req = const DescribePrometheusAgentsRequest&;
+    using Resp = DescribePrometheusAgentsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribePrometheusAgents", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::DescribePrometheusAgentsOutcomeCallable TkeClient::DescribePrometheusAgentsCallable(const DescribePrometheusAgentsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribePrometheusAgentsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribePrometheusAgents(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribePrometheusAgentsOutcome>>();
+    DescribePrometheusAgentsAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const DescribePrometheusAgentsRequest&,
+        DescribePrometheusAgentsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::DescribePrometheusAlertHistoryOutcome TkeClient::DescribePrometheusAlertHistory(const DescribePrometheusAlertHistoryRequest &request)
@@ -5781,25 +6712,32 @@ TkeClient::DescribePrometheusAlertHistoryOutcome TkeClient::DescribePrometheusAl
 
 void TkeClient::DescribePrometheusAlertHistoryAsync(const DescribePrometheusAlertHistoryRequest& request, const DescribePrometheusAlertHistoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribePrometheusAlertHistory(request), context);
-    };
+    using Req = const DescribePrometheusAlertHistoryRequest&;
+    using Resp = DescribePrometheusAlertHistoryResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribePrometheusAlertHistory", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::DescribePrometheusAlertHistoryOutcomeCallable TkeClient::DescribePrometheusAlertHistoryCallable(const DescribePrometheusAlertHistoryRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribePrometheusAlertHistoryOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribePrometheusAlertHistory(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribePrometheusAlertHistoryOutcome>>();
+    DescribePrometheusAlertHistoryAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const DescribePrometheusAlertHistoryRequest&,
+        DescribePrometheusAlertHistoryOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::DescribePrometheusAlertPolicyOutcome TkeClient::DescribePrometheusAlertPolicy(const DescribePrometheusAlertPolicyRequest &request)
@@ -5824,25 +6762,32 @@ TkeClient::DescribePrometheusAlertPolicyOutcome TkeClient::DescribePrometheusAle
 
 void TkeClient::DescribePrometheusAlertPolicyAsync(const DescribePrometheusAlertPolicyRequest& request, const DescribePrometheusAlertPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribePrometheusAlertPolicy(request), context);
-    };
+    using Req = const DescribePrometheusAlertPolicyRequest&;
+    using Resp = DescribePrometheusAlertPolicyResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribePrometheusAlertPolicy", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::DescribePrometheusAlertPolicyOutcomeCallable TkeClient::DescribePrometheusAlertPolicyCallable(const DescribePrometheusAlertPolicyRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribePrometheusAlertPolicyOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribePrometheusAlertPolicy(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribePrometheusAlertPolicyOutcome>>();
+    DescribePrometheusAlertPolicyAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const DescribePrometheusAlertPolicyRequest&,
+        DescribePrometheusAlertPolicyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::DescribePrometheusAlertRuleOutcome TkeClient::DescribePrometheusAlertRule(const DescribePrometheusAlertRuleRequest &request)
@@ -5867,25 +6812,32 @@ TkeClient::DescribePrometheusAlertRuleOutcome TkeClient::DescribePrometheusAlert
 
 void TkeClient::DescribePrometheusAlertRuleAsync(const DescribePrometheusAlertRuleRequest& request, const DescribePrometheusAlertRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribePrometheusAlertRule(request), context);
-    };
+    using Req = const DescribePrometheusAlertRuleRequest&;
+    using Resp = DescribePrometheusAlertRuleResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribePrometheusAlertRule", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::DescribePrometheusAlertRuleOutcomeCallable TkeClient::DescribePrometheusAlertRuleCallable(const DescribePrometheusAlertRuleRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribePrometheusAlertRuleOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribePrometheusAlertRule(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribePrometheusAlertRuleOutcome>>();
+    DescribePrometheusAlertRuleAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const DescribePrometheusAlertRuleRequest&,
+        DescribePrometheusAlertRuleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::DescribePrometheusClusterAgentsOutcome TkeClient::DescribePrometheusClusterAgents(const DescribePrometheusClusterAgentsRequest &request)
@@ -5910,25 +6862,32 @@ TkeClient::DescribePrometheusClusterAgentsOutcome TkeClient::DescribePrometheusC
 
 void TkeClient::DescribePrometheusClusterAgentsAsync(const DescribePrometheusClusterAgentsRequest& request, const DescribePrometheusClusterAgentsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribePrometheusClusterAgents(request), context);
-    };
+    using Req = const DescribePrometheusClusterAgentsRequest&;
+    using Resp = DescribePrometheusClusterAgentsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribePrometheusClusterAgents", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::DescribePrometheusClusterAgentsOutcomeCallable TkeClient::DescribePrometheusClusterAgentsCallable(const DescribePrometheusClusterAgentsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribePrometheusClusterAgentsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribePrometheusClusterAgents(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribePrometheusClusterAgentsOutcome>>();
+    DescribePrometheusClusterAgentsAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const DescribePrometheusClusterAgentsRequest&,
+        DescribePrometheusClusterAgentsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::DescribePrometheusConfigOutcome TkeClient::DescribePrometheusConfig(const DescribePrometheusConfigRequest &request)
@@ -5953,25 +6912,32 @@ TkeClient::DescribePrometheusConfigOutcome TkeClient::DescribePrometheusConfig(c
 
 void TkeClient::DescribePrometheusConfigAsync(const DescribePrometheusConfigRequest& request, const DescribePrometheusConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribePrometheusConfig(request), context);
-    };
+    using Req = const DescribePrometheusConfigRequest&;
+    using Resp = DescribePrometheusConfigResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribePrometheusConfig", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::DescribePrometheusConfigOutcomeCallable TkeClient::DescribePrometheusConfigCallable(const DescribePrometheusConfigRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribePrometheusConfigOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribePrometheusConfig(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribePrometheusConfigOutcome>>();
+    DescribePrometheusConfigAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const DescribePrometheusConfigRequest&,
+        DescribePrometheusConfigOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::DescribePrometheusGlobalConfigOutcome TkeClient::DescribePrometheusGlobalConfig(const DescribePrometheusGlobalConfigRequest &request)
@@ -5996,25 +6962,32 @@ TkeClient::DescribePrometheusGlobalConfigOutcome TkeClient::DescribePrometheusGl
 
 void TkeClient::DescribePrometheusGlobalConfigAsync(const DescribePrometheusGlobalConfigRequest& request, const DescribePrometheusGlobalConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribePrometheusGlobalConfig(request), context);
-    };
+    using Req = const DescribePrometheusGlobalConfigRequest&;
+    using Resp = DescribePrometheusGlobalConfigResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribePrometheusGlobalConfig", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::DescribePrometheusGlobalConfigOutcomeCallable TkeClient::DescribePrometheusGlobalConfigCallable(const DescribePrometheusGlobalConfigRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribePrometheusGlobalConfigOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribePrometheusGlobalConfig(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribePrometheusGlobalConfigOutcome>>();
+    DescribePrometheusGlobalConfigAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const DescribePrometheusGlobalConfigRequest&,
+        DescribePrometheusGlobalConfigOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::DescribePrometheusGlobalNotificationOutcome TkeClient::DescribePrometheusGlobalNotification(const DescribePrometheusGlobalNotificationRequest &request)
@@ -6039,25 +7012,32 @@ TkeClient::DescribePrometheusGlobalNotificationOutcome TkeClient::DescribePromet
 
 void TkeClient::DescribePrometheusGlobalNotificationAsync(const DescribePrometheusGlobalNotificationRequest& request, const DescribePrometheusGlobalNotificationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribePrometheusGlobalNotification(request), context);
-    };
+    using Req = const DescribePrometheusGlobalNotificationRequest&;
+    using Resp = DescribePrometheusGlobalNotificationResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribePrometheusGlobalNotification", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::DescribePrometheusGlobalNotificationOutcomeCallable TkeClient::DescribePrometheusGlobalNotificationCallable(const DescribePrometheusGlobalNotificationRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribePrometheusGlobalNotificationOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribePrometheusGlobalNotification(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribePrometheusGlobalNotificationOutcome>>();
+    DescribePrometheusGlobalNotificationAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const DescribePrometheusGlobalNotificationRequest&,
+        DescribePrometheusGlobalNotificationOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::DescribePrometheusInstanceOutcome TkeClient::DescribePrometheusInstance(const DescribePrometheusInstanceRequest &request)
@@ -6082,25 +7062,32 @@ TkeClient::DescribePrometheusInstanceOutcome TkeClient::DescribePrometheusInstan
 
 void TkeClient::DescribePrometheusInstanceAsync(const DescribePrometheusInstanceRequest& request, const DescribePrometheusInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribePrometheusInstance(request), context);
-    };
+    using Req = const DescribePrometheusInstanceRequest&;
+    using Resp = DescribePrometheusInstanceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribePrometheusInstance", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::DescribePrometheusInstanceOutcomeCallable TkeClient::DescribePrometheusInstanceCallable(const DescribePrometheusInstanceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribePrometheusInstanceOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribePrometheusInstance(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribePrometheusInstanceOutcome>>();
+    DescribePrometheusInstanceAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const DescribePrometheusInstanceRequest&,
+        DescribePrometheusInstanceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::DescribePrometheusInstanceInitStatusOutcome TkeClient::DescribePrometheusInstanceInitStatus(const DescribePrometheusInstanceInitStatusRequest &request)
@@ -6125,25 +7112,32 @@ TkeClient::DescribePrometheusInstanceInitStatusOutcome TkeClient::DescribePromet
 
 void TkeClient::DescribePrometheusInstanceInitStatusAsync(const DescribePrometheusInstanceInitStatusRequest& request, const DescribePrometheusInstanceInitStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribePrometheusInstanceInitStatus(request), context);
-    };
+    using Req = const DescribePrometheusInstanceInitStatusRequest&;
+    using Resp = DescribePrometheusInstanceInitStatusResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribePrometheusInstanceInitStatus", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::DescribePrometheusInstanceInitStatusOutcomeCallable TkeClient::DescribePrometheusInstanceInitStatusCallable(const DescribePrometheusInstanceInitStatusRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribePrometheusInstanceInitStatusOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribePrometheusInstanceInitStatus(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribePrometheusInstanceInitStatusOutcome>>();
+    DescribePrometheusInstanceInitStatusAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const DescribePrometheusInstanceInitStatusRequest&,
+        DescribePrometheusInstanceInitStatusOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::DescribePrometheusInstancesOverviewOutcome TkeClient::DescribePrometheusInstancesOverview(const DescribePrometheusInstancesOverviewRequest &request)
@@ -6168,25 +7162,32 @@ TkeClient::DescribePrometheusInstancesOverviewOutcome TkeClient::DescribePrometh
 
 void TkeClient::DescribePrometheusInstancesOverviewAsync(const DescribePrometheusInstancesOverviewRequest& request, const DescribePrometheusInstancesOverviewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribePrometheusInstancesOverview(request), context);
-    };
+    using Req = const DescribePrometheusInstancesOverviewRequest&;
+    using Resp = DescribePrometheusInstancesOverviewResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribePrometheusInstancesOverview", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::DescribePrometheusInstancesOverviewOutcomeCallable TkeClient::DescribePrometheusInstancesOverviewCallable(const DescribePrometheusInstancesOverviewRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribePrometheusInstancesOverviewOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribePrometheusInstancesOverview(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribePrometheusInstancesOverviewOutcome>>();
+    DescribePrometheusInstancesOverviewAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const DescribePrometheusInstancesOverviewRequest&,
+        DescribePrometheusInstancesOverviewOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::DescribePrometheusOverviewsOutcome TkeClient::DescribePrometheusOverviews(const DescribePrometheusOverviewsRequest &request)
@@ -6211,25 +7212,32 @@ TkeClient::DescribePrometheusOverviewsOutcome TkeClient::DescribePrometheusOverv
 
 void TkeClient::DescribePrometheusOverviewsAsync(const DescribePrometheusOverviewsRequest& request, const DescribePrometheusOverviewsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribePrometheusOverviews(request), context);
-    };
+    using Req = const DescribePrometheusOverviewsRequest&;
+    using Resp = DescribePrometheusOverviewsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribePrometheusOverviews", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::DescribePrometheusOverviewsOutcomeCallable TkeClient::DescribePrometheusOverviewsCallable(const DescribePrometheusOverviewsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribePrometheusOverviewsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribePrometheusOverviews(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribePrometheusOverviewsOutcome>>();
+    DescribePrometheusOverviewsAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const DescribePrometheusOverviewsRequest&,
+        DescribePrometheusOverviewsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::DescribePrometheusRecordRulesOutcome TkeClient::DescribePrometheusRecordRules(const DescribePrometheusRecordRulesRequest &request)
@@ -6254,25 +7262,32 @@ TkeClient::DescribePrometheusRecordRulesOutcome TkeClient::DescribePrometheusRec
 
 void TkeClient::DescribePrometheusRecordRulesAsync(const DescribePrometheusRecordRulesRequest& request, const DescribePrometheusRecordRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribePrometheusRecordRules(request), context);
-    };
+    using Req = const DescribePrometheusRecordRulesRequest&;
+    using Resp = DescribePrometheusRecordRulesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribePrometheusRecordRules", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::DescribePrometheusRecordRulesOutcomeCallable TkeClient::DescribePrometheusRecordRulesCallable(const DescribePrometheusRecordRulesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribePrometheusRecordRulesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribePrometheusRecordRules(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribePrometheusRecordRulesOutcome>>();
+    DescribePrometheusRecordRulesAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const DescribePrometheusRecordRulesRequest&,
+        DescribePrometheusRecordRulesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::DescribePrometheusTargetsOutcome TkeClient::DescribePrometheusTargets(const DescribePrometheusTargetsRequest &request)
@@ -6297,25 +7312,32 @@ TkeClient::DescribePrometheusTargetsOutcome TkeClient::DescribePrometheusTargets
 
 void TkeClient::DescribePrometheusTargetsAsync(const DescribePrometheusTargetsRequest& request, const DescribePrometheusTargetsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribePrometheusTargets(request), context);
-    };
+    using Req = const DescribePrometheusTargetsRequest&;
+    using Resp = DescribePrometheusTargetsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribePrometheusTargets", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::DescribePrometheusTargetsOutcomeCallable TkeClient::DescribePrometheusTargetsCallable(const DescribePrometheusTargetsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribePrometheusTargetsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribePrometheusTargets(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribePrometheusTargetsOutcome>>();
+    DescribePrometheusTargetsAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const DescribePrometheusTargetsRequest&,
+        DescribePrometheusTargetsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::DescribePrometheusTempOutcome TkeClient::DescribePrometheusTemp(const DescribePrometheusTempRequest &request)
@@ -6340,25 +7362,32 @@ TkeClient::DescribePrometheusTempOutcome TkeClient::DescribePrometheusTemp(const
 
 void TkeClient::DescribePrometheusTempAsync(const DescribePrometheusTempRequest& request, const DescribePrometheusTempAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribePrometheusTemp(request), context);
-    };
+    using Req = const DescribePrometheusTempRequest&;
+    using Resp = DescribePrometheusTempResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribePrometheusTemp", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::DescribePrometheusTempOutcomeCallable TkeClient::DescribePrometheusTempCallable(const DescribePrometheusTempRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribePrometheusTempOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribePrometheusTemp(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribePrometheusTempOutcome>>();
+    DescribePrometheusTempAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const DescribePrometheusTempRequest&,
+        DescribePrometheusTempOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::DescribePrometheusTempSyncOutcome TkeClient::DescribePrometheusTempSync(const DescribePrometheusTempSyncRequest &request)
@@ -6383,25 +7412,32 @@ TkeClient::DescribePrometheusTempSyncOutcome TkeClient::DescribePrometheusTempSy
 
 void TkeClient::DescribePrometheusTempSyncAsync(const DescribePrometheusTempSyncRequest& request, const DescribePrometheusTempSyncAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribePrometheusTempSync(request), context);
-    };
+    using Req = const DescribePrometheusTempSyncRequest&;
+    using Resp = DescribePrometheusTempSyncResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribePrometheusTempSync", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::DescribePrometheusTempSyncOutcomeCallable TkeClient::DescribePrometheusTempSyncCallable(const DescribePrometheusTempSyncRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribePrometheusTempSyncOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribePrometheusTempSync(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribePrometheusTempSyncOutcome>>();
+    DescribePrometheusTempSyncAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const DescribePrometheusTempSyncRequest&,
+        DescribePrometheusTempSyncOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::DescribePrometheusTemplateSyncOutcome TkeClient::DescribePrometheusTemplateSync(const DescribePrometheusTemplateSyncRequest &request)
@@ -6426,25 +7462,32 @@ TkeClient::DescribePrometheusTemplateSyncOutcome TkeClient::DescribePrometheusTe
 
 void TkeClient::DescribePrometheusTemplateSyncAsync(const DescribePrometheusTemplateSyncRequest& request, const DescribePrometheusTemplateSyncAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribePrometheusTemplateSync(request), context);
-    };
+    using Req = const DescribePrometheusTemplateSyncRequest&;
+    using Resp = DescribePrometheusTemplateSyncResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribePrometheusTemplateSync", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::DescribePrometheusTemplateSyncOutcomeCallable TkeClient::DescribePrometheusTemplateSyncCallable(const DescribePrometheusTemplateSyncRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribePrometheusTemplateSyncOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribePrometheusTemplateSync(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribePrometheusTemplateSyncOutcome>>();
+    DescribePrometheusTemplateSyncAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const DescribePrometheusTemplateSyncRequest&,
+        DescribePrometheusTemplateSyncOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::DescribePrometheusTemplatesOutcome TkeClient::DescribePrometheusTemplates(const DescribePrometheusTemplatesRequest &request)
@@ -6469,25 +7512,32 @@ TkeClient::DescribePrometheusTemplatesOutcome TkeClient::DescribePrometheusTempl
 
 void TkeClient::DescribePrometheusTemplatesAsync(const DescribePrometheusTemplatesRequest& request, const DescribePrometheusTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribePrometheusTemplates(request), context);
-    };
+    using Req = const DescribePrometheusTemplatesRequest&;
+    using Resp = DescribePrometheusTemplatesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribePrometheusTemplates", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::DescribePrometheusTemplatesOutcomeCallable TkeClient::DescribePrometheusTemplatesCallable(const DescribePrometheusTemplatesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribePrometheusTemplatesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribePrometheusTemplates(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribePrometheusTemplatesOutcome>>();
+    DescribePrometheusTemplatesAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const DescribePrometheusTemplatesRequest&,
+        DescribePrometheusTemplatesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::DescribeRIUtilizationDetailOutcome TkeClient::DescribeRIUtilizationDetail(const DescribeRIUtilizationDetailRequest &request)
@@ -6512,25 +7562,32 @@ TkeClient::DescribeRIUtilizationDetailOutcome TkeClient::DescribeRIUtilizationDe
 
 void TkeClient::DescribeRIUtilizationDetailAsync(const DescribeRIUtilizationDetailRequest& request, const DescribeRIUtilizationDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeRIUtilizationDetail(request), context);
-    };
+    using Req = const DescribeRIUtilizationDetailRequest&;
+    using Resp = DescribeRIUtilizationDetailResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeRIUtilizationDetail", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::DescribeRIUtilizationDetailOutcomeCallable TkeClient::DescribeRIUtilizationDetailCallable(const DescribeRIUtilizationDetailRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeRIUtilizationDetailOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeRIUtilizationDetail(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeRIUtilizationDetailOutcome>>();
+    DescribeRIUtilizationDetailAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const DescribeRIUtilizationDetailRequest&,
+        DescribeRIUtilizationDetailOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::DescribeRegionsOutcome TkeClient::DescribeRegions(const DescribeRegionsRequest &request)
@@ -6555,25 +7612,32 @@ TkeClient::DescribeRegionsOutcome TkeClient::DescribeRegions(const DescribeRegio
 
 void TkeClient::DescribeRegionsAsync(const DescribeRegionsRequest& request, const DescribeRegionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeRegions(request), context);
-    };
+    using Req = const DescribeRegionsRequest&;
+    using Resp = DescribeRegionsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeRegions", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::DescribeRegionsOutcomeCallable TkeClient::DescribeRegionsCallable(const DescribeRegionsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeRegionsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeRegions(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeRegionsOutcome>>();
+    DescribeRegionsAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const DescribeRegionsRequest&,
+        DescribeRegionsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::DescribeReservedInstanceUtilizationRateOutcome TkeClient::DescribeReservedInstanceUtilizationRate(const DescribeReservedInstanceUtilizationRateRequest &request)
@@ -6598,25 +7662,32 @@ TkeClient::DescribeReservedInstanceUtilizationRateOutcome TkeClient::DescribeRes
 
 void TkeClient::DescribeReservedInstanceUtilizationRateAsync(const DescribeReservedInstanceUtilizationRateRequest& request, const DescribeReservedInstanceUtilizationRateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeReservedInstanceUtilizationRate(request), context);
-    };
+    using Req = const DescribeReservedInstanceUtilizationRateRequest&;
+    using Resp = DescribeReservedInstanceUtilizationRateResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeReservedInstanceUtilizationRate", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::DescribeReservedInstanceUtilizationRateOutcomeCallable TkeClient::DescribeReservedInstanceUtilizationRateCallable(const DescribeReservedInstanceUtilizationRateRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeReservedInstanceUtilizationRateOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeReservedInstanceUtilizationRate(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeReservedInstanceUtilizationRateOutcome>>();
+    DescribeReservedInstanceUtilizationRateAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const DescribeReservedInstanceUtilizationRateRequest&,
+        DescribeReservedInstanceUtilizationRateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::DescribeReservedInstancesOutcome TkeClient::DescribeReservedInstances(const DescribeReservedInstancesRequest &request)
@@ -6641,25 +7712,32 @@ TkeClient::DescribeReservedInstancesOutcome TkeClient::DescribeReservedInstances
 
 void TkeClient::DescribeReservedInstancesAsync(const DescribeReservedInstancesRequest& request, const DescribeReservedInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeReservedInstances(request), context);
-    };
+    using Req = const DescribeReservedInstancesRequest&;
+    using Resp = DescribeReservedInstancesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeReservedInstances", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::DescribeReservedInstancesOutcomeCallable TkeClient::DescribeReservedInstancesCallable(const DescribeReservedInstancesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeReservedInstancesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeReservedInstances(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeReservedInstancesOutcome>>();
+    DescribeReservedInstancesAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const DescribeReservedInstancesRequest&,
+        DescribeReservedInstancesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::DescribeResourceUsageOutcome TkeClient::DescribeResourceUsage(const DescribeResourceUsageRequest &request)
@@ -6684,25 +7762,32 @@ TkeClient::DescribeResourceUsageOutcome TkeClient::DescribeResourceUsage(const D
 
 void TkeClient::DescribeResourceUsageAsync(const DescribeResourceUsageRequest& request, const DescribeResourceUsageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeResourceUsage(request), context);
-    };
+    using Req = const DescribeResourceUsageRequest&;
+    using Resp = DescribeResourceUsageResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeResourceUsage", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::DescribeResourceUsageOutcomeCallable TkeClient::DescribeResourceUsageCallable(const DescribeResourceUsageRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeResourceUsageOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeResourceUsage(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeResourceUsageOutcome>>();
+    DescribeResourceUsageAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const DescribeResourceUsageRequest&,
+        DescribeResourceUsageOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::DescribeRouteTableConflictsOutcome TkeClient::DescribeRouteTableConflicts(const DescribeRouteTableConflictsRequest &request)
@@ -6727,25 +7812,32 @@ TkeClient::DescribeRouteTableConflictsOutcome TkeClient::DescribeRouteTableConfl
 
 void TkeClient::DescribeRouteTableConflictsAsync(const DescribeRouteTableConflictsRequest& request, const DescribeRouteTableConflictsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeRouteTableConflicts(request), context);
-    };
+    using Req = const DescribeRouteTableConflictsRequest&;
+    using Resp = DescribeRouteTableConflictsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeRouteTableConflicts", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::DescribeRouteTableConflictsOutcomeCallable TkeClient::DescribeRouteTableConflictsCallable(const DescribeRouteTableConflictsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeRouteTableConflictsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeRouteTableConflicts(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeRouteTableConflictsOutcome>>();
+    DescribeRouteTableConflictsAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const DescribeRouteTableConflictsRequest&,
+        DescribeRouteTableConflictsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::DescribeSupportedRuntimeOutcome TkeClient::DescribeSupportedRuntime(const DescribeSupportedRuntimeRequest &request)
@@ -6770,25 +7862,32 @@ TkeClient::DescribeSupportedRuntimeOutcome TkeClient::DescribeSupportedRuntime(c
 
 void TkeClient::DescribeSupportedRuntimeAsync(const DescribeSupportedRuntimeRequest& request, const DescribeSupportedRuntimeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeSupportedRuntime(request), context);
-    };
+    using Req = const DescribeSupportedRuntimeRequest&;
+    using Resp = DescribeSupportedRuntimeResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeSupportedRuntime", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::DescribeSupportedRuntimeOutcomeCallable TkeClient::DescribeSupportedRuntimeCallable(const DescribeSupportedRuntimeRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeSupportedRuntimeOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeSupportedRuntime(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeSupportedRuntimeOutcome>>();
+    DescribeSupportedRuntimeAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const DescribeSupportedRuntimeRequest&,
+        DescribeSupportedRuntimeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::DescribeTKEEdgeClusterCredentialOutcome TkeClient::DescribeTKEEdgeClusterCredential(const DescribeTKEEdgeClusterCredentialRequest &request)
@@ -6813,25 +7912,32 @@ TkeClient::DescribeTKEEdgeClusterCredentialOutcome TkeClient::DescribeTKEEdgeClu
 
 void TkeClient::DescribeTKEEdgeClusterCredentialAsync(const DescribeTKEEdgeClusterCredentialRequest& request, const DescribeTKEEdgeClusterCredentialAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeTKEEdgeClusterCredential(request), context);
-    };
+    using Req = const DescribeTKEEdgeClusterCredentialRequest&;
+    using Resp = DescribeTKEEdgeClusterCredentialResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeTKEEdgeClusterCredential", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::DescribeTKEEdgeClusterCredentialOutcomeCallable TkeClient::DescribeTKEEdgeClusterCredentialCallable(const DescribeTKEEdgeClusterCredentialRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeTKEEdgeClusterCredentialOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeTKEEdgeClusterCredential(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeTKEEdgeClusterCredentialOutcome>>();
+    DescribeTKEEdgeClusterCredentialAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const DescribeTKEEdgeClusterCredentialRequest&,
+        DescribeTKEEdgeClusterCredentialOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::DescribeTKEEdgeClusterStatusOutcome TkeClient::DescribeTKEEdgeClusterStatus(const DescribeTKEEdgeClusterStatusRequest &request)
@@ -6856,25 +7962,32 @@ TkeClient::DescribeTKEEdgeClusterStatusOutcome TkeClient::DescribeTKEEdgeCluster
 
 void TkeClient::DescribeTKEEdgeClusterStatusAsync(const DescribeTKEEdgeClusterStatusRequest& request, const DescribeTKEEdgeClusterStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeTKEEdgeClusterStatus(request), context);
-    };
+    using Req = const DescribeTKEEdgeClusterStatusRequest&;
+    using Resp = DescribeTKEEdgeClusterStatusResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeTKEEdgeClusterStatus", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::DescribeTKEEdgeClusterStatusOutcomeCallable TkeClient::DescribeTKEEdgeClusterStatusCallable(const DescribeTKEEdgeClusterStatusRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeTKEEdgeClusterStatusOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeTKEEdgeClusterStatus(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeTKEEdgeClusterStatusOutcome>>();
+    DescribeTKEEdgeClusterStatusAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const DescribeTKEEdgeClusterStatusRequest&,
+        DescribeTKEEdgeClusterStatusOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::DescribeTKEEdgeClustersOutcome TkeClient::DescribeTKEEdgeClusters(const DescribeTKEEdgeClustersRequest &request)
@@ -6899,25 +8012,32 @@ TkeClient::DescribeTKEEdgeClustersOutcome TkeClient::DescribeTKEEdgeClusters(con
 
 void TkeClient::DescribeTKEEdgeClustersAsync(const DescribeTKEEdgeClustersRequest& request, const DescribeTKEEdgeClustersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeTKEEdgeClusters(request), context);
-    };
+    using Req = const DescribeTKEEdgeClustersRequest&;
+    using Resp = DescribeTKEEdgeClustersResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeTKEEdgeClusters", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::DescribeTKEEdgeClustersOutcomeCallable TkeClient::DescribeTKEEdgeClustersCallable(const DescribeTKEEdgeClustersRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeTKEEdgeClustersOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeTKEEdgeClusters(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeTKEEdgeClustersOutcome>>();
+    DescribeTKEEdgeClustersAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const DescribeTKEEdgeClustersRequest&,
+        DescribeTKEEdgeClustersOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::DescribeTKEEdgeExternalKubeconfigOutcome TkeClient::DescribeTKEEdgeExternalKubeconfig(const DescribeTKEEdgeExternalKubeconfigRequest &request)
@@ -6942,25 +8062,32 @@ TkeClient::DescribeTKEEdgeExternalKubeconfigOutcome TkeClient::DescribeTKEEdgeEx
 
 void TkeClient::DescribeTKEEdgeExternalKubeconfigAsync(const DescribeTKEEdgeExternalKubeconfigRequest& request, const DescribeTKEEdgeExternalKubeconfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeTKEEdgeExternalKubeconfig(request), context);
-    };
+    using Req = const DescribeTKEEdgeExternalKubeconfigRequest&;
+    using Resp = DescribeTKEEdgeExternalKubeconfigResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeTKEEdgeExternalKubeconfig", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::DescribeTKEEdgeExternalKubeconfigOutcomeCallable TkeClient::DescribeTKEEdgeExternalKubeconfigCallable(const DescribeTKEEdgeExternalKubeconfigRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeTKEEdgeExternalKubeconfigOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeTKEEdgeExternalKubeconfig(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeTKEEdgeExternalKubeconfigOutcome>>();
+    DescribeTKEEdgeExternalKubeconfigAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const DescribeTKEEdgeExternalKubeconfigRequest&,
+        DescribeTKEEdgeExternalKubeconfigOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::DescribeTKEEdgeScriptOutcome TkeClient::DescribeTKEEdgeScript(const DescribeTKEEdgeScriptRequest &request)
@@ -6985,25 +8112,32 @@ TkeClient::DescribeTKEEdgeScriptOutcome TkeClient::DescribeTKEEdgeScript(const D
 
 void TkeClient::DescribeTKEEdgeScriptAsync(const DescribeTKEEdgeScriptRequest& request, const DescribeTKEEdgeScriptAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeTKEEdgeScript(request), context);
-    };
+    using Req = const DescribeTKEEdgeScriptRequest&;
+    using Resp = DescribeTKEEdgeScriptResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeTKEEdgeScript", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::DescribeTKEEdgeScriptOutcomeCallable TkeClient::DescribeTKEEdgeScriptCallable(const DescribeTKEEdgeScriptRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeTKEEdgeScriptOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeTKEEdgeScript(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeTKEEdgeScriptOutcome>>();
+    DescribeTKEEdgeScriptAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const DescribeTKEEdgeScriptRequest&,
+        DescribeTKEEdgeScriptOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::DescribeTasksOutcome TkeClient::DescribeTasks(const DescribeTasksRequest &request)
@@ -7028,25 +8162,32 @@ TkeClient::DescribeTasksOutcome TkeClient::DescribeTasks(const DescribeTasksRequ
 
 void TkeClient::DescribeTasksAsync(const DescribeTasksRequest& request, const DescribeTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeTasks(request), context);
-    };
+    using Req = const DescribeTasksRequest&;
+    using Resp = DescribeTasksResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeTasks", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::DescribeTasksOutcomeCallable TkeClient::DescribeTasksCallable(const DescribeTasksRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeTasksOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeTasks(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeTasksOutcome>>();
+    DescribeTasksAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const DescribeTasksRequest&,
+        DescribeTasksOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::DescribeVersionsOutcome TkeClient::DescribeVersions(const DescribeVersionsRequest &request)
@@ -7071,25 +8212,32 @@ TkeClient::DescribeVersionsOutcome TkeClient::DescribeVersions(const DescribeVer
 
 void TkeClient::DescribeVersionsAsync(const DescribeVersionsRequest& request, const DescribeVersionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeVersions(request), context);
-    };
+    using Req = const DescribeVersionsRequest&;
+    using Resp = DescribeVersionsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeVersions", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::DescribeVersionsOutcomeCallable TkeClient::DescribeVersionsCallable(const DescribeVersionsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeVersionsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeVersions(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeVersionsOutcome>>();
+    DescribeVersionsAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const DescribeVersionsRequest&,
+        DescribeVersionsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::DescribeVpcCniPodLimitsOutcome TkeClient::DescribeVpcCniPodLimits(const DescribeVpcCniPodLimitsRequest &request)
@@ -7114,25 +8262,32 @@ TkeClient::DescribeVpcCniPodLimitsOutcome TkeClient::DescribeVpcCniPodLimits(con
 
 void TkeClient::DescribeVpcCniPodLimitsAsync(const DescribeVpcCniPodLimitsRequest& request, const DescribeVpcCniPodLimitsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeVpcCniPodLimits(request), context);
-    };
+    using Req = const DescribeVpcCniPodLimitsRequest&;
+    using Resp = DescribeVpcCniPodLimitsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeVpcCniPodLimits", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::DescribeVpcCniPodLimitsOutcomeCallable TkeClient::DescribeVpcCniPodLimitsCallable(const DescribeVpcCniPodLimitsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeVpcCniPodLimitsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeVpcCniPodLimits(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeVpcCniPodLimitsOutcome>>();
+    DescribeVpcCniPodLimitsAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const DescribeVpcCniPodLimitsRequest&,
+        DescribeVpcCniPodLimitsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::DisableClusterAuditOutcome TkeClient::DisableClusterAudit(const DisableClusterAuditRequest &request)
@@ -7157,25 +8312,32 @@ TkeClient::DisableClusterAuditOutcome TkeClient::DisableClusterAudit(const Disab
 
 void TkeClient::DisableClusterAuditAsync(const DisableClusterAuditRequest& request, const DisableClusterAuditAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DisableClusterAudit(request), context);
-    };
+    using Req = const DisableClusterAuditRequest&;
+    using Resp = DisableClusterAuditResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DisableClusterAudit", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::DisableClusterAuditOutcomeCallable TkeClient::DisableClusterAuditCallable(const DisableClusterAuditRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DisableClusterAuditOutcome()>>(
-        [this, request]()
-        {
-            return this->DisableClusterAudit(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DisableClusterAuditOutcome>>();
+    DisableClusterAuditAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const DisableClusterAuditRequest&,
+        DisableClusterAuditOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::DisableClusterDeletionProtectionOutcome TkeClient::DisableClusterDeletionProtection(const DisableClusterDeletionProtectionRequest &request)
@@ -7200,25 +8362,32 @@ TkeClient::DisableClusterDeletionProtectionOutcome TkeClient::DisableClusterDele
 
 void TkeClient::DisableClusterDeletionProtectionAsync(const DisableClusterDeletionProtectionRequest& request, const DisableClusterDeletionProtectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DisableClusterDeletionProtection(request), context);
-    };
+    using Req = const DisableClusterDeletionProtectionRequest&;
+    using Resp = DisableClusterDeletionProtectionResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DisableClusterDeletionProtection", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::DisableClusterDeletionProtectionOutcomeCallable TkeClient::DisableClusterDeletionProtectionCallable(const DisableClusterDeletionProtectionRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DisableClusterDeletionProtectionOutcome()>>(
-        [this, request]()
-        {
-            return this->DisableClusterDeletionProtection(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DisableClusterDeletionProtectionOutcome>>();
+    DisableClusterDeletionProtectionAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const DisableClusterDeletionProtectionRequest&,
+        DisableClusterDeletionProtectionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::DisableEncryptionProtectionOutcome TkeClient::DisableEncryptionProtection(const DisableEncryptionProtectionRequest &request)
@@ -7243,25 +8412,32 @@ TkeClient::DisableEncryptionProtectionOutcome TkeClient::DisableEncryptionProtec
 
 void TkeClient::DisableEncryptionProtectionAsync(const DisableEncryptionProtectionRequest& request, const DisableEncryptionProtectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DisableEncryptionProtection(request), context);
-    };
+    using Req = const DisableEncryptionProtectionRequest&;
+    using Resp = DisableEncryptionProtectionResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DisableEncryptionProtection", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::DisableEncryptionProtectionOutcomeCallable TkeClient::DisableEncryptionProtectionCallable(const DisableEncryptionProtectionRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DisableEncryptionProtectionOutcome()>>(
-        [this, request]()
-        {
-            return this->DisableEncryptionProtection(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DisableEncryptionProtectionOutcome>>();
+    DisableEncryptionProtectionAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const DisableEncryptionProtectionRequest&,
+        DisableEncryptionProtectionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::DisableEventPersistenceOutcome TkeClient::DisableEventPersistence(const DisableEventPersistenceRequest &request)
@@ -7286,25 +8462,32 @@ TkeClient::DisableEventPersistenceOutcome TkeClient::DisableEventPersistence(con
 
 void TkeClient::DisableEventPersistenceAsync(const DisableEventPersistenceRequest& request, const DisableEventPersistenceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DisableEventPersistence(request), context);
-    };
+    using Req = const DisableEventPersistenceRequest&;
+    using Resp = DisableEventPersistenceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DisableEventPersistence", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::DisableEventPersistenceOutcomeCallable TkeClient::DisableEventPersistenceCallable(const DisableEventPersistenceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DisableEventPersistenceOutcome()>>(
-        [this, request]()
-        {
-            return this->DisableEventPersistence(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DisableEventPersistenceOutcome>>();
+    DisableEventPersistenceAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const DisableEventPersistenceRequest&,
+        DisableEventPersistenceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::DisableVpcCniNetworkTypeOutcome TkeClient::DisableVpcCniNetworkType(const DisableVpcCniNetworkTypeRequest &request)
@@ -7329,25 +8512,32 @@ TkeClient::DisableVpcCniNetworkTypeOutcome TkeClient::DisableVpcCniNetworkType(c
 
 void TkeClient::DisableVpcCniNetworkTypeAsync(const DisableVpcCniNetworkTypeRequest& request, const DisableVpcCniNetworkTypeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DisableVpcCniNetworkType(request), context);
-    };
+    using Req = const DisableVpcCniNetworkTypeRequest&;
+    using Resp = DisableVpcCniNetworkTypeResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DisableVpcCniNetworkType", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::DisableVpcCniNetworkTypeOutcomeCallable TkeClient::DisableVpcCniNetworkTypeCallable(const DisableVpcCniNetworkTypeRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DisableVpcCniNetworkTypeOutcome()>>(
-        [this, request]()
-        {
-            return this->DisableVpcCniNetworkType(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DisableVpcCniNetworkTypeOutcome>>();
+    DisableVpcCniNetworkTypeAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const DisableVpcCniNetworkTypeRequest&,
+        DisableVpcCniNetworkTypeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::DrainClusterVirtualNodeOutcome TkeClient::DrainClusterVirtualNode(const DrainClusterVirtualNodeRequest &request)
@@ -7372,25 +8562,32 @@ TkeClient::DrainClusterVirtualNodeOutcome TkeClient::DrainClusterVirtualNode(con
 
 void TkeClient::DrainClusterVirtualNodeAsync(const DrainClusterVirtualNodeRequest& request, const DrainClusterVirtualNodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DrainClusterVirtualNode(request), context);
-    };
+    using Req = const DrainClusterVirtualNodeRequest&;
+    using Resp = DrainClusterVirtualNodeResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DrainClusterVirtualNode", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::DrainClusterVirtualNodeOutcomeCallable TkeClient::DrainClusterVirtualNodeCallable(const DrainClusterVirtualNodeRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DrainClusterVirtualNodeOutcome()>>(
-        [this, request]()
-        {
-            return this->DrainClusterVirtualNode(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DrainClusterVirtualNodeOutcome>>();
+    DrainClusterVirtualNodeAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const DrainClusterVirtualNodeRequest&,
+        DrainClusterVirtualNodeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::EnableClusterAuditOutcome TkeClient::EnableClusterAudit(const EnableClusterAuditRequest &request)
@@ -7415,25 +8612,32 @@ TkeClient::EnableClusterAuditOutcome TkeClient::EnableClusterAudit(const EnableC
 
 void TkeClient::EnableClusterAuditAsync(const EnableClusterAuditRequest& request, const EnableClusterAuditAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->EnableClusterAudit(request), context);
-    };
+    using Req = const EnableClusterAuditRequest&;
+    using Resp = EnableClusterAuditResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "EnableClusterAudit", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::EnableClusterAuditOutcomeCallable TkeClient::EnableClusterAuditCallable(const EnableClusterAuditRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<EnableClusterAuditOutcome()>>(
-        [this, request]()
-        {
-            return this->EnableClusterAudit(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<EnableClusterAuditOutcome>>();
+    EnableClusterAuditAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const EnableClusterAuditRequest&,
+        EnableClusterAuditOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::EnableClusterDeletionProtectionOutcome TkeClient::EnableClusterDeletionProtection(const EnableClusterDeletionProtectionRequest &request)
@@ -7458,25 +8662,32 @@ TkeClient::EnableClusterDeletionProtectionOutcome TkeClient::EnableClusterDeleti
 
 void TkeClient::EnableClusterDeletionProtectionAsync(const EnableClusterDeletionProtectionRequest& request, const EnableClusterDeletionProtectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->EnableClusterDeletionProtection(request), context);
-    };
+    using Req = const EnableClusterDeletionProtectionRequest&;
+    using Resp = EnableClusterDeletionProtectionResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "EnableClusterDeletionProtection", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::EnableClusterDeletionProtectionOutcomeCallable TkeClient::EnableClusterDeletionProtectionCallable(const EnableClusterDeletionProtectionRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<EnableClusterDeletionProtectionOutcome()>>(
-        [this, request]()
-        {
-            return this->EnableClusterDeletionProtection(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<EnableClusterDeletionProtectionOutcome>>();
+    EnableClusterDeletionProtectionAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const EnableClusterDeletionProtectionRequest&,
+        EnableClusterDeletionProtectionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::EnableEncryptionProtectionOutcome TkeClient::EnableEncryptionProtection(const EnableEncryptionProtectionRequest &request)
@@ -7501,25 +8712,32 @@ TkeClient::EnableEncryptionProtectionOutcome TkeClient::EnableEncryptionProtecti
 
 void TkeClient::EnableEncryptionProtectionAsync(const EnableEncryptionProtectionRequest& request, const EnableEncryptionProtectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->EnableEncryptionProtection(request), context);
-    };
+    using Req = const EnableEncryptionProtectionRequest&;
+    using Resp = EnableEncryptionProtectionResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "EnableEncryptionProtection", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::EnableEncryptionProtectionOutcomeCallable TkeClient::EnableEncryptionProtectionCallable(const EnableEncryptionProtectionRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<EnableEncryptionProtectionOutcome()>>(
-        [this, request]()
-        {
-            return this->EnableEncryptionProtection(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<EnableEncryptionProtectionOutcome>>();
+    EnableEncryptionProtectionAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const EnableEncryptionProtectionRequest&,
+        EnableEncryptionProtectionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::EnableEventPersistenceOutcome TkeClient::EnableEventPersistence(const EnableEventPersistenceRequest &request)
@@ -7544,25 +8762,32 @@ TkeClient::EnableEventPersistenceOutcome TkeClient::EnableEventPersistence(const
 
 void TkeClient::EnableEventPersistenceAsync(const EnableEventPersistenceRequest& request, const EnableEventPersistenceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->EnableEventPersistence(request), context);
-    };
+    using Req = const EnableEventPersistenceRequest&;
+    using Resp = EnableEventPersistenceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "EnableEventPersistence", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::EnableEventPersistenceOutcomeCallable TkeClient::EnableEventPersistenceCallable(const EnableEventPersistenceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<EnableEventPersistenceOutcome()>>(
-        [this, request]()
-        {
-            return this->EnableEventPersistence(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<EnableEventPersistenceOutcome>>();
+    EnableEventPersistenceAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const EnableEventPersistenceRequest&,
+        EnableEventPersistenceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::EnableVpcCniNetworkTypeOutcome TkeClient::EnableVpcCniNetworkType(const EnableVpcCniNetworkTypeRequest &request)
@@ -7587,25 +8812,32 @@ TkeClient::EnableVpcCniNetworkTypeOutcome TkeClient::EnableVpcCniNetworkType(con
 
 void TkeClient::EnableVpcCniNetworkTypeAsync(const EnableVpcCniNetworkTypeRequest& request, const EnableVpcCniNetworkTypeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->EnableVpcCniNetworkType(request), context);
-    };
+    using Req = const EnableVpcCniNetworkTypeRequest&;
+    using Resp = EnableVpcCniNetworkTypeResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "EnableVpcCniNetworkType", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::EnableVpcCniNetworkTypeOutcomeCallable TkeClient::EnableVpcCniNetworkTypeCallable(const EnableVpcCniNetworkTypeRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<EnableVpcCniNetworkTypeOutcome()>>(
-        [this, request]()
-        {
-            return this->EnableVpcCniNetworkType(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<EnableVpcCniNetworkTypeOutcome>>();
+    EnableVpcCniNetworkTypeAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const EnableVpcCniNetworkTypeRequest&,
+        EnableVpcCniNetworkTypeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::ForwardTKEEdgeApplicationRequestV3Outcome TkeClient::ForwardTKEEdgeApplicationRequestV3(const ForwardTKEEdgeApplicationRequestV3Request &request)
@@ -7630,25 +8862,32 @@ TkeClient::ForwardTKEEdgeApplicationRequestV3Outcome TkeClient::ForwardTKEEdgeAp
 
 void TkeClient::ForwardTKEEdgeApplicationRequestV3Async(const ForwardTKEEdgeApplicationRequestV3Request& request, const ForwardTKEEdgeApplicationRequestV3AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ForwardTKEEdgeApplicationRequestV3(request), context);
-    };
+    using Req = const ForwardTKEEdgeApplicationRequestV3Request&;
+    using Resp = ForwardTKEEdgeApplicationRequestV3Response;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ForwardTKEEdgeApplicationRequestV3", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::ForwardTKEEdgeApplicationRequestV3OutcomeCallable TkeClient::ForwardTKEEdgeApplicationRequestV3Callable(const ForwardTKEEdgeApplicationRequestV3Request &request)
 {
-    auto task = std::make_shared<std::packaged_task<ForwardTKEEdgeApplicationRequestV3Outcome()>>(
-        [this, request]()
-        {
-            return this->ForwardTKEEdgeApplicationRequestV3(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ForwardTKEEdgeApplicationRequestV3Outcome>>();
+    ForwardTKEEdgeApplicationRequestV3Async(
+    request,
+    [prom](
+        const TkeClient*,
+        const ForwardTKEEdgeApplicationRequestV3Request&,
+        ForwardTKEEdgeApplicationRequestV3Outcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::GetClusterLevelPriceOutcome TkeClient::GetClusterLevelPrice(const GetClusterLevelPriceRequest &request)
@@ -7673,25 +8912,32 @@ TkeClient::GetClusterLevelPriceOutcome TkeClient::GetClusterLevelPrice(const Get
 
 void TkeClient::GetClusterLevelPriceAsync(const GetClusterLevelPriceRequest& request, const GetClusterLevelPriceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->GetClusterLevelPrice(request), context);
-    };
+    using Req = const GetClusterLevelPriceRequest&;
+    using Resp = GetClusterLevelPriceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "GetClusterLevelPrice", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::GetClusterLevelPriceOutcomeCallable TkeClient::GetClusterLevelPriceCallable(const GetClusterLevelPriceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<GetClusterLevelPriceOutcome()>>(
-        [this, request]()
-        {
-            return this->GetClusterLevelPrice(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<GetClusterLevelPriceOutcome>>();
+    GetClusterLevelPriceAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const GetClusterLevelPriceRequest&,
+        GetClusterLevelPriceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::GetMostSuitableImageCacheOutcome TkeClient::GetMostSuitableImageCache(const GetMostSuitableImageCacheRequest &request)
@@ -7716,25 +8962,32 @@ TkeClient::GetMostSuitableImageCacheOutcome TkeClient::GetMostSuitableImageCache
 
 void TkeClient::GetMostSuitableImageCacheAsync(const GetMostSuitableImageCacheRequest& request, const GetMostSuitableImageCacheAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->GetMostSuitableImageCache(request), context);
-    };
+    using Req = const GetMostSuitableImageCacheRequest&;
+    using Resp = GetMostSuitableImageCacheResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "GetMostSuitableImageCache", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::GetMostSuitableImageCacheOutcomeCallable TkeClient::GetMostSuitableImageCacheCallable(const GetMostSuitableImageCacheRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<GetMostSuitableImageCacheOutcome()>>(
-        [this, request]()
-        {
-            return this->GetMostSuitableImageCache(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<GetMostSuitableImageCacheOutcome>>();
+    GetMostSuitableImageCacheAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const GetMostSuitableImageCacheRequest&,
+        GetMostSuitableImageCacheOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::GetTkeAppChartListOutcome TkeClient::GetTkeAppChartList(const GetTkeAppChartListRequest &request)
@@ -7759,25 +9012,32 @@ TkeClient::GetTkeAppChartListOutcome TkeClient::GetTkeAppChartList(const GetTkeA
 
 void TkeClient::GetTkeAppChartListAsync(const GetTkeAppChartListRequest& request, const GetTkeAppChartListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->GetTkeAppChartList(request), context);
-    };
+    using Req = const GetTkeAppChartListRequest&;
+    using Resp = GetTkeAppChartListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "GetTkeAppChartList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::GetTkeAppChartListOutcomeCallable TkeClient::GetTkeAppChartListCallable(const GetTkeAppChartListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<GetTkeAppChartListOutcome()>>(
-        [this, request]()
-        {
-            return this->GetTkeAppChartList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<GetTkeAppChartListOutcome>>();
+    GetTkeAppChartListAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const GetTkeAppChartListRequest&,
+        GetTkeAppChartListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::GetUpgradeInstanceProgressOutcome TkeClient::GetUpgradeInstanceProgress(const GetUpgradeInstanceProgressRequest &request)
@@ -7802,25 +9062,32 @@ TkeClient::GetUpgradeInstanceProgressOutcome TkeClient::GetUpgradeInstanceProgre
 
 void TkeClient::GetUpgradeInstanceProgressAsync(const GetUpgradeInstanceProgressRequest& request, const GetUpgradeInstanceProgressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->GetUpgradeInstanceProgress(request), context);
-    };
+    using Req = const GetUpgradeInstanceProgressRequest&;
+    using Resp = GetUpgradeInstanceProgressResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "GetUpgradeInstanceProgress", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::GetUpgradeInstanceProgressOutcomeCallable TkeClient::GetUpgradeInstanceProgressCallable(const GetUpgradeInstanceProgressRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<GetUpgradeInstanceProgressOutcome()>>(
-        [this, request]()
-        {
-            return this->GetUpgradeInstanceProgress(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<GetUpgradeInstanceProgressOutcome>>();
+    GetUpgradeInstanceProgressAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const GetUpgradeInstanceProgressRequest&,
+        GetUpgradeInstanceProgressOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::InstallAddonOutcome TkeClient::InstallAddon(const InstallAddonRequest &request)
@@ -7845,25 +9112,32 @@ TkeClient::InstallAddonOutcome TkeClient::InstallAddon(const InstallAddonRequest
 
 void TkeClient::InstallAddonAsync(const InstallAddonRequest& request, const InstallAddonAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->InstallAddon(request), context);
-    };
+    using Req = const InstallAddonRequest&;
+    using Resp = InstallAddonResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "InstallAddon", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::InstallAddonOutcomeCallable TkeClient::InstallAddonCallable(const InstallAddonRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<InstallAddonOutcome()>>(
-        [this, request]()
-        {
-            return this->InstallAddon(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<InstallAddonOutcome>>();
+    InstallAddonAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const InstallAddonRequest&,
+        InstallAddonOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::InstallEdgeLogAgentOutcome TkeClient::InstallEdgeLogAgent(const InstallEdgeLogAgentRequest &request)
@@ -7888,25 +9162,32 @@ TkeClient::InstallEdgeLogAgentOutcome TkeClient::InstallEdgeLogAgent(const Insta
 
 void TkeClient::InstallEdgeLogAgentAsync(const InstallEdgeLogAgentRequest& request, const InstallEdgeLogAgentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->InstallEdgeLogAgent(request), context);
-    };
+    using Req = const InstallEdgeLogAgentRequest&;
+    using Resp = InstallEdgeLogAgentResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "InstallEdgeLogAgent", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::InstallEdgeLogAgentOutcomeCallable TkeClient::InstallEdgeLogAgentCallable(const InstallEdgeLogAgentRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<InstallEdgeLogAgentOutcome()>>(
-        [this, request]()
-        {
-            return this->InstallEdgeLogAgent(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<InstallEdgeLogAgentOutcome>>();
+    InstallEdgeLogAgentAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const InstallEdgeLogAgentRequest&,
+        InstallEdgeLogAgentOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::InstallLogAgentOutcome TkeClient::InstallLogAgent(const InstallLogAgentRequest &request)
@@ -7931,25 +9212,32 @@ TkeClient::InstallLogAgentOutcome TkeClient::InstallLogAgent(const InstallLogAge
 
 void TkeClient::InstallLogAgentAsync(const InstallLogAgentRequest& request, const InstallLogAgentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->InstallLogAgent(request), context);
-    };
+    using Req = const InstallLogAgentRequest&;
+    using Resp = InstallLogAgentResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "InstallLogAgent", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::InstallLogAgentOutcomeCallable TkeClient::InstallLogAgentCallable(const InstallLogAgentRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<InstallLogAgentOutcome()>>(
-        [this, request]()
-        {
-            return this->InstallLogAgent(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<InstallLogAgentOutcome>>();
+    InstallLogAgentAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const InstallLogAgentRequest&,
+        InstallLogAgentOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::ListClusterInspectionResultsOutcome TkeClient::ListClusterInspectionResults(const ListClusterInspectionResultsRequest &request)
@@ -7974,25 +9262,32 @@ TkeClient::ListClusterInspectionResultsOutcome TkeClient::ListClusterInspectionR
 
 void TkeClient::ListClusterInspectionResultsAsync(const ListClusterInspectionResultsRequest& request, const ListClusterInspectionResultsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ListClusterInspectionResults(request), context);
-    };
+    using Req = const ListClusterInspectionResultsRequest&;
+    using Resp = ListClusterInspectionResultsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ListClusterInspectionResults", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::ListClusterInspectionResultsOutcomeCallable TkeClient::ListClusterInspectionResultsCallable(const ListClusterInspectionResultsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ListClusterInspectionResultsOutcome()>>(
-        [this, request]()
-        {
-            return this->ListClusterInspectionResults(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ListClusterInspectionResultsOutcome>>();
+    ListClusterInspectionResultsAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const ListClusterInspectionResultsRequest&,
+        ListClusterInspectionResultsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::ListClusterInspectionResultsItemsOutcome TkeClient::ListClusterInspectionResultsItems(const ListClusterInspectionResultsItemsRequest &request)
@@ -8017,25 +9312,32 @@ TkeClient::ListClusterInspectionResultsItemsOutcome TkeClient::ListClusterInspec
 
 void TkeClient::ListClusterInspectionResultsItemsAsync(const ListClusterInspectionResultsItemsRequest& request, const ListClusterInspectionResultsItemsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ListClusterInspectionResultsItems(request), context);
-    };
+    using Req = const ListClusterInspectionResultsItemsRequest&;
+    using Resp = ListClusterInspectionResultsItemsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ListClusterInspectionResultsItems", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::ListClusterInspectionResultsItemsOutcomeCallable TkeClient::ListClusterInspectionResultsItemsCallable(const ListClusterInspectionResultsItemsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ListClusterInspectionResultsItemsOutcome()>>(
-        [this, request]()
-        {
-            return this->ListClusterInspectionResultsItems(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ListClusterInspectionResultsItemsOutcome>>();
+    ListClusterInspectionResultsItemsAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const ListClusterInspectionResultsItemsRequest&,
+        ListClusterInspectionResultsItemsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::ModifyClusterAsGroupAttributeOutcome TkeClient::ModifyClusterAsGroupAttribute(const ModifyClusterAsGroupAttributeRequest &request)
@@ -8060,25 +9362,32 @@ TkeClient::ModifyClusterAsGroupAttributeOutcome TkeClient::ModifyClusterAsGroupA
 
 void TkeClient::ModifyClusterAsGroupAttributeAsync(const ModifyClusterAsGroupAttributeRequest& request, const ModifyClusterAsGroupAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyClusterAsGroupAttribute(request), context);
-    };
+    using Req = const ModifyClusterAsGroupAttributeRequest&;
+    using Resp = ModifyClusterAsGroupAttributeResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyClusterAsGroupAttribute", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::ModifyClusterAsGroupAttributeOutcomeCallable TkeClient::ModifyClusterAsGroupAttributeCallable(const ModifyClusterAsGroupAttributeRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyClusterAsGroupAttributeOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyClusterAsGroupAttribute(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyClusterAsGroupAttributeOutcome>>();
+    ModifyClusterAsGroupAttributeAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const ModifyClusterAsGroupAttributeRequest&,
+        ModifyClusterAsGroupAttributeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::ModifyClusterAsGroupOptionAttributeOutcome TkeClient::ModifyClusterAsGroupOptionAttribute(const ModifyClusterAsGroupOptionAttributeRequest &request)
@@ -8103,25 +9412,32 @@ TkeClient::ModifyClusterAsGroupOptionAttributeOutcome TkeClient::ModifyClusterAs
 
 void TkeClient::ModifyClusterAsGroupOptionAttributeAsync(const ModifyClusterAsGroupOptionAttributeRequest& request, const ModifyClusterAsGroupOptionAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyClusterAsGroupOptionAttribute(request), context);
-    };
+    using Req = const ModifyClusterAsGroupOptionAttributeRequest&;
+    using Resp = ModifyClusterAsGroupOptionAttributeResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyClusterAsGroupOptionAttribute", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::ModifyClusterAsGroupOptionAttributeOutcomeCallable TkeClient::ModifyClusterAsGroupOptionAttributeCallable(const ModifyClusterAsGroupOptionAttributeRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyClusterAsGroupOptionAttributeOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyClusterAsGroupOptionAttribute(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyClusterAsGroupOptionAttributeOutcome>>();
+    ModifyClusterAsGroupOptionAttributeAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const ModifyClusterAsGroupOptionAttributeRequest&,
+        ModifyClusterAsGroupOptionAttributeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::ModifyClusterAttributeOutcome TkeClient::ModifyClusterAttribute(const ModifyClusterAttributeRequest &request)
@@ -8146,25 +9462,32 @@ TkeClient::ModifyClusterAttributeOutcome TkeClient::ModifyClusterAttribute(const
 
 void TkeClient::ModifyClusterAttributeAsync(const ModifyClusterAttributeRequest& request, const ModifyClusterAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyClusterAttribute(request), context);
-    };
+    using Req = const ModifyClusterAttributeRequest&;
+    using Resp = ModifyClusterAttributeResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyClusterAttribute", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::ModifyClusterAttributeOutcomeCallable TkeClient::ModifyClusterAttributeCallable(const ModifyClusterAttributeRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyClusterAttributeOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyClusterAttribute(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyClusterAttributeOutcome>>();
+    ModifyClusterAttributeAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const ModifyClusterAttributeRequest&,
+        ModifyClusterAttributeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::ModifyClusterAuthenticationOptionsOutcome TkeClient::ModifyClusterAuthenticationOptions(const ModifyClusterAuthenticationOptionsRequest &request)
@@ -8189,25 +9512,32 @@ TkeClient::ModifyClusterAuthenticationOptionsOutcome TkeClient::ModifyClusterAut
 
 void TkeClient::ModifyClusterAuthenticationOptionsAsync(const ModifyClusterAuthenticationOptionsRequest& request, const ModifyClusterAuthenticationOptionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyClusterAuthenticationOptions(request), context);
-    };
+    using Req = const ModifyClusterAuthenticationOptionsRequest&;
+    using Resp = ModifyClusterAuthenticationOptionsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyClusterAuthenticationOptions", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::ModifyClusterAuthenticationOptionsOutcomeCallable TkeClient::ModifyClusterAuthenticationOptionsCallable(const ModifyClusterAuthenticationOptionsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyClusterAuthenticationOptionsOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyClusterAuthenticationOptions(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyClusterAuthenticationOptionsOutcome>>();
+    ModifyClusterAuthenticationOptionsAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const ModifyClusterAuthenticationOptionsRequest&,
+        ModifyClusterAuthenticationOptionsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::ModifyClusterEndpointSPOutcome TkeClient::ModifyClusterEndpointSP(const ModifyClusterEndpointSPRequest &request)
@@ -8232,25 +9562,32 @@ TkeClient::ModifyClusterEndpointSPOutcome TkeClient::ModifyClusterEndpointSP(con
 
 void TkeClient::ModifyClusterEndpointSPAsync(const ModifyClusterEndpointSPRequest& request, const ModifyClusterEndpointSPAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyClusterEndpointSP(request), context);
-    };
+    using Req = const ModifyClusterEndpointSPRequest&;
+    using Resp = ModifyClusterEndpointSPResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyClusterEndpointSP", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::ModifyClusterEndpointSPOutcomeCallable TkeClient::ModifyClusterEndpointSPCallable(const ModifyClusterEndpointSPRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyClusterEndpointSPOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyClusterEndpointSP(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyClusterEndpointSPOutcome>>();
+    ModifyClusterEndpointSPAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const ModifyClusterEndpointSPRequest&,
+        ModifyClusterEndpointSPOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::ModifyClusterExtraArgsOutcome TkeClient::ModifyClusterExtraArgs(const ModifyClusterExtraArgsRequest &request)
@@ -8275,25 +9612,32 @@ TkeClient::ModifyClusterExtraArgsOutcome TkeClient::ModifyClusterExtraArgs(const
 
 void TkeClient::ModifyClusterExtraArgsAsync(const ModifyClusterExtraArgsRequest& request, const ModifyClusterExtraArgsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyClusterExtraArgs(request), context);
-    };
+    using Req = const ModifyClusterExtraArgsRequest&;
+    using Resp = ModifyClusterExtraArgsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyClusterExtraArgs", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::ModifyClusterExtraArgsOutcomeCallable TkeClient::ModifyClusterExtraArgsCallable(const ModifyClusterExtraArgsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyClusterExtraArgsOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyClusterExtraArgs(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyClusterExtraArgsOutcome>>();
+    ModifyClusterExtraArgsAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const ModifyClusterExtraArgsRequest&,
+        ModifyClusterExtraArgsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::ModifyClusterExtraArgsTaskStateOutcome TkeClient::ModifyClusterExtraArgsTaskState(const ModifyClusterExtraArgsTaskStateRequest &request)
@@ -8318,25 +9662,32 @@ TkeClient::ModifyClusterExtraArgsTaskStateOutcome TkeClient::ModifyClusterExtraA
 
 void TkeClient::ModifyClusterExtraArgsTaskStateAsync(const ModifyClusterExtraArgsTaskStateRequest& request, const ModifyClusterExtraArgsTaskStateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyClusterExtraArgsTaskState(request), context);
-    };
+    using Req = const ModifyClusterExtraArgsTaskStateRequest&;
+    using Resp = ModifyClusterExtraArgsTaskStateResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyClusterExtraArgsTaskState", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::ModifyClusterExtraArgsTaskStateOutcomeCallable TkeClient::ModifyClusterExtraArgsTaskStateCallable(const ModifyClusterExtraArgsTaskStateRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyClusterExtraArgsTaskStateOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyClusterExtraArgsTaskState(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyClusterExtraArgsTaskStateOutcome>>();
+    ModifyClusterExtraArgsTaskStateAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const ModifyClusterExtraArgsTaskStateRequest&,
+        ModifyClusterExtraArgsTaskStateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::ModifyClusterImageOutcome TkeClient::ModifyClusterImage(const ModifyClusterImageRequest &request)
@@ -8361,25 +9712,32 @@ TkeClient::ModifyClusterImageOutcome TkeClient::ModifyClusterImage(const ModifyC
 
 void TkeClient::ModifyClusterImageAsync(const ModifyClusterImageRequest& request, const ModifyClusterImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyClusterImage(request), context);
-    };
+    using Req = const ModifyClusterImageRequest&;
+    using Resp = ModifyClusterImageResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyClusterImage", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::ModifyClusterImageOutcomeCallable TkeClient::ModifyClusterImageCallable(const ModifyClusterImageRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyClusterImageOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyClusterImage(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyClusterImageOutcome>>();
+    ModifyClusterImageAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const ModifyClusterImageRequest&,
+        ModifyClusterImageOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::ModifyClusterNodePoolOutcome TkeClient::ModifyClusterNodePool(const ModifyClusterNodePoolRequest &request)
@@ -8404,25 +9762,32 @@ TkeClient::ModifyClusterNodePoolOutcome TkeClient::ModifyClusterNodePool(const M
 
 void TkeClient::ModifyClusterNodePoolAsync(const ModifyClusterNodePoolRequest& request, const ModifyClusterNodePoolAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyClusterNodePool(request), context);
-    };
+    using Req = const ModifyClusterNodePoolRequest&;
+    using Resp = ModifyClusterNodePoolResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyClusterNodePool", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::ModifyClusterNodePoolOutcomeCallable TkeClient::ModifyClusterNodePoolCallable(const ModifyClusterNodePoolRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyClusterNodePoolOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyClusterNodePool(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyClusterNodePoolOutcome>>();
+    ModifyClusterNodePoolAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const ModifyClusterNodePoolRequest&,
+        ModifyClusterNodePoolOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::ModifyClusterRuntimeConfigOutcome TkeClient::ModifyClusterRuntimeConfig(const ModifyClusterRuntimeConfigRequest &request)
@@ -8447,25 +9812,32 @@ TkeClient::ModifyClusterRuntimeConfigOutcome TkeClient::ModifyClusterRuntimeConf
 
 void TkeClient::ModifyClusterRuntimeConfigAsync(const ModifyClusterRuntimeConfigRequest& request, const ModifyClusterRuntimeConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyClusterRuntimeConfig(request), context);
-    };
+    using Req = const ModifyClusterRuntimeConfigRequest&;
+    using Resp = ModifyClusterRuntimeConfigResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyClusterRuntimeConfig", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::ModifyClusterRuntimeConfigOutcomeCallable TkeClient::ModifyClusterRuntimeConfigCallable(const ModifyClusterRuntimeConfigRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyClusterRuntimeConfigOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyClusterRuntimeConfig(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyClusterRuntimeConfigOutcome>>();
+    ModifyClusterRuntimeConfigAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const ModifyClusterRuntimeConfigRequest&,
+        ModifyClusterRuntimeConfigOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::ModifyClusterTagsOutcome TkeClient::ModifyClusterTags(const ModifyClusterTagsRequest &request)
@@ -8490,25 +9862,32 @@ TkeClient::ModifyClusterTagsOutcome TkeClient::ModifyClusterTags(const ModifyClu
 
 void TkeClient::ModifyClusterTagsAsync(const ModifyClusterTagsRequest& request, const ModifyClusterTagsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyClusterTags(request), context);
-    };
+    using Req = const ModifyClusterTagsRequest&;
+    using Resp = ModifyClusterTagsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyClusterTags", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::ModifyClusterTagsOutcomeCallable TkeClient::ModifyClusterTagsCallable(const ModifyClusterTagsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyClusterTagsOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyClusterTags(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyClusterTagsOutcome>>();
+    ModifyClusterTagsAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const ModifyClusterTagsRequest&,
+        ModifyClusterTagsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::ModifyClusterVirtualNodePoolOutcome TkeClient::ModifyClusterVirtualNodePool(const ModifyClusterVirtualNodePoolRequest &request)
@@ -8533,25 +9912,32 @@ TkeClient::ModifyClusterVirtualNodePoolOutcome TkeClient::ModifyClusterVirtualNo
 
 void TkeClient::ModifyClusterVirtualNodePoolAsync(const ModifyClusterVirtualNodePoolRequest& request, const ModifyClusterVirtualNodePoolAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyClusterVirtualNodePool(request), context);
-    };
+    using Req = const ModifyClusterVirtualNodePoolRequest&;
+    using Resp = ModifyClusterVirtualNodePoolResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyClusterVirtualNodePool", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::ModifyClusterVirtualNodePoolOutcomeCallable TkeClient::ModifyClusterVirtualNodePoolCallable(const ModifyClusterVirtualNodePoolRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyClusterVirtualNodePoolOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyClusterVirtualNodePool(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyClusterVirtualNodePoolOutcome>>();
+    ModifyClusterVirtualNodePoolAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const ModifyClusterVirtualNodePoolRequest&,
+        ModifyClusterVirtualNodePoolOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::ModifyMasterComponentOutcome TkeClient::ModifyMasterComponent(const ModifyMasterComponentRequest &request)
@@ -8576,25 +9962,32 @@ TkeClient::ModifyMasterComponentOutcome TkeClient::ModifyMasterComponent(const M
 
 void TkeClient::ModifyMasterComponentAsync(const ModifyMasterComponentRequest& request, const ModifyMasterComponentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyMasterComponent(request), context);
-    };
+    using Req = const ModifyMasterComponentRequest&;
+    using Resp = ModifyMasterComponentResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyMasterComponent", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::ModifyMasterComponentOutcomeCallable TkeClient::ModifyMasterComponentCallable(const ModifyMasterComponentRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyMasterComponentOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyMasterComponent(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyMasterComponentOutcome>>();
+    ModifyMasterComponentAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const ModifyMasterComponentRequest&,
+        ModifyMasterComponentOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::ModifyNodePoolDesiredCapacityAboutAsgOutcome TkeClient::ModifyNodePoolDesiredCapacityAboutAsg(const ModifyNodePoolDesiredCapacityAboutAsgRequest &request)
@@ -8619,25 +10012,32 @@ TkeClient::ModifyNodePoolDesiredCapacityAboutAsgOutcome TkeClient::ModifyNodePoo
 
 void TkeClient::ModifyNodePoolDesiredCapacityAboutAsgAsync(const ModifyNodePoolDesiredCapacityAboutAsgRequest& request, const ModifyNodePoolDesiredCapacityAboutAsgAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyNodePoolDesiredCapacityAboutAsg(request), context);
-    };
+    using Req = const ModifyNodePoolDesiredCapacityAboutAsgRequest&;
+    using Resp = ModifyNodePoolDesiredCapacityAboutAsgResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyNodePoolDesiredCapacityAboutAsg", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::ModifyNodePoolDesiredCapacityAboutAsgOutcomeCallable TkeClient::ModifyNodePoolDesiredCapacityAboutAsgCallable(const ModifyNodePoolDesiredCapacityAboutAsgRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyNodePoolDesiredCapacityAboutAsgOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyNodePoolDesiredCapacityAboutAsg(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyNodePoolDesiredCapacityAboutAsgOutcome>>();
+    ModifyNodePoolDesiredCapacityAboutAsgAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const ModifyNodePoolDesiredCapacityAboutAsgRequest&,
+        ModifyNodePoolDesiredCapacityAboutAsgOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::ModifyNodePoolInstanceTypesOutcome TkeClient::ModifyNodePoolInstanceTypes(const ModifyNodePoolInstanceTypesRequest &request)
@@ -8662,25 +10062,32 @@ TkeClient::ModifyNodePoolInstanceTypesOutcome TkeClient::ModifyNodePoolInstanceT
 
 void TkeClient::ModifyNodePoolInstanceTypesAsync(const ModifyNodePoolInstanceTypesRequest& request, const ModifyNodePoolInstanceTypesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyNodePoolInstanceTypes(request), context);
-    };
+    using Req = const ModifyNodePoolInstanceTypesRequest&;
+    using Resp = ModifyNodePoolInstanceTypesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyNodePoolInstanceTypes", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::ModifyNodePoolInstanceTypesOutcomeCallable TkeClient::ModifyNodePoolInstanceTypesCallable(const ModifyNodePoolInstanceTypesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyNodePoolInstanceTypesOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyNodePoolInstanceTypes(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyNodePoolInstanceTypesOutcome>>();
+    ModifyNodePoolInstanceTypesAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const ModifyNodePoolInstanceTypesRequest&,
+        ModifyNodePoolInstanceTypesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::ModifyOpenPolicyListOutcome TkeClient::ModifyOpenPolicyList(const ModifyOpenPolicyListRequest &request)
@@ -8705,25 +10112,32 @@ TkeClient::ModifyOpenPolicyListOutcome TkeClient::ModifyOpenPolicyList(const Mod
 
 void TkeClient::ModifyOpenPolicyListAsync(const ModifyOpenPolicyListRequest& request, const ModifyOpenPolicyListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyOpenPolicyList(request), context);
-    };
+    using Req = const ModifyOpenPolicyListRequest&;
+    using Resp = ModifyOpenPolicyListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyOpenPolicyList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::ModifyOpenPolicyListOutcomeCallable TkeClient::ModifyOpenPolicyListCallable(const ModifyOpenPolicyListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyOpenPolicyListOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyOpenPolicyList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyOpenPolicyListOutcome>>();
+    ModifyOpenPolicyListAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const ModifyOpenPolicyListRequest&,
+        ModifyOpenPolicyListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::ModifyPrometheusAgentExternalLabelsOutcome TkeClient::ModifyPrometheusAgentExternalLabels(const ModifyPrometheusAgentExternalLabelsRequest &request)
@@ -8748,25 +10162,32 @@ TkeClient::ModifyPrometheusAgentExternalLabelsOutcome TkeClient::ModifyPrometheu
 
 void TkeClient::ModifyPrometheusAgentExternalLabelsAsync(const ModifyPrometheusAgentExternalLabelsRequest& request, const ModifyPrometheusAgentExternalLabelsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyPrometheusAgentExternalLabels(request), context);
-    };
+    using Req = const ModifyPrometheusAgentExternalLabelsRequest&;
+    using Resp = ModifyPrometheusAgentExternalLabelsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyPrometheusAgentExternalLabels", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::ModifyPrometheusAgentExternalLabelsOutcomeCallable TkeClient::ModifyPrometheusAgentExternalLabelsCallable(const ModifyPrometheusAgentExternalLabelsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyPrometheusAgentExternalLabelsOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyPrometheusAgentExternalLabels(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyPrometheusAgentExternalLabelsOutcome>>();
+    ModifyPrometheusAgentExternalLabelsAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const ModifyPrometheusAgentExternalLabelsRequest&,
+        ModifyPrometheusAgentExternalLabelsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::ModifyPrometheusAlertPolicyOutcome TkeClient::ModifyPrometheusAlertPolicy(const ModifyPrometheusAlertPolicyRequest &request)
@@ -8791,25 +10212,32 @@ TkeClient::ModifyPrometheusAlertPolicyOutcome TkeClient::ModifyPrometheusAlertPo
 
 void TkeClient::ModifyPrometheusAlertPolicyAsync(const ModifyPrometheusAlertPolicyRequest& request, const ModifyPrometheusAlertPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyPrometheusAlertPolicy(request), context);
-    };
+    using Req = const ModifyPrometheusAlertPolicyRequest&;
+    using Resp = ModifyPrometheusAlertPolicyResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyPrometheusAlertPolicy", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::ModifyPrometheusAlertPolicyOutcomeCallable TkeClient::ModifyPrometheusAlertPolicyCallable(const ModifyPrometheusAlertPolicyRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyPrometheusAlertPolicyOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyPrometheusAlertPolicy(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyPrometheusAlertPolicyOutcome>>();
+    ModifyPrometheusAlertPolicyAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const ModifyPrometheusAlertPolicyRequest&,
+        ModifyPrometheusAlertPolicyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::ModifyPrometheusAlertRuleOutcome TkeClient::ModifyPrometheusAlertRule(const ModifyPrometheusAlertRuleRequest &request)
@@ -8834,25 +10262,32 @@ TkeClient::ModifyPrometheusAlertRuleOutcome TkeClient::ModifyPrometheusAlertRule
 
 void TkeClient::ModifyPrometheusAlertRuleAsync(const ModifyPrometheusAlertRuleRequest& request, const ModifyPrometheusAlertRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyPrometheusAlertRule(request), context);
-    };
+    using Req = const ModifyPrometheusAlertRuleRequest&;
+    using Resp = ModifyPrometheusAlertRuleResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyPrometheusAlertRule", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::ModifyPrometheusAlertRuleOutcomeCallable TkeClient::ModifyPrometheusAlertRuleCallable(const ModifyPrometheusAlertRuleRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyPrometheusAlertRuleOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyPrometheusAlertRule(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyPrometheusAlertRuleOutcome>>();
+    ModifyPrometheusAlertRuleAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const ModifyPrometheusAlertRuleRequest&,
+        ModifyPrometheusAlertRuleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::ModifyPrometheusConfigOutcome TkeClient::ModifyPrometheusConfig(const ModifyPrometheusConfigRequest &request)
@@ -8877,25 +10312,32 @@ TkeClient::ModifyPrometheusConfigOutcome TkeClient::ModifyPrometheusConfig(const
 
 void TkeClient::ModifyPrometheusConfigAsync(const ModifyPrometheusConfigRequest& request, const ModifyPrometheusConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyPrometheusConfig(request), context);
-    };
+    using Req = const ModifyPrometheusConfigRequest&;
+    using Resp = ModifyPrometheusConfigResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyPrometheusConfig", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::ModifyPrometheusConfigOutcomeCallable TkeClient::ModifyPrometheusConfigCallable(const ModifyPrometheusConfigRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyPrometheusConfigOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyPrometheusConfig(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyPrometheusConfigOutcome>>();
+    ModifyPrometheusConfigAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const ModifyPrometheusConfigRequest&,
+        ModifyPrometheusConfigOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::ModifyPrometheusGlobalNotificationOutcome TkeClient::ModifyPrometheusGlobalNotification(const ModifyPrometheusGlobalNotificationRequest &request)
@@ -8920,25 +10362,32 @@ TkeClient::ModifyPrometheusGlobalNotificationOutcome TkeClient::ModifyPrometheus
 
 void TkeClient::ModifyPrometheusGlobalNotificationAsync(const ModifyPrometheusGlobalNotificationRequest& request, const ModifyPrometheusGlobalNotificationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyPrometheusGlobalNotification(request), context);
-    };
+    using Req = const ModifyPrometheusGlobalNotificationRequest&;
+    using Resp = ModifyPrometheusGlobalNotificationResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyPrometheusGlobalNotification", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::ModifyPrometheusGlobalNotificationOutcomeCallable TkeClient::ModifyPrometheusGlobalNotificationCallable(const ModifyPrometheusGlobalNotificationRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyPrometheusGlobalNotificationOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyPrometheusGlobalNotification(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyPrometheusGlobalNotificationOutcome>>();
+    ModifyPrometheusGlobalNotificationAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const ModifyPrometheusGlobalNotificationRequest&,
+        ModifyPrometheusGlobalNotificationOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::ModifyPrometheusRecordRuleYamlOutcome TkeClient::ModifyPrometheusRecordRuleYaml(const ModifyPrometheusRecordRuleYamlRequest &request)
@@ -8963,25 +10412,32 @@ TkeClient::ModifyPrometheusRecordRuleYamlOutcome TkeClient::ModifyPrometheusReco
 
 void TkeClient::ModifyPrometheusRecordRuleYamlAsync(const ModifyPrometheusRecordRuleYamlRequest& request, const ModifyPrometheusRecordRuleYamlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyPrometheusRecordRuleYaml(request), context);
-    };
+    using Req = const ModifyPrometheusRecordRuleYamlRequest&;
+    using Resp = ModifyPrometheusRecordRuleYamlResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyPrometheusRecordRuleYaml", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::ModifyPrometheusRecordRuleYamlOutcomeCallable TkeClient::ModifyPrometheusRecordRuleYamlCallable(const ModifyPrometheusRecordRuleYamlRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyPrometheusRecordRuleYamlOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyPrometheusRecordRuleYaml(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyPrometheusRecordRuleYamlOutcome>>();
+    ModifyPrometheusRecordRuleYamlAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const ModifyPrometheusRecordRuleYamlRequest&,
+        ModifyPrometheusRecordRuleYamlOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::ModifyPrometheusTempOutcome TkeClient::ModifyPrometheusTemp(const ModifyPrometheusTempRequest &request)
@@ -9006,25 +10462,32 @@ TkeClient::ModifyPrometheusTempOutcome TkeClient::ModifyPrometheusTemp(const Mod
 
 void TkeClient::ModifyPrometheusTempAsync(const ModifyPrometheusTempRequest& request, const ModifyPrometheusTempAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyPrometheusTemp(request), context);
-    };
+    using Req = const ModifyPrometheusTempRequest&;
+    using Resp = ModifyPrometheusTempResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyPrometheusTemp", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::ModifyPrometheusTempOutcomeCallable TkeClient::ModifyPrometheusTempCallable(const ModifyPrometheusTempRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyPrometheusTempOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyPrometheusTemp(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyPrometheusTempOutcome>>();
+    ModifyPrometheusTempAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const ModifyPrometheusTempRequest&,
+        ModifyPrometheusTempOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::ModifyPrometheusTemplateOutcome TkeClient::ModifyPrometheusTemplate(const ModifyPrometheusTemplateRequest &request)
@@ -9049,25 +10512,32 @@ TkeClient::ModifyPrometheusTemplateOutcome TkeClient::ModifyPrometheusTemplate(c
 
 void TkeClient::ModifyPrometheusTemplateAsync(const ModifyPrometheusTemplateRequest& request, const ModifyPrometheusTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyPrometheusTemplate(request), context);
-    };
+    using Req = const ModifyPrometheusTemplateRequest&;
+    using Resp = ModifyPrometheusTemplateResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyPrometheusTemplate", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::ModifyPrometheusTemplateOutcomeCallable TkeClient::ModifyPrometheusTemplateCallable(const ModifyPrometheusTemplateRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyPrometheusTemplateOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyPrometheusTemplate(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyPrometheusTemplateOutcome>>();
+    ModifyPrometheusTemplateAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const ModifyPrometheusTemplateRequest&,
+        ModifyPrometheusTemplateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::ModifyReservedInstanceScopeOutcome TkeClient::ModifyReservedInstanceScope(const ModifyReservedInstanceScopeRequest &request)
@@ -9092,25 +10562,32 @@ TkeClient::ModifyReservedInstanceScopeOutcome TkeClient::ModifyReservedInstanceS
 
 void TkeClient::ModifyReservedInstanceScopeAsync(const ModifyReservedInstanceScopeRequest& request, const ModifyReservedInstanceScopeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyReservedInstanceScope(request), context);
-    };
+    using Req = const ModifyReservedInstanceScopeRequest&;
+    using Resp = ModifyReservedInstanceScopeResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyReservedInstanceScope", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::ModifyReservedInstanceScopeOutcomeCallable TkeClient::ModifyReservedInstanceScopeCallable(const ModifyReservedInstanceScopeRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyReservedInstanceScopeOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyReservedInstanceScope(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyReservedInstanceScopeOutcome>>();
+    ModifyReservedInstanceScopeAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const ModifyReservedInstanceScopeRequest&,
+        ModifyReservedInstanceScopeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::RemoveNodeFromNodePoolOutcome TkeClient::RemoveNodeFromNodePool(const RemoveNodeFromNodePoolRequest &request)
@@ -9135,25 +10612,32 @@ TkeClient::RemoveNodeFromNodePoolOutcome TkeClient::RemoveNodeFromNodePool(const
 
 void TkeClient::RemoveNodeFromNodePoolAsync(const RemoveNodeFromNodePoolRequest& request, const RemoveNodeFromNodePoolAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->RemoveNodeFromNodePool(request), context);
-    };
+    using Req = const RemoveNodeFromNodePoolRequest&;
+    using Resp = RemoveNodeFromNodePoolResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "RemoveNodeFromNodePool", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::RemoveNodeFromNodePoolOutcomeCallable TkeClient::RemoveNodeFromNodePoolCallable(const RemoveNodeFromNodePoolRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<RemoveNodeFromNodePoolOutcome()>>(
-        [this, request]()
-        {
-            return this->RemoveNodeFromNodePool(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<RemoveNodeFromNodePoolOutcome>>();
+    RemoveNodeFromNodePoolAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const RemoveNodeFromNodePoolRequest&,
+        RemoveNodeFromNodePoolOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::RenewReservedInstancesOutcome TkeClient::RenewReservedInstances(const RenewReservedInstancesRequest &request)
@@ -9178,25 +10662,32 @@ TkeClient::RenewReservedInstancesOutcome TkeClient::RenewReservedInstances(const
 
 void TkeClient::RenewReservedInstancesAsync(const RenewReservedInstancesRequest& request, const RenewReservedInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->RenewReservedInstances(request), context);
-    };
+    using Req = const RenewReservedInstancesRequest&;
+    using Resp = RenewReservedInstancesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "RenewReservedInstances", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::RenewReservedInstancesOutcomeCallable TkeClient::RenewReservedInstancesCallable(const RenewReservedInstancesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<RenewReservedInstancesOutcome()>>(
-        [this, request]()
-        {
-            return this->RenewReservedInstances(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<RenewReservedInstancesOutcome>>();
+    RenewReservedInstancesAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const RenewReservedInstancesRequest&,
+        RenewReservedInstancesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::RestartEKSContainerInstancesOutcome TkeClient::RestartEKSContainerInstances(const RestartEKSContainerInstancesRequest &request)
@@ -9221,25 +10712,32 @@ TkeClient::RestartEKSContainerInstancesOutcome TkeClient::RestartEKSContainerIns
 
 void TkeClient::RestartEKSContainerInstancesAsync(const RestartEKSContainerInstancesRequest& request, const RestartEKSContainerInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->RestartEKSContainerInstances(request), context);
-    };
+    using Req = const RestartEKSContainerInstancesRequest&;
+    using Resp = RestartEKSContainerInstancesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "RestartEKSContainerInstances", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::RestartEKSContainerInstancesOutcomeCallable TkeClient::RestartEKSContainerInstancesCallable(const RestartEKSContainerInstancesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<RestartEKSContainerInstancesOutcome()>>(
-        [this, request]()
-        {
-            return this->RestartEKSContainerInstances(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<RestartEKSContainerInstancesOutcome>>();
+    RestartEKSContainerInstancesAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const RestartEKSContainerInstancesRequest&,
+        RestartEKSContainerInstancesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::RollbackClusterReleaseOutcome TkeClient::RollbackClusterRelease(const RollbackClusterReleaseRequest &request)
@@ -9264,25 +10762,32 @@ TkeClient::RollbackClusterReleaseOutcome TkeClient::RollbackClusterRelease(const
 
 void TkeClient::RollbackClusterReleaseAsync(const RollbackClusterReleaseRequest& request, const RollbackClusterReleaseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->RollbackClusterRelease(request), context);
-    };
+    using Req = const RollbackClusterReleaseRequest&;
+    using Resp = RollbackClusterReleaseResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "RollbackClusterRelease", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::RollbackClusterReleaseOutcomeCallable TkeClient::RollbackClusterReleaseCallable(const RollbackClusterReleaseRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<RollbackClusterReleaseOutcome()>>(
-        [this, request]()
-        {
-            return this->RollbackClusterRelease(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<RollbackClusterReleaseOutcome>>();
+    RollbackClusterReleaseAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const RollbackClusterReleaseRequest&,
+        RollbackClusterReleaseOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::RunPrometheusInstanceOutcome TkeClient::RunPrometheusInstance(const RunPrometheusInstanceRequest &request)
@@ -9307,25 +10812,32 @@ TkeClient::RunPrometheusInstanceOutcome TkeClient::RunPrometheusInstance(const R
 
 void TkeClient::RunPrometheusInstanceAsync(const RunPrometheusInstanceRequest& request, const RunPrometheusInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->RunPrometheusInstance(request), context);
-    };
+    using Req = const RunPrometheusInstanceRequest&;
+    using Resp = RunPrometheusInstanceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "RunPrometheusInstance", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::RunPrometheusInstanceOutcomeCallable TkeClient::RunPrometheusInstanceCallable(const RunPrometheusInstanceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<RunPrometheusInstanceOutcome()>>(
-        [this, request]()
-        {
-            return this->RunPrometheusInstance(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<RunPrometheusInstanceOutcome>>();
+    RunPrometheusInstanceAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const RunPrometheusInstanceRequest&,
+        RunPrometheusInstanceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::ScaleInClusterMasterOutcome TkeClient::ScaleInClusterMaster(const ScaleInClusterMasterRequest &request)
@@ -9350,25 +10862,32 @@ TkeClient::ScaleInClusterMasterOutcome TkeClient::ScaleInClusterMaster(const Sca
 
 void TkeClient::ScaleInClusterMasterAsync(const ScaleInClusterMasterRequest& request, const ScaleInClusterMasterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ScaleInClusterMaster(request), context);
-    };
+    using Req = const ScaleInClusterMasterRequest&;
+    using Resp = ScaleInClusterMasterResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ScaleInClusterMaster", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::ScaleInClusterMasterOutcomeCallable TkeClient::ScaleInClusterMasterCallable(const ScaleInClusterMasterRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ScaleInClusterMasterOutcome()>>(
-        [this, request]()
-        {
-            return this->ScaleInClusterMaster(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ScaleInClusterMasterOutcome>>();
+    ScaleInClusterMasterAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const ScaleInClusterMasterRequest&,
+        ScaleInClusterMasterOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::ScaleOutClusterMasterOutcome TkeClient::ScaleOutClusterMaster(const ScaleOutClusterMasterRequest &request)
@@ -9393,25 +10912,32 @@ TkeClient::ScaleOutClusterMasterOutcome TkeClient::ScaleOutClusterMaster(const S
 
 void TkeClient::ScaleOutClusterMasterAsync(const ScaleOutClusterMasterRequest& request, const ScaleOutClusterMasterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ScaleOutClusterMaster(request), context);
-    };
+    using Req = const ScaleOutClusterMasterRequest&;
+    using Resp = ScaleOutClusterMasterResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ScaleOutClusterMaster", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::ScaleOutClusterMasterOutcomeCallable TkeClient::ScaleOutClusterMasterCallable(const ScaleOutClusterMasterRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ScaleOutClusterMasterOutcome()>>(
-        [this, request]()
-        {
-            return this->ScaleOutClusterMaster(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ScaleOutClusterMasterOutcome>>();
+    ScaleOutClusterMasterAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const ScaleOutClusterMasterRequest&,
+        ScaleOutClusterMasterOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::SetNodePoolNodeProtectionOutcome TkeClient::SetNodePoolNodeProtection(const SetNodePoolNodeProtectionRequest &request)
@@ -9436,25 +10962,32 @@ TkeClient::SetNodePoolNodeProtectionOutcome TkeClient::SetNodePoolNodeProtection
 
 void TkeClient::SetNodePoolNodeProtectionAsync(const SetNodePoolNodeProtectionRequest& request, const SetNodePoolNodeProtectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->SetNodePoolNodeProtection(request), context);
-    };
+    using Req = const SetNodePoolNodeProtectionRequest&;
+    using Resp = SetNodePoolNodeProtectionResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "SetNodePoolNodeProtection", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::SetNodePoolNodeProtectionOutcomeCallable TkeClient::SetNodePoolNodeProtectionCallable(const SetNodePoolNodeProtectionRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<SetNodePoolNodeProtectionOutcome()>>(
-        [this, request]()
-        {
-            return this->SetNodePoolNodeProtection(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<SetNodePoolNodeProtectionOutcome>>();
+    SetNodePoolNodeProtectionAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const SetNodePoolNodeProtectionRequest&,
+        SetNodePoolNodeProtectionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::SyncPrometheusTempOutcome TkeClient::SyncPrometheusTemp(const SyncPrometheusTempRequest &request)
@@ -9479,25 +11012,32 @@ TkeClient::SyncPrometheusTempOutcome TkeClient::SyncPrometheusTemp(const SyncPro
 
 void TkeClient::SyncPrometheusTempAsync(const SyncPrometheusTempRequest& request, const SyncPrometheusTempAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->SyncPrometheusTemp(request), context);
-    };
+    using Req = const SyncPrometheusTempRequest&;
+    using Resp = SyncPrometheusTempResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "SyncPrometheusTemp", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::SyncPrometheusTempOutcomeCallable TkeClient::SyncPrometheusTempCallable(const SyncPrometheusTempRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<SyncPrometheusTempOutcome()>>(
-        [this, request]()
-        {
-            return this->SyncPrometheusTemp(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<SyncPrometheusTempOutcome>>();
+    SyncPrometheusTempAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const SyncPrometheusTempRequest&,
+        SyncPrometheusTempOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::SyncPrometheusTemplateOutcome TkeClient::SyncPrometheusTemplate(const SyncPrometheusTemplateRequest &request)
@@ -9522,25 +11062,32 @@ TkeClient::SyncPrometheusTemplateOutcome TkeClient::SyncPrometheusTemplate(const
 
 void TkeClient::SyncPrometheusTemplateAsync(const SyncPrometheusTemplateRequest& request, const SyncPrometheusTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->SyncPrometheusTemplate(request), context);
-    };
+    using Req = const SyncPrometheusTemplateRequest&;
+    using Resp = SyncPrometheusTemplateResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "SyncPrometheusTemplate", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::SyncPrometheusTemplateOutcomeCallable TkeClient::SyncPrometheusTemplateCallable(const SyncPrometheusTemplateRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<SyncPrometheusTemplateOutcome()>>(
-        [this, request]()
-        {
-            return this->SyncPrometheusTemplate(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<SyncPrometheusTemplateOutcome>>();
+    SyncPrometheusTemplateAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const SyncPrometheusTemplateRequest&,
+        SyncPrometheusTemplateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::UninstallClusterReleaseOutcome TkeClient::UninstallClusterRelease(const UninstallClusterReleaseRequest &request)
@@ -9565,25 +11112,32 @@ TkeClient::UninstallClusterReleaseOutcome TkeClient::UninstallClusterRelease(con
 
 void TkeClient::UninstallClusterReleaseAsync(const UninstallClusterReleaseRequest& request, const UninstallClusterReleaseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UninstallClusterRelease(request), context);
-    };
+    using Req = const UninstallClusterReleaseRequest&;
+    using Resp = UninstallClusterReleaseResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UninstallClusterRelease", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::UninstallClusterReleaseOutcomeCallable TkeClient::UninstallClusterReleaseCallable(const UninstallClusterReleaseRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UninstallClusterReleaseOutcome()>>(
-        [this, request]()
-        {
-            return this->UninstallClusterRelease(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UninstallClusterReleaseOutcome>>();
+    UninstallClusterReleaseAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const UninstallClusterReleaseRequest&,
+        UninstallClusterReleaseOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::UninstallEdgeLogAgentOutcome TkeClient::UninstallEdgeLogAgent(const UninstallEdgeLogAgentRequest &request)
@@ -9608,25 +11162,32 @@ TkeClient::UninstallEdgeLogAgentOutcome TkeClient::UninstallEdgeLogAgent(const U
 
 void TkeClient::UninstallEdgeLogAgentAsync(const UninstallEdgeLogAgentRequest& request, const UninstallEdgeLogAgentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UninstallEdgeLogAgent(request), context);
-    };
+    using Req = const UninstallEdgeLogAgentRequest&;
+    using Resp = UninstallEdgeLogAgentResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UninstallEdgeLogAgent", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::UninstallEdgeLogAgentOutcomeCallable TkeClient::UninstallEdgeLogAgentCallable(const UninstallEdgeLogAgentRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UninstallEdgeLogAgentOutcome()>>(
-        [this, request]()
-        {
-            return this->UninstallEdgeLogAgent(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UninstallEdgeLogAgentOutcome>>();
+    UninstallEdgeLogAgentAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const UninstallEdgeLogAgentRequest&,
+        UninstallEdgeLogAgentOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::UninstallLogAgentOutcome TkeClient::UninstallLogAgent(const UninstallLogAgentRequest &request)
@@ -9651,25 +11212,32 @@ TkeClient::UninstallLogAgentOutcome TkeClient::UninstallLogAgent(const Uninstall
 
 void TkeClient::UninstallLogAgentAsync(const UninstallLogAgentRequest& request, const UninstallLogAgentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UninstallLogAgent(request), context);
-    };
+    using Req = const UninstallLogAgentRequest&;
+    using Resp = UninstallLogAgentResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UninstallLogAgent", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::UninstallLogAgentOutcomeCallable TkeClient::UninstallLogAgentCallable(const UninstallLogAgentRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UninstallLogAgentOutcome()>>(
-        [this, request]()
-        {
-            return this->UninstallLogAgent(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UninstallLogAgentOutcome>>();
+    UninstallLogAgentAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const UninstallLogAgentRequest&,
+        UninstallLogAgentOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::UpdateAddonOutcome TkeClient::UpdateAddon(const UpdateAddonRequest &request)
@@ -9694,25 +11262,32 @@ TkeClient::UpdateAddonOutcome TkeClient::UpdateAddon(const UpdateAddonRequest &r
 
 void TkeClient::UpdateAddonAsync(const UpdateAddonRequest& request, const UpdateAddonAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UpdateAddon(request), context);
-    };
+    using Req = const UpdateAddonRequest&;
+    using Resp = UpdateAddonResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UpdateAddon", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::UpdateAddonOutcomeCallable TkeClient::UpdateAddonCallable(const UpdateAddonRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UpdateAddonOutcome()>>(
-        [this, request]()
-        {
-            return this->UpdateAddon(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UpdateAddonOutcome>>();
+    UpdateAddonAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const UpdateAddonRequest&,
+        UpdateAddonOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::UpdateClusterKubeconfigOutcome TkeClient::UpdateClusterKubeconfig(const UpdateClusterKubeconfigRequest &request)
@@ -9737,25 +11312,32 @@ TkeClient::UpdateClusterKubeconfigOutcome TkeClient::UpdateClusterKubeconfig(con
 
 void TkeClient::UpdateClusterKubeconfigAsync(const UpdateClusterKubeconfigRequest& request, const UpdateClusterKubeconfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UpdateClusterKubeconfig(request), context);
-    };
+    using Req = const UpdateClusterKubeconfigRequest&;
+    using Resp = UpdateClusterKubeconfigResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UpdateClusterKubeconfig", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::UpdateClusterKubeconfigOutcomeCallable TkeClient::UpdateClusterKubeconfigCallable(const UpdateClusterKubeconfigRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UpdateClusterKubeconfigOutcome()>>(
-        [this, request]()
-        {
-            return this->UpdateClusterKubeconfig(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UpdateClusterKubeconfigOutcome>>();
+    UpdateClusterKubeconfigAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const UpdateClusterKubeconfigRequest&,
+        UpdateClusterKubeconfigOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::UpdateClusterVersionOutcome TkeClient::UpdateClusterVersion(const UpdateClusterVersionRequest &request)
@@ -9780,25 +11362,32 @@ TkeClient::UpdateClusterVersionOutcome TkeClient::UpdateClusterVersion(const Upd
 
 void TkeClient::UpdateClusterVersionAsync(const UpdateClusterVersionRequest& request, const UpdateClusterVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UpdateClusterVersion(request), context);
-    };
+    using Req = const UpdateClusterVersionRequest&;
+    using Resp = UpdateClusterVersionResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UpdateClusterVersion", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::UpdateClusterVersionOutcomeCallable TkeClient::UpdateClusterVersionCallable(const UpdateClusterVersionRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UpdateClusterVersionOutcome()>>(
-        [this, request]()
-        {
-            return this->UpdateClusterVersion(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UpdateClusterVersionOutcome>>();
+    UpdateClusterVersionAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const UpdateClusterVersionRequest&,
+        UpdateClusterVersionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::UpdateEKSClusterOutcome TkeClient::UpdateEKSCluster(const UpdateEKSClusterRequest &request)
@@ -9823,25 +11412,32 @@ TkeClient::UpdateEKSClusterOutcome TkeClient::UpdateEKSCluster(const UpdateEKSCl
 
 void TkeClient::UpdateEKSClusterAsync(const UpdateEKSClusterRequest& request, const UpdateEKSClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UpdateEKSCluster(request), context);
-    };
+    using Req = const UpdateEKSClusterRequest&;
+    using Resp = UpdateEKSClusterResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UpdateEKSCluster", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::UpdateEKSClusterOutcomeCallable TkeClient::UpdateEKSClusterCallable(const UpdateEKSClusterRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UpdateEKSClusterOutcome()>>(
-        [this, request]()
-        {
-            return this->UpdateEKSCluster(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UpdateEKSClusterOutcome>>();
+    UpdateEKSClusterAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const UpdateEKSClusterRequest&,
+        UpdateEKSClusterOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::UpdateEKSContainerInstanceOutcome TkeClient::UpdateEKSContainerInstance(const UpdateEKSContainerInstanceRequest &request)
@@ -9866,25 +11462,32 @@ TkeClient::UpdateEKSContainerInstanceOutcome TkeClient::UpdateEKSContainerInstan
 
 void TkeClient::UpdateEKSContainerInstanceAsync(const UpdateEKSContainerInstanceRequest& request, const UpdateEKSContainerInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UpdateEKSContainerInstance(request), context);
-    };
+    using Req = const UpdateEKSContainerInstanceRequest&;
+    using Resp = UpdateEKSContainerInstanceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UpdateEKSContainerInstance", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::UpdateEKSContainerInstanceOutcomeCallable TkeClient::UpdateEKSContainerInstanceCallable(const UpdateEKSContainerInstanceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UpdateEKSContainerInstanceOutcome()>>(
-        [this, request]()
-        {
-            return this->UpdateEKSContainerInstance(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UpdateEKSContainerInstanceOutcome>>();
+    UpdateEKSContainerInstanceAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const UpdateEKSContainerInstanceRequest&,
+        UpdateEKSContainerInstanceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::UpdateEdgeClusterVersionOutcome TkeClient::UpdateEdgeClusterVersion(const UpdateEdgeClusterVersionRequest &request)
@@ -9909,25 +11512,32 @@ TkeClient::UpdateEdgeClusterVersionOutcome TkeClient::UpdateEdgeClusterVersion(c
 
 void TkeClient::UpdateEdgeClusterVersionAsync(const UpdateEdgeClusterVersionRequest& request, const UpdateEdgeClusterVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UpdateEdgeClusterVersion(request), context);
-    };
+    using Req = const UpdateEdgeClusterVersionRequest&;
+    using Resp = UpdateEdgeClusterVersionResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UpdateEdgeClusterVersion", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::UpdateEdgeClusterVersionOutcomeCallable TkeClient::UpdateEdgeClusterVersionCallable(const UpdateEdgeClusterVersionRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UpdateEdgeClusterVersionOutcome()>>(
-        [this, request]()
-        {
-            return this->UpdateEdgeClusterVersion(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UpdateEdgeClusterVersionOutcome>>();
+    UpdateEdgeClusterVersionAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const UpdateEdgeClusterVersionRequest&,
+        UpdateEdgeClusterVersionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::UpdateImageCacheOutcome TkeClient::UpdateImageCache(const UpdateImageCacheRequest &request)
@@ -9952,25 +11562,32 @@ TkeClient::UpdateImageCacheOutcome TkeClient::UpdateImageCache(const UpdateImage
 
 void TkeClient::UpdateImageCacheAsync(const UpdateImageCacheRequest& request, const UpdateImageCacheAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UpdateImageCache(request), context);
-    };
+    using Req = const UpdateImageCacheRequest&;
+    using Resp = UpdateImageCacheResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UpdateImageCache", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::UpdateImageCacheOutcomeCallable TkeClient::UpdateImageCacheCallable(const UpdateImageCacheRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UpdateImageCacheOutcome()>>(
-        [this, request]()
-        {
-            return this->UpdateImageCache(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UpdateImageCacheOutcome>>();
+    UpdateImageCacheAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const UpdateImageCacheRequest&,
+        UpdateImageCacheOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::UpdateTKEEdgeClusterOutcome TkeClient::UpdateTKEEdgeCluster(const UpdateTKEEdgeClusterRequest &request)
@@ -9995,25 +11612,32 @@ TkeClient::UpdateTKEEdgeClusterOutcome TkeClient::UpdateTKEEdgeCluster(const Upd
 
 void TkeClient::UpdateTKEEdgeClusterAsync(const UpdateTKEEdgeClusterRequest& request, const UpdateTKEEdgeClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UpdateTKEEdgeCluster(request), context);
-    };
+    using Req = const UpdateTKEEdgeClusterRequest&;
+    using Resp = UpdateTKEEdgeClusterResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UpdateTKEEdgeCluster", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::UpdateTKEEdgeClusterOutcomeCallable TkeClient::UpdateTKEEdgeClusterCallable(const UpdateTKEEdgeClusterRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UpdateTKEEdgeClusterOutcome()>>(
-        [this, request]()
-        {
-            return this->UpdateTKEEdgeCluster(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UpdateTKEEdgeClusterOutcome>>();
+    UpdateTKEEdgeClusterAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const UpdateTKEEdgeClusterRequest&,
+        UpdateTKEEdgeClusterOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::UpgradeClusterInstancesOutcome TkeClient::UpgradeClusterInstances(const UpgradeClusterInstancesRequest &request)
@@ -10038,25 +11662,32 @@ TkeClient::UpgradeClusterInstancesOutcome TkeClient::UpgradeClusterInstances(con
 
 void TkeClient::UpgradeClusterInstancesAsync(const UpgradeClusterInstancesRequest& request, const UpgradeClusterInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UpgradeClusterInstances(request), context);
-    };
+    using Req = const UpgradeClusterInstancesRequest&;
+    using Resp = UpgradeClusterInstancesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UpgradeClusterInstances", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::UpgradeClusterInstancesOutcomeCallable TkeClient::UpgradeClusterInstancesCallable(const UpgradeClusterInstancesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UpgradeClusterInstancesOutcome()>>(
-        [this, request]()
-        {
-            return this->UpgradeClusterInstances(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UpgradeClusterInstancesOutcome>>();
+    UpgradeClusterInstancesAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const UpgradeClusterInstancesRequest&,
+        UpgradeClusterInstancesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TkeClient::UpgradeClusterReleaseOutcome TkeClient::UpgradeClusterRelease(const UpgradeClusterReleaseRequest &request)
@@ -10081,24 +11712,31 @@ TkeClient::UpgradeClusterReleaseOutcome TkeClient::UpgradeClusterRelease(const U
 
 void TkeClient::UpgradeClusterReleaseAsync(const UpgradeClusterReleaseRequest& request, const UpgradeClusterReleaseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UpgradeClusterRelease(request), context);
-    };
+    using Req = const UpgradeClusterReleaseRequest&;
+    using Resp = UpgradeClusterReleaseResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UpgradeClusterRelease", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TkeClient::UpgradeClusterReleaseOutcomeCallable TkeClient::UpgradeClusterReleaseCallable(const UpgradeClusterReleaseRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UpgradeClusterReleaseOutcome()>>(
-        [this, request]()
-        {
-            return this->UpgradeClusterRelease(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UpgradeClusterReleaseOutcome>>();
+    UpgradeClusterReleaseAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const UpgradeClusterReleaseRequest&,
+        UpgradeClusterReleaseOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 

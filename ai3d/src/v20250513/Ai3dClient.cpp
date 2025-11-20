@@ -62,25 +62,32 @@ Ai3dClient::QueryHunyuanTo3DProJobOutcome Ai3dClient::QueryHunyuanTo3DProJob(con
 
 void Ai3dClient::QueryHunyuanTo3DProJobAsync(const QueryHunyuanTo3DProJobRequest& request, const QueryHunyuanTo3DProJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->QueryHunyuanTo3DProJob(request), context);
-    };
+    using Req = const QueryHunyuanTo3DProJobRequest&;
+    using Resp = QueryHunyuanTo3DProJobResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "QueryHunyuanTo3DProJob", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 Ai3dClient::QueryHunyuanTo3DProJobOutcomeCallable Ai3dClient::QueryHunyuanTo3DProJobCallable(const QueryHunyuanTo3DProJobRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<QueryHunyuanTo3DProJobOutcome()>>(
-        [this, request]()
-        {
-            return this->QueryHunyuanTo3DProJob(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<QueryHunyuanTo3DProJobOutcome>>();
+    QueryHunyuanTo3DProJobAsync(
+    request,
+    [prom](
+        const Ai3dClient*,
+        const QueryHunyuanTo3DProJobRequest&,
+        QueryHunyuanTo3DProJobOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 Ai3dClient::QueryHunyuanTo3DRapidJobOutcome Ai3dClient::QueryHunyuanTo3DRapidJob(const QueryHunyuanTo3DRapidJobRequest &request)
@@ -105,25 +112,32 @@ Ai3dClient::QueryHunyuanTo3DRapidJobOutcome Ai3dClient::QueryHunyuanTo3DRapidJob
 
 void Ai3dClient::QueryHunyuanTo3DRapidJobAsync(const QueryHunyuanTo3DRapidJobRequest& request, const QueryHunyuanTo3DRapidJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->QueryHunyuanTo3DRapidJob(request), context);
-    };
+    using Req = const QueryHunyuanTo3DRapidJobRequest&;
+    using Resp = QueryHunyuanTo3DRapidJobResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "QueryHunyuanTo3DRapidJob", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 Ai3dClient::QueryHunyuanTo3DRapidJobOutcomeCallable Ai3dClient::QueryHunyuanTo3DRapidJobCallable(const QueryHunyuanTo3DRapidJobRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<QueryHunyuanTo3DRapidJobOutcome()>>(
-        [this, request]()
-        {
-            return this->QueryHunyuanTo3DRapidJob(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<QueryHunyuanTo3DRapidJobOutcome>>();
+    QueryHunyuanTo3DRapidJobAsync(
+    request,
+    [prom](
+        const Ai3dClient*,
+        const QueryHunyuanTo3DRapidJobRequest&,
+        QueryHunyuanTo3DRapidJobOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 Ai3dClient::SubmitHunyuanTo3DProJobOutcome Ai3dClient::SubmitHunyuanTo3DProJob(const SubmitHunyuanTo3DProJobRequest &request)
@@ -148,25 +162,32 @@ Ai3dClient::SubmitHunyuanTo3DProJobOutcome Ai3dClient::SubmitHunyuanTo3DProJob(c
 
 void Ai3dClient::SubmitHunyuanTo3DProJobAsync(const SubmitHunyuanTo3DProJobRequest& request, const SubmitHunyuanTo3DProJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->SubmitHunyuanTo3DProJob(request), context);
-    };
+    using Req = const SubmitHunyuanTo3DProJobRequest&;
+    using Resp = SubmitHunyuanTo3DProJobResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "SubmitHunyuanTo3DProJob", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 Ai3dClient::SubmitHunyuanTo3DProJobOutcomeCallable Ai3dClient::SubmitHunyuanTo3DProJobCallable(const SubmitHunyuanTo3DProJobRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<SubmitHunyuanTo3DProJobOutcome()>>(
-        [this, request]()
-        {
-            return this->SubmitHunyuanTo3DProJob(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<SubmitHunyuanTo3DProJobOutcome>>();
+    SubmitHunyuanTo3DProJobAsync(
+    request,
+    [prom](
+        const Ai3dClient*,
+        const SubmitHunyuanTo3DProJobRequest&,
+        SubmitHunyuanTo3DProJobOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 Ai3dClient::SubmitHunyuanTo3DRapidJobOutcome Ai3dClient::SubmitHunyuanTo3DRapidJob(const SubmitHunyuanTo3DRapidJobRequest &request)
@@ -191,24 +212,31 @@ Ai3dClient::SubmitHunyuanTo3DRapidJobOutcome Ai3dClient::SubmitHunyuanTo3DRapidJ
 
 void Ai3dClient::SubmitHunyuanTo3DRapidJobAsync(const SubmitHunyuanTo3DRapidJobRequest& request, const SubmitHunyuanTo3DRapidJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->SubmitHunyuanTo3DRapidJob(request), context);
-    };
+    using Req = const SubmitHunyuanTo3DRapidJobRequest&;
+    using Resp = SubmitHunyuanTo3DRapidJobResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "SubmitHunyuanTo3DRapidJob", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 Ai3dClient::SubmitHunyuanTo3DRapidJobOutcomeCallable Ai3dClient::SubmitHunyuanTo3DRapidJobCallable(const SubmitHunyuanTo3DRapidJobRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<SubmitHunyuanTo3DRapidJobOutcome()>>(
-        [this, request]()
-        {
-            return this->SubmitHunyuanTo3DRapidJob(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<SubmitHunyuanTo3DRapidJobOutcome>>();
+    SubmitHunyuanTo3DRapidJobAsync(
+    request,
+    [prom](
+        const Ai3dClient*,
+        const SubmitHunyuanTo3DRapidJobRequest&,
+        SubmitHunyuanTo3DRapidJobOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 

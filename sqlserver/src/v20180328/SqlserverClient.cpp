@@ -62,25 +62,32 @@ SqlserverClient::AssociateSecurityGroupsOutcome SqlserverClient::AssociateSecuri
 
 void SqlserverClient::AssociateSecurityGroupsAsync(const AssociateSecurityGroupsRequest& request, const AssociateSecurityGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->AssociateSecurityGroups(request), context);
-    };
+    using Req = const AssociateSecurityGroupsRequest&;
+    using Resp = AssociateSecurityGroupsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "AssociateSecurityGroups", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SqlserverClient::AssociateSecurityGroupsOutcomeCallable SqlserverClient::AssociateSecurityGroupsCallable(const AssociateSecurityGroupsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<AssociateSecurityGroupsOutcome()>>(
-        [this, request]()
-        {
-            return this->AssociateSecurityGroups(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<AssociateSecurityGroupsOutcome>>();
+    AssociateSecurityGroupsAsync(
+    request,
+    [prom](
+        const SqlserverClient*,
+        const AssociateSecurityGroupsRequest&,
+        AssociateSecurityGroupsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SqlserverClient::BalanceReadOnlyGroupOutcome SqlserverClient::BalanceReadOnlyGroup(const BalanceReadOnlyGroupRequest &request)
@@ -105,25 +112,32 @@ SqlserverClient::BalanceReadOnlyGroupOutcome SqlserverClient::BalanceReadOnlyGro
 
 void SqlserverClient::BalanceReadOnlyGroupAsync(const BalanceReadOnlyGroupRequest& request, const BalanceReadOnlyGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->BalanceReadOnlyGroup(request), context);
-    };
+    using Req = const BalanceReadOnlyGroupRequest&;
+    using Resp = BalanceReadOnlyGroupResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "BalanceReadOnlyGroup", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SqlserverClient::BalanceReadOnlyGroupOutcomeCallable SqlserverClient::BalanceReadOnlyGroupCallable(const BalanceReadOnlyGroupRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<BalanceReadOnlyGroupOutcome()>>(
-        [this, request]()
-        {
-            return this->BalanceReadOnlyGroup(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<BalanceReadOnlyGroupOutcome>>();
+    BalanceReadOnlyGroupAsync(
+    request,
+    [prom](
+        const SqlserverClient*,
+        const BalanceReadOnlyGroupRequest&,
+        BalanceReadOnlyGroupOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SqlserverClient::CloneDBOutcome SqlserverClient::CloneDB(const CloneDBRequest &request)
@@ -148,25 +162,32 @@ SqlserverClient::CloneDBOutcome SqlserverClient::CloneDB(const CloneDBRequest &r
 
 void SqlserverClient::CloneDBAsync(const CloneDBRequest& request, const CloneDBAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CloneDB(request), context);
-    };
+    using Req = const CloneDBRequest&;
+    using Resp = CloneDBResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CloneDB", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SqlserverClient::CloneDBOutcomeCallable SqlserverClient::CloneDBCallable(const CloneDBRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CloneDBOutcome()>>(
-        [this, request]()
-        {
-            return this->CloneDB(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CloneDBOutcome>>();
+    CloneDBAsync(
+    request,
+    [prom](
+        const SqlserverClient*,
+        const CloneDBRequest&,
+        CloneDBOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SqlserverClient::CloseInterCommunicationOutcome SqlserverClient::CloseInterCommunication(const CloseInterCommunicationRequest &request)
@@ -191,25 +212,32 @@ SqlserverClient::CloseInterCommunicationOutcome SqlserverClient::CloseInterCommu
 
 void SqlserverClient::CloseInterCommunicationAsync(const CloseInterCommunicationRequest& request, const CloseInterCommunicationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CloseInterCommunication(request), context);
-    };
+    using Req = const CloseInterCommunicationRequest&;
+    using Resp = CloseInterCommunicationResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CloseInterCommunication", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SqlserverClient::CloseInterCommunicationOutcomeCallable SqlserverClient::CloseInterCommunicationCallable(const CloseInterCommunicationRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CloseInterCommunicationOutcome()>>(
-        [this, request]()
-        {
-            return this->CloseInterCommunication(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CloseInterCommunicationOutcome>>();
+    CloseInterCommunicationAsync(
+    request,
+    [prom](
+        const SqlserverClient*,
+        const CloseInterCommunicationRequest&,
+        CloseInterCommunicationOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SqlserverClient::CompleteExpansionOutcome SqlserverClient::CompleteExpansion(const CompleteExpansionRequest &request)
@@ -234,25 +262,32 @@ SqlserverClient::CompleteExpansionOutcome SqlserverClient::CompleteExpansion(con
 
 void SqlserverClient::CompleteExpansionAsync(const CompleteExpansionRequest& request, const CompleteExpansionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CompleteExpansion(request), context);
-    };
+    using Req = const CompleteExpansionRequest&;
+    using Resp = CompleteExpansionResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CompleteExpansion", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SqlserverClient::CompleteExpansionOutcomeCallable SqlserverClient::CompleteExpansionCallable(const CompleteExpansionRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CompleteExpansionOutcome()>>(
-        [this, request]()
-        {
-            return this->CompleteExpansion(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CompleteExpansionOutcome>>();
+    CompleteExpansionAsync(
+    request,
+    [prom](
+        const SqlserverClient*,
+        const CompleteExpansionRequest&,
+        CompleteExpansionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SqlserverClient::CompleteMigrationOutcome SqlserverClient::CompleteMigration(const CompleteMigrationRequest &request)
@@ -277,25 +312,32 @@ SqlserverClient::CompleteMigrationOutcome SqlserverClient::CompleteMigration(con
 
 void SqlserverClient::CompleteMigrationAsync(const CompleteMigrationRequest& request, const CompleteMigrationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CompleteMigration(request), context);
-    };
+    using Req = const CompleteMigrationRequest&;
+    using Resp = CompleteMigrationResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CompleteMigration", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SqlserverClient::CompleteMigrationOutcomeCallable SqlserverClient::CompleteMigrationCallable(const CompleteMigrationRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CompleteMigrationOutcome()>>(
-        [this, request]()
-        {
-            return this->CompleteMigration(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CompleteMigrationOutcome>>();
+    CompleteMigrationAsync(
+    request,
+    [prom](
+        const SqlserverClient*,
+        const CompleteMigrationRequest&,
+        CompleteMigrationOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SqlserverClient::CreateAccountOutcome SqlserverClient::CreateAccount(const CreateAccountRequest &request)
@@ -320,25 +362,32 @@ SqlserverClient::CreateAccountOutcome SqlserverClient::CreateAccount(const Creat
 
 void SqlserverClient::CreateAccountAsync(const CreateAccountRequest& request, const CreateAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateAccount(request), context);
-    };
+    using Req = const CreateAccountRequest&;
+    using Resp = CreateAccountResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateAccount", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SqlserverClient::CreateAccountOutcomeCallable SqlserverClient::CreateAccountCallable(const CreateAccountRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateAccountOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateAccount(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateAccountOutcome>>();
+    CreateAccountAsync(
+    request,
+    [prom](
+        const SqlserverClient*,
+        const CreateAccountRequest&,
+        CreateAccountOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SqlserverClient::CreateBackupOutcome SqlserverClient::CreateBackup(const CreateBackupRequest &request)
@@ -363,25 +412,32 @@ SqlserverClient::CreateBackupOutcome SqlserverClient::CreateBackup(const CreateB
 
 void SqlserverClient::CreateBackupAsync(const CreateBackupRequest& request, const CreateBackupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateBackup(request), context);
-    };
+    using Req = const CreateBackupRequest&;
+    using Resp = CreateBackupResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateBackup", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SqlserverClient::CreateBackupOutcomeCallable SqlserverClient::CreateBackupCallable(const CreateBackupRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateBackupOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateBackup(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateBackupOutcome>>();
+    CreateBackupAsync(
+    request,
+    [prom](
+        const SqlserverClient*,
+        const CreateBackupRequest&,
+        CreateBackupOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SqlserverClient::CreateBackupMigrationOutcome SqlserverClient::CreateBackupMigration(const CreateBackupMigrationRequest &request)
@@ -406,25 +462,32 @@ SqlserverClient::CreateBackupMigrationOutcome SqlserverClient::CreateBackupMigra
 
 void SqlserverClient::CreateBackupMigrationAsync(const CreateBackupMigrationRequest& request, const CreateBackupMigrationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateBackupMigration(request), context);
-    };
+    using Req = const CreateBackupMigrationRequest&;
+    using Resp = CreateBackupMigrationResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateBackupMigration", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SqlserverClient::CreateBackupMigrationOutcomeCallable SqlserverClient::CreateBackupMigrationCallable(const CreateBackupMigrationRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateBackupMigrationOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateBackupMigration(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateBackupMigrationOutcome>>();
+    CreateBackupMigrationAsync(
+    request,
+    [prom](
+        const SqlserverClient*,
+        const CreateBackupMigrationRequest&,
+        CreateBackupMigrationOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SqlserverClient::CreateBasicDBInstancesOutcome SqlserverClient::CreateBasicDBInstances(const CreateBasicDBInstancesRequest &request)
@@ -449,25 +512,32 @@ SqlserverClient::CreateBasicDBInstancesOutcome SqlserverClient::CreateBasicDBIns
 
 void SqlserverClient::CreateBasicDBInstancesAsync(const CreateBasicDBInstancesRequest& request, const CreateBasicDBInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateBasicDBInstances(request), context);
-    };
+    using Req = const CreateBasicDBInstancesRequest&;
+    using Resp = CreateBasicDBInstancesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateBasicDBInstances", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SqlserverClient::CreateBasicDBInstancesOutcomeCallable SqlserverClient::CreateBasicDBInstancesCallable(const CreateBasicDBInstancesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateBasicDBInstancesOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateBasicDBInstances(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateBasicDBInstancesOutcome>>();
+    CreateBasicDBInstancesAsync(
+    request,
+    [prom](
+        const SqlserverClient*,
+        const CreateBasicDBInstancesRequest&,
+        CreateBasicDBInstancesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SqlserverClient::CreateBusinessDBInstancesOutcome SqlserverClient::CreateBusinessDBInstances(const CreateBusinessDBInstancesRequest &request)
@@ -492,25 +562,32 @@ SqlserverClient::CreateBusinessDBInstancesOutcome SqlserverClient::CreateBusines
 
 void SqlserverClient::CreateBusinessDBInstancesAsync(const CreateBusinessDBInstancesRequest& request, const CreateBusinessDBInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateBusinessDBInstances(request), context);
-    };
+    using Req = const CreateBusinessDBInstancesRequest&;
+    using Resp = CreateBusinessDBInstancesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateBusinessDBInstances", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SqlserverClient::CreateBusinessDBInstancesOutcomeCallable SqlserverClient::CreateBusinessDBInstancesCallable(const CreateBusinessDBInstancesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateBusinessDBInstancesOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateBusinessDBInstances(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateBusinessDBInstancesOutcome>>();
+    CreateBusinessDBInstancesAsync(
+    request,
+    [prom](
+        const SqlserverClient*,
+        const CreateBusinessDBInstancesRequest&,
+        CreateBusinessDBInstancesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SqlserverClient::CreateBusinessIntelligenceFileOutcome SqlserverClient::CreateBusinessIntelligenceFile(const CreateBusinessIntelligenceFileRequest &request)
@@ -535,25 +612,32 @@ SqlserverClient::CreateBusinessIntelligenceFileOutcome SqlserverClient::CreateBu
 
 void SqlserverClient::CreateBusinessIntelligenceFileAsync(const CreateBusinessIntelligenceFileRequest& request, const CreateBusinessIntelligenceFileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateBusinessIntelligenceFile(request), context);
-    };
+    using Req = const CreateBusinessIntelligenceFileRequest&;
+    using Resp = CreateBusinessIntelligenceFileResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateBusinessIntelligenceFile", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SqlserverClient::CreateBusinessIntelligenceFileOutcomeCallable SqlserverClient::CreateBusinessIntelligenceFileCallable(const CreateBusinessIntelligenceFileRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateBusinessIntelligenceFileOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateBusinessIntelligenceFile(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateBusinessIntelligenceFileOutcome>>();
+    CreateBusinessIntelligenceFileAsync(
+    request,
+    [prom](
+        const SqlserverClient*,
+        const CreateBusinessIntelligenceFileRequest&,
+        CreateBusinessIntelligenceFileOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SqlserverClient::CreateCloudDBInstancesOutcome SqlserverClient::CreateCloudDBInstances(const CreateCloudDBInstancesRequest &request)
@@ -578,25 +662,32 @@ SqlserverClient::CreateCloudDBInstancesOutcome SqlserverClient::CreateCloudDBIns
 
 void SqlserverClient::CreateCloudDBInstancesAsync(const CreateCloudDBInstancesRequest& request, const CreateCloudDBInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateCloudDBInstances(request), context);
-    };
+    using Req = const CreateCloudDBInstancesRequest&;
+    using Resp = CreateCloudDBInstancesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateCloudDBInstances", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SqlserverClient::CreateCloudDBInstancesOutcomeCallable SqlserverClient::CreateCloudDBInstancesCallable(const CreateCloudDBInstancesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateCloudDBInstancesOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateCloudDBInstances(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateCloudDBInstancesOutcome>>();
+    CreateCloudDBInstancesAsync(
+    request,
+    [prom](
+        const SqlserverClient*,
+        const CreateCloudDBInstancesRequest&,
+        CreateCloudDBInstancesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SqlserverClient::CreateCloudReadOnlyDBInstancesOutcome SqlserverClient::CreateCloudReadOnlyDBInstances(const CreateCloudReadOnlyDBInstancesRequest &request)
@@ -621,25 +712,32 @@ SqlserverClient::CreateCloudReadOnlyDBInstancesOutcome SqlserverClient::CreateCl
 
 void SqlserverClient::CreateCloudReadOnlyDBInstancesAsync(const CreateCloudReadOnlyDBInstancesRequest& request, const CreateCloudReadOnlyDBInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateCloudReadOnlyDBInstances(request), context);
-    };
+    using Req = const CreateCloudReadOnlyDBInstancesRequest&;
+    using Resp = CreateCloudReadOnlyDBInstancesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateCloudReadOnlyDBInstances", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SqlserverClient::CreateCloudReadOnlyDBInstancesOutcomeCallable SqlserverClient::CreateCloudReadOnlyDBInstancesCallable(const CreateCloudReadOnlyDBInstancesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateCloudReadOnlyDBInstancesOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateCloudReadOnlyDBInstances(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateCloudReadOnlyDBInstancesOutcome>>();
+    CreateCloudReadOnlyDBInstancesAsync(
+    request,
+    [prom](
+        const SqlserverClient*,
+        const CreateCloudReadOnlyDBInstancesRequest&,
+        CreateCloudReadOnlyDBInstancesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SqlserverClient::CreateDBOutcome SqlserverClient::CreateDB(const CreateDBRequest &request)
@@ -664,25 +762,32 @@ SqlserverClient::CreateDBOutcome SqlserverClient::CreateDB(const CreateDBRequest
 
 void SqlserverClient::CreateDBAsync(const CreateDBRequest& request, const CreateDBAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateDB(request), context);
-    };
+    using Req = const CreateDBRequest&;
+    using Resp = CreateDBResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateDB", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SqlserverClient::CreateDBOutcomeCallable SqlserverClient::CreateDBCallable(const CreateDBRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateDBOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateDB(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateDBOutcome>>();
+    CreateDBAsync(
+    request,
+    [prom](
+        const SqlserverClient*,
+        const CreateDBRequest&,
+        CreateDBOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SqlserverClient::CreateDBInstancesOutcome SqlserverClient::CreateDBInstances(const CreateDBInstancesRequest &request)
@@ -707,25 +812,32 @@ SqlserverClient::CreateDBInstancesOutcome SqlserverClient::CreateDBInstances(con
 
 void SqlserverClient::CreateDBInstancesAsync(const CreateDBInstancesRequest& request, const CreateDBInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateDBInstances(request), context);
-    };
+    using Req = const CreateDBInstancesRequest&;
+    using Resp = CreateDBInstancesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateDBInstances", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SqlserverClient::CreateDBInstancesOutcomeCallable SqlserverClient::CreateDBInstancesCallable(const CreateDBInstancesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateDBInstancesOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateDBInstances(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateDBInstancesOutcome>>();
+    CreateDBInstancesAsync(
+    request,
+    [prom](
+        const SqlserverClient*,
+        const CreateDBInstancesRequest&,
+        CreateDBInstancesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SqlserverClient::CreateIncrementalMigrationOutcome SqlserverClient::CreateIncrementalMigration(const CreateIncrementalMigrationRequest &request)
@@ -750,25 +862,32 @@ SqlserverClient::CreateIncrementalMigrationOutcome SqlserverClient::CreateIncrem
 
 void SqlserverClient::CreateIncrementalMigrationAsync(const CreateIncrementalMigrationRequest& request, const CreateIncrementalMigrationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateIncrementalMigration(request), context);
-    };
+    using Req = const CreateIncrementalMigrationRequest&;
+    using Resp = CreateIncrementalMigrationResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateIncrementalMigration", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SqlserverClient::CreateIncrementalMigrationOutcomeCallable SqlserverClient::CreateIncrementalMigrationCallable(const CreateIncrementalMigrationRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateIncrementalMigrationOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateIncrementalMigration(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateIncrementalMigrationOutcome>>();
+    CreateIncrementalMigrationAsync(
+    request,
+    [prom](
+        const SqlserverClient*,
+        const CreateIncrementalMigrationRequest&,
+        CreateIncrementalMigrationOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SqlserverClient::CreateMigrationOutcome SqlserverClient::CreateMigration(const CreateMigrationRequest &request)
@@ -793,25 +912,32 @@ SqlserverClient::CreateMigrationOutcome SqlserverClient::CreateMigration(const C
 
 void SqlserverClient::CreateMigrationAsync(const CreateMigrationRequest& request, const CreateMigrationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateMigration(request), context);
-    };
+    using Req = const CreateMigrationRequest&;
+    using Resp = CreateMigrationResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateMigration", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SqlserverClient::CreateMigrationOutcomeCallable SqlserverClient::CreateMigrationCallable(const CreateMigrationRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateMigrationOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateMigration(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateMigrationOutcome>>();
+    CreateMigrationAsync(
+    request,
+    [prom](
+        const SqlserverClient*,
+        const CreateMigrationRequest&,
+        CreateMigrationOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SqlserverClient::CreatePublishSubscribeOutcome SqlserverClient::CreatePublishSubscribe(const CreatePublishSubscribeRequest &request)
@@ -836,25 +962,32 @@ SqlserverClient::CreatePublishSubscribeOutcome SqlserverClient::CreatePublishSub
 
 void SqlserverClient::CreatePublishSubscribeAsync(const CreatePublishSubscribeRequest& request, const CreatePublishSubscribeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreatePublishSubscribe(request), context);
-    };
+    using Req = const CreatePublishSubscribeRequest&;
+    using Resp = CreatePublishSubscribeResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreatePublishSubscribe", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SqlserverClient::CreatePublishSubscribeOutcomeCallable SqlserverClient::CreatePublishSubscribeCallable(const CreatePublishSubscribeRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreatePublishSubscribeOutcome()>>(
-        [this, request]()
-        {
-            return this->CreatePublishSubscribe(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreatePublishSubscribeOutcome>>();
+    CreatePublishSubscribeAsync(
+    request,
+    [prom](
+        const SqlserverClient*,
+        const CreatePublishSubscribeRequest&,
+        CreatePublishSubscribeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SqlserverClient::CreateReadOnlyDBInstancesOutcome SqlserverClient::CreateReadOnlyDBInstances(const CreateReadOnlyDBInstancesRequest &request)
@@ -879,25 +1012,32 @@ SqlserverClient::CreateReadOnlyDBInstancesOutcome SqlserverClient::CreateReadOnl
 
 void SqlserverClient::CreateReadOnlyDBInstancesAsync(const CreateReadOnlyDBInstancesRequest& request, const CreateReadOnlyDBInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateReadOnlyDBInstances(request), context);
-    };
+    using Req = const CreateReadOnlyDBInstancesRequest&;
+    using Resp = CreateReadOnlyDBInstancesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateReadOnlyDBInstances", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SqlserverClient::CreateReadOnlyDBInstancesOutcomeCallable SqlserverClient::CreateReadOnlyDBInstancesCallable(const CreateReadOnlyDBInstancesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateReadOnlyDBInstancesOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateReadOnlyDBInstances(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateReadOnlyDBInstancesOutcome>>();
+    CreateReadOnlyDBInstancesAsync(
+    request,
+    [prom](
+        const SqlserverClient*,
+        const CreateReadOnlyDBInstancesRequest&,
+        CreateReadOnlyDBInstancesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SqlserverClient::CutXEventsOutcome SqlserverClient::CutXEvents(const CutXEventsRequest &request)
@@ -922,25 +1062,32 @@ SqlserverClient::CutXEventsOutcome SqlserverClient::CutXEvents(const CutXEventsR
 
 void SqlserverClient::CutXEventsAsync(const CutXEventsRequest& request, const CutXEventsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CutXEvents(request), context);
-    };
+    using Req = const CutXEventsRequest&;
+    using Resp = CutXEventsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CutXEvents", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SqlserverClient::CutXEventsOutcomeCallable SqlserverClient::CutXEventsCallable(const CutXEventsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CutXEventsOutcome()>>(
-        [this, request]()
-        {
-            return this->CutXEvents(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CutXEventsOutcome>>();
+    CutXEventsAsync(
+    request,
+    [prom](
+        const SqlserverClient*,
+        const CutXEventsRequest&,
+        CutXEventsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SqlserverClient::DeleteAccountOutcome SqlserverClient::DeleteAccount(const DeleteAccountRequest &request)
@@ -965,25 +1112,32 @@ SqlserverClient::DeleteAccountOutcome SqlserverClient::DeleteAccount(const Delet
 
 void SqlserverClient::DeleteAccountAsync(const DeleteAccountRequest& request, const DeleteAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteAccount(request), context);
-    };
+    using Req = const DeleteAccountRequest&;
+    using Resp = DeleteAccountResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteAccount", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SqlserverClient::DeleteAccountOutcomeCallable SqlserverClient::DeleteAccountCallable(const DeleteAccountRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteAccountOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteAccount(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteAccountOutcome>>();
+    DeleteAccountAsync(
+    request,
+    [prom](
+        const SqlserverClient*,
+        const DeleteAccountRequest&,
+        DeleteAccountOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SqlserverClient::DeleteBackupMigrationOutcome SqlserverClient::DeleteBackupMigration(const DeleteBackupMigrationRequest &request)
@@ -1008,25 +1162,32 @@ SqlserverClient::DeleteBackupMigrationOutcome SqlserverClient::DeleteBackupMigra
 
 void SqlserverClient::DeleteBackupMigrationAsync(const DeleteBackupMigrationRequest& request, const DeleteBackupMigrationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteBackupMigration(request), context);
-    };
+    using Req = const DeleteBackupMigrationRequest&;
+    using Resp = DeleteBackupMigrationResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteBackupMigration", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SqlserverClient::DeleteBackupMigrationOutcomeCallable SqlserverClient::DeleteBackupMigrationCallable(const DeleteBackupMigrationRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteBackupMigrationOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteBackupMigration(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteBackupMigrationOutcome>>();
+    DeleteBackupMigrationAsync(
+    request,
+    [prom](
+        const SqlserverClient*,
+        const DeleteBackupMigrationRequest&,
+        DeleteBackupMigrationOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SqlserverClient::DeleteBusinessIntelligenceFileOutcome SqlserverClient::DeleteBusinessIntelligenceFile(const DeleteBusinessIntelligenceFileRequest &request)
@@ -1051,25 +1212,32 @@ SqlserverClient::DeleteBusinessIntelligenceFileOutcome SqlserverClient::DeleteBu
 
 void SqlserverClient::DeleteBusinessIntelligenceFileAsync(const DeleteBusinessIntelligenceFileRequest& request, const DeleteBusinessIntelligenceFileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteBusinessIntelligenceFile(request), context);
-    };
+    using Req = const DeleteBusinessIntelligenceFileRequest&;
+    using Resp = DeleteBusinessIntelligenceFileResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteBusinessIntelligenceFile", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SqlserverClient::DeleteBusinessIntelligenceFileOutcomeCallable SqlserverClient::DeleteBusinessIntelligenceFileCallable(const DeleteBusinessIntelligenceFileRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteBusinessIntelligenceFileOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteBusinessIntelligenceFile(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteBusinessIntelligenceFileOutcome>>();
+    DeleteBusinessIntelligenceFileAsync(
+    request,
+    [prom](
+        const SqlserverClient*,
+        const DeleteBusinessIntelligenceFileRequest&,
+        DeleteBusinessIntelligenceFileOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SqlserverClient::DeleteDBOutcome SqlserverClient::DeleteDB(const DeleteDBRequest &request)
@@ -1094,25 +1262,32 @@ SqlserverClient::DeleteDBOutcome SqlserverClient::DeleteDB(const DeleteDBRequest
 
 void SqlserverClient::DeleteDBAsync(const DeleteDBRequest& request, const DeleteDBAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteDB(request), context);
-    };
+    using Req = const DeleteDBRequest&;
+    using Resp = DeleteDBResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteDB", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SqlserverClient::DeleteDBOutcomeCallable SqlserverClient::DeleteDBCallable(const DeleteDBRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteDBOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteDB(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteDBOutcome>>();
+    DeleteDBAsync(
+    request,
+    [prom](
+        const SqlserverClient*,
+        const DeleteDBRequest&,
+        DeleteDBOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SqlserverClient::DeleteDBInstanceOutcome SqlserverClient::DeleteDBInstance(const DeleteDBInstanceRequest &request)
@@ -1137,25 +1312,32 @@ SqlserverClient::DeleteDBInstanceOutcome SqlserverClient::DeleteDBInstance(const
 
 void SqlserverClient::DeleteDBInstanceAsync(const DeleteDBInstanceRequest& request, const DeleteDBInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteDBInstance(request), context);
-    };
+    using Req = const DeleteDBInstanceRequest&;
+    using Resp = DeleteDBInstanceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteDBInstance", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SqlserverClient::DeleteDBInstanceOutcomeCallable SqlserverClient::DeleteDBInstanceCallable(const DeleteDBInstanceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteDBInstanceOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteDBInstance(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteDBInstanceOutcome>>();
+    DeleteDBInstanceAsync(
+    request,
+    [prom](
+        const SqlserverClient*,
+        const DeleteDBInstanceRequest&,
+        DeleteDBInstanceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SqlserverClient::DeleteIncrementalMigrationOutcome SqlserverClient::DeleteIncrementalMigration(const DeleteIncrementalMigrationRequest &request)
@@ -1180,25 +1362,32 @@ SqlserverClient::DeleteIncrementalMigrationOutcome SqlserverClient::DeleteIncrem
 
 void SqlserverClient::DeleteIncrementalMigrationAsync(const DeleteIncrementalMigrationRequest& request, const DeleteIncrementalMigrationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteIncrementalMigration(request), context);
-    };
+    using Req = const DeleteIncrementalMigrationRequest&;
+    using Resp = DeleteIncrementalMigrationResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteIncrementalMigration", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SqlserverClient::DeleteIncrementalMigrationOutcomeCallable SqlserverClient::DeleteIncrementalMigrationCallable(const DeleteIncrementalMigrationRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteIncrementalMigrationOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteIncrementalMigration(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteIncrementalMigrationOutcome>>();
+    DeleteIncrementalMigrationAsync(
+    request,
+    [prom](
+        const SqlserverClient*,
+        const DeleteIncrementalMigrationRequest&,
+        DeleteIncrementalMigrationOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SqlserverClient::DeleteMigrationOutcome SqlserverClient::DeleteMigration(const DeleteMigrationRequest &request)
@@ -1223,25 +1412,32 @@ SqlserverClient::DeleteMigrationOutcome SqlserverClient::DeleteMigration(const D
 
 void SqlserverClient::DeleteMigrationAsync(const DeleteMigrationRequest& request, const DeleteMigrationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteMigration(request), context);
-    };
+    using Req = const DeleteMigrationRequest&;
+    using Resp = DeleteMigrationResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteMigration", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SqlserverClient::DeleteMigrationOutcomeCallable SqlserverClient::DeleteMigrationCallable(const DeleteMigrationRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteMigrationOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteMigration(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteMigrationOutcome>>();
+    DeleteMigrationAsync(
+    request,
+    [prom](
+        const SqlserverClient*,
+        const DeleteMigrationRequest&,
+        DeleteMigrationOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SqlserverClient::DeletePublishSubscribeOutcome SqlserverClient::DeletePublishSubscribe(const DeletePublishSubscribeRequest &request)
@@ -1266,25 +1462,32 @@ SqlserverClient::DeletePublishSubscribeOutcome SqlserverClient::DeletePublishSub
 
 void SqlserverClient::DeletePublishSubscribeAsync(const DeletePublishSubscribeRequest& request, const DeletePublishSubscribeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeletePublishSubscribe(request), context);
-    };
+    using Req = const DeletePublishSubscribeRequest&;
+    using Resp = DeletePublishSubscribeResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeletePublishSubscribe", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SqlserverClient::DeletePublishSubscribeOutcomeCallable SqlserverClient::DeletePublishSubscribeCallable(const DeletePublishSubscribeRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeletePublishSubscribeOutcome()>>(
-        [this, request]()
-        {
-            return this->DeletePublishSubscribe(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeletePublishSubscribeOutcome>>();
+    DeletePublishSubscribeAsync(
+    request,
+    [prom](
+        const SqlserverClient*,
+        const DeletePublishSubscribeRequest&,
+        DeletePublishSubscribeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SqlserverClient::DeleteRestoreTaskOutcome SqlserverClient::DeleteRestoreTask(const DeleteRestoreTaskRequest &request)
@@ -1309,25 +1512,32 @@ SqlserverClient::DeleteRestoreTaskOutcome SqlserverClient::DeleteRestoreTask(con
 
 void SqlserverClient::DeleteRestoreTaskAsync(const DeleteRestoreTaskRequest& request, const DeleteRestoreTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteRestoreTask(request), context);
-    };
+    using Req = const DeleteRestoreTaskRequest&;
+    using Resp = DeleteRestoreTaskResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteRestoreTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SqlserverClient::DeleteRestoreTaskOutcomeCallable SqlserverClient::DeleteRestoreTaskCallable(const DeleteRestoreTaskRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteRestoreTaskOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteRestoreTask(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteRestoreTaskOutcome>>();
+    DeleteRestoreTaskAsync(
+    request,
+    [prom](
+        const SqlserverClient*,
+        const DeleteRestoreTaskRequest&,
+        DeleteRestoreTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SqlserverClient::DescribeAccountPrivilegeByDBOutcome SqlserverClient::DescribeAccountPrivilegeByDB(const DescribeAccountPrivilegeByDBRequest &request)
@@ -1352,25 +1562,32 @@ SqlserverClient::DescribeAccountPrivilegeByDBOutcome SqlserverClient::DescribeAc
 
 void SqlserverClient::DescribeAccountPrivilegeByDBAsync(const DescribeAccountPrivilegeByDBRequest& request, const DescribeAccountPrivilegeByDBAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAccountPrivilegeByDB(request), context);
-    };
+    using Req = const DescribeAccountPrivilegeByDBRequest&;
+    using Resp = DescribeAccountPrivilegeByDBResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAccountPrivilegeByDB", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SqlserverClient::DescribeAccountPrivilegeByDBOutcomeCallable SqlserverClient::DescribeAccountPrivilegeByDBCallable(const DescribeAccountPrivilegeByDBRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAccountPrivilegeByDBOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAccountPrivilegeByDB(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAccountPrivilegeByDBOutcome>>();
+    DescribeAccountPrivilegeByDBAsync(
+    request,
+    [prom](
+        const SqlserverClient*,
+        const DescribeAccountPrivilegeByDBRequest&,
+        DescribeAccountPrivilegeByDBOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SqlserverClient::DescribeAccountsOutcome SqlserverClient::DescribeAccounts(const DescribeAccountsRequest &request)
@@ -1395,25 +1612,32 @@ SqlserverClient::DescribeAccountsOutcome SqlserverClient::DescribeAccounts(const
 
 void SqlserverClient::DescribeAccountsAsync(const DescribeAccountsRequest& request, const DescribeAccountsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAccounts(request), context);
-    };
+    using Req = const DescribeAccountsRequest&;
+    using Resp = DescribeAccountsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAccounts", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SqlserverClient::DescribeAccountsOutcomeCallable SqlserverClient::DescribeAccountsCallable(const DescribeAccountsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAccountsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAccounts(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAccountsOutcome>>();
+    DescribeAccountsAsync(
+    request,
+    [prom](
+        const SqlserverClient*,
+        const DescribeAccountsRequest&,
+        DescribeAccountsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SqlserverClient::DescribeBackupByFlowIdOutcome SqlserverClient::DescribeBackupByFlowId(const DescribeBackupByFlowIdRequest &request)
@@ -1438,25 +1662,32 @@ SqlserverClient::DescribeBackupByFlowIdOutcome SqlserverClient::DescribeBackupBy
 
 void SqlserverClient::DescribeBackupByFlowIdAsync(const DescribeBackupByFlowIdRequest& request, const DescribeBackupByFlowIdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeBackupByFlowId(request), context);
-    };
+    using Req = const DescribeBackupByFlowIdRequest&;
+    using Resp = DescribeBackupByFlowIdResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeBackupByFlowId", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SqlserverClient::DescribeBackupByFlowIdOutcomeCallable SqlserverClient::DescribeBackupByFlowIdCallable(const DescribeBackupByFlowIdRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeBackupByFlowIdOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeBackupByFlowId(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeBackupByFlowIdOutcome>>();
+    DescribeBackupByFlowIdAsync(
+    request,
+    [prom](
+        const SqlserverClient*,
+        const DescribeBackupByFlowIdRequest&,
+        DescribeBackupByFlowIdOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SqlserverClient::DescribeBackupCommandOutcome SqlserverClient::DescribeBackupCommand(const DescribeBackupCommandRequest &request)
@@ -1481,25 +1712,32 @@ SqlserverClient::DescribeBackupCommandOutcome SqlserverClient::DescribeBackupCom
 
 void SqlserverClient::DescribeBackupCommandAsync(const DescribeBackupCommandRequest& request, const DescribeBackupCommandAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeBackupCommand(request), context);
-    };
+    using Req = const DescribeBackupCommandRequest&;
+    using Resp = DescribeBackupCommandResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeBackupCommand", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SqlserverClient::DescribeBackupCommandOutcomeCallable SqlserverClient::DescribeBackupCommandCallable(const DescribeBackupCommandRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeBackupCommandOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeBackupCommand(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeBackupCommandOutcome>>();
+    DescribeBackupCommandAsync(
+    request,
+    [prom](
+        const SqlserverClient*,
+        const DescribeBackupCommandRequest&,
+        DescribeBackupCommandOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SqlserverClient::DescribeBackupFilesOutcome SqlserverClient::DescribeBackupFiles(const DescribeBackupFilesRequest &request)
@@ -1524,25 +1762,32 @@ SqlserverClient::DescribeBackupFilesOutcome SqlserverClient::DescribeBackupFiles
 
 void SqlserverClient::DescribeBackupFilesAsync(const DescribeBackupFilesRequest& request, const DescribeBackupFilesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeBackupFiles(request), context);
-    };
+    using Req = const DescribeBackupFilesRequest&;
+    using Resp = DescribeBackupFilesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeBackupFiles", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SqlserverClient::DescribeBackupFilesOutcomeCallable SqlserverClient::DescribeBackupFilesCallable(const DescribeBackupFilesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeBackupFilesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeBackupFiles(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeBackupFilesOutcome>>();
+    DescribeBackupFilesAsync(
+    request,
+    [prom](
+        const SqlserverClient*,
+        const DescribeBackupFilesRequest&,
+        DescribeBackupFilesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SqlserverClient::DescribeBackupMigrationOutcome SqlserverClient::DescribeBackupMigration(const DescribeBackupMigrationRequest &request)
@@ -1567,25 +1812,32 @@ SqlserverClient::DescribeBackupMigrationOutcome SqlserverClient::DescribeBackupM
 
 void SqlserverClient::DescribeBackupMigrationAsync(const DescribeBackupMigrationRequest& request, const DescribeBackupMigrationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeBackupMigration(request), context);
-    };
+    using Req = const DescribeBackupMigrationRequest&;
+    using Resp = DescribeBackupMigrationResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeBackupMigration", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SqlserverClient::DescribeBackupMigrationOutcomeCallable SqlserverClient::DescribeBackupMigrationCallable(const DescribeBackupMigrationRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeBackupMigrationOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeBackupMigration(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeBackupMigrationOutcome>>();
+    DescribeBackupMigrationAsync(
+    request,
+    [prom](
+        const SqlserverClient*,
+        const DescribeBackupMigrationRequest&,
+        DescribeBackupMigrationOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SqlserverClient::DescribeBackupMonitorOutcome SqlserverClient::DescribeBackupMonitor(const DescribeBackupMonitorRequest &request)
@@ -1610,25 +1862,32 @@ SqlserverClient::DescribeBackupMonitorOutcome SqlserverClient::DescribeBackupMon
 
 void SqlserverClient::DescribeBackupMonitorAsync(const DescribeBackupMonitorRequest& request, const DescribeBackupMonitorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeBackupMonitor(request), context);
-    };
+    using Req = const DescribeBackupMonitorRequest&;
+    using Resp = DescribeBackupMonitorResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeBackupMonitor", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SqlserverClient::DescribeBackupMonitorOutcomeCallable SqlserverClient::DescribeBackupMonitorCallable(const DescribeBackupMonitorRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeBackupMonitorOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeBackupMonitor(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeBackupMonitorOutcome>>();
+    DescribeBackupMonitorAsync(
+    request,
+    [prom](
+        const SqlserverClient*,
+        const DescribeBackupMonitorRequest&,
+        DescribeBackupMonitorOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SqlserverClient::DescribeBackupStatisticalOutcome SqlserverClient::DescribeBackupStatistical(const DescribeBackupStatisticalRequest &request)
@@ -1653,25 +1912,32 @@ SqlserverClient::DescribeBackupStatisticalOutcome SqlserverClient::DescribeBacku
 
 void SqlserverClient::DescribeBackupStatisticalAsync(const DescribeBackupStatisticalRequest& request, const DescribeBackupStatisticalAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeBackupStatistical(request), context);
-    };
+    using Req = const DescribeBackupStatisticalRequest&;
+    using Resp = DescribeBackupStatisticalResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeBackupStatistical", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SqlserverClient::DescribeBackupStatisticalOutcomeCallable SqlserverClient::DescribeBackupStatisticalCallable(const DescribeBackupStatisticalRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeBackupStatisticalOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeBackupStatistical(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeBackupStatisticalOutcome>>();
+    DescribeBackupStatisticalAsync(
+    request,
+    [prom](
+        const SqlserverClient*,
+        const DescribeBackupStatisticalRequest&,
+        DescribeBackupStatisticalOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SqlserverClient::DescribeBackupSummaryOutcome SqlserverClient::DescribeBackupSummary(const DescribeBackupSummaryRequest &request)
@@ -1696,25 +1962,32 @@ SqlserverClient::DescribeBackupSummaryOutcome SqlserverClient::DescribeBackupSum
 
 void SqlserverClient::DescribeBackupSummaryAsync(const DescribeBackupSummaryRequest& request, const DescribeBackupSummaryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeBackupSummary(request), context);
-    };
+    using Req = const DescribeBackupSummaryRequest&;
+    using Resp = DescribeBackupSummaryResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeBackupSummary", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SqlserverClient::DescribeBackupSummaryOutcomeCallable SqlserverClient::DescribeBackupSummaryCallable(const DescribeBackupSummaryRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeBackupSummaryOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeBackupSummary(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeBackupSummaryOutcome>>();
+    DescribeBackupSummaryAsync(
+    request,
+    [prom](
+        const SqlserverClient*,
+        const DescribeBackupSummaryRequest&,
+        DescribeBackupSummaryOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SqlserverClient::DescribeBackupUploadSizeOutcome SqlserverClient::DescribeBackupUploadSize(const DescribeBackupUploadSizeRequest &request)
@@ -1739,25 +2012,32 @@ SqlserverClient::DescribeBackupUploadSizeOutcome SqlserverClient::DescribeBackup
 
 void SqlserverClient::DescribeBackupUploadSizeAsync(const DescribeBackupUploadSizeRequest& request, const DescribeBackupUploadSizeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeBackupUploadSize(request), context);
-    };
+    using Req = const DescribeBackupUploadSizeRequest&;
+    using Resp = DescribeBackupUploadSizeResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeBackupUploadSize", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SqlserverClient::DescribeBackupUploadSizeOutcomeCallable SqlserverClient::DescribeBackupUploadSizeCallable(const DescribeBackupUploadSizeRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeBackupUploadSizeOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeBackupUploadSize(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeBackupUploadSizeOutcome>>();
+    DescribeBackupUploadSizeAsync(
+    request,
+    [prom](
+        const SqlserverClient*,
+        const DescribeBackupUploadSizeRequest&,
+        DescribeBackupUploadSizeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SqlserverClient::DescribeBackupsOutcome SqlserverClient::DescribeBackups(const DescribeBackupsRequest &request)
@@ -1782,25 +2062,32 @@ SqlserverClient::DescribeBackupsOutcome SqlserverClient::DescribeBackups(const D
 
 void SqlserverClient::DescribeBackupsAsync(const DescribeBackupsRequest& request, const DescribeBackupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeBackups(request), context);
-    };
+    using Req = const DescribeBackupsRequest&;
+    using Resp = DescribeBackupsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeBackups", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SqlserverClient::DescribeBackupsOutcomeCallable SqlserverClient::DescribeBackupsCallable(const DescribeBackupsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeBackupsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeBackups(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeBackupsOutcome>>();
+    DescribeBackupsAsync(
+    request,
+    [prom](
+        const SqlserverClient*,
+        const DescribeBackupsRequest&,
+        DescribeBackupsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SqlserverClient::DescribeBusinessIntelligenceFileOutcome SqlserverClient::DescribeBusinessIntelligenceFile(const DescribeBusinessIntelligenceFileRequest &request)
@@ -1825,25 +2112,32 @@ SqlserverClient::DescribeBusinessIntelligenceFileOutcome SqlserverClient::Descri
 
 void SqlserverClient::DescribeBusinessIntelligenceFileAsync(const DescribeBusinessIntelligenceFileRequest& request, const DescribeBusinessIntelligenceFileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeBusinessIntelligenceFile(request), context);
-    };
+    using Req = const DescribeBusinessIntelligenceFileRequest&;
+    using Resp = DescribeBusinessIntelligenceFileResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeBusinessIntelligenceFile", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SqlserverClient::DescribeBusinessIntelligenceFileOutcomeCallable SqlserverClient::DescribeBusinessIntelligenceFileCallable(const DescribeBusinessIntelligenceFileRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeBusinessIntelligenceFileOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeBusinessIntelligenceFile(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeBusinessIntelligenceFileOutcome>>();
+    DescribeBusinessIntelligenceFileAsync(
+    request,
+    [prom](
+        const SqlserverClient*,
+        const DescribeBusinessIntelligenceFileRequest&,
+        DescribeBusinessIntelligenceFileOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SqlserverClient::DescribeCollationTimeZoneOutcome SqlserverClient::DescribeCollationTimeZone(const DescribeCollationTimeZoneRequest &request)
@@ -1868,25 +2162,32 @@ SqlserverClient::DescribeCollationTimeZoneOutcome SqlserverClient::DescribeColla
 
 void SqlserverClient::DescribeCollationTimeZoneAsync(const DescribeCollationTimeZoneRequest& request, const DescribeCollationTimeZoneAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeCollationTimeZone(request), context);
-    };
+    using Req = const DescribeCollationTimeZoneRequest&;
+    using Resp = DescribeCollationTimeZoneResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeCollationTimeZone", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SqlserverClient::DescribeCollationTimeZoneOutcomeCallable SqlserverClient::DescribeCollationTimeZoneCallable(const DescribeCollationTimeZoneRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeCollationTimeZoneOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeCollationTimeZone(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeCollationTimeZoneOutcome>>();
+    DescribeCollationTimeZoneAsync(
+    request,
+    [prom](
+        const SqlserverClient*,
+        const DescribeCollationTimeZoneRequest&,
+        DescribeCollationTimeZoneOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SqlserverClient::DescribeCrossBackupStatisticalOutcome SqlserverClient::DescribeCrossBackupStatistical(const DescribeCrossBackupStatisticalRequest &request)
@@ -1911,25 +2212,32 @@ SqlserverClient::DescribeCrossBackupStatisticalOutcome SqlserverClient::Describe
 
 void SqlserverClient::DescribeCrossBackupStatisticalAsync(const DescribeCrossBackupStatisticalRequest& request, const DescribeCrossBackupStatisticalAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeCrossBackupStatistical(request), context);
-    };
+    using Req = const DescribeCrossBackupStatisticalRequest&;
+    using Resp = DescribeCrossBackupStatisticalResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeCrossBackupStatistical", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SqlserverClient::DescribeCrossBackupStatisticalOutcomeCallable SqlserverClient::DescribeCrossBackupStatisticalCallable(const DescribeCrossBackupStatisticalRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeCrossBackupStatisticalOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeCrossBackupStatistical(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeCrossBackupStatisticalOutcome>>();
+    DescribeCrossBackupStatisticalAsync(
+    request,
+    [prom](
+        const SqlserverClient*,
+        const DescribeCrossBackupStatisticalRequest&,
+        DescribeCrossBackupStatisticalOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SqlserverClient::DescribeCrossRegionZoneOutcome SqlserverClient::DescribeCrossRegionZone(const DescribeCrossRegionZoneRequest &request)
@@ -1954,25 +2262,32 @@ SqlserverClient::DescribeCrossRegionZoneOutcome SqlserverClient::DescribeCrossRe
 
 void SqlserverClient::DescribeCrossRegionZoneAsync(const DescribeCrossRegionZoneRequest& request, const DescribeCrossRegionZoneAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeCrossRegionZone(request), context);
-    };
+    using Req = const DescribeCrossRegionZoneRequest&;
+    using Resp = DescribeCrossRegionZoneResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeCrossRegionZone", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SqlserverClient::DescribeCrossRegionZoneOutcomeCallable SqlserverClient::DescribeCrossRegionZoneCallable(const DescribeCrossRegionZoneRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeCrossRegionZoneOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeCrossRegionZone(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeCrossRegionZoneOutcome>>();
+    DescribeCrossRegionZoneAsync(
+    request,
+    [prom](
+        const SqlserverClient*,
+        const DescribeCrossRegionZoneRequest&,
+        DescribeCrossRegionZoneOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SqlserverClient::DescribeCrossRegionsOutcome SqlserverClient::DescribeCrossRegions(const DescribeCrossRegionsRequest &request)
@@ -1997,25 +2312,32 @@ SqlserverClient::DescribeCrossRegionsOutcome SqlserverClient::DescribeCrossRegio
 
 void SqlserverClient::DescribeCrossRegionsAsync(const DescribeCrossRegionsRequest& request, const DescribeCrossRegionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeCrossRegions(request), context);
-    };
+    using Req = const DescribeCrossRegionsRequest&;
+    using Resp = DescribeCrossRegionsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeCrossRegions", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SqlserverClient::DescribeCrossRegionsOutcomeCallable SqlserverClient::DescribeCrossRegionsCallable(const DescribeCrossRegionsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeCrossRegionsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeCrossRegions(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeCrossRegionsOutcome>>();
+    DescribeCrossRegionsAsync(
+    request,
+    [prom](
+        const SqlserverClient*,
+        const DescribeCrossRegionsRequest&,
+        DescribeCrossRegionsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SqlserverClient::DescribeDBCharsetsOutcome SqlserverClient::DescribeDBCharsets(const DescribeDBCharsetsRequest &request)
@@ -2040,25 +2362,32 @@ SqlserverClient::DescribeDBCharsetsOutcome SqlserverClient::DescribeDBCharsets(c
 
 void SqlserverClient::DescribeDBCharsetsAsync(const DescribeDBCharsetsRequest& request, const DescribeDBCharsetsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDBCharsets(request), context);
-    };
+    using Req = const DescribeDBCharsetsRequest&;
+    using Resp = DescribeDBCharsetsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeDBCharsets", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SqlserverClient::DescribeDBCharsetsOutcomeCallable SqlserverClient::DescribeDBCharsetsCallable(const DescribeDBCharsetsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeDBCharsetsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDBCharsets(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeDBCharsetsOutcome>>();
+    DescribeDBCharsetsAsync(
+    request,
+    [prom](
+        const SqlserverClient*,
+        const DescribeDBCharsetsRequest&,
+        DescribeDBCharsetsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SqlserverClient::DescribeDBInstanceInterOutcome SqlserverClient::DescribeDBInstanceInter(const DescribeDBInstanceInterRequest &request)
@@ -2083,25 +2412,32 @@ SqlserverClient::DescribeDBInstanceInterOutcome SqlserverClient::DescribeDBInsta
 
 void SqlserverClient::DescribeDBInstanceInterAsync(const DescribeDBInstanceInterRequest& request, const DescribeDBInstanceInterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDBInstanceInter(request), context);
-    };
+    using Req = const DescribeDBInstanceInterRequest&;
+    using Resp = DescribeDBInstanceInterResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeDBInstanceInter", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SqlserverClient::DescribeDBInstanceInterOutcomeCallable SqlserverClient::DescribeDBInstanceInterCallable(const DescribeDBInstanceInterRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeDBInstanceInterOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDBInstanceInter(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeDBInstanceInterOutcome>>();
+    DescribeDBInstanceInterAsync(
+    request,
+    [prom](
+        const SqlserverClient*,
+        const DescribeDBInstanceInterRequest&,
+        DescribeDBInstanceInterOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SqlserverClient::DescribeDBInstancesOutcome SqlserverClient::DescribeDBInstances(const DescribeDBInstancesRequest &request)
@@ -2126,25 +2462,32 @@ SqlserverClient::DescribeDBInstancesOutcome SqlserverClient::DescribeDBInstances
 
 void SqlserverClient::DescribeDBInstancesAsync(const DescribeDBInstancesRequest& request, const DescribeDBInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDBInstances(request), context);
-    };
+    using Req = const DescribeDBInstancesRequest&;
+    using Resp = DescribeDBInstancesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeDBInstances", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SqlserverClient::DescribeDBInstancesOutcomeCallable SqlserverClient::DescribeDBInstancesCallable(const DescribeDBInstancesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeDBInstancesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDBInstances(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeDBInstancesOutcome>>();
+    DescribeDBInstancesAsync(
+    request,
+    [prom](
+        const SqlserverClient*,
+        const DescribeDBInstancesRequest&,
+        DescribeDBInstancesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SqlserverClient::DescribeDBInstancesAttributeOutcome SqlserverClient::DescribeDBInstancesAttribute(const DescribeDBInstancesAttributeRequest &request)
@@ -2169,25 +2512,32 @@ SqlserverClient::DescribeDBInstancesAttributeOutcome SqlserverClient::DescribeDB
 
 void SqlserverClient::DescribeDBInstancesAttributeAsync(const DescribeDBInstancesAttributeRequest& request, const DescribeDBInstancesAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDBInstancesAttribute(request), context);
-    };
+    using Req = const DescribeDBInstancesAttributeRequest&;
+    using Resp = DescribeDBInstancesAttributeResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeDBInstancesAttribute", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SqlserverClient::DescribeDBInstancesAttributeOutcomeCallable SqlserverClient::DescribeDBInstancesAttributeCallable(const DescribeDBInstancesAttributeRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeDBInstancesAttributeOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDBInstancesAttribute(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeDBInstancesAttributeOutcome>>();
+    DescribeDBInstancesAttributeAsync(
+    request,
+    [prom](
+        const SqlserverClient*,
+        const DescribeDBInstancesAttributeRequest&,
+        DescribeDBInstancesAttributeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SqlserverClient::DescribeDBPrivilegeByAccountOutcome SqlserverClient::DescribeDBPrivilegeByAccount(const DescribeDBPrivilegeByAccountRequest &request)
@@ -2212,25 +2562,32 @@ SqlserverClient::DescribeDBPrivilegeByAccountOutcome SqlserverClient::DescribeDB
 
 void SqlserverClient::DescribeDBPrivilegeByAccountAsync(const DescribeDBPrivilegeByAccountRequest& request, const DescribeDBPrivilegeByAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDBPrivilegeByAccount(request), context);
-    };
+    using Req = const DescribeDBPrivilegeByAccountRequest&;
+    using Resp = DescribeDBPrivilegeByAccountResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeDBPrivilegeByAccount", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SqlserverClient::DescribeDBPrivilegeByAccountOutcomeCallable SqlserverClient::DescribeDBPrivilegeByAccountCallable(const DescribeDBPrivilegeByAccountRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeDBPrivilegeByAccountOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDBPrivilegeByAccount(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeDBPrivilegeByAccountOutcome>>();
+    DescribeDBPrivilegeByAccountAsync(
+    request,
+    [prom](
+        const SqlserverClient*,
+        const DescribeDBPrivilegeByAccountRequest&,
+        DescribeDBPrivilegeByAccountOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SqlserverClient::DescribeDBRestoreTimeOutcome SqlserverClient::DescribeDBRestoreTime(const DescribeDBRestoreTimeRequest &request)
@@ -2255,25 +2612,32 @@ SqlserverClient::DescribeDBRestoreTimeOutcome SqlserverClient::DescribeDBRestore
 
 void SqlserverClient::DescribeDBRestoreTimeAsync(const DescribeDBRestoreTimeRequest& request, const DescribeDBRestoreTimeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDBRestoreTime(request), context);
-    };
+    using Req = const DescribeDBRestoreTimeRequest&;
+    using Resp = DescribeDBRestoreTimeResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeDBRestoreTime", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SqlserverClient::DescribeDBRestoreTimeOutcomeCallable SqlserverClient::DescribeDBRestoreTimeCallable(const DescribeDBRestoreTimeRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeDBRestoreTimeOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDBRestoreTime(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeDBRestoreTimeOutcome>>();
+    DescribeDBRestoreTimeAsync(
+    request,
+    [prom](
+        const SqlserverClient*,
+        const DescribeDBRestoreTimeRequest&,
+        DescribeDBRestoreTimeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SqlserverClient::DescribeDBSecurityGroupsOutcome SqlserverClient::DescribeDBSecurityGroups(const DescribeDBSecurityGroupsRequest &request)
@@ -2298,25 +2662,32 @@ SqlserverClient::DescribeDBSecurityGroupsOutcome SqlserverClient::DescribeDBSecu
 
 void SqlserverClient::DescribeDBSecurityGroupsAsync(const DescribeDBSecurityGroupsRequest& request, const DescribeDBSecurityGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDBSecurityGroups(request), context);
-    };
+    using Req = const DescribeDBSecurityGroupsRequest&;
+    using Resp = DescribeDBSecurityGroupsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeDBSecurityGroups", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SqlserverClient::DescribeDBSecurityGroupsOutcomeCallable SqlserverClient::DescribeDBSecurityGroupsCallable(const DescribeDBSecurityGroupsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeDBSecurityGroupsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDBSecurityGroups(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeDBSecurityGroupsOutcome>>();
+    DescribeDBSecurityGroupsAsync(
+    request,
+    [prom](
+        const SqlserverClient*,
+        const DescribeDBSecurityGroupsRequest&,
+        DescribeDBSecurityGroupsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SqlserverClient::DescribeDBsOutcome SqlserverClient::DescribeDBs(const DescribeDBsRequest &request)
@@ -2341,25 +2712,32 @@ SqlserverClient::DescribeDBsOutcome SqlserverClient::DescribeDBs(const DescribeD
 
 void SqlserverClient::DescribeDBsAsync(const DescribeDBsRequest& request, const DescribeDBsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDBs(request), context);
-    };
+    using Req = const DescribeDBsRequest&;
+    using Resp = DescribeDBsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeDBs", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SqlserverClient::DescribeDBsOutcomeCallable SqlserverClient::DescribeDBsCallable(const DescribeDBsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeDBsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDBs(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeDBsOutcome>>();
+    DescribeDBsAsync(
+    request,
+    [prom](
+        const SqlserverClient*,
+        const DescribeDBsRequest&,
+        DescribeDBsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SqlserverClient::DescribeDBsNormalOutcome SqlserverClient::DescribeDBsNormal(const DescribeDBsNormalRequest &request)
@@ -2384,25 +2762,32 @@ SqlserverClient::DescribeDBsNormalOutcome SqlserverClient::DescribeDBsNormal(con
 
 void SqlserverClient::DescribeDBsNormalAsync(const DescribeDBsNormalRequest& request, const DescribeDBsNormalAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDBsNormal(request), context);
-    };
+    using Req = const DescribeDBsNormalRequest&;
+    using Resp = DescribeDBsNormalResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeDBsNormal", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SqlserverClient::DescribeDBsNormalOutcomeCallable SqlserverClient::DescribeDBsNormalCallable(const DescribeDBsNormalRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeDBsNormalOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDBsNormal(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeDBsNormalOutcome>>();
+    DescribeDBsNormalAsync(
+    request,
+    [prom](
+        const SqlserverClient*,
+        const DescribeDBsNormalRequest&,
+        DescribeDBsNormalOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SqlserverClient::DescribeDatabaseNamesOutcome SqlserverClient::DescribeDatabaseNames(const DescribeDatabaseNamesRequest &request)
@@ -2427,25 +2812,32 @@ SqlserverClient::DescribeDatabaseNamesOutcome SqlserverClient::DescribeDatabaseN
 
 void SqlserverClient::DescribeDatabaseNamesAsync(const DescribeDatabaseNamesRequest& request, const DescribeDatabaseNamesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDatabaseNames(request), context);
-    };
+    using Req = const DescribeDatabaseNamesRequest&;
+    using Resp = DescribeDatabaseNamesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeDatabaseNames", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SqlserverClient::DescribeDatabaseNamesOutcomeCallable SqlserverClient::DescribeDatabaseNamesCallable(const DescribeDatabaseNamesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeDatabaseNamesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDatabaseNames(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeDatabaseNamesOutcome>>();
+    DescribeDatabaseNamesAsync(
+    request,
+    [prom](
+        const SqlserverClient*,
+        const DescribeDatabaseNamesRequest&,
+        DescribeDatabaseNamesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SqlserverClient::DescribeDatabasesOutcome SqlserverClient::DescribeDatabases(const DescribeDatabasesRequest &request)
@@ -2470,25 +2862,32 @@ SqlserverClient::DescribeDatabasesOutcome SqlserverClient::DescribeDatabases(con
 
 void SqlserverClient::DescribeDatabasesAsync(const DescribeDatabasesRequest& request, const DescribeDatabasesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDatabases(request), context);
-    };
+    using Req = const DescribeDatabasesRequest&;
+    using Resp = DescribeDatabasesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeDatabases", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SqlserverClient::DescribeDatabasesOutcomeCallable SqlserverClient::DescribeDatabasesCallable(const DescribeDatabasesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeDatabasesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDatabases(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeDatabasesOutcome>>();
+    DescribeDatabasesAsync(
+    request,
+    [prom](
+        const SqlserverClient*,
+        const DescribeDatabasesRequest&,
+        DescribeDatabasesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SqlserverClient::DescribeDatabasesNormalOutcome SqlserverClient::DescribeDatabasesNormal(const DescribeDatabasesNormalRequest &request)
@@ -2513,25 +2912,32 @@ SqlserverClient::DescribeDatabasesNormalOutcome SqlserverClient::DescribeDatabas
 
 void SqlserverClient::DescribeDatabasesNormalAsync(const DescribeDatabasesNormalRequest& request, const DescribeDatabasesNormalAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDatabasesNormal(request), context);
-    };
+    using Req = const DescribeDatabasesNormalRequest&;
+    using Resp = DescribeDatabasesNormalResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeDatabasesNormal", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SqlserverClient::DescribeDatabasesNormalOutcomeCallable SqlserverClient::DescribeDatabasesNormalCallable(const DescribeDatabasesNormalRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeDatabasesNormalOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDatabasesNormal(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeDatabasesNormalOutcome>>();
+    DescribeDatabasesNormalAsync(
+    request,
+    [prom](
+        const SqlserverClient*,
+        const DescribeDatabasesNormalRequest&,
+        DescribeDatabasesNormalOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SqlserverClient::DescribeFlowStatusOutcome SqlserverClient::DescribeFlowStatus(const DescribeFlowStatusRequest &request)
@@ -2556,25 +2962,32 @@ SqlserverClient::DescribeFlowStatusOutcome SqlserverClient::DescribeFlowStatus(c
 
 void SqlserverClient::DescribeFlowStatusAsync(const DescribeFlowStatusRequest& request, const DescribeFlowStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeFlowStatus(request), context);
-    };
+    using Req = const DescribeFlowStatusRequest&;
+    using Resp = DescribeFlowStatusResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeFlowStatus", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SqlserverClient::DescribeFlowStatusOutcomeCallable SqlserverClient::DescribeFlowStatusCallable(const DescribeFlowStatusRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeFlowStatusOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeFlowStatus(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeFlowStatusOutcome>>();
+    DescribeFlowStatusAsync(
+    request,
+    [prom](
+        const SqlserverClient*,
+        const DescribeFlowStatusRequest&,
+        DescribeFlowStatusOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SqlserverClient::DescribeHASwitchLogOutcome SqlserverClient::DescribeHASwitchLog(const DescribeHASwitchLogRequest &request)
@@ -2599,25 +3012,32 @@ SqlserverClient::DescribeHASwitchLogOutcome SqlserverClient::DescribeHASwitchLog
 
 void SqlserverClient::DescribeHASwitchLogAsync(const DescribeHASwitchLogRequest& request, const DescribeHASwitchLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeHASwitchLog(request), context);
-    };
+    using Req = const DescribeHASwitchLogRequest&;
+    using Resp = DescribeHASwitchLogResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeHASwitchLog", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SqlserverClient::DescribeHASwitchLogOutcomeCallable SqlserverClient::DescribeHASwitchLogCallable(const DescribeHASwitchLogRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeHASwitchLogOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeHASwitchLog(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeHASwitchLogOutcome>>();
+    DescribeHASwitchLogAsync(
+    request,
+    [prom](
+        const SqlserverClient*,
+        const DescribeHASwitchLogRequest&,
+        DescribeHASwitchLogOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SqlserverClient::DescribeIncrementalMigrationOutcome SqlserverClient::DescribeIncrementalMigration(const DescribeIncrementalMigrationRequest &request)
@@ -2642,25 +3062,32 @@ SqlserverClient::DescribeIncrementalMigrationOutcome SqlserverClient::DescribeIn
 
 void SqlserverClient::DescribeIncrementalMigrationAsync(const DescribeIncrementalMigrationRequest& request, const DescribeIncrementalMigrationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeIncrementalMigration(request), context);
-    };
+    using Req = const DescribeIncrementalMigrationRequest&;
+    using Resp = DescribeIncrementalMigrationResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeIncrementalMigration", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SqlserverClient::DescribeIncrementalMigrationOutcomeCallable SqlserverClient::DescribeIncrementalMigrationCallable(const DescribeIncrementalMigrationRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeIncrementalMigrationOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeIncrementalMigration(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeIncrementalMigrationOutcome>>();
+    DescribeIncrementalMigrationAsync(
+    request,
+    [prom](
+        const SqlserverClient*,
+        const DescribeIncrementalMigrationRequest&,
+        DescribeIncrementalMigrationOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SqlserverClient::DescribeInquiryPriceParameterOutcome SqlserverClient::DescribeInquiryPriceParameter(const DescribeInquiryPriceParameterRequest &request)
@@ -2685,25 +3112,32 @@ SqlserverClient::DescribeInquiryPriceParameterOutcome SqlserverClient::DescribeI
 
 void SqlserverClient::DescribeInquiryPriceParameterAsync(const DescribeInquiryPriceParameterRequest& request, const DescribeInquiryPriceParameterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeInquiryPriceParameter(request), context);
-    };
+    using Req = const DescribeInquiryPriceParameterRequest&;
+    using Resp = DescribeInquiryPriceParameterResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeInquiryPriceParameter", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SqlserverClient::DescribeInquiryPriceParameterOutcomeCallable SqlserverClient::DescribeInquiryPriceParameterCallable(const DescribeInquiryPriceParameterRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeInquiryPriceParameterOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeInquiryPriceParameter(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeInquiryPriceParameterOutcome>>();
+    DescribeInquiryPriceParameterAsync(
+    request,
+    [prom](
+        const SqlserverClient*,
+        const DescribeInquiryPriceParameterRequest&,
+        DescribeInquiryPriceParameterOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SqlserverClient::DescribeInstanceByOrdersOutcome SqlserverClient::DescribeInstanceByOrders(const DescribeInstanceByOrdersRequest &request)
@@ -2728,25 +3162,32 @@ SqlserverClient::DescribeInstanceByOrdersOutcome SqlserverClient::DescribeInstan
 
 void SqlserverClient::DescribeInstanceByOrdersAsync(const DescribeInstanceByOrdersRequest& request, const DescribeInstanceByOrdersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeInstanceByOrders(request), context);
-    };
+    using Req = const DescribeInstanceByOrdersRequest&;
+    using Resp = DescribeInstanceByOrdersResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeInstanceByOrders", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SqlserverClient::DescribeInstanceByOrdersOutcomeCallable SqlserverClient::DescribeInstanceByOrdersCallable(const DescribeInstanceByOrdersRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeInstanceByOrdersOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeInstanceByOrders(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeInstanceByOrdersOutcome>>();
+    DescribeInstanceByOrdersAsync(
+    request,
+    [prom](
+        const SqlserverClient*,
+        const DescribeInstanceByOrdersRequest&,
+        DescribeInstanceByOrdersOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SqlserverClient::DescribeInstanceParamRecordsOutcome SqlserverClient::DescribeInstanceParamRecords(const DescribeInstanceParamRecordsRequest &request)
@@ -2771,25 +3212,32 @@ SqlserverClient::DescribeInstanceParamRecordsOutcome SqlserverClient::DescribeIn
 
 void SqlserverClient::DescribeInstanceParamRecordsAsync(const DescribeInstanceParamRecordsRequest& request, const DescribeInstanceParamRecordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeInstanceParamRecords(request), context);
-    };
+    using Req = const DescribeInstanceParamRecordsRequest&;
+    using Resp = DescribeInstanceParamRecordsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeInstanceParamRecords", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SqlserverClient::DescribeInstanceParamRecordsOutcomeCallable SqlserverClient::DescribeInstanceParamRecordsCallable(const DescribeInstanceParamRecordsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeInstanceParamRecordsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeInstanceParamRecords(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeInstanceParamRecordsOutcome>>();
+    DescribeInstanceParamRecordsAsync(
+    request,
+    [prom](
+        const SqlserverClient*,
+        const DescribeInstanceParamRecordsRequest&,
+        DescribeInstanceParamRecordsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SqlserverClient::DescribeInstanceParamsOutcome SqlserverClient::DescribeInstanceParams(const DescribeInstanceParamsRequest &request)
@@ -2814,25 +3262,32 @@ SqlserverClient::DescribeInstanceParamsOutcome SqlserverClient::DescribeInstance
 
 void SqlserverClient::DescribeInstanceParamsAsync(const DescribeInstanceParamsRequest& request, const DescribeInstanceParamsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeInstanceParams(request), context);
-    };
+    using Req = const DescribeInstanceParamsRequest&;
+    using Resp = DescribeInstanceParamsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeInstanceParams", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SqlserverClient::DescribeInstanceParamsOutcomeCallable SqlserverClient::DescribeInstanceParamsCallable(const DescribeInstanceParamsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeInstanceParamsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeInstanceParams(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeInstanceParamsOutcome>>();
+    DescribeInstanceParamsAsync(
+    request,
+    [prom](
+        const SqlserverClient*,
+        const DescribeInstanceParamsRequest&,
+        DescribeInstanceParamsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SqlserverClient::DescribeInstanceTasksOutcome SqlserverClient::DescribeInstanceTasks(const DescribeInstanceTasksRequest &request)
@@ -2857,25 +3312,32 @@ SqlserverClient::DescribeInstanceTasksOutcome SqlserverClient::DescribeInstanceT
 
 void SqlserverClient::DescribeInstanceTasksAsync(const DescribeInstanceTasksRequest& request, const DescribeInstanceTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeInstanceTasks(request), context);
-    };
+    using Req = const DescribeInstanceTasksRequest&;
+    using Resp = DescribeInstanceTasksResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeInstanceTasks", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SqlserverClient::DescribeInstanceTasksOutcomeCallable SqlserverClient::DescribeInstanceTasksCallable(const DescribeInstanceTasksRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeInstanceTasksOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeInstanceTasks(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeInstanceTasksOutcome>>();
+    DescribeInstanceTasksAsync(
+    request,
+    [prom](
+        const SqlserverClient*,
+        const DescribeInstanceTasksRequest&,
+        DescribeInstanceTasksOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SqlserverClient::DescribeInstanceTradeParameterOutcome SqlserverClient::DescribeInstanceTradeParameter(const DescribeInstanceTradeParameterRequest &request)
@@ -2900,25 +3362,32 @@ SqlserverClient::DescribeInstanceTradeParameterOutcome SqlserverClient::Describe
 
 void SqlserverClient::DescribeInstanceTradeParameterAsync(const DescribeInstanceTradeParameterRequest& request, const DescribeInstanceTradeParameterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeInstanceTradeParameter(request), context);
-    };
+    using Req = const DescribeInstanceTradeParameterRequest&;
+    using Resp = DescribeInstanceTradeParameterResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeInstanceTradeParameter", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SqlserverClient::DescribeInstanceTradeParameterOutcomeCallable SqlserverClient::DescribeInstanceTradeParameterCallable(const DescribeInstanceTradeParameterRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeInstanceTradeParameterOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeInstanceTradeParameter(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeInstanceTradeParameterOutcome>>();
+    DescribeInstanceTradeParameterAsync(
+    request,
+    [prom](
+        const SqlserverClient*,
+        const DescribeInstanceTradeParameterRequest&,
+        DescribeInstanceTradeParameterOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SqlserverClient::DescribeMaintenanceSpanOutcome SqlserverClient::DescribeMaintenanceSpan(const DescribeMaintenanceSpanRequest &request)
@@ -2943,25 +3412,32 @@ SqlserverClient::DescribeMaintenanceSpanOutcome SqlserverClient::DescribeMainten
 
 void SqlserverClient::DescribeMaintenanceSpanAsync(const DescribeMaintenanceSpanRequest& request, const DescribeMaintenanceSpanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeMaintenanceSpan(request), context);
-    };
+    using Req = const DescribeMaintenanceSpanRequest&;
+    using Resp = DescribeMaintenanceSpanResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeMaintenanceSpan", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SqlserverClient::DescribeMaintenanceSpanOutcomeCallable SqlserverClient::DescribeMaintenanceSpanCallable(const DescribeMaintenanceSpanRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeMaintenanceSpanOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeMaintenanceSpan(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeMaintenanceSpanOutcome>>();
+    DescribeMaintenanceSpanAsync(
+    request,
+    [prom](
+        const SqlserverClient*,
+        const DescribeMaintenanceSpanRequest&,
+        DescribeMaintenanceSpanOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SqlserverClient::DescribeMigrationDatabasesOutcome SqlserverClient::DescribeMigrationDatabases(const DescribeMigrationDatabasesRequest &request)
@@ -2986,25 +3462,32 @@ SqlserverClient::DescribeMigrationDatabasesOutcome SqlserverClient::DescribeMigr
 
 void SqlserverClient::DescribeMigrationDatabasesAsync(const DescribeMigrationDatabasesRequest& request, const DescribeMigrationDatabasesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeMigrationDatabases(request), context);
-    };
+    using Req = const DescribeMigrationDatabasesRequest&;
+    using Resp = DescribeMigrationDatabasesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeMigrationDatabases", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SqlserverClient::DescribeMigrationDatabasesOutcomeCallable SqlserverClient::DescribeMigrationDatabasesCallable(const DescribeMigrationDatabasesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeMigrationDatabasesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeMigrationDatabases(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeMigrationDatabasesOutcome>>();
+    DescribeMigrationDatabasesAsync(
+    request,
+    [prom](
+        const SqlserverClient*,
+        const DescribeMigrationDatabasesRequest&,
+        DescribeMigrationDatabasesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SqlserverClient::DescribeMigrationDetailOutcome SqlserverClient::DescribeMigrationDetail(const DescribeMigrationDetailRequest &request)
@@ -3029,25 +3512,32 @@ SqlserverClient::DescribeMigrationDetailOutcome SqlserverClient::DescribeMigrati
 
 void SqlserverClient::DescribeMigrationDetailAsync(const DescribeMigrationDetailRequest& request, const DescribeMigrationDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeMigrationDetail(request), context);
-    };
+    using Req = const DescribeMigrationDetailRequest&;
+    using Resp = DescribeMigrationDetailResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeMigrationDetail", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SqlserverClient::DescribeMigrationDetailOutcomeCallable SqlserverClient::DescribeMigrationDetailCallable(const DescribeMigrationDetailRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeMigrationDetailOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeMigrationDetail(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeMigrationDetailOutcome>>();
+    DescribeMigrationDetailAsync(
+    request,
+    [prom](
+        const SqlserverClient*,
+        const DescribeMigrationDetailRequest&,
+        DescribeMigrationDetailOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SqlserverClient::DescribeMigrationsOutcome SqlserverClient::DescribeMigrations(const DescribeMigrationsRequest &request)
@@ -3072,25 +3562,32 @@ SqlserverClient::DescribeMigrationsOutcome SqlserverClient::DescribeMigrations(c
 
 void SqlserverClient::DescribeMigrationsAsync(const DescribeMigrationsRequest& request, const DescribeMigrationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeMigrations(request), context);
-    };
+    using Req = const DescribeMigrationsRequest&;
+    using Resp = DescribeMigrationsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeMigrations", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SqlserverClient::DescribeMigrationsOutcomeCallable SqlserverClient::DescribeMigrationsCallable(const DescribeMigrationsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeMigrationsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeMigrations(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeMigrationsOutcome>>();
+    DescribeMigrationsAsync(
+    request,
+    [prom](
+        const SqlserverClient*,
+        const DescribeMigrationsRequest&,
+        DescribeMigrationsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SqlserverClient::DescribeOrdersOutcome SqlserverClient::DescribeOrders(const DescribeOrdersRequest &request)
@@ -3115,25 +3612,32 @@ SqlserverClient::DescribeOrdersOutcome SqlserverClient::DescribeOrders(const Des
 
 void SqlserverClient::DescribeOrdersAsync(const DescribeOrdersRequest& request, const DescribeOrdersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeOrders(request), context);
-    };
+    using Req = const DescribeOrdersRequest&;
+    using Resp = DescribeOrdersResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeOrders", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SqlserverClient::DescribeOrdersOutcomeCallable SqlserverClient::DescribeOrdersCallable(const DescribeOrdersRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeOrdersOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeOrders(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeOrdersOutcome>>();
+    DescribeOrdersAsync(
+    request,
+    [prom](
+        const SqlserverClient*,
+        const DescribeOrdersRequest&,
+        DescribeOrdersOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SqlserverClient::DescribeProductConfigOutcome SqlserverClient::DescribeProductConfig(const DescribeProductConfigRequest &request)
@@ -3158,25 +3662,32 @@ SqlserverClient::DescribeProductConfigOutcome SqlserverClient::DescribeProductCo
 
 void SqlserverClient::DescribeProductConfigAsync(const DescribeProductConfigRequest& request, const DescribeProductConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeProductConfig(request), context);
-    };
+    using Req = const DescribeProductConfigRequest&;
+    using Resp = DescribeProductConfigResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeProductConfig", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SqlserverClient::DescribeProductConfigOutcomeCallable SqlserverClient::DescribeProductConfigCallable(const DescribeProductConfigRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeProductConfigOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeProductConfig(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeProductConfigOutcome>>();
+    DescribeProductConfigAsync(
+    request,
+    [prom](
+        const SqlserverClient*,
+        const DescribeProductConfigRequest&,
+        DescribeProductConfigOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SqlserverClient::DescribeProductSpecOutcome SqlserverClient::DescribeProductSpec(const DescribeProductSpecRequest &request)
@@ -3201,25 +3712,32 @@ SqlserverClient::DescribeProductSpecOutcome SqlserverClient::DescribeProductSpec
 
 void SqlserverClient::DescribeProductSpecAsync(const DescribeProductSpecRequest& request, const DescribeProductSpecAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeProductSpec(request), context);
-    };
+    using Req = const DescribeProductSpecRequest&;
+    using Resp = DescribeProductSpecResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeProductSpec", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SqlserverClient::DescribeProductSpecOutcomeCallable SqlserverClient::DescribeProductSpecCallable(const DescribeProductSpecRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeProductSpecOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeProductSpec(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeProductSpecOutcome>>();
+    DescribeProductSpecAsync(
+    request,
+    [prom](
+        const SqlserverClient*,
+        const DescribeProductSpecRequest&,
+        DescribeProductSpecOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SqlserverClient::DescribeProjectSecurityGroupsOutcome SqlserverClient::DescribeProjectSecurityGroups(const DescribeProjectSecurityGroupsRequest &request)
@@ -3244,25 +3762,32 @@ SqlserverClient::DescribeProjectSecurityGroupsOutcome SqlserverClient::DescribeP
 
 void SqlserverClient::DescribeProjectSecurityGroupsAsync(const DescribeProjectSecurityGroupsRequest& request, const DescribeProjectSecurityGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeProjectSecurityGroups(request), context);
-    };
+    using Req = const DescribeProjectSecurityGroupsRequest&;
+    using Resp = DescribeProjectSecurityGroupsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeProjectSecurityGroups", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SqlserverClient::DescribeProjectSecurityGroupsOutcomeCallable SqlserverClient::DescribeProjectSecurityGroupsCallable(const DescribeProjectSecurityGroupsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeProjectSecurityGroupsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeProjectSecurityGroups(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeProjectSecurityGroupsOutcome>>();
+    DescribeProjectSecurityGroupsAsync(
+    request,
+    [prom](
+        const SqlserverClient*,
+        const DescribeProjectSecurityGroupsRequest&,
+        DescribeProjectSecurityGroupsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SqlserverClient::DescribePublishSubscribeOutcome SqlserverClient::DescribePublishSubscribe(const DescribePublishSubscribeRequest &request)
@@ -3287,25 +3812,32 @@ SqlserverClient::DescribePublishSubscribeOutcome SqlserverClient::DescribePublis
 
 void SqlserverClient::DescribePublishSubscribeAsync(const DescribePublishSubscribeRequest& request, const DescribePublishSubscribeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribePublishSubscribe(request), context);
-    };
+    using Req = const DescribePublishSubscribeRequest&;
+    using Resp = DescribePublishSubscribeResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribePublishSubscribe", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SqlserverClient::DescribePublishSubscribeOutcomeCallable SqlserverClient::DescribePublishSubscribeCallable(const DescribePublishSubscribeRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribePublishSubscribeOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribePublishSubscribe(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribePublishSubscribeOutcome>>();
+    DescribePublishSubscribeAsync(
+    request,
+    [prom](
+        const SqlserverClient*,
+        const DescribePublishSubscribeRequest&,
+        DescribePublishSubscribeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SqlserverClient::DescribeReadOnlyGroupAutoWeightOutcome SqlserverClient::DescribeReadOnlyGroupAutoWeight(const DescribeReadOnlyGroupAutoWeightRequest &request)
@@ -3330,25 +3862,32 @@ SqlserverClient::DescribeReadOnlyGroupAutoWeightOutcome SqlserverClient::Describ
 
 void SqlserverClient::DescribeReadOnlyGroupAutoWeightAsync(const DescribeReadOnlyGroupAutoWeightRequest& request, const DescribeReadOnlyGroupAutoWeightAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeReadOnlyGroupAutoWeight(request), context);
-    };
+    using Req = const DescribeReadOnlyGroupAutoWeightRequest&;
+    using Resp = DescribeReadOnlyGroupAutoWeightResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeReadOnlyGroupAutoWeight", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SqlserverClient::DescribeReadOnlyGroupAutoWeightOutcomeCallable SqlserverClient::DescribeReadOnlyGroupAutoWeightCallable(const DescribeReadOnlyGroupAutoWeightRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeReadOnlyGroupAutoWeightOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeReadOnlyGroupAutoWeight(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeReadOnlyGroupAutoWeightOutcome>>();
+    DescribeReadOnlyGroupAutoWeightAsync(
+    request,
+    [prom](
+        const SqlserverClient*,
+        const DescribeReadOnlyGroupAutoWeightRequest&,
+        DescribeReadOnlyGroupAutoWeightOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SqlserverClient::DescribeReadOnlyGroupByReadOnlyInstanceOutcome SqlserverClient::DescribeReadOnlyGroupByReadOnlyInstance(const DescribeReadOnlyGroupByReadOnlyInstanceRequest &request)
@@ -3373,25 +3912,32 @@ SqlserverClient::DescribeReadOnlyGroupByReadOnlyInstanceOutcome SqlserverClient:
 
 void SqlserverClient::DescribeReadOnlyGroupByReadOnlyInstanceAsync(const DescribeReadOnlyGroupByReadOnlyInstanceRequest& request, const DescribeReadOnlyGroupByReadOnlyInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeReadOnlyGroupByReadOnlyInstance(request), context);
-    };
+    using Req = const DescribeReadOnlyGroupByReadOnlyInstanceRequest&;
+    using Resp = DescribeReadOnlyGroupByReadOnlyInstanceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeReadOnlyGroupByReadOnlyInstance", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SqlserverClient::DescribeReadOnlyGroupByReadOnlyInstanceOutcomeCallable SqlserverClient::DescribeReadOnlyGroupByReadOnlyInstanceCallable(const DescribeReadOnlyGroupByReadOnlyInstanceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeReadOnlyGroupByReadOnlyInstanceOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeReadOnlyGroupByReadOnlyInstance(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeReadOnlyGroupByReadOnlyInstanceOutcome>>();
+    DescribeReadOnlyGroupByReadOnlyInstanceAsync(
+    request,
+    [prom](
+        const SqlserverClient*,
+        const DescribeReadOnlyGroupByReadOnlyInstanceRequest&,
+        DescribeReadOnlyGroupByReadOnlyInstanceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SqlserverClient::DescribeReadOnlyGroupDetailsOutcome SqlserverClient::DescribeReadOnlyGroupDetails(const DescribeReadOnlyGroupDetailsRequest &request)
@@ -3416,25 +3962,32 @@ SqlserverClient::DescribeReadOnlyGroupDetailsOutcome SqlserverClient::DescribeRe
 
 void SqlserverClient::DescribeReadOnlyGroupDetailsAsync(const DescribeReadOnlyGroupDetailsRequest& request, const DescribeReadOnlyGroupDetailsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeReadOnlyGroupDetails(request), context);
-    };
+    using Req = const DescribeReadOnlyGroupDetailsRequest&;
+    using Resp = DescribeReadOnlyGroupDetailsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeReadOnlyGroupDetails", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SqlserverClient::DescribeReadOnlyGroupDetailsOutcomeCallable SqlserverClient::DescribeReadOnlyGroupDetailsCallable(const DescribeReadOnlyGroupDetailsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeReadOnlyGroupDetailsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeReadOnlyGroupDetails(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeReadOnlyGroupDetailsOutcome>>();
+    DescribeReadOnlyGroupDetailsAsync(
+    request,
+    [prom](
+        const SqlserverClient*,
+        const DescribeReadOnlyGroupDetailsRequest&,
+        DescribeReadOnlyGroupDetailsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SqlserverClient::DescribeReadOnlyGroupListOutcome SqlserverClient::DescribeReadOnlyGroupList(const DescribeReadOnlyGroupListRequest &request)
@@ -3459,25 +4012,32 @@ SqlserverClient::DescribeReadOnlyGroupListOutcome SqlserverClient::DescribeReadO
 
 void SqlserverClient::DescribeReadOnlyGroupListAsync(const DescribeReadOnlyGroupListRequest& request, const DescribeReadOnlyGroupListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeReadOnlyGroupList(request), context);
-    };
+    using Req = const DescribeReadOnlyGroupListRequest&;
+    using Resp = DescribeReadOnlyGroupListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeReadOnlyGroupList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SqlserverClient::DescribeReadOnlyGroupListOutcomeCallable SqlserverClient::DescribeReadOnlyGroupListCallable(const DescribeReadOnlyGroupListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeReadOnlyGroupListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeReadOnlyGroupList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeReadOnlyGroupListOutcome>>();
+    DescribeReadOnlyGroupListAsync(
+    request,
+    [prom](
+        const SqlserverClient*,
+        const DescribeReadOnlyGroupListRequest&,
+        DescribeReadOnlyGroupListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SqlserverClient::DescribeRegionsOutcome SqlserverClient::DescribeRegions(const DescribeRegionsRequest &request)
@@ -3502,25 +4062,32 @@ SqlserverClient::DescribeRegionsOutcome SqlserverClient::DescribeRegions(const D
 
 void SqlserverClient::DescribeRegionsAsync(const DescribeRegionsRequest& request, const DescribeRegionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeRegions(request), context);
-    };
+    using Req = const DescribeRegionsRequest&;
+    using Resp = DescribeRegionsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeRegions", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SqlserverClient::DescribeRegionsOutcomeCallable SqlserverClient::DescribeRegionsCallable(const DescribeRegionsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeRegionsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeRegions(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeRegionsOutcome>>();
+    DescribeRegionsAsync(
+    request,
+    [prom](
+        const SqlserverClient*,
+        const DescribeRegionsRequest&,
+        DescribeRegionsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SqlserverClient::DescribeRegularBackupPlanOutcome SqlserverClient::DescribeRegularBackupPlan(const DescribeRegularBackupPlanRequest &request)
@@ -3545,25 +4112,32 @@ SqlserverClient::DescribeRegularBackupPlanOutcome SqlserverClient::DescribeRegul
 
 void SqlserverClient::DescribeRegularBackupPlanAsync(const DescribeRegularBackupPlanRequest& request, const DescribeRegularBackupPlanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeRegularBackupPlan(request), context);
-    };
+    using Req = const DescribeRegularBackupPlanRequest&;
+    using Resp = DescribeRegularBackupPlanResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeRegularBackupPlan", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SqlserverClient::DescribeRegularBackupPlanOutcomeCallable SqlserverClient::DescribeRegularBackupPlanCallable(const DescribeRegularBackupPlanRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeRegularBackupPlanOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeRegularBackupPlan(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeRegularBackupPlanOutcome>>();
+    DescribeRegularBackupPlanAsync(
+    request,
+    [prom](
+        const SqlserverClient*,
+        const DescribeRegularBackupPlanRequest&,
+        DescribeRegularBackupPlanOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SqlserverClient::DescribeRestoreTaskOutcome SqlserverClient::DescribeRestoreTask(const DescribeRestoreTaskRequest &request)
@@ -3588,25 +4162,32 @@ SqlserverClient::DescribeRestoreTaskOutcome SqlserverClient::DescribeRestoreTask
 
 void SqlserverClient::DescribeRestoreTaskAsync(const DescribeRestoreTaskRequest& request, const DescribeRestoreTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeRestoreTask(request), context);
-    };
+    using Req = const DescribeRestoreTaskRequest&;
+    using Resp = DescribeRestoreTaskResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeRestoreTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SqlserverClient::DescribeRestoreTaskOutcomeCallable SqlserverClient::DescribeRestoreTaskCallable(const DescribeRestoreTaskRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeRestoreTaskOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeRestoreTask(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeRestoreTaskOutcome>>();
+    DescribeRestoreTaskAsync(
+    request,
+    [prom](
+        const SqlserverClient*,
+        const DescribeRestoreTaskRequest&,
+        DescribeRestoreTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SqlserverClient::DescribeRestoreTimeRangeOutcome SqlserverClient::DescribeRestoreTimeRange(const DescribeRestoreTimeRangeRequest &request)
@@ -3631,25 +4212,32 @@ SqlserverClient::DescribeRestoreTimeRangeOutcome SqlserverClient::DescribeRestor
 
 void SqlserverClient::DescribeRestoreTimeRangeAsync(const DescribeRestoreTimeRangeRequest& request, const DescribeRestoreTimeRangeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeRestoreTimeRange(request), context);
-    };
+    using Req = const DescribeRestoreTimeRangeRequest&;
+    using Resp = DescribeRestoreTimeRangeResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeRestoreTimeRange", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SqlserverClient::DescribeRestoreTimeRangeOutcomeCallable SqlserverClient::DescribeRestoreTimeRangeCallable(const DescribeRestoreTimeRangeRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeRestoreTimeRangeOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeRestoreTimeRange(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeRestoreTimeRangeOutcome>>();
+    DescribeRestoreTimeRangeAsync(
+    request,
+    [prom](
+        const SqlserverClient*,
+        const DescribeRestoreTimeRangeRequest&,
+        DescribeRestoreTimeRangeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SqlserverClient::DescribeRollbackTimeOutcome SqlserverClient::DescribeRollbackTime(const DescribeRollbackTimeRequest &request)
@@ -3674,25 +4262,32 @@ SqlserverClient::DescribeRollbackTimeOutcome SqlserverClient::DescribeRollbackTi
 
 void SqlserverClient::DescribeRollbackTimeAsync(const DescribeRollbackTimeRequest& request, const DescribeRollbackTimeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeRollbackTime(request), context);
-    };
+    using Req = const DescribeRollbackTimeRequest&;
+    using Resp = DescribeRollbackTimeResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeRollbackTime", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SqlserverClient::DescribeRollbackTimeOutcomeCallable SqlserverClient::DescribeRollbackTimeCallable(const DescribeRollbackTimeRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeRollbackTimeOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeRollbackTime(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeRollbackTimeOutcome>>();
+    DescribeRollbackTimeAsync(
+    request,
+    [prom](
+        const SqlserverClient*,
+        const DescribeRollbackTimeRequest&,
+        DescribeRollbackTimeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SqlserverClient::DescribeSlowlogsOutcome SqlserverClient::DescribeSlowlogs(const DescribeSlowlogsRequest &request)
@@ -3717,25 +4312,32 @@ SqlserverClient::DescribeSlowlogsOutcome SqlserverClient::DescribeSlowlogs(const
 
 void SqlserverClient::DescribeSlowlogsAsync(const DescribeSlowlogsRequest& request, const DescribeSlowlogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeSlowlogs(request), context);
-    };
+    using Req = const DescribeSlowlogsRequest&;
+    using Resp = DescribeSlowlogsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeSlowlogs", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SqlserverClient::DescribeSlowlogsOutcomeCallable SqlserverClient::DescribeSlowlogsCallable(const DescribeSlowlogsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeSlowlogsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeSlowlogs(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeSlowlogsOutcome>>();
+    DescribeSlowlogsAsync(
+    request,
+    [prom](
+        const SqlserverClient*,
+        const DescribeSlowlogsRequest&,
+        DescribeSlowlogsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SqlserverClient::DescribeSpecSellStatusOutcome SqlserverClient::DescribeSpecSellStatus(const DescribeSpecSellStatusRequest &request)
@@ -3760,25 +4362,32 @@ SqlserverClient::DescribeSpecSellStatusOutcome SqlserverClient::DescribeSpecSell
 
 void SqlserverClient::DescribeSpecSellStatusAsync(const DescribeSpecSellStatusRequest& request, const DescribeSpecSellStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeSpecSellStatus(request), context);
-    };
+    using Req = const DescribeSpecSellStatusRequest&;
+    using Resp = DescribeSpecSellStatusResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeSpecSellStatus", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SqlserverClient::DescribeSpecSellStatusOutcomeCallable SqlserverClient::DescribeSpecSellStatusCallable(const DescribeSpecSellStatusRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeSpecSellStatusOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeSpecSellStatus(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeSpecSellStatusOutcome>>();
+    DescribeSpecSellStatusAsync(
+    request,
+    [prom](
+        const SqlserverClient*,
+        const DescribeSpecSellStatusRequest&,
+        DescribeSpecSellStatusOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SqlserverClient::DescribeUpgradeInstanceCheckOutcome SqlserverClient::DescribeUpgradeInstanceCheck(const DescribeUpgradeInstanceCheckRequest &request)
@@ -3803,25 +4412,32 @@ SqlserverClient::DescribeUpgradeInstanceCheckOutcome SqlserverClient::DescribeUp
 
 void SqlserverClient::DescribeUpgradeInstanceCheckAsync(const DescribeUpgradeInstanceCheckRequest& request, const DescribeUpgradeInstanceCheckAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeUpgradeInstanceCheck(request), context);
-    };
+    using Req = const DescribeUpgradeInstanceCheckRequest&;
+    using Resp = DescribeUpgradeInstanceCheckResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeUpgradeInstanceCheck", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SqlserverClient::DescribeUpgradeInstanceCheckOutcomeCallable SqlserverClient::DescribeUpgradeInstanceCheckCallable(const DescribeUpgradeInstanceCheckRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeUpgradeInstanceCheckOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeUpgradeInstanceCheck(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeUpgradeInstanceCheckOutcome>>();
+    DescribeUpgradeInstanceCheckAsync(
+    request,
+    [prom](
+        const SqlserverClient*,
+        const DescribeUpgradeInstanceCheckRequest&,
+        DescribeUpgradeInstanceCheckOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SqlserverClient::DescribeUploadBackupInfoOutcome SqlserverClient::DescribeUploadBackupInfo(const DescribeUploadBackupInfoRequest &request)
@@ -3846,25 +4462,32 @@ SqlserverClient::DescribeUploadBackupInfoOutcome SqlserverClient::DescribeUpload
 
 void SqlserverClient::DescribeUploadBackupInfoAsync(const DescribeUploadBackupInfoRequest& request, const DescribeUploadBackupInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeUploadBackupInfo(request), context);
-    };
+    using Req = const DescribeUploadBackupInfoRequest&;
+    using Resp = DescribeUploadBackupInfoResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeUploadBackupInfo", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SqlserverClient::DescribeUploadBackupInfoOutcomeCallable SqlserverClient::DescribeUploadBackupInfoCallable(const DescribeUploadBackupInfoRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeUploadBackupInfoOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeUploadBackupInfo(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeUploadBackupInfoOutcome>>();
+    DescribeUploadBackupInfoAsync(
+    request,
+    [prom](
+        const SqlserverClient*,
+        const DescribeUploadBackupInfoRequest&,
+        DescribeUploadBackupInfoOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SqlserverClient::DescribeUploadIncrementalInfoOutcome SqlserverClient::DescribeUploadIncrementalInfo(const DescribeUploadIncrementalInfoRequest &request)
@@ -3889,25 +4512,32 @@ SqlserverClient::DescribeUploadIncrementalInfoOutcome SqlserverClient::DescribeU
 
 void SqlserverClient::DescribeUploadIncrementalInfoAsync(const DescribeUploadIncrementalInfoRequest& request, const DescribeUploadIncrementalInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeUploadIncrementalInfo(request), context);
-    };
+    using Req = const DescribeUploadIncrementalInfoRequest&;
+    using Resp = DescribeUploadIncrementalInfoResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeUploadIncrementalInfo", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SqlserverClient::DescribeUploadIncrementalInfoOutcomeCallable SqlserverClient::DescribeUploadIncrementalInfoCallable(const DescribeUploadIncrementalInfoRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeUploadIncrementalInfoOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeUploadIncrementalInfo(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeUploadIncrementalInfoOutcome>>();
+    DescribeUploadIncrementalInfoAsync(
+    request,
+    [prom](
+        const SqlserverClient*,
+        const DescribeUploadIncrementalInfoRequest&,
+        DescribeUploadIncrementalInfoOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SqlserverClient::DescribeXEventsOutcome SqlserverClient::DescribeXEvents(const DescribeXEventsRequest &request)
@@ -3932,25 +4562,32 @@ SqlserverClient::DescribeXEventsOutcome SqlserverClient::DescribeXEvents(const D
 
 void SqlserverClient::DescribeXEventsAsync(const DescribeXEventsRequest& request, const DescribeXEventsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeXEvents(request), context);
-    };
+    using Req = const DescribeXEventsRequest&;
+    using Resp = DescribeXEventsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeXEvents", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SqlserverClient::DescribeXEventsOutcomeCallable SqlserverClient::DescribeXEventsCallable(const DescribeXEventsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeXEventsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeXEvents(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeXEventsOutcome>>();
+    DescribeXEventsAsync(
+    request,
+    [prom](
+        const SqlserverClient*,
+        const DescribeXEventsRequest&,
+        DescribeXEventsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SqlserverClient::DescribeZonesOutcome SqlserverClient::DescribeZones(const DescribeZonesRequest &request)
@@ -3975,25 +4612,32 @@ SqlserverClient::DescribeZonesOutcome SqlserverClient::DescribeZones(const Descr
 
 void SqlserverClient::DescribeZonesAsync(const DescribeZonesRequest& request, const DescribeZonesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeZones(request), context);
-    };
+    using Req = const DescribeZonesRequest&;
+    using Resp = DescribeZonesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeZones", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SqlserverClient::DescribeZonesOutcomeCallable SqlserverClient::DescribeZonesCallable(const DescribeZonesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeZonesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeZones(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeZonesOutcome>>();
+    DescribeZonesAsync(
+    request,
+    [prom](
+        const SqlserverClient*,
+        const DescribeZonesRequest&,
+        DescribeZonesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SqlserverClient::DisassociateSecurityGroupsOutcome SqlserverClient::DisassociateSecurityGroups(const DisassociateSecurityGroupsRequest &request)
@@ -4018,25 +4662,32 @@ SqlserverClient::DisassociateSecurityGroupsOutcome SqlserverClient::Disassociate
 
 void SqlserverClient::DisassociateSecurityGroupsAsync(const DisassociateSecurityGroupsRequest& request, const DisassociateSecurityGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DisassociateSecurityGroups(request), context);
-    };
+    using Req = const DisassociateSecurityGroupsRequest&;
+    using Resp = DisassociateSecurityGroupsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DisassociateSecurityGroups", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SqlserverClient::DisassociateSecurityGroupsOutcomeCallable SqlserverClient::DisassociateSecurityGroupsCallable(const DisassociateSecurityGroupsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DisassociateSecurityGroupsOutcome()>>(
-        [this, request]()
-        {
-            return this->DisassociateSecurityGroups(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DisassociateSecurityGroupsOutcome>>();
+    DisassociateSecurityGroupsAsync(
+    request,
+    [prom](
+        const SqlserverClient*,
+        const DisassociateSecurityGroupsRequest&,
+        DisassociateSecurityGroupsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SqlserverClient::InquiryPriceCreateDBInstancesOutcome SqlserverClient::InquiryPriceCreateDBInstances(const InquiryPriceCreateDBInstancesRequest &request)
@@ -4061,25 +4712,32 @@ SqlserverClient::InquiryPriceCreateDBInstancesOutcome SqlserverClient::InquiryPr
 
 void SqlserverClient::InquiryPriceCreateDBInstancesAsync(const InquiryPriceCreateDBInstancesRequest& request, const InquiryPriceCreateDBInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->InquiryPriceCreateDBInstances(request), context);
-    };
+    using Req = const InquiryPriceCreateDBInstancesRequest&;
+    using Resp = InquiryPriceCreateDBInstancesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "InquiryPriceCreateDBInstances", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SqlserverClient::InquiryPriceCreateDBInstancesOutcomeCallable SqlserverClient::InquiryPriceCreateDBInstancesCallable(const InquiryPriceCreateDBInstancesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<InquiryPriceCreateDBInstancesOutcome()>>(
-        [this, request]()
-        {
-            return this->InquiryPriceCreateDBInstances(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<InquiryPriceCreateDBInstancesOutcome>>();
+    InquiryPriceCreateDBInstancesAsync(
+    request,
+    [prom](
+        const SqlserverClient*,
+        const InquiryPriceCreateDBInstancesRequest&,
+        InquiryPriceCreateDBInstancesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SqlserverClient::InquiryPriceRenewDBInstanceOutcome SqlserverClient::InquiryPriceRenewDBInstance(const InquiryPriceRenewDBInstanceRequest &request)
@@ -4104,25 +4762,32 @@ SqlserverClient::InquiryPriceRenewDBInstanceOutcome SqlserverClient::InquiryPric
 
 void SqlserverClient::InquiryPriceRenewDBInstanceAsync(const InquiryPriceRenewDBInstanceRequest& request, const InquiryPriceRenewDBInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->InquiryPriceRenewDBInstance(request), context);
-    };
+    using Req = const InquiryPriceRenewDBInstanceRequest&;
+    using Resp = InquiryPriceRenewDBInstanceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "InquiryPriceRenewDBInstance", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SqlserverClient::InquiryPriceRenewDBInstanceOutcomeCallable SqlserverClient::InquiryPriceRenewDBInstanceCallable(const InquiryPriceRenewDBInstanceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<InquiryPriceRenewDBInstanceOutcome()>>(
-        [this, request]()
-        {
-            return this->InquiryPriceRenewDBInstance(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<InquiryPriceRenewDBInstanceOutcome>>();
+    InquiryPriceRenewDBInstanceAsync(
+    request,
+    [prom](
+        const SqlserverClient*,
+        const InquiryPriceRenewDBInstanceRequest&,
+        InquiryPriceRenewDBInstanceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SqlserverClient::InquiryPriceUpgradeDBInstanceOutcome SqlserverClient::InquiryPriceUpgradeDBInstance(const InquiryPriceUpgradeDBInstanceRequest &request)
@@ -4147,25 +4812,32 @@ SqlserverClient::InquiryPriceUpgradeDBInstanceOutcome SqlserverClient::InquiryPr
 
 void SqlserverClient::InquiryPriceUpgradeDBInstanceAsync(const InquiryPriceUpgradeDBInstanceRequest& request, const InquiryPriceUpgradeDBInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->InquiryPriceUpgradeDBInstance(request), context);
-    };
+    using Req = const InquiryPriceUpgradeDBInstanceRequest&;
+    using Resp = InquiryPriceUpgradeDBInstanceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "InquiryPriceUpgradeDBInstance", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SqlserverClient::InquiryPriceUpgradeDBInstanceOutcomeCallable SqlserverClient::InquiryPriceUpgradeDBInstanceCallable(const InquiryPriceUpgradeDBInstanceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<InquiryPriceUpgradeDBInstanceOutcome()>>(
-        [this, request]()
-        {
-            return this->InquiryPriceUpgradeDBInstance(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<InquiryPriceUpgradeDBInstanceOutcome>>();
+    InquiryPriceUpgradeDBInstanceAsync(
+    request,
+    [prom](
+        const SqlserverClient*,
+        const InquiryPriceUpgradeDBInstanceRequest&,
+        InquiryPriceUpgradeDBInstanceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SqlserverClient::ModifyAccountPrivilegeOutcome SqlserverClient::ModifyAccountPrivilege(const ModifyAccountPrivilegeRequest &request)
@@ -4190,25 +4862,32 @@ SqlserverClient::ModifyAccountPrivilegeOutcome SqlserverClient::ModifyAccountPri
 
 void SqlserverClient::ModifyAccountPrivilegeAsync(const ModifyAccountPrivilegeRequest& request, const ModifyAccountPrivilegeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyAccountPrivilege(request), context);
-    };
+    using Req = const ModifyAccountPrivilegeRequest&;
+    using Resp = ModifyAccountPrivilegeResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyAccountPrivilege", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SqlserverClient::ModifyAccountPrivilegeOutcomeCallable SqlserverClient::ModifyAccountPrivilegeCallable(const ModifyAccountPrivilegeRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyAccountPrivilegeOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyAccountPrivilege(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyAccountPrivilegeOutcome>>();
+    ModifyAccountPrivilegeAsync(
+    request,
+    [prom](
+        const SqlserverClient*,
+        const ModifyAccountPrivilegeRequest&,
+        ModifyAccountPrivilegeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SqlserverClient::ModifyAccountRemarkOutcome SqlserverClient::ModifyAccountRemark(const ModifyAccountRemarkRequest &request)
@@ -4233,25 +4912,32 @@ SqlserverClient::ModifyAccountRemarkOutcome SqlserverClient::ModifyAccountRemark
 
 void SqlserverClient::ModifyAccountRemarkAsync(const ModifyAccountRemarkRequest& request, const ModifyAccountRemarkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyAccountRemark(request), context);
-    };
+    using Req = const ModifyAccountRemarkRequest&;
+    using Resp = ModifyAccountRemarkResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyAccountRemark", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SqlserverClient::ModifyAccountRemarkOutcomeCallable SqlserverClient::ModifyAccountRemarkCallable(const ModifyAccountRemarkRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyAccountRemarkOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyAccountRemark(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyAccountRemarkOutcome>>();
+    ModifyAccountRemarkAsync(
+    request,
+    [prom](
+        const SqlserverClient*,
+        const ModifyAccountRemarkRequest&,
+        ModifyAccountRemarkOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SqlserverClient::ModifyBackupMigrationOutcome SqlserverClient::ModifyBackupMigration(const ModifyBackupMigrationRequest &request)
@@ -4276,25 +4962,32 @@ SqlserverClient::ModifyBackupMigrationOutcome SqlserverClient::ModifyBackupMigra
 
 void SqlserverClient::ModifyBackupMigrationAsync(const ModifyBackupMigrationRequest& request, const ModifyBackupMigrationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyBackupMigration(request), context);
-    };
+    using Req = const ModifyBackupMigrationRequest&;
+    using Resp = ModifyBackupMigrationResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyBackupMigration", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SqlserverClient::ModifyBackupMigrationOutcomeCallable SqlserverClient::ModifyBackupMigrationCallable(const ModifyBackupMigrationRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyBackupMigrationOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyBackupMigration(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyBackupMigrationOutcome>>();
+    ModifyBackupMigrationAsync(
+    request,
+    [prom](
+        const SqlserverClient*,
+        const ModifyBackupMigrationRequest&,
+        ModifyBackupMigrationOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SqlserverClient::ModifyBackupNameOutcome SqlserverClient::ModifyBackupName(const ModifyBackupNameRequest &request)
@@ -4319,25 +5012,32 @@ SqlserverClient::ModifyBackupNameOutcome SqlserverClient::ModifyBackupName(const
 
 void SqlserverClient::ModifyBackupNameAsync(const ModifyBackupNameRequest& request, const ModifyBackupNameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyBackupName(request), context);
-    };
+    using Req = const ModifyBackupNameRequest&;
+    using Resp = ModifyBackupNameResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyBackupName", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SqlserverClient::ModifyBackupNameOutcomeCallable SqlserverClient::ModifyBackupNameCallable(const ModifyBackupNameRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyBackupNameOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyBackupName(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyBackupNameOutcome>>();
+    ModifyBackupNameAsync(
+    request,
+    [prom](
+        const SqlserverClient*,
+        const ModifyBackupNameRequest&,
+        ModifyBackupNameOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SqlserverClient::ModifyBackupStrategyOutcome SqlserverClient::ModifyBackupStrategy(const ModifyBackupStrategyRequest &request)
@@ -4362,25 +5062,32 @@ SqlserverClient::ModifyBackupStrategyOutcome SqlserverClient::ModifyBackupStrate
 
 void SqlserverClient::ModifyBackupStrategyAsync(const ModifyBackupStrategyRequest& request, const ModifyBackupStrategyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyBackupStrategy(request), context);
-    };
+    using Req = const ModifyBackupStrategyRequest&;
+    using Resp = ModifyBackupStrategyResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyBackupStrategy", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SqlserverClient::ModifyBackupStrategyOutcomeCallable SqlserverClient::ModifyBackupStrategyCallable(const ModifyBackupStrategyRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyBackupStrategyOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyBackupStrategy(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyBackupStrategyOutcome>>();
+    ModifyBackupStrategyAsync(
+    request,
+    [prom](
+        const SqlserverClient*,
+        const ModifyBackupStrategyRequest&,
+        ModifyBackupStrategyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SqlserverClient::ModifyCloseWanIpOutcome SqlserverClient::ModifyCloseWanIp(const ModifyCloseWanIpRequest &request)
@@ -4405,25 +5112,32 @@ SqlserverClient::ModifyCloseWanIpOutcome SqlserverClient::ModifyCloseWanIp(const
 
 void SqlserverClient::ModifyCloseWanIpAsync(const ModifyCloseWanIpRequest& request, const ModifyCloseWanIpAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyCloseWanIp(request), context);
-    };
+    using Req = const ModifyCloseWanIpRequest&;
+    using Resp = ModifyCloseWanIpResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyCloseWanIp", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SqlserverClient::ModifyCloseWanIpOutcomeCallable SqlserverClient::ModifyCloseWanIpCallable(const ModifyCloseWanIpRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyCloseWanIpOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyCloseWanIp(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyCloseWanIpOutcome>>();
+    ModifyCloseWanIpAsync(
+    request,
+    [prom](
+        const SqlserverClient*,
+        const ModifyCloseWanIpRequest&,
+        ModifyCloseWanIpOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SqlserverClient::ModifyCrossBackupStrategyOutcome SqlserverClient::ModifyCrossBackupStrategy(const ModifyCrossBackupStrategyRequest &request)
@@ -4448,25 +5162,32 @@ SqlserverClient::ModifyCrossBackupStrategyOutcome SqlserverClient::ModifyCrossBa
 
 void SqlserverClient::ModifyCrossBackupStrategyAsync(const ModifyCrossBackupStrategyRequest& request, const ModifyCrossBackupStrategyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyCrossBackupStrategy(request), context);
-    };
+    using Req = const ModifyCrossBackupStrategyRequest&;
+    using Resp = ModifyCrossBackupStrategyResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyCrossBackupStrategy", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SqlserverClient::ModifyCrossBackupStrategyOutcomeCallable SqlserverClient::ModifyCrossBackupStrategyCallable(const ModifyCrossBackupStrategyRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyCrossBackupStrategyOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyCrossBackupStrategy(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyCrossBackupStrategyOutcome>>();
+    ModifyCrossBackupStrategyAsync(
+    request,
+    [prom](
+        const SqlserverClient*,
+        const ModifyCrossBackupStrategyRequest&,
+        ModifyCrossBackupStrategyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SqlserverClient::ModifyDBEncryptAttributesOutcome SqlserverClient::ModifyDBEncryptAttributes(const ModifyDBEncryptAttributesRequest &request)
@@ -4491,25 +5212,32 @@ SqlserverClient::ModifyDBEncryptAttributesOutcome SqlserverClient::ModifyDBEncry
 
 void SqlserverClient::ModifyDBEncryptAttributesAsync(const ModifyDBEncryptAttributesRequest& request, const ModifyDBEncryptAttributesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyDBEncryptAttributes(request), context);
-    };
+    using Req = const ModifyDBEncryptAttributesRequest&;
+    using Resp = ModifyDBEncryptAttributesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyDBEncryptAttributes", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SqlserverClient::ModifyDBEncryptAttributesOutcomeCallable SqlserverClient::ModifyDBEncryptAttributesCallable(const ModifyDBEncryptAttributesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyDBEncryptAttributesOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyDBEncryptAttributes(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyDBEncryptAttributesOutcome>>();
+    ModifyDBEncryptAttributesAsync(
+    request,
+    [prom](
+        const SqlserverClient*,
+        const ModifyDBEncryptAttributesRequest&,
+        ModifyDBEncryptAttributesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SqlserverClient::ModifyDBInstanceNameOutcome SqlserverClient::ModifyDBInstanceName(const ModifyDBInstanceNameRequest &request)
@@ -4534,25 +5262,32 @@ SqlserverClient::ModifyDBInstanceNameOutcome SqlserverClient::ModifyDBInstanceNa
 
 void SqlserverClient::ModifyDBInstanceNameAsync(const ModifyDBInstanceNameRequest& request, const ModifyDBInstanceNameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyDBInstanceName(request), context);
-    };
+    using Req = const ModifyDBInstanceNameRequest&;
+    using Resp = ModifyDBInstanceNameResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyDBInstanceName", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SqlserverClient::ModifyDBInstanceNameOutcomeCallable SqlserverClient::ModifyDBInstanceNameCallable(const ModifyDBInstanceNameRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyDBInstanceNameOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyDBInstanceName(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyDBInstanceNameOutcome>>();
+    ModifyDBInstanceNameAsync(
+    request,
+    [prom](
+        const SqlserverClient*,
+        const ModifyDBInstanceNameRequest&,
+        ModifyDBInstanceNameOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SqlserverClient::ModifyDBInstanceNetworkOutcome SqlserverClient::ModifyDBInstanceNetwork(const ModifyDBInstanceNetworkRequest &request)
@@ -4577,25 +5312,32 @@ SqlserverClient::ModifyDBInstanceNetworkOutcome SqlserverClient::ModifyDBInstanc
 
 void SqlserverClient::ModifyDBInstanceNetworkAsync(const ModifyDBInstanceNetworkRequest& request, const ModifyDBInstanceNetworkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyDBInstanceNetwork(request), context);
-    };
+    using Req = const ModifyDBInstanceNetworkRequest&;
+    using Resp = ModifyDBInstanceNetworkResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyDBInstanceNetwork", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SqlserverClient::ModifyDBInstanceNetworkOutcomeCallable SqlserverClient::ModifyDBInstanceNetworkCallable(const ModifyDBInstanceNetworkRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyDBInstanceNetworkOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyDBInstanceNetwork(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyDBInstanceNetworkOutcome>>();
+    ModifyDBInstanceNetworkAsync(
+    request,
+    [prom](
+        const SqlserverClient*,
+        const ModifyDBInstanceNetworkRequest&,
+        ModifyDBInstanceNetworkOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SqlserverClient::ModifyDBInstanceNoteOutcome SqlserverClient::ModifyDBInstanceNote(const ModifyDBInstanceNoteRequest &request)
@@ -4620,25 +5362,32 @@ SqlserverClient::ModifyDBInstanceNoteOutcome SqlserverClient::ModifyDBInstanceNo
 
 void SqlserverClient::ModifyDBInstanceNoteAsync(const ModifyDBInstanceNoteRequest& request, const ModifyDBInstanceNoteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyDBInstanceNote(request), context);
-    };
+    using Req = const ModifyDBInstanceNoteRequest&;
+    using Resp = ModifyDBInstanceNoteResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyDBInstanceNote", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SqlserverClient::ModifyDBInstanceNoteOutcomeCallable SqlserverClient::ModifyDBInstanceNoteCallable(const ModifyDBInstanceNoteRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyDBInstanceNoteOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyDBInstanceNote(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyDBInstanceNoteOutcome>>();
+    ModifyDBInstanceNoteAsync(
+    request,
+    [prom](
+        const SqlserverClient*,
+        const ModifyDBInstanceNoteRequest&,
+        ModifyDBInstanceNoteOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SqlserverClient::ModifyDBInstanceProjectOutcome SqlserverClient::ModifyDBInstanceProject(const ModifyDBInstanceProjectRequest &request)
@@ -4663,25 +5412,32 @@ SqlserverClient::ModifyDBInstanceProjectOutcome SqlserverClient::ModifyDBInstanc
 
 void SqlserverClient::ModifyDBInstanceProjectAsync(const ModifyDBInstanceProjectRequest& request, const ModifyDBInstanceProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyDBInstanceProject(request), context);
-    };
+    using Req = const ModifyDBInstanceProjectRequest&;
+    using Resp = ModifyDBInstanceProjectResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyDBInstanceProject", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SqlserverClient::ModifyDBInstanceProjectOutcomeCallable SqlserverClient::ModifyDBInstanceProjectCallable(const ModifyDBInstanceProjectRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyDBInstanceProjectOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyDBInstanceProject(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyDBInstanceProjectOutcome>>();
+    ModifyDBInstanceProjectAsync(
+    request,
+    [prom](
+        const SqlserverClient*,
+        const ModifyDBInstanceProjectRequest&,
+        ModifyDBInstanceProjectOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SqlserverClient::ModifyDBInstanceRenewFlagOutcome SqlserverClient::ModifyDBInstanceRenewFlag(const ModifyDBInstanceRenewFlagRequest &request)
@@ -4706,25 +5462,32 @@ SqlserverClient::ModifyDBInstanceRenewFlagOutcome SqlserverClient::ModifyDBInsta
 
 void SqlserverClient::ModifyDBInstanceRenewFlagAsync(const ModifyDBInstanceRenewFlagRequest& request, const ModifyDBInstanceRenewFlagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyDBInstanceRenewFlag(request), context);
-    };
+    using Req = const ModifyDBInstanceRenewFlagRequest&;
+    using Resp = ModifyDBInstanceRenewFlagResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyDBInstanceRenewFlag", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SqlserverClient::ModifyDBInstanceRenewFlagOutcomeCallable SqlserverClient::ModifyDBInstanceRenewFlagCallable(const ModifyDBInstanceRenewFlagRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyDBInstanceRenewFlagOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyDBInstanceRenewFlag(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyDBInstanceRenewFlagOutcome>>();
+    ModifyDBInstanceRenewFlagAsync(
+    request,
+    [prom](
+        const SqlserverClient*,
+        const ModifyDBInstanceRenewFlagRequest&,
+        ModifyDBInstanceRenewFlagOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SqlserverClient::ModifyDBInstanceSSLOutcome SqlserverClient::ModifyDBInstanceSSL(const ModifyDBInstanceSSLRequest &request)
@@ -4749,25 +5512,32 @@ SqlserverClient::ModifyDBInstanceSSLOutcome SqlserverClient::ModifyDBInstanceSSL
 
 void SqlserverClient::ModifyDBInstanceSSLAsync(const ModifyDBInstanceSSLRequest& request, const ModifyDBInstanceSSLAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyDBInstanceSSL(request), context);
-    };
+    using Req = const ModifyDBInstanceSSLRequest&;
+    using Resp = ModifyDBInstanceSSLResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyDBInstanceSSL", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SqlserverClient::ModifyDBInstanceSSLOutcomeCallable SqlserverClient::ModifyDBInstanceSSLCallable(const ModifyDBInstanceSSLRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyDBInstanceSSLOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyDBInstanceSSL(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyDBInstanceSSLOutcome>>();
+    ModifyDBInstanceSSLAsync(
+    request,
+    [prom](
+        const SqlserverClient*,
+        const ModifyDBInstanceSSLRequest&,
+        ModifyDBInstanceSSLOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SqlserverClient::ModifyDBInstanceSecurityGroupsOutcome SqlserverClient::ModifyDBInstanceSecurityGroups(const ModifyDBInstanceSecurityGroupsRequest &request)
@@ -4792,25 +5562,32 @@ SqlserverClient::ModifyDBInstanceSecurityGroupsOutcome SqlserverClient::ModifyDB
 
 void SqlserverClient::ModifyDBInstanceSecurityGroupsAsync(const ModifyDBInstanceSecurityGroupsRequest& request, const ModifyDBInstanceSecurityGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyDBInstanceSecurityGroups(request), context);
-    };
+    using Req = const ModifyDBInstanceSecurityGroupsRequest&;
+    using Resp = ModifyDBInstanceSecurityGroupsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyDBInstanceSecurityGroups", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SqlserverClient::ModifyDBInstanceSecurityGroupsOutcomeCallable SqlserverClient::ModifyDBInstanceSecurityGroupsCallable(const ModifyDBInstanceSecurityGroupsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyDBInstanceSecurityGroupsOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyDBInstanceSecurityGroups(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyDBInstanceSecurityGroupsOutcome>>();
+    ModifyDBInstanceSecurityGroupsAsync(
+    request,
+    [prom](
+        const SqlserverClient*,
+        const ModifyDBInstanceSecurityGroupsRequest&,
+        ModifyDBInstanceSecurityGroupsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SqlserverClient::ModifyDBNameOutcome SqlserverClient::ModifyDBName(const ModifyDBNameRequest &request)
@@ -4835,25 +5612,32 @@ SqlserverClient::ModifyDBNameOutcome SqlserverClient::ModifyDBName(const ModifyD
 
 void SqlserverClient::ModifyDBNameAsync(const ModifyDBNameRequest& request, const ModifyDBNameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyDBName(request), context);
-    };
+    using Req = const ModifyDBNameRequest&;
+    using Resp = ModifyDBNameResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyDBName", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SqlserverClient::ModifyDBNameOutcomeCallable SqlserverClient::ModifyDBNameCallable(const ModifyDBNameRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyDBNameOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyDBName(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyDBNameOutcome>>();
+    ModifyDBNameAsync(
+    request,
+    [prom](
+        const SqlserverClient*,
+        const ModifyDBNameRequest&,
+        ModifyDBNameOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SqlserverClient::ModifyDBRemarkOutcome SqlserverClient::ModifyDBRemark(const ModifyDBRemarkRequest &request)
@@ -4878,25 +5662,32 @@ SqlserverClient::ModifyDBRemarkOutcome SqlserverClient::ModifyDBRemark(const Mod
 
 void SqlserverClient::ModifyDBRemarkAsync(const ModifyDBRemarkRequest& request, const ModifyDBRemarkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyDBRemark(request), context);
-    };
+    using Req = const ModifyDBRemarkRequest&;
+    using Resp = ModifyDBRemarkResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyDBRemark", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SqlserverClient::ModifyDBRemarkOutcomeCallable SqlserverClient::ModifyDBRemarkCallable(const ModifyDBRemarkRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyDBRemarkOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyDBRemark(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyDBRemarkOutcome>>();
+    ModifyDBRemarkAsync(
+    request,
+    [prom](
+        const SqlserverClient*,
+        const ModifyDBRemarkRequest&,
+        ModifyDBRemarkOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SqlserverClient::ModifyDReadableOutcome SqlserverClient::ModifyDReadable(const ModifyDReadableRequest &request)
@@ -4921,25 +5712,32 @@ SqlserverClient::ModifyDReadableOutcome SqlserverClient::ModifyDReadable(const M
 
 void SqlserverClient::ModifyDReadableAsync(const ModifyDReadableRequest& request, const ModifyDReadableAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyDReadable(request), context);
-    };
+    using Req = const ModifyDReadableRequest&;
+    using Resp = ModifyDReadableResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyDReadable", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SqlserverClient::ModifyDReadableOutcomeCallable SqlserverClient::ModifyDReadableCallable(const ModifyDReadableRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyDReadableOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyDReadable(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyDReadableOutcome>>();
+    ModifyDReadableAsync(
+    request,
+    [prom](
+        const SqlserverClient*,
+        const ModifyDReadableRequest&,
+        ModifyDReadableOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SqlserverClient::ModifyDatabaseCDCOutcome SqlserverClient::ModifyDatabaseCDC(const ModifyDatabaseCDCRequest &request)
@@ -4964,25 +5762,32 @@ SqlserverClient::ModifyDatabaseCDCOutcome SqlserverClient::ModifyDatabaseCDC(con
 
 void SqlserverClient::ModifyDatabaseCDCAsync(const ModifyDatabaseCDCRequest& request, const ModifyDatabaseCDCAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyDatabaseCDC(request), context);
-    };
+    using Req = const ModifyDatabaseCDCRequest&;
+    using Resp = ModifyDatabaseCDCResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyDatabaseCDC", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SqlserverClient::ModifyDatabaseCDCOutcomeCallable SqlserverClient::ModifyDatabaseCDCCallable(const ModifyDatabaseCDCRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyDatabaseCDCOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyDatabaseCDC(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyDatabaseCDCOutcome>>();
+    ModifyDatabaseCDCAsync(
+    request,
+    [prom](
+        const SqlserverClient*,
+        const ModifyDatabaseCDCRequest&,
+        ModifyDatabaseCDCOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SqlserverClient::ModifyDatabaseCTOutcome SqlserverClient::ModifyDatabaseCT(const ModifyDatabaseCTRequest &request)
@@ -5007,25 +5812,32 @@ SqlserverClient::ModifyDatabaseCTOutcome SqlserverClient::ModifyDatabaseCT(const
 
 void SqlserverClient::ModifyDatabaseCTAsync(const ModifyDatabaseCTRequest& request, const ModifyDatabaseCTAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyDatabaseCT(request), context);
-    };
+    using Req = const ModifyDatabaseCTRequest&;
+    using Resp = ModifyDatabaseCTResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyDatabaseCT", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SqlserverClient::ModifyDatabaseCTOutcomeCallable SqlserverClient::ModifyDatabaseCTCallable(const ModifyDatabaseCTRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyDatabaseCTOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyDatabaseCT(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyDatabaseCTOutcome>>();
+    ModifyDatabaseCTAsync(
+    request,
+    [prom](
+        const SqlserverClient*,
+        const ModifyDatabaseCTRequest&,
+        ModifyDatabaseCTOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SqlserverClient::ModifyDatabaseMdfOutcome SqlserverClient::ModifyDatabaseMdf(const ModifyDatabaseMdfRequest &request)
@@ -5050,25 +5862,32 @@ SqlserverClient::ModifyDatabaseMdfOutcome SqlserverClient::ModifyDatabaseMdf(con
 
 void SqlserverClient::ModifyDatabaseMdfAsync(const ModifyDatabaseMdfRequest& request, const ModifyDatabaseMdfAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyDatabaseMdf(request), context);
-    };
+    using Req = const ModifyDatabaseMdfRequest&;
+    using Resp = ModifyDatabaseMdfResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyDatabaseMdf", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SqlserverClient::ModifyDatabaseMdfOutcomeCallable SqlserverClient::ModifyDatabaseMdfCallable(const ModifyDatabaseMdfRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyDatabaseMdfOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyDatabaseMdf(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyDatabaseMdfOutcome>>();
+    ModifyDatabaseMdfAsync(
+    request,
+    [prom](
+        const SqlserverClient*,
+        const ModifyDatabaseMdfRequest&,
+        ModifyDatabaseMdfOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SqlserverClient::ModifyDatabasePrivilegeOutcome SqlserverClient::ModifyDatabasePrivilege(const ModifyDatabasePrivilegeRequest &request)
@@ -5093,25 +5912,32 @@ SqlserverClient::ModifyDatabasePrivilegeOutcome SqlserverClient::ModifyDatabaseP
 
 void SqlserverClient::ModifyDatabasePrivilegeAsync(const ModifyDatabasePrivilegeRequest& request, const ModifyDatabasePrivilegeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyDatabasePrivilege(request), context);
-    };
+    using Req = const ModifyDatabasePrivilegeRequest&;
+    using Resp = ModifyDatabasePrivilegeResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyDatabasePrivilege", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SqlserverClient::ModifyDatabasePrivilegeOutcomeCallable SqlserverClient::ModifyDatabasePrivilegeCallable(const ModifyDatabasePrivilegeRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyDatabasePrivilegeOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyDatabasePrivilege(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyDatabasePrivilegeOutcome>>();
+    ModifyDatabasePrivilegeAsync(
+    request,
+    [prom](
+        const SqlserverClient*,
+        const ModifyDatabasePrivilegeRequest&,
+        ModifyDatabasePrivilegeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SqlserverClient::ModifyDatabaseShrinkMDFOutcome SqlserverClient::ModifyDatabaseShrinkMDF(const ModifyDatabaseShrinkMDFRequest &request)
@@ -5136,25 +5962,32 @@ SqlserverClient::ModifyDatabaseShrinkMDFOutcome SqlserverClient::ModifyDatabaseS
 
 void SqlserverClient::ModifyDatabaseShrinkMDFAsync(const ModifyDatabaseShrinkMDFRequest& request, const ModifyDatabaseShrinkMDFAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyDatabaseShrinkMDF(request), context);
-    };
+    using Req = const ModifyDatabaseShrinkMDFRequest&;
+    using Resp = ModifyDatabaseShrinkMDFResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyDatabaseShrinkMDF", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SqlserverClient::ModifyDatabaseShrinkMDFOutcomeCallable SqlserverClient::ModifyDatabaseShrinkMDFCallable(const ModifyDatabaseShrinkMDFRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyDatabaseShrinkMDFOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyDatabaseShrinkMDF(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyDatabaseShrinkMDFOutcome>>();
+    ModifyDatabaseShrinkMDFAsync(
+    request,
+    [prom](
+        const SqlserverClient*,
+        const ModifyDatabaseShrinkMDFRequest&,
+        ModifyDatabaseShrinkMDFOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SqlserverClient::ModifyIncrementalMigrationOutcome SqlserverClient::ModifyIncrementalMigration(const ModifyIncrementalMigrationRequest &request)
@@ -5179,25 +6012,32 @@ SqlserverClient::ModifyIncrementalMigrationOutcome SqlserverClient::ModifyIncrem
 
 void SqlserverClient::ModifyIncrementalMigrationAsync(const ModifyIncrementalMigrationRequest& request, const ModifyIncrementalMigrationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyIncrementalMigration(request), context);
-    };
+    using Req = const ModifyIncrementalMigrationRequest&;
+    using Resp = ModifyIncrementalMigrationResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyIncrementalMigration", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SqlserverClient::ModifyIncrementalMigrationOutcomeCallable SqlserverClient::ModifyIncrementalMigrationCallable(const ModifyIncrementalMigrationRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyIncrementalMigrationOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyIncrementalMigration(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyIncrementalMigrationOutcome>>();
+    ModifyIncrementalMigrationAsync(
+    request,
+    [prom](
+        const SqlserverClient*,
+        const ModifyIncrementalMigrationRequest&,
+        ModifyIncrementalMigrationOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SqlserverClient::ModifyInstanceEncryptAttributesOutcome SqlserverClient::ModifyInstanceEncryptAttributes(const ModifyInstanceEncryptAttributesRequest &request)
@@ -5222,25 +6062,32 @@ SqlserverClient::ModifyInstanceEncryptAttributesOutcome SqlserverClient::ModifyI
 
 void SqlserverClient::ModifyInstanceEncryptAttributesAsync(const ModifyInstanceEncryptAttributesRequest& request, const ModifyInstanceEncryptAttributesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyInstanceEncryptAttributes(request), context);
-    };
+    using Req = const ModifyInstanceEncryptAttributesRequest&;
+    using Resp = ModifyInstanceEncryptAttributesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyInstanceEncryptAttributes", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SqlserverClient::ModifyInstanceEncryptAttributesOutcomeCallable SqlserverClient::ModifyInstanceEncryptAttributesCallable(const ModifyInstanceEncryptAttributesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyInstanceEncryptAttributesOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyInstanceEncryptAttributes(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyInstanceEncryptAttributesOutcome>>();
+    ModifyInstanceEncryptAttributesAsync(
+    request,
+    [prom](
+        const SqlserverClient*,
+        const ModifyInstanceEncryptAttributesRequest&,
+        ModifyInstanceEncryptAttributesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SqlserverClient::ModifyInstanceParamOutcome SqlserverClient::ModifyInstanceParam(const ModifyInstanceParamRequest &request)
@@ -5265,25 +6112,32 @@ SqlserverClient::ModifyInstanceParamOutcome SqlserverClient::ModifyInstanceParam
 
 void SqlserverClient::ModifyInstanceParamAsync(const ModifyInstanceParamRequest& request, const ModifyInstanceParamAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyInstanceParam(request), context);
-    };
+    using Req = const ModifyInstanceParamRequest&;
+    using Resp = ModifyInstanceParamResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyInstanceParam", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SqlserverClient::ModifyInstanceParamOutcomeCallable SqlserverClient::ModifyInstanceParamCallable(const ModifyInstanceParamRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyInstanceParamOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyInstanceParam(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyInstanceParamOutcome>>();
+    ModifyInstanceParamAsync(
+    request,
+    [prom](
+        const SqlserverClient*,
+        const ModifyInstanceParamRequest&,
+        ModifyInstanceParamOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SqlserverClient::ModifyMaintenanceSpanOutcome SqlserverClient::ModifyMaintenanceSpan(const ModifyMaintenanceSpanRequest &request)
@@ -5308,25 +6162,32 @@ SqlserverClient::ModifyMaintenanceSpanOutcome SqlserverClient::ModifyMaintenance
 
 void SqlserverClient::ModifyMaintenanceSpanAsync(const ModifyMaintenanceSpanRequest& request, const ModifyMaintenanceSpanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyMaintenanceSpan(request), context);
-    };
+    using Req = const ModifyMaintenanceSpanRequest&;
+    using Resp = ModifyMaintenanceSpanResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyMaintenanceSpan", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SqlserverClient::ModifyMaintenanceSpanOutcomeCallable SqlserverClient::ModifyMaintenanceSpanCallable(const ModifyMaintenanceSpanRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyMaintenanceSpanOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyMaintenanceSpan(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyMaintenanceSpanOutcome>>();
+    ModifyMaintenanceSpanAsync(
+    request,
+    [prom](
+        const SqlserverClient*,
+        const ModifyMaintenanceSpanRequest&,
+        ModifyMaintenanceSpanOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SqlserverClient::ModifyMigrationOutcome SqlserverClient::ModifyMigration(const ModifyMigrationRequest &request)
@@ -5351,25 +6212,32 @@ SqlserverClient::ModifyMigrationOutcome SqlserverClient::ModifyMigration(const M
 
 void SqlserverClient::ModifyMigrationAsync(const ModifyMigrationRequest& request, const ModifyMigrationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyMigration(request), context);
-    };
+    using Req = const ModifyMigrationRequest&;
+    using Resp = ModifyMigrationResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyMigration", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SqlserverClient::ModifyMigrationOutcomeCallable SqlserverClient::ModifyMigrationCallable(const ModifyMigrationRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyMigrationOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyMigration(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyMigrationOutcome>>();
+    ModifyMigrationAsync(
+    request,
+    [prom](
+        const SqlserverClient*,
+        const ModifyMigrationRequest&,
+        ModifyMigrationOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SqlserverClient::ModifyOpenWanIpOutcome SqlserverClient::ModifyOpenWanIp(const ModifyOpenWanIpRequest &request)
@@ -5394,25 +6262,32 @@ SqlserverClient::ModifyOpenWanIpOutcome SqlserverClient::ModifyOpenWanIp(const M
 
 void SqlserverClient::ModifyOpenWanIpAsync(const ModifyOpenWanIpRequest& request, const ModifyOpenWanIpAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyOpenWanIp(request), context);
-    };
+    using Req = const ModifyOpenWanIpRequest&;
+    using Resp = ModifyOpenWanIpResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyOpenWanIp", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SqlserverClient::ModifyOpenWanIpOutcomeCallable SqlserverClient::ModifyOpenWanIpCallable(const ModifyOpenWanIpRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyOpenWanIpOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyOpenWanIp(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyOpenWanIpOutcome>>();
+    ModifyOpenWanIpAsync(
+    request,
+    [prom](
+        const SqlserverClient*,
+        const ModifyOpenWanIpRequest&,
+        ModifyOpenWanIpOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SqlserverClient::ModifyPublishSubscribeOutcome SqlserverClient::ModifyPublishSubscribe(const ModifyPublishSubscribeRequest &request)
@@ -5437,25 +6312,32 @@ SqlserverClient::ModifyPublishSubscribeOutcome SqlserverClient::ModifyPublishSub
 
 void SqlserverClient::ModifyPublishSubscribeAsync(const ModifyPublishSubscribeRequest& request, const ModifyPublishSubscribeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyPublishSubscribe(request), context);
-    };
+    using Req = const ModifyPublishSubscribeRequest&;
+    using Resp = ModifyPublishSubscribeResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyPublishSubscribe", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SqlserverClient::ModifyPublishSubscribeOutcomeCallable SqlserverClient::ModifyPublishSubscribeCallable(const ModifyPublishSubscribeRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyPublishSubscribeOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyPublishSubscribe(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyPublishSubscribeOutcome>>();
+    ModifyPublishSubscribeAsync(
+    request,
+    [prom](
+        const SqlserverClient*,
+        const ModifyPublishSubscribeRequest&,
+        ModifyPublishSubscribeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SqlserverClient::ModifyPublishSubscribeNameOutcome SqlserverClient::ModifyPublishSubscribeName(const ModifyPublishSubscribeNameRequest &request)
@@ -5480,25 +6362,32 @@ SqlserverClient::ModifyPublishSubscribeNameOutcome SqlserverClient::ModifyPublis
 
 void SqlserverClient::ModifyPublishSubscribeNameAsync(const ModifyPublishSubscribeNameRequest& request, const ModifyPublishSubscribeNameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyPublishSubscribeName(request), context);
-    };
+    using Req = const ModifyPublishSubscribeNameRequest&;
+    using Resp = ModifyPublishSubscribeNameResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyPublishSubscribeName", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SqlserverClient::ModifyPublishSubscribeNameOutcomeCallable SqlserverClient::ModifyPublishSubscribeNameCallable(const ModifyPublishSubscribeNameRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyPublishSubscribeNameOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyPublishSubscribeName(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyPublishSubscribeNameOutcome>>();
+    ModifyPublishSubscribeNameAsync(
+    request,
+    [prom](
+        const SqlserverClient*,
+        const ModifyPublishSubscribeNameRequest&,
+        ModifyPublishSubscribeNameOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SqlserverClient::ModifyReadOnlyGroupDetailsOutcome SqlserverClient::ModifyReadOnlyGroupDetails(const ModifyReadOnlyGroupDetailsRequest &request)
@@ -5523,25 +6412,32 @@ SqlserverClient::ModifyReadOnlyGroupDetailsOutcome SqlserverClient::ModifyReadOn
 
 void SqlserverClient::ModifyReadOnlyGroupDetailsAsync(const ModifyReadOnlyGroupDetailsRequest& request, const ModifyReadOnlyGroupDetailsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyReadOnlyGroupDetails(request), context);
-    };
+    using Req = const ModifyReadOnlyGroupDetailsRequest&;
+    using Resp = ModifyReadOnlyGroupDetailsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyReadOnlyGroupDetails", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SqlserverClient::ModifyReadOnlyGroupDetailsOutcomeCallable SqlserverClient::ModifyReadOnlyGroupDetailsCallable(const ModifyReadOnlyGroupDetailsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyReadOnlyGroupDetailsOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyReadOnlyGroupDetails(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyReadOnlyGroupDetailsOutcome>>();
+    ModifyReadOnlyGroupDetailsAsync(
+    request,
+    [prom](
+        const SqlserverClient*,
+        const ModifyReadOnlyGroupDetailsRequest&,
+        ModifyReadOnlyGroupDetailsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SqlserverClient::OpenInterCommunicationOutcome SqlserverClient::OpenInterCommunication(const OpenInterCommunicationRequest &request)
@@ -5566,25 +6462,32 @@ SqlserverClient::OpenInterCommunicationOutcome SqlserverClient::OpenInterCommuni
 
 void SqlserverClient::OpenInterCommunicationAsync(const OpenInterCommunicationRequest& request, const OpenInterCommunicationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->OpenInterCommunication(request), context);
-    };
+    using Req = const OpenInterCommunicationRequest&;
+    using Resp = OpenInterCommunicationResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "OpenInterCommunication", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SqlserverClient::OpenInterCommunicationOutcomeCallable SqlserverClient::OpenInterCommunicationCallable(const OpenInterCommunicationRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<OpenInterCommunicationOutcome()>>(
-        [this, request]()
-        {
-            return this->OpenInterCommunication(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<OpenInterCommunicationOutcome>>();
+    OpenInterCommunicationAsync(
+    request,
+    [prom](
+        const SqlserverClient*,
+        const OpenInterCommunicationRequest&,
+        OpenInterCommunicationOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SqlserverClient::QueryMigrationCheckProcessOutcome SqlserverClient::QueryMigrationCheckProcess(const QueryMigrationCheckProcessRequest &request)
@@ -5609,25 +6512,32 @@ SqlserverClient::QueryMigrationCheckProcessOutcome SqlserverClient::QueryMigrati
 
 void SqlserverClient::QueryMigrationCheckProcessAsync(const QueryMigrationCheckProcessRequest& request, const QueryMigrationCheckProcessAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->QueryMigrationCheckProcess(request), context);
-    };
+    using Req = const QueryMigrationCheckProcessRequest&;
+    using Resp = QueryMigrationCheckProcessResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "QueryMigrationCheckProcess", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SqlserverClient::QueryMigrationCheckProcessOutcomeCallable SqlserverClient::QueryMigrationCheckProcessCallable(const QueryMigrationCheckProcessRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<QueryMigrationCheckProcessOutcome()>>(
-        [this, request]()
-        {
-            return this->QueryMigrationCheckProcess(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<QueryMigrationCheckProcessOutcome>>();
+    QueryMigrationCheckProcessAsync(
+    request,
+    [prom](
+        const SqlserverClient*,
+        const QueryMigrationCheckProcessRequest&,
+        QueryMigrationCheckProcessOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SqlserverClient::RecycleDBInstanceOutcome SqlserverClient::RecycleDBInstance(const RecycleDBInstanceRequest &request)
@@ -5652,25 +6562,32 @@ SqlserverClient::RecycleDBInstanceOutcome SqlserverClient::RecycleDBInstance(con
 
 void SqlserverClient::RecycleDBInstanceAsync(const RecycleDBInstanceRequest& request, const RecycleDBInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->RecycleDBInstance(request), context);
-    };
+    using Req = const RecycleDBInstanceRequest&;
+    using Resp = RecycleDBInstanceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "RecycleDBInstance", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SqlserverClient::RecycleDBInstanceOutcomeCallable SqlserverClient::RecycleDBInstanceCallable(const RecycleDBInstanceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<RecycleDBInstanceOutcome()>>(
-        [this, request]()
-        {
-            return this->RecycleDBInstance(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<RecycleDBInstanceOutcome>>();
+    RecycleDBInstanceAsync(
+    request,
+    [prom](
+        const SqlserverClient*,
+        const RecycleDBInstanceRequest&,
+        RecycleDBInstanceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SqlserverClient::RecycleReadOnlyGroupOutcome SqlserverClient::RecycleReadOnlyGroup(const RecycleReadOnlyGroupRequest &request)
@@ -5695,25 +6612,32 @@ SqlserverClient::RecycleReadOnlyGroupOutcome SqlserverClient::RecycleReadOnlyGro
 
 void SqlserverClient::RecycleReadOnlyGroupAsync(const RecycleReadOnlyGroupRequest& request, const RecycleReadOnlyGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->RecycleReadOnlyGroup(request), context);
-    };
+    using Req = const RecycleReadOnlyGroupRequest&;
+    using Resp = RecycleReadOnlyGroupResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "RecycleReadOnlyGroup", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SqlserverClient::RecycleReadOnlyGroupOutcomeCallable SqlserverClient::RecycleReadOnlyGroupCallable(const RecycleReadOnlyGroupRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<RecycleReadOnlyGroupOutcome()>>(
-        [this, request]()
-        {
-            return this->RecycleReadOnlyGroup(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<RecycleReadOnlyGroupOutcome>>();
+    RecycleReadOnlyGroupAsync(
+    request,
+    [prom](
+        const SqlserverClient*,
+        const RecycleReadOnlyGroupRequest&,
+        RecycleReadOnlyGroupOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SqlserverClient::RemoveBackupsOutcome SqlserverClient::RemoveBackups(const RemoveBackupsRequest &request)
@@ -5738,25 +6662,32 @@ SqlserverClient::RemoveBackupsOutcome SqlserverClient::RemoveBackups(const Remov
 
 void SqlserverClient::RemoveBackupsAsync(const RemoveBackupsRequest& request, const RemoveBackupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->RemoveBackups(request), context);
-    };
+    using Req = const RemoveBackupsRequest&;
+    using Resp = RemoveBackupsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "RemoveBackups", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SqlserverClient::RemoveBackupsOutcomeCallable SqlserverClient::RemoveBackupsCallable(const RemoveBackupsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<RemoveBackupsOutcome()>>(
-        [this, request]()
-        {
-            return this->RemoveBackups(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<RemoveBackupsOutcome>>();
+    RemoveBackupsAsync(
+    request,
+    [prom](
+        const SqlserverClient*,
+        const RemoveBackupsRequest&,
+        RemoveBackupsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SqlserverClient::RenewDBInstanceOutcome SqlserverClient::RenewDBInstance(const RenewDBInstanceRequest &request)
@@ -5781,25 +6712,32 @@ SqlserverClient::RenewDBInstanceOutcome SqlserverClient::RenewDBInstance(const R
 
 void SqlserverClient::RenewDBInstanceAsync(const RenewDBInstanceRequest& request, const RenewDBInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->RenewDBInstance(request), context);
-    };
+    using Req = const RenewDBInstanceRequest&;
+    using Resp = RenewDBInstanceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "RenewDBInstance", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SqlserverClient::RenewDBInstanceOutcomeCallable SqlserverClient::RenewDBInstanceCallable(const RenewDBInstanceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<RenewDBInstanceOutcome()>>(
-        [this, request]()
-        {
-            return this->RenewDBInstance(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<RenewDBInstanceOutcome>>();
+    RenewDBInstanceAsync(
+    request,
+    [prom](
+        const SqlserverClient*,
+        const RenewDBInstanceRequest&,
+        RenewDBInstanceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SqlserverClient::RenewPostpaidDBInstanceOutcome SqlserverClient::RenewPostpaidDBInstance(const RenewPostpaidDBInstanceRequest &request)
@@ -5824,25 +6762,32 @@ SqlserverClient::RenewPostpaidDBInstanceOutcome SqlserverClient::RenewPostpaidDB
 
 void SqlserverClient::RenewPostpaidDBInstanceAsync(const RenewPostpaidDBInstanceRequest& request, const RenewPostpaidDBInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->RenewPostpaidDBInstance(request), context);
-    };
+    using Req = const RenewPostpaidDBInstanceRequest&;
+    using Resp = RenewPostpaidDBInstanceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "RenewPostpaidDBInstance", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SqlserverClient::RenewPostpaidDBInstanceOutcomeCallable SqlserverClient::RenewPostpaidDBInstanceCallable(const RenewPostpaidDBInstanceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<RenewPostpaidDBInstanceOutcome()>>(
-        [this, request]()
-        {
-            return this->RenewPostpaidDBInstance(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<RenewPostpaidDBInstanceOutcome>>();
+    RenewPostpaidDBInstanceAsync(
+    request,
+    [prom](
+        const SqlserverClient*,
+        const RenewPostpaidDBInstanceRequest&,
+        RenewPostpaidDBInstanceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SqlserverClient::ResetAccountPasswordOutcome SqlserverClient::ResetAccountPassword(const ResetAccountPasswordRequest &request)
@@ -5867,25 +6812,32 @@ SqlserverClient::ResetAccountPasswordOutcome SqlserverClient::ResetAccountPasswo
 
 void SqlserverClient::ResetAccountPasswordAsync(const ResetAccountPasswordRequest& request, const ResetAccountPasswordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ResetAccountPassword(request), context);
-    };
+    using Req = const ResetAccountPasswordRequest&;
+    using Resp = ResetAccountPasswordResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ResetAccountPassword", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SqlserverClient::ResetAccountPasswordOutcomeCallable SqlserverClient::ResetAccountPasswordCallable(const ResetAccountPasswordRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ResetAccountPasswordOutcome()>>(
-        [this, request]()
-        {
-            return this->ResetAccountPassword(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ResetAccountPasswordOutcome>>();
+    ResetAccountPasswordAsync(
+    request,
+    [prom](
+        const SqlserverClient*,
+        const ResetAccountPasswordRequest&,
+        ResetAccountPasswordOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SqlserverClient::RestartDBInstanceOutcome SqlserverClient::RestartDBInstance(const RestartDBInstanceRequest &request)
@@ -5910,25 +6862,32 @@ SqlserverClient::RestartDBInstanceOutcome SqlserverClient::RestartDBInstance(con
 
 void SqlserverClient::RestartDBInstanceAsync(const RestartDBInstanceRequest& request, const RestartDBInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->RestartDBInstance(request), context);
-    };
+    using Req = const RestartDBInstanceRequest&;
+    using Resp = RestartDBInstanceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "RestartDBInstance", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SqlserverClient::RestartDBInstanceOutcomeCallable SqlserverClient::RestartDBInstanceCallable(const RestartDBInstanceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<RestartDBInstanceOutcome()>>(
-        [this, request]()
-        {
-            return this->RestartDBInstance(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<RestartDBInstanceOutcome>>();
+    RestartDBInstanceAsync(
+    request,
+    [prom](
+        const SqlserverClient*,
+        const RestartDBInstanceRequest&,
+        RestartDBInstanceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SqlserverClient::RestoreInstanceOutcome SqlserverClient::RestoreInstance(const RestoreInstanceRequest &request)
@@ -5953,25 +6912,32 @@ SqlserverClient::RestoreInstanceOutcome SqlserverClient::RestoreInstance(const R
 
 void SqlserverClient::RestoreInstanceAsync(const RestoreInstanceRequest& request, const RestoreInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->RestoreInstance(request), context);
-    };
+    using Req = const RestoreInstanceRequest&;
+    using Resp = RestoreInstanceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "RestoreInstance", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SqlserverClient::RestoreInstanceOutcomeCallable SqlserverClient::RestoreInstanceCallable(const RestoreInstanceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<RestoreInstanceOutcome()>>(
-        [this, request]()
-        {
-            return this->RestoreInstance(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<RestoreInstanceOutcome>>();
+    RestoreInstanceAsync(
+    request,
+    [prom](
+        const SqlserverClient*,
+        const RestoreInstanceRequest&,
+        RestoreInstanceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SqlserverClient::RollbackInstanceOutcome SqlserverClient::RollbackInstance(const RollbackInstanceRequest &request)
@@ -5996,25 +6962,32 @@ SqlserverClient::RollbackInstanceOutcome SqlserverClient::RollbackInstance(const
 
 void SqlserverClient::RollbackInstanceAsync(const RollbackInstanceRequest& request, const RollbackInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->RollbackInstance(request), context);
-    };
+    using Req = const RollbackInstanceRequest&;
+    using Resp = RollbackInstanceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "RollbackInstance", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SqlserverClient::RollbackInstanceOutcomeCallable SqlserverClient::RollbackInstanceCallable(const RollbackInstanceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<RollbackInstanceOutcome()>>(
-        [this, request]()
-        {
-            return this->RollbackInstance(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<RollbackInstanceOutcome>>();
+    RollbackInstanceAsync(
+    request,
+    [prom](
+        const SqlserverClient*,
+        const RollbackInstanceRequest&,
+        RollbackInstanceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SqlserverClient::RunMigrationOutcome SqlserverClient::RunMigration(const RunMigrationRequest &request)
@@ -6039,25 +7012,32 @@ SqlserverClient::RunMigrationOutcome SqlserverClient::RunMigration(const RunMigr
 
 void SqlserverClient::RunMigrationAsync(const RunMigrationRequest& request, const RunMigrationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->RunMigration(request), context);
-    };
+    using Req = const RunMigrationRequest&;
+    using Resp = RunMigrationResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "RunMigration", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SqlserverClient::RunMigrationOutcomeCallable SqlserverClient::RunMigrationCallable(const RunMigrationRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<RunMigrationOutcome()>>(
-        [this, request]()
-        {
-            return this->RunMigration(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<RunMigrationOutcome>>();
+    RunMigrationAsync(
+    request,
+    [prom](
+        const SqlserverClient*,
+        const RunMigrationRequest&,
+        RunMigrationOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SqlserverClient::StartBackupMigrationOutcome SqlserverClient::StartBackupMigration(const StartBackupMigrationRequest &request)
@@ -6082,25 +7062,32 @@ SqlserverClient::StartBackupMigrationOutcome SqlserverClient::StartBackupMigrati
 
 void SqlserverClient::StartBackupMigrationAsync(const StartBackupMigrationRequest& request, const StartBackupMigrationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->StartBackupMigration(request), context);
-    };
+    using Req = const StartBackupMigrationRequest&;
+    using Resp = StartBackupMigrationResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "StartBackupMigration", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SqlserverClient::StartBackupMigrationOutcomeCallable SqlserverClient::StartBackupMigrationCallable(const StartBackupMigrationRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<StartBackupMigrationOutcome()>>(
-        [this, request]()
-        {
-            return this->StartBackupMigration(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<StartBackupMigrationOutcome>>();
+    StartBackupMigrationAsync(
+    request,
+    [prom](
+        const SqlserverClient*,
+        const StartBackupMigrationRequest&,
+        StartBackupMigrationOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SqlserverClient::StartIncrementalMigrationOutcome SqlserverClient::StartIncrementalMigration(const StartIncrementalMigrationRequest &request)
@@ -6125,25 +7112,32 @@ SqlserverClient::StartIncrementalMigrationOutcome SqlserverClient::StartIncremen
 
 void SqlserverClient::StartIncrementalMigrationAsync(const StartIncrementalMigrationRequest& request, const StartIncrementalMigrationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->StartIncrementalMigration(request), context);
-    };
+    using Req = const StartIncrementalMigrationRequest&;
+    using Resp = StartIncrementalMigrationResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "StartIncrementalMigration", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SqlserverClient::StartIncrementalMigrationOutcomeCallable SqlserverClient::StartIncrementalMigrationCallable(const StartIncrementalMigrationRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<StartIncrementalMigrationOutcome()>>(
-        [this, request]()
-        {
-            return this->StartIncrementalMigration(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<StartIncrementalMigrationOutcome>>();
+    StartIncrementalMigrationAsync(
+    request,
+    [prom](
+        const SqlserverClient*,
+        const StartIncrementalMigrationRequest&,
+        StartIncrementalMigrationOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SqlserverClient::StartInstanceXEventOutcome SqlserverClient::StartInstanceXEvent(const StartInstanceXEventRequest &request)
@@ -6168,25 +7162,32 @@ SqlserverClient::StartInstanceXEventOutcome SqlserverClient::StartInstanceXEvent
 
 void SqlserverClient::StartInstanceXEventAsync(const StartInstanceXEventRequest& request, const StartInstanceXEventAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->StartInstanceXEvent(request), context);
-    };
+    using Req = const StartInstanceXEventRequest&;
+    using Resp = StartInstanceXEventResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "StartInstanceXEvent", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SqlserverClient::StartInstanceXEventOutcomeCallable SqlserverClient::StartInstanceXEventCallable(const StartInstanceXEventRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<StartInstanceXEventOutcome()>>(
-        [this, request]()
-        {
-            return this->StartInstanceXEvent(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<StartInstanceXEventOutcome>>();
+    StartInstanceXEventAsync(
+    request,
+    [prom](
+        const SqlserverClient*,
+        const StartInstanceXEventRequest&,
+        StartInstanceXEventOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SqlserverClient::StartMigrationCheckOutcome SqlserverClient::StartMigrationCheck(const StartMigrationCheckRequest &request)
@@ -6211,25 +7212,32 @@ SqlserverClient::StartMigrationCheckOutcome SqlserverClient::StartMigrationCheck
 
 void SqlserverClient::StartMigrationCheckAsync(const StartMigrationCheckRequest& request, const StartMigrationCheckAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->StartMigrationCheck(request), context);
-    };
+    using Req = const StartMigrationCheckRequest&;
+    using Resp = StartMigrationCheckResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "StartMigrationCheck", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SqlserverClient::StartMigrationCheckOutcomeCallable SqlserverClient::StartMigrationCheckCallable(const StartMigrationCheckRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<StartMigrationCheckOutcome()>>(
-        [this, request]()
-        {
-            return this->StartMigrationCheck(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<StartMigrationCheckOutcome>>();
+    StartMigrationCheckAsync(
+    request,
+    [prom](
+        const SqlserverClient*,
+        const StartMigrationCheckRequest&,
+        StartMigrationCheckOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SqlserverClient::StopMigrationOutcome SqlserverClient::StopMigration(const StopMigrationRequest &request)
@@ -6254,25 +7262,32 @@ SqlserverClient::StopMigrationOutcome SqlserverClient::StopMigration(const StopM
 
 void SqlserverClient::StopMigrationAsync(const StopMigrationRequest& request, const StopMigrationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->StopMigration(request), context);
-    };
+    using Req = const StopMigrationRequest&;
+    using Resp = StopMigrationResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "StopMigration", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SqlserverClient::StopMigrationOutcomeCallable SqlserverClient::StopMigrationCallable(const StopMigrationRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<StopMigrationOutcome()>>(
-        [this, request]()
-        {
-            return this->StopMigration(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<StopMigrationOutcome>>();
+    StopMigrationAsync(
+    request,
+    [prom](
+        const SqlserverClient*,
+        const StopMigrationRequest&,
+        StopMigrationOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SqlserverClient::SwitchCloudInstanceHAOutcome SqlserverClient::SwitchCloudInstanceHA(const SwitchCloudInstanceHARequest &request)
@@ -6297,25 +7312,32 @@ SqlserverClient::SwitchCloudInstanceHAOutcome SqlserverClient::SwitchCloudInstan
 
 void SqlserverClient::SwitchCloudInstanceHAAsync(const SwitchCloudInstanceHARequest& request, const SwitchCloudInstanceHAAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->SwitchCloudInstanceHA(request), context);
-    };
+    using Req = const SwitchCloudInstanceHARequest&;
+    using Resp = SwitchCloudInstanceHAResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "SwitchCloudInstanceHA", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SqlserverClient::SwitchCloudInstanceHAOutcomeCallable SqlserverClient::SwitchCloudInstanceHACallable(const SwitchCloudInstanceHARequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<SwitchCloudInstanceHAOutcome()>>(
-        [this, request]()
-        {
-            return this->SwitchCloudInstanceHA(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<SwitchCloudInstanceHAOutcome>>();
+    SwitchCloudInstanceHAAsync(
+    request,
+    [prom](
+        const SqlserverClient*,
+        const SwitchCloudInstanceHARequest&,
+        SwitchCloudInstanceHAOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SqlserverClient::TerminateDBInstanceOutcome SqlserverClient::TerminateDBInstance(const TerminateDBInstanceRequest &request)
@@ -6340,25 +7362,32 @@ SqlserverClient::TerminateDBInstanceOutcome SqlserverClient::TerminateDBInstance
 
 void SqlserverClient::TerminateDBInstanceAsync(const TerminateDBInstanceRequest& request, const TerminateDBInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->TerminateDBInstance(request), context);
-    };
+    using Req = const TerminateDBInstanceRequest&;
+    using Resp = TerminateDBInstanceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "TerminateDBInstance", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SqlserverClient::TerminateDBInstanceOutcomeCallable SqlserverClient::TerminateDBInstanceCallable(const TerminateDBInstanceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<TerminateDBInstanceOutcome()>>(
-        [this, request]()
-        {
-            return this->TerminateDBInstance(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<TerminateDBInstanceOutcome>>();
+    TerminateDBInstanceAsync(
+    request,
+    [prom](
+        const SqlserverClient*,
+        const TerminateDBInstanceRequest&,
+        TerminateDBInstanceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SqlserverClient::UpgradeDBInstanceOutcome SqlserverClient::UpgradeDBInstance(const UpgradeDBInstanceRequest &request)
@@ -6383,24 +7412,31 @@ SqlserverClient::UpgradeDBInstanceOutcome SqlserverClient::UpgradeDBInstance(con
 
 void SqlserverClient::UpgradeDBInstanceAsync(const UpgradeDBInstanceRequest& request, const UpgradeDBInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UpgradeDBInstance(request), context);
-    };
+    using Req = const UpgradeDBInstanceRequest&;
+    using Resp = UpgradeDBInstanceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UpgradeDBInstance", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SqlserverClient::UpgradeDBInstanceOutcomeCallable SqlserverClient::UpgradeDBInstanceCallable(const UpgradeDBInstanceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UpgradeDBInstanceOutcome()>>(
-        [this, request]()
-        {
-            return this->UpgradeDBInstance(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UpgradeDBInstanceOutcome>>();
+    UpgradeDBInstanceAsync(
+    request,
+    [prom](
+        const SqlserverClient*,
+        const UpgradeDBInstanceRequest&,
+        UpgradeDBInstanceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 

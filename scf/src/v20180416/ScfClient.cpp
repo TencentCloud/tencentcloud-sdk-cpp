@@ -62,25 +62,32 @@ ScfClient::CopyFunctionOutcome ScfClient::CopyFunction(const CopyFunctionRequest
 
 void ScfClient::CopyFunctionAsync(const CopyFunctionRequest& request, const CopyFunctionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CopyFunction(request), context);
-    };
+    using Req = const CopyFunctionRequest&;
+    using Resp = CopyFunctionResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CopyFunction", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ScfClient::CopyFunctionOutcomeCallable ScfClient::CopyFunctionCallable(const CopyFunctionRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CopyFunctionOutcome()>>(
-        [this, request]()
-        {
-            return this->CopyFunction(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CopyFunctionOutcome>>();
+    CopyFunctionAsync(
+    request,
+    [prom](
+        const ScfClient*,
+        const CopyFunctionRequest&,
+        CopyFunctionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ScfClient::CreateAliasOutcome ScfClient::CreateAlias(const CreateAliasRequest &request)
@@ -105,25 +112,32 @@ ScfClient::CreateAliasOutcome ScfClient::CreateAlias(const CreateAliasRequest &r
 
 void ScfClient::CreateAliasAsync(const CreateAliasRequest& request, const CreateAliasAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateAlias(request), context);
-    };
+    using Req = const CreateAliasRequest&;
+    using Resp = CreateAliasResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateAlias", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ScfClient::CreateAliasOutcomeCallable ScfClient::CreateAliasCallable(const CreateAliasRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateAliasOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateAlias(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateAliasOutcome>>();
+    CreateAliasAsync(
+    request,
+    [prom](
+        const ScfClient*,
+        const CreateAliasRequest&,
+        CreateAliasOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ScfClient::CreateCustomDomainOutcome ScfClient::CreateCustomDomain(const CreateCustomDomainRequest &request)
@@ -148,25 +162,32 @@ ScfClient::CreateCustomDomainOutcome ScfClient::CreateCustomDomain(const CreateC
 
 void ScfClient::CreateCustomDomainAsync(const CreateCustomDomainRequest& request, const CreateCustomDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateCustomDomain(request), context);
-    };
+    using Req = const CreateCustomDomainRequest&;
+    using Resp = CreateCustomDomainResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateCustomDomain", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ScfClient::CreateCustomDomainOutcomeCallable ScfClient::CreateCustomDomainCallable(const CreateCustomDomainRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateCustomDomainOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateCustomDomain(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateCustomDomainOutcome>>();
+    CreateCustomDomainAsync(
+    request,
+    [prom](
+        const ScfClient*,
+        const CreateCustomDomainRequest&,
+        CreateCustomDomainOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ScfClient::CreateFunctionOutcome ScfClient::CreateFunction(const CreateFunctionRequest &request)
@@ -191,25 +212,32 @@ ScfClient::CreateFunctionOutcome ScfClient::CreateFunction(const CreateFunctionR
 
 void ScfClient::CreateFunctionAsync(const CreateFunctionRequest& request, const CreateFunctionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateFunction(request), context);
-    };
+    using Req = const CreateFunctionRequest&;
+    using Resp = CreateFunctionResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateFunction", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ScfClient::CreateFunctionOutcomeCallable ScfClient::CreateFunctionCallable(const CreateFunctionRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateFunctionOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateFunction(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateFunctionOutcome>>();
+    CreateFunctionAsync(
+    request,
+    [prom](
+        const ScfClient*,
+        const CreateFunctionRequest&,
+        CreateFunctionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ScfClient::CreateNamespaceOutcome ScfClient::CreateNamespace(const CreateNamespaceRequest &request)
@@ -234,25 +262,32 @@ ScfClient::CreateNamespaceOutcome ScfClient::CreateNamespace(const CreateNamespa
 
 void ScfClient::CreateNamespaceAsync(const CreateNamespaceRequest& request, const CreateNamespaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateNamespace(request), context);
-    };
+    using Req = const CreateNamespaceRequest&;
+    using Resp = CreateNamespaceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateNamespace", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ScfClient::CreateNamespaceOutcomeCallable ScfClient::CreateNamespaceCallable(const CreateNamespaceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateNamespaceOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateNamespace(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateNamespaceOutcome>>();
+    CreateNamespaceAsync(
+    request,
+    [prom](
+        const ScfClient*,
+        const CreateNamespaceRequest&,
+        CreateNamespaceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ScfClient::CreateTriggerOutcome ScfClient::CreateTrigger(const CreateTriggerRequest &request)
@@ -277,25 +312,32 @@ ScfClient::CreateTriggerOutcome ScfClient::CreateTrigger(const CreateTriggerRequ
 
 void ScfClient::CreateTriggerAsync(const CreateTriggerRequest& request, const CreateTriggerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateTrigger(request), context);
-    };
+    using Req = const CreateTriggerRequest&;
+    using Resp = CreateTriggerResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateTrigger", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ScfClient::CreateTriggerOutcomeCallable ScfClient::CreateTriggerCallable(const CreateTriggerRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateTriggerOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateTrigger(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateTriggerOutcome>>();
+    CreateTriggerAsync(
+    request,
+    [prom](
+        const ScfClient*,
+        const CreateTriggerRequest&,
+        CreateTriggerOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ScfClient::DeleteAliasOutcome ScfClient::DeleteAlias(const DeleteAliasRequest &request)
@@ -320,25 +362,32 @@ ScfClient::DeleteAliasOutcome ScfClient::DeleteAlias(const DeleteAliasRequest &r
 
 void ScfClient::DeleteAliasAsync(const DeleteAliasRequest& request, const DeleteAliasAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteAlias(request), context);
-    };
+    using Req = const DeleteAliasRequest&;
+    using Resp = DeleteAliasResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteAlias", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ScfClient::DeleteAliasOutcomeCallable ScfClient::DeleteAliasCallable(const DeleteAliasRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteAliasOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteAlias(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteAliasOutcome>>();
+    DeleteAliasAsync(
+    request,
+    [prom](
+        const ScfClient*,
+        const DeleteAliasRequest&,
+        DeleteAliasOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ScfClient::DeleteCustomDomainOutcome ScfClient::DeleteCustomDomain(const DeleteCustomDomainRequest &request)
@@ -363,25 +412,32 @@ ScfClient::DeleteCustomDomainOutcome ScfClient::DeleteCustomDomain(const DeleteC
 
 void ScfClient::DeleteCustomDomainAsync(const DeleteCustomDomainRequest& request, const DeleteCustomDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteCustomDomain(request), context);
-    };
+    using Req = const DeleteCustomDomainRequest&;
+    using Resp = DeleteCustomDomainResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteCustomDomain", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ScfClient::DeleteCustomDomainOutcomeCallable ScfClient::DeleteCustomDomainCallable(const DeleteCustomDomainRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteCustomDomainOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteCustomDomain(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteCustomDomainOutcome>>();
+    DeleteCustomDomainAsync(
+    request,
+    [prom](
+        const ScfClient*,
+        const DeleteCustomDomainRequest&,
+        DeleteCustomDomainOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ScfClient::DeleteFunctionOutcome ScfClient::DeleteFunction(const DeleteFunctionRequest &request)
@@ -406,25 +462,32 @@ ScfClient::DeleteFunctionOutcome ScfClient::DeleteFunction(const DeleteFunctionR
 
 void ScfClient::DeleteFunctionAsync(const DeleteFunctionRequest& request, const DeleteFunctionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteFunction(request), context);
-    };
+    using Req = const DeleteFunctionRequest&;
+    using Resp = DeleteFunctionResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteFunction", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ScfClient::DeleteFunctionOutcomeCallable ScfClient::DeleteFunctionCallable(const DeleteFunctionRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteFunctionOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteFunction(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteFunctionOutcome>>();
+    DeleteFunctionAsync(
+    request,
+    [prom](
+        const ScfClient*,
+        const DeleteFunctionRequest&,
+        DeleteFunctionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ScfClient::DeleteFunctionVersionOutcome ScfClient::DeleteFunctionVersion(const DeleteFunctionVersionRequest &request)
@@ -449,25 +512,32 @@ ScfClient::DeleteFunctionVersionOutcome ScfClient::DeleteFunctionVersion(const D
 
 void ScfClient::DeleteFunctionVersionAsync(const DeleteFunctionVersionRequest& request, const DeleteFunctionVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteFunctionVersion(request), context);
-    };
+    using Req = const DeleteFunctionVersionRequest&;
+    using Resp = DeleteFunctionVersionResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteFunctionVersion", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ScfClient::DeleteFunctionVersionOutcomeCallable ScfClient::DeleteFunctionVersionCallable(const DeleteFunctionVersionRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteFunctionVersionOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteFunctionVersion(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteFunctionVersionOutcome>>();
+    DeleteFunctionVersionAsync(
+    request,
+    [prom](
+        const ScfClient*,
+        const DeleteFunctionVersionRequest&,
+        DeleteFunctionVersionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ScfClient::DeleteLayerVersionOutcome ScfClient::DeleteLayerVersion(const DeleteLayerVersionRequest &request)
@@ -492,25 +562,32 @@ ScfClient::DeleteLayerVersionOutcome ScfClient::DeleteLayerVersion(const DeleteL
 
 void ScfClient::DeleteLayerVersionAsync(const DeleteLayerVersionRequest& request, const DeleteLayerVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteLayerVersion(request), context);
-    };
+    using Req = const DeleteLayerVersionRequest&;
+    using Resp = DeleteLayerVersionResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteLayerVersion", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ScfClient::DeleteLayerVersionOutcomeCallable ScfClient::DeleteLayerVersionCallable(const DeleteLayerVersionRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteLayerVersionOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteLayerVersion(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteLayerVersionOutcome>>();
+    DeleteLayerVersionAsync(
+    request,
+    [prom](
+        const ScfClient*,
+        const DeleteLayerVersionRequest&,
+        DeleteLayerVersionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ScfClient::DeleteNamespaceOutcome ScfClient::DeleteNamespace(const DeleteNamespaceRequest &request)
@@ -535,25 +612,32 @@ ScfClient::DeleteNamespaceOutcome ScfClient::DeleteNamespace(const DeleteNamespa
 
 void ScfClient::DeleteNamespaceAsync(const DeleteNamespaceRequest& request, const DeleteNamespaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteNamespace(request), context);
-    };
+    using Req = const DeleteNamespaceRequest&;
+    using Resp = DeleteNamespaceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteNamespace", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ScfClient::DeleteNamespaceOutcomeCallable ScfClient::DeleteNamespaceCallable(const DeleteNamespaceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteNamespaceOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteNamespace(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteNamespaceOutcome>>();
+    DeleteNamespaceAsync(
+    request,
+    [prom](
+        const ScfClient*,
+        const DeleteNamespaceRequest&,
+        DeleteNamespaceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ScfClient::DeleteProvisionedConcurrencyConfigOutcome ScfClient::DeleteProvisionedConcurrencyConfig(const DeleteProvisionedConcurrencyConfigRequest &request)
@@ -578,25 +662,32 @@ ScfClient::DeleteProvisionedConcurrencyConfigOutcome ScfClient::DeleteProvisione
 
 void ScfClient::DeleteProvisionedConcurrencyConfigAsync(const DeleteProvisionedConcurrencyConfigRequest& request, const DeleteProvisionedConcurrencyConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteProvisionedConcurrencyConfig(request), context);
-    };
+    using Req = const DeleteProvisionedConcurrencyConfigRequest&;
+    using Resp = DeleteProvisionedConcurrencyConfigResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteProvisionedConcurrencyConfig", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ScfClient::DeleteProvisionedConcurrencyConfigOutcomeCallable ScfClient::DeleteProvisionedConcurrencyConfigCallable(const DeleteProvisionedConcurrencyConfigRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteProvisionedConcurrencyConfigOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteProvisionedConcurrencyConfig(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteProvisionedConcurrencyConfigOutcome>>();
+    DeleteProvisionedConcurrencyConfigAsync(
+    request,
+    [prom](
+        const ScfClient*,
+        const DeleteProvisionedConcurrencyConfigRequest&,
+        DeleteProvisionedConcurrencyConfigOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ScfClient::DeleteReservedConcurrencyConfigOutcome ScfClient::DeleteReservedConcurrencyConfig(const DeleteReservedConcurrencyConfigRequest &request)
@@ -621,25 +712,32 @@ ScfClient::DeleteReservedConcurrencyConfigOutcome ScfClient::DeleteReservedConcu
 
 void ScfClient::DeleteReservedConcurrencyConfigAsync(const DeleteReservedConcurrencyConfigRequest& request, const DeleteReservedConcurrencyConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteReservedConcurrencyConfig(request), context);
-    };
+    using Req = const DeleteReservedConcurrencyConfigRequest&;
+    using Resp = DeleteReservedConcurrencyConfigResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteReservedConcurrencyConfig", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ScfClient::DeleteReservedConcurrencyConfigOutcomeCallable ScfClient::DeleteReservedConcurrencyConfigCallable(const DeleteReservedConcurrencyConfigRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteReservedConcurrencyConfigOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteReservedConcurrencyConfig(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteReservedConcurrencyConfigOutcome>>();
+    DeleteReservedConcurrencyConfigAsync(
+    request,
+    [prom](
+        const ScfClient*,
+        const DeleteReservedConcurrencyConfigRequest&,
+        DeleteReservedConcurrencyConfigOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ScfClient::DeleteTriggerOutcome ScfClient::DeleteTrigger(const DeleteTriggerRequest &request)
@@ -664,25 +762,32 @@ ScfClient::DeleteTriggerOutcome ScfClient::DeleteTrigger(const DeleteTriggerRequ
 
 void ScfClient::DeleteTriggerAsync(const DeleteTriggerRequest& request, const DeleteTriggerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteTrigger(request), context);
-    };
+    using Req = const DeleteTriggerRequest&;
+    using Resp = DeleteTriggerResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteTrigger", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ScfClient::DeleteTriggerOutcomeCallable ScfClient::DeleteTriggerCallable(const DeleteTriggerRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteTriggerOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteTrigger(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteTriggerOutcome>>();
+    DeleteTriggerAsync(
+    request,
+    [prom](
+        const ScfClient*,
+        const DeleteTriggerRequest&,
+        DeleteTriggerOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ScfClient::GetAccountOutcome ScfClient::GetAccount(const GetAccountRequest &request)
@@ -707,25 +812,32 @@ ScfClient::GetAccountOutcome ScfClient::GetAccount(const GetAccountRequest &requ
 
 void ScfClient::GetAccountAsync(const GetAccountRequest& request, const GetAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->GetAccount(request), context);
-    };
+    using Req = const GetAccountRequest&;
+    using Resp = GetAccountResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "GetAccount", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ScfClient::GetAccountOutcomeCallable ScfClient::GetAccountCallable(const GetAccountRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<GetAccountOutcome()>>(
-        [this, request]()
-        {
-            return this->GetAccount(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<GetAccountOutcome>>();
+    GetAccountAsync(
+    request,
+    [prom](
+        const ScfClient*,
+        const GetAccountRequest&,
+        GetAccountOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ScfClient::GetAliasOutcome ScfClient::GetAlias(const GetAliasRequest &request)
@@ -750,25 +862,32 @@ ScfClient::GetAliasOutcome ScfClient::GetAlias(const GetAliasRequest &request)
 
 void ScfClient::GetAliasAsync(const GetAliasRequest& request, const GetAliasAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->GetAlias(request), context);
-    };
+    using Req = const GetAliasRequest&;
+    using Resp = GetAliasResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "GetAlias", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ScfClient::GetAliasOutcomeCallable ScfClient::GetAliasCallable(const GetAliasRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<GetAliasOutcome()>>(
-        [this, request]()
-        {
-            return this->GetAlias(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<GetAliasOutcome>>();
+    GetAliasAsync(
+    request,
+    [prom](
+        const ScfClient*,
+        const GetAliasRequest&,
+        GetAliasOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ScfClient::GetAsyncEventStatusOutcome ScfClient::GetAsyncEventStatus(const GetAsyncEventStatusRequest &request)
@@ -793,25 +912,32 @@ ScfClient::GetAsyncEventStatusOutcome ScfClient::GetAsyncEventStatus(const GetAs
 
 void ScfClient::GetAsyncEventStatusAsync(const GetAsyncEventStatusRequest& request, const GetAsyncEventStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->GetAsyncEventStatus(request), context);
-    };
+    using Req = const GetAsyncEventStatusRequest&;
+    using Resp = GetAsyncEventStatusResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "GetAsyncEventStatus", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ScfClient::GetAsyncEventStatusOutcomeCallable ScfClient::GetAsyncEventStatusCallable(const GetAsyncEventStatusRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<GetAsyncEventStatusOutcome()>>(
-        [this, request]()
-        {
-            return this->GetAsyncEventStatus(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<GetAsyncEventStatusOutcome>>();
+    GetAsyncEventStatusAsync(
+    request,
+    [prom](
+        const ScfClient*,
+        const GetAsyncEventStatusRequest&,
+        GetAsyncEventStatusOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ScfClient::GetCustomDomainOutcome ScfClient::GetCustomDomain(const GetCustomDomainRequest &request)
@@ -836,25 +962,32 @@ ScfClient::GetCustomDomainOutcome ScfClient::GetCustomDomain(const GetCustomDoma
 
 void ScfClient::GetCustomDomainAsync(const GetCustomDomainRequest& request, const GetCustomDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->GetCustomDomain(request), context);
-    };
+    using Req = const GetCustomDomainRequest&;
+    using Resp = GetCustomDomainResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "GetCustomDomain", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ScfClient::GetCustomDomainOutcomeCallable ScfClient::GetCustomDomainCallable(const GetCustomDomainRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<GetCustomDomainOutcome()>>(
-        [this, request]()
-        {
-            return this->GetCustomDomain(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<GetCustomDomainOutcome>>();
+    GetCustomDomainAsync(
+    request,
+    [prom](
+        const ScfClient*,
+        const GetCustomDomainRequest&,
+        GetCustomDomainOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ScfClient::GetFunctionOutcome ScfClient::GetFunction(const GetFunctionRequest &request)
@@ -879,25 +1012,32 @@ ScfClient::GetFunctionOutcome ScfClient::GetFunction(const GetFunctionRequest &r
 
 void ScfClient::GetFunctionAsync(const GetFunctionRequest& request, const GetFunctionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->GetFunction(request), context);
-    };
+    using Req = const GetFunctionRequest&;
+    using Resp = GetFunctionResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "GetFunction", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ScfClient::GetFunctionOutcomeCallable ScfClient::GetFunctionCallable(const GetFunctionRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<GetFunctionOutcome()>>(
-        [this, request]()
-        {
-            return this->GetFunction(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<GetFunctionOutcome>>();
+    GetFunctionAsync(
+    request,
+    [prom](
+        const ScfClient*,
+        const GetFunctionRequest&,
+        GetFunctionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ScfClient::GetFunctionAddressOutcome ScfClient::GetFunctionAddress(const GetFunctionAddressRequest &request)
@@ -922,25 +1062,32 @@ ScfClient::GetFunctionAddressOutcome ScfClient::GetFunctionAddress(const GetFunc
 
 void ScfClient::GetFunctionAddressAsync(const GetFunctionAddressRequest& request, const GetFunctionAddressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->GetFunctionAddress(request), context);
-    };
+    using Req = const GetFunctionAddressRequest&;
+    using Resp = GetFunctionAddressResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "GetFunctionAddress", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ScfClient::GetFunctionAddressOutcomeCallable ScfClient::GetFunctionAddressCallable(const GetFunctionAddressRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<GetFunctionAddressOutcome()>>(
-        [this, request]()
-        {
-            return this->GetFunctionAddress(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<GetFunctionAddressOutcome>>();
+    GetFunctionAddressAsync(
+    request,
+    [prom](
+        const ScfClient*,
+        const GetFunctionAddressRequest&,
+        GetFunctionAddressOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ScfClient::GetFunctionEventInvokeConfigOutcome ScfClient::GetFunctionEventInvokeConfig(const GetFunctionEventInvokeConfigRequest &request)
@@ -965,25 +1112,32 @@ ScfClient::GetFunctionEventInvokeConfigOutcome ScfClient::GetFunctionEventInvoke
 
 void ScfClient::GetFunctionEventInvokeConfigAsync(const GetFunctionEventInvokeConfigRequest& request, const GetFunctionEventInvokeConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->GetFunctionEventInvokeConfig(request), context);
-    };
+    using Req = const GetFunctionEventInvokeConfigRequest&;
+    using Resp = GetFunctionEventInvokeConfigResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "GetFunctionEventInvokeConfig", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ScfClient::GetFunctionEventInvokeConfigOutcomeCallable ScfClient::GetFunctionEventInvokeConfigCallable(const GetFunctionEventInvokeConfigRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<GetFunctionEventInvokeConfigOutcome()>>(
-        [this, request]()
-        {
-            return this->GetFunctionEventInvokeConfig(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<GetFunctionEventInvokeConfigOutcome>>();
+    GetFunctionEventInvokeConfigAsync(
+    request,
+    [prom](
+        const ScfClient*,
+        const GetFunctionEventInvokeConfigRequest&,
+        GetFunctionEventInvokeConfigOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ScfClient::GetFunctionLogsOutcome ScfClient::GetFunctionLogs(const GetFunctionLogsRequest &request)
@@ -1008,25 +1162,32 @@ ScfClient::GetFunctionLogsOutcome ScfClient::GetFunctionLogs(const GetFunctionLo
 
 void ScfClient::GetFunctionLogsAsync(const GetFunctionLogsRequest& request, const GetFunctionLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->GetFunctionLogs(request), context);
-    };
+    using Req = const GetFunctionLogsRequest&;
+    using Resp = GetFunctionLogsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "GetFunctionLogs", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ScfClient::GetFunctionLogsOutcomeCallable ScfClient::GetFunctionLogsCallable(const GetFunctionLogsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<GetFunctionLogsOutcome()>>(
-        [this, request]()
-        {
-            return this->GetFunctionLogs(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<GetFunctionLogsOutcome>>();
+    GetFunctionLogsAsync(
+    request,
+    [prom](
+        const ScfClient*,
+        const GetFunctionLogsRequest&,
+        GetFunctionLogsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ScfClient::GetLayerVersionOutcome ScfClient::GetLayerVersion(const GetLayerVersionRequest &request)
@@ -1051,25 +1212,32 @@ ScfClient::GetLayerVersionOutcome ScfClient::GetLayerVersion(const GetLayerVersi
 
 void ScfClient::GetLayerVersionAsync(const GetLayerVersionRequest& request, const GetLayerVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->GetLayerVersion(request), context);
-    };
+    using Req = const GetLayerVersionRequest&;
+    using Resp = GetLayerVersionResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "GetLayerVersion", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ScfClient::GetLayerVersionOutcomeCallable ScfClient::GetLayerVersionCallable(const GetLayerVersionRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<GetLayerVersionOutcome()>>(
-        [this, request]()
-        {
-            return this->GetLayerVersion(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<GetLayerVersionOutcome>>();
+    GetLayerVersionAsync(
+    request,
+    [prom](
+        const ScfClient*,
+        const GetLayerVersionRequest&,
+        GetLayerVersionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ScfClient::GetProvisionedConcurrencyConfigOutcome ScfClient::GetProvisionedConcurrencyConfig(const GetProvisionedConcurrencyConfigRequest &request)
@@ -1094,25 +1262,32 @@ ScfClient::GetProvisionedConcurrencyConfigOutcome ScfClient::GetProvisionedConcu
 
 void ScfClient::GetProvisionedConcurrencyConfigAsync(const GetProvisionedConcurrencyConfigRequest& request, const GetProvisionedConcurrencyConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->GetProvisionedConcurrencyConfig(request), context);
-    };
+    using Req = const GetProvisionedConcurrencyConfigRequest&;
+    using Resp = GetProvisionedConcurrencyConfigResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "GetProvisionedConcurrencyConfig", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ScfClient::GetProvisionedConcurrencyConfigOutcomeCallable ScfClient::GetProvisionedConcurrencyConfigCallable(const GetProvisionedConcurrencyConfigRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<GetProvisionedConcurrencyConfigOutcome()>>(
-        [this, request]()
-        {
-            return this->GetProvisionedConcurrencyConfig(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<GetProvisionedConcurrencyConfigOutcome>>();
+    GetProvisionedConcurrencyConfigAsync(
+    request,
+    [prom](
+        const ScfClient*,
+        const GetProvisionedConcurrencyConfigRequest&,
+        GetProvisionedConcurrencyConfigOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ScfClient::GetRequestStatusOutcome ScfClient::GetRequestStatus(const GetRequestStatusRequest &request)
@@ -1137,25 +1312,32 @@ ScfClient::GetRequestStatusOutcome ScfClient::GetRequestStatus(const GetRequestS
 
 void ScfClient::GetRequestStatusAsync(const GetRequestStatusRequest& request, const GetRequestStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->GetRequestStatus(request), context);
-    };
+    using Req = const GetRequestStatusRequest&;
+    using Resp = GetRequestStatusResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "GetRequestStatus", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ScfClient::GetRequestStatusOutcomeCallable ScfClient::GetRequestStatusCallable(const GetRequestStatusRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<GetRequestStatusOutcome()>>(
-        [this, request]()
-        {
-            return this->GetRequestStatus(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<GetRequestStatusOutcome>>();
+    GetRequestStatusAsync(
+    request,
+    [prom](
+        const ScfClient*,
+        const GetRequestStatusRequest&,
+        GetRequestStatusOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ScfClient::GetReservedConcurrencyConfigOutcome ScfClient::GetReservedConcurrencyConfig(const GetReservedConcurrencyConfigRequest &request)
@@ -1180,25 +1362,32 @@ ScfClient::GetReservedConcurrencyConfigOutcome ScfClient::GetReservedConcurrency
 
 void ScfClient::GetReservedConcurrencyConfigAsync(const GetReservedConcurrencyConfigRequest& request, const GetReservedConcurrencyConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->GetReservedConcurrencyConfig(request), context);
-    };
+    using Req = const GetReservedConcurrencyConfigRequest&;
+    using Resp = GetReservedConcurrencyConfigResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "GetReservedConcurrencyConfig", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ScfClient::GetReservedConcurrencyConfigOutcomeCallable ScfClient::GetReservedConcurrencyConfigCallable(const GetReservedConcurrencyConfigRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<GetReservedConcurrencyConfigOutcome()>>(
-        [this, request]()
-        {
-            return this->GetReservedConcurrencyConfig(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<GetReservedConcurrencyConfigOutcome>>();
+    GetReservedConcurrencyConfigAsync(
+    request,
+    [prom](
+        const ScfClient*,
+        const GetReservedConcurrencyConfigRequest&,
+        GetReservedConcurrencyConfigOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ScfClient::InvokeOutcome ScfClient::Invoke(const InvokeRequest &request)
@@ -1223,25 +1412,32 @@ ScfClient::InvokeOutcome ScfClient::Invoke(const InvokeRequest &request)
 
 void ScfClient::InvokeAsync(const InvokeRequest& request, const InvokeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->Invoke(request), context);
-    };
+    using Req = const InvokeRequest&;
+    using Resp = InvokeResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "Invoke", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ScfClient::InvokeOutcomeCallable ScfClient::InvokeCallable(const InvokeRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<InvokeOutcome()>>(
-        [this, request]()
-        {
-            return this->Invoke(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<InvokeOutcome>>();
+    InvokeAsync(
+    request,
+    [prom](
+        const ScfClient*,
+        const InvokeRequest&,
+        InvokeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ScfClient::InvokeFunctionOutcome ScfClient::InvokeFunction(const InvokeFunctionRequest &request)
@@ -1266,25 +1462,32 @@ ScfClient::InvokeFunctionOutcome ScfClient::InvokeFunction(const InvokeFunctionR
 
 void ScfClient::InvokeFunctionAsync(const InvokeFunctionRequest& request, const InvokeFunctionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->InvokeFunction(request), context);
-    };
+    using Req = const InvokeFunctionRequest&;
+    using Resp = InvokeFunctionResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "InvokeFunction", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ScfClient::InvokeFunctionOutcomeCallable ScfClient::InvokeFunctionCallable(const InvokeFunctionRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<InvokeFunctionOutcome()>>(
-        [this, request]()
-        {
-            return this->InvokeFunction(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<InvokeFunctionOutcome>>();
+    InvokeFunctionAsync(
+    request,
+    [prom](
+        const ScfClient*,
+        const InvokeFunctionRequest&,
+        InvokeFunctionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ScfClient::ListAliasesOutcome ScfClient::ListAliases(const ListAliasesRequest &request)
@@ -1309,25 +1512,32 @@ ScfClient::ListAliasesOutcome ScfClient::ListAliases(const ListAliasesRequest &r
 
 void ScfClient::ListAliasesAsync(const ListAliasesRequest& request, const ListAliasesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ListAliases(request), context);
-    };
+    using Req = const ListAliasesRequest&;
+    using Resp = ListAliasesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ListAliases", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ScfClient::ListAliasesOutcomeCallable ScfClient::ListAliasesCallable(const ListAliasesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ListAliasesOutcome()>>(
-        [this, request]()
-        {
-            return this->ListAliases(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ListAliasesOutcome>>();
+    ListAliasesAsync(
+    request,
+    [prom](
+        const ScfClient*,
+        const ListAliasesRequest&,
+        ListAliasesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ScfClient::ListAsyncEventsOutcome ScfClient::ListAsyncEvents(const ListAsyncEventsRequest &request)
@@ -1352,25 +1562,32 @@ ScfClient::ListAsyncEventsOutcome ScfClient::ListAsyncEvents(const ListAsyncEven
 
 void ScfClient::ListAsyncEventsAsync(const ListAsyncEventsRequest& request, const ListAsyncEventsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ListAsyncEvents(request), context);
-    };
+    using Req = const ListAsyncEventsRequest&;
+    using Resp = ListAsyncEventsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ListAsyncEvents", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ScfClient::ListAsyncEventsOutcomeCallable ScfClient::ListAsyncEventsCallable(const ListAsyncEventsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ListAsyncEventsOutcome()>>(
-        [this, request]()
-        {
-            return this->ListAsyncEvents(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ListAsyncEventsOutcome>>();
+    ListAsyncEventsAsync(
+    request,
+    [prom](
+        const ScfClient*,
+        const ListAsyncEventsRequest&,
+        ListAsyncEventsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ScfClient::ListCustomDomainsOutcome ScfClient::ListCustomDomains(const ListCustomDomainsRequest &request)
@@ -1395,25 +1612,32 @@ ScfClient::ListCustomDomainsOutcome ScfClient::ListCustomDomains(const ListCusto
 
 void ScfClient::ListCustomDomainsAsync(const ListCustomDomainsRequest& request, const ListCustomDomainsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ListCustomDomains(request), context);
-    };
+    using Req = const ListCustomDomainsRequest&;
+    using Resp = ListCustomDomainsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ListCustomDomains", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ScfClient::ListCustomDomainsOutcomeCallable ScfClient::ListCustomDomainsCallable(const ListCustomDomainsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ListCustomDomainsOutcome()>>(
-        [this, request]()
-        {
-            return this->ListCustomDomains(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ListCustomDomainsOutcome>>();
+    ListCustomDomainsAsync(
+    request,
+    [prom](
+        const ScfClient*,
+        const ListCustomDomainsRequest&,
+        ListCustomDomainsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ScfClient::ListFunctionsOutcome ScfClient::ListFunctions(const ListFunctionsRequest &request)
@@ -1438,25 +1662,32 @@ ScfClient::ListFunctionsOutcome ScfClient::ListFunctions(const ListFunctionsRequ
 
 void ScfClient::ListFunctionsAsync(const ListFunctionsRequest& request, const ListFunctionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ListFunctions(request), context);
-    };
+    using Req = const ListFunctionsRequest&;
+    using Resp = ListFunctionsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ListFunctions", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ScfClient::ListFunctionsOutcomeCallable ScfClient::ListFunctionsCallable(const ListFunctionsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ListFunctionsOutcome()>>(
-        [this, request]()
-        {
-            return this->ListFunctions(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ListFunctionsOutcome>>();
+    ListFunctionsAsync(
+    request,
+    [prom](
+        const ScfClient*,
+        const ListFunctionsRequest&,
+        ListFunctionsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ScfClient::ListLayerVersionsOutcome ScfClient::ListLayerVersions(const ListLayerVersionsRequest &request)
@@ -1481,25 +1712,32 @@ ScfClient::ListLayerVersionsOutcome ScfClient::ListLayerVersions(const ListLayer
 
 void ScfClient::ListLayerVersionsAsync(const ListLayerVersionsRequest& request, const ListLayerVersionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ListLayerVersions(request), context);
-    };
+    using Req = const ListLayerVersionsRequest&;
+    using Resp = ListLayerVersionsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ListLayerVersions", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ScfClient::ListLayerVersionsOutcomeCallable ScfClient::ListLayerVersionsCallable(const ListLayerVersionsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ListLayerVersionsOutcome()>>(
-        [this, request]()
-        {
-            return this->ListLayerVersions(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ListLayerVersionsOutcome>>();
+    ListLayerVersionsAsync(
+    request,
+    [prom](
+        const ScfClient*,
+        const ListLayerVersionsRequest&,
+        ListLayerVersionsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ScfClient::ListLayersOutcome ScfClient::ListLayers(const ListLayersRequest &request)
@@ -1524,25 +1762,32 @@ ScfClient::ListLayersOutcome ScfClient::ListLayers(const ListLayersRequest &requ
 
 void ScfClient::ListLayersAsync(const ListLayersRequest& request, const ListLayersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ListLayers(request), context);
-    };
+    using Req = const ListLayersRequest&;
+    using Resp = ListLayersResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ListLayers", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ScfClient::ListLayersOutcomeCallable ScfClient::ListLayersCallable(const ListLayersRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ListLayersOutcome()>>(
-        [this, request]()
-        {
-            return this->ListLayers(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ListLayersOutcome>>();
+    ListLayersAsync(
+    request,
+    [prom](
+        const ScfClient*,
+        const ListLayersRequest&,
+        ListLayersOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ScfClient::ListNamespacesOutcome ScfClient::ListNamespaces(const ListNamespacesRequest &request)
@@ -1567,25 +1812,32 @@ ScfClient::ListNamespacesOutcome ScfClient::ListNamespaces(const ListNamespacesR
 
 void ScfClient::ListNamespacesAsync(const ListNamespacesRequest& request, const ListNamespacesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ListNamespaces(request), context);
-    };
+    using Req = const ListNamespacesRequest&;
+    using Resp = ListNamespacesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ListNamespaces", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ScfClient::ListNamespacesOutcomeCallable ScfClient::ListNamespacesCallable(const ListNamespacesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ListNamespacesOutcome()>>(
-        [this, request]()
-        {
-            return this->ListNamespaces(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ListNamespacesOutcome>>();
+    ListNamespacesAsync(
+    request,
+    [prom](
+        const ScfClient*,
+        const ListNamespacesRequest&,
+        ListNamespacesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ScfClient::ListTriggersOutcome ScfClient::ListTriggers(const ListTriggersRequest &request)
@@ -1610,25 +1862,32 @@ ScfClient::ListTriggersOutcome ScfClient::ListTriggers(const ListTriggersRequest
 
 void ScfClient::ListTriggersAsync(const ListTriggersRequest& request, const ListTriggersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ListTriggers(request), context);
-    };
+    using Req = const ListTriggersRequest&;
+    using Resp = ListTriggersResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ListTriggers", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ScfClient::ListTriggersOutcomeCallable ScfClient::ListTriggersCallable(const ListTriggersRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ListTriggersOutcome()>>(
-        [this, request]()
-        {
-            return this->ListTriggers(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ListTriggersOutcome>>();
+    ListTriggersAsync(
+    request,
+    [prom](
+        const ScfClient*,
+        const ListTriggersRequest&,
+        ListTriggersOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ScfClient::ListVersionByFunctionOutcome ScfClient::ListVersionByFunction(const ListVersionByFunctionRequest &request)
@@ -1653,25 +1912,32 @@ ScfClient::ListVersionByFunctionOutcome ScfClient::ListVersionByFunction(const L
 
 void ScfClient::ListVersionByFunctionAsync(const ListVersionByFunctionRequest& request, const ListVersionByFunctionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ListVersionByFunction(request), context);
-    };
+    using Req = const ListVersionByFunctionRequest&;
+    using Resp = ListVersionByFunctionResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ListVersionByFunction", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ScfClient::ListVersionByFunctionOutcomeCallable ScfClient::ListVersionByFunctionCallable(const ListVersionByFunctionRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ListVersionByFunctionOutcome()>>(
-        [this, request]()
-        {
-            return this->ListVersionByFunction(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ListVersionByFunctionOutcome>>();
+    ListVersionByFunctionAsync(
+    request,
+    [prom](
+        const ScfClient*,
+        const ListVersionByFunctionRequest&,
+        ListVersionByFunctionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ScfClient::PublishLayerVersionOutcome ScfClient::PublishLayerVersion(const PublishLayerVersionRequest &request)
@@ -1696,25 +1962,32 @@ ScfClient::PublishLayerVersionOutcome ScfClient::PublishLayerVersion(const Publi
 
 void ScfClient::PublishLayerVersionAsync(const PublishLayerVersionRequest& request, const PublishLayerVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->PublishLayerVersion(request), context);
-    };
+    using Req = const PublishLayerVersionRequest&;
+    using Resp = PublishLayerVersionResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "PublishLayerVersion", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ScfClient::PublishLayerVersionOutcomeCallable ScfClient::PublishLayerVersionCallable(const PublishLayerVersionRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<PublishLayerVersionOutcome()>>(
-        [this, request]()
-        {
-            return this->PublishLayerVersion(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<PublishLayerVersionOutcome>>();
+    PublishLayerVersionAsync(
+    request,
+    [prom](
+        const ScfClient*,
+        const PublishLayerVersionRequest&,
+        PublishLayerVersionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ScfClient::PublishVersionOutcome ScfClient::PublishVersion(const PublishVersionRequest &request)
@@ -1739,25 +2012,32 @@ ScfClient::PublishVersionOutcome ScfClient::PublishVersion(const PublishVersionR
 
 void ScfClient::PublishVersionAsync(const PublishVersionRequest& request, const PublishVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->PublishVersion(request), context);
-    };
+    using Req = const PublishVersionRequest&;
+    using Resp = PublishVersionResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "PublishVersion", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ScfClient::PublishVersionOutcomeCallable ScfClient::PublishVersionCallable(const PublishVersionRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<PublishVersionOutcome()>>(
-        [this, request]()
-        {
-            return this->PublishVersion(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<PublishVersionOutcome>>();
+    PublishVersionAsync(
+    request,
+    [prom](
+        const ScfClient*,
+        const PublishVersionRequest&,
+        PublishVersionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ScfClient::PutProvisionedConcurrencyConfigOutcome ScfClient::PutProvisionedConcurrencyConfig(const PutProvisionedConcurrencyConfigRequest &request)
@@ -1782,25 +2062,32 @@ ScfClient::PutProvisionedConcurrencyConfigOutcome ScfClient::PutProvisionedConcu
 
 void ScfClient::PutProvisionedConcurrencyConfigAsync(const PutProvisionedConcurrencyConfigRequest& request, const PutProvisionedConcurrencyConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->PutProvisionedConcurrencyConfig(request), context);
-    };
+    using Req = const PutProvisionedConcurrencyConfigRequest&;
+    using Resp = PutProvisionedConcurrencyConfigResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "PutProvisionedConcurrencyConfig", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ScfClient::PutProvisionedConcurrencyConfigOutcomeCallable ScfClient::PutProvisionedConcurrencyConfigCallable(const PutProvisionedConcurrencyConfigRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<PutProvisionedConcurrencyConfigOutcome()>>(
-        [this, request]()
-        {
-            return this->PutProvisionedConcurrencyConfig(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<PutProvisionedConcurrencyConfigOutcome>>();
+    PutProvisionedConcurrencyConfigAsync(
+    request,
+    [prom](
+        const ScfClient*,
+        const PutProvisionedConcurrencyConfigRequest&,
+        PutProvisionedConcurrencyConfigOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ScfClient::PutReservedConcurrencyConfigOutcome ScfClient::PutReservedConcurrencyConfig(const PutReservedConcurrencyConfigRequest &request)
@@ -1825,25 +2112,32 @@ ScfClient::PutReservedConcurrencyConfigOutcome ScfClient::PutReservedConcurrency
 
 void ScfClient::PutReservedConcurrencyConfigAsync(const PutReservedConcurrencyConfigRequest& request, const PutReservedConcurrencyConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->PutReservedConcurrencyConfig(request), context);
-    };
+    using Req = const PutReservedConcurrencyConfigRequest&;
+    using Resp = PutReservedConcurrencyConfigResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "PutReservedConcurrencyConfig", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ScfClient::PutReservedConcurrencyConfigOutcomeCallable ScfClient::PutReservedConcurrencyConfigCallable(const PutReservedConcurrencyConfigRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<PutReservedConcurrencyConfigOutcome()>>(
-        [this, request]()
-        {
-            return this->PutReservedConcurrencyConfig(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<PutReservedConcurrencyConfigOutcome>>();
+    PutReservedConcurrencyConfigAsync(
+    request,
+    [prom](
+        const ScfClient*,
+        const PutReservedConcurrencyConfigRequest&,
+        PutReservedConcurrencyConfigOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ScfClient::PutTotalConcurrencyConfigOutcome ScfClient::PutTotalConcurrencyConfig(const PutTotalConcurrencyConfigRequest &request)
@@ -1868,25 +2162,32 @@ ScfClient::PutTotalConcurrencyConfigOutcome ScfClient::PutTotalConcurrencyConfig
 
 void ScfClient::PutTotalConcurrencyConfigAsync(const PutTotalConcurrencyConfigRequest& request, const PutTotalConcurrencyConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->PutTotalConcurrencyConfig(request), context);
-    };
+    using Req = const PutTotalConcurrencyConfigRequest&;
+    using Resp = PutTotalConcurrencyConfigResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "PutTotalConcurrencyConfig", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ScfClient::PutTotalConcurrencyConfigOutcomeCallable ScfClient::PutTotalConcurrencyConfigCallable(const PutTotalConcurrencyConfigRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<PutTotalConcurrencyConfigOutcome()>>(
-        [this, request]()
-        {
-            return this->PutTotalConcurrencyConfig(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<PutTotalConcurrencyConfigOutcome>>();
+    PutTotalConcurrencyConfigAsync(
+    request,
+    [prom](
+        const ScfClient*,
+        const PutTotalConcurrencyConfigRequest&,
+        PutTotalConcurrencyConfigOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ScfClient::TerminateAsyncEventOutcome ScfClient::TerminateAsyncEvent(const TerminateAsyncEventRequest &request)
@@ -1911,25 +2212,32 @@ ScfClient::TerminateAsyncEventOutcome ScfClient::TerminateAsyncEvent(const Termi
 
 void ScfClient::TerminateAsyncEventAsync(const TerminateAsyncEventRequest& request, const TerminateAsyncEventAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->TerminateAsyncEvent(request), context);
-    };
+    using Req = const TerminateAsyncEventRequest&;
+    using Resp = TerminateAsyncEventResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "TerminateAsyncEvent", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ScfClient::TerminateAsyncEventOutcomeCallable ScfClient::TerminateAsyncEventCallable(const TerminateAsyncEventRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<TerminateAsyncEventOutcome()>>(
-        [this, request]()
-        {
-            return this->TerminateAsyncEvent(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<TerminateAsyncEventOutcome>>();
+    TerminateAsyncEventAsync(
+    request,
+    [prom](
+        const ScfClient*,
+        const TerminateAsyncEventRequest&,
+        TerminateAsyncEventOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ScfClient::UpdateAliasOutcome ScfClient::UpdateAlias(const UpdateAliasRequest &request)
@@ -1954,25 +2262,32 @@ ScfClient::UpdateAliasOutcome ScfClient::UpdateAlias(const UpdateAliasRequest &r
 
 void ScfClient::UpdateAliasAsync(const UpdateAliasRequest& request, const UpdateAliasAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UpdateAlias(request), context);
-    };
+    using Req = const UpdateAliasRequest&;
+    using Resp = UpdateAliasResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UpdateAlias", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ScfClient::UpdateAliasOutcomeCallable ScfClient::UpdateAliasCallable(const UpdateAliasRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UpdateAliasOutcome()>>(
-        [this, request]()
-        {
-            return this->UpdateAlias(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UpdateAliasOutcome>>();
+    UpdateAliasAsync(
+    request,
+    [prom](
+        const ScfClient*,
+        const UpdateAliasRequest&,
+        UpdateAliasOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ScfClient::UpdateCustomDomainOutcome ScfClient::UpdateCustomDomain(const UpdateCustomDomainRequest &request)
@@ -1997,25 +2312,32 @@ ScfClient::UpdateCustomDomainOutcome ScfClient::UpdateCustomDomain(const UpdateC
 
 void ScfClient::UpdateCustomDomainAsync(const UpdateCustomDomainRequest& request, const UpdateCustomDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UpdateCustomDomain(request), context);
-    };
+    using Req = const UpdateCustomDomainRequest&;
+    using Resp = UpdateCustomDomainResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UpdateCustomDomain", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ScfClient::UpdateCustomDomainOutcomeCallable ScfClient::UpdateCustomDomainCallable(const UpdateCustomDomainRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UpdateCustomDomainOutcome()>>(
-        [this, request]()
-        {
-            return this->UpdateCustomDomain(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UpdateCustomDomainOutcome>>();
+    UpdateCustomDomainAsync(
+    request,
+    [prom](
+        const ScfClient*,
+        const UpdateCustomDomainRequest&,
+        UpdateCustomDomainOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ScfClient::UpdateFunctionCodeOutcome ScfClient::UpdateFunctionCode(const UpdateFunctionCodeRequest &request)
@@ -2040,25 +2362,32 @@ ScfClient::UpdateFunctionCodeOutcome ScfClient::UpdateFunctionCode(const UpdateF
 
 void ScfClient::UpdateFunctionCodeAsync(const UpdateFunctionCodeRequest& request, const UpdateFunctionCodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UpdateFunctionCode(request), context);
-    };
+    using Req = const UpdateFunctionCodeRequest&;
+    using Resp = UpdateFunctionCodeResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UpdateFunctionCode", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ScfClient::UpdateFunctionCodeOutcomeCallable ScfClient::UpdateFunctionCodeCallable(const UpdateFunctionCodeRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UpdateFunctionCodeOutcome()>>(
-        [this, request]()
-        {
-            return this->UpdateFunctionCode(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UpdateFunctionCodeOutcome>>();
+    UpdateFunctionCodeAsync(
+    request,
+    [prom](
+        const ScfClient*,
+        const UpdateFunctionCodeRequest&,
+        UpdateFunctionCodeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ScfClient::UpdateFunctionConfigurationOutcome ScfClient::UpdateFunctionConfiguration(const UpdateFunctionConfigurationRequest &request)
@@ -2083,25 +2412,32 @@ ScfClient::UpdateFunctionConfigurationOutcome ScfClient::UpdateFunctionConfigura
 
 void ScfClient::UpdateFunctionConfigurationAsync(const UpdateFunctionConfigurationRequest& request, const UpdateFunctionConfigurationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UpdateFunctionConfiguration(request), context);
-    };
+    using Req = const UpdateFunctionConfigurationRequest&;
+    using Resp = UpdateFunctionConfigurationResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UpdateFunctionConfiguration", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ScfClient::UpdateFunctionConfigurationOutcomeCallable ScfClient::UpdateFunctionConfigurationCallable(const UpdateFunctionConfigurationRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UpdateFunctionConfigurationOutcome()>>(
-        [this, request]()
-        {
-            return this->UpdateFunctionConfiguration(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UpdateFunctionConfigurationOutcome>>();
+    UpdateFunctionConfigurationAsync(
+    request,
+    [prom](
+        const ScfClient*,
+        const UpdateFunctionConfigurationRequest&,
+        UpdateFunctionConfigurationOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ScfClient::UpdateFunctionEventInvokeConfigOutcome ScfClient::UpdateFunctionEventInvokeConfig(const UpdateFunctionEventInvokeConfigRequest &request)
@@ -2126,25 +2462,32 @@ ScfClient::UpdateFunctionEventInvokeConfigOutcome ScfClient::UpdateFunctionEvent
 
 void ScfClient::UpdateFunctionEventInvokeConfigAsync(const UpdateFunctionEventInvokeConfigRequest& request, const UpdateFunctionEventInvokeConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UpdateFunctionEventInvokeConfig(request), context);
-    };
+    using Req = const UpdateFunctionEventInvokeConfigRequest&;
+    using Resp = UpdateFunctionEventInvokeConfigResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UpdateFunctionEventInvokeConfig", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ScfClient::UpdateFunctionEventInvokeConfigOutcomeCallable ScfClient::UpdateFunctionEventInvokeConfigCallable(const UpdateFunctionEventInvokeConfigRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UpdateFunctionEventInvokeConfigOutcome()>>(
-        [this, request]()
-        {
-            return this->UpdateFunctionEventInvokeConfig(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UpdateFunctionEventInvokeConfigOutcome>>();
+    UpdateFunctionEventInvokeConfigAsync(
+    request,
+    [prom](
+        const ScfClient*,
+        const UpdateFunctionEventInvokeConfigRequest&,
+        UpdateFunctionEventInvokeConfigOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ScfClient::UpdateNamespaceOutcome ScfClient::UpdateNamespace(const UpdateNamespaceRequest &request)
@@ -2169,25 +2512,32 @@ ScfClient::UpdateNamespaceOutcome ScfClient::UpdateNamespace(const UpdateNamespa
 
 void ScfClient::UpdateNamespaceAsync(const UpdateNamespaceRequest& request, const UpdateNamespaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UpdateNamespace(request), context);
-    };
+    using Req = const UpdateNamespaceRequest&;
+    using Resp = UpdateNamespaceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UpdateNamespace", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ScfClient::UpdateNamespaceOutcomeCallable ScfClient::UpdateNamespaceCallable(const UpdateNamespaceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UpdateNamespaceOutcome()>>(
-        [this, request]()
-        {
-            return this->UpdateNamespace(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UpdateNamespaceOutcome>>();
+    UpdateNamespaceAsync(
+    request,
+    [prom](
+        const ScfClient*,
+        const UpdateNamespaceRequest&,
+        UpdateNamespaceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ScfClient::UpdateTriggerOutcome ScfClient::UpdateTrigger(const UpdateTriggerRequest &request)
@@ -2212,25 +2562,32 @@ ScfClient::UpdateTriggerOutcome ScfClient::UpdateTrigger(const UpdateTriggerRequ
 
 void ScfClient::UpdateTriggerAsync(const UpdateTriggerRequest& request, const UpdateTriggerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UpdateTrigger(request), context);
-    };
+    using Req = const UpdateTriggerRequest&;
+    using Resp = UpdateTriggerResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UpdateTrigger", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ScfClient::UpdateTriggerOutcomeCallable ScfClient::UpdateTriggerCallable(const UpdateTriggerRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UpdateTriggerOutcome()>>(
-        [this, request]()
-        {
-            return this->UpdateTrigger(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UpdateTriggerOutcome>>();
+    UpdateTriggerAsync(
+    request,
+    [prom](
+        const ScfClient*,
+        const UpdateTriggerRequest&,
+        UpdateTriggerOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ScfClient::UpdateTriggerStatusOutcome ScfClient::UpdateTriggerStatus(const UpdateTriggerStatusRequest &request)
@@ -2255,24 +2612,31 @@ ScfClient::UpdateTriggerStatusOutcome ScfClient::UpdateTriggerStatus(const Updat
 
 void ScfClient::UpdateTriggerStatusAsync(const UpdateTriggerStatusRequest& request, const UpdateTriggerStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UpdateTriggerStatus(request), context);
-    };
+    using Req = const UpdateTriggerStatusRequest&;
+    using Resp = UpdateTriggerStatusResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UpdateTriggerStatus", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ScfClient::UpdateTriggerStatusOutcomeCallable ScfClient::UpdateTriggerStatusCallable(const UpdateTriggerStatusRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UpdateTriggerStatusOutcome()>>(
-        [this, request]()
-        {
-            return this->UpdateTriggerStatus(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UpdateTriggerStatusOutcome>>();
+    UpdateTriggerStatusAsync(
+    request,
+    [prom](
+        const ScfClient*,
+        const UpdateTriggerStatusRequest&,
+        UpdateTriggerStatusOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 

@@ -62,25 +62,32 @@ LighthouseClient::ApplyDiskBackupOutcome LighthouseClient::ApplyDiskBackup(const
 
 void LighthouseClient::ApplyDiskBackupAsync(const ApplyDiskBackupRequest& request, const ApplyDiskBackupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ApplyDiskBackup(request), context);
-    };
+    using Req = const ApplyDiskBackupRequest&;
+    using Resp = ApplyDiskBackupResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ApplyDiskBackup", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 LighthouseClient::ApplyDiskBackupOutcomeCallable LighthouseClient::ApplyDiskBackupCallable(const ApplyDiskBackupRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ApplyDiskBackupOutcome()>>(
-        [this, request]()
-        {
-            return this->ApplyDiskBackup(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ApplyDiskBackupOutcome>>();
+    ApplyDiskBackupAsync(
+    request,
+    [prom](
+        const LighthouseClient*,
+        const ApplyDiskBackupRequest&,
+        ApplyDiskBackupOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 LighthouseClient::ApplyFirewallTemplateOutcome LighthouseClient::ApplyFirewallTemplate(const ApplyFirewallTemplateRequest &request)
@@ -105,25 +112,32 @@ LighthouseClient::ApplyFirewallTemplateOutcome LighthouseClient::ApplyFirewallTe
 
 void LighthouseClient::ApplyFirewallTemplateAsync(const ApplyFirewallTemplateRequest& request, const ApplyFirewallTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ApplyFirewallTemplate(request), context);
-    };
+    using Req = const ApplyFirewallTemplateRequest&;
+    using Resp = ApplyFirewallTemplateResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ApplyFirewallTemplate", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 LighthouseClient::ApplyFirewallTemplateOutcomeCallable LighthouseClient::ApplyFirewallTemplateCallable(const ApplyFirewallTemplateRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ApplyFirewallTemplateOutcome()>>(
-        [this, request]()
-        {
-            return this->ApplyFirewallTemplate(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ApplyFirewallTemplateOutcome>>();
+    ApplyFirewallTemplateAsync(
+    request,
+    [prom](
+        const LighthouseClient*,
+        const ApplyFirewallTemplateRequest&,
+        ApplyFirewallTemplateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 LighthouseClient::ApplyInstanceSnapshotOutcome LighthouseClient::ApplyInstanceSnapshot(const ApplyInstanceSnapshotRequest &request)
@@ -148,25 +162,32 @@ LighthouseClient::ApplyInstanceSnapshotOutcome LighthouseClient::ApplyInstanceSn
 
 void LighthouseClient::ApplyInstanceSnapshotAsync(const ApplyInstanceSnapshotRequest& request, const ApplyInstanceSnapshotAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ApplyInstanceSnapshot(request), context);
-    };
+    using Req = const ApplyInstanceSnapshotRequest&;
+    using Resp = ApplyInstanceSnapshotResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ApplyInstanceSnapshot", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 LighthouseClient::ApplyInstanceSnapshotOutcomeCallable LighthouseClient::ApplyInstanceSnapshotCallable(const ApplyInstanceSnapshotRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ApplyInstanceSnapshotOutcome()>>(
-        [this, request]()
-        {
-            return this->ApplyInstanceSnapshot(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ApplyInstanceSnapshotOutcome>>();
+    ApplyInstanceSnapshotAsync(
+    request,
+    [prom](
+        const LighthouseClient*,
+        const ApplyInstanceSnapshotRequest&,
+        ApplyInstanceSnapshotOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 LighthouseClient::AssociateInstancesKeyPairsOutcome LighthouseClient::AssociateInstancesKeyPairs(const AssociateInstancesKeyPairsRequest &request)
@@ -191,25 +212,32 @@ LighthouseClient::AssociateInstancesKeyPairsOutcome LighthouseClient::AssociateI
 
 void LighthouseClient::AssociateInstancesKeyPairsAsync(const AssociateInstancesKeyPairsRequest& request, const AssociateInstancesKeyPairsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->AssociateInstancesKeyPairs(request), context);
-    };
+    using Req = const AssociateInstancesKeyPairsRequest&;
+    using Resp = AssociateInstancesKeyPairsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "AssociateInstancesKeyPairs", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 LighthouseClient::AssociateInstancesKeyPairsOutcomeCallable LighthouseClient::AssociateInstancesKeyPairsCallable(const AssociateInstancesKeyPairsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<AssociateInstancesKeyPairsOutcome()>>(
-        [this, request]()
-        {
-            return this->AssociateInstancesKeyPairs(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<AssociateInstancesKeyPairsOutcome>>();
+    AssociateInstancesKeyPairsAsync(
+    request,
+    [prom](
+        const LighthouseClient*,
+        const AssociateInstancesKeyPairsRequest&,
+        AssociateInstancesKeyPairsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 LighthouseClient::AttachCcnOutcome LighthouseClient::AttachCcn(const AttachCcnRequest &request)
@@ -234,25 +262,32 @@ LighthouseClient::AttachCcnOutcome LighthouseClient::AttachCcn(const AttachCcnRe
 
 void LighthouseClient::AttachCcnAsync(const AttachCcnRequest& request, const AttachCcnAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->AttachCcn(request), context);
-    };
+    using Req = const AttachCcnRequest&;
+    using Resp = AttachCcnResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "AttachCcn", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 LighthouseClient::AttachCcnOutcomeCallable LighthouseClient::AttachCcnCallable(const AttachCcnRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<AttachCcnOutcome()>>(
-        [this, request]()
-        {
-            return this->AttachCcn(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<AttachCcnOutcome>>();
+    AttachCcnAsync(
+    request,
+    [prom](
+        const LighthouseClient*,
+        const AttachCcnRequest&,
+        AttachCcnOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 LighthouseClient::AttachDisksOutcome LighthouseClient::AttachDisks(const AttachDisksRequest &request)
@@ -277,25 +312,32 @@ LighthouseClient::AttachDisksOutcome LighthouseClient::AttachDisks(const AttachD
 
 void LighthouseClient::AttachDisksAsync(const AttachDisksRequest& request, const AttachDisksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->AttachDisks(request), context);
-    };
+    using Req = const AttachDisksRequest&;
+    using Resp = AttachDisksResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "AttachDisks", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 LighthouseClient::AttachDisksOutcomeCallable LighthouseClient::AttachDisksCallable(const AttachDisksRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<AttachDisksOutcome()>>(
-        [this, request]()
-        {
-            return this->AttachDisks(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<AttachDisksOutcome>>();
+    AttachDisksAsync(
+    request,
+    [prom](
+        const LighthouseClient*,
+        const AttachDisksRequest&,
+        AttachDisksOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 LighthouseClient::CancelShareBlueprintAcrossAccountsOutcome LighthouseClient::CancelShareBlueprintAcrossAccounts(const CancelShareBlueprintAcrossAccountsRequest &request)
@@ -320,25 +362,32 @@ LighthouseClient::CancelShareBlueprintAcrossAccountsOutcome LighthouseClient::Ca
 
 void LighthouseClient::CancelShareBlueprintAcrossAccountsAsync(const CancelShareBlueprintAcrossAccountsRequest& request, const CancelShareBlueprintAcrossAccountsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CancelShareBlueprintAcrossAccounts(request), context);
-    };
+    using Req = const CancelShareBlueprintAcrossAccountsRequest&;
+    using Resp = CancelShareBlueprintAcrossAccountsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CancelShareBlueprintAcrossAccounts", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 LighthouseClient::CancelShareBlueprintAcrossAccountsOutcomeCallable LighthouseClient::CancelShareBlueprintAcrossAccountsCallable(const CancelShareBlueprintAcrossAccountsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CancelShareBlueprintAcrossAccountsOutcome()>>(
-        [this, request]()
-        {
-            return this->CancelShareBlueprintAcrossAccounts(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CancelShareBlueprintAcrossAccountsOutcome>>();
+    CancelShareBlueprintAcrossAccountsAsync(
+    request,
+    [prom](
+        const LighthouseClient*,
+        const CancelShareBlueprintAcrossAccountsRequest&,
+        CancelShareBlueprintAcrossAccountsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 LighthouseClient::CreateBlueprintOutcome LighthouseClient::CreateBlueprint(const CreateBlueprintRequest &request)
@@ -363,25 +412,32 @@ LighthouseClient::CreateBlueprintOutcome LighthouseClient::CreateBlueprint(const
 
 void LighthouseClient::CreateBlueprintAsync(const CreateBlueprintRequest& request, const CreateBlueprintAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateBlueprint(request), context);
-    };
+    using Req = const CreateBlueprintRequest&;
+    using Resp = CreateBlueprintResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateBlueprint", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 LighthouseClient::CreateBlueprintOutcomeCallable LighthouseClient::CreateBlueprintCallable(const CreateBlueprintRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateBlueprintOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateBlueprint(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateBlueprintOutcome>>();
+    CreateBlueprintAsync(
+    request,
+    [prom](
+        const LighthouseClient*,
+        const CreateBlueprintRequest&,
+        CreateBlueprintOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 LighthouseClient::CreateDiskBackupOutcome LighthouseClient::CreateDiskBackup(const CreateDiskBackupRequest &request)
@@ -406,25 +462,32 @@ LighthouseClient::CreateDiskBackupOutcome LighthouseClient::CreateDiskBackup(con
 
 void LighthouseClient::CreateDiskBackupAsync(const CreateDiskBackupRequest& request, const CreateDiskBackupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateDiskBackup(request), context);
-    };
+    using Req = const CreateDiskBackupRequest&;
+    using Resp = CreateDiskBackupResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateDiskBackup", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 LighthouseClient::CreateDiskBackupOutcomeCallable LighthouseClient::CreateDiskBackupCallable(const CreateDiskBackupRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateDiskBackupOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateDiskBackup(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateDiskBackupOutcome>>();
+    CreateDiskBackupAsync(
+    request,
+    [prom](
+        const LighthouseClient*,
+        const CreateDiskBackupRequest&,
+        CreateDiskBackupOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 LighthouseClient::CreateDisksOutcome LighthouseClient::CreateDisks(const CreateDisksRequest &request)
@@ -449,25 +512,32 @@ LighthouseClient::CreateDisksOutcome LighthouseClient::CreateDisks(const CreateD
 
 void LighthouseClient::CreateDisksAsync(const CreateDisksRequest& request, const CreateDisksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateDisks(request), context);
-    };
+    using Req = const CreateDisksRequest&;
+    using Resp = CreateDisksResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateDisks", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 LighthouseClient::CreateDisksOutcomeCallable LighthouseClient::CreateDisksCallable(const CreateDisksRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateDisksOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateDisks(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateDisksOutcome>>();
+    CreateDisksAsync(
+    request,
+    [prom](
+        const LighthouseClient*,
+        const CreateDisksRequest&,
+        CreateDisksOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 LighthouseClient::CreateFirewallRulesOutcome LighthouseClient::CreateFirewallRules(const CreateFirewallRulesRequest &request)
@@ -492,25 +562,32 @@ LighthouseClient::CreateFirewallRulesOutcome LighthouseClient::CreateFirewallRul
 
 void LighthouseClient::CreateFirewallRulesAsync(const CreateFirewallRulesRequest& request, const CreateFirewallRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateFirewallRules(request), context);
-    };
+    using Req = const CreateFirewallRulesRequest&;
+    using Resp = CreateFirewallRulesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateFirewallRules", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 LighthouseClient::CreateFirewallRulesOutcomeCallable LighthouseClient::CreateFirewallRulesCallable(const CreateFirewallRulesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateFirewallRulesOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateFirewallRules(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateFirewallRulesOutcome>>();
+    CreateFirewallRulesAsync(
+    request,
+    [prom](
+        const LighthouseClient*,
+        const CreateFirewallRulesRequest&,
+        CreateFirewallRulesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 LighthouseClient::CreateFirewallTemplateOutcome LighthouseClient::CreateFirewallTemplate(const CreateFirewallTemplateRequest &request)
@@ -535,25 +612,32 @@ LighthouseClient::CreateFirewallTemplateOutcome LighthouseClient::CreateFirewall
 
 void LighthouseClient::CreateFirewallTemplateAsync(const CreateFirewallTemplateRequest& request, const CreateFirewallTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateFirewallTemplate(request), context);
-    };
+    using Req = const CreateFirewallTemplateRequest&;
+    using Resp = CreateFirewallTemplateResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateFirewallTemplate", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 LighthouseClient::CreateFirewallTemplateOutcomeCallable LighthouseClient::CreateFirewallTemplateCallable(const CreateFirewallTemplateRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateFirewallTemplateOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateFirewallTemplate(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateFirewallTemplateOutcome>>();
+    CreateFirewallTemplateAsync(
+    request,
+    [prom](
+        const LighthouseClient*,
+        const CreateFirewallTemplateRequest&,
+        CreateFirewallTemplateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 LighthouseClient::CreateFirewallTemplateRulesOutcome LighthouseClient::CreateFirewallTemplateRules(const CreateFirewallTemplateRulesRequest &request)
@@ -578,25 +662,32 @@ LighthouseClient::CreateFirewallTemplateRulesOutcome LighthouseClient::CreateFir
 
 void LighthouseClient::CreateFirewallTemplateRulesAsync(const CreateFirewallTemplateRulesRequest& request, const CreateFirewallTemplateRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateFirewallTemplateRules(request), context);
-    };
+    using Req = const CreateFirewallTemplateRulesRequest&;
+    using Resp = CreateFirewallTemplateRulesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateFirewallTemplateRules", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 LighthouseClient::CreateFirewallTemplateRulesOutcomeCallable LighthouseClient::CreateFirewallTemplateRulesCallable(const CreateFirewallTemplateRulesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateFirewallTemplateRulesOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateFirewallTemplateRules(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateFirewallTemplateRulesOutcome>>();
+    CreateFirewallTemplateRulesAsync(
+    request,
+    [prom](
+        const LighthouseClient*,
+        const CreateFirewallTemplateRulesRequest&,
+        CreateFirewallTemplateRulesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 LighthouseClient::CreateInstanceSnapshotOutcome LighthouseClient::CreateInstanceSnapshot(const CreateInstanceSnapshotRequest &request)
@@ -621,25 +712,32 @@ LighthouseClient::CreateInstanceSnapshotOutcome LighthouseClient::CreateInstance
 
 void LighthouseClient::CreateInstanceSnapshotAsync(const CreateInstanceSnapshotRequest& request, const CreateInstanceSnapshotAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateInstanceSnapshot(request), context);
-    };
+    using Req = const CreateInstanceSnapshotRequest&;
+    using Resp = CreateInstanceSnapshotResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateInstanceSnapshot", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 LighthouseClient::CreateInstanceSnapshotOutcomeCallable LighthouseClient::CreateInstanceSnapshotCallable(const CreateInstanceSnapshotRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateInstanceSnapshotOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateInstanceSnapshot(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateInstanceSnapshotOutcome>>();
+    CreateInstanceSnapshotAsync(
+    request,
+    [prom](
+        const LighthouseClient*,
+        const CreateInstanceSnapshotRequest&,
+        CreateInstanceSnapshotOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 LighthouseClient::CreateInstancesOutcome LighthouseClient::CreateInstances(const CreateInstancesRequest &request)
@@ -664,25 +762,32 @@ LighthouseClient::CreateInstancesOutcome LighthouseClient::CreateInstances(const
 
 void LighthouseClient::CreateInstancesAsync(const CreateInstancesRequest& request, const CreateInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateInstances(request), context);
-    };
+    using Req = const CreateInstancesRequest&;
+    using Resp = CreateInstancesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateInstances", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 LighthouseClient::CreateInstancesOutcomeCallable LighthouseClient::CreateInstancesCallable(const CreateInstancesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateInstancesOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateInstances(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateInstancesOutcome>>();
+    CreateInstancesAsync(
+    request,
+    [prom](
+        const LighthouseClient*,
+        const CreateInstancesRequest&,
+        CreateInstancesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 LighthouseClient::CreateKeyPairOutcome LighthouseClient::CreateKeyPair(const CreateKeyPairRequest &request)
@@ -707,25 +812,32 @@ LighthouseClient::CreateKeyPairOutcome LighthouseClient::CreateKeyPair(const Cre
 
 void LighthouseClient::CreateKeyPairAsync(const CreateKeyPairRequest& request, const CreateKeyPairAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateKeyPair(request), context);
-    };
+    using Req = const CreateKeyPairRequest&;
+    using Resp = CreateKeyPairResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateKeyPair", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 LighthouseClient::CreateKeyPairOutcomeCallable LighthouseClient::CreateKeyPairCallable(const CreateKeyPairRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateKeyPairOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateKeyPair(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateKeyPairOutcome>>();
+    CreateKeyPairAsync(
+    request,
+    [prom](
+        const LighthouseClient*,
+        const CreateKeyPairRequest&,
+        CreateKeyPairOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 LighthouseClient::CreateMcpServerOutcome LighthouseClient::CreateMcpServer(const CreateMcpServerRequest &request)
@@ -750,25 +862,32 @@ LighthouseClient::CreateMcpServerOutcome LighthouseClient::CreateMcpServer(const
 
 void LighthouseClient::CreateMcpServerAsync(const CreateMcpServerRequest& request, const CreateMcpServerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateMcpServer(request), context);
-    };
+    using Req = const CreateMcpServerRequest&;
+    using Resp = CreateMcpServerResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateMcpServer", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 LighthouseClient::CreateMcpServerOutcomeCallable LighthouseClient::CreateMcpServerCallable(const CreateMcpServerRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateMcpServerOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateMcpServer(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateMcpServerOutcome>>();
+    CreateMcpServerAsync(
+    request,
+    [prom](
+        const LighthouseClient*,
+        const CreateMcpServerRequest&,
+        CreateMcpServerOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 LighthouseClient::DeleteBlueprintsOutcome LighthouseClient::DeleteBlueprints(const DeleteBlueprintsRequest &request)
@@ -793,25 +912,32 @@ LighthouseClient::DeleteBlueprintsOutcome LighthouseClient::DeleteBlueprints(con
 
 void LighthouseClient::DeleteBlueprintsAsync(const DeleteBlueprintsRequest& request, const DeleteBlueprintsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteBlueprints(request), context);
-    };
+    using Req = const DeleteBlueprintsRequest&;
+    using Resp = DeleteBlueprintsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteBlueprints", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 LighthouseClient::DeleteBlueprintsOutcomeCallable LighthouseClient::DeleteBlueprintsCallable(const DeleteBlueprintsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteBlueprintsOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteBlueprints(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteBlueprintsOutcome>>();
+    DeleteBlueprintsAsync(
+    request,
+    [prom](
+        const LighthouseClient*,
+        const DeleteBlueprintsRequest&,
+        DeleteBlueprintsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 LighthouseClient::DeleteDiskBackupsOutcome LighthouseClient::DeleteDiskBackups(const DeleteDiskBackupsRequest &request)
@@ -836,25 +962,32 @@ LighthouseClient::DeleteDiskBackupsOutcome LighthouseClient::DeleteDiskBackups(c
 
 void LighthouseClient::DeleteDiskBackupsAsync(const DeleteDiskBackupsRequest& request, const DeleteDiskBackupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteDiskBackups(request), context);
-    };
+    using Req = const DeleteDiskBackupsRequest&;
+    using Resp = DeleteDiskBackupsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteDiskBackups", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 LighthouseClient::DeleteDiskBackupsOutcomeCallable LighthouseClient::DeleteDiskBackupsCallable(const DeleteDiskBackupsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteDiskBackupsOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteDiskBackups(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteDiskBackupsOutcome>>();
+    DeleteDiskBackupsAsync(
+    request,
+    [prom](
+        const LighthouseClient*,
+        const DeleteDiskBackupsRequest&,
+        DeleteDiskBackupsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 LighthouseClient::DeleteFirewallRulesOutcome LighthouseClient::DeleteFirewallRules(const DeleteFirewallRulesRequest &request)
@@ -879,25 +1012,32 @@ LighthouseClient::DeleteFirewallRulesOutcome LighthouseClient::DeleteFirewallRul
 
 void LighthouseClient::DeleteFirewallRulesAsync(const DeleteFirewallRulesRequest& request, const DeleteFirewallRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteFirewallRules(request), context);
-    };
+    using Req = const DeleteFirewallRulesRequest&;
+    using Resp = DeleteFirewallRulesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteFirewallRules", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 LighthouseClient::DeleteFirewallRulesOutcomeCallable LighthouseClient::DeleteFirewallRulesCallable(const DeleteFirewallRulesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteFirewallRulesOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteFirewallRules(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteFirewallRulesOutcome>>();
+    DeleteFirewallRulesAsync(
+    request,
+    [prom](
+        const LighthouseClient*,
+        const DeleteFirewallRulesRequest&,
+        DeleteFirewallRulesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 LighthouseClient::DeleteFirewallTemplateOutcome LighthouseClient::DeleteFirewallTemplate(const DeleteFirewallTemplateRequest &request)
@@ -922,25 +1062,32 @@ LighthouseClient::DeleteFirewallTemplateOutcome LighthouseClient::DeleteFirewall
 
 void LighthouseClient::DeleteFirewallTemplateAsync(const DeleteFirewallTemplateRequest& request, const DeleteFirewallTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteFirewallTemplate(request), context);
-    };
+    using Req = const DeleteFirewallTemplateRequest&;
+    using Resp = DeleteFirewallTemplateResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteFirewallTemplate", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 LighthouseClient::DeleteFirewallTemplateOutcomeCallable LighthouseClient::DeleteFirewallTemplateCallable(const DeleteFirewallTemplateRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteFirewallTemplateOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteFirewallTemplate(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteFirewallTemplateOutcome>>();
+    DeleteFirewallTemplateAsync(
+    request,
+    [prom](
+        const LighthouseClient*,
+        const DeleteFirewallTemplateRequest&,
+        DeleteFirewallTemplateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 LighthouseClient::DeleteFirewallTemplateRulesOutcome LighthouseClient::DeleteFirewallTemplateRules(const DeleteFirewallTemplateRulesRequest &request)
@@ -965,25 +1112,32 @@ LighthouseClient::DeleteFirewallTemplateRulesOutcome LighthouseClient::DeleteFir
 
 void LighthouseClient::DeleteFirewallTemplateRulesAsync(const DeleteFirewallTemplateRulesRequest& request, const DeleteFirewallTemplateRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteFirewallTemplateRules(request), context);
-    };
+    using Req = const DeleteFirewallTemplateRulesRequest&;
+    using Resp = DeleteFirewallTemplateRulesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteFirewallTemplateRules", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 LighthouseClient::DeleteFirewallTemplateRulesOutcomeCallable LighthouseClient::DeleteFirewallTemplateRulesCallable(const DeleteFirewallTemplateRulesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteFirewallTemplateRulesOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteFirewallTemplateRules(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteFirewallTemplateRulesOutcome>>();
+    DeleteFirewallTemplateRulesAsync(
+    request,
+    [prom](
+        const LighthouseClient*,
+        const DeleteFirewallTemplateRulesRequest&,
+        DeleteFirewallTemplateRulesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 LighthouseClient::DeleteKeyPairsOutcome LighthouseClient::DeleteKeyPairs(const DeleteKeyPairsRequest &request)
@@ -1008,25 +1162,32 @@ LighthouseClient::DeleteKeyPairsOutcome LighthouseClient::DeleteKeyPairs(const D
 
 void LighthouseClient::DeleteKeyPairsAsync(const DeleteKeyPairsRequest& request, const DeleteKeyPairsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteKeyPairs(request), context);
-    };
+    using Req = const DeleteKeyPairsRequest&;
+    using Resp = DeleteKeyPairsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteKeyPairs", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 LighthouseClient::DeleteKeyPairsOutcomeCallable LighthouseClient::DeleteKeyPairsCallable(const DeleteKeyPairsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteKeyPairsOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteKeyPairs(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteKeyPairsOutcome>>();
+    DeleteKeyPairsAsync(
+    request,
+    [prom](
+        const LighthouseClient*,
+        const DeleteKeyPairsRequest&,
+        DeleteKeyPairsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 LighthouseClient::DeleteSnapshotsOutcome LighthouseClient::DeleteSnapshots(const DeleteSnapshotsRequest &request)
@@ -1051,25 +1212,32 @@ LighthouseClient::DeleteSnapshotsOutcome LighthouseClient::DeleteSnapshots(const
 
 void LighthouseClient::DeleteSnapshotsAsync(const DeleteSnapshotsRequest& request, const DeleteSnapshotsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteSnapshots(request), context);
-    };
+    using Req = const DeleteSnapshotsRequest&;
+    using Resp = DeleteSnapshotsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteSnapshots", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 LighthouseClient::DeleteSnapshotsOutcomeCallable LighthouseClient::DeleteSnapshotsCallable(const DeleteSnapshotsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteSnapshotsOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteSnapshots(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteSnapshotsOutcome>>();
+    DeleteSnapshotsAsync(
+    request,
+    [prom](
+        const LighthouseClient*,
+        const DeleteSnapshotsRequest&,
+        DeleteSnapshotsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 LighthouseClient::DescribeAllScenesOutcome LighthouseClient::DescribeAllScenes(const DescribeAllScenesRequest &request)
@@ -1094,25 +1262,32 @@ LighthouseClient::DescribeAllScenesOutcome LighthouseClient::DescribeAllScenes(c
 
 void LighthouseClient::DescribeAllScenesAsync(const DescribeAllScenesRequest& request, const DescribeAllScenesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAllScenes(request), context);
-    };
+    using Req = const DescribeAllScenesRequest&;
+    using Resp = DescribeAllScenesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAllScenes", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 LighthouseClient::DescribeAllScenesOutcomeCallable LighthouseClient::DescribeAllScenesCallable(const DescribeAllScenesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAllScenesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAllScenes(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAllScenesOutcome>>();
+    DescribeAllScenesAsync(
+    request,
+    [prom](
+        const LighthouseClient*,
+        const DescribeAllScenesRequest&,
+        DescribeAllScenesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 LighthouseClient::DescribeBlueprintInstancesOutcome LighthouseClient::DescribeBlueprintInstances(const DescribeBlueprintInstancesRequest &request)
@@ -1137,25 +1312,32 @@ LighthouseClient::DescribeBlueprintInstancesOutcome LighthouseClient::DescribeBl
 
 void LighthouseClient::DescribeBlueprintInstancesAsync(const DescribeBlueprintInstancesRequest& request, const DescribeBlueprintInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeBlueprintInstances(request), context);
-    };
+    using Req = const DescribeBlueprintInstancesRequest&;
+    using Resp = DescribeBlueprintInstancesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeBlueprintInstances", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 LighthouseClient::DescribeBlueprintInstancesOutcomeCallable LighthouseClient::DescribeBlueprintInstancesCallable(const DescribeBlueprintInstancesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeBlueprintInstancesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeBlueprintInstances(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeBlueprintInstancesOutcome>>();
+    DescribeBlueprintInstancesAsync(
+    request,
+    [prom](
+        const LighthouseClient*,
+        const DescribeBlueprintInstancesRequest&,
+        DescribeBlueprintInstancesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 LighthouseClient::DescribeBlueprintsOutcome LighthouseClient::DescribeBlueprints(const DescribeBlueprintsRequest &request)
@@ -1180,25 +1362,32 @@ LighthouseClient::DescribeBlueprintsOutcome LighthouseClient::DescribeBlueprints
 
 void LighthouseClient::DescribeBlueprintsAsync(const DescribeBlueprintsRequest& request, const DescribeBlueprintsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeBlueprints(request), context);
-    };
+    using Req = const DescribeBlueprintsRequest&;
+    using Resp = DescribeBlueprintsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeBlueprints", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 LighthouseClient::DescribeBlueprintsOutcomeCallable LighthouseClient::DescribeBlueprintsCallable(const DescribeBlueprintsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeBlueprintsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeBlueprints(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeBlueprintsOutcome>>();
+    DescribeBlueprintsAsync(
+    request,
+    [prom](
+        const LighthouseClient*,
+        const DescribeBlueprintsRequest&,
+        DescribeBlueprintsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 LighthouseClient::DescribeBundleDiscountOutcome LighthouseClient::DescribeBundleDiscount(const DescribeBundleDiscountRequest &request)
@@ -1223,25 +1412,32 @@ LighthouseClient::DescribeBundleDiscountOutcome LighthouseClient::DescribeBundle
 
 void LighthouseClient::DescribeBundleDiscountAsync(const DescribeBundleDiscountRequest& request, const DescribeBundleDiscountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeBundleDiscount(request), context);
-    };
+    using Req = const DescribeBundleDiscountRequest&;
+    using Resp = DescribeBundleDiscountResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeBundleDiscount", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 LighthouseClient::DescribeBundleDiscountOutcomeCallable LighthouseClient::DescribeBundleDiscountCallable(const DescribeBundleDiscountRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeBundleDiscountOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeBundleDiscount(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeBundleDiscountOutcome>>();
+    DescribeBundleDiscountAsync(
+    request,
+    [prom](
+        const LighthouseClient*,
+        const DescribeBundleDiscountRequest&,
+        DescribeBundleDiscountOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 LighthouseClient::DescribeBundlesOutcome LighthouseClient::DescribeBundles(const DescribeBundlesRequest &request)
@@ -1266,25 +1462,32 @@ LighthouseClient::DescribeBundlesOutcome LighthouseClient::DescribeBundles(const
 
 void LighthouseClient::DescribeBundlesAsync(const DescribeBundlesRequest& request, const DescribeBundlesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeBundles(request), context);
-    };
+    using Req = const DescribeBundlesRequest&;
+    using Resp = DescribeBundlesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeBundles", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 LighthouseClient::DescribeBundlesOutcomeCallable LighthouseClient::DescribeBundlesCallable(const DescribeBundlesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeBundlesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeBundles(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeBundlesOutcome>>();
+    DescribeBundlesAsync(
+    request,
+    [prom](
+        const LighthouseClient*,
+        const DescribeBundlesRequest&,
+        DescribeBundlesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 LighthouseClient::DescribeCcnAttachedInstancesOutcome LighthouseClient::DescribeCcnAttachedInstances(const DescribeCcnAttachedInstancesRequest &request)
@@ -1309,25 +1512,32 @@ LighthouseClient::DescribeCcnAttachedInstancesOutcome LighthouseClient::Describe
 
 void LighthouseClient::DescribeCcnAttachedInstancesAsync(const DescribeCcnAttachedInstancesRequest& request, const DescribeCcnAttachedInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeCcnAttachedInstances(request), context);
-    };
+    using Req = const DescribeCcnAttachedInstancesRequest&;
+    using Resp = DescribeCcnAttachedInstancesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeCcnAttachedInstances", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 LighthouseClient::DescribeCcnAttachedInstancesOutcomeCallable LighthouseClient::DescribeCcnAttachedInstancesCallable(const DescribeCcnAttachedInstancesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeCcnAttachedInstancesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeCcnAttachedInstances(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeCcnAttachedInstancesOutcome>>();
+    DescribeCcnAttachedInstancesAsync(
+    request,
+    [prom](
+        const LighthouseClient*,
+        const DescribeCcnAttachedInstancesRequest&,
+        DescribeCcnAttachedInstancesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 LighthouseClient::DescribeDiskBackupsOutcome LighthouseClient::DescribeDiskBackups(const DescribeDiskBackupsRequest &request)
@@ -1352,25 +1562,32 @@ LighthouseClient::DescribeDiskBackupsOutcome LighthouseClient::DescribeDiskBacku
 
 void LighthouseClient::DescribeDiskBackupsAsync(const DescribeDiskBackupsRequest& request, const DescribeDiskBackupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDiskBackups(request), context);
-    };
+    using Req = const DescribeDiskBackupsRequest&;
+    using Resp = DescribeDiskBackupsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeDiskBackups", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 LighthouseClient::DescribeDiskBackupsOutcomeCallable LighthouseClient::DescribeDiskBackupsCallable(const DescribeDiskBackupsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeDiskBackupsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDiskBackups(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeDiskBackupsOutcome>>();
+    DescribeDiskBackupsAsync(
+    request,
+    [prom](
+        const LighthouseClient*,
+        const DescribeDiskBackupsRequest&,
+        DescribeDiskBackupsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 LighthouseClient::DescribeDiskBackupsDeniedActionsOutcome LighthouseClient::DescribeDiskBackupsDeniedActions(const DescribeDiskBackupsDeniedActionsRequest &request)
@@ -1395,25 +1612,32 @@ LighthouseClient::DescribeDiskBackupsDeniedActionsOutcome LighthouseClient::Desc
 
 void LighthouseClient::DescribeDiskBackupsDeniedActionsAsync(const DescribeDiskBackupsDeniedActionsRequest& request, const DescribeDiskBackupsDeniedActionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDiskBackupsDeniedActions(request), context);
-    };
+    using Req = const DescribeDiskBackupsDeniedActionsRequest&;
+    using Resp = DescribeDiskBackupsDeniedActionsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeDiskBackupsDeniedActions", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 LighthouseClient::DescribeDiskBackupsDeniedActionsOutcomeCallable LighthouseClient::DescribeDiskBackupsDeniedActionsCallable(const DescribeDiskBackupsDeniedActionsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeDiskBackupsDeniedActionsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDiskBackupsDeniedActions(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeDiskBackupsDeniedActionsOutcome>>();
+    DescribeDiskBackupsDeniedActionsAsync(
+    request,
+    [prom](
+        const LighthouseClient*,
+        const DescribeDiskBackupsDeniedActionsRequest&,
+        DescribeDiskBackupsDeniedActionsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 LighthouseClient::DescribeDiskConfigsOutcome LighthouseClient::DescribeDiskConfigs(const DescribeDiskConfigsRequest &request)
@@ -1438,25 +1662,32 @@ LighthouseClient::DescribeDiskConfigsOutcome LighthouseClient::DescribeDiskConfi
 
 void LighthouseClient::DescribeDiskConfigsAsync(const DescribeDiskConfigsRequest& request, const DescribeDiskConfigsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDiskConfigs(request), context);
-    };
+    using Req = const DescribeDiskConfigsRequest&;
+    using Resp = DescribeDiskConfigsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeDiskConfigs", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 LighthouseClient::DescribeDiskConfigsOutcomeCallable LighthouseClient::DescribeDiskConfigsCallable(const DescribeDiskConfigsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeDiskConfigsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDiskConfigs(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeDiskConfigsOutcome>>();
+    DescribeDiskConfigsAsync(
+    request,
+    [prom](
+        const LighthouseClient*,
+        const DescribeDiskConfigsRequest&,
+        DescribeDiskConfigsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 LighthouseClient::DescribeDiskDiscountOutcome LighthouseClient::DescribeDiskDiscount(const DescribeDiskDiscountRequest &request)
@@ -1481,25 +1712,32 @@ LighthouseClient::DescribeDiskDiscountOutcome LighthouseClient::DescribeDiskDisc
 
 void LighthouseClient::DescribeDiskDiscountAsync(const DescribeDiskDiscountRequest& request, const DescribeDiskDiscountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDiskDiscount(request), context);
-    };
+    using Req = const DescribeDiskDiscountRequest&;
+    using Resp = DescribeDiskDiscountResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeDiskDiscount", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 LighthouseClient::DescribeDiskDiscountOutcomeCallable LighthouseClient::DescribeDiskDiscountCallable(const DescribeDiskDiscountRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeDiskDiscountOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDiskDiscount(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeDiskDiscountOutcome>>();
+    DescribeDiskDiscountAsync(
+    request,
+    [prom](
+        const LighthouseClient*,
+        const DescribeDiskDiscountRequest&,
+        DescribeDiskDiscountOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 LighthouseClient::DescribeDisksOutcome LighthouseClient::DescribeDisks(const DescribeDisksRequest &request)
@@ -1524,25 +1762,32 @@ LighthouseClient::DescribeDisksOutcome LighthouseClient::DescribeDisks(const Des
 
 void LighthouseClient::DescribeDisksAsync(const DescribeDisksRequest& request, const DescribeDisksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDisks(request), context);
-    };
+    using Req = const DescribeDisksRequest&;
+    using Resp = DescribeDisksResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeDisks", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 LighthouseClient::DescribeDisksOutcomeCallable LighthouseClient::DescribeDisksCallable(const DescribeDisksRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeDisksOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDisks(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeDisksOutcome>>();
+    DescribeDisksAsync(
+    request,
+    [prom](
+        const LighthouseClient*,
+        const DescribeDisksRequest&,
+        DescribeDisksOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 LighthouseClient::DescribeDisksDeniedActionsOutcome LighthouseClient::DescribeDisksDeniedActions(const DescribeDisksDeniedActionsRequest &request)
@@ -1567,25 +1812,32 @@ LighthouseClient::DescribeDisksDeniedActionsOutcome LighthouseClient::DescribeDi
 
 void LighthouseClient::DescribeDisksDeniedActionsAsync(const DescribeDisksDeniedActionsRequest& request, const DescribeDisksDeniedActionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDisksDeniedActions(request), context);
-    };
+    using Req = const DescribeDisksDeniedActionsRequest&;
+    using Resp = DescribeDisksDeniedActionsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeDisksDeniedActions", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 LighthouseClient::DescribeDisksDeniedActionsOutcomeCallable LighthouseClient::DescribeDisksDeniedActionsCallable(const DescribeDisksDeniedActionsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeDisksDeniedActionsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDisksDeniedActions(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeDisksDeniedActionsOutcome>>();
+    DescribeDisksDeniedActionsAsync(
+    request,
+    [prom](
+        const LighthouseClient*,
+        const DescribeDisksDeniedActionsRequest&,
+        DescribeDisksDeniedActionsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 LighthouseClient::DescribeDisksReturnableOutcome LighthouseClient::DescribeDisksReturnable(const DescribeDisksReturnableRequest &request)
@@ -1610,25 +1862,32 @@ LighthouseClient::DescribeDisksReturnableOutcome LighthouseClient::DescribeDisks
 
 void LighthouseClient::DescribeDisksReturnableAsync(const DescribeDisksReturnableRequest& request, const DescribeDisksReturnableAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDisksReturnable(request), context);
-    };
+    using Req = const DescribeDisksReturnableRequest&;
+    using Resp = DescribeDisksReturnableResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeDisksReturnable", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 LighthouseClient::DescribeDisksReturnableOutcomeCallable LighthouseClient::DescribeDisksReturnableCallable(const DescribeDisksReturnableRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeDisksReturnableOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDisksReturnable(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeDisksReturnableOutcome>>();
+    DescribeDisksReturnableAsync(
+    request,
+    [prom](
+        const LighthouseClient*,
+        const DescribeDisksReturnableRequest&,
+        DescribeDisksReturnableOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 LighthouseClient::DescribeDockerActivitiesOutcome LighthouseClient::DescribeDockerActivities(const DescribeDockerActivitiesRequest &request)
@@ -1653,25 +1912,32 @@ LighthouseClient::DescribeDockerActivitiesOutcome LighthouseClient::DescribeDock
 
 void LighthouseClient::DescribeDockerActivitiesAsync(const DescribeDockerActivitiesRequest& request, const DescribeDockerActivitiesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDockerActivities(request), context);
-    };
+    using Req = const DescribeDockerActivitiesRequest&;
+    using Resp = DescribeDockerActivitiesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeDockerActivities", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 LighthouseClient::DescribeDockerActivitiesOutcomeCallable LighthouseClient::DescribeDockerActivitiesCallable(const DescribeDockerActivitiesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeDockerActivitiesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDockerActivities(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeDockerActivitiesOutcome>>();
+    DescribeDockerActivitiesAsync(
+    request,
+    [prom](
+        const LighthouseClient*,
+        const DescribeDockerActivitiesRequest&,
+        DescribeDockerActivitiesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 LighthouseClient::DescribeDockerContainerConfigurationOutcome LighthouseClient::DescribeDockerContainerConfiguration(const DescribeDockerContainerConfigurationRequest &request)
@@ -1696,25 +1962,32 @@ LighthouseClient::DescribeDockerContainerConfigurationOutcome LighthouseClient::
 
 void LighthouseClient::DescribeDockerContainerConfigurationAsync(const DescribeDockerContainerConfigurationRequest& request, const DescribeDockerContainerConfigurationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDockerContainerConfiguration(request), context);
-    };
+    using Req = const DescribeDockerContainerConfigurationRequest&;
+    using Resp = DescribeDockerContainerConfigurationResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeDockerContainerConfiguration", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 LighthouseClient::DescribeDockerContainerConfigurationOutcomeCallable LighthouseClient::DescribeDockerContainerConfigurationCallable(const DescribeDockerContainerConfigurationRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeDockerContainerConfigurationOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDockerContainerConfiguration(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeDockerContainerConfigurationOutcome>>();
+    DescribeDockerContainerConfigurationAsync(
+    request,
+    [prom](
+        const LighthouseClient*,
+        const DescribeDockerContainerConfigurationRequest&,
+        DescribeDockerContainerConfigurationOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 LighthouseClient::DescribeDockerContainerDetailOutcome LighthouseClient::DescribeDockerContainerDetail(const DescribeDockerContainerDetailRequest &request)
@@ -1739,25 +2012,32 @@ LighthouseClient::DescribeDockerContainerDetailOutcome LighthouseClient::Describ
 
 void LighthouseClient::DescribeDockerContainerDetailAsync(const DescribeDockerContainerDetailRequest& request, const DescribeDockerContainerDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDockerContainerDetail(request), context);
-    };
+    using Req = const DescribeDockerContainerDetailRequest&;
+    using Resp = DescribeDockerContainerDetailResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeDockerContainerDetail", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 LighthouseClient::DescribeDockerContainerDetailOutcomeCallable LighthouseClient::DescribeDockerContainerDetailCallable(const DescribeDockerContainerDetailRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeDockerContainerDetailOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDockerContainerDetail(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeDockerContainerDetailOutcome>>();
+    DescribeDockerContainerDetailAsync(
+    request,
+    [prom](
+        const LighthouseClient*,
+        const DescribeDockerContainerDetailRequest&,
+        DescribeDockerContainerDetailOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 LighthouseClient::DescribeDockerContainersOutcome LighthouseClient::DescribeDockerContainers(const DescribeDockerContainersRequest &request)
@@ -1782,25 +2062,32 @@ LighthouseClient::DescribeDockerContainersOutcome LighthouseClient::DescribeDock
 
 void LighthouseClient::DescribeDockerContainersAsync(const DescribeDockerContainersRequest& request, const DescribeDockerContainersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDockerContainers(request), context);
-    };
+    using Req = const DescribeDockerContainersRequest&;
+    using Resp = DescribeDockerContainersResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeDockerContainers", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 LighthouseClient::DescribeDockerContainersOutcomeCallable LighthouseClient::DescribeDockerContainersCallable(const DescribeDockerContainersRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeDockerContainersOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDockerContainers(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeDockerContainersOutcome>>();
+    DescribeDockerContainersAsync(
+    request,
+    [prom](
+        const LighthouseClient*,
+        const DescribeDockerContainersRequest&,
+        DescribeDockerContainersOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 LighthouseClient::DescribeFirewallRulesOutcome LighthouseClient::DescribeFirewallRules(const DescribeFirewallRulesRequest &request)
@@ -1825,25 +2112,32 @@ LighthouseClient::DescribeFirewallRulesOutcome LighthouseClient::DescribeFirewal
 
 void LighthouseClient::DescribeFirewallRulesAsync(const DescribeFirewallRulesRequest& request, const DescribeFirewallRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeFirewallRules(request), context);
-    };
+    using Req = const DescribeFirewallRulesRequest&;
+    using Resp = DescribeFirewallRulesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeFirewallRules", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 LighthouseClient::DescribeFirewallRulesOutcomeCallable LighthouseClient::DescribeFirewallRulesCallable(const DescribeFirewallRulesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeFirewallRulesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeFirewallRules(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeFirewallRulesOutcome>>();
+    DescribeFirewallRulesAsync(
+    request,
+    [prom](
+        const LighthouseClient*,
+        const DescribeFirewallRulesRequest&,
+        DescribeFirewallRulesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 LighthouseClient::DescribeFirewallRulesTemplateOutcome LighthouseClient::DescribeFirewallRulesTemplate(const DescribeFirewallRulesTemplateRequest &request)
@@ -1868,25 +2162,32 @@ LighthouseClient::DescribeFirewallRulesTemplateOutcome LighthouseClient::Describ
 
 void LighthouseClient::DescribeFirewallRulesTemplateAsync(const DescribeFirewallRulesTemplateRequest& request, const DescribeFirewallRulesTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeFirewallRulesTemplate(request), context);
-    };
+    using Req = const DescribeFirewallRulesTemplateRequest&;
+    using Resp = DescribeFirewallRulesTemplateResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeFirewallRulesTemplate", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 LighthouseClient::DescribeFirewallRulesTemplateOutcomeCallable LighthouseClient::DescribeFirewallRulesTemplateCallable(const DescribeFirewallRulesTemplateRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeFirewallRulesTemplateOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeFirewallRulesTemplate(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeFirewallRulesTemplateOutcome>>();
+    DescribeFirewallRulesTemplateAsync(
+    request,
+    [prom](
+        const LighthouseClient*,
+        const DescribeFirewallRulesTemplateRequest&,
+        DescribeFirewallRulesTemplateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 LighthouseClient::DescribeFirewallTemplateApplyRecordsOutcome LighthouseClient::DescribeFirewallTemplateApplyRecords(const DescribeFirewallTemplateApplyRecordsRequest &request)
@@ -1911,25 +2212,32 @@ LighthouseClient::DescribeFirewallTemplateApplyRecordsOutcome LighthouseClient::
 
 void LighthouseClient::DescribeFirewallTemplateApplyRecordsAsync(const DescribeFirewallTemplateApplyRecordsRequest& request, const DescribeFirewallTemplateApplyRecordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeFirewallTemplateApplyRecords(request), context);
-    };
+    using Req = const DescribeFirewallTemplateApplyRecordsRequest&;
+    using Resp = DescribeFirewallTemplateApplyRecordsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeFirewallTemplateApplyRecords", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 LighthouseClient::DescribeFirewallTemplateApplyRecordsOutcomeCallable LighthouseClient::DescribeFirewallTemplateApplyRecordsCallable(const DescribeFirewallTemplateApplyRecordsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeFirewallTemplateApplyRecordsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeFirewallTemplateApplyRecords(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeFirewallTemplateApplyRecordsOutcome>>();
+    DescribeFirewallTemplateApplyRecordsAsync(
+    request,
+    [prom](
+        const LighthouseClient*,
+        const DescribeFirewallTemplateApplyRecordsRequest&,
+        DescribeFirewallTemplateApplyRecordsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 LighthouseClient::DescribeFirewallTemplateQuotaOutcome LighthouseClient::DescribeFirewallTemplateQuota(const DescribeFirewallTemplateQuotaRequest &request)
@@ -1954,25 +2262,32 @@ LighthouseClient::DescribeFirewallTemplateQuotaOutcome LighthouseClient::Describ
 
 void LighthouseClient::DescribeFirewallTemplateQuotaAsync(const DescribeFirewallTemplateQuotaRequest& request, const DescribeFirewallTemplateQuotaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeFirewallTemplateQuota(request), context);
-    };
+    using Req = const DescribeFirewallTemplateQuotaRequest&;
+    using Resp = DescribeFirewallTemplateQuotaResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeFirewallTemplateQuota", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 LighthouseClient::DescribeFirewallTemplateQuotaOutcomeCallable LighthouseClient::DescribeFirewallTemplateQuotaCallable(const DescribeFirewallTemplateQuotaRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeFirewallTemplateQuotaOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeFirewallTemplateQuota(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeFirewallTemplateQuotaOutcome>>();
+    DescribeFirewallTemplateQuotaAsync(
+    request,
+    [prom](
+        const LighthouseClient*,
+        const DescribeFirewallTemplateQuotaRequest&,
+        DescribeFirewallTemplateQuotaOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 LighthouseClient::DescribeFirewallTemplateRuleQuotaOutcome LighthouseClient::DescribeFirewallTemplateRuleQuota(const DescribeFirewallTemplateRuleQuotaRequest &request)
@@ -1997,25 +2312,32 @@ LighthouseClient::DescribeFirewallTemplateRuleQuotaOutcome LighthouseClient::Des
 
 void LighthouseClient::DescribeFirewallTemplateRuleQuotaAsync(const DescribeFirewallTemplateRuleQuotaRequest& request, const DescribeFirewallTemplateRuleQuotaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeFirewallTemplateRuleQuota(request), context);
-    };
+    using Req = const DescribeFirewallTemplateRuleQuotaRequest&;
+    using Resp = DescribeFirewallTemplateRuleQuotaResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeFirewallTemplateRuleQuota", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 LighthouseClient::DescribeFirewallTemplateRuleQuotaOutcomeCallable LighthouseClient::DescribeFirewallTemplateRuleQuotaCallable(const DescribeFirewallTemplateRuleQuotaRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeFirewallTemplateRuleQuotaOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeFirewallTemplateRuleQuota(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeFirewallTemplateRuleQuotaOutcome>>();
+    DescribeFirewallTemplateRuleQuotaAsync(
+    request,
+    [prom](
+        const LighthouseClient*,
+        const DescribeFirewallTemplateRuleQuotaRequest&,
+        DescribeFirewallTemplateRuleQuotaOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 LighthouseClient::DescribeFirewallTemplateRulesOutcome LighthouseClient::DescribeFirewallTemplateRules(const DescribeFirewallTemplateRulesRequest &request)
@@ -2040,25 +2362,32 @@ LighthouseClient::DescribeFirewallTemplateRulesOutcome LighthouseClient::Describ
 
 void LighthouseClient::DescribeFirewallTemplateRulesAsync(const DescribeFirewallTemplateRulesRequest& request, const DescribeFirewallTemplateRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeFirewallTemplateRules(request), context);
-    };
+    using Req = const DescribeFirewallTemplateRulesRequest&;
+    using Resp = DescribeFirewallTemplateRulesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeFirewallTemplateRules", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 LighthouseClient::DescribeFirewallTemplateRulesOutcomeCallable LighthouseClient::DescribeFirewallTemplateRulesCallable(const DescribeFirewallTemplateRulesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeFirewallTemplateRulesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeFirewallTemplateRules(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeFirewallTemplateRulesOutcome>>();
+    DescribeFirewallTemplateRulesAsync(
+    request,
+    [prom](
+        const LighthouseClient*,
+        const DescribeFirewallTemplateRulesRequest&,
+        DescribeFirewallTemplateRulesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 LighthouseClient::DescribeFirewallTemplatesOutcome LighthouseClient::DescribeFirewallTemplates(const DescribeFirewallTemplatesRequest &request)
@@ -2083,25 +2412,32 @@ LighthouseClient::DescribeFirewallTemplatesOutcome LighthouseClient::DescribeFir
 
 void LighthouseClient::DescribeFirewallTemplatesAsync(const DescribeFirewallTemplatesRequest& request, const DescribeFirewallTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeFirewallTemplates(request), context);
-    };
+    using Req = const DescribeFirewallTemplatesRequest&;
+    using Resp = DescribeFirewallTemplatesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeFirewallTemplates", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 LighthouseClient::DescribeFirewallTemplatesOutcomeCallable LighthouseClient::DescribeFirewallTemplatesCallable(const DescribeFirewallTemplatesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeFirewallTemplatesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeFirewallTemplates(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeFirewallTemplatesOutcome>>();
+    DescribeFirewallTemplatesAsync(
+    request,
+    [prom](
+        const LighthouseClient*,
+        const DescribeFirewallTemplatesRequest&,
+        DescribeFirewallTemplatesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 LighthouseClient::DescribeGeneralResourceQuotasOutcome LighthouseClient::DescribeGeneralResourceQuotas(const DescribeGeneralResourceQuotasRequest &request)
@@ -2126,25 +2462,32 @@ LighthouseClient::DescribeGeneralResourceQuotasOutcome LighthouseClient::Describ
 
 void LighthouseClient::DescribeGeneralResourceQuotasAsync(const DescribeGeneralResourceQuotasRequest& request, const DescribeGeneralResourceQuotasAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeGeneralResourceQuotas(request), context);
-    };
+    using Req = const DescribeGeneralResourceQuotasRequest&;
+    using Resp = DescribeGeneralResourceQuotasResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeGeneralResourceQuotas", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 LighthouseClient::DescribeGeneralResourceQuotasOutcomeCallable LighthouseClient::DescribeGeneralResourceQuotasCallable(const DescribeGeneralResourceQuotasRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeGeneralResourceQuotasOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeGeneralResourceQuotas(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeGeneralResourceQuotasOutcome>>();
+    DescribeGeneralResourceQuotasAsync(
+    request,
+    [prom](
+        const LighthouseClient*,
+        const DescribeGeneralResourceQuotasRequest&,
+        DescribeGeneralResourceQuotasOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 LighthouseClient::DescribeImagesToShareOutcome LighthouseClient::DescribeImagesToShare(const DescribeImagesToShareRequest &request)
@@ -2169,25 +2512,32 @@ LighthouseClient::DescribeImagesToShareOutcome LighthouseClient::DescribeImagesT
 
 void LighthouseClient::DescribeImagesToShareAsync(const DescribeImagesToShareRequest& request, const DescribeImagesToShareAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeImagesToShare(request), context);
-    };
+    using Req = const DescribeImagesToShareRequest&;
+    using Resp = DescribeImagesToShareResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeImagesToShare", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 LighthouseClient::DescribeImagesToShareOutcomeCallable LighthouseClient::DescribeImagesToShareCallable(const DescribeImagesToShareRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeImagesToShareOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeImagesToShare(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeImagesToShareOutcome>>();
+    DescribeImagesToShareAsync(
+    request,
+    [prom](
+        const LighthouseClient*,
+        const DescribeImagesToShareRequest&,
+        DescribeImagesToShareOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 LighthouseClient::DescribeInstanceVncUrlOutcome LighthouseClient::DescribeInstanceVncUrl(const DescribeInstanceVncUrlRequest &request)
@@ -2212,25 +2562,32 @@ LighthouseClient::DescribeInstanceVncUrlOutcome LighthouseClient::DescribeInstan
 
 void LighthouseClient::DescribeInstanceVncUrlAsync(const DescribeInstanceVncUrlRequest& request, const DescribeInstanceVncUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeInstanceVncUrl(request), context);
-    };
+    using Req = const DescribeInstanceVncUrlRequest&;
+    using Resp = DescribeInstanceVncUrlResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeInstanceVncUrl", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 LighthouseClient::DescribeInstanceVncUrlOutcomeCallable LighthouseClient::DescribeInstanceVncUrlCallable(const DescribeInstanceVncUrlRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeInstanceVncUrlOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeInstanceVncUrl(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeInstanceVncUrlOutcome>>();
+    DescribeInstanceVncUrlAsync(
+    request,
+    [prom](
+        const LighthouseClient*,
+        const DescribeInstanceVncUrlRequest&,
+        DescribeInstanceVncUrlOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 LighthouseClient::DescribeInstancesOutcome LighthouseClient::DescribeInstances(const DescribeInstancesRequest &request)
@@ -2255,25 +2612,32 @@ LighthouseClient::DescribeInstancesOutcome LighthouseClient::DescribeInstances(c
 
 void LighthouseClient::DescribeInstancesAsync(const DescribeInstancesRequest& request, const DescribeInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeInstances(request), context);
-    };
+    using Req = const DescribeInstancesRequest&;
+    using Resp = DescribeInstancesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeInstances", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 LighthouseClient::DescribeInstancesOutcomeCallable LighthouseClient::DescribeInstancesCallable(const DescribeInstancesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeInstancesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeInstances(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeInstancesOutcome>>();
+    DescribeInstancesAsync(
+    request,
+    [prom](
+        const LighthouseClient*,
+        const DescribeInstancesRequest&,
+        DescribeInstancesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 LighthouseClient::DescribeInstancesDeniedActionsOutcome LighthouseClient::DescribeInstancesDeniedActions(const DescribeInstancesDeniedActionsRequest &request)
@@ -2298,25 +2662,32 @@ LighthouseClient::DescribeInstancesDeniedActionsOutcome LighthouseClient::Descri
 
 void LighthouseClient::DescribeInstancesDeniedActionsAsync(const DescribeInstancesDeniedActionsRequest& request, const DescribeInstancesDeniedActionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeInstancesDeniedActions(request), context);
-    };
+    using Req = const DescribeInstancesDeniedActionsRequest&;
+    using Resp = DescribeInstancesDeniedActionsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeInstancesDeniedActions", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 LighthouseClient::DescribeInstancesDeniedActionsOutcomeCallable LighthouseClient::DescribeInstancesDeniedActionsCallable(const DescribeInstancesDeniedActionsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeInstancesDeniedActionsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeInstancesDeniedActions(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeInstancesDeniedActionsOutcome>>();
+    DescribeInstancesDeniedActionsAsync(
+    request,
+    [prom](
+        const LighthouseClient*,
+        const DescribeInstancesDeniedActionsRequest&,
+        DescribeInstancesDeniedActionsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 LighthouseClient::DescribeInstancesDiskNumOutcome LighthouseClient::DescribeInstancesDiskNum(const DescribeInstancesDiskNumRequest &request)
@@ -2341,25 +2712,32 @@ LighthouseClient::DescribeInstancesDiskNumOutcome LighthouseClient::DescribeInst
 
 void LighthouseClient::DescribeInstancesDiskNumAsync(const DescribeInstancesDiskNumRequest& request, const DescribeInstancesDiskNumAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeInstancesDiskNum(request), context);
-    };
+    using Req = const DescribeInstancesDiskNumRequest&;
+    using Resp = DescribeInstancesDiskNumResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeInstancesDiskNum", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 LighthouseClient::DescribeInstancesDiskNumOutcomeCallable LighthouseClient::DescribeInstancesDiskNumCallable(const DescribeInstancesDiskNumRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeInstancesDiskNumOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeInstancesDiskNum(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeInstancesDiskNumOutcome>>();
+    DescribeInstancesDiskNumAsync(
+    request,
+    [prom](
+        const LighthouseClient*,
+        const DescribeInstancesDiskNumRequest&,
+        DescribeInstancesDiskNumOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 LighthouseClient::DescribeInstancesReturnableOutcome LighthouseClient::DescribeInstancesReturnable(const DescribeInstancesReturnableRequest &request)
@@ -2384,25 +2762,32 @@ LighthouseClient::DescribeInstancesReturnableOutcome LighthouseClient::DescribeI
 
 void LighthouseClient::DescribeInstancesReturnableAsync(const DescribeInstancesReturnableRequest& request, const DescribeInstancesReturnableAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeInstancesReturnable(request), context);
-    };
+    using Req = const DescribeInstancesReturnableRequest&;
+    using Resp = DescribeInstancesReturnableResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeInstancesReturnable", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 LighthouseClient::DescribeInstancesReturnableOutcomeCallable LighthouseClient::DescribeInstancesReturnableCallable(const DescribeInstancesReturnableRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeInstancesReturnableOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeInstancesReturnable(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeInstancesReturnableOutcome>>();
+    DescribeInstancesReturnableAsync(
+    request,
+    [prom](
+        const LighthouseClient*,
+        const DescribeInstancesReturnableRequest&,
+        DescribeInstancesReturnableOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 LighthouseClient::DescribeInstancesTrafficPackagesOutcome LighthouseClient::DescribeInstancesTrafficPackages(const DescribeInstancesTrafficPackagesRequest &request)
@@ -2427,25 +2812,32 @@ LighthouseClient::DescribeInstancesTrafficPackagesOutcome LighthouseClient::Desc
 
 void LighthouseClient::DescribeInstancesTrafficPackagesAsync(const DescribeInstancesTrafficPackagesRequest& request, const DescribeInstancesTrafficPackagesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeInstancesTrafficPackages(request), context);
-    };
+    using Req = const DescribeInstancesTrafficPackagesRequest&;
+    using Resp = DescribeInstancesTrafficPackagesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeInstancesTrafficPackages", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 LighthouseClient::DescribeInstancesTrafficPackagesOutcomeCallable LighthouseClient::DescribeInstancesTrafficPackagesCallable(const DescribeInstancesTrafficPackagesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeInstancesTrafficPackagesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeInstancesTrafficPackages(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeInstancesTrafficPackagesOutcome>>();
+    DescribeInstancesTrafficPackagesAsync(
+    request,
+    [prom](
+        const LighthouseClient*,
+        const DescribeInstancesTrafficPackagesRequest&,
+        DescribeInstancesTrafficPackagesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 LighthouseClient::DescribeKeyPairsOutcome LighthouseClient::DescribeKeyPairs(const DescribeKeyPairsRequest &request)
@@ -2470,25 +2862,32 @@ LighthouseClient::DescribeKeyPairsOutcome LighthouseClient::DescribeKeyPairs(con
 
 void LighthouseClient::DescribeKeyPairsAsync(const DescribeKeyPairsRequest& request, const DescribeKeyPairsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeKeyPairs(request), context);
-    };
+    using Req = const DescribeKeyPairsRequest&;
+    using Resp = DescribeKeyPairsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeKeyPairs", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 LighthouseClient::DescribeKeyPairsOutcomeCallable LighthouseClient::DescribeKeyPairsCallable(const DescribeKeyPairsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeKeyPairsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeKeyPairs(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeKeyPairsOutcome>>();
+    DescribeKeyPairsAsync(
+    request,
+    [prom](
+        const LighthouseClient*,
+        const DescribeKeyPairsRequest&,
+        DescribeKeyPairsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 LighthouseClient::DescribeMcpServerTemplatesOutcome LighthouseClient::DescribeMcpServerTemplates(const DescribeMcpServerTemplatesRequest &request)
@@ -2513,25 +2912,32 @@ LighthouseClient::DescribeMcpServerTemplatesOutcome LighthouseClient::DescribeMc
 
 void LighthouseClient::DescribeMcpServerTemplatesAsync(const DescribeMcpServerTemplatesRequest& request, const DescribeMcpServerTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeMcpServerTemplates(request), context);
-    };
+    using Req = const DescribeMcpServerTemplatesRequest&;
+    using Resp = DescribeMcpServerTemplatesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeMcpServerTemplates", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 LighthouseClient::DescribeMcpServerTemplatesOutcomeCallable LighthouseClient::DescribeMcpServerTemplatesCallable(const DescribeMcpServerTemplatesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeMcpServerTemplatesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeMcpServerTemplates(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeMcpServerTemplatesOutcome>>();
+    DescribeMcpServerTemplatesAsync(
+    request,
+    [prom](
+        const LighthouseClient*,
+        const DescribeMcpServerTemplatesRequest&,
+        DescribeMcpServerTemplatesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 LighthouseClient::DescribeMcpServersOutcome LighthouseClient::DescribeMcpServers(const DescribeMcpServersRequest &request)
@@ -2556,25 +2962,32 @@ LighthouseClient::DescribeMcpServersOutcome LighthouseClient::DescribeMcpServers
 
 void LighthouseClient::DescribeMcpServersAsync(const DescribeMcpServersRequest& request, const DescribeMcpServersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeMcpServers(request), context);
-    };
+    using Req = const DescribeMcpServersRequest&;
+    using Resp = DescribeMcpServersResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeMcpServers", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 LighthouseClient::DescribeMcpServersOutcomeCallable LighthouseClient::DescribeMcpServersCallable(const DescribeMcpServersRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeMcpServersOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeMcpServers(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeMcpServersOutcome>>();
+    DescribeMcpServersAsync(
+    request,
+    [prom](
+        const LighthouseClient*,
+        const DescribeMcpServersRequest&,
+        DescribeMcpServersOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 LighthouseClient::DescribeModifyInstanceBundlesOutcome LighthouseClient::DescribeModifyInstanceBundles(const DescribeModifyInstanceBundlesRequest &request)
@@ -2599,25 +3012,32 @@ LighthouseClient::DescribeModifyInstanceBundlesOutcome LighthouseClient::Describ
 
 void LighthouseClient::DescribeModifyInstanceBundlesAsync(const DescribeModifyInstanceBundlesRequest& request, const DescribeModifyInstanceBundlesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeModifyInstanceBundles(request), context);
-    };
+    using Req = const DescribeModifyInstanceBundlesRequest&;
+    using Resp = DescribeModifyInstanceBundlesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeModifyInstanceBundles", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 LighthouseClient::DescribeModifyInstanceBundlesOutcomeCallable LighthouseClient::DescribeModifyInstanceBundlesCallable(const DescribeModifyInstanceBundlesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeModifyInstanceBundlesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeModifyInstanceBundles(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeModifyInstanceBundlesOutcome>>();
+    DescribeModifyInstanceBundlesAsync(
+    request,
+    [prom](
+        const LighthouseClient*,
+        const DescribeModifyInstanceBundlesRequest&,
+        DescribeModifyInstanceBundlesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 LighthouseClient::DescribeRegionsOutcome LighthouseClient::DescribeRegions(const DescribeRegionsRequest &request)
@@ -2642,25 +3062,32 @@ LighthouseClient::DescribeRegionsOutcome LighthouseClient::DescribeRegions(const
 
 void LighthouseClient::DescribeRegionsAsync(const DescribeRegionsRequest& request, const DescribeRegionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeRegions(request), context);
-    };
+    using Req = const DescribeRegionsRequest&;
+    using Resp = DescribeRegionsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeRegions", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 LighthouseClient::DescribeRegionsOutcomeCallable LighthouseClient::DescribeRegionsCallable(const DescribeRegionsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeRegionsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeRegions(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeRegionsOutcome>>();
+    DescribeRegionsAsync(
+    request,
+    [prom](
+        const LighthouseClient*,
+        const DescribeRegionsRequest&,
+        DescribeRegionsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 LighthouseClient::DescribeResetInstanceBlueprintsOutcome LighthouseClient::DescribeResetInstanceBlueprints(const DescribeResetInstanceBlueprintsRequest &request)
@@ -2685,25 +3112,32 @@ LighthouseClient::DescribeResetInstanceBlueprintsOutcome LighthouseClient::Descr
 
 void LighthouseClient::DescribeResetInstanceBlueprintsAsync(const DescribeResetInstanceBlueprintsRequest& request, const DescribeResetInstanceBlueprintsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeResetInstanceBlueprints(request), context);
-    };
+    using Req = const DescribeResetInstanceBlueprintsRequest&;
+    using Resp = DescribeResetInstanceBlueprintsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeResetInstanceBlueprints", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 LighthouseClient::DescribeResetInstanceBlueprintsOutcomeCallable LighthouseClient::DescribeResetInstanceBlueprintsCallable(const DescribeResetInstanceBlueprintsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeResetInstanceBlueprintsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeResetInstanceBlueprints(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeResetInstanceBlueprintsOutcome>>();
+    DescribeResetInstanceBlueprintsAsync(
+    request,
+    [prom](
+        const LighthouseClient*,
+        const DescribeResetInstanceBlueprintsRequest&,
+        DescribeResetInstanceBlueprintsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 LighthouseClient::DescribeScenesOutcome LighthouseClient::DescribeScenes(const DescribeScenesRequest &request)
@@ -2728,25 +3162,32 @@ LighthouseClient::DescribeScenesOutcome LighthouseClient::DescribeScenes(const D
 
 void LighthouseClient::DescribeScenesAsync(const DescribeScenesRequest& request, const DescribeScenesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeScenes(request), context);
-    };
+    using Req = const DescribeScenesRequest&;
+    using Resp = DescribeScenesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeScenes", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 LighthouseClient::DescribeScenesOutcomeCallable LighthouseClient::DescribeScenesCallable(const DescribeScenesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeScenesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeScenes(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeScenesOutcome>>();
+    DescribeScenesAsync(
+    request,
+    [prom](
+        const LighthouseClient*,
+        const DescribeScenesRequest&,
+        DescribeScenesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 LighthouseClient::DescribeSnapshotsOutcome LighthouseClient::DescribeSnapshots(const DescribeSnapshotsRequest &request)
@@ -2771,25 +3212,32 @@ LighthouseClient::DescribeSnapshotsOutcome LighthouseClient::DescribeSnapshots(c
 
 void LighthouseClient::DescribeSnapshotsAsync(const DescribeSnapshotsRequest& request, const DescribeSnapshotsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeSnapshots(request), context);
-    };
+    using Req = const DescribeSnapshotsRequest&;
+    using Resp = DescribeSnapshotsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeSnapshots", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 LighthouseClient::DescribeSnapshotsOutcomeCallable LighthouseClient::DescribeSnapshotsCallable(const DescribeSnapshotsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeSnapshotsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeSnapshots(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeSnapshotsOutcome>>();
+    DescribeSnapshotsAsync(
+    request,
+    [prom](
+        const LighthouseClient*,
+        const DescribeSnapshotsRequest&,
+        DescribeSnapshotsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 LighthouseClient::DescribeSnapshotsDeniedActionsOutcome LighthouseClient::DescribeSnapshotsDeniedActions(const DescribeSnapshotsDeniedActionsRequest &request)
@@ -2814,25 +3262,32 @@ LighthouseClient::DescribeSnapshotsDeniedActionsOutcome LighthouseClient::Descri
 
 void LighthouseClient::DescribeSnapshotsDeniedActionsAsync(const DescribeSnapshotsDeniedActionsRequest& request, const DescribeSnapshotsDeniedActionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeSnapshotsDeniedActions(request), context);
-    };
+    using Req = const DescribeSnapshotsDeniedActionsRequest&;
+    using Resp = DescribeSnapshotsDeniedActionsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeSnapshotsDeniedActions", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 LighthouseClient::DescribeSnapshotsDeniedActionsOutcomeCallable LighthouseClient::DescribeSnapshotsDeniedActionsCallable(const DescribeSnapshotsDeniedActionsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeSnapshotsDeniedActionsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeSnapshotsDeniedActions(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeSnapshotsDeniedActionsOutcome>>();
+    DescribeSnapshotsDeniedActionsAsync(
+    request,
+    [prom](
+        const LighthouseClient*,
+        const DescribeSnapshotsDeniedActionsRequest&,
+        DescribeSnapshotsDeniedActionsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 LighthouseClient::DescribeZonesOutcome LighthouseClient::DescribeZones(const DescribeZonesRequest &request)
@@ -2857,25 +3312,32 @@ LighthouseClient::DescribeZonesOutcome LighthouseClient::DescribeZones(const Des
 
 void LighthouseClient::DescribeZonesAsync(const DescribeZonesRequest& request, const DescribeZonesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeZones(request), context);
-    };
+    using Req = const DescribeZonesRequest&;
+    using Resp = DescribeZonesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeZones", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 LighthouseClient::DescribeZonesOutcomeCallable LighthouseClient::DescribeZonesCallable(const DescribeZonesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeZonesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeZones(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeZonesOutcome>>();
+    DescribeZonesAsync(
+    request,
+    [prom](
+        const LighthouseClient*,
+        const DescribeZonesRequest&,
+        DescribeZonesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 LighthouseClient::DetachCcnOutcome LighthouseClient::DetachCcn(const DetachCcnRequest &request)
@@ -2900,25 +3362,32 @@ LighthouseClient::DetachCcnOutcome LighthouseClient::DetachCcn(const DetachCcnRe
 
 void LighthouseClient::DetachCcnAsync(const DetachCcnRequest& request, const DetachCcnAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DetachCcn(request), context);
-    };
+    using Req = const DetachCcnRequest&;
+    using Resp = DetachCcnResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DetachCcn", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 LighthouseClient::DetachCcnOutcomeCallable LighthouseClient::DetachCcnCallable(const DetachCcnRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DetachCcnOutcome()>>(
-        [this, request]()
-        {
-            return this->DetachCcn(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DetachCcnOutcome>>();
+    DetachCcnAsync(
+    request,
+    [prom](
+        const LighthouseClient*,
+        const DetachCcnRequest&,
+        DetachCcnOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 LighthouseClient::DetachDisksOutcome LighthouseClient::DetachDisks(const DetachDisksRequest &request)
@@ -2943,25 +3412,32 @@ LighthouseClient::DetachDisksOutcome LighthouseClient::DetachDisks(const DetachD
 
 void LighthouseClient::DetachDisksAsync(const DetachDisksRequest& request, const DetachDisksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DetachDisks(request), context);
-    };
+    using Req = const DetachDisksRequest&;
+    using Resp = DetachDisksResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DetachDisks", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 LighthouseClient::DetachDisksOutcomeCallable LighthouseClient::DetachDisksCallable(const DetachDisksRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DetachDisksOutcome()>>(
-        [this, request]()
-        {
-            return this->DetachDisks(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DetachDisksOutcome>>();
+    DetachDisksAsync(
+    request,
+    [prom](
+        const LighthouseClient*,
+        const DetachDisksRequest&,
+        DetachDisksOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 LighthouseClient::DisassociateInstancesKeyPairsOutcome LighthouseClient::DisassociateInstancesKeyPairs(const DisassociateInstancesKeyPairsRequest &request)
@@ -2986,25 +3462,32 @@ LighthouseClient::DisassociateInstancesKeyPairsOutcome LighthouseClient::Disasso
 
 void LighthouseClient::DisassociateInstancesKeyPairsAsync(const DisassociateInstancesKeyPairsRequest& request, const DisassociateInstancesKeyPairsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DisassociateInstancesKeyPairs(request), context);
-    };
+    using Req = const DisassociateInstancesKeyPairsRequest&;
+    using Resp = DisassociateInstancesKeyPairsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DisassociateInstancesKeyPairs", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 LighthouseClient::DisassociateInstancesKeyPairsOutcomeCallable LighthouseClient::DisassociateInstancesKeyPairsCallable(const DisassociateInstancesKeyPairsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DisassociateInstancesKeyPairsOutcome()>>(
-        [this, request]()
-        {
-            return this->DisassociateInstancesKeyPairs(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DisassociateInstancesKeyPairsOutcome>>();
+    DisassociateInstancesKeyPairsAsync(
+    request,
+    [prom](
+        const LighthouseClient*,
+        const DisassociateInstancesKeyPairsRequest&,
+        DisassociateInstancesKeyPairsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 LighthouseClient::ImportKeyPairOutcome LighthouseClient::ImportKeyPair(const ImportKeyPairRequest &request)
@@ -3029,25 +3512,32 @@ LighthouseClient::ImportKeyPairOutcome LighthouseClient::ImportKeyPair(const Imp
 
 void LighthouseClient::ImportKeyPairAsync(const ImportKeyPairRequest& request, const ImportKeyPairAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ImportKeyPair(request), context);
-    };
+    using Req = const ImportKeyPairRequest&;
+    using Resp = ImportKeyPairResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ImportKeyPair", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 LighthouseClient::ImportKeyPairOutcomeCallable LighthouseClient::ImportKeyPairCallable(const ImportKeyPairRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ImportKeyPairOutcome()>>(
-        [this, request]()
-        {
-            return this->ImportKeyPair(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ImportKeyPairOutcome>>();
+    ImportKeyPairAsync(
+    request,
+    [prom](
+        const LighthouseClient*,
+        const ImportKeyPairRequest&,
+        ImportKeyPairOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 LighthouseClient::InquirePriceCreateBlueprintOutcome LighthouseClient::InquirePriceCreateBlueprint(const InquirePriceCreateBlueprintRequest &request)
@@ -3072,25 +3562,32 @@ LighthouseClient::InquirePriceCreateBlueprintOutcome LighthouseClient::InquirePr
 
 void LighthouseClient::InquirePriceCreateBlueprintAsync(const InquirePriceCreateBlueprintRequest& request, const InquirePriceCreateBlueprintAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->InquirePriceCreateBlueprint(request), context);
-    };
+    using Req = const InquirePriceCreateBlueprintRequest&;
+    using Resp = InquirePriceCreateBlueprintResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "InquirePriceCreateBlueprint", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 LighthouseClient::InquirePriceCreateBlueprintOutcomeCallable LighthouseClient::InquirePriceCreateBlueprintCallable(const InquirePriceCreateBlueprintRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<InquirePriceCreateBlueprintOutcome()>>(
-        [this, request]()
-        {
-            return this->InquirePriceCreateBlueprint(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<InquirePriceCreateBlueprintOutcome>>();
+    InquirePriceCreateBlueprintAsync(
+    request,
+    [prom](
+        const LighthouseClient*,
+        const InquirePriceCreateBlueprintRequest&,
+        InquirePriceCreateBlueprintOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 LighthouseClient::InquirePriceCreateDisksOutcome LighthouseClient::InquirePriceCreateDisks(const InquirePriceCreateDisksRequest &request)
@@ -3115,25 +3612,32 @@ LighthouseClient::InquirePriceCreateDisksOutcome LighthouseClient::InquirePriceC
 
 void LighthouseClient::InquirePriceCreateDisksAsync(const InquirePriceCreateDisksRequest& request, const InquirePriceCreateDisksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->InquirePriceCreateDisks(request), context);
-    };
+    using Req = const InquirePriceCreateDisksRequest&;
+    using Resp = InquirePriceCreateDisksResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "InquirePriceCreateDisks", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 LighthouseClient::InquirePriceCreateDisksOutcomeCallable LighthouseClient::InquirePriceCreateDisksCallable(const InquirePriceCreateDisksRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<InquirePriceCreateDisksOutcome()>>(
-        [this, request]()
-        {
-            return this->InquirePriceCreateDisks(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<InquirePriceCreateDisksOutcome>>();
+    InquirePriceCreateDisksAsync(
+    request,
+    [prom](
+        const LighthouseClient*,
+        const InquirePriceCreateDisksRequest&,
+        InquirePriceCreateDisksOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 LighthouseClient::InquirePriceCreateInstancesOutcome LighthouseClient::InquirePriceCreateInstances(const InquirePriceCreateInstancesRequest &request)
@@ -3158,25 +3662,32 @@ LighthouseClient::InquirePriceCreateInstancesOutcome LighthouseClient::InquirePr
 
 void LighthouseClient::InquirePriceCreateInstancesAsync(const InquirePriceCreateInstancesRequest& request, const InquirePriceCreateInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->InquirePriceCreateInstances(request), context);
-    };
+    using Req = const InquirePriceCreateInstancesRequest&;
+    using Resp = InquirePriceCreateInstancesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "InquirePriceCreateInstances", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 LighthouseClient::InquirePriceCreateInstancesOutcomeCallable LighthouseClient::InquirePriceCreateInstancesCallable(const InquirePriceCreateInstancesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<InquirePriceCreateInstancesOutcome()>>(
-        [this, request]()
-        {
-            return this->InquirePriceCreateInstances(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<InquirePriceCreateInstancesOutcome>>();
+    InquirePriceCreateInstancesAsync(
+    request,
+    [prom](
+        const LighthouseClient*,
+        const InquirePriceCreateInstancesRequest&,
+        InquirePriceCreateInstancesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 LighthouseClient::InquirePriceRenewDisksOutcome LighthouseClient::InquirePriceRenewDisks(const InquirePriceRenewDisksRequest &request)
@@ -3201,25 +3712,32 @@ LighthouseClient::InquirePriceRenewDisksOutcome LighthouseClient::InquirePriceRe
 
 void LighthouseClient::InquirePriceRenewDisksAsync(const InquirePriceRenewDisksRequest& request, const InquirePriceRenewDisksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->InquirePriceRenewDisks(request), context);
-    };
+    using Req = const InquirePriceRenewDisksRequest&;
+    using Resp = InquirePriceRenewDisksResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "InquirePriceRenewDisks", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 LighthouseClient::InquirePriceRenewDisksOutcomeCallable LighthouseClient::InquirePriceRenewDisksCallable(const InquirePriceRenewDisksRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<InquirePriceRenewDisksOutcome()>>(
-        [this, request]()
-        {
-            return this->InquirePriceRenewDisks(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<InquirePriceRenewDisksOutcome>>();
+    InquirePriceRenewDisksAsync(
+    request,
+    [prom](
+        const LighthouseClient*,
+        const InquirePriceRenewDisksRequest&,
+        InquirePriceRenewDisksOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 LighthouseClient::InquirePriceRenewInstancesOutcome LighthouseClient::InquirePriceRenewInstances(const InquirePriceRenewInstancesRequest &request)
@@ -3244,25 +3762,32 @@ LighthouseClient::InquirePriceRenewInstancesOutcome LighthouseClient::InquirePri
 
 void LighthouseClient::InquirePriceRenewInstancesAsync(const InquirePriceRenewInstancesRequest& request, const InquirePriceRenewInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->InquirePriceRenewInstances(request), context);
-    };
+    using Req = const InquirePriceRenewInstancesRequest&;
+    using Resp = InquirePriceRenewInstancesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "InquirePriceRenewInstances", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 LighthouseClient::InquirePriceRenewInstancesOutcomeCallable LighthouseClient::InquirePriceRenewInstancesCallable(const InquirePriceRenewInstancesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<InquirePriceRenewInstancesOutcome()>>(
-        [this, request]()
-        {
-            return this->InquirePriceRenewInstances(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<InquirePriceRenewInstancesOutcome>>();
+    InquirePriceRenewInstancesAsync(
+    request,
+    [prom](
+        const LighthouseClient*,
+        const InquirePriceRenewInstancesRequest&,
+        InquirePriceRenewInstancesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 LighthouseClient::IsolateDisksOutcome LighthouseClient::IsolateDisks(const IsolateDisksRequest &request)
@@ -3287,25 +3812,32 @@ LighthouseClient::IsolateDisksOutcome LighthouseClient::IsolateDisks(const Isola
 
 void LighthouseClient::IsolateDisksAsync(const IsolateDisksRequest& request, const IsolateDisksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->IsolateDisks(request), context);
-    };
+    using Req = const IsolateDisksRequest&;
+    using Resp = IsolateDisksResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "IsolateDisks", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 LighthouseClient::IsolateDisksOutcomeCallable LighthouseClient::IsolateDisksCallable(const IsolateDisksRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<IsolateDisksOutcome()>>(
-        [this, request]()
-        {
-            return this->IsolateDisks(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<IsolateDisksOutcome>>();
+    IsolateDisksAsync(
+    request,
+    [prom](
+        const LighthouseClient*,
+        const IsolateDisksRequest&,
+        IsolateDisksOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 LighthouseClient::IsolateInstancesOutcome LighthouseClient::IsolateInstances(const IsolateInstancesRequest &request)
@@ -3330,25 +3862,32 @@ LighthouseClient::IsolateInstancesOutcome LighthouseClient::IsolateInstances(con
 
 void LighthouseClient::IsolateInstancesAsync(const IsolateInstancesRequest& request, const IsolateInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->IsolateInstances(request), context);
-    };
+    using Req = const IsolateInstancesRequest&;
+    using Resp = IsolateInstancesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "IsolateInstances", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 LighthouseClient::IsolateInstancesOutcomeCallable LighthouseClient::IsolateInstancesCallable(const IsolateInstancesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<IsolateInstancesOutcome()>>(
-        [this, request]()
-        {
-            return this->IsolateInstances(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<IsolateInstancesOutcome>>();
+    IsolateInstancesAsync(
+    request,
+    [prom](
+        const LighthouseClient*,
+        const IsolateInstancesRequest&,
+        IsolateInstancesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 LighthouseClient::ModifyBlueprintAttributeOutcome LighthouseClient::ModifyBlueprintAttribute(const ModifyBlueprintAttributeRequest &request)
@@ -3373,25 +3912,32 @@ LighthouseClient::ModifyBlueprintAttributeOutcome LighthouseClient::ModifyBluepr
 
 void LighthouseClient::ModifyBlueprintAttributeAsync(const ModifyBlueprintAttributeRequest& request, const ModifyBlueprintAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyBlueprintAttribute(request), context);
-    };
+    using Req = const ModifyBlueprintAttributeRequest&;
+    using Resp = ModifyBlueprintAttributeResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyBlueprintAttribute", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 LighthouseClient::ModifyBlueprintAttributeOutcomeCallable LighthouseClient::ModifyBlueprintAttributeCallable(const ModifyBlueprintAttributeRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyBlueprintAttributeOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyBlueprintAttribute(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyBlueprintAttributeOutcome>>();
+    ModifyBlueprintAttributeAsync(
+    request,
+    [prom](
+        const LighthouseClient*,
+        const ModifyBlueprintAttributeRequest&,
+        ModifyBlueprintAttributeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 LighthouseClient::ModifyDiskBackupsAttributeOutcome LighthouseClient::ModifyDiskBackupsAttribute(const ModifyDiskBackupsAttributeRequest &request)
@@ -3416,25 +3962,32 @@ LighthouseClient::ModifyDiskBackupsAttributeOutcome LighthouseClient::ModifyDisk
 
 void LighthouseClient::ModifyDiskBackupsAttributeAsync(const ModifyDiskBackupsAttributeRequest& request, const ModifyDiskBackupsAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyDiskBackupsAttribute(request), context);
-    };
+    using Req = const ModifyDiskBackupsAttributeRequest&;
+    using Resp = ModifyDiskBackupsAttributeResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyDiskBackupsAttribute", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 LighthouseClient::ModifyDiskBackupsAttributeOutcomeCallable LighthouseClient::ModifyDiskBackupsAttributeCallable(const ModifyDiskBackupsAttributeRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyDiskBackupsAttributeOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyDiskBackupsAttribute(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyDiskBackupsAttributeOutcome>>();
+    ModifyDiskBackupsAttributeAsync(
+    request,
+    [prom](
+        const LighthouseClient*,
+        const ModifyDiskBackupsAttributeRequest&,
+        ModifyDiskBackupsAttributeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 LighthouseClient::ModifyDisksAttributeOutcome LighthouseClient::ModifyDisksAttribute(const ModifyDisksAttributeRequest &request)
@@ -3459,25 +4012,32 @@ LighthouseClient::ModifyDisksAttributeOutcome LighthouseClient::ModifyDisksAttri
 
 void LighthouseClient::ModifyDisksAttributeAsync(const ModifyDisksAttributeRequest& request, const ModifyDisksAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyDisksAttribute(request), context);
-    };
+    using Req = const ModifyDisksAttributeRequest&;
+    using Resp = ModifyDisksAttributeResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyDisksAttribute", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 LighthouseClient::ModifyDisksAttributeOutcomeCallable LighthouseClient::ModifyDisksAttributeCallable(const ModifyDisksAttributeRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyDisksAttributeOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyDisksAttribute(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyDisksAttributeOutcome>>();
+    ModifyDisksAttributeAsync(
+    request,
+    [prom](
+        const LighthouseClient*,
+        const ModifyDisksAttributeRequest&,
+        ModifyDisksAttributeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 LighthouseClient::ModifyDisksBackupQuotaOutcome LighthouseClient::ModifyDisksBackupQuota(const ModifyDisksBackupQuotaRequest &request)
@@ -3502,25 +4062,32 @@ LighthouseClient::ModifyDisksBackupQuotaOutcome LighthouseClient::ModifyDisksBac
 
 void LighthouseClient::ModifyDisksBackupQuotaAsync(const ModifyDisksBackupQuotaRequest& request, const ModifyDisksBackupQuotaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyDisksBackupQuota(request), context);
-    };
+    using Req = const ModifyDisksBackupQuotaRequest&;
+    using Resp = ModifyDisksBackupQuotaResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyDisksBackupQuota", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 LighthouseClient::ModifyDisksBackupQuotaOutcomeCallable LighthouseClient::ModifyDisksBackupQuotaCallable(const ModifyDisksBackupQuotaRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyDisksBackupQuotaOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyDisksBackupQuota(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyDisksBackupQuotaOutcome>>();
+    ModifyDisksBackupQuotaAsync(
+    request,
+    [prom](
+        const LighthouseClient*,
+        const ModifyDisksBackupQuotaRequest&,
+        ModifyDisksBackupQuotaOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 LighthouseClient::ModifyDisksRenewFlagOutcome LighthouseClient::ModifyDisksRenewFlag(const ModifyDisksRenewFlagRequest &request)
@@ -3545,25 +4112,32 @@ LighthouseClient::ModifyDisksRenewFlagOutcome LighthouseClient::ModifyDisksRenew
 
 void LighthouseClient::ModifyDisksRenewFlagAsync(const ModifyDisksRenewFlagRequest& request, const ModifyDisksRenewFlagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyDisksRenewFlag(request), context);
-    };
+    using Req = const ModifyDisksRenewFlagRequest&;
+    using Resp = ModifyDisksRenewFlagResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyDisksRenewFlag", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 LighthouseClient::ModifyDisksRenewFlagOutcomeCallable LighthouseClient::ModifyDisksRenewFlagCallable(const ModifyDisksRenewFlagRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyDisksRenewFlagOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyDisksRenewFlag(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyDisksRenewFlagOutcome>>();
+    ModifyDisksRenewFlagAsync(
+    request,
+    [prom](
+        const LighthouseClient*,
+        const ModifyDisksRenewFlagRequest&,
+        ModifyDisksRenewFlagOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 LighthouseClient::ModifyDockerContainerOutcome LighthouseClient::ModifyDockerContainer(const ModifyDockerContainerRequest &request)
@@ -3588,25 +4162,32 @@ LighthouseClient::ModifyDockerContainerOutcome LighthouseClient::ModifyDockerCon
 
 void LighthouseClient::ModifyDockerContainerAsync(const ModifyDockerContainerRequest& request, const ModifyDockerContainerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyDockerContainer(request), context);
-    };
+    using Req = const ModifyDockerContainerRequest&;
+    using Resp = ModifyDockerContainerResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyDockerContainer", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 LighthouseClient::ModifyDockerContainerOutcomeCallable LighthouseClient::ModifyDockerContainerCallable(const ModifyDockerContainerRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyDockerContainerOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyDockerContainer(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyDockerContainerOutcome>>();
+    ModifyDockerContainerAsync(
+    request,
+    [prom](
+        const LighthouseClient*,
+        const ModifyDockerContainerRequest&,
+        ModifyDockerContainerOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 LighthouseClient::ModifyFirewallRuleDescriptionOutcome LighthouseClient::ModifyFirewallRuleDescription(const ModifyFirewallRuleDescriptionRequest &request)
@@ -3631,25 +4212,32 @@ LighthouseClient::ModifyFirewallRuleDescriptionOutcome LighthouseClient::ModifyF
 
 void LighthouseClient::ModifyFirewallRuleDescriptionAsync(const ModifyFirewallRuleDescriptionRequest& request, const ModifyFirewallRuleDescriptionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyFirewallRuleDescription(request), context);
-    };
+    using Req = const ModifyFirewallRuleDescriptionRequest&;
+    using Resp = ModifyFirewallRuleDescriptionResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyFirewallRuleDescription", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 LighthouseClient::ModifyFirewallRuleDescriptionOutcomeCallable LighthouseClient::ModifyFirewallRuleDescriptionCallable(const ModifyFirewallRuleDescriptionRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyFirewallRuleDescriptionOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyFirewallRuleDescription(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyFirewallRuleDescriptionOutcome>>();
+    ModifyFirewallRuleDescriptionAsync(
+    request,
+    [prom](
+        const LighthouseClient*,
+        const ModifyFirewallRuleDescriptionRequest&,
+        ModifyFirewallRuleDescriptionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 LighthouseClient::ModifyFirewallRulesOutcome LighthouseClient::ModifyFirewallRules(const ModifyFirewallRulesRequest &request)
@@ -3674,25 +4262,32 @@ LighthouseClient::ModifyFirewallRulesOutcome LighthouseClient::ModifyFirewallRul
 
 void LighthouseClient::ModifyFirewallRulesAsync(const ModifyFirewallRulesRequest& request, const ModifyFirewallRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyFirewallRules(request), context);
-    };
+    using Req = const ModifyFirewallRulesRequest&;
+    using Resp = ModifyFirewallRulesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyFirewallRules", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 LighthouseClient::ModifyFirewallRulesOutcomeCallable LighthouseClient::ModifyFirewallRulesCallable(const ModifyFirewallRulesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyFirewallRulesOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyFirewallRules(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyFirewallRulesOutcome>>();
+    ModifyFirewallRulesAsync(
+    request,
+    [prom](
+        const LighthouseClient*,
+        const ModifyFirewallRulesRequest&,
+        ModifyFirewallRulesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 LighthouseClient::ModifyFirewallTemplateOutcome LighthouseClient::ModifyFirewallTemplate(const ModifyFirewallTemplateRequest &request)
@@ -3717,25 +4312,32 @@ LighthouseClient::ModifyFirewallTemplateOutcome LighthouseClient::ModifyFirewall
 
 void LighthouseClient::ModifyFirewallTemplateAsync(const ModifyFirewallTemplateRequest& request, const ModifyFirewallTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyFirewallTemplate(request), context);
-    };
+    using Req = const ModifyFirewallTemplateRequest&;
+    using Resp = ModifyFirewallTemplateResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyFirewallTemplate", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 LighthouseClient::ModifyFirewallTemplateOutcomeCallable LighthouseClient::ModifyFirewallTemplateCallable(const ModifyFirewallTemplateRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyFirewallTemplateOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyFirewallTemplate(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyFirewallTemplateOutcome>>();
+    ModifyFirewallTemplateAsync(
+    request,
+    [prom](
+        const LighthouseClient*,
+        const ModifyFirewallTemplateRequest&,
+        ModifyFirewallTemplateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 LighthouseClient::ModifyImageSharePermissionOutcome LighthouseClient::ModifyImageSharePermission(const ModifyImageSharePermissionRequest &request)
@@ -3760,25 +4362,32 @@ LighthouseClient::ModifyImageSharePermissionOutcome LighthouseClient::ModifyImag
 
 void LighthouseClient::ModifyImageSharePermissionAsync(const ModifyImageSharePermissionRequest& request, const ModifyImageSharePermissionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyImageSharePermission(request), context);
-    };
+    using Req = const ModifyImageSharePermissionRequest&;
+    using Resp = ModifyImageSharePermissionResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyImageSharePermission", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 LighthouseClient::ModifyImageSharePermissionOutcomeCallable LighthouseClient::ModifyImageSharePermissionCallable(const ModifyImageSharePermissionRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyImageSharePermissionOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyImageSharePermission(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyImageSharePermissionOutcome>>();
+    ModifyImageSharePermissionAsync(
+    request,
+    [prom](
+        const LighthouseClient*,
+        const ModifyImageSharePermissionRequest&,
+        ModifyImageSharePermissionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 LighthouseClient::ModifyInstancesAttributeOutcome LighthouseClient::ModifyInstancesAttribute(const ModifyInstancesAttributeRequest &request)
@@ -3803,25 +4412,32 @@ LighthouseClient::ModifyInstancesAttributeOutcome LighthouseClient::ModifyInstan
 
 void LighthouseClient::ModifyInstancesAttributeAsync(const ModifyInstancesAttributeRequest& request, const ModifyInstancesAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyInstancesAttribute(request), context);
-    };
+    using Req = const ModifyInstancesAttributeRequest&;
+    using Resp = ModifyInstancesAttributeResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyInstancesAttribute", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 LighthouseClient::ModifyInstancesAttributeOutcomeCallable LighthouseClient::ModifyInstancesAttributeCallable(const ModifyInstancesAttributeRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyInstancesAttributeOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyInstancesAttribute(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyInstancesAttributeOutcome>>();
+    ModifyInstancesAttributeAsync(
+    request,
+    [prom](
+        const LighthouseClient*,
+        const ModifyInstancesAttributeRequest&,
+        ModifyInstancesAttributeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 LighthouseClient::ModifyInstancesBundleOutcome LighthouseClient::ModifyInstancesBundle(const ModifyInstancesBundleRequest &request)
@@ -3846,25 +4462,32 @@ LighthouseClient::ModifyInstancesBundleOutcome LighthouseClient::ModifyInstances
 
 void LighthouseClient::ModifyInstancesBundleAsync(const ModifyInstancesBundleRequest& request, const ModifyInstancesBundleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyInstancesBundle(request), context);
-    };
+    using Req = const ModifyInstancesBundleRequest&;
+    using Resp = ModifyInstancesBundleResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyInstancesBundle", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 LighthouseClient::ModifyInstancesBundleOutcomeCallable LighthouseClient::ModifyInstancesBundleCallable(const ModifyInstancesBundleRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyInstancesBundleOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyInstancesBundle(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyInstancesBundleOutcome>>();
+    ModifyInstancesBundleAsync(
+    request,
+    [prom](
+        const LighthouseClient*,
+        const ModifyInstancesBundleRequest&,
+        ModifyInstancesBundleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 LighthouseClient::ModifyInstancesRenewFlagOutcome LighthouseClient::ModifyInstancesRenewFlag(const ModifyInstancesRenewFlagRequest &request)
@@ -3889,25 +4512,32 @@ LighthouseClient::ModifyInstancesRenewFlagOutcome LighthouseClient::ModifyInstan
 
 void LighthouseClient::ModifyInstancesRenewFlagAsync(const ModifyInstancesRenewFlagRequest& request, const ModifyInstancesRenewFlagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyInstancesRenewFlag(request), context);
-    };
+    using Req = const ModifyInstancesRenewFlagRequest&;
+    using Resp = ModifyInstancesRenewFlagResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyInstancesRenewFlag", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 LighthouseClient::ModifyInstancesRenewFlagOutcomeCallable LighthouseClient::ModifyInstancesRenewFlagCallable(const ModifyInstancesRenewFlagRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyInstancesRenewFlagOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyInstancesRenewFlag(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyInstancesRenewFlagOutcome>>();
+    ModifyInstancesRenewFlagAsync(
+    request,
+    [prom](
+        const LighthouseClient*,
+        const ModifyInstancesRenewFlagRequest&,
+        ModifyInstancesRenewFlagOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 LighthouseClient::ModifyMcpServerOutcome LighthouseClient::ModifyMcpServer(const ModifyMcpServerRequest &request)
@@ -3932,25 +4562,32 @@ LighthouseClient::ModifyMcpServerOutcome LighthouseClient::ModifyMcpServer(const
 
 void LighthouseClient::ModifyMcpServerAsync(const ModifyMcpServerRequest& request, const ModifyMcpServerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyMcpServer(request), context);
-    };
+    using Req = const ModifyMcpServerRequest&;
+    using Resp = ModifyMcpServerResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyMcpServer", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 LighthouseClient::ModifyMcpServerOutcomeCallable LighthouseClient::ModifyMcpServerCallable(const ModifyMcpServerRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyMcpServerOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyMcpServer(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyMcpServerOutcome>>();
+    ModifyMcpServerAsync(
+    request,
+    [prom](
+        const LighthouseClient*,
+        const ModifyMcpServerRequest&,
+        ModifyMcpServerOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 LighthouseClient::ModifySnapshotAttributeOutcome LighthouseClient::ModifySnapshotAttribute(const ModifySnapshotAttributeRequest &request)
@@ -3975,25 +4612,32 @@ LighthouseClient::ModifySnapshotAttributeOutcome LighthouseClient::ModifySnapsho
 
 void LighthouseClient::ModifySnapshotAttributeAsync(const ModifySnapshotAttributeRequest& request, const ModifySnapshotAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifySnapshotAttribute(request), context);
-    };
+    using Req = const ModifySnapshotAttributeRequest&;
+    using Resp = ModifySnapshotAttributeResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifySnapshotAttribute", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 LighthouseClient::ModifySnapshotAttributeOutcomeCallable LighthouseClient::ModifySnapshotAttributeCallable(const ModifySnapshotAttributeRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifySnapshotAttributeOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifySnapshotAttribute(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifySnapshotAttributeOutcome>>();
+    ModifySnapshotAttributeAsync(
+    request,
+    [prom](
+        const LighthouseClient*,
+        const ModifySnapshotAttributeRequest&,
+        ModifySnapshotAttributeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 LighthouseClient::RebootInstancesOutcome LighthouseClient::RebootInstances(const RebootInstancesRequest &request)
@@ -4018,25 +4662,32 @@ LighthouseClient::RebootInstancesOutcome LighthouseClient::RebootInstances(const
 
 void LighthouseClient::RebootInstancesAsync(const RebootInstancesRequest& request, const RebootInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->RebootInstances(request), context);
-    };
+    using Req = const RebootInstancesRequest&;
+    using Resp = RebootInstancesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "RebootInstances", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 LighthouseClient::RebootInstancesOutcomeCallable LighthouseClient::RebootInstancesCallable(const RebootInstancesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<RebootInstancesOutcome()>>(
-        [this, request]()
-        {
-            return this->RebootInstances(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<RebootInstancesOutcome>>();
+    RebootInstancesAsync(
+    request,
+    [prom](
+        const LighthouseClient*,
+        const RebootInstancesRequest&,
+        RebootInstancesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 LighthouseClient::RemoveDockerContainersOutcome LighthouseClient::RemoveDockerContainers(const RemoveDockerContainersRequest &request)
@@ -4061,25 +4712,32 @@ LighthouseClient::RemoveDockerContainersOutcome LighthouseClient::RemoveDockerCo
 
 void LighthouseClient::RemoveDockerContainersAsync(const RemoveDockerContainersRequest& request, const RemoveDockerContainersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->RemoveDockerContainers(request), context);
-    };
+    using Req = const RemoveDockerContainersRequest&;
+    using Resp = RemoveDockerContainersResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "RemoveDockerContainers", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 LighthouseClient::RemoveDockerContainersOutcomeCallable LighthouseClient::RemoveDockerContainersCallable(const RemoveDockerContainersRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<RemoveDockerContainersOutcome()>>(
-        [this, request]()
-        {
-            return this->RemoveDockerContainers(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<RemoveDockerContainersOutcome>>();
+    RemoveDockerContainersAsync(
+    request,
+    [prom](
+        const LighthouseClient*,
+        const RemoveDockerContainersRequest&,
+        RemoveDockerContainersOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 LighthouseClient::RemoveMcpServersOutcome LighthouseClient::RemoveMcpServers(const RemoveMcpServersRequest &request)
@@ -4104,25 +4762,32 @@ LighthouseClient::RemoveMcpServersOutcome LighthouseClient::RemoveMcpServers(con
 
 void LighthouseClient::RemoveMcpServersAsync(const RemoveMcpServersRequest& request, const RemoveMcpServersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->RemoveMcpServers(request), context);
-    };
+    using Req = const RemoveMcpServersRequest&;
+    using Resp = RemoveMcpServersResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "RemoveMcpServers", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 LighthouseClient::RemoveMcpServersOutcomeCallable LighthouseClient::RemoveMcpServersCallable(const RemoveMcpServersRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<RemoveMcpServersOutcome()>>(
-        [this, request]()
-        {
-            return this->RemoveMcpServers(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<RemoveMcpServersOutcome>>();
+    RemoveMcpServersAsync(
+    request,
+    [prom](
+        const LighthouseClient*,
+        const RemoveMcpServersRequest&,
+        RemoveMcpServersOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 LighthouseClient::RenameDockerContainerOutcome LighthouseClient::RenameDockerContainer(const RenameDockerContainerRequest &request)
@@ -4147,25 +4812,32 @@ LighthouseClient::RenameDockerContainerOutcome LighthouseClient::RenameDockerCon
 
 void LighthouseClient::RenameDockerContainerAsync(const RenameDockerContainerRequest& request, const RenameDockerContainerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->RenameDockerContainer(request), context);
-    };
+    using Req = const RenameDockerContainerRequest&;
+    using Resp = RenameDockerContainerResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "RenameDockerContainer", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 LighthouseClient::RenameDockerContainerOutcomeCallable LighthouseClient::RenameDockerContainerCallable(const RenameDockerContainerRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<RenameDockerContainerOutcome()>>(
-        [this, request]()
-        {
-            return this->RenameDockerContainer(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<RenameDockerContainerOutcome>>();
+    RenameDockerContainerAsync(
+    request,
+    [prom](
+        const LighthouseClient*,
+        const RenameDockerContainerRequest&,
+        RenameDockerContainerOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 LighthouseClient::RenewDisksOutcome LighthouseClient::RenewDisks(const RenewDisksRequest &request)
@@ -4190,25 +4862,32 @@ LighthouseClient::RenewDisksOutcome LighthouseClient::RenewDisks(const RenewDisk
 
 void LighthouseClient::RenewDisksAsync(const RenewDisksRequest& request, const RenewDisksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->RenewDisks(request), context);
-    };
+    using Req = const RenewDisksRequest&;
+    using Resp = RenewDisksResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "RenewDisks", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 LighthouseClient::RenewDisksOutcomeCallable LighthouseClient::RenewDisksCallable(const RenewDisksRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<RenewDisksOutcome()>>(
-        [this, request]()
-        {
-            return this->RenewDisks(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<RenewDisksOutcome>>();
+    RenewDisksAsync(
+    request,
+    [prom](
+        const LighthouseClient*,
+        const RenewDisksRequest&,
+        RenewDisksOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 LighthouseClient::RenewInstancesOutcome LighthouseClient::RenewInstances(const RenewInstancesRequest &request)
@@ -4233,25 +4912,32 @@ LighthouseClient::RenewInstancesOutcome LighthouseClient::RenewInstances(const R
 
 void LighthouseClient::RenewInstancesAsync(const RenewInstancesRequest& request, const RenewInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->RenewInstances(request), context);
-    };
+    using Req = const RenewInstancesRequest&;
+    using Resp = RenewInstancesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "RenewInstances", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 LighthouseClient::RenewInstancesOutcomeCallable LighthouseClient::RenewInstancesCallable(const RenewInstancesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<RenewInstancesOutcome()>>(
-        [this, request]()
-        {
-            return this->RenewInstances(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<RenewInstancesOutcome>>();
+    RenewInstancesAsync(
+    request,
+    [prom](
+        const LighthouseClient*,
+        const RenewInstancesRequest&,
+        RenewInstancesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 LighthouseClient::ReplaceFirewallTemplateRuleOutcome LighthouseClient::ReplaceFirewallTemplateRule(const ReplaceFirewallTemplateRuleRequest &request)
@@ -4276,25 +4962,32 @@ LighthouseClient::ReplaceFirewallTemplateRuleOutcome LighthouseClient::ReplaceFi
 
 void LighthouseClient::ReplaceFirewallTemplateRuleAsync(const ReplaceFirewallTemplateRuleRequest& request, const ReplaceFirewallTemplateRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ReplaceFirewallTemplateRule(request), context);
-    };
+    using Req = const ReplaceFirewallTemplateRuleRequest&;
+    using Resp = ReplaceFirewallTemplateRuleResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ReplaceFirewallTemplateRule", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 LighthouseClient::ReplaceFirewallTemplateRuleOutcomeCallable LighthouseClient::ReplaceFirewallTemplateRuleCallable(const ReplaceFirewallTemplateRuleRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ReplaceFirewallTemplateRuleOutcome()>>(
-        [this, request]()
-        {
-            return this->ReplaceFirewallTemplateRule(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ReplaceFirewallTemplateRuleOutcome>>();
+    ReplaceFirewallTemplateRuleAsync(
+    request,
+    [prom](
+        const LighthouseClient*,
+        const ReplaceFirewallTemplateRuleRequest&,
+        ReplaceFirewallTemplateRuleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 LighthouseClient::RerunDockerContainerOutcome LighthouseClient::RerunDockerContainer(const RerunDockerContainerRequest &request)
@@ -4319,25 +5012,32 @@ LighthouseClient::RerunDockerContainerOutcome LighthouseClient::RerunDockerConta
 
 void LighthouseClient::RerunDockerContainerAsync(const RerunDockerContainerRequest& request, const RerunDockerContainerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->RerunDockerContainer(request), context);
-    };
+    using Req = const RerunDockerContainerRequest&;
+    using Resp = RerunDockerContainerResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "RerunDockerContainer", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 LighthouseClient::RerunDockerContainerOutcomeCallable LighthouseClient::RerunDockerContainerCallable(const RerunDockerContainerRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<RerunDockerContainerOutcome()>>(
-        [this, request]()
-        {
-            return this->RerunDockerContainer(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<RerunDockerContainerOutcome>>();
+    RerunDockerContainerAsync(
+    request,
+    [prom](
+        const LighthouseClient*,
+        const RerunDockerContainerRequest&,
+        RerunDockerContainerOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 LighthouseClient::ResetAttachCcnOutcome LighthouseClient::ResetAttachCcn(const ResetAttachCcnRequest &request)
@@ -4362,25 +5062,32 @@ LighthouseClient::ResetAttachCcnOutcome LighthouseClient::ResetAttachCcn(const R
 
 void LighthouseClient::ResetAttachCcnAsync(const ResetAttachCcnRequest& request, const ResetAttachCcnAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ResetAttachCcn(request), context);
-    };
+    using Req = const ResetAttachCcnRequest&;
+    using Resp = ResetAttachCcnResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ResetAttachCcn", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 LighthouseClient::ResetAttachCcnOutcomeCallable LighthouseClient::ResetAttachCcnCallable(const ResetAttachCcnRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ResetAttachCcnOutcome()>>(
-        [this, request]()
-        {
-            return this->ResetAttachCcn(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ResetAttachCcnOutcome>>();
+    ResetAttachCcnAsync(
+    request,
+    [prom](
+        const LighthouseClient*,
+        const ResetAttachCcnRequest&,
+        ResetAttachCcnOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 LighthouseClient::ResetFirewallTemplateRulesOutcome LighthouseClient::ResetFirewallTemplateRules(const ResetFirewallTemplateRulesRequest &request)
@@ -4405,25 +5112,32 @@ LighthouseClient::ResetFirewallTemplateRulesOutcome LighthouseClient::ResetFirew
 
 void LighthouseClient::ResetFirewallTemplateRulesAsync(const ResetFirewallTemplateRulesRequest& request, const ResetFirewallTemplateRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ResetFirewallTemplateRules(request), context);
-    };
+    using Req = const ResetFirewallTemplateRulesRequest&;
+    using Resp = ResetFirewallTemplateRulesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ResetFirewallTemplateRules", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 LighthouseClient::ResetFirewallTemplateRulesOutcomeCallable LighthouseClient::ResetFirewallTemplateRulesCallable(const ResetFirewallTemplateRulesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ResetFirewallTemplateRulesOutcome()>>(
-        [this, request]()
-        {
-            return this->ResetFirewallTemplateRules(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ResetFirewallTemplateRulesOutcome>>();
+    ResetFirewallTemplateRulesAsync(
+    request,
+    [prom](
+        const LighthouseClient*,
+        const ResetFirewallTemplateRulesRequest&,
+        ResetFirewallTemplateRulesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 LighthouseClient::ResetInstanceOutcome LighthouseClient::ResetInstance(const ResetInstanceRequest &request)
@@ -4448,25 +5162,32 @@ LighthouseClient::ResetInstanceOutcome LighthouseClient::ResetInstance(const Res
 
 void LighthouseClient::ResetInstanceAsync(const ResetInstanceRequest& request, const ResetInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ResetInstance(request), context);
-    };
+    using Req = const ResetInstanceRequest&;
+    using Resp = ResetInstanceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ResetInstance", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 LighthouseClient::ResetInstanceOutcomeCallable LighthouseClient::ResetInstanceCallable(const ResetInstanceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ResetInstanceOutcome()>>(
-        [this, request]()
-        {
-            return this->ResetInstance(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ResetInstanceOutcome>>();
+    ResetInstanceAsync(
+    request,
+    [prom](
+        const LighthouseClient*,
+        const ResetInstanceRequest&,
+        ResetInstanceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 LighthouseClient::ResetInstancesPasswordOutcome LighthouseClient::ResetInstancesPassword(const ResetInstancesPasswordRequest &request)
@@ -4491,25 +5212,32 @@ LighthouseClient::ResetInstancesPasswordOutcome LighthouseClient::ResetInstances
 
 void LighthouseClient::ResetInstancesPasswordAsync(const ResetInstancesPasswordRequest& request, const ResetInstancesPasswordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ResetInstancesPassword(request), context);
-    };
+    using Req = const ResetInstancesPasswordRequest&;
+    using Resp = ResetInstancesPasswordResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ResetInstancesPassword", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 LighthouseClient::ResetInstancesPasswordOutcomeCallable LighthouseClient::ResetInstancesPasswordCallable(const ResetInstancesPasswordRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ResetInstancesPasswordOutcome()>>(
-        [this, request]()
-        {
-            return this->ResetInstancesPassword(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ResetInstancesPasswordOutcome>>();
+    ResetInstancesPasswordAsync(
+    request,
+    [prom](
+        const LighthouseClient*,
+        const ResetInstancesPasswordRequest&,
+        ResetInstancesPasswordOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 LighthouseClient::ResizeDisksOutcome LighthouseClient::ResizeDisks(const ResizeDisksRequest &request)
@@ -4534,25 +5262,32 @@ LighthouseClient::ResizeDisksOutcome LighthouseClient::ResizeDisks(const ResizeD
 
 void LighthouseClient::ResizeDisksAsync(const ResizeDisksRequest& request, const ResizeDisksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ResizeDisks(request), context);
-    };
+    using Req = const ResizeDisksRequest&;
+    using Resp = ResizeDisksResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ResizeDisks", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 LighthouseClient::ResizeDisksOutcomeCallable LighthouseClient::ResizeDisksCallable(const ResizeDisksRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ResizeDisksOutcome()>>(
-        [this, request]()
-        {
-            return this->ResizeDisks(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ResizeDisksOutcome>>();
+    ResizeDisksAsync(
+    request,
+    [prom](
+        const LighthouseClient*,
+        const ResizeDisksRequest&,
+        ResizeDisksOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 LighthouseClient::RestartDockerContainersOutcome LighthouseClient::RestartDockerContainers(const RestartDockerContainersRequest &request)
@@ -4577,25 +5312,32 @@ LighthouseClient::RestartDockerContainersOutcome LighthouseClient::RestartDocker
 
 void LighthouseClient::RestartDockerContainersAsync(const RestartDockerContainersRequest& request, const RestartDockerContainersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->RestartDockerContainers(request), context);
-    };
+    using Req = const RestartDockerContainersRequest&;
+    using Resp = RestartDockerContainersResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "RestartDockerContainers", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 LighthouseClient::RestartDockerContainersOutcomeCallable LighthouseClient::RestartDockerContainersCallable(const RestartDockerContainersRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<RestartDockerContainersOutcome()>>(
-        [this, request]()
-        {
-            return this->RestartDockerContainers(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<RestartDockerContainersOutcome>>();
+    RestartDockerContainersAsync(
+    request,
+    [prom](
+        const LighthouseClient*,
+        const RestartDockerContainersRequest&,
+        RestartDockerContainersOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 LighthouseClient::RestartMcpServersOutcome LighthouseClient::RestartMcpServers(const RestartMcpServersRequest &request)
@@ -4620,25 +5362,32 @@ LighthouseClient::RestartMcpServersOutcome LighthouseClient::RestartMcpServers(c
 
 void LighthouseClient::RestartMcpServersAsync(const RestartMcpServersRequest& request, const RestartMcpServersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->RestartMcpServers(request), context);
-    };
+    using Req = const RestartMcpServersRequest&;
+    using Resp = RestartMcpServersResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "RestartMcpServers", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 LighthouseClient::RestartMcpServersOutcomeCallable LighthouseClient::RestartMcpServersCallable(const RestartMcpServersRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<RestartMcpServersOutcome()>>(
-        [this, request]()
-        {
-            return this->RestartMcpServers(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<RestartMcpServersOutcome>>();
+    RestartMcpServersAsync(
+    request,
+    [prom](
+        const LighthouseClient*,
+        const RestartMcpServersRequest&,
+        RestartMcpServersOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 LighthouseClient::RunDockerContainersOutcome LighthouseClient::RunDockerContainers(const RunDockerContainersRequest &request)
@@ -4663,25 +5412,32 @@ LighthouseClient::RunDockerContainersOutcome LighthouseClient::RunDockerContaine
 
 void LighthouseClient::RunDockerContainersAsync(const RunDockerContainersRequest& request, const RunDockerContainersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->RunDockerContainers(request), context);
-    };
+    using Req = const RunDockerContainersRequest&;
+    using Resp = RunDockerContainersResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "RunDockerContainers", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 LighthouseClient::RunDockerContainersOutcomeCallable LighthouseClient::RunDockerContainersCallable(const RunDockerContainersRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<RunDockerContainersOutcome()>>(
-        [this, request]()
-        {
-            return this->RunDockerContainers(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<RunDockerContainersOutcome>>();
+    RunDockerContainersAsync(
+    request,
+    [prom](
+        const LighthouseClient*,
+        const RunDockerContainersRequest&,
+        RunDockerContainersOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 LighthouseClient::ShareBlueprintAcrossAccountsOutcome LighthouseClient::ShareBlueprintAcrossAccounts(const ShareBlueprintAcrossAccountsRequest &request)
@@ -4706,25 +5462,32 @@ LighthouseClient::ShareBlueprintAcrossAccountsOutcome LighthouseClient::ShareBlu
 
 void LighthouseClient::ShareBlueprintAcrossAccountsAsync(const ShareBlueprintAcrossAccountsRequest& request, const ShareBlueprintAcrossAccountsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ShareBlueprintAcrossAccounts(request), context);
-    };
+    using Req = const ShareBlueprintAcrossAccountsRequest&;
+    using Resp = ShareBlueprintAcrossAccountsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ShareBlueprintAcrossAccounts", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 LighthouseClient::ShareBlueprintAcrossAccountsOutcomeCallable LighthouseClient::ShareBlueprintAcrossAccountsCallable(const ShareBlueprintAcrossAccountsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ShareBlueprintAcrossAccountsOutcome()>>(
-        [this, request]()
-        {
-            return this->ShareBlueprintAcrossAccounts(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ShareBlueprintAcrossAccountsOutcome>>();
+    ShareBlueprintAcrossAccountsAsync(
+    request,
+    [prom](
+        const LighthouseClient*,
+        const ShareBlueprintAcrossAccountsRequest&,
+        ShareBlueprintAcrossAccountsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 LighthouseClient::StartDockerContainersOutcome LighthouseClient::StartDockerContainers(const StartDockerContainersRequest &request)
@@ -4749,25 +5512,32 @@ LighthouseClient::StartDockerContainersOutcome LighthouseClient::StartDockerCont
 
 void LighthouseClient::StartDockerContainersAsync(const StartDockerContainersRequest& request, const StartDockerContainersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->StartDockerContainers(request), context);
-    };
+    using Req = const StartDockerContainersRequest&;
+    using Resp = StartDockerContainersResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "StartDockerContainers", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 LighthouseClient::StartDockerContainersOutcomeCallable LighthouseClient::StartDockerContainersCallable(const StartDockerContainersRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<StartDockerContainersOutcome()>>(
-        [this, request]()
-        {
-            return this->StartDockerContainers(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<StartDockerContainersOutcome>>();
+    StartDockerContainersAsync(
+    request,
+    [prom](
+        const LighthouseClient*,
+        const StartDockerContainersRequest&,
+        StartDockerContainersOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 LighthouseClient::StartInstancesOutcome LighthouseClient::StartInstances(const StartInstancesRequest &request)
@@ -4792,25 +5562,32 @@ LighthouseClient::StartInstancesOutcome LighthouseClient::StartInstances(const S
 
 void LighthouseClient::StartInstancesAsync(const StartInstancesRequest& request, const StartInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->StartInstances(request), context);
-    };
+    using Req = const StartInstancesRequest&;
+    using Resp = StartInstancesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "StartInstances", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 LighthouseClient::StartInstancesOutcomeCallable LighthouseClient::StartInstancesCallable(const StartInstancesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<StartInstancesOutcome()>>(
-        [this, request]()
-        {
-            return this->StartInstances(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<StartInstancesOutcome>>();
+    StartInstancesAsync(
+    request,
+    [prom](
+        const LighthouseClient*,
+        const StartInstancesRequest&,
+        StartInstancesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 LighthouseClient::StartMcpServersOutcome LighthouseClient::StartMcpServers(const StartMcpServersRequest &request)
@@ -4835,25 +5612,32 @@ LighthouseClient::StartMcpServersOutcome LighthouseClient::StartMcpServers(const
 
 void LighthouseClient::StartMcpServersAsync(const StartMcpServersRequest& request, const StartMcpServersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->StartMcpServers(request), context);
-    };
+    using Req = const StartMcpServersRequest&;
+    using Resp = StartMcpServersResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "StartMcpServers", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 LighthouseClient::StartMcpServersOutcomeCallable LighthouseClient::StartMcpServersCallable(const StartMcpServersRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<StartMcpServersOutcome()>>(
-        [this, request]()
-        {
-            return this->StartMcpServers(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<StartMcpServersOutcome>>();
+    StartMcpServersAsync(
+    request,
+    [prom](
+        const LighthouseClient*,
+        const StartMcpServersRequest&,
+        StartMcpServersOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 LighthouseClient::StopDockerContainersOutcome LighthouseClient::StopDockerContainers(const StopDockerContainersRequest &request)
@@ -4878,25 +5662,32 @@ LighthouseClient::StopDockerContainersOutcome LighthouseClient::StopDockerContai
 
 void LighthouseClient::StopDockerContainersAsync(const StopDockerContainersRequest& request, const StopDockerContainersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->StopDockerContainers(request), context);
-    };
+    using Req = const StopDockerContainersRequest&;
+    using Resp = StopDockerContainersResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "StopDockerContainers", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 LighthouseClient::StopDockerContainersOutcomeCallable LighthouseClient::StopDockerContainersCallable(const StopDockerContainersRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<StopDockerContainersOutcome()>>(
-        [this, request]()
-        {
-            return this->StopDockerContainers(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<StopDockerContainersOutcome>>();
+    StopDockerContainersAsync(
+    request,
+    [prom](
+        const LighthouseClient*,
+        const StopDockerContainersRequest&,
+        StopDockerContainersOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 LighthouseClient::StopInstancesOutcome LighthouseClient::StopInstances(const StopInstancesRequest &request)
@@ -4921,25 +5712,32 @@ LighthouseClient::StopInstancesOutcome LighthouseClient::StopInstances(const Sto
 
 void LighthouseClient::StopInstancesAsync(const StopInstancesRequest& request, const StopInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->StopInstances(request), context);
-    };
+    using Req = const StopInstancesRequest&;
+    using Resp = StopInstancesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "StopInstances", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 LighthouseClient::StopInstancesOutcomeCallable LighthouseClient::StopInstancesCallable(const StopInstancesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<StopInstancesOutcome()>>(
-        [this, request]()
-        {
-            return this->StopInstances(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<StopInstancesOutcome>>();
+    StopInstancesAsync(
+    request,
+    [prom](
+        const LighthouseClient*,
+        const StopInstancesRequest&,
+        StopInstancesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 LighthouseClient::StopMcpServersOutcome LighthouseClient::StopMcpServers(const StopMcpServersRequest &request)
@@ -4964,25 +5762,32 @@ LighthouseClient::StopMcpServersOutcome LighthouseClient::StopMcpServers(const S
 
 void LighthouseClient::StopMcpServersAsync(const StopMcpServersRequest& request, const StopMcpServersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->StopMcpServers(request), context);
-    };
+    using Req = const StopMcpServersRequest&;
+    using Resp = StopMcpServersResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "StopMcpServers", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 LighthouseClient::StopMcpServersOutcomeCallable LighthouseClient::StopMcpServersCallable(const StopMcpServersRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<StopMcpServersOutcome()>>(
-        [this, request]()
-        {
-            return this->StopMcpServers(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<StopMcpServersOutcome>>();
+    StopMcpServersAsync(
+    request,
+    [prom](
+        const LighthouseClient*,
+        const StopMcpServersRequest&,
+        StopMcpServersOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 LighthouseClient::SyncBlueprintOutcome LighthouseClient::SyncBlueprint(const SyncBlueprintRequest &request)
@@ -5007,25 +5812,32 @@ LighthouseClient::SyncBlueprintOutcome LighthouseClient::SyncBlueprint(const Syn
 
 void LighthouseClient::SyncBlueprintAsync(const SyncBlueprintRequest& request, const SyncBlueprintAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->SyncBlueprint(request), context);
-    };
+    using Req = const SyncBlueprintRequest&;
+    using Resp = SyncBlueprintResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "SyncBlueprint", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 LighthouseClient::SyncBlueprintOutcomeCallable LighthouseClient::SyncBlueprintCallable(const SyncBlueprintRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<SyncBlueprintOutcome()>>(
-        [this, request]()
-        {
-            return this->SyncBlueprint(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<SyncBlueprintOutcome>>();
+    SyncBlueprintAsync(
+    request,
+    [prom](
+        const LighthouseClient*,
+        const SyncBlueprintRequest&,
+        SyncBlueprintOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 LighthouseClient::TerminateDisksOutcome LighthouseClient::TerminateDisks(const TerminateDisksRequest &request)
@@ -5050,25 +5862,32 @@ LighthouseClient::TerminateDisksOutcome LighthouseClient::TerminateDisks(const T
 
 void LighthouseClient::TerminateDisksAsync(const TerminateDisksRequest& request, const TerminateDisksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->TerminateDisks(request), context);
-    };
+    using Req = const TerminateDisksRequest&;
+    using Resp = TerminateDisksResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "TerminateDisks", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 LighthouseClient::TerminateDisksOutcomeCallable LighthouseClient::TerminateDisksCallable(const TerminateDisksRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<TerminateDisksOutcome()>>(
-        [this, request]()
-        {
-            return this->TerminateDisks(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<TerminateDisksOutcome>>();
+    TerminateDisksAsync(
+    request,
+    [prom](
+        const LighthouseClient*,
+        const TerminateDisksRequest&,
+        TerminateDisksOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 LighthouseClient::TerminateInstancesOutcome LighthouseClient::TerminateInstances(const TerminateInstancesRequest &request)
@@ -5093,24 +5912,31 @@ LighthouseClient::TerminateInstancesOutcome LighthouseClient::TerminateInstances
 
 void LighthouseClient::TerminateInstancesAsync(const TerminateInstancesRequest& request, const TerminateInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->TerminateInstances(request), context);
-    };
+    using Req = const TerminateInstancesRequest&;
+    using Resp = TerminateInstancesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "TerminateInstances", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 LighthouseClient::TerminateInstancesOutcomeCallable LighthouseClient::TerminateInstancesCallable(const TerminateInstancesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<TerminateInstancesOutcome()>>(
-        [this, request]()
-        {
-            return this->TerminateInstances(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<TerminateInstancesOutcome>>();
+    TerminateInstancesAsync(
+    request,
+    [prom](
+        const LighthouseClient*,
+        const TerminateInstancesRequest&,
+        TerminateInstancesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 

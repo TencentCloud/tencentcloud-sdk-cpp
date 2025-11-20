@@ -62,25 +62,32 @@ ControlcenterClient::BatchApplyAccountBaselinesOutcome ControlcenterClient::Batc
 
 void ControlcenterClient::BatchApplyAccountBaselinesAsync(const BatchApplyAccountBaselinesRequest& request, const BatchApplyAccountBaselinesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->BatchApplyAccountBaselines(request), context);
-    };
+    using Req = const BatchApplyAccountBaselinesRequest&;
+    using Resp = BatchApplyAccountBaselinesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "BatchApplyAccountBaselines", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ControlcenterClient::BatchApplyAccountBaselinesOutcomeCallable ControlcenterClient::BatchApplyAccountBaselinesCallable(const BatchApplyAccountBaselinesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<BatchApplyAccountBaselinesOutcome()>>(
-        [this, request]()
-        {
-            return this->BatchApplyAccountBaselines(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<BatchApplyAccountBaselinesOutcome>>();
+    BatchApplyAccountBaselinesAsync(
+    request,
+    [prom](
+        const ControlcenterClient*,
+        const BatchApplyAccountBaselinesRequest&,
+        BatchApplyAccountBaselinesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ControlcenterClient::GetAccountFactoryBaselineOutcome ControlcenterClient::GetAccountFactoryBaseline(const GetAccountFactoryBaselineRequest &request)
@@ -105,25 +112,32 @@ ControlcenterClient::GetAccountFactoryBaselineOutcome ControlcenterClient::GetAc
 
 void ControlcenterClient::GetAccountFactoryBaselineAsync(const GetAccountFactoryBaselineRequest& request, const GetAccountFactoryBaselineAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->GetAccountFactoryBaseline(request), context);
-    };
+    using Req = const GetAccountFactoryBaselineRequest&;
+    using Resp = GetAccountFactoryBaselineResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "GetAccountFactoryBaseline", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ControlcenterClient::GetAccountFactoryBaselineOutcomeCallable ControlcenterClient::GetAccountFactoryBaselineCallable(const GetAccountFactoryBaselineRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<GetAccountFactoryBaselineOutcome()>>(
-        [this, request]()
-        {
-            return this->GetAccountFactoryBaseline(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<GetAccountFactoryBaselineOutcome>>();
+    GetAccountFactoryBaselineAsync(
+    request,
+    [prom](
+        const ControlcenterClient*,
+        const GetAccountFactoryBaselineRequest&,
+        GetAccountFactoryBaselineOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ControlcenterClient::ListAccountFactoryBaselineItemsOutcome ControlcenterClient::ListAccountFactoryBaselineItems(const ListAccountFactoryBaselineItemsRequest &request)
@@ -148,25 +162,32 @@ ControlcenterClient::ListAccountFactoryBaselineItemsOutcome ControlcenterClient:
 
 void ControlcenterClient::ListAccountFactoryBaselineItemsAsync(const ListAccountFactoryBaselineItemsRequest& request, const ListAccountFactoryBaselineItemsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ListAccountFactoryBaselineItems(request), context);
-    };
+    using Req = const ListAccountFactoryBaselineItemsRequest&;
+    using Resp = ListAccountFactoryBaselineItemsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ListAccountFactoryBaselineItems", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ControlcenterClient::ListAccountFactoryBaselineItemsOutcomeCallable ControlcenterClient::ListAccountFactoryBaselineItemsCallable(const ListAccountFactoryBaselineItemsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ListAccountFactoryBaselineItemsOutcome()>>(
-        [this, request]()
-        {
-            return this->ListAccountFactoryBaselineItems(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ListAccountFactoryBaselineItemsOutcome>>();
+    ListAccountFactoryBaselineItemsAsync(
+    request,
+    [prom](
+        const ControlcenterClient*,
+        const ListAccountFactoryBaselineItemsRequest&,
+        ListAccountFactoryBaselineItemsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ControlcenterClient::ListDeployStepTasksOutcome ControlcenterClient::ListDeployStepTasks(const ListDeployStepTasksRequest &request)
@@ -191,25 +212,32 @@ ControlcenterClient::ListDeployStepTasksOutcome ControlcenterClient::ListDeployS
 
 void ControlcenterClient::ListDeployStepTasksAsync(const ListDeployStepTasksRequest& request, const ListDeployStepTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ListDeployStepTasks(request), context);
-    };
+    using Req = const ListDeployStepTasksRequest&;
+    using Resp = ListDeployStepTasksResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ListDeployStepTasks", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ControlcenterClient::ListDeployStepTasksOutcomeCallable ControlcenterClient::ListDeployStepTasksCallable(const ListDeployStepTasksRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ListDeployStepTasksOutcome()>>(
-        [this, request]()
-        {
-            return this->ListDeployStepTasks(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ListDeployStepTasksOutcome>>();
+    ListDeployStepTasksAsync(
+    request,
+    [prom](
+        const ControlcenterClient*,
+        const ListDeployStepTasksRequest&,
+        ListDeployStepTasksOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ControlcenterClient::UpdateAccountFactoryBaselineOutcome ControlcenterClient::UpdateAccountFactoryBaseline(const UpdateAccountFactoryBaselineRequest &request)
@@ -234,24 +262,31 @@ ControlcenterClient::UpdateAccountFactoryBaselineOutcome ControlcenterClient::Up
 
 void ControlcenterClient::UpdateAccountFactoryBaselineAsync(const UpdateAccountFactoryBaselineRequest& request, const UpdateAccountFactoryBaselineAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UpdateAccountFactoryBaseline(request), context);
-    };
+    using Req = const UpdateAccountFactoryBaselineRequest&;
+    using Resp = UpdateAccountFactoryBaselineResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UpdateAccountFactoryBaseline", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ControlcenterClient::UpdateAccountFactoryBaselineOutcomeCallable ControlcenterClient::UpdateAccountFactoryBaselineCallable(const UpdateAccountFactoryBaselineRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UpdateAccountFactoryBaselineOutcome()>>(
-        [this, request]()
-        {
-            return this->UpdateAccountFactoryBaseline(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UpdateAccountFactoryBaselineOutcome>>();
+    UpdateAccountFactoryBaselineAsync(
+    request,
+    [prom](
+        const ControlcenterClient*,
+        const UpdateAccountFactoryBaselineRequest&,
+        UpdateAccountFactoryBaselineOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 

@@ -62,25 +62,32 @@ YunjingClient::AddLoginWhiteListOutcome YunjingClient::AddLoginWhiteList(const A
 
 void YunjingClient::AddLoginWhiteListAsync(const AddLoginWhiteListRequest& request, const AddLoginWhiteListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->AddLoginWhiteList(request), context);
-    };
+    using Req = const AddLoginWhiteListRequest&;
+    using Resp = AddLoginWhiteListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "AddLoginWhiteList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 YunjingClient::AddLoginWhiteListOutcomeCallable YunjingClient::AddLoginWhiteListCallable(const AddLoginWhiteListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<AddLoginWhiteListOutcome()>>(
-        [this, request]()
-        {
-            return this->AddLoginWhiteList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<AddLoginWhiteListOutcome>>();
+    AddLoginWhiteListAsync(
+    request,
+    [prom](
+        const YunjingClient*,
+        const AddLoginWhiteListRequest&,
+        AddLoginWhiteListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 YunjingClient::AddMachineTagOutcome YunjingClient::AddMachineTag(const AddMachineTagRequest &request)
@@ -105,25 +112,32 @@ YunjingClient::AddMachineTagOutcome YunjingClient::AddMachineTag(const AddMachin
 
 void YunjingClient::AddMachineTagAsync(const AddMachineTagRequest& request, const AddMachineTagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->AddMachineTag(request), context);
-    };
+    using Req = const AddMachineTagRequest&;
+    using Resp = AddMachineTagResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "AddMachineTag", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 YunjingClient::AddMachineTagOutcomeCallable YunjingClient::AddMachineTagCallable(const AddMachineTagRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<AddMachineTagOutcome()>>(
-        [this, request]()
-        {
-            return this->AddMachineTag(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<AddMachineTagOutcome>>();
+    AddMachineTagAsync(
+    request,
+    [prom](
+        const YunjingClient*,
+        const AddMachineTagRequest&,
+        AddMachineTagOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 YunjingClient::CloseProVersionOutcome YunjingClient::CloseProVersion(const CloseProVersionRequest &request)
@@ -148,25 +162,32 @@ YunjingClient::CloseProVersionOutcome YunjingClient::CloseProVersion(const Close
 
 void YunjingClient::CloseProVersionAsync(const CloseProVersionRequest& request, const CloseProVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CloseProVersion(request), context);
-    };
+    using Req = const CloseProVersionRequest&;
+    using Resp = CloseProVersionResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CloseProVersion", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 YunjingClient::CloseProVersionOutcomeCallable YunjingClient::CloseProVersionCallable(const CloseProVersionRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CloseProVersionOutcome()>>(
-        [this, request]()
-        {
-            return this->CloseProVersion(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CloseProVersionOutcome>>();
+    CloseProVersionAsync(
+    request,
+    [prom](
+        const YunjingClient*,
+        const CloseProVersionRequest&,
+        CloseProVersionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 YunjingClient::CreateBaselineStrategyOutcome YunjingClient::CreateBaselineStrategy(const CreateBaselineStrategyRequest &request)
@@ -191,25 +212,32 @@ YunjingClient::CreateBaselineStrategyOutcome YunjingClient::CreateBaselineStrate
 
 void YunjingClient::CreateBaselineStrategyAsync(const CreateBaselineStrategyRequest& request, const CreateBaselineStrategyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateBaselineStrategy(request), context);
-    };
+    using Req = const CreateBaselineStrategyRequest&;
+    using Resp = CreateBaselineStrategyResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateBaselineStrategy", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 YunjingClient::CreateBaselineStrategyOutcomeCallable YunjingClient::CreateBaselineStrategyCallable(const CreateBaselineStrategyRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateBaselineStrategyOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateBaselineStrategy(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateBaselineStrategyOutcome>>();
+    CreateBaselineStrategyAsync(
+    request,
+    [prom](
+        const YunjingClient*,
+        const CreateBaselineStrategyRequest&,
+        CreateBaselineStrategyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 YunjingClient::CreateOpenPortTaskOutcome YunjingClient::CreateOpenPortTask(const CreateOpenPortTaskRequest &request)
@@ -234,25 +262,32 @@ YunjingClient::CreateOpenPortTaskOutcome YunjingClient::CreateOpenPortTask(const
 
 void YunjingClient::CreateOpenPortTaskAsync(const CreateOpenPortTaskRequest& request, const CreateOpenPortTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateOpenPortTask(request), context);
-    };
+    using Req = const CreateOpenPortTaskRequest&;
+    using Resp = CreateOpenPortTaskResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateOpenPortTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 YunjingClient::CreateOpenPortTaskOutcomeCallable YunjingClient::CreateOpenPortTaskCallable(const CreateOpenPortTaskRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateOpenPortTaskOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateOpenPortTask(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateOpenPortTaskOutcome>>();
+    CreateOpenPortTaskAsync(
+    request,
+    [prom](
+        const YunjingClient*,
+        const CreateOpenPortTaskRequest&,
+        CreateOpenPortTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 YunjingClient::CreateProcessTaskOutcome YunjingClient::CreateProcessTask(const CreateProcessTaskRequest &request)
@@ -277,25 +312,32 @@ YunjingClient::CreateProcessTaskOutcome YunjingClient::CreateProcessTask(const C
 
 void YunjingClient::CreateProcessTaskAsync(const CreateProcessTaskRequest& request, const CreateProcessTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateProcessTask(request), context);
-    };
+    using Req = const CreateProcessTaskRequest&;
+    using Resp = CreateProcessTaskResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateProcessTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 YunjingClient::CreateProcessTaskOutcomeCallable YunjingClient::CreateProcessTaskCallable(const CreateProcessTaskRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateProcessTaskOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateProcessTask(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateProcessTaskOutcome>>();
+    CreateProcessTaskAsync(
+    request,
+    [prom](
+        const YunjingClient*,
+        const CreateProcessTaskRequest&,
+        CreateProcessTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 YunjingClient::CreateUsualLoginPlacesOutcome YunjingClient::CreateUsualLoginPlaces(const CreateUsualLoginPlacesRequest &request)
@@ -320,25 +362,32 @@ YunjingClient::CreateUsualLoginPlacesOutcome YunjingClient::CreateUsualLoginPlac
 
 void YunjingClient::CreateUsualLoginPlacesAsync(const CreateUsualLoginPlacesRequest& request, const CreateUsualLoginPlacesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateUsualLoginPlaces(request), context);
-    };
+    using Req = const CreateUsualLoginPlacesRequest&;
+    using Resp = CreateUsualLoginPlacesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateUsualLoginPlaces", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 YunjingClient::CreateUsualLoginPlacesOutcomeCallable YunjingClient::CreateUsualLoginPlacesCallable(const CreateUsualLoginPlacesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateUsualLoginPlacesOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateUsualLoginPlaces(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateUsualLoginPlacesOutcome>>();
+    CreateUsualLoginPlacesAsync(
+    request,
+    [prom](
+        const YunjingClient*,
+        const CreateUsualLoginPlacesRequest&,
+        CreateUsualLoginPlacesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 YunjingClient::DeleteAttackLogsOutcome YunjingClient::DeleteAttackLogs(const DeleteAttackLogsRequest &request)
@@ -363,25 +412,32 @@ YunjingClient::DeleteAttackLogsOutcome YunjingClient::DeleteAttackLogs(const Del
 
 void YunjingClient::DeleteAttackLogsAsync(const DeleteAttackLogsRequest& request, const DeleteAttackLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteAttackLogs(request), context);
-    };
+    using Req = const DeleteAttackLogsRequest&;
+    using Resp = DeleteAttackLogsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteAttackLogs", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 YunjingClient::DeleteAttackLogsOutcomeCallable YunjingClient::DeleteAttackLogsCallable(const DeleteAttackLogsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteAttackLogsOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteAttackLogs(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteAttackLogsOutcome>>();
+    DeleteAttackLogsAsync(
+    request,
+    [prom](
+        const YunjingClient*,
+        const DeleteAttackLogsRequest&,
+        DeleteAttackLogsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 YunjingClient::DeleteBashEventsOutcome YunjingClient::DeleteBashEvents(const DeleteBashEventsRequest &request)
@@ -406,25 +462,32 @@ YunjingClient::DeleteBashEventsOutcome YunjingClient::DeleteBashEvents(const Del
 
 void YunjingClient::DeleteBashEventsAsync(const DeleteBashEventsRequest& request, const DeleteBashEventsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteBashEvents(request), context);
-    };
+    using Req = const DeleteBashEventsRequest&;
+    using Resp = DeleteBashEventsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteBashEvents", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 YunjingClient::DeleteBashEventsOutcomeCallable YunjingClient::DeleteBashEventsCallable(const DeleteBashEventsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteBashEventsOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteBashEvents(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteBashEventsOutcome>>();
+    DeleteBashEventsAsync(
+    request,
+    [prom](
+        const YunjingClient*,
+        const DeleteBashEventsRequest&,
+        DeleteBashEventsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 YunjingClient::DeleteBashRulesOutcome YunjingClient::DeleteBashRules(const DeleteBashRulesRequest &request)
@@ -449,25 +512,32 @@ YunjingClient::DeleteBashRulesOutcome YunjingClient::DeleteBashRules(const Delet
 
 void YunjingClient::DeleteBashRulesAsync(const DeleteBashRulesRequest& request, const DeleteBashRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteBashRules(request), context);
-    };
+    using Req = const DeleteBashRulesRequest&;
+    using Resp = DeleteBashRulesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteBashRules", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 YunjingClient::DeleteBashRulesOutcomeCallable YunjingClient::DeleteBashRulesCallable(const DeleteBashRulesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteBashRulesOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteBashRules(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteBashRulesOutcome>>();
+    DeleteBashRulesAsync(
+    request,
+    [prom](
+        const YunjingClient*,
+        const DeleteBashRulesRequest&,
+        DeleteBashRulesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 YunjingClient::DeleteBruteAttacksOutcome YunjingClient::DeleteBruteAttacks(const DeleteBruteAttacksRequest &request)
@@ -492,25 +562,32 @@ YunjingClient::DeleteBruteAttacksOutcome YunjingClient::DeleteBruteAttacks(const
 
 void YunjingClient::DeleteBruteAttacksAsync(const DeleteBruteAttacksRequest& request, const DeleteBruteAttacksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteBruteAttacks(request), context);
-    };
+    using Req = const DeleteBruteAttacksRequest&;
+    using Resp = DeleteBruteAttacksResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteBruteAttacks", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 YunjingClient::DeleteBruteAttacksOutcomeCallable YunjingClient::DeleteBruteAttacksCallable(const DeleteBruteAttacksRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteBruteAttacksOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteBruteAttacks(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteBruteAttacksOutcome>>();
+    DeleteBruteAttacksAsync(
+    request,
+    [prom](
+        const YunjingClient*,
+        const DeleteBruteAttacksRequest&,
+        DeleteBruteAttacksOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 YunjingClient::DeleteLoginWhiteListOutcome YunjingClient::DeleteLoginWhiteList(const DeleteLoginWhiteListRequest &request)
@@ -535,25 +612,32 @@ YunjingClient::DeleteLoginWhiteListOutcome YunjingClient::DeleteLoginWhiteList(c
 
 void YunjingClient::DeleteLoginWhiteListAsync(const DeleteLoginWhiteListRequest& request, const DeleteLoginWhiteListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteLoginWhiteList(request), context);
-    };
+    using Req = const DeleteLoginWhiteListRequest&;
+    using Resp = DeleteLoginWhiteListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteLoginWhiteList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 YunjingClient::DeleteLoginWhiteListOutcomeCallable YunjingClient::DeleteLoginWhiteListCallable(const DeleteLoginWhiteListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteLoginWhiteListOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteLoginWhiteList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteLoginWhiteListOutcome>>();
+    DeleteLoginWhiteListAsync(
+    request,
+    [prom](
+        const YunjingClient*,
+        const DeleteLoginWhiteListRequest&,
+        DeleteLoginWhiteListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 YunjingClient::DeleteMachineOutcome YunjingClient::DeleteMachine(const DeleteMachineRequest &request)
@@ -578,25 +662,32 @@ YunjingClient::DeleteMachineOutcome YunjingClient::DeleteMachine(const DeleteMac
 
 void YunjingClient::DeleteMachineAsync(const DeleteMachineRequest& request, const DeleteMachineAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteMachine(request), context);
-    };
+    using Req = const DeleteMachineRequest&;
+    using Resp = DeleteMachineResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteMachine", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 YunjingClient::DeleteMachineOutcomeCallable YunjingClient::DeleteMachineCallable(const DeleteMachineRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteMachineOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteMachine(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteMachineOutcome>>();
+    DeleteMachineAsync(
+    request,
+    [prom](
+        const YunjingClient*,
+        const DeleteMachineRequest&,
+        DeleteMachineOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 YunjingClient::DeleteMachineTagOutcome YunjingClient::DeleteMachineTag(const DeleteMachineTagRequest &request)
@@ -621,25 +712,32 @@ YunjingClient::DeleteMachineTagOutcome YunjingClient::DeleteMachineTag(const Del
 
 void YunjingClient::DeleteMachineTagAsync(const DeleteMachineTagRequest& request, const DeleteMachineTagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteMachineTag(request), context);
-    };
+    using Req = const DeleteMachineTagRequest&;
+    using Resp = DeleteMachineTagResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteMachineTag", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 YunjingClient::DeleteMachineTagOutcomeCallable YunjingClient::DeleteMachineTagCallable(const DeleteMachineTagRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteMachineTagOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteMachineTag(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteMachineTagOutcome>>();
+    DeleteMachineTagAsync(
+    request,
+    [prom](
+        const YunjingClient*,
+        const DeleteMachineTagRequest&,
+        DeleteMachineTagOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 YunjingClient::DeleteMaliciousRequestsOutcome YunjingClient::DeleteMaliciousRequests(const DeleteMaliciousRequestsRequest &request)
@@ -664,25 +762,32 @@ YunjingClient::DeleteMaliciousRequestsOutcome YunjingClient::DeleteMaliciousRequ
 
 void YunjingClient::DeleteMaliciousRequestsAsync(const DeleteMaliciousRequestsRequest& request, const DeleteMaliciousRequestsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteMaliciousRequests(request), context);
-    };
+    using Req = const DeleteMaliciousRequestsRequest&;
+    using Resp = DeleteMaliciousRequestsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteMaliciousRequests", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 YunjingClient::DeleteMaliciousRequestsOutcomeCallable YunjingClient::DeleteMaliciousRequestsCallable(const DeleteMaliciousRequestsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteMaliciousRequestsOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteMaliciousRequests(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteMaliciousRequestsOutcome>>();
+    DeleteMaliciousRequestsAsync(
+    request,
+    [prom](
+        const YunjingClient*,
+        const DeleteMaliciousRequestsRequest&,
+        DeleteMaliciousRequestsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 YunjingClient::DeleteMalwaresOutcome YunjingClient::DeleteMalwares(const DeleteMalwaresRequest &request)
@@ -707,25 +812,32 @@ YunjingClient::DeleteMalwaresOutcome YunjingClient::DeleteMalwares(const DeleteM
 
 void YunjingClient::DeleteMalwaresAsync(const DeleteMalwaresRequest& request, const DeleteMalwaresAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteMalwares(request), context);
-    };
+    using Req = const DeleteMalwaresRequest&;
+    using Resp = DeleteMalwaresResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteMalwares", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 YunjingClient::DeleteMalwaresOutcomeCallable YunjingClient::DeleteMalwaresCallable(const DeleteMalwaresRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteMalwaresOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteMalwares(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteMalwaresOutcome>>();
+    DeleteMalwaresAsync(
+    request,
+    [prom](
+        const YunjingClient*,
+        const DeleteMalwaresRequest&,
+        DeleteMalwaresOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 YunjingClient::DeleteNonlocalLoginPlacesOutcome YunjingClient::DeleteNonlocalLoginPlaces(const DeleteNonlocalLoginPlacesRequest &request)
@@ -750,25 +862,32 @@ YunjingClient::DeleteNonlocalLoginPlacesOutcome YunjingClient::DeleteNonlocalLog
 
 void YunjingClient::DeleteNonlocalLoginPlacesAsync(const DeleteNonlocalLoginPlacesRequest& request, const DeleteNonlocalLoginPlacesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteNonlocalLoginPlaces(request), context);
-    };
+    using Req = const DeleteNonlocalLoginPlacesRequest&;
+    using Resp = DeleteNonlocalLoginPlacesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteNonlocalLoginPlaces", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 YunjingClient::DeleteNonlocalLoginPlacesOutcomeCallable YunjingClient::DeleteNonlocalLoginPlacesCallable(const DeleteNonlocalLoginPlacesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteNonlocalLoginPlacesOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteNonlocalLoginPlaces(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteNonlocalLoginPlacesOutcome>>();
+    DeleteNonlocalLoginPlacesAsync(
+    request,
+    [prom](
+        const YunjingClient*,
+        const DeleteNonlocalLoginPlacesRequest&,
+        DeleteNonlocalLoginPlacesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 YunjingClient::DeletePrivilegeEventsOutcome YunjingClient::DeletePrivilegeEvents(const DeletePrivilegeEventsRequest &request)
@@ -793,25 +912,32 @@ YunjingClient::DeletePrivilegeEventsOutcome YunjingClient::DeletePrivilegeEvents
 
 void YunjingClient::DeletePrivilegeEventsAsync(const DeletePrivilegeEventsRequest& request, const DeletePrivilegeEventsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeletePrivilegeEvents(request), context);
-    };
+    using Req = const DeletePrivilegeEventsRequest&;
+    using Resp = DeletePrivilegeEventsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeletePrivilegeEvents", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 YunjingClient::DeletePrivilegeEventsOutcomeCallable YunjingClient::DeletePrivilegeEventsCallable(const DeletePrivilegeEventsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeletePrivilegeEventsOutcome()>>(
-        [this, request]()
-        {
-            return this->DeletePrivilegeEvents(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeletePrivilegeEventsOutcome>>();
+    DeletePrivilegeEventsAsync(
+    request,
+    [prom](
+        const YunjingClient*,
+        const DeletePrivilegeEventsRequest&,
+        DeletePrivilegeEventsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 YunjingClient::DeletePrivilegeRulesOutcome YunjingClient::DeletePrivilegeRules(const DeletePrivilegeRulesRequest &request)
@@ -836,25 +962,32 @@ YunjingClient::DeletePrivilegeRulesOutcome YunjingClient::DeletePrivilegeRules(c
 
 void YunjingClient::DeletePrivilegeRulesAsync(const DeletePrivilegeRulesRequest& request, const DeletePrivilegeRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeletePrivilegeRules(request), context);
-    };
+    using Req = const DeletePrivilegeRulesRequest&;
+    using Resp = DeletePrivilegeRulesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeletePrivilegeRules", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 YunjingClient::DeletePrivilegeRulesOutcomeCallable YunjingClient::DeletePrivilegeRulesCallable(const DeletePrivilegeRulesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeletePrivilegeRulesOutcome()>>(
-        [this, request]()
-        {
-            return this->DeletePrivilegeRules(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeletePrivilegeRulesOutcome>>();
+    DeletePrivilegeRulesAsync(
+    request,
+    [prom](
+        const YunjingClient*,
+        const DeletePrivilegeRulesRequest&,
+        DeletePrivilegeRulesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 YunjingClient::DeleteReverseShellEventsOutcome YunjingClient::DeleteReverseShellEvents(const DeleteReverseShellEventsRequest &request)
@@ -879,25 +1012,32 @@ YunjingClient::DeleteReverseShellEventsOutcome YunjingClient::DeleteReverseShell
 
 void YunjingClient::DeleteReverseShellEventsAsync(const DeleteReverseShellEventsRequest& request, const DeleteReverseShellEventsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteReverseShellEvents(request), context);
-    };
+    using Req = const DeleteReverseShellEventsRequest&;
+    using Resp = DeleteReverseShellEventsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteReverseShellEvents", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 YunjingClient::DeleteReverseShellEventsOutcomeCallable YunjingClient::DeleteReverseShellEventsCallable(const DeleteReverseShellEventsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteReverseShellEventsOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteReverseShellEvents(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteReverseShellEventsOutcome>>();
+    DeleteReverseShellEventsAsync(
+    request,
+    [prom](
+        const YunjingClient*,
+        const DeleteReverseShellEventsRequest&,
+        DeleteReverseShellEventsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 YunjingClient::DeleteReverseShellRulesOutcome YunjingClient::DeleteReverseShellRules(const DeleteReverseShellRulesRequest &request)
@@ -922,25 +1062,32 @@ YunjingClient::DeleteReverseShellRulesOutcome YunjingClient::DeleteReverseShellR
 
 void YunjingClient::DeleteReverseShellRulesAsync(const DeleteReverseShellRulesRequest& request, const DeleteReverseShellRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteReverseShellRules(request), context);
-    };
+    using Req = const DeleteReverseShellRulesRequest&;
+    using Resp = DeleteReverseShellRulesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteReverseShellRules", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 YunjingClient::DeleteReverseShellRulesOutcomeCallable YunjingClient::DeleteReverseShellRulesCallable(const DeleteReverseShellRulesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteReverseShellRulesOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteReverseShellRules(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteReverseShellRulesOutcome>>();
+    DeleteReverseShellRulesAsync(
+    request,
+    [prom](
+        const YunjingClient*,
+        const DeleteReverseShellRulesRequest&,
+        DeleteReverseShellRulesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 YunjingClient::DeleteTagsOutcome YunjingClient::DeleteTags(const DeleteTagsRequest &request)
@@ -965,25 +1112,32 @@ YunjingClient::DeleteTagsOutcome YunjingClient::DeleteTags(const DeleteTagsReque
 
 void YunjingClient::DeleteTagsAsync(const DeleteTagsRequest& request, const DeleteTagsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteTags(request), context);
-    };
+    using Req = const DeleteTagsRequest&;
+    using Resp = DeleteTagsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteTags", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 YunjingClient::DeleteTagsOutcomeCallable YunjingClient::DeleteTagsCallable(const DeleteTagsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteTagsOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteTags(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteTagsOutcome>>();
+    DeleteTagsAsync(
+    request,
+    [prom](
+        const YunjingClient*,
+        const DeleteTagsRequest&,
+        DeleteTagsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 YunjingClient::DeleteUsualLoginPlacesOutcome YunjingClient::DeleteUsualLoginPlaces(const DeleteUsualLoginPlacesRequest &request)
@@ -1008,25 +1162,32 @@ YunjingClient::DeleteUsualLoginPlacesOutcome YunjingClient::DeleteUsualLoginPlac
 
 void YunjingClient::DeleteUsualLoginPlacesAsync(const DeleteUsualLoginPlacesRequest& request, const DeleteUsualLoginPlacesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteUsualLoginPlaces(request), context);
-    };
+    using Req = const DeleteUsualLoginPlacesRequest&;
+    using Resp = DeleteUsualLoginPlacesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteUsualLoginPlaces", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 YunjingClient::DeleteUsualLoginPlacesOutcomeCallable YunjingClient::DeleteUsualLoginPlacesCallable(const DeleteUsualLoginPlacesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteUsualLoginPlacesOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteUsualLoginPlaces(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteUsualLoginPlacesOutcome>>();
+    DeleteUsualLoginPlacesAsync(
+    request,
+    [prom](
+        const YunjingClient*,
+        const DeleteUsualLoginPlacesRequest&,
+        DeleteUsualLoginPlacesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 YunjingClient::DescribeAccountStatisticsOutcome YunjingClient::DescribeAccountStatistics(const DescribeAccountStatisticsRequest &request)
@@ -1051,25 +1212,32 @@ YunjingClient::DescribeAccountStatisticsOutcome YunjingClient::DescribeAccountSt
 
 void YunjingClient::DescribeAccountStatisticsAsync(const DescribeAccountStatisticsRequest& request, const DescribeAccountStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAccountStatistics(request), context);
-    };
+    using Req = const DescribeAccountStatisticsRequest&;
+    using Resp = DescribeAccountStatisticsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAccountStatistics", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 YunjingClient::DescribeAccountStatisticsOutcomeCallable YunjingClient::DescribeAccountStatisticsCallable(const DescribeAccountStatisticsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAccountStatisticsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAccountStatistics(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAccountStatisticsOutcome>>();
+    DescribeAccountStatisticsAsync(
+    request,
+    [prom](
+        const YunjingClient*,
+        const DescribeAccountStatisticsRequest&,
+        DescribeAccountStatisticsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 YunjingClient::DescribeAccountsOutcome YunjingClient::DescribeAccounts(const DescribeAccountsRequest &request)
@@ -1094,25 +1262,32 @@ YunjingClient::DescribeAccountsOutcome YunjingClient::DescribeAccounts(const Des
 
 void YunjingClient::DescribeAccountsAsync(const DescribeAccountsRequest& request, const DescribeAccountsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAccounts(request), context);
-    };
+    using Req = const DescribeAccountsRequest&;
+    using Resp = DescribeAccountsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAccounts", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 YunjingClient::DescribeAccountsOutcomeCallable YunjingClient::DescribeAccountsCallable(const DescribeAccountsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAccountsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAccounts(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAccountsOutcome>>();
+    DescribeAccountsAsync(
+    request,
+    [prom](
+        const YunjingClient*,
+        const DescribeAccountsRequest&,
+        DescribeAccountsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 YunjingClient::DescribeAgentVulsOutcome YunjingClient::DescribeAgentVuls(const DescribeAgentVulsRequest &request)
@@ -1137,25 +1312,32 @@ YunjingClient::DescribeAgentVulsOutcome YunjingClient::DescribeAgentVuls(const D
 
 void YunjingClient::DescribeAgentVulsAsync(const DescribeAgentVulsRequest& request, const DescribeAgentVulsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAgentVuls(request), context);
-    };
+    using Req = const DescribeAgentVulsRequest&;
+    using Resp = DescribeAgentVulsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAgentVuls", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 YunjingClient::DescribeAgentVulsOutcomeCallable YunjingClient::DescribeAgentVulsCallable(const DescribeAgentVulsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAgentVulsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAgentVuls(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAgentVulsOutcome>>();
+    DescribeAgentVulsAsync(
+    request,
+    [prom](
+        const YunjingClient*,
+        const DescribeAgentVulsRequest&,
+        DescribeAgentVulsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 YunjingClient::DescribeAlarmAttributeOutcome YunjingClient::DescribeAlarmAttribute(const DescribeAlarmAttributeRequest &request)
@@ -1180,25 +1362,32 @@ YunjingClient::DescribeAlarmAttributeOutcome YunjingClient::DescribeAlarmAttribu
 
 void YunjingClient::DescribeAlarmAttributeAsync(const DescribeAlarmAttributeRequest& request, const DescribeAlarmAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAlarmAttribute(request), context);
-    };
+    using Req = const DescribeAlarmAttributeRequest&;
+    using Resp = DescribeAlarmAttributeResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAlarmAttribute", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 YunjingClient::DescribeAlarmAttributeOutcomeCallable YunjingClient::DescribeAlarmAttributeCallable(const DescribeAlarmAttributeRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAlarmAttributeOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAlarmAttribute(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAlarmAttributeOutcome>>();
+    DescribeAlarmAttributeAsync(
+    request,
+    [prom](
+        const YunjingClient*,
+        const DescribeAlarmAttributeRequest&,
+        DescribeAlarmAttributeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 YunjingClient::DescribeAttackLogInfoOutcome YunjingClient::DescribeAttackLogInfo(const DescribeAttackLogInfoRequest &request)
@@ -1223,25 +1412,32 @@ YunjingClient::DescribeAttackLogInfoOutcome YunjingClient::DescribeAttackLogInfo
 
 void YunjingClient::DescribeAttackLogInfoAsync(const DescribeAttackLogInfoRequest& request, const DescribeAttackLogInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAttackLogInfo(request), context);
-    };
+    using Req = const DescribeAttackLogInfoRequest&;
+    using Resp = DescribeAttackLogInfoResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAttackLogInfo", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 YunjingClient::DescribeAttackLogInfoOutcomeCallable YunjingClient::DescribeAttackLogInfoCallable(const DescribeAttackLogInfoRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAttackLogInfoOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAttackLogInfo(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAttackLogInfoOutcome>>();
+    DescribeAttackLogInfoAsync(
+    request,
+    [prom](
+        const YunjingClient*,
+        const DescribeAttackLogInfoRequest&,
+        DescribeAttackLogInfoOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 YunjingClient::DescribeAttackLogsOutcome YunjingClient::DescribeAttackLogs(const DescribeAttackLogsRequest &request)
@@ -1266,25 +1462,32 @@ YunjingClient::DescribeAttackLogsOutcome YunjingClient::DescribeAttackLogs(const
 
 void YunjingClient::DescribeAttackLogsAsync(const DescribeAttackLogsRequest& request, const DescribeAttackLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAttackLogs(request), context);
-    };
+    using Req = const DescribeAttackLogsRequest&;
+    using Resp = DescribeAttackLogsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAttackLogs", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 YunjingClient::DescribeAttackLogsOutcomeCallable YunjingClient::DescribeAttackLogsCallable(const DescribeAttackLogsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAttackLogsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAttackLogs(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAttackLogsOutcome>>();
+    DescribeAttackLogsAsync(
+    request,
+    [prom](
+        const YunjingClient*,
+        const DescribeAttackLogsRequest&,
+        DescribeAttackLogsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 YunjingClient::DescribeBashEventsOutcome YunjingClient::DescribeBashEvents(const DescribeBashEventsRequest &request)
@@ -1309,25 +1512,32 @@ YunjingClient::DescribeBashEventsOutcome YunjingClient::DescribeBashEvents(const
 
 void YunjingClient::DescribeBashEventsAsync(const DescribeBashEventsRequest& request, const DescribeBashEventsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeBashEvents(request), context);
-    };
+    using Req = const DescribeBashEventsRequest&;
+    using Resp = DescribeBashEventsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeBashEvents", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 YunjingClient::DescribeBashEventsOutcomeCallable YunjingClient::DescribeBashEventsCallable(const DescribeBashEventsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeBashEventsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeBashEvents(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeBashEventsOutcome>>();
+    DescribeBashEventsAsync(
+    request,
+    [prom](
+        const YunjingClient*,
+        const DescribeBashEventsRequest&,
+        DescribeBashEventsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 YunjingClient::DescribeBashRulesOutcome YunjingClient::DescribeBashRules(const DescribeBashRulesRequest &request)
@@ -1352,25 +1562,32 @@ YunjingClient::DescribeBashRulesOutcome YunjingClient::DescribeBashRules(const D
 
 void YunjingClient::DescribeBashRulesAsync(const DescribeBashRulesRequest& request, const DescribeBashRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeBashRules(request), context);
-    };
+    using Req = const DescribeBashRulesRequest&;
+    using Resp = DescribeBashRulesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeBashRules", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 YunjingClient::DescribeBashRulesOutcomeCallable YunjingClient::DescribeBashRulesCallable(const DescribeBashRulesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeBashRulesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeBashRules(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeBashRulesOutcome>>();
+    DescribeBashRulesAsync(
+    request,
+    [prom](
+        const YunjingClient*,
+        const DescribeBashRulesRequest&,
+        DescribeBashRulesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 YunjingClient::DescribeBruteAttacksOutcome YunjingClient::DescribeBruteAttacks(const DescribeBruteAttacksRequest &request)
@@ -1395,25 +1612,32 @@ YunjingClient::DescribeBruteAttacksOutcome YunjingClient::DescribeBruteAttacks(c
 
 void YunjingClient::DescribeBruteAttacksAsync(const DescribeBruteAttacksRequest& request, const DescribeBruteAttacksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeBruteAttacks(request), context);
-    };
+    using Req = const DescribeBruteAttacksRequest&;
+    using Resp = DescribeBruteAttacksResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeBruteAttacks", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 YunjingClient::DescribeBruteAttacksOutcomeCallable YunjingClient::DescribeBruteAttacksCallable(const DescribeBruteAttacksRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeBruteAttacksOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeBruteAttacks(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeBruteAttacksOutcome>>();
+    DescribeBruteAttacksAsync(
+    request,
+    [prom](
+        const YunjingClient*,
+        const DescribeBruteAttacksRequest&,
+        DescribeBruteAttacksOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 YunjingClient::DescribeComponentInfoOutcome YunjingClient::DescribeComponentInfo(const DescribeComponentInfoRequest &request)
@@ -1438,25 +1662,32 @@ YunjingClient::DescribeComponentInfoOutcome YunjingClient::DescribeComponentInfo
 
 void YunjingClient::DescribeComponentInfoAsync(const DescribeComponentInfoRequest& request, const DescribeComponentInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeComponentInfo(request), context);
-    };
+    using Req = const DescribeComponentInfoRequest&;
+    using Resp = DescribeComponentInfoResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeComponentInfo", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 YunjingClient::DescribeComponentInfoOutcomeCallable YunjingClient::DescribeComponentInfoCallable(const DescribeComponentInfoRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeComponentInfoOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeComponentInfo(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeComponentInfoOutcome>>();
+    DescribeComponentInfoAsync(
+    request,
+    [prom](
+        const YunjingClient*,
+        const DescribeComponentInfoRequest&,
+        DescribeComponentInfoOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 YunjingClient::DescribeComponentStatisticsOutcome YunjingClient::DescribeComponentStatistics(const DescribeComponentStatisticsRequest &request)
@@ -1481,25 +1712,32 @@ YunjingClient::DescribeComponentStatisticsOutcome YunjingClient::DescribeCompone
 
 void YunjingClient::DescribeComponentStatisticsAsync(const DescribeComponentStatisticsRequest& request, const DescribeComponentStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeComponentStatistics(request), context);
-    };
+    using Req = const DescribeComponentStatisticsRequest&;
+    using Resp = DescribeComponentStatisticsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeComponentStatistics", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 YunjingClient::DescribeComponentStatisticsOutcomeCallable YunjingClient::DescribeComponentStatisticsCallable(const DescribeComponentStatisticsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeComponentStatisticsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeComponentStatistics(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeComponentStatisticsOutcome>>();
+    DescribeComponentStatisticsAsync(
+    request,
+    [prom](
+        const YunjingClient*,
+        const DescribeComponentStatisticsRequest&,
+        DescribeComponentStatisticsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 YunjingClient::DescribeComponentsOutcome YunjingClient::DescribeComponents(const DescribeComponentsRequest &request)
@@ -1524,25 +1762,32 @@ YunjingClient::DescribeComponentsOutcome YunjingClient::DescribeComponents(const
 
 void YunjingClient::DescribeComponentsAsync(const DescribeComponentsRequest& request, const DescribeComponentsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeComponents(request), context);
-    };
+    using Req = const DescribeComponentsRequest&;
+    using Resp = DescribeComponentsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeComponents", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 YunjingClient::DescribeComponentsOutcomeCallable YunjingClient::DescribeComponentsCallable(const DescribeComponentsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeComponentsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeComponents(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeComponentsOutcome>>();
+    DescribeComponentsAsync(
+    request,
+    [prom](
+        const YunjingClient*,
+        const DescribeComponentsRequest&,
+        DescribeComponentsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 YunjingClient::DescribeHistoryAccountsOutcome YunjingClient::DescribeHistoryAccounts(const DescribeHistoryAccountsRequest &request)
@@ -1567,25 +1812,32 @@ YunjingClient::DescribeHistoryAccountsOutcome YunjingClient::DescribeHistoryAcco
 
 void YunjingClient::DescribeHistoryAccountsAsync(const DescribeHistoryAccountsRequest& request, const DescribeHistoryAccountsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeHistoryAccounts(request), context);
-    };
+    using Req = const DescribeHistoryAccountsRequest&;
+    using Resp = DescribeHistoryAccountsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeHistoryAccounts", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 YunjingClient::DescribeHistoryAccountsOutcomeCallable YunjingClient::DescribeHistoryAccountsCallable(const DescribeHistoryAccountsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeHistoryAccountsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeHistoryAccounts(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeHistoryAccountsOutcome>>();
+    DescribeHistoryAccountsAsync(
+    request,
+    [prom](
+        const YunjingClient*,
+        const DescribeHistoryAccountsRequest&,
+        DescribeHistoryAccountsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 YunjingClient::DescribeImpactedHostsOutcome YunjingClient::DescribeImpactedHosts(const DescribeImpactedHostsRequest &request)
@@ -1610,25 +1862,32 @@ YunjingClient::DescribeImpactedHostsOutcome YunjingClient::DescribeImpactedHosts
 
 void YunjingClient::DescribeImpactedHostsAsync(const DescribeImpactedHostsRequest& request, const DescribeImpactedHostsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeImpactedHosts(request), context);
-    };
+    using Req = const DescribeImpactedHostsRequest&;
+    using Resp = DescribeImpactedHostsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeImpactedHosts", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 YunjingClient::DescribeImpactedHostsOutcomeCallable YunjingClient::DescribeImpactedHostsCallable(const DescribeImpactedHostsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeImpactedHostsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeImpactedHosts(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeImpactedHostsOutcome>>();
+    DescribeImpactedHostsAsync(
+    request,
+    [prom](
+        const YunjingClient*,
+        const DescribeImpactedHostsRequest&,
+        DescribeImpactedHostsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 YunjingClient::DescribeLoginWhiteListOutcome YunjingClient::DescribeLoginWhiteList(const DescribeLoginWhiteListRequest &request)
@@ -1653,25 +1912,32 @@ YunjingClient::DescribeLoginWhiteListOutcome YunjingClient::DescribeLoginWhiteLi
 
 void YunjingClient::DescribeLoginWhiteListAsync(const DescribeLoginWhiteListRequest& request, const DescribeLoginWhiteListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeLoginWhiteList(request), context);
-    };
+    using Req = const DescribeLoginWhiteListRequest&;
+    using Resp = DescribeLoginWhiteListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeLoginWhiteList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 YunjingClient::DescribeLoginWhiteListOutcomeCallable YunjingClient::DescribeLoginWhiteListCallable(const DescribeLoginWhiteListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeLoginWhiteListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeLoginWhiteList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeLoginWhiteListOutcome>>();
+    DescribeLoginWhiteListAsync(
+    request,
+    [prom](
+        const YunjingClient*,
+        const DescribeLoginWhiteListRequest&,
+        DescribeLoginWhiteListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 YunjingClient::DescribeMachineInfoOutcome YunjingClient::DescribeMachineInfo(const DescribeMachineInfoRequest &request)
@@ -1696,25 +1962,32 @@ YunjingClient::DescribeMachineInfoOutcome YunjingClient::DescribeMachineInfo(con
 
 void YunjingClient::DescribeMachineInfoAsync(const DescribeMachineInfoRequest& request, const DescribeMachineInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeMachineInfo(request), context);
-    };
+    using Req = const DescribeMachineInfoRequest&;
+    using Resp = DescribeMachineInfoResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeMachineInfo", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 YunjingClient::DescribeMachineInfoOutcomeCallable YunjingClient::DescribeMachineInfoCallable(const DescribeMachineInfoRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeMachineInfoOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeMachineInfo(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeMachineInfoOutcome>>();
+    DescribeMachineInfoAsync(
+    request,
+    [prom](
+        const YunjingClient*,
+        const DescribeMachineInfoRequest&,
+        DescribeMachineInfoOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 YunjingClient::DescribeMachinesOutcome YunjingClient::DescribeMachines(const DescribeMachinesRequest &request)
@@ -1739,25 +2012,32 @@ YunjingClient::DescribeMachinesOutcome YunjingClient::DescribeMachines(const Des
 
 void YunjingClient::DescribeMachinesAsync(const DescribeMachinesRequest& request, const DescribeMachinesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeMachines(request), context);
-    };
+    using Req = const DescribeMachinesRequest&;
+    using Resp = DescribeMachinesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeMachines", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 YunjingClient::DescribeMachinesOutcomeCallable YunjingClient::DescribeMachinesCallable(const DescribeMachinesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeMachinesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeMachines(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeMachinesOutcome>>();
+    DescribeMachinesAsync(
+    request,
+    [prom](
+        const YunjingClient*,
+        const DescribeMachinesRequest&,
+        DescribeMachinesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 YunjingClient::DescribeMaliciousRequestsOutcome YunjingClient::DescribeMaliciousRequests(const DescribeMaliciousRequestsRequest &request)
@@ -1782,25 +2062,32 @@ YunjingClient::DescribeMaliciousRequestsOutcome YunjingClient::DescribeMalicious
 
 void YunjingClient::DescribeMaliciousRequestsAsync(const DescribeMaliciousRequestsRequest& request, const DescribeMaliciousRequestsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeMaliciousRequests(request), context);
-    };
+    using Req = const DescribeMaliciousRequestsRequest&;
+    using Resp = DescribeMaliciousRequestsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeMaliciousRequests", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 YunjingClient::DescribeMaliciousRequestsOutcomeCallable YunjingClient::DescribeMaliciousRequestsCallable(const DescribeMaliciousRequestsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeMaliciousRequestsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeMaliciousRequests(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeMaliciousRequestsOutcome>>();
+    DescribeMaliciousRequestsAsync(
+    request,
+    [prom](
+        const YunjingClient*,
+        const DescribeMaliciousRequestsRequest&,
+        DescribeMaliciousRequestsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 YunjingClient::DescribeMalwaresOutcome YunjingClient::DescribeMalwares(const DescribeMalwaresRequest &request)
@@ -1825,25 +2112,32 @@ YunjingClient::DescribeMalwaresOutcome YunjingClient::DescribeMalwares(const Des
 
 void YunjingClient::DescribeMalwaresAsync(const DescribeMalwaresRequest& request, const DescribeMalwaresAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeMalwares(request), context);
-    };
+    using Req = const DescribeMalwaresRequest&;
+    using Resp = DescribeMalwaresResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeMalwares", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 YunjingClient::DescribeMalwaresOutcomeCallable YunjingClient::DescribeMalwaresCallable(const DescribeMalwaresRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeMalwaresOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeMalwares(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeMalwaresOutcome>>();
+    DescribeMalwaresAsync(
+    request,
+    [prom](
+        const YunjingClient*,
+        const DescribeMalwaresRequest&,
+        DescribeMalwaresOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 YunjingClient::DescribeNonlocalLoginPlacesOutcome YunjingClient::DescribeNonlocalLoginPlaces(const DescribeNonlocalLoginPlacesRequest &request)
@@ -1868,25 +2162,32 @@ YunjingClient::DescribeNonlocalLoginPlacesOutcome YunjingClient::DescribeNonloca
 
 void YunjingClient::DescribeNonlocalLoginPlacesAsync(const DescribeNonlocalLoginPlacesRequest& request, const DescribeNonlocalLoginPlacesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeNonlocalLoginPlaces(request), context);
-    };
+    using Req = const DescribeNonlocalLoginPlacesRequest&;
+    using Resp = DescribeNonlocalLoginPlacesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeNonlocalLoginPlaces", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 YunjingClient::DescribeNonlocalLoginPlacesOutcomeCallable YunjingClient::DescribeNonlocalLoginPlacesCallable(const DescribeNonlocalLoginPlacesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeNonlocalLoginPlacesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeNonlocalLoginPlaces(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeNonlocalLoginPlacesOutcome>>();
+    DescribeNonlocalLoginPlacesAsync(
+    request,
+    [prom](
+        const YunjingClient*,
+        const DescribeNonlocalLoginPlacesRequest&,
+        DescribeNonlocalLoginPlacesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 YunjingClient::DescribeOpenPortStatisticsOutcome YunjingClient::DescribeOpenPortStatistics(const DescribeOpenPortStatisticsRequest &request)
@@ -1911,25 +2212,32 @@ YunjingClient::DescribeOpenPortStatisticsOutcome YunjingClient::DescribeOpenPort
 
 void YunjingClient::DescribeOpenPortStatisticsAsync(const DescribeOpenPortStatisticsRequest& request, const DescribeOpenPortStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeOpenPortStatistics(request), context);
-    };
+    using Req = const DescribeOpenPortStatisticsRequest&;
+    using Resp = DescribeOpenPortStatisticsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeOpenPortStatistics", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 YunjingClient::DescribeOpenPortStatisticsOutcomeCallable YunjingClient::DescribeOpenPortStatisticsCallable(const DescribeOpenPortStatisticsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeOpenPortStatisticsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeOpenPortStatistics(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeOpenPortStatisticsOutcome>>();
+    DescribeOpenPortStatisticsAsync(
+    request,
+    [prom](
+        const YunjingClient*,
+        const DescribeOpenPortStatisticsRequest&,
+        DescribeOpenPortStatisticsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 YunjingClient::DescribeOpenPortTaskStatusOutcome YunjingClient::DescribeOpenPortTaskStatus(const DescribeOpenPortTaskStatusRequest &request)
@@ -1954,25 +2262,32 @@ YunjingClient::DescribeOpenPortTaskStatusOutcome YunjingClient::DescribeOpenPort
 
 void YunjingClient::DescribeOpenPortTaskStatusAsync(const DescribeOpenPortTaskStatusRequest& request, const DescribeOpenPortTaskStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeOpenPortTaskStatus(request), context);
-    };
+    using Req = const DescribeOpenPortTaskStatusRequest&;
+    using Resp = DescribeOpenPortTaskStatusResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeOpenPortTaskStatus", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 YunjingClient::DescribeOpenPortTaskStatusOutcomeCallable YunjingClient::DescribeOpenPortTaskStatusCallable(const DescribeOpenPortTaskStatusRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeOpenPortTaskStatusOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeOpenPortTaskStatus(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeOpenPortTaskStatusOutcome>>();
+    DescribeOpenPortTaskStatusAsync(
+    request,
+    [prom](
+        const YunjingClient*,
+        const DescribeOpenPortTaskStatusRequest&,
+        DescribeOpenPortTaskStatusOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 YunjingClient::DescribeOpenPortsOutcome YunjingClient::DescribeOpenPorts(const DescribeOpenPortsRequest &request)
@@ -1997,25 +2312,32 @@ YunjingClient::DescribeOpenPortsOutcome YunjingClient::DescribeOpenPorts(const D
 
 void YunjingClient::DescribeOpenPortsAsync(const DescribeOpenPortsRequest& request, const DescribeOpenPortsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeOpenPorts(request), context);
-    };
+    using Req = const DescribeOpenPortsRequest&;
+    using Resp = DescribeOpenPortsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeOpenPorts", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 YunjingClient::DescribeOpenPortsOutcomeCallable YunjingClient::DescribeOpenPortsCallable(const DescribeOpenPortsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeOpenPortsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeOpenPorts(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeOpenPortsOutcome>>();
+    DescribeOpenPortsAsync(
+    request,
+    [prom](
+        const YunjingClient*,
+        const DescribeOpenPortsRequest&,
+        DescribeOpenPortsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 YunjingClient::DescribeOverviewStatisticsOutcome YunjingClient::DescribeOverviewStatistics(const DescribeOverviewStatisticsRequest &request)
@@ -2040,25 +2362,32 @@ YunjingClient::DescribeOverviewStatisticsOutcome YunjingClient::DescribeOverview
 
 void YunjingClient::DescribeOverviewStatisticsAsync(const DescribeOverviewStatisticsRequest& request, const DescribeOverviewStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeOverviewStatistics(request), context);
-    };
+    using Req = const DescribeOverviewStatisticsRequest&;
+    using Resp = DescribeOverviewStatisticsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeOverviewStatistics", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 YunjingClient::DescribeOverviewStatisticsOutcomeCallable YunjingClient::DescribeOverviewStatisticsCallable(const DescribeOverviewStatisticsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeOverviewStatisticsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeOverviewStatistics(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeOverviewStatisticsOutcome>>();
+    DescribeOverviewStatisticsAsync(
+    request,
+    [prom](
+        const YunjingClient*,
+        const DescribeOverviewStatisticsRequest&,
+        DescribeOverviewStatisticsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 YunjingClient::DescribePrivilegeEventsOutcome YunjingClient::DescribePrivilegeEvents(const DescribePrivilegeEventsRequest &request)
@@ -2083,25 +2412,32 @@ YunjingClient::DescribePrivilegeEventsOutcome YunjingClient::DescribePrivilegeEv
 
 void YunjingClient::DescribePrivilegeEventsAsync(const DescribePrivilegeEventsRequest& request, const DescribePrivilegeEventsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribePrivilegeEvents(request), context);
-    };
+    using Req = const DescribePrivilegeEventsRequest&;
+    using Resp = DescribePrivilegeEventsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribePrivilegeEvents", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 YunjingClient::DescribePrivilegeEventsOutcomeCallable YunjingClient::DescribePrivilegeEventsCallable(const DescribePrivilegeEventsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribePrivilegeEventsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribePrivilegeEvents(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribePrivilegeEventsOutcome>>();
+    DescribePrivilegeEventsAsync(
+    request,
+    [prom](
+        const YunjingClient*,
+        const DescribePrivilegeEventsRequest&,
+        DescribePrivilegeEventsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 YunjingClient::DescribePrivilegeRulesOutcome YunjingClient::DescribePrivilegeRules(const DescribePrivilegeRulesRequest &request)
@@ -2126,25 +2462,32 @@ YunjingClient::DescribePrivilegeRulesOutcome YunjingClient::DescribePrivilegeRul
 
 void YunjingClient::DescribePrivilegeRulesAsync(const DescribePrivilegeRulesRequest& request, const DescribePrivilegeRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribePrivilegeRules(request), context);
-    };
+    using Req = const DescribePrivilegeRulesRequest&;
+    using Resp = DescribePrivilegeRulesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribePrivilegeRules", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 YunjingClient::DescribePrivilegeRulesOutcomeCallable YunjingClient::DescribePrivilegeRulesCallable(const DescribePrivilegeRulesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribePrivilegeRulesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribePrivilegeRules(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribePrivilegeRulesOutcome>>();
+    DescribePrivilegeRulesAsync(
+    request,
+    [prom](
+        const YunjingClient*,
+        const DescribePrivilegeRulesRequest&,
+        DescribePrivilegeRulesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 YunjingClient::DescribeProVersionInfoOutcome YunjingClient::DescribeProVersionInfo(const DescribeProVersionInfoRequest &request)
@@ -2169,25 +2512,32 @@ YunjingClient::DescribeProVersionInfoOutcome YunjingClient::DescribeProVersionIn
 
 void YunjingClient::DescribeProVersionInfoAsync(const DescribeProVersionInfoRequest& request, const DescribeProVersionInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeProVersionInfo(request), context);
-    };
+    using Req = const DescribeProVersionInfoRequest&;
+    using Resp = DescribeProVersionInfoResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeProVersionInfo", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 YunjingClient::DescribeProVersionInfoOutcomeCallable YunjingClient::DescribeProVersionInfoCallable(const DescribeProVersionInfoRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeProVersionInfoOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeProVersionInfo(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeProVersionInfoOutcome>>();
+    DescribeProVersionInfoAsync(
+    request,
+    [prom](
+        const YunjingClient*,
+        const DescribeProVersionInfoRequest&,
+        DescribeProVersionInfoOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 YunjingClient::DescribeProcessStatisticsOutcome YunjingClient::DescribeProcessStatistics(const DescribeProcessStatisticsRequest &request)
@@ -2212,25 +2562,32 @@ YunjingClient::DescribeProcessStatisticsOutcome YunjingClient::DescribeProcessSt
 
 void YunjingClient::DescribeProcessStatisticsAsync(const DescribeProcessStatisticsRequest& request, const DescribeProcessStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeProcessStatistics(request), context);
-    };
+    using Req = const DescribeProcessStatisticsRequest&;
+    using Resp = DescribeProcessStatisticsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeProcessStatistics", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 YunjingClient::DescribeProcessStatisticsOutcomeCallable YunjingClient::DescribeProcessStatisticsCallable(const DescribeProcessStatisticsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeProcessStatisticsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeProcessStatistics(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeProcessStatisticsOutcome>>();
+    DescribeProcessStatisticsAsync(
+    request,
+    [prom](
+        const YunjingClient*,
+        const DescribeProcessStatisticsRequest&,
+        DescribeProcessStatisticsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 YunjingClient::DescribeProcessTaskStatusOutcome YunjingClient::DescribeProcessTaskStatus(const DescribeProcessTaskStatusRequest &request)
@@ -2255,25 +2612,32 @@ YunjingClient::DescribeProcessTaskStatusOutcome YunjingClient::DescribeProcessTa
 
 void YunjingClient::DescribeProcessTaskStatusAsync(const DescribeProcessTaskStatusRequest& request, const DescribeProcessTaskStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeProcessTaskStatus(request), context);
-    };
+    using Req = const DescribeProcessTaskStatusRequest&;
+    using Resp = DescribeProcessTaskStatusResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeProcessTaskStatus", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 YunjingClient::DescribeProcessTaskStatusOutcomeCallable YunjingClient::DescribeProcessTaskStatusCallable(const DescribeProcessTaskStatusRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeProcessTaskStatusOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeProcessTaskStatus(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeProcessTaskStatusOutcome>>();
+    DescribeProcessTaskStatusAsync(
+    request,
+    [prom](
+        const YunjingClient*,
+        const DescribeProcessTaskStatusRequest&,
+        DescribeProcessTaskStatusOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 YunjingClient::DescribeProcessesOutcome YunjingClient::DescribeProcesses(const DescribeProcessesRequest &request)
@@ -2298,25 +2662,32 @@ YunjingClient::DescribeProcessesOutcome YunjingClient::DescribeProcesses(const D
 
 void YunjingClient::DescribeProcessesAsync(const DescribeProcessesRequest& request, const DescribeProcessesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeProcesses(request), context);
-    };
+    using Req = const DescribeProcessesRequest&;
+    using Resp = DescribeProcessesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeProcesses", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 YunjingClient::DescribeProcessesOutcomeCallable YunjingClient::DescribeProcessesCallable(const DescribeProcessesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeProcessesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeProcesses(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeProcessesOutcome>>();
+    DescribeProcessesAsync(
+    request,
+    [prom](
+        const YunjingClient*,
+        const DescribeProcessesRequest&,
+        DescribeProcessesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 YunjingClient::DescribeReverseShellEventsOutcome YunjingClient::DescribeReverseShellEvents(const DescribeReverseShellEventsRequest &request)
@@ -2341,25 +2712,32 @@ YunjingClient::DescribeReverseShellEventsOutcome YunjingClient::DescribeReverseS
 
 void YunjingClient::DescribeReverseShellEventsAsync(const DescribeReverseShellEventsRequest& request, const DescribeReverseShellEventsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeReverseShellEvents(request), context);
-    };
+    using Req = const DescribeReverseShellEventsRequest&;
+    using Resp = DescribeReverseShellEventsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeReverseShellEvents", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 YunjingClient::DescribeReverseShellEventsOutcomeCallable YunjingClient::DescribeReverseShellEventsCallable(const DescribeReverseShellEventsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeReverseShellEventsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeReverseShellEvents(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeReverseShellEventsOutcome>>();
+    DescribeReverseShellEventsAsync(
+    request,
+    [prom](
+        const YunjingClient*,
+        const DescribeReverseShellEventsRequest&,
+        DescribeReverseShellEventsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 YunjingClient::DescribeReverseShellRulesOutcome YunjingClient::DescribeReverseShellRules(const DescribeReverseShellRulesRequest &request)
@@ -2384,25 +2762,32 @@ YunjingClient::DescribeReverseShellRulesOutcome YunjingClient::DescribeReverseSh
 
 void YunjingClient::DescribeReverseShellRulesAsync(const DescribeReverseShellRulesRequest& request, const DescribeReverseShellRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeReverseShellRules(request), context);
-    };
+    using Req = const DescribeReverseShellRulesRequest&;
+    using Resp = DescribeReverseShellRulesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeReverseShellRules", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 YunjingClient::DescribeReverseShellRulesOutcomeCallable YunjingClient::DescribeReverseShellRulesCallable(const DescribeReverseShellRulesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeReverseShellRulesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeReverseShellRules(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeReverseShellRulesOutcome>>();
+    DescribeReverseShellRulesAsync(
+    request,
+    [prom](
+        const YunjingClient*,
+        const DescribeReverseShellRulesRequest&,
+        DescribeReverseShellRulesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 YunjingClient::DescribeSecurityDynamicsOutcome YunjingClient::DescribeSecurityDynamics(const DescribeSecurityDynamicsRequest &request)
@@ -2427,25 +2812,32 @@ YunjingClient::DescribeSecurityDynamicsOutcome YunjingClient::DescribeSecurityDy
 
 void YunjingClient::DescribeSecurityDynamicsAsync(const DescribeSecurityDynamicsRequest& request, const DescribeSecurityDynamicsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeSecurityDynamics(request), context);
-    };
+    using Req = const DescribeSecurityDynamicsRequest&;
+    using Resp = DescribeSecurityDynamicsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeSecurityDynamics", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 YunjingClient::DescribeSecurityDynamicsOutcomeCallable YunjingClient::DescribeSecurityDynamicsCallable(const DescribeSecurityDynamicsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeSecurityDynamicsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeSecurityDynamics(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeSecurityDynamicsOutcome>>();
+    DescribeSecurityDynamicsAsync(
+    request,
+    [prom](
+        const YunjingClient*,
+        const DescribeSecurityDynamicsRequest&,
+        DescribeSecurityDynamicsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 YunjingClient::DescribeSecurityTrendsOutcome YunjingClient::DescribeSecurityTrends(const DescribeSecurityTrendsRequest &request)
@@ -2470,25 +2862,32 @@ YunjingClient::DescribeSecurityTrendsOutcome YunjingClient::DescribeSecurityTren
 
 void YunjingClient::DescribeSecurityTrendsAsync(const DescribeSecurityTrendsRequest& request, const DescribeSecurityTrendsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeSecurityTrends(request), context);
-    };
+    using Req = const DescribeSecurityTrendsRequest&;
+    using Resp = DescribeSecurityTrendsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeSecurityTrends", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 YunjingClient::DescribeSecurityTrendsOutcomeCallable YunjingClient::DescribeSecurityTrendsCallable(const DescribeSecurityTrendsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeSecurityTrendsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeSecurityTrends(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeSecurityTrendsOutcome>>();
+    DescribeSecurityTrendsAsync(
+    request,
+    [prom](
+        const YunjingClient*,
+        const DescribeSecurityTrendsRequest&,
+        DescribeSecurityTrendsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 YunjingClient::DescribeTagMachinesOutcome YunjingClient::DescribeTagMachines(const DescribeTagMachinesRequest &request)
@@ -2513,25 +2912,32 @@ YunjingClient::DescribeTagMachinesOutcome YunjingClient::DescribeTagMachines(con
 
 void YunjingClient::DescribeTagMachinesAsync(const DescribeTagMachinesRequest& request, const DescribeTagMachinesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeTagMachines(request), context);
-    };
+    using Req = const DescribeTagMachinesRequest&;
+    using Resp = DescribeTagMachinesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeTagMachines", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 YunjingClient::DescribeTagMachinesOutcomeCallable YunjingClient::DescribeTagMachinesCallable(const DescribeTagMachinesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeTagMachinesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeTagMachines(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeTagMachinesOutcome>>();
+    DescribeTagMachinesAsync(
+    request,
+    [prom](
+        const YunjingClient*,
+        const DescribeTagMachinesRequest&,
+        DescribeTagMachinesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 YunjingClient::DescribeTagsOutcome YunjingClient::DescribeTags(const DescribeTagsRequest &request)
@@ -2556,25 +2962,32 @@ YunjingClient::DescribeTagsOutcome YunjingClient::DescribeTags(const DescribeTag
 
 void YunjingClient::DescribeTagsAsync(const DescribeTagsRequest& request, const DescribeTagsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeTags(request), context);
-    };
+    using Req = const DescribeTagsRequest&;
+    using Resp = DescribeTagsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeTags", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 YunjingClient::DescribeTagsOutcomeCallable YunjingClient::DescribeTagsCallable(const DescribeTagsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeTagsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeTags(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeTagsOutcome>>();
+    DescribeTagsAsync(
+    request,
+    [prom](
+        const YunjingClient*,
+        const DescribeTagsRequest&,
+        DescribeTagsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 YunjingClient::DescribeUsualLoginPlacesOutcome YunjingClient::DescribeUsualLoginPlaces(const DescribeUsualLoginPlacesRequest &request)
@@ -2599,25 +3012,32 @@ YunjingClient::DescribeUsualLoginPlacesOutcome YunjingClient::DescribeUsualLogin
 
 void YunjingClient::DescribeUsualLoginPlacesAsync(const DescribeUsualLoginPlacesRequest& request, const DescribeUsualLoginPlacesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeUsualLoginPlaces(request), context);
-    };
+    using Req = const DescribeUsualLoginPlacesRequest&;
+    using Resp = DescribeUsualLoginPlacesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeUsualLoginPlaces", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 YunjingClient::DescribeUsualLoginPlacesOutcomeCallable YunjingClient::DescribeUsualLoginPlacesCallable(const DescribeUsualLoginPlacesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeUsualLoginPlacesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeUsualLoginPlaces(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeUsualLoginPlacesOutcome>>();
+    DescribeUsualLoginPlacesAsync(
+    request,
+    [prom](
+        const YunjingClient*,
+        const DescribeUsualLoginPlacesRequest&,
+        DescribeUsualLoginPlacesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 YunjingClient::DescribeVulInfoOutcome YunjingClient::DescribeVulInfo(const DescribeVulInfoRequest &request)
@@ -2642,25 +3062,32 @@ YunjingClient::DescribeVulInfoOutcome YunjingClient::DescribeVulInfo(const Descr
 
 void YunjingClient::DescribeVulInfoAsync(const DescribeVulInfoRequest& request, const DescribeVulInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeVulInfo(request), context);
-    };
+    using Req = const DescribeVulInfoRequest&;
+    using Resp = DescribeVulInfoResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeVulInfo", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 YunjingClient::DescribeVulInfoOutcomeCallable YunjingClient::DescribeVulInfoCallable(const DescribeVulInfoRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeVulInfoOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeVulInfo(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeVulInfoOutcome>>();
+    DescribeVulInfoAsync(
+    request,
+    [prom](
+        const YunjingClient*,
+        const DescribeVulInfoRequest&,
+        DescribeVulInfoOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 YunjingClient::DescribeVulScanResultOutcome YunjingClient::DescribeVulScanResult(const DescribeVulScanResultRequest &request)
@@ -2685,25 +3112,32 @@ YunjingClient::DescribeVulScanResultOutcome YunjingClient::DescribeVulScanResult
 
 void YunjingClient::DescribeVulScanResultAsync(const DescribeVulScanResultRequest& request, const DescribeVulScanResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeVulScanResult(request), context);
-    };
+    using Req = const DescribeVulScanResultRequest&;
+    using Resp = DescribeVulScanResultResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeVulScanResult", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 YunjingClient::DescribeVulScanResultOutcomeCallable YunjingClient::DescribeVulScanResultCallable(const DescribeVulScanResultRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeVulScanResultOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeVulScanResult(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeVulScanResultOutcome>>();
+    DescribeVulScanResultAsync(
+    request,
+    [prom](
+        const YunjingClient*,
+        const DescribeVulScanResultRequest&,
+        DescribeVulScanResultOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 YunjingClient::DescribeVulsOutcome YunjingClient::DescribeVuls(const DescribeVulsRequest &request)
@@ -2728,25 +3162,32 @@ YunjingClient::DescribeVulsOutcome YunjingClient::DescribeVuls(const DescribeVul
 
 void YunjingClient::DescribeVulsAsync(const DescribeVulsRequest& request, const DescribeVulsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeVuls(request), context);
-    };
+    using Req = const DescribeVulsRequest&;
+    using Resp = DescribeVulsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeVuls", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 YunjingClient::DescribeVulsOutcomeCallable YunjingClient::DescribeVulsCallable(const DescribeVulsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeVulsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeVuls(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeVulsOutcome>>();
+    DescribeVulsAsync(
+    request,
+    [prom](
+        const YunjingClient*,
+        const DescribeVulsRequest&,
+        DescribeVulsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 YunjingClient::DescribeWeeklyReportBruteAttacksOutcome YunjingClient::DescribeWeeklyReportBruteAttacks(const DescribeWeeklyReportBruteAttacksRequest &request)
@@ -2771,25 +3212,32 @@ YunjingClient::DescribeWeeklyReportBruteAttacksOutcome YunjingClient::DescribeWe
 
 void YunjingClient::DescribeWeeklyReportBruteAttacksAsync(const DescribeWeeklyReportBruteAttacksRequest& request, const DescribeWeeklyReportBruteAttacksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeWeeklyReportBruteAttacks(request), context);
-    };
+    using Req = const DescribeWeeklyReportBruteAttacksRequest&;
+    using Resp = DescribeWeeklyReportBruteAttacksResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeWeeklyReportBruteAttacks", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 YunjingClient::DescribeWeeklyReportBruteAttacksOutcomeCallable YunjingClient::DescribeWeeklyReportBruteAttacksCallable(const DescribeWeeklyReportBruteAttacksRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeWeeklyReportBruteAttacksOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeWeeklyReportBruteAttacks(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeWeeklyReportBruteAttacksOutcome>>();
+    DescribeWeeklyReportBruteAttacksAsync(
+    request,
+    [prom](
+        const YunjingClient*,
+        const DescribeWeeklyReportBruteAttacksRequest&,
+        DescribeWeeklyReportBruteAttacksOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 YunjingClient::DescribeWeeklyReportInfoOutcome YunjingClient::DescribeWeeklyReportInfo(const DescribeWeeklyReportInfoRequest &request)
@@ -2814,25 +3262,32 @@ YunjingClient::DescribeWeeklyReportInfoOutcome YunjingClient::DescribeWeeklyRepo
 
 void YunjingClient::DescribeWeeklyReportInfoAsync(const DescribeWeeklyReportInfoRequest& request, const DescribeWeeklyReportInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeWeeklyReportInfo(request), context);
-    };
+    using Req = const DescribeWeeklyReportInfoRequest&;
+    using Resp = DescribeWeeklyReportInfoResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeWeeklyReportInfo", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 YunjingClient::DescribeWeeklyReportInfoOutcomeCallable YunjingClient::DescribeWeeklyReportInfoCallable(const DescribeWeeklyReportInfoRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeWeeklyReportInfoOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeWeeklyReportInfo(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeWeeklyReportInfoOutcome>>();
+    DescribeWeeklyReportInfoAsync(
+    request,
+    [prom](
+        const YunjingClient*,
+        const DescribeWeeklyReportInfoRequest&,
+        DescribeWeeklyReportInfoOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 YunjingClient::DescribeWeeklyReportMalwaresOutcome YunjingClient::DescribeWeeklyReportMalwares(const DescribeWeeklyReportMalwaresRequest &request)
@@ -2857,25 +3312,32 @@ YunjingClient::DescribeWeeklyReportMalwaresOutcome YunjingClient::DescribeWeekly
 
 void YunjingClient::DescribeWeeklyReportMalwaresAsync(const DescribeWeeklyReportMalwaresRequest& request, const DescribeWeeklyReportMalwaresAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeWeeklyReportMalwares(request), context);
-    };
+    using Req = const DescribeWeeklyReportMalwaresRequest&;
+    using Resp = DescribeWeeklyReportMalwaresResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeWeeklyReportMalwares", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 YunjingClient::DescribeWeeklyReportMalwaresOutcomeCallable YunjingClient::DescribeWeeklyReportMalwaresCallable(const DescribeWeeklyReportMalwaresRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeWeeklyReportMalwaresOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeWeeklyReportMalwares(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeWeeklyReportMalwaresOutcome>>();
+    DescribeWeeklyReportMalwaresAsync(
+    request,
+    [prom](
+        const YunjingClient*,
+        const DescribeWeeklyReportMalwaresRequest&,
+        DescribeWeeklyReportMalwaresOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 YunjingClient::DescribeWeeklyReportNonlocalLoginPlacesOutcome YunjingClient::DescribeWeeklyReportNonlocalLoginPlaces(const DescribeWeeklyReportNonlocalLoginPlacesRequest &request)
@@ -2900,25 +3362,32 @@ YunjingClient::DescribeWeeklyReportNonlocalLoginPlacesOutcome YunjingClient::Des
 
 void YunjingClient::DescribeWeeklyReportNonlocalLoginPlacesAsync(const DescribeWeeklyReportNonlocalLoginPlacesRequest& request, const DescribeWeeklyReportNonlocalLoginPlacesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeWeeklyReportNonlocalLoginPlaces(request), context);
-    };
+    using Req = const DescribeWeeklyReportNonlocalLoginPlacesRequest&;
+    using Resp = DescribeWeeklyReportNonlocalLoginPlacesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeWeeklyReportNonlocalLoginPlaces", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 YunjingClient::DescribeWeeklyReportNonlocalLoginPlacesOutcomeCallable YunjingClient::DescribeWeeklyReportNonlocalLoginPlacesCallable(const DescribeWeeklyReportNonlocalLoginPlacesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeWeeklyReportNonlocalLoginPlacesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeWeeklyReportNonlocalLoginPlaces(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeWeeklyReportNonlocalLoginPlacesOutcome>>();
+    DescribeWeeklyReportNonlocalLoginPlacesAsync(
+    request,
+    [prom](
+        const YunjingClient*,
+        const DescribeWeeklyReportNonlocalLoginPlacesRequest&,
+        DescribeWeeklyReportNonlocalLoginPlacesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 YunjingClient::DescribeWeeklyReportVulsOutcome YunjingClient::DescribeWeeklyReportVuls(const DescribeWeeklyReportVulsRequest &request)
@@ -2943,25 +3412,32 @@ YunjingClient::DescribeWeeklyReportVulsOutcome YunjingClient::DescribeWeeklyRepo
 
 void YunjingClient::DescribeWeeklyReportVulsAsync(const DescribeWeeklyReportVulsRequest& request, const DescribeWeeklyReportVulsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeWeeklyReportVuls(request), context);
-    };
+    using Req = const DescribeWeeklyReportVulsRequest&;
+    using Resp = DescribeWeeklyReportVulsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeWeeklyReportVuls", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 YunjingClient::DescribeWeeklyReportVulsOutcomeCallable YunjingClient::DescribeWeeklyReportVulsCallable(const DescribeWeeklyReportVulsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeWeeklyReportVulsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeWeeklyReportVuls(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeWeeklyReportVulsOutcome>>();
+    DescribeWeeklyReportVulsAsync(
+    request,
+    [prom](
+        const YunjingClient*,
+        const DescribeWeeklyReportVulsRequest&,
+        DescribeWeeklyReportVulsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 YunjingClient::DescribeWeeklyReportsOutcome YunjingClient::DescribeWeeklyReports(const DescribeWeeklyReportsRequest &request)
@@ -2986,25 +3462,32 @@ YunjingClient::DescribeWeeklyReportsOutcome YunjingClient::DescribeWeeklyReports
 
 void YunjingClient::DescribeWeeklyReportsAsync(const DescribeWeeklyReportsRequest& request, const DescribeWeeklyReportsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeWeeklyReports(request), context);
-    };
+    using Req = const DescribeWeeklyReportsRequest&;
+    using Resp = DescribeWeeklyReportsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeWeeklyReports", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 YunjingClient::DescribeWeeklyReportsOutcomeCallable YunjingClient::DescribeWeeklyReportsCallable(const DescribeWeeklyReportsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeWeeklyReportsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeWeeklyReports(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeWeeklyReportsOutcome>>();
+    DescribeWeeklyReportsAsync(
+    request,
+    [prom](
+        const YunjingClient*,
+        const DescribeWeeklyReportsRequest&,
+        DescribeWeeklyReportsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 YunjingClient::EditBashRuleOutcome YunjingClient::EditBashRule(const EditBashRuleRequest &request)
@@ -3029,25 +3512,32 @@ YunjingClient::EditBashRuleOutcome YunjingClient::EditBashRule(const EditBashRul
 
 void YunjingClient::EditBashRuleAsync(const EditBashRuleRequest& request, const EditBashRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->EditBashRule(request), context);
-    };
+    using Req = const EditBashRuleRequest&;
+    using Resp = EditBashRuleResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "EditBashRule", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 YunjingClient::EditBashRuleOutcomeCallable YunjingClient::EditBashRuleCallable(const EditBashRuleRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<EditBashRuleOutcome()>>(
-        [this, request]()
-        {
-            return this->EditBashRule(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<EditBashRuleOutcome>>();
+    EditBashRuleAsync(
+    request,
+    [prom](
+        const YunjingClient*,
+        const EditBashRuleRequest&,
+        EditBashRuleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 YunjingClient::EditPrivilegeRuleOutcome YunjingClient::EditPrivilegeRule(const EditPrivilegeRuleRequest &request)
@@ -3072,25 +3562,32 @@ YunjingClient::EditPrivilegeRuleOutcome YunjingClient::EditPrivilegeRule(const E
 
 void YunjingClient::EditPrivilegeRuleAsync(const EditPrivilegeRuleRequest& request, const EditPrivilegeRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->EditPrivilegeRule(request), context);
-    };
+    using Req = const EditPrivilegeRuleRequest&;
+    using Resp = EditPrivilegeRuleResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "EditPrivilegeRule", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 YunjingClient::EditPrivilegeRuleOutcomeCallable YunjingClient::EditPrivilegeRuleCallable(const EditPrivilegeRuleRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<EditPrivilegeRuleOutcome()>>(
-        [this, request]()
-        {
-            return this->EditPrivilegeRule(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<EditPrivilegeRuleOutcome>>();
+    EditPrivilegeRuleAsync(
+    request,
+    [prom](
+        const YunjingClient*,
+        const EditPrivilegeRuleRequest&,
+        EditPrivilegeRuleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 YunjingClient::EditReverseShellRuleOutcome YunjingClient::EditReverseShellRule(const EditReverseShellRuleRequest &request)
@@ -3115,25 +3612,32 @@ YunjingClient::EditReverseShellRuleOutcome YunjingClient::EditReverseShellRule(c
 
 void YunjingClient::EditReverseShellRuleAsync(const EditReverseShellRuleRequest& request, const EditReverseShellRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->EditReverseShellRule(request), context);
-    };
+    using Req = const EditReverseShellRuleRequest&;
+    using Resp = EditReverseShellRuleResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "EditReverseShellRule", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 YunjingClient::EditReverseShellRuleOutcomeCallable YunjingClient::EditReverseShellRuleCallable(const EditReverseShellRuleRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<EditReverseShellRuleOutcome()>>(
-        [this, request]()
-        {
-            return this->EditReverseShellRule(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<EditReverseShellRuleOutcome>>();
+    EditReverseShellRuleAsync(
+    request,
+    [prom](
+        const YunjingClient*,
+        const EditReverseShellRuleRequest&,
+        EditReverseShellRuleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 YunjingClient::EditTagsOutcome YunjingClient::EditTags(const EditTagsRequest &request)
@@ -3158,25 +3662,32 @@ YunjingClient::EditTagsOutcome YunjingClient::EditTags(const EditTagsRequest &re
 
 void YunjingClient::EditTagsAsync(const EditTagsRequest& request, const EditTagsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->EditTags(request), context);
-    };
+    using Req = const EditTagsRequest&;
+    using Resp = EditTagsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "EditTags", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 YunjingClient::EditTagsOutcomeCallable YunjingClient::EditTagsCallable(const EditTagsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<EditTagsOutcome()>>(
-        [this, request]()
-        {
-            return this->EditTags(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<EditTagsOutcome>>();
+    EditTagsAsync(
+    request,
+    [prom](
+        const YunjingClient*,
+        const EditTagsRequest&,
+        EditTagsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 YunjingClient::ExportAttackLogsOutcome YunjingClient::ExportAttackLogs(const ExportAttackLogsRequest &request)
@@ -3201,25 +3712,32 @@ YunjingClient::ExportAttackLogsOutcome YunjingClient::ExportAttackLogs(const Exp
 
 void YunjingClient::ExportAttackLogsAsync(const ExportAttackLogsRequest& request, const ExportAttackLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ExportAttackLogs(request), context);
-    };
+    using Req = const ExportAttackLogsRequest&;
+    using Resp = ExportAttackLogsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ExportAttackLogs", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 YunjingClient::ExportAttackLogsOutcomeCallable YunjingClient::ExportAttackLogsCallable(const ExportAttackLogsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ExportAttackLogsOutcome()>>(
-        [this, request]()
-        {
-            return this->ExportAttackLogs(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ExportAttackLogsOutcome>>();
+    ExportAttackLogsAsync(
+    request,
+    [prom](
+        const YunjingClient*,
+        const ExportAttackLogsRequest&,
+        ExportAttackLogsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 YunjingClient::ExportBashEventsOutcome YunjingClient::ExportBashEvents(const ExportBashEventsRequest &request)
@@ -3244,25 +3762,32 @@ YunjingClient::ExportBashEventsOutcome YunjingClient::ExportBashEvents(const Exp
 
 void YunjingClient::ExportBashEventsAsync(const ExportBashEventsRequest& request, const ExportBashEventsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ExportBashEvents(request), context);
-    };
+    using Req = const ExportBashEventsRequest&;
+    using Resp = ExportBashEventsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ExportBashEvents", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 YunjingClient::ExportBashEventsOutcomeCallable YunjingClient::ExportBashEventsCallable(const ExportBashEventsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ExportBashEventsOutcome()>>(
-        [this, request]()
-        {
-            return this->ExportBashEvents(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ExportBashEventsOutcome>>();
+    ExportBashEventsAsync(
+    request,
+    [prom](
+        const YunjingClient*,
+        const ExportBashEventsRequest&,
+        ExportBashEventsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 YunjingClient::ExportBruteAttacksOutcome YunjingClient::ExportBruteAttacks(const ExportBruteAttacksRequest &request)
@@ -3287,25 +3812,32 @@ YunjingClient::ExportBruteAttacksOutcome YunjingClient::ExportBruteAttacks(const
 
 void YunjingClient::ExportBruteAttacksAsync(const ExportBruteAttacksRequest& request, const ExportBruteAttacksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ExportBruteAttacks(request), context);
-    };
+    using Req = const ExportBruteAttacksRequest&;
+    using Resp = ExportBruteAttacksResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ExportBruteAttacks", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 YunjingClient::ExportBruteAttacksOutcomeCallable YunjingClient::ExportBruteAttacksCallable(const ExportBruteAttacksRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ExportBruteAttacksOutcome()>>(
-        [this, request]()
-        {
-            return this->ExportBruteAttacks(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ExportBruteAttacksOutcome>>();
+    ExportBruteAttacksAsync(
+    request,
+    [prom](
+        const YunjingClient*,
+        const ExportBruteAttacksRequest&,
+        ExportBruteAttacksOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 YunjingClient::ExportMaliciousRequestsOutcome YunjingClient::ExportMaliciousRequests(const ExportMaliciousRequestsRequest &request)
@@ -3330,25 +3862,32 @@ YunjingClient::ExportMaliciousRequestsOutcome YunjingClient::ExportMaliciousRequ
 
 void YunjingClient::ExportMaliciousRequestsAsync(const ExportMaliciousRequestsRequest& request, const ExportMaliciousRequestsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ExportMaliciousRequests(request), context);
-    };
+    using Req = const ExportMaliciousRequestsRequest&;
+    using Resp = ExportMaliciousRequestsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ExportMaliciousRequests", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 YunjingClient::ExportMaliciousRequestsOutcomeCallable YunjingClient::ExportMaliciousRequestsCallable(const ExportMaliciousRequestsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ExportMaliciousRequestsOutcome()>>(
-        [this, request]()
-        {
-            return this->ExportMaliciousRequests(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ExportMaliciousRequestsOutcome>>();
+    ExportMaliciousRequestsAsync(
+    request,
+    [prom](
+        const YunjingClient*,
+        const ExportMaliciousRequestsRequest&,
+        ExportMaliciousRequestsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 YunjingClient::ExportMalwaresOutcome YunjingClient::ExportMalwares(const ExportMalwaresRequest &request)
@@ -3373,25 +3912,32 @@ YunjingClient::ExportMalwaresOutcome YunjingClient::ExportMalwares(const ExportM
 
 void YunjingClient::ExportMalwaresAsync(const ExportMalwaresRequest& request, const ExportMalwaresAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ExportMalwares(request), context);
-    };
+    using Req = const ExportMalwaresRequest&;
+    using Resp = ExportMalwaresResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ExportMalwares", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 YunjingClient::ExportMalwaresOutcomeCallable YunjingClient::ExportMalwaresCallable(const ExportMalwaresRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ExportMalwaresOutcome()>>(
-        [this, request]()
-        {
-            return this->ExportMalwares(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ExportMalwaresOutcome>>();
+    ExportMalwaresAsync(
+    request,
+    [prom](
+        const YunjingClient*,
+        const ExportMalwaresRequest&,
+        ExportMalwaresOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 YunjingClient::ExportNonlocalLoginPlacesOutcome YunjingClient::ExportNonlocalLoginPlaces(const ExportNonlocalLoginPlacesRequest &request)
@@ -3416,25 +3962,32 @@ YunjingClient::ExportNonlocalLoginPlacesOutcome YunjingClient::ExportNonlocalLog
 
 void YunjingClient::ExportNonlocalLoginPlacesAsync(const ExportNonlocalLoginPlacesRequest& request, const ExportNonlocalLoginPlacesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ExportNonlocalLoginPlaces(request), context);
-    };
+    using Req = const ExportNonlocalLoginPlacesRequest&;
+    using Resp = ExportNonlocalLoginPlacesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ExportNonlocalLoginPlaces", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 YunjingClient::ExportNonlocalLoginPlacesOutcomeCallable YunjingClient::ExportNonlocalLoginPlacesCallable(const ExportNonlocalLoginPlacesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ExportNonlocalLoginPlacesOutcome()>>(
-        [this, request]()
-        {
-            return this->ExportNonlocalLoginPlaces(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ExportNonlocalLoginPlacesOutcome>>();
+    ExportNonlocalLoginPlacesAsync(
+    request,
+    [prom](
+        const YunjingClient*,
+        const ExportNonlocalLoginPlacesRequest&,
+        ExportNonlocalLoginPlacesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 YunjingClient::ExportPrivilegeEventsOutcome YunjingClient::ExportPrivilegeEvents(const ExportPrivilegeEventsRequest &request)
@@ -3459,25 +4012,32 @@ YunjingClient::ExportPrivilegeEventsOutcome YunjingClient::ExportPrivilegeEvents
 
 void YunjingClient::ExportPrivilegeEventsAsync(const ExportPrivilegeEventsRequest& request, const ExportPrivilegeEventsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ExportPrivilegeEvents(request), context);
-    };
+    using Req = const ExportPrivilegeEventsRequest&;
+    using Resp = ExportPrivilegeEventsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ExportPrivilegeEvents", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 YunjingClient::ExportPrivilegeEventsOutcomeCallable YunjingClient::ExportPrivilegeEventsCallable(const ExportPrivilegeEventsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ExportPrivilegeEventsOutcome()>>(
-        [this, request]()
-        {
-            return this->ExportPrivilegeEvents(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ExportPrivilegeEventsOutcome>>();
+    ExportPrivilegeEventsAsync(
+    request,
+    [prom](
+        const YunjingClient*,
+        const ExportPrivilegeEventsRequest&,
+        ExportPrivilegeEventsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 YunjingClient::ExportReverseShellEventsOutcome YunjingClient::ExportReverseShellEvents(const ExportReverseShellEventsRequest &request)
@@ -3502,25 +4062,32 @@ YunjingClient::ExportReverseShellEventsOutcome YunjingClient::ExportReverseShell
 
 void YunjingClient::ExportReverseShellEventsAsync(const ExportReverseShellEventsRequest& request, const ExportReverseShellEventsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ExportReverseShellEvents(request), context);
-    };
+    using Req = const ExportReverseShellEventsRequest&;
+    using Resp = ExportReverseShellEventsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ExportReverseShellEvents", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 YunjingClient::ExportReverseShellEventsOutcomeCallable YunjingClient::ExportReverseShellEventsCallable(const ExportReverseShellEventsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ExportReverseShellEventsOutcome()>>(
-        [this, request]()
-        {
-            return this->ExportReverseShellEvents(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ExportReverseShellEventsOutcome>>();
+    ExportReverseShellEventsAsync(
+    request,
+    [prom](
+        const YunjingClient*,
+        const ExportReverseShellEventsRequest&,
+        ExportReverseShellEventsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 YunjingClient::IgnoreImpactedHostsOutcome YunjingClient::IgnoreImpactedHosts(const IgnoreImpactedHostsRequest &request)
@@ -3545,25 +4112,32 @@ YunjingClient::IgnoreImpactedHostsOutcome YunjingClient::IgnoreImpactedHosts(con
 
 void YunjingClient::IgnoreImpactedHostsAsync(const IgnoreImpactedHostsRequest& request, const IgnoreImpactedHostsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->IgnoreImpactedHosts(request), context);
-    };
+    using Req = const IgnoreImpactedHostsRequest&;
+    using Resp = IgnoreImpactedHostsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "IgnoreImpactedHosts", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 YunjingClient::IgnoreImpactedHostsOutcomeCallable YunjingClient::IgnoreImpactedHostsCallable(const IgnoreImpactedHostsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<IgnoreImpactedHostsOutcome()>>(
-        [this, request]()
-        {
-            return this->IgnoreImpactedHosts(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<IgnoreImpactedHostsOutcome>>();
+    IgnoreImpactedHostsAsync(
+    request,
+    [prom](
+        const YunjingClient*,
+        const IgnoreImpactedHostsRequest&,
+        IgnoreImpactedHostsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 YunjingClient::InquiryPriceOpenProVersionPrepaidOutcome YunjingClient::InquiryPriceOpenProVersionPrepaid(const InquiryPriceOpenProVersionPrepaidRequest &request)
@@ -3588,25 +4162,32 @@ YunjingClient::InquiryPriceOpenProVersionPrepaidOutcome YunjingClient::InquiryPr
 
 void YunjingClient::InquiryPriceOpenProVersionPrepaidAsync(const InquiryPriceOpenProVersionPrepaidRequest& request, const InquiryPriceOpenProVersionPrepaidAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->InquiryPriceOpenProVersionPrepaid(request), context);
-    };
+    using Req = const InquiryPriceOpenProVersionPrepaidRequest&;
+    using Resp = InquiryPriceOpenProVersionPrepaidResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "InquiryPriceOpenProVersionPrepaid", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 YunjingClient::InquiryPriceOpenProVersionPrepaidOutcomeCallable YunjingClient::InquiryPriceOpenProVersionPrepaidCallable(const InquiryPriceOpenProVersionPrepaidRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<InquiryPriceOpenProVersionPrepaidOutcome()>>(
-        [this, request]()
-        {
-            return this->InquiryPriceOpenProVersionPrepaid(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<InquiryPriceOpenProVersionPrepaidOutcome>>();
+    InquiryPriceOpenProVersionPrepaidAsync(
+    request,
+    [prom](
+        const YunjingClient*,
+        const InquiryPriceOpenProVersionPrepaidRequest&,
+        InquiryPriceOpenProVersionPrepaidOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 YunjingClient::MisAlarmNonlocalLoginPlacesOutcome YunjingClient::MisAlarmNonlocalLoginPlaces(const MisAlarmNonlocalLoginPlacesRequest &request)
@@ -3631,25 +4212,32 @@ YunjingClient::MisAlarmNonlocalLoginPlacesOutcome YunjingClient::MisAlarmNonloca
 
 void YunjingClient::MisAlarmNonlocalLoginPlacesAsync(const MisAlarmNonlocalLoginPlacesRequest& request, const MisAlarmNonlocalLoginPlacesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->MisAlarmNonlocalLoginPlaces(request), context);
-    };
+    using Req = const MisAlarmNonlocalLoginPlacesRequest&;
+    using Resp = MisAlarmNonlocalLoginPlacesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "MisAlarmNonlocalLoginPlaces", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 YunjingClient::MisAlarmNonlocalLoginPlacesOutcomeCallable YunjingClient::MisAlarmNonlocalLoginPlacesCallable(const MisAlarmNonlocalLoginPlacesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<MisAlarmNonlocalLoginPlacesOutcome()>>(
-        [this, request]()
-        {
-            return this->MisAlarmNonlocalLoginPlaces(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<MisAlarmNonlocalLoginPlacesOutcome>>();
+    MisAlarmNonlocalLoginPlacesAsync(
+    request,
+    [prom](
+        const YunjingClient*,
+        const MisAlarmNonlocalLoginPlacesRequest&,
+        MisAlarmNonlocalLoginPlacesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 YunjingClient::ModifyAlarmAttributeOutcome YunjingClient::ModifyAlarmAttribute(const ModifyAlarmAttributeRequest &request)
@@ -3674,25 +4262,32 @@ YunjingClient::ModifyAlarmAttributeOutcome YunjingClient::ModifyAlarmAttribute(c
 
 void YunjingClient::ModifyAlarmAttributeAsync(const ModifyAlarmAttributeRequest& request, const ModifyAlarmAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyAlarmAttribute(request), context);
-    };
+    using Req = const ModifyAlarmAttributeRequest&;
+    using Resp = ModifyAlarmAttributeResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyAlarmAttribute", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 YunjingClient::ModifyAlarmAttributeOutcomeCallable YunjingClient::ModifyAlarmAttributeCallable(const ModifyAlarmAttributeRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyAlarmAttributeOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyAlarmAttribute(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyAlarmAttributeOutcome>>();
+    ModifyAlarmAttributeAsync(
+    request,
+    [prom](
+        const YunjingClient*,
+        const ModifyAlarmAttributeRequest&,
+        ModifyAlarmAttributeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 YunjingClient::ModifyAutoOpenProVersionConfigOutcome YunjingClient::ModifyAutoOpenProVersionConfig(const ModifyAutoOpenProVersionConfigRequest &request)
@@ -3717,25 +4312,32 @@ YunjingClient::ModifyAutoOpenProVersionConfigOutcome YunjingClient::ModifyAutoOp
 
 void YunjingClient::ModifyAutoOpenProVersionConfigAsync(const ModifyAutoOpenProVersionConfigRequest& request, const ModifyAutoOpenProVersionConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyAutoOpenProVersionConfig(request), context);
-    };
+    using Req = const ModifyAutoOpenProVersionConfigRequest&;
+    using Resp = ModifyAutoOpenProVersionConfigResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyAutoOpenProVersionConfig", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 YunjingClient::ModifyAutoOpenProVersionConfigOutcomeCallable YunjingClient::ModifyAutoOpenProVersionConfigCallable(const ModifyAutoOpenProVersionConfigRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyAutoOpenProVersionConfigOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyAutoOpenProVersionConfig(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyAutoOpenProVersionConfigOutcome>>();
+    ModifyAutoOpenProVersionConfigAsync(
+    request,
+    [prom](
+        const YunjingClient*,
+        const ModifyAutoOpenProVersionConfigRequest&,
+        ModifyAutoOpenProVersionConfigOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 YunjingClient::ModifyLoginWhiteListOutcome YunjingClient::ModifyLoginWhiteList(const ModifyLoginWhiteListRequest &request)
@@ -3760,25 +4362,32 @@ YunjingClient::ModifyLoginWhiteListOutcome YunjingClient::ModifyLoginWhiteList(c
 
 void YunjingClient::ModifyLoginWhiteListAsync(const ModifyLoginWhiteListRequest& request, const ModifyLoginWhiteListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyLoginWhiteList(request), context);
-    };
+    using Req = const ModifyLoginWhiteListRequest&;
+    using Resp = ModifyLoginWhiteListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyLoginWhiteList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 YunjingClient::ModifyLoginWhiteListOutcomeCallable YunjingClient::ModifyLoginWhiteListCallable(const ModifyLoginWhiteListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyLoginWhiteListOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyLoginWhiteList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyLoginWhiteListOutcome>>();
+    ModifyLoginWhiteListAsync(
+    request,
+    [prom](
+        const YunjingClient*,
+        const ModifyLoginWhiteListRequest&,
+        ModifyLoginWhiteListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 YunjingClient::ModifyProVersionRenewFlagOutcome YunjingClient::ModifyProVersionRenewFlag(const ModifyProVersionRenewFlagRequest &request)
@@ -3803,25 +4412,32 @@ YunjingClient::ModifyProVersionRenewFlagOutcome YunjingClient::ModifyProVersionR
 
 void YunjingClient::ModifyProVersionRenewFlagAsync(const ModifyProVersionRenewFlagRequest& request, const ModifyProVersionRenewFlagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyProVersionRenewFlag(request), context);
-    };
+    using Req = const ModifyProVersionRenewFlagRequest&;
+    using Resp = ModifyProVersionRenewFlagResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyProVersionRenewFlag", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 YunjingClient::ModifyProVersionRenewFlagOutcomeCallable YunjingClient::ModifyProVersionRenewFlagCallable(const ModifyProVersionRenewFlagRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyProVersionRenewFlagOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyProVersionRenewFlag(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyProVersionRenewFlagOutcome>>();
+    ModifyProVersionRenewFlagAsync(
+    request,
+    [prom](
+        const YunjingClient*,
+        const ModifyProVersionRenewFlagRequest&,
+        ModifyProVersionRenewFlagOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 YunjingClient::OpenProVersionOutcome YunjingClient::OpenProVersion(const OpenProVersionRequest &request)
@@ -3846,25 +4462,32 @@ YunjingClient::OpenProVersionOutcome YunjingClient::OpenProVersion(const OpenPro
 
 void YunjingClient::OpenProVersionAsync(const OpenProVersionRequest& request, const OpenProVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->OpenProVersion(request), context);
-    };
+    using Req = const OpenProVersionRequest&;
+    using Resp = OpenProVersionResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "OpenProVersion", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 YunjingClient::OpenProVersionOutcomeCallable YunjingClient::OpenProVersionCallable(const OpenProVersionRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<OpenProVersionOutcome()>>(
-        [this, request]()
-        {
-            return this->OpenProVersion(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<OpenProVersionOutcome>>();
+    OpenProVersionAsync(
+    request,
+    [prom](
+        const YunjingClient*,
+        const OpenProVersionRequest&,
+        OpenProVersionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 YunjingClient::OpenProVersionPrepaidOutcome YunjingClient::OpenProVersionPrepaid(const OpenProVersionPrepaidRequest &request)
@@ -3889,25 +4512,32 @@ YunjingClient::OpenProVersionPrepaidOutcome YunjingClient::OpenProVersionPrepaid
 
 void YunjingClient::OpenProVersionPrepaidAsync(const OpenProVersionPrepaidRequest& request, const OpenProVersionPrepaidAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->OpenProVersionPrepaid(request), context);
-    };
+    using Req = const OpenProVersionPrepaidRequest&;
+    using Resp = OpenProVersionPrepaidResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "OpenProVersionPrepaid", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 YunjingClient::OpenProVersionPrepaidOutcomeCallable YunjingClient::OpenProVersionPrepaidCallable(const OpenProVersionPrepaidRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<OpenProVersionPrepaidOutcome()>>(
-        [this, request]()
-        {
-            return this->OpenProVersionPrepaid(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<OpenProVersionPrepaidOutcome>>();
+    OpenProVersionPrepaidAsync(
+    request,
+    [prom](
+        const YunjingClient*,
+        const OpenProVersionPrepaidRequest&,
+        OpenProVersionPrepaidOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 YunjingClient::RecoverMalwaresOutcome YunjingClient::RecoverMalwares(const RecoverMalwaresRequest &request)
@@ -3932,25 +4562,32 @@ YunjingClient::RecoverMalwaresOutcome YunjingClient::RecoverMalwares(const Recov
 
 void YunjingClient::RecoverMalwaresAsync(const RecoverMalwaresRequest& request, const RecoverMalwaresAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->RecoverMalwares(request), context);
-    };
+    using Req = const RecoverMalwaresRequest&;
+    using Resp = RecoverMalwaresResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "RecoverMalwares", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 YunjingClient::RecoverMalwaresOutcomeCallable YunjingClient::RecoverMalwaresCallable(const RecoverMalwaresRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<RecoverMalwaresOutcome()>>(
-        [this, request]()
-        {
-            return this->RecoverMalwares(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<RecoverMalwaresOutcome>>();
+    RecoverMalwaresAsync(
+    request,
+    [prom](
+        const YunjingClient*,
+        const RecoverMalwaresRequest&,
+        RecoverMalwaresOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 YunjingClient::RenewProVersionOutcome YunjingClient::RenewProVersion(const RenewProVersionRequest &request)
@@ -3975,25 +4612,32 @@ YunjingClient::RenewProVersionOutcome YunjingClient::RenewProVersion(const Renew
 
 void YunjingClient::RenewProVersionAsync(const RenewProVersionRequest& request, const RenewProVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->RenewProVersion(request), context);
-    };
+    using Req = const RenewProVersionRequest&;
+    using Resp = RenewProVersionResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "RenewProVersion", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 YunjingClient::RenewProVersionOutcomeCallable YunjingClient::RenewProVersionCallable(const RenewProVersionRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<RenewProVersionOutcome()>>(
-        [this, request]()
-        {
-            return this->RenewProVersion(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<RenewProVersionOutcome>>();
+    RenewProVersionAsync(
+    request,
+    [prom](
+        const YunjingClient*,
+        const RenewProVersionRequest&,
+        RenewProVersionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 YunjingClient::RescanImpactedHostOutcome YunjingClient::RescanImpactedHost(const RescanImpactedHostRequest &request)
@@ -4018,25 +4662,32 @@ YunjingClient::RescanImpactedHostOutcome YunjingClient::RescanImpactedHost(const
 
 void YunjingClient::RescanImpactedHostAsync(const RescanImpactedHostRequest& request, const RescanImpactedHostAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->RescanImpactedHost(request), context);
-    };
+    using Req = const RescanImpactedHostRequest&;
+    using Resp = RescanImpactedHostResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "RescanImpactedHost", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 YunjingClient::RescanImpactedHostOutcomeCallable YunjingClient::RescanImpactedHostCallable(const RescanImpactedHostRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<RescanImpactedHostOutcome()>>(
-        [this, request]()
-        {
-            return this->RescanImpactedHost(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<RescanImpactedHostOutcome>>();
+    RescanImpactedHostAsync(
+    request,
+    [prom](
+        const YunjingClient*,
+        const RescanImpactedHostRequest&,
+        RescanImpactedHostOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 YunjingClient::SeparateMalwaresOutcome YunjingClient::SeparateMalwares(const SeparateMalwaresRequest &request)
@@ -4061,25 +4712,32 @@ YunjingClient::SeparateMalwaresOutcome YunjingClient::SeparateMalwares(const Sep
 
 void YunjingClient::SeparateMalwaresAsync(const SeparateMalwaresRequest& request, const SeparateMalwaresAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->SeparateMalwares(request), context);
-    };
+    using Req = const SeparateMalwaresRequest&;
+    using Resp = SeparateMalwaresResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "SeparateMalwares", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 YunjingClient::SeparateMalwaresOutcomeCallable YunjingClient::SeparateMalwaresCallable(const SeparateMalwaresRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<SeparateMalwaresOutcome()>>(
-        [this, request]()
-        {
-            return this->SeparateMalwares(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<SeparateMalwaresOutcome>>();
+    SeparateMalwaresAsync(
+    request,
+    [prom](
+        const YunjingClient*,
+        const SeparateMalwaresRequest&,
+        SeparateMalwaresOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 YunjingClient::SetBashEventsStatusOutcome YunjingClient::SetBashEventsStatus(const SetBashEventsStatusRequest &request)
@@ -4104,25 +4762,32 @@ YunjingClient::SetBashEventsStatusOutcome YunjingClient::SetBashEventsStatus(con
 
 void YunjingClient::SetBashEventsStatusAsync(const SetBashEventsStatusRequest& request, const SetBashEventsStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->SetBashEventsStatus(request), context);
-    };
+    using Req = const SetBashEventsStatusRequest&;
+    using Resp = SetBashEventsStatusResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "SetBashEventsStatus", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 YunjingClient::SetBashEventsStatusOutcomeCallable YunjingClient::SetBashEventsStatusCallable(const SetBashEventsStatusRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<SetBashEventsStatusOutcome()>>(
-        [this, request]()
-        {
-            return this->SetBashEventsStatus(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<SetBashEventsStatusOutcome>>();
+    SetBashEventsStatusAsync(
+    request,
+    [prom](
+        const YunjingClient*,
+        const SetBashEventsStatusRequest&,
+        SetBashEventsStatusOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 YunjingClient::SwitchBashRulesOutcome YunjingClient::SwitchBashRules(const SwitchBashRulesRequest &request)
@@ -4147,25 +4812,32 @@ YunjingClient::SwitchBashRulesOutcome YunjingClient::SwitchBashRules(const Switc
 
 void YunjingClient::SwitchBashRulesAsync(const SwitchBashRulesRequest& request, const SwitchBashRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->SwitchBashRules(request), context);
-    };
+    using Req = const SwitchBashRulesRequest&;
+    using Resp = SwitchBashRulesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "SwitchBashRules", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 YunjingClient::SwitchBashRulesOutcomeCallable YunjingClient::SwitchBashRulesCallable(const SwitchBashRulesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<SwitchBashRulesOutcome()>>(
-        [this, request]()
-        {
-            return this->SwitchBashRules(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<SwitchBashRulesOutcome>>();
+    SwitchBashRulesAsync(
+    request,
+    [prom](
+        const YunjingClient*,
+        const SwitchBashRulesRequest&,
+        SwitchBashRulesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 YunjingClient::TrustMaliciousRequestOutcome YunjingClient::TrustMaliciousRequest(const TrustMaliciousRequestRequest &request)
@@ -4190,25 +4862,32 @@ YunjingClient::TrustMaliciousRequestOutcome YunjingClient::TrustMaliciousRequest
 
 void YunjingClient::TrustMaliciousRequestAsync(const TrustMaliciousRequestRequest& request, const TrustMaliciousRequestAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->TrustMaliciousRequest(request), context);
-    };
+    using Req = const TrustMaliciousRequestRequest&;
+    using Resp = TrustMaliciousRequestResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "TrustMaliciousRequest", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 YunjingClient::TrustMaliciousRequestOutcomeCallable YunjingClient::TrustMaliciousRequestCallable(const TrustMaliciousRequestRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<TrustMaliciousRequestOutcome()>>(
-        [this, request]()
-        {
-            return this->TrustMaliciousRequest(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<TrustMaliciousRequestOutcome>>();
+    TrustMaliciousRequestAsync(
+    request,
+    [prom](
+        const YunjingClient*,
+        const TrustMaliciousRequestRequest&,
+        TrustMaliciousRequestOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 YunjingClient::TrustMalwaresOutcome YunjingClient::TrustMalwares(const TrustMalwaresRequest &request)
@@ -4233,25 +4912,32 @@ YunjingClient::TrustMalwaresOutcome YunjingClient::TrustMalwares(const TrustMalw
 
 void YunjingClient::TrustMalwaresAsync(const TrustMalwaresRequest& request, const TrustMalwaresAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->TrustMalwares(request), context);
-    };
+    using Req = const TrustMalwaresRequest&;
+    using Resp = TrustMalwaresResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "TrustMalwares", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 YunjingClient::TrustMalwaresOutcomeCallable YunjingClient::TrustMalwaresCallable(const TrustMalwaresRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<TrustMalwaresOutcome()>>(
-        [this, request]()
-        {
-            return this->TrustMalwares(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<TrustMalwaresOutcome>>();
+    TrustMalwaresAsync(
+    request,
+    [prom](
+        const YunjingClient*,
+        const TrustMalwaresRequest&,
+        TrustMalwaresOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 YunjingClient::UntrustMaliciousRequestOutcome YunjingClient::UntrustMaliciousRequest(const UntrustMaliciousRequestRequest &request)
@@ -4276,25 +4962,32 @@ YunjingClient::UntrustMaliciousRequestOutcome YunjingClient::UntrustMaliciousReq
 
 void YunjingClient::UntrustMaliciousRequestAsync(const UntrustMaliciousRequestRequest& request, const UntrustMaliciousRequestAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UntrustMaliciousRequest(request), context);
-    };
+    using Req = const UntrustMaliciousRequestRequest&;
+    using Resp = UntrustMaliciousRequestResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UntrustMaliciousRequest", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 YunjingClient::UntrustMaliciousRequestOutcomeCallable YunjingClient::UntrustMaliciousRequestCallable(const UntrustMaliciousRequestRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UntrustMaliciousRequestOutcome()>>(
-        [this, request]()
-        {
-            return this->UntrustMaliciousRequest(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UntrustMaliciousRequestOutcome>>();
+    UntrustMaliciousRequestAsync(
+    request,
+    [prom](
+        const YunjingClient*,
+        const UntrustMaliciousRequestRequest&,
+        UntrustMaliciousRequestOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 YunjingClient::UntrustMalwaresOutcome YunjingClient::UntrustMalwares(const UntrustMalwaresRequest &request)
@@ -4319,24 +5012,31 @@ YunjingClient::UntrustMalwaresOutcome YunjingClient::UntrustMalwares(const Untru
 
 void YunjingClient::UntrustMalwaresAsync(const UntrustMalwaresRequest& request, const UntrustMalwaresAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UntrustMalwares(request), context);
-    };
+    using Req = const UntrustMalwaresRequest&;
+    using Resp = UntrustMalwaresResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UntrustMalwares", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 YunjingClient::UntrustMalwaresOutcomeCallable YunjingClient::UntrustMalwaresCallable(const UntrustMalwaresRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UntrustMalwaresOutcome()>>(
-        [this, request]()
-        {
-            return this->UntrustMalwares(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UntrustMalwaresOutcome>>();
+    UntrustMalwaresAsync(
+    request,
+    [prom](
+        const YunjingClient*,
+        const UntrustMalwaresRequest&,
+        UntrustMalwaresOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 

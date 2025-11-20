@@ -62,24 +62,31 @@ SmopClient::SubmitTaskEventOutcome SmopClient::SubmitTaskEvent(const SubmitTaskE
 
 void SmopClient::SubmitTaskEventAsync(const SubmitTaskEventRequest& request, const SubmitTaskEventAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->SubmitTaskEvent(request), context);
-    };
+    using Req = const SubmitTaskEventRequest&;
+    using Resp = SubmitTaskEventResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "SubmitTaskEvent", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SmopClient::SubmitTaskEventOutcomeCallable SmopClient::SubmitTaskEventCallable(const SubmitTaskEventRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<SubmitTaskEventOutcome()>>(
-        [this, request]()
-        {
-            return this->SubmitTaskEvent(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<SubmitTaskEventOutcome>>();
+    SubmitTaskEventAsync(
+    request,
+    [prom](
+        const SmopClient*,
+        const SubmitTaskEventRequest&,
+        SubmitTaskEventOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 

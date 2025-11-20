@@ -62,25 +62,32 @@ MsClient::CancelEncryptTaskOutcome MsClient::CancelEncryptTask(const CancelEncry
 
 void MsClient::CancelEncryptTaskAsync(const CancelEncryptTaskRequest& request, const CancelEncryptTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CancelEncryptTask(request), context);
-    };
+    using Req = const CancelEncryptTaskRequest&;
+    using Resp = CancelEncryptTaskResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CancelEncryptTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MsClient::CancelEncryptTaskOutcomeCallable MsClient::CancelEncryptTaskCallable(const CancelEncryptTaskRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CancelEncryptTaskOutcome()>>(
-        [this, request]()
-        {
-            return this->CancelEncryptTask(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CancelEncryptTaskOutcome>>();
+    CancelEncryptTaskAsync(
+    request,
+    [prom](
+        const MsClient*,
+        const CancelEncryptTaskRequest&,
+        CancelEncryptTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MsClient::CreateBindInstanceOutcome MsClient::CreateBindInstance(const CreateBindInstanceRequest &request)
@@ -105,25 +112,32 @@ MsClient::CreateBindInstanceOutcome MsClient::CreateBindInstance(const CreateBin
 
 void MsClient::CreateBindInstanceAsync(const CreateBindInstanceRequest& request, const CreateBindInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateBindInstance(request), context);
-    };
+    using Req = const CreateBindInstanceRequest&;
+    using Resp = CreateBindInstanceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateBindInstance", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MsClient::CreateBindInstanceOutcomeCallable MsClient::CreateBindInstanceCallable(const CreateBindInstanceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateBindInstanceOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateBindInstance(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateBindInstanceOutcome>>();
+    CreateBindInstanceAsync(
+    request,
+    [prom](
+        const MsClient*,
+        const CreateBindInstanceRequest&,
+        CreateBindInstanceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MsClient::CreateCosSecKeyInstanceOutcome MsClient::CreateCosSecKeyInstance(const CreateCosSecKeyInstanceRequest &request)
@@ -148,25 +162,32 @@ MsClient::CreateCosSecKeyInstanceOutcome MsClient::CreateCosSecKeyInstance(const
 
 void MsClient::CreateCosSecKeyInstanceAsync(const CreateCosSecKeyInstanceRequest& request, const CreateCosSecKeyInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateCosSecKeyInstance(request), context);
-    };
+    using Req = const CreateCosSecKeyInstanceRequest&;
+    using Resp = CreateCosSecKeyInstanceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateCosSecKeyInstance", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MsClient::CreateCosSecKeyInstanceOutcomeCallable MsClient::CreateCosSecKeyInstanceCallable(const CreateCosSecKeyInstanceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateCosSecKeyInstanceOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateCosSecKeyInstance(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateCosSecKeyInstanceOutcome>>();
+    CreateCosSecKeyInstanceAsync(
+    request,
+    [prom](
+        const MsClient*,
+        const CreateCosSecKeyInstanceRequest&,
+        CreateCosSecKeyInstanceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MsClient::CreateEncryptInstanceOutcome MsClient::CreateEncryptInstance(const CreateEncryptInstanceRequest &request)
@@ -191,25 +212,32 @@ MsClient::CreateEncryptInstanceOutcome MsClient::CreateEncryptInstance(const Cre
 
 void MsClient::CreateEncryptInstanceAsync(const CreateEncryptInstanceRequest& request, const CreateEncryptInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateEncryptInstance(request), context);
-    };
+    using Req = const CreateEncryptInstanceRequest&;
+    using Resp = CreateEncryptInstanceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateEncryptInstance", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MsClient::CreateEncryptInstanceOutcomeCallable MsClient::CreateEncryptInstanceCallable(const CreateEncryptInstanceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateEncryptInstanceOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateEncryptInstance(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateEncryptInstanceOutcome>>();
+    CreateEncryptInstanceAsync(
+    request,
+    [prom](
+        const MsClient*,
+        const CreateEncryptInstanceRequest&,
+        CreateEncryptInstanceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MsClient::CreateOrderInstanceOutcome MsClient::CreateOrderInstance(const CreateOrderInstanceRequest &request)
@@ -234,25 +262,32 @@ MsClient::CreateOrderInstanceOutcome MsClient::CreateOrderInstance(const CreateO
 
 void MsClient::CreateOrderInstanceAsync(const CreateOrderInstanceRequest& request, const CreateOrderInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateOrderInstance(request), context);
-    };
+    using Req = const CreateOrderInstanceRequest&;
+    using Resp = CreateOrderInstanceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateOrderInstance", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MsClient::CreateOrderInstanceOutcomeCallable MsClient::CreateOrderInstanceCallable(const CreateOrderInstanceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateOrderInstanceOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateOrderInstance(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateOrderInstanceOutcome>>();
+    CreateOrderInstanceAsync(
+    request,
+    [prom](
+        const MsClient*,
+        const CreateOrderInstanceRequest&,
+        CreateOrderInstanceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MsClient::CreateResourceInstancesOutcome MsClient::CreateResourceInstances(const CreateResourceInstancesRequest &request)
@@ -277,25 +312,32 @@ MsClient::CreateResourceInstancesOutcome MsClient::CreateResourceInstances(const
 
 void MsClient::CreateResourceInstancesAsync(const CreateResourceInstancesRequest& request, const CreateResourceInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateResourceInstances(request), context);
-    };
+    using Req = const CreateResourceInstancesRequest&;
+    using Resp = CreateResourceInstancesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateResourceInstances", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MsClient::CreateResourceInstancesOutcomeCallable MsClient::CreateResourceInstancesCallable(const CreateResourceInstancesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateResourceInstancesOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateResourceInstances(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateResourceInstancesOutcome>>();
+    CreateResourceInstancesAsync(
+    request,
+    [prom](
+        const MsClient*,
+        const CreateResourceInstancesRequest&,
+        CreateResourceInstancesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MsClient::CreateShieldInstanceOutcome MsClient::CreateShieldInstance(const CreateShieldInstanceRequest &request)
@@ -320,25 +362,32 @@ MsClient::CreateShieldInstanceOutcome MsClient::CreateShieldInstance(const Creat
 
 void MsClient::CreateShieldInstanceAsync(const CreateShieldInstanceRequest& request, const CreateShieldInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateShieldInstance(request), context);
-    };
+    using Req = const CreateShieldInstanceRequest&;
+    using Resp = CreateShieldInstanceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateShieldInstance", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MsClient::CreateShieldInstanceOutcomeCallable MsClient::CreateShieldInstanceCallable(const CreateShieldInstanceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateShieldInstanceOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateShieldInstance(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateShieldInstanceOutcome>>();
+    CreateShieldInstanceAsync(
+    request,
+    [prom](
+        const MsClient*,
+        const CreateShieldInstanceRequest&,
+        CreateShieldInstanceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MsClient::CreateShieldPlanInstanceOutcome MsClient::CreateShieldPlanInstance(const CreateShieldPlanInstanceRequest &request)
@@ -363,25 +412,32 @@ MsClient::CreateShieldPlanInstanceOutcome MsClient::CreateShieldPlanInstance(con
 
 void MsClient::CreateShieldPlanInstanceAsync(const CreateShieldPlanInstanceRequest& request, const CreateShieldPlanInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateShieldPlanInstance(request), context);
-    };
+    using Req = const CreateShieldPlanInstanceRequest&;
+    using Resp = CreateShieldPlanInstanceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateShieldPlanInstance", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MsClient::CreateShieldPlanInstanceOutcomeCallable MsClient::CreateShieldPlanInstanceCallable(const CreateShieldPlanInstanceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateShieldPlanInstanceOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateShieldPlanInstance(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateShieldPlanInstanceOutcome>>();
+    CreateShieldPlanInstanceAsync(
+    request,
+    [prom](
+        const MsClient*,
+        const CreateShieldPlanInstanceRequest&,
+        CreateShieldPlanInstanceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MsClient::DeleteShieldInstancesOutcome MsClient::DeleteShieldInstances(const DeleteShieldInstancesRequest &request)
@@ -406,25 +462,32 @@ MsClient::DeleteShieldInstancesOutcome MsClient::DeleteShieldInstances(const Del
 
 void MsClient::DeleteShieldInstancesAsync(const DeleteShieldInstancesRequest& request, const DeleteShieldInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteShieldInstances(request), context);
-    };
+    using Req = const DeleteShieldInstancesRequest&;
+    using Resp = DeleteShieldInstancesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteShieldInstances", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MsClient::DeleteShieldInstancesOutcomeCallable MsClient::DeleteShieldInstancesCallable(const DeleteShieldInstancesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteShieldInstancesOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteShieldInstances(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteShieldInstancesOutcome>>();
+    DeleteShieldInstancesAsync(
+    request,
+    [prom](
+        const MsClient*,
+        const DeleteShieldInstancesRequest&,
+        DeleteShieldInstancesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MsClient::DescribeApkDetectionResultOutcome MsClient::DescribeApkDetectionResult(const DescribeApkDetectionResultRequest &request)
@@ -449,25 +512,32 @@ MsClient::DescribeApkDetectionResultOutcome MsClient::DescribeApkDetectionResult
 
 void MsClient::DescribeApkDetectionResultAsync(const DescribeApkDetectionResultRequest& request, const DescribeApkDetectionResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeApkDetectionResult(request), context);
-    };
+    using Req = const DescribeApkDetectionResultRequest&;
+    using Resp = DescribeApkDetectionResultResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeApkDetectionResult", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MsClient::DescribeApkDetectionResultOutcomeCallable MsClient::DescribeApkDetectionResultCallable(const DescribeApkDetectionResultRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeApkDetectionResultOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeApkDetectionResult(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeApkDetectionResultOutcome>>();
+    DescribeApkDetectionResultAsync(
+    request,
+    [prom](
+        const MsClient*,
+        const DescribeApkDetectionResultRequest&,
+        DescribeApkDetectionResultOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MsClient::DescribeEncryptInstancesOutcome MsClient::DescribeEncryptInstances(const DescribeEncryptInstancesRequest &request)
@@ -492,25 +562,32 @@ MsClient::DescribeEncryptInstancesOutcome MsClient::DescribeEncryptInstances(con
 
 void MsClient::DescribeEncryptInstancesAsync(const DescribeEncryptInstancesRequest& request, const DescribeEncryptInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeEncryptInstances(request), context);
-    };
+    using Req = const DescribeEncryptInstancesRequest&;
+    using Resp = DescribeEncryptInstancesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeEncryptInstances", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MsClient::DescribeEncryptInstancesOutcomeCallable MsClient::DescribeEncryptInstancesCallable(const DescribeEncryptInstancesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeEncryptInstancesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeEncryptInstances(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeEncryptInstancesOutcome>>();
+    DescribeEncryptInstancesAsync(
+    request,
+    [prom](
+        const MsClient*,
+        const DescribeEncryptInstancesRequest&,
+        DescribeEncryptInstancesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MsClient::DescribeEncryptPlanOutcome MsClient::DescribeEncryptPlan(const DescribeEncryptPlanRequest &request)
@@ -535,25 +612,32 @@ MsClient::DescribeEncryptPlanOutcome MsClient::DescribeEncryptPlan(const Describ
 
 void MsClient::DescribeEncryptPlanAsync(const DescribeEncryptPlanRequest& request, const DescribeEncryptPlanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeEncryptPlan(request), context);
-    };
+    using Req = const DescribeEncryptPlanRequest&;
+    using Resp = DescribeEncryptPlanResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeEncryptPlan", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MsClient::DescribeEncryptPlanOutcomeCallable MsClient::DescribeEncryptPlanCallable(const DescribeEncryptPlanRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeEncryptPlanOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeEncryptPlan(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeEncryptPlanOutcome>>();
+    DescribeEncryptPlanAsync(
+    request,
+    [prom](
+        const MsClient*,
+        const DescribeEncryptPlanRequest&,
+        DescribeEncryptPlanOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MsClient::DescribeOrderInstancesOutcome MsClient::DescribeOrderInstances(const DescribeOrderInstancesRequest &request)
@@ -578,25 +662,32 @@ MsClient::DescribeOrderInstancesOutcome MsClient::DescribeOrderInstances(const D
 
 void MsClient::DescribeOrderInstancesAsync(const DescribeOrderInstancesRequest& request, const DescribeOrderInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeOrderInstances(request), context);
-    };
+    using Req = const DescribeOrderInstancesRequest&;
+    using Resp = DescribeOrderInstancesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeOrderInstances", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MsClient::DescribeOrderInstancesOutcomeCallable MsClient::DescribeOrderInstancesCallable(const DescribeOrderInstancesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeOrderInstancesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeOrderInstances(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeOrderInstancesOutcome>>();
+    DescribeOrderInstancesAsync(
+    request,
+    [prom](
+        const MsClient*,
+        const DescribeOrderInstancesRequest&,
+        DescribeOrderInstancesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MsClient::DescribeResourceInstancesOutcome MsClient::DescribeResourceInstances(const DescribeResourceInstancesRequest &request)
@@ -621,25 +712,32 @@ MsClient::DescribeResourceInstancesOutcome MsClient::DescribeResourceInstances(c
 
 void MsClient::DescribeResourceInstancesAsync(const DescribeResourceInstancesRequest& request, const DescribeResourceInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeResourceInstances(request), context);
-    };
+    using Req = const DescribeResourceInstancesRequest&;
+    using Resp = DescribeResourceInstancesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeResourceInstances", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MsClient::DescribeResourceInstancesOutcomeCallable MsClient::DescribeResourceInstancesCallable(const DescribeResourceInstancesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeResourceInstancesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeResourceInstances(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeResourceInstancesOutcome>>();
+    DescribeResourceInstancesAsync(
+    request,
+    [prom](
+        const MsClient*,
+        const DescribeResourceInstancesRequest&,
+        DescribeResourceInstancesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MsClient::DescribeShieldInstancesOutcome MsClient::DescribeShieldInstances(const DescribeShieldInstancesRequest &request)
@@ -664,25 +762,32 @@ MsClient::DescribeShieldInstancesOutcome MsClient::DescribeShieldInstances(const
 
 void MsClient::DescribeShieldInstancesAsync(const DescribeShieldInstancesRequest& request, const DescribeShieldInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeShieldInstances(request), context);
-    };
+    using Req = const DescribeShieldInstancesRequest&;
+    using Resp = DescribeShieldInstancesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeShieldInstances", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MsClient::DescribeShieldInstancesOutcomeCallable MsClient::DescribeShieldInstancesCallable(const DescribeShieldInstancesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeShieldInstancesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeShieldInstances(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeShieldInstancesOutcome>>();
+    DescribeShieldInstancesAsync(
+    request,
+    [prom](
+        const MsClient*,
+        const DescribeShieldInstancesRequest&,
+        DescribeShieldInstancesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MsClient::DescribeShieldPlanInstanceOutcome MsClient::DescribeShieldPlanInstance(const DescribeShieldPlanInstanceRequest &request)
@@ -707,25 +812,32 @@ MsClient::DescribeShieldPlanInstanceOutcome MsClient::DescribeShieldPlanInstance
 
 void MsClient::DescribeShieldPlanInstanceAsync(const DescribeShieldPlanInstanceRequest& request, const DescribeShieldPlanInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeShieldPlanInstance(request), context);
-    };
+    using Req = const DescribeShieldPlanInstanceRequest&;
+    using Resp = DescribeShieldPlanInstanceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeShieldPlanInstance", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MsClient::DescribeShieldPlanInstanceOutcomeCallable MsClient::DescribeShieldPlanInstanceCallable(const DescribeShieldPlanInstanceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeShieldPlanInstanceOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeShieldPlanInstance(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeShieldPlanInstanceOutcome>>();
+    DescribeShieldPlanInstanceAsync(
+    request,
+    [prom](
+        const MsClient*,
+        const DescribeShieldPlanInstanceRequest&,
+        DescribeShieldPlanInstanceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MsClient::DescribeShieldResultOutcome MsClient::DescribeShieldResult(const DescribeShieldResultRequest &request)
@@ -750,25 +862,32 @@ MsClient::DescribeShieldResultOutcome MsClient::DescribeShieldResult(const Descr
 
 void MsClient::DescribeShieldResultAsync(const DescribeShieldResultRequest& request, const DescribeShieldResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeShieldResult(request), context);
-    };
+    using Req = const DescribeShieldResultRequest&;
+    using Resp = DescribeShieldResultResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeShieldResult", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MsClient::DescribeShieldResultOutcomeCallable MsClient::DescribeShieldResultCallable(const DescribeShieldResultRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeShieldResultOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeShieldResult(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeShieldResultOutcome>>();
+    DescribeShieldResultAsync(
+    request,
+    [prom](
+        const MsClient*,
+        const DescribeShieldResultRequest&,
+        DescribeShieldResultOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MsClient::DescribeUrlDetectionResultOutcome MsClient::DescribeUrlDetectionResult(const DescribeUrlDetectionResultRequest &request)
@@ -793,25 +912,32 @@ MsClient::DescribeUrlDetectionResultOutcome MsClient::DescribeUrlDetectionResult
 
 void MsClient::DescribeUrlDetectionResultAsync(const DescribeUrlDetectionResultRequest& request, const DescribeUrlDetectionResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeUrlDetectionResult(request), context);
-    };
+    using Req = const DescribeUrlDetectionResultRequest&;
+    using Resp = DescribeUrlDetectionResultResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeUrlDetectionResult", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MsClient::DescribeUrlDetectionResultOutcomeCallable MsClient::DescribeUrlDetectionResultCallable(const DescribeUrlDetectionResultRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeUrlDetectionResultOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeUrlDetectionResult(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeUrlDetectionResultOutcome>>();
+    DescribeUrlDetectionResultAsync(
+    request,
+    [prom](
+        const MsClient*,
+        const DescribeUrlDetectionResultRequest&,
+        DescribeUrlDetectionResultOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MsClient::DescribeUserBaseInfoInstanceOutcome MsClient::DescribeUserBaseInfoInstance(const DescribeUserBaseInfoInstanceRequest &request)
@@ -836,25 +962,32 @@ MsClient::DescribeUserBaseInfoInstanceOutcome MsClient::DescribeUserBaseInfoInst
 
 void MsClient::DescribeUserBaseInfoInstanceAsync(const DescribeUserBaseInfoInstanceRequest& request, const DescribeUserBaseInfoInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeUserBaseInfoInstance(request), context);
-    };
+    using Req = const DescribeUserBaseInfoInstanceRequest&;
+    using Resp = DescribeUserBaseInfoInstanceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeUserBaseInfoInstance", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MsClient::DescribeUserBaseInfoInstanceOutcomeCallable MsClient::DescribeUserBaseInfoInstanceCallable(const DescribeUserBaseInfoInstanceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeUserBaseInfoInstanceOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeUserBaseInfoInstance(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeUserBaseInfoInstanceOutcome>>();
+    DescribeUserBaseInfoInstanceAsync(
+    request,
+    [prom](
+        const MsClient*,
+        const DescribeUserBaseInfoInstanceRequest&,
+        DescribeUserBaseInfoInstanceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MsClient::DestroyResourceInstancesOutcome MsClient::DestroyResourceInstances(const DestroyResourceInstancesRequest &request)
@@ -879,25 +1012,32 @@ MsClient::DestroyResourceInstancesOutcome MsClient::DestroyResourceInstances(con
 
 void MsClient::DestroyResourceInstancesAsync(const DestroyResourceInstancesRequest& request, const DestroyResourceInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DestroyResourceInstances(request), context);
-    };
+    using Req = const DestroyResourceInstancesRequest&;
+    using Resp = DestroyResourceInstancesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DestroyResourceInstances", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MsClient::DestroyResourceInstancesOutcomeCallable MsClient::DestroyResourceInstancesCallable(const DestroyResourceInstancesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DestroyResourceInstancesOutcome()>>(
-        [this, request]()
-        {
-            return this->DestroyResourceInstances(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DestroyResourceInstancesOutcome>>();
+    DestroyResourceInstancesAsync(
+    request,
+    [prom](
+        const MsClient*,
+        const DestroyResourceInstancesRequest&,
+        DestroyResourceInstancesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MsClient::RequestLocalTaskOutcome MsClient::RequestLocalTask(const RequestLocalTaskRequest &request)
@@ -922,25 +1062,32 @@ MsClient::RequestLocalTaskOutcome MsClient::RequestLocalTask(const RequestLocalT
 
 void MsClient::RequestLocalTaskAsync(const RequestLocalTaskRequest& request, const RequestLocalTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->RequestLocalTask(request), context);
-    };
+    using Req = const RequestLocalTaskRequest&;
+    using Resp = RequestLocalTaskResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "RequestLocalTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MsClient::RequestLocalTaskOutcomeCallable MsClient::RequestLocalTaskCallable(const RequestLocalTaskRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<RequestLocalTaskOutcome()>>(
-        [this, request]()
-        {
-            return this->RequestLocalTask(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<RequestLocalTaskOutcome>>();
+    RequestLocalTaskAsync(
+    request,
+    [prom](
+        const MsClient*,
+        const RequestLocalTaskRequest&,
+        RequestLocalTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MsClient::UpdateClientStateOutcome MsClient::UpdateClientState(const UpdateClientStateRequest &request)
@@ -965,25 +1112,32 @@ MsClient::UpdateClientStateOutcome MsClient::UpdateClientState(const UpdateClien
 
 void MsClient::UpdateClientStateAsync(const UpdateClientStateRequest& request, const UpdateClientStateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UpdateClientState(request), context);
-    };
+    using Req = const UpdateClientStateRequest&;
+    using Resp = UpdateClientStateResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UpdateClientState", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MsClient::UpdateClientStateOutcomeCallable MsClient::UpdateClientStateCallable(const UpdateClientStateRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UpdateClientStateOutcome()>>(
-        [this, request]()
-        {
-            return this->UpdateClientState(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UpdateClientStateOutcome>>();
+    UpdateClientStateAsync(
+    request,
+    [prom](
+        const MsClient*,
+        const UpdateClientStateRequest&,
+        UpdateClientStateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MsClient::UpdateLocalTaskResultOutcome MsClient::UpdateLocalTaskResult(const UpdateLocalTaskResultRequest &request)
@@ -1008,24 +1162,31 @@ MsClient::UpdateLocalTaskResultOutcome MsClient::UpdateLocalTaskResult(const Upd
 
 void MsClient::UpdateLocalTaskResultAsync(const UpdateLocalTaskResultRequest& request, const UpdateLocalTaskResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UpdateLocalTaskResult(request), context);
-    };
+    using Req = const UpdateLocalTaskResultRequest&;
+    using Resp = UpdateLocalTaskResultResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UpdateLocalTaskResult", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MsClient::UpdateLocalTaskResultOutcomeCallable MsClient::UpdateLocalTaskResultCallable(const UpdateLocalTaskResultRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UpdateLocalTaskResultOutcome()>>(
-        [this, request]()
-        {
-            return this->UpdateLocalTaskResult(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UpdateLocalTaskResultOutcome>>();
+    UpdateLocalTaskResultAsync(
+    request,
+    [prom](
+        const MsClient*,
+        const UpdateLocalTaskResultRequest&,
+        UpdateLocalTaskResultOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 

@@ -62,24 +62,31 @@ BriClient::DescribeBRIOutcome BriClient::DescribeBRI(const DescribeBRIRequest &r
 
 void BriClient::DescribeBRIAsync(const DescribeBRIRequest& request, const DescribeBRIAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeBRI(request), context);
-    };
+    using Req = const DescribeBRIRequest&;
+    using Resp = DescribeBRIResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeBRI", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BriClient::DescribeBRIOutcomeCallable BriClient::DescribeBRICallable(const DescribeBRIRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeBRIOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeBRI(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeBRIOutcome>>();
+    DescribeBRIAsync(
+    request,
+    [prom](
+        const BriClient*,
+        const DescribeBRIRequest&,
+        DescribeBRIOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 

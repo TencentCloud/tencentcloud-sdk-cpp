@@ -62,24 +62,31 @@ TafClient::ManagePortraitRiskOutcome TafClient::ManagePortraitRisk(const ManageP
 
 void TafClient::ManagePortraitRiskAsync(const ManagePortraitRiskRequest& request, const ManagePortraitRiskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ManagePortraitRisk(request), context);
-    };
+    using Req = const ManagePortraitRiskRequest&;
+    using Resp = ManagePortraitRiskResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ManagePortraitRisk", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TafClient::ManagePortraitRiskOutcomeCallable TafClient::ManagePortraitRiskCallable(const ManagePortraitRiskRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ManagePortraitRiskOutcome()>>(
-        [this, request]()
-        {
-            return this->ManagePortraitRisk(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ManagePortraitRiskOutcome>>();
+    ManagePortraitRiskAsync(
+    request,
+    [prom](
+        const TafClient*,
+        const ManagePortraitRiskRequest&,
+        ManagePortraitRiskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 

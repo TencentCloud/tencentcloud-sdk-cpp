@@ -62,25 +62,32 @@ CloudhsmClient::DescribeHSMBySubnetIdOutcome CloudhsmClient::DescribeHSMBySubnet
 
 void CloudhsmClient::DescribeHSMBySubnetIdAsync(const DescribeHSMBySubnetIdRequest& request, const DescribeHSMBySubnetIdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeHSMBySubnetId(request), context);
-    };
+    using Req = const DescribeHSMBySubnetIdRequest&;
+    using Resp = DescribeHSMBySubnetIdResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeHSMBySubnetId", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CloudhsmClient::DescribeHSMBySubnetIdOutcomeCallable CloudhsmClient::DescribeHSMBySubnetIdCallable(const DescribeHSMBySubnetIdRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeHSMBySubnetIdOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeHSMBySubnetId(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeHSMBySubnetIdOutcome>>();
+    DescribeHSMBySubnetIdAsync(
+    request,
+    [prom](
+        const CloudhsmClient*,
+        const DescribeHSMBySubnetIdRequest&,
+        DescribeHSMBySubnetIdOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CloudhsmClient::DescribeHSMByVpcIdOutcome CloudhsmClient::DescribeHSMByVpcId(const DescribeHSMByVpcIdRequest &request)
@@ -105,25 +112,32 @@ CloudhsmClient::DescribeHSMByVpcIdOutcome CloudhsmClient::DescribeHSMByVpcId(con
 
 void CloudhsmClient::DescribeHSMByVpcIdAsync(const DescribeHSMByVpcIdRequest& request, const DescribeHSMByVpcIdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeHSMByVpcId(request), context);
-    };
+    using Req = const DescribeHSMByVpcIdRequest&;
+    using Resp = DescribeHSMByVpcIdResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeHSMByVpcId", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CloudhsmClient::DescribeHSMByVpcIdOutcomeCallable CloudhsmClient::DescribeHSMByVpcIdCallable(const DescribeHSMByVpcIdRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeHSMByVpcIdOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeHSMByVpcId(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeHSMByVpcIdOutcome>>();
+    DescribeHSMByVpcIdAsync(
+    request,
+    [prom](
+        const CloudhsmClient*,
+        const DescribeHSMByVpcIdRequest&,
+        DescribeHSMByVpcIdOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CloudhsmClient::DescribeSubnetOutcome CloudhsmClient::DescribeSubnet(const DescribeSubnetRequest &request)
@@ -148,25 +162,32 @@ CloudhsmClient::DescribeSubnetOutcome CloudhsmClient::DescribeSubnet(const Descr
 
 void CloudhsmClient::DescribeSubnetAsync(const DescribeSubnetRequest& request, const DescribeSubnetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeSubnet(request), context);
-    };
+    using Req = const DescribeSubnetRequest&;
+    using Resp = DescribeSubnetResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeSubnet", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CloudhsmClient::DescribeSubnetOutcomeCallable CloudhsmClient::DescribeSubnetCallable(const DescribeSubnetRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeSubnetOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeSubnet(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeSubnetOutcome>>();
+    DescribeSubnetAsync(
+    request,
+    [prom](
+        const CloudhsmClient*,
+        const DescribeSubnetRequest&,
+        DescribeSubnetOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CloudhsmClient::DescribeSupportedHsmOutcome CloudhsmClient::DescribeSupportedHsm(const DescribeSupportedHsmRequest &request)
@@ -191,25 +212,32 @@ CloudhsmClient::DescribeSupportedHsmOutcome CloudhsmClient::DescribeSupportedHsm
 
 void CloudhsmClient::DescribeSupportedHsmAsync(const DescribeSupportedHsmRequest& request, const DescribeSupportedHsmAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeSupportedHsm(request), context);
-    };
+    using Req = const DescribeSupportedHsmRequest&;
+    using Resp = DescribeSupportedHsmResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeSupportedHsm", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CloudhsmClient::DescribeSupportedHsmOutcomeCallable CloudhsmClient::DescribeSupportedHsmCallable(const DescribeSupportedHsmRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeSupportedHsmOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeSupportedHsm(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeSupportedHsmOutcome>>();
+    DescribeSupportedHsmAsync(
+    request,
+    [prom](
+        const CloudhsmClient*,
+        const DescribeSupportedHsmRequest&,
+        DescribeSupportedHsmOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CloudhsmClient::DescribeUsgOutcome CloudhsmClient::DescribeUsg(const DescribeUsgRequest &request)
@@ -234,25 +262,32 @@ CloudhsmClient::DescribeUsgOutcome CloudhsmClient::DescribeUsg(const DescribeUsg
 
 void CloudhsmClient::DescribeUsgAsync(const DescribeUsgRequest& request, const DescribeUsgAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeUsg(request), context);
-    };
+    using Req = const DescribeUsgRequest&;
+    using Resp = DescribeUsgResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeUsg", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CloudhsmClient::DescribeUsgOutcomeCallable CloudhsmClient::DescribeUsgCallable(const DescribeUsgRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeUsgOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeUsg(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeUsgOutcome>>();
+    DescribeUsgAsync(
+    request,
+    [prom](
+        const CloudhsmClient*,
+        const DescribeUsgRequest&,
+        DescribeUsgOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CloudhsmClient::DescribeUsgRuleOutcome CloudhsmClient::DescribeUsgRule(const DescribeUsgRuleRequest &request)
@@ -277,25 +312,32 @@ CloudhsmClient::DescribeUsgRuleOutcome CloudhsmClient::DescribeUsgRule(const Des
 
 void CloudhsmClient::DescribeUsgRuleAsync(const DescribeUsgRuleRequest& request, const DescribeUsgRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeUsgRule(request), context);
-    };
+    using Req = const DescribeUsgRuleRequest&;
+    using Resp = DescribeUsgRuleResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeUsgRule", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CloudhsmClient::DescribeUsgRuleOutcomeCallable CloudhsmClient::DescribeUsgRuleCallable(const DescribeUsgRuleRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeUsgRuleOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeUsgRule(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeUsgRuleOutcome>>();
+    DescribeUsgRuleAsync(
+    request,
+    [prom](
+        const CloudhsmClient*,
+        const DescribeUsgRuleRequest&,
+        DescribeUsgRuleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CloudhsmClient::DescribeVpcOutcome CloudhsmClient::DescribeVpc(const DescribeVpcRequest &request)
@@ -320,25 +362,32 @@ CloudhsmClient::DescribeVpcOutcome CloudhsmClient::DescribeVpc(const DescribeVpc
 
 void CloudhsmClient::DescribeVpcAsync(const DescribeVpcRequest& request, const DescribeVpcAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeVpc(request), context);
-    };
+    using Req = const DescribeVpcRequest&;
+    using Resp = DescribeVpcResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeVpc", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CloudhsmClient::DescribeVpcOutcomeCallable CloudhsmClient::DescribeVpcCallable(const DescribeVpcRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeVpcOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeVpc(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeVpcOutcome>>();
+    DescribeVpcAsync(
+    request,
+    [prom](
+        const CloudhsmClient*,
+        const DescribeVpcRequest&,
+        DescribeVpcOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CloudhsmClient::DescribeVsmAttributesOutcome CloudhsmClient::DescribeVsmAttributes(const DescribeVsmAttributesRequest &request)
@@ -363,25 +412,32 @@ CloudhsmClient::DescribeVsmAttributesOutcome CloudhsmClient::DescribeVsmAttribut
 
 void CloudhsmClient::DescribeVsmAttributesAsync(const DescribeVsmAttributesRequest& request, const DescribeVsmAttributesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeVsmAttributes(request), context);
-    };
+    using Req = const DescribeVsmAttributesRequest&;
+    using Resp = DescribeVsmAttributesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeVsmAttributes", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CloudhsmClient::DescribeVsmAttributesOutcomeCallable CloudhsmClient::DescribeVsmAttributesCallable(const DescribeVsmAttributesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeVsmAttributesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeVsmAttributes(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeVsmAttributesOutcome>>();
+    DescribeVsmAttributesAsync(
+    request,
+    [prom](
+        const CloudhsmClient*,
+        const DescribeVsmAttributesRequest&,
+        DescribeVsmAttributesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CloudhsmClient::DescribeVsmsOutcome CloudhsmClient::DescribeVsms(const DescribeVsmsRequest &request)
@@ -406,25 +462,32 @@ CloudhsmClient::DescribeVsmsOutcome CloudhsmClient::DescribeVsms(const DescribeV
 
 void CloudhsmClient::DescribeVsmsAsync(const DescribeVsmsRequest& request, const DescribeVsmsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeVsms(request), context);
-    };
+    using Req = const DescribeVsmsRequest&;
+    using Resp = DescribeVsmsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeVsms", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CloudhsmClient::DescribeVsmsOutcomeCallable CloudhsmClient::DescribeVsmsCallable(const DescribeVsmsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeVsmsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeVsms(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeVsmsOutcome>>();
+    DescribeVsmsAsync(
+    request,
+    [prom](
+        const CloudhsmClient*,
+        const DescribeVsmsRequest&,
+        DescribeVsmsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CloudhsmClient::GetAlarmEventOutcome CloudhsmClient::GetAlarmEvent(const GetAlarmEventRequest &request)
@@ -449,25 +512,32 @@ CloudhsmClient::GetAlarmEventOutcome CloudhsmClient::GetAlarmEvent(const GetAlar
 
 void CloudhsmClient::GetAlarmEventAsync(const GetAlarmEventRequest& request, const GetAlarmEventAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->GetAlarmEvent(request), context);
-    };
+    using Req = const GetAlarmEventRequest&;
+    using Resp = GetAlarmEventResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "GetAlarmEvent", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CloudhsmClient::GetAlarmEventOutcomeCallable CloudhsmClient::GetAlarmEventCallable(const GetAlarmEventRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<GetAlarmEventOutcome()>>(
-        [this, request]()
-        {
-            return this->GetAlarmEvent(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<GetAlarmEventOutcome>>();
+    GetAlarmEventAsync(
+    request,
+    [prom](
+        const CloudhsmClient*,
+        const GetAlarmEventRequest&,
+        GetAlarmEventOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CloudhsmClient::GetVsmMonitorInfoOutcome CloudhsmClient::GetVsmMonitorInfo(const GetVsmMonitorInfoRequest &request)
@@ -492,25 +562,32 @@ CloudhsmClient::GetVsmMonitorInfoOutcome CloudhsmClient::GetVsmMonitorInfo(const
 
 void CloudhsmClient::GetVsmMonitorInfoAsync(const GetVsmMonitorInfoRequest& request, const GetVsmMonitorInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->GetVsmMonitorInfo(request), context);
-    };
+    using Req = const GetVsmMonitorInfoRequest&;
+    using Resp = GetVsmMonitorInfoResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "GetVsmMonitorInfo", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CloudhsmClient::GetVsmMonitorInfoOutcomeCallable CloudhsmClient::GetVsmMonitorInfoCallable(const GetVsmMonitorInfoRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<GetVsmMonitorInfoOutcome()>>(
-        [this, request]()
-        {
-            return this->GetVsmMonitorInfo(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<GetVsmMonitorInfoOutcome>>();
+    GetVsmMonitorInfoAsync(
+    request,
+    [prom](
+        const CloudhsmClient*,
+        const GetVsmMonitorInfoRequest&,
+        GetVsmMonitorInfoOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CloudhsmClient::InquiryPriceBuyVsmOutcome CloudhsmClient::InquiryPriceBuyVsm(const InquiryPriceBuyVsmRequest &request)
@@ -535,25 +612,32 @@ CloudhsmClient::InquiryPriceBuyVsmOutcome CloudhsmClient::InquiryPriceBuyVsm(con
 
 void CloudhsmClient::InquiryPriceBuyVsmAsync(const InquiryPriceBuyVsmRequest& request, const InquiryPriceBuyVsmAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->InquiryPriceBuyVsm(request), context);
-    };
+    using Req = const InquiryPriceBuyVsmRequest&;
+    using Resp = InquiryPriceBuyVsmResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "InquiryPriceBuyVsm", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CloudhsmClient::InquiryPriceBuyVsmOutcomeCallable CloudhsmClient::InquiryPriceBuyVsmCallable(const InquiryPriceBuyVsmRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<InquiryPriceBuyVsmOutcome()>>(
-        [this, request]()
-        {
-            return this->InquiryPriceBuyVsm(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<InquiryPriceBuyVsmOutcome>>();
+    InquiryPriceBuyVsmAsync(
+    request,
+    [prom](
+        const CloudhsmClient*,
+        const InquiryPriceBuyVsmRequest&,
+        InquiryPriceBuyVsmOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CloudhsmClient::ModifyAlarmEventOutcome CloudhsmClient::ModifyAlarmEvent(const ModifyAlarmEventRequest &request)
@@ -578,25 +662,32 @@ CloudhsmClient::ModifyAlarmEventOutcome CloudhsmClient::ModifyAlarmEvent(const M
 
 void CloudhsmClient::ModifyAlarmEventAsync(const ModifyAlarmEventRequest& request, const ModifyAlarmEventAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyAlarmEvent(request), context);
-    };
+    using Req = const ModifyAlarmEventRequest&;
+    using Resp = ModifyAlarmEventResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyAlarmEvent", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CloudhsmClient::ModifyAlarmEventOutcomeCallable CloudhsmClient::ModifyAlarmEventCallable(const ModifyAlarmEventRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyAlarmEventOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyAlarmEvent(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyAlarmEventOutcome>>();
+    ModifyAlarmEventAsync(
+    request,
+    [prom](
+        const CloudhsmClient*,
+        const ModifyAlarmEventRequest&,
+        ModifyAlarmEventOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CloudhsmClient::ModifyVsmAttributesOutcome CloudhsmClient::ModifyVsmAttributes(const ModifyVsmAttributesRequest &request)
@@ -621,24 +712,31 @@ CloudhsmClient::ModifyVsmAttributesOutcome CloudhsmClient::ModifyVsmAttributes(c
 
 void CloudhsmClient::ModifyVsmAttributesAsync(const ModifyVsmAttributesRequest& request, const ModifyVsmAttributesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyVsmAttributes(request), context);
-    };
+    using Req = const ModifyVsmAttributesRequest&;
+    using Resp = ModifyVsmAttributesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyVsmAttributes", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CloudhsmClient::ModifyVsmAttributesOutcomeCallable CloudhsmClient::ModifyVsmAttributesCallable(const ModifyVsmAttributesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyVsmAttributesOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyVsmAttributes(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyVsmAttributesOutcome>>();
+    ModifyVsmAttributesAsync(
+    request,
+    [prom](
+        const CloudhsmClient*,
+        const ModifyVsmAttributesRequest&,
+        ModifyVsmAttributesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 

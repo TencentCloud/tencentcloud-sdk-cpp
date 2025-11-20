@@ -62,25 +62,32 @@ IaiClient::AnalyzeDenseLandmarksOutcome IaiClient::AnalyzeDenseLandmarks(const A
 
 void IaiClient::AnalyzeDenseLandmarksAsync(const AnalyzeDenseLandmarksRequest& request, const AnalyzeDenseLandmarksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->AnalyzeDenseLandmarks(request), context);
-    };
+    using Req = const AnalyzeDenseLandmarksRequest&;
+    using Resp = AnalyzeDenseLandmarksResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "AnalyzeDenseLandmarks", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IaiClient::AnalyzeDenseLandmarksOutcomeCallable IaiClient::AnalyzeDenseLandmarksCallable(const AnalyzeDenseLandmarksRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<AnalyzeDenseLandmarksOutcome()>>(
-        [this, request]()
-        {
-            return this->AnalyzeDenseLandmarks(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<AnalyzeDenseLandmarksOutcome>>();
+    AnalyzeDenseLandmarksAsync(
+    request,
+    [prom](
+        const IaiClient*,
+        const AnalyzeDenseLandmarksRequest&,
+        AnalyzeDenseLandmarksOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IaiClient::AnalyzeFaceOutcome IaiClient::AnalyzeFace(const AnalyzeFaceRequest &request)
@@ -105,25 +112,32 @@ IaiClient::AnalyzeFaceOutcome IaiClient::AnalyzeFace(const AnalyzeFaceRequest &r
 
 void IaiClient::AnalyzeFaceAsync(const AnalyzeFaceRequest& request, const AnalyzeFaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->AnalyzeFace(request), context);
-    };
+    using Req = const AnalyzeFaceRequest&;
+    using Resp = AnalyzeFaceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "AnalyzeFace", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IaiClient::AnalyzeFaceOutcomeCallable IaiClient::AnalyzeFaceCallable(const AnalyzeFaceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<AnalyzeFaceOutcome()>>(
-        [this, request]()
-        {
-            return this->AnalyzeFace(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<AnalyzeFaceOutcome>>();
+    AnalyzeFaceAsync(
+    request,
+    [prom](
+        const IaiClient*,
+        const AnalyzeFaceRequest&,
+        AnalyzeFaceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IaiClient::CompareFaceOutcome IaiClient::CompareFace(const CompareFaceRequest &request)
@@ -148,25 +162,32 @@ IaiClient::CompareFaceOutcome IaiClient::CompareFace(const CompareFaceRequest &r
 
 void IaiClient::CompareFaceAsync(const CompareFaceRequest& request, const CompareFaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CompareFace(request), context);
-    };
+    using Req = const CompareFaceRequest&;
+    using Resp = CompareFaceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CompareFace", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IaiClient::CompareFaceOutcomeCallable IaiClient::CompareFaceCallable(const CompareFaceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CompareFaceOutcome()>>(
-        [this, request]()
-        {
-            return this->CompareFace(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CompareFaceOutcome>>();
+    CompareFaceAsync(
+    request,
+    [prom](
+        const IaiClient*,
+        const CompareFaceRequest&,
+        CompareFaceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IaiClient::CopyPersonOutcome IaiClient::CopyPerson(const CopyPersonRequest &request)
@@ -191,25 +212,32 @@ IaiClient::CopyPersonOutcome IaiClient::CopyPerson(const CopyPersonRequest &requ
 
 void IaiClient::CopyPersonAsync(const CopyPersonRequest& request, const CopyPersonAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CopyPerson(request), context);
-    };
+    using Req = const CopyPersonRequest&;
+    using Resp = CopyPersonResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CopyPerson", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IaiClient::CopyPersonOutcomeCallable IaiClient::CopyPersonCallable(const CopyPersonRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CopyPersonOutcome()>>(
-        [this, request]()
-        {
-            return this->CopyPerson(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CopyPersonOutcome>>();
+    CopyPersonAsync(
+    request,
+    [prom](
+        const IaiClient*,
+        const CopyPersonRequest&,
+        CopyPersonOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IaiClient::CreateFaceOutcome IaiClient::CreateFace(const CreateFaceRequest &request)
@@ -234,25 +262,32 @@ IaiClient::CreateFaceOutcome IaiClient::CreateFace(const CreateFaceRequest &requ
 
 void IaiClient::CreateFaceAsync(const CreateFaceRequest& request, const CreateFaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateFace(request), context);
-    };
+    using Req = const CreateFaceRequest&;
+    using Resp = CreateFaceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateFace", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IaiClient::CreateFaceOutcomeCallable IaiClient::CreateFaceCallable(const CreateFaceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateFaceOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateFace(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateFaceOutcome>>();
+    CreateFaceAsync(
+    request,
+    [prom](
+        const IaiClient*,
+        const CreateFaceRequest&,
+        CreateFaceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IaiClient::CreateGroupOutcome IaiClient::CreateGroup(const CreateGroupRequest &request)
@@ -277,25 +312,32 @@ IaiClient::CreateGroupOutcome IaiClient::CreateGroup(const CreateGroupRequest &r
 
 void IaiClient::CreateGroupAsync(const CreateGroupRequest& request, const CreateGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateGroup(request), context);
-    };
+    using Req = const CreateGroupRequest&;
+    using Resp = CreateGroupResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateGroup", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IaiClient::CreateGroupOutcomeCallable IaiClient::CreateGroupCallable(const CreateGroupRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateGroupOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateGroup(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateGroupOutcome>>();
+    CreateGroupAsync(
+    request,
+    [prom](
+        const IaiClient*,
+        const CreateGroupRequest&,
+        CreateGroupOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IaiClient::CreatePersonOutcome IaiClient::CreatePerson(const CreatePersonRequest &request)
@@ -320,25 +362,32 @@ IaiClient::CreatePersonOutcome IaiClient::CreatePerson(const CreatePersonRequest
 
 void IaiClient::CreatePersonAsync(const CreatePersonRequest& request, const CreatePersonAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreatePerson(request), context);
-    };
+    using Req = const CreatePersonRequest&;
+    using Resp = CreatePersonResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreatePerson", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IaiClient::CreatePersonOutcomeCallable IaiClient::CreatePersonCallable(const CreatePersonRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreatePersonOutcome()>>(
-        [this, request]()
-        {
-            return this->CreatePerson(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreatePersonOutcome>>();
+    CreatePersonAsync(
+    request,
+    [prom](
+        const IaiClient*,
+        const CreatePersonRequest&,
+        CreatePersonOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IaiClient::DeleteFaceOutcome IaiClient::DeleteFace(const DeleteFaceRequest &request)
@@ -363,25 +412,32 @@ IaiClient::DeleteFaceOutcome IaiClient::DeleteFace(const DeleteFaceRequest &requ
 
 void IaiClient::DeleteFaceAsync(const DeleteFaceRequest& request, const DeleteFaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteFace(request), context);
-    };
+    using Req = const DeleteFaceRequest&;
+    using Resp = DeleteFaceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteFace", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IaiClient::DeleteFaceOutcomeCallable IaiClient::DeleteFaceCallable(const DeleteFaceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteFaceOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteFace(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteFaceOutcome>>();
+    DeleteFaceAsync(
+    request,
+    [prom](
+        const IaiClient*,
+        const DeleteFaceRequest&,
+        DeleteFaceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IaiClient::DeleteGroupOutcome IaiClient::DeleteGroup(const DeleteGroupRequest &request)
@@ -406,25 +462,32 @@ IaiClient::DeleteGroupOutcome IaiClient::DeleteGroup(const DeleteGroupRequest &r
 
 void IaiClient::DeleteGroupAsync(const DeleteGroupRequest& request, const DeleteGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteGroup(request), context);
-    };
+    using Req = const DeleteGroupRequest&;
+    using Resp = DeleteGroupResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteGroup", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IaiClient::DeleteGroupOutcomeCallable IaiClient::DeleteGroupCallable(const DeleteGroupRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteGroupOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteGroup(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteGroupOutcome>>();
+    DeleteGroupAsync(
+    request,
+    [prom](
+        const IaiClient*,
+        const DeleteGroupRequest&,
+        DeleteGroupOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IaiClient::DeletePersonOutcome IaiClient::DeletePerson(const DeletePersonRequest &request)
@@ -449,25 +512,32 @@ IaiClient::DeletePersonOutcome IaiClient::DeletePerson(const DeletePersonRequest
 
 void IaiClient::DeletePersonAsync(const DeletePersonRequest& request, const DeletePersonAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeletePerson(request), context);
-    };
+    using Req = const DeletePersonRequest&;
+    using Resp = DeletePersonResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeletePerson", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IaiClient::DeletePersonOutcomeCallable IaiClient::DeletePersonCallable(const DeletePersonRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeletePersonOutcome()>>(
-        [this, request]()
-        {
-            return this->DeletePerson(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeletePersonOutcome>>();
+    DeletePersonAsync(
+    request,
+    [prom](
+        const IaiClient*,
+        const DeletePersonRequest&,
+        DeletePersonOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IaiClient::DeletePersonFromGroupOutcome IaiClient::DeletePersonFromGroup(const DeletePersonFromGroupRequest &request)
@@ -492,25 +562,32 @@ IaiClient::DeletePersonFromGroupOutcome IaiClient::DeletePersonFromGroup(const D
 
 void IaiClient::DeletePersonFromGroupAsync(const DeletePersonFromGroupRequest& request, const DeletePersonFromGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeletePersonFromGroup(request), context);
-    };
+    using Req = const DeletePersonFromGroupRequest&;
+    using Resp = DeletePersonFromGroupResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeletePersonFromGroup", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IaiClient::DeletePersonFromGroupOutcomeCallable IaiClient::DeletePersonFromGroupCallable(const DeletePersonFromGroupRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeletePersonFromGroupOutcome()>>(
-        [this, request]()
-        {
-            return this->DeletePersonFromGroup(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeletePersonFromGroupOutcome>>();
+    DeletePersonFromGroupAsync(
+    request,
+    [prom](
+        const IaiClient*,
+        const DeletePersonFromGroupRequest&,
+        DeletePersonFromGroupOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IaiClient::DetectFaceOutcome IaiClient::DetectFace(const DetectFaceRequest &request)
@@ -535,25 +612,32 @@ IaiClient::DetectFaceOutcome IaiClient::DetectFace(const DetectFaceRequest &requ
 
 void IaiClient::DetectFaceAsync(const DetectFaceRequest& request, const DetectFaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DetectFace(request), context);
-    };
+    using Req = const DetectFaceRequest&;
+    using Resp = DetectFaceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DetectFace", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IaiClient::DetectFaceOutcomeCallable IaiClient::DetectFaceCallable(const DetectFaceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DetectFaceOutcome()>>(
-        [this, request]()
-        {
-            return this->DetectFace(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DetectFaceOutcome>>();
+    DetectFaceAsync(
+    request,
+    [prom](
+        const IaiClient*,
+        const DetectFaceRequest&,
+        DetectFaceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IaiClient::DetectFaceAttributesOutcome IaiClient::DetectFaceAttributes(const DetectFaceAttributesRequest &request)
@@ -578,25 +662,32 @@ IaiClient::DetectFaceAttributesOutcome IaiClient::DetectFaceAttributes(const Det
 
 void IaiClient::DetectFaceAttributesAsync(const DetectFaceAttributesRequest& request, const DetectFaceAttributesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DetectFaceAttributes(request), context);
-    };
+    using Req = const DetectFaceAttributesRequest&;
+    using Resp = DetectFaceAttributesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DetectFaceAttributes", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IaiClient::DetectFaceAttributesOutcomeCallable IaiClient::DetectFaceAttributesCallable(const DetectFaceAttributesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DetectFaceAttributesOutcome()>>(
-        [this, request]()
-        {
-            return this->DetectFaceAttributes(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DetectFaceAttributesOutcome>>();
+    DetectFaceAttributesAsync(
+    request,
+    [prom](
+        const IaiClient*,
+        const DetectFaceAttributesRequest&,
+        DetectFaceAttributesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IaiClient::DetectLiveFaceOutcome IaiClient::DetectLiveFace(const DetectLiveFaceRequest &request)
@@ -621,25 +712,32 @@ IaiClient::DetectLiveFaceOutcome IaiClient::DetectLiveFace(const DetectLiveFaceR
 
 void IaiClient::DetectLiveFaceAsync(const DetectLiveFaceRequest& request, const DetectLiveFaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DetectLiveFace(request), context);
-    };
+    using Req = const DetectLiveFaceRequest&;
+    using Resp = DetectLiveFaceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DetectLiveFace", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IaiClient::DetectLiveFaceOutcomeCallable IaiClient::DetectLiveFaceCallable(const DetectLiveFaceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DetectLiveFaceOutcome()>>(
-        [this, request]()
-        {
-            return this->DetectLiveFace(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DetectLiveFaceOutcome>>();
+    DetectLiveFaceAsync(
+    request,
+    [prom](
+        const IaiClient*,
+        const DetectLiveFaceRequest&,
+        DetectLiveFaceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IaiClient::GetGroupInfoOutcome IaiClient::GetGroupInfo(const GetGroupInfoRequest &request)
@@ -664,25 +762,32 @@ IaiClient::GetGroupInfoOutcome IaiClient::GetGroupInfo(const GetGroupInfoRequest
 
 void IaiClient::GetGroupInfoAsync(const GetGroupInfoRequest& request, const GetGroupInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->GetGroupInfo(request), context);
-    };
+    using Req = const GetGroupInfoRequest&;
+    using Resp = GetGroupInfoResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "GetGroupInfo", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IaiClient::GetGroupInfoOutcomeCallable IaiClient::GetGroupInfoCallable(const GetGroupInfoRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<GetGroupInfoOutcome()>>(
-        [this, request]()
-        {
-            return this->GetGroupInfo(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<GetGroupInfoOutcome>>();
+    GetGroupInfoAsync(
+    request,
+    [prom](
+        const IaiClient*,
+        const GetGroupInfoRequest&,
+        GetGroupInfoOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IaiClient::GetGroupListOutcome IaiClient::GetGroupList(const GetGroupListRequest &request)
@@ -707,25 +812,32 @@ IaiClient::GetGroupListOutcome IaiClient::GetGroupList(const GetGroupListRequest
 
 void IaiClient::GetGroupListAsync(const GetGroupListRequest& request, const GetGroupListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->GetGroupList(request), context);
-    };
+    using Req = const GetGroupListRequest&;
+    using Resp = GetGroupListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "GetGroupList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IaiClient::GetGroupListOutcomeCallable IaiClient::GetGroupListCallable(const GetGroupListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<GetGroupListOutcome()>>(
-        [this, request]()
-        {
-            return this->GetGroupList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<GetGroupListOutcome>>();
+    GetGroupListAsync(
+    request,
+    [prom](
+        const IaiClient*,
+        const GetGroupListRequest&,
+        GetGroupListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IaiClient::GetPersonBaseInfoOutcome IaiClient::GetPersonBaseInfo(const GetPersonBaseInfoRequest &request)
@@ -750,25 +862,32 @@ IaiClient::GetPersonBaseInfoOutcome IaiClient::GetPersonBaseInfo(const GetPerson
 
 void IaiClient::GetPersonBaseInfoAsync(const GetPersonBaseInfoRequest& request, const GetPersonBaseInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->GetPersonBaseInfo(request), context);
-    };
+    using Req = const GetPersonBaseInfoRequest&;
+    using Resp = GetPersonBaseInfoResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "GetPersonBaseInfo", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IaiClient::GetPersonBaseInfoOutcomeCallable IaiClient::GetPersonBaseInfoCallable(const GetPersonBaseInfoRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<GetPersonBaseInfoOutcome()>>(
-        [this, request]()
-        {
-            return this->GetPersonBaseInfo(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<GetPersonBaseInfoOutcome>>();
+    GetPersonBaseInfoAsync(
+    request,
+    [prom](
+        const IaiClient*,
+        const GetPersonBaseInfoRequest&,
+        GetPersonBaseInfoOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IaiClient::GetPersonGroupInfoOutcome IaiClient::GetPersonGroupInfo(const GetPersonGroupInfoRequest &request)
@@ -793,25 +912,32 @@ IaiClient::GetPersonGroupInfoOutcome IaiClient::GetPersonGroupInfo(const GetPers
 
 void IaiClient::GetPersonGroupInfoAsync(const GetPersonGroupInfoRequest& request, const GetPersonGroupInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->GetPersonGroupInfo(request), context);
-    };
+    using Req = const GetPersonGroupInfoRequest&;
+    using Resp = GetPersonGroupInfoResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "GetPersonGroupInfo", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IaiClient::GetPersonGroupInfoOutcomeCallable IaiClient::GetPersonGroupInfoCallable(const GetPersonGroupInfoRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<GetPersonGroupInfoOutcome()>>(
-        [this, request]()
-        {
-            return this->GetPersonGroupInfo(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<GetPersonGroupInfoOutcome>>();
+    GetPersonGroupInfoAsync(
+    request,
+    [prom](
+        const IaiClient*,
+        const GetPersonGroupInfoRequest&,
+        GetPersonGroupInfoOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IaiClient::GetPersonListOutcome IaiClient::GetPersonList(const GetPersonListRequest &request)
@@ -836,25 +962,32 @@ IaiClient::GetPersonListOutcome IaiClient::GetPersonList(const GetPersonListRequ
 
 void IaiClient::GetPersonListAsync(const GetPersonListRequest& request, const GetPersonListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->GetPersonList(request), context);
-    };
+    using Req = const GetPersonListRequest&;
+    using Resp = GetPersonListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "GetPersonList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IaiClient::GetPersonListOutcomeCallable IaiClient::GetPersonListCallable(const GetPersonListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<GetPersonListOutcome()>>(
-        [this, request]()
-        {
-            return this->GetPersonList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<GetPersonListOutcome>>();
+    GetPersonListAsync(
+    request,
+    [prom](
+        const IaiClient*,
+        const GetPersonListRequest&,
+        GetPersonListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IaiClient::GetPersonListNumOutcome IaiClient::GetPersonListNum(const GetPersonListNumRequest &request)
@@ -879,25 +1012,32 @@ IaiClient::GetPersonListNumOutcome IaiClient::GetPersonListNum(const GetPersonLi
 
 void IaiClient::GetPersonListNumAsync(const GetPersonListNumRequest& request, const GetPersonListNumAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->GetPersonListNum(request), context);
-    };
+    using Req = const GetPersonListNumRequest&;
+    using Resp = GetPersonListNumResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "GetPersonListNum", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IaiClient::GetPersonListNumOutcomeCallable IaiClient::GetPersonListNumCallable(const GetPersonListNumRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<GetPersonListNumOutcome()>>(
-        [this, request]()
-        {
-            return this->GetPersonListNum(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<GetPersonListNumOutcome>>();
+    GetPersonListNumAsync(
+    request,
+    [prom](
+        const IaiClient*,
+        const GetPersonListNumRequest&,
+        GetPersonListNumOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IaiClient::GetUpgradeGroupFaceModelVersionJobListOutcome IaiClient::GetUpgradeGroupFaceModelVersionJobList(const GetUpgradeGroupFaceModelVersionJobListRequest &request)
@@ -922,25 +1062,32 @@ IaiClient::GetUpgradeGroupFaceModelVersionJobListOutcome IaiClient::GetUpgradeGr
 
 void IaiClient::GetUpgradeGroupFaceModelVersionJobListAsync(const GetUpgradeGroupFaceModelVersionJobListRequest& request, const GetUpgradeGroupFaceModelVersionJobListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->GetUpgradeGroupFaceModelVersionJobList(request), context);
-    };
+    using Req = const GetUpgradeGroupFaceModelVersionJobListRequest&;
+    using Resp = GetUpgradeGroupFaceModelVersionJobListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "GetUpgradeGroupFaceModelVersionJobList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IaiClient::GetUpgradeGroupFaceModelVersionJobListOutcomeCallable IaiClient::GetUpgradeGroupFaceModelVersionJobListCallable(const GetUpgradeGroupFaceModelVersionJobListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<GetUpgradeGroupFaceModelVersionJobListOutcome()>>(
-        [this, request]()
-        {
-            return this->GetUpgradeGroupFaceModelVersionJobList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<GetUpgradeGroupFaceModelVersionJobListOutcome>>();
+    GetUpgradeGroupFaceModelVersionJobListAsync(
+    request,
+    [prom](
+        const IaiClient*,
+        const GetUpgradeGroupFaceModelVersionJobListRequest&,
+        GetUpgradeGroupFaceModelVersionJobListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IaiClient::GetUpgradeGroupFaceModelVersionResultOutcome IaiClient::GetUpgradeGroupFaceModelVersionResult(const GetUpgradeGroupFaceModelVersionResultRequest &request)
@@ -965,25 +1112,32 @@ IaiClient::GetUpgradeGroupFaceModelVersionResultOutcome IaiClient::GetUpgradeGro
 
 void IaiClient::GetUpgradeGroupFaceModelVersionResultAsync(const GetUpgradeGroupFaceModelVersionResultRequest& request, const GetUpgradeGroupFaceModelVersionResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->GetUpgradeGroupFaceModelVersionResult(request), context);
-    };
+    using Req = const GetUpgradeGroupFaceModelVersionResultRequest&;
+    using Resp = GetUpgradeGroupFaceModelVersionResultResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "GetUpgradeGroupFaceModelVersionResult", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IaiClient::GetUpgradeGroupFaceModelVersionResultOutcomeCallable IaiClient::GetUpgradeGroupFaceModelVersionResultCallable(const GetUpgradeGroupFaceModelVersionResultRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<GetUpgradeGroupFaceModelVersionResultOutcome()>>(
-        [this, request]()
-        {
-            return this->GetUpgradeGroupFaceModelVersionResult(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<GetUpgradeGroupFaceModelVersionResultOutcome>>();
+    GetUpgradeGroupFaceModelVersionResultAsync(
+    request,
+    [prom](
+        const IaiClient*,
+        const GetUpgradeGroupFaceModelVersionResultRequest&,
+        GetUpgradeGroupFaceModelVersionResultOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IaiClient::ModifyGroupOutcome IaiClient::ModifyGroup(const ModifyGroupRequest &request)
@@ -1008,25 +1162,32 @@ IaiClient::ModifyGroupOutcome IaiClient::ModifyGroup(const ModifyGroupRequest &r
 
 void IaiClient::ModifyGroupAsync(const ModifyGroupRequest& request, const ModifyGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyGroup(request), context);
-    };
+    using Req = const ModifyGroupRequest&;
+    using Resp = ModifyGroupResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyGroup", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IaiClient::ModifyGroupOutcomeCallable IaiClient::ModifyGroupCallable(const ModifyGroupRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyGroupOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyGroup(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyGroupOutcome>>();
+    ModifyGroupAsync(
+    request,
+    [prom](
+        const IaiClient*,
+        const ModifyGroupRequest&,
+        ModifyGroupOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IaiClient::ModifyPersonBaseInfoOutcome IaiClient::ModifyPersonBaseInfo(const ModifyPersonBaseInfoRequest &request)
@@ -1051,25 +1212,32 @@ IaiClient::ModifyPersonBaseInfoOutcome IaiClient::ModifyPersonBaseInfo(const Mod
 
 void IaiClient::ModifyPersonBaseInfoAsync(const ModifyPersonBaseInfoRequest& request, const ModifyPersonBaseInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyPersonBaseInfo(request), context);
-    };
+    using Req = const ModifyPersonBaseInfoRequest&;
+    using Resp = ModifyPersonBaseInfoResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyPersonBaseInfo", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IaiClient::ModifyPersonBaseInfoOutcomeCallable IaiClient::ModifyPersonBaseInfoCallable(const ModifyPersonBaseInfoRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyPersonBaseInfoOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyPersonBaseInfo(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyPersonBaseInfoOutcome>>();
+    ModifyPersonBaseInfoAsync(
+    request,
+    [prom](
+        const IaiClient*,
+        const ModifyPersonBaseInfoRequest&,
+        ModifyPersonBaseInfoOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IaiClient::ModifyPersonGroupInfoOutcome IaiClient::ModifyPersonGroupInfo(const ModifyPersonGroupInfoRequest &request)
@@ -1094,25 +1262,32 @@ IaiClient::ModifyPersonGroupInfoOutcome IaiClient::ModifyPersonGroupInfo(const M
 
 void IaiClient::ModifyPersonGroupInfoAsync(const ModifyPersonGroupInfoRequest& request, const ModifyPersonGroupInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyPersonGroupInfo(request), context);
-    };
+    using Req = const ModifyPersonGroupInfoRequest&;
+    using Resp = ModifyPersonGroupInfoResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyPersonGroupInfo", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IaiClient::ModifyPersonGroupInfoOutcomeCallable IaiClient::ModifyPersonGroupInfoCallable(const ModifyPersonGroupInfoRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyPersonGroupInfoOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyPersonGroupInfo(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyPersonGroupInfoOutcome>>();
+    ModifyPersonGroupInfoAsync(
+    request,
+    [prom](
+        const IaiClient*,
+        const ModifyPersonGroupInfoRequest&,
+        ModifyPersonGroupInfoOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IaiClient::RevertGroupFaceModelVersionOutcome IaiClient::RevertGroupFaceModelVersion(const RevertGroupFaceModelVersionRequest &request)
@@ -1137,25 +1312,32 @@ IaiClient::RevertGroupFaceModelVersionOutcome IaiClient::RevertGroupFaceModelVer
 
 void IaiClient::RevertGroupFaceModelVersionAsync(const RevertGroupFaceModelVersionRequest& request, const RevertGroupFaceModelVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->RevertGroupFaceModelVersion(request), context);
-    };
+    using Req = const RevertGroupFaceModelVersionRequest&;
+    using Resp = RevertGroupFaceModelVersionResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "RevertGroupFaceModelVersion", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IaiClient::RevertGroupFaceModelVersionOutcomeCallable IaiClient::RevertGroupFaceModelVersionCallable(const RevertGroupFaceModelVersionRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<RevertGroupFaceModelVersionOutcome()>>(
-        [this, request]()
-        {
-            return this->RevertGroupFaceModelVersion(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<RevertGroupFaceModelVersionOutcome>>();
+    RevertGroupFaceModelVersionAsync(
+    request,
+    [prom](
+        const IaiClient*,
+        const RevertGroupFaceModelVersionRequest&,
+        RevertGroupFaceModelVersionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IaiClient::SearchFacesOutcome IaiClient::SearchFaces(const SearchFacesRequest &request)
@@ -1180,25 +1362,32 @@ IaiClient::SearchFacesOutcome IaiClient::SearchFaces(const SearchFacesRequest &r
 
 void IaiClient::SearchFacesAsync(const SearchFacesRequest& request, const SearchFacesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->SearchFaces(request), context);
-    };
+    using Req = const SearchFacesRequest&;
+    using Resp = SearchFacesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "SearchFaces", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IaiClient::SearchFacesOutcomeCallable IaiClient::SearchFacesCallable(const SearchFacesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<SearchFacesOutcome()>>(
-        [this, request]()
-        {
-            return this->SearchFaces(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<SearchFacesOutcome>>();
+    SearchFacesAsync(
+    request,
+    [prom](
+        const IaiClient*,
+        const SearchFacesRequest&,
+        SearchFacesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IaiClient::SearchFacesReturnsByGroupOutcome IaiClient::SearchFacesReturnsByGroup(const SearchFacesReturnsByGroupRequest &request)
@@ -1223,25 +1412,32 @@ IaiClient::SearchFacesReturnsByGroupOutcome IaiClient::SearchFacesReturnsByGroup
 
 void IaiClient::SearchFacesReturnsByGroupAsync(const SearchFacesReturnsByGroupRequest& request, const SearchFacesReturnsByGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->SearchFacesReturnsByGroup(request), context);
-    };
+    using Req = const SearchFacesReturnsByGroupRequest&;
+    using Resp = SearchFacesReturnsByGroupResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "SearchFacesReturnsByGroup", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IaiClient::SearchFacesReturnsByGroupOutcomeCallable IaiClient::SearchFacesReturnsByGroupCallable(const SearchFacesReturnsByGroupRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<SearchFacesReturnsByGroupOutcome()>>(
-        [this, request]()
-        {
-            return this->SearchFacesReturnsByGroup(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<SearchFacesReturnsByGroupOutcome>>();
+    SearchFacesReturnsByGroupAsync(
+    request,
+    [prom](
+        const IaiClient*,
+        const SearchFacesReturnsByGroupRequest&,
+        SearchFacesReturnsByGroupOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IaiClient::SearchPersonsOutcome IaiClient::SearchPersons(const SearchPersonsRequest &request)
@@ -1266,25 +1462,32 @@ IaiClient::SearchPersonsOutcome IaiClient::SearchPersons(const SearchPersonsRequ
 
 void IaiClient::SearchPersonsAsync(const SearchPersonsRequest& request, const SearchPersonsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->SearchPersons(request), context);
-    };
+    using Req = const SearchPersonsRequest&;
+    using Resp = SearchPersonsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "SearchPersons", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IaiClient::SearchPersonsOutcomeCallable IaiClient::SearchPersonsCallable(const SearchPersonsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<SearchPersonsOutcome()>>(
-        [this, request]()
-        {
-            return this->SearchPersons(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<SearchPersonsOutcome>>();
+    SearchPersonsAsync(
+    request,
+    [prom](
+        const IaiClient*,
+        const SearchPersonsRequest&,
+        SearchPersonsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IaiClient::SearchPersonsReturnsByGroupOutcome IaiClient::SearchPersonsReturnsByGroup(const SearchPersonsReturnsByGroupRequest &request)
@@ -1309,25 +1512,32 @@ IaiClient::SearchPersonsReturnsByGroupOutcome IaiClient::SearchPersonsReturnsByG
 
 void IaiClient::SearchPersonsReturnsByGroupAsync(const SearchPersonsReturnsByGroupRequest& request, const SearchPersonsReturnsByGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->SearchPersonsReturnsByGroup(request), context);
-    };
+    using Req = const SearchPersonsReturnsByGroupRequest&;
+    using Resp = SearchPersonsReturnsByGroupResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "SearchPersonsReturnsByGroup", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IaiClient::SearchPersonsReturnsByGroupOutcomeCallable IaiClient::SearchPersonsReturnsByGroupCallable(const SearchPersonsReturnsByGroupRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<SearchPersonsReturnsByGroupOutcome()>>(
-        [this, request]()
-        {
-            return this->SearchPersonsReturnsByGroup(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<SearchPersonsReturnsByGroupOutcome>>();
+    SearchPersonsReturnsByGroupAsync(
+    request,
+    [prom](
+        const IaiClient*,
+        const SearchPersonsReturnsByGroupRequest&,
+        SearchPersonsReturnsByGroupOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IaiClient::UpgradeGroupFaceModelVersionOutcome IaiClient::UpgradeGroupFaceModelVersion(const UpgradeGroupFaceModelVersionRequest &request)
@@ -1352,25 +1562,32 @@ IaiClient::UpgradeGroupFaceModelVersionOutcome IaiClient::UpgradeGroupFaceModelV
 
 void IaiClient::UpgradeGroupFaceModelVersionAsync(const UpgradeGroupFaceModelVersionRequest& request, const UpgradeGroupFaceModelVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UpgradeGroupFaceModelVersion(request), context);
-    };
+    using Req = const UpgradeGroupFaceModelVersionRequest&;
+    using Resp = UpgradeGroupFaceModelVersionResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UpgradeGroupFaceModelVersion", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IaiClient::UpgradeGroupFaceModelVersionOutcomeCallable IaiClient::UpgradeGroupFaceModelVersionCallable(const UpgradeGroupFaceModelVersionRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UpgradeGroupFaceModelVersionOutcome()>>(
-        [this, request]()
-        {
-            return this->UpgradeGroupFaceModelVersion(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UpgradeGroupFaceModelVersionOutcome>>();
+    UpgradeGroupFaceModelVersionAsync(
+    request,
+    [prom](
+        const IaiClient*,
+        const UpgradeGroupFaceModelVersionRequest&,
+        UpgradeGroupFaceModelVersionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IaiClient::VerifyFaceOutcome IaiClient::VerifyFace(const VerifyFaceRequest &request)
@@ -1395,25 +1612,32 @@ IaiClient::VerifyFaceOutcome IaiClient::VerifyFace(const VerifyFaceRequest &requ
 
 void IaiClient::VerifyFaceAsync(const VerifyFaceRequest& request, const VerifyFaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->VerifyFace(request), context);
-    };
+    using Req = const VerifyFaceRequest&;
+    using Resp = VerifyFaceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "VerifyFace", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IaiClient::VerifyFaceOutcomeCallable IaiClient::VerifyFaceCallable(const VerifyFaceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<VerifyFaceOutcome()>>(
-        [this, request]()
-        {
-            return this->VerifyFace(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<VerifyFaceOutcome>>();
+    VerifyFaceAsync(
+    request,
+    [prom](
+        const IaiClient*,
+        const VerifyFaceRequest&,
+        VerifyFaceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 IaiClient::VerifyPersonOutcome IaiClient::VerifyPerson(const VerifyPersonRequest &request)
@@ -1438,24 +1662,31 @@ IaiClient::VerifyPersonOutcome IaiClient::VerifyPerson(const VerifyPersonRequest
 
 void IaiClient::VerifyPersonAsync(const VerifyPersonRequest& request, const VerifyPersonAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->VerifyPerson(request), context);
-    };
+    using Req = const VerifyPersonRequest&;
+    using Resp = VerifyPersonResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "VerifyPerson", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 IaiClient::VerifyPersonOutcomeCallable IaiClient::VerifyPersonCallable(const VerifyPersonRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<VerifyPersonOutcome()>>(
-        [this, request]()
-        {
-            return this->VerifyPerson(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<VerifyPersonOutcome>>();
+    VerifyPersonAsync(
+    request,
+    [prom](
+        const IaiClient*,
+        const VerifyPersonRequest&,
+        VerifyPersonOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 

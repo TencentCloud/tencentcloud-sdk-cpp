@@ -62,25 +62,32 @@ CiiClient::AddSubStructureTasksOutcome CiiClient::AddSubStructureTasks(const Add
 
 void CiiClient::AddSubStructureTasksAsync(const AddSubStructureTasksRequest& request, const AddSubStructureTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->AddSubStructureTasks(request), context);
-    };
+    using Req = const AddSubStructureTasksRequest&;
+    using Resp = AddSubStructureTasksResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "AddSubStructureTasks", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CiiClient::AddSubStructureTasksOutcomeCallable CiiClient::AddSubStructureTasksCallable(const AddSubStructureTasksRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<AddSubStructureTasksOutcome()>>(
-        [this, request]()
-        {
-            return this->AddSubStructureTasks(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<AddSubStructureTasksOutcome>>();
+    AddSubStructureTasksAsync(
+    request,
+    [prom](
+        const CiiClient*,
+        const AddSubStructureTasksRequest&,
+        AddSubStructureTasksOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CiiClient::CreateAutoClassifyStructureTaskOutcome CiiClient::CreateAutoClassifyStructureTask(const CreateAutoClassifyStructureTaskRequest &request)
@@ -105,25 +112,32 @@ CiiClient::CreateAutoClassifyStructureTaskOutcome CiiClient::CreateAutoClassifyS
 
 void CiiClient::CreateAutoClassifyStructureTaskAsync(const CreateAutoClassifyStructureTaskRequest& request, const CreateAutoClassifyStructureTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateAutoClassifyStructureTask(request), context);
-    };
+    using Req = const CreateAutoClassifyStructureTaskRequest&;
+    using Resp = CreateAutoClassifyStructureTaskResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateAutoClassifyStructureTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CiiClient::CreateAutoClassifyStructureTaskOutcomeCallable CiiClient::CreateAutoClassifyStructureTaskCallable(const CreateAutoClassifyStructureTaskRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateAutoClassifyStructureTaskOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateAutoClassifyStructureTask(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateAutoClassifyStructureTaskOutcome>>();
+    CreateAutoClassifyStructureTaskAsync(
+    request,
+    [prom](
+        const CiiClient*,
+        const CreateAutoClassifyStructureTaskRequest&,
+        CreateAutoClassifyStructureTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CiiClient::CreateStructureTaskOutcome CiiClient::CreateStructureTask(const CreateStructureTaskRequest &request)
@@ -148,25 +162,32 @@ CiiClient::CreateStructureTaskOutcome CiiClient::CreateStructureTask(const Creat
 
 void CiiClient::CreateStructureTaskAsync(const CreateStructureTaskRequest& request, const CreateStructureTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateStructureTask(request), context);
-    };
+    using Req = const CreateStructureTaskRequest&;
+    using Resp = CreateStructureTaskResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateStructureTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CiiClient::CreateStructureTaskOutcomeCallable CiiClient::CreateStructureTaskCallable(const CreateStructureTaskRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateStructureTaskOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateStructureTask(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateStructureTaskOutcome>>();
+    CreateStructureTaskAsync(
+    request,
+    [prom](
+        const CiiClient*,
+        const CreateStructureTaskRequest&,
+        CreateStructureTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CiiClient::CreateUnderwriteTaskByIdOutcome CiiClient::CreateUnderwriteTaskById(const CreateUnderwriteTaskByIdRequest &request)
@@ -191,25 +212,32 @@ CiiClient::CreateUnderwriteTaskByIdOutcome CiiClient::CreateUnderwriteTaskById(c
 
 void CiiClient::CreateUnderwriteTaskByIdAsync(const CreateUnderwriteTaskByIdRequest& request, const CreateUnderwriteTaskByIdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateUnderwriteTaskById(request), context);
-    };
+    using Req = const CreateUnderwriteTaskByIdRequest&;
+    using Resp = CreateUnderwriteTaskByIdResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateUnderwriteTaskById", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CiiClient::CreateUnderwriteTaskByIdOutcomeCallable CiiClient::CreateUnderwriteTaskByIdCallable(const CreateUnderwriteTaskByIdRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateUnderwriteTaskByIdOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateUnderwriteTaskById(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateUnderwriteTaskByIdOutcome>>();
+    CreateUnderwriteTaskByIdAsync(
+    request,
+    [prom](
+        const CiiClient*,
+        const CreateUnderwriteTaskByIdRequest&,
+        CreateUnderwriteTaskByIdOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CiiClient::DescribeMachineUnderwriteOutcome CiiClient::DescribeMachineUnderwrite(const DescribeMachineUnderwriteRequest &request)
@@ -234,25 +262,32 @@ CiiClient::DescribeMachineUnderwriteOutcome CiiClient::DescribeMachineUnderwrite
 
 void CiiClient::DescribeMachineUnderwriteAsync(const DescribeMachineUnderwriteRequest& request, const DescribeMachineUnderwriteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeMachineUnderwrite(request), context);
-    };
+    using Req = const DescribeMachineUnderwriteRequest&;
+    using Resp = DescribeMachineUnderwriteResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeMachineUnderwrite", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CiiClient::DescribeMachineUnderwriteOutcomeCallable CiiClient::DescribeMachineUnderwriteCallable(const DescribeMachineUnderwriteRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeMachineUnderwriteOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeMachineUnderwrite(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeMachineUnderwriteOutcome>>();
+    DescribeMachineUnderwriteAsync(
+    request,
+    [prom](
+        const CiiClient*,
+        const DescribeMachineUnderwriteRequest&,
+        DescribeMachineUnderwriteOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CiiClient::DescribeQualityScoreOutcome CiiClient::DescribeQualityScore(const DescribeQualityScoreRequest &request)
@@ -277,25 +312,32 @@ CiiClient::DescribeQualityScoreOutcome CiiClient::DescribeQualityScore(const Des
 
 void CiiClient::DescribeQualityScoreAsync(const DescribeQualityScoreRequest& request, const DescribeQualityScoreAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeQualityScore(request), context);
-    };
+    using Req = const DescribeQualityScoreRequest&;
+    using Resp = DescribeQualityScoreResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeQualityScore", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CiiClient::DescribeQualityScoreOutcomeCallable CiiClient::DescribeQualityScoreCallable(const DescribeQualityScoreRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeQualityScoreOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeQualityScore(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeQualityScoreOutcome>>();
+    DescribeQualityScoreAsync(
+    request,
+    [prom](
+        const CiiClient*,
+        const DescribeQualityScoreRequest&,
+        DescribeQualityScoreOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CiiClient::DescribeReportClassifyOutcome CiiClient::DescribeReportClassify(const DescribeReportClassifyRequest &request)
@@ -320,25 +362,32 @@ CiiClient::DescribeReportClassifyOutcome CiiClient::DescribeReportClassify(const
 
 void CiiClient::DescribeReportClassifyAsync(const DescribeReportClassifyRequest& request, const DescribeReportClassifyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeReportClassify(request), context);
-    };
+    using Req = const DescribeReportClassifyRequest&;
+    using Resp = DescribeReportClassifyResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeReportClassify", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CiiClient::DescribeReportClassifyOutcomeCallable CiiClient::DescribeReportClassifyCallable(const DescribeReportClassifyRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeReportClassifyOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeReportClassify(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeReportClassifyOutcome>>();
+    DescribeReportClassifyAsync(
+    request,
+    [prom](
+        const CiiClient*,
+        const DescribeReportClassifyRequest&,
+        DescribeReportClassifyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CiiClient::DescribeStructCompareDataOutcome CiiClient::DescribeStructCompareData(const DescribeStructCompareDataRequest &request)
@@ -363,25 +412,32 @@ CiiClient::DescribeStructCompareDataOutcome CiiClient::DescribeStructCompareData
 
 void CiiClient::DescribeStructCompareDataAsync(const DescribeStructCompareDataRequest& request, const DescribeStructCompareDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeStructCompareData(request), context);
-    };
+    using Req = const DescribeStructCompareDataRequest&;
+    using Resp = DescribeStructCompareDataResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeStructCompareData", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CiiClient::DescribeStructCompareDataOutcomeCallable CiiClient::DescribeStructCompareDataCallable(const DescribeStructCompareDataRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeStructCompareDataOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeStructCompareData(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeStructCompareDataOutcome>>();
+    DescribeStructCompareDataAsync(
+    request,
+    [prom](
+        const CiiClient*,
+        const DescribeStructCompareDataRequest&,
+        DescribeStructCompareDataOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CiiClient::DescribeStructureDifferenceOutcome CiiClient::DescribeStructureDifference(const DescribeStructureDifferenceRequest &request)
@@ -406,25 +462,32 @@ CiiClient::DescribeStructureDifferenceOutcome CiiClient::DescribeStructureDiffer
 
 void CiiClient::DescribeStructureDifferenceAsync(const DescribeStructureDifferenceRequest& request, const DescribeStructureDifferenceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeStructureDifference(request), context);
-    };
+    using Req = const DescribeStructureDifferenceRequest&;
+    using Resp = DescribeStructureDifferenceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeStructureDifference", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CiiClient::DescribeStructureDifferenceOutcomeCallable CiiClient::DescribeStructureDifferenceCallable(const DescribeStructureDifferenceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeStructureDifferenceOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeStructureDifference(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeStructureDifferenceOutcome>>();
+    DescribeStructureDifferenceAsync(
+    request,
+    [prom](
+        const CiiClient*,
+        const DescribeStructureDifferenceRequest&,
+        DescribeStructureDifferenceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CiiClient::DescribeStructureResultOutcome CiiClient::DescribeStructureResult(const DescribeStructureResultRequest &request)
@@ -449,25 +512,32 @@ CiiClient::DescribeStructureResultOutcome CiiClient::DescribeStructureResult(con
 
 void CiiClient::DescribeStructureResultAsync(const DescribeStructureResultRequest& request, const DescribeStructureResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeStructureResult(request), context);
-    };
+    using Req = const DescribeStructureResultRequest&;
+    using Resp = DescribeStructureResultResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeStructureResult", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CiiClient::DescribeStructureResultOutcomeCallable CiiClient::DescribeStructureResultCallable(const DescribeStructureResultRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeStructureResultOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeStructureResult(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeStructureResultOutcome>>();
+    DescribeStructureResultAsync(
+    request,
+    [prom](
+        const CiiClient*,
+        const DescribeStructureResultRequest&,
+        DescribeStructureResultOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CiiClient::DescribeStructureTaskResultOutcome CiiClient::DescribeStructureTaskResult(const DescribeStructureTaskResultRequest &request)
@@ -492,25 +562,32 @@ CiiClient::DescribeStructureTaskResultOutcome CiiClient::DescribeStructureTaskRe
 
 void CiiClient::DescribeStructureTaskResultAsync(const DescribeStructureTaskResultRequest& request, const DescribeStructureTaskResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeStructureTaskResult(request), context);
-    };
+    using Req = const DescribeStructureTaskResultRequest&;
+    using Resp = DescribeStructureTaskResultResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeStructureTaskResult", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CiiClient::DescribeStructureTaskResultOutcomeCallable CiiClient::DescribeStructureTaskResultCallable(const DescribeStructureTaskResultRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeStructureTaskResultOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeStructureTaskResult(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeStructureTaskResultOutcome>>();
+    DescribeStructureTaskResultAsync(
+    request,
+    [prom](
+        const CiiClient*,
+        const DescribeStructureTaskResultRequest&,
+        DescribeStructureTaskResultOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CiiClient::DescribeUnderwriteTaskOutcome CiiClient::DescribeUnderwriteTask(const DescribeUnderwriteTaskRequest &request)
@@ -535,25 +612,32 @@ CiiClient::DescribeUnderwriteTaskOutcome CiiClient::DescribeUnderwriteTask(const
 
 void CiiClient::DescribeUnderwriteTaskAsync(const DescribeUnderwriteTaskRequest& request, const DescribeUnderwriteTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeUnderwriteTask(request), context);
-    };
+    using Req = const DescribeUnderwriteTaskRequest&;
+    using Resp = DescribeUnderwriteTaskResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeUnderwriteTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CiiClient::DescribeUnderwriteTaskOutcomeCallable CiiClient::DescribeUnderwriteTaskCallable(const DescribeUnderwriteTaskRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeUnderwriteTaskOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeUnderwriteTask(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeUnderwriteTaskOutcome>>();
+    DescribeUnderwriteTaskAsync(
+    request,
+    [prom](
+        const CiiClient*,
+        const DescribeUnderwriteTaskRequest&,
+        DescribeUnderwriteTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CiiClient::UploadMedicalFileOutcome CiiClient::UploadMedicalFile(const UploadMedicalFileRequest &request)
@@ -578,24 +662,31 @@ CiiClient::UploadMedicalFileOutcome CiiClient::UploadMedicalFile(const UploadMed
 
 void CiiClient::UploadMedicalFileAsync(const UploadMedicalFileRequest& request, const UploadMedicalFileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UploadMedicalFile(request), context);
-    };
+    using Req = const UploadMedicalFileRequest&;
+    using Resp = UploadMedicalFileResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UploadMedicalFile", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CiiClient::UploadMedicalFileOutcomeCallable CiiClient::UploadMedicalFileCallable(const UploadMedicalFileRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UploadMedicalFileOutcome()>>(
-        [this, request]()
-        {
-            return this->UploadMedicalFile(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UploadMedicalFileOutcome>>();
+    UploadMedicalFileAsync(
+    request,
+    [prom](
+        const CiiClient*,
+        const UploadMedicalFileRequest&,
+        UploadMedicalFileOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 

@@ -62,25 +62,32 @@ EcmClient::AllocateAddressesOutcome EcmClient::AllocateAddresses(const AllocateA
 
 void EcmClient::AllocateAddressesAsync(const AllocateAddressesRequest& request, const AllocateAddressesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->AllocateAddresses(request), context);
-    };
+    using Req = const AllocateAddressesRequest&;
+    using Resp = AllocateAddressesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "AllocateAddresses", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EcmClient::AllocateAddressesOutcomeCallable EcmClient::AllocateAddressesCallable(const AllocateAddressesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<AllocateAddressesOutcome()>>(
-        [this, request]()
-        {
-            return this->AllocateAddresses(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<AllocateAddressesOutcome>>();
+    AllocateAddressesAsync(
+    request,
+    [prom](
+        const EcmClient*,
+        const AllocateAddressesRequest&,
+        AllocateAddressesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EcmClient::AllocateIpv6AddressesBandwidthOutcome EcmClient::AllocateIpv6AddressesBandwidth(const AllocateIpv6AddressesBandwidthRequest &request)
@@ -105,25 +112,32 @@ EcmClient::AllocateIpv6AddressesBandwidthOutcome EcmClient::AllocateIpv6Addresse
 
 void EcmClient::AllocateIpv6AddressesBandwidthAsync(const AllocateIpv6AddressesBandwidthRequest& request, const AllocateIpv6AddressesBandwidthAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->AllocateIpv6AddressesBandwidth(request), context);
-    };
+    using Req = const AllocateIpv6AddressesBandwidthRequest&;
+    using Resp = AllocateIpv6AddressesBandwidthResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "AllocateIpv6AddressesBandwidth", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EcmClient::AllocateIpv6AddressesBandwidthOutcomeCallable EcmClient::AllocateIpv6AddressesBandwidthCallable(const AllocateIpv6AddressesBandwidthRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<AllocateIpv6AddressesBandwidthOutcome()>>(
-        [this, request]()
-        {
-            return this->AllocateIpv6AddressesBandwidth(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<AllocateIpv6AddressesBandwidthOutcome>>();
+    AllocateIpv6AddressesBandwidthAsync(
+    request,
+    [prom](
+        const EcmClient*,
+        const AllocateIpv6AddressesBandwidthRequest&,
+        AllocateIpv6AddressesBandwidthOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EcmClient::AssignIpv6AddressesOutcome EcmClient::AssignIpv6Addresses(const AssignIpv6AddressesRequest &request)
@@ -148,25 +162,32 @@ EcmClient::AssignIpv6AddressesOutcome EcmClient::AssignIpv6Addresses(const Assig
 
 void EcmClient::AssignIpv6AddressesAsync(const AssignIpv6AddressesRequest& request, const AssignIpv6AddressesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->AssignIpv6Addresses(request), context);
-    };
+    using Req = const AssignIpv6AddressesRequest&;
+    using Resp = AssignIpv6AddressesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "AssignIpv6Addresses", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EcmClient::AssignIpv6AddressesOutcomeCallable EcmClient::AssignIpv6AddressesCallable(const AssignIpv6AddressesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<AssignIpv6AddressesOutcome()>>(
-        [this, request]()
-        {
-            return this->AssignIpv6Addresses(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<AssignIpv6AddressesOutcome>>();
+    AssignIpv6AddressesAsync(
+    request,
+    [prom](
+        const EcmClient*,
+        const AssignIpv6AddressesRequest&,
+        AssignIpv6AddressesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EcmClient::AssignIpv6CidrBlockOutcome EcmClient::AssignIpv6CidrBlock(const AssignIpv6CidrBlockRequest &request)
@@ -191,25 +212,32 @@ EcmClient::AssignIpv6CidrBlockOutcome EcmClient::AssignIpv6CidrBlock(const Assig
 
 void EcmClient::AssignIpv6CidrBlockAsync(const AssignIpv6CidrBlockRequest& request, const AssignIpv6CidrBlockAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->AssignIpv6CidrBlock(request), context);
-    };
+    using Req = const AssignIpv6CidrBlockRequest&;
+    using Resp = AssignIpv6CidrBlockResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "AssignIpv6CidrBlock", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EcmClient::AssignIpv6CidrBlockOutcomeCallable EcmClient::AssignIpv6CidrBlockCallable(const AssignIpv6CidrBlockRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<AssignIpv6CidrBlockOutcome()>>(
-        [this, request]()
-        {
-            return this->AssignIpv6CidrBlock(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<AssignIpv6CidrBlockOutcome>>();
+    AssignIpv6CidrBlockAsync(
+    request,
+    [prom](
+        const EcmClient*,
+        const AssignIpv6CidrBlockRequest&,
+        AssignIpv6CidrBlockOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EcmClient::AssignIpv6CidrBlocksOutcome EcmClient::AssignIpv6CidrBlocks(const AssignIpv6CidrBlocksRequest &request)
@@ -234,25 +262,32 @@ EcmClient::AssignIpv6CidrBlocksOutcome EcmClient::AssignIpv6CidrBlocks(const Ass
 
 void EcmClient::AssignIpv6CidrBlocksAsync(const AssignIpv6CidrBlocksRequest& request, const AssignIpv6CidrBlocksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->AssignIpv6CidrBlocks(request), context);
-    };
+    using Req = const AssignIpv6CidrBlocksRequest&;
+    using Resp = AssignIpv6CidrBlocksResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "AssignIpv6CidrBlocks", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EcmClient::AssignIpv6CidrBlocksOutcomeCallable EcmClient::AssignIpv6CidrBlocksCallable(const AssignIpv6CidrBlocksRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<AssignIpv6CidrBlocksOutcome()>>(
-        [this, request]()
-        {
-            return this->AssignIpv6CidrBlocks(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<AssignIpv6CidrBlocksOutcome>>();
+    AssignIpv6CidrBlocksAsync(
+    request,
+    [prom](
+        const EcmClient*,
+        const AssignIpv6CidrBlocksRequest&,
+        AssignIpv6CidrBlocksOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EcmClient::AssignIpv6SubnetCidrBlockOutcome EcmClient::AssignIpv6SubnetCidrBlock(const AssignIpv6SubnetCidrBlockRequest &request)
@@ -277,25 +312,32 @@ EcmClient::AssignIpv6SubnetCidrBlockOutcome EcmClient::AssignIpv6SubnetCidrBlock
 
 void EcmClient::AssignIpv6SubnetCidrBlockAsync(const AssignIpv6SubnetCidrBlockRequest& request, const AssignIpv6SubnetCidrBlockAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->AssignIpv6SubnetCidrBlock(request), context);
-    };
+    using Req = const AssignIpv6SubnetCidrBlockRequest&;
+    using Resp = AssignIpv6SubnetCidrBlockResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "AssignIpv6SubnetCidrBlock", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EcmClient::AssignIpv6SubnetCidrBlockOutcomeCallable EcmClient::AssignIpv6SubnetCidrBlockCallable(const AssignIpv6SubnetCidrBlockRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<AssignIpv6SubnetCidrBlockOutcome()>>(
-        [this, request]()
-        {
-            return this->AssignIpv6SubnetCidrBlock(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<AssignIpv6SubnetCidrBlockOutcome>>();
+    AssignIpv6SubnetCidrBlockAsync(
+    request,
+    [prom](
+        const EcmClient*,
+        const AssignIpv6SubnetCidrBlockRequest&,
+        AssignIpv6SubnetCidrBlockOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EcmClient::AssignPrivateIpAddressesOutcome EcmClient::AssignPrivateIpAddresses(const AssignPrivateIpAddressesRequest &request)
@@ -320,25 +362,32 @@ EcmClient::AssignPrivateIpAddressesOutcome EcmClient::AssignPrivateIpAddresses(c
 
 void EcmClient::AssignPrivateIpAddressesAsync(const AssignPrivateIpAddressesRequest& request, const AssignPrivateIpAddressesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->AssignPrivateIpAddresses(request), context);
-    };
+    using Req = const AssignPrivateIpAddressesRequest&;
+    using Resp = AssignPrivateIpAddressesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "AssignPrivateIpAddresses", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EcmClient::AssignPrivateIpAddressesOutcomeCallable EcmClient::AssignPrivateIpAddressesCallable(const AssignPrivateIpAddressesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<AssignPrivateIpAddressesOutcome()>>(
-        [this, request]()
-        {
-            return this->AssignPrivateIpAddresses(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<AssignPrivateIpAddressesOutcome>>();
+    AssignPrivateIpAddressesAsync(
+    request,
+    [prom](
+        const EcmClient*,
+        const AssignPrivateIpAddressesRequest&,
+        AssignPrivateIpAddressesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EcmClient::AssociateAddressOutcome EcmClient::AssociateAddress(const AssociateAddressRequest &request)
@@ -363,25 +412,32 @@ EcmClient::AssociateAddressOutcome EcmClient::AssociateAddress(const AssociateAd
 
 void EcmClient::AssociateAddressAsync(const AssociateAddressRequest& request, const AssociateAddressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->AssociateAddress(request), context);
-    };
+    using Req = const AssociateAddressRequest&;
+    using Resp = AssociateAddressResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "AssociateAddress", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EcmClient::AssociateAddressOutcomeCallable EcmClient::AssociateAddressCallable(const AssociateAddressRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<AssociateAddressOutcome()>>(
-        [this, request]()
-        {
-            return this->AssociateAddress(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<AssociateAddressOutcome>>();
+    AssociateAddressAsync(
+    request,
+    [prom](
+        const EcmClient*,
+        const AssociateAddressRequest&,
+        AssociateAddressOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EcmClient::AssociateSecurityGroupsOutcome EcmClient::AssociateSecurityGroups(const AssociateSecurityGroupsRequest &request)
@@ -406,25 +462,32 @@ EcmClient::AssociateSecurityGroupsOutcome EcmClient::AssociateSecurityGroups(con
 
 void EcmClient::AssociateSecurityGroupsAsync(const AssociateSecurityGroupsRequest& request, const AssociateSecurityGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->AssociateSecurityGroups(request), context);
-    };
+    using Req = const AssociateSecurityGroupsRequest&;
+    using Resp = AssociateSecurityGroupsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "AssociateSecurityGroups", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EcmClient::AssociateSecurityGroupsOutcomeCallable EcmClient::AssociateSecurityGroupsCallable(const AssociateSecurityGroupsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<AssociateSecurityGroupsOutcome()>>(
-        [this, request]()
-        {
-            return this->AssociateSecurityGroups(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<AssociateSecurityGroupsOutcome>>();
+    AssociateSecurityGroupsAsync(
+    request,
+    [prom](
+        const EcmClient*,
+        const AssociateSecurityGroupsRequest&,
+        AssociateSecurityGroupsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EcmClient::AttachDisksOutcome EcmClient::AttachDisks(const AttachDisksRequest &request)
@@ -449,25 +512,32 @@ EcmClient::AttachDisksOutcome EcmClient::AttachDisks(const AttachDisksRequest &r
 
 void EcmClient::AttachDisksAsync(const AttachDisksRequest& request, const AttachDisksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->AttachDisks(request), context);
-    };
+    using Req = const AttachDisksRequest&;
+    using Resp = AttachDisksResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "AttachDisks", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EcmClient::AttachDisksOutcomeCallable EcmClient::AttachDisksCallable(const AttachDisksRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<AttachDisksOutcome()>>(
-        [this, request]()
-        {
-            return this->AttachDisks(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<AttachDisksOutcome>>();
+    AttachDisksAsync(
+    request,
+    [prom](
+        const EcmClient*,
+        const AttachDisksRequest&,
+        AttachDisksOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EcmClient::AttachNetworkInterfaceOutcome EcmClient::AttachNetworkInterface(const AttachNetworkInterfaceRequest &request)
@@ -492,25 +562,32 @@ EcmClient::AttachNetworkInterfaceOutcome EcmClient::AttachNetworkInterface(const
 
 void EcmClient::AttachNetworkInterfaceAsync(const AttachNetworkInterfaceRequest& request, const AttachNetworkInterfaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->AttachNetworkInterface(request), context);
-    };
+    using Req = const AttachNetworkInterfaceRequest&;
+    using Resp = AttachNetworkInterfaceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "AttachNetworkInterface", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EcmClient::AttachNetworkInterfaceOutcomeCallable EcmClient::AttachNetworkInterfaceCallable(const AttachNetworkInterfaceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<AttachNetworkInterfaceOutcome()>>(
-        [this, request]()
-        {
-            return this->AttachNetworkInterface(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<AttachNetworkInterfaceOutcome>>();
+    AttachNetworkInterfaceAsync(
+    request,
+    [prom](
+        const EcmClient*,
+        const AttachNetworkInterfaceRequest&,
+        AttachNetworkInterfaceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EcmClient::BatchDeregisterTargetsOutcome EcmClient::BatchDeregisterTargets(const BatchDeregisterTargetsRequest &request)
@@ -535,25 +612,32 @@ EcmClient::BatchDeregisterTargetsOutcome EcmClient::BatchDeregisterTargets(const
 
 void EcmClient::BatchDeregisterTargetsAsync(const BatchDeregisterTargetsRequest& request, const BatchDeregisterTargetsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->BatchDeregisterTargets(request), context);
-    };
+    using Req = const BatchDeregisterTargetsRequest&;
+    using Resp = BatchDeregisterTargetsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "BatchDeregisterTargets", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EcmClient::BatchDeregisterTargetsOutcomeCallable EcmClient::BatchDeregisterTargetsCallable(const BatchDeregisterTargetsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<BatchDeregisterTargetsOutcome()>>(
-        [this, request]()
-        {
-            return this->BatchDeregisterTargets(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<BatchDeregisterTargetsOutcome>>();
+    BatchDeregisterTargetsAsync(
+    request,
+    [prom](
+        const EcmClient*,
+        const BatchDeregisterTargetsRequest&,
+        BatchDeregisterTargetsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EcmClient::BatchModifyTargetWeightOutcome EcmClient::BatchModifyTargetWeight(const BatchModifyTargetWeightRequest &request)
@@ -578,25 +662,32 @@ EcmClient::BatchModifyTargetWeightOutcome EcmClient::BatchModifyTargetWeight(con
 
 void EcmClient::BatchModifyTargetWeightAsync(const BatchModifyTargetWeightRequest& request, const BatchModifyTargetWeightAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->BatchModifyTargetWeight(request), context);
-    };
+    using Req = const BatchModifyTargetWeightRequest&;
+    using Resp = BatchModifyTargetWeightResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "BatchModifyTargetWeight", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EcmClient::BatchModifyTargetWeightOutcomeCallable EcmClient::BatchModifyTargetWeightCallable(const BatchModifyTargetWeightRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<BatchModifyTargetWeightOutcome()>>(
-        [this, request]()
-        {
-            return this->BatchModifyTargetWeight(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<BatchModifyTargetWeightOutcome>>();
+    BatchModifyTargetWeightAsync(
+    request,
+    [prom](
+        const EcmClient*,
+        const BatchModifyTargetWeightRequest&,
+        BatchModifyTargetWeightOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EcmClient::BatchRegisterTargetsOutcome EcmClient::BatchRegisterTargets(const BatchRegisterTargetsRequest &request)
@@ -621,25 +712,32 @@ EcmClient::BatchRegisterTargetsOutcome EcmClient::BatchRegisterTargets(const Bat
 
 void EcmClient::BatchRegisterTargetsAsync(const BatchRegisterTargetsRequest& request, const BatchRegisterTargetsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->BatchRegisterTargets(request), context);
-    };
+    using Req = const BatchRegisterTargetsRequest&;
+    using Resp = BatchRegisterTargetsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "BatchRegisterTargets", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EcmClient::BatchRegisterTargetsOutcomeCallable EcmClient::BatchRegisterTargetsCallable(const BatchRegisterTargetsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<BatchRegisterTargetsOutcome()>>(
-        [this, request]()
-        {
-            return this->BatchRegisterTargets(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<BatchRegisterTargetsOutcome>>();
+    BatchRegisterTargetsAsync(
+    request,
+    [prom](
+        const EcmClient*,
+        const BatchRegisterTargetsRequest&,
+        BatchRegisterTargetsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EcmClient::CreateDisksOutcome EcmClient::CreateDisks(const CreateDisksRequest &request)
@@ -664,25 +762,32 @@ EcmClient::CreateDisksOutcome EcmClient::CreateDisks(const CreateDisksRequest &r
 
 void EcmClient::CreateDisksAsync(const CreateDisksRequest& request, const CreateDisksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateDisks(request), context);
-    };
+    using Req = const CreateDisksRequest&;
+    using Resp = CreateDisksResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateDisks", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EcmClient::CreateDisksOutcomeCallable EcmClient::CreateDisksCallable(const CreateDisksRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateDisksOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateDisks(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateDisksOutcome>>();
+    CreateDisksAsync(
+    request,
+    [prom](
+        const EcmClient*,
+        const CreateDisksRequest&,
+        CreateDisksOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EcmClient::CreateHaVipOutcome EcmClient::CreateHaVip(const CreateHaVipRequest &request)
@@ -707,25 +812,32 @@ EcmClient::CreateHaVipOutcome EcmClient::CreateHaVip(const CreateHaVipRequest &r
 
 void EcmClient::CreateHaVipAsync(const CreateHaVipRequest& request, const CreateHaVipAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateHaVip(request), context);
-    };
+    using Req = const CreateHaVipRequest&;
+    using Resp = CreateHaVipResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateHaVip", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EcmClient::CreateHaVipOutcomeCallable EcmClient::CreateHaVipCallable(const CreateHaVipRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateHaVipOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateHaVip(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateHaVipOutcome>>();
+    CreateHaVipAsync(
+    request,
+    [prom](
+        const EcmClient*,
+        const CreateHaVipRequest&,
+        CreateHaVipOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EcmClient::CreateImageOutcome EcmClient::CreateImage(const CreateImageRequest &request)
@@ -750,25 +862,32 @@ EcmClient::CreateImageOutcome EcmClient::CreateImage(const CreateImageRequest &r
 
 void EcmClient::CreateImageAsync(const CreateImageRequest& request, const CreateImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateImage(request), context);
-    };
+    using Req = const CreateImageRequest&;
+    using Resp = CreateImageResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateImage", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EcmClient::CreateImageOutcomeCallable EcmClient::CreateImageCallable(const CreateImageRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateImageOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateImage(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateImageOutcome>>();
+    CreateImageAsync(
+    request,
+    [prom](
+        const EcmClient*,
+        const CreateImageRequest&,
+        CreateImageOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EcmClient::CreateKeyPairOutcome EcmClient::CreateKeyPair(const CreateKeyPairRequest &request)
@@ -793,25 +912,32 @@ EcmClient::CreateKeyPairOutcome EcmClient::CreateKeyPair(const CreateKeyPairRequ
 
 void EcmClient::CreateKeyPairAsync(const CreateKeyPairRequest& request, const CreateKeyPairAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateKeyPair(request), context);
-    };
+    using Req = const CreateKeyPairRequest&;
+    using Resp = CreateKeyPairResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateKeyPair", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EcmClient::CreateKeyPairOutcomeCallable EcmClient::CreateKeyPairCallable(const CreateKeyPairRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateKeyPairOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateKeyPair(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateKeyPairOutcome>>();
+    CreateKeyPairAsync(
+    request,
+    [prom](
+        const EcmClient*,
+        const CreateKeyPairRequest&,
+        CreateKeyPairOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EcmClient::CreateListenerOutcome EcmClient::CreateListener(const CreateListenerRequest &request)
@@ -836,25 +962,32 @@ EcmClient::CreateListenerOutcome EcmClient::CreateListener(const CreateListenerR
 
 void EcmClient::CreateListenerAsync(const CreateListenerRequest& request, const CreateListenerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateListener(request), context);
-    };
+    using Req = const CreateListenerRequest&;
+    using Resp = CreateListenerResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateListener", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EcmClient::CreateListenerOutcomeCallable EcmClient::CreateListenerCallable(const CreateListenerRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateListenerOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateListener(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateListenerOutcome>>();
+    CreateListenerAsync(
+    request,
+    [prom](
+        const EcmClient*,
+        const CreateListenerRequest&,
+        CreateListenerOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EcmClient::CreateLoadBalancerOutcome EcmClient::CreateLoadBalancer(const CreateLoadBalancerRequest &request)
@@ -879,25 +1012,32 @@ EcmClient::CreateLoadBalancerOutcome EcmClient::CreateLoadBalancer(const CreateL
 
 void EcmClient::CreateLoadBalancerAsync(const CreateLoadBalancerRequest& request, const CreateLoadBalancerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateLoadBalancer(request), context);
-    };
+    using Req = const CreateLoadBalancerRequest&;
+    using Resp = CreateLoadBalancerResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateLoadBalancer", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EcmClient::CreateLoadBalancerOutcomeCallable EcmClient::CreateLoadBalancerCallable(const CreateLoadBalancerRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateLoadBalancerOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateLoadBalancer(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateLoadBalancerOutcome>>();
+    CreateLoadBalancerAsync(
+    request,
+    [prom](
+        const EcmClient*,
+        const CreateLoadBalancerRequest&,
+        CreateLoadBalancerOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EcmClient::CreateModuleOutcome EcmClient::CreateModule(const CreateModuleRequest &request)
@@ -922,25 +1062,32 @@ EcmClient::CreateModuleOutcome EcmClient::CreateModule(const CreateModuleRequest
 
 void EcmClient::CreateModuleAsync(const CreateModuleRequest& request, const CreateModuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateModule(request), context);
-    };
+    using Req = const CreateModuleRequest&;
+    using Resp = CreateModuleResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateModule", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EcmClient::CreateModuleOutcomeCallable EcmClient::CreateModuleCallable(const CreateModuleRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateModuleOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateModule(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateModuleOutcome>>();
+    CreateModuleAsync(
+    request,
+    [prom](
+        const EcmClient*,
+        const CreateModuleRequest&,
+        CreateModuleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EcmClient::CreateNetworkInterfaceOutcome EcmClient::CreateNetworkInterface(const CreateNetworkInterfaceRequest &request)
@@ -965,25 +1112,32 @@ EcmClient::CreateNetworkInterfaceOutcome EcmClient::CreateNetworkInterface(const
 
 void EcmClient::CreateNetworkInterfaceAsync(const CreateNetworkInterfaceRequest& request, const CreateNetworkInterfaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateNetworkInterface(request), context);
-    };
+    using Req = const CreateNetworkInterfaceRequest&;
+    using Resp = CreateNetworkInterfaceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateNetworkInterface", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EcmClient::CreateNetworkInterfaceOutcomeCallable EcmClient::CreateNetworkInterfaceCallable(const CreateNetworkInterfaceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateNetworkInterfaceOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateNetworkInterface(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateNetworkInterfaceOutcome>>();
+    CreateNetworkInterfaceAsync(
+    request,
+    [prom](
+        const EcmClient*,
+        const CreateNetworkInterfaceRequest&,
+        CreateNetworkInterfaceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EcmClient::CreateRouteTableOutcome EcmClient::CreateRouteTable(const CreateRouteTableRequest &request)
@@ -1008,25 +1162,32 @@ EcmClient::CreateRouteTableOutcome EcmClient::CreateRouteTable(const CreateRoute
 
 void EcmClient::CreateRouteTableAsync(const CreateRouteTableRequest& request, const CreateRouteTableAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateRouteTable(request), context);
-    };
+    using Req = const CreateRouteTableRequest&;
+    using Resp = CreateRouteTableResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateRouteTable", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EcmClient::CreateRouteTableOutcomeCallable EcmClient::CreateRouteTableCallable(const CreateRouteTableRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateRouteTableOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateRouteTable(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateRouteTableOutcome>>();
+    CreateRouteTableAsync(
+    request,
+    [prom](
+        const EcmClient*,
+        const CreateRouteTableRequest&,
+        CreateRouteTableOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EcmClient::CreateRoutesOutcome EcmClient::CreateRoutes(const CreateRoutesRequest &request)
@@ -1051,25 +1212,32 @@ EcmClient::CreateRoutesOutcome EcmClient::CreateRoutes(const CreateRoutesRequest
 
 void EcmClient::CreateRoutesAsync(const CreateRoutesRequest& request, const CreateRoutesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateRoutes(request), context);
-    };
+    using Req = const CreateRoutesRequest&;
+    using Resp = CreateRoutesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateRoutes", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EcmClient::CreateRoutesOutcomeCallable EcmClient::CreateRoutesCallable(const CreateRoutesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateRoutesOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateRoutes(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateRoutesOutcome>>();
+    CreateRoutesAsync(
+    request,
+    [prom](
+        const EcmClient*,
+        const CreateRoutesRequest&,
+        CreateRoutesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EcmClient::CreateSecurityGroupOutcome EcmClient::CreateSecurityGroup(const CreateSecurityGroupRequest &request)
@@ -1094,25 +1262,32 @@ EcmClient::CreateSecurityGroupOutcome EcmClient::CreateSecurityGroup(const Creat
 
 void EcmClient::CreateSecurityGroupAsync(const CreateSecurityGroupRequest& request, const CreateSecurityGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateSecurityGroup(request), context);
-    };
+    using Req = const CreateSecurityGroupRequest&;
+    using Resp = CreateSecurityGroupResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateSecurityGroup", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EcmClient::CreateSecurityGroupOutcomeCallable EcmClient::CreateSecurityGroupCallable(const CreateSecurityGroupRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateSecurityGroupOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateSecurityGroup(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateSecurityGroupOutcome>>();
+    CreateSecurityGroupAsync(
+    request,
+    [prom](
+        const EcmClient*,
+        const CreateSecurityGroupRequest&,
+        CreateSecurityGroupOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EcmClient::CreateSecurityGroupPoliciesOutcome EcmClient::CreateSecurityGroupPolicies(const CreateSecurityGroupPoliciesRequest &request)
@@ -1137,25 +1312,32 @@ EcmClient::CreateSecurityGroupPoliciesOutcome EcmClient::CreateSecurityGroupPoli
 
 void EcmClient::CreateSecurityGroupPoliciesAsync(const CreateSecurityGroupPoliciesRequest& request, const CreateSecurityGroupPoliciesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateSecurityGroupPolicies(request), context);
-    };
+    using Req = const CreateSecurityGroupPoliciesRequest&;
+    using Resp = CreateSecurityGroupPoliciesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateSecurityGroupPolicies", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EcmClient::CreateSecurityGroupPoliciesOutcomeCallable EcmClient::CreateSecurityGroupPoliciesCallable(const CreateSecurityGroupPoliciesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateSecurityGroupPoliciesOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateSecurityGroupPolicies(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateSecurityGroupPoliciesOutcome>>();
+    CreateSecurityGroupPoliciesAsync(
+    request,
+    [prom](
+        const EcmClient*,
+        const CreateSecurityGroupPoliciesRequest&,
+        CreateSecurityGroupPoliciesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EcmClient::CreateSubnetOutcome EcmClient::CreateSubnet(const CreateSubnetRequest &request)
@@ -1180,25 +1362,32 @@ EcmClient::CreateSubnetOutcome EcmClient::CreateSubnet(const CreateSubnetRequest
 
 void EcmClient::CreateSubnetAsync(const CreateSubnetRequest& request, const CreateSubnetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateSubnet(request), context);
-    };
+    using Req = const CreateSubnetRequest&;
+    using Resp = CreateSubnetResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateSubnet", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EcmClient::CreateSubnetOutcomeCallable EcmClient::CreateSubnetCallable(const CreateSubnetRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateSubnetOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateSubnet(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateSubnetOutcome>>();
+    CreateSubnetAsync(
+    request,
+    [prom](
+        const EcmClient*,
+        const CreateSubnetRequest&,
+        CreateSubnetOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EcmClient::CreateVpcOutcome EcmClient::CreateVpc(const CreateVpcRequest &request)
@@ -1223,25 +1412,32 @@ EcmClient::CreateVpcOutcome EcmClient::CreateVpc(const CreateVpcRequest &request
 
 void EcmClient::CreateVpcAsync(const CreateVpcRequest& request, const CreateVpcAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateVpc(request), context);
-    };
+    using Req = const CreateVpcRequest&;
+    using Resp = CreateVpcResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateVpc", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EcmClient::CreateVpcOutcomeCallable EcmClient::CreateVpcCallable(const CreateVpcRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateVpcOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateVpc(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateVpcOutcome>>();
+    CreateVpcAsync(
+    request,
+    [prom](
+        const EcmClient*,
+        const CreateVpcRequest&,
+        CreateVpcOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EcmClient::DeleteHaVipOutcome EcmClient::DeleteHaVip(const DeleteHaVipRequest &request)
@@ -1266,25 +1462,32 @@ EcmClient::DeleteHaVipOutcome EcmClient::DeleteHaVip(const DeleteHaVipRequest &r
 
 void EcmClient::DeleteHaVipAsync(const DeleteHaVipRequest& request, const DeleteHaVipAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteHaVip(request), context);
-    };
+    using Req = const DeleteHaVipRequest&;
+    using Resp = DeleteHaVipResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteHaVip", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EcmClient::DeleteHaVipOutcomeCallable EcmClient::DeleteHaVipCallable(const DeleteHaVipRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteHaVipOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteHaVip(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteHaVipOutcome>>();
+    DeleteHaVipAsync(
+    request,
+    [prom](
+        const EcmClient*,
+        const DeleteHaVipRequest&,
+        DeleteHaVipOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EcmClient::DeleteImageOutcome EcmClient::DeleteImage(const DeleteImageRequest &request)
@@ -1309,25 +1512,32 @@ EcmClient::DeleteImageOutcome EcmClient::DeleteImage(const DeleteImageRequest &r
 
 void EcmClient::DeleteImageAsync(const DeleteImageRequest& request, const DeleteImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteImage(request), context);
-    };
+    using Req = const DeleteImageRequest&;
+    using Resp = DeleteImageResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteImage", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EcmClient::DeleteImageOutcomeCallable EcmClient::DeleteImageCallable(const DeleteImageRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteImageOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteImage(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteImageOutcome>>();
+    DeleteImageAsync(
+    request,
+    [prom](
+        const EcmClient*,
+        const DeleteImageRequest&,
+        DeleteImageOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EcmClient::DeleteListenerOutcome EcmClient::DeleteListener(const DeleteListenerRequest &request)
@@ -1352,25 +1562,32 @@ EcmClient::DeleteListenerOutcome EcmClient::DeleteListener(const DeleteListenerR
 
 void EcmClient::DeleteListenerAsync(const DeleteListenerRequest& request, const DeleteListenerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteListener(request), context);
-    };
+    using Req = const DeleteListenerRequest&;
+    using Resp = DeleteListenerResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteListener", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EcmClient::DeleteListenerOutcomeCallable EcmClient::DeleteListenerCallable(const DeleteListenerRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteListenerOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteListener(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteListenerOutcome>>();
+    DeleteListenerAsync(
+    request,
+    [prom](
+        const EcmClient*,
+        const DeleteListenerRequest&,
+        DeleteListenerOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EcmClient::DeleteLoadBalancerOutcome EcmClient::DeleteLoadBalancer(const DeleteLoadBalancerRequest &request)
@@ -1395,25 +1612,32 @@ EcmClient::DeleteLoadBalancerOutcome EcmClient::DeleteLoadBalancer(const DeleteL
 
 void EcmClient::DeleteLoadBalancerAsync(const DeleteLoadBalancerRequest& request, const DeleteLoadBalancerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteLoadBalancer(request), context);
-    };
+    using Req = const DeleteLoadBalancerRequest&;
+    using Resp = DeleteLoadBalancerResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteLoadBalancer", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EcmClient::DeleteLoadBalancerOutcomeCallable EcmClient::DeleteLoadBalancerCallable(const DeleteLoadBalancerRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteLoadBalancerOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteLoadBalancer(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteLoadBalancerOutcome>>();
+    DeleteLoadBalancerAsync(
+    request,
+    [prom](
+        const EcmClient*,
+        const DeleteLoadBalancerRequest&,
+        DeleteLoadBalancerOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EcmClient::DeleteLoadBalancerListenersOutcome EcmClient::DeleteLoadBalancerListeners(const DeleteLoadBalancerListenersRequest &request)
@@ -1438,25 +1662,32 @@ EcmClient::DeleteLoadBalancerListenersOutcome EcmClient::DeleteLoadBalancerListe
 
 void EcmClient::DeleteLoadBalancerListenersAsync(const DeleteLoadBalancerListenersRequest& request, const DeleteLoadBalancerListenersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteLoadBalancerListeners(request), context);
-    };
+    using Req = const DeleteLoadBalancerListenersRequest&;
+    using Resp = DeleteLoadBalancerListenersResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteLoadBalancerListeners", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EcmClient::DeleteLoadBalancerListenersOutcomeCallable EcmClient::DeleteLoadBalancerListenersCallable(const DeleteLoadBalancerListenersRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteLoadBalancerListenersOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteLoadBalancerListeners(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteLoadBalancerListenersOutcome>>();
+    DeleteLoadBalancerListenersAsync(
+    request,
+    [prom](
+        const EcmClient*,
+        const DeleteLoadBalancerListenersRequest&,
+        DeleteLoadBalancerListenersOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EcmClient::DeleteModuleOutcome EcmClient::DeleteModule(const DeleteModuleRequest &request)
@@ -1481,25 +1712,32 @@ EcmClient::DeleteModuleOutcome EcmClient::DeleteModule(const DeleteModuleRequest
 
 void EcmClient::DeleteModuleAsync(const DeleteModuleRequest& request, const DeleteModuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteModule(request), context);
-    };
+    using Req = const DeleteModuleRequest&;
+    using Resp = DeleteModuleResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteModule", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EcmClient::DeleteModuleOutcomeCallable EcmClient::DeleteModuleCallable(const DeleteModuleRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteModuleOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteModule(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteModuleOutcome>>();
+    DeleteModuleAsync(
+    request,
+    [prom](
+        const EcmClient*,
+        const DeleteModuleRequest&,
+        DeleteModuleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EcmClient::DeleteNetworkInterfaceOutcome EcmClient::DeleteNetworkInterface(const DeleteNetworkInterfaceRequest &request)
@@ -1524,25 +1762,32 @@ EcmClient::DeleteNetworkInterfaceOutcome EcmClient::DeleteNetworkInterface(const
 
 void EcmClient::DeleteNetworkInterfaceAsync(const DeleteNetworkInterfaceRequest& request, const DeleteNetworkInterfaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteNetworkInterface(request), context);
-    };
+    using Req = const DeleteNetworkInterfaceRequest&;
+    using Resp = DeleteNetworkInterfaceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteNetworkInterface", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EcmClient::DeleteNetworkInterfaceOutcomeCallable EcmClient::DeleteNetworkInterfaceCallable(const DeleteNetworkInterfaceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteNetworkInterfaceOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteNetworkInterface(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteNetworkInterfaceOutcome>>();
+    DeleteNetworkInterfaceAsync(
+    request,
+    [prom](
+        const EcmClient*,
+        const DeleteNetworkInterfaceRequest&,
+        DeleteNetworkInterfaceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EcmClient::DeleteRouteTableOutcome EcmClient::DeleteRouteTable(const DeleteRouteTableRequest &request)
@@ -1567,25 +1812,32 @@ EcmClient::DeleteRouteTableOutcome EcmClient::DeleteRouteTable(const DeleteRoute
 
 void EcmClient::DeleteRouteTableAsync(const DeleteRouteTableRequest& request, const DeleteRouteTableAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteRouteTable(request), context);
-    };
+    using Req = const DeleteRouteTableRequest&;
+    using Resp = DeleteRouteTableResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteRouteTable", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EcmClient::DeleteRouteTableOutcomeCallable EcmClient::DeleteRouteTableCallable(const DeleteRouteTableRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteRouteTableOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteRouteTable(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteRouteTableOutcome>>();
+    DeleteRouteTableAsync(
+    request,
+    [prom](
+        const EcmClient*,
+        const DeleteRouteTableRequest&,
+        DeleteRouteTableOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EcmClient::DeleteRoutesOutcome EcmClient::DeleteRoutes(const DeleteRoutesRequest &request)
@@ -1610,25 +1862,32 @@ EcmClient::DeleteRoutesOutcome EcmClient::DeleteRoutes(const DeleteRoutesRequest
 
 void EcmClient::DeleteRoutesAsync(const DeleteRoutesRequest& request, const DeleteRoutesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteRoutes(request), context);
-    };
+    using Req = const DeleteRoutesRequest&;
+    using Resp = DeleteRoutesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteRoutes", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EcmClient::DeleteRoutesOutcomeCallable EcmClient::DeleteRoutesCallable(const DeleteRoutesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteRoutesOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteRoutes(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteRoutesOutcome>>();
+    DeleteRoutesAsync(
+    request,
+    [prom](
+        const EcmClient*,
+        const DeleteRoutesRequest&,
+        DeleteRoutesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EcmClient::DeleteSecurityGroupOutcome EcmClient::DeleteSecurityGroup(const DeleteSecurityGroupRequest &request)
@@ -1653,25 +1912,32 @@ EcmClient::DeleteSecurityGroupOutcome EcmClient::DeleteSecurityGroup(const Delet
 
 void EcmClient::DeleteSecurityGroupAsync(const DeleteSecurityGroupRequest& request, const DeleteSecurityGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteSecurityGroup(request), context);
-    };
+    using Req = const DeleteSecurityGroupRequest&;
+    using Resp = DeleteSecurityGroupResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteSecurityGroup", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EcmClient::DeleteSecurityGroupOutcomeCallable EcmClient::DeleteSecurityGroupCallable(const DeleteSecurityGroupRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteSecurityGroupOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteSecurityGroup(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteSecurityGroupOutcome>>();
+    DeleteSecurityGroupAsync(
+    request,
+    [prom](
+        const EcmClient*,
+        const DeleteSecurityGroupRequest&,
+        DeleteSecurityGroupOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EcmClient::DeleteSecurityGroupPoliciesOutcome EcmClient::DeleteSecurityGroupPolicies(const DeleteSecurityGroupPoliciesRequest &request)
@@ -1696,25 +1962,32 @@ EcmClient::DeleteSecurityGroupPoliciesOutcome EcmClient::DeleteSecurityGroupPoli
 
 void EcmClient::DeleteSecurityGroupPoliciesAsync(const DeleteSecurityGroupPoliciesRequest& request, const DeleteSecurityGroupPoliciesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteSecurityGroupPolicies(request), context);
-    };
+    using Req = const DeleteSecurityGroupPoliciesRequest&;
+    using Resp = DeleteSecurityGroupPoliciesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteSecurityGroupPolicies", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EcmClient::DeleteSecurityGroupPoliciesOutcomeCallable EcmClient::DeleteSecurityGroupPoliciesCallable(const DeleteSecurityGroupPoliciesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteSecurityGroupPoliciesOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteSecurityGroupPolicies(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteSecurityGroupPoliciesOutcome>>();
+    DeleteSecurityGroupPoliciesAsync(
+    request,
+    [prom](
+        const EcmClient*,
+        const DeleteSecurityGroupPoliciesRequest&,
+        DeleteSecurityGroupPoliciesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EcmClient::DeleteSnapshotsOutcome EcmClient::DeleteSnapshots(const DeleteSnapshotsRequest &request)
@@ -1739,25 +2012,32 @@ EcmClient::DeleteSnapshotsOutcome EcmClient::DeleteSnapshots(const DeleteSnapsho
 
 void EcmClient::DeleteSnapshotsAsync(const DeleteSnapshotsRequest& request, const DeleteSnapshotsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteSnapshots(request), context);
-    };
+    using Req = const DeleteSnapshotsRequest&;
+    using Resp = DeleteSnapshotsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteSnapshots", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EcmClient::DeleteSnapshotsOutcomeCallable EcmClient::DeleteSnapshotsCallable(const DeleteSnapshotsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteSnapshotsOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteSnapshots(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteSnapshotsOutcome>>();
+    DeleteSnapshotsAsync(
+    request,
+    [prom](
+        const EcmClient*,
+        const DeleteSnapshotsRequest&,
+        DeleteSnapshotsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EcmClient::DeleteSubnetOutcome EcmClient::DeleteSubnet(const DeleteSubnetRequest &request)
@@ -1782,25 +2062,32 @@ EcmClient::DeleteSubnetOutcome EcmClient::DeleteSubnet(const DeleteSubnetRequest
 
 void EcmClient::DeleteSubnetAsync(const DeleteSubnetRequest& request, const DeleteSubnetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteSubnet(request), context);
-    };
+    using Req = const DeleteSubnetRequest&;
+    using Resp = DeleteSubnetResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteSubnet", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EcmClient::DeleteSubnetOutcomeCallable EcmClient::DeleteSubnetCallable(const DeleteSubnetRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteSubnetOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteSubnet(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteSubnetOutcome>>();
+    DeleteSubnetAsync(
+    request,
+    [prom](
+        const EcmClient*,
+        const DeleteSubnetRequest&,
+        DeleteSubnetOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EcmClient::DeleteVpcOutcome EcmClient::DeleteVpc(const DeleteVpcRequest &request)
@@ -1825,25 +2112,32 @@ EcmClient::DeleteVpcOutcome EcmClient::DeleteVpc(const DeleteVpcRequest &request
 
 void EcmClient::DeleteVpcAsync(const DeleteVpcRequest& request, const DeleteVpcAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteVpc(request), context);
-    };
+    using Req = const DeleteVpcRequest&;
+    using Resp = DeleteVpcResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteVpc", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EcmClient::DeleteVpcOutcomeCallable EcmClient::DeleteVpcCallable(const DeleteVpcRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteVpcOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteVpc(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteVpcOutcome>>();
+    DeleteVpcAsync(
+    request,
+    [prom](
+        const EcmClient*,
+        const DeleteVpcRequest&,
+        DeleteVpcOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EcmClient::DescribeAddressQuotaOutcome EcmClient::DescribeAddressQuota(const DescribeAddressQuotaRequest &request)
@@ -1868,25 +2162,32 @@ EcmClient::DescribeAddressQuotaOutcome EcmClient::DescribeAddressQuota(const Des
 
 void EcmClient::DescribeAddressQuotaAsync(const DescribeAddressQuotaRequest& request, const DescribeAddressQuotaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAddressQuota(request), context);
-    };
+    using Req = const DescribeAddressQuotaRequest&;
+    using Resp = DescribeAddressQuotaResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAddressQuota", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EcmClient::DescribeAddressQuotaOutcomeCallable EcmClient::DescribeAddressQuotaCallable(const DescribeAddressQuotaRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAddressQuotaOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAddressQuota(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAddressQuotaOutcome>>();
+    DescribeAddressQuotaAsync(
+    request,
+    [prom](
+        const EcmClient*,
+        const DescribeAddressQuotaRequest&,
+        DescribeAddressQuotaOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EcmClient::DescribeAddressesOutcome EcmClient::DescribeAddresses(const DescribeAddressesRequest &request)
@@ -1911,25 +2212,32 @@ EcmClient::DescribeAddressesOutcome EcmClient::DescribeAddresses(const DescribeA
 
 void EcmClient::DescribeAddressesAsync(const DescribeAddressesRequest& request, const DescribeAddressesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAddresses(request), context);
-    };
+    using Req = const DescribeAddressesRequest&;
+    using Resp = DescribeAddressesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAddresses", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EcmClient::DescribeAddressesOutcomeCallable EcmClient::DescribeAddressesCallable(const DescribeAddressesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAddressesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAddresses(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAddressesOutcome>>();
+    DescribeAddressesAsync(
+    request,
+    [prom](
+        const EcmClient*,
+        const DescribeAddressesRequest&,
+        DescribeAddressesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EcmClient::DescribeBaseOverviewOutcome EcmClient::DescribeBaseOverview(const DescribeBaseOverviewRequest &request)
@@ -1954,25 +2262,32 @@ EcmClient::DescribeBaseOverviewOutcome EcmClient::DescribeBaseOverview(const Des
 
 void EcmClient::DescribeBaseOverviewAsync(const DescribeBaseOverviewRequest& request, const DescribeBaseOverviewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeBaseOverview(request), context);
-    };
+    using Req = const DescribeBaseOverviewRequest&;
+    using Resp = DescribeBaseOverviewResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeBaseOverview", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EcmClient::DescribeBaseOverviewOutcomeCallable EcmClient::DescribeBaseOverviewCallable(const DescribeBaseOverviewRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeBaseOverviewOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeBaseOverview(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeBaseOverviewOutcome>>();
+    DescribeBaseOverviewAsync(
+    request,
+    [prom](
+        const EcmClient*,
+        const DescribeBaseOverviewRequest&,
+        DescribeBaseOverviewOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EcmClient::DescribeConfigOutcome EcmClient::DescribeConfig(const DescribeConfigRequest &request)
@@ -1997,25 +2312,32 @@ EcmClient::DescribeConfigOutcome EcmClient::DescribeConfig(const DescribeConfigR
 
 void EcmClient::DescribeConfigAsync(const DescribeConfigRequest& request, const DescribeConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeConfig(request), context);
-    };
+    using Req = const DescribeConfigRequest&;
+    using Resp = DescribeConfigResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeConfig", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EcmClient::DescribeConfigOutcomeCallable EcmClient::DescribeConfigCallable(const DescribeConfigRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeConfigOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeConfig(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeConfigOutcome>>();
+    DescribeConfigAsync(
+    request,
+    [prom](
+        const EcmClient*,
+        const DescribeConfigRequest&,
+        DescribeConfigOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EcmClient::DescribeCustomImageTaskOutcome EcmClient::DescribeCustomImageTask(const DescribeCustomImageTaskRequest &request)
@@ -2040,25 +2362,32 @@ EcmClient::DescribeCustomImageTaskOutcome EcmClient::DescribeCustomImageTask(con
 
 void EcmClient::DescribeCustomImageTaskAsync(const DescribeCustomImageTaskRequest& request, const DescribeCustomImageTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeCustomImageTask(request), context);
-    };
+    using Req = const DescribeCustomImageTaskRequest&;
+    using Resp = DescribeCustomImageTaskResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeCustomImageTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EcmClient::DescribeCustomImageTaskOutcomeCallable EcmClient::DescribeCustomImageTaskCallable(const DescribeCustomImageTaskRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeCustomImageTaskOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeCustomImageTask(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeCustomImageTaskOutcome>>();
+    DescribeCustomImageTaskAsync(
+    request,
+    [prom](
+        const EcmClient*,
+        const DescribeCustomImageTaskRequest&,
+        DescribeCustomImageTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EcmClient::DescribeDefaultSubnetOutcome EcmClient::DescribeDefaultSubnet(const DescribeDefaultSubnetRequest &request)
@@ -2083,25 +2412,32 @@ EcmClient::DescribeDefaultSubnetOutcome EcmClient::DescribeDefaultSubnet(const D
 
 void EcmClient::DescribeDefaultSubnetAsync(const DescribeDefaultSubnetRequest& request, const DescribeDefaultSubnetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDefaultSubnet(request), context);
-    };
+    using Req = const DescribeDefaultSubnetRequest&;
+    using Resp = DescribeDefaultSubnetResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeDefaultSubnet", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EcmClient::DescribeDefaultSubnetOutcomeCallable EcmClient::DescribeDefaultSubnetCallable(const DescribeDefaultSubnetRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeDefaultSubnetOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDefaultSubnet(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeDefaultSubnetOutcome>>();
+    DescribeDefaultSubnetAsync(
+    request,
+    [prom](
+        const EcmClient*,
+        const DescribeDefaultSubnetRequest&,
+        DescribeDefaultSubnetOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EcmClient::DescribeDisksOutcome EcmClient::DescribeDisks(const DescribeDisksRequest &request)
@@ -2126,25 +2462,32 @@ EcmClient::DescribeDisksOutcome EcmClient::DescribeDisks(const DescribeDisksRequ
 
 void EcmClient::DescribeDisksAsync(const DescribeDisksRequest& request, const DescribeDisksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDisks(request), context);
-    };
+    using Req = const DescribeDisksRequest&;
+    using Resp = DescribeDisksResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeDisks", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EcmClient::DescribeDisksOutcomeCallable EcmClient::DescribeDisksCallable(const DescribeDisksRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeDisksOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDisks(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeDisksOutcome>>();
+    DescribeDisksAsync(
+    request,
+    [prom](
+        const EcmClient*,
+        const DescribeDisksRequest&,
+        DescribeDisksOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EcmClient::DescribeHaVipsOutcome EcmClient::DescribeHaVips(const DescribeHaVipsRequest &request)
@@ -2169,25 +2512,32 @@ EcmClient::DescribeHaVipsOutcome EcmClient::DescribeHaVips(const DescribeHaVipsR
 
 void EcmClient::DescribeHaVipsAsync(const DescribeHaVipsRequest& request, const DescribeHaVipsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeHaVips(request), context);
-    };
+    using Req = const DescribeHaVipsRequest&;
+    using Resp = DescribeHaVipsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeHaVips", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EcmClient::DescribeHaVipsOutcomeCallable EcmClient::DescribeHaVipsCallable(const DescribeHaVipsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeHaVipsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeHaVips(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeHaVipsOutcome>>();
+    DescribeHaVipsAsync(
+    request,
+    [prom](
+        const EcmClient*,
+        const DescribeHaVipsRequest&,
+        DescribeHaVipsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EcmClient::DescribeImageOutcome EcmClient::DescribeImage(const DescribeImageRequest &request)
@@ -2212,25 +2562,32 @@ EcmClient::DescribeImageOutcome EcmClient::DescribeImage(const DescribeImageRequ
 
 void EcmClient::DescribeImageAsync(const DescribeImageRequest& request, const DescribeImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeImage(request), context);
-    };
+    using Req = const DescribeImageRequest&;
+    using Resp = DescribeImageResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeImage", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EcmClient::DescribeImageOutcomeCallable EcmClient::DescribeImageCallable(const DescribeImageRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeImageOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeImage(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeImageOutcome>>();
+    DescribeImageAsync(
+    request,
+    [prom](
+        const EcmClient*,
+        const DescribeImageRequest&,
+        DescribeImageOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EcmClient::DescribeImportImageOsOutcome EcmClient::DescribeImportImageOs(const DescribeImportImageOsRequest &request)
@@ -2255,25 +2612,32 @@ EcmClient::DescribeImportImageOsOutcome EcmClient::DescribeImportImageOs(const D
 
 void EcmClient::DescribeImportImageOsAsync(const DescribeImportImageOsRequest& request, const DescribeImportImageOsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeImportImageOs(request), context);
-    };
+    using Req = const DescribeImportImageOsRequest&;
+    using Resp = DescribeImportImageOsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeImportImageOs", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EcmClient::DescribeImportImageOsOutcomeCallable EcmClient::DescribeImportImageOsCallable(const DescribeImportImageOsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeImportImageOsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeImportImageOs(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeImportImageOsOutcome>>();
+    DescribeImportImageOsAsync(
+    request,
+    [prom](
+        const EcmClient*,
+        const DescribeImportImageOsRequest&,
+        DescribeImportImageOsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EcmClient::DescribeInstanceTypeConfigOutcome EcmClient::DescribeInstanceTypeConfig(const DescribeInstanceTypeConfigRequest &request)
@@ -2298,25 +2662,32 @@ EcmClient::DescribeInstanceTypeConfigOutcome EcmClient::DescribeInstanceTypeConf
 
 void EcmClient::DescribeInstanceTypeConfigAsync(const DescribeInstanceTypeConfigRequest& request, const DescribeInstanceTypeConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeInstanceTypeConfig(request), context);
-    };
+    using Req = const DescribeInstanceTypeConfigRequest&;
+    using Resp = DescribeInstanceTypeConfigResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeInstanceTypeConfig", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EcmClient::DescribeInstanceTypeConfigOutcomeCallable EcmClient::DescribeInstanceTypeConfigCallable(const DescribeInstanceTypeConfigRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeInstanceTypeConfigOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeInstanceTypeConfig(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeInstanceTypeConfigOutcome>>();
+    DescribeInstanceTypeConfigAsync(
+    request,
+    [prom](
+        const EcmClient*,
+        const DescribeInstanceTypeConfigRequest&,
+        DescribeInstanceTypeConfigOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EcmClient::DescribeInstanceVncUrlOutcome EcmClient::DescribeInstanceVncUrl(const DescribeInstanceVncUrlRequest &request)
@@ -2341,25 +2712,32 @@ EcmClient::DescribeInstanceVncUrlOutcome EcmClient::DescribeInstanceVncUrl(const
 
 void EcmClient::DescribeInstanceVncUrlAsync(const DescribeInstanceVncUrlRequest& request, const DescribeInstanceVncUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeInstanceVncUrl(request), context);
-    };
+    using Req = const DescribeInstanceVncUrlRequest&;
+    using Resp = DescribeInstanceVncUrlResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeInstanceVncUrl", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EcmClient::DescribeInstanceVncUrlOutcomeCallable EcmClient::DescribeInstanceVncUrlCallable(const DescribeInstanceVncUrlRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeInstanceVncUrlOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeInstanceVncUrl(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeInstanceVncUrlOutcome>>();
+    DescribeInstanceVncUrlAsync(
+    request,
+    [prom](
+        const EcmClient*,
+        const DescribeInstanceVncUrlRequest&,
+        DescribeInstanceVncUrlOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EcmClient::DescribeInstancesOutcome EcmClient::DescribeInstances(const DescribeInstancesRequest &request)
@@ -2384,25 +2762,32 @@ EcmClient::DescribeInstancesOutcome EcmClient::DescribeInstances(const DescribeI
 
 void EcmClient::DescribeInstancesAsync(const DescribeInstancesRequest& request, const DescribeInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeInstances(request), context);
-    };
+    using Req = const DescribeInstancesRequest&;
+    using Resp = DescribeInstancesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeInstances", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EcmClient::DescribeInstancesOutcomeCallable EcmClient::DescribeInstancesCallable(const DescribeInstancesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeInstancesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeInstances(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeInstancesOutcome>>();
+    DescribeInstancesAsync(
+    request,
+    [prom](
+        const EcmClient*,
+        const DescribeInstancesRequest&,
+        DescribeInstancesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EcmClient::DescribeInstancesDeniedActionsOutcome EcmClient::DescribeInstancesDeniedActions(const DescribeInstancesDeniedActionsRequest &request)
@@ -2427,25 +2812,32 @@ EcmClient::DescribeInstancesDeniedActionsOutcome EcmClient::DescribeInstancesDen
 
 void EcmClient::DescribeInstancesDeniedActionsAsync(const DescribeInstancesDeniedActionsRequest& request, const DescribeInstancesDeniedActionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeInstancesDeniedActions(request), context);
-    };
+    using Req = const DescribeInstancesDeniedActionsRequest&;
+    using Resp = DescribeInstancesDeniedActionsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeInstancesDeniedActions", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EcmClient::DescribeInstancesDeniedActionsOutcomeCallable EcmClient::DescribeInstancesDeniedActionsCallable(const DescribeInstancesDeniedActionsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeInstancesDeniedActionsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeInstancesDeniedActions(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeInstancesDeniedActionsOutcome>>();
+    DescribeInstancesDeniedActionsAsync(
+    request,
+    [prom](
+        const EcmClient*,
+        const DescribeInstancesDeniedActionsRequest&,
+        DescribeInstancesDeniedActionsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EcmClient::DescribeListenersOutcome EcmClient::DescribeListeners(const DescribeListenersRequest &request)
@@ -2470,25 +2862,32 @@ EcmClient::DescribeListenersOutcome EcmClient::DescribeListeners(const DescribeL
 
 void EcmClient::DescribeListenersAsync(const DescribeListenersRequest& request, const DescribeListenersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeListeners(request), context);
-    };
+    using Req = const DescribeListenersRequest&;
+    using Resp = DescribeListenersResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeListeners", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EcmClient::DescribeListenersOutcomeCallable EcmClient::DescribeListenersCallable(const DescribeListenersRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeListenersOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeListeners(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeListenersOutcome>>();
+    DescribeListenersAsync(
+    request,
+    [prom](
+        const EcmClient*,
+        const DescribeListenersRequest&,
+        DescribeListenersOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EcmClient::DescribeLoadBalanceTaskStatusOutcome EcmClient::DescribeLoadBalanceTaskStatus(const DescribeLoadBalanceTaskStatusRequest &request)
@@ -2513,25 +2912,32 @@ EcmClient::DescribeLoadBalanceTaskStatusOutcome EcmClient::DescribeLoadBalanceTa
 
 void EcmClient::DescribeLoadBalanceTaskStatusAsync(const DescribeLoadBalanceTaskStatusRequest& request, const DescribeLoadBalanceTaskStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeLoadBalanceTaskStatus(request), context);
-    };
+    using Req = const DescribeLoadBalanceTaskStatusRequest&;
+    using Resp = DescribeLoadBalanceTaskStatusResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeLoadBalanceTaskStatus", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EcmClient::DescribeLoadBalanceTaskStatusOutcomeCallable EcmClient::DescribeLoadBalanceTaskStatusCallable(const DescribeLoadBalanceTaskStatusRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeLoadBalanceTaskStatusOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeLoadBalanceTaskStatus(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeLoadBalanceTaskStatusOutcome>>();
+    DescribeLoadBalanceTaskStatusAsync(
+    request,
+    [prom](
+        const EcmClient*,
+        const DescribeLoadBalanceTaskStatusRequest&,
+        DescribeLoadBalanceTaskStatusOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EcmClient::DescribeLoadBalancersOutcome EcmClient::DescribeLoadBalancers(const DescribeLoadBalancersRequest &request)
@@ -2556,25 +2962,32 @@ EcmClient::DescribeLoadBalancersOutcome EcmClient::DescribeLoadBalancers(const D
 
 void EcmClient::DescribeLoadBalancersAsync(const DescribeLoadBalancersRequest& request, const DescribeLoadBalancersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeLoadBalancers(request), context);
-    };
+    using Req = const DescribeLoadBalancersRequest&;
+    using Resp = DescribeLoadBalancersResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeLoadBalancers", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EcmClient::DescribeLoadBalancersOutcomeCallable EcmClient::DescribeLoadBalancersCallable(const DescribeLoadBalancersRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeLoadBalancersOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeLoadBalancers(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeLoadBalancersOutcome>>();
+    DescribeLoadBalancersAsync(
+    request,
+    [prom](
+        const EcmClient*,
+        const DescribeLoadBalancersRequest&,
+        DescribeLoadBalancersOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EcmClient::DescribeModuleOutcome EcmClient::DescribeModule(const DescribeModuleRequest &request)
@@ -2599,25 +3012,32 @@ EcmClient::DescribeModuleOutcome EcmClient::DescribeModule(const DescribeModuleR
 
 void EcmClient::DescribeModuleAsync(const DescribeModuleRequest& request, const DescribeModuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeModule(request), context);
-    };
+    using Req = const DescribeModuleRequest&;
+    using Resp = DescribeModuleResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeModule", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EcmClient::DescribeModuleOutcomeCallable EcmClient::DescribeModuleCallable(const DescribeModuleRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeModuleOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeModule(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeModuleOutcome>>();
+    DescribeModuleAsync(
+    request,
+    [prom](
+        const EcmClient*,
+        const DescribeModuleRequest&,
+        DescribeModuleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EcmClient::DescribeModuleDetailOutcome EcmClient::DescribeModuleDetail(const DescribeModuleDetailRequest &request)
@@ -2642,25 +3062,32 @@ EcmClient::DescribeModuleDetailOutcome EcmClient::DescribeModuleDetail(const Des
 
 void EcmClient::DescribeModuleDetailAsync(const DescribeModuleDetailRequest& request, const DescribeModuleDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeModuleDetail(request), context);
-    };
+    using Req = const DescribeModuleDetailRequest&;
+    using Resp = DescribeModuleDetailResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeModuleDetail", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EcmClient::DescribeModuleDetailOutcomeCallable EcmClient::DescribeModuleDetailCallable(const DescribeModuleDetailRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeModuleDetailOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeModuleDetail(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeModuleDetailOutcome>>();
+    DescribeModuleDetailAsync(
+    request,
+    [prom](
+        const EcmClient*,
+        const DescribeModuleDetailRequest&,
+        DescribeModuleDetailOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EcmClient::DescribeMonthPeakNetworkOutcome EcmClient::DescribeMonthPeakNetwork(const DescribeMonthPeakNetworkRequest &request)
@@ -2685,25 +3112,32 @@ EcmClient::DescribeMonthPeakNetworkOutcome EcmClient::DescribeMonthPeakNetwork(c
 
 void EcmClient::DescribeMonthPeakNetworkAsync(const DescribeMonthPeakNetworkRequest& request, const DescribeMonthPeakNetworkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeMonthPeakNetwork(request), context);
-    };
+    using Req = const DescribeMonthPeakNetworkRequest&;
+    using Resp = DescribeMonthPeakNetworkResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeMonthPeakNetwork", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EcmClient::DescribeMonthPeakNetworkOutcomeCallable EcmClient::DescribeMonthPeakNetworkCallable(const DescribeMonthPeakNetworkRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeMonthPeakNetworkOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeMonthPeakNetwork(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeMonthPeakNetworkOutcome>>();
+    DescribeMonthPeakNetworkAsync(
+    request,
+    [prom](
+        const EcmClient*,
+        const DescribeMonthPeakNetworkRequest&,
+        DescribeMonthPeakNetworkOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EcmClient::DescribeNetworkInterfacesOutcome EcmClient::DescribeNetworkInterfaces(const DescribeNetworkInterfacesRequest &request)
@@ -2728,25 +3162,32 @@ EcmClient::DescribeNetworkInterfacesOutcome EcmClient::DescribeNetworkInterfaces
 
 void EcmClient::DescribeNetworkInterfacesAsync(const DescribeNetworkInterfacesRequest& request, const DescribeNetworkInterfacesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeNetworkInterfaces(request), context);
-    };
+    using Req = const DescribeNetworkInterfacesRequest&;
+    using Resp = DescribeNetworkInterfacesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeNetworkInterfaces", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EcmClient::DescribeNetworkInterfacesOutcomeCallable EcmClient::DescribeNetworkInterfacesCallable(const DescribeNetworkInterfacesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeNetworkInterfacesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeNetworkInterfaces(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeNetworkInterfacesOutcome>>();
+    DescribeNetworkInterfacesAsync(
+    request,
+    [prom](
+        const EcmClient*,
+        const DescribeNetworkInterfacesRequest&,
+        DescribeNetworkInterfacesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EcmClient::DescribeNodeOutcome EcmClient::DescribeNode(const DescribeNodeRequest &request)
@@ -2771,25 +3212,32 @@ EcmClient::DescribeNodeOutcome EcmClient::DescribeNode(const DescribeNodeRequest
 
 void EcmClient::DescribeNodeAsync(const DescribeNodeRequest& request, const DescribeNodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeNode(request), context);
-    };
+    using Req = const DescribeNodeRequest&;
+    using Resp = DescribeNodeResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeNode", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EcmClient::DescribeNodeOutcomeCallable EcmClient::DescribeNodeCallable(const DescribeNodeRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeNodeOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeNode(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeNodeOutcome>>();
+    DescribeNodeAsync(
+    request,
+    [prom](
+        const EcmClient*,
+        const DescribeNodeRequest&,
+        DescribeNodeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EcmClient::DescribePackingQuotaGroupOutcome EcmClient::DescribePackingQuotaGroup(const DescribePackingQuotaGroupRequest &request)
@@ -2814,25 +3262,32 @@ EcmClient::DescribePackingQuotaGroupOutcome EcmClient::DescribePackingQuotaGroup
 
 void EcmClient::DescribePackingQuotaGroupAsync(const DescribePackingQuotaGroupRequest& request, const DescribePackingQuotaGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribePackingQuotaGroup(request), context);
-    };
+    using Req = const DescribePackingQuotaGroupRequest&;
+    using Resp = DescribePackingQuotaGroupResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribePackingQuotaGroup", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EcmClient::DescribePackingQuotaGroupOutcomeCallable EcmClient::DescribePackingQuotaGroupCallable(const DescribePackingQuotaGroupRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribePackingQuotaGroupOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribePackingQuotaGroup(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribePackingQuotaGroupOutcome>>();
+    DescribePackingQuotaGroupAsync(
+    request,
+    [prom](
+        const EcmClient*,
+        const DescribePackingQuotaGroupRequest&,
+        DescribePackingQuotaGroupOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EcmClient::DescribePeakBaseOverviewOutcome EcmClient::DescribePeakBaseOverview(const DescribePeakBaseOverviewRequest &request)
@@ -2857,25 +3312,32 @@ EcmClient::DescribePeakBaseOverviewOutcome EcmClient::DescribePeakBaseOverview(c
 
 void EcmClient::DescribePeakBaseOverviewAsync(const DescribePeakBaseOverviewRequest& request, const DescribePeakBaseOverviewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribePeakBaseOverview(request), context);
-    };
+    using Req = const DescribePeakBaseOverviewRequest&;
+    using Resp = DescribePeakBaseOverviewResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribePeakBaseOverview", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EcmClient::DescribePeakBaseOverviewOutcomeCallable EcmClient::DescribePeakBaseOverviewCallable(const DescribePeakBaseOverviewRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribePeakBaseOverviewOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribePeakBaseOverview(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribePeakBaseOverviewOutcome>>();
+    DescribePeakBaseOverviewAsync(
+    request,
+    [prom](
+        const EcmClient*,
+        const DescribePeakBaseOverviewRequest&,
+        DescribePeakBaseOverviewOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EcmClient::DescribePeakNetworkOverviewOutcome EcmClient::DescribePeakNetworkOverview(const DescribePeakNetworkOverviewRequest &request)
@@ -2900,25 +3362,32 @@ EcmClient::DescribePeakNetworkOverviewOutcome EcmClient::DescribePeakNetworkOver
 
 void EcmClient::DescribePeakNetworkOverviewAsync(const DescribePeakNetworkOverviewRequest& request, const DescribePeakNetworkOverviewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribePeakNetworkOverview(request), context);
-    };
+    using Req = const DescribePeakNetworkOverviewRequest&;
+    using Resp = DescribePeakNetworkOverviewResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribePeakNetworkOverview", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EcmClient::DescribePeakNetworkOverviewOutcomeCallable EcmClient::DescribePeakNetworkOverviewCallable(const DescribePeakNetworkOverviewRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribePeakNetworkOverviewOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribePeakNetworkOverview(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribePeakNetworkOverviewOutcome>>();
+    DescribePeakNetworkOverviewAsync(
+    request,
+    [prom](
+        const EcmClient*,
+        const DescribePeakNetworkOverviewRequest&,
+        DescribePeakNetworkOverviewOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EcmClient::DescribePriceRunInstanceOutcome EcmClient::DescribePriceRunInstance(const DescribePriceRunInstanceRequest &request)
@@ -2943,25 +3412,32 @@ EcmClient::DescribePriceRunInstanceOutcome EcmClient::DescribePriceRunInstance(c
 
 void EcmClient::DescribePriceRunInstanceAsync(const DescribePriceRunInstanceRequest& request, const DescribePriceRunInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribePriceRunInstance(request), context);
-    };
+    using Req = const DescribePriceRunInstanceRequest&;
+    using Resp = DescribePriceRunInstanceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribePriceRunInstance", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EcmClient::DescribePriceRunInstanceOutcomeCallable EcmClient::DescribePriceRunInstanceCallable(const DescribePriceRunInstanceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribePriceRunInstanceOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribePriceRunInstance(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribePriceRunInstanceOutcome>>();
+    DescribePriceRunInstanceAsync(
+    request,
+    [prom](
+        const EcmClient*,
+        const DescribePriceRunInstanceRequest&,
+        DescribePriceRunInstanceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EcmClient::DescribeRegionIpv6AddressesOutcome EcmClient::DescribeRegionIpv6Addresses(const DescribeRegionIpv6AddressesRequest &request)
@@ -2986,25 +3462,32 @@ EcmClient::DescribeRegionIpv6AddressesOutcome EcmClient::DescribeRegionIpv6Addre
 
 void EcmClient::DescribeRegionIpv6AddressesAsync(const DescribeRegionIpv6AddressesRequest& request, const DescribeRegionIpv6AddressesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeRegionIpv6Addresses(request), context);
-    };
+    using Req = const DescribeRegionIpv6AddressesRequest&;
+    using Resp = DescribeRegionIpv6AddressesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeRegionIpv6Addresses", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EcmClient::DescribeRegionIpv6AddressesOutcomeCallable EcmClient::DescribeRegionIpv6AddressesCallable(const DescribeRegionIpv6AddressesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeRegionIpv6AddressesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeRegionIpv6Addresses(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeRegionIpv6AddressesOutcome>>();
+    DescribeRegionIpv6AddressesAsync(
+    request,
+    [prom](
+        const EcmClient*,
+        const DescribeRegionIpv6AddressesRequest&,
+        DescribeRegionIpv6AddressesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EcmClient::DescribeRouteConflictsOutcome EcmClient::DescribeRouteConflicts(const DescribeRouteConflictsRequest &request)
@@ -3029,25 +3512,32 @@ EcmClient::DescribeRouteConflictsOutcome EcmClient::DescribeRouteConflicts(const
 
 void EcmClient::DescribeRouteConflictsAsync(const DescribeRouteConflictsRequest& request, const DescribeRouteConflictsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeRouteConflicts(request), context);
-    };
+    using Req = const DescribeRouteConflictsRequest&;
+    using Resp = DescribeRouteConflictsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeRouteConflicts", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EcmClient::DescribeRouteConflictsOutcomeCallable EcmClient::DescribeRouteConflictsCallable(const DescribeRouteConflictsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeRouteConflictsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeRouteConflicts(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeRouteConflictsOutcome>>();
+    DescribeRouteConflictsAsync(
+    request,
+    [prom](
+        const EcmClient*,
+        const DescribeRouteConflictsRequest&,
+        DescribeRouteConflictsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EcmClient::DescribeRouteTablesOutcome EcmClient::DescribeRouteTables(const DescribeRouteTablesRequest &request)
@@ -3072,25 +3562,32 @@ EcmClient::DescribeRouteTablesOutcome EcmClient::DescribeRouteTables(const Descr
 
 void EcmClient::DescribeRouteTablesAsync(const DescribeRouteTablesRequest& request, const DescribeRouteTablesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeRouteTables(request), context);
-    };
+    using Req = const DescribeRouteTablesRequest&;
+    using Resp = DescribeRouteTablesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeRouteTables", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EcmClient::DescribeRouteTablesOutcomeCallable EcmClient::DescribeRouteTablesCallable(const DescribeRouteTablesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeRouteTablesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeRouteTables(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeRouteTablesOutcome>>();
+    DescribeRouteTablesAsync(
+    request,
+    [prom](
+        const EcmClient*,
+        const DescribeRouteTablesRequest&,
+        DescribeRouteTablesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EcmClient::DescribeSecurityGroupAssociationStatisticsOutcome EcmClient::DescribeSecurityGroupAssociationStatistics(const DescribeSecurityGroupAssociationStatisticsRequest &request)
@@ -3115,25 +3612,32 @@ EcmClient::DescribeSecurityGroupAssociationStatisticsOutcome EcmClient::Describe
 
 void EcmClient::DescribeSecurityGroupAssociationStatisticsAsync(const DescribeSecurityGroupAssociationStatisticsRequest& request, const DescribeSecurityGroupAssociationStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeSecurityGroupAssociationStatistics(request), context);
-    };
+    using Req = const DescribeSecurityGroupAssociationStatisticsRequest&;
+    using Resp = DescribeSecurityGroupAssociationStatisticsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeSecurityGroupAssociationStatistics", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EcmClient::DescribeSecurityGroupAssociationStatisticsOutcomeCallable EcmClient::DescribeSecurityGroupAssociationStatisticsCallable(const DescribeSecurityGroupAssociationStatisticsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeSecurityGroupAssociationStatisticsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeSecurityGroupAssociationStatistics(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeSecurityGroupAssociationStatisticsOutcome>>();
+    DescribeSecurityGroupAssociationStatisticsAsync(
+    request,
+    [prom](
+        const EcmClient*,
+        const DescribeSecurityGroupAssociationStatisticsRequest&,
+        DescribeSecurityGroupAssociationStatisticsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EcmClient::DescribeSecurityGroupLimitsOutcome EcmClient::DescribeSecurityGroupLimits(const DescribeSecurityGroupLimitsRequest &request)
@@ -3158,25 +3662,32 @@ EcmClient::DescribeSecurityGroupLimitsOutcome EcmClient::DescribeSecurityGroupLi
 
 void EcmClient::DescribeSecurityGroupLimitsAsync(const DescribeSecurityGroupLimitsRequest& request, const DescribeSecurityGroupLimitsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeSecurityGroupLimits(request), context);
-    };
+    using Req = const DescribeSecurityGroupLimitsRequest&;
+    using Resp = DescribeSecurityGroupLimitsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeSecurityGroupLimits", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EcmClient::DescribeSecurityGroupLimitsOutcomeCallable EcmClient::DescribeSecurityGroupLimitsCallable(const DescribeSecurityGroupLimitsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeSecurityGroupLimitsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeSecurityGroupLimits(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeSecurityGroupLimitsOutcome>>();
+    DescribeSecurityGroupLimitsAsync(
+    request,
+    [prom](
+        const EcmClient*,
+        const DescribeSecurityGroupLimitsRequest&,
+        DescribeSecurityGroupLimitsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EcmClient::DescribeSecurityGroupPoliciesOutcome EcmClient::DescribeSecurityGroupPolicies(const DescribeSecurityGroupPoliciesRequest &request)
@@ -3201,25 +3712,32 @@ EcmClient::DescribeSecurityGroupPoliciesOutcome EcmClient::DescribeSecurityGroup
 
 void EcmClient::DescribeSecurityGroupPoliciesAsync(const DescribeSecurityGroupPoliciesRequest& request, const DescribeSecurityGroupPoliciesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeSecurityGroupPolicies(request), context);
-    };
+    using Req = const DescribeSecurityGroupPoliciesRequest&;
+    using Resp = DescribeSecurityGroupPoliciesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeSecurityGroupPolicies", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EcmClient::DescribeSecurityGroupPoliciesOutcomeCallable EcmClient::DescribeSecurityGroupPoliciesCallable(const DescribeSecurityGroupPoliciesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeSecurityGroupPoliciesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeSecurityGroupPolicies(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeSecurityGroupPoliciesOutcome>>();
+    DescribeSecurityGroupPoliciesAsync(
+    request,
+    [prom](
+        const EcmClient*,
+        const DescribeSecurityGroupPoliciesRequest&,
+        DescribeSecurityGroupPoliciesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EcmClient::DescribeSecurityGroupsOutcome EcmClient::DescribeSecurityGroups(const DescribeSecurityGroupsRequest &request)
@@ -3244,25 +3762,32 @@ EcmClient::DescribeSecurityGroupsOutcome EcmClient::DescribeSecurityGroups(const
 
 void EcmClient::DescribeSecurityGroupsAsync(const DescribeSecurityGroupsRequest& request, const DescribeSecurityGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeSecurityGroups(request), context);
-    };
+    using Req = const DescribeSecurityGroupsRequest&;
+    using Resp = DescribeSecurityGroupsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeSecurityGroups", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EcmClient::DescribeSecurityGroupsOutcomeCallable EcmClient::DescribeSecurityGroupsCallable(const DescribeSecurityGroupsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeSecurityGroupsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeSecurityGroups(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeSecurityGroupsOutcome>>();
+    DescribeSecurityGroupsAsync(
+    request,
+    [prom](
+        const EcmClient*,
+        const DescribeSecurityGroupsRequest&,
+        DescribeSecurityGroupsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EcmClient::DescribeSnapshotsOutcome EcmClient::DescribeSnapshots(const DescribeSnapshotsRequest &request)
@@ -3287,25 +3812,32 @@ EcmClient::DescribeSnapshotsOutcome EcmClient::DescribeSnapshots(const DescribeS
 
 void EcmClient::DescribeSnapshotsAsync(const DescribeSnapshotsRequest& request, const DescribeSnapshotsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeSnapshots(request), context);
-    };
+    using Req = const DescribeSnapshotsRequest&;
+    using Resp = DescribeSnapshotsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeSnapshots", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EcmClient::DescribeSnapshotsOutcomeCallable EcmClient::DescribeSnapshotsCallable(const DescribeSnapshotsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeSnapshotsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeSnapshots(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeSnapshotsOutcome>>();
+    DescribeSnapshotsAsync(
+    request,
+    [prom](
+        const EcmClient*,
+        const DescribeSnapshotsRequest&,
+        DescribeSnapshotsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EcmClient::DescribeSubnetsOutcome EcmClient::DescribeSubnets(const DescribeSubnetsRequest &request)
@@ -3330,25 +3862,32 @@ EcmClient::DescribeSubnetsOutcome EcmClient::DescribeSubnets(const DescribeSubne
 
 void EcmClient::DescribeSubnetsAsync(const DescribeSubnetsRequest& request, const DescribeSubnetsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeSubnets(request), context);
-    };
+    using Req = const DescribeSubnetsRequest&;
+    using Resp = DescribeSubnetsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeSubnets", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EcmClient::DescribeSubnetsOutcomeCallable EcmClient::DescribeSubnetsCallable(const DescribeSubnetsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeSubnetsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeSubnets(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeSubnetsOutcome>>();
+    DescribeSubnetsAsync(
+    request,
+    [prom](
+        const EcmClient*,
+        const DescribeSubnetsRequest&,
+        DescribeSubnetsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EcmClient::DescribeTargetHealthOutcome EcmClient::DescribeTargetHealth(const DescribeTargetHealthRequest &request)
@@ -3373,25 +3912,32 @@ EcmClient::DescribeTargetHealthOutcome EcmClient::DescribeTargetHealth(const Des
 
 void EcmClient::DescribeTargetHealthAsync(const DescribeTargetHealthRequest& request, const DescribeTargetHealthAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeTargetHealth(request), context);
-    };
+    using Req = const DescribeTargetHealthRequest&;
+    using Resp = DescribeTargetHealthResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeTargetHealth", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EcmClient::DescribeTargetHealthOutcomeCallable EcmClient::DescribeTargetHealthCallable(const DescribeTargetHealthRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeTargetHealthOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeTargetHealth(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeTargetHealthOutcome>>();
+    DescribeTargetHealthAsync(
+    request,
+    [prom](
+        const EcmClient*,
+        const DescribeTargetHealthRequest&,
+        DescribeTargetHealthOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EcmClient::DescribeTargetsOutcome EcmClient::DescribeTargets(const DescribeTargetsRequest &request)
@@ -3416,25 +3962,32 @@ EcmClient::DescribeTargetsOutcome EcmClient::DescribeTargets(const DescribeTarge
 
 void EcmClient::DescribeTargetsAsync(const DescribeTargetsRequest& request, const DescribeTargetsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeTargets(request), context);
-    };
+    using Req = const DescribeTargetsRequest&;
+    using Resp = DescribeTargetsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeTargets", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EcmClient::DescribeTargetsOutcomeCallable EcmClient::DescribeTargetsCallable(const DescribeTargetsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeTargetsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeTargets(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeTargetsOutcome>>();
+    DescribeTargetsAsync(
+    request,
+    [prom](
+        const EcmClient*,
+        const DescribeTargetsRequest&,
+        DescribeTargetsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EcmClient::DescribeTaskResultOutcome EcmClient::DescribeTaskResult(const DescribeTaskResultRequest &request)
@@ -3459,25 +4012,32 @@ EcmClient::DescribeTaskResultOutcome EcmClient::DescribeTaskResult(const Describ
 
 void EcmClient::DescribeTaskResultAsync(const DescribeTaskResultRequest& request, const DescribeTaskResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeTaskResult(request), context);
-    };
+    using Req = const DescribeTaskResultRequest&;
+    using Resp = DescribeTaskResultResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeTaskResult", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EcmClient::DescribeTaskResultOutcomeCallable EcmClient::DescribeTaskResultCallable(const DescribeTaskResultRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeTaskResultOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeTaskResult(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeTaskResultOutcome>>();
+    DescribeTaskResultAsync(
+    request,
+    [prom](
+        const EcmClient*,
+        const DescribeTaskResultRequest&,
+        DescribeTaskResultOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EcmClient::DescribeTaskStatusOutcome EcmClient::DescribeTaskStatus(const DescribeTaskStatusRequest &request)
@@ -3502,25 +4062,32 @@ EcmClient::DescribeTaskStatusOutcome EcmClient::DescribeTaskStatus(const Describ
 
 void EcmClient::DescribeTaskStatusAsync(const DescribeTaskStatusRequest& request, const DescribeTaskStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeTaskStatus(request), context);
-    };
+    using Req = const DescribeTaskStatusRequest&;
+    using Resp = DescribeTaskStatusResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeTaskStatus", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EcmClient::DescribeTaskStatusOutcomeCallable EcmClient::DescribeTaskStatusCallable(const DescribeTaskStatusRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeTaskStatusOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeTaskStatus(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeTaskStatusOutcome>>();
+    DescribeTaskStatusAsync(
+    request,
+    [prom](
+        const EcmClient*,
+        const DescribeTaskStatusRequest&,
+        DescribeTaskStatusOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EcmClient::DescribeVpcsOutcome EcmClient::DescribeVpcs(const DescribeVpcsRequest &request)
@@ -3545,25 +4112,32 @@ EcmClient::DescribeVpcsOutcome EcmClient::DescribeVpcs(const DescribeVpcsRequest
 
 void EcmClient::DescribeVpcsAsync(const DescribeVpcsRequest& request, const DescribeVpcsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeVpcs(request), context);
-    };
+    using Req = const DescribeVpcsRequest&;
+    using Resp = DescribeVpcsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeVpcs", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EcmClient::DescribeVpcsOutcomeCallable EcmClient::DescribeVpcsCallable(const DescribeVpcsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeVpcsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeVpcs(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeVpcsOutcome>>();
+    DescribeVpcsAsync(
+    request,
+    [prom](
+        const EcmClient*,
+        const DescribeVpcsRequest&,
+        DescribeVpcsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EcmClient::DetachDisksOutcome EcmClient::DetachDisks(const DetachDisksRequest &request)
@@ -3588,25 +4162,32 @@ EcmClient::DetachDisksOutcome EcmClient::DetachDisks(const DetachDisksRequest &r
 
 void EcmClient::DetachDisksAsync(const DetachDisksRequest& request, const DetachDisksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DetachDisks(request), context);
-    };
+    using Req = const DetachDisksRequest&;
+    using Resp = DetachDisksResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DetachDisks", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EcmClient::DetachDisksOutcomeCallable EcmClient::DetachDisksCallable(const DetachDisksRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DetachDisksOutcome()>>(
-        [this, request]()
-        {
-            return this->DetachDisks(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DetachDisksOutcome>>();
+    DetachDisksAsync(
+    request,
+    [prom](
+        const EcmClient*,
+        const DetachDisksRequest&,
+        DetachDisksOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EcmClient::DetachNetworkInterfaceOutcome EcmClient::DetachNetworkInterface(const DetachNetworkInterfaceRequest &request)
@@ -3631,25 +4212,32 @@ EcmClient::DetachNetworkInterfaceOutcome EcmClient::DetachNetworkInterface(const
 
 void EcmClient::DetachNetworkInterfaceAsync(const DetachNetworkInterfaceRequest& request, const DetachNetworkInterfaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DetachNetworkInterface(request), context);
-    };
+    using Req = const DetachNetworkInterfaceRequest&;
+    using Resp = DetachNetworkInterfaceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DetachNetworkInterface", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EcmClient::DetachNetworkInterfaceOutcomeCallable EcmClient::DetachNetworkInterfaceCallable(const DetachNetworkInterfaceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DetachNetworkInterfaceOutcome()>>(
-        [this, request]()
-        {
-            return this->DetachNetworkInterface(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DetachNetworkInterfaceOutcome>>();
+    DetachNetworkInterfaceAsync(
+    request,
+    [prom](
+        const EcmClient*,
+        const DetachNetworkInterfaceRequest&,
+        DetachNetworkInterfaceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EcmClient::DisableRoutesOutcome EcmClient::DisableRoutes(const DisableRoutesRequest &request)
@@ -3674,25 +4262,32 @@ EcmClient::DisableRoutesOutcome EcmClient::DisableRoutes(const DisableRoutesRequ
 
 void EcmClient::DisableRoutesAsync(const DisableRoutesRequest& request, const DisableRoutesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DisableRoutes(request), context);
-    };
+    using Req = const DisableRoutesRequest&;
+    using Resp = DisableRoutesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DisableRoutes", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EcmClient::DisableRoutesOutcomeCallable EcmClient::DisableRoutesCallable(const DisableRoutesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DisableRoutesOutcome()>>(
-        [this, request]()
-        {
-            return this->DisableRoutes(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DisableRoutesOutcome>>();
+    DisableRoutesAsync(
+    request,
+    [prom](
+        const EcmClient*,
+        const DisableRoutesRequest&,
+        DisableRoutesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EcmClient::DisassociateAddressOutcome EcmClient::DisassociateAddress(const DisassociateAddressRequest &request)
@@ -3717,25 +4312,32 @@ EcmClient::DisassociateAddressOutcome EcmClient::DisassociateAddress(const Disas
 
 void EcmClient::DisassociateAddressAsync(const DisassociateAddressRequest& request, const DisassociateAddressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DisassociateAddress(request), context);
-    };
+    using Req = const DisassociateAddressRequest&;
+    using Resp = DisassociateAddressResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DisassociateAddress", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EcmClient::DisassociateAddressOutcomeCallable EcmClient::DisassociateAddressCallable(const DisassociateAddressRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DisassociateAddressOutcome()>>(
-        [this, request]()
-        {
-            return this->DisassociateAddress(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DisassociateAddressOutcome>>();
+    DisassociateAddressAsync(
+    request,
+    [prom](
+        const EcmClient*,
+        const DisassociateAddressRequest&,
+        DisassociateAddressOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EcmClient::DisassociateInstancesKeyPairsOutcome EcmClient::DisassociateInstancesKeyPairs(const DisassociateInstancesKeyPairsRequest &request)
@@ -3760,25 +4362,32 @@ EcmClient::DisassociateInstancesKeyPairsOutcome EcmClient::DisassociateInstances
 
 void EcmClient::DisassociateInstancesKeyPairsAsync(const DisassociateInstancesKeyPairsRequest& request, const DisassociateInstancesKeyPairsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DisassociateInstancesKeyPairs(request), context);
-    };
+    using Req = const DisassociateInstancesKeyPairsRequest&;
+    using Resp = DisassociateInstancesKeyPairsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DisassociateInstancesKeyPairs", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EcmClient::DisassociateInstancesKeyPairsOutcomeCallable EcmClient::DisassociateInstancesKeyPairsCallable(const DisassociateInstancesKeyPairsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DisassociateInstancesKeyPairsOutcome()>>(
-        [this, request]()
-        {
-            return this->DisassociateInstancesKeyPairs(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DisassociateInstancesKeyPairsOutcome>>();
+    DisassociateInstancesKeyPairsAsync(
+    request,
+    [prom](
+        const EcmClient*,
+        const DisassociateInstancesKeyPairsRequest&,
+        DisassociateInstancesKeyPairsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EcmClient::DisassociateSecurityGroupsOutcome EcmClient::DisassociateSecurityGroups(const DisassociateSecurityGroupsRequest &request)
@@ -3803,25 +4412,32 @@ EcmClient::DisassociateSecurityGroupsOutcome EcmClient::DisassociateSecurityGrou
 
 void EcmClient::DisassociateSecurityGroupsAsync(const DisassociateSecurityGroupsRequest& request, const DisassociateSecurityGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DisassociateSecurityGroups(request), context);
-    };
+    using Req = const DisassociateSecurityGroupsRequest&;
+    using Resp = DisassociateSecurityGroupsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DisassociateSecurityGroups", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EcmClient::DisassociateSecurityGroupsOutcomeCallable EcmClient::DisassociateSecurityGroupsCallable(const DisassociateSecurityGroupsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DisassociateSecurityGroupsOutcome()>>(
-        [this, request]()
-        {
-            return this->DisassociateSecurityGroups(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DisassociateSecurityGroupsOutcome>>();
+    DisassociateSecurityGroupsAsync(
+    request,
+    [prom](
+        const EcmClient*,
+        const DisassociateSecurityGroupsRequest&,
+        DisassociateSecurityGroupsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EcmClient::EnableRoutesOutcome EcmClient::EnableRoutes(const EnableRoutesRequest &request)
@@ -3846,25 +4462,32 @@ EcmClient::EnableRoutesOutcome EcmClient::EnableRoutes(const EnableRoutesRequest
 
 void EcmClient::EnableRoutesAsync(const EnableRoutesRequest& request, const EnableRoutesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->EnableRoutes(request), context);
-    };
+    using Req = const EnableRoutesRequest&;
+    using Resp = EnableRoutesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "EnableRoutes", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EcmClient::EnableRoutesOutcomeCallable EcmClient::EnableRoutesCallable(const EnableRoutesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<EnableRoutesOutcome()>>(
-        [this, request]()
-        {
-            return this->EnableRoutes(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<EnableRoutesOutcome>>();
+    EnableRoutesAsync(
+    request,
+    [prom](
+        const EcmClient*,
+        const EnableRoutesRequest&,
+        EnableRoutesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EcmClient::ImportCustomImageOutcome EcmClient::ImportCustomImage(const ImportCustomImageRequest &request)
@@ -3889,25 +4512,32 @@ EcmClient::ImportCustomImageOutcome EcmClient::ImportCustomImage(const ImportCus
 
 void EcmClient::ImportCustomImageAsync(const ImportCustomImageRequest& request, const ImportCustomImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ImportCustomImage(request), context);
-    };
+    using Req = const ImportCustomImageRequest&;
+    using Resp = ImportCustomImageResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ImportCustomImage", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EcmClient::ImportCustomImageOutcomeCallable EcmClient::ImportCustomImageCallable(const ImportCustomImageRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ImportCustomImageOutcome()>>(
-        [this, request]()
-        {
-            return this->ImportCustomImage(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ImportCustomImageOutcome>>();
+    ImportCustomImageAsync(
+    request,
+    [prom](
+        const EcmClient*,
+        const ImportCustomImageRequest&,
+        ImportCustomImageOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EcmClient::ImportImageOutcome EcmClient::ImportImage(const ImportImageRequest &request)
@@ -3932,25 +4562,32 @@ EcmClient::ImportImageOutcome EcmClient::ImportImage(const ImportImageRequest &r
 
 void EcmClient::ImportImageAsync(const ImportImageRequest& request, const ImportImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ImportImage(request), context);
-    };
+    using Req = const ImportImageRequest&;
+    using Resp = ImportImageResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ImportImage", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EcmClient::ImportImageOutcomeCallable EcmClient::ImportImageCallable(const ImportImageRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ImportImageOutcome()>>(
-        [this, request]()
-        {
-            return this->ImportImage(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ImportImageOutcome>>();
+    ImportImageAsync(
+    request,
+    [prom](
+        const EcmClient*,
+        const ImportImageRequest&,
+        ImportImageOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EcmClient::MigrateNetworkInterfaceOutcome EcmClient::MigrateNetworkInterface(const MigrateNetworkInterfaceRequest &request)
@@ -3975,25 +4612,32 @@ EcmClient::MigrateNetworkInterfaceOutcome EcmClient::MigrateNetworkInterface(con
 
 void EcmClient::MigrateNetworkInterfaceAsync(const MigrateNetworkInterfaceRequest& request, const MigrateNetworkInterfaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->MigrateNetworkInterface(request), context);
-    };
+    using Req = const MigrateNetworkInterfaceRequest&;
+    using Resp = MigrateNetworkInterfaceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "MigrateNetworkInterface", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EcmClient::MigrateNetworkInterfaceOutcomeCallable EcmClient::MigrateNetworkInterfaceCallable(const MigrateNetworkInterfaceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<MigrateNetworkInterfaceOutcome()>>(
-        [this, request]()
-        {
-            return this->MigrateNetworkInterface(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<MigrateNetworkInterfaceOutcome>>();
+    MigrateNetworkInterfaceAsync(
+    request,
+    [prom](
+        const EcmClient*,
+        const MigrateNetworkInterfaceRequest&,
+        MigrateNetworkInterfaceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EcmClient::MigratePrivateIpAddressOutcome EcmClient::MigratePrivateIpAddress(const MigratePrivateIpAddressRequest &request)
@@ -4018,25 +4662,32 @@ EcmClient::MigratePrivateIpAddressOutcome EcmClient::MigratePrivateIpAddress(con
 
 void EcmClient::MigratePrivateIpAddressAsync(const MigratePrivateIpAddressRequest& request, const MigratePrivateIpAddressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->MigratePrivateIpAddress(request), context);
-    };
+    using Req = const MigratePrivateIpAddressRequest&;
+    using Resp = MigratePrivateIpAddressResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "MigratePrivateIpAddress", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EcmClient::MigratePrivateIpAddressOutcomeCallable EcmClient::MigratePrivateIpAddressCallable(const MigratePrivateIpAddressRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<MigratePrivateIpAddressOutcome()>>(
-        [this, request]()
-        {
-            return this->MigratePrivateIpAddress(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<MigratePrivateIpAddressOutcome>>();
+    MigratePrivateIpAddressAsync(
+    request,
+    [prom](
+        const EcmClient*,
+        const MigratePrivateIpAddressRequest&,
+        MigratePrivateIpAddressOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EcmClient::ModifyAddressAttributeOutcome EcmClient::ModifyAddressAttribute(const ModifyAddressAttributeRequest &request)
@@ -4061,25 +4712,32 @@ EcmClient::ModifyAddressAttributeOutcome EcmClient::ModifyAddressAttribute(const
 
 void EcmClient::ModifyAddressAttributeAsync(const ModifyAddressAttributeRequest& request, const ModifyAddressAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyAddressAttribute(request), context);
-    };
+    using Req = const ModifyAddressAttributeRequest&;
+    using Resp = ModifyAddressAttributeResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyAddressAttribute", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EcmClient::ModifyAddressAttributeOutcomeCallable EcmClient::ModifyAddressAttributeCallable(const ModifyAddressAttributeRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyAddressAttributeOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyAddressAttribute(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyAddressAttributeOutcome>>();
+    ModifyAddressAttributeAsync(
+    request,
+    [prom](
+        const EcmClient*,
+        const ModifyAddressAttributeRequest&,
+        ModifyAddressAttributeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EcmClient::ModifyAddressesBandwidthOutcome EcmClient::ModifyAddressesBandwidth(const ModifyAddressesBandwidthRequest &request)
@@ -4104,25 +4762,32 @@ EcmClient::ModifyAddressesBandwidthOutcome EcmClient::ModifyAddressesBandwidth(c
 
 void EcmClient::ModifyAddressesBandwidthAsync(const ModifyAddressesBandwidthRequest& request, const ModifyAddressesBandwidthAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyAddressesBandwidth(request), context);
-    };
+    using Req = const ModifyAddressesBandwidthRequest&;
+    using Resp = ModifyAddressesBandwidthResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyAddressesBandwidth", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EcmClient::ModifyAddressesBandwidthOutcomeCallable EcmClient::ModifyAddressesBandwidthCallable(const ModifyAddressesBandwidthRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyAddressesBandwidthOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyAddressesBandwidth(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyAddressesBandwidthOutcome>>();
+    ModifyAddressesBandwidthAsync(
+    request,
+    [prom](
+        const EcmClient*,
+        const ModifyAddressesBandwidthRequest&,
+        ModifyAddressesBandwidthOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EcmClient::ModifyDefaultSubnetOutcome EcmClient::ModifyDefaultSubnet(const ModifyDefaultSubnetRequest &request)
@@ -4147,25 +4812,32 @@ EcmClient::ModifyDefaultSubnetOutcome EcmClient::ModifyDefaultSubnet(const Modif
 
 void EcmClient::ModifyDefaultSubnetAsync(const ModifyDefaultSubnetRequest& request, const ModifyDefaultSubnetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyDefaultSubnet(request), context);
-    };
+    using Req = const ModifyDefaultSubnetRequest&;
+    using Resp = ModifyDefaultSubnetResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyDefaultSubnet", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EcmClient::ModifyDefaultSubnetOutcomeCallable EcmClient::ModifyDefaultSubnetCallable(const ModifyDefaultSubnetRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyDefaultSubnetOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyDefaultSubnet(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyDefaultSubnetOutcome>>();
+    ModifyDefaultSubnetAsync(
+    request,
+    [prom](
+        const EcmClient*,
+        const ModifyDefaultSubnetRequest&,
+        ModifyDefaultSubnetOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EcmClient::ModifyHaVipAttributeOutcome EcmClient::ModifyHaVipAttribute(const ModifyHaVipAttributeRequest &request)
@@ -4190,25 +4862,32 @@ EcmClient::ModifyHaVipAttributeOutcome EcmClient::ModifyHaVipAttribute(const Mod
 
 void EcmClient::ModifyHaVipAttributeAsync(const ModifyHaVipAttributeRequest& request, const ModifyHaVipAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyHaVipAttribute(request), context);
-    };
+    using Req = const ModifyHaVipAttributeRequest&;
+    using Resp = ModifyHaVipAttributeResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyHaVipAttribute", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EcmClient::ModifyHaVipAttributeOutcomeCallable EcmClient::ModifyHaVipAttributeCallable(const ModifyHaVipAttributeRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyHaVipAttributeOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyHaVipAttribute(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyHaVipAttributeOutcome>>();
+    ModifyHaVipAttributeAsync(
+    request,
+    [prom](
+        const EcmClient*,
+        const ModifyHaVipAttributeRequest&,
+        ModifyHaVipAttributeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EcmClient::ModifyImageAttributeOutcome EcmClient::ModifyImageAttribute(const ModifyImageAttributeRequest &request)
@@ -4233,25 +4912,32 @@ EcmClient::ModifyImageAttributeOutcome EcmClient::ModifyImageAttribute(const Mod
 
 void EcmClient::ModifyImageAttributeAsync(const ModifyImageAttributeRequest& request, const ModifyImageAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyImageAttribute(request), context);
-    };
+    using Req = const ModifyImageAttributeRequest&;
+    using Resp = ModifyImageAttributeResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyImageAttribute", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EcmClient::ModifyImageAttributeOutcomeCallable EcmClient::ModifyImageAttributeCallable(const ModifyImageAttributeRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyImageAttributeOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyImageAttribute(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyImageAttributeOutcome>>();
+    ModifyImageAttributeAsync(
+    request,
+    [prom](
+        const EcmClient*,
+        const ModifyImageAttributeRequest&,
+        ModifyImageAttributeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EcmClient::ModifyInstancesAttributeOutcome EcmClient::ModifyInstancesAttribute(const ModifyInstancesAttributeRequest &request)
@@ -4276,25 +4962,32 @@ EcmClient::ModifyInstancesAttributeOutcome EcmClient::ModifyInstancesAttribute(c
 
 void EcmClient::ModifyInstancesAttributeAsync(const ModifyInstancesAttributeRequest& request, const ModifyInstancesAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyInstancesAttribute(request), context);
-    };
+    using Req = const ModifyInstancesAttributeRequest&;
+    using Resp = ModifyInstancesAttributeResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyInstancesAttribute", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EcmClient::ModifyInstancesAttributeOutcomeCallable EcmClient::ModifyInstancesAttributeCallable(const ModifyInstancesAttributeRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyInstancesAttributeOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyInstancesAttribute(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyInstancesAttributeOutcome>>();
+    ModifyInstancesAttributeAsync(
+    request,
+    [prom](
+        const EcmClient*,
+        const ModifyInstancesAttributeRequest&,
+        ModifyInstancesAttributeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EcmClient::ModifyIpv6AddressesAttributeOutcome EcmClient::ModifyIpv6AddressesAttribute(const ModifyIpv6AddressesAttributeRequest &request)
@@ -4319,25 +5012,32 @@ EcmClient::ModifyIpv6AddressesAttributeOutcome EcmClient::ModifyIpv6AddressesAtt
 
 void EcmClient::ModifyIpv6AddressesAttributeAsync(const ModifyIpv6AddressesAttributeRequest& request, const ModifyIpv6AddressesAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyIpv6AddressesAttribute(request), context);
-    };
+    using Req = const ModifyIpv6AddressesAttributeRequest&;
+    using Resp = ModifyIpv6AddressesAttributeResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyIpv6AddressesAttribute", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EcmClient::ModifyIpv6AddressesAttributeOutcomeCallable EcmClient::ModifyIpv6AddressesAttributeCallable(const ModifyIpv6AddressesAttributeRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyIpv6AddressesAttributeOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyIpv6AddressesAttribute(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyIpv6AddressesAttributeOutcome>>();
+    ModifyIpv6AddressesAttributeAsync(
+    request,
+    [prom](
+        const EcmClient*,
+        const ModifyIpv6AddressesAttributeRequest&,
+        ModifyIpv6AddressesAttributeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EcmClient::ModifyIpv6AddressesBandwidthOutcome EcmClient::ModifyIpv6AddressesBandwidth(const ModifyIpv6AddressesBandwidthRequest &request)
@@ -4362,25 +5062,32 @@ EcmClient::ModifyIpv6AddressesBandwidthOutcome EcmClient::ModifyIpv6AddressesBan
 
 void EcmClient::ModifyIpv6AddressesBandwidthAsync(const ModifyIpv6AddressesBandwidthRequest& request, const ModifyIpv6AddressesBandwidthAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyIpv6AddressesBandwidth(request), context);
-    };
+    using Req = const ModifyIpv6AddressesBandwidthRequest&;
+    using Resp = ModifyIpv6AddressesBandwidthResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyIpv6AddressesBandwidth", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EcmClient::ModifyIpv6AddressesBandwidthOutcomeCallable EcmClient::ModifyIpv6AddressesBandwidthCallable(const ModifyIpv6AddressesBandwidthRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyIpv6AddressesBandwidthOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyIpv6AddressesBandwidth(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyIpv6AddressesBandwidthOutcome>>();
+    ModifyIpv6AddressesBandwidthAsync(
+    request,
+    [prom](
+        const EcmClient*,
+        const ModifyIpv6AddressesBandwidthRequest&,
+        ModifyIpv6AddressesBandwidthOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EcmClient::ModifyListenerOutcome EcmClient::ModifyListener(const ModifyListenerRequest &request)
@@ -4405,25 +5112,32 @@ EcmClient::ModifyListenerOutcome EcmClient::ModifyListener(const ModifyListenerR
 
 void EcmClient::ModifyListenerAsync(const ModifyListenerRequest& request, const ModifyListenerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyListener(request), context);
-    };
+    using Req = const ModifyListenerRequest&;
+    using Resp = ModifyListenerResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyListener", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EcmClient::ModifyListenerOutcomeCallable EcmClient::ModifyListenerCallable(const ModifyListenerRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyListenerOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyListener(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyListenerOutcome>>();
+    ModifyListenerAsync(
+    request,
+    [prom](
+        const EcmClient*,
+        const ModifyListenerRequest&,
+        ModifyListenerOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EcmClient::ModifyLoadBalancerAttributesOutcome EcmClient::ModifyLoadBalancerAttributes(const ModifyLoadBalancerAttributesRequest &request)
@@ -4448,25 +5162,32 @@ EcmClient::ModifyLoadBalancerAttributesOutcome EcmClient::ModifyLoadBalancerAttr
 
 void EcmClient::ModifyLoadBalancerAttributesAsync(const ModifyLoadBalancerAttributesRequest& request, const ModifyLoadBalancerAttributesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyLoadBalancerAttributes(request), context);
-    };
+    using Req = const ModifyLoadBalancerAttributesRequest&;
+    using Resp = ModifyLoadBalancerAttributesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyLoadBalancerAttributes", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EcmClient::ModifyLoadBalancerAttributesOutcomeCallable EcmClient::ModifyLoadBalancerAttributesCallable(const ModifyLoadBalancerAttributesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyLoadBalancerAttributesOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyLoadBalancerAttributes(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyLoadBalancerAttributesOutcome>>();
+    ModifyLoadBalancerAttributesAsync(
+    request,
+    [prom](
+        const EcmClient*,
+        const ModifyLoadBalancerAttributesRequest&,
+        ModifyLoadBalancerAttributesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EcmClient::ModifyModuleConfigOutcome EcmClient::ModifyModuleConfig(const ModifyModuleConfigRequest &request)
@@ -4491,25 +5212,32 @@ EcmClient::ModifyModuleConfigOutcome EcmClient::ModifyModuleConfig(const ModifyM
 
 void EcmClient::ModifyModuleConfigAsync(const ModifyModuleConfigRequest& request, const ModifyModuleConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyModuleConfig(request), context);
-    };
+    using Req = const ModifyModuleConfigRequest&;
+    using Resp = ModifyModuleConfigResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyModuleConfig", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EcmClient::ModifyModuleConfigOutcomeCallable EcmClient::ModifyModuleConfigCallable(const ModifyModuleConfigRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyModuleConfigOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyModuleConfig(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyModuleConfigOutcome>>();
+    ModifyModuleConfigAsync(
+    request,
+    [prom](
+        const EcmClient*,
+        const ModifyModuleConfigRequest&,
+        ModifyModuleConfigOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EcmClient::ModifyModuleDisableWanIpOutcome EcmClient::ModifyModuleDisableWanIp(const ModifyModuleDisableWanIpRequest &request)
@@ -4534,25 +5262,32 @@ EcmClient::ModifyModuleDisableWanIpOutcome EcmClient::ModifyModuleDisableWanIp(c
 
 void EcmClient::ModifyModuleDisableWanIpAsync(const ModifyModuleDisableWanIpRequest& request, const ModifyModuleDisableWanIpAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyModuleDisableWanIp(request), context);
-    };
+    using Req = const ModifyModuleDisableWanIpRequest&;
+    using Resp = ModifyModuleDisableWanIpResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyModuleDisableWanIp", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EcmClient::ModifyModuleDisableWanIpOutcomeCallable EcmClient::ModifyModuleDisableWanIpCallable(const ModifyModuleDisableWanIpRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyModuleDisableWanIpOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyModuleDisableWanIp(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyModuleDisableWanIpOutcome>>();
+    ModifyModuleDisableWanIpAsync(
+    request,
+    [prom](
+        const EcmClient*,
+        const ModifyModuleDisableWanIpRequest&,
+        ModifyModuleDisableWanIpOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EcmClient::ModifyModuleImageOutcome EcmClient::ModifyModuleImage(const ModifyModuleImageRequest &request)
@@ -4577,25 +5312,32 @@ EcmClient::ModifyModuleImageOutcome EcmClient::ModifyModuleImage(const ModifyMod
 
 void EcmClient::ModifyModuleImageAsync(const ModifyModuleImageRequest& request, const ModifyModuleImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyModuleImage(request), context);
-    };
+    using Req = const ModifyModuleImageRequest&;
+    using Resp = ModifyModuleImageResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyModuleImage", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EcmClient::ModifyModuleImageOutcomeCallable EcmClient::ModifyModuleImageCallable(const ModifyModuleImageRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyModuleImageOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyModuleImage(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyModuleImageOutcome>>();
+    ModifyModuleImageAsync(
+    request,
+    [prom](
+        const EcmClient*,
+        const ModifyModuleImageRequest&,
+        ModifyModuleImageOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EcmClient::ModifyModuleIpDirectOutcome EcmClient::ModifyModuleIpDirect(const ModifyModuleIpDirectRequest &request)
@@ -4620,25 +5362,32 @@ EcmClient::ModifyModuleIpDirectOutcome EcmClient::ModifyModuleIpDirect(const Mod
 
 void EcmClient::ModifyModuleIpDirectAsync(const ModifyModuleIpDirectRequest& request, const ModifyModuleIpDirectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyModuleIpDirect(request), context);
-    };
+    using Req = const ModifyModuleIpDirectRequest&;
+    using Resp = ModifyModuleIpDirectResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyModuleIpDirect", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EcmClient::ModifyModuleIpDirectOutcomeCallable EcmClient::ModifyModuleIpDirectCallable(const ModifyModuleIpDirectRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyModuleIpDirectOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyModuleIpDirect(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyModuleIpDirectOutcome>>();
+    ModifyModuleIpDirectAsync(
+    request,
+    [prom](
+        const EcmClient*,
+        const ModifyModuleIpDirectRequest&,
+        ModifyModuleIpDirectOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EcmClient::ModifyModuleNameOutcome EcmClient::ModifyModuleName(const ModifyModuleNameRequest &request)
@@ -4663,25 +5412,32 @@ EcmClient::ModifyModuleNameOutcome EcmClient::ModifyModuleName(const ModifyModul
 
 void EcmClient::ModifyModuleNameAsync(const ModifyModuleNameRequest& request, const ModifyModuleNameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyModuleName(request), context);
-    };
+    using Req = const ModifyModuleNameRequest&;
+    using Resp = ModifyModuleNameResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyModuleName", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EcmClient::ModifyModuleNameOutcomeCallable EcmClient::ModifyModuleNameCallable(const ModifyModuleNameRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyModuleNameOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyModuleName(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyModuleNameOutcome>>();
+    ModifyModuleNameAsync(
+    request,
+    [prom](
+        const EcmClient*,
+        const ModifyModuleNameRequest&,
+        ModifyModuleNameOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EcmClient::ModifyModuleNetworkOutcome EcmClient::ModifyModuleNetwork(const ModifyModuleNetworkRequest &request)
@@ -4706,25 +5462,32 @@ EcmClient::ModifyModuleNetworkOutcome EcmClient::ModifyModuleNetwork(const Modif
 
 void EcmClient::ModifyModuleNetworkAsync(const ModifyModuleNetworkRequest& request, const ModifyModuleNetworkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyModuleNetwork(request), context);
-    };
+    using Req = const ModifyModuleNetworkRequest&;
+    using Resp = ModifyModuleNetworkResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyModuleNetwork", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EcmClient::ModifyModuleNetworkOutcomeCallable EcmClient::ModifyModuleNetworkCallable(const ModifyModuleNetworkRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyModuleNetworkOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyModuleNetwork(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyModuleNetworkOutcome>>();
+    ModifyModuleNetworkAsync(
+    request,
+    [prom](
+        const EcmClient*,
+        const ModifyModuleNetworkRequest&,
+        ModifyModuleNetworkOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EcmClient::ModifyModuleSecurityGroupsOutcome EcmClient::ModifyModuleSecurityGroups(const ModifyModuleSecurityGroupsRequest &request)
@@ -4749,25 +5512,32 @@ EcmClient::ModifyModuleSecurityGroupsOutcome EcmClient::ModifyModuleSecurityGrou
 
 void EcmClient::ModifyModuleSecurityGroupsAsync(const ModifyModuleSecurityGroupsRequest& request, const ModifyModuleSecurityGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyModuleSecurityGroups(request), context);
-    };
+    using Req = const ModifyModuleSecurityGroupsRequest&;
+    using Resp = ModifyModuleSecurityGroupsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyModuleSecurityGroups", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EcmClient::ModifyModuleSecurityGroupsOutcomeCallable EcmClient::ModifyModuleSecurityGroupsCallable(const ModifyModuleSecurityGroupsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyModuleSecurityGroupsOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyModuleSecurityGroups(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyModuleSecurityGroupsOutcome>>();
+    ModifyModuleSecurityGroupsAsync(
+    request,
+    [prom](
+        const EcmClient*,
+        const ModifyModuleSecurityGroupsRequest&,
+        ModifyModuleSecurityGroupsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EcmClient::ModifyPrivateIpAddressesAttributeOutcome EcmClient::ModifyPrivateIpAddressesAttribute(const ModifyPrivateIpAddressesAttributeRequest &request)
@@ -4792,25 +5562,32 @@ EcmClient::ModifyPrivateIpAddressesAttributeOutcome EcmClient::ModifyPrivateIpAd
 
 void EcmClient::ModifyPrivateIpAddressesAttributeAsync(const ModifyPrivateIpAddressesAttributeRequest& request, const ModifyPrivateIpAddressesAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyPrivateIpAddressesAttribute(request), context);
-    };
+    using Req = const ModifyPrivateIpAddressesAttributeRequest&;
+    using Resp = ModifyPrivateIpAddressesAttributeResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyPrivateIpAddressesAttribute", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EcmClient::ModifyPrivateIpAddressesAttributeOutcomeCallable EcmClient::ModifyPrivateIpAddressesAttributeCallable(const ModifyPrivateIpAddressesAttributeRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyPrivateIpAddressesAttributeOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyPrivateIpAddressesAttribute(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyPrivateIpAddressesAttributeOutcome>>();
+    ModifyPrivateIpAddressesAttributeAsync(
+    request,
+    [prom](
+        const EcmClient*,
+        const ModifyPrivateIpAddressesAttributeRequest&,
+        ModifyPrivateIpAddressesAttributeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EcmClient::ModifyRouteTableAttributeOutcome EcmClient::ModifyRouteTableAttribute(const ModifyRouteTableAttributeRequest &request)
@@ -4835,25 +5612,32 @@ EcmClient::ModifyRouteTableAttributeOutcome EcmClient::ModifyRouteTableAttribute
 
 void EcmClient::ModifyRouteTableAttributeAsync(const ModifyRouteTableAttributeRequest& request, const ModifyRouteTableAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyRouteTableAttribute(request), context);
-    };
+    using Req = const ModifyRouteTableAttributeRequest&;
+    using Resp = ModifyRouteTableAttributeResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyRouteTableAttribute", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EcmClient::ModifyRouteTableAttributeOutcomeCallable EcmClient::ModifyRouteTableAttributeCallable(const ModifyRouteTableAttributeRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyRouteTableAttributeOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyRouteTableAttribute(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyRouteTableAttributeOutcome>>();
+    ModifyRouteTableAttributeAsync(
+    request,
+    [prom](
+        const EcmClient*,
+        const ModifyRouteTableAttributeRequest&,
+        ModifyRouteTableAttributeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EcmClient::ModifySecurityGroupAttributeOutcome EcmClient::ModifySecurityGroupAttribute(const ModifySecurityGroupAttributeRequest &request)
@@ -4878,25 +5662,32 @@ EcmClient::ModifySecurityGroupAttributeOutcome EcmClient::ModifySecurityGroupAtt
 
 void EcmClient::ModifySecurityGroupAttributeAsync(const ModifySecurityGroupAttributeRequest& request, const ModifySecurityGroupAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifySecurityGroupAttribute(request), context);
-    };
+    using Req = const ModifySecurityGroupAttributeRequest&;
+    using Resp = ModifySecurityGroupAttributeResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifySecurityGroupAttribute", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EcmClient::ModifySecurityGroupAttributeOutcomeCallable EcmClient::ModifySecurityGroupAttributeCallable(const ModifySecurityGroupAttributeRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifySecurityGroupAttributeOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifySecurityGroupAttribute(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifySecurityGroupAttributeOutcome>>();
+    ModifySecurityGroupAttributeAsync(
+    request,
+    [prom](
+        const EcmClient*,
+        const ModifySecurityGroupAttributeRequest&,
+        ModifySecurityGroupAttributeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EcmClient::ModifySecurityGroupPoliciesOutcome EcmClient::ModifySecurityGroupPolicies(const ModifySecurityGroupPoliciesRequest &request)
@@ -4921,25 +5712,32 @@ EcmClient::ModifySecurityGroupPoliciesOutcome EcmClient::ModifySecurityGroupPoli
 
 void EcmClient::ModifySecurityGroupPoliciesAsync(const ModifySecurityGroupPoliciesRequest& request, const ModifySecurityGroupPoliciesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifySecurityGroupPolicies(request), context);
-    };
+    using Req = const ModifySecurityGroupPoliciesRequest&;
+    using Resp = ModifySecurityGroupPoliciesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifySecurityGroupPolicies", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EcmClient::ModifySecurityGroupPoliciesOutcomeCallable EcmClient::ModifySecurityGroupPoliciesCallable(const ModifySecurityGroupPoliciesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifySecurityGroupPoliciesOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifySecurityGroupPolicies(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifySecurityGroupPoliciesOutcome>>();
+    ModifySecurityGroupPoliciesAsync(
+    request,
+    [prom](
+        const EcmClient*,
+        const ModifySecurityGroupPoliciesRequest&,
+        ModifySecurityGroupPoliciesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EcmClient::ModifySubnetAttributeOutcome EcmClient::ModifySubnetAttribute(const ModifySubnetAttributeRequest &request)
@@ -4964,25 +5762,32 @@ EcmClient::ModifySubnetAttributeOutcome EcmClient::ModifySubnetAttribute(const M
 
 void EcmClient::ModifySubnetAttributeAsync(const ModifySubnetAttributeRequest& request, const ModifySubnetAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifySubnetAttribute(request), context);
-    };
+    using Req = const ModifySubnetAttributeRequest&;
+    using Resp = ModifySubnetAttributeResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifySubnetAttribute", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EcmClient::ModifySubnetAttributeOutcomeCallable EcmClient::ModifySubnetAttributeCallable(const ModifySubnetAttributeRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifySubnetAttributeOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifySubnetAttribute(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifySubnetAttributeOutcome>>();
+    ModifySubnetAttributeAsync(
+    request,
+    [prom](
+        const EcmClient*,
+        const ModifySubnetAttributeRequest&,
+        ModifySubnetAttributeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EcmClient::ModifyTargetPortOutcome EcmClient::ModifyTargetPort(const ModifyTargetPortRequest &request)
@@ -5007,25 +5812,32 @@ EcmClient::ModifyTargetPortOutcome EcmClient::ModifyTargetPort(const ModifyTarge
 
 void EcmClient::ModifyTargetPortAsync(const ModifyTargetPortRequest& request, const ModifyTargetPortAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyTargetPort(request), context);
-    };
+    using Req = const ModifyTargetPortRequest&;
+    using Resp = ModifyTargetPortResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyTargetPort", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EcmClient::ModifyTargetPortOutcomeCallable EcmClient::ModifyTargetPortCallable(const ModifyTargetPortRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyTargetPortOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyTargetPort(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyTargetPortOutcome>>();
+    ModifyTargetPortAsync(
+    request,
+    [prom](
+        const EcmClient*,
+        const ModifyTargetPortRequest&,
+        ModifyTargetPortOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EcmClient::ModifyTargetWeightOutcome EcmClient::ModifyTargetWeight(const ModifyTargetWeightRequest &request)
@@ -5050,25 +5862,32 @@ EcmClient::ModifyTargetWeightOutcome EcmClient::ModifyTargetWeight(const ModifyT
 
 void EcmClient::ModifyTargetWeightAsync(const ModifyTargetWeightRequest& request, const ModifyTargetWeightAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyTargetWeight(request), context);
-    };
+    using Req = const ModifyTargetWeightRequest&;
+    using Resp = ModifyTargetWeightResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyTargetWeight", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EcmClient::ModifyTargetWeightOutcomeCallable EcmClient::ModifyTargetWeightCallable(const ModifyTargetWeightRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyTargetWeightOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyTargetWeight(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyTargetWeightOutcome>>();
+    ModifyTargetWeightAsync(
+    request,
+    [prom](
+        const EcmClient*,
+        const ModifyTargetWeightRequest&,
+        ModifyTargetWeightOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EcmClient::ModifyVpcAttributeOutcome EcmClient::ModifyVpcAttribute(const ModifyVpcAttributeRequest &request)
@@ -5093,25 +5912,32 @@ EcmClient::ModifyVpcAttributeOutcome EcmClient::ModifyVpcAttribute(const ModifyV
 
 void EcmClient::ModifyVpcAttributeAsync(const ModifyVpcAttributeRequest& request, const ModifyVpcAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyVpcAttribute(request), context);
-    };
+    using Req = const ModifyVpcAttributeRequest&;
+    using Resp = ModifyVpcAttributeResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyVpcAttribute", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EcmClient::ModifyVpcAttributeOutcomeCallable EcmClient::ModifyVpcAttributeCallable(const ModifyVpcAttributeRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyVpcAttributeOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyVpcAttribute(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyVpcAttributeOutcome>>();
+    ModifyVpcAttributeAsync(
+    request,
+    [prom](
+        const EcmClient*,
+        const ModifyVpcAttributeRequest&,
+        ModifyVpcAttributeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EcmClient::QueryVpcTaskResultOutcome EcmClient::QueryVpcTaskResult(const QueryVpcTaskResultRequest &request)
@@ -5136,25 +5962,32 @@ EcmClient::QueryVpcTaskResultOutcome EcmClient::QueryVpcTaskResult(const QueryVp
 
 void EcmClient::QueryVpcTaskResultAsync(const QueryVpcTaskResultRequest& request, const QueryVpcTaskResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->QueryVpcTaskResult(request), context);
-    };
+    using Req = const QueryVpcTaskResultRequest&;
+    using Resp = QueryVpcTaskResultResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "QueryVpcTaskResult", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EcmClient::QueryVpcTaskResultOutcomeCallable EcmClient::QueryVpcTaskResultCallable(const QueryVpcTaskResultRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<QueryVpcTaskResultOutcome()>>(
-        [this, request]()
-        {
-            return this->QueryVpcTaskResult(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<QueryVpcTaskResultOutcome>>();
+    QueryVpcTaskResultAsync(
+    request,
+    [prom](
+        const EcmClient*,
+        const QueryVpcTaskResultRequest&,
+        QueryVpcTaskResultOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EcmClient::RebootInstancesOutcome EcmClient::RebootInstances(const RebootInstancesRequest &request)
@@ -5179,25 +6012,32 @@ EcmClient::RebootInstancesOutcome EcmClient::RebootInstances(const RebootInstanc
 
 void EcmClient::RebootInstancesAsync(const RebootInstancesRequest& request, const RebootInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->RebootInstances(request), context);
-    };
+    using Req = const RebootInstancesRequest&;
+    using Resp = RebootInstancesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "RebootInstances", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EcmClient::RebootInstancesOutcomeCallable EcmClient::RebootInstancesCallable(const RebootInstancesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<RebootInstancesOutcome()>>(
-        [this, request]()
-        {
-            return this->RebootInstances(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<RebootInstancesOutcome>>();
+    RebootInstancesAsync(
+    request,
+    [prom](
+        const EcmClient*,
+        const RebootInstancesRequest&,
+        RebootInstancesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EcmClient::ReleaseAddressesOutcome EcmClient::ReleaseAddresses(const ReleaseAddressesRequest &request)
@@ -5222,25 +6062,32 @@ EcmClient::ReleaseAddressesOutcome EcmClient::ReleaseAddresses(const ReleaseAddr
 
 void EcmClient::ReleaseAddressesAsync(const ReleaseAddressesRequest& request, const ReleaseAddressesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ReleaseAddresses(request), context);
-    };
+    using Req = const ReleaseAddressesRequest&;
+    using Resp = ReleaseAddressesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ReleaseAddresses", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EcmClient::ReleaseAddressesOutcomeCallable EcmClient::ReleaseAddressesCallable(const ReleaseAddressesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ReleaseAddressesOutcome()>>(
-        [this, request]()
-        {
-            return this->ReleaseAddresses(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ReleaseAddressesOutcome>>();
+    ReleaseAddressesAsync(
+    request,
+    [prom](
+        const EcmClient*,
+        const ReleaseAddressesRequest&,
+        ReleaseAddressesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EcmClient::ReleaseIpv6AddressesOutcome EcmClient::ReleaseIpv6Addresses(const ReleaseIpv6AddressesRequest &request)
@@ -5265,25 +6112,32 @@ EcmClient::ReleaseIpv6AddressesOutcome EcmClient::ReleaseIpv6Addresses(const Rel
 
 void EcmClient::ReleaseIpv6AddressesAsync(const ReleaseIpv6AddressesRequest& request, const ReleaseIpv6AddressesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ReleaseIpv6Addresses(request), context);
-    };
+    using Req = const ReleaseIpv6AddressesRequest&;
+    using Resp = ReleaseIpv6AddressesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ReleaseIpv6Addresses", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EcmClient::ReleaseIpv6AddressesOutcomeCallable EcmClient::ReleaseIpv6AddressesCallable(const ReleaseIpv6AddressesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ReleaseIpv6AddressesOutcome()>>(
-        [this, request]()
-        {
-            return this->ReleaseIpv6Addresses(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ReleaseIpv6AddressesOutcome>>();
+    ReleaseIpv6AddressesAsync(
+    request,
+    [prom](
+        const EcmClient*,
+        const ReleaseIpv6AddressesRequest&,
+        ReleaseIpv6AddressesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EcmClient::ReleaseIpv6AddressesBandwidthOutcome EcmClient::ReleaseIpv6AddressesBandwidth(const ReleaseIpv6AddressesBandwidthRequest &request)
@@ -5308,25 +6162,32 @@ EcmClient::ReleaseIpv6AddressesBandwidthOutcome EcmClient::ReleaseIpv6AddressesB
 
 void EcmClient::ReleaseIpv6AddressesBandwidthAsync(const ReleaseIpv6AddressesBandwidthRequest& request, const ReleaseIpv6AddressesBandwidthAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ReleaseIpv6AddressesBandwidth(request), context);
-    };
+    using Req = const ReleaseIpv6AddressesBandwidthRequest&;
+    using Resp = ReleaseIpv6AddressesBandwidthResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ReleaseIpv6AddressesBandwidth", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EcmClient::ReleaseIpv6AddressesBandwidthOutcomeCallable EcmClient::ReleaseIpv6AddressesBandwidthCallable(const ReleaseIpv6AddressesBandwidthRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ReleaseIpv6AddressesBandwidthOutcome()>>(
-        [this, request]()
-        {
-            return this->ReleaseIpv6AddressesBandwidth(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ReleaseIpv6AddressesBandwidthOutcome>>();
+    ReleaseIpv6AddressesBandwidthAsync(
+    request,
+    [prom](
+        const EcmClient*,
+        const ReleaseIpv6AddressesBandwidthRequest&,
+        ReleaseIpv6AddressesBandwidthOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EcmClient::RemovePrivateIpAddressesOutcome EcmClient::RemovePrivateIpAddresses(const RemovePrivateIpAddressesRequest &request)
@@ -5351,25 +6212,32 @@ EcmClient::RemovePrivateIpAddressesOutcome EcmClient::RemovePrivateIpAddresses(c
 
 void EcmClient::RemovePrivateIpAddressesAsync(const RemovePrivateIpAddressesRequest& request, const RemovePrivateIpAddressesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->RemovePrivateIpAddresses(request), context);
-    };
+    using Req = const RemovePrivateIpAddressesRequest&;
+    using Resp = RemovePrivateIpAddressesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "RemovePrivateIpAddresses", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EcmClient::RemovePrivateIpAddressesOutcomeCallable EcmClient::RemovePrivateIpAddressesCallable(const RemovePrivateIpAddressesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<RemovePrivateIpAddressesOutcome()>>(
-        [this, request]()
-        {
-            return this->RemovePrivateIpAddresses(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<RemovePrivateIpAddressesOutcome>>();
+    RemovePrivateIpAddressesAsync(
+    request,
+    [prom](
+        const EcmClient*,
+        const RemovePrivateIpAddressesRequest&,
+        RemovePrivateIpAddressesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EcmClient::ReplaceRouteTableAssociationOutcome EcmClient::ReplaceRouteTableAssociation(const ReplaceRouteTableAssociationRequest &request)
@@ -5394,25 +6262,32 @@ EcmClient::ReplaceRouteTableAssociationOutcome EcmClient::ReplaceRouteTableAssoc
 
 void EcmClient::ReplaceRouteTableAssociationAsync(const ReplaceRouteTableAssociationRequest& request, const ReplaceRouteTableAssociationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ReplaceRouteTableAssociation(request), context);
-    };
+    using Req = const ReplaceRouteTableAssociationRequest&;
+    using Resp = ReplaceRouteTableAssociationResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ReplaceRouteTableAssociation", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EcmClient::ReplaceRouteTableAssociationOutcomeCallable EcmClient::ReplaceRouteTableAssociationCallable(const ReplaceRouteTableAssociationRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ReplaceRouteTableAssociationOutcome()>>(
-        [this, request]()
-        {
-            return this->ReplaceRouteTableAssociation(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ReplaceRouteTableAssociationOutcome>>();
+    ReplaceRouteTableAssociationAsync(
+    request,
+    [prom](
+        const EcmClient*,
+        const ReplaceRouteTableAssociationRequest&,
+        ReplaceRouteTableAssociationOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EcmClient::ReplaceRoutesOutcome EcmClient::ReplaceRoutes(const ReplaceRoutesRequest &request)
@@ -5437,25 +6312,32 @@ EcmClient::ReplaceRoutesOutcome EcmClient::ReplaceRoutes(const ReplaceRoutesRequ
 
 void EcmClient::ReplaceRoutesAsync(const ReplaceRoutesRequest& request, const ReplaceRoutesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ReplaceRoutes(request), context);
-    };
+    using Req = const ReplaceRoutesRequest&;
+    using Resp = ReplaceRoutesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ReplaceRoutes", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EcmClient::ReplaceRoutesOutcomeCallable EcmClient::ReplaceRoutesCallable(const ReplaceRoutesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ReplaceRoutesOutcome()>>(
-        [this, request]()
-        {
-            return this->ReplaceRoutes(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ReplaceRoutesOutcome>>();
+    ReplaceRoutesAsync(
+    request,
+    [prom](
+        const EcmClient*,
+        const ReplaceRoutesRequest&,
+        ReplaceRoutesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EcmClient::ReplaceSecurityGroupPolicyOutcome EcmClient::ReplaceSecurityGroupPolicy(const ReplaceSecurityGroupPolicyRequest &request)
@@ -5480,25 +6362,32 @@ EcmClient::ReplaceSecurityGroupPolicyOutcome EcmClient::ReplaceSecurityGroupPoli
 
 void EcmClient::ReplaceSecurityGroupPolicyAsync(const ReplaceSecurityGroupPolicyRequest& request, const ReplaceSecurityGroupPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ReplaceSecurityGroupPolicy(request), context);
-    };
+    using Req = const ReplaceSecurityGroupPolicyRequest&;
+    using Resp = ReplaceSecurityGroupPolicyResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ReplaceSecurityGroupPolicy", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EcmClient::ReplaceSecurityGroupPolicyOutcomeCallable EcmClient::ReplaceSecurityGroupPolicyCallable(const ReplaceSecurityGroupPolicyRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ReplaceSecurityGroupPolicyOutcome()>>(
-        [this, request]()
-        {
-            return this->ReplaceSecurityGroupPolicy(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ReplaceSecurityGroupPolicyOutcome>>();
+    ReplaceSecurityGroupPolicyAsync(
+    request,
+    [prom](
+        const EcmClient*,
+        const ReplaceSecurityGroupPolicyRequest&,
+        ReplaceSecurityGroupPolicyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EcmClient::ResetInstancesOutcome EcmClient::ResetInstances(const ResetInstancesRequest &request)
@@ -5523,25 +6412,32 @@ EcmClient::ResetInstancesOutcome EcmClient::ResetInstances(const ResetInstancesR
 
 void EcmClient::ResetInstancesAsync(const ResetInstancesRequest& request, const ResetInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ResetInstances(request), context);
-    };
+    using Req = const ResetInstancesRequest&;
+    using Resp = ResetInstancesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ResetInstances", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EcmClient::ResetInstancesOutcomeCallable EcmClient::ResetInstancesCallable(const ResetInstancesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ResetInstancesOutcome()>>(
-        [this, request]()
-        {
-            return this->ResetInstances(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ResetInstancesOutcome>>();
+    ResetInstancesAsync(
+    request,
+    [prom](
+        const EcmClient*,
+        const ResetInstancesRequest&,
+        ResetInstancesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EcmClient::ResetInstancesMaxBandwidthOutcome EcmClient::ResetInstancesMaxBandwidth(const ResetInstancesMaxBandwidthRequest &request)
@@ -5566,25 +6462,32 @@ EcmClient::ResetInstancesMaxBandwidthOutcome EcmClient::ResetInstancesMaxBandwid
 
 void EcmClient::ResetInstancesMaxBandwidthAsync(const ResetInstancesMaxBandwidthRequest& request, const ResetInstancesMaxBandwidthAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ResetInstancesMaxBandwidth(request), context);
-    };
+    using Req = const ResetInstancesMaxBandwidthRequest&;
+    using Resp = ResetInstancesMaxBandwidthResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ResetInstancesMaxBandwidth", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EcmClient::ResetInstancesMaxBandwidthOutcomeCallable EcmClient::ResetInstancesMaxBandwidthCallable(const ResetInstancesMaxBandwidthRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ResetInstancesMaxBandwidthOutcome()>>(
-        [this, request]()
-        {
-            return this->ResetInstancesMaxBandwidth(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ResetInstancesMaxBandwidthOutcome>>();
+    ResetInstancesMaxBandwidthAsync(
+    request,
+    [prom](
+        const EcmClient*,
+        const ResetInstancesMaxBandwidthRequest&,
+        ResetInstancesMaxBandwidthOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EcmClient::ResetInstancesPasswordOutcome EcmClient::ResetInstancesPassword(const ResetInstancesPasswordRequest &request)
@@ -5609,25 +6512,32 @@ EcmClient::ResetInstancesPasswordOutcome EcmClient::ResetInstancesPassword(const
 
 void EcmClient::ResetInstancesPasswordAsync(const ResetInstancesPasswordRequest& request, const ResetInstancesPasswordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ResetInstancesPassword(request), context);
-    };
+    using Req = const ResetInstancesPasswordRequest&;
+    using Resp = ResetInstancesPasswordResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ResetInstancesPassword", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EcmClient::ResetInstancesPasswordOutcomeCallable EcmClient::ResetInstancesPasswordCallable(const ResetInstancesPasswordRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ResetInstancesPasswordOutcome()>>(
-        [this, request]()
-        {
-            return this->ResetInstancesPassword(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ResetInstancesPasswordOutcome>>();
+    ResetInstancesPasswordAsync(
+    request,
+    [prom](
+        const EcmClient*,
+        const ResetInstancesPasswordRequest&,
+        ResetInstancesPasswordOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EcmClient::ResetRoutesOutcome EcmClient::ResetRoutes(const ResetRoutesRequest &request)
@@ -5652,25 +6562,32 @@ EcmClient::ResetRoutesOutcome EcmClient::ResetRoutes(const ResetRoutesRequest &r
 
 void EcmClient::ResetRoutesAsync(const ResetRoutesRequest& request, const ResetRoutesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ResetRoutes(request), context);
-    };
+    using Req = const ResetRoutesRequest&;
+    using Resp = ResetRoutesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ResetRoutes", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EcmClient::ResetRoutesOutcomeCallable EcmClient::ResetRoutesCallable(const ResetRoutesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ResetRoutesOutcome()>>(
-        [this, request]()
-        {
-            return this->ResetRoutes(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ResetRoutesOutcome>>();
+    ResetRoutesAsync(
+    request,
+    [prom](
+        const EcmClient*,
+        const ResetRoutesRequest&,
+        ResetRoutesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EcmClient::RunInstancesOutcome EcmClient::RunInstances(const RunInstancesRequest &request)
@@ -5695,25 +6612,32 @@ EcmClient::RunInstancesOutcome EcmClient::RunInstances(const RunInstancesRequest
 
 void EcmClient::RunInstancesAsync(const RunInstancesRequest& request, const RunInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->RunInstances(request), context);
-    };
+    using Req = const RunInstancesRequest&;
+    using Resp = RunInstancesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "RunInstances", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EcmClient::RunInstancesOutcomeCallable EcmClient::RunInstancesCallable(const RunInstancesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<RunInstancesOutcome()>>(
-        [this, request]()
-        {
-            return this->RunInstances(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<RunInstancesOutcome>>();
+    RunInstancesAsync(
+    request,
+    [prom](
+        const EcmClient*,
+        const RunInstancesRequest&,
+        RunInstancesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EcmClient::SetLoadBalancerSecurityGroupsOutcome EcmClient::SetLoadBalancerSecurityGroups(const SetLoadBalancerSecurityGroupsRequest &request)
@@ -5738,25 +6662,32 @@ EcmClient::SetLoadBalancerSecurityGroupsOutcome EcmClient::SetLoadBalancerSecuri
 
 void EcmClient::SetLoadBalancerSecurityGroupsAsync(const SetLoadBalancerSecurityGroupsRequest& request, const SetLoadBalancerSecurityGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->SetLoadBalancerSecurityGroups(request), context);
-    };
+    using Req = const SetLoadBalancerSecurityGroupsRequest&;
+    using Resp = SetLoadBalancerSecurityGroupsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "SetLoadBalancerSecurityGroups", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EcmClient::SetLoadBalancerSecurityGroupsOutcomeCallable EcmClient::SetLoadBalancerSecurityGroupsCallable(const SetLoadBalancerSecurityGroupsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<SetLoadBalancerSecurityGroupsOutcome()>>(
-        [this, request]()
-        {
-            return this->SetLoadBalancerSecurityGroups(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<SetLoadBalancerSecurityGroupsOutcome>>();
+    SetLoadBalancerSecurityGroupsAsync(
+    request,
+    [prom](
+        const EcmClient*,
+        const SetLoadBalancerSecurityGroupsRequest&,
+        SetLoadBalancerSecurityGroupsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EcmClient::SetSecurityGroupForLoadbalancersOutcome EcmClient::SetSecurityGroupForLoadbalancers(const SetSecurityGroupForLoadbalancersRequest &request)
@@ -5781,25 +6712,32 @@ EcmClient::SetSecurityGroupForLoadbalancersOutcome EcmClient::SetSecurityGroupFo
 
 void EcmClient::SetSecurityGroupForLoadbalancersAsync(const SetSecurityGroupForLoadbalancersRequest& request, const SetSecurityGroupForLoadbalancersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->SetSecurityGroupForLoadbalancers(request), context);
-    };
+    using Req = const SetSecurityGroupForLoadbalancersRequest&;
+    using Resp = SetSecurityGroupForLoadbalancersResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "SetSecurityGroupForLoadbalancers", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EcmClient::SetSecurityGroupForLoadbalancersOutcomeCallable EcmClient::SetSecurityGroupForLoadbalancersCallable(const SetSecurityGroupForLoadbalancersRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<SetSecurityGroupForLoadbalancersOutcome()>>(
-        [this, request]()
-        {
-            return this->SetSecurityGroupForLoadbalancers(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<SetSecurityGroupForLoadbalancersOutcome>>();
+    SetSecurityGroupForLoadbalancersAsync(
+    request,
+    [prom](
+        const EcmClient*,
+        const SetSecurityGroupForLoadbalancersRequest&,
+        SetSecurityGroupForLoadbalancersOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EcmClient::StartInstancesOutcome EcmClient::StartInstances(const StartInstancesRequest &request)
@@ -5824,25 +6762,32 @@ EcmClient::StartInstancesOutcome EcmClient::StartInstances(const StartInstancesR
 
 void EcmClient::StartInstancesAsync(const StartInstancesRequest& request, const StartInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->StartInstances(request), context);
-    };
+    using Req = const StartInstancesRequest&;
+    using Resp = StartInstancesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "StartInstances", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EcmClient::StartInstancesOutcomeCallable EcmClient::StartInstancesCallable(const StartInstancesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<StartInstancesOutcome()>>(
-        [this, request]()
-        {
-            return this->StartInstances(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<StartInstancesOutcome>>();
+    StartInstancesAsync(
+    request,
+    [prom](
+        const EcmClient*,
+        const StartInstancesRequest&,
+        StartInstancesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EcmClient::StopInstancesOutcome EcmClient::StopInstances(const StopInstancesRequest &request)
@@ -5867,25 +6812,32 @@ EcmClient::StopInstancesOutcome EcmClient::StopInstances(const StopInstancesRequ
 
 void EcmClient::StopInstancesAsync(const StopInstancesRequest& request, const StopInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->StopInstances(request), context);
-    };
+    using Req = const StopInstancesRequest&;
+    using Resp = StopInstancesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "StopInstances", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EcmClient::StopInstancesOutcomeCallable EcmClient::StopInstancesCallable(const StopInstancesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<StopInstancesOutcome()>>(
-        [this, request]()
-        {
-            return this->StopInstances(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<StopInstancesOutcome>>();
+    StopInstancesAsync(
+    request,
+    [prom](
+        const EcmClient*,
+        const StopInstancesRequest&,
+        StopInstancesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EcmClient::TerminateDisksOutcome EcmClient::TerminateDisks(const TerminateDisksRequest &request)
@@ -5910,25 +6862,32 @@ EcmClient::TerminateDisksOutcome EcmClient::TerminateDisks(const TerminateDisksR
 
 void EcmClient::TerminateDisksAsync(const TerminateDisksRequest& request, const TerminateDisksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->TerminateDisks(request), context);
-    };
+    using Req = const TerminateDisksRequest&;
+    using Resp = TerminateDisksResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "TerminateDisks", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EcmClient::TerminateDisksOutcomeCallable EcmClient::TerminateDisksCallable(const TerminateDisksRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<TerminateDisksOutcome()>>(
-        [this, request]()
-        {
-            return this->TerminateDisks(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<TerminateDisksOutcome>>();
+    TerminateDisksAsync(
+    request,
+    [prom](
+        const EcmClient*,
+        const TerminateDisksRequest&,
+        TerminateDisksOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EcmClient::TerminateInstancesOutcome EcmClient::TerminateInstances(const TerminateInstancesRequest &request)
@@ -5953,25 +6912,32 @@ EcmClient::TerminateInstancesOutcome EcmClient::TerminateInstances(const Termina
 
 void EcmClient::TerminateInstancesAsync(const TerminateInstancesRequest& request, const TerminateInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->TerminateInstances(request), context);
-    };
+    using Req = const TerminateInstancesRequest&;
+    using Resp = TerminateInstancesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "TerminateInstances", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EcmClient::TerminateInstancesOutcomeCallable EcmClient::TerminateInstancesCallable(const TerminateInstancesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<TerminateInstancesOutcome()>>(
-        [this, request]()
-        {
-            return this->TerminateInstances(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<TerminateInstancesOutcome>>();
+    TerminateInstancesAsync(
+    request,
+    [prom](
+        const EcmClient*,
+        const TerminateInstancesRequest&,
+        TerminateInstancesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EcmClient::UnassignIpv6SubnetCidrBlockOutcome EcmClient::UnassignIpv6SubnetCidrBlock(const UnassignIpv6SubnetCidrBlockRequest &request)
@@ -5996,24 +6962,31 @@ EcmClient::UnassignIpv6SubnetCidrBlockOutcome EcmClient::UnassignIpv6SubnetCidrB
 
 void EcmClient::UnassignIpv6SubnetCidrBlockAsync(const UnassignIpv6SubnetCidrBlockRequest& request, const UnassignIpv6SubnetCidrBlockAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UnassignIpv6SubnetCidrBlock(request), context);
-    };
+    using Req = const UnassignIpv6SubnetCidrBlockRequest&;
+    using Resp = UnassignIpv6SubnetCidrBlockResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UnassignIpv6SubnetCidrBlock", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EcmClient::UnassignIpv6SubnetCidrBlockOutcomeCallable EcmClient::UnassignIpv6SubnetCidrBlockCallable(const UnassignIpv6SubnetCidrBlockRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UnassignIpv6SubnetCidrBlockOutcome()>>(
-        [this, request]()
-        {
-            return this->UnassignIpv6SubnetCidrBlock(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UnassignIpv6SubnetCidrBlockOutcome>>();
+    UnassignIpv6SubnetCidrBlockAsync(
+    request,
+    [prom](
+        const EcmClient*,
+        const UnassignIpv6SubnetCidrBlockRequest&,
+        UnassignIpv6SubnetCidrBlockOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 

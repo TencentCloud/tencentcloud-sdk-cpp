@@ -62,25 +62,32 @@ WeilingwithClient::AddAlarmProcessRecordOutcome WeilingwithClient::AddAlarmProce
 
 void WeilingwithClient::AddAlarmProcessRecordAsync(const AddAlarmProcessRecordRequest& request, const AddAlarmProcessRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->AddAlarmProcessRecord(request), context);
-    };
+    using Req = const AddAlarmProcessRecordRequest&;
+    using Resp = AddAlarmProcessRecordResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "AddAlarmProcessRecord", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WeilingwithClient::AddAlarmProcessRecordOutcomeCallable WeilingwithClient::AddAlarmProcessRecordCallable(const AddAlarmProcessRecordRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<AddAlarmProcessRecordOutcome()>>(
-        [this, request]()
-        {
-            return this->AddAlarmProcessRecord(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<AddAlarmProcessRecordOutcome>>();
+    AddAlarmProcessRecordAsync(
+    request,
+    [prom](
+        const WeilingwithClient*,
+        const AddAlarmProcessRecordRequest&,
+        AddAlarmProcessRecordOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WeilingwithClient::BatchCreateDeviceOutcome WeilingwithClient::BatchCreateDevice(const BatchCreateDeviceRequest &request)
@@ -105,25 +112,32 @@ WeilingwithClient::BatchCreateDeviceOutcome WeilingwithClient::BatchCreateDevice
 
 void WeilingwithClient::BatchCreateDeviceAsync(const BatchCreateDeviceRequest& request, const BatchCreateDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->BatchCreateDevice(request), context);
-    };
+    using Req = const BatchCreateDeviceRequest&;
+    using Resp = BatchCreateDeviceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "BatchCreateDevice", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WeilingwithClient::BatchCreateDeviceOutcomeCallable WeilingwithClient::BatchCreateDeviceCallable(const BatchCreateDeviceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<BatchCreateDeviceOutcome()>>(
-        [this, request]()
-        {
-            return this->BatchCreateDevice(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<BatchCreateDeviceOutcome>>();
+    BatchCreateDeviceAsync(
+    request,
+    [prom](
+        const WeilingwithClient*,
+        const BatchCreateDeviceRequest&,
+        BatchCreateDeviceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WeilingwithClient::BatchDeleteDeviceOutcome WeilingwithClient::BatchDeleteDevice(const BatchDeleteDeviceRequest &request)
@@ -148,25 +162,32 @@ WeilingwithClient::BatchDeleteDeviceOutcome WeilingwithClient::BatchDeleteDevice
 
 void WeilingwithClient::BatchDeleteDeviceAsync(const BatchDeleteDeviceRequest& request, const BatchDeleteDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->BatchDeleteDevice(request), context);
-    };
+    using Req = const BatchDeleteDeviceRequest&;
+    using Resp = BatchDeleteDeviceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "BatchDeleteDevice", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WeilingwithClient::BatchDeleteDeviceOutcomeCallable WeilingwithClient::BatchDeleteDeviceCallable(const BatchDeleteDeviceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<BatchDeleteDeviceOutcome()>>(
-        [this, request]()
-        {
-            return this->BatchDeleteDevice(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<BatchDeleteDeviceOutcome>>();
+    BatchDeleteDeviceAsync(
+    request,
+    [prom](
+        const WeilingwithClient*,
+        const BatchDeleteDeviceRequest&,
+        BatchDeleteDeviceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WeilingwithClient::BatchKillAlarmOutcome WeilingwithClient::BatchKillAlarm(const BatchKillAlarmRequest &request)
@@ -191,25 +212,32 @@ WeilingwithClient::BatchKillAlarmOutcome WeilingwithClient::BatchKillAlarm(const
 
 void WeilingwithClient::BatchKillAlarmAsync(const BatchKillAlarmRequest& request, const BatchKillAlarmAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->BatchKillAlarm(request), context);
-    };
+    using Req = const BatchKillAlarmRequest&;
+    using Resp = BatchKillAlarmResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "BatchKillAlarm", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WeilingwithClient::BatchKillAlarmOutcomeCallable WeilingwithClient::BatchKillAlarmCallable(const BatchKillAlarmRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<BatchKillAlarmOutcome()>>(
-        [this, request]()
-        {
-            return this->BatchKillAlarm(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<BatchKillAlarmOutcome>>();
+    BatchKillAlarmAsync(
+    request,
+    [prom](
+        const WeilingwithClient*,
+        const BatchKillAlarmRequest&,
+        BatchKillAlarmOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WeilingwithClient::BatchReportAppMessageOutcome WeilingwithClient::BatchReportAppMessage(const BatchReportAppMessageRequest &request)
@@ -234,25 +262,32 @@ WeilingwithClient::BatchReportAppMessageOutcome WeilingwithClient::BatchReportAp
 
 void WeilingwithClient::BatchReportAppMessageAsync(const BatchReportAppMessageRequest& request, const BatchReportAppMessageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->BatchReportAppMessage(request), context);
-    };
+    using Req = const BatchReportAppMessageRequest&;
+    using Resp = BatchReportAppMessageResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "BatchReportAppMessage", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WeilingwithClient::BatchReportAppMessageOutcomeCallable WeilingwithClient::BatchReportAppMessageCallable(const BatchReportAppMessageRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<BatchReportAppMessageOutcome()>>(
-        [this, request]()
-        {
-            return this->BatchReportAppMessage(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<BatchReportAppMessageOutcome>>();
+    BatchReportAppMessageAsync(
+    request,
+    [prom](
+        const WeilingwithClient*,
+        const BatchReportAppMessageRequest&,
+        BatchReportAppMessageOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WeilingwithClient::ChangeAlarmStatusOutcome WeilingwithClient::ChangeAlarmStatus(const ChangeAlarmStatusRequest &request)
@@ -277,25 +312,32 @@ WeilingwithClient::ChangeAlarmStatusOutcome WeilingwithClient::ChangeAlarmStatus
 
 void WeilingwithClient::ChangeAlarmStatusAsync(const ChangeAlarmStatusRequest& request, const ChangeAlarmStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ChangeAlarmStatus(request), context);
-    };
+    using Req = const ChangeAlarmStatusRequest&;
+    using Resp = ChangeAlarmStatusResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ChangeAlarmStatus", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WeilingwithClient::ChangeAlarmStatusOutcomeCallable WeilingwithClient::ChangeAlarmStatusCallable(const ChangeAlarmStatusRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ChangeAlarmStatusOutcome()>>(
-        [this, request]()
-        {
-            return this->ChangeAlarmStatus(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ChangeAlarmStatusOutcome>>();
+    ChangeAlarmStatusAsync(
+    request,
+    [prom](
+        const WeilingwithClient*,
+        const ChangeAlarmStatusRequest&,
+        ChangeAlarmStatusOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WeilingwithClient::ControlCameraPTZOutcome WeilingwithClient::ControlCameraPTZ(const ControlCameraPTZRequest &request)
@@ -320,25 +362,32 @@ WeilingwithClient::ControlCameraPTZOutcome WeilingwithClient::ControlCameraPTZ(c
 
 void WeilingwithClient::ControlCameraPTZAsync(const ControlCameraPTZRequest& request, const ControlCameraPTZAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ControlCameraPTZ(request), context);
-    };
+    using Req = const ControlCameraPTZRequest&;
+    using Resp = ControlCameraPTZResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ControlCameraPTZ", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WeilingwithClient::ControlCameraPTZOutcomeCallable WeilingwithClient::ControlCameraPTZCallable(const ControlCameraPTZRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ControlCameraPTZOutcome()>>(
-        [this, request]()
-        {
-            return this->ControlCameraPTZ(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ControlCameraPTZOutcome>>();
+    ControlCameraPTZAsync(
+    request,
+    [prom](
+        const WeilingwithClient*,
+        const ControlCameraPTZRequest&,
+        ControlCameraPTZOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WeilingwithClient::ControlDeviceOutcome WeilingwithClient::ControlDevice(const ControlDeviceRequest &request)
@@ -363,25 +412,32 @@ WeilingwithClient::ControlDeviceOutcome WeilingwithClient::ControlDevice(const C
 
 void WeilingwithClient::ControlDeviceAsync(const ControlDeviceRequest& request, const ControlDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ControlDevice(request), context);
-    };
+    using Req = const ControlDeviceRequest&;
+    using Resp = ControlDeviceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ControlDevice", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WeilingwithClient::ControlDeviceOutcomeCallable WeilingwithClient::ControlDeviceCallable(const ControlDeviceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ControlDeviceOutcome()>>(
-        [this, request]()
-        {
-            return this->ControlDevice(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ControlDeviceOutcome>>();
+    ControlDeviceAsync(
+    request,
+    [prom](
+        const WeilingwithClient*,
+        const ControlDeviceRequest&,
+        ControlDeviceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WeilingwithClient::CreateApplicationTokenOutcome WeilingwithClient::CreateApplicationToken(const CreateApplicationTokenRequest &request)
@@ -406,25 +462,32 @@ WeilingwithClient::CreateApplicationTokenOutcome WeilingwithClient::CreateApplic
 
 void WeilingwithClient::CreateApplicationTokenAsync(const CreateApplicationTokenRequest& request, const CreateApplicationTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateApplicationToken(request), context);
-    };
+    using Req = const CreateApplicationTokenRequest&;
+    using Resp = CreateApplicationTokenResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateApplicationToken", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WeilingwithClient::CreateApplicationTokenOutcomeCallable WeilingwithClient::CreateApplicationTokenCallable(const CreateApplicationTokenRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateApplicationTokenOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateApplicationToken(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateApplicationTokenOutcome>>();
+    CreateApplicationTokenAsync(
+    request,
+    [prom](
+        const WeilingwithClient*,
+        const CreateApplicationTokenRequest&,
+        CreateApplicationTokenOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WeilingwithClient::DeleteDeviceGroupOutcome WeilingwithClient::DeleteDeviceGroup(const DeleteDeviceGroupRequest &request)
@@ -449,25 +512,32 @@ WeilingwithClient::DeleteDeviceGroupOutcome WeilingwithClient::DeleteDeviceGroup
 
 void WeilingwithClient::DeleteDeviceGroupAsync(const DeleteDeviceGroupRequest& request, const DeleteDeviceGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteDeviceGroup(request), context);
-    };
+    using Req = const DeleteDeviceGroupRequest&;
+    using Resp = DeleteDeviceGroupResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteDeviceGroup", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WeilingwithClient::DeleteDeviceGroupOutcomeCallable WeilingwithClient::DeleteDeviceGroupCallable(const DeleteDeviceGroupRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteDeviceGroupOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteDeviceGroup(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteDeviceGroupOutcome>>();
+    DeleteDeviceGroupAsync(
+    request,
+    [prom](
+        const WeilingwithClient*,
+        const DeleteDeviceGroupRequest&,
+        DeleteDeviceGroupOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WeilingwithClient::DescribeActionListOutcome WeilingwithClient::DescribeActionList(const DescribeActionListRequest &request)
@@ -492,25 +562,32 @@ WeilingwithClient::DescribeActionListOutcome WeilingwithClient::DescribeActionLi
 
 void WeilingwithClient::DescribeActionListAsync(const DescribeActionListRequest& request, const DescribeActionListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeActionList(request), context);
-    };
+    using Req = const DescribeActionListRequest&;
+    using Resp = DescribeActionListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeActionList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WeilingwithClient::DescribeActionListOutcomeCallable WeilingwithClient::DescribeActionListCallable(const DescribeActionListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeActionListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeActionList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeActionListOutcome>>();
+    DescribeActionListAsync(
+    request,
+    [prom](
+        const WeilingwithClient*,
+        const DescribeActionListRequest&,
+        DescribeActionListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WeilingwithClient::DescribeAdministrationByTagOutcome WeilingwithClient::DescribeAdministrationByTag(const DescribeAdministrationByTagRequest &request)
@@ -535,25 +612,32 @@ WeilingwithClient::DescribeAdministrationByTagOutcome WeilingwithClient::Describ
 
 void WeilingwithClient::DescribeAdministrationByTagAsync(const DescribeAdministrationByTagRequest& request, const DescribeAdministrationByTagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAdministrationByTag(request), context);
-    };
+    using Req = const DescribeAdministrationByTagRequest&;
+    using Resp = DescribeAdministrationByTagResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAdministrationByTag", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WeilingwithClient::DescribeAdministrationByTagOutcomeCallable WeilingwithClient::DescribeAdministrationByTagCallable(const DescribeAdministrationByTagRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAdministrationByTagOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAdministrationByTag(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAdministrationByTagOutcome>>();
+    DescribeAdministrationByTagAsync(
+    request,
+    [prom](
+        const WeilingwithClient*,
+        const DescribeAdministrationByTagRequest&,
+        DescribeAdministrationByTagOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WeilingwithClient::DescribeAlarmLevelListOutcome WeilingwithClient::DescribeAlarmLevelList(const DescribeAlarmLevelListRequest &request)
@@ -578,25 +662,32 @@ WeilingwithClient::DescribeAlarmLevelListOutcome WeilingwithClient::DescribeAlar
 
 void WeilingwithClient::DescribeAlarmLevelListAsync(const DescribeAlarmLevelListRequest& request, const DescribeAlarmLevelListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAlarmLevelList(request), context);
-    };
+    using Req = const DescribeAlarmLevelListRequest&;
+    using Resp = DescribeAlarmLevelListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAlarmLevelList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WeilingwithClient::DescribeAlarmLevelListOutcomeCallable WeilingwithClient::DescribeAlarmLevelListCallable(const DescribeAlarmLevelListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAlarmLevelListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAlarmLevelList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAlarmLevelListOutcome>>();
+    DescribeAlarmLevelListAsync(
+    request,
+    [prom](
+        const WeilingwithClient*,
+        const DescribeAlarmLevelListRequest&,
+        DescribeAlarmLevelListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WeilingwithClient::DescribeAlarmListOutcome WeilingwithClient::DescribeAlarmList(const DescribeAlarmListRequest &request)
@@ -621,25 +712,32 @@ WeilingwithClient::DescribeAlarmListOutcome WeilingwithClient::DescribeAlarmList
 
 void WeilingwithClient::DescribeAlarmListAsync(const DescribeAlarmListRequest& request, const DescribeAlarmListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAlarmList(request), context);
-    };
+    using Req = const DescribeAlarmListRequest&;
+    using Resp = DescribeAlarmListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAlarmList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WeilingwithClient::DescribeAlarmListOutcomeCallable WeilingwithClient::DescribeAlarmListCallable(const DescribeAlarmListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAlarmListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAlarmList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAlarmListOutcome>>();
+    DescribeAlarmListAsync(
+    request,
+    [prom](
+        const WeilingwithClient*,
+        const DescribeAlarmListRequest&,
+        DescribeAlarmListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WeilingwithClient::DescribeAlarmStatusListOutcome WeilingwithClient::DescribeAlarmStatusList(const DescribeAlarmStatusListRequest &request)
@@ -664,25 +762,32 @@ WeilingwithClient::DescribeAlarmStatusListOutcome WeilingwithClient::DescribeAla
 
 void WeilingwithClient::DescribeAlarmStatusListAsync(const DescribeAlarmStatusListRequest& request, const DescribeAlarmStatusListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAlarmStatusList(request), context);
-    };
+    using Req = const DescribeAlarmStatusListRequest&;
+    using Resp = DescribeAlarmStatusListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAlarmStatusList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WeilingwithClient::DescribeAlarmStatusListOutcomeCallable WeilingwithClient::DescribeAlarmStatusListCallable(const DescribeAlarmStatusListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAlarmStatusListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAlarmStatusList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAlarmStatusListOutcome>>();
+    DescribeAlarmStatusListAsync(
+    request,
+    [prom](
+        const WeilingwithClient*,
+        const DescribeAlarmStatusListRequest&,
+        DescribeAlarmStatusListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WeilingwithClient::DescribeAlarmTypeListOutcome WeilingwithClient::DescribeAlarmTypeList(const DescribeAlarmTypeListRequest &request)
@@ -707,25 +812,32 @@ WeilingwithClient::DescribeAlarmTypeListOutcome WeilingwithClient::DescribeAlarm
 
 void WeilingwithClient::DescribeAlarmTypeListAsync(const DescribeAlarmTypeListRequest& request, const DescribeAlarmTypeListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAlarmTypeList(request), context);
-    };
+    using Req = const DescribeAlarmTypeListRequest&;
+    using Resp = DescribeAlarmTypeListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAlarmTypeList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WeilingwithClient::DescribeAlarmTypeListOutcomeCallable WeilingwithClient::DescribeAlarmTypeListCallable(const DescribeAlarmTypeListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAlarmTypeListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAlarmTypeList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAlarmTypeListOutcome>>();
+    DescribeAlarmTypeListAsync(
+    request,
+    [prom](
+        const WeilingwithClient*,
+        const DescribeAlarmTypeListRequest&,
+        DescribeAlarmTypeListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WeilingwithClient::DescribeApplicationListOutcome WeilingwithClient::DescribeApplicationList(const DescribeApplicationListRequest &request)
@@ -750,25 +862,32 @@ WeilingwithClient::DescribeApplicationListOutcome WeilingwithClient::DescribeApp
 
 void WeilingwithClient::DescribeApplicationListAsync(const DescribeApplicationListRequest& request, const DescribeApplicationListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeApplicationList(request), context);
-    };
+    using Req = const DescribeApplicationListRequest&;
+    using Resp = DescribeApplicationListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeApplicationList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WeilingwithClient::DescribeApplicationListOutcomeCallable WeilingwithClient::DescribeApplicationListCallable(const DescribeApplicationListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeApplicationListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeApplicationList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeApplicationListOutcome>>();
+    DescribeApplicationListAsync(
+    request,
+    [prom](
+        const WeilingwithClient*,
+        const DescribeApplicationListRequest&,
+        DescribeApplicationListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WeilingwithClient::DescribeBuildingListOutcome WeilingwithClient::DescribeBuildingList(const DescribeBuildingListRequest &request)
@@ -793,25 +912,32 @@ WeilingwithClient::DescribeBuildingListOutcome WeilingwithClient::DescribeBuildi
 
 void WeilingwithClient::DescribeBuildingListAsync(const DescribeBuildingListRequest& request, const DescribeBuildingListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeBuildingList(request), context);
-    };
+    using Req = const DescribeBuildingListRequest&;
+    using Resp = DescribeBuildingListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeBuildingList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WeilingwithClient::DescribeBuildingListOutcomeCallable WeilingwithClient::DescribeBuildingListCallable(const DescribeBuildingListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeBuildingListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeBuildingList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeBuildingListOutcome>>();
+    DescribeBuildingListAsync(
+    request,
+    [prom](
+        const WeilingwithClient*,
+        const DescribeBuildingListRequest&,
+        DescribeBuildingListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WeilingwithClient::DescribeBuildingModelOutcome WeilingwithClient::DescribeBuildingModel(const DescribeBuildingModelRequest &request)
@@ -836,25 +962,32 @@ WeilingwithClient::DescribeBuildingModelOutcome WeilingwithClient::DescribeBuild
 
 void WeilingwithClient::DescribeBuildingModelAsync(const DescribeBuildingModelRequest& request, const DescribeBuildingModelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeBuildingModel(request), context);
-    };
+    using Req = const DescribeBuildingModelRequest&;
+    using Resp = DescribeBuildingModelResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeBuildingModel", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WeilingwithClient::DescribeBuildingModelOutcomeCallable WeilingwithClient::DescribeBuildingModelCallable(const DescribeBuildingModelRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeBuildingModelOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeBuildingModel(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeBuildingModelOutcome>>();
+    DescribeBuildingModelAsync(
+    request,
+    [prom](
+        const WeilingwithClient*,
+        const DescribeBuildingModelRequest&,
+        DescribeBuildingModelOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WeilingwithClient::DescribeBuildingProfileOutcome WeilingwithClient::DescribeBuildingProfile(const DescribeBuildingProfileRequest &request)
@@ -879,25 +1012,32 @@ WeilingwithClient::DescribeBuildingProfileOutcome WeilingwithClient::DescribeBui
 
 void WeilingwithClient::DescribeBuildingProfileAsync(const DescribeBuildingProfileRequest& request, const DescribeBuildingProfileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeBuildingProfile(request), context);
-    };
+    using Req = const DescribeBuildingProfileRequest&;
+    using Resp = DescribeBuildingProfileResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeBuildingProfile", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WeilingwithClient::DescribeBuildingProfileOutcomeCallable WeilingwithClient::DescribeBuildingProfileCallable(const DescribeBuildingProfileRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeBuildingProfileOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeBuildingProfile(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeBuildingProfileOutcome>>();
+    DescribeBuildingProfileAsync(
+    request,
+    [prom](
+        const WeilingwithClient*,
+        const DescribeBuildingProfileRequest&,
+        DescribeBuildingProfileOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WeilingwithClient::DescribeCameraExtendInfoOutcome WeilingwithClient::DescribeCameraExtendInfo(const DescribeCameraExtendInfoRequest &request)
@@ -922,25 +1062,32 @@ WeilingwithClient::DescribeCameraExtendInfoOutcome WeilingwithClient::DescribeCa
 
 void WeilingwithClient::DescribeCameraExtendInfoAsync(const DescribeCameraExtendInfoRequest& request, const DescribeCameraExtendInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeCameraExtendInfo(request), context);
-    };
+    using Req = const DescribeCameraExtendInfoRequest&;
+    using Resp = DescribeCameraExtendInfoResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeCameraExtendInfo", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WeilingwithClient::DescribeCameraExtendInfoOutcomeCallable WeilingwithClient::DescribeCameraExtendInfoCallable(const DescribeCameraExtendInfoRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeCameraExtendInfoOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeCameraExtendInfo(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeCameraExtendInfoOutcome>>();
+    DescribeCameraExtendInfoAsync(
+    request,
+    [prom](
+        const WeilingwithClient*,
+        const DescribeCameraExtendInfoRequest&,
+        DescribeCameraExtendInfoOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WeilingwithClient::DescribeCityWorkspaceListOutcome WeilingwithClient::DescribeCityWorkspaceList(const DescribeCityWorkspaceListRequest &request)
@@ -965,25 +1112,32 @@ WeilingwithClient::DescribeCityWorkspaceListOutcome WeilingwithClient::DescribeC
 
 void WeilingwithClient::DescribeCityWorkspaceListAsync(const DescribeCityWorkspaceListRequest& request, const DescribeCityWorkspaceListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeCityWorkspaceList(request), context);
-    };
+    using Req = const DescribeCityWorkspaceListRequest&;
+    using Resp = DescribeCityWorkspaceListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeCityWorkspaceList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WeilingwithClient::DescribeCityWorkspaceListOutcomeCallable WeilingwithClient::DescribeCityWorkspaceListCallable(const DescribeCityWorkspaceListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeCityWorkspaceListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeCityWorkspaceList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeCityWorkspaceListOutcome>>();
+    DescribeCityWorkspaceListAsync(
+    request,
+    [prom](
+        const WeilingwithClient*,
+        const DescribeCityWorkspaceListRequest&,
+        DescribeCityWorkspaceListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WeilingwithClient::DescribeDeviceGroupListOutcome WeilingwithClient::DescribeDeviceGroupList(const DescribeDeviceGroupListRequest &request)
@@ -1008,25 +1162,32 @@ WeilingwithClient::DescribeDeviceGroupListOutcome WeilingwithClient::DescribeDev
 
 void WeilingwithClient::DescribeDeviceGroupListAsync(const DescribeDeviceGroupListRequest& request, const DescribeDeviceGroupListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDeviceGroupList(request), context);
-    };
+    using Req = const DescribeDeviceGroupListRequest&;
+    using Resp = DescribeDeviceGroupListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeDeviceGroupList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WeilingwithClient::DescribeDeviceGroupListOutcomeCallable WeilingwithClient::DescribeDeviceGroupListCallable(const DescribeDeviceGroupListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeDeviceGroupListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDeviceGroupList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeDeviceGroupListOutcome>>();
+    DescribeDeviceGroupListAsync(
+    request,
+    [prom](
+        const WeilingwithClient*,
+        const DescribeDeviceGroupListRequest&,
+        DescribeDeviceGroupListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WeilingwithClient::DescribeDeviceListOutcome WeilingwithClient::DescribeDeviceList(const DescribeDeviceListRequest &request)
@@ -1051,25 +1212,32 @@ WeilingwithClient::DescribeDeviceListOutcome WeilingwithClient::DescribeDeviceLi
 
 void WeilingwithClient::DescribeDeviceListAsync(const DescribeDeviceListRequest& request, const DescribeDeviceListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDeviceList(request), context);
-    };
+    using Req = const DescribeDeviceListRequest&;
+    using Resp = DescribeDeviceListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeDeviceList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WeilingwithClient::DescribeDeviceListOutcomeCallable WeilingwithClient::DescribeDeviceListCallable(const DescribeDeviceListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeDeviceListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDeviceList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeDeviceListOutcome>>();
+    DescribeDeviceListAsync(
+    request,
+    [prom](
+        const WeilingwithClient*,
+        const DescribeDeviceListRequest&,
+        DescribeDeviceListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WeilingwithClient::DescribeDeviceShadowListOutcome WeilingwithClient::DescribeDeviceShadowList(const DescribeDeviceShadowListRequest &request)
@@ -1094,25 +1262,32 @@ WeilingwithClient::DescribeDeviceShadowListOutcome WeilingwithClient::DescribeDe
 
 void WeilingwithClient::DescribeDeviceShadowListAsync(const DescribeDeviceShadowListRequest& request, const DescribeDeviceShadowListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDeviceShadowList(request), context);
-    };
+    using Req = const DescribeDeviceShadowListRequest&;
+    using Resp = DescribeDeviceShadowListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeDeviceShadowList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WeilingwithClient::DescribeDeviceShadowListOutcomeCallable WeilingwithClient::DescribeDeviceShadowListCallable(const DescribeDeviceShadowListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeDeviceShadowListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDeviceShadowList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeDeviceShadowListOutcome>>();
+    DescribeDeviceShadowListAsync(
+    request,
+    [prom](
+        const WeilingwithClient*,
+        const DescribeDeviceShadowListRequest&,
+        DescribeDeviceShadowListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WeilingwithClient::DescribeDeviceStatusListOutcome WeilingwithClient::DescribeDeviceStatusList(const DescribeDeviceStatusListRequest &request)
@@ -1137,25 +1312,32 @@ WeilingwithClient::DescribeDeviceStatusListOutcome WeilingwithClient::DescribeDe
 
 void WeilingwithClient::DescribeDeviceStatusListAsync(const DescribeDeviceStatusListRequest& request, const DescribeDeviceStatusListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDeviceStatusList(request), context);
-    };
+    using Req = const DescribeDeviceStatusListRequest&;
+    using Resp = DescribeDeviceStatusListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeDeviceStatusList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WeilingwithClient::DescribeDeviceStatusListOutcomeCallable WeilingwithClient::DescribeDeviceStatusListCallable(const DescribeDeviceStatusListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeDeviceStatusListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDeviceStatusList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeDeviceStatusListOutcome>>();
+    DescribeDeviceStatusListAsync(
+    request,
+    [prom](
+        const WeilingwithClient*,
+        const DescribeDeviceStatusListRequest&,
+        DescribeDeviceStatusListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WeilingwithClient::DescribeDeviceStatusStatOutcome WeilingwithClient::DescribeDeviceStatusStat(const DescribeDeviceStatusStatRequest &request)
@@ -1180,25 +1362,32 @@ WeilingwithClient::DescribeDeviceStatusStatOutcome WeilingwithClient::DescribeDe
 
 void WeilingwithClient::DescribeDeviceStatusStatAsync(const DescribeDeviceStatusStatRequest& request, const DescribeDeviceStatusStatAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDeviceStatusStat(request), context);
-    };
+    using Req = const DescribeDeviceStatusStatRequest&;
+    using Resp = DescribeDeviceStatusStatResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeDeviceStatusStat", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WeilingwithClient::DescribeDeviceStatusStatOutcomeCallable WeilingwithClient::DescribeDeviceStatusStatCallable(const DescribeDeviceStatusStatRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeDeviceStatusStatOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDeviceStatusStat(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeDeviceStatusStatOutcome>>();
+    DescribeDeviceStatusStatAsync(
+    request,
+    [prom](
+        const WeilingwithClient*,
+        const DescribeDeviceStatusStatRequest&,
+        DescribeDeviceStatusStatOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WeilingwithClient::DescribeDeviceTagListOutcome WeilingwithClient::DescribeDeviceTagList(const DescribeDeviceTagListRequest &request)
@@ -1223,25 +1412,32 @@ WeilingwithClient::DescribeDeviceTagListOutcome WeilingwithClient::DescribeDevic
 
 void WeilingwithClient::DescribeDeviceTagListAsync(const DescribeDeviceTagListRequest& request, const DescribeDeviceTagListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDeviceTagList(request), context);
-    };
+    using Req = const DescribeDeviceTagListRequest&;
+    using Resp = DescribeDeviceTagListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeDeviceTagList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WeilingwithClient::DescribeDeviceTagListOutcomeCallable WeilingwithClient::DescribeDeviceTagListCallable(const DescribeDeviceTagListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeDeviceTagListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDeviceTagList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeDeviceTagListOutcome>>();
+    DescribeDeviceTagListAsync(
+    request,
+    [prom](
+        const WeilingwithClient*,
+        const DescribeDeviceTagListRequest&,
+        DescribeDeviceTagListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WeilingwithClient::DescribeDeviceTypeListOutcome WeilingwithClient::DescribeDeviceTypeList(const DescribeDeviceTypeListRequest &request)
@@ -1266,25 +1462,32 @@ WeilingwithClient::DescribeDeviceTypeListOutcome WeilingwithClient::DescribeDevi
 
 void WeilingwithClient::DescribeDeviceTypeListAsync(const DescribeDeviceTypeListRequest& request, const DescribeDeviceTypeListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDeviceTypeList(request), context);
-    };
+    using Req = const DescribeDeviceTypeListRequest&;
+    using Resp = DescribeDeviceTypeListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeDeviceTypeList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WeilingwithClient::DescribeDeviceTypeListOutcomeCallable WeilingwithClient::DescribeDeviceTypeListCallable(const DescribeDeviceTypeListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeDeviceTypeListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDeviceTypeList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeDeviceTypeListOutcome>>();
+    DescribeDeviceTypeListAsync(
+    request,
+    [prom](
+        const WeilingwithClient*,
+        const DescribeDeviceTypeListRequest&,
+        DescribeDeviceTypeListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WeilingwithClient::DescribeEdgeApplicationTokenOutcome WeilingwithClient::DescribeEdgeApplicationToken(const DescribeEdgeApplicationTokenRequest &request)
@@ -1309,25 +1512,32 @@ WeilingwithClient::DescribeEdgeApplicationTokenOutcome WeilingwithClient::Descri
 
 void WeilingwithClient::DescribeEdgeApplicationTokenAsync(const DescribeEdgeApplicationTokenRequest& request, const DescribeEdgeApplicationTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeEdgeApplicationToken(request), context);
-    };
+    using Req = const DescribeEdgeApplicationTokenRequest&;
+    using Resp = DescribeEdgeApplicationTokenResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeEdgeApplicationToken", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WeilingwithClient::DescribeEdgeApplicationTokenOutcomeCallable WeilingwithClient::DescribeEdgeApplicationTokenCallable(const DescribeEdgeApplicationTokenRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeEdgeApplicationTokenOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeEdgeApplicationToken(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeEdgeApplicationTokenOutcome>>();
+    DescribeEdgeApplicationTokenAsync(
+    request,
+    [prom](
+        const WeilingwithClient*,
+        const DescribeEdgeApplicationTokenRequest&,
+        DescribeEdgeApplicationTokenOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WeilingwithClient::DescribeElementProfilePageOutcome WeilingwithClient::DescribeElementProfilePage(const DescribeElementProfilePageRequest &request)
@@ -1352,25 +1562,32 @@ WeilingwithClient::DescribeElementProfilePageOutcome WeilingwithClient::Describe
 
 void WeilingwithClient::DescribeElementProfilePageAsync(const DescribeElementProfilePageRequest& request, const DescribeElementProfilePageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeElementProfilePage(request), context);
-    };
+    using Req = const DescribeElementProfilePageRequest&;
+    using Resp = DescribeElementProfilePageResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeElementProfilePage", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WeilingwithClient::DescribeElementProfilePageOutcomeCallable WeilingwithClient::DescribeElementProfilePageCallable(const DescribeElementProfilePageRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeElementProfilePageOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeElementProfilePage(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeElementProfilePageOutcome>>();
+    DescribeElementProfilePageAsync(
+    request,
+    [prom](
+        const WeilingwithClient*,
+        const DescribeElementProfilePageRequest&,
+        DescribeElementProfilePageOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WeilingwithClient::DescribeElementProfileTreeOutcome WeilingwithClient::DescribeElementProfileTree(const DescribeElementProfileTreeRequest &request)
@@ -1395,25 +1612,32 @@ WeilingwithClient::DescribeElementProfileTreeOutcome WeilingwithClient::Describe
 
 void WeilingwithClient::DescribeElementProfileTreeAsync(const DescribeElementProfileTreeRequest& request, const DescribeElementProfileTreeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeElementProfileTree(request), context);
-    };
+    using Req = const DescribeElementProfileTreeRequest&;
+    using Resp = DescribeElementProfileTreeResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeElementProfileTree", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WeilingwithClient::DescribeElementProfileTreeOutcomeCallable WeilingwithClient::DescribeElementProfileTreeCallable(const DescribeElementProfileTreeRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeElementProfileTreeOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeElementProfileTree(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeElementProfileTreeOutcome>>();
+    DescribeElementProfileTreeAsync(
+    request,
+    [prom](
+        const WeilingwithClient*,
+        const DescribeElementProfileTreeRequest&,
+        DescribeElementProfileTreeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WeilingwithClient::DescribeEventListOutcome WeilingwithClient::DescribeEventList(const DescribeEventListRequest &request)
@@ -1438,25 +1662,32 @@ WeilingwithClient::DescribeEventListOutcome WeilingwithClient::DescribeEventList
 
 void WeilingwithClient::DescribeEventListAsync(const DescribeEventListRequest& request, const DescribeEventListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeEventList(request), context);
-    };
+    using Req = const DescribeEventListRequest&;
+    using Resp = DescribeEventListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeEventList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WeilingwithClient::DescribeEventListOutcomeCallable WeilingwithClient::DescribeEventListCallable(const DescribeEventListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeEventListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeEventList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeEventListOutcome>>();
+    DescribeEventListAsync(
+    request,
+    [prom](
+        const WeilingwithClient*,
+        const DescribeEventListRequest&,
+        DescribeEventListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WeilingwithClient::DescribeFileDownloadURLOutcome WeilingwithClient::DescribeFileDownloadURL(const DescribeFileDownloadURLRequest &request)
@@ -1481,25 +1712,32 @@ WeilingwithClient::DescribeFileDownloadURLOutcome WeilingwithClient::DescribeFil
 
 void WeilingwithClient::DescribeFileDownloadURLAsync(const DescribeFileDownloadURLRequest& request, const DescribeFileDownloadURLAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeFileDownloadURL(request), context);
-    };
+    using Req = const DescribeFileDownloadURLRequest&;
+    using Resp = DescribeFileDownloadURLResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeFileDownloadURL", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WeilingwithClient::DescribeFileDownloadURLOutcomeCallable WeilingwithClient::DescribeFileDownloadURLCallable(const DescribeFileDownloadURLRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeFileDownloadURLOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeFileDownloadURL(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeFileDownloadURLOutcome>>();
+    DescribeFileDownloadURLAsync(
+    request,
+    [prom](
+        const WeilingwithClient*,
+        const DescribeFileDownloadURLRequest&,
+        DescribeFileDownloadURLOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WeilingwithClient::DescribeFileUploadURLOutcome WeilingwithClient::DescribeFileUploadURL(const DescribeFileUploadURLRequest &request)
@@ -1524,25 +1762,32 @@ WeilingwithClient::DescribeFileUploadURLOutcome WeilingwithClient::DescribeFileU
 
 void WeilingwithClient::DescribeFileUploadURLAsync(const DescribeFileUploadURLRequest& request, const DescribeFileUploadURLAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeFileUploadURL(request), context);
-    };
+    using Req = const DescribeFileUploadURLRequest&;
+    using Resp = DescribeFileUploadURLResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeFileUploadURL", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WeilingwithClient::DescribeFileUploadURLOutcomeCallable WeilingwithClient::DescribeFileUploadURLCallable(const DescribeFileUploadURLRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeFileUploadURLOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeFileUploadURL(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeFileUploadURLOutcome>>();
+    DescribeFileUploadURLAsync(
+    request,
+    [prom](
+        const WeilingwithClient*,
+        const DescribeFileUploadURLRequest&,
+        DescribeFileUploadURLOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WeilingwithClient::DescribeInterfaceListOutcome WeilingwithClient::DescribeInterfaceList(const DescribeInterfaceListRequest &request)
@@ -1567,25 +1812,32 @@ WeilingwithClient::DescribeInterfaceListOutcome WeilingwithClient::DescribeInter
 
 void WeilingwithClient::DescribeInterfaceListAsync(const DescribeInterfaceListRequest& request, const DescribeInterfaceListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeInterfaceList(request), context);
-    };
+    using Req = const DescribeInterfaceListRequest&;
+    using Resp = DescribeInterfaceListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeInterfaceList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WeilingwithClient::DescribeInterfaceListOutcomeCallable WeilingwithClient::DescribeInterfaceListCallable(const DescribeInterfaceListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeInterfaceListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeInterfaceList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeInterfaceListOutcome>>();
+    DescribeInterfaceListAsync(
+    request,
+    [prom](
+        const WeilingwithClient*,
+        const DescribeInterfaceListRequest&,
+        DescribeInterfaceListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WeilingwithClient::DescribeLinkRuleListOutcome WeilingwithClient::DescribeLinkRuleList(const DescribeLinkRuleListRequest &request)
@@ -1610,25 +1862,32 @@ WeilingwithClient::DescribeLinkRuleListOutcome WeilingwithClient::DescribeLinkRu
 
 void WeilingwithClient::DescribeLinkRuleListAsync(const DescribeLinkRuleListRequest& request, const DescribeLinkRuleListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeLinkRuleList(request), context);
-    };
+    using Req = const DescribeLinkRuleListRequest&;
+    using Resp = DescribeLinkRuleListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeLinkRuleList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WeilingwithClient::DescribeLinkRuleListOutcomeCallable WeilingwithClient::DescribeLinkRuleListCallable(const DescribeLinkRuleListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeLinkRuleListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeLinkRuleList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeLinkRuleListOutcome>>();
+    DescribeLinkRuleListAsync(
+    request,
+    [prom](
+        const WeilingwithClient*,
+        const DescribeLinkRuleListRequest&,
+        DescribeLinkRuleListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WeilingwithClient::DescribeModelListOutcome WeilingwithClient::DescribeModelList(const DescribeModelListRequest &request)
@@ -1653,25 +1912,32 @@ WeilingwithClient::DescribeModelListOutcome WeilingwithClient::DescribeModelList
 
 void WeilingwithClient::DescribeModelListAsync(const DescribeModelListRequest& request, const DescribeModelListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeModelList(request), context);
-    };
+    using Req = const DescribeModelListRequest&;
+    using Resp = DescribeModelListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeModelList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WeilingwithClient::DescribeModelListOutcomeCallable WeilingwithClient::DescribeModelListCallable(const DescribeModelListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeModelListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeModelList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeModelListOutcome>>();
+    DescribeModelListAsync(
+    request,
+    [prom](
+        const WeilingwithClient*,
+        const DescribeModelListRequest&,
+        DescribeModelListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WeilingwithClient::DescribeProductListOutcome WeilingwithClient::DescribeProductList(const DescribeProductListRequest &request)
@@ -1696,25 +1962,32 @@ WeilingwithClient::DescribeProductListOutcome WeilingwithClient::DescribeProduct
 
 void WeilingwithClient::DescribeProductListAsync(const DescribeProductListRequest& request, const DescribeProductListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeProductList(request), context);
-    };
+    using Req = const DescribeProductListRequest&;
+    using Resp = DescribeProductListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeProductList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WeilingwithClient::DescribeProductListOutcomeCallable WeilingwithClient::DescribeProductListCallable(const DescribeProductListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeProductListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeProductList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeProductListOutcome>>();
+    DescribeProductListAsync(
+    request,
+    [prom](
+        const WeilingwithClient*,
+        const DescribeProductListRequest&,
+        DescribeProductListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WeilingwithClient::DescribePropertyListOutcome WeilingwithClient::DescribePropertyList(const DescribePropertyListRequest &request)
@@ -1739,25 +2012,32 @@ WeilingwithClient::DescribePropertyListOutcome WeilingwithClient::DescribeProper
 
 void WeilingwithClient::DescribePropertyListAsync(const DescribePropertyListRequest& request, const DescribePropertyListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribePropertyList(request), context);
-    };
+    using Req = const DescribePropertyListRequest&;
+    using Resp = DescribePropertyListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribePropertyList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WeilingwithClient::DescribePropertyListOutcomeCallable WeilingwithClient::DescribePropertyListCallable(const DescribePropertyListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribePropertyListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribePropertyList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribePropertyListOutcome>>();
+    DescribePropertyListAsync(
+    request,
+    [prom](
+        const WeilingwithClient*,
+        const DescribePropertyListRequest&,
+        DescribePropertyListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WeilingwithClient::DescribeRuleDetailOutcome WeilingwithClient::DescribeRuleDetail(const DescribeRuleDetailRequest &request)
@@ -1782,25 +2062,32 @@ WeilingwithClient::DescribeRuleDetailOutcome WeilingwithClient::DescribeRuleDeta
 
 void WeilingwithClient::DescribeRuleDetailAsync(const DescribeRuleDetailRequest& request, const DescribeRuleDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeRuleDetail(request), context);
-    };
+    using Req = const DescribeRuleDetailRequest&;
+    using Resp = DescribeRuleDetailResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeRuleDetail", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WeilingwithClient::DescribeRuleDetailOutcomeCallable WeilingwithClient::DescribeRuleDetailCallable(const DescribeRuleDetailRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeRuleDetailOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeRuleDetail(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeRuleDetailOutcome>>();
+    DescribeRuleDetailAsync(
+    request,
+    [prom](
+        const WeilingwithClient*,
+        const DescribeRuleDetailRequest&,
+        DescribeRuleDetailOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WeilingwithClient::DescribeSceneListOutcome WeilingwithClient::DescribeSceneList(const DescribeSceneListRequest &request)
@@ -1825,25 +2112,32 @@ WeilingwithClient::DescribeSceneListOutcome WeilingwithClient::DescribeSceneList
 
 void WeilingwithClient::DescribeSceneListAsync(const DescribeSceneListRequest& request, const DescribeSceneListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeSceneList(request), context);
-    };
+    using Req = const DescribeSceneListRequest&;
+    using Resp = DescribeSceneListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeSceneList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WeilingwithClient::DescribeSceneListOutcomeCallable WeilingwithClient::DescribeSceneListCallable(const DescribeSceneListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeSceneListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeSceneList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeSceneListOutcome>>();
+    DescribeSceneListAsync(
+    request,
+    [prom](
+        const WeilingwithClient*,
+        const DescribeSceneListRequest&,
+        DescribeSceneListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WeilingwithClient::DescribeSpaceDeviceIdListOutcome WeilingwithClient::DescribeSpaceDeviceIdList(const DescribeSpaceDeviceIdListRequest &request)
@@ -1868,25 +2162,32 @@ WeilingwithClient::DescribeSpaceDeviceIdListOutcome WeilingwithClient::DescribeS
 
 void WeilingwithClient::DescribeSpaceDeviceIdListAsync(const DescribeSpaceDeviceIdListRequest& request, const DescribeSpaceDeviceIdListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeSpaceDeviceIdList(request), context);
-    };
+    using Req = const DescribeSpaceDeviceIdListRequest&;
+    using Resp = DescribeSpaceDeviceIdListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeSpaceDeviceIdList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WeilingwithClient::DescribeSpaceDeviceIdListOutcomeCallable WeilingwithClient::DescribeSpaceDeviceIdListCallable(const DescribeSpaceDeviceIdListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeSpaceDeviceIdListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeSpaceDeviceIdList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeSpaceDeviceIdListOutcome>>();
+    DescribeSpaceDeviceIdListAsync(
+    request,
+    [prom](
+        const WeilingwithClient*,
+        const DescribeSpaceDeviceIdListRequest&,
+        DescribeSpaceDeviceIdListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WeilingwithClient::DescribeSpaceDeviceRelationListOutcome WeilingwithClient::DescribeSpaceDeviceRelationList(const DescribeSpaceDeviceRelationListRequest &request)
@@ -1911,25 +2212,32 @@ WeilingwithClient::DescribeSpaceDeviceRelationListOutcome WeilingwithClient::Des
 
 void WeilingwithClient::DescribeSpaceDeviceRelationListAsync(const DescribeSpaceDeviceRelationListRequest& request, const DescribeSpaceDeviceRelationListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeSpaceDeviceRelationList(request), context);
-    };
+    using Req = const DescribeSpaceDeviceRelationListRequest&;
+    using Resp = DescribeSpaceDeviceRelationListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeSpaceDeviceRelationList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WeilingwithClient::DescribeSpaceDeviceRelationListOutcomeCallable WeilingwithClient::DescribeSpaceDeviceRelationListCallable(const DescribeSpaceDeviceRelationListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeSpaceDeviceRelationListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeSpaceDeviceRelationList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeSpaceDeviceRelationListOutcome>>();
+    DescribeSpaceDeviceRelationListAsync(
+    request,
+    [prom](
+        const WeilingwithClient*,
+        const DescribeSpaceDeviceRelationListRequest&,
+        DescribeSpaceDeviceRelationListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WeilingwithClient::DescribeSpaceInfoByDeviceIdOutcome WeilingwithClient::DescribeSpaceInfoByDeviceId(const DescribeSpaceInfoByDeviceIdRequest &request)
@@ -1954,25 +2262,32 @@ WeilingwithClient::DescribeSpaceInfoByDeviceIdOutcome WeilingwithClient::Describ
 
 void WeilingwithClient::DescribeSpaceInfoByDeviceIdAsync(const DescribeSpaceInfoByDeviceIdRequest& request, const DescribeSpaceInfoByDeviceIdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeSpaceInfoByDeviceId(request), context);
-    };
+    using Req = const DescribeSpaceInfoByDeviceIdRequest&;
+    using Resp = DescribeSpaceInfoByDeviceIdResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeSpaceInfoByDeviceId", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WeilingwithClient::DescribeSpaceInfoByDeviceIdOutcomeCallable WeilingwithClient::DescribeSpaceInfoByDeviceIdCallable(const DescribeSpaceInfoByDeviceIdRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeSpaceInfoByDeviceIdOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeSpaceInfoByDeviceId(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeSpaceInfoByDeviceIdOutcome>>();
+    DescribeSpaceInfoByDeviceIdAsync(
+    request,
+    [prom](
+        const WeilingwithClient*,
+        const DescribeSpaceInfoByDeviceIdRequest&,
+        DescribeSpaceInfoByDeviceIdOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WeilingwithClient::DescribeSpaceRelationByDeviceIdOutcome WeilingwithClient::DescribeSpaceRelationByDeviceId(const DescribeSpaceRelationByDeviceIdRequest &request)
@@ -1997,25 +2312,32 @@ WeilingwithClient::DescribeSpaceRelationByDeviceIdOutcome WeilingwithClient::Des
 
 void WeilingwithClient::DescribeSpaceRelationByDeviceIdAsync(const DescribeSpaceRelationByDeviceIdRequest& request, const DescribeSpaceRelationByDeviceIdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeSpaceRelationByDeviceId(request), context);
-    };
+    using Req = const DescribeSpaceRelationByDeviceIdRequest&;
+    using Resp = DescribeSpaceRelationByDeviceIdResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeSpaceRelationByDeviceId", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WeilingwithClient::DescribeSpaceRelationByDeviceIdOutcomeCallable WeilingwithClient::DescribeSpaceRelationByDeviceIdCallable(const DescribeSpaceRelationByDeviceIdRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeSpaceRelationByDeviceIdOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeSpaceRelationByDeviceId(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeSpaceRelationByDeviceIdOutcome>>();
+    DescribeSpaceRelationByDeviceIdAsync(
+    request,
+    [prom](
+        const WeilingwithClient*,
+        const DescribeSpaceRelationByDeviceIdRequest&,
+        DescribeSpaceRelationByDeviceIdOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WeilingwithClient::DescribeSpaceTypeListOutcome WeilingwithClient::DescribeSpaceTypeList(const DescribeSpaceTypeListRequest &request)
@@ -2040,25 +2362,32 @@ WeilingwithClient::DescribeSpaceTypeListOutcome WeilingwithClient::DescribeSpace
 
 void WeilingwithClient::DescribeSpaceTypeListAsync(const DescribeSpaceTypeListRequest& request, const DescribeSpaceTypeListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeSpaceTypeList(request), context);
-    };
+    using Req = const DescribeSpaceTypeListRequest&;
+    using Resp = DescribeSpaceTypeListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeSpaceTypeList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WeilingwithClient::DescribeSpaceTypeListOutcomeCallable WeilingwithClient::DescribeSpaceTypeListCallable(const DescribeSpaceTypeListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeSpaceTypeListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeSpaceTypeList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeSpaceTypeListOutcome>>();
+    DescribeSpaceTypeListAsync(
+    request,
+    [prom](
+        const WeilingwithClient*,
+        const DescribeSpaceTypeListRequest&,
+        DescribeSpaceTypeListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WeilingwithClient::DescribeTenantBuildingCountAndAreaOutcome WeilingwithClient::DescribeTenantBuildingCountAndArea(const DescribeTenantBuildingCountAndAreaRequest &request)
@@ -2083,25 +2412,32 @@ WeilingwithClient::DescribeTenantBuildingCountAndAreaOutcome WeilingwithClient::
 
 void WeilingwithClient::DescribeTenantBuildingCountAndAreaAsync(const DescribeTenantBuildingCountAndAreaRequest& request, const DescribeTenantBuildingCountAndAreaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeTenantBuildingCountAndArea(request), context);
-    };
+    using Req = const DescribeTenantBuildingCountAndAreaRequest&;
+    using Resp = DescribeTenantBuildingCountAndAreaResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeTenantBuildingCountAndArea", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WeilingwithClient::DescribeTenantBuildingCountAndAreaOutcomeCallable WeilingwithClient::DescribeTenantBuildingCountAndAreaCallable(const DescribeTenantBuildingCountAndAreaRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeTenantBuildingCountAndAreaOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeTenantBuildingCountAndArea(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeTenantBuildingCountAndAreaOutcome>>();
+    DescribeTenantBuildingCountAndAreaAsync(
+    request,
+    [prom](
+        const WeilingwithClient*,
+        const DescribeTenantBuildingCountAndAreaRequest&,
+        DescribeTenantBuildingCountAndAreaOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WeilingwithClient::DescribeTenantDepartmentListOutcome WeilingwithClient::DescribeTenantDepartmentList(const DescribeTenantDepartmentListRequest &request)
@@ -2126,25 +2462,32 @@ WeilingwithClient::DescribeTenantDepartmentListOutcome WeilingwithClient::Descri
 
 void WeilingwithClient::DescribeTenantDepartmentListAsync(const DescribeTenantDepartmentListRequest& request, const DescribeTenantDepartmentListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeTenantDepartmentList(request), context);
-    };
+    using Req = const DescribeTenantDepartmentListRequest&;
+    using Resp = DescribeTenantDepartmentListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeTenantDepartmentList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WeilingwithClient::DescribeTenantDepartmentListOutcomeCallable WeilingwithClient::DescribeTenantDepartmentListCallable(const DescribeTenantDepartmentListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeTenantDepartmentListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeTenantDepartmentList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeTenantDepartmentListOutcome>>();
+    DescribeTenantDepartmentListAsync(
+    request,
+    [prom](
+        const WeilingwithClient*,
+        const DescribeTenantDepartmentListRequest&,
+        DescribeTenantDepartmentListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WeilingwithClient::DescribeTenantUserListOutcome WeilingwithClient::DescribeTenantUserList(const DescribeTenantUserListRequest &request)
@@ -2169,25 +2512,32 @@ WeilingwithClient::DescribeTenantUserListOutcome WeilingwithClient::DescribeTena
 
 void WeilingwithClient::DescribeTenantUserListAsync(const DescribeTenantUserListRequest& request, const DescribeTenantUserListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeTenantUserList(request), context);
-    };
+    using Req = const DescribeTenantUserListRequest&;
+    using Resp = DescribeTenantUserListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeTenantUserList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WeilingwithClient::DescribeTenantUserListOutcomeCallable WeilingwithClient::DescribeTenantUserListCallable(const DescribeTenantUserListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeTenantUserListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeTenantUserList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeTenantUserListOutcome>>();
+    DescribeTenantUserListAsync(
+    request,
+    [prom](
+        const WeilingwithClient*,
+        const DescribeTenantUserListRequest&,
+        DescribeTenantUserListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WeilingwithClient::DescribeVideoCloudRecordOutcome WeilingwithClient::DescribeVideoCloudRecord(const DescribeVideoCloudRecordRequest &request)
@@ -2212,25 +2562,32 @@ WeilingwithClient::DescribeVideoCloudRecordOutcome WeilingwithClient::DescribeVi
 
 void WeilingwithClient::DescribeVideoCloudRecordAsync(const DescribeVideoCloudRecordRequest& request, const DescribeVideoCloudRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeVideoCloudRecord(request), context);
-    };
+    using Req = const DescribeVideoCloudRecordRequest&;
+    using Resp = DescribeVideoCloudRecordResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeVideoCloudRecord", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WeilingwithClient::DescribeVideoCloudRecordOutcomeCallable WeilingwithClient::DescribeVideoCloudRecordCallable(const DescribeVideoCloudRecordRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeVideoCloudRecordOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeVideoCloudRecord(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeVideoCloudRecordOutcome>>();
+    DescribeVideoCloudRecordAsync(
+    request,
+    [prom](
+        const WeilingwithClient*,
+        const DescribeVideoCloudRecordRequest&,
+        DescribeVideoCloudRecordOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WeilingwithClient::DescribeVideoLiveStreamOutcome WeilingwithClient::DescribeVideoLiveStream(const DescribeVideoLiveStreamRequest &request)
@@ -2255,25 +2612,32 @@ WeilingwithClient::DescribeVideoLiveStreamOutcome WeilingwithClient::DescribeVid
 
 void WeilingwithClient::DescribeVideoLiveStreamAsync(const DescribeVideoLiveStreamRequest& request, const DescribeVideoLiveStreamAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeVideoLiveStream(request), context);
-    };
+    using Req = const DescribeVideoLiveStreamRequest&;
+    using Resp = DescribeVideoLiveStreamResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeVideoLiveStream", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WeilingwithClient::DescribeVideoLiveStreamOutcomeCallable WeilingwithClient::DescribeVideoLiveStreamCallable(const DescribeVideoLiveStreamRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeVideoLiveStreamOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeVideoLiveStream(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeVideoLiveStreamOutcome>>();
+    DescribeVideoLiveStreamAsync(
+    request,
+    [prom](
+        const WeilingwithClient*,
+        const DescribeVideoLiveStreamRequest&,
+        DescribeVideoLiveStreamOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WeilingwithClient::DescribeVideoRecordStreamOutcome WeilingwithClient::DescribeVideoRecordStream(const DescribeVideoRecordStreamRequest &request)
@@ -2298,25 +2662,32 @@ WeilingwithClient::DescribeVideoRecordStreamOutcome WeilingwithClient::DescribeV
 
 void WeilingwithClient::DescribeVideoRecordStreamAsync(const DescribeVideoRecordStreamRequest& request, const DescribeVideoRecordStreamAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeVideoRecordStream(request), context);
-    };
+    using Req = const DescribeVideoRecordStreamRequest&;
+    using Resp = DescribeVideoRecordStreamResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeVideoRecordStream", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WeilingwithClient::DescribeVideoRecordStreamOutcomeCallable WeilingwithClient::DescribeVideoRecordStreamCallable(const DescribeVideoRecordStreamRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeVideoRecordStreamOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeVideoRecordStream(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeVideoRecordStreamOutcome>>();
+    DescribeVideoRecordStreamAsync(
+    request,
+    [prom](
+        const WeilingwithClient*,
+        const DescribeVideoRecordStreamRequest&,
+        DescribeVideoRecordStreamOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WeilingwithClient::DescribeWorkSpaceBuildingCountAndAreaOutcome WeilingwithClient::DescribeWorkSpaceBuildingCountAndArea(const DescribeWorkSpaceBuildingCountAndAreaRequest &request)
@@ -2341,25 +2712,32 @@ WeilingwithClient::DescribeWorkSpaceBuildingCountAndAreaOutcome WeilingwithClien
 
 void WeilingwithClient::DescribeWorkSpaceBuildingCountAndAreaAsync(const DescribeWorkSpaceBuildingCountAndAreaRequest& request, const DescribeWorkSpaceBuildingCountAndAreaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeWorkSpaceBuildingCountAndArea(request), context);
-    };
+    using Req = const DescribeWorkSpaceBuildingCountAndAreaRequest&;
+    using Resp = DescribeWorkSpaceBuildingCountAndAreaResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeWorkSpaceBuildingCountAndArea", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WeilingwithClient::DescribeWorkSpaceBuildingCountAndAreaOutcomeCallable WeilingwithClient::DescribeWorkSpaceBuildingCountAndAreaCallable(const DescribeWorkSpaceBuildingCountAndAreaRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeWorkSpaceBuildingCountAndAreaOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeWorkSpaceBuildingCountAndArea(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeWorkSpaceBuildingCountAndAreaOutcome>>();
+    DescribeWorkSpaceBuildingCountAndAreaAsync(
+    request,
+    [prom](
+        const WeilingwithClient*,
+        const DescribeWorkSpaceBuildingCountAndAreaRequest&,
+        DescribeWorkSpaceBuildingCountAndAreaOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WeilingwithClient::DescribeWorkspaceListOutcome WeilingwithClient::DescribeWorkspaceList(const DescribeWorkspaceListRequest &request)
@@ -2384,25 +2762,32 @@ WeilingwithClient::DescribeWorkspaceListOutcome WeilingwithClient::DescribeWorks
 
 void WeilingwithClient::DescribeWorkspaceListAsync(const DescribeWorkspaceListRequest& request, const DescribeWorkspaceListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeWorkspaceList(request), context);
-    };
+    using Req = const DescribeWorkspaceListRequest&;
+    using Resp = DescribeWorkspaceListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeWorkspaceList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WeilingwithClient::DescribeWorkspaceListOutcomeCallable WeilingwithClient::DescribeWorkspaceListCallable(const DescribeWorkspaceListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeWorkspaceListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeWorkspaceList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeWorkspaceListOutcome>>();
+    DescribeWorkspaceListAsync(
+    request,
+    [prom](
+        const WeilingwithClient*,
+        const DescribeWorkspaceListRequest&,
+        DescribeWorkspaceListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WeilingwithClient::DescribeWorkspaceUserListOutcome WeilingwithClient::DescribeWorkspaceUserList(const DescribeWorkspaceUserListRequest &request)
@@ -2427,25 +2812,32 @@ WeilingwithClient::DescribeWorkspaceUserListOutcome WeilingwithClient::DescribeW
 
 void WeilingwithClient::DescribeWorkspaceUserListAsync(const DescribeWorkspaceUserListRequest& request, const DescribeWorkspaceUserListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeWorkspaceUserList(request), context);
-    };
+    using Req = const DescribeWorkspaceUserListRequest&;
+    using Resp = DescribeWorkspaceUserListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeWorkspaceUserList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WeilingwithClient::DescribeWorkspaceUserListOutcomeCallable WeilingwithClient::DescribeWorkspaceUserListCallable(const DescribeWorkspaceUserListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeWorkspaceUserListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeWorkspaceUserList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeWorkspaceUserListOutcome>>();
+    DescribeWorkspaceUserListAsync(
+    request,
+    [prom](
+        const WeilingwithClient*,
+        const DescribeWorkspaceUserListRequest&,
+        DescribeWorkspaceUserListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WeilingwithClient::ModifyDeviceFieldOutcome WeilingwithClient::ModifyDeviceField(const ModifyDeviceFieldRequest &request)
@@ -2470,25 +2862,32 @@ WeilingwithClient::ModifyDeviceFieldOutcome WeilingwithClient::ModifyDeviceField
 
 void WeilingwithClient::ModifyDeviceFieldAsync(const ModifyDeviceFieldRequest& request, const ModifyDeviceFieldAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyDeviceField(request), context);
-    };
+    using Req = const ModifyDeviceFieldRequest&;
+    using Resp = ModifyDeviceFieldResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyDeviceField", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WeilingwithClient::ModifyDeviceFieldOutcomeCallable WeilingwithClient::ModifyDeviceFieldCallable(const ModifyDeviceFieldRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyDeviceFieldOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyDeviceField(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyDeviceFieldOutcome>>();
+    ModifyDeviceFieldAsync(
+    request,
+    [prom](
+        const WeilingwithClient*,
+        const ModifyDeviceFieldRequest&,
+        ModifyDeviceFieldOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WeilingwithClient::ModifyDeviceGroupOutcome WeilingwithClient::ModifyDeviceGroup(const ModifyDeviceGroupRequest &request)
@@ -2513,25 +2912,32 @@ WeilingwithClient::ModifyDeviceGroupOutcome WeilingwithClient::ModifyDeviceGroup
 
 void WeilingwithClient::ModifyDeviceGroupAsync(const ModifyDeviceGroupRequest& request, const ModifyDeviceGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyDeviceGroup(request), context);
-    };
+    using Req = const ModifyDeviceGroupRequest&;
+    using Resp = ModifyDeviceGroupResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyDeviceGroup", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WeilingwithClient::ModifyDeviceGroupOutcomeCallable WeilingwithClient::ModifyDeviceGroupCallable(const ModifyDeviceGroupRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyDeviceGroupOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyDeviceGroup(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyDeviceGroupOutcome>>();
+    ModifyDeviceGroupAsync(
+    request,
+    [prom](
+        const WeilingwithClient*,
+        const ModifyDeviceGroupRequest&,
+        ModifyDeviceGroupOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WeilingwithClient::ModifyDeviceNameOutcome WeilingwithClient::ModifyDeviceName(const ModifyDeviceNameRequest &request)
@@ -2556,25 +2962,32 @@ WeilingwithClient::ModifyDeviceNameOutcome WeilingwithClient::ModifyDeviceName(c
 
 void WeilingwithClient::ModifyDeviceNameAsync(const ModifyDeviceNameRequest& request, const ModifyDeviceNameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyDeviceName(request), context);
-    };
+    using Req = const ModifyDeviceNameRequest&;
+    using Resp = ModifyDeviceNameResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyDeviceName", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WeilingwithClient::ModifyDeviceNameOutcomeCallable WeilingwithClient::ModifyDeviceNameCallable(const ModifyDeviceNameRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyDeviceNameOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyDeviceName(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyDeviceNameOutcome>>();
+    ModifyDeviceNameAsync(
+    request,
+    [prom](
+        const WeilingwithClient*,
+        const ModifyDeviceNameRequest&,
+        ModifyDeviceNameOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WeilingwithClient::ModifyDeviceTagOutcome WeilingwithClient::ModifyDeviceTag(const ModifyDeviceTagRequest &request)
@@ -2599,25 +3012,32 @@ WeilingwithClient::ModifyDeviceTagOutcome WeilingwithClient::ModifyDeviceTag(con
 
 void WeilingwithClient::ModifyDeviceTagAsync(const ModifyDeviceTagRequest& request, const ModifyDeviceTagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyDeviceTag(request), context);
-    };
+    using Req = const ModifyDeviceTagRequest&;
+    using Resp = ModifyDeviceTagResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyDeviceTag", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WeilingwithClient::ModifyDeviceTagOutcomeCallable WeilingwithClient::ModifyDeviceTagCallable(const ModifyDeviceTagRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyDeviceTagOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyDeviceTag(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyDeviceTagOutcome>>();
+    ModifyDeviceTagAsync(
+    request,
+    [prom](
+        const WeilingwithClient*,
+        const ModifyDeviceTagRequest&,
+        ModifyDeviceTagOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WeilingwithClient::ReportAppMessageOutcome WeilingwithClient::ReportAppMessage(const ReportAppMessageRequest &request)
@@ -2642,25 +3062,32 @@ WeilingwithClient::ReportAppMessageOutcome WeilingwithClient::ReportAppMessage(c
 
 void WeilingwithClient::ReportAppMessageAsync(const ReportAppMessageRequest& request, const ReportAppMessageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ReportAppMessage(request), context);
-    };
+    using Req = const ReportAppMessageRequest&;
+    using Resp = ReportAppMessageResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ReportAppMessage", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WeilingwithClient::ReportAppMessageOutcomeCallable WeilingwithClient::ReportAppMessageCallable(const ReportAppMessageRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ReportAppMessageOutcome()>>(
-        [this, request]()
-        {
-            return this->ReportAppMessage(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ReportAppMessageOutcome>>();
+    ReportAppMessageAsync(
+    request,
+    [prom](
+        const WeilingwithClient*,
+        const ReportAppMessageRequest&,
+        ReportAppMessageOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WeilingwithClient::SaveDeviceGroupOutcome WeilingwithClient::SaveDeviceGroup(const SaveDeviceGroupRequest &request)
@@ -2685,25 +3112,32 @@ WeilingwithClient::SaveDeviceGroupOutcome WeilingwithClient::SaveDeviceGroup(con
 
 void WeilingwithClient::SaveDeviceGroupAsync(const SaveDeviceGroupRequest& request, const SaveDeviceGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->SaveDeviceGroup(request), context);
-    };
+    using Req = const SaveDeviceGroupRequest&;
+    using Resp = SaveDeviceGroupResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "SaveDeviceGroup", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WeilingwithClient::SaveDeviceGroupOutcomeCallable WeilingwithClient::SaveDeviceGroupCallable(const SaveDeviceGroupRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<SaveDeviceGroupOutcome()>>(
-        [this, request]()
-        {
-            return this->SaveDeviceGroup(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<SaveDeviceGroupOutcome>>();
+    SaveDeviceGroupAsync(
+    request,
+    [prom](
+        const WeilingwithClient*,
+        const SaveDeviceGroupRequest&,
+        SaveDeviceGroupOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WeilingwithClient::StopVideoStreamingOutcome WeilingwithClient::StopVideoStreaming(const StopVideoStreamingRequest &request)
@@ -2728,25 +3162,32 @@ WeilingwithClient::StopVideoStreamingOutcome WeilingwithClient::StopVideoStreami
 
 void WeilingwithClient::StopVideoStreamingAsync(const StopVideoStreamingRequest& request, const StopVideoStreamingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->StopVideoStreaming(request), context);
-    };
+    using Req = const StopVideoStreamingRequest&;
+    using Resp = StopVideoStreamingResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "StopVideoStreaming", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WeilingwithClient::StopVideoStreamingOutcomeCallable WeilingwithClient::StopVideoStreamingCallable(const StopVideoStreamingRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<StopVideoStreamingOutcome()>>(
-        [this, request]()
-        {
-            return this->StopVideoStreaming(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<StopVideoStreamingOutcome>>();
+    StopVideoStreamingAsync(
+    request,
+    [prom](
+        const WeilingwithClient*,
+        const StopVideoStreamingRequest&,
+        StopVideoStreamingOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WeilingwithClient::UpdateWorkspaceParkAttributesOutcome WeilingwithClient::UpdateWorkspaceParkAttributes(const UpdateWorkspaceParkAttributesRequest &request)
@@ -2771,24 +3212,31 @@ WeilingwithClient::UpdateWorkspaceParkAttributesOutcome WeilingwithClient::Updat
 
 void WeilingwithClient::UpdateWorkspaceParkAttributesAsync(const UpdateWorkspaceParkAttributesRequest& request, const UpdateWorkspaceParkAttributesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UpdateWorkspaceParkAttributes(request), context);
-    };
+    using Req = const UpdateWorkspaceParkAttributesRequest&;
+    using Resp = UpdateWorkspaceParkAttributesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UpdateWorkspaceParkAttributes", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WeilingwithClient::UpdateWorkspaceParkAttributesOutcomeCallable WeilingwithClient::UpdateWorkspaceParkAttributesCallable(const UpdateWorkspaceParkAttributesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UpdateWorkspaceParkAttributesOutcome()>>(
-        [this, request]()
-        {
-            return this->UpdateWorkspaceParkAttributes(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UpdateWorkspaceParkAttributesOutcome>>();
+    UpdateWorkspaceParkAttributesAsync(
+    request,
+    [prom](
+        const WeilingwithClient*,
+        const UpdateWorkspaceParkAttributesRequest&,
+        UpdateWorkspaceParkAttributesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 

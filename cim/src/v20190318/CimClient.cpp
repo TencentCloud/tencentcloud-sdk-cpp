@@ -62,24 +62,31 @@ CimClient::DescribeSdkAppidOutcome CimClient::DescribeSdkAppid(const DescribeSdk
 
 void CimClient::DescribeSdkAppidAsync(const DescribeSdkAppidRequest& request, const DescribeSdkAppidAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeSdkAppid(request), context);
-    };
+    using Req = const DescribeSdkAppidRequest&;
+    using Resp = DescribeSdkAppidResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeSdkAppid", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CimClient::DescribeSdkAppidOutcomeCallable CimClient::DescribeSdkAppidCallable(const DescribeSdkAppidRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeSdkAppidOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeSdkAppid(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeSdkAppidOutcome>>();
+    DescribeSdkAppidAsync(
+    request,
+    [prom](
+        const CimClient*,
+        const DescribeSdkAppidRequest&,
+        DescribeSdkAppidOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 

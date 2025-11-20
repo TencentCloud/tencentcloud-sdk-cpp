@@ -62,25 +62,32 @@ MarketClient::FlowProductRemindOutcome MarketClient::FlowProductRemind(const Flo
 
 void MarketClient::FlowProductRemindAsync(const FlowProductRemindRequest& request, const FlowProductRemindAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->FlowProductRemind(request), context);
-    };
+    using Req = const FlowProductRemindRequest&;
+    using Resp = FlowProductRemindResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "FlowProductRemind", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MarketClient::FlowProductRemindOutcomeCallable MarketClient::FlowProductRemindCallable(const FlowProductRemindRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<FlowProductRemindOutcome()>>(
-        [this, request]()
-        {
-            return this->FlowProductRemind(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<FlowProductRemindOutcome>>();
+    FlowProductRemindAsync(
+    request,
+    [prom](
+        const MarketClient*,
+        const FlowProductRemindRequest&,
+        FlowProductRemindOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MarketClient::GetUsagePlanUsageAmountOutcome MarketClient::GetUsagePlanUsageAmount(const GetUsagePlanUsageAmountRequest &request)
@@ -105,24 +112,31 @@ MarketClient::GetUsagePlanUsageAmountOutcome MarketClient::GetUsagePlanUsageAmou
 
 void MarketClient::GetUsagePlanUsageAmountAsync(const GetUsagePlanUsageAmountRequest& request, const GetUsagePlanUsageAmountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->GetUsagePlanUsageAmount(request), context);
-    };
+    using Req = const GetUsagePlanUsageAmountRequest&;
+    using Resp = GetUsagePlanUsageAmountResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "GetUsagePlanUsageAmount", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MarketClient::GetUsagePlanUsageAmountOutcomeCallable MarketClient::GetUsagePlanUsageAmountCallable(const GetUsagePlanUsageAmountRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<GetUsagePlanUsageAmountOutcome()>>(
-        [this, request]()
-        {
-            return this->GetUsagePlanUsageAmount(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<GetUsagePlanUsageAmountOutcome>>();
+    GetUsagePlanUsageAmountAsync(
+    request,
+    [prom](
+        const MarketClient*,
+        const GetUsagePlanUsageAmountRequest&,
+        GetUsagePlanUsageAmountOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 

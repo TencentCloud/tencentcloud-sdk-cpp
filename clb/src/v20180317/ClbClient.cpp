@@ -62,25 +62,32 @@ ClbClient::AssociateTargetGroupsOutcome ClbClient::AssociateTargetGroups(const A
 
 void ClbClient::AssociateTargetGroupsAsync(const AssociateTargetGroupsRequest& request, const AssociateTargetGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->AssociateTargetGroups(request), context);
-    };
+    using Req = const AssociateTargetGroupsRequest&;
+    using Resp = AssociateTargetGroupsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "AssociateTargetGroups", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ClbClient::AssociateTargetGroupsOutcomeCallable ClbClient::AssociateTargetGroupsCallable(const AssociateTargetGroupsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<AssociateTargetGroupsOutcome()>>(
-        [this, request]()
-        {
-            return this->AssociateTargetGroups(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<AssociateTargetGroupsOutcome>>();
+    AssociateTargetGroupsAsync(
+    request,
+    [prom](
+        const ClbClient*,
+        const AssociateTargetGroupsRequest&,
+        AssociateTargetGroupsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ClbClient::AutoRewriteOutcome ClbClient::AutoRewrite(const AutoRewriteRequest &request)
@@ -105,25 +112,32 @@ ClbClient::AutoRewriteOutcome ClbClient::AutoRewrite(const AutoRewriteRequest &r
 
 void ClbClient::AutoRewriteAsync(const AutoRewriteRequest& request, const AutoRewriteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->AutoRewrite(request), context);
-    };
+    using Req = const AutoRewriteRequest&;
+    using Resp = AutoRewriteResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "AutoRewrite", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ClbClient::AutoRewriteOutcomeCallable ClbClient::AutoRewriteCallable(const AutoRewriteRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<AutoRewriteOutcome()>>(
-        [this, request]()
-        {
-            return this->AutoRewrite(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<AutoRewriteOutcome>>();
+    AutoRewriteAsync(
+    request,
+    [prom](
+        const ClbClient*,
+        const AutoRewriteRequest&,
+        AutoRewriteOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ClbClient::BatchDeregisterTargetsOutcome ClbClient::BatchDeregisterTargets(const BatchDeregisterTargetsRequest &request)
@@ -148,25 +162,32 @@ ClbClient::BatchDeregisterTargetsOutcome ClbClient::BatchDeregisterTargets(const
 
 void ClbClient::BatchDeregisterTargetsAsync(const BatchDeregisterTargetsRequest& request, const BatchDeregisterTargetsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->BatchDeregisterTargets(request), context);
-    };
+    using Req = const BatchDeregisterTargetsRequest&;
+    using Resp = BatchDeregisterTargetsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "BatchDeregisterTargets", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ClbClient::BatchDeregisterTargetsOutcomeCallable ClbClient::BatchDeregisterTargetsCallable(const BatchDeregisterTargetsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<BatchDeregisterTargetsOutcome()>>(
-        [this, request]()
-        {
-            return this->BatchDeregisterTargets(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<BatchDeregisterTargetsOutcome>>();
+    BatchDeregisterTargetsAsync(
+    request,
+    [prom](
+        const ClbClient*,
+        const BatchDeregisterTargetsRequest&,
+        BatchDeregisterTargetsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ClbClient::BatchModifyTargetTagOutcome ClbClient::BatchModifyTargetTag(const BatchModifyTargetTagRequest &request)
@@ -191,25 +212,32 @@ ClbClient::BatchModifyTargetTagOutcome ClbClient::BatchModifyTargetTag(const Bat
 
 void ClbClient::BatchModifyTargetTagAsync(const BatchModifyTargetTagRequest& request, const BatchModifyTargetTagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->BatchModifyTargetTag(request), context);
-    };
+    using Req = const BatchModifyTargetTagRequest&;
+    using Resp = BatchModifyTargetTagResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "BatchModifyTargetTag", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ClbClient::BatchModifyTargetTagOutcomeCallable ClbClient::BatchModifyTargetTagCallable(const BatchModifyTargetTagRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<BatchModifyTargetTagOutcome()>>(
-        [this, request]()
-        {
-            return this->BatchModifyTargetTag(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<BatchModifyTargetTagOutcome>>();
+    BatchModifyTargetTagAsync(
+    request,
+    [prom](
+        const ClbClient*,
+        const BatchModifyTargetTagRequest&,
+        BatchModifyTargetTagOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ClbClient::BatchModifyTargetWeightOutcome ClbClient::BatchModifyTargetWeight(const BatchModifyTargetWeightRequest &request)
@@ -234,25 +262,32 @@ ClbClient::BatchModifyTargetWeightOutcome ClbClient::BatchModifyTargetWeight(con
 
 void ClbClient::BatchModifyTargetWeightAsync(const BatchModifyTargetWeightRequest& request, const BatchModifyTargetWeightAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->BatchModifyTargetWeight(request), context);
-    };
+    using Req = const BatchModifyTargetWeightRequest&;
+    using Resp = BatchModifyTargetWeightResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "BatchModifyTargetWeight", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ClbClient::BatchModifyTargetWeightOutcomeCallable ClbClient::BatchModifyTargetWeightCallable(const BatchModifyTargetWeightRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<BatchModifyTargetWeightOutcome()>>(
-        [this, request]()
-        {
-            return this->BatchModifyTargetWeight(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<BatchModifyTargetWeightOutcome>>();
+    BatchModifyTargetWeightAsync(
+    request,
+    [prom](
+        const ClbClient*,
+        const BatchModifyTargetWeightRequest&,
+        BatchModifyTargetWeightOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ClbClient::BatchRegisterTargetsOutcome ClbClient::BatchRegisterTargets(const BatchRegisterTargetsRequest &request)
@@ -277,25 +312,32 @@ ClbClient::BatchRegisterTargetsOutcome ClbClient::BatchRegisterTargets(const Bat
 
 void ClbClient::BatchRegisterTargetsAsync(const BatchRegisterTargetsRequest& request, const BatchRegisterTargetsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->BatchRegisterTargets(request), context);
-    };
+    using Req = const BatchRegisterTargetsRequest&;
+    using Resp = BatchRegisterTargetsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "BatchRegisterTargets", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ClbClient::BatchRegisterTargetsOutcomeCallable ClbClient::BatchRegisterTargetsCallable(const BatchRegisterTargetsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<BatchRegisterTargetsOutcome()>>(
-        [this, request]()
-        {
-            return this->BatchRegisterTargets(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<BatchRegisterTargetsOutcome>>();
+    BatchRegisterTargetsAsync(
+    request,
+    [prom](
+        const ClbClient*,
+        const BatchRegisterTargetsRequest&,
+        BatchRegisterTargetsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ClbClient::CloneLoadBalancerOutcome ClbClient::CloneLoadBalancer(const CloneLoadBalancerRequest &request)
@@ -320,25 +362,32 @@ ClbClient::CloneLoadBalancerOutcome ClbClient::CloneLoadBalancer(const CloneLoad
 
 void ClbClient::CloneLoadBalancerAsync(const CloneLoadBalancerRequest& request, const CloneLoadBalancerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CloneLoadBalancer(request), context);
-    };
+    using Req = const CloneLoadBalancerRequest&;
+    using Resp = CloneLoadBalancerResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CloneLoadBalancer", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ClbClient::CloneLoadBalancerOutcomeCallable ClbClient::CloneLoadBalancerCallable(const CloneLoadBalancerRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CloneLoadBalancerOutcome()>>(
-        [this, request]()
-        {
-            return this->CloneLoadBalancer(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CloneLoadBalancerOutcome>>();
+    CloneLoadBalancerAsync(
+    request,
+    [prom](
+        const ClbClient*,
+        const CloneLoadBalancerRequest&,
+        CloneLoadBalancerOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ClbClient::CreateClsLogSetOutcome ClbClient::CreateClsLogSet(const CreateClsLogSetRequest &request)
@@ -363,25 +412,32 @@ ClbClient::CreateClsLogSetOutcome ClbClient::CreateClsLogSet(const CreateClsLogS
 
 void ClbClient::CreateClsLogSetAsync(const CreateClsLogSetRequest& request, const CreateClsLogSetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateClsLogSet(request), context);
-    };
+    using Req = const CreateClsLogSetRequest&;
+    using Resp = CreateClsLogSetResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateClsLogSet", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ClbClient::CreateClsLogSetOutcomeCallable ClbClient::CreateClsLogSetCallable(const CreateClsLogSetRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateClsLogSetOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateClsLogSet(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateClsLogSetOutcome>>();
+    CreateClsLogSetAsync(
+    request,
+    [prom](
+        const ClbClient*,
+        const CreateClsLogSetRequest&,
+        CreateClsLogSetOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ClbClient::CreateListenerOutcome ClbClient::CreateListener(const CreateListenerRequest &request)
@@ -406,25 +462,32 @@ ClbClient::CreateListenerOutcome ClbClient::CreateListener(const CreateListenerR
 
 void ClbClient::CreateListenerAsync(const CreateListenerRequest& request, const CreateListenerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateListener(request), context);
-    };
+    using Req = const CreateListenerRequest&;
+    using Resp = CreateListenerResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateListener", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ClbClient::CreateListenerOutcomeCallable ClbClient::CreateListenerCallable(const CreateListenerRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateListenerOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateListener(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateListenerOutcome>>();
+    CreateListenerAsync(
+    request,
+    [prom](
+        const ClbClient*,
+        const CreateListenerRequest&,
+        CreateListenerOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ClbClient::CreateLoadBalancerOutcome ClbClient::CreateLoadBalancer(const CreateLoadBalancerRequest &request)
@@ -449,25 +512,32 @@ ClbClient::CreateLoadBalancerOutcome ClbClient::CreateLoadBalancer(const CreateL
 
 void ClbClient::CreateLoadBalancerAsync(const CreateLoadBalancerRequest& request, const CreateLoadBalancerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateLoadBalancer(request), context);
-    };
+    using Req = const CreateLoadBalancerRequest&;
+    using Resp = CreateLoadBalancerResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateLoadBalancer", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ClbClient::CreateLoadBalancerOutcomeCallable ClbClient::CreateLoadBalancerCallable(const CreateLoadBalancerRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateLoadBalancerOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateLoadBalancer(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateLoadBalancerOutcome>>();
+    CreateLoadBalancerAsync(
+    request,
+    [prom](
+        const ClbClient*,
+        const CreateLoadBalancerRequest&,
+        CreateLoadBalancerOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ClbClient::CreateLoadBalancerSnatIpsOutcome ClbClient::CreateLoadBalancerSnatIps(const CreateLoadBalancerSnatIpsRequest &request)
@@ -492,25 +562,32 @@ ClbClient::CreateLoadBalancerSnatIpsOutcome ClbClient::CreateLoadBalancerSnatIps
 
 void ClbClient::CreateLoadBalancerSnatIpsAsync(const CreateLoadBalancerSnatIpsRequest& request, const CreateLoadBalancerSnatIpsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateLoadBalancerSnatIps(request), context);
-    };
+    using Req = const CreateLoadBalancerSnatIpsRequest&;
+    using Resp = CreateLoadBalancerSnatIpsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateLoadBalancerSnatIps", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ClbClient::CreateLoadBalancerSnatIpsOutcomeCallable ClbClient::CreateLoadBalancerSnatIpsCallable(const CreateLoadBalancerSnatIpsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateLoadBalancerSnatIpsOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateLoadBalancerSnatIps(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateLoadBalancerSnatIpsOutcome>>();
+    CreateLoadBalancerSnatIpsAsync(
+    request,
+    [prom](
+        const ClbClient*,
+        const CreateLoadBalancerSnatIpsRequest&,
+        CreateLoadBalancerSnatIpsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ClbClient::CreateRuleOutcome ClbClient::CreateRule(const CreateRuleRequest &request)
@@ -535,25 +612,32 @@ ClbClient::CreateRuleOutcome ClbClient::CreateRule(const CreateRuleRequest &requ
 
 void ClbClient::CreateRuleAsync(const CreateRuleRequest& request, const CreateRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateRule(request), context);
-    };
+    using Req = const CreateRuleRequest&;
+    using Resp = CreateRuleResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateRule", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ClbClient::CreateRuleOutcomeCallable ClbClient::CreateRuleCallable(const CreateRuleRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateRuleOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateRule(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateRuleOutcome>>();
+    CreateRuleAsync(
+    request,
+    [prom](
+        const ClbClient*,
+        const CreateRuleRequest&,
+        CreateRuleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ClbClient::CreateTargetGroupOutcome ClbClient::CreateTargetGroup(const CreateTargetGroupRequest &request)
@@ -578,25 +662,32 @@ ClbClient::CreateTargetGroupOutcome ClbClient::CreateTargetGroup(const CreateTar
 
 void ClbClient::CreateTargetGroupAsync(const CreateTargetGroupRequest& request, const CreateTargetGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateTargetGroup(request), context);
-    };
+    using Req = const CreateTargetGroupRequest&;
+    using Resp = CreateTargetGroupResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateTargetGroup", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ClbClient::CreateTargetGroupOutcomeCallable ClbClient::CreateTargetGroupCallable(const CreateTargetGroupRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateTargetGroupOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateTargetGroup(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateTargetGroupOutcome>>();
+    CreateTargetGroupAsync(
+    request,
+    [prom](
+        const ClbClient*,
+        const CreateTargetGroupRequest&,
+        CreateTargetGroupOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ClbClient::CreateTopicOutcome ClbClient::CreateTopic(const CreateTopicRequest &request)
@@ -621,25 +712,32 @@ ClbClient::CreateTopicOutcome ClbClient::CreateTopic(const CreateTopicRequest &r
 
 void ClbClient::CreateTopicAsync(const CreateTopicRequest& request, const CreateTopicAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateTopic(request), context);
-    };
+    using Req = const CreateTopicRequest&;
+    using Resp = CreateTopicResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateTopic", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ClbClient::CreateTopicOutcomeCallable ClbClient::CreateTopicCallable(const CreateTopicRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateTopicOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateTopic(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateTopicOutcome>>();
+    CreateTopicAsync(
+    request,
+    [prom](
+        const ClbClient*,
+        const CreateTopicRequest&,
+        CreateTopicOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ClbClient::DeleteListenerOutcome ClbClient::DeleteListener(const DeleteListenerRequest &request)
@@ -664,25 +762,32 @@ ClbClient::DeleteListenerOutcome ClbClient::DeleteListener(const DeleteListenerR
 
 void ClbClient::DeleteListenerAsync(const DeleteListenerRequest& request, const DeleteListenerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteListener(request), context);
-    };
+    using Req = const DeleteListenerRequest&;
+    using Resp = DeleteListenerResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteListener", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ClbClient::DeleteListenerOutcomeCallable ClbClient::DeleteListenerCallable(const DeleteListenerRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteListenerOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteListener(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteListenerOutcome>>();
+    DeleteListenerAsync(
+    request,
+    [prom](
+        const ClbClient*,
+        const DeleteListenerRequest&,
+        DeleteListenerOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ClbClient::DeleteLoadBalancerOutcome ClbClient::DeleteLoadBalancer(const DeleteLoadBalancerRequest &request)
@@ -707,25 +812,32 @@ ClbClient::DeleteLoadBalancerOutcome ClbClient::DeleteLoadBalancer(const DeleteL
 
 void ClbClient::DeleteLoadBalancerAsync(const DeleteLoadBalancerRequest& request, const DeleteLoadBalancerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteLoadBalancer(request), context);
-    };
+    using Req = const DeleteLoadBalancerRequest&;
+    using Resp = DeleteLoadBalancerResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteLoadBalancer", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ClbClient::DeleteLoadBalancerOutcomeCallable ClbClient::DeleteLoadBalancerCallable(const DeleteLoadBalancerRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteLoadBalancerOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteLoadBalancer(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteLoadBalancerOutcome>>();
+    DeleteLoadBalancerAsync(
+    request,
+    [prom](
+        const ClbClient*,
+        const DeleteLoadBalancerRequest&,
+        DeleteLoadBalancerOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ClbClient::DeleteLoadBalancerListenersOutcome ClbClient::DeleteLoadBalancerListeners(const DeleteLoadBalancerListenersRequest &request)
@@ -750,25 +862,32 @@ ClbClient::DeleteLoadBalancerListenersOutcome ClbClient::DeleteLoadBalancerListe
 
 void ClbClient::DeleteLoadBalancerListenersAsync(const DeleteLoadBalancerListenersRequest& request, const DeleteLoadBalancerListenersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteLoadBalancerListeners(request), context);
-    };
+    using Req = const DeleteLoadBalancerListenersRequest&;
+    using Resp = DeleteLoadBalancerListenersResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteLoadBalancerListeners", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ClbClient::DeleteLoadBalancerListenersOutcomeCallable ClbClient::DeleteLoadBalancerListenersCallable(const DeleteLoadBalancerListenersRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteLoadBalancerListenersOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteLoadBalancerListeners(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteLoadBalancerListenersOutcome>>();
+    DeleteLoadBalancerListenersAsync(
+    request,
+    [prom](
+        const ClbClient*,
+        const DeleteLoadBalancerListenersRequest&,
+        DeleteLoadBalancerListenersOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ClbClient::DeleteLoadBalancerSnatIpsOutcome ClbClient::DeleteLoadBalancerSnatIps(const DeleteLoadBalancerSnatIpsRequest &request)
@@ -793,25 +912,32 @@ ClbClient::DeleteLoadBalancerSnatIpsOutcome ClbClient::DeleteLoadBalancerSnatIps
 
 void ClbClient::DeleteLoadBalancerSnatIpsAsync(const DeleteLoadBalancerSnatIpsRequest& request, const DeleteLoadBalancerSnatIpsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteLoadBalancerSnatIps(request), context);
-    };
+    using Req = const DeleteLoadBalancerSnatIpsRequest&;
+    using Resp = DeleteLoadBalancerSnatIpsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteLoadBalancerSnatIps", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ClbClient::DeleteLoadBalancerSnatIpsOutcomeCallable ClbClient::DeleteLoadBalancerSnatIpsCallable(const DeleteLoadBalancerSnatIpsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteLoadBalancerSnatIpsOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteLoadBalancerSnatIps(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteLoadBalancerSnatIpsOutcome>>();
+    DeleteLoadBalancerSnatIpsAsync(
+    request,
+    [prom](
+        const ClbClient*,
+        const DeleteLoadBalancerSnatIpsRequest&,
+        DeleteLoadBalancerSnatIpsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ClbClient::DeleteRewriteOutcome ClbClient::DeleteRewrite(const DeleteRewriteRequest &request)
@@ -836,25 +962,32 @@ ClbClient::DeleteRewriteOutcome ClbClient::DeleteRewrite(const DeleteRewriteRequ
 
 void ClbClient::DeleteRewriteAsync(const DeleteRewriteRequest& request, const DeleteRewriteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteRewrite(request), context);
-    };
+    using Req = const DeleteRewriteRequest&;
+    using Resp = DeleteRewriteResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteRewrite", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ClbClient::DeleteRewriteOutcomeCallable ClbClient::DeleteRewriteCallable(const DeleteRewriteRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteRewriteOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteRewrite(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteRewriteOutcome>>();
+    DeleteRewriteAsync(
+    request,
+    [prom](
+        const ClbClient*,
+        const DeleteRewriteRequest&,
+        DeleteRewriteOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ClbClient::DeleteRuleOutcome ClbClient::DeleteRule(const DeleteRuleRequest &request)
@@ -879,25 +1012,32 @@ ClbClient::DeleteRuleOutcome ClbClient::DeleteRule(const DeleteRuleRequest &requ
 
 void ClbClient::DeleteRuleAsync(const DeleteRuleRequest& request, const DeleteRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteRule(request), context);
-    };
+    using Req = const DeleteRuleRequest&;
+    using Resp = DeleteRuleResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteRule", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ClbClient::DeleteRuleOutcomeCallable ClbClient::DeleteRuleCallable(const DeleteRuleRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteRuleOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteRule(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteRuleOutcome>>();
+    DeleteRuleAsync(
+    request,
+    [prom](
+        const ClbClient*,
+        const DeleteRuleRequest&,
+        DeleteRuleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ClbClient::DeleteTargetGroupsOutcome ClbClient::DeleteTargetGroups(const DeleteTargetGroupsRequest &request)
@@ -922,25 +1062,32 @@ ClbClient::DeleteTargetGroupsOutcome ClbClient::DeleteTargetGroups(const DeleteT
 
 void ClbClient::DeleteTargetGroupsAsync(const DeleteTargetGroupsRequest& request, const DeleteTargetGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteTargetGroups(request), context);
-    };
+    using Req = const DeleteTargetGroupsRequest&;
+    using Resp = DeleteTargetGroupsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteTargetGroups", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ClbClient::DeleteTargetGroupsOutcomeCallable ClbClient::DeleteTargetGroupsCallable(const DeleteTargetGroupsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteTargetGroupsOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteTargetGroups(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteTargetGroupsOutcome>>();
+    DeleteTargetGroupsAsync(
+    request,
+    [prom](
+        const ClbClient*,
+        const DeleteTargetGroupsRequest&,
+        DeleteTargetGroupsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ClbClient::DeregisterFunctionTargetsOutcome ClbClient::DeregisterFunctionTargets(const DeregisterFunctionTargetsRequest &request)
@@ -965,25 +1112,32 @@ ClbClient::DeregisterFunctionTargetsOutcome ClbClient::DeregisterFunctionTargets
 
 void ClbClient::DeregisterFunctionTargetsAsync(const DeregisterFunctionTargetsRequest& request, const DeregisterFunctionTargetsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeregisterFunctionTargets(request), context);
-    };
+    using Req = const DeregisterFunctionTargetsRequest&;
+    using Resp = DeregisterFunctionTargetsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeregisterFunctionTargets", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ClbClient::DeregisterFunctionTargetsOutcomeCallable ClbClient::DeregisterFunctionTargetsCallable(const DeregisterFunctionTargetsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeregisterFunctionTargetsOutcome()>>(
-        [this, request]()
-        {
-            return this->DeregisterFunctionTargets(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeregisterFunctionTargetsOutcome>>();
+    DeregisterFunctionTargetsAsync(
+    request,
+    [prom](
+        const ClbClient*,
+        const DeregisterFunctionTargetsRequest&,
+        DeregisterFunctionTargetsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ClbClient::DeregisterTargetGroupInstancesOutcome ClbClient::DeregisterTargetGroupInstances(const DeregisterTargetGroupInstancesRequest &request)
@@ -1008,25 +1162,32 @@ ClbClient::DeregisterTargetGroupInstancesOutcome ClbClient::DeregisterTargetGrou
 
 void ClbClient::DeregisterTargetGroupInstancesAsync(const DeregisterTargetGroupInstancesRequest& request, const DeregisterTargetGroupInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeregisterTargetGroupInstances(request), context);
-    };
+    using Req = const DeregisterTargetGroupInstancesRequest&;
+    using Resp = DeregisterTargetGroupInstancesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeregisterTargetGroupInstances", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ClbClient::DeregisterTargetGroupInstancesOutcomeCallable ClbClient::DeregisterTargetGroupInstancesCallable(const DeregisterTargetGroupInstancesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeregisterTargetGroupInstancesOutcome()>>(
-        [this, request]()
-        {
-            return this->DeregisterTargetGroupInstances(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeregisterTargetGroupInstancesOutcome>>();
+    DeregisterTargetGroupInstancesAsync(
+    request,
+    [prom](
+        const ClbClient*,
+        const DeregisterTargetGroupInstancesRequest&,
+        DeregisterTargetGroupInstancesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ClbClient::DeregisterTargetsOutcome ClbClient::DeregisterTargets(const DeregisterTargetsRequest &request)
@@ -1051,25 +1212,32 @@ ClbClient::DeregisterTargetsOutcome ClbClient::DeregisterTargets(const Deregiste
 
 void ClbClient::DeregisterTargetsAsync(const DeregisterTargetsRequest& request, const DeregisterTargetsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeregisterTargets(request), context);
-    };
+    using Req = const DeregisterTargetsRequest&;
+    using Resp = DeregisterTargetsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeregisterTargets", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ClbClient::DeregisterTargetsOutcomeCallable ClbClient::DeregisterTargetsCallable(const DeregisterTargetsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeregisterTargetsOutcome()>>(
-        [this, request]()
-        {
-            return this->DeregisterTargets(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeregisterTargetsOutcome>>();
+    DeregisterTargetsAsync(
+    request,
+    [prom](
+        const ClbClient*,
+        const DeregisterTargetsRequest&,
+        DeregisterTargetsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ClbClient::DeregisterTargetsFromClassicalLBOutcome ClbClient::DeregisterTargetsFromClassicalLB(const DeregisterTargetsFromClassicalLBRequest &request)
@@ -1094,25 +1262,32 @@ ClbClient::DeregisterTargetsFromClassicalLBOutcome ClbClient::DeregisterTargetsF
 
 void ClbClient::DeregisterTargetsFromClassicalLBAsync(const DeregisterTargetsFromClassicalLBRequest& request, const DeregisterTargetsFromClassicalLBAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeregisterTargetsFromClassicalLB(request), context);
-    };
+    using Req = const DeregisterTargetsFromClassicalLBRequest&;
+    using Resp = DeregisterTargetsFromClassicalLBResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeregisterTargetsFromClassicalLB", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ClbClient::DeregisterTargetsFromClassicalLBOutcomeCallable ClbClient::DeregisterTargetsFromClassicalLBCallable(const DeregisterTargetsFromClassicalLBRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeregisterTargetsFromClassicalLBOutcome()>>(
-        [this, request]()
-        {
-            return this->DeregisterTargetsFromClassicalLB(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeregisterTargetsFromClassicalLBOutcome>>();
+    DeregisterTargetsFromClassicalLBAsync(
+    request,
+    [prom](
+        const ClbClient*,
+        const DeregisterTargetsFromClassicalLBRequest&,
+        DeregisterTargetsFromClassicalLBOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ClbClient::DescribeBlockIPListOutcome ClbClient::DescribeBlockIPList(const DescribeBlockIPListRequest &request)
@@ -1137,25 +1312,32 @@ ClbClient::DescribeBlockIPListOutcome ClbClient::DescribeBlockIPList(const Descr
 
 void ClbClient::DescribeBlockIPListAsync(const DescribeBlockIPListRequest& request, const DescribeBlockIPListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeBlockIPList(request), context);
-    };
+    using Req = const DescribeBlockIPListRequest&;
+    using Resp = DescribeBlockIPListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeBlockIPList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ClbClient::DescribeBlockIPListOutcomeCallable ClbClient::DescribeBlockIPListCallable(const DescribeBlockIPListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeBlockIPListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeBlockIPList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeBlockIPListOutcome>>();
+    DescribeBlockIPListAsync(
+    request,
+    [prom](
+        const ClbClient*,
+        const DescribeBlockIPListRequest&,
+        DescribeBlockIPListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ClbClient::DescribeBlockIPTaskOutcome ClbClient::DescribeBlockIPTask(const DescribeBlockIPTaskRequest &request)
@@ -1180,25 +1362,32 @@ ClbClient::DescribeBlockIPTaskOutcome ClbClient::DescribeBlockIPTask(const Descr
 
 void ClbClient::DescribeBlockIPTaskAsync(const DescribeBlockIPTaskRequest& request, const DescribeBlockIPTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeBlockIPTask(request), context);
-    };
+    using Req = const DescribeBlockIPTaskRequest&;
+    using Resp = DescribeBlockIPTaskResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeBlockIPTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ClbClient::DescribeBlockIPTaskOutcomeCallable ClbClient::DescribeBlockIPTaskCallable(const DescribeBlockIPTaskRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeBlockIPTaskOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeBlockIPTask(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeBlockIPTaskOutcome>>();
+    DescribeBlockIPTaskAsync(
+    request,
+    [prom](
+        const ClbClient*,
+        const DescribeBlockIPTaskRequest&,
+        DescribeBlockIPTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ClbClient::DescribeClassicalLBByInstanceIdOutcome ClbClient::DescribeClassicalLBByInstanceId(const DescribeClassicalLBByInstanceIdRequest &request)
@@ -1223,25 +1412,32 @@ ClbClient::DescribeClassicalLBByInstanceIdOutcome ClbClient::DescribeClassicalLB
 
 void ClbClient::DescribeClassicalLBByInstanceIdAsync(const DescribeClassicalLBByInstanceIdRequest& request, const DescribeClassicalLBByInstanceIdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeClassicalLBByInstanceId(request), context);
-    };
+    using Req = const DescribeClassicalLBByInstanceIdRequest&;
+    using Resp = DescribeClassicalLBByInstanceIdResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeClassicalLBByInstanceId", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ClbClient::DescribeClassicalLBByInstanceIdOutcomeCallable ClbClient::DescribeClassicalLBByInstanceIdCallable(const DescribeClassicalLBByInstanceIdRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeClassicalLBByInstanceIdOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeClassicalLBByInstanceId(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeClassicalLBByInstanceIdOutcome>>();
+    DescribeClassicalLBByInstanceIdAsync(
+    request,
+    [prom](
+        const ClbClient*,
+        const DescribeClassicalLBByInstanceIdRequest&,
+        DescribeClassicalLBByInstanceIdOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ClbClient::DescribeClassicalLBHealthStatusOutcome ClbClient::DescribeClassicalLBHealthStatus(const DescribeClassicalLBHealthStatusRequest &request)
@@ -1266,25 +1462,32 @@ ClbClient::DescribeClassicalLBHealthStatusOutcome ClbClient::DescribeClassicalLB
 
 void ClbClient::DescribeClassicalLBHealthStatusAsync(const DescribeClassicalLBHealthStatusRequest& request, const DescribeClassicalLBHealthStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeClassicalLBHealthStatus(request), context);
-    };
+    using Req = const DescribeClassicalLBHealthStatusRequest&;
+    using Resp = DescribeClassicalLBHealthStatusResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeClassicalLBHealthStatus", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ClbClient::DescribeClassicalLBHealthStatusOutcomeCallable ClbClient::DescribeClassicalLBHealthStatusCallable(const DescribeClassicalLBHealthStatusRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeClassicalLBHealthStatusOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeClassicalLBHealthStatus(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeClassicalLBHealthStatusOutcome>>();
+    DescribeClassicalLBHealthStatusAsync(
+    request,
+    [prom](
+        const ClbClient*,
+        const DescribeClassicalLBHealthStatusRequest&,
+        DescribeClassicalLBHealthStatusOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ClbClient::DescribeClassicalLBListenersOutcome ClbClient::DescribeClassicalLBListeners(const DescribeClassicalLBListenersRequest &request)
@@ -1309,25 +1512,32 @@ ClbClient::DescribeClassicalLBListenersOutcome ClbClient::DescribeClassicalLBLis
 
 void ClbClient::DescribeClassicalLBListenersAsync(const DescribeClassicalLBListenersRequest& request, const DescribeClassicalLBListenersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeClassicalLBListeners(request), context);
-    };
+    using Req = const DescribeClassicalLBListenersRequest&;
+    using Resp = DescribeClassicalLBListenersResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeClassicalLBListeners", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ClbClient::DescribeClassicalLBListenersOutcomeCallable ClbClient::DescribeClassicalLBListenersCallable(const DescribeClassicalLBListenersRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeClassicalLBListenersOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeClassicalLBListeners(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeClassicalLBListenersOutcome>>();
+    DescribeClassicalLBListenersAsync(
+    request,
+    [prom](
+        const ClbClient*,
+        const DescribeClassicalLBListenersRequest&,
+        DescribeClassicalLBListenersOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ClbClient::DescribeClassicalLBTargetsOutcome ClbClient::DescribeClassicalLBTargets(const DescribeClassicalLBTargetsRequest &request)
@@ -1352,25 +1562,32 @@ ClbClient::DescribeClassicalLBTargetsOutcome ClbClient::DescribeClassicalLBTarge
 
 void ClbClient::DescribeClassicalLBTargetsAsync(const DescribeClassicalLBTargetsRequest& request, const DescribeClassicalLBTargetsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeClassicalLBTargets(request), context);
-    };
+    using Req = const DescribeClassicalLBTargetsRequest&;
+    using Resp = DescribeClassicalLBTargetsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeClassicalLBTargets", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ClbClient::DescribeClassicalLBTargetsOutcomeCallable ClbClient::DescribeClassicalLBTargetsCallable(const DescribeClassicalLBTargetsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeClassicalLBTargetsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeClassicalLBTargets(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeClassicalLBTargetsOutcome>>();
+    DescribeClassicalLBTargetsAsync(
+    request,
+    [prom](
+        const ClbClient*,
+        const DescribeClassicalLBTargetsRequest&,
+        DescribeClassicalLBTargetsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ClbClient::DescribeClsLogSetOutcome ClbClient::DescribeClsLogSet(const DescribeClsLogSetRequest &request)
@@ -1395,25 +1612,32 @@ ClbClient::DescribeClsLogSetOutcome ClbClient::DescribeClsLogSet(const DescribeC
 
 void ClbClient::DescribeClsLogSetAsync(const DescribeClsLogSetRequest& request, const DescribeClsLogSetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeClsLogSet(request), context);
-    };
+    using Req = const DescribeClsLogSetRequest&;
+    using Resp = DescribeClsLogSetResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeClsLogSet", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ClbClient::DescribeClsLogSetOutcomeCallable ClbClient::DescribeClsLogSetCallable(const DescribeClsLogSetRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeClsLogSetOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeClsLogSet(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeClsLogSetOutcome>>();
+    DescribeClsLogSetAsync(
+    request,
+    [prom](
+        const ClbClient*,
+        const DescribeClsLogSetRequest&,
+        DescribeClsLogSetOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ClbClient::DescribeClusterResourcesOutcome ClbClient::DescribeClusterResources(const DescribeClusterResourcesRequest &request)
@@ -1438,25 +1662,32 @@ ClbClient::DescribeClusterResourcesOutcome ClbClient::DescribeClusterResources(c
 
 void ClbClient::DescribeClusterResourcesAsync(const DescribeClusterResourcesRequest& request, const DescribeClusterResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeClusterResources(request), context);
-    };
+    using Req = const DescribeClusterResourcesRequest&;
+    using Resp = DescribeClusterResourcesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeClusterResources", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ClbClient::DescribeClusterResourcesOutcomeCallable ClbClient::DescribeClusterResourcesCallable(const DescribeClusterResourcesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeClusterResourcesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeClusterResources(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeClusterResourcesOutcome>>();
+    DescribeClusterResourcesAsync(
+    request,
+    [prom](
+        const ClbClient*,
+        const DescribeClusterResourcesRequest&,
+        DescribeClusterResourcesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ClbClient::DescribeCrossTargetsOutcome ClbClient::DescribeCrossTargets(const DescribeCrossTargetsRequest &request)
@@ -1481,25 +1712,32 @@ ClbClient::DescribeCrossTargetsOutcome ClbClient::DescribeCrossTargets(const Des
 
 void ClbClient::DescribeCrossTargetsAsync(const DescribeCrossTargetsRequest& request, const DescribeCrossTargetsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeCrossTargets(request), context);
-    };
+    using Req = const DescribeCrossTargetsRequest&;
+    using Resp = DescribeCrossTargetsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeCrossTargets", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ClbClient::DescribeCrossTargetsOutcomeCallable ClbClient::DescribeCrossTargetsCallable(const DescribeCrossTargetsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeCrossTargetsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeCrossTargets(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeCrossTargetsOutcome>>();
+    DescribeCrossTargetsAsync(
+    request,
+    [prom](
+        const ClbClient*,
+        const DescribeCrossTargetsRequest&,
+        DescribeCrossTargetsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ClbClient::DescribeCustomizedConfigAssociateListOutcome ClbClient::DescribeCustomizedConfigAssociateList(const DescribeCustomizedConfigAssociateListRequest &request)
@@ -1524,25 +1762,32 @@ ClbClient::DescribeCustomizedConfigAssociateListOutcome ClbClient::DescribeCusto
 
 void ClbClient::DescribeCustomizedConfigAssociateListAsync(const DescribeCustomizedConfigAssociateListRequest& request, const DescribeCustomizedConfigAssociateListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeCustomizedConfigAssociateList(request), context);
-    };
+    using Req = const DescribeCustomizedConfigAssociateListRequest&;
+    using Resp = DescribeCustomizedConfigAssociateListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeCustomizedConfigAssociateList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ClbClient::DescribeCustomizedConfigAssociateListOutcomeCallable ClbClient::DescribeCustomizedConfigAssociateListCallable(const DescribeCustomizedConfigAssociateListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeCustomizedConfigAssociateListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeCustomizedConfigAssociateList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeCustomizedConfigAssociateListOutcome>>();
+    DescribeCustomizedConfigAssociateListAsync(
+    request,
+    [prom](
+        const ClbClient*,
+        const DescribeCustomizedConfigAssociateListRequest&,
+        DescribeCustomizedConfigAssociateListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ClbClient::DescribeCustomizedConfigListOutcome ClbClient::DescribeCustomizedConfigList(const DescribeCustomizedConfigListRequest &request)
@@ -1567,25 +1812,32 @@ ClbClient::DescribeCustomizedConfigListOutcome ClbClient::DescribeCustomizedConf
 
 void ClbClient::DescribeCustomizedConfigListAsync(const DescribeCustomizedConfigListRequest& request, const DescribeCustomizedConfigListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeCustomizedConfigList(request), context);
-    };
+    using Req = const DescribeCustomizedConfigListRequest&;
+    using Resp = DescribeCustomizedConfigListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeCustomizedConfigList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ClbClient::DescribeCustomizedConfigListOutcomeCallable ClbClient::DescribeCustomizedConfigListCallable(const DescribeCustomizedConfigListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeCustomizedConfigListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeCustomizedConfigList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeCustomizedConfigListOutcome>>();
+    DescribeCustomizedConfigListAsync(
+    request,
+    [prom](
+        const ClbClient*,
+        const DescribeCustomizedConfigListRequest&,
+        DescribeCustomizedConfigListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ClbClient::DescribeExclusiveClustersOutcome ClbClient::DescribeExclusiveClusters(const DescribeExclusiveClustersRequest &request)
@@ -1610,25 +1862,32 @@ ClbClient::DescribeExclusiveClustersOutcome ClbClient::DescribeExclusiveClusters
 
 void ClbClient::DescribeExclusiveClustersAsync(const DescribeExclusiveClustersRequest& request, const DescribeExclusiveClustersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeExclusiveClusters(request), context);
-    };
+    using Req = const DescribeExclusiveClustersRequest&;
+    using Resp = DescribeExclusiveClustersResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeExclusiveClusters", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ClbClient::DescribeExclusiveClustersOutcomeCallable ClbClient::DescribeExclusiveClustersCallable(const DescribeExclusiveClustersRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeExclusiveClustersOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeExclusiveClusters(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeExclusiveClustersOutcome>>();
+    DescribeExclusiveClustersAsync(
+    request,
+    [prom](
+        const ClbClient*,
+        const DescribeExclusiveClustersRequest&,
+        DescribeExclusiveClustersOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ClbClient::DescribeIdleLoadBalancersOutcome ClbClient::DescribeIdleLoadBalancers(const DescribeIdleLoadBalancersRequest &request)
@@ -1653,25 +1912,32 @@ ClbClient::DescribeIdleLoadBalancersOutcome ClbClient::DescribeIdleLoadBalancers
 
 void ClbClient::DescribeIdleLoadBalancersAsync(const DescribeIdleLoadBalancersRequest& request, const DescribeIdleLoadBalancersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeIdleLoadBalancers(request), context);
-    };
+    using Req = const DescribeIdleLoadBalancersRequest&;
+    using Resp = DescribeIdleLoadBalancersResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeIdleLoadBalancers", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ClbClient::DescribeIdleLoadBalancersOutcomeCallable ClbClient::DescribeIdleLoadBalancersCallable(const DescribeIdleLoadBalancersRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeIdleLoadBalancersOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeIdleLoadBalancers(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeIdleLoadBalancersOutcome>>();
+    DescribeIdleLoadBalancersAsync(
+    request,
+    [prom](
+        const ClbClient*,
+        const DescribeIdleLoadBalancersRequest&,
+        DescribeIdleLoadBalancersOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ClbClient::DescribeLBListenersOutcome ClbClient::DescribeLBListeners(const DescribeLBListenersRequest &request)
@@ -1696,25 +1962,32 @@ ClbClient::DescribeLBListenersOutcome ClbClient::DescribeLBListeners(const Descr
 
 void ClbClient::DescribeLBListenersAsync(const DescribeLBListenersRequest& request, const DescribeLBListenersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeLBListeners(request), context);
-    };
+    using Req = const DescribeLBListenersRequest&;
+    using Resp = DescribeLBListenersResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeLBListeners", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ClbClient::DescribeLBListenersOutcomeCallable ClbClient::DescribeLBListenersCallable(const DescribeLBListenersRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeLBListenersOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeLBListeners(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeLBListenersOutcome>>();
+    DescribeLBListenersAsync(
+    request,
+    [prom](
+        const ClbClient*,
+        const DescribeLBListenersRequest&,
+        DescribeLBListenersOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ClbClient::DescribeLBOperateProtectOutcome ClbClient::DescribeLBOperateProtect(const DescribeLBOperateProtectRequest &request)
@@ -1739,25 +2012,32 @@ ClbClient::DescribeLBOperateProtectOutcome ClbClient::DescribeLBOperateProtect(c
 
 void ClbClient::DescribeLBOperateProtectAsync(const DescribeLBOperateProtectRequest& request, const DescribeLBOperateProtectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeLBOperateProtect(request), context);
-    };
+    using Req = const DescribeLBOperateProtectRequest&;
+    using Resp = DescribeLBOperateProtectResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeLBOperateProtect", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ClbClient::DescribeLBOperateProtectOutcomeCallable ClbClient::DescribeLBOperateProtectCallable(const DescribeLBOperateProtectRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeLBOperateProtectOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeLBOperateProtect(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeLBOperateProtectOutcome>>();
+    DescribeLBOperateProtectAsync(
+    request,
+    [prom](
+        const ClbClient*,
+        const DescribeLBOperateProtectRequest&,
+        DescribeLBOperateProtectOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ClbClient::DescribeListenersOutcome ClbClient::DescribeListeners(const DescribeListenersRequest &request)
@@ -1782,25 +2062,32 @@ ClbClient::DescribeListenersOutcome ClbClient::DescribeListeners(const DescribeL
 
 void ClbClient::DescribeListenersAsync(const DescribeListenersRequest& request, const DescribeListenersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeListeners(request), context);
-    };
+    using Req = const DescribeListenersRequest&;
+    using Resp = DescribeListenersResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeListeners", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ClbClient::DescribeListenersOutcomeCallable ClbClient::DescribeListenersCallable(const DescribeListenersRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeListenersOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeListeners(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeListenersOutcome>>();
+    DescribeListenersAsync(
+    request,
+    [prom](
+        const ClbClient*,
+        const DescribeListenersRequest&,
+        DescribeListenersOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ClbClient::DescribeLoadBalancerListByCertIdOutcome ClbClient::DescribeLoadBalancerListByCertId(const DescribeLoadBalancerListByCertIdRequest &request)
@@ -1825,25 +2112,32 @@ ClbClient::DescribeLoadBalancerListByCertIdOutcome ClbClient::DescribeLoadBalanc
 
 void ClbClient::DescribeLoadBalancerListByCertIdAsync(const DescribeLoadBalancerListByCertIdRequest& request, const DescribeLoadBalancerListByCertIdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeLoadBalancerListByCertId(request), context);
-    };
+    using Req = const DescribeLoadBalancerListByCertIdRequest&;
+    using Resp = DescribeLoadBalancerListByCertIdResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeLoadBalancerListByCertId", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ClbClient::DescribeLoadBalancerListByCertIdOutcomeCallable ClbClient::DescribeLoadBalancerListByCertIdCallable(const DescribeLoadBalancerListByCertIdRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeLoadBalancerListByCertIdOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeLoadBalancerListByCertId(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeLoadBalancerListByCertIdOutcome>>();
+    DescribeLoadBalancerListByCertIdAsync(
+    request,
+    [prom](
+        const ClbClient*,
+        const DescribeLoadBalancerListByCertIdRequest&,
+        DescribeLoadBalancerListByCertIdOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ClbClient::DescribeLoadBalancerOverviewOutcome ClbClient::DescribeLoadBalancerOverview(const DescribeLoadBalancerOverviewRequest &request)
@@ -1868,25 +2162,32 @@ ClbClient::DescribeLoadBalancerOverviewOutcome ClbClient::DescribeLoadBalancerOv
 
 void ClbClient::DescribeLoadBalancerOverviewAsync(const DescribeLoadBalancerOverviewRequest& request, const DescribeLoadBalancerOverviewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeLoadBalancerOverview(request), context);
-    };
+    using Req = const DescribeLoadBalancerOverviewRequest&;
+    using Resp = DescribeLoadBalancerOverviewResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeLoadBalancerOverview", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ClbClient::DescribeLoadBalancerOverviewOutcomeCallable ClbClient::DescribeLoadBalancerOverviewCallable(const DescribeLoadBalancerOverviewRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeLoadBalancerOverviewOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeLoadBalancerOverview(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeLoadBalancerOverviewOutcome>>();
+    DescribeLoadBalancerOverviewAsync(
+    request,
+    [prom](
+        const ClbClient*,
+        const DescribeLoadBalancerOverviewRequest&,
+        DescribeLoadBalancerOverviewOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ClbClient::DescribeLoadBalancerTrafficOutcome ClbClient::DescribeLoadBalancerTraffic(const DescribeLoadBalancerTrafficRequest &request)
@@ -1911,25 +2212,32 @@ ClbClient::DescribeLoadBalancerTrafficOutcome ClbClient::DescribeLoadBalancerTra
 
 void ClbClient::DescribeLoadBalancerTrafficAsync(const DescribeLoadBalancerTrafficRequest& request, const DescribeLoadBalancerTrafficAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeLoadBalancerTraffic(request), context);
-    };
+    using Req = const DescribeLoadBalancerTrafficRequest&;
+    using Resp = DescribeLoadBalancerTrafficResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeLoadBalancerTraffic", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ClbClient::DescribeLoadBalancerTrafficOutcomeCallable ClbClient::DescribeLoadBalancerTrafficCallable(const DescribeLoadBalancerTrafficRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeLoadBalancerTrafficOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeLoadBalancerTraffic(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeLoadBalancerTrafficOutcome>>();
+    DescribeLoadBalancerTrafficAsync(
+    request,
+    [prom](
+        const ClbClient*,
+        const DescribeLoadBalancerTrafficRequest&,
+        DescribeLoadBalancerTrafficOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ClbClient::DescribeLoadBalancersOutcome ClbClient::DescribeLoadBalancers(const DescribeLoadBalancersRequest &request)
@@ -1954,25 +2262,32 @@ ClbClient::DescribeLoadBalancersOutcome ClbClient::DescribeLoadBalancers(const D
 
 void ClbClient::DescribeLoadBalancersAsync(const DescribeLoadBalancersRequest& request, const DescribeLoadBalancersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeLoadBalancers(request), context);
-    };
+    using Req = const DescribeLoadBalancersRequest&;
+    using Resp = DescribeLoadBalancersResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeLoadBalancers", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ClbClient::DescribeLoadBalancersOutcomeCallable ClbClient::DescribeLoadBalancersCallable(const DescribeLoadBalancersRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeLoadBalancersOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeLoadBalancers(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeLoadBalancersOutcome>>();
+    DescribeLoadBalancersAsync(
+    request,
+    [prom](
+        const ClbClient*,
+        const DescribeLoadBalancersRequest&,
+        DescribeLoadBalancersOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ClbClient::DescribeLoadBalancersDetailOutcome ClbClient::DescribeLoadBalancersDetail(const DescribeLoadBalancersDetailRequest &request)
@@ -1997,25 +2312,32 @@ ClbClient::DescribeLoadBalancersDetailOutcome ClbClient::DescribeLoadBalancersDe
 
 void ClbClient::DescribeLoadBalancersDetailAsync(const DescribeLoadBalancersDetailRequest& request, const DescribeLoadBalancersDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeLoadBalancersDetail(request), context);
-    };
+    using Req = const DescribeLoadBalancersDetailRequest&;
+    using Resp = DescribeLoadBalancersDetailResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeLoadBalancersDetail", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ClbClient::DescribeLoadBalancersDetailOutcomeCallable ClbClient::DescribeLoadBalancersDetailCallable(const DescribeLoadBalancersDetailRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeLoadBalancersDetailOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeLoadBalancersDetail(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeLoadBalancersDetailOutcome>>();
+    DescribeLoadBalancersDetailAsync(
+    request,
+    [prom](
+        const ClbClient*,
+        const DescribeLoadBalancersDetailRequest&,
+        DescribeLoadBalancersDetailOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ClbClient::DescribeQuotaOutcome ClbClient::DescribeQuota(const DescribeQuotaRequest &request)
@@ -2040,25 +2362,32 @@ ClbClient::DescribeQuotaOutcome ClbClient::DescribeQuota(const DescribeQuotaRequ
 
 void ClbClient::DescribeQuotaAsync(const DescribeQuotaRequest& request, const DescribeQuotaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeQuota(request), context);
-    };
+    using Req = const DescribeQuotaRequest&;
+    using Resp = DescribeQuotaResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeQuota", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ClbClient::DescribeQuotaOutcomeCallable ClbClient::DescribeQuotaCallable(const DescribeQuotaRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeQuotaOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeQuota(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeQuotaOutcome>>();
+    DescribeQuotaAsync(
+    request,
+    [prom](
+        const ClbClient*,
+        const DescribeQuotaRequest&,
+        DescribeQuotaOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ClbClient::DescribeResourcesOutcome ClbClient::DescribeResources(const DescribeResourcesRequest &request)
@@ -2083,25 +2412,32 @@ ClbClient::DescribeResourcesOutcome ClbClient::DescribeResources(const DescribeR
 
 void ClbClient::DescribeResourcesAsync(const DescribeResourcesRequest& request, const DescribeResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeResources(request), context);
-    };
+    using Req = const DescribeResourcesRequest&;
+    using Resp = DescribeResourcesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeResources", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ClbClient::DescribeResourcesOutcomeCallable ClbClient::DescribeResourcesCallable(const DescribeResourcesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeResourcesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeResources(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeResourcesOutcome>>();
+    DescribeResourcesAsync(
+    request,
+    [prom](
+        const ClbClient*,
+        const DescribeResourcesRequest&,
+        DescribeResourcesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ClbClient::DescribeRewriteOutcome ClbClient::DescribeRewrite(const DescribeRewriteRequest &request)
@@ -2126,25 +2462,32 @@ ClbClient::DescribeRewriteOutcome ClbClient::DescribeRewrite(const DescribeRewri
 
 void ClbClient::DescribeRewriteAsync(const DescribeRewriteRequest& request, const DescribeRewriteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeRewrite(request), context);
-    };
+    using Req = const DescribeRewriteRequest&;
+    using Resp = DescribeRewriteResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeRewrite", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ClbClient::DescribeRewriteOutcomeCallable ClbClient::DescribeRewriteCallable(const DescribeRewriteRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeRewriteOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeRewrite(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeRewriteOutcome>>();
+    DescribeRewriteAsync(
+    request,
+    [prom](
+        const ClbClient*,
+        const DescribeRewriteRequest&,
+        DescribeRewriteOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ClbClient::DescribeTargetGroupInstancesOutcome ClbClient::DescribeTargetGroupInstances(const DescribeTargetGroupInstancesRequest &request)
@@ -2169,25 +2512,32 @@ ClbClient::DescribeTargetGroupInstancesOutcome ClbClient::DescribeTargetGroupIns
 
 void ClbClient::DescribeTargetGroupInstancesAsync(const DescribeTargetGroupInstancesRequest& request, const DescribeTargetGroupInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeTargetGroupInstances(request), context);
-    };
+    using Req = const DescribeTargetGroupInstancesRequest&;
+    using Resp = DescribeTargetGroupInstancesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeTargetGroupInstances", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ClbClient::DescribeTargetGroupInstancesOutcomeCallable ClbClient::DescribeTargetGroupInstancesCallable(const DescribeTargetGroupInstancesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeTargetGroupInstancesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeTargetGroupInstances(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeTargetGroupInstancesOutcome>>();
+    DescribeTargetGroupInstancesAsync(
+    request,
+    [prom](
+        const ClbClient*,
+        const DescribeTargetGroupInstancesRequest&,
+        DescribeTargetGroupInstancesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ClbClient::DescribeTargetGroupListOutcome ClbClient::DescribeTargetGroupList(const DescribeTargetGroupListRequest &request)
@@ -2212,25 +2562,32 @@ ClbClient::DescribeTargetGroupListOutcome ClbClient::DescribeTargetGroupList(con
 
 void ClbClient::DescribeTargetGroupListAsync(const DescribeTargetGroupListRequest& request, const DescribeTargetGroupListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeTargetGroupList(request), context);
-    };
+    using Req = const DescribeTargetGroupListRequest&;
+    using Resp = DescribeTargetGroupListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeTargetGroupList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ClbClient::DescribeTargetGroupListOutcomeCallable ClbClient::DescribeTargetGroupListCallable(const DescribeTargetGroupListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeTargetGroupListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeTargetGroupList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeTargetGroupListOutcome>>();
+    DescribeTargetGroupListAsync(
+    request,
+    [prom](
+        const ClbClient*,
+        const DescribeTargetGroupListRequest&,
+        DescribeTargetGroupListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ClbClient::DescribeTargetGroupsOutcome ClbClient::DescribeTargetGroups(const DescribeTargetGroupsRequest &request)
@@ -2255,25 +2612,32 @@ ClbClient::DescribeTargetGroupsOutcome ClbClient::DescribeTargetGroups(const Des
 
 void ClbClient::DescribeTargetGroupsAsync(const DescribeTargetGroupsRequest& request, const DescribeTargetGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeTargetGroups(request), context);
-    };
+    using Req = const DescribeTargetGroupsRequest&;
+    using Resp = DescribeTargetGroupsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeTargetGroups", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ClbClient::DescribeTargetGroupsOutcomeCallable ClbClient::DescribeTargetGroupsCallable(const DescribeTargetGroupsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeTargetGroupsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeTargetGroups(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeTargetGroupsOutcome>>();
+    DescribeTargetGroupsAsync(
+    request,
+    [prom](
+        const ClbClient*,
+        const DescribeTargetGroupsRequest&,
+        DescribeTargetGroupsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ClbClient::DescribeTargetHealthOutcome ClbClient::DescribeTargetHealth(const DescribeTargetHealthRequest &request)
@@ -2298,25 +2662,32 @@ ClbClient::DescribeTargetHealthOutcome ClbClient::DescribeTargetHealth(const Des
 
 void ClbClient::DescribeTargetHealthAsync(const DescribeTargetHealthRequest& request, const DescribeTargetHealthAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeTargetHealth(request), context);
-    };
+    using Req = const DescribeTargetHealthRequest&;
+    using Resp = DescribeTargetHealthResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeTargetHealth", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ClbClient::DescribeTargetHealthOutcomeCallable ClbClient::DescribeTargetHealthCallable(const DescribeTargetHealthRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeTargetHealthOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeTargetHealth(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeTargetHealthOutcome>>();
+    DescribeTargetHealthAsync(
+    request,
+    [prom](
+        const ClbClient*,
+        const DescribeTargetHealthRequest&,
+        DescribeTargetHealthOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ClbClient::DescribeTargetsOutcome ClbClient::DescribeTargets(const DescribeTargetsRequest &request)
@@ -2341,25 +2712,32 @@ ClbClient::DescribeTargetsOutcome ClbClient::DescribeTargets(const DescribeTarge
 
 void ClbClient::DescribeTargetsAsync(const DescribeTargetsRequest& request, const DescribeTargetsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeTargets(request), context);
-    };
+    using Req = const DescribeTargetsRequest&;
+    using Resp = DescribeTargetsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeTargets", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ClbClient::DescribeTargetsOutcomeCallable ClbClient::DescribeTargetsCallable(const DescribeTargetsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeTargetsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeTargets(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeTargetsOutcome>>();
+    DescribeTargetsAsync(
+    request,
+    [prom](
+        const ClbClient*,
+        const DescribeTargetsRequest&,
+        DescribeTargetsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ClbClient::DescribeTaskStatusOutcome ClbClient::DescribeTaskStatus(const DescribeTaskStatusRequest &request)
@@ -2384,25 +2762,32 @@ ClbClient::DescribeTaskStatusOutcome ClbClient::DescribeTaskStatus(const Describ
 
 void ClbClient::DescribeTaskStatusAsync(const DescribeTaskStatusRequest& request, const DescribeTaskStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeTaskStatus(request), context);
-    };
+    using Req = const DescribeTaskStatusRequest&;
+    using Resp = DescribeTaskStatusResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeTaskStatus", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ClbClient::DescribeTaskStatusOutcomeCallable ClbClient::DescribeTaskStatusCallable(const DescribeTaskStatusRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeTaskStatusOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeTaskStatus(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeTaskStatusOutcome>>();
+    DescribeTaskStatusAsync(
+    request,
+    [prom](
+        const ClbClient*,
+        const DescribeTaskStatusRequest&,
+        DescribeTaskStatusOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ClbClient::DisassociateTargetGroupsOutcome ClbClient::DisassociateTargetGroups(const DisassociateTargetGroupsRequest &request)
@@ -2427,25 +2812,32 @@ ClbClient::DisassociateTargetGroupsOutcome ClbClient::DisassociateTargetGroups(c
 
 void ClbClient::DisassociateTargetGroupsAsync(const DisassociateTargetGroupsRequest& request, const DisassociateTargetGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DisassociateTargetGroups(request), context);
-    };
+    using Req = const DisassociateTargetGroupsRequest&;
+    using Resp = DisassociateTargetGroupsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DisassociateTargetGroups", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ClbClient::DisassociateTargetGroupsOutcomeCallable ClbClient::DisassociateTargetGroupsCallable(const DisassociateTargetGroupsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DisassociateTargetGroupsOutcome()>>(
-        [this, request]()
-        {
-            return this->DisassociateTargetGroups(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DisassociateTargetGroupsOutcome>>();
+    DisassociateTargetGroupsAsync(
+    request,
+    [prom](
+        const ClbClient*,
+        const DisassociateTargetGroupsRequest&,
+        DisassociateTargetGroupsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ClbClient::InquiryPriceCreateLoadBalancerOutcome ClbClient::InquiryPriceCreateLoadBalancer(const InquiryPriceCreateLoadBalancerRequest &request)
@@ -2470,25 +2862,32 @@ ClbClient::InquiryPriceCreateLoadBalancerOutcome ClbClient::InquiryPriceCreateLo
 
 void ClbClient::InquiryPriceCreateLoadBalancerAsync(const InquiryPriceCreateLoadBalancerRequest& request, const InquiryPriceCreateLoadBalancerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->InquiryPriceCreateLoadBalancer(request), context);
-    };
+    using Req = const InquiryPriceCreateLoadBalancerRequest&;
+    using Resp = InquiryPriceCreateLoadBalancerResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "InquiryPriceCreateLoadBalancer", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ClbClient::InquiryPriceCreateLoadBalancerOutcomeCallable ClbClient::InquiryPriceCreateLoadBalancerCallable(const InquiryPriceCreateLoadBalancerRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<InquiryPriceCreateLoadBalancerOutcome()>>(
-        [this, request]()
-        {
-            return this->InquiryPriceCreateLoadBalancer(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<InquiryPriceCreateLoadBalancerOutcome>>();
+    InquiryPriceCreateLoadBalancerAsync(
+    request,
+    [prom](
+        const ClbClient*,
+        const InquiryPriceCreateLoadBalancerRequest&,
+        InquiryPriceCreateLoadBalancerOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ClbClient::InquiryPriceModifyLoadBalancerOutcome ClbClient::InquiryPriceModifyLoadBalancer(const InquiryPriceModifyLoadBalancerRequest &request)
@@ -2513,25 +2912,32 @@ ClbClient::InquiryPriceModifyLoadBalancerOutcome ClbClient::InquiryPriceModifyLo
 
 void ClbClient::InquiryPriceModifyLoadBalancerAsync(const InquiryPriceModifyLoadBalancerRequest& request, const InquiryPriceModifyLoadBalancerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->InquiryPriceModifyLoadBalancer(request), context);
-    };
+    using Req = const InquiryPriceModifyLoadBalancerRequest&;
+    using Resp = InquiryPriceModifyLoadBalancerResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "InquiryPriceModifyLoadBalancer", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ClbClient::InquiryPriceModifyLoadBalancerOutcomeCallable ClbClient::InquiryPriceModifyLoadBalancerCallable(const InquiryPriceModifyLoadBalancerRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<InquiryPriceModifyLoadBalancerOutcome()>>(
-        [this, request]()
-        {
-            return this->InquiryPriceModifyLoadBalancer(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<InquiryPriceModifyLoadBalancerOutcome>>();
+    InquiryPriceModifyLoadBalancerAsync(
+    request,
+    [prom](
+        const ClbClient*,
+        const InquiryPriceModifyLoadBalancerRequest&,
+        InquiryPriceModifyLoadBalancerOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ClbClient::InquiryPriceRefundLoadBalancerOutcome ClbClient::InquiryPriceRefundLoadBalancer(const InquiryPriceRefundLoadBalancerRequest &request)
@@ -2556,25 +2962,32 @@ ClbClient::InquiryPriceRefundLoadBalancerOutcome ClbClient::InquiryPriceRefundLo
 
 void ClbClient::InquiryPriceRefundLoadBalancerAsync(const InquiryPriceRefundLoadBalancerRequest& request, const InquiryPriceRefundLoadBalancerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->InquiryPriceRefundLoadBalancer(request), context);
-    };
+    using Req = const InquiryPriceRefundLoadBalancerRequest&;
+    using Resp = InquiryPriceRefundLoadBalancerResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "InquiryPriceRefundLoadBalancer", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ClbClient::InquiryPriceRefundLoadBalancerOutcomeCallable ClbClient::InquiryPriceRefundLoadBalancerCallable(const InquiryPriceRefundLoadBalancerRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<InquiryPriceRefundLoadBalancerOutcome()>>(
-        [this, request]()
-        {
-            return this->InquiryPriceRefundLoadBalancer(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<InquiryPriceRefundLoadBalancerOutcome>>();
+    InquiryPriceRefundLoadBalancerAsync(
+    request,
+    [prom](
+        const ClbClient*,
+        const InquiryPriceRefundLoadBalancerRequest&,
+        InquiryPriceRefundLoadBalancerOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ClbClient::InquiryPriceRenewLoadBalancerOutcome ClbClient::InquiryPriceRenewLoadBalancer(const InquiryPriceRenewLoadBalancerRequest &request)
@@ -2599,25 +3012,32 @@ ClbClient::InquiryPriceRenewLoadBalancerOutcome ClbClient::InquiryPriceRenewLoad
 
 void ClbClient::InquiryPriceRenewLoadBalancerAsync(const InquiryPriceRenewLoadBalancerRequest& request, const InquiryPriceRenewLoadBalancerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->InquiryPriceRenewLoadBalancer(request), context);
-    };
+    using Req = const InquiryPriceRenewLoadBalancerRequest&;
+    using Resp = InquiryPriceRenewLoadBalancerResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "InquiryPriceRenewLoadBalancer", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ClbClient::InquiryPriceRenewLoadBalancerOutcomeCallable ClbClient::InquiryPriceRenewLoadBalancerCallable(const InquiryPriceRenewLoadBalancerRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<InquiryPriceRenewLoadBalancerOutcome()>>(
-        [this, request]()
-        {
-            return this->InquiryPriceRenewLoadBalancer(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<InquiryPriceRenewLoadBalancerOutcome>>();
+    InquiryPriceRenewLoadBalancerAsync(
+    request,
+    [prom](
+        const ClbClient*,
+        const InquiryPriceRenewLoadBalancerRequest&,
+        InquiryPriceRenewLoadBalancerOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ClbClient::ManualRewriteOutcome ClbClient::ManualRewrite(const ManualRewriteRequest &request)
@@ -2642,25 +3062,32 @@ ClbClient::ManualRewriteOutcome ClbClient::ManualRewrite(const ManualRewriteRequ
 
 void ClbClient::ManualRewriteAsync(const ManualRewriteRequest& request, const ManualRewriteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ManualRewrite(request), context);
-    };
+    using Req = const ManualRewriteRequest&;
+    using Resp = ManualRewriteResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ManualRewrite", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ClbClient::ManualRewriteOutcomeCallable ClbClient::ManualRewriteCallable(const ManualRewriteRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ManualRewriteOutcome()>>(
-        [this, request]()
-        {
-            return this->ManualRewrite(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ManualRewriteOutcome>>();
+    ManualRewriteAsync(
+    request,
+    [prom](
+        const ClbClient*,
+        const ManualRewriteRequest&,
+        ManualRewriteOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ClbClient::MigrateClassicalLoadBalancersOutcome ClbClient::MigrateClassicalLoadBalancers(const MigrateClassicalLoadBalancersRequest &request)
@@ -2685,25 +3112,32 @@ ClbClient::MigrateClassicalLoadBalancersOutcome ClbClient::MigrateClassicalLoadB
 
 void ClbClient::MigrateClassicalLoadBalancersAsync(const MigrateClassicalLoadBalancersRequest& request, const MigrateClassicalLoadBalancersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->MigrateClassicalLoadBalancers(request), context);
-    };
+    using Req = const MigrateClassicalLoadBalancersRequest&;
+    using Resp = MigrateClassicalLoadBalancersResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "MigrateClassicalLoadBalancers", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ClbClient::MigrateClassicalLoadBalancersOutcomeCallable ClbClient::MigrateClassicalLoadBalancersCallable(const MigrateClassicalLoadBalancersRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<MigrateClassicalLoadBalancersOutcome()>>(
-        [this, request]()
-        {
-            return this->MigrateClassicalLoadBalancers(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<MigrateClassicalLoadBalancersOutcome>>();
+    MigrateClassicalLoadBalancersAsync(
+    request,
+    [prom](
+        const ClbClient*,
+        const MigrateClassicalLoadBalancersRequest&,
+        MigrateClassicalLoadBalancersOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ClbClient::ModifyBlockIPListOutcome ClbClient::ModifyBlockIPList(const ModifyBlockIPListRequest &request)
@@ -2728,25 +3162,32 @@ ClbClient::ModifyBlockIPListOutcome ClbClient::ModifyBlockIPList(const ModifyBlo
 
 void ClbClient::ModifyBlockIPListAsync(const ModifyBlockIPListRequest& request, const ModifyBlockIPListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyBlockIPList(request), context);
-    };
+    using Req = const ModifyBlockIPListRequest&;
+    using Resp = ModifyBlockIPListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyBlockIPList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ClbClient::ModifyBlockIPListOutcomeCallable ClbClient::ModifyBlockIPListCallable(const ModifyBlockIPListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyBlockIPListOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyBlockIPList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyBlockIPListOutcome>>();
+    ModifyBlockIPListAsync(
+    request,
+    [prom](
+        const ClbClient*,
+        const ModifyBlockIPListRequest&,
+        ModifyBlockIPListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ClbClient::ModifyDomainOutcome ClbClient::ModifyDomain(const ModifyDomainRequest &request)
@@ -2771,25 +3212,32 @@ ClbClient::ModifyDomainOutcome ClbClient::ModifyDomain(const ModifyDomainRequest
 
 void ClbClient::ModifyDomainAsync(const ModifyDomainRequest& request, const ModifyDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyDomain(request), context);
-    };
+    using Req = const ModifyDomainRequest&;
+    using Resp = ModifyDomainResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyDomain", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ClbClient::ModifyDomainOutcomeCallable ClbClient::ModifyDomainCallable(const ModifyDomainRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyDomainOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyDomain(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyDomainOutcome>>();
+    ModifyDomainAsync(
+    request,
+    [prom](
+        const ClbClient*,
+        const ModifyDomainRequest&,
+        ModifyDomainOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ClbClient::ModifyDomainAttributesOutcome ClbClient::ModifyDomainAttributes(const ModifyDomainAttributesRequest &request)
@@ -2814,25 +3262,32 @@ ClbClient::ModifyDomainAttributesOutcome ClbClient::ModifyDomainAttributes(const
 
 void ClbClient::ModifyDomainAttributesAsync(const ModifyDomainAttributesRequest& request, const ModifyDomainAttributesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyDomainAttributes(request), context);
-    };
+    using Req = const ModifyDomainAttributesRequest&;
+    using Resp = ModifyDomainAttributesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyDomainAttributes", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ClbClient::ModifyDomainAttributesOutcomeCallable ClbClient::ModifyDomainAttributesCallable(const ModifyDomainAttributesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyDomainAttributesOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyDomainAttributes(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyDomainAttributesOutcome>>();
+    ModifyDomainAttributesAsync(
+    request,
+    [prom](
+        const ClbClient*,
+        const ModifyDomainAttributesRequest&,
+        ModifyDomainAttributesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ClbClient::ModifyFunctionTargetsOutcome ClbClient::ModifyFunctionTargets(const ModifyFunctionTargetsRequest &request)
@@ -2857,25 +3312,32 @@ ClbClient::ModifyFunctionTargetsOutcome ClbClient::ModifyFunctionTargets(const M
 
 void ClbClient::ModifyFunctionTargetsAsync(const ModifyFunctionTargetsRequest& request, const ModifyFunctionTargetsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyFunctionTargets(request), context);
-    };
+    using Req = const ModifyFunctionTargetsRequest&;
+    using Resp = ModifyFunctionTargetsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyFunctionTargets", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ClbClient::ModifyFunctionTargetsOutcomeCallable ClbClient::ModifyFunctionTargetsCallable(const ModifyFunctionTargetsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyFunctionTargetsOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyFunctionTargets(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyFunctionTargetsOutcome>>();
+    ModifyFunctionTargetsAsync(
+    request,
+    [prom](
+        const ClbClient*,
+        const ModifyFunctionTargetsRequest&,
+        ModifyFunctionTargetsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ClbClient::ModifyListenerOutcome ClbClient::ModifyListener(const ModifyListenerRequest &request)
@@ -2900,25 +3362,32 @@ ClbClient::ModifyListenerOutcome ClbClient::ModifyListener(const ModifyListenerR
 
 void ClbClient::ModifyListenerAsync(const ModifyListenerRequest& request, const ModifyListenerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyListener(request), context);
-    };
+    using Req = const ModifyListenerRequest&;
+    using Resp = ModifyListenerResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyListener", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ClbClient::ModifyListenerOutcomeCallable ClbClient::ModifyListenerCallable(const ModifyListenerRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyListenerOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyListener(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyListenerOutcome>>();
+    ModifyListenerAsync(
+    request,
+    [prom](
+        const ClbClient*,
+        const ModifyListenerRequest&,
+        ModifyListenerOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ClbClient::ModifyLoadBalancerAttributesOutcome ClbClient::ModifyLoadBalancerAttributes(const ModifyLoadBalancerAttributesRequest &request)
@@ -2943,25 +3412,32 @@ ClbClient::ModifyLoadBalancerAttributesOutcome ClbClient::ModifyLoadBalancerAttr
 
 void ClbClient::ModifyLoadBalancerAttributesAsync(const ModifyLoadBalancerAttributesRequest& request, const ModifyLoadBalancerAttributesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyLoadBalancerAttributes(request), context);
-    };
+    using Req = const ModifyLoadBalancerAttributesRequest&;
+    using Resp = ModifyLoadBalancerAttributesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyLoadBalancerAttributes", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ClbClient::ModifyLoadBalancerAttributesOutcomeCallable ClbClient::ModifyLoadBalancerAttributesCallable(const ModifyLoadBalancerAttributesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyLoadBalancerAttributesOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyLoadBalancerAttributes(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyLoadBalancerAttributesOutcome>>();
+    ModifyLoadBalancerAttributesAsync(
+    request,
+    [prom](
+        const ClbClient*,
+        const ModifyLoadBalancerAttributesRequest&,
+        ModifyLoadBalancerAttributesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ClbClient::ModifyLoadBalancerMixIpTargetOutcome ClbClient::ModifyLoadBalancerMixIpTarget(const ModifyLoadBalancerMixIpTargetRequest &request)
@@ -2986,25 +3462,32 @@ ClbClient::ModifyLoadBalancerMixIpTargetOutcome ClbClient::ModifyLoadBalancerMix
 
 void ClbClient::ModifyLoadBalancerMixIpTargetAsync(const ModifyLoadBalancerMixIpTargetRequest& request, const ModifyLoadBalancerMixIpTargetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyLoadBalancerMixIpTarget(request), context);
-    };
+    using Req = const ModifyLoadBalancerMixIpTargetRequest&;
+    using Resp = ModifyLoadBalancerMixIpTargetResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyLoadBalancerMixIpTarget", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ClbClient::ModifyLoadBalancerMixIpTargetOutcomeCallable ClbClient::ModifyLoadBalancerMixIpTargetCallable(const ModifyLoadBalancerMixIpTargetRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyLoadBalancerMixIpTargetOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyLoadBalancerMixIpTarget(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyLoadBalancerMixIpTargetOutcome>>();
+    ModifyLoadBalancerMixIpTargetAsync(
+    request,
+    [prom](
+        const ClbClient*,
+        const ModifyLoadBalancerMixIpTargetRequest&,
+        ModifyLoadBalancerMixIpTargetOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ClbClient::ModifyLoadBalancerSlaOutcome ClbClient::ModifyLoadBalancerSla(const ModifyLoadBalancerSlaRequest &request)
@@ -3029,25 +3512,32 @@ ClbClient::ModifyLoadBalancerSlaOutcome ClbClient::ModifyLoadBalancerSla(const M
 
 void ClbClient::ModifyLoadBalancerSlaAsync(const ModifyLoadBalancerSlaRequest& request, const ModifyLoadBalancerSlaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyLoadBalancerSla(request), context);
-    };
+    using Req = const ModifyLoadBalancerSlaRequest&;
+    using Resp = ModifyLoadBalancerSlaResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyLoadBalancerSla", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ClbClient::ModifyLoadBalancerSlaOutcomeCallable ClbClient::ModifyLoadBalancerSlaCallable(const ModifyLoadBalancerSlaRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyLoadBalancerSlaOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyLoadBalancerSla(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyLoadBalancerSlaOutcome>>();
+    ModifyLoadBalancerSlaAsync(
+    request,
+    [prom](
+        const ClbClient*,
+        const ModifyLoadBalancerSlaRequest&,
+        ModifyLoadBalancerSlaOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ClbClient::ModifyLoadBalancersProjectOutcome ClbClient::ModifyLoadBalancersProject(const ModifyLoadBalancersProjectRequest &request)
@@ -3072,25 +3562,32 @@ ClbClient::ModifyLoadBalancersProjectOutcome ClbClient::ModifyLoadBalancersProje
 
 void ClbClient::ModifyLoadBalancersProjectAsync(const ModifyLoadBalancersProjectRequest& request, const ModifyLoadBalancersProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyLoadBalancersProject(request), context);
-    };
+    using Req = const ModifyLoadBalancersProjectRequest&;
+    using Resp = ModifyLoadBalancersProjectResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyLoadBalancersProject", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ClbClient::ModifyLoadBalancersProjectOutcomeCallable ClbClient::ModifyLoadBalancersProjectCallable(const ModifyLoadBalancersProjectRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyLoadBalancersProjectOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyLoadBalancersProject(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyLoadBalancersProjectOutcome>>();
+    ModifyLoadBalancersProjectAsync(
+    request,
+    [prom](
+        const ClbClient*,
+        const ModifyLoadBalancersProjectRequest&,
+        ModifyLoadBalancersProjectOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ClbClient::ModifyRuleOutcome ClbClient::ModifyRule(const ModifyRuleRequest &request)
@@ -3115,25 +3612,32 @@ ClbClient::ModifyRuleOutcome ClbClient::ModifyRule(const ModifyRuleRequest &requ
 
 void ClbClient::ModifyRuleAsync(const ModifyRuleRequest& request, const ModifyRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyRule(request), context);
-    };
+    using Req = const ModifyRuleRequest&;
+    using Resp = ModifyRuleResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyRule", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ClbClient::ModifyRuleOutcomeCallable ClbClient::ModifyRuleCallable(const ModifyRuleRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyRuleOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyRule(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyRuleOutcome>>();
+    ModifyRuleAsync(
+    request,
+    [prom](
+        const ClbClient*,
+        const ModifyRuleRequest&,
+        ModifyRuleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ClbClient::ModifyTargetGroupAttributeOutcome ClbClient::ModifyTargetGroupAttribute(const ModifyTargetGroupAttributeRequest &request)
@@ -3158,25 +3662,32 @@ ClbClient::ModifyTargetGroupAttributeOutcome ClbClient::ModifyTargetGroupAttribu
 
 void ClbClient::ModifyTargetGroupAttributeAsync(const ModifyTargetGroupAttributeRequest& request, const ModifyTargetGroupAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyTargetGroupAttribute(request), context);
-    };
+    using Req = const ModifyTargetGroupAttributeRequest&;
+    using Resp = ModifyTargetGroupAttributeResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyTargetGroupAttribute", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ClbClient::ModifyTargetGroupAttributeOutcomeCallable ClbClient::ModifyTargetGroupAttributeCallable(const ModifyTargetGroupAttributeRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyTargetGroupAttributeOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyTargetGroupAttribute(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyTargetGroupAttributeOutcome>>();
+    ModifyTargetGroupAttributeAsync(
+    request,
+    [prom](
+        const ClbClient*,
+        const ModifyTargetGroupAttributeRequest&,
+        ModifyTargetGroupAttributeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ClbClient::ModifyTargetGroupInstancesPortOutcome ClbClient::ModifyTargetGroupInstancesPort(const ModifyTargetGroupInstancesPortRequest &request)
@@ -3201,25 +3712,32 @@ ClbClient::ModifyTargetGroupInstancesPortOutcome ClbClient::ModifyTargetGroupIns
 
 void ClbClient::ModifyTargetGroupInstancesPortAsync(const ModifyTargetGroupInstancesPortRequest& request, const ModifyTargetGroupInstancesPortAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyTargetGroupInstancesPort(request), context);
-    };
+    using Req = const ModifyTargetGroupInstancesPortRequest&;
+    using Resp = ModifyTargetGroupInstancesPortResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyTargetGroupInstancesPort", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ClbClient::ModifyTargetGroupInstancesPortOutcomeCallable ClbClient::ModifyTargetGroupInstancesPortCallable(const ModifyTargetGroupInstancesPortRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyTargetGroupInstancesPortOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyTargetGroupInstancesPort(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyTargetGroupInstancesPortOutcome>>();
+    ModifyTargetGroupInstancesPortAsync(
+    request,
+    [prom](
+        const ClbClient*,
+        const ModifyTargetGroupInstancesPortRequest&,
+        ModifyTargetGroupInstancesPortOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ClbClient::ModifyTargetGroupInstancesWeightOutcome ClbClient::ModifyTargetGroupInstancesWeight(const ModifyTargetGroupInstancesWeightRequest &request)
@@ -3244,25 +3762,32 @@ ClbClient::ModifyTargetGroupInstancesWeightOutcome ClbClient::ModifyTargetGroupI
 
 void ClbClient::ModifyTargetGroupInstancesWeightAsync(const ModifyTargetGroupInstancesWeightRequest& request, const ModifyTargetGroupInstancesWeightAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyTargetGroupInstancesWeight(request), context);
-    };
+    using Req = const ModifyTargetGroupInstancesWeightRequest&;
+    using Resp = ModifyTargetGroupInstancesWeightResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyTargetGroupInstancesWeight", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ClbClient::ModifyTargetGroupInstancesWeightOutcomeCallable ClbClient::ModifyTargetGroupInstancesWeightCallable(const ModifyTargetGroupInstancesWeightRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyTargetGroupInstancesWeightOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyTargetGroupInstancesWeight(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyTargetGroupInstancesWeightOutcome>>();
+    ModifyTargetGroupInstancesWeightAsync(
+    request,
+    [prom](
+        const ClbClient*,
+        const ModifyTargetGroupInstancesWeightRequest&,
+        ModifyTargetGroupInstancesWeightOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ClbClient::ModifyTargetPortOutcome ClbClient::ModifyTargetPort(const ModifyTargetPortRequest &request)
@@ -3287,25 +3812,32 @@ ClbClient::ModifyTargetPortOutcome ClbClient::ModifyTargetPort(const ModifyTarge
 
 void ClbClient::ModifyTargetPortAsync(const ModifyTargetPortRequest& request, const ModifyTargetPortAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyTargetPort(request), context);
-    };
+    using Req = const ModifyTargetPortRequest&;
+    using Resp = ModifyTargetPortResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyTargetPort", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ClbClient::ModifyTargetPortOutcomeCallable ClbClient::ModifyTargetPortCallable(const ModifyTargetPortRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyTargetPortOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyTargetPort(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyTargetPortOutcome>>();
+    ModifyTargetPortAsync(
+    request,
+    [prom](
+        const ClbClient*,
+        const ModifyTargetPortRequest&,
+        ModifyTargetPortOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ClbClient::ModifyTargetWeightOutcome ClbClient::ModifyTargetWeight(const ModifyTargetWeightRequest &request)
@@ -3330,25 +3862,32 @@ ClbClient::ModifyTargetWeightOutcome ClbClient::ModifyTargetWeight(const ModifyT
 
 void ClbClient::ModifyTargetWeightAsync(const ModifyTargetWeightRequest& request, const ModifyTargetWeightAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyTargetWeight(request), context);
-    };
+    using Req = const ModifyTargetWeightRequest&;
+    using Resp = ModifyTargetWeightResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyTargetWeight", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ClbClient::ModifyTargetWeightOutcomeCallable ClbClient::ModifyTargetWeightCallable(const ModifyTargetWeightRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyTargetWeightOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyTargetWeight(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyTargetWeightOutcome>>();
+    ModifyTargetWeightAsync(
+    request,
+    [prom](
+        const ClbClient*,
+        const ModifyTargetWeightRequest&,
+        ModifyTargetWeightOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ClbClient::RegisterFunctionTargetsOutcome ClbClient::RegisterFunctionTargets(const RegisterFunctionTargetsRequest &request)
@@ -3373,25 +3912,32 @@ ClbClient::RegisterFunctionTargetsOutcome ClbClient::RegisterFunctionTargets(con
 
 void ClbClient::RegisterFunctionTargetsAsync(const RegisterFunctionTargetsRequest& request, const RegisterFunctionTargetsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->RegisterFunctionTargets(request), context);
-    };
+    using Req = const RegisterFunctionTargetsRequest&;
+    using Resp = RegisterFunctionTargetsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "RegisterFunctionTargets", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ClbClient::RegisterFunctionTargetsOutcomeCallable ClbClient::RegisterFunctionTargetsCallable(const RegisterFunctionTargetsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<RegisterFunctionTargetsOutcome()>>(
-        [this, request]()
-        {
-            return this->RegisterFunctionTargets(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<RegisterFunctionTargetsOutcome>>();
+    RegisterFunctionTargetsAsync(
+    request,
+    [prom](
+        const ClbClient*,
+        const RegisterFunctionTargetsRequest&,
+        RegisterFunctionTargetsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ClbClient::RegisterTargetGroupInstancesOutcome ClbClient::RegisterTargetGroupInstances(const RegisterTargetGroupInstancesRequest &request)
@@ -3416,25 +3962,32 @@ ClbClient::RegisterTargetGroupInstancesOutcome ClbClient::RegisterTargetGroupIns
 
 void ClbClient::RegisterTargetGroupInstancesAsync(const RegisterTargetGroupInstancesRequest& request, const RegisterTargetGroupInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->RegisterTargetGroupInstances(request), context);
-    };
+    using Req = const RegisterTargetGroupInstancesRequest&;
+    using Resp = RegisterTargetGroupInstancesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "RegisterTargetGroupInstances", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ClbClient::RegisterTargetGroupInstancesOutcomeCallable ClbClient::RegisterTargetGroupInstancesCallable(const RegisterTargetGroupInstancesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<RegisterTargetGroupInstancesOutcome()>>(
-        [this, request]()
-        {
-            return this->RegisterTargetGroupInstances(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<RegisterTargetGroupInstancesOutcome>>();
+    RegisterTargetGroupInstancesAsync(
+    request,
+    [prom](
+        const ClbClient*,
+        const RegisterTargetGroupInstancesRequest&,
+        RegisterTargetGroupInstancesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ClbClient::RegisterTargetsOutcome ClbClient::RegisterTargets(const RegisterTargetsRequest &request)
@@ -3459,25 +4012,32 @@ ClbClient::RegisterTargetsOutcome ClbClient::RegisterTargets(const RegisterTarge
 
 void ClbClient::RegisterTargetsAsync(const RegisterTargetsRequest& request, const RegisterTargetsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->RegisterTargets(request), context);
-    };
+    using Req = const RegisterTargetsRequest&;
+    using Resp = RegisterTargetsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "RegisterTargets", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ClbClient::RegisterTargetsOutcomeCallable ClbClient::RegisterTargetsCallable(const RegisterTargetsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<RegisterTargetsOutcome()>>(
-        [this, request]()
-        {
-            return this->RegisterTargets(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<RegisterTargetsOutcome>>();
+    RegisterTargetsAsync(
+    request,
+    [prom](
+        const ClbClient*,
+        const RegisterTargetsRequest&,
+        RegisterTargetsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ClbClient::RegisterTargetsWithClassicalLBOutcome ClbClient::RegisterTargetsWithClassicalLB(const RegisterTargetsWithClassicalLBRequest &request)
@@ -3502,25 +4062,32 @@ ClbClient::RegisterTargetsWithClassicalLBOutcome ClbClient::RegisterTargetsWithC
 
 void ClbClient::RegisterTargetsWithClassicalLBAsync(const RegisterTargetsWithClassicalLBRequest& request, const RegisterTargetsWithClassicalLBAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->RegisterTargetsWithClassicalLB(request), context);
-    };
+    using Req = const RegisterTargetsWithClassicalLBRequest&;
+    using Resp = RegisterTargetsWithClassicalLBResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "RegisterTargetsWithClassicalLB", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ClbClient::RegisterTargetsWithClassicalLBOutcomeCallable ClbClient::RegisterTargetsWithClassicalLBCallable(const RegisterTargetsWithClassicalLBRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<RegisterTargetsWithClassicalLBOutcome()>>(
-        [this, request]()
-        {
-            return this->RegisterTargetsWithClassicalLB(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<RegisterTargetsWithClassicalLBOutcome>>();
+    RegisterTargetsWithClassicalLBAsync(
+    request,
+    [prom](
+        const ClbClient*,
+        const RegisterTargetsWithClassicalLBRequest&,
+        RegisterTargetsWithClassicalLBOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ClbClient::ReplaceCertForLoadBalancersOutcome ClbClient::ReplaceCertForLoadBalancers(const ReplaceCertForLoadBalancersRequest &request)
@@ -3545,25 +4112,32 @@ ClbClient::ReplaceCertForLoadBalancersOutcome ClbClient::ReplaceCertForLoadBalan
 
 void ClbClient::ReplaceCertForLoadBalancersAsync(const ReplaceCertForLoadBalancersRequest& request, const ReplaceCertForLoadBalancersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ReplaceCertForLoadBalancers(request), context);
-    };
+    using Req = const ReplaceCertForLoadBalancersRequest&;
+    using Resp = ReplaceCertForLoadBalancersResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ReplaceCertForLoadBalancers", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ClbClient::ReplaceCertForLoadBalancersOutcomeCallable ClbClient::ReplaceCertForLoadBalancersCallable(const ReplaceCertForLoadBalancersRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ReplaceCertForLoadBalancersOutcome()>>(
-        [this, request]()
-        {
-            return this->ReplaceCertForLoadBalancers(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ReplaceCertForLoadBalancersOutcome>>();
+    ReplaceCertForLoadBalancersAsync(
+    request,
+    [prom](
+        const ClbClient*,
+        const ReplaceCertForLoadBalancersRequest&,
+        ReplaceCertForLoadBalancersOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ClbClient::SetCustomizedConfigForLoadBalancerOutcome ClbClient::SetCustomizedConfigForLoadBalancer(const SetCustomizedConfigForLoadBalancerRequest &request)
@@ -3588,25 +4162,32 @@ ClbClient::SetCustomizedConfigForLoadBalancerOutcome ClbClient::SetCustomizedCon
 
 void ClbClient::SetCustomizedConfigForLoadBalancerAsync(const SetCustomizedConfigForLoadBalancerRequest& request, const SetCustomizedConfigForLoadBalancerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->SetCustomizedConfigForLoadBalancer(request), context);
-    };
+    using Req = const SetCustomizedConfigForLoadBalancerRequest&;
+    using Resp = SetCustomizedConfigForLoadBalancerResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "SetCustomizedConfigForLoadBalancer", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ClbClient::SetCustomizedConfigForLoadBalancerOutcomeCallable ClbClient::SetCustomizedConfigForLoadBalancerCallable(const SetCustomizedConfigForLoadBalancerRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<SetCustomizedConfigForLoadBalancerOutcome()>>(
-        [this, request]()
-        {
-            return this->SetCustomizedConfigForLoadBalancer(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<SetCustomizedConfigForLoadBalancerOutcome>>();
+    SetCustomizedConfigForLoadBalancerAsync(
+    request,
+    [prom](
+        const ClbClient*,
+        const SetCustomizedConfigForLoadBalancerRequest&,
+        SetCustomizedConfigForLoadBalancerOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ClbClient::SetLoadBalancerClsLogOutcome ClbClient::SetLoadBalancerClsLog(const SetLoadBalancerClsLogRequest &request)
@@ -3631,25 +4212,32 @@ ClbClient::SetLoadBalancerClsLogOutcome ClbClient::SetLoadBalancerClsLog(const S
 
 void ClbClient::SetLoadBalancerClsLogAsync(const SetLoadBalancerClsLogRequest& request, const SetLoadBalancerClsLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->SetLoadBalancerClsLog(request), context);
-    };
+    using Req = const SetLoadBalancerClsLogRequest&;
+    using Resp = SetLoadBalancerClsLogResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "SetLoadBalancerClsLog", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ClbClient::SetLoadBalancerClsLogOutcomeCallable ClbClient::SetLoadBalancerClsLogCallable(const SetLoadBalancerClsLogRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<SetLoadBalancerClsLogOutcome()>>(
-        [this, request]()
-        {
-            return this->SetLoadBalancerClsLog(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<SetLoadBalancerClsLogOutcome>>();
+    SetLoadBalancerClsLogAsync(
+    request,
+    [prom](
+        const ClbClient*,
+        const SetLoadBalancerClsLogRequest&,
+        SetLoadBalancerClsLogOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ClbClient::SetLoadBalancerSecurityGroupsOutcome ClbClient::SetLoadBalancerSecurityGroups(const SetLoadBalancerSecurityGroupsRequest &request)
@@ -3674,25 +4262,32 @@ ClbClient::SetLoadBalancerSecurityGroupsOutcome ClbClient::SetLoadBalancerSecuri
 
 void ClbClient::SetLoadBalancerSecurityGroupsAsync(const SetLoadBalancerSecurityGroupsRequest& request, const SetLoadBalancerSecurityGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->SetLoadBalancerSecurityGroups(request), context);
-    };
+    using Req = const SetLoadBalancerSecurityGroupsRequest&;
+    using Resp = SetLoadBalancerSecurityGroupsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "SetLoadBalancerSecurityGroups", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ClbClient::SetLoadBalancerSecurityGroupsOutcomeCallable ClbClient::SetLoadBalancerSecurityGroupsCallable(const SetLoadBalancerSecurityGroupsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<SetLoadBalancerSecurityGroupsOutcome()>>(
-        [this, request]()
-        {
-            return this->SetLoadBalancerSecurityGroups(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<SetLoadBalancerSecurityGroupsOutcome>>();
+    SetLoadBalancerSecurityGroupsAsync(
+    request,
+    [prom](
+        const ClbClient*,
+        const SetLoadBalancerSecurityGroupsRequest&,
+        SetLoadBalancerSecurityGroupsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ClbClient::SetLoadBalancerStartStatusOutcome ClbClient::SetLoadBalancerStartStatus(const SetLoadBalancerStartStatusRequest &request)
@@ -3717,25 +4312,32 @@ ClbClient::SetLoadBalancerStartStatusOutcome ClbClient::SetLoadBalancerStartStat
 
 void ClbClient::SetLoadBalancerStartStatusAsync(const SetLoadBalancerStartStatusRequest& request, const SetLoadBalancerStartStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->SetLoadBalancerStartStatus(request), context);
-    };
+    using Req = const SetLoadBalancerStartStatusRequest&;
+    using Resp = SetLoadBalancerStartStatusResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "SetLoadBalancerStartStatus", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ClbClient::SetLoadBalancerStartStatusOutcomeCallable ClbClient::SetLoadBalancerStartStatusCallable(const SetLoadBalancerStartStatusRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<SetLoadBalancerStartStatusOutcome()>>(
-        [this, request]()
-        {
-            return this->SetLoadBalancerStartStatus(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<SetLoadBalancerStartStatusOutcome>>();
+    SetLoadBalancerStartStatusAsync(
+    request,
+    [prom](
+        const ClbClient*,
+        const SetLoadBalancerStartStatusRequest&,
+        SetLoadBalancerStartStatusOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ClbClient::SetSecurityGroupForLoadbalancersOutcome ClbClient::SetSecurityGroupForLoadbalancers(const SetSecurityGroupForLoadbalancersRequest &request)
@@ -3760,24 +4362,31 @@ ClbClient::SetSecurityGroupForLoadbalancersOutcome ClbClient::SetSecurityGroupFo
 
 void ClbClient::SetSecurityGroupForLoadbalancersAsync(const SetSecurityGroupForLoadbalancersRequest& request, const SetSecurityGroupForLoadbalancersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->SetSecurityGroupForLoadbalancers(request), context);
-    };
+    using Req = const SetSecurityGroupForLoadbalancersRequest&;
+    using Resp = SetSecurityGroupForLoadbalancersResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "SetSecurityGroupForLoadbalancers", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ClbClient::SetSecurityGroupForLoadbalancersOutcomeCallable ClbClient::SetSecurityGroupForLoadbalancersCallable(const SetSecurityGroupForLoadbalancersRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<SetSecurityGroupForLoadbalancersOutcome()>>(
-        [this, request]()
-        {
-            return this->SetSecurityGroupForLoadbalancers(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<SetSecurityGroupForLoadbalancersOutcome>>();
+    SetSecurityGroupForLoadbalancersAsync(
+    request,
+    [prom](
+        const ClbClient*,
+        const SetSecurityGroupForLoadbalancersRequest&,
+        SetSecurityGroupForLoadbalancersOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 

@@ -62,25 +62,32 @@ TemClient::CreateCosTokenOutcome TemClient::CreateCosToken(const CreateCosTokenR
 
 void TemClient::CreateCosTokenAsync(const CreateCosTokenRequest& request, const CreateCosTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateCosToken(request), context);
-    };
+    using Req = const CreateCosTokenRequest&;
+    using Resp = CreateCosTokenResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateCosToken", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TemClient::CreateCosTokenOutcomeCallable TemClient::CreateCosTokenCallable(const CreateCosTokenRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateCosTokenOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateCosToken(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateCosTokenOutcome>>();
+    CreateCosTokenAsync(
+    request,
+    [prom](
+        const TemClient*,
+        const CreateCosTokenRequest&,
+        CreateCosTokenOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TemClient::CreateCosTokenV2Outcome TemClient::CreateCosTokenV2(const CreateCosTokenV2Request &request)
@@ -105,25 +112,32 @@ TemClient::CreateCosTokenV2Outcome TemClient::CreateCosTokenV2(const CreateCosTo
 
 void TemClient::CreateCosTokenV2Async(const CreateCosTokenV2Request& request, const CreateCosTokenV2AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateCosTokenV2(request), context);
-    };
+    using Req = const CreateCosTokenV2Request&;
+    using Resp = CreateCosTokenV2Response;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateCosTokenV2", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TemClient::CreateCosTokenV2OutcomeCallable TemClient::CreateCosTokenV2Callable(const CreateCosTokenV2Request &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateCosTokenV2Outcome()>>(
-        [this, request]()
-        {
-            return this->CreateCosTokenV2(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateCosTokenV2Outcome>>();
+    CreateCosTokenV2Async(
+    request,
+    [prom](
+        const TemClient*,
+        const CreateCosTokenV2Request&,
+        CreateCosTokenV2Outcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TemClient::CreateNamespaceOutcome TemClient::CreateNamespace(const CreateNamespaceRequest &request)
@@ -148,25 +162,32 @@ TemClient::CreateNamespaceOutcome TemClient::CreateNamespace(const CreateNamespa
 
 void TemClient::CreateNamespaceAsync(const CreateNamespaceRequest& request, const CreateNamespaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateNamespace(request), context);
-    };
+    using Req = const CreateNamespaceRequest&;
+    using Resp = CreateNamespaceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateNamespace", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TemClient::CreateNamespaceOutcomeCallable TemClient::CreateNamespaceCallable(const CreateNamespaceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateNamespaceOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateNamespace(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateNamespaceOutcome>>();
+    CreateNamespaceAsync(
+    request,
+    [prom](
+        const TemClient*,
+        const CreateNamespaceRequest&,
+        CreateNamespaceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TemClient::CreateResourceOutcome TemClient::CreateResource(const CreateResourceRequest &request)
@@ -191,25 +212,32 @@ TemClient::CreateResourceOutcome TemClient::CreateResource(const CreateResourceR
 
 void TemClient::CreateResourceAsync(const CreateResourceRequest& request, const CreateResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateResource(request), context);
-    };
+    using Req = const CreateResourceRequest&;
+    using Resp = CreateResourceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateResource", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TemClient::CreateResourceOutcomeCallable TemClient::CreateResourceCallable(const CreateResourceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateResourceOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateResource(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateResourceOutcome>>();
+    CreateResourceAsync(
+    request,
+    [prom](
+        const TemClient*,
+        const CreateResourceRequest&,
+        CreateResourceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TemClient::CreateServiceV2Outcome TemClient::CreateServiceV2(const CreateServiceV2Request &request)
@@ -234,25 +262,32 @@ TemClient::CreateServiceV2Outcome TemClient::CreateServiceV2(const CreateService
 
 void TemClient::CreateServiceV2Async(const CreateServiceV2Request& request, const CreateServiceV2AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateServiceV2(request), context);
-    };
+    using Req = const CreateServiceV2Request&;
+    using Resp = CreateServiceV2Response;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateServiceV2", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TemClient::CreateServiceV2OutcomeCallable TemClient::CreateServiceV2Callable(const CreateServiceV2Request &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateServiceV2Outcome()>>(
-        [this, request]()
-        {
-            return this->CreateServiceV2(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateServiceV2Outcome>>();
+    CreateServiceV2Async(
+    request,
+    [prom](
+        const TemClient*,
+        const CreateServiceV2Request&,
+        CreateServiceV2Outcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TemClient::DeleteIngressOutcome TemClient::DeleteIngress(const DeleteIngressRequest &request)
@@ -277,25 +312,32 @@ TemClient::DeleteIngressOutcome TemClient::DeleteIngress(const DeleteIngressRequ
 
 void TemClient::DeleteIngressAsync(const DeleteIngressRequest& request, const DeleteIngressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteIngress(request), context);
-    };
+    using Req = const DeleteIngressRequest&;
+    using Resp = DeleteIngressResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteIngress", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TemClient::DeleteIngressOutcomeCallable TemClient::DeleteIngressCallable(const DeleteIngressRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteIngressOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteIngress(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteIngressOutcome>>();
+    DeleteIngressAsync(
+    request,
+    [prom](
+        const TemClient*,
+        const DeleteIngressRequest&,
+        DeleteIngressOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TemClient::DeployServiceV2Outcome TemClient::DeployServiceV2(const DeployServiceV2Request &request)
@@ -320,25 +362,32 @@ TemClient::DeployServiceV2Outcome TemClient::DeployServiceV2(const DeployService
 
 void TemClient::DeployServiceV2Async(const DeployServiceV2Request& request, const DeployServiceV2AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeployServiceV2(request), context);
-    };
+    using Req = const DeployServiceV2Request&;
+    using Resp = DeployServiceV2Response;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeployServiceV2", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TemClient::DeployServiceV2OutcomeCallable TemClient::DeployServiceV2Callable(const DeployServiceV2Request &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeployServiceV2Outcome()>>(
-        [this, request]()
-        {
-            return this->DeployServiceV2(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeployServiceV2Outcome>>();
+    DeployServiceV2Async(
+    request,
+    [prom](
+        const TemClient*,
+        const DeployServiceV2Request&,
+        DeployServiceV2Outcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TemClient::DescribeIngressOutcome TemClient::DescribeIngress(const DescribeIngressRequest &request)
@@ -363,25 +412,32 @@ TemClient::DescribeIngressOutcome TemClient::DescribeIngress(const DescribeIngre
 
 void TemClient::DescribeIngressAsync(const DescribeIngressRequest& request, const DescribeIngressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeIngress(request), context);
-    };
+    using Req = const DescribeIngressRequest&;
+    using Resp = DescribeIngressResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeIngress", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TemClient::DescribeIngressOutcomeCallable TemClient::DescribeIngressCallable(const DescribeIngressRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeIngressOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeIngress(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeIngressOutcome>>();
+    DescribeIngressAsync(
+    request,
+    [prom](
+        const TemClient*,
+        const DescribeIngressRequest&,
+        DescribeIngressOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TemClient::DescribeIngressesOutcome TemClient::DescribeIngresses(const DescribeIngressesRequest &request)
@@ -406,25 +462,32 @@ TemClient::DescribeIngressesOutcome TemClient::DescribeIngresses(const DescribeI
 
 void TemClient::DescribeIngressesAsync(const DescribeIngressesRequest& request, const DescribeIngressesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeIngresses(request), context);
-    };
+    using Req = const DescribeIngressesRequest&;
+    using Resp = DescribeIngressesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeIngresses", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TemClient::DescribeIngressesOutcomeCallable TemClient::DescribeIngressesCallable(const DescribeIngressesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeIngressesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeIngresses(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeIngressesOutcome>>();
+    DescribeIngressesAsync(
+    request,
+    [prom](
+        const TemClient*,
+        const DescribeIngressesRequest&,
+        DescribeIngressesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TemClient::DescribeNamespacesOutcome TemClient::DescribeNamespaces(const DescribeNamespacesRequest &request)
@@ -449,25 +512,32 @@ TemClient::DescribeNamespacesOutcome TemClient::DescribeNamespaces(const Describ
 
 void TemClient::DescribeNamespacesAsync(const DescribeNamespacesRequest& request, const DescribeNamespacesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeNamespaces(request), context);
-    };
+    using Req = const DescribeNamespacesRequest&;
+    using Resp = DescribeNamespacesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeNamespaces", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TemClient::DescribeNamespacesOutcomeCallable TemClient::DescribeNamespacesCallable(const DescribeNamespacesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeNamespacesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeNamespaces(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeNamespacesOutcome>>();
+    DescribeNamespacesAsync(
+    request,
+    [prom](
+        const TemClient*,
+        const DescribeNamespacesRequest&,
+        DescribeNamespacesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TemClient::DescribeRelatedIngressesOutcome TemClient::DescribeRelatedIngresses(const DescribeRelatedIngressesRequest &request)
@@ -492,25 +562,32 @@ TemClient::DescribeRelatedIngressesOutcome TemClient::DescribeRelatedIngresses(c
 
 void TemClient::DescribeRelatedIngressesAsync(const DescribeRelatedIngressesRequest& request, const DescribeRelatedIngressesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeRelatedIngresses(request), context);
-    };
+    using Req = const DescribeRelatedIngressesRequest&;
+    using Resp = DescribeRelatedIngressesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeRelatedIngresses", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TemClient::DescribeRelatedIngressesOutcomeCallable TemClient::DescribeRelatedIngressesCallable(const DescribeRelatedIngressesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeRelatedIngressesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeRelatedIngresses(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeRelatedIngressesOutcome>>();
+    DescribeRelatedIngressesAsync(
+    request,
+    [prom](
+        const TemClient*,
+        const DescribeRelatedIngressesRequest&,
+        DescribeRelatedIngressesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TemClient::DescribeServiceRunPodListV2Outcome TemClient::DescribeServiceRunPodListV2(const DescribeServiceRunPodListV2Request &request)
@@ -535,25 +612,32 @@ TemClient::DescribeServiceRunPodListV2Outcome TemClient::DescribeServiceRunPodLi
 
 void TemClient::DescribeServiceRunPodListV2Async(const DescribeServiceRunPodListV2Request& request, const DescribeServiceRunPodListV2AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeServiceRunPodListV2(request), context);
-    };
+    using Req = const DescribeServiceRunPodListV2Request&;
+    using Resp = DescribeServiceRunPodListV2Response;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeServiceRunPodListV2", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TemClient::DescribeServiceRunPodListV2OutcomeCallable TemClient::DescribeServiceRunPodListV2Callable(const DescribeServiceRunPodListV2Request &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeServiceRunPodListV2Outcome()>>(
-        [this, request]()
-        {
-            return this->DescribeServiceRunPodListV2(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeServiceRunPodListV2Outcome>>();
+    DescribeServiceRunPodListV2Async(
+    request,
+    [prom](
+        const TemClient*,
+        const DescribeServiceRunPodListV2Request&,
+        DescribeServiceRunPodListV2Outcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TemClient::GenerateDownloadUrlOutcome TemClient::GenerateDownloadUrl(const GenerateDownloadUrlRequest &request)
@@ -578,25 +662,32 @@ TemClient::GenerateDownloadUrlOutcome TemClient::GenerateDownloadUrl(const Gener
 
 void TemClient::GenerateDownloadUrlAsync(const GenerateDownloadUrlRequest& request, const GenerateDownloadUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->GenerateDownloadUrl(request), context);
-    };
+    using Req = const GenerateDownloadUrlRequest&;
+    using Resp = GenerateDownloadUrlResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "GenerateDownloadUrl", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TemClient::GenerateDownloadUrlOutcomeCallable TemClient::GenerateDownloadUrlCallable(const GenerateDownloadUrlRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<GenerateDownloadUrlOutcome()>>(
-        [this, request]()
-        {
-            return this->GenerateDownloadUrl(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<GenerateDownloadUrlOutcome>>();
+    GenerateDownloadUrlAsync(
+    request,
+    [prom](
+        const TemClient*,
+        const GenerateDownloadUrlRequest&,
+        GenerateDownloadUrlOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TemClient::ModifyIngressOutcome TemClient::ModifyIngress(const ModifyIngressRequest &request)
@@ -621,25 +712,32 @@ TemClient::ModifyIngressOutcome TemClient::ModifyIngress(const ModifyIngressRequ
 
 void TemClient::ModifyIngressAsync(const ModifyIngressRequest& request, const ModifyIngressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyIngress(request), context);
-    };
+    using Req = const ModifyIngressRequest&;
+    using Resp = ModifyIngressResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyIngress", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TemClient::ModifyIngressOutcomeCallable TemClient::ModifyIngressCallable(const ModifyIngressRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyIngressOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyIngress(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyIngressOutcome>>();
+    ModifyIngressAsync(
+    request,
+    [prom](
+        const TemClient*,
+        const ModifyIngressRequest&,
+        ModifyIngressOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TemClient::ModifyNamespaceOutcome TemClient::ModifyNamespace(const ModifyNamespaceRequest &request)
@@ -664,25 +762,32 @@ TemClient::ModifyNamespaceOutcome TemClient::ModifyNamespace(const ModifyNamespa
 
 void TemClient::ModifyNamespaceAsync(const ModifyNamespaceRequest& request, const ModifyNamespaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyNamespace(request), context);
-    };
+    using Req = const ModifyNamespaceRequest&;
+    using Resp = ModifyNamespaceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyNamespace", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TemClient::ModifyNamespaceOutcomeCallable TemClient::ModifyNamespaceCallable(const ModifyNamespaceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyNamespaceOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyNamespace(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyNamespaceOutcome>>();
+    ModifyNamespaceAsync(
+    request,
+    [prom](
+        const TemClient*,
+        const ModifyNamespaceRequest&,
+        ModifyNamespaceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TemClient::ModifyServiceInfoOutcome TemClient::ModifyServiceInfo(const ModifyServiceInfoRequest &request)
@@ -707,25 +812,32 @@ TemClient::ModifyServiceInfoOutcome TemClient::ModifyServiceInfo(const ModifySer
 
 void TemClient::ModifyServiceInfoAsync(const ModifyServiceInfoRequest& request, const ModifyServiceInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyServiceInfo(request), context);
-    };
+    using Req = const ModifyServiceInfoRequest&;
+    using Resp = ModifyServiceInfoResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyServiceInfo", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TemClient::ModifyServiceInfoOutcomeCallable TemClient::ModifyServiceInfoCallable(const ModifyServiceInfoRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyServiceInfoOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyServiceInfo(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyServiceInfoOutcome>>();
+    ModifyServiceInfoAsync(
+    request,
+    [prom](
+        const TemClient*,
+        const ModifyServiceInfoRequest&,
+        ModifyServiceInfoOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TemClient::RestartServiceRunPodOutcome TemClient::RestartServiceRunPod(const RestartServiceRunPodRequest &request)
@@ -750,24 +862,31 @@ TemClient::RestartServiceRunPodOutcome TemClient::RestartServiceRunPod(const Res
 
 void TemClient::RestartServiceRunPodAsync(const RestartServiceRunPodRequest& request, const RestartServiceRunPodAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->RestartServiceRunPod(request), context);
-    };
+    using Req = const RestartServiceRunPodRequest&;
+    using Resp = RestartServiceRunPodResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "RestartServiceRunPod", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TemClient::RestartServiceRunPodOutcomeCallable TemClient::RestartServiceRunPodCallable(const RestartServiceRunPodRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<RestartServiceRunPodOutcome()>>(
-        [this, request]()
-        {
-            return this->RestartServiceRunPod(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<RestartServiceRunPodOutcome>>();
+    RestartServiceRunPodAsync(
+    request,
+    [prom](
+        const TemClient*,
+        const RestartServiceRunPodRequest&,
+        RestartServiceRunPodOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 

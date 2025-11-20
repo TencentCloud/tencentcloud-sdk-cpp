@@ -62,25 +62,32 @@ MqttClient::ActivateCaCertificateOutcome MqttClient::ActivateCaCertificate(const
 
 void MqttClient::ActivateCaCertificateAsync(const ActivateCaCertificateRequest& request, const ActivateCaCertificateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ActivateCaCertificate(request), context);
-    };
+    using Req = const ActivateCaCertificateRequest&;
+    using Resp = ActivateCaCertificateResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ActivateCaCertificate", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MqttClient::ActivateCaCertificateOutcomeCallable MqttClient::ActivateCaCertificateCallable(const ActivateCaCertificateRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ActivateCaCertificateOutcome()>>(
-        [this, request]()
-        {
-            return this->ActivateCaCertificate(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ActivateCaCertificateOutcome>>();
+    ActivateCaCertificateAsync(
+    request,
+    [prom](
+        const MqttClient*,
+        const ActivateCaCertificateRequest&,
+        ActivateCaCertificateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MqttClient::ActivateDeviceCertificateOutcome MqttClient::ActivateDeviceCertificate(const ActivateDeviceCertificateRequest &request)
@@ -105,25 +112,32 @@ MqttClient::ActivateDeviceCertificateOutcome MqttClient::ActivateDeviceCertifica
 
 void MqttClient::ActivateDeviceCertificateAsync(const ActivateDeviceCertificateRequest& request, const ActivateDeviceCertificateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ActivateDeviceCertificate(request), context);
-    };
+    using Req = const ActivateDeviceCertificateRequest&;
+    using Resp = ActivateDeviceCertificateResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ActivateDeviceCertificate", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MqttClient::ActivateDeviceCertificateOutcomeCallable MqttClient::ActivateDeviceCertificateCallable(const ActivateDeviceCertificateRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ActivateDeviceCertificateOutcome()>>(
-        [this, request]()
-        {
-            return this->ActivateDeviceCertificate(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ActivateDeviceCertificateOutcome>>();
+    ActivateDeviceCertificateAsync(
+    request,
+    [prom](
+        const MqttClient*,
+        const ActivateDeviceCertificateRequest&,
+        ActivateDeviceCertificateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MqttClient::AddClientSubscriptionOutcome MqttClient::AddClientSubscription(const AddClientSubscriptionRequest &request)
@@ -148,25 +162,32 @@ MqttClient::AddClientSubscriptionOutcome MqttClient::AddClientSubscription(const
 
 void MqttClient::AddClientSubscriptionAsync(const AddClientSubscriptionRequest& request, const AddClientSubscriptionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->AddClientSubscription(request), context);
-    };
+    using Req = const AddClientSubscriptionRequest&;
+    using Resp = AddClientSubscriptionResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "AddClientSubscription", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MqttClient::AddClientSubscriptionOutcomeCallable MqttClient::AddClientSubscriptionCallable(const AddClientSubscriptionRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<AddClientSubscriptionOutcome()>>(
-        [this, request]()
-        {
-            return this->AddClientSubscription(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<AddClientSubscriptionOutcome>>();
+    AddClientSubscriptionAsync(
+    request,
+    [prom](
+        const MqttClient*,
+        const AddClientSubscriptionRequest&,
+        AddClientSubscriptionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MqttClient::ApplyRegistrationCodeOutcome MqttClient::ApplyRegistrationCode(const ApplyRegistrationCodeRequest &request)
@@ -191,25 +212,32 @@ MqttClient::ApplyRegistrationCodeOutcome MqttClient::ApplyRegistrationCode(const
 
 void MqttClient::ApplyRegistrationCodeAsync(const ApplyRegistrationCodeRequest& request, const ApplyRegistrationCodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ApplyRegistrationCode(request), context);
-    };
+    using Req = const ApplyRegistrationCodeRequest&;
+    using Resp = ApplyRegistrationCodeResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ApplyRegistrationCode", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MqttClient::ApplyRegistrationCodeOutcomeCallable MqttClient::ApplyRegistrationCodeCallable(const ApplyRegistrationCodeRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ApplyRegistrationCodeOutcome()>>(
-        [this, request]()
-        {
-            return this->ApplyRegistrationCode(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ApplyRegistrationCodeOutcome>>();
+    ApplyRegistrationCodeAsync(
+    request,
+    [prom](
+        const MqttClient*,
+        const ApplyRegistrationCodeRequest&,
+        ApplyRegistrationCodeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MqttClient::CreateAuthorizationPolicyOutcome MqttClient::CreateAuthorizationPolicy(const CreateAuthorizationPolicyRequest &request)
@@ -234,25 +262,32 @@ MqttClient::CreateAuthorizationPolicyOutcome MqttClient::CreateAuthorizationPoli
 
 void MqttClient::CreateAuthorizationPolicyAsync(const CreateAuthorizationPolicyRequest& request, const CreateAuthorizationPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateAuthorizationPolicy(request), context);
-    };
+    using Req = const CreateAuthorizationPolicyRequest&;
+    using Resp = CreateAuthorizationPolicyResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateAuthorizationPolicy", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MqttClient::CreateAuthorizationPolicyOutcomeCallable MqttClient::CreateAuthorizationPolicyCallable(const CreateAuthorizationPolicyRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateAuthorizationPolicyOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateAuthorizationPolicy(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateAuthorizationPolicyOutcome>>();
+    CreateAuthorizationPolicyAsync(
+    request,
+    [prom](
+        const MqttClient*,
+        const CreateAuthorizationPolicyRequest&,
+        CreateAuthorizationPolicyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MqttClient::CreateDeviceIdentityOutcome MqttClient::CreateDeviceIdentity(const CreateDeviceIdentityRequest &request)
@@ -277,25 +312,32 @@ MqttClient::CreateDeviceIdentityOutcome MqttClient::CreateDeviceIdentity(const C
 
 void MqttClient::CreateDeviceIdentityAsync(const CreateDeviceIdentityRequest& request, const CreateDeviceIdentityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateDeviceIdentity(request), context);
-    };
+    using Req = const CreateDeviceIdentityRequest&;
+    using Resp = CreateDeviceIdentityResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateDeviceIdentity", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MqttClient::CreateDeviceIdentityOutcomeCallable MqttClient::CreateDeviceIdentityCallable(const CreateDeviceIdentityRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateDeviceIdentityOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateDeviceIdentity(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateDeviceIdentityOutcome>>();
+    CreateDeviceIdentityAsync(
+    request,
+    [prom](
+        const MqttClient*,
+        const CreateDeviceIdentityRequest&,
+        CreateDeviceIdentityOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MqttClient::CreateHttpAuthenticatorOutcome MqttClient::CreateHttpAuthenticator(const CreateHttpAuthenticatorRequest &request)
@@ -320,25 +362,32 @@ MqttClient::CreateHttpAuthenticatorOutcome MqttClient::CreateHttpAuthenticator(c
 
 void MqttClient::CreateHttpAuthenticatorAsync(const CreateHttpAuthenticatorRequest& request, const CreateHttpAuthenticatorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateHttpAuthenticator(request), context);
-    };
+    using Req = const CreateHttpAuthenticatorRequest&;
+    using Resp = CreateHttpAuthenticatorResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateHttpAuthenticator", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MqttClient::CreateHttpAuthenticatorOutcomeCallable MqttClient::CreateHttpAuthenticatorCallable(const CreateHttpAuthenticatorRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateHttpAuthenticatorOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateHttpAuthenticator(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateHttpAuthenticatorOutcome>>();
+    CreateHttpAuthenticatorAsync(
+    request,
+    [prom](
+        const MqttClient*,
+        const CreateHttpAuthenticatorRequest&,
+        CreateHttpAuthenticatorOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MqttClient::CreateInsPublicEndpointOutcome MqttClient::CreateInsPublicEndpoint(const CreateInsPublicEndpointRequest &request)
@@ -363,25 +412,32 @@ MqttClient::CreateInsPublicEndpointOutcome MqttClient::CreateInsPublicEndpoint(c
 
 void MqttClient::CreateInsPublicEndpointAsync(const CreateInsPublicEndpointRequest& request, const CreateInsPublicEndpointAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateInsPublicEndpoint(request), context);
-    };
+    using Req = const CreateInsPublicEndpointRequest&;
+    using Resp = CreateInsPublicEndpointResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateInsPublicEndpoint", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MqttClient::CreateInsPublicEndpointOutcomeCallable MqttClient::CreateInsPublicEndpointCallable(const CreateInsPublicEndpointRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateInsPublicEndpointOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateInsPublicEndpoint(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateInsPublicEndpointOutcome>>();
+    CreateInsPublicEndpointAsync(
+    request,
+    [prom](
+        const MqttClient*,
+        const CreateInsPublicEndpointRequest&,
+        CreateInsPublicEndpointOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MqttClient::CreateInstanceOutcome MqttClient::CreateInstance(const CreateInstanceRequest &request)
@@ -406,25 +462,32 @@ MqttClient::CreateInstanceOutcome MqttClient::CreateInstance(const CreateInstanc
 
 void MqttClient::CreateInstanceAsync(const CreateInstanceRequest& request, const CreateInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateInstance(request), context);
-    };
+    using Req = const CreateInstanceRequest&;
+    using Resp = CreateInstanceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateInstance", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MqttClient::CreateInstanceOutcomeCallable MqttClient::CreateInstanceCallable(const CreateInstanceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateInstanceOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateInstance(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateInstanceOutcome>>();
+    CreateInstanceAsync(
+    request,
+    [prom](
+        const MqttClient*,
+        const CreateInstanceRequest&,
+        CreateInstanceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MqttClient::CreateJWKSAuthenticatorOutcome MqttClient::CreateJWKSAuthenticator(const CreateJWKSAuthenticatorRequest &request)
@@ -449,25 +512,32 @@ MqttClient::CreateJWKSAuthenticatorOutcome MqttClient::CreateJWKSAuthenticator(c
 
 void MqttClient::CreateJWKSAuthenticatorAsync(const CreateJWKSAuthenticatorRequest& request, const CreateJWKSAuthenticatorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateJWKSAuthenticator(request), context);
-    };
+    using Req = const CreateJWKSAuthenticatorRequest&;
+    using Resp = CreateJWKSAuthenticatorResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateJWKSAuthenticator", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MqttClient::CreateJWKSAuthenticatorOutcomeCallable MqttClient::CreateJWKSAuthenticatorCallable(const CreateJWKSAuthenticatorRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateJWKSAuthenticatorOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateJWKSAuthenticator(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateJWKSAuthenticatorOutcome>>();
+    CreateJWKSAuthenticatorAsync(
+    request,
+    [prom](
+        const MqttClient*,
+        const CreateJWKSAuthenticatorRequest&,
+        CreateJWKSAuthenticatorOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MqttClient::CreateJWTAuthenticatorOutcome MqttClient::CreateJWTAuthenticator(const CreateJWTAuthenticatorRequest &request)
@@ -492,25 +562,32 @@ MqttClient::CreateJWTAuthenticatorOutcome MqttClient::CreateJWTAuthenticator(con
 
 void MqttClient::CreateJWTAuthenticatorAsync(const CreateJWTAuthenticatorRequest& request, const CreateJWTAuthenticatorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateJWTAuthenticator(request), context);
-    };
+    using Req = const CreateJWTAuthenticatorRequest&;
+    using Resp = CreateJWTAuthenticatorResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateJWTAuthenticator", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MqttClient::CreateJWTAuthenticatorOutcomeCallable MqttClient::CreateJWTAuthenticatorCallable(const CreateJWTAuthenticatorRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateJWTAuthenticatorOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateJWTAuthenticator(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateJWTAuthenticatorOutcome>>();
+    CreateJWTAuthenticatorAsync(
+    request,
+    [prom](
+        const MqttClient*,
+        const CreateJWTAuthenticatorRequest&,
+        CreateJWTAuthenticatorOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MqttClient::CreateTopicOutcome MqttClient::CreateTopic(const CreateTopicRequest &request)
@@ -535,25 +612,32 @@ MqttClient::CreateTopicOutcome MqttClient::CreateTopic(const CreateTopicRequest 
 
 void MqttClient::CreateTopicAsync(const CreateTopicRequest& request, const CreateTopicAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateTopic(request), context);
-    };
+    using Req = const CreateTopicRequest&;
+    using Resp = CreateTopicResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateTopic", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MqttClient::CreateTopicOutcomeCallable MqttClient::CreateTopicCallable(const CreateTopicRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateTopicOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateTopic(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateTopicOutcome>>();
+    CreateTopicAsync(
+    request,
+    [prom](
+        const MqttClient*,
+        const CreateTopicRequest&,
+        CreateTopicOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MqttClient::CreateUserOutcome MqttClient::CreateUser(const CreateUserRequest &request)
@@ -578,25 +662,32 @@ MqttClient::CreateUserOutcome MqttClient::CreateUser(const CreateUserRequest &re
 
 void MqttClient::CreateUserAsync(const CreateUserRequest& request, const CreateUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateUser(request), context);
-    };
+    using Req = const CreateUserRequest&;
+    using Resp = CreateUserResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateUser", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MqttClient::CreateUserOutcomeCallable MqttClient::CreateUserCallable(const CreateUserRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateUserOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateUser(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateUserOutcome>>();
+    CreateUserAsync(
+    request,
+    [prom](
+        const MqttClient*,
+        const CreateUserRequest&,
+        CreateUserOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MqttClient::DeactivateCaCertificateOutcome MqttClient::DeactivateCaCertificate(const DeactivateCaCertificateRequest &request)
@@ -621,25 +712,32 @@ MqttClient::DeactivateCaCertificateOutcome MqttClient::DeactivateCaCertificate(c
 
 void MqttClient::DeactivateCaCertificateAsync(const DeactivateCaCertificateRequest& request, const DeactivateCaCertificateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeactivateCaCertificate(request), context);
-    };
+    using Req = const DeactivateCaCertificateRequest&;
+    using Resp = DeactivateCaCertificateResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeactivateCaCertificate", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MqttClient::DeactivateCaCertificateOutcomeCallable MqttClient::DeactivateCaCertificateCallable(const DeactivateCaCertificateRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeactivateCaCertificateOutcome()>>(
-        [this, request]()
-        {
-            return this->DeactivateCaCertificate(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeactivateCaCertificateOutcome>>();
+    DeactivateCaCertificateAsync(
+    request,
+    [prom](
+        const MqttClient*,
+        const DeactivateCaCertificateRequest&,
+        DeactivateCaCertificateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MqttClient::DeactivateDeviceCertificateOutcome MqttClient::DeactivateDeviceCertificate(const DeactivateDeviceCertificateRequest &request)
@@ -664,25 +762,32 @@ MqttClient::DeactivateDeviceCertificateOutcome MqttClient::DeactivateDeviceCerti
 
 void MqttClient::DeactivateDeviceCertificateAsync(const DeactivateDeviceCertificateRequest& request, const DeactivateDeviceCertificateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeactivateDeviceCertificate(request), context);
-    };
+    using Req = const DeactivateDeviceCertificateRequest&;
+    using Resp = DeactivateDeviceCertificateResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeactivateDeviceCertificate", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MqttClient::DeactivateDeviceCertificateOutcomeCallable MqttClient::DeactivateDeviceCertificateCallable(const DeactivateDeviceCertificateRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeactivateDeviceCertificateOutcome()>>(
-        [this, request]()
-        {
-            return this->DeactivateDeviceCertificate(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeactivateDeviceCertificateOutcome>>();
+    DeactivateDeviceCertificateAsync(
+    request,
+    [prom](
+        const MqttClient*,
+        const DeactivateDeviceCertificateRequest&,
+        DeactivateDeviceCertificateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MqttClient::DeleteAuthenticatorOutcome MqttClient::DeleteAuthenticator(const DeleteAuthenticatorRequest &request)
@@ -707,25 +812,32 @@ MqttClient::DeleteAuthenticatorOutcome MqttClient::DeleteAuthenticator(const Del
 
 void MqttClient::DeleteAuthenticatorAsync(const DeleteAuthenticatorRequest& request, const DeleteAuthenticatorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteAuthenticator(request), context);
-    };
+    using Req = const DeleteAuthenticatorRequest&;
+    using Resp = DeleteAuthenticatorResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteAuthenticator", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MqttClient::DeleteAuthenticatorOutcomeCallable MqttClient::DeleteAuthenticatorCallable(const DeleteAuthenticatorRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteAuthenticatorOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteAuthenticator(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteAuthenticatorOutcome>>();
+    DeleteAuthenticatorAsync(
+    request,
+    [prom](
+        const MqttClient*,
+        const DeleteAuthenticatorRequest&,
+        DeleteAuthenticatorOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MqttClient::DeleteAuthorizationPolicyOutcome MqttClient::DeleteAuthorizationPolicy(const DeleteAuthorizationPolicyRequest &request)
@@ -750,25 +862,32 @@ MqttClient::DeleteAuthorizationPolicyOutcome MqttClient::DeleteAuthorizationPoli
 
 void MqttClient::DeleteAuthorizationPolicyAsync(const DeleteAuthorizationPolicyRequest& request, const DeleteAuthorizationPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteAuthorizationPolicy(request), context);
-    };
+    using Req = const DeleteAuthorizationPolicyRequest&;
+    using Resp = DeleteAuthorizationPolicyResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteAuthorizationPolicy", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MqttClient::DeleteAuthorizationPolicyOutcomeCallable MqttClient::DeleteAuthorizationPolicyCallable(const DeleteAuthorizationPolicyRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteAuthorizationPolicyOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteAuthorizationPolicy(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteAuthorizationPolicyOutcome>>();
+    DeleteAuthorizationPolicyAsync(
+    request,
+    [prom](
+        const MqttClient*,
+        const DeleteAuthorizationPolicyRequest&,
+        DeleteAuthorizationPolicyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MqttClient::DeleteCaCertificateOutcome MqttClient::DeleteCaCertificate(const DeleteCaCertificateRequest &request)
@@ -793,25 +912,32 @@ MqttClient::DeleteCaCertificateOutcome MqttClient::DeleteCaCertificate(const Del
 
 void MqttClient::DeleteCaCertificateAsync(const DeleteCaCertificateRequest& request, const DeleteCaCertificateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteCaCertificate(request), context);
-    };
+    using Req = const DeleteCaCertificateRequest&;
+    using Resp = DeleteCaCertificateResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteCaCertificate", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MqttClient::DeleteCaCertificateOutcomeCallable MqttClient::DeleteCaCertificateCallable(const DeleteCaCertificateRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteCaCertificateOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteCaCertificate(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteCaCertificateOutcome>>();
+    DeleteCaCertificateAsync(
+    request,
+    [prom](
+        const MqttClient*,
+        const DeleteCaCertificateRequest&,
+        DeleteCaCertificateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MqttClient::DeleteClientSubscriptionOutcome MqttClient::DeleteClientSubscription(const DeleteClientSubscriptionRequest &request)
@@ -836,25 +962,32 @@ MqttClient::DeleteClientSubscriptionOutcome MqttClient::DeleteClientSubscription
 
 void MqttClient::DeleteClientSubscriptionAsync(const DeleteClientSubscriptionRequest& request, const DeleteClientSubscriptionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteClientSubscription(request), context);
-    };
+    using Req = const DeleteClientSubscriptionRequest&;
+    using Resp = DeleteClientSubscriptionResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteClientSubscription", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MqttClient::DeleteClientSubscriptionOutcomeCallable MqttClient::DeleteClientSubscriptionCallable(const DeleteClientSubscriptionRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteClientSubscriptionOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteClientSubscription(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteClientSubscriptionOutcome>>();
+    DeleteClientSubscriptionAsync(
+    request,
+    [prom](
+        const MqttClient*,
+        const DeleteClientSubscriptionRequest&,
+        DeleteClientSubscriptionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MqttClient::DeleteDeviceCertificateOutcome MqttClient::DeleteDeviceCertificate(const DeleteDeviceCertificateRequest &request)
@@ -879,25 +1012,32 @@ MqttClient::DeleteDeviceCertificateOutcome MqttClient::DeleteDeviceCertificate(c
 
 void MqttClient::DeleteDeviceCertificateAsync(const DeleteDeviceCertificateRequest& request, const DeleteDeviceCertificateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteDeviceCertificate(request), context);
-    };
+    using Req = const DeleteDeviceCertificateRequest&;
+    using Resp = DeleteDeviceCertificateResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteDeviceCertificate", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MqttClient::DeleteDeviceCertificateOutcomeCallable MqttClient::DeleteDeviceCertificateCallable(const DeleteDeviceCertificateRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteDeviceCertificateOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteDeviceCertificate(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteDeviceCertificateOutcome>>();
+    DeleteDeviceCertificateAsync(
+    request,
+    [prom](
+        const MqttClient*,
+        const DeleteDeviceCertificateRequest&,
+        DeleteDeviceCertificateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MqttClient::DeleteDeviceIdentityOutcome MqttClient::DeleteDeviceIdentity(const DeleteDeviceIdentityRequest &request)
@@ -922,25 +1062,32 @@ MqttClient::DeleteDeviceIdentityOutcome MqttClient::DeleteDeviceIdentity(const D
 
 void MqttClient::DeleteDeviceIdentityAsync(const DeleteDeviceIdentityRequest& request, const DeleteDeviceIdentityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteDeviceIdentity(request), context);
-    };
+    using Req = const DeleteDeviceIdentityRequest&;
+    using Resp = DeleteDeviceIdentityResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteDeviceIdentity", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MqttClient::DeleteDeviceIdentityOutcomeCallable MqttClient::DeleteDeviceIdentityCallable(const DeleteDeviceIdentityRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteDeviceIdentityOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteDeviceIdentity(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteDeviceIdentityOutcome>>();
+    DeleteDeviceIdentityAsync(
+    request,
+    [prom](
+        const MqttClient*,
+        const DeleteDeviceIdentityRequest&,
+        DeleteDeviceIdentityOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MqttClient::DeleteInsPublicEndpointOutcome MqttClient::DeleteInsPublicEndpoint(const DeleteInsPublicEndpointRequest &request)
@@ -965,25 +1112,32 @@ MqttClient::DeleteInsPublicEndpointOutcome MqttClient::DeleteInsPublicEndpoint(c
 
 void MqttClient::DeleteInsPublicEndpointAsync(const DeleteInsPublicEndpointRequest& request, const DeleteInsPublicEndpointAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteInsPublicEndpoint(request), context);
-    };
+    using Req = const DeleteInsPublicEndpointRequest&;
+    using Resp = DeleteInsPublicEndpointResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteInsPublicEndpoint", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MqttClient::DeleteInsPublicEndpointOutcomeCallable MqttClient::DeleteInsPublicEndpointCallable(const DeleteInsPublicEndpointRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteInsPublicEndpointOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteInsPublicEndpoint(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteInsPublicEndpointOutcome>>();
+    DeleteInsPublicEndpointAsync(
+    request,
+    [prom](
+        const MqttClient*,
+        const DeleteInsPublicEndpointRequest&,
+        DeleteInsPublicEndpointOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MqttClient::DeleteInstanceOutcome MqttClient::DeleteInstance(const DeleteInstanceRequest &request)
@@ -1008,25 +1162,32 @@ MqttClient::DeleteInstanceOutcome MqttClient::DeleteInstance(const DeleteInstanc
 
 void MqttClient::DeleteInstanceAsync(const DeleteInstanceRequest& request, const DeleteInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteInstance(request), context);
-    };
+    using Req = const DeleteInstanceRequest&;
+    using Resp = DeleteInstanceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteInstance", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MqttClient::DeleteInstanceOutcomeCallable MqttClient::DeleteInstanceCallable(const DeleteInstanceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteInstanceOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteInstance(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteInstanceOutcome>>();
+    DeleteInstanceAsync(
+    request,
+    [prom](
+        const MqttClient*,
+        const DeleteInstanceRequest&,
+        DeleteInstanceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MqttClient::DeleteTopicOutcome MqttClient::DeleteTopic(const DeleteTopicRequest &request)
@@ -1051,25 +1212,32 @@ MqttClient::DeleteTopicOutcome MqttClient::DeleteTopic(const DeleteTopicRequest 
 
 void MqttClient::DeleteTopicAsync(const DeleteTopicRequest& request, const DeleteTopicAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteTopic(request), context);
-    };
+    using Req = const DeleteTopicRequest&;
+    using Resp = DeleteTopicResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteTopic", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MqttClient::DeleteTopicOutcomeCallable MqttClient::DeleteTopicCallable(const DeleteTopicRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteTopicOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteTopic(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteTopicOutcome>>();
+    DeleteTopicAsync(
+    request,
+    [prom](
+        const MqttClient*,
+        const DeleteTopicRequest&,
+        DeleteTopicOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MqttClient::DeleteUserOutcome MqttClient::DeleteUser(const DeleteUserRequest &request)
@@ -1094,25 +1262,32 @@ MqttClient::DeleteUserOutcome MqttClient::DeleteUser(const DeleteUserRequest &re
 
 void MqttClient::DeleteUserAsync(const DeleteUserRequest& request, const DeleteUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteUser(request), context);
-    };
+    using Req = const DeleteUserRequest&;
+    using Resp = DeleteUserResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteUser", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MqttClient::DeleteUserOutcomeCallable MqttClient::DeleteUserCallable(const DeleteUserRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteUserOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteUser(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteUserOutcome>>();
+    DeleteUserAsync(
+    request,
+    [prom](
+        const MqttClient*,
+        const DeleteUserRequest&,
+        DeleteUserOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MqttClient::DescribeAuthenticatorOutcome MqttClient::DescribeAuthenticator(const DescribeAuthenticatorRequest &request)
@@ -1137,25 +1312,32 @@ MqttClient::DescribeAuthenticatorOutcome MqttClient::DescribeAuthenticator(const
 
 void MqttClient::DescribeAuthenticatorAsync(const DescribeAuthenticatorRequest& request, const DescribeAuthenticatorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAuthenticator(request), context);
-    };
+    using Req = const DescribeAuthenticatorRequest&;
+    using Resp = DescribeAuthenticatorResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAuthenticator", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MqttClient::DescribeAuthenticatorOutcomeCallable MqttClient::DescribeAuthenticatorCallable(const DescribeAuthenticatorRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAuthenticatorOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAuthenticator(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAuthenticatorOutcome>>();
+    DescribeAuthenticatorAsync(
+    request,
+    [prom](
+        const MqttClient*,
+        const DescribeAuthenticatorRequest&,
+        DescribeAuthenticatorOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MqttClient::DescribeAuthorizationPoliciesOutcome MqttClient::DescribeAuthorizationPolicies(const DescribeAuthorizationPoliciesRequest &request)
@@ -1180,25 +1362,32 @@ MqttClient::DescribeAuthorizationPoliciesOutcome MqttClient::DescribeAuthorizati
 
 void MqttClient::DescribeAuthorizationPoliciesAsync(const DescribeAuthorizationPoliciesRequest& request, const DescribeAuthorizationPoliciesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAuthorizationPolicies(request), context);
-    };
+    using Req = const DescribeAuthorizationPoliciesRequest&;
+    using Resp = DescribeAuthorizationPoliciesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAuthorizationPolicies", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MqttClient::DescribeAuthorizationPoliciesOutcomeCallable MqttClient::DescribeAuthorizationPoliciesCallable(const DescribeAuthorizationPoliciesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAuthorizationPoliciesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAuthorizationPolicies(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAuthorizationPoliciesOutcome>>();
+    DescribeAuthorizationPoliciesAsync(
+    request,
+    [prom](
+        const MqttClient*,
+        const DescribeAuthorizationPoliciesRequest&,
+        DescribeAuthorizationPoliciesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MqttClient::DescribeCaCertificateOutcome MqttClient::DescribeCaCertificate(const DescribeCaCertificateRequest &request)
@@ -1223,25 +1412,32 @@ MqttClient::DescribeCaCertificateOutcome MqttClient::DescribeCaCertificate(const
 
 void MqttClient::DescribeCaCertificateAsync(const DescribeCaCertificateRequest& request, const DescribeCaCertificateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeCaCertificate(request), context);
-    };
+    using Req = const DescribeCaCertificateRequest&;
+    using Resp = DescribeCaCertificateResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeCaCertificate", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MqttClient::DescribeCaCertificateOutcomeCallable MqttClient::DescribeCaCertificateCallable(const DescribeCaCertificateRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeCaCertificateOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeCaCertificate(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeCaCertificateOutcome>>();
+    DescribeCaCertificateAsync(
+    request,
+    [prom](
+        const MqttClient*,
+        const DescribeCaCertificateRequest&,
+        DescribeCaCertificateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MqttClient::DescribeCaCertificatesOutcome MqttClient::DescribeCaCertificates(const DescribeCaCertificatesRequest &request)
@@ -1266,25 +1462,32 @@ MqttClient::DescribeCaCertificatesOutcome MqttClient::DescribeCaCertificates(con
 
 void MqttClient::DescribeCaCertificatesAsync(const DescribeCaCertificatesRequest& request, const DescribeCaCertificatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeCaCertificates(request), context);
-    };
+    using Req = const DescribeCaCertificatesRequest&;
+    using Resp = DescribeCaCertificatesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeCaCertificates", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MqttClient::DescribeCaCertificatesOutcomeCallable MqttClient::DescribeCaCertificatesCallable(const DescribeCaCertificatesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeCaCertificatesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeCaCertificates(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeCaCertificatesOutcome>>();
+    DescribeCaCertificatesAsync(
+    request,
+    [prom](
+        const MqttClient*,
+        const DescribeCaCertificatesRequest&,
+        DescribeCaCertificatesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MqttClient::DescribeClientListOutcome MqttClient::DescribeClientList(const DescribeClientListRequest &request)
@@ -1309,25 +1512,32 @@ MqttClient::DescribeClientListOutcome MqttClient::DescribeClientList(const Descr
 
 void MqttClient::DescribeClientListAsync(const DescribeClientListRequest& request, const DescribeClientListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeClientList(request), context);
-    };
+    using Req = const DescribeClientListRequest&;
+    using Resp = DescribeClientListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeClientList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MqttClient::DescribeClientListOutcomeCallable MqttClient::DescribeClientListCallable(const DescribeClientListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeClientListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeClientList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeClientListOutcome>>();
+    DescribeClientListAsync(
+    request,
+    [prom](
+        const MqttClient*,
+        const DescribeClientListRequest&,
+        DescribeClientListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MqttClient::DescribeDeviceCertificateOutcome MqttClient::DescribeDeviceCertificate(const DescribeDeviceCertificateRequest &request)
@@ -1352,25 +1562,32 @@ MqttClient::DescribeDeviceCertificateOutcome MqttClient::DescribeDeviceCertifica
 
 void MqttClient::DescribeDeviceCertificateAsync(const DescribeDeviceCertificateRequest& request, const DescribeDeviceCertificateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDeviceCertificate(request), context);
-    };
+    using Req = const DescribeDeviceCertificateRequest&;
+    using Resp = DescribeDeviceCertificateResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeDeviceCertificate", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MqttClient::DescribeDeviceCertificateOutcomeCallable MqttClient::DescribeDeviceCertificateCallable(const DescribeDeviceCertificateRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeDeviceCertificateOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDeviceCertificate(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeDeviceCertificateOutcome>>();
+    DescribeDeviceCertificateAsync(
+    request,
+    [prom](
+        const MqttClient*,
+        const DescribeDeviceCertificateRequest&,
+        DescribeDeviceCertificateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MqttClient::DescribeDeviceCertificatesOutcome MqttClient::DescribeDeviceCertificates(const DescribeDeviceCertificatesRequest &request)
@@ -1395,25 +1612,32 @@ MqttClient::DescribeDeviceCertificatesOutcome MqttClient::DescribeDeviceCertific
 
 void MqttClient::DescribeDeviceCertificatesAsync(const DescribeDeviceCertificatesRequest& request, const DescribeDeviceCertificatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDeviceCertificates(request), context);
-    };
+    using Req = const DescribeDeviceCertificatesRequest&;
+    using Resp = DescribeDeviceCertificatesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeDeviceCertificates", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MqttClient::DescribeDeviceCertificatesOutcomeCallable MqttClient::DescribeDeviceCertificatesCallable(const DescribeDeviceCertificatesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeDeviceCertificatesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDeviceCertificates(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeDeviceCertificatesOutcome>>();
+    DescribeDeviceCertificatesAsync(
+    request,
+    [prom](
+        const MqttClient*,
+        const DescribeDeviceCertificatesRequest&,
+        DescribeDeviceCertificatesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MqttClient::DescribeDeviceIdentitiesOutcome MqttClient::DescribeDeviceIdentities(const DescribeDeviceIdentitiesRequest &request)
@@ -1438,25 +1662,32 @@ MqttClient::DescribeDeviceIdentitiesOutcome MqttClient::DescribeDeviceIdentities
 
 void MqttClient::DescribeDeviceIdentitiesAsync(const DescribeDeviceIdentitiesRequest& request, const DescribeDeviceIdentitiesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDeviceIdentities(request), context);
-    };
+    using Req = const DescribeDeviceIdentitiesRequest&;
+    using Resp = DescribeDeviceIdentitiesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeDeviceIdentities", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MqttClient::DescribeDeviceIdentitiesOutcomeCallable MqttClient::DescribeDeviceIdentitiesCallable(const DescribeDeviceIdentitiesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeDeviceIdentitiesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDeviceIdentities(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeDeviceIdentitiesOutcome>>();
+    DescribeDeviceIdentitiesAsync(
+    request,
+    [prom](
+        const MqttClient*,
+        const DescribeDeviceIdentitiesRequest&,
+        DescribeDeviceIdentitiesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MqttClient::DescribeDeviceIdentityOutcome MqttClient::DescribeDeviceIdentity(const DescribeDeviceIdentityRequest &request)
@@ -1481,25 +1712,32 @@ MqttClient::DescribeDeviceIdentityOutcome MqttClient::DescribeDeviceIdentity(con
 
 void MqttClient::DescribeDeviceIdentityAsync(const DescribeDeviceIdentityRequest& request, const DescribeDeviceIdentityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDeviceIdentity(request), context);
-    };
+    using Req = const DescribeDeviceIdentityRequest&;
+    using Resp = DescribeDeviceIdentityResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeDeviceIdentity", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MqttClient::DescribeDeviceIdentityOutcomeCallable MqttClient::DescribeDeviceIdentityCallable(const DescribeDeviceIdentityRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeDeviceIdentityOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDeviceIdentity(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeDeviceIdentityOutcome>>();
+    DescribeDeviceIdentityAsync(
+    request,
+    [prom](
+        const MqttClient*,
+        const DescribeDeviceIdentityRequest&,
+        DescribeDeviceIdentityOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MqttClient::DescribeInsPublicEndpointsOutcome MqttClient::DescribeInsPublicEndpoints(const DescribeInsPublicEndpointsRequest &request)
@@ -1524,25 +1762,32 @@ MqttClient::DescribeInsPublicEndpointsOutcome MqttClient::DescribeInsPublicEndpo
 
 void MqttClient::DescribeInsPublicEndpointsAsync(const DescribeInsPublicEndpointsRequest& request, const DescribeInsPublicEndpointsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeInsPublicEndpoints(request), context);
-    };
+    using Req = const DescribeInsPublicEndpointsRequest&;
+    using Resp = DescribeInsPublicEndpointsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeInsPublicEndpoints", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MqttClient::DescribeInsPublicEndpointsOutcomeCallable MqttClient::DescribeInsPublicEndpointsCallable(const DescribeInsPublicEndpointsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeInsPublicEndpointsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeInsPublicEndpoints(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeInsPublicEndpointsOutcome>>();
+    DescribeInsPublicEndpointsAsync(
+    request,
+    [prom](
+        const MqttClient*,
+        const DescribeInsPublicEndpointsRequest&,
+        DescribeInsPublicEndpointsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MqttClient::DescribeInsVPCEndpointsOutcome MqttClient::DescribeInsVPCEndpoints(const DescribeInsVPCEndpointsRequest &request)
@@ -1567,25 +1812,32 @@ MqttClient::DescribeInsVPCEndpointsOutcome MqttClient::DescribeInsVPCEndpoints(c
 
 void MqttClient::DescribeInsVPCEndpointsAsync(const DescribeInsVPCEndpointsRequest& request, const DescribeInsVPCEndpointsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeInsVPCEndpoints(request), context);
-    };
+    using Req = const DescribeInsVPCEndpointsRequest&;
+    using Resp = DescribeInsVPCEndpointsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeInsVPCEndpoints", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MqttClient::DescribeInsVPCEndpointsOutcomeCallable MqttClient::DescribeInsVPCEndpointsCallable(const DescribeInsVPCEndpointsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeInsVPCEndpointsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeInsVPCEndpoints(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeInsVPCEndpointsOutcome>>();
+    DescribeInsVPCEndpointsAsync(
+    request,
+    [prom](
+        const MqttClient*,
+        const DescribeInsVPCEndpointsRequest&,
+        DescribeInsVPCEndpointsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MqttClient::DescribeInstanceOutcome MqttClient::DescribeInstance(const DescribeInstanceRequest &request)
@@ -1610,25 +1862,32 @@ MqttClient::DescribeInstanceOutcome MqttClient::DescribeInstance(const DescribeI
 
 void MqttClient::DescribeInstanceAsync(const DescribeInstanceRequest& request, const DescribeInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeInstance(request), context);
-    };
+    using Req = const DescribeInstanceRequest&;
+    using Resp = DescribeInstanceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeInstance", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MqttClient::DescribeInstanceOutcomeCallable MqttClient::DescribeInstanceCallable(const DescribeInstanceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeInstanceOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeInstance(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeInstanceOutcome>>();
+    DescribeInstanceAsync(
+    request,
+    [prom](
+        const MqttClient*,
+        const DescribeInstanceRequest&,
+        DescribeInstanceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MqttClient::DescribeInstanceListOutcome MqttClient::DescribeInstanceList(const DescribeInstanceListRequest &request)
@@ -1653,25 +1912,32 @@ MqttClient::DescribeInstanceListOutcome MqttClient::DescribeInstanceList(const D
 
 void MqttClient::DescribeInstanceListAsync(const DescribeInstanceListRequest& request, const DescribeInstanceListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeInstanceList(request), context);
-    };
+    using Req = const DescribeInstanceListRequest&;
+    using Resp = DescribeInstanceListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeInstanceList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MqttClient::DescribeInstanceListOutcomeCallable MqttClient::DescribeInstanceListCallable(const DescribeInstanceListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeInstanceListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeInstanceList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeInstanceListOutcome>>();
+    DescribeInstanceListAsync(
+    request,
+    [prom](
+        const MqttClient*,
+        const DescribeInstanceListRequest&,
+        DescribeInstanceListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MqttClient::DescribeMessageByTopicOutcome MqttClient::DescribeMessageByTopic(const DescribeMessageByTopicRequest &request)
@@ -1696,25 +1962,32 @@ MqttClient::DescribeMessageByTopicOutcome MqttClient::DescribeMessageByTopic(con
 
 void MqttClient::DescribeMessageByTopicAsync(const DescribeMessageByTopicRequest& request, const DescribeMessageByTopicAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeMessageByTopic(request), context);
-    };
+    using Req = const DescribeMessageByTopicRequest&;
+    using Resp = DescribeMessageByTopicResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeMessageByTopic", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MqttClient::DescribeMessageByTopicOutcomeCallable MqttClient::DescribeMessageByTopicCallable(const DescribeMessageByTopicRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeMessageByTopicOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeMessageByTopic(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeMessageByTopicOutcome>>();
+    DescribeMessageByTopicAsync(
+    request,
+    [prom](
+        const MqttClient*,
+        const DescribeMessageByTopicRequest&,
+        DescribeMessageByTopicOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MqttClient::DescribeMessageDetailsOutcome MqttClient::DescribeMessageDetails(const DescribeMessageDetailsRequest &request)
@@ -1739,25 +2012,32 @@ MqttClient::DescribeMessageDetailsOutcome MqttClient::DescribeMessageDetails(con
 
 void MqttClient::DescribeMessageDetailsAsync(const DescribeMessageDetailsRequest& request, const DescribeMessageDetailsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeMessageDetails(request), context);
-    };
+    using Req = const DescribeMessageDetailsRequest&;
+    using Resp = DescribeMessageDetailsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeMessageDetails", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MqttClient::DescribeMessageDetailsOutcomeCallable MqttClient::DescribeMessageDetailsCallable(const DescribeMessageDetailsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeMessageDetailsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeMessageDetails(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeMessageDetailsOutcome>>();
+    DescribeMessageDetailsAsync(
+    request,
+    [prom](
+        const MqttClient*,
+        const DescribeMessageDetailsRequest&,
+        DescribeMessageDetailsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MqttClient::DescribeMessageListOutcome MqttClient::DescribeMessageList(const DescribeMessageListRequest &request)
@@ -1782,25 +2062,32 @@ MqttClient::DescribeMessageListOutcome MqttClient::DescribeMessageList(const Des
 
 void MqttClient::DescribeMessageListAsync(const DescribeMessageListRequest& request, const DescribeMessageListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeMessageList(request), context);
-    };
+    using Req = const DescribeMessageListRequest&;
+    using Resp = DescribeMessageListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeMessageList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MqttClient::DescribeMessageListOutcomeCallable MqttClient::DescribeMessageListCallable(const DescribeMessageListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeMessageListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeMessageList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeMessageListOutcome>>();
+    DescribeMessageListAsync(
+    request,
+    [prom](
+        const MqttClient*,
+        const DescribeMessageListRequest&,
+        DescribeMessageListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MqttClient::DescribeProductSKUListOutcome MqttClient::DescribeProductSKUList(const DescribeProductSKUListRequest &request)
@@ -1825,25 +2112,32 @@ MqttClient::DescribeProductSKUListOutcome MqttClient::DescribeProductSKUList(con
 
 void MqttClient::DescribeProductSKUListAsync(const DescribeProductSKUListRequest& request, const DescribeProductSKUListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeProductSKUList(request), context);
-    };
+    using Req = const DescribeProductSKUListRequest&;
+    using Resp = DescribeProductSKUListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeProductSKUList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MqttClient::DescribeProductSKUListOutcomeCallable MqttClient::DescribeProductSKUListCallable(const DescribeProductSKUListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeProductSKUListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeProductSKUList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeProductSKUListOutcome>>();
+    DescribeProductSKUListAsync(
+    request,
+    [prom](
+        const MqttClient*,
+        const DescribeProductSKUListRequest&,
+        DescribeProductSKUListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MqttClient::DescribeSharedSubscriptionLagOutcome MqttClient::DescribeSharedSubscriptionLag(const DescribeSharedSubscriptionLagRequest &request)
@@ -1868,25 +2162,32 @@ MqttClient::DescribeSharedSubscriptionLagOutcome MqttClient::DescribeSharedSubsc
 
 void MqttClient::DescribeSharedSubscriptionLagAsync(const DescribeSharedSubscriptionLagRequest& request, const DescribeSharedSubscriptionLagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeSharedSubscriptionLag(request), context);
-    };
+    using Req = const DescribeSharedSubscriptionLagRequest&;
+    using Resp = DescribeSharedSubscriptionLagResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeSharedSubscriptionLag", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MqttClient::DescribeSharedSubscriptionLagOutcomeCallable MqttClient::DescribeSharedSubscriptionLagCallable(const DescribeSharedSubscriptionLagRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeSharedSubscriptionLagOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeSharedSubscriptionLag(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeSharedSubscriptionLagOutcome>>();
+    DescribeSharedSubscriptionLagAsync(
+    request,
+    [prom](
+        const MqttClient*,
+        const DescribeSharedSubscriptionLagRequest&,
+        DescribeSharedSubscriptionLagOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MqttClient::DescribeTopicOutcome MqttClient::DescribeTopic(const DescribeTopicRequest &request)
@@ -1911,25 +2212,32 @@ MqttClient::DescribeTopicOutcome MqttClient::DescribeTopic(const DescribeTopicRe
 
 void MqttClient::DescribeTopicAsync(const DescribeTopicRequest& request, const DescribeTopicAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeTopic(request), context);
-    };
+    using Req = const DescribeTopicRequest&;
+    using Resp = DescribeTopicResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeTopic", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MqttClient::DescribeTopicOutcomeCallable MqttClient::DescribeTopicCallable(const DescribeTopicRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeTopicOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeTopic(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeTopicOutcome>>();
+    DescribeTopicAsync(
+    request,
+    [prom](
+        const MqttClient*,
+        const DescribeTopicRequest&,
+        DescribeTopicOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MqttClient::DescribeTopicListOutcome MqttClient::DescribeTopicList(const DescribeTopicListRequest &request)
@@ -1954,25 +2262,32 @@ MqttClient::DescribeTopicListOutcome MqttClient::DescribeTopicList(const Describ
 
 void MqttClient::DescribeTopicListAsync(const DescribeTopicListRequest& request, const DescribeTopicListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeTopicList(request), context);
-    };
+    using Req = const DescribeTopicListRequest&;
+    using Resp = DescribeTopicListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeTopicList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MqttClient::DescribeTopicListOutcomeCallable MqttClient::DescribeTopicListCallable(const DescribeTopicListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeTopicListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeTopicList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeTopicListOutcome>>();
+    DescribeTopicListAsync(
+    request,
+    [prom](
+        const MqttClient*,
+        const DescribeTopicListRequest&,
+        DescribeTopicListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MqttClient::DescribeUserListOutcome MqttClient::DescribeUserList(const DescribeUserListRequest &request)
@@ -1997,25 +2312,32 @@ MqttClient::DescribeUserListOutcome MqttClient::DescribeUserList(const DescribeU
 
 void MqttClient::DescribeUserListAsync(const DescribeUserListRequest& request, const DescribeUserListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeUserList(request), context);
-    };
+    using Req = const DescribeUserListRequest&;
+    using Resp = DescribeUserListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeUserList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MqttClient::DescribeUserListOutcomeCallable MqttClient::DescribeUserListCallable(const DescribeUserListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeUserListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeUserList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeUserListOutcome>>();
+    DescribeUserListAsync(
+    request,
+    [prom](
+        const MqttClient*,
+        const DescribeUserListRequest&,
+        DescribeUserListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MqttClient::KickOutClientOutcome MqttClient::KickOutClient(const KickOutClientRequest &request)
@@ -2040,25 +2362,32 @@ MqttClient::KickOutClientOutcome MqttClient::KickOutClient(const KickOutClientRe
 
 void MqttClient::KickOutClientAsync(const KickOutClientRequest& request, const KickOutClientAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->KickOutClient(request), context);
-    };
+    using Req = const KickOutClientRequest&;
+    using Resp = KickOutClientResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "KickOutClient", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MqttClient::KickOutClientOutcomeCallable MqttClient::KickOutClientCallable(const KickOutClientRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<KickOutClientOutcome()>>(
-        [this, request]()
-        {
-            return this->KickOutClient(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<KickOutClientOutcome>>();
+    KickOutClientAsync(
+    request,
+    [prom](
+        const MqttClient*,
+        const KickOutClientRequest&,
+        KickOutClientOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MqttClient::ModifyAuthorizationPolicyOutcome MqttClient::ModifyAuthorizationPolicy(const ModifyAuthorizationPolicyRequest &request)
@@ -2083,25 +2412,32 @@ MqttClient::ModifyAuthorizationPolicyOutcome MqttClient::ModifyAuthorizationPoli
 
 void MqttClient::ModifyAuthorizationPolicyAsync(const ModifyAuthorizationPolicyRequest& request, const ModifyAuthorizationPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyAuthorizationPolicy(request), context);
-    };
+    using Req = const ModifyAuthorizationPolicyRequest&;
+    using Resp = ModifyAuthorizationPolicyResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyAuthorizationPolicy", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MqttClient::ModifyAuthorizationPolicyOutcomeCallable MqttClient::ModifyAuthorizationPolicyCallable(const ModifyAuthorizationPolicyRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyAuthorizationPolicyOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyAuthorizationPolicy(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyAuthorizationPolicyOutcome>>();
+    ModifyAuthorizationPolicyAsync(
+    request,
+    [prom](
+        const MqttClient*,
+        const ModifyAuthorizationPolicyRequest&,
+        ModifyAuthorizationPolicyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MqttClient::ModifyDeviceIdentityOutcome MqttClient::ModifyDeviceIdentity(const ModifyDeviceIdentityRequest &request)
@@ -2126,25 +2462,32 @@ MqttClient::ModifyDeviceIdentityOutcome MqttClient::ModifyDeviceIdentity(const M
 
 void MqttClient::ModifyDeviceIdentityAsync(const ModifyDeviceIdentityRequest& request, const ModifyDeviceIdentityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyDeviceIdentity(request), context);
-    };
+    using Req = const ModifyDeviceIdentityRequest&;
+    using Resp = ModifyDeviceIdentityResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyDeviceIdentity", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MqttClient::ModifyDeviceIdentityOutcomeCallable MqttClient::ModifyDeviceIdentityCallable(const ModifyDeviceIdentityRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyDeviceIdentityOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyDeviceIdentity(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyDeviceIdentityOutcome>>();
+    ModifyDeviceIdentityAsync(
+    request,
+    [prom](
+        const MqttClient*,
+        const ModifyDeviceIdentityRequest&,
+        ModifyDeviceIdentityOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MqttClient::ModifyHttpAuthenticatorOutcome MqttClient::ModifyHttpAuthenticator(const ModifyHttpAuthenticatorRequest &request)
@@ -2169,25 +2512,32 @@ MqttClient::ModifyHttpAuthenticatorOutcome MqttClient::ModifyHttpAuthenticator(c
 
 void MqttClient::ModifyHttpAuthenticatorAsync(const ModifyHttpAuthenticatorRequest& request, const ModifyHttpAuthenticatorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyHttpAuthenticator(request), context);
-    };
+    using Req = const ModifyHttpAuthenticatorRequest&;
+    using Resp = ModifyHttpAuthenticatorResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyHttpAuthenticator", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MqttClient::ModifyHttpAuthenticatorOutcomeCallable MqttClient::ModifyHttpAuthenticatorCallable(const ModifyHttpAuthenticatorRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyHttpAuthenticatorOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyHttpAuthenticator(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyHttpAuthenticatorOutcome>>();
+    ModifyHttpAuthenticatorAsync(
+    request,
+    [prom](
+        const MqttClient*,
+        const ModifyHttpAuthenticatorRequest&,
+        ModifyHttpAuthenticatorOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MqttClient::ModifyInsPublicEndpointOutcome MqttClient::ModifyInsPublicEndpoint(const ModifyInsPublicEndpointRequest &request)
@@ -2212,25 +2562,32 @@ MqttClient::ModifyInsPublicEndpointOutcome MqttClient::ModifyInsPublicEndpoint(c
 
 void MqttClient::ModifyInsPublicEndpointAsync(const ModifyInsPublicEndpointRequest& request, const ModifyInsPublicEndpointAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyInsPublicEndpoint(request), context);
-    };
+    using Req = const ModifyInsPublicEndpointRequest&;
+    using Resp = ModifyInsPublicEndpointResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyInsPublicEndpoint", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MqttClient::ModifyInsPublicEndpointOutcomeCallable MqttClient::ModifyInsPublicEndpointCallable(const ModifyInsPublicEndpointRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyInsPublicEndpointOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyInsPublicEndpoint(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyInsPublicEndpointOutcome>>();
+    ModifyInsPublicEndpointAsync(
+    request,
+    [prom](
+        const MqttClient*,
+        const ModifyInsPublicEndpointRequest&,
+        ModifyInsPublicEndpointOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MqttClient::ModifyInstanceOutcome MqttClient::ModifyInstance(const ModifyInstanceRequest &request)
@@ -2255,25 +2612,32 @@ MqttClient::ModifyInstanceOutcome MqttClient::ModifyInstance(const ModifyInstanc
 
 void MqttClient::ModifyInstanceAsync(const ModifyInstanceRequest& request, const ModifyInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyInstance(request), context);
-    };
+    using Req = const ModifyInstanceRequest&;
+    using Resp = ModifyInstanceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyInstance", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MqttClient::ModifyInstanceOutcomeCallable MqttClient::ModifyInstanceCallable(const ModifyInstanceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyInstanceOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyInstance(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyInstanceOutcome>>();
+    ModifyInstanceAsync(
+    request,
+    [prom](
+        const MqttClient*,
+        const ModifyInstanceRequest&,
+        ModifyInstanceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MqttClient::ModifyInstanceCertBindingOutcome MqttClient::ModifyInstanceCertBinding(const ModifyInstanceCertBindingRequest &request)
@@ -2298,25 +2662,32 @@ MqttClient::ModifyInstanceCertBindingOutcome MqttClient::ModifyInstanceCertBindi
 
 void MqttClient::ModifyInstanceCertBindingAsync(const ModifyInstanceCertBindingRequest& request, const ModifyInstanceCertBindingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyInstanceCertBinding(request), context);
-    };
+    using Req = const ModifyInstanceCertBindingRequest&;
+    using Resp = ModifyInstanceCertBindingResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyInstanceCertBinding", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MqttClient::ModifyInstanceCertBindingOutcomeCallable MqttClient::ModifyInstanceCertBindingCallable(const ModifyInstanceCertBindingRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyInstanceCertBindingOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyInstanceCertBinding(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyInstanceCertBindingOutcome>>();
+    ModifyInstanceCertBindingAsync(
+    request,
+    [prom](
+        const MqttClient*,
+        const ModifyInstanceCertBindingRequest&,
+        ModifyInstanceCertBindingOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MqttClient::ModifyJWKSAuthenticatorOutcome MqttClient::ModifyJWKSAuthenticator(const ModifyJWKSAuthenticatorRequest &request)
@@ -2341,25 +2712,32 @@ MqttClient::ModifyJWKSAuthenticatorOutcome MqttClient::ModifyJWKSAuthenticator(c
 
 void MqttClient::ModifyJWKSAuthenticatorAsync(const ModifyJWKSAuthenticatorRequest& request, const ModifyJWKSAuthenticatorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyJWKSAuthenticator(request), context);
-    };
+    using Req = const ModifyJWKSAuthenticatorRequest&;
+    using Resp = ModifyJWKSAuthenticatorResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyJWKSAuthenticator", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MqttClient::ModifyJWKSAuthenticatorOutcomeCallable MqttClient::ModifyJWKSAuthenticatorCallable(const ModifyJWKSAuthenticatorRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyJWKSAuthenticatorOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyJWKSAuthenticator(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyJWKSAuthenticatorOutcome>>();
+    ModifyJWKSAuthenticatorAsync(
+    request,
+    [prom](
+        const MqttClient*,
+        const ModifyJWKSAuthenticatorRequest&,
+        ModifyJWKSAuthenticatorOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MqttClient::ModifyJWTAuthenticatorOutcome MqttClient::ModifyJWTAuthenticator(const ModifyJWTAuthenticatorRequest &request)
@@ -2384,25 +2762,32 @@ MqttClient::ModifyJWTAuthenticatorOutcome MqttClient::ModifyJWTAuthenticator(con
 
 void MqttClient::ModifyJWTAuthenticatorAsync(const ModifyJWTAuthenticatorRequest& request, const ModifyJWTAuthenticatorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyJWTAuthenticator(request), context);
-    };
+    using Req = const ModifyJWTAuthenticatorRequest&;
+    using Resp = ModifyJWTAuthenticatorResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyJWTAuthenticator", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MqttClient::ModifyJWTAuthenticatorOutcomeCallable MqttClient::ModifyJWTAuthenticatorCallable(const ModifyJWTAuthenticatorRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyJWTAuthenticatorOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyJWTAuthenticator(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyJWTAuthenticatorOutcome>>();
+    ModifyJWTAuthenticatorAsync(
+    request,
+    [prom](
+        const MqttClient*,
+        const ModifyJWTAuthenticatorRequest&,
+        ModifyJWTAuthenticatorOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MqttClient::ModifyTopicOutcome MqttClient::ModifyTopic(const ModifyTopicRequest &request)
@@ -2427,25 +2812,32 @@ MqttClient::ModifyTopicOutcome MqttClient::ModifyTopic(const ModifyTopicRequest 
 
 void MqttClient::ModifyTopicAsync(const ModifyTopicRequest& request, const ModifyTopicAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyTopic(request), context);
-    };
+    using Req = const ModifyTopicRequest&;
+    using Resp = ModifyTopicResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyTopic", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MqttClient::ModifyTopicOutcomeCallable MqttClient::ModifyTopicCallable(const ModifyTopicRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyTopicOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyTopic(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyTopicOutcome>>();
+    ModifyTopicAsync(
+    request,
+    [prom](
+        const MqttClient*,
+        const ModifyTopicRequest&,
+        ModifyTopicOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MqttClient::ModifyUserOutcome MqttClient::ModifyUser(const ModifyUserRequest &request)
@@ -2470,25 +2862,32 @@ MqttClient::ModifyUserOutcome MqttClient::ModifyUser(const ModifyUserRequest &re
 
 void MqttClient::ModifyUserAsync(const ModifyUserRequest& request, const ModifyUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyUser(request), context);
-    };
+    using Req = const ModifyUserRequest&;
+    using Resp = ModifyUserResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyUser", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MqttClient::ModifyUserOutcomeCallable MqttClient::ModifyUserCallable(const ModifyUserRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyUserOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyUser(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyUserOutcome>>();
+    ModifyUserAsync(
+    request,
+    [prom](
+        const MqttClient*,
+        const ModifyUserRequest&,
+        ModifyUserOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MqttClient::PublishMessageOutcome MqttClient::PublishMessage(const PublishMessageRequest &request)
@@ -2513,25 +2912,32 @@ MqttClient::PublishMessageOutcome MqttClient::PublishMessage(const PublishMessag
 
 void MqttClient::PublishMessageAsync(const PublishMessageRequest& request, const PublishMessageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->PublishMessage(request), context);
-    };
+    using Req = const PublishMessageRequest&;
+    using Resp = PublishMessageResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "PublishMessage", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MqttClient::PublishMessageOutcomeCallable MqttClient::PublishMessageCallable(const PublishMessageRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<PublishMessageOutcome()>>(
-        [this, request]()
-        {
-            return this->PublishMessage(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<PublishMessageOutcome>>();
+    PublishMessageAsync(
+    request,
+    [prom](
+        const MqttClient*,
+        const PublishMessageRequest&,
+        PublishMessageOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MqttClient::RegisterCaCertificateOutcome MqttClient::RegisterCaCertificate(const RegisterCaCertificateRequest &request)
@@ -2556,25 +2962,32 @@ MqttClient::RegisterCaCertificateOutcome MqttClient::RegisterCaCertificate(const
 
 void MqttClient::RegisterCaCertificateAsync(const RegisterCaCertificateRequest& request, const RegisterCaCertificateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->RegisterCaCertificate(request), context);
-    };
+    using Req = const RegisterCaCertificateRequest&;
+    using Resp = RegisterCaCertificateResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "RegisterCaCertificate", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MqttClient::RegisterCaCertificateOutcomeCallable MqttClient::RegisterCaCertificateCallable(const RegisterCaCertificateRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<RegisterCaCertificateOutcome()>>(
-        [this, request]()
-        {
-            return this->RegisterCaCertificate(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<RegisterCaCertificateOutcome>>();
+    RegisterCaCertificateAsync(
+    request,
+    [prom](
+        const MqttClient*,
+        const RegisterCaCertificateRequest&,
+        RegisterCaCertificateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MqttClient::RegisterDeviceCertificateOutcome MqttClient::RegisterDeviceCertificate(const RegisterDeviceCertificateRequest &request)
@@ -2599,25 +3012,32 @@ MqttClient::RegisterDeviceCertificateOutcome MqttClient::RegisterDeviceCertifica
 
 void MqttClient::RegisterDeviceCertificateAsync(const RegisterDeviceCertificateRequest& request, const RegisterDeviceCertificateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->RegisterDeviceCertificate(request), context);
-    };
+    using Req = const RegisterDeviceCertificateRequest&;
+    using Resp = RegisterDeviceCertificateResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "RegisterDeviceCertificate", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MqttClient::RegisterDeviceCertificateOutcomeCallable MqttClient::RegisterDeviceCertificateCallable(const RegisterDeviceCertificateRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<RegisterDeviceCertificateOutcome()>>(
-        [this, request]()
-        {
-            return this->RegisterDeviceCertificate(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<RegisterDeviceCertificateOutcome>>();
+    RegisterDeviceCertificateAsync(
+    request,
+    [prom](
+        const MqttClient*,
+        const RegisterDeviceCertificateRequest&,
+        RegisterDeviceCertificateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MqttClient::RevokedDeviceCertificateOutcome MqttClient::RevokedDeviceCertificate(const RevokedDeviceCertificateRequest &request)
@@ -2642,25 +3062,32 @@ MqttClient::RevokedDeviceCertificateOutcome MqttClient::RevokedDeviceCertificate
 
 void MqttClient::RevokedDeviceCertificateAsync(const RevokedDeviceCertificateRequest& request, const RevokedDeviceCertificateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->RevokedDeviceCertificate(request), context);
-    };
+    using Req = const RevokedDeviceCertificateRequest&;
+    using Resp = RevokedDeviceCertificateResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "RevokedDeviceCertificate", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MqttClient::RevokedDeviceCertificateOutcomeCallable MqttClient::RevokedDeviceCertificateCallable(const RevokedDeviceCertificateRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<RevokedDeviceCertificateOutcome()>>(
-        [this, request]()
-        {
-            return this->RevokedDeviceCertificate(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<RevokedDeviceCertificateOutcome>>();
+    RevokedDeviceCertificateAsync(
+    request,
+    [prom](
+        const MqttClient*,
+        const RevokedDeviceCertificateRequest&,
+        RevokedDeviceCertificateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MqttClient::UpdateAuthorizationPolicyPriorityOutcome MqttClient::UpdateAuthorizationPolicyPriority(const UpdateAuthorizationPolicyPriorityRequest &request)
@@ -2685,24 +3112,31 @@ MqttClient::UpdateAuthorizationPolicyPriorityOutcome MqttClient::UpdateAuthoriza
 
 void MqttClient::UpdateAuthorizationPolicyPriorityAsync(const UpdateAuthorizationPolicyPriorityRequest& request, const UpdateAuthorizationPolicyPriorityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UpdateAuthorizationPolicyPriority(request), context);
-    };
+    using Req = const UpdateAuthorizationPolicyPriorityRequest&;
+    using Resp = UpdateAuthorizationPolicyPriorityResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UpdateAuthorizationPolicyPriority", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MqttClient::UpdateAuthorizationPolicyPriorityOutcomeCallable MqttClient::UpdateAuthorizationPolicyPriorityCallable(const UpdateAuthorizationPolicyPriorityRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UpdateAuthorizationPolicyPriorityOutcome()>>(
-        [this, request]()
-        {
-            return this->UpdateAuthorizationPolicyPriority(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UpdateAuthorizationPolicyPriorityOutcome>>();
+    UpdateAuthorizationPolicyPriorityAsync(
+    request,
+    [prom](
+        const MqttClient*,
+        const UpdateAuthorizationPolicyPriorityRequest&,
+        UpdateAuthorizationPolicyPriorityOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 

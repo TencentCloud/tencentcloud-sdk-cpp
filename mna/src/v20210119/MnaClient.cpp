@@ -62,25 +62,32 @@ MnaClient::ActivateHardwareOutcome MnaClient::ActivateHardware(const ActivateHar
 
 void MnaClient::ActivateHardwareAsync(const ActivateHardwareRequest& request, const ActivateHardwareAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ActivateHardware(request), context);
-    };
+    using Req = const ActivateHardwareRequest&;
+    using Resp = ActivateHardwareResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ActivateHardware", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MnaClient::ActivateHardwareOutcomeCallable MnaClient::ActivateHardwareCallable(const ActivateHardwareRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ActivateHardwareOutcome()>>(
-        [this, request]()
-        {
-            return this->ActivateHardware(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ActivateHardwareOutcome>>();
+    ActivateHardwareAsync(
+    request,
+    [prom](
+        const MnaClient*,
+        const ActivateHardwareRequest&,
+        ActivateHardwareOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MnaClient::AddDeviceOutcome MnaClient::AddDevice(const AddDeviceRequest &request)
@@ -105,25 +112,32 @@ MnaClient::AddDeviceOutcome MnaClient::AddDevice(const AddDeviceRequest &request
 
 void MnaClient::AddDeviceAsync(const AddDeviceRequest& request, const AddDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->AddDevice(request), context);
-    };
+    using Req = const AddDeviceRequest&;
+    using Resp = AddDeviceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "AddDevice", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MnaClient::AddDeviceOutcomeCallable MnaClient::AddDeviceCallable(const AddDeviceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<AddDeviceOutcome()>>(
-        [this, request]()
-        {
-            return this->AddDevice(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<AddDeviceOutcome>>();
+    AddDeviceAsync(
+    request,
+    [prom](
+        const MnaClient*,
+        const AddDeviceRequest&,
+        AddDeviceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MnaClient::AddGroupOutcome MnaClient::AddGroup(const AddGroupRequest &request)
@@ -148,25 +162,32 @@ MnaClient::AddGroupOutcome MnaClient::AddGroup(const AddGroupRequest &request)
 
 void MnaClient::AddGroupAsync(const AddGroupRequest& request, const AddGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->AddGroup(request), context);
-    };
+    using Req = const AddGroupRequest&;
+    using Resp = AddGroupResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "AddGroup", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MnaClient::AddGroupOutcomeCallable MnaClient::AddGroupCallable(const AddGroupRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<AddGroupOutcome()>>(
-        [this, request]()
-        {
-            return this->AddGroup(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<AddGroupOutcome>>();
+    AddGroupAsync(
+    request,
+    [prom](
+        const MnaClient*,
+        const AddGroupRequest&,
+        AddGroupOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MnaClient::AddHardwareOutcome MnaClient::AddHardware(const AddHardwareRequest &request)
@@ -191,25 +212,32 @@ MnaClient::AddHardwareOutcome MnaClient::AddHardware(const AddHardwareRequest &r
 
 void MnaClient::AddHardwareAsync(const AddHardwareRequest& request, const AddHardwareAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->AddHardware(request), context);
-    };
+    using Req = const AddHardwareRequest&;
+    using Resp = AddHardwareResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "AddHardware", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MnaClient::AddHardwareOutcomeCallable MnaClient::AddHardwareCallable(const AddHardwareRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<AddHardwareOutcome()>>(
-        [this, request]()
-        {
-            return this->AddHardware(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<AddHardwareOutcome>>();
+    AddHardwareAsync(
+    request,
+    [prom](
+        const MnaClient*,
+        const AddHardwareRequest&,
+        AddHardwareOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MnaClient::AddL3ConnOutcome MnaClient::AddL3Conn(const AddL3ConnRequest &request)
@@ -234,25 +262,32 @@ MnaClient::AddL3ConnOutcome MnaClient::AddL3Conn(const AddL3ConnRequest &request
 
 void MnaClient::AddL3ConnAsync(const AddL3ConnRequest& request, const AddL3ConnAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->AddL3Conn(request), context);
-    };
+    using Req = const AddL3ConnRequest&;
+    using Resp = AddL3ConnResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "AddL3Conn", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MnaClient::AddL3ConnOutcomeCallable MnaClient::AddL3ConnCallable(const AddL3ConnRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<AddL3ConnOutcome()>>(
-        [this, request]()
-        {
-            return this->AddL3Conn(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<AddL3ConnOutcome>>();
+    AddL3ConnAsync(
+    request,
+    [prom](
+        const MnaClient*,
+        const AddL3ConnRequest&,
+        AddL3ConnOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MnaClient::CreateEncryptedKeyOutcome MnaClient::CreateEncryptedKey(const CreateEncryptedKeyRequest &request)
@@ -277,25 +312,32 @@ MnaClient::CreateEncryptedKeyOutcome MnaClient::CreateEncryptedKey(const CreateE
 
 void MnaClient::CreateEncryptedKeyAsync(const CreateEncryptedKeyRequest& request, const CreateEncryptedKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateEncryptedKey(request), context);
-    };
+    using Req = const CreateEncryptedKeyRequest&;
+    using Resp = CreateEncryptedKeyResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateEncryptedKey", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MnaClient::CreateEncryptedKeyOutcomeCallable MnaClient::CreateEncryptedKeyCallable(const CreateEncryptedKeyRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateEncryptedKeyOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateEncryptedKey(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateEncryptedKeyOutcome>>();
+    CreateEncryptedKeyAsync(
+    request,
+    [prom](
+        const MnaClient*,
+        const CreateEncryptedKeyRequest&,
+        CreateEncryptedKeyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MnaClient::DeleteDeviceOutcome MnaClient::DeleteDevice(const DeleteDeviceRequest &request)
@@ -320,25 +362,32 @@ MnaClient::DeleteDeviceOutcome MnaClient::DeleteDevice(const DeleteDeviceRequest
 
 void MnaClient::DeleteDeviceAsync(const DeleteDeviceRequest& request, const DeleteDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteDevice(request), context);
-    };
+    using Req = const DeleteDeviceRequest&;
+    using Resp = DeleteDeviceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteDevice", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MnaClient::DeleteDeviceOutcomeCallable MnaClient::DeleteDeviceCallable(const DeleteDeviceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteDeviceOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteDevice(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteDeviceOutcome>>();
+    DeleteDeviceAsync(
+    request,
+    [prom](
+        const MnaClient*,
+        const DeleteDeviceRequest&,
+        DeleteDeviceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MnaClient::DeleteGroupOutcome MnaClient::DeleteGroup(const DeleteGroupRequest &request)
@@ -363,25 +412,32 @@ MnaClient::DeleteGroupOutcome MnaClient::DeleteGroup(const DeleteGroupRequest &r
 
 void MnaClient::DeleteGroupAsync(const DeleteGroupRequest& request, const DeleteGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteGroup(request), context);
-    };
+    using Req = const DeleteGroupRequest&;
+    using Resp = DeleteGroupResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteGroup", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MnaClient::DeleteGroupOutcomeCallable MnaClient::DeleteGroupCallable(const DeleteGroupRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteGroupOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteGroup(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteGroupOutcome>>();
+    DeleteGroupAsync(
+    request,
+    [prom](
+        const MnaClient*,
+        const DeleteGroupRequest&,
+        DeleteGroupOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MnaClient::DeleteL3ConnOutcome MnaClient::DeleteL3Conn(const DeleteL3ConnRequest &request)
@@ -406,25 +462,32 @@ MnaClient::DeleteL3ConnOutcome MnaClient::DeleteL3Conn(const DeleteL3ConnRequest
 
 void MnaClient::DeleteL3ConnAsync(const DeleteL3ConnRequest& request, const DeleteL3ConnAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteL3Conn(request), context);
-    };
+    using Req = const DeleteL3ConnRequest&;
+    using Resp = DeleteL3ConnResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteL3Conn", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MnaClient::DeleteL3ConnOutcomeCallable MnaClient::DeleteL3ConnCallable(const DeleteL3ConnRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteL3ConnOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteL3Conn(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteL3ConnOutcome>>();
+    DeleteL3ConnAsync(
+    request,
+    [prom](
+        const MnaClient*,
+        const DeleteL3ConnRequest&,
+        DeleteL3ConnOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MnaClient::DownloadActiveDeviceCountOutcome MnaClient::DownloadActiveDeviceCount(const DownloadActiveDeviceCountRequest &request)
@@ -449,25 +512,32 @@ MnaClient::DownloadActiveDeviceCountOutcome MnaClient::DownloadActiveDeviceCount
 
 void MnaClient::DownloadActiveDeviceCountAsync(const DownloadActiveDeviceCountRequest& request, const DownloadActiveDeviceCountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DownloadActiveDeviceCount(request), context);
-    };
+    using Req = const DownloadActiveDeviceCountRequest&;
+    using Resp = DownloadActiveDeviceCountResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DownloadActiveDeviceCount", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MnaClient::DownloadActiveDeviceCountOutcomeCallable MnaClient::DownloadActiveDeviceCountCallable(const DownloadActiveDeviceCountRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DownloadActiveDeviceCountOutcome()>>(
-        [this, request]()
-        {
-            return this->DownloadActiveDeviceCount(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DownloadActiveDeviceCountOutcome>>();
+    DownloadActiveDeviceCountAsync(
+    request,
+    [prom](
+        const MnaClient*,
+        const DownloadActiveDeviceCountRequest&,
+        DownloadActiveDeviceCountOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MnaClient::GetActiveDeviceCountOutcome MnaClient::GetActiveDeviceCount(const GetActiveDeviceCountRequest &request)
@@ -492,25 +562,32 @@ MnaClient::GetActiveDeviceCountOutcome MnaClient::GetActiveDeviceCount(const Get
 
 void MnaClient::GetActiveDeviceCountAsync(const GetActiveDeviceCountRequest& request, const GetActiveDeviceCountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->GetActiveDeviceCount(request), context);
-    };
+    using Req = const GetActiveDeviceCountRequest&;
+    using Resp = GetActiveDeviceCountResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "GetActiveDeviceCount", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MnaClient::GetActiveDeviceCountOutcomeCallable MnaClient::GetActiveDeviceCountCallable(const GetActiveDeviceCountRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<GetActiveDeviceCountOutcome()>>(
-        [this, request]()
-        {
-            return this->GetActiveDeviceCount(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<GetActiveDeviceCountOutcome>>();
+    GetActiveDeviceCountAsync(
+    request,
+    [prom](
+        const MnaClient*,
+        const GetActiveDeviceCountRequest&,
+        GetActiveDeviceCountOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MnaClient::GetDeviceOutcome MnaClient::GetDevice(const GetDeviceRequest &request)
@@ -535,25 +612,32 @@ MnaClient::GetDeviceOutcome MnaClient::GetDevice(const GetDeviceRequest &request
 
 void MnaClient::GetDeviceAsync(const GetDeviceRequest& request, const GetDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->GetDevice(request), context);
-    };
+    using Req = const GetDeviceRequest&;
+    using Resp = GetDeviceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "GetDevice", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MnaClient::GetDeviceOutcomeCallable MnaClient::GetDeviceCallable(const GetDeviceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<GetDeviceOutcome()>>(
-        [this, request]()
-        {
-            return this->GetDevice(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<GetDeviceOutcome>>();
+    GetDeviceAsync(
+    request,
+    [prom](
+        const MnaClient*,
+        const GetDeviceRequest&,
+        GetDeviceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MnaClient::GetDevicePayModeOutcome MnaClient::GetDevicePayMode(const GetDevicePayModeRequest &request)
@@ -578,25 +662,32 @@ MnaClient::GetDevicePayModeOutcome MnaClient::GetDevicePayMode(const GetDevicePa
 
 void MnaClient::GetDevicePayModeAsync(const GetDevicePayModeRequest& request, const GetDevicePayModeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->GetDevicePayMode(request), context);
-    };
+    using Req = const GetDevicePayModeRequest&;
+    using Resp = GetDevicePayModeResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "GetDevicePayMode", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MnaClient::GetDevicePayModeOutcomeCallable MnaClient::GetDevicePayModeCallable(const GetDevicePayModeRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<GetDevicePayModeOutcome()>>(
-        [this, request]()
-        {
-            return this->GetDevicePayMode(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<GetDevicePayModeOutcome>>();
+    GetDevicePayModeAsync(
+    request,
+    [prom](
+        const MnaClient*,
+        const GetDevicePayModeRequest&,
+        GetDevicePayModeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MnaClient::GetDevicesOutcome MnaClient::GetDevices(const GetDevicesRequest &request)
@@ -621,25 +712,32 @@ MnaClient::GetDevicesOutcome MnaClient::GetDevices(const GetDevicesRequest &requ
 
 void MnaClient::GetDevicesAsync(const GetDevicesRequest& request, const GetDevicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->GetDevices(request), context);
-    };
+    using Req = const GetDevicesRequest&;
+    using Resp = GetDevicesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "GetDevices", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MnaClient::GetDevicesOutcomeCallable MnaClient::GetDevicesCallable(const GetDevicesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<GetDevicesOutcome()>>(
-        [this, request]()
-        {
-            return this->GetDevices(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<GetDevicesOutcome>>();
+    GetDevicesAsync(
+    request,
+    [prom](
+        const MnaClient*,
+        const GetDevicesRequest&,
+        GetDevicesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MnaClient::GetFlowAlarmInfoOutcome MnaClient::GetFlowAlarmInfo(const GetFlowAlarmInfoRequest &request)
@@ -664,25 +762,32 @@ MnaClient::GetFlowAlarmInfoOutcome MnaClient::GetFlowAlarmInfo(const GetFlowAlar
 
 void MnaClient::GetFlowAlarmInfoAsync(const GetFlowAlarmInfoRequest& request, const GetFlowAlarmInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->GetFlowAlarmInfo(request), context);
-    };
+    using Req = const GetFlowAlarmInfoRequest&;
+    using Resp = GetFlowAlarmInfoResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "GetFlowAlarmInfo", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MnaClient::GetFlowAlarmInfoOutcomeCallable MnaClient::GetFlowAlarmInfoCallable(const GetFlowAlarmInfoRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<GetFlowAlarmInfoOutcome()>>(
-        [this, request]()
-        {
-            return this->GetFlowAlarmInfo(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<GetFlowAlarmInfoOutcome>>();
+    GetFlowAlarmInfoAsync(
+    request,
+    [prom](
+        const MnaClient*,
+        const GetFlowAlarmInfoRequest&,
+        GetFlowAlarmInfoOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MnaClient::GetFlowPackagesOutcome MnaClient::GetFlowPackages(const GetFlowPackagesRequest &request)
@@ -707,25 +812,32 @@ MnaClient::GetFlowPackagesOutcome MnaClient::GetFlowPackages(const GetFlowPackag
 
 void MnaClient::GetFlowPackagesAsync(const GetFlowPackagesRequest& request, const GetFlowPackagesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->GetFlowPackages(request), context);
-    };
+    using Req = const GetFlowPackagesRequest&;
+    using Resp = GetFlowPackagesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "GetFlowPackages", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MnaClient::GetFlowPackagesOutcomeCallable MnaClient::GetFlowPackagesCallable(const GetFlowPackagesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<GetFlowPackagesOutcome()>>(
-        [this, request]()
-        {
-            return this->GetFlowPackages(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<GetFlowPackagesOutcome>>();
+    GetFlowPackagesAsync(
+    request,
+    [prom](
+        const MnaClient*,
+        const GetFlowPackagesRequest&,
+        GetFlowPackagesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MnaClient::GetFlowStatisticOutcome MnaClient::GetFlowStatistic(const GetFlowStatisticRequest &request)
@@ -750,25 +862,32 @@ MnaClient::GetFlowStatisticOutcome MnaClient::GetFlowStatistic(const GetFlowStat
 
 void MnaClient::GetFlowStatisticAsync(const GetFlowStatisticRequest& request, const GetFlowStatisticAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->GetFlowStatistic(request), context);
-    };
+    using Req = const GetFlowStatisticRequest&;
+    using Resp = GetFlowStatisticResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "GetFlowStatistic", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MnaClient::GetFlowStatisticOutcomeCallable MnaClient::GetFlowStatisticCallable(const GetFlowStatisticRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<GetFlowStatisticOutcome()>>(
-        [this, request]()
-        {
-            return this->GetFlowStatistic(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<GetFlowStatisticOutcome>>();
+    GetFlowStatisticAsync(
+    request,
+    [prom](
+        const MnaClient*,
+        const GetFlowStatisticRequest&,
+        GetFlowStatisticOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MnaClient::GetFlowStatisticByGroupOutcome MnaClient::GetFlowStatisticByGroup(const GetFlowStatisticByGroupRequest &request)
@@ -793,25 +912,32 @@ MnaClient::GetFlowStatisticByGroupOutcome MnaClient::GetFlowStatisticByGroup(con
 
 void MnaClient::GetFlowStatisticByGroupAsync(const GetFlowStatisticByGroupRequest& request, const GetFlowStatisticByGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->GetFlowStatisticByGroup(request), context);
-    };
+    using Req = const GetFlowStatisticByGroupRequest&;
+    using Resp = GetFlowStatisticByGroupResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "GetFlowStatisticByGroup", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MnaClient::GetFlowStatisticByGroupOutcomeCallable MnaClient::GetFlowStatisticByGroupCallable(const GetFlowStatisticByGroupRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<GetFlowStatisticByGroupOutcome()>>(
-        [this, request]()
-        {
-            return this->GetFlowStatisticByGroup(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<GetFlowStatisticByGroupOutcome>>();
+    GetFlowStatisticByGroupAsync(
+    request,
+    [prom](
+        const MnaClient*,
+        const GetFlowStatisticByGroupRequest&,
+        GetFlowStatisticByGroupOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MnaClient::GetFlowStatisticByRegionOutcome MnaClient::GetFlowStatisticByRegion(const GetFlowStatisticByRegionRequest &request)
@@ -836,25 +962,32 @@ MnaClient::GetFlowStatisticByRegionOutcome MnaClient::GetFlowStatisticByRegion(c
 
 void MnaClient::GetFlowStatisticByRegionAsync(const GetFlowStatisticByRegionRequest& request, const GetFlowStatisticByRegionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->GetFlowStatisticByRegion(request), context);
-    };
+    using Req = const GetFlowStatisticByRegionRequest&;
+    using Resp = GetFlowStatisticByRegionResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "GetFlowStatisticByRegion", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MnaClient::GetFlowStatisticByRegionOutcomeCallable MnaClient::GetFlowStatisticByRegionCallable(const GetFlowStatisticByRegionRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<GetFlowStatisticByRegionOutcome()>>(
-        [this, request]()
-        {
-            return this->GetFlowStatisticByRegion(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<GetFlowStatisticByRegionOutcome>>();
+    GetFlowStatisticByRegionAsync(
+    request,
+    [prom](
+        const MnaClient*,
+        const GetFlowStatisticByRegionRequest&,
+        GetFlowStatisticByRegionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MnaClient::GetGroupDetailOutcome MnaClient::GetGroupDetail(const GetGroupDetailRequest &request)
@@ -879,25 +1012,32 @@ MnaClient::GetGroupDetailOutcome MnaClient::GetGroupDetail(const GetGroupDetailR
 
 void MnaClient::GetGroupDetailAsync(const GetGroupDetailRequest& request, const GetGroupDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->GetGroupDetail(request), context);
-    };
+    using Req = const GetGroupDetailRequest&;
+    using Resp = GetGroupDetailResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "GetGroupDetail", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MnaClient::GetGroupDetailOutcomeCallable MnaClient::GetGroupDetailCallable(const GetGroupDetailRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<GetGroupDetailOutcome()>>(
-        [this, request]()
-        {
-            return this->GetGroupDetail(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<GetGroupDetailOutcome>>();
+    GetGroupDetailAsync(
+    request,
+    [prom](
+        const MnaClient*,
+        const GetGroupDetailRequest&,
+        GetGroupDetailOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MnaClient::GetGroupListOutcome MnaClient::GetGroupList(const GetGroupListRequest &request)
@@ -922,25 +1062,32 @@ MnaClient::GetGroupListOutcome MnaClient::GetGroupList(const GetGroupListRequest
 
 void MnaClient::GetGroupListAsync(const GetGroupListRequest& request, const GetGroupListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->GetGroupList(request), context);
-    };
+    using Req = const GetGroupListRequest&;
+    using Resp = GetGroupListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "GetGroupList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MnaClient::GetGroupListOutcomeCallable MnaClient::GetGroupListCallable(const GetGroupListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<GetGroupListOutcome()>>(
-        [this, request]()
-        {
-            return this->GetGroupList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<GetGroupListOutcome>>();
+    GetGroupListAsync(
+    request,
+    [prom](
+        const MnaClient*,
+        const GetGroupListRequest&,
+        GetGroupListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MnaClient::GetHardwareListOutcome MnaClient::GetHardwareList(const GetHardwareListRequest &request)
@@ -965,25 +1112,32 @@ MnaClient::GetHardwareListOutcome MnaClient::GetHardwareList(const GetHardwareLi
 
 void MnaClient::GetHardwareListAsync(const GetHardwareListRequest& request, const GetHardwareListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->GetHardwareList(request), context);
-    };
+    using Req = const GetHardwareListRequest&;
+    using Resp = GetHardwareListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "GetHardwareList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MnaClient::GetHardwareListOutcomeCallable MnaClient::GetHardwareListCallable(const GetHardwareListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<GetHardwareListOutcome()>>(
-        [this, request]()
-        {
-            return this->GetHardwareList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<GetHardwareListOutcome>>();
+    GetHardwareListAsync(
+    request,
+    [prom](
+        const MnaClient*,
+        const GetHardwareListRequest&,
+        GetHardwareListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MnaClient::GetL3ConnListOutcome MnaClient::GetL3ConnList(const GetL3ConnListRequest &request)
@@ -1008,25 +1162,32 @@ MnaClient::GetL3ConnListOutcome MnaClient::GetL3ConnList(const GetL3ConnListRequ
 
 void MnaClient::GetL3ConnListAsync(const GetL3ConnListRequest& request, const GetL3ConnListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->GetL3ConnList(request), context);
-    };
+    using Req = const GetL3ConnListRequest&;
+    using Resp = GetL3ConnListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "GetL3ConnList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MnaClient::GetL3ConnListOutcomeCallable MnaClient::GetL3ConnListCallable(const GetL3ConnListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<GetL3ConnListOutcome()>>(
-        [this, request]()
-        {
-            return this->GetL3ConnList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<GetL3ConnListOutcome>>();
+    GetL3ConnListAsync(
+    request,
+    [prom](
+        const MnaClient*,
+        const GetL3ConnListRequest&,
+        GetL3ConnListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MnaClient::GetMultiFlowStatisticOutcome MnaClient::GetMultiFlowStatistic(const GetMultiFlowStatisticRequest &request)
@@ -1051,25 +1212,32 @@ MnaClient::GetMultiFlowStatisticOutcome MnaClient::GetMultiFlowStatistic(const G
 
 void MnaClient::GetMultiFlowStatisticAsync(const GetMultiFlowStatisticRequest& request, const GetMultiFlowStatisticAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->GetMultiFlowStatistic(request), context);
-    };
+    using Req = const GetMultiFlowStatisticRequest&;
+    using Resp = GetMultiFlowStatisticResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "GetMultiFlowStatistic", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MnaClient::GetMultiFlowStatisticOutcomeCallable MnaClient::GetMultiFlowStatisticCallable(const GetMultiFlowStatisticRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<GetMultiFlowStatisticOutcome()>>(
-        [this, request]()
-        {
-            return this->GetMultiFlowStatistic(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<GetMultiFlowStatisticOutcome>>();
+    GetMultiFlowStatisticAsync(
+    request,
+    [prom](
+        const MnaClient*,
+        const GetMultiFlowStatisticRequest&,
+        GetMultiFlowStatisticOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MnaClient::GetNetMonitorOutcome MnaClient::GetNetMonitor(const GetNetMonitorRequest &request)
@@ -1094,25 +1262,32 @@ MnaClient::GetNetMonitorOutcome MnaClient::GetNetMonitor(const GetNetMonitorRequ
 
 void MnaClient::GetNetMonitorAsync(const GetNetMonitorRequest& request, const GetNetMonitorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->GetNetMonitor(request), context);
-    };
+    using Req = const GetNetMonitorRequest&;
+    using Resp = GetNetMonitorResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "GetNetMonitor", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MnaClient::GetNetMonitorOutcomeCallable MnaClient::GetNetMonitorCallable(const GetNetMonitorRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<GetNetMonitorOutcome()>>(
-        [this, request]()
-        {
-            return this->GetNetMonitor(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<GetNetMonitorOutcome>>();
+    GetNetMonitorAsync(
+    request,
+    [prom](
+        const MnaClient*,
+        const GetNetMonitorRequest&,
+        GetNetMonitorOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MnaClient::GetPublicKeyOutcome MnaClient::GetPublicKey(const GetPublicKeyRequest &request)
@@ -1137,25 +1312,32 @@ MnaClient::GetPublicKeyOutcome MnaClient::GetPublicKey(const GetPublicKeyRequest
 
 void MnaClient::GetPublicKeyAsync(const GetPublicKeyRequest& request, const GetPublicKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->GetPublicKey(request), context);
-    };
+    using Req = const GetPublicKeyRequest&;
+    using Resp = GetPublicKeyResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "GetPublicKey", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MnaClient::GetPublicKeyOutcomeCallable MnaClient::GetPublicKeyCallable(const GetPublicKeyRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<GetPublicKeyOutcome()>>(
-        [this, request]()
-        {
-            return this->GetPublicKey(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<GetPublicKeyOutcome>>();
+    GetPublicKeyAsync(
+    request,
+    [prom](
+        const MnaClient*,
+        const GetPublicKeyRequest&,
+        GetPublicKeyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MnaClient::GetStatisticDataOutcome MnaClient::GetStatisticData(const GetStatisticDataRequest &request)
@@ -1180,25 +1362,32 @@ MnaClient::GetStatisticDataOutcome MnaClient::GetStatisticData(const GetStatisti
 
 void MnaClient::GetStatisticDataAsync(const GetStatisticDataRequest& request, const GetStatisticDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->GetStatisticData(request), context);
-    };
+    using Req = const GetStatisticDataRequest&;
+    using Resp = GetStatisticDataResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "GetStatisticData", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MnaClient::GetStatisticDataOutcomeCallable MnaClient::GetStatisticDataCallable(const GetStatisticDataRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<GetStatisticDataOutcome()>>(
-        [this, request]()
-        {
-            return this->GetStatisticData(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<GetStatisticDataOutcome>>();
+    GetStatisticDataAsync(
+    request,
+    [prom](
+        const MnaClient*,
+        const GetStatisticDataRequest&,
+        GetStatisticDataOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MnaClient::GetVendorHardwareOutcome MnaClient::GetVendorHardware(const GetVendorHardwareRequest &request)
@@ -1223,25 +1412,32 @@ MnaClient::GetVendorHardwareOutcome MnaClient::GetVendorHardware(const GetVendor
 
 void MnaClient::GetVendorHardwareAsync(const GetVendorHardwareRequest& request, const GetVendorHardwareAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->GetVendorHardware(request), context);
-    };
+    using Req = const GetVendorHardwareRequest&;
+    using Resp = GetVendorHardwareResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "GetVendorHardware", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MnaClient::GetVendorHardwareOutcomeCallable MnaClient::GetVendorHardwareCallable(const GetVendorHardwareRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<GetVendorHardwareOutcome()>>(
-        [this, request]()
-        {
-            return this->GetVendorHardware(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<GetVendorHardwareOutcome>>();
+    GetVendorHardwareAsync(
+    request,
+    [prom](
+        const MnaClient*,
+        const GetVendorHardwareRequest&,
+        GetVendorHardwareOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MnaClient::GroupAddDeviceOutcome MnaClient::GroupAddDevice(const GroupAddDeviceRequest &request)
@@ -1266,25 +1462,32 @@ MnaClient::GroupAddDeviceOutcome MnaClient::GroupAddDevice(const GroupAddDeviceR
 
 void MnaClient::GroupAddDeviceAsync(const GroupAddDeviceRequest& request, const GroupAddDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->GroupAddDevice(request), context);
-    };
+    using Req = const GroupAddDeviceRequest&;
+    using Resp = GroupAddDeviceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "GroupAddDevice", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MnaClient::GroupAddDeviceOutcomeCallable MnaClient::GroupAddDeviceCallable(const GroupAddDeviceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<GroupAddDeviceOutcome()>>(
-        [this, request]()
-        {
-            return this->GroupAddDevice(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<GroupAddDeviceOutcome>>();
+    GroupAddDeviceAsync(
+    request,
+    [prom](
+        const MnaClient*,
+        const GroupAddDeviceRequest&,
+        GroupAddDeviceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MnaClient::GroupDeleteDeviceOutcome MnaClient::GroupDeleteDevice(const GroupDeleteDeviceRequest &request)
@@ -1309,25 +1512,32 @@ MnaClient::GroupDeleteDeviceOutcome MnaClient::GroupDeleteDevice(const GroupDele
 
 void MnaClient::GroupDeleteDeviceAsync(const GroupDeleteDeviceRequest& request, const GroupDeleteDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->GroupDeleteDevice(request), context);
-    };
+    using Req = const GroupDeleteDeviceRequest&;
+    using Resp = GroupDeleteDeviceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "GroupDeleteDevice", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MnaClient::GroupDeleteDeviceOutcomeCallable MnaClient::GroupDeleteDeviceCallable(const GroupDeleteDeviceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<GroupDeleteDeviceOutcome()>>(
-        [this, request]()
-        {
-            return this->GroupDeleteDevice(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<GroupDeleteDeviceOutcome>>();
+    GroupDeleteDeviceAsync(
+    request,
+    [prom](
+        const MnaClient*,
+        const GroupDeleteDeviceRequest&,
+        GroupDeleteDeviceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MnaClient::ModifyPackageRenewFlagOutcome MnaClient::ModifyPackageRenewFlag(const ModifyPackageRenewFlagRequest &request)
@@ -1352,25 +1562,32 @@ MnaClient::ModifyPackageRenewFlagOutcome MnaClient::ModifyPackageRenewFlag(const
 
 void MnaClient::ModifyPackageRenewFlagAsync(const ModifyPackageRenewFlagRequest& request, const ModifyPackageRenewFlagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyPackageRenewFlag(request), context);
-    };
+    using Req = const ModifyPackageRenewFlagRequest&;
+    using Resp = ModifyPackageRenewFlagResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyPackageRenewFlag", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MnaClient::ModifyPackageRenewFlagOutcomeCallable MnaClient::ModifyPackageRenewFlagCallable(const ModifyPackageRenewFlagRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyPackageRenewFlagOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyPackageRenewFlag(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyPackageRenewFlagOutcome>>();
+    ModifyPackageRenewFlagAsync(
+    request,
+    [prom](
+        const MnaClient*,
+        const ModifyPackageRenewFlagRequest&,
+        ModifyPackageRenewFlagOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MnaClient::OrderFlowPackageOutcome MnaClient::OrderFlowPackage(const OrderFlowPackageRequest &request)
@@ -1395,25 +1612,32 @@ MnaClient::OrderFlowPackageOutcome MnaClient::OrderFlowPackage(const OrderFlowPa
 
 void MnaClient::OrderFlowPackageAsync(const OrderFlowPackageRequest& request, const OrderFlowPackageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->OrderFlowPackage(request), context);
-    };
+    using Req = const OrderFlowPackageRequest&;
+    using Resp = OrderFlowPackageResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "OrderFlowPackage", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MnaClient::OrderFlowPackageOutcomeCallable MnaClient::OrderFlowPackageCallable(const OrderFlowPackageRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<OrderFlowPackageOutcome()>>(
-        [this, request]()
-        {
-            return this->OrderFlowPackage(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<OrderFlowPackageOutcome>>();
+    OrderFlowPackageAsync(
+    request,
+    [prom](
+        const MnaClient*,
+        const OrderFlowPackageRequest&,
+        OrderFlowPackageOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MnaClient::OrderPerLicenseOutcome MnaClient::OrderPerLicense(const OrderPerLicenseRequest &request)
@@ -1438,25 +1662,32 @@ MnaClient::OrderPerLicenseOutcome MnaClient::OrderPerLicense(const OrderPerLicen
 
 void MnaClient::OrderPerLicenseAsync(const OrderPerLicenseRequest& request, const OrderPerLicenseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->OrderPerLicense(request), context);
-    };
+    using Req = const OrderPerLicenseRequest&;
+    using Resp = OrderPerLicenseResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "OrderPerLicense", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MnaClient::OrderPerLicenseOutcomeCallable MnaClient::OrderPerLicenseCallable(const OrderPerLicenseRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<OrderPerLicenseOutcome()>>(
-        [this, request]()
-        {
-            return this->OrderPerLicense(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<OrderPerLicenseOutcome>>();
+    OrderPerLicenseAsync(
+    request,
+    [prom](
+        const MnaClient*,
+        const OrderPerLicenseRequest&,
+        OrderPerLicenseOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MnaClient::ReportOrderOutcome MnaClient::ReportOrder(const ReportOrderRequest &request)
@@ -1481,25 +1712,32 @@ MnaClient::ReportOrderOutcome MnaClient::ReportOrder(const ReportOrderRequest &r
 
 void MnaClient::ReportOrderAsync(const ReportOrderRequest& request, const ReportOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ReportOrder(request), context);
-    };
+    using Req = const ReportOrderRequest&;
+    using Resp = ReportOrderResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ReportOrder", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MnaClient::ReportOrderOutcomeCallable MnaClient::ReportOrderCallable(const ReportOrderRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ReportOrderOutcome()>>(
-        [this, request]()
-        {
-            return this->ReportOrder(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ReportOrderOutcome>>();
+    ReportOrderAsync(
+    request,
+    [prom](
+        const MnaClient*,
+        const ReportOrderRequest&,
+        ReportOrderOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MnaClient::SetNotifyUrlOutcome MnaClient::SetNotifyUrl(const SetNotifyUrlRequest &request)
@@ -1524,25 +1762,32 @@ MnaClient::SetNotifyUrlOutcome MnaClient::SetNotifyUrl(const SetNotifyUrlRequest
 
 void MnaClient::SetNotifyUrlAsync(const SetNotifyUrlRequest& request, const SetNotifyUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->SetNotifyUrl(request), context);
-    };
+    using Req = const SetNotifyUrlRequest&;
+    using Resp = SetNotifyUrlResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "SetNotifyUrl", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MnaClient::SetNotifyUrlOutcomeCallable MnaClient::SetNotifyUrlCallable(const SetNotifyUrlRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<SetNotifyUrlOutcome()>>(
-        [this, request]()
-        {
-            return this->SetNotifyUrl(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<SetNotifyUrlOutcome>>();
+    SetNotifyUrlAsync(
+    request,
+    [prom](
+        const MnaClient*,
+        const SetNotifyUrlRequest&,
+        SetNotifyUrlOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MnaClient::UpdateDeviceOutcome MnaClient::UpdateDevice(const UpdateDeviceRequest &request)
@@ -1567,25 +1812,32 @@ MnaClient::UpdateDeviceOutcome MnaClient::UpdateDevice(const UpdateDeviceRequest
 
 void MnaClient::UpdateDeviceAsync(const UpdateDeviceRequest& request, const UpdateDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UpdateDevice(request), context);
-    };
+    using Req = const UpdateDeviceRequest&;
+    using Resp = UpdateDeviceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UpdateDevice", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MnaClient::UpdateDeviceOutcomeCallable MnaClient::UpdateDeviceCallable(const UpdateDeviceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UpdateDeviceOutcome()>>(
-        [this, request]()
-        {
-            return this->UpdateDevice(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UpdateDeviceOutcome>>();
+    UpdateDeviceAsync(
+    request,
+    [prom](
+        const MnaClient*,
+        const UpdateDeviceRequest&,
+        UpdateDeviceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MnaClient::UpdateGroupOutcome MnaClient::UpdateGroup(const UpdateGroupRequest &request)
@@ -1610,25 +1862,32 @@ MnaClient::UpdateGroupOutcome MnaClient::UpdateGroup(const UpdateGroupRequest &r
 
 void MnaClient::UpdateGroupAsync(const UpdateGroupRequest& request, const UpdateGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UpdateGroup(request), context);
-    };
+    using Req = const UpdateGroupRequest&;
+    using Resp = UpdateGroupResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UpdateGroup", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MnaClient::UpdateGroupOutcomeCallable MnaClient::UpdateGroupCallable(const UpdateGroupRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UpdateGroupOutcome()>>(
-        [this, request]()
-        {
-            return this->UpdateGroup(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UpdateGroupOutcome>>();
+    UpdateGroupAsync(
+    request,
+    [prom](
+        const MnaClient*,
+        const UpdateGroupRequest&,
+        UpdateGroupOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MnaClient::UpdateHardwareOutcome MnaClient::UpdateHardware(const UpdateHardwareRequest &request)
@@ -1653,25 +1912,32 @@ MnaClient::UpdateHardwareOutcome MnaClient::UpdateHardware(const UpdateHardwareR
 
 void MnaClient::UpdateHardwareAsync(const UpdateHardwareRequest& request, const UpdateHardwareAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UpdateHardware(request), context);
-    };
+    using Req = const UpdateHardwareRequest&;
+    using Resp = UpdateHardwareResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UpdateHardware", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MnaClient::UpdateHardwareOutcomeCallable MnaClient::UpdateHardwareCallable(const UpdateHardwareRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UpdateHardwareOutcome()>>(
-        [this, request]()
-        {
-            return this->UpdateHardware(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UpdateHardwareOutcome>>();
+    UpdateHardwareAsync(
+    request,
+    [prom](
+        const MnaClient*,
+        const UpdateHardwareRequest&,
+        UpdateHardwareOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MnaClient::UpdateL3CidrOutcome MnaClient::UpdateL3Cidr(const UpdateL3CidrRequest &request)
@@ -1696,25 +1962,32 @@ MnaClient::UpdateL3CidrOutcome MnaClient::UpdateL3Cidr(const UpdateL3CidrRequest
 
 void MnaClient::UpdateL3CidrAsync(const UpdateL3CidrRequest& request, const UpdateL3CidrAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UpdateL3Cidr(request), context);
-    };
+    using Req = const UpdateL3CidrRequest&;
+    using Resp = UpdateL3CidrResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UpdateL3Cidr", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MnaClient::UpdateL3CidrOutcomeCallable MnaClient::UpdateL3CidrCallable(const UpdateL3CidrRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UpdateL3CidrOutcome()>>(
-        [this, request]()
-        {
-            return this->UpdateL3Cidr(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UpdateL3CidrOutcome>>();
+    UpdateL3CidrAsync(
+    request,
+    [prom](
+        const MnaClient*,
+        const UpdateL3CidrRequest&,
+        UpdateL3CidrOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MnaClient::UpdateL3ConnOutcome MnaClient::UpdateL3Conn(const UpdateL3ConnRequest &request)
@@ -1739,25 +2012,32 @@ MnaClient::UpdateL3ConnOutcome MnaClient::UpdateL3Conn(const UpdateL3ConnRequest
 
 void MnaClient::UpdateL3ConnAsync(const UpdateL3ConnRequest& request, const UpdateL3ConnAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UpdateL3Conn(request), context);
-    };
+    using Req = const UpdateL3ConnRequest&;
+    using Resp = UpdateL3ConnResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UpdateL3Conn", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MnaClient::UpdateL3ConnOutcomeCallable MnaClient::UpdateL3ConnCallable(const UpdateL3ConnRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UpdateL3ConnOutcome()>>(
-        [this, request]()
-        {
-            return this->UpdateL3Conn(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UpdateL3ConnOutcome>>();
+    UpdateL3ConnAsync(
+    request,
+    [prom](
+        const MnaClient*,
+        const UpdateL3ConnRequest&,
+        UpdateL3ConnOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MnaClient::UpdateL3SwitchOutcome MnaClient::UpdateL3Switch(const UpdateL3SwitchRequest &request)
@@ -1782,24 +2062,31 @@ MnaClient::UpdateL3SwitchOutcome MnaClient::UpdateL3Switch(const UpdateL3SwitchR
 
 void MnaClient::UpdateL3SwitchAsync(const UpdateL3SwitchRequest& request, const UpdateL3SwitchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UpdateL3Switch(request), context);
-    };
+    using Req = const UpdateL3SwitchRequest&;
+    using Resp = UpdateL3SwitchResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UpdateL3Switch", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MnaClient::UpdateL3SwitchOutcomeCallable MnaClient::UpdateL3SwitchCallable(const UpdateL3SwitchRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UpdateL3SwitchOutcome()>>(
-        [this, request]()
-        {
-            return this->UpdateL3Switch(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UpdateL3SwitchOutcome>>();
+    UpdateL3SwitchAsync(
+    request,
+    [prom](
+        const MnaClient*,
+        const UpdateL3SwitchRequest&,
+        UpdateL3SwitchOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 

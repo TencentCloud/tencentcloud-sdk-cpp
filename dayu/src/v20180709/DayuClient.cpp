@@ -62,25 +62,32 @@ DayuClient::CreateBasicDDoSAlarmThresholdOutcome DayuClient::CreateBasicDDoSAlar
 
 void DayuClient::CreateBasicDDoSAlarmThresholdAsync(const CreateBasicDDoSAlarmThresholdRequest& request, const CreateBasicDDoSAlarmThresholdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateBasicDDoSAlarmThreshold(request), context);
-    };
+    using Req = const CreateBasicDDoSAlarmThresholdRequest&;
+    using Resp = CreateBasicDDoSAlarmThresholdResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateBasicDDoSAlarmThreshold", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DayuClient::CreateBasicDDoSAlarmThresholdOutcomeCallable DayuClient::CreateBasicDDoSAlarmThresholdCallable(const CreateBasicDDoSAlarmThresholdRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateBasicDDoSAlarmThresholdOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateBasicDDoSAlarmThreshold(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateBasicDDoSAlarmThresholdOutcome>>();
+    CreateBasicDDoSAlarmThresholdAsync(
+    request,
+    [prom](
+        const DayuClient*,
+        const CreateBasicDDoSAlarmThresholdRequest&,
+        CreateBasicDDoSAlarmThresholdOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DayuClient::CreateBoundIPOutcome DayuClient::CreateBoundIP(const CreateBoundIPRequest &request)
@@ -105,25 +112,32 @@ DayuClient::CreateBoundIPOutcome DayuClient::CreateBoundIP(const CreateBoundIPRe
 
 void DayuClient::CreateBoundIPAsync(const CreateBoundIPRequest& request, const CreateBoundIPAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateBoundIP(request), context);
-    };
+    using Req = const CreateBoundIPRequest&;
+    using Resp = CreateBoundIPResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateBoundIP", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DayuClient::CreateBoundIPOutcomeCallable DayuClient::CreateBoundIPCallable(const CreateBoundIPRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateBoundIPOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateBoundIP(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateBoundIPOutcome>>();
+    CreateBoundIPAsync(
+    request,
+    [prom](
+        const DayuClient*,
+        const CreateBoundIPRequest&,
+        CreateBoundIPOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DayuClient::CreateCCFrequencyRulesOutcome DayuClient::CreateCCFrequencyRules(const CreateCCFrequencyRulesRequest &request)
@@ -148,25 +162,32 @@ DayuClient::CreateCCFrequencyRulesOutcome DayuClient::CreateCCFrequencyRules(con
 
 void DayuClient::CreateCCFrequencyRulesAsync(const CreateCCFrequencyRulesRequest& request, const CreateCCFrequencyRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateCCFrequencyRules(request), context);
-    };
+    using Req = const CreateCCFrequencyRulesRequest&;
+    using Resp = CreateCCFrequencyRulesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateCCFrequencyRules", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DayuClient::CreateCCFrequencyRulesOutcomeCallable DayuClient::CreateCCFrequencyRulesCallable(const CreateCCFrequencyRulesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateCCFrequencyRulesOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateCCFrequencyRules(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateCCFrequencyRulesOutcome>>();
+    CreateCCFrequencyRulesAsync(
+    request,
+    [prom](
+        const DayuClient*,
+        const CreateCCFrequencyRulesRequest&,
+        CreateCCFrequencyRulesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DayuClient::CreateCCSelfDefinePolicyOutcome DayuClient::CreateCCSelfDefinePolicy(const CreateCCSelfDefinePolicyRequest &request)
@@ -191,25 +212,32 @@ DayuClient::CreateCCSelfDefinePolicyOutcome DayuClient::CreateCCSelfDefinePolicy
 
 void DayuClient::CreateCCSelfDefinePolicyAsync(const CreateCCSelfDefinePolicyRequest& request, const CreateCCSelfDefinePolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateCCSelfDefinePolicy(request), context);
-    };
+    using Req = const CreateCCSelfDefinePolicyRequest&;
+    using Resp = CreateCCSelfDefinePolicyResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateCCSelfDefinePolicy", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DayuClient::CreateCCSelfDefinePolicyOutcomeCallable DayuClient::CreateCCSelfDefinePolicyCallable(const CreateCCSelfDefinePolicyRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateCCSelfDefinePolicyOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateCCSelfDefinePolicy(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateCCSelfDefinePolicyOutcome>>();
+    CreateCCSelfDefinePolicyAsync(
+    request,
+    [prom](
+        const DayuClient*,
+        const CreateCCSelfDefinePolicyRequest&,
+        CreateCCSelfDefinePolicyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DayuClient::CreateDDoSPolicyOutcome DayuClient::CreateDDoSPolicy(const CreateDDoSPolicyRequest &request)
@@ -234,25 +262,32 @@ DayuClient::CreateDDoSPolicyOutcome DayuClient::CreateDDoSPolicy(const CreateDDo
 
 void DayuClient::CreateDDoSPolicyAsync(const CreateDDoSPolicyRequest& request, const CreateDDoSPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateDDoSPolicy(request), context);
-    };
+    using Req = const CreateDDoSPolicyRequest&;
+    using Resp = CreateDDoSPolicyResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateDDoSPolicy", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DayuClient::CreateDDoSPolicyOutcomeCallable DayuClient::CreateDDoSPolicyCallable(const CreateDDoSPolicyRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateDDoSPolicyOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateDDoSPolicy(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateDDoSPolicyOutcome>>();
+    CreateDDoSPolicyAsync(
+    request,
+    [prom](
+        const DayuClient*,
+        const CreateDDoSPolicyRequest&,
+        CreateDDoSPolicyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DayuClient::CreateDDoSPolicyCaseOutcome DayuClient::CreateDDoSPolicyCase(const CreateDDoSPolicyCaseRequest &request)
@@ -277,25 +312,32 @@ DayuClient::CreateDDoSPolicyCaseOutcome DayuClient::CreateDDoSPolicyCase(const C
 
 void DayuClient::CreateDDoSPolicyCaseAsync(const CreateDDoSPolicyCaseRequest& request, const CreateDDoSPolicyCaseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateDDoSPolicyCase(request), context);
-    };
+    using Req = const CreateDDoSPolicyCaseRequest&;
+    using Resp = CreateDDoSPolicyCaseResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateDDoSPolicyCase", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DayuClient::CreateDDoSPolicyCaseOutcomeCallable DayuClient::CreateDDoSPolicyCaseCallable(const CreateDDoSPolicyCaseRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateDDoSPolicyCaseOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateDDoSPolicyCase(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateDDoSPolicyCaseOutcome>>();
+    CreateDDoSPolicyCaseAsync(
+    request,
+    [prom](
+        const DayuClient*,
+        const CreateDDoSPolicyCaseRequest&,
+        CreateDDoSPolicyCaseOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DayuClient::CreateInstanceNameOutcome DayuClient::CreateInstanceName(const CreateInstanceNameRequest &request)
@@ -320,25 +362,32 @@ DayuClient::CreateInstanceNameOutcome DayuClient::CreateInstanceName(const Creat
 
 void DayuClient::CreateInstanceNameAsync(const CreateInstanceNameRequest& request, const CreateInstanceNameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateInstanceName(request), context);
-    };
+    using Req = const CreateInstanceNameRequest&;
+    using Resp = CreateInstanceNameResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateInstanceName", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DayuClient::CreateInstanceNameOutcomeCallable DayuClient::CreateInstanceNameCallable(const CreateInstanceNameRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateInstanceNameOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateInstanceName(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateInstanceNameOutcome>>();
+    CreateInstanceNameAsync(
+    request,
+    [prom](
+        const DayuClient*,
+        const CreateInstanceNameRequest&,
+        CreateInstanceNameOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DayuClient::CreateL4HealthConfigOutcome DayuClient::CreateL4HealthConfig(const CreateL4HealthConfigRequest &request)
@@ -363,25 +412,32 @@ DayuClient::CreateL4HealthConfigOutcome DayuClient::CreateL4HealthConfig(const C
 
 void DayuClient::CreateL4HealthConfigAsync(const CreateL4HealthConfigRequest& request, const CreateL4HealthConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateL4HealthConfig(request), context);
-    };
+    using Req = const CreateL4HealthConfigRequest&;
+    using Resp = CreateL4HealthConfigResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateL4HealthConfig", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DayuClient::CreateL4HealthConfigOutcomeCallable DayuClient::CreateL4HealthConfigCallable(const CreateL4HealthConfigRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateL4HealthConfigOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateL4HealthConfig(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateL4HealthConfigOutcome>>();
+    CreateL4HealthConfigAsync(
+    request,
+    [prom](
+        const DayuClient*,
+        const CreateL4HealthConfigRequest&,
+        CreateL4HealthConfigOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DayuClient::CreateL4RulesOutcome DayuClient::CreateL4Rules(const CreateL4RulesRequest &request)
@@ -406,25 +462,32 @@ DayuClient::CreateL4RulesOutcome DayuClient::CreateL4Rules(const CreateL4RulesRe
 
 void DayuClient::CreateL4RulesAsync(const CreateL4RulesRequest& request, const CreateL4RulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateL4Rules(request), context);
-    };
+    using Req = const CreateL4RulesRequest&;
+    using Resp = CreateL4RulesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateL4Rules", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DayuClient::CreateL4RulesOutcomeCallable DayuClient::CreateL4RulesCallable(const CreateL4RulesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateL4RulesOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateL4Rules(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateL4RulesOutcome>>();
+    CreateL4RulesAsync(
+    request,
+    [prom](
+        const DayuClient*,
+        const CreateL4RulesRequest&,
+        CreateL4RulesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DayuClient::CreateL7CCRuleOutcome DayuClient::CreateL7CCRule(const CreateL7CCRuleRequest &request)
@@ -449,25 +512,32 @@ DayuClient::CreateL7CCRuleOutcome DayuClient::CreateL7CCRule(const CreateL7CCRul
 
 void DayuClient::CreateL7CCRuleAsync(const CreateL7CCRuleRequest& request, const CreateL7CCRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateL7CCRule(request), context);
-    };
+    using Req = const CreateL7CCRuleRequest&;
+    using Resp = CreateL7CCRuleResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateL7CCRule", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DayuClient::CreateL7CCRuleOutcomeCallable DayuClient::CreateL7CCRuleCallable(const CreateL7CCRuleRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateL7CCRuleOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateL7CCRule(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateL7CCRuleOutcome>>();
+    CreateL7CCRuleAsync(
+    request,
+    [prom](
+        const DayuClient*,
+        const CreateL7CCRuleRequest&,
+        CreateL7CCRuleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DayuClient::CreateL7HealthConfigOutcome DayuClient::CreateL7HealthConfig(const CreateL7HealthConfigRequest &request)
@@ -492,25 +562,32 @@ DayuClient::CreateL7HealthConfigOutcome DayuClient::CreateL7HealthConfig(const C
 
 void DayuClient::CreateL7HealthConfigAsync(const CreateL7HealthConfigRequest& request, const CreateL7HealthConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateL7HealthConfig(request), context);
-    };
+    using Req = const CreateL7HealthConfigRequest&;
+    using Resp = CreateL7HealthConfigResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateL7HealthConfig", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DayuClient::CreateL7HealthConfigOutcomeCallable DayuClient::CreateL7HealthConfigCallable(const CreateL7HealthConfigRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateL7HealthConfigOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateL7HealthConfig(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateL7HealthConfigOutcome>>();
+    CreateL7HealthConfigAsync(
+    request,
+    [prom](
+        const DayuClient*,
+        const CreateL7HealthConfigRequest&,
+        CreateL7HealthConfigOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DayuClient::CreateL7RuleCertOutcome DayuClient::CreateL7RuleCert(const CreateL7RuleCertRequest &request)
@@ -535,25 +612,32 @@ DayuClient::CreateL7RuleCertOutcome DayuClient::CreateL7RuleCert(const CreateL7R
 
 void DayuClient::CreateL7RuleCertAsync(const CreateL7RuleCertRequest& request, const CreateL7RuleCertAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateL7RuleCert(request), context);
-    };
+    using Req = const CreateL7RuleCertRequest&;
+    using Resp = CreateL7RuleCertResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateL7RuleCert", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DayuClient::CreateL7RuleCertOutcomeCallable DayuClient::CreateL7RuleCertCallable(const CreateL7RuleCertRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateL7RuleCertOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateL7RuleCert(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateL7RuleCertOutcome>>();
+    CreateL7RuleCertAsync(
+    request,
+    [prom](
+        const DayuClient*,
+        const CreateL7RuleCertRequest&,
+        CreateL7RuleCertOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DayuClient::CreateL7RulesOutcome DayuClient::CreateL7Rules(const CreateL7RulesRequest &request)
@@ -578,25 +662,32 @@ DayuClient::CreateL7RulesOutcome DayuClient::CreateL7Rules(const CreateL7RulesRe
 
 void DayuClient::CreateL7RulesAsync(const CreateL7RulesRequest& request, const CreateL7RulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateL7Rules(request), context);
-    };
+    using Req = const CreateL7RulesRequest&;
+    using Resp = CreateL7RulesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateL7Rules", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DayuClient::CreateL7RulesOutcomeCallable DayuClient::CreateL7RulesCallable(const CreateL7RulesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateL7RulesOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateL7Rules(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateL7RulesOutcome>>();
+    CreateL7RulesAsync(
+    request,
+    [prom](
+        const DayuClient*,
+        const CreateL7RulesRequest&,
+        CreateL7RulesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DayuClient::CreateL7RulesUploadOutcome DayuClient::CreateL7RulesUpload(const CreateL7RulesUploadRequest &request)
@@ -621,25 +712,32 @@ DayuClient::CreateL7RulesUploadOutcome DayuClient::CreateL7RulesUpload(const Cre
 
 void DayuClient::CreateL7RulesUploadAsync(const CreateL7RulesUploadRequest& request, const CreateL7RulesUploadAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateL7RulesUpload(request), context);
-    };
+    using Req = const CreateL7RulesUploadRequest&;
+    using Resp = CreateL7RulesUploadResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateL7RulesUpload", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DayuClient::CreateL7RulesUploadOutcomeCallable DayuClient::CreateL7RulesUploadCallable(const CreateL7RulesUploadRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateL7RulesUploadOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateL7RulesUpload(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateL7RulesUploadOutcome>>();
+    CreateL7RulesUploadAsync(
+    request,
+    [prom](
+        const DayuClient*,
+        const CreateL7RulesUploadRequest&,
+        CreateL7RulesUploadOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DayuClient::CreateNetReturnOutcome DayuClient::CreateNetReturn(const CreateNetReturnRequest &request)
@@ -664,25 +762,32 @@ DayuClient::CreateNetReturnOutcome DayuClient::CreateNetReturn(const CreateNetRe
 
 void DayuClient::CreateNetReturnAsync(const CreateNetReturnRequest& request, const CreateNetReturnAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateNetReturn(request), context);
-    };
+    using Req = const CreateNetReturnRequest&;
+    using Resp = CreateNetReturnResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateNetReturn", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DayuClient::CreateNetReturnOutcomeCallable DayuClient::CreateNetReturnCallable(const CreateNetReturnRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateNetReturnOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateNetReturn(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateNetReturnOutcome>>();
+    CreateNetReturnAsync(
+    request,
+    [prom](
+        const DayuClient*,
+        const CreateNetReturnRequest&,
+        CreateNetReturnOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DayuClient::CreateNewL4RulesOutcome DayuClient::CreateNewL4Rules(const CreateNewL4RulesRequest &request)
@@ -707,25 +812,32 @@ DayuClient::CreateNewL4RulesOutcome DayuClient::CreateNewL4Rules(const CreateNew
 
 void DayuClient::CreateNewL4RulesAsync(const CreateNewL4RulesRequest& request, const CreateNewL4RulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateNewL4Rules(request), context);
-    };
+    using Req = const CreateNewL4RulesRequest&;
+    using Resp = CreateNewL4RulesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateNewL4Rules", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DayuClient::CreateNewL4RulesOutcomeCallable DayuClient::CreateNewL4RulesCallable(const CreateNewL4RulesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateNewL4RulesOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateNewL4Rules(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateNewL4RulesOutcome>>();
+    CreateNewL4RulesAsync(
+    request,
+    [prom](
+        const DayuClient*,
+        const CreateNewL4RulesRequest&,
+        CreateNewL4RulesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DayuClient::CreateNewL7RulesOutcome DayuClient::CreateNewL7Rules(const CreateNewL7RulesRequest &request)
@@ -750,25 +862,32 @@ DayuClient::CreateNewL7RulesOutcome DayuClient::CreateNewL7Rules(const CreateNew
 
 void DayuClient::CreateNewL7RulesAsync(const CreateNewL7RulesRequest& request, const CreateNewL7RulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateNewL7Rules(request), context);
-    };
+    using Req = const CreateNewL7RulesRequest&;
+    using Resp = CreateNewL7RulesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateNewL7Rules", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DayuClient::CreateNewL7RulesOutcomeCallable DayuClient::CreateNewL7RulesCallable(const CreateNewL7RulesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateNewL7RulesOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateNewL7Rules(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateNewL7RulesOutcome>>();
+    CreateNewL7RulesAsync(
+    request,
+    [prom](
+        const DayuClient*,
+        const CreateNewL7RulesRequest&,
+        CreateNewL7RulesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DayuClient::CreateNewL7RulesUploadOutcome DayuClient::CreateNewL7RulesUpload(const CreateNewL7RulesUploadRequest &request)
@@ -793,25 +912,32 @@ DayuClient::CreateNewL7RulesUploadOutcome DayuClient::CreateNewL7RulesUpload(con
 
 void DayuClient::CreateNewL7RulesUploadAsync(const CreateNewL7RulesUploadRequest& request, const CreateNewL7RulesUploadAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateNewL7RulesUpload(request), context);
-    };
+    using Req = const CreateNewL7RulesUploadRequest&;
+    using Resp = CreateNewL7RulesUploadResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateNewL7RulesUpload", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DayuClient::CreateNewL7RulesUploadOutcomeCallable DayuClient::CreateNewL7RulesUploadCallable(const CreateNewL7RulesUploadRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateNewL7RulesUploadOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateNewL7RulesUpload(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateNewL7RulesUploadOutcome>>();
+    CreateNewL7RulesUploadAsync(
+    request,
+    [prom](
+        const DayuClient*,
+        const CreateNewL7RulesUploadRequest&,
+        CreateNewL7RulesUploadOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DayuClient::CreateUnblockIpOutcome DayuClient::CreateUnblockIp(const CreateUnblockIpRequest &request)
@@ -836,25 +962,32 @@ DayuClient::CreateUnblockIpOutcome DayuClient::CreateUnblockIp(const CreateUnblo
 
 void DayuClient::CreateUnblockIpAsync(const CreateUnblockIpRequest& request, const CreateUnblockIpAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateUnblockIp(request), context);
-    };
+    using Req = const CreateUnblockIpRequest&;
+    using Resp = CreateUnblockIpResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateUnblockIp", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DayuClient::CreateUnblockIpOutcomeCallable DayuClient::CreateUnblockIpCallable(const CreateUnblockIpRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateUnblockIpOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateUnblockIp(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateUnblockIpOutcome>>();
+    CreateUnblockIpAsync(
+    request,
+    [prom](
+        const DayuClient*,
+        const CreateUnblockIpRequest&,
+        CreateUnblockIpOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DayuClient::DeleteCCFrequencyRulesOutcome DayuClient::DeleteCCFrequencyRules(const DeleteCCFrequencyRulesRequest &request)
@@ -879,25 +1012,32 @@ DayuClient::DeleteCCFrequencyRulesOutcome DayuClient::DeleteCCFrequencyRules(con
 
 void DayuClient::DeleteCCFrequencyRulesAsync(const DeleteCCFrequencyRulesRequest& request, const DeleteCCFrequencyRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteCCFrequencyRules(request), context);
-    };
+    using Req = const DeleteCCFrequencyRulesRequest&;
+    using Resp = DeleteCCFrequencyRulesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteCCFrequencyRules", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DayuClient::DeleteCCFrequencyRulesOutcomeCallable DayuClient::DeleteCCFrequencyRulesCallable(const DeleteCCFrequencyRulesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteCCFrequencyRulesOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteCCFrequencyRules(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteCCFrequencyRulesOutcome>>();
+    DeleteCCFrequencyRulesAsync(
+    request,
+    [prom](
+        const DayuClient*,
+        const DeleteCCFrequencyRulesRequest&,
+        DeleteCCFrequencyRulesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DayuClient::DeleteCCSelfDefinePolicyOutcome DayuClient::DeleteCCSelfDefinePolicy(const DeleteCCSelfDefinePolicyRequest &request)
@@ -922,25 +1062,32 @@ DayuClient::DeleteCCSelfDefinePolicyOutcome DayuClient::DeleteCCSelfDefinePolicy
 
 void DayuClient::DeleteCCSelfDefinePolicyAsync(const DeleteCCSelfDefinePolicyRequest& request, const DeleteCCSelfDefinePolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteCCSelfDefinePolicy(request), context);
-    };
+    using Req = const DeleteCCSelfDefinePolicyRequest&;
+    using Resp = DeleteCCSelfDefinePolicyResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteCCSelfDefinePolicy", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DayuClient::DeleteCCSelfDefinePolicyOutcomeCallable DayuClient::DeleteCCSelfDefinePolicyCallable(const DeleteCCSelfDefinePolicyRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteCCSelfDefinePolicyOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteCCSelfDefinePolicy(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteCCSelfDefinePolicyOutcome>>();
+    DeleteCCSelfDefinePolicyAsync(
+    request,
+    [prom](
+        const DayuClient*,
+        const DeleteCCSelfDefinePolicyRequest&,
+        DeleteCCSelfDefinePolicyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DayuClient::DeleteDDoSPolicyOutcome DayuClient::DeleteDDoSPolicy(const DeleteDDoSPolicyRequest &request)
@@ -965,25 +1112,32 @@ DayuClient::DeleteDDoSPolicyOutcome DayuClient::DeleteDDoSPolicy(const DeleteDDo
 
 void DayuClient::DeleteDDoSPolicyAsync(const DeleteDDoSPolicyRequest& request, const DeleteDDoSPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteDDoSPolicy(request), context);
-    };
+    using Req = const DeleteDDoSPolicyRequest&;
+    using Resp = DeleteDDoSPolicyResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteDDoSPolicy", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DayuClient::DeleteDDoSPolicyOutcomeCallable DayuClient::DeleteDDoSPolicyCallable(const DeleteDDoSPolicyRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteDDoSPolicyOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteDDoSPolicy(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteDDoSPolicyOutcome>>();
+    DeleteDDoSPolicyAsync(
+    request,
+    [prom](
+        const DayuClient*,
+        const DeleteDDoSPolicyRequest&,
+        DeleteDDoSPolicyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DayuClient::DeleteDDoSPolicyCaseOutcome DayuClient::DeleteDDoSPolicyCase(const DeleteDDoSPolicyCaseRequest &request)
@@ -1008,25 +1162,32 @@ DayuClient::DeleteDDoSPolicyCaseOutcome DayuClient::DeleteDDoSPolicyCase(const D
 
 void DayuClient::DeleteDDoSPolicyCaseAsync(const DeleteDDoSPolicyCaseRequest& request, const DeleteDDoSPolicyCaseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteDDoSPolicyCase(request), context);
-    };
+    using Req = const DeleteDDoSPolicyCaseRequest&;
+    using Resp = DeleteDDoSPolicyCaseResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteDDoSPolicyCase", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DayuClient::DeleteDDoSPolicyCaseOutcomeCallable DayuClient::DeleteDDoSPolicyCaseCallable(const DeleteDDoSPolicyCaseRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteDDoSPolicyCaseOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteDDoSPolicyCase(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteDDoSPolicyCaseOutcome>>();
+    DeleteDDoSPolicyCaseAsync(
+    request,
+    [prom](
+        const DayuClient*,
+        const DeleteDDoSPolicyCaseRequest&,
+        DeleteDDoSPolicyCaseOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DayuClient::DeleteL4RulesOutcome DayuClient::DeleteL4Rules(const DeleteL4RulesRequest &request)
@@ -1051,25 +1212,32 @@ DayuClient::DeleteL4RulesOutcome DayuClient::DeleteL4Rules(const DeleteL4RulesRe
 
 void DayuClient::DeleteL4RulesAsync(const DeleteL4RulesRequest& request, const DeleteL4RulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteL4Rules(request), context);
-    };
+    using Req = const DeleteL4RulesRequest&;
+    using Resp = DeleteL4RulesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteL4Rules", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DayuClient::DeleteL4RulesOutcomeCallable DayuClient::DeleteL4RulesCallable(const DeleteL4RulesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteL4RulesOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteL4Rules(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteL4RulesOutcome>>();
+    DeleteL4RulesAsync(
+    request,
+    [prom](
+        const DayuClient*,
+        const DeleteL4RulesRequest&,
+        DeleteL4RulesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DayuClient::DeleteL7RulesOutcome DayuClient::DeleteL7Rules(const DeleteL7RulesRequest &request)
@@ -1094,25 +1262,32 @@ DayuClient::DeleteL7RulesOutcome DayuClient::DeleteL7Rules(const DeleteL7RulesRe
 
 void DayuClient::DeleteL7RulesAsync(const DeleteL7RulesRequest& request, const DeleteL7RulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteL7Rules(request), context);
-    };
+    using Req = const DeleteL7RulesRequest&;
+    using Resp = DeleteL7RulesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteL7Rules", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DayuClient::DeleteL7RulesOutcomeCallable DayuClient::DeleteL7RulesCallable(const DeleteL7RulesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteL7RulesOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteL7Rules(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteL7RulesOutcome>>();
+    DeleteL7RulesAsync(
+    request,
+    [prom](
+        const DayuClient*,
+        const DeleteL7RulesRequest&,
+        DeleteL7RulesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DayuClient::DeleteNewL4RulesOutcome DayuClient::DeleteNewL4Rules(const DeleteNewL4RulesRequest &request)
@@ -1137,25 +1312,32 @@ DayuClient::DeleteNewL4RulesOutcome DayuClient::DeleteNewL4Rules(const DeleteNew
 
 void DayuClient::DeleteNewL4RulesAsync(const DeleteNewL4RulesRequest& request, const DeleteNewL4RulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteNewL4Rules(request), context);
-    };
+    using Req = const DeleteNewL4RulesRequest&;
+    using Resp = DeleteNewL4RulesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteNewL4Rules", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DayuClient::DeleteNewL4RulesOutcomeCallable DayuClient::DeleteNewL4RulesCallable(const DeleteNewL4RulesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteNewL4RulesOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteNewL4Rules(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteNewL4RulesOutcome>>();
+    DeleteNewL4RulesAsync(
+    request,
+    [prom](
+        const DayuClient*,
+        const DeleteNewL4RulesRequest&,
+        DeleteNewL4RulesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DayuClient::DeleteNewL7RulesOutcome DayuClient::DeleteNewL7Rules(const DeleteNewL7RulesRequest &request)
@@ -1180,25 +1362,32 @@ DayuClient::DeleteNewL7RulesOutcome DayuClient::DeleteNewL7Rules(const DeleteNew
 
 void DayuClient::DeleteNewL7RulesAsync(const DeleteNewL7RulesRequest& request, const DeleteNewL7RulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteNewL7Rules(request), context);
-    };
+    using Req = const DeleteNewL7RulesRequest&;
+    using Resp = DeleteNewL7RulesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteNewL7Rules", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DayuClient::DeleteNewL7RulesOutcomeCallable DayuClient::DeleteNewL7RulesCallable(const DeleteNewL7RulesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteNewL7RulesOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteNewL7Rules(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteNewL7RulesOutcome>>();
+    DeleteNewL7RulesAsync(
+    request,
+    [prom](
+        const DayuClient*,
+        const DeleteNewL7RulesRequest&,
+        DeleteNewL7RulesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DayuClient::DescribeActionLogOutcome DayuClient::DescribeActionLog(const DescribeActionLogRequest &request)
@@ -1223,25 +1412,32 @@ DayuClient::DescribeActionLogOutcome DayuClient::DescribeActionLog(const Describ
 
 void DayuClient::DescribeActionLogAsync(const DescribeActionLogRequest& request, const DescribeActionLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeActionLog(request), context);
-    };
+    using Req = const DescribeActionLogRequest&;
+    using Resp = DescribeActionLogResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeActionLog", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DayuClient::DescribeActionLogOutcomeCallable DayuClient::DescribeActionLogCallable(const DescribeActionLogRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeActionLogOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeActionLog(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeActionLogOutcome>>();
+    DescribeActionLogAsync(
+    request,
+    [prom](
+        const DayuClient*,
+        const DescribeActionLogRequest&,
+        DescribeActionLogOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DayuClient::DescribeBGPIPL7RuleMaxCntOutcome DayuClient::DescribeBGPIPL7RuleMaxCnt(const DescribeBGPIPL7RuleMaxCntRequest &request)
@@ -1266,25 +1462,32 @@ DayuClient::DescribeBGPIPL7RuleMaxCntOutcome DayuClient::DescribeBGPIPL7RuleMaxC
 
 void DayuClient::DescribeBGPIPL7RuleMaxCntAsync(const DescribeBGPIPL7RuleMaxCntRequest& request, const DescribeBGPIPL7RuleMaxCntAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeBGPIPL7RuleMaxCnt(request), context);
-    };
+    using Req = const DescribeBGPIPL7RuleMaxCntRequest&;
+    using Resp = DescribeBGPIPL7RuleMaxCntResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeBGPIPL7RuleMaxCnt", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DayuClient::DescribeBGPIPL7RuleMaxCntOutcomeCallable DayuClient::DescribeBGPIPL7RuleMaxCntCallable(const DescribeBGPIPL7RuleMaxCntRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeBGPIPL7RuleMaxCntOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeBGPIPL7RuleMaxCnt(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeBGPIPL7RuleMaxCntOutcome>>();
+    DescribeBGPIPL7RuleMaxCntAsync(
+    request,
+    [prom](
+        const DayuClient*,
+        const DescribeBGPIPL7RuleMaxCntRequest&,
+        DescribeBGPIPL7RuleMaxCntOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DayuClient::DescribeBaradDataOutcome DayuClient::DescribeBaradData(const DescribeBaradDataRequest &request)
@@ -1309,25 +1512,32 @@ DayuClient::DescribeBaradDataOutcome DayuClient::DescribeBaradData(const Describ
 
 void DayuClient::DescribeBaradDataAsync(const DescribeBaradDataRequest& request, const DescribeBaradDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeBaradData(request), context);
-    };
+    using Req = const DescribeBaradDataRequest&;
+    using Resp = DescribeBaradDataResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeBaradData", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DayuClient::DescribeBaradDataOutcomeCallable DayuClient::DescribeBaradDataCallable(const DescribeBaradDataRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeBaradDataOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeBaradData(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeBaradDataOutcome>>();
+    DescribeBaradDataAsync(
+    request,
+    [prom](
+        const DayuClient*,
+        const DescribeBaradDataRequest&,
+        DescribeBaradDataOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DayuClient::DescribeBasicCCThresholdOutcome DayuClient::DescribeBasicCCThreshold(const DescribeBasicCCThresholdRequest &request)
@@ -1352,25 +1562,32 @@ DayuClient::DescribeBasicCCThresholdOutcome DayuClient::DescribeBasicCCThreshold
 
 void DayuClient::DescribeBasicCCThresholdAsync(const DescribeBasicCCThresholdRequest& request, const DescribeBasicCCThresholdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeBasicCCThreshold(request), context);
-    };
+    using Req = const DescribeBasicCCThresholdRequest&;
+    using Resp = DescribeBasicCCThresholdResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeBasicCCThreshold", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DayuClient::DescribeBasicCCThresholdOutcomeCallable DayuClient::DescribeBasicCCThresholdCallable(const DescribeBasicCCThresholdRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeBasicCCThresholdOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeBasicCCThreshold(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeBasicCCThresholdOutcome>>();
+    DescribeBasicCCThresholdAsync(
+    request,
+    [prom](
+        const DayuClient*,
+        const DescribeBasicCCThresholdRequest&,
+        DescribeBasicCCThresholdOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DayuClient::DescribeBasicDeviceThresholdOutcome DayuClient::DescribeBasicDeviceThreshold(const DescribeBasicDeviceThresholdRequest &request)
@@ -1395,25 +1612,32 @@ DayuClient::DescribeBasicDeviceThresholdOutcome DayuClient::DescribeBasicDeviceT
 
 void DayuClient::DescribeBasicDeviceThresholdAsync(const DescribeBasicDeviceThresholdRequest& request, const DescribeBasicDeviceThresholdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeBasicDeviceThreshold(request), context);
-    };
+    using Req = const DescribeBasicDeviceThresholdRequest&;
+    using Resp = DescribeBasicDeviceThresholdResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeBasicDeviceThreshold", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DayuClient::DescribeBasicDeviceThresholdOutcomeCallable DayuClient::DescribeBasicDeviceThresholdCallable(const DescribeBasicDeviceThresholdRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeBasicDeviceThresholdOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeBasicDeviceThreshold(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeBasicDeviceThresholdOutcome>>();
+    DescribeBasicDeviceThresholdAsync(
+    request,
+    [prom](
+        const DayuClient*,
+        const DescribeBasicDeviceThresholdRequest&,
+        DescribeBasicDeviceThresholdOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DayuClient::DescribeBizHttpStatusOutcome DayuClient::DescribeBizHttpStatus(const DescribeBizHttpStatusRequest &request)
@@ -1438,25 +1662,32 @@ DayuClient::DescribeBizHttpStatusOutcome DayuClient::DescribeBizHttpStatus(const
 
 void DayuClient::DescribeBizHttpStatusAsync(const DescribeBizHttpStatusRequest& request, const DescribeBizHttpStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeBizHttpStatus(request), context);
-    };
+    using Req = const DescribeBizHttpStatusRequest&;
+    using Resp = DescribeBizHttpStatusResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeBizHttpStatus", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DayuClient::DescribeBizHttpStatusOutcomeCallable DayuClient::DescribeBizHttpStatusCallable(const DescribeBizHttpStatusRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeBizHttpStatusOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeBizHttpStatus(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeBizHttpStatusOutcome>>();
+    DescribeBizHttpStatusAsync(
+    request,
+    [prom](
+        const DayuClient*,
+        const DescribeBizHttpStatusRequest&,
+        DescribeBizHttpStatusOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DayuClient::DescribeBizTrendOutcome DayuClient::DescribeBizTrend(const DescribeBizTrendRequest &request)
@@ -1481,25 +1712,32 @@ DayuClient::DescribeBizTrendOutcome DayuClient::DescribeBizTrend(const DescribeB
 
 void DayuClient::DescribeBizTrendAsync(const DescribeBizTrendRequest& request, const DescribeBizTrendAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeBizTrend(request), context);
-    };
+    using Req = const DescribeBizTrendRequest&;
+    using Resp = DescribeBizTrendResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeBizTrend", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DayuClient::DescribeBizTrendOutcomeCallable DayuClient::DescribeBizTrendCallable(const DescribeBizTrendRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeBizTrendOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeBizTrend(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeBizTrendOutcome>>();
+    DescribeBizTrendAsync(
+    request,
+    [prom](
+        const DayuClient*,
+        const DescribeBizTrendRequest&,
+        DescribeBizTrendOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DayuClient::DescribeCCAlarmThresholdOutcome DayuClient::DescribeCCAlarmThreshold(const DescribeCCAlarmThresholdRequest &request)
@@ -1524,25 +1762,32 @@ DayuClient::DescribeCCAlarmThresholdOutcome DayuClient::DescribeCCAlarmThreshold
 
 void DayuClient::DescribeCCAlarmThresholdAsync(const DescribeCCAlarmThresholdRequest& request, const DescribeCCAlarmThresholdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeCCAlarmThreshold(request), context);
-    };
+    using Req = const DescribeCCAlarmThresholdRequest&;
+    using Resp = DescribeCCAlarmThresholdResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeCCAlarmThreshold", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DayuClient::DescribeCCAlarmThresholdOutcomeCallable DayuClient::DescribeCCAlarmThresholdCallable(const DescribeCCAlarmThresholdRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeCCAlarmThresholdOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeCCAlarmThreshold(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeCCAlarmThresholdOutcome>>();
+    DescribeCCAlarmThresholdAsync(
+    request,
+    [prom](
+        const DayuClient*,
+        const DescribeCCAlarmThresholdRequest&,
+        DescribeCCAlarmThresholdOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DayuClient::DescribeCCEvListOutcome DayuClient::DescribeCCEvList(const DescribeCCEvListRequest &request)
@@ -1567,25 +1812,32 @@ DayuClient::DescribeCCEvListOutcome DayuClient::DescribeCCEvList(const DescribeC
 
 void DayuClient::DescribeCCEvListAsync(const DescribeCCEvListRequest& request, const DescribeCCEvListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeCCEvList(request), context);
-    };
+    using Req = const DescribeCCEvListRequest&;
+    using Resp = DescribeCCEvListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeCCEvList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DayuClient::DescribeCCEvListOutcomeCallable DayuClient::DescribeCCEvListCallable(const DescribeCCEvListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeCCEvListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeCCEvList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeCCEvListOutcome>>();
+    DescribeCCEvListAsync(
+    request,
+    [prom](
+        const DayuClient*,
+        const DescribeCCEvListRequest&,
+        DescribeCCEvListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DayuClient::DescribeCCFrequencyRulesOutcome DayuClient::DescribeCCFrequencyRules(const DescribeCCFrequencyRulesRequest &request)
@@ -1610,25 +1862,32 @@ DayuClient::DescribeCCFrequencyRulesOutcome DayuClient::DescribeCCFrequencyRules
 
 void DayuClient::DescribeCCFrequencyRulesAsync(const DescribeCCFrequencyRulesRequest& request, const DescribeCCFrequencyRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeCCFrequencyRules(request), context);
-    };
+    using Req = const DescribeCCFrequencyRulesRequest&;
+    using Resp = DescribeCCFrequencyRulesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeCCFrequencyRules", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DayuClient::DescribeCCFrequencyRulesOutcomeCallable DayuClient::DescribeCCFrequencyRulesCallable(const DescribeCCFrequencyRulesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeCCFrequencyRulesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeCCFrequencyRules(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeCCFrequencyRulesOutcome>>();
+    DescribeCCFrequencyRulesAsync(
+    request,
+    [prom](
+        const DayuClient*,
+        const DescribeCCFrequencyRulesRequest&,
+        DescribeCCFrequencyRulesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DayuClient::DescribeCCIpAllowDenyOutcome DayuClient::DescribeCCIpAllowDeny(const DescribeCCIpAllowDenyRequest &request)
@@ -1653,25 +1912,32 @@ DayuClient::DescribeCCIpAllowDenyOutcome DayuClient::DescribeCCIpAllowDeny(const
 
 void DayuClient::DescribeCCIpAllowDenyAsync(const DescribeCCIpAllowDenyRequest& request, const DescribeCCIpAllowDenyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeCCIpAllowDeny(request), context);
-    };
+    using Req = const DescribeCCIpAllowDenyRequest&;
+    using Resp = DescribeCCIpAllowDenyResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeCCIpAllowDeny", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DayuClient::DescribeCCIpAllowDenyOutcomeCallable DayuClient::DescribeCCIpAllowDenyCallable(const DescribeCCIpAllowDenyRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeCCIpAllowDenyOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeCCIpAllowDeny(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeCCIpAllowDenyOutcome>>();
+    DescribeCCIpAllowDenyAsync(
+    request,
+    [prom](
+        const DayuClient*,
+        const DescribeCCIpAllowDenyRequest&,
+        DescribeCCIpAllowDenyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DayuClient::DescribeCCSelfDefinePolicyOutcome DayuClient::DescribeCCSelfDefinePolicy(const DescribeCCSelfDefinePolicyRequest &request)
@@ -1696,25 +1962,32 @@ DayuClient::DescribeCCSelfDefinePolicyOutcome DayuClient::DescribeCCSelfDefinePo
 
 void DayuClient::DescribeCCSelfDefinePolicyAsync(const DescribeCCSelfDefinePolicyRequest& request, const DescribeCCSelfDefinePolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeCCSelfDefinePolicy(request), context);
-    };
+    using Req = const DescribeCCSelfDefinePolicyRequest&;
+    using Resp = DescribeCCSelfDefinePolicyResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeCCSelfDefinePolicy", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DayuClient::DescribeCCSelfDefinePolicyOutcomeCallable DayuClient::DescribeCCSelfDefinePolicyCallable(const DescribeCCSelfDefinePolicyRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeCCSelfDefinePolicyOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeCCSelfDefinePolicy(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeCCSelfDefinePolicyOutcome>>();
+    DescribeCCSelfDefinePolicyAsync(
+    request,
+    [prom](
+        const DayuClient*,
+        const DescribeCCSelfDefinePolicyRequest&,
+        DescribeCCSelfDefinePolicyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DayuClient::DescribeCCTrendOutcome DayuClient::DescribeCCTrend(const DescribeCCTrendRequest &request)
@@ -1739,25 +2012,32 @@ DayuClient::DescribeCCTrendOutcome DayuClient::DescribeCCTrend(const DescribeCCT
 
 void DayuClient::DescribeCCTrendAsync(const DescribeCCTrendRequest& request, const DescribeCCTrendAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeCCTrend(request), context);
-    };
+    using Req = const DescribeCCTrendRequest&;
+    using Resp = DescribeCCTrendResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeCCTrend", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DayuClient::DescribeCCTrendOutcomeCallable DayuClient::DescribeCCTrendCallable(const DescribeCCTrendRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeCCTrendOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeCCTrend(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeCCTrendOutcome>>();
+    DescribeCCTrendAsync(
+    request,
+    [prom](
+        const DayuClient*,
+        const DescribeCCTrendRequest&,
+        DescribeCCTrendOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DayuClient::DescribeCCUrlAllowOutcome DayuClient::DescribeCCUrlAllow(const DescribeCCUrlAllowRequest &request)
@@ -1782,25 +2062,32 @@ DayuClient::DescribeCCUrlAllowOutcome DayuClient::DescribeCCUrlAllow(const Descr
 
 void DayuClient::DescribeCCUrlAllowAsync(const DescribeCCUrlAllowRequest& request, const DescribeCCUrlAllowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeCCUrlAllow(request), context);
-    };
+    using Req = const DescribeCCUrlAllowRequest&;
+    using Resp = DescribeCCUrlAllowResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeCCUrlAllow", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DayuClient::DescribeCCUrlAllowOutcomeCallable DayuClient::DescribeCCUrlAllowCallable(const DescribeCCUrlAllowRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeCCUrlAllowOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeCCUrlAllow(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeCCUrlAllowOutcome>>();
+    DescribeCCUrlAllowAsync(
+    request,
+    [prom](
+        const DayuClient*,
+        const DescribeCCUrlAllowRequest&,
+        DescribeCCUrlAllowOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DayuClient::DescribeDDoSAlarmThresholdOutcome DayuClient::DescribeDDoSAlarmThreshold(const DescribeDDoSAlarmThresholdRequest &request)
@@ -1825,25 +2112,32 @@ DayuClient::DescribeDDoSAlarmThresholdOutcome DayuClient::DescribeDDoSAlarmThres
 
 void DayuClient::DescribeDDoSAlarmThresholdAsync(const DescribeDDoSAlarmThresholdRequest& request, const DescribeDDoSAlarmThresholdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDDoSAlarmThreshold(request), context);
-    };
+    using Req = const DescribeDDoSAlarmThresholdRequest&;
+    using Resp = DescribeDDoSAlarmThresholdResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeDDoSAlarmThreshold", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DayuClient::DescribeDDoSAlarmThresholdOutcomeCallable DayuClient::DescribeDDoSAlarmThresholdCallable(const DescribeDDoSAlarmThresholdRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeDDoSAlarmThresholdOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDDoSAlarmThreshold(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeDDoSAlarmThresholdOutcome>>();
+    DescribeDDoSAlarmThresholdAsync(
+    request,
+    [prom](
+        const DayuClient*,
+        const DescribeDDoSAlarmThresholdRequest&,
+        DescribeDDoSAlarmThresholdOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DayuClient::DescribeDDoSAttackIPRegionMapOutcome DayuClient::DescribeDDoSAttackIPRegionMap(const DescribeDDoSAttackIPRegionMapRequest &request)
@@ -1868,25 +2162,32 @@ DayuClient::DescribeDDoSAttackIPRegionMapOutcome DayuClient::DescribeDDoSAttackI
 
 void DayuClient::DescribeDDoSAttackIPRegionMapAsync(const DescribeDDoSAttackIPRegionMapRequest& request, const DescribeDDoSAttackIPRegionMapAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDDoSAttackIPRegionMap(request), context);
-    };
+    using Req = const DescribeDDoSAttackIPRegionMapRequest&;
+    using Resp = DescribeDDoSAttackIPRegionMapResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeDDoSAttackIPRegionMap", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DayuClient::DescribeDDoSAttackIPRegionMapOutcomeCallable DayuClient::DescribeDDoSAttackIPRegionMapCallable(const DescribeDDoSAttackIPRegionMapRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeDDoSAttackIPRegionMapOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDDoSAttackIPRegionMap(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeDDoSAttackIPRegionMapOutcome>>();
+    DescribeDDoSAttackIPRegionMapAsync(
+    request,
+    [prom](
+        const DayuClient*,
+        const DescribeDDoSAttackIPRegionMapRequest&,
+        DescribeDDoSAttackIPRegionMapOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DayuClient::DescribeDDoSAttackSourceOutcome DayuClient::DescribeDDoSAttackSource(const DescribeDDoSAttackSourceRequest &request)
@@ -1911,25 +2212,32 @@ DayuClient::DescribeDDoSAttackSourceOutcome DayuClient::DescribeDDoSAttackSource
 
 void DayuClient::DescribeDDoSAttackSourceAsync(const DescribeDDoSAttackSourceRequest& request, const DescribeDDoSAttackSourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDDoSAttackSource(request), context);
-    };
+    using Req = const DescribeDDoSAttackSourceRequest&;
+    using Resp = DescribeDDoSAttackSourceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeDDoSAttackSource", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DayuClient::DescribeDDoSAttackSourceOutcomeCallable DayuClient::DescribeDDoSAttackSourceCallable(const DescribeDDoSAttackSourceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeDDoSAttackSourceOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDDoSAttackSource(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeDDoSAttackSourceOutcome>>();
+    DescribeDDoSAttackSourceAsync(
+    request,
+    [prom](
+        const DayuClient*,
+        const DescribeDDoSAttackSourceRequest&,
+        DescribeDDoSAttackSourceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DayuClient::DescribeDDoSCountOutcome DayuClient::DescribeDDoSCount(const DescribeDDoSCountRequest &request)
@@ -1954,25 +2262,32 @@ DayuClient::DescribeDDoSCountOutcome DayuClient::DescribeDDoSCount(const Describ
 
 void DayuClient::DescribeDDoSCountAsync(const DescribeDDoSCountRequest& request, const DescribeDDoSCountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDDoSCount(request), context);
-    };
+    using Req = const DescribeDDoSCountRequest&;
+    using Resp = DescribeDDoSCountResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeDDoSCount", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DayuClient::DescribeDDoSCountOutcomeCallable DayuClient::DescribeDDoSCountCallable(const DescribeDDoSCountRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeDDoSCountOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDDoSCount(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeDDoSCountOutcome>>();
+    DescribeDDoSCountAsync(
+    request,
+    [prom](
+        const DayuClient*,
+        const DescribeDDoSCountRequest&,
+        DescribeDDoSCountOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DayuClient::DescribeDDoSDefendStatusOutcome DayuClient::DescribeDDoSDefendStatus(const DescribeDDoSDefendStatusRequest &request)
@@ -1997,25 +2312,32 @@ DayuClient::DescribeDDoSDefendStatusOutcome DayuClient::DescribeDDoSDefendStatus
 
 void DayuClient::DescribeDDoSDefendStatusAsync(const DescribeDDoSDefendStatusRequest& request, const DescribeDDoSDefendStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDDoSDefendStatus(request), context);
-    };
+    using Req = const DescribeDDoSDefendStatusRequest&;
+    using Resp = DescribeDDoSDefendStatusResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeDDoSDefendStatus", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DayuClient::DescribeDDoSDefendStatusOutcomeCallable DayuClient::DescribeDDoSDefendStatusCallable(const DescribeDDoSDefendStatusRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeDDoSDefendStatusOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDDoSDefendStatus(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeDDoSDefendStatusOutcome>>();
+    DescribeDDoSDefendStatusAsync(
+    request,
+    [prom](
+        const DayuClient*,
+        const DescribeDDoSDefendStatusRequest&,
+        DescribeDDoSDefendStatusOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DayuClient::DescribeDDoSEvInfoOutcome DayuClient::DescribeDDoSEvInfo(const DescribeDDoSEvInfoRequest &request)
@@ -2040,25 +2362,32 @@ DayuClient::DescribeDDoSEvInfoOutcome DayuClient::DescribeDDoSEvInfo(const Descr
 
 void DayuClient::DescribeDDoSEvInfoAsync(const DescribeDDoSEvInfoRequest& request, const DescribeDDoSEvInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDDoSEvInfo(request), context);
-    };
+    using Req = const DescribeDDoSEvInfoRequest&;
+    using Resp = DescribeDDoSEvInfoResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeDDoSEvInfo", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DayuClient::DescribeDDoSEvInfoOutcomeCallable DayuClient::DescribeDDoSEvInfoCallable(const DescribeDDoSEvInfoRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeDDoSEvInfoOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDDoSEvInfo(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeDDoSEvInfoOutcome>>();
+    DescribeDDoSEvInfoAsync(
+    request,
+    [prom](
+        const DayuClient*,
+        const DescribeDDoSEvInfoRequest&,
+        DescribeDDoSEvInfoOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DayuClient::DescribeDDoSEvListOutcome DayuClient::DescribeDDoSEvList(const DescribeDDoSEvListRequest &request)
@@ -2083,25 +2412,32 @@ DayuClient::DescribeDDoSEvListOutcome DayuClient::DescribeDDoSEvList(const Descr
 
 void DayuClient::DescribeDDoSEvListAsync(const DescribeDDoSEvListRequest& request, const DescribeDDoSEvListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDDoSEvList(request), context);
-    };
+    using Req = const DescribeDDoSEvListRequest&;
+    using Resp = DescribeDDoSEvListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeDDoSEvList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DayuClient::DescribeDDoSEvListOutcomeCallable DayuClient::DescribeDDoSEvListCallable(const DescribeDDoSEvListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeDDoSEvListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDDoSEvList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeDDoSEvListOutcome>>();
+    DescribeDDoSEvListAsync(
+    request,
+    [prom](
+        const DayuClient*,
+        const DescribeDDoSEvListRequest&,
+        DescribeDDoSEvListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DayuClient::DescribeDDoSIpLogOutcome DayuClient::DescribeDDoSIpLog(const DescribeDDoSIpLogRequest &request)
@@ -2126,25 +2462,32 @@ DayuClient::DescribeDDoSIpLogOutcome DayuClient::DescribeDDoSIpLog(const Describ
 
 void DayuClient::DescribeDDoSIpLogAsync(const DescribeDDoSIpLogRequest& request, const DescribeDDoSIpLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDDoSIpLog(request), context);
-    };
+    using Req = const DescribeDDoSIpLogRequest&;
+    using Resp = DescribeDDoSIpLogResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeDDoSIpLog", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DayuClient::DescribeDDoSIpLogOutcomeCallable DayuClient::DescribeDDoSIpLogCallable(const DescribeDDoSIpLogRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeDDoSIpLogOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDDoSIpLog(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeDDoSIpLogOutcome>>();
+    DescribeDDoSIpLogAsync(
+    request,
+    [prom](
+        const DayuClient*,
+        const DescribeDDoSIpLogRequest&,
+        DescribeDDoSIpLogOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DayuClient::DescribeDDoSNetCountOutcome DayuClient::DescribeDDoSNetCount(const DescribeDDoSNetCountRequest &request)
@@ -2169,25 +2512,32 @@ DayuClient::DescribeDDoSNetCountOutcome DayuClient::DescribeDDoSNetCount(const D
 
 void DayuClient::DescribeDDoSNetCountAsync(const DescribeDDoSNetCountRequest& request, const DescribeDDoSNetCountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDDoSNetCount(request), context);
-    };
+    using Req = const DescribeDDoSNetCountRequest&;
+    using Resp = DescribeDDoSNetCountResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeDDoSNetCount", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DayuClient::DescribeDDoSNetCountOutcomeCallable DayuClient::DescribeDDoSNetCountCallable(const DescribeDDoSNetCountRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeDDoSNetCountOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDDoSNetCount(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeDDoSNetCountOutcome>>();
+    DescribeDDoSNetCountAsync(
+    request,
+    [prom](
+        const DayuClient*,
+        const DescribeDDoSNetCountRequest&,
+        DescribeDDoSNetCountOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DayuClient::DescribeDDoSNetEvInfoOutcome DayuClient::DescribeDDoSNetEvInfo(const DescribeDDoSNetEvInfoRequest &request)
@@ -2212,25 +2562,32 @@ DayuClient::DescribeDDoSNetEvInfoOutcome DayuClient::DescribeDDoSNetEvInfo(const
 
 void DayuClient::DescribeDDoSNetEvInfoAsync(const DescribeDDoSNetEvInfoRequest& request, const DescribeDDoSNetEvInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDDoSNetEvInfo(request), context);
-    };
+    using Req = const DescribeDDoSNetEvInfoRequest&;
+    using Resp = DescribeDDoSNetEvInfoResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeDDoSNetEvInfo", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DayuClient::DescribeDDoSNetEvInfoOutcomeCallable DayuClient::DescribeDDoSNetEvInfoCallable(const DescribeDDoSNetEvInfoRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeDDoSNetEvInfoOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDDoSNetEvInfo(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeDDoSNetEvInfoOutcome>>();
+    DescribeDDoSNetEvInfoAsync(
+    request,
+    [prom](
+        const DayuClient*,
+        const DescribeDDoSNetEvInfoRequest&,
+        DescribeDDoSNetEvInfoOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DayuClient::DescribeDDoSNetEvListOutcome DayuClient::DescribeDDoSNetEvList(const DescribeDDoSNetEvListRequest &request)
@@ -2255,25 +2612,32 @@ DayuClient::DescribeDDoSNetEvListOutcome DayuClient::DescribeDDoSNetEvList(const
 
 void DayuClient::DescribeDDoSNetEvListAsync(const DescribeDDoSNetEvListRequest& request, const DescribeDDoSNetEvListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDDoSNetEvList(request), context);
-    };
+    using Req = const DescribeDDoSNetEvListRequest&;
+    using Resp = DescribeDDoSNetEvListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeDDoSNetEvList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DayuClient::DescribeDDoSNetEvListOutcomeCallable DayuClient::DescribeDDoSNetEvListCallable(const DescribeDDoSNetEvListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeDDoSNetEvListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDDoSNetEvList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeDDoSNetEvListOutcome>>();
+    DescribeDDoSNetEvListAsync(
+    request,
+    [prom](
+        const DayuClient*,
+        const DescribeDDoSNetEvListRequest&,
+        DescribeDDoSNetEvListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DayuClient::DescribeDDoSNetIpLogOutcome DayuClient::DescribeDDoSNetIpLog(const DescribeDDoSNetIpLogRequest &request)
@@ -2298,25 +2662,32 @@ DayuClient::DescribeDDoSNetIpLogOutcome DayuClient::DescribeDDoSNetIpLog(const D
 
 void DayuClient::DescribeDDoSNetIpLogAsync(const DescribeDDoSNetIpLogRequest& request, const DescribeDDoSNetIpLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDDoSNetIpLog(request), context);
-    };
+    using Req = const DescribeDDoSNetIpLogRequest&;
+    using Resp = DescribeDDoSNetIpLogResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeDDoSNetIpLog", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DayuClient::DescribeDDoSNetIpLogOutcomeCallable DayuClient::DescribeDDoSNetIpLogCallable(const DescribeDDoSNetIpLogRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeDDoSNetIpLogOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDDoSNetIpLog(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeDDoSNetIpLogOutcome>>();
+    DescribeDDoSNetIpLogAsync(
+    request,
+    [prom](
+        const DayuClient*,
+        const DescribeDDoSNetIpLogRequest&,
+        DescribeDDoSNetIpLogOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DayuClient::DescribeDDoSNetTrendOutcome DayuClient::DescribeDDoSNetTrend(const DescribeDDoSNetTrendRequest &request)
@@ -2341,25 +2712,32 @@ DayuClient::DescribeDDoSNetTrendOutcome DayuClient::DescribeDDoSNetTrend(const D
 
 void DayuClient::DescribeDDoSNetTrendAsync(const DescribeDDoSNetTrendRequest& request, const DescribeDDoSNetTrendAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDDoSNetTrend(request), context);
-    };
+    using Req = const DescribeDDoSNetTrendRequest&;
+    using Resp = DescribeDDoSNetTrendResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeDDoSNetTrend", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DayuClient::DescribeDDoSNetTrendOutcomeCallable DayuClient::DescribeDDoSNetTrendCallable(const DescribeDDoSNetTrendRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeDDoSNetTrendOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDDoSNetTrend(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeDDoSNetTrendOutcome>>();
+    DescribeDDoSNetTrendAsync(
+    request,
+    [prom](
+        const DayuClient*,
+        const DescribeDDoSNetTrendRequest&,
+        DescribeDDoSNetTrendOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DayuClient::DescribeDDoSPolicyOutcome DayuClient::DescribeDDoSPolicy(const DescribeDDoSPolicyRequest &request)
@@ -2384,25 +2762,32 @@ DayuClient::DescribeDDoSPolicyOutcome DayuClient::DescribeDDoSPolicy(const Descr
 
 void DayuClient::DescribeDDoSPolicyAsync(const DescribeDDoSPolicyRequest& request, const DescribeDDoSPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDDoSPolicy(request), context);
-    };
+    using Req = const DescribeDDoSPolicyRequest&;
+    using Resp = DescribeDDoSPolicyResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeDDoSPolicy", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DayuClient::DescribeDDoSPolicyOutcomeCallable DayuClient::DescribeDDoSPolicyCallable(const DescribeDDoSPolicyRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeDDoSPolicyOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDDoSPolicy(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeDDoSPolicyOutcome>>();
+    DescribeDDoSPolicyAsync(
+    request,
+    [prom](
+        const DayuClient*,
+        const DescribeDDoSPolicyRequest&,
+        DescribeDDoSPolicyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DayuClient::DescribeDDoSTrendOutcome DayuClient::DescribeDDoSTrend(const DescribeDDoSTrendRequest &request)
@@ -2427,25 +2812,32 @@ DayuClient::DescribeDDoSTrendOutcome DayuClient::DescribeDDoSTrend(const Describ
 
 void DayuClient::DescribeDDoSTrendAsync(const DescribeDDoSTrendRequest& request, const DescribeDDoSTrendAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDDoSTrend(request), context);
-    };
+    using Req = const DescribeDDoSTrendRequest&;
+    using Resp = DescribeDDoSTrendResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeDDoSTrend", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DayuClient::DescribeDDoSTrendOutcomeCallable DayuClient::DescribeDDoSTrendCallable(const DescribeDDoSTrendRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeDDoSTrendOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDDoSTrend(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeDDoSTrendOutcome>>();
+    DescribeDDoSTrendAsync(
+    request,
+    [prom](
+        const DayuClient*,
+        const DescribeDDoSTrendRequest&,
+        DescribeDDoSTrendOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DayuClient::DescribeDDoSUsedStatisOutcome DayuClient::DescribeDDoSUsedStatis(const DescribeDDoSUsedStatisRequest &request)
@@ -2470,25 +2862,32 @@ DayuClient::DescribeDDoSUsedStatisOutcome DayuClient::DescribeDDoSUsedStatis(con
 
 void DayuClient::DescribeDDoSUsedStatisAsync(const DescribeDDoSUsedStatisRequest& request, const DescribeDDoSUsedStatisAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDDoSUsedStatis(request), context);
-    };
+    using Req = const DescribeDDoSUsedStatisRequest&;
+    using Resp = DescribeDDoSUsedStatisResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeDDoSUsedStatis", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DayuClient::DescribeDDoSUsedStatisOutcomeCallable DayuClient::DescribeDDoSUsedStatisCallable(const DescribeDDoSUsedStatisRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeDDoSUsedStatisOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDDoSUsedStatis(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeDDoSUsedStatisOutcome>>();
+    DescribeDDoSUsedStatisAsync(
+    request,
+    [prom](
+        const DayuClient*,
+        const DescribeDDoSUsedStatisRequest&,
+        DescribeDDoSUsedStatisOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DayuClient::DescribeIPProductInfoOutcome DayuClient::DescribeIPProductInfo(const DescribeIPProductInfoRequest &request)
@@ -2513,25 +2912,32 @@ DayuClient::DescribeIPProductInfoOutcome DayuClient::DescribeIPProductInfo(const
 
 void DayuClient::DescribeIPProductInfoAsync(const DescribeIPProductInfoRequest& request, const DescribeIPProductInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeIPProductInfo(request), context);
-    };
+    using Req = const DescribeIPProductInfoRequest&;
+    using Resp = DescribeIPProductInfoResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeIPProductInfo", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DayuClient::DescribeIPProductInfoOutcomeCallable DayuClient::DescribeIPProductInfoCallable(const DescribeIPProductInfoRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeIPProductInfoOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeIPProductInfo(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeIPProductInfoOutcome>>();
+    DescribeIPProductInfoAsync(
+    request,
+    [prom](
+        const DayuClient*,
+        const DescribeIPProductInfoRequest&,
+        DescribeIPProductInfoOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DayuClient::DescribeInsurePacksOutcome DayuClient::DescribeInsurePacks(const DescribeInsurePacksRequest &request)
@@ -2556,25 +2962,32 @@ DayuClient::DescribeInsurePacksOutcome DayuClient::DescribeInsurePacks(const Des
 
 void DayuClient::DescribeInsurePacksAsync(const DescribeInsurePacksRequest& request, const DescribeInsurePacksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeInsurePacks(request), context);
-    };
+    using Req = const DescribeInsurePacksRequest&;
+    using Resp = DescribeInsurePacksResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeInsurePacks", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DayuClient::DescribeInsurePacksOutcomeCallable DayuClient::DescribeInsurePacksCallable(const DescribeInsurePacksRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeInsurePacksOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeInsurePacks(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeInsurePacksOutcome>>();
+    DescribeInsurePacksAsync(
+    request,
+    [prom](
+        const DayuClient*,
+        const DescribeInsurePacksRequest&,
+        DescribeInsurePacksOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DayuClient::DescribeIpBlockListOutcome DayuClient::DescribeIpBlockList(const DescribeIpBlockListRequest &request)
@@ -2599,25 +3012,32 @@ DayuClient::DescribeIpBlockListOutcome DayuClient::DescribeIpBlockList(const Des
 
 void DayuClient::DescribeIpBlockListAsync(const DescribeIpBlockListRequest& request, const DescribeIpBlockListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeIpBlockList(request), context);
-    };
+    using Req = const DescribeIpBlockListRequest&;
+    using Resp = DescribeIpBlockListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeIpBlockList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DayuClient::DescribeIpBlockListOutcomeCallable DayuClient::DescribeIpBlockListCallable(const DescribeIpBlockListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeIpBlockListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeIpBlockList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeIpBlockListOutcome>>();
+    DescribeIpBlockListAsync(
+    request,
+    [prom](
+        const DayuClient*,
+        const DescribeIpBlockListRequest&,
+        DescribeIpBlockListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DayuClient::DescribeIpUnBlockListOutcome DayuClient::DescribeIpUnBlockList(const DescribeIpUnBlockListRequest &request)
@@ -2642,25 +3062,32 @@ DayuClient::DescribeIpUnBlockListOutcome DayuClient::DescribeIpUnBlockList(const
 
 void DayuClient::DescribeIpUnBlockListAsync(const DescribeIpUnBlockListRequest& request, const DescribeIpUnBlockListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeIpUnBlockList(request), context);
-    };
+    using Req = const DescribeIpUnBlockListRequest&;
+    using Resp = DescribeIpUnBlockListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeIpUnBlockList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DayuClient::DescribeIpUnBlockListOutcomeCallable DayuClient::DescribeIpUnBlockListCallable(const DescribeIpUnBlockListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeIpUnBlockListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeIpUnBlockList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeIpUnBlockListOutcome>>();
+    DescribeIpUnBlockListAsync(
+    request,
+    [prom](
+        const DayuClient*,
+        const DescribeIpUnBlockListRequest&,
+        DescribeIpUnBlockListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DayuClient::DescribeL4HealthConfigOutcome DayuClient::DescribeL4HealthConfig(const DescribeL4HealthConfigRequest &request)
@@ -2685,25 +3112,32 @@ DayuClient::DescribeL4HealthConfigOutcome DayuClient::DescribeL4HealthConfig(con
 
 void DayuClient::DescribeL4HealthConfigAsync(const DescribeL4HealthConfigRequest& request, const DescribeL4HealthConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeL4HealthConfig(request), context);
-    };
+    using Req = const DescribeL4HealthConfigRequest&;
+    using Resp = DescribeL4HealthConfigResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeL4HealthConfig", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DayuClient::DescribeL4HealthConfigOutcomeCallable DayuClient::DescribeL4HealthConfigCallable(const DescribeL4HealthConfigRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeL4HealthConfigOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeL4HealthConfig(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeL4HealthConfigOutcome>>();
+    DescribeL4HealthConfigAsync(
+    request,
+    [prom](
+        const DayuClient*,
+        const DescribeL4HealthConfigRequest&,
+        DescribeL4HealthConfigOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DayuClient::DescribeL4RulesErrHealthOutcome DayuClient::DescribeL4RulesErrHealth(const DescribeL4RulesErrHealthRequest &request)
@@ -2728,25 +3162,32 @@ DayuClient::DescribeL4RulesErrHealthOutcome DayuClient::DescribeL4RulesErrHealth
 
 void DayuClient::DescribeL4RulesErrHealthAsync(const DescribeL4RulesErrHealthRequest& request, const DescribeL4RulesErrHealthAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeL4RulesErrHealth(request), context);
-    };
+    using Req = const DescribeL4RulesErrHealthRequest&;
+    using Resp = DescribeL4RulesErrHealthResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeL4RulesErrHealth", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DayuClient::DescribeL4RulesErrHealthOutcomeCallable DayuClient::DescribeL4RulesErrHealthCallable(const DescribeL4RulesErrHealthRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeL4RulesErrHealthOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeL4RulesErrHealth(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeL4RulesErrHealthOutcome>>();
+    DescribeL4RulesErrHealthAsync(
+    request,
+    [prom](
+        const DayuClient*,
+        const DescribeL4RulesErrHealthRequest&,
+        DescribeL4RulesErrHealthOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DayuClient::DescribeL7HealthConfigOutcome DayuClient::DescribeL7HealthConfig(const DescribeL7HealthConfigRequest &request)
@@ -2771,25 +3212,32 @@ DayuClient::DescribeL7HealthConfigOutcome DayuClient::DescribeL7HealthConfig(con
 
 void DayuClient::DescribeL7HealthConfigAsync(const DescribeL7HealthConfigRequest& request, const DescribeL7HealthConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeL7HealthConfig(request), context);
-    };
+    using Req = const DescribeL7HealthConfigRequest&;
+    using Resp = DescribeL7HealthConfigResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeL7HealthConfig", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DayuClient::DescribeL7HealthConfigOutcomeCallable DayuClient::DescribeL7HealthConfigCallable(const DescribeL7HealthConfigRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeL7HealthConfigOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeL7HealthConfig(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeL7HealthConfigOutcome>>();
+    DescribeL7HealthConfigAsync(
+    request,
+    [prom](
+        const DayuClient*,
+        const DescribeL7HealthConfigRequest&,
+        DescribeL7HealthConfigOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DayuClient::DescribeNewL4RulesOutcome DayuClient::DescribeNewL4Rules(const DescribeNewL4RulesRequest &request)
@@ -2814,25 +3262,32 @@ DayuClient::DescribeNewL4RulesOutcome DayuClient::DescribeNewL4Rules(const Descr
 
 void DayuClient::DescribeNewL4RulesAsync(const DescribeNewL4RulesRequest& request, const DescribeNewL4RulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeNewL4Rules(request), context);
-    };
+    using Req = const DescribeNewL4RulesRequest&;
+    using Resp = DescribeNewL4RulesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeNewL4Rules", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DayuClient::DescribeNewL4RulesOutcomeCallable DayuClient::DescribeNewL4RulesCallable(const DescribeNewL4RulesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeNewL4RulesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeNewL4Rules(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeNewL4RulesOutcome>>();
+    DescribeNewL4RulesAsync(
+    request,
+    [prom](
+        const DayuClient*,
+        const DescribeNewL4RulesRequest&,
+        DescribeNewL4RulesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DayuClient::DescribeNewL4RulesErrHealthOutcome DayuClient::DescribeNewL4RulesErrHealth(const DescribeNewL4RulesErrHealthRequest &request)
@@ -2857,25 +3312,32 @@ DayuClient::DescribeNewL4RulesErrHealthOutcome DayuClient::DescribeNewL4RulesErr
 
 void DayuClient::DescribeNewL4RulesErrHealthAsync(const DescribeNewL4RulesErrHealthRequest& request, const DescribeNewL4RulesErrHealthAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeNewL4RulesErrHealth(request), context);
-    };
+    using Req = const DescribeNewL4RulesErrHealthRequest&;
+    using Resp = DescribeNewL4RulesErrHealthResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeNewL4RulesErrHealth", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DayuClient::DescribeNewL4RulesErrHealthOutcomeCallable DayuClient::DescribeNewL4RulesErrHealthCallable(const DescribeNewL4RulesErrHealthRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeNewL4RulesErrHealthOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeNewL4RulesErrHealth(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeNewL4RulesErrHealthOutcome>>();
+    DescribeNewL4RulesErrHealthAsync(
+    request,
+    [prom](
+        const DayuClient*,
+        const DescribeNewL4RulesErrHealthRequest&,
+        DescribeNewL4RulesErrHealthOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DayuClient::DescribeNewL7RulesErrHealthOutcome DayuClient::DescribeNewL7RulesErrHealth(const DescribeNewL7RulesErrHealthRequest &request)
@@ -2900,25 +3362,32 @@ DayuClient::DescribeNewL7RulesErrHealthOutcome DayuClient::DescribeNewL7RulesErr
 
 void DayuClient::DescribeNewL7RulesErrHealthAsync(const DescribeNewL7RulesErrHealthRequest& request, const DescribeNewL7RulesErrHealthAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeNewL7RulesErrHealth(request), context);
-    };
+    using Req = const DescribeNewL7RulesErrHealthRequest&;
+    using Resp = DescribeNewL7RulesErrHealthResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeNewL7RulesErrHealth", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DayuClient::DescribeNewL7RulesErrHealthOutcomeCallable DayuClient::DescribeNewL7RulesErrHealthCallable(const DescribeNewL7RulesErrHealthRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeNewL7RulesErrHealthOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeNewL7RulesErrHealth(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeNewL7RulesErrHealthOutcome>>();
+    DescribeNewL7RulesErrHealthAsync(
+    request,
+    [prom](
+        const DayuClient*,
+        const DescribeNewL7RulesErrHealthRequest&,
+        DescribeNewL7RulesErrHealthOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DayuClient::DescribePackIndexOutcome DayuClient::DescribePackIndex(const DescribePackIndexRequest &request)
@@ -2943,25 +3412,32 @@ DayuClient::DescribePackIndexOutcome DayuClient::DescribePackIndex(const Describ
 
 void DayuClient::DescribePackIndexAsync(const DescribePackIndexRequest& request, const DescribePackIndexAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribePackIndex(request), context);
-    };
+    using Req = const DescribePackIndexRequest&;
+    using Resp = DescribePackIndexResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribePackIndex", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DayuClient::DescribePackIndexOutcomeCallable DayuClient::DescribePackIndexCallable(const DescribePackIndexRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribePackIndexOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribePackIndex(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribePackIndexOutcome>>();
+    DescribePackIndexAsync(
+    request,
+    [prom](
+        const DayuClient*,
+        const DescribePackIndexRequest&,
+        DescribePackIndexOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DayuClient::DescribePcapOutcome DayuClient::DescribePcap(const DescribePcapRequest &request)
@@ -2986,25 +3462,32 @@ DayuClient::DescribePcapOutcome DayuClient::DescribePcap(const DescribePcapReque
 
 void DayuClient::DescribePcapAsync(const DescribePcapRequest& request, const DescribePcapAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribePcap(request), context);
-    };
+    using Req = const DescribePcapRequest&;
+    using Resp = DescribePcapResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribePcap", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DayuClient::DescribePcapOutcomeCallable DayuClient::DescribePcapCallable(const DescribePcapRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribePcapOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribePcap(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribePcapOutcome>>();
+    DescribePcapAsync(
+    request,
+    [prom](
+        const DayuClient*,
+        const DescribePcapRequest&,
+        DescribePcapOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DayuClient::DescribePolicyCaseOutcome DayuClient::DescribePolicyCase(const DescribePolicyCaseRequest &request)
@@ -3029,25 +3512,32 @@ DayuClient::DescribePolicyCaseOutcome DayuClient::DescribePolicyCase(const Descr
 
 void DayuClient::DescribePolicyCaseAsync(const DescribePolicyCaseRequest& request, const DescribePolicyCaseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribePolicyCase(request), context);
-    };
+    using Req = const DescribePolicyCaseRequest&;
+    using Resp = DescribePolicyCaseResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribePolicyCase", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DayuClient::DescribePolicyCaseOutcomeCallable DayuClient::DescribePolicyCaseCallable(const DescribePolicyCaseRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribePolicyCaseOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribePolicyCase(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribePolicyCaseOutcome>>();
+    DescribePolicyCaseAsync(
+    request,
+    [prom](
+        const DayuClient*,
+        const DescribePolicyCaseRequest&,
+        DescribePolicyCaseOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DayuClient::DescribeResIpListOutcome DayuClient::DescribeResIpList(const DescribeResIpListRequest &request)
@@ -3072,25 +3562,32 @@ DayuClient::DescribeResIpListOutcome DayuClient::DescribeResIpList(const Describ
 
 void DayuClient::DescribeResIpListAsync(const DescribeResIpListRequest& request, const DescribeResIpListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeResIpList(request), context);
-    };
+    using Req = const DescribeResIpListRequest&;
+    using Resp = DescribeResIpListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeResIpList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DayuClient::DescribeResIpListOutcomeCallable DayuClient::DescribeResIpListCallable(const DescribeResIpListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeResIpListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeResIpList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeResIpListOutcome>>();
+    DescribeResIpListAsync(
+    request,
+    [prom](
+        const DayuClient*,
+        const DescribeResIpListRequest&,
+        DescribeResIpListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DayuClient::DescribeResourceListOutcome DayuClient::DescribeResourceList(const DescribeResourceListRequest &request)
@@ -3115,25 +3612,32 @@ DayuClient::DescribeResourceListOutcome DayuClient::DescribeResourceList(const D
 
 void DayuClient::DescribeResourceListAsync(const DescribeResourceListRequest& request, const DescribeResourceListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeResourceList(request), context);
-    };
+    using Req = const DescribeResourceListRequest&;
+    using Resp = DescribeResourceListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeResourceList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DayuClient::DescribeResourceListOutcomeCallable DayuClient::DescribeResourceListCallable(const DescribeResourceListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeResourceListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeResourceList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeResourceListOutcome>>();
+    DescribeResourceListAsync(
+    request,
+    [prom](
+        const DayuClient*,
+        const DescribeResourceListRequest&,
+        DescribeResourceListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DayuClient::DescribeRuleSetsOutcome DayuClient::DescribeRuleSets(const DescribeRuleSetsRequest &request)
@@ -3158,25 +3662,32 @@ DayuClient::DescribeRuleSetsOutcome DayuClient::DescribeRuleSets(const DescribeR
 
 void DayuClient::DescribeRuleSetsAsync(const DescribeRuleSetsRequest& request, const DescribeRuleSetsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeRuleSets(request), context);
-    };
+    using Req = const DescribeRuleSetsRequest&;
+    using Resp = DescribeRuleSetsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeRuleSets", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DayuClient::DescribeRuleSetsOutcomeCallable DayuClient::DescribeRuleSetsCallable(const DescribeRuleSetsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeRuleSetsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeRuleSets(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeRuleSetsOutcome>>();
+    DescribeRuleSetsAsync(
+    request,
+    [prom](
+        const DayuClient*,
+        const DescribeRuleSetsRequest&,
+        DescribeRuleSetsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DayuClient::DescribeSchedulingDomainListOutcome DayuClient::DescribeSchedulingDomainList(const DescribeSchedulingDomainListRequest &request)
@@ -3201,25 +3712,32 @@ DayuClient::DescribeSchedulingDomainListOutcome DayuClient::DescribeSchedulingDo
 
 void DayuClient::DescribeSchedulingDomainListAsync(const DescribeSchedulingDomainListRequest& request, const DescribeSchedulingDomainListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeSchedulingDomainList(request), context);
-    };
+    using Req = const DescribeSchedulingDomainListRequest&;
+    using Resp = DescribeSchedulingDomainListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeSchedulingDomainList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DayuClient::DescribeSchedulingDomainListOutcomeCallable DayuClient::DescribeSchedulingDomainListCallable(const DescribeSchedulingDomainListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeSchedulingDomainListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeSchedulingDomainList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeSchedulingDomainListOutcome>>();
+    DescribeSchedulingDomainListAsync(
+    request,
+    [prom](
+        const DayuClient*,
+        const DescribeSchedulingDomainListRequest&,
+        DescribeSchedulingDomainListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DayuClient::DescribeSecIndexOutcome DayuClient::DescribeSecIndex(const DescribeSecIndexRequest &request)
@@ -3244,25 +3762,32 @@ DayuClient::DescribeSecIndexOutcome DayuClient::DescribeSecIndex(const DescribeS
 
 void DayuClient::DescribeSecIndexAsync(const DescribeSecIndexRequest& request, const DescribeSecIndexAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeSecIndex(request), context);
-    };
+    using Req = const DescribeSecIndexRequest&;
+    using Resp = DescribeSecIndexResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeSecIndex", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DayuClient::DescribeSecIndexOutcomeCallable DayuClient::DescribeSecIndexCallable(const DescribeSecIndexRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeSecIndexOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeSecIndex(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeSecIndexOutcome>>();
+    DescribeSecIndexAsync(
+    request,
+    [prom](
+        const DayuClient*,
+        const DescribeSecIndexRequest&,
+        DescribeSecIndexOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DayuClient::DescribeSourceIpSegmentOutcome DayuClient::DescribeSourceIpSegment(const DescribeSourceIpSegmentRequest &request)
@@ -3287,25 +3812,32 @@ DayuClient::DescribeSourceIpSegmentOutcome DayuClient::DescribeSourceIpSegment(c
 
 void DayuClient::DescribeSourceIpSegmentAsync(const DescribeSourceIpSegmentRequest& request, const DescribeSourceIpSegmentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeSourceIpSegment(request), context);
-    };
+    using Req = const DescribeSourceIpSegmentRequest&;
+    using Resp = DescribeSourceIpSegmentResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeSourceIpSegment", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DayuClient::DescribeSourceIpSegmentOutcomeCallable DayuClient::DescribeSourceIpSegmentCallable(const DescribeSourceIpSegmentRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeSourceIpSegmentOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeSourceIpSegment(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeSourceIpSegmentOutcome>>();
+    DescribeSourceIpSegmentAsync(
+    request,
+    [prom](
+        const DayuClient*,
+        const DescribeSourceIpSegmentRequest&,
+        DescribeSourceIpSegmentOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DayuClient::DescribeTransmitStatisOutcome DayuClient::DescribeTransmitStatis(const DescribeTransmitStatisRequest &request)
@@ -3330,25 +3862,32 @@ DayuClient::DescribeTransmitStatisOutcome DayuClient::DescribeTransmitStatis(con
 
 void DayuClient::DescribeTransmitStatisAsync(const DescribeTransmitStatisRequest& request, const DescribeTransmitStatisAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeTransmitStatis(request), context);
-    };
+    using Req = const DescribeTransmitStatisRequest&;
+    using Resp = DescribeTransmitStatisResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeTransmitStatis", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DayuClient::DescribeTransmitStatisOutcomeCallable DayuClient::DescribeTransmitStatisCallable(const DescribeTransmitStatisRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeTransmitStatisOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeTransmitStatis(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeTransmitStatisOutcome>>();
+    DescribeTransmitStatisAsync(
+    request,
+    [prom](
+        const DayuClient*,
+        const DescribeTransmitStatisRequest&,
+        DescribeTransmitStatisOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DayuClient::DescribeUnBlockStatisOutcome DayuClient::DescribeUnBlockStatis(const DescribeUnBlockStatisRequest &request)
@@ -3373,25 +3912,32 @@ DayuClient::DescribeUnBlockStatisOutcome DayuClient::DescribeUnBlockStatis(const
 
 void DayuClient::DescribeUnBlockStatisAsync(const DescribeUnBlockStatisRequest& request, const DescribeUnBlockStatisAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeUnBlockStatis(request), context);
-    };
+    using Req = const DescribeUnBlockStatisRequest&;
+    using Resp = DescribeUnBlockStatisResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeUnBlockStatis", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DayuClient::DescribeUnBlockStatisOutcomeCallable DayuClient::DescribeUnBlockStatisCallable(const DescribeUnBlockStatisRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeUnBlockStatisOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeUnBlockStatis(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeUnBlockStatisOutcome>>();
+    DescribeUnBlockStatisAsync(
+    request,
+    [prom](
+        const DayuClient*,
+        const DescribeUnBlockStatisRequest&,
+        DescribeUnBlockStatisOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DayuClient::DescribleL4RulesOutcome DayuClient::DescribleL4Rules(const DescribleL4RulesRequest &request)
@@ -3416,25 +3962,32 @@ DayuClient::DescribleL4RulesOutcome DayuClient::DescribleL4Rules(const Describle
 
 void DayuClient::DescribleL4RulesAsync(const DescribleL4RulesRequest& request, const DescribleL4RulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribleL4Rules(request), context);
-    };
+    using Req = const DescribleL4RulesRequest&;
+    using Resp = DescribleL4RulesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribleL4Rules", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DayuClient::DescribleL4RulesOutcomeCallable DayuClient::DescribleL4RulesCallable(const DescribleL4RulesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribleL4RulesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribleL4Rules(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribleL4RulesOutcome>>();
+    DescribleL4RulesAsync(
+    request,
+    [prom](
+        const DayuClient*,
+        const DescribleL4RulesRequest&,
+        DescribleL4RulesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DayuClient::DescribleL7RulesOutcome DayuClient::DescribleL7Rules(const DescribleL7RulesRequest &request)
@@ -3459,25 +4012,32 @@ DayuClient::DescribleL7RulesOutcome DayuClient::DescribleL7Rules(const Describle
 
 void DayuClient::DescribleL7RulesAsync(const DescribleL7RulesRequest& request, const DescribleL7RulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribleL7Rules(request), context);
-    };
+    using Req = const DescribleL7RulesRequest&;
+    using Resp = DescribleL7RulesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribleL7Rules", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DayuClient::DescribleL7RulesOutcomeCallable DayuClient::DescribleL7RulesCallable(const DescribleL7RulesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribleL7RulesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribleL7Rules(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribleL7RulesOutcome>>();
+    DescribleL7RulesAsync(
+    request,
+    [prom](
+        const DayuClient*,
+        const DescribleL7RulesRequest&,
+        DescribleL7RulesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DayuClient::DescribleNewL7RulesOutcome DayuClient::DescribleNewL7Rules(const DescribleNewL7RulesRequest &request)
@@ -3502,25 +4062,32 @@ DayuClient::DescribleNewL7RulesOutcome DayuClient::DescribleNewL7Rules(const Des
 
 void DayuClient::DescribleNewL7RulesAsync(const DescribleNewL7RulesRequest& request, const DescribleNewL7RulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribleNewL7Rules(request), context);
-    };
+    using Req = const DescribleNewL7RulesRequest&;
+    using Resp = DescribleNewL7RulesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribleNewL7Rules", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DayuClient::DescribleNewL7RulesOutcomeCallable DayuClient::DescribleNewL7RulesCallable(const DescribleNewL7RulesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribleNewL7RulesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribleNewL7Rules(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribleNewL7RulesOutcome>>();
+    DescribleNewL7RulesAsync(
+    request,
+    [prom](
+        const DayuClient*,
+        const DescribleNewL7RulesRequest&,
+        DescribleNewL7RulesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DayuClient::DescribleRegionCountOutcome DayuClient::DescribleRegionCount(const DescribleRegionCountRequest &request)
@@ -3545,25 +4112,32 @@ DayuClient::DescribleRegionCountOutcome DayuClient::DescribleRegionCount(const D
 
 void DayuClient::DescribleRegionCountAsync(const DescribleRegionCountRequest& request, const DescribleRegionCountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribleRegionCount(request), context);
-    };
+    using Req = const DescribleRegionCountRequest&;
+    using Resp = DescribleRegionCountResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribleRegionCount", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DayuClient::DescribleRegionCountOutcomeCallable DayuClient::DescribleRegionCountCallable(const DescribleRegionCountRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribleRegionCountOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribleRegionCount(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribleRegionCountOutcome>>();
+    DescribleRegionCountAsync(
+    request,
+    [prom](
+        const DayuClient*,
+        const DescribleRegionCountRequest&,
+        DescribleRegionCountOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DayuClient::ModifyCCAlarmThresholdOutcome DayuClient::ModifyCCAlarmThreshold(const ModifyCCAlarmThresholdRequest &request)
@@ -3588,25 +4162,32 @@ DayuClient::ModifyCCAlarmThresholdOutcome DayuClient::ModifyCCAlarmThreshold(con
 
 void DayuClient::ModifyCCAlarmThresholdAsync(const ModifyCCAlarmThresholdRequest& request, const ModifyCCAlarmThresholdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyCCAlarmThreshold(request), context);
-    };
+    using Req = const ModifyCCAlarmThresholdRequest&;
+    using Resp = ModifyCCAlarmThresholdResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyCCAlarmThreshold", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DayuClient::ModifyCCAlarmThresholdOutcomeCallable DayuClient::ModifyCCAlarmThresholdCallable(const ModifyCCAlarmThresholdRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyCCAlarmThresholdOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyCCAlarmThreshold(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyCCAlarmThresholdOutcome>>();
+    ModifyCCAlarmThresholdAsync(
+    request,
+    [prom](
+        const DayuClient*,
+        const ModifyCCAlarmThresholdRequest&,
+        ModifyCCAlarmThresholdOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DayuClient::ModifyCCFrequencyRulesOutcome DayuClient::ModifyCCFrequencyRules(const ModifyCCFrequencyRulesRequest &request)
@@ -3631,25 +4212,32 @@ DayuClient::ModifyCCFrequencyRulesOutcome DayuClient::ModifyCCFrequencyRules(con
 
 void DayuClient::ModifyCCFrequencyRulesAsync(const ModifyCCFrequencyRulesRequest& request, const ModifyCCFrequencyRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyCCFrequencyRules(request), context);
-    };
+    using Req = const ModifyCCFrequencyRulesRequest&;
+    using Resp = ModifyCCFrequencyRulesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyCCFrequencyRules", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DayuClient::ModifyCCFrequencyRulesOutcomeCallable DayuClient::ModifyCCFrequencyRulesCallable(const ModifyCCFrequencyRulesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyCCFrequencyRulesOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyCCFrequencyRules(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyCCFrequencyRulesOutcome>>();
+    ModifyCCFrequencyRulesAsync(
+    request,
+    [prom](
+        const DayuClient*,
+        const ModifyCCFrequencyRulesRequest&,
+        ModifyCCFrequencyRulesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DayuClient::ModifyCCFrequencyRulesStatusOutcome DayuClient::ModifyCCFrequencyRulesStatus(const ModifyCCFrequencyRulesStatusRequest &request)
@@ -3674,25 +4262,32 @@ DayuClient::ModifyCCFrequencyRulesStatusOutcome DayuClient::ModifyCCFrequencyRul
 
 void DayuClient::ModifyCCFrequencyRulesStatusAsync(const ModifyCCFrequencyRulesStatusRequest& request, const ModifyCCFrequencyRulesStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyCCFrequencyRulesStatus(request), context);
-    };
+    using Req = const ModifyCCFrequencyRulesStatusRequest&;
+    using Resp = ModifyCCFrequencyRulesStatusResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyCCFrequencyRulesStatus", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DayuClient::ModifyCCFrequencyRulesStatusOutcomeCallable DayuClient::ModifyCCFrequencyRulesStatusCallable(const ModifyCCFrequencyRulesStatusRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyCCFrequencyRulesStatusOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyCCFrequencyRulesStatus(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyCCFrequencyRulesStatusOutcome>>();
+    ModifyCCFrequencyRulesStatusAsync(
+    request,
+    [prom](
+        const DayuClient*,
+        const ModifyCCFrequencyRulesStatusRequest&,
+        ModifyCCFrequencyRulesStatusOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DayuClient::ModifyCCHostProtectionOutcome DayuClient::ModifyCCHostProtection(const ModifyCCHostProtectionRequest &request)
@@ -3717,25 +4312,32 @@ DayuClient::ModifyCCHostProtectionOutcome DayuClient::ModifyCCHostProtection(con
 
 void DayuClient::ModifyCCHostProtectionAsync(const ModifyCCHostProtectionRequest& request, const ModifyCCHostProtectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyCCHostProtection(request), context);
-    };
+    using Req = const ModifyCCHostProtectionRequest&;
+    using Resp = ModifyCCHostProtectionResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyCCHostProtection", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DayuClient::ModifyCCHostProtectionOutcomeCallable DayuClient::ModifyCCHostProtectionCallable(const ModifyCCHostProtectionRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyCCHostProtectionOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyCCHostProtection(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyCCHostProtectionOutcome>>();
+    ModifyCCHostProtectionAsync(
+    request,
+    [prom](
+        const DayuClient*,
+        const ModifyCCHostProtectionRequest&,
+        ModifyCCHostProtectionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DayuClient::ModifyCCIpAllowDenyOutcome DayuClient::ModifyCCIpAllowDeny(const ModifyCCIpAllowDenyRequest &request)
@@ -3760,25 +4362,32 @@ DayuClient::ModifyCCIpAllowDenyOutcome DayuClient::ModifyCCIpAllowDeny(const Mod
 
 void DayuClient::ModifyCCIpAllowDenyAsync(const ModifyCCIpAllowDenyRequest& request, const ModifyCCIpAllowDenyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyCCIpAllowDeny(request), context);
-    };
+    using Req = const ModifyCCIpAllowDenyRequest&;
+    using Resp = ModifyCCIpAllowDenyResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyCCIpAllowDeny", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DayuClient::ModifyCCIpAllowDenyOutcomeCallable DayuClient::ModifyCCIpAllowDenyCallable(const ModifyCCIpAllowDenyRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyCCIpAllowDenyOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyCCIpAllowDeny(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyCCIpAllowDenyOutcome>>();
+    ModifyCCIpAllowDenyAsync(
+    request,
+    [prom](
+        const DayuClient*,
+        const ModifyCCIpAllowDenyRequest&,
+        ModifyCCIpAllowDenyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DayuClient::ModifyCCLevelOutcome DayuClient::ModifyCCLevel(const ModifyCCLevelRequest &request)
@@ -3803,25 +4412,32 @@ DayuClient::ModifyCCLevelOutcome DayuClient::ModifyCCLevel(const ModifyCCLevelRe
 
 void DayuClient::ModifyCCLevelAsync(const ModifyCCLevelRequest& request, const ModifyCCLevelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyCCLevel(request), context);
-    };
+    using Req = const ModifyCCLevelRequest&;
+    using Resp = ModifyCCLevelResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyCCLevel", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DayuClient::ModifyCCLevelOutcomeCallable DayuClient::ModifyCCLevelCallable(const ModifyCCLevelRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyCCLevelOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyCCLevel(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyCCLevelOutcome>>();
+    ModifyCCLevelAsync(
+    request,
+    [prom](
+        const DayuClient*,
+        const ModifyCCLevelRequest&,
+        ModifyCCLevelOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DayuClient::ModifyCCPolicySwitchOutcome DayuClient::ModifyCCPolicySwitch(const ModifyCCPolicySwitchRequest &request)
@@ -3846,25 +4462,32 @@ DayuClient::ModifyCCPolicySwitchOutcome DayuClient::ModifyCCPolicySwitch(const M
 
 void DayuClient::ModifyCCPolicySwitchAsync(const ModifyCCPolicySwitchRequest& request, const ModifyCCPolicySwitchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyCCPolicySwitch(request), context);
-    };
+    using Req = const ModifyCCPolicySwitchRequest&;
+    using Resp = ModifyCCPolicySwitchResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyCCPolicySwitch", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DayuClient::ModifyCCPolicySwitchOutcomeCallable DayuClient::ModifyCCPolicySwitchCallable(const ModifyCCPolicySwitchRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyCCPolicySwitchOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyCCPolicySwitch(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyCCPolicySwitchOutcome>>();
+    ModifyCCPolicySwitchAsync(
+    request,
+    [prom](
+        const DayuClient*,
+        const ModifyCCPolicySwitchRequest&,
+        ModifyCCPolicySwitchOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DayuClient::ModifyCCSelfDefinePolicyOutcome DayuClient::ModifyCCSelfDefinePolicy(const ModifyCCSelfDefinePolicyRequest &request)
@@ -3889,25 +4512,32 @@ DayuClient::ModifyCCSelfDefinePolicyOutcome DayuClient::ModifyCCSelfDefinePolicy
 
 void DayuClient::ModifyCCSelfDefinePolicyAsync(const ModifyCCSelfDefinePolicyRequest& request, const ModifyCCSelfDefinePolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyCCSelfDefinePolicy(request), context);
-    };
+    using Req = const ModifyCCSelfDefinePolicyRequest&;
+    using Resp = ModifyCCSelfDefinePolicyResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyCCSelfDefinePolicy", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DayuClient::ModifyCCSelfDefinePolicyOutcomeCallable DayuClient::ModifyCCSelfDefinePolicyCallable(const ModifyCCSelfDefinePolicyRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyCCSelfDefinePolicyOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyCCSelfDefinePolicy(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyCCSelfDefinePolicyOutcome>>();
+    ModifyCCSelfDefinePolicyAsync(
+    request,
+    [prom](
+        const DayuClient*,
+        const ModifyCCSelfDefinePolicyRequest&,
+        ModifyCCSelfDefinePolicyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DayuClient::ModifyCCThresholdOutcome DayuClient::ModifyCCThreshold(const ModifyCCThresholdRequest &request)
@@ -3932,25 +4562,32 @@ DayuClient::ModifyCCThresholdOutcome DayuClient::ModifyCCThreshold(const ModifyC
 
 void DayuClient::ModifyCCThresholdAsync(const ModifyCCThresholdRequest& request, const ModifyCCThresholdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyCCThreshold(request), context);
-    };
+    using Req = const ModifyCCThresholdRequest&;
+    using Resp = ModifyCCThresholdResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyCCThreshold", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DayuClient::ModifyCCThresholdOutcomeCallable DayuClient::ModifyCCThresholdCallable(const ModifyCCThresholdRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyCCThresholdOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyCCThreshold(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyCCThresholdOutcome>>();
+    ModifyCCThresholdAsync(
+    request,
+    [prom](
+        const DayuClient*,
+        const ModifyCCThresholdRequest&,
+        ModifyCCThresholdOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DayuClient::ModifyCCUrlAllowOutcome DayuClient::ModifyCCUrlAllow(const ModifyCCUrlAllowRequest &request)
@@ -3975,25 +4612,32 @@ DayuClient::ModifyCCUrlAllowOutcome DayuClient::ModifyCCUrlAllow(const ModifyCCU
 
 void DayuClient::ModifyCCUrlAllowAsync(const ModifyCCUrlAllowRequest& request, const ModifyCCUrlAllowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyCCUrlAllow(request), context);
-    };
+    using Req = const ModifyCCUrlAllowRequest&;
+    using Resp = ModifyCCUrlAllowResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyCCUrlAllow", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DayuClient::ModifyCCUrlAllowOutcomeCallable DayuClient::ModifyCCUrlAllowCallable(const ModifyCCUrlAllowRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyCCUrlAllowOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyCCUrlAllow(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyCCUrlAllowOutcome>>();
+    ModifyCCUrlAllowAsync(
+    request,
+    [prom](
+        const DayuClient*,
+        const ModifyCCUrlAllowRequest&,
+        ModifyCCUrlAllowOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DayuClient::ModifyDDoSAIStatusOutcome DayuClient::ModifyDDoSAIStatus(const ModifyDDoSAIStatusRequest &request)
@@ -4018,25 +4662,32 @@ DayuClient::ModifyDDoSAIStatusOutcome DayuClient::ModifyDDoSAIStatus(const Modif
 
 void DayuClient::ModifyDDoSAIStatusAsync(const ModifyDDoSAIStatusRequest& request, const ModifyDDoSAIStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyDDoSAIStatus(request), context);
-    };
+    using Req = const ModifyDDoSAIStatusRequest&;
+    using Resp = ModifyDDoSAIStatusResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyDDoSAIStatus", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DayuClient::ModifyDDoSAIStatusOutcomeCallable DayuClient::ModifyDDoSAIStatusCallable(const ModifyDDoSAIStatusRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyDDoSAIStatusOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyDDoSAIStatus(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyDDoSAIStatusOutcome>>();
+    ModifyDDoSAIStatusAsync(
+    request,
+    [prom](
+        const DayuClient*,
+        const ModifyDDoSAIStatusRequest&,
+        ModifyDDoSAIStatusOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DayuClient::ModifyDDoSAlarmThresholdOutcome DayuClient::ModifyDDoSAlarmThreshold(const ModifyDDoSAlarmThresholdRequest &request)
@@ -4061,25 +4712,32 @@ DayuClient::ModifyDDoSAlarmThresholdOutcome DayuClient::ModifyDDoSAlarmThreshold
 
 void DayuClient::ModifyDDoSAlarmThresholdAsync(const ModifyDDoSAlarmThresholdRequest& request, const ModifyDDoSAlarmThresholdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyDDoSAlarmThreshold(request), context);
-    };
+    using Req = const ModifyDDoSAlarmThresholdRequest&;
+    using Resp = ModifyDDoSAlarmThresholdResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyDDoSAlarmThreshold", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DayuClient::ModifyDDoSAlarmThresholdOutcomeCallable DayuClient::ModifyDDoSAlarmThresholdCallable(const ModifyDDoSAlarmThresholdRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyDDoSAlarmThresholdOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyDDoSAlarmThreshold(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyDDoSAlarmThresholdOutcome>>();
+    ModifyDDoSAlarmThresholdAsync(
+    request,
+    [prom](
+        const DayuClient*,
+        const ModifyDDoSAlarmThresholdRequest&,
+        ModifyDDoSAlarmThresholdOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DayuClient::ModifyDDoSDefendStatusOutcome DayuClient::ModifyDDoSDefendStatus(const ModifyDDoSDefendStatusRequest &request)
@@ -4104,25 +4762,32 @@ DayuClient::ModifyDDoSDefendStatusOutcome DayuClient::ModifyDDoSDefendStatus(con
 
 void DayuClient::ModifyDDoSDefendStatusAsync(const ModifyDDoSDefendStatusRequest& request, const ModifyDDoSDefendStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyDDoSDefendStatus(request), context);
-    };
+    using Req = const ModifyDDoSDefendStatusRequest&;
+    using Resp = ModifyDDoSDefendStatusResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyDDoSDefendStatus", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DayuClient::ModifyDDoSDefendStatusOutcomeCallable DayuClient::ModifyDDoSDefendStatusCallable(const ModifyDDoSDefendStatusRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyDDoSDefendStatusOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyDDoSDefendStatus(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyDDoSDefendStatusOutcome>>();
+    ModifyDDoSDefendStatusAsync(
+    request,
+    [prom](
+        const DayuClient*,
+        const ModifyDDoSDefendStatusRequest&,
+        ModifyDDoSDefendStatusOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DayuClient::ModifyDDoSLevelOutcome DayuClient::ModifyDDoSLevel(const ModifyDDoSLevelRequest &request)
@@ -4147,25 +4812,32 @@ DayuClient::ModifyDDoSLevelOutcome DayuClient::ModifyDDoSLevel(const ModifyDDoSL
 
 void DayuClient::ModifyDDoSLevelAsync(const ModifyDDoSLevelRequest& request, const ModifyDDoSLevelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyDDoSLevel(request), context);
-    };
+    using Req = const ModifyDDoSLevelRequest&;
+    using Resp = ModifyDDoSLevelResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyDDoSLevel", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DayuClient::ModifyDDoSLevelOutcomeCallable DayuClient::ModifyDDoSLevelCallable(const ModifyDDoSLevelRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyDDoSLevelOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyDDoSLevel(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyDDoSLevelOutcome>>();
+    ModifyDDoSLevelAsync(
+    request,
+    [prom](
+        const DayuClient*,
+        const ModifyDDoSLevelRequest&,
+        ModifyDDoSLevelOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DayuClient::ModifyDDoSPolicyOutcome DayuClient::ModifyDDoSPolicy(const ModifyDDoSPolicyRequest &request)
@@ -4190,25 +4862,32 @@ DayuClient::ModifyDDoSPolicyOutcome DayuClient::ModifyDDoSPolicy(const ModifyDDo
 
 void DayuClient::ModifyDDoSPolicyAsync(const ModifyDDoSPolicyRequest& request, const ModifyDDoSPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyDDoSPolicy(request), context);
-    };
+    using Req = const ModifyDDoSPolicyRequest&;
+    using Resp = ModifyDDoSPolicyResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyDDoSPolicy", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DayuClient::ModifyDDoSPolicyOutcomeCallable DayuClient::ModifyDDoSPolicyCallable(const ModifyDDoSPolicyRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyDDoSPolicyOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyDDoSPolicy(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyDDoSPolicyOutcome>>();
+    ModifyDDoSPolicyAsync(
+    request,
+    [prom](
+        const DayuClient*,
+        const ModifyDDoSPolicyRequest&,
+        ModifyDDoSPolicyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DayuClient::ModifyDDoSPolicyCaseOutcome DayuClient::ModifyDDoSPolicyCase(const ModifyDDoSPolicyCaseRequest &request)
@@ -4233,25 +4912,32 @@ DayuClient::ModifyDDoSPolicyCaseOutcome DayuClient::ModifyDDoSPolicyCase(const M
 
 void DayuClient::ModifyDDoSPolicyCaseAsync(const ModifyDDoSPolicyCaseRequest& request, const ModifyDDoSPolicyCaseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyDDoSPolicyCase(request), context);
-    };
+    using Req = const ModifyDDoSPolicyCaseRequest&;
+    using Resp = ModifyDDoSPolicyCaseResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyDDoSPolicyCase", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DayuClient::ModifyDDoSPolicyCaseOutcomeCallable DayuClient::ModifyDDoSPolicyCaseCallable(const ModifyDDoSPolicyCaseRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyDDoSPolicyCaseOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyDDoSPolicyCase(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyDDoSPolicyCaseOutcome>>();
+    ModifyDDoSPolicyCaseAsync(
+    request,
+    [prom](
+        const DayuClient*,
+        const ModifyDDoSPolicyCaseRequest&,
+        ModifyDDoSPolicyCaseOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DayuClient::ModifyDDoSPolicyNameOutcome DayuClient::ModifyDDoSPolicyName(const ModifyDDoSPolicyNameRequest &request)
@@ -4276,25 +4962,32 @@ DayuClient::ModifyDDoSPolicyNameOutcome DayuClient::ModifyDDoSPolicyName(const M
 
 void DayuClient::ModifyDDoSPolicyNameAsync(const ModifyDDoSPolicyNameRequest& request, const ModifyDDoSPolicyNameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyDDoSPolicyName(request), context);
-    };
+    using Req = const ModifyDDoSPolicyNameRequest&;
+    using Resp = ModifyDDoSPolicyNameResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyDDoSPolicyName", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DayuClient::ModifyDDoSPolicyNameOutcomeCallable DayuClient::ModifyDDoSPolicyNameCallable(const ModifyDDoSPolicyNameRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyDDoSPolicyNameOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyDDoSPolicyName(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyDDoSPolicyNameOutcome>>();
+    ModifyDDoSPolicyNameAsync(
+    request,
+    [prom](
+        const DayuClient*,
+        const ModifyDDoSPolicyNameRequest&,
+        ModifyDDoSPolicyNameOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DayuClient::ModifyDDoSSwitchOutcome DayuClient::ModifyDDoSSwitch(const ModifyDDoSSwitchRequest &request)
@@ -4319,25 +5012,32 @@ DayuClient::ModifyDDoSSwitchOutcome DayuClient::ModifyDDoSSwitch(const ModifyDDo
 
 void DayuClient::ModifyDDoSSwitchAsync(const ModifyDDoSSwitchRequest& request, const ModifyDDoSSwitchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyDDoSSwitch(request), context);
-    };
+    using Req = const ModifyDDoSSwitchRequest&;
+    using Resp = ModifyDDoSSwitchResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyDDoSSwitch", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DayuClient::ModifyDDoSSwitchOutcomeCallable DayuClient::ModifyDDoSSwitchCallable(const ModifyDDoSSwitchRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyDDoSSwitchOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyDDoSSwitch(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyDDoSSwitchOutcome>>();
+    ModifyDDoSSwitchAsync(
+    request,
+    [prom](
+        const DayuClient*,
+        const ModifyDDoSSwitchRequest&,
+        ModifyDDoSSwitchOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DayuClient::ModifyDDoSThresholdOutcome DayuClient::ModifyDDoSThreshold(const ModifyDDoSThresholdRequest &request)
@@ -4362,25 +5062,32 @@ DayuClient::ModifyDDoSThresholdOutcome DayuClient::ModifyDDoSThreshold(const Mod
 
 void DayuClient::ModifyDDoSThresholdAsync(const ModifyDDoSThresholdRequest& request, const ModifyDDoSThresholdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyDDoSThreshold(request), context);
-    };
+    using Req = const ModifyDDoSThresholdRequest&;
+    using Resp = ModifyDDoSThresholdResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyDDoSThreshold", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DayuClient::ModifyDDoSThresholdOutcomeCallable DayuClient::ModifyDDoSThresholdCallable(const ModifyDDoSThresholdRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyDDoSThresholdOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyDDoSThreshold(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyDDoSThresholdOutcome>>();
+    ModifyDDoSThresholdAsync(
+    request,
+    [prom](
+        const DayuClient*,
+        const ModifyDDoSThresholdRequest&,
+        ModifyDDoSThresholdOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DayuClient::ModifyDDoSWaterKeyOutcome DayuClient::ModifyDDoSWaterKey(const ModifyDDoSWaterKeyRequest &request)
@@ -4405,25 +5112,32 @@ DayuClient::ModifyDDoSWaterKeyOutcome DayuClient::ModifyDDoSWaterKey(const Modif
 
 void DayuClient::ModifyDDoSWaterKeyAsync(const ModifyDDoSWaterKeyRequest& request, const ModifyDDoSWaterKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyDDoSWaterKey(request), context);
-    };
+    using Req = const ModifyDDoSWaterKeyRequest&;
+    using Resp = ModifyDDoSWaterKeyResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyDDoSWaterKey", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DayuClient::ModifyDDoSWaterKeyOutcomeCallable DayuClient::ModifyDDoSWaterKeyCallable(const ModifyDDoSWaterKeyRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyDDoSWaterKeyOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyDDoSWaterKey(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyDDoSWaterKeyOutcome>>();
+    ModifyDDoSWaterKeyAsync(
+    request,
+    [prom](
+        const DayuClient*,
+        const ModifyDDoSWaterKeyRequest&,
+        ModifyDDoSWaterKeyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DayuClient::ModifyElasticLimitOutcome DayuClient::ModifyElasticLimit(const ModifyElasticLimitRequest &request)
@@ -4448,25 +5162,32 @@ DayuClient::ModifyElasticLimitOutcome DayuClient::ModifyElasticLimit(const Modif
 
 void DayuClient::ModifyElasticLimitAsync(const ModifyElasticLimitRequest& request, const ModifyElasticLimitAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyElasticLimit(request), context);
-    };
+    using Req = const ModifyElasticLimitRequest&;
+    using Resp = ModifyElasticLimitResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyElasticLimit", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DayuClient::ModifyElasticLimitOutcomeCallable DayuClient::ModifyElasticLimitCallable(const ModifyElasticLimitRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyElasticLimitOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyElasticLimit(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyElasticLimitOutcome>>();
+    ModifyElasticLimitAsync(
+    request,
+    [prom](
+        const DayuClient*,
+        const ModifyElasticLimitRequest&,
+        ModifyElasticLimitOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DayuClient::ModifyL4HealthOutcome DayuClient::ModifyL4Health(const ModifyL4HealthRequest &request)
@@ -4491,25 +5212,32 @@ DayuClient::ModifyL4HealthOutcome DayuClient::ModifyL4Health(const ModifyL4Healt
 
 void DayuClient::ModifyL4HealthAsync(const ModifyL4HealthRequest& request, const ModifyL4HealthAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyL4Health(request), context);
-    };
+    using Req = const ModifyL4HealthRequest&;
+    using Resp = ModifyL4HealthResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyL4Health", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DayuClient::ModifyL4HealthOutcomeCallable DayuClient::ModifyL4HealthCallable(const ModifyL4HealthRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyL4HealthOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyL4Health(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyL4HealthOutcome>>();
+    ModifyL4HealthAsync(
+    request,
+    [prom](
+        const DayuClient*,
+        const ModifyL4HealthRequest&,
+        ModifyL4HealthOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DayuClient::ModifyL4KeepTimeOutcome DayuClient::ModifyL4KeepTime(const ModifyL4KeepTimeRequest &request)
@@ -4534,25 +5262,32 @@ DayuClient::ModifyL4KeepTimeOutcome DayuClient::ModifyL4KeepTime(const ModifyL4K
 
 void DayuClient::ModifyL4KeepTimeAsync(const ModifyL4KeepTimeRequest& request, const ModifyL4KeepTimeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyL4KeepTime(request), context);
-    };
+    using Req = const ModifyL4KeepTimeRequest&;
+    using Resp = ModifyL4KeepTimeResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyL4KeepTime", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DayuClient::ModifyL4KeepTimeOutcomeCallable DayuClient::ModifyL4KeepTimeCallable(const ModifyL4KeepTimeRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyL4KeepTimeOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyL4KeepTime(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyL4KeepTimeOutcome>>();
+    ModifyL4KeepTimeAsync(
+    request,
+    [prom](
+        const DayuClient*,
+        const ModifyL4KeepTimeRequest&,
+        ModifyL4KeepTimeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DayuClient::ModifyL4RulesOutcome DayuClient::ModifyL4Rules(const ModifyL4RulesRequest &request)
@@ -4577,25 +5312,32 @@ DayuClient::ModifyL4RulesOutcome DayuClient::ModifyL4Rules(const ModifyL4RulesRe
 
 void DayuClient::ModifyL4RulesAsync(const ModifyL4RulesRequest& request, const ModifyL4RulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyL4Rules(request), context);
-    };
+    using Req = const ModifyL4RulesRequest&;
+    using Resp = ModifyL4RulesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyL4Rules", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DayuClient::ModifyL4RulesOutcomeCallable DayuClient::ModifyL4RulesCallable(const ModifyL4RulesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyL4RulesOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyL4Rules(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyL4RulesOutcome>>();
+    ModifyL4RulesAsync(
+    request,
+    [prom](
+        const DayuClient*,
+        const ModifyL4RulesRequest&,
+        ModifyL4RulesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DayuClient::ModifyL7RulesOutcome DayuClient::ModifyL7Rules(const ModifyL7RulesRequest &request)
@@ -4620,25 +5362,32 @@ DayuClient::ModifyL7RulesOutcome DayuClient::ModifyL7Rules(const ModifyL7RulesRe
 
 void DayuClient::ModifyL7RulesAsync(const ModifyL7RulesRequest& request, const ModifyL7RulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyL7Rules(request), context);
-    };
+    using Req = const ModifyL7RulesRequest&;
+    using Resp = ModifyL7RulesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyL7Rules", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DayuClient::ModifyL7RulesOutcomeCallable DayuClient::ModifyL7RulesCallable(const ModifyL7RulesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyL7RulesOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyL7Rules(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyL7RulesOutcome>>();
+    ModifyL7RulesAsync(
+    request,
+    [prom](
+        const DayuClient*,
+        const ModifyL7RulesRequest&,
+        ModifyL7RulesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DayuClient::ModifyNetReturnSwitchOutcome DayuClient::ModifyNetReturnSwitch(const ModifyNetReturnSwitchRequest &request)
@@ -4663,25 +5412,32 @@ DayuClient::ModifyNetReturnSwitchOutcome DayuClient::ModifyNetReturnSwitch(const
 
 void DayuClient::ModifyNetReturnSwitchAsync(const ModifyNetReturnSwitchRequest& request, const ModifyNetReturnSwitchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyNetReturnSwitch(request), context);
-    };
+    using Req = const ModifyNetReturnSwitchRequest&;
+    using Resp = ModifyNetReturnSwitchResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyNetReturnSwitch", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DayuClient::ModifyNetReturnSwitchOutcomeCallable DayuClient::ModifyNetReturnSwitchCallable(const ModifyNetReturnSwitchRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyNetReturnSwitchOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyNetReturnSwitch(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyNetReturnSwitchOutcome>>();
+    ModifyNetReturnSwitchAsync(
+    request,
+    [prom](
+        const DayuClient*,
+        const ModifyNetReturnSwitchRequest&,
+        ModifyNetReturnSwitchOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DayuClient::ModifyNewDomainRulesOutcome DayuClient::ModifyNewDomainRules(const ModifyNewDomainRulesRequest &request)
@@ -4706,25 +5462,32 @@ DayuClient::ModifyNewDomainRulesOutcome DayuClient::ModifyNewDomainRules(const M
 
 void DayuClient::ModifyNewDomainRulesAsync(const ModifyNewDomainRulesRequest& request, const ModifyNewDomainRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyNewDomainRules(request), context);
-    };
+    using Req = const ModifyNewDomainRulesRequest&;
+    using Resp = ModifyNewDomainRulesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyNewDomainRules", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DayuClient::ModifyNewDomainRulesOutcomeCallable DayuClient::ModifyNewDomainRulesCallable(const ModifyNewDomainRulesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyNewDomainRulesOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyNewDomainRules(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyNewDomainRulesOutcome>>();
+    ModifyNewDomainRulesAsync(
+    request,
+    [prom](
+        const DayuClient*,
+        const ModifyNewDomainRulesRequest&,
+        ModifyNewDomainRulesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DayuClient::ModifyNewL4RuleOutcome DayuClient::ModifyNewL4Rule(const ModifyNewL4RuleRequest &request)
@@ -4749,25 +5512,32 @@ DayuClient::ModifyNewL4RuleOutcome DayuClient::ModifyNewL4Rule(const ModifyNewL4
 
 void DayuClient::ModifyNewL4RuleAsync(const ModifyNewL4RuleRequest& request, const ModifyNewL4RuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyNewL4Rule(request), context);
-    };
+    using Req = const ModifyNewL4RuleRequest&;
+    using Resp = ModifyNewL4RuleResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyNewL4Rule", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DayuClient::ModifyNewL4RuleOutcomeCallable DayuClient::ModifyNewL4RuleCallable(const ModifyNewL4RuleRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyNewL4RuleOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyNewL4Rule(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyNewL4RuleOutcome>>();
+    ModifyNewL4RuleAsync(
+    request,
+    [prom](
+        const DayuClient*,
+        const ModifyNewL4RuleRequest&,
+        ModifyNewL4RuleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DayuClient::ModifyResBindDDoSPolicyOutcome DayuClient::ModifyResBindDDoSPolicy(const ModifyResBindDDoSPolicyRequest &request)
@@ -4792,25 +5562,32 @@ DayuClient::ModifyResBindDDoSPolicyOutcome DayuClient::ModifyResBindDDoSPolicy(c
 
 void DayuClient::ModifyResBindDDoSPolicyAsync(const ModifyResBindDDoSPolicyRequest& request, const ModifyResBindDDoSPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyResBindDDoSPolicy(request), context);
-    };
+    using Req = const ModifyResBindDDoSPolicyRequest&;
+    using Resp = ModifyResBindDDoSPolicyResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyResBindDDoSPolicy", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DayuClient::ModifyResBindDDoSPolicyOutcomeCallable DayuClient::ModifyResBindDDoSPolicyCallable(const ModifyResBindDDoSPolicyRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyResBindDDoSPolicyOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyResBindDDoSPolicy(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyResBindDDoSPolicyOutcome>>();
+    ModifyResBindDDoSPolicyAsync(
+    request,
+    [prom](
+        const DayuClient*,
+        const ModifyResBindDDoSPolicyRequest&,
+        ModifyResBindDDoSPolicyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DayuClient::ModifyResourceRenewFlagOutcome DayuClient::ModifyResourceRenewFlag(const ModifyResourceRenewFlagRequest &request)
@@ -4835,24 +5612,31 @@ DayuClient::ModifyResourceRenewFlagOutcome DayuClient::ModifyResourceRenewFlag(c
 
 void DayuClient::ModifyResourceRenewFlagAsync(const ModifyResourceRenewFlagRequest& request, const ModifyResourceRenewFlagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyResourceRenewFlag(request), context);
-    };
+    using Req = const ModifyResourceRenewFlagRequest&;
+    using Resp = ModifyResourceRenewFlagResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyResourceRenewFlag", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DayuClient::ModifyResourceRenewFlagOutcomeCallable DayuClient::ModifyResourceRenewFlagCallable(const ModifyResourceRenewFlagRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyResourceRenewFlagOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyResourceRenewFlag(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyResourceRenewFlagOutcome>>();
+    ModifyResourceRenewFlagAsync(
+    request,
+    [prom](
+        const DayuClient*,
+        const ModifyResourceRenewFlagRequest&,
+        ModifyResourceRenewFlagOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 

@@ -62,25 +62,32 @@ PartnersClient::AgentPayDealsOutcome PartnersClient::AgentPayDeals(const AgentPa
 
 void PartnersClient::AgentPayDealsAsync(const AgentPayDealsRequest& request, const AgentPayDealsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->AgentPayDeals(request), context);
-    };
+    using Req = const AgentPayDealsRequest&;
+    using Resp = AgentPayDealsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "AgentPayDeals", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 PartnersClient::AgentPayDealsOutcomeCallable PartnersClient::AgentPayDealsCallable(const AgentPayDealsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<AgentPayDealsOutcome()>>(
-        [this, request]()
-        {
-            return this->AgentPayDeals(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<AgentPayDealsOutcome>>();
+    AgentPayDealsAsync(
+    request,
+    [prom](
+        const PartnersClient*,
+        const AgentPayDealsRequest&,
+        AgentPayDealsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 PartnersClient::AgentTransferMoneyOutcome PartnersClient::AgentTransferMoney(const AgentTransferMoneyRequest &request)
@@ -105,25 +112,32 @@ PartnersClient::AgentTransferMoneyOutcome PartnersClient::AgentTransferMoney(con
 
 void PartnersClient::AgentTransferMoneyAsync(const AgentTransferMoneyRequest& request, const AgentTransferMoneyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->AgentTransferMoney(request), context);
-    };
+    using Req = const AgentTransferMoneyRequest&;
+    using Resp = AgentTransferMoneyResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "AgentTransferMoney", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 PartnersClient::AgentTransferMoneyOutcomeCallable PartnersClient::AgentTransferMoneyCallable(const AgentTransferMoneyRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<AgentTransferMoneyOutcome()>>(
-        [this, request]()
-        {
-            return this->AgentTransferMoney(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<AgentTransferMoneyOutcome>>();
+    AgentTransferMoneyAsync(
+    request,
+    [prom](
+        const PartnersClient*,
+        const AgentTransferMoneyRequest&,
+        AgentTransferMoneyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 PartnersClient::AssignClientsToSalesOutcome PartnersClient::AssignClientsToSales(const AssignClientsToSalesRequest &request)
@@ -148,25 +162,32 @@ PartnersClient::AssignClientsToSalesOutcome PartnersClient::AssignClientsToSales
 
 void PartnersClient::AssignClientsToSalesAsync(const AssignClientsToSalesRequest& request, const AssignClientsToSalesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->AssignClientsToSales(request), context);
-    };
+    using Req = const AssignClientsToSalesRequest&;
+    using Resp = AssignClientsToSalesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "AssignClientsToSales", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 PartnersClient::AssignClientsToSalesOutcomeCallable PartnersClient::AssignClientsToSalesCallable(const AssignClientsToSalesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<AssignClientsToSalesOutcome()>>(
-        [this, request]()
-        {
-            return this->AssignClientsToSales(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<AssignClientsToSalesOutcome>>();
+    AssignClientsToSalesAsync(
+    request,
+    [prom](
+        const PartnersClient*,
+        const AssignClientsToSalesRequest&,
+        AssignClientsToSalesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 PartnersClient::AuditApplyClientOutcome PartnersClient::AuditApplyClient(const AuditApplyClientRequest &request)
@@ -191,25 +212,32 @@ PartnersClient::AuditApplyClientOutcome PartnersClient::AuditApplyClient(const A
 
 void PartnersClient::AuditApplyClientAsync(const AuditApplyClientRequest& request, const AuditApplyClientAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->AuditApplyClient(request), context);
-    };
+    using Req = const AuditApplyClientRequest&;
+    using Resp = AuditApplyClientResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "AuditApplyClient", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 PartnersClient::AuditApplyClientOutcomeCallable PartnersClient::AuditApplyClientCallable(const AuditApplyClientRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<AuditApplyClientOutcome()>>(
-        [this, request]()
-        {
-            return this->AuditApplyClient(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<AuditApplyClientOutcome>>();
+    AuditApplyClientAsync(
+    request,
+    [prom](
+        const PartnersClient*,
+        const AuditApplyClientRequest&,
+        AuditApplyClientOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 PartnersClient::CreatePayRelationForClientOutcome PartnersClient::CreatePayRelationForClient(const CreatePayRelationForClientRequest &request)
@@ -234,25 +262,32 @@ PartnersClient::CreatePayRelationForClientOutcome PartnersClient::CreatePayRelat
 
 void PartnersClient::CreatePayRelationForClientAsync(const CreatePayRelationForClientRequest& request, const CreatePayRelationForClientAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreatePayRelationForClient(request), context);
-    };
+    using Req = const CreatePayRelationForClientRequest&;
+    using Resp = CreatePayRelationForClientResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreatePayRelationForClient", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 PartnersClient::CreatePayRelationForClientOutcomeCallable PartnersClient::CreatePayRelationForClientCallable(const CreatePayRelationForClientRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreatePayRelationForClientOutcome()>>(
-        [this, request]()
-        {
-            return this->CreatePayRelationForClient(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreatePayRelationForClientOutcome>>();
+    CreatePayRelationForClientAsync(
+    request,
+    [prom](
+        const PartnersClient*,
+        const CreatePayRelationForClientRequest&,
+        CreatePayRelationForClientOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 PartnersClient::DescribeAgentAuditedClientsOutcome PartnersClient::DescribeAgentAuditedClients(const DescribeAgentAuditedClientsRequest &request)
@@ -277,25 +312,32 @@ PartnersClient::DescribeAgentAuditedClientsOutcome PartnersClient::DescribeAgent
 
 void PartnersClient::DescribeAgentAuditedClientsAsync(const DescribeAgentAuditedClientsRequest& request, const DescribeAgentAuditedClientsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAgentAuditedClients(request), context);
-    };
+    using Req = const DescribeAgentAuditedClientsRequest&;
+    using Resp = DescribeAgentAuditedClientsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAgentAuditedClients", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 PartnersClient::DescribeAgentAuditedClientsOutcomeCallable PartnersClient::DescribeAgentAuditedClientsCallable(const DescribeAgentAuditedClientsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAgentAuditedClientsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAgentAuditedClients(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAgentAuditedClientsOutcome>>();
+    DescribeAgentAuditedClientsAsync(
+    request,
+    [prom](
+        const PartnersClient*,
+        const DescribeAgentAuditedClientsRequest&,
+        DescribeAgentAuditedClientsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 PartnersClient::DescribeAgentBillsOutcome PartnersClient::DescribeAgentBills(const DescribeAgentBillsRequest &request)
@@ -320,25 +362,32 @@ PartnersClient::DescribeAgentBillsOutcome PartnersClient::DescribeAgentBills(con
 
 void PartnersClient::DescribeAgentBillsAsync(const DescribeAgentBillsRequest& request, const DescribeAgentBillsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAgentBills(request), context);
-    };
+    using Req = const DescribeAgentBillsRequest&;
+    using Resp = DescribeAgentBillsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAgentBills", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 PartnersClient::DescribeAgentBillsOutcomeCallable PartnersClient::DescribeAgentBillsCallable(const DescribeAgentBillsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAgentBillsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAgentBills(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAgentBillsOutcome>>();
+    DescribeAgentBillsAsync(
+    request,
+    [prom](
+        const PartnersClient*,
+        const DescribeAgentBillsRequest&,
+        DescribeAgentBillsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 PartnersClient::DescribeAgentClientGradeOutcome PartnersClient::DescribeAgentClientGrade(const DescribeAgentClientGradeRequest &request)
@@ -363,25 +412,32 @@ PartnersClient::DescribeAgentClientGradeOutcome PartnersClient::DescribeAgentCli
 
 void PartnersClient::DescribeAgentClientGradeAsync(const DescribeAgentClientGradeRequest& request, const DescribeAgentClientGradeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAgentClientGrade(request), context);
-    };
+    using Req = const DescribeAgentClientGradeRequest&;
+    using Resp = DescribeAgentClientGradeResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAgentClientGrade", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 PartnersClient::DescribeAgentClientGradeOutcomeCallable PartnersClient::DescribeAgentClientGradeCallable(const DescribeAgentClientGradeRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAgentClientGradeOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAgentClientGrade(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAgentClientGradeOutcome>>();
+    DescribeAgentClientGradeAsync(
+    request,
+    [prom](
+        const PartnersClient*,
+        const DescribeAgentClientGradeRequest&,
+        DescribeAgentClientGradeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 PartnersClient::DescribeAgentClientsOutcome PartnersClient::DescribeAgentClients(const DescribeAgentClientsRequest &request)
@@ -406,25 +462,32 @@ PartnersClient::DescribeAgentClientsOutcome PartnersClient::DescribeAgentClients
 
 void PartnersClient::DescribeAgentClientsAsync(const DescribeAgentClientsRequest& request, const DescribeAgentClientsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAgentClients(request), context);
-    };
+    using Req = const DescribeAgentClientsRequest&;
+    using Resp = DescribeAgentClientsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAgentClients", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 PartnersClient::DescribeAgentClientsOutcomeCallable PartnersClient::DescribeAgentClientsCallable(const DescribeAgentClientsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAgentClientsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAgentClients(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAgentClientsOutcome>>();
+    DescribeAgentClientsAsync(
+    request,
+    [prom](
+        const PartnersClient*,
+        const DescribeAgentClientsRequest&,
+        DescribeAgentClientsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 PartnersClient::DescribeAgentDealsByCacheOutcome PartnersClient::DescribeAgentDealsByCache(const DescribeAgentDealsByCacheRequest &request)
@@ -449,25 +512,32 @@ PartnersClient::DescribeAgentDealsByCacheOutcome PartnersClient::DescribeAgentDe
 
 void PartnersClient::DescribeAgentDealsByCacheAsync(const DescribeAgentDealsByCacheRequest& request, const DescribeAgentDealsByCacheAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAgentDealsByCache(request), context);
-    };
+    using Req = const DescribeAgentDealsByCacheRequest&;
+    using Resp = DescribeAgentDealsByCacheResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAgentDealsByCache", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 PartnersClient::DescribeAgentDealsByCacheOutcomeCallable PartnersClient::DescribeAgentDealsByCacheCallable(const DescribeAgentDealsByCacheRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAgentDealsByCacheOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAgentDealsByCache(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAgentDealsByCacheOutcome>>();
+    DescribeAgentDealsByCacheAsync(
+    request,
+    [prom](
+        const PartnersClient*,
+        const DescribeAgentDealsByCacheRequest&,
+        DescribeAgentDealsByCacheOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 PartnersClient::DescribeAgentDealsPriceDetailByDealNameOutcome PartnersClient::DescribeAgentDealsPriceDetailByDealName(const DescribeAgentDealsPriceDetailByDealNameRequest &request)
@@ -492,25 +562,32 @@ PartnersClient::DescribeAgentDealsPriceDetailByDealNameOutcome PartnersClient::D
 
 void PartnersClient::DescribeAgentDealsPriceDetailByDealNameAsync(const DescribeAgentDealsPriceDetailByDealNameRequest& request, const DescribeAgentDealsPriceDetailByDealNameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAgentDealsPriceDetailByDealName(request), context);
-    };
+    using Req = const DescribeAgentDealsPriceDetailByDealNameRequest&;
+    using Resp = DescribeAgentDealsPriceDetailByDealNameResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAgentDealsPriceDetailByDealName", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 PartnersClient::DescribeAgentDealsPriceDetailByDealNameOutcomeCallable PartnersClient::DescribeAgentDealsPriceDetailByDealNameCallable(const DescribeAgentDealsPriceDetailByDealNameRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAgentDealsPriceDetailByDealNameOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAgentDealsPriceDetailByDealName(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAgentDealsPriceDetailByDealNameOutcome>>();
+    DescribeAgentDealsPriceDetailByDealNameAsync(
+    request,
+    [prom](
+        const PartnersClient*,
+        const DescribeAgentDealsPriceDetailByDealNameRequest&,
+        DescribeAgentDealsPriceDetailByDealNameOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 PartnersClient::DescribeAgentPayDealsV2Outcome PartnersClient::DescribeAgentPayDealsV2(const DescribeAgentPayDealsV2Request &request)
@@ -535,25 +612,32 @@ PartnersClient::DescribeAgentPayDealsV2Outcome PartnersClient::DescribeAgentPayD
 
 void PartnersClient::DescribeAgentPayDealsV2Async(const DescribeAgentPayDealsV2Request& request, const DescribeAgentPayDealsV2AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAgentPayDealsV2(request), context);
-    };
+    using Req = const DescribeAgentPayDealsV2Request&;
+    using Resp = DescribeAgentPayDealsV2Response;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAgentPayDealsV2", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 PartnersClient::DescribeAgentPayDealsV2OutcomeCallable PartnersClient::DescribeAgentPayDealsV2Callable(const DescribeAgentPayDealsV2Request &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAgentPayDealsV2Outcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAgentPayDealsV2(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAgentPayDealsV2Outcome>>();
+    DescribeAgentPayDealsV2Async(
+    request,
+    [prom](
+        const PartnersClient*,
+        const DescribeAgentPayDealsV2Request&,
+        DescribeAgentPayDealsV2Outcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 PartnersClient::DescribeAgentRelateBigDealIdsOutcome PartnersClient::DescribeAgentRelateBigDealIds(const DescribeAgentRelateBigDealIdsRequest &request)
@@ -578,25 +662,32 @@ PartnersClient::DescribeAgentRelateBigDealIdsOutcome PartnersClient::DescribeAge
 
 void PartnersClient::DescribeAgentRelateBigDealIdsAsync(const DescribeAgentRelateBigDealIdsRequest& request, const DescribeAgentRelateBigDealIdsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAgentRelateBigDealIds(request), context);
-    };
+    using Req = const DescribeAgentRelateBigDealIdsRequest&;
+    using Resp = DescribeAgentRelateBigDealIdsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAgentRelateBigDealIds", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 PartnersClient::DescribeAgentRelateBigDealIdsOutcomeCallable PartnersClient::DescribeAgentRelateBigDealIdsCallable(const DescribeAgentRelateBigDealIdsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAgentRelateBigDealIdsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAgentRelateBigDealIds(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAgentRelateBigDealIdsOutcome>>();
+    DescribeAgentRelateBigDealIdsAsync(
+    request,
+    [prom](
+        const PartnersClient*,
+        const DescribeAgentRelateBigDealIdsRequest&,
+        DescribeAgentRelateBigDealIdsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 PartnersClient::DescribeAgentSelfPayDealsV2Outcome PartnersClient::DescribeAgentSelfPayDealsV2(const DescribeAgentSelfPayDealsV2Request &request)
@@ -621,25 +712,32 @@ PartnersClient::DescribeAgentSelfPayDealsV2Outcome PartnersClient::DescribeAgent
 
 void PartnersClient::DescribeAgentSelfPayDealsV2Async(const DescribeAgentSelfPayDealsV2Request& request, const DescribeAgentSelfPayDealsV2AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAgentSelfPayDealsV2(request), context);
-    };
+    using Req = const DescribeAgentSelfPayDealsV2Request&;
+    using Resp = DescribeAgentSelfPayDealsV2Response;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAgentSelfPayDealsV2", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 PartnersClient::DescribeAgentSelfPayDealsV2OutcomeCallable PartnersClient::DescribeAgentSelfPayDealsV2Callable(const DescribeAgentSelfPayDealsV2Request &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAgentSelfPayDealsV2Outcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAgentSelfPayDealsV2(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAgentSelfPayDealsV2Outcome>>();
+    DescribeAgentSelfPayDealsV2Async(
+    request,
+    [prom](
+        const PartnersClient*,
+        const DescribeAgentSelfPayDealsV2Request&,
+        DescribeAgentSelfPayDealsV2Outcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 PartnersClient::DescribeClientBalanceNewOutcome PartnersClient::DescribeClientBalanceNew(const DescribeClientBalanceNewRequest &request)
@@ -664,25 +762,32 @@ PartnersClient::DescribeClientBalanceNewOutcome PartnersClient::DescribeClientBa
 
 void PartnersClient::DescribeClientBalanceNewAsync(const DescribeClientBalanceNewRequest& request, const DescribeClientBalanceNewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeClientBalanceNew(request), context);
-    };
+    using Req = const DescribeClientBalanceNewRequest&;
+    using Resp = DescribeClientBalanceNewResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeClientBalanceNew", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 PartnersClient::DescribeClientBalanceNewOutcomeCallable PartnersClient::DescribeClientBalanceNewCallable(const DescribeClientBalanceNewRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeClientBalanceNewOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeClientBalanceNew(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeClientBalanceNewOutcome>>();
+    DescribeClientBalanceNewAsync(
+    request,
+    [prom](
+        const PartnersClient*,
+        const DescribeClientBalanceNewRequest&,
+        DescribeClientBalanceNewOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 PartnersClient::DescribeClientJoinIncreaseListOutcome PartnersClient::DescribeClientJoinIncreaseList(const DescribeClientJoinIncreaseListRequest &request)
@@ -707,25 +812,32 @@ PartnersClient::DescribeClientJoinIncreaseListOutcome PartnersClient::DescribeCl
 
 void PartnersClient::DescribeClientJoinIncreaseListAsync(const DescribeClientJoinIncreaseListRequest& request, const DescribeClientJoinIncreaseListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeClientJoinIncreaseList(request), context);
-    };
+    using Req = const DescribeClientJoinIncreaseListRequest&;
+    using Resp = DescribeClientJoinIncreaseListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeClientJoinIncreaseList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 PartnersClient::DescribeClientJoinIncreaseListOutcomeCallable PartnersClient::DescribeClientJoinIncreaseListCallable(const DescribeClientJoinIncreaseListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeClientJoinIncreaseListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeClientJoinIncreaseList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeClientJoinIncreaseListOutcome>>();
+    DescribeClientJoinIncreaseListAsync(
+    request,
+    [prom](
+        const PartnersClient*,
+        const DescribeClientJoinIncreaseListRequest&,
+        DescribeClientJoinIncreaseListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 PartnersClient::DescribeClientSwitchTraTaskInfoOutcome PartnersClient::DescribeClientSwitchTraTaskInfo(const DescribeClientSwitchTraTaskInfoRequest &request)
@@ -750,25 +862,32 @@ PartnersClient::DescribeClientSwitchTraTaskInfoOutcome PartnersClient::DescribeC
 
 void PartnersClient::DescribeClientSwitchTraTaskInfoAsync(const DescribeClientSwitchTraTaskInfoRequest& request, const DescribeClientSwitchTraTaskInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeClientSwitchTraTaskInfo(request), context);
-    };
+    using Req = const DescribeClientSwitchTraTaskInfoRequest&;
+    using Resp = DescribeClientSwitchTraTaskInfoResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeClientSwitchTraTaskInfo", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 PartnersClient::DescribeClientSwitchTraTaskInfoOutcomeCallable PartnersClient::DescribeClientSwitchTraTaskInfoCallable(const DescribeClientSwitchTraTaskInfoRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeClientSwitchTraTaskInfoOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeClientSwitchTraTaskInfo(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeClientSwitchTraTaskInfoOutcome>>();
+    DescribeClientSwitchTraTaskInfoAsync(
+    request,
+    [prom](
+        const PartnersClient*,
+        const DescribeClientSwitchTraTaskInfoRequest&,
+        DescribeClientSwitchTraTaskInfoOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 PartnersClient::DescribeRebateInfosOutcome PartnersClient::DescribeRebateInfos(const DescribeRebateInfosRequest &request)
@@ -793,25 +912,32 @@ PartnersClient::DescribeRebateInfosOutcome PartnersClient::DescribeRebateInfos(c
 
 void PartnersClient::DescribeRebateInfosAsync(const DescribeRebateInfosRequest& request, const DescribeRebateInfosAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeRebateInfos(request), context);
-    };
+    using Req = const DescribeRebateInfosRequest&;
+    using Resp = DescribeRebateInfosResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeRebateInfos", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 PartnersClient::DescribeRebateInfosOutcomeCallable PartnersClient::DescribeRebateInfosCallable(const DescribeRebateInfosRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeRebateInfosOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeRebateInfos(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeRebateInfosOutcome>>();
+    DescribeRebateInfosAsync(
+    request,
+    [prom](
+        const PartnersClient*,
+        const DescribeRebateInfosRequest&,
+        DescribeRebateInfosOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 PartnersClient::DescribeRebateInfosNewOutcome PartnersClient::DescribeRebateInfosNew(const DescribeRebateInfosNewRequest &request)
@@ -836,25 +962,32 @@ PartnersClient::DescribeRebateInfosNewOutcome PartnersClient::DescribeRebateInfo
 
 void PartnersClient::DescribeRebateInfosNewAsync(const DescribeRebateInfosNewRequest& request, const DescribeRebateInfosNewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeRebateInfosNew(request), context);
-    };
+    using Req = const DescribeRebateInfosNewRequest&;
+    using Resp = DescribeRebateInfosNewResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeRebateInfosNew", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 PartnersClient::DescribeRebateInfosNewOutcomeCallable PartnersClient::DescribeRebateInfosNewCallable(const DescribeRebateInfosNewRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeRebateInfosNewOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeRebateInfosNew(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeRebateInfosNewOutcome>>();
+    DescribeRebateInfosNewAsync(
+    request,
+    [prom](
+        const PartnersClient*,
+        const DescribeRebateInfosNewRequest&,
+        DescribeRebateInfosNewOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 PartnersClient::DescribeSalesmansOutcome PartnersClient::DescribeSalesmans(const DescribeSalesmansRequest &request)
@@ -879,25 +1012,32 @@ PartnersClient::DescribeSalesmansOutcome PartnersClient::DescribeSalesmans(const
 
 void PartnersClient::DescribeSalesmansAsync(const DescribeSalesmansRequest& request, const DescribeSalesmansAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeSalesmans(request), context);
-    };
+    using Req = const DescribeSalesmansRequest&;
+    using Resp = DescribeSalesmansResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeSalesmans", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 PartnersClient::DescribeSalesmansOutcomeCallable PartnersClient::DescribeSalesmansCallable(const DescribeSalesmansRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeSalesmansOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeSalesmans(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeSalesmansOutcome>>();
+    DescribeSalesmansAsync(
+    request,
+    [prom](
+        const PartnersClient*,
+        const DescribeSalesmansRequest&,
+        DescribeSalesmansOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 PartnersClient::DescribeUnbindClientListOutcome PartnersClient::DescribeUnbindClientList(const DescribeUnbindClientListRequest &request)
@@ -922,25 +1062,32 @@ PartnersClient::DescribeUnbindClientListOutcome PartnersClient::DescribeUnbindCl
 
 void PartnersClient::DescribeUnbindClientListAsync(const DescribeUnbindClientListRequest& request, const DescribeUnbindClientListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeUnbindClientList(request), context);
-    };
+    using Req = const DescribeUnbindClientListRequest&;
+    using Resp = DescribeUnbindClientListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeUnbindClientList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 PartnersClient::DescribeUnbindClientListOutcomeCallable PartnersClient::DescribeUnbindClientListCallable(const DescribeUnbindClientListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeUnbindClientListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeUnbindClientList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeUnbindClientListOutcome>>();
+    DescribeUnbindClientListAsync(
+    request,
+    [prom](
+        const PartnersClient*,
+        const DescribeUnbindClientListRequest&,
+        DescribeUnbindClientListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 PartnersClient::ModifyClientRemarkOutcome PartnersClient::ModifyClientRemark(const ModifyClientRemarkRequest &request)
@@ -965,25 +1112,32 @@ PartnersClient::ModifyClientRemarkOutcome PartnersClient::ModifyClientRemark(con
 
 void PartnersClient::ModifyClientRemarkAsync(const ModifyClientRemarkRequest& request, const ModifyClientRemarkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyClientRemark(request), context);
-    };
+    using Req = const ModifyClientRemarkRequest&;
+    using Resp = ModifyClientRemarkResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyClientRemark", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 PartnersClient::ModifyClientRemarkOutcomeCallable PartnersClient::ModifyClientRemarkCallable(const ModifyClientRemarkRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyClientRemarkOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyClientRemark(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyClientRemarkOutcome>>();
+    ModifyClientRemarkAsync(
+    request,
+    [prom](
+        const PartnersClient*,
+        const ModifyClientRemarkRequest&,
+        ModifyClientRemarkOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 PartnersClient::RemovePayRelationForClientOutcome PartnersClient::RemovePayRelationForClient(const RemovePayRelationForClientRequest &request)
@@ -1008,24 +1162,31 @@ PartnersClient::RemovePayRelationForClientOutcome PartnersClient::RemovePayRelat
 
 void PartnersClient::RemovePayRelationForClientAsync(const RemovePayRelationForClientRequest& request, const RemovePayRelationForClientAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->RemovePayRelationForClient(request), context);
-    };
+    using Req = const RemovePayRelationForClientRequest&;
+    using Resp = RemovePayRelationForClientResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "RemovePayRelationForClient", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 PartnersClient::RemovePayRelationForClientOutcomeCallable PartnersClient::RemovePayRelationForClientCallable(const RemovePayRelationForClientRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<RemovePayRelationForClientOutcome()>>(
-        [this, request]()
-        {
-            return this->RemovePayRelationForClient(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<RemovePayRelationForClientOutcome>>();
+    RemovePayRelationForClientAsync(
+    request,
+    [prom](
+        const PartnersClient*,
+        const RemovePayRelationForClientRequest&,
+        RemovePayRelationForClientOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 

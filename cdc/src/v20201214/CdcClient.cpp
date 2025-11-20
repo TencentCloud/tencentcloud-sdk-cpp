@@ -62,25 +62,32 @@ CdcClient::CreateDedicatedClusterOutcome CdcClient::CreateDedicatedCluster(const
 
 void CdcClient::CreateDedicatedClusterAsync(const CreateDedicatedClusterRequest& request, const CreateDedicatedClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateDedicatedCluster(request), context);
-    };
+    using Req = const CreateDedicatedClusterRequest&;
+    using Resp = CreateDedicatedClusterResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateDedicatedCluster", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CdcClient::CreateDedicatedClusterOutcomeCallable CdcClient::CreateDedicatedClusterCallable(const CreateDedicatedClusterRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateDedicatedClusterOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateDedicatedCluster(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateDedicatedClusterOutcome>>();
+    CreateDedicatedClusterAsync(
+    request,
+    [prom](
+        const CdcClient*,
+        const CreateDedicatedClusterRequest&,
+        CreateDedicatedClusterOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CdcClient::CreateDedicatedClusterImageCacheOutcome CdcClient::CreateDedicatedClusterImageCache(const CreateDedicatedClusterImageCacheRequest &request)
@@ -105,25 +112,32 @@ CdcClient::CreateDedicatedClusterImageCacheOutcome CdcClient::CreateDedicatedClu
 
 void CdcClient::CreateDedicatedClusterImageCacheAsync(const CreateDedicatedClusterImageCacheRequest& request, const CreateDedicatedClusterImageCacheAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateDedicatedClusterImageCache(request), context);
-    };
+    using Req = const CreateDedicatedClusterImageCacheRequest&;
+    using Resp = CreateDedicatedClusterImageCacheResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateDedicatedClusterImageCache", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CdcClient::CreateDedicatedClusterImageCacheOutcomeCallable CdcClient::CreateDedicatedClusterImageCacheCallable(const CreateDedicatedClusterImageCacheRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateDedicatedClusterImageCacheOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateDedicatedClusterImageCache(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateDedicatedClusterImageCacheOutcome>>();
+    CreateDedicatedClusterImageCacheAsync(
+    request,
+    [prom](
+        const CdcClient*,
+        const CreateDedicatedClusterImageCacheRequest&,
+        CreateDedicatedClusterImageCacheOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CdcClient::CreateDedicatedClusterOrderOutcome CdcClient::CreateDedicatedClusterOrder(const CreateDedicatedClusterOrderRequest &request)
@@ -148,25 +162,32 @@ CdcClient::CreateDedicatedClusterOrderOutcome CdcClient::CreateDedicatedClusterO
 
 void CdcClient::CreateDedicatedClusterOrderAsync(const CreateDedicatedClusterOrderRequest& request, const CreateDedicatedClusterOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateDedicatedClusterOrder(request), context);
-    };
+    using Req = const CreateDedicatedClusterOrderRequest&;
+    using Resp = CreateDedicatedClusterOrderResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateDedicatedClusterOrder", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CdcClient::CreateDedicatedClusterOrderOutcomeCallable CdcClient::CreateDedicatedClusterOrderCallable(const CreateDedicatedClusterOrderRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateDedicatedClusterOrderOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateDedicatedClusterOrder(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateDedicatedClusterOrderOutcome>>();
+    CreateDedicatedClusterOrderAsync(
+    request,
+    [prom](
+        const CdcClient*,
+        const CreateDedicatedClusterOrderRequest&,
+        CreateDedicatedClusterOrderOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CdcClient::CreateSiteOutcome CdcClient::CreateSite(const CreateSiteRequest &request)
@@ -191,25 +212,32 @@ CdcClient::CreateSiteOutcome CdcClient::CreateSite(const CreateSiteRequest &requ
 
 void CdcClient::CreateSiteAsync(const CreateSiteRequest& request, const CreateSiteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateSite(request), context);
-    };
+    using Req = const CreateSiteRequest&;
+    using Resp = CreateSiteResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateSite", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CdcClient::CreateSiteOutcomeCallable CdcClient::CreateSiteCallable(const CreateSiteRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateSiteOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateSite(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateSiteOutcome>>();
+    CreateSiteAsync(
+    request,
+    [prom](
+        const CdcClient*,
+        const CreateSiteRequest&,
+        CreateSiteOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CdcClient::DeleteDedicatedClusterImageCacheOutcome CdcClient::DeleteDedicatedClusterImageCache(const DeleteDedicatedClusterImageCacheRequest &request)
@@ -234,25 +262,32 @@ CdcClient::DeleteDedicatedClusterImageCacheOutcome CdcClient::DeleteDedicatedClu
 
 void CdcClient::DeleteDedicatedClusterImageCacheAsync(const DeleteDedicatedClusterImageCacheRequest& request, const DeleteDedicatedClusterImageCacheAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteDedicatedClusterImageCache(request), context);
-    };
+    using Req = const DeleteDedicatedClusterImageCacheRequest&;
+    using Resp = DeleteDedicatedClusterImageCacheResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteDedicatedClusterImageCache", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CdcClient::DeleteDedicatedClusterImageCacheOutcomeCallable CdcClient::DeleteDedicatedClusterImageCacheCallable(const DeleteDedicatedClusterImageCacheRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteDedicatedClusterImageCacheOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteDedicatedClusterImageCache(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteDedicatedClusterImageCacheOutcome>>();
+    DeleteDedicatedClusterImageCacheAsync(
+    request,
+    [prom](
+        const CdcClient*,
+        const DeleteDedicatedClusterImageCacheRequest&,
+        DeleteDedicatedClusterImageCacheOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CdcClient::DeleteDedicatedClustersOutcome CdcClient::DeleteDedicatedClusters(const DeleteDedicatedClustersRequest &request)
@@ -277,25 +312,32 @@ CdcClient::DeleteDedicatedClustersOutcome CdcClient::DeleteDedicatedClusters(con
 
 void CdcClient::DeleteDedicatedClustersAsync(const DeleteDedicatedClustersRequest& request, const DeleteDedicatedClustersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteDedicatedClusters(request), context);
-    };
+    using Req = const DeleteDedicatedClustersRequest&;
+    using Resp = DeleteDedicatedClustersResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteDedicatedClusters", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CdcClient::DeleteDedicatedClustersOutcomeCallable CdcClient::DeleteDedicatedClustersCallable(const DeleteDedicatedClustersRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteDedicatedClustersOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteDedicatedClusters(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteDedicatedClustersOutcome>>();
+    DeleteDedicatedClustersAsync(
+    request,
+    [prom](
+        const CdcClient*,
+        const DeleteDedicatedClustersRequest&,
+        DeleteDedicatedClustersOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CdcClient::DeleteSitesOutcome CdcClient::DeleteSites(const DeleteSitesRequest &request)
@@ -320,25 +362,32 @@ CdcClient::DeleteSitesOutcome CdcClient::DeleteSites(const DeleteSitesRequest &r
 
 void CdcClient::DeleteSitesAsync(const DeleteSitesRequest& request, const DeleteSitesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteSites(request), context);
-    };
+    using Req = const DeleteSitesRequest&;
+    using Resp = DeleteSitesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteSites", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CdcClient::DeleteSitesOutcomeCallable CdcClient::DeleteSitesCallable(const DeleteSitesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteSitesOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteSites(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteSitesOutcome>>();
+    DeleteSitesAsync(
+    request,
+    [prom](
+        const CdcClient*,
+        const DeleteSitesRequest&,
+        DeleteSitesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CdcClient::DescribeDedicatedClusterCbsStatisticsOutcome CdcClient::DescribeDedicatedClusterCbsStatistics(const DescribeDedicatedClusterCbsStatisticsRequest &request)
@@ -363,25 +412,32 @@ CdcClient::DescribeDedicatedClusterCbsStatisticsOutcome CdcClient::DescribeDedic
 
 void CdcClient::DescribeDedicatedClusterCbsStatisticsAsync(const DescribeDedicatedClusterCbsStatisticsRequest& request, const DescribeDedicatedClusterCbsStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDedicatedClusterCbsStatistics(request), context);
-    };
+    using Req = const DescribeDedicatedClusterCbsStatisticsRequest&;
+    using Resp = DescribeDedicatedClusterCbsStatisticsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeDedicatedClusterCbsStatistics", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CdcClient::DescribeDedicatedClusterCbsStatisticsOutcomeCallable CdcClient::DescribeDedicatedClusterCbsStatisticsCallable(const DescribeDedicatedClusterCbsStatisticsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeDedicatedClusterCbsStatisticsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDedicatedClusterCbsStatistics(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeDedicatedClusterCbsStatisticsOutcome>>();
+    DescribeDedicatedClusterCbsStatisticsAsync(
+    request,
+    [prom](
+        const CdcClient*,
+        const DescribeDedicatedClusterCbsStatisticsRequest&,
+        DescribeDedicatedClusterCbsStatisticsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CdcClient::DescribeDedicatedClusterCosCapacityOutcome CdcClient::DescribeDedicatedClusterCosCapacity(const DescribeDedicatedClusterCosCapacityRequest &request)
@@ -406,25 +462,32 @@ CdcClient::DescribeDedicatedClusterCosCapacityOutcome CdcClient::DescribeDedicat
 
 void CdcClient::DescribeDedicatedClusterCosCapacityAsync(const DescribeDedicatedClusterCosCapacityRequest& request, const DescribeDedicatedClusterCosCapacityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDedicatedClusterCosCapacity(request), context);
-    };
+    using Req = const DescribeDedicatedClusterCosCapacityRequest&;
+    using Resp = DescribeDedicatedClusterCosCapacityResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeDedicatedClusterCosCapacity", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CdcClient::DescribeDedicatedClusterCosCapacityOutcomeCallable CdcClient::DescribeDedicatedClusterCosCapacityCallable(const DescribeDedicatedClusterCosCapacityRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeDedicatedClusterCosCapacityOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDedicatedClusterCosCapacity(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeDedicatedClusterCosCapacityOutcome>>();
+    DescribeDedicatedClusterCosCapacityAsync(
+    request,
+    [prom](
+        const CdcClient*,
+        const DescribeDedicatedClusterCosCapacityRequest&,
+        DescribeDedicatedClusterCosCapacityOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CdcClient::DescribeDedicatedClusterHostStatisticsOutcome CdcClient::DescribeDedicatedClusterHostStatistics(const DescribeDedicatedClusterHostStatisticsRequest &request)
@@ -449,25 +512,32 @@ CdcClient::DescribeDedicatedClusterHostStatisticsOutcome CdcClient::DescribeDedi
 
 void CdcClient::DescribeDedicatedClusterHostStatisticsAsync(const DescribeDedicatedClusterHostStatisticsRequest& request, const DescribeDedicatedClusterHostStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDedicatedClusterHostStatistics(request), context);
-    };
+    using Req = const DescribeDedicatedClusterHostStatisticsRequest&;
+    using Resp = DescribeDedicatedClusterHostStatisticsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeDedicatedClusterHostStatistics", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CdcClient::DescribeDedicatedClusterHostStatisticsOutcomeCallable CdcClient::DescribeDedicatedClusterHostStatisticsCallable(const DescribeDedicatedClusterHostStatisticsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeDedicatedClusterHostStatisticsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDedicatedClusterHostStatistics(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeDedicatedClusterHostStatisticsOutcome>>();
+    DescribeDedicatedClusterHostStatisticsAsync(
+    request,
+    [prom](
+        const CdcClient*,
+        const DescribeDedicatedClusterHostStatisticsRequest&,
+        DescribeDedicatedClusterHostStatisticsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CdcClient::DescribeDedicatedClusterHostsOutcome CdcClient::DescribeDedicatedClusterHosts(const DescribeDedicatedClusterHostsRequest &request)
@@ -492,25 +562,32 @@ CdcClient::DescribeDedicatedClusterHostsOutcome CdcClient::DescribeDedicatedClus
 
 void CdcClient::DescribeDedicatedClusterHostsAsync(const DescribeDedicatedClusterHostsRequest& request, const DescribeDedicatedClusterHostsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDedicatedClusterHosts(request), context);
-    };
+    using Req = const DescribeDedicatedClusterHostsRequest&;
+    using Resp = DescribeDedicatedClusterHostsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeDedicatedClusterHosts", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CdcClient::DescribeDedicatedClusterHostsOutcomeCallable CdcClient::DescribeDedicatedClusterHostsCallable(const DescribeDedicatedClusterHostsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeDedicatedClusterHostsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDedicatedClusterHosts(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeDedicatedClusterHostsOutcome>>();
+    DescribeDedicatedClusterHostsAsync(
+    request,
+    [prom](
+        const CdcClient*,
+        const DescribeDedicatedClusterHostsRequest&,
+        DescribeDedicatedClusterHostsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CdcClient::DescribeDedicatedClusterInstanceTypesOutcome CdcClient::DescribeDedicatedClusterInstanceTypes(const DescribeDedicatedClusterInstanceTypesRequest &request)
@@ -535,25 +612,32 @@ CdcClient::DescribeDedicatedClusterInstanceTypesOutcome CdcClient::DescribeDedic
 
 void CdcClient::DescribeDedicatedClusterInstanceTypesAsync(const DescribeDedicatedClusterInstanceTypesRequest& request, const DescribeDedicatedClusterInstanceTypesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDedicatedClusterInstanceTypes(request), context);
-    };
+    using Req = const DescribeDedicatedClusterInstanceTypesRequest&;
+    using Resp = DescribeDedicatedClusterInstanceTypesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeDedicatedClusterInstanceTypes", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CdcClient::DescribeDedicatedClusterInstanceTypesOutcomeCallable CdcClient::DescribeDedicatedClusterInstanceTypesCallable(const DescribeDedicatedClusterInstanceTypesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeDedicatedClusterInstanceTypesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDedicatedClusterInstanceTypes(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeDedicatedClusterInstanceTypesOutcome>>();
+    DescribeDedicatedClusterInstanceTypesAsync(
+    request,
+    [prom](
+        const CdcClient*,
+        const DescribeDedicatedClusterInstanceTypesRequest&,
+        DescribeDedicatedClusterInstanceTypesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CdcClient::DescribeDedicatedClusterOrdersOutcome CdcClient::DescribeDedicatedClusterOrders(const DescribeDedicatedClusterOrdersRequest &request)
@@ -578,25 +662,32 @@ CdcClient::DescribeDedicatedClusterOrdersOutcome CdcClient::DescribeDedicatedClu
 
 void CdcClient::DescribeDedicatedClusterOrdersAsync(const DescribeDedicatedClusterOrdersRequest& request, const DescribeDedicatedClusterOrdersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDedicatedClusterOrders(request), context);
-    };
+    using Req = const DescribeDedicatedClusterOrdersRequest&;
+    using Resp = DescribeDedicatedClusterOrdersResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeDedicatedClusterOrders", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CdcClient::DescribeDedicatedClusterOrdersOutcomeCallable CdcClient::DescribeDedicatedClusterOrdersCallable(const DescribeDedicatedClusterOrdersRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeDedicatedClusterOrdersOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDedicatedClusterOrders(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeDedicatedClusterOrdersOutcome>>();
+    DescribeDedicatedClusterOrdersAsync(
+    request,
+    [prom](
+        const CdcClient*,
+        const DescribeDedicatedClusterOrdersRequest&,
+        DescribeDedicatedClusterOrdersOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CdcClient::DescribeDedicatedClusterOverviewOutcome CdcClient::DescribeDedicatedClusterOverview(const DescribeDedicatedClusterOverviewRequest &request)
@@ -621,25 +712,32 @@ CdcClient::DescribeDedicatedClusterOverviewOutcome CdcClient::DescribeDedicatedC
 
 void CdcClient::DescribeDedicatedClusterOverviewAsync(const DescribeDedicatedClusterOverviewRequest& request, const DescribeDedicatedClusterOverviewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDedicatedClusterOverview(request), context);
-    };
+    using Req = const DescribeDedicatedClusterOverviewRequest&;
+    using Resp = DescribeDedicatedClusterOverviewResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeDedicatedClusterOverview", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CdcClient::DescribeDedicatedClusterOverviewOutcomeCallable CdcClient::DescribeDedicatedClusterOverviewCallable(const DescribeDedicatedClusterOverviewRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeDedicatedClusterOverviewOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDedicatedClusterOverview(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeDedicatedClusterOverviewOutcome>>();
+    DescribeDedicatedClusterOverviewAsync(
+    request,
+    [prom](
+        const CdcClient*,
+        const DescribeDedicatedClusterOverviewRequest&,
+        DescribeDedicatedClusterOverviewOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CdcClient::DescribeDedicatedClusterTypesOutcome CdcClient::DescribeDedicatedClusterTypes(const DescribeDedicatedClusterTypesRequest &request)
@@ -664,25 +762,32 @@ CdcClient::DescribeDedicatedClusterTypesOutcome CdcClient::DescribeDedicatedClus
 
 void CdcClient::DescribeDedicatedClusterTypesAsync(const DescribeDedicatedClusterTypesRequest& request, const DescribeDedicatedClusterTypesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDedicatedClusterTypes(request), context);
-    };
+    using Req = const DescribeDedicatedClusterTypesRequest&;
+    using Resp = DescribeDedicatedClusterTypesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeDedicatedClusterTypes", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CdcClient::DescribeDedicatedClusterTypesOutcomeCallable CdcClient::DescribeDedicatedClusterTypesCallable(const DescribeDedicatedClusterTypesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeDedicatedClusterTypesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDedicatedClusterTypes(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeDedicatedClusterTypesOutcome>>();
+    DescribeDedicatedClusterTypesAsync(
+    request,
+    [prom](
+        const CdcClient*,
+        const DescribeDedicatedClusterTypesRequest&,
+        DescribeDedicatedClusterTypesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CdcClient::DescribeDedicatedClustersOutcome CdcClient::DescribeDedicatedClusters(const DescribeDedicatedClustersRequest &request)
@@ -707,25 +812,32 @@ CdcClient::DescribeDedicatedClustersOutcome CdcClient::DescribeDedicatedClusters
 
 void CdcClient::DescribeDedicatedClustersAsync(const DescribeDedicatedClustersRequest& request, const DescribeDedicatedClustersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDedicatedClusters(request), context);
-    };
+    using Req = const DescribeDedicatedClustersRequest&;
+    using Resp = DescribeDedicatedClustersResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeDedicatedClusters", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CdcClient::DescribeDedicatedClustersOutcomeCallable CdcClient::DescribeDedicatedClustersCallable(const DescribeDedicatedClustersRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeDedicatedClustersOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDedicatedClusters(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeDedicatedClustersOutcome>>();
+    DescribeDedicatedClustersAsync(
+    request,
+    [prom](
+        const CdcClient*,
+        const DescribeDedicatedClustersRequest&,
+        DescribeDedicatedClustersOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CdcClient::DescribeDedicatedSupportedZonesOutcome CdcClient::DescribeDedicatedSupportedZones(const DescribeDedicatedSupportedZonesRequest &request)
@@ -750,25 +862,32 @@ CdcClient::DescribeDedicatedSupportedZonesOutcome CdcClient::DescribeDedicatedSu
 
 void CdcClient::DescribeDedicatedSupportedZonesAsync(const DescribeDedicatedSupportedZonesRequest& request, const DescribeDedicatedSupportedZonesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDedicatedSupportedZones(request), context);
-    };
+    using Req = const DescribeDedicatedSupportedZonesRequest&;
+    using Resp = DescribeDedicatedSupportedZonesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeDedicatedSupportedZones", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CdcClient::DescribeDedicatedSupportedZonesOutcomeCallable CdcClient::DescribeDedicatedSupportedZonesCallable(const DescribeDedicatedSupportedZonesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeDedicatedSupportedZonesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDedicatedSupportedZones(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeDedicatedSupportedZonesOutcome>>();
+    DescribeDedicatedSupportedZonesAsync(
+    request,
+    [prom](
+        const CdcClient*,
+        const DescribeDedicatedSupportedZonesRequest&,
+        DescribeDedicatedSupportedZonesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CdcClient::DescribeSitesOutcome CdcClient::DescribeSites(const DescribeSitesRequest &request)
@@ -793,25 +912,32 @@ CdcClient::DescribeSitesOutcome CdcClient::DescribeSites(const DescribeSitesRequ
 
 void CdcClient::DescribeSitesAsync(const DescribeSitesRequest& request, const DescribeSitesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeSites(request), context);
-    };
+    using Req = const DescribeSitesRequest&;
+    using Resp = DescribeSitesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeSites", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CdcClient::DescribeSitesOutcomeCallable CdcClient::DescribeSitesCallable(const DescribeSitesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeSitesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeSites(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeSitesOutcome>>();
+    DescribeSitesAsync(
+    request,
+    [prom](
+        const CdcClient*,
+        const DescribeSitesRequest&,
+        DescribeSitesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CdcClient::DescribeSitesDetailOutcome CdcClient::DescribeSitesDetail(const DescribeSitesDetailRequest &request)
@@ -836,25 +962,32 @@ CdcClient::DescribeSitesDetailOutcome CdcClient::DescribeSitesDetail(const Descr
 
 void CdcClient::DescribeSitesDetailAsync(const DescribeSitesDetailRequest& request, const DescribeSitesDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeSitesDetail(request), context);
-    };
+    using Req = const DescribeSitesDetailRequest&;
+    using Resp = DescribeSitesDetailResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeSitesDetail", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CdcClient::DescribeSitesDetailOutcomeCallable CdcClient::DescribeSitesDetailCallable(const DescribeSitesDetailRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeSitesDetailOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeSitesDetail(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeSitesDetailOutcome>>();
+    DescribeSitesDetailAsync(
+    request,
+    [prom](
+        const CdcClient*,
+        const DescribeSitesDetailRequest&,
+        DescribeSitesDetailOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CdcClient::ModifyDedicatedClusterInfoOutcome CdcClient::ModifyDedicatedClusterInfo(const ModifyDedicatedClusterInfoRequest &request)
@@ -879,25 +1012,32 @@ CdcClient::ModifyDedicatedClusterInfoOutcome CdcClient::ModifyDedicatedClusterIn
 
 void CdcClient::ModifyDedicatedClusterInfoAsync(const ModifyDedicatedClusterInfoRequest& request, const ModifyDedicatedClusterInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyDedicatedClusterInfo(request), context);
-    };
+    using Req = const ModifyDedicatedClusterInfoRequest&;
+    using Resp = ModifyDedicatedClusterInfoResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyDedicatedClusterInfo", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CdcClient::ModifyDedicatedClusterInfoOutcomeCallable CdcClient::ModifyDedicatedClusterInfoCallable(const ModifyDedicatedClusterInfoRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyDedicatedClusterInfoOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyDedicatedClusterInfo(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyDedicatedClusterInfoOutcome>>();
+    ModifyDedicatedClusterInfoAsync(
+    request,
+    [prom](
+        const CdcClient*,
+        const ModifyDedicatedClusterInfoRequest&,
+        ModifyDedicatedClusterInfoOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CdcClient::ModifyOrderStatusOutcome CdcClient::ModifyOrderStatus(const ModifyOrderStatusRequest &request)
@@ -922,25 +1062,32 @@ CdcClient::ModifyOrderStatusOutcome CdcClient::ModifyOrderStatus(const ModifyOrd
 
 void CdcClient::ModifyOrderStatusAsync(const ModifyOrderStatusRequest& request, const ModifyOrderStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyOrderStatus(request), context);
-    };
+    using Req = const ModifyOrderStatusRequest&;
+    using Resp = ModifyOrderStatusResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyOrderStatus", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CdcClient::ModifyOrderStatusOutcomeCallable CdcClient::ModifyOrderStatusCallable(const ModifyOrderStatusRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyOrderStatusOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyOrderStatus(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyOrderStatusOutcome>>();
+    ModifyOrderStatusAsync(
+    request,
+    [prom](
+        const CdcClient*,
+        const ModifyOrderStatusRequest&,
+        ModifyOrderStatusOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CdcClient::ModifySiteDeviceInfoOutcome CdcClient::ModifySiteDeviceInfo(const ModifySiteDeviceInfoRequest &request)
@@ -965,25 +1112,32 @@ CdcClient::ModifySiteDeviceInfoOutcome CdcClient::ModifySiteDeviceInfo(const Mod
 
 void CdcClient::ModifySiteDeviceInfoAsync(const ModifySiteDeviceInfoRequest& request, const ModifySiteDeviceInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifySiteDeviceInfo(request), context);
-    };
+    using Req = const ModifySiteDeviceInfoRequest&;
+    using Resp = ModifySiteDeviceInfoResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifySiteDeviceInfo", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CdcClient::ModifySiteDeviceInfoOutcomeCallable CdcClient::ModifySiteDeviceInfoCallable(const ModifySiteDeviceInfoRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifySiteDeviceInfoOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifySiteDeviceInfo(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifySiteDeviceInfoOutcome>>();
+    ModifySiteDeviceInfoAsync(
+    request,
+    [prom](
+        const CdcClient*,
+        const ModifySiteDeviceInfoRequest&,
+        ModifySiteDeviceInfoOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CdcClient::ModifySiteInfoOutcome CdcClient::ModifySiteInfo(const ModifySiteInfoRequest &request)
@@ -1008,24 +1162,31 @@ CdcClient::ModifySiteInfoOutcome CdcClient::ModifySiteInfo(const ModifySiteInfoR
 
 void CdcClient::ModifySiteInfoAsync(const ModifySiteInfoRequest& request, const ModifySiteInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifySiteInfo(request), context);
-    };
+    using Req = const ModifySiteInfoRequest&;
+    using Resp = ModifySiteInfoResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifySiteInfo", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CdcClient::ModifySiteInfoOutcomeCallable CdcClient::ModifySiteInfoCallable(const ModifySiteInfoRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifySiteInfoOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifySiteInfo(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifySiteInfoOutcome>>();
+    ModifySiteInfoAsync(
+    request,
+    [prom](
+        const CdcClient*,
+        const ModifySiteInfoRequest&,
+        ModifySiteInfoOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 

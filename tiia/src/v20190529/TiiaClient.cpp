@@ -62,25 +62,32 @@ TiiaClient::AssessQualityOutcome TiiaClient::AssessQuality(const AssessQualityRe
 
 void TiiaClient::AssessQualityAsync(const AssessQualityRequest& request, const AssessQualityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->AssessQuality(request), context);
-    };
+    using Req = const AssessQualityRequest&;
+    using Resp = AssessQualityResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "AssessQuality", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TiiaClient::AssessQualityOutcomeCallable TiiaClient::AssessQualityCallable(const AssessQualityRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<AssessQualityOutcome()>>(
-        [this, request]()
-        {
-            return this->AssessQuality(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<AssessQualityOutcome>>();
+    AssessQualityAsync(
+    request,
+    [prom](
+        const TiiaClient*,
+        const AssessQualityRequest&,
+        AssessQualityOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TiiaClient::CreateGroupOutcome TiiaClient::CreateGroup(const CreateGroupRequest &request)
@@ -105,25 +112,32 @@ TiiaClient::CreateGroupOutcome TiiaClient::CreateGroup(const CreateGroupRequest 
 
 void TiiaClient::CreateGroupAsync(const CreateGroupRequest& request, const CreateGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateGroup(request), context);
-    };
+    using Req = const CreateGroupRequest&;
+    using Resp = CreateGroupResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateGroup", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TiiaClient::CreateGroupOutcomeCallable TiiaClient::CreateGroupCallable(const CreateGroupRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateGroupOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateGroup(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateGroupOutcome>>();
+    CreateGroupAsync(
+    request,
+    [prom](
+        const TiiaClient*,
+        const CreateGroupRequest&,
+        CreateGroupOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TiiaClient::CreateImageOutcome TiiaClient::CreateImage(const CreateImageRequest &request)
@@ -148,25 +162,32 @@ TiiaClient::CreateImageOutcome TiiaClient::CreateImage(const CreateImageRequest 
 
 void TiiaClient::CreateImageAsync(const CreateImageRequest& request, const CreateImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateImage(request), context);
-    };
+    using Req = const CreateImageRequest&;
+    using Resp = CreateImageResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateImage", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TiiaClient::CreateImageOutcomeCallable TiiaClient::CreateImageCallable(const CreateImageRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateImageOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateImage(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateImageOutcome>>();
+    CreateImageAsync(
+    request,
+    [prom](
+        const TiiaClient*,
+        const CreateImageRequest&,
+        CreateImageOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TiiaClient::CropImageOutcome TiiaClient::CropImage(const CropImageRequest &request)
@@ -191,25 +212,32 @@ TiiaClient::CropImageOutcome TiiaClient::CropImage(const CropImageRequest &reque
 
 void TiiaClient::CropImageAsync(const CropImageRequest& request, const CropImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CropImage(request), context);
-    };
+    using Req = const CropImageRequest&;
+    using Resp = CropImageResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CropImage", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TiiaClient::CropImageOutcomeCallable TiiaClient::CropImageCallable(const CropImageRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CropImageOutcome()>>(
-        [this, request]()
-        {
-            return this->CropImage(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CropImageOutcome>>();
+    CropImageAsync(
+    request,
+    [prom](
+        const TiiaClient*,
+        const CropImageRequest&,
+        CropImageOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TiiaClient::DeleteImagesOutcome TiiaClient::DeleteImages(const DeleteImagesRequest &request)
@@ -234,25 +262,32 @@ TiiaClient::DeleteImagesOutcome TiiaClient::DeleteImages(const DeleteImagesReque
 
 void TiiaClient::DeleteImagesAsync(const DeleteImagesRequest& request, const DeleteImagesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteImages(request), context);
-    };
+    using Req = const DeleteImagesRequest&;
+    using Resp = DeleteImagesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteImages", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TiiaClient::DeleteImagesOutcomeCallable TiiaClient::DeleteImagesCallable(const DeleteImagesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteImagesOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteImages(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteImagesOutcome>>();
+    DeleteImagesAsync(
+    request,
+    [prom](
+        const TiiaClient*,
+        const DeleteImagesRequest&,
+        DeleteImagesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TiiaClient::DescribeGroupsOutcome TiiaClient::DescribeGroups(const DescribeGroupsRequest &request)
@@ -277,25 +312,32 @@ TiiaClient::DescribeGroupsOutcome TiiaClient::DescribeGroups(const DescribeGroup
 
 void TiiaClient::DescribeGroupsAsync(const DescribeGroupsRequest& request, const DescribeGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeGroups(request), context);
-    };
+    using Req = const DescribeGroupsRequest&;
+    using Resp = DescribeGroupsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeGroups", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TiiaClient::DescribeGroupsOutcomeCallable TiiaClient::DescribeGroupsCallable(const DescribeGroupsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeGroupsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeGroups(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeGroupsOutcome>>();
+    DescribeGroupsAsync(
+    request,
+    [prom](
+        const TiiaClient*,
+        const DescribeGroupsRequest&,
+        DescribeGroupsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TiiaClient::DescribeImagesOutcome TiiaClient::DescribeImages(const DescribeImagesRequest &request)
@@ -320,25 +362,32 @@ TiiaClient::DescribeImagesOutcome TiiaClient::DescribeImages(const DescribeImage
 
 void TiiaClient::DescribeImagesAsync(const DescribeImagesRequest& request, const DescribeImagesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeImages(request), context);
-    };
+    using Req = const DescribeImagesRequest&;
+    using Resp = DescribeImagesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeImages", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TiiaClient::DescribeImagesOutcomeCallable TiiaClient::DescribeImagesCallable(const DescribeImagesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeImagesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeImages(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeImagesOutcome>>();
+    DescribeImagesAsync(
+    request,
+    [prom](
+        const TiiaClient*,
+        const DescribeImagesRequest&,
+        DescribeImagesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TiiaClient::DetectChefDressOutcome TiiaClient::DetectChefDress(const DetectChefDressRequest &request)
@@ -363,25 +412,32 @@ TiiaClient::DetectChefDressOutcome TiiaClient::DetectChefDress(const DetectChefD
 
 void TiiaClient::DetectChefDressAsync(const DetectChefDressRequest& request, const DetectChefDressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DetectChefDress(request), context);
-    };
+    using Req = const DetectChefDressRequest&;
+    using Resp = DetectChefDressResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DetectChefDress", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TiiaClient::DetectChefDressOutcomeCallable TiiaClient::DetectChefDressCallable(const DetectChefDressRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DetectChefDressOutcome()>>(
-        [this, request]()
-        {
-            return this->DetectChefDress(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DetectChefDressOutcome>>();
+    DetectChefDressAsync(
+    request,
+    [prom](
+        const TiiaClient*,
+        const DetectChefDressRequest&,
+        DetectChefDressOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TiiaClient::DetectDisgustOutcome TiiaClient::DetectDisgust(const DetectDisgustRequest &request)
@@ -406,25 +462,32 @@ TiiaClient::DetectDisgustOutcome TiiaClient::DetectDisgust(const DetectDisgustRe
 
 void TiiaClient::DetectDisgustAsync(const DetectDisgustRequest& request, const DetectDisgustAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DetectDisgust(request), context);
-    };
+    using Req = const DetectDisgustRequest&;
+    using Resp = DetectDisgustResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DetectDisgust", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TiiaClient::DetectDisgustOutcomeCallable TiiaClient::DetectDisgustCallable(const DetectDisgustRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DetectDisgustOutcome()>>(
-        [this, request]()
-        {
-            return this->DetectDisgust(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DetectDisgustOutcome>>();
+    DetectDisgustAsync(
+    request,
+    [prom](
+        const TiiaClient*,
+        const DetectDisgustRequest&,
+        DetectDisgustOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TiiaClient::DetectEnvelopeOutcome TiiaClient::DetectEnvelope(const DetectEnvelopeRequest &request)
@@ -449,25 +512,32 @@ TiiaClient::DetectEnvelopeOutcome TiiaClient::DetectEnvelope(const DetectEnvelop
 
 void TiiaClient::DetectEnvelopeAsync(const DetectEnvelopeRequest& request, const DetectEnvelopeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DetectEnvelope(request), context);
-    };
+    using Req = const DetectEnvelopeRequest&;
+    using Resp = DetectEnvelopeResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DetectEnvelope", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TiiaClient::DetectEnvelopeOutcomeCallable TiiaClient::DetectEnvelopeCallable(const DetectEnvelopeRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DetectEnvelopeOutcome()>>(
-        [this, request]()
-        {
-            return this->DetectEnvelope(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DetectEnvelopeOutcome>>();
+    DetectEnvelopeAsync(
+    request,
+    [prom](
+        const TiiaClient*,
+        const DetectEnvelopeRequest&,
+        DetectEnvelopeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TiiaClient::DetectLabelOutcome TiiaClient::DetectLabel(const DetectLabelRequest &request)
@@ -492,25 +562,32 @@ TiiaClient::DetectLabelOutcome TiiaClient::DetectLabel(const DetectLabelRequest 
 
 void TiiaClient::DetectLabelAsync(const DetectLabelRequest& request, const DetectLabelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DetectLabel(request), context);
-    };
+    using Req = const DetectLabelRequest&;
+    using Resp = DetectLabelResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DetectLabel", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TiiaClient::DetectLabelOutcomeCallable TiiaClient::DetectLabelCallable(const DetectLabelRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DetectLabelOutcome()>>(
-        [this, request]()
-        {
-            return this->DetectLabel(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DetectLabelOutcome>>();
+    DetectLabelAsync(
+    request,
+    [prom](
+        const TiiaClient*,
+        const DetectLabelRequest&,
+        DetectLabelOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TiiaClient::DetectLabelProOutcome TiiaClient::DetectLabelPro(const DetectLabelProRequest &request)
@@ -535,25 +612,32 @@ TiiaClient::DetectLabelProOutcome TiiaClient::DetectLabelPro(const DetectLabelPr
 
 void TiiaClient::DetectLabelProAsync(const DetectLabelProRequest& request, const DetectLabelProAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DetectLabelPro(request), context);
-    };
+    using Req = const DetectLabelProRequest&;
+    using Resp = DetectLabelProResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DetectLabelPro", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TiiaClient::DetectLabelProOutcomeCallable TiiaClient::DetectLabelProCallable(const DetectLabelProRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DetectLabelProOutcome()>>(
-        [this, request]()
-        {
-            return this->DetectLabelPro(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DetectLabelProOutcome>>();
+    DetectLabelProAsync(
+    request,
+    [prom](
+        const TiiaClient*,
+        const DetectLabelProRequest&,
+        DetectLabelProOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TiiaClient::DetectMisbehaviorOutcome TiiaClient::DetectMisbehavior(const DetectMisbehaviorRequest &request)
@@ -578,25 +662,32 @@ TiiaClient::DetectMisbehaviorOutcome TiiaClient::DetectMisbehavior(const DetectM
 
 void TiiaClient::DetectMisbehaviorAsync(const DetectMisbehaviorRequest& request, const DetectMisbehaviorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DetectMisbehavior(request), context);
-    };
+    using Req = const DetectMisbehaviorRequest&;
+    using Resp = DetectMisbehaviorResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DetectMisbehavior", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TiiaClient::DetectMisbehaviorOutcomeCallable TiiaClient::DetectMisbehaviorCallable(const DetectMisbehaviorRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DetectMisbehaviorOutcome()>>(
-        [this, request]()
-        {
-            return this->DetectMisbehavior(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DetectMisbehaviorOutcome>>();
+    DetectMisbehaviorAsync(
+    request,
+    [prom](
+        const TiiaClient*,
+        const DetectMisbehaviorRequest&,
+        DetectMisbehaviorOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TiiaClient::DetectPetOutcome TiiaClient::DetectPet(const DetectPetRequest &request)
@@ -621,25 +712,32 @@ TiiaClient::DetectPetOutcome TiiaClient::DetectPet(const DetectPetRequest &reque
 
 void TiiaClient::DetectPetAsync(const DetectPetRequest& request, const DetectPetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DetectPet(request), context);
-    };
+    using Req = const DetectPetRequest&;
+    using Resp = DetectPetResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DetectPet", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TiiaClient::DetectPetOutcomeCallable TiiaClient::DetectPetCallable(const DetectPetRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DetectPetOutcome()>>(
-        [this, request]()
-        {
-            return this->DetectPet(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DetectPetOutcome>>();
+    DetectPetAsync(
+    request,
+    [prom](
+        const TiiaClient*,
+        const DetectPetRequest&,
+        DetectPetOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TiiaClient::DetectProductOutcome TiiaClient::DetectProduct(const DetectProductRequest &request)
@@ -664,25 +762,32 @@ TiiaClient::DetectProductOutcome TiiaClient::DetectProduct(const DetectProductRe
 
 void TiiaClient::DetectProductAsync(const DetectProductRequest& request, const DetectProductAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DetectProduct(request), context);
-    };
+    using Req = const DetectProductRequest&;
+    using Resp = DetectProductResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DetectProduct", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TiiaClient::DetectProductOutcomeCallable TiiaClient::DetectProductCallable(const DetectProductRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DetectProductOutcome()>>(
-        [this, request]()
-        {
-            return this->DetectProduct(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DetectProductOutcome>>();
+    DetectProductAsync(
+    request,
+    [prom](
+        const TiiaClient*,
+        const DetectProductRequest&,
+        DetectProductOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TiiaClient::DetectSecurityOutcome TiiaClient::DetectSecurity(const DetectSecurityRequest &request)
@@ -707,25 +812,32 @@ TiiaClient::DetectSecurityOutcome TiiaClient::DetectSecurity(const DetectSecurit
 
 void TiiaClient::DetectSecurityAsync(const DetectSecurityRequest& request, const DetectSecurityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DetectSecurity(request), context);
-    };
+    using Req = const DetectSecurityRequest&;
+    using Resp = DetectSecurityResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DetectSecurity", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TiiaClient::DetectSecurityOutcomeCallable TiiaClient::DetectSecurityCallable(const DetectSecurityRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DetectSecurityOutcome()>>(
-        [this, request]()
-        {
-            return this->DetectSecurity(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DetectSecurityOutcome>>();
+    DetectSecurityAsync(
+    request,
+    [prom](
+        const TiiaClient*,
+        const DetectSecurityRequest&,
+        DetectSecurityOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TiiaClient::EnhanceImageOutcome TiiaClient::EnhanceImage(const EnhanceImageRequest &request)
@@ -750,25 +862,32 @@ TiiaClient::EnhanceImageOutcome TiiaClient::EnhanceImage(const EnhanceImageReque
 
 void TiiaClient::EnhanceImageAsync(const EnhanceImageRequest& request, const EnhanceImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->EnhanceImage(request), context);
-    };
+    using Req = const EnhanceImageRequest&;
+    using Resp = EnhanceImageResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "EnhanceImage", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TiiaClient::EnhanceImageOutcomeCallable TiiaClient::EnhanceImageCallable(const EnhanceImageRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<EnhanceImageOutcome()>>(
-        [this, request]()
-        {
-            return this->EnhanceImage(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<EnhanceImageOutcome>>();
+    EnhanceImageAsync(
+    request,
+    [prom](
+        const TiiaClient*,
+        const EnhanceImageRequest&,
+        EnhanceImageOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TiiaClient::RecognizeCarOutcome TiiaClient::RecognizeCar(const RecognizeCarRequest &request)
@@ -793,25 +912,32 @@ TiiaClient::RecognizeCarOutcome TiiaClient::RecognizeCar(const RecognizeCarReque
 
 void TiiaClient::RecognizeCarAsync(const RecognizeCarRequest& request, const RecognizeCarAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->RecognizeCar(request), context);
-    };
+    using Req = const RecognizeCarRequest&;
+    using Resp = RecognizeCarResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "RecognizeCar", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TiiaClient::RecognizeCarOutcomeCallable TiiaClient::RecognizeCarCallable(const RecognizeCarRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<RecognizeCarOutcome()>>(
-        [this, request]()
-        {
-            return this->RecognizeCar(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<RecognizeCarOutcome>>();
+    RecognizeCarAsync(
+    request,
+    [prom](
+        const TiiaClient*,
+        const RecognizeCarRequest&,
+        RecognizeCarOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TiiaClient::RecognizeCarProOutcome TiiaClient::RecognizeCarPro(const RecognizeCarProRequest &request)
@@ -836,25 +962,32 @@ TiiaClient::RecognizeCarProOutcome TiiaClient::RecognizeCarPro(const RecognizeCa
 
 void TiiaClient::RecognizeCarProAsync(const RecognizeCarProRequest& request, const RecognizeCarProAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->RecognizeCarPro(request), context);
-    };
+    using Req = const RecognizeCarProRequest&;
+    using Resp = RecognizeCarProResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "RecognizeCarPro", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TiiaClient::RecognizeCarProOutcomeCallable TiiaClient::RecognizeCarProCallable(const RecognizeCarProRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<RecognizeCarProOutcome()>>(
-        [this, request]()
-        {
-            return this->RecognizeCarPro(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<RecognizeCarProOutcome>>();
+    RecognizeCarProAsync(
+    request,
+    [prom](
+        const TiiaClient*,
+        const RecognizeCarProRequest&,
+        RecognizeCarProOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TiiaClient::SearchImageOutcome TiiaClient::SearchImage(const SearchImageRequest &request)
@@ -879,25 +1012,32 @@ TiiaClient::SearchImageOutcome TiiaClient::SearchImage(const SearchImageRequest 
 
 void TiiaClient::SearchImageAsync(const SearchImageRequest& request, const SearchImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->SearchImage(request), context);
-    };
+    using Req = const SearchImageRequest&;
+    using Resp = SearchImageResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "SearchImage", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TiiaClient::SearchImageOutcomeCallable TiiaClient::SearchImageCallable(const SearchImageRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<SearchImageOutcome()>>(
-        [this, request]()
-        {
-            return this->SearchImage(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<SearchImageOutcome>>();
+    SearchImageAsync(
+    request,
+    [prom](
+        const TiiaClient*,
+        const SearchImageRequest&,
+        SearchImageOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TiiaClient::UpdateImageOutcome TiiaClient::UpdateImage(const UpdateImageRequest &request)
@@ -922,24 +1062,31 @@ TiiaClient::UpdateImageOutcome TiiaClient::UpdateImage(const UpdateImageRequest 
 
 void TiiaClient::UpdateImageAsync(const UpdateImageRequest& request, const UpdateImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UpdateImage(request), context);
-    };
+    using Req = const UpdateImageRequest&;
+    using Resp = UpdateImageResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UpdateImage", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TiiaClient::UpdateImageOutcomeCallable TiiaClient::UpdateImageCallable(const UpdateImageRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UpdateImageOutcome()>>(
-        [this, request]()
-        {
-            return this->UpdateImage(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UpdateImageOutcome>>();
+    UpdateImageAsync(
+    request,
+    [prom](
+        const TiiaClient*,
+        const UpdateImageRequest&,
+        UpdateImageOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 

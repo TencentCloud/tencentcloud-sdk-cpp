@@ -62,25 +62,32 @@ WssClient::DeleteCertOutcome WssClient::DeleteCert(const DeleteCertRequest &requ
 
 void WssClient::DeleteCertAsync(const DeleteCertRequest& request, const DeleteCertAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteCert(request), context);
-    };
+    using Req = const DeleteCertRequest&;
+    using Resp = DeleteCertResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteCert", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WssClient::DeleteCertOutcomeCallable WssClient::DeleteCertCallable(const DeleteCertRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteCertOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteCert(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteCertOutcome>>();
+    DeleteCertAsync(
+    request,
+    [prom](
+        const WssClient*,
+        const DeleteCertRequest&,
+        DeleteCertOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WssClient::DescribeCertListOutcome WssClient::DescribeCertList(const DescribeCertListRequest &request)
@@ -105,25 +112,32 @@ WssClient::DescribeCertListOutcome WssClient::DescribeCertList(const DescribeCer
 
 void WssClient::DescribeCertListAsync(const DescribeCertListRequest& request, const DescribeCertListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeCertList(request), context);
-    };
+    using Req = const DescribeCertListRequest&;
+    using Resp = DescribeCertListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeCertList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WssClient::DescribeCertListOutcomeCallable WssClient::DescribeCertListCallable(const DescribeCertListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeCertListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeCertList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeCertListOutcome>>();
+    DescribeCertListAsync(
+    request,
+    [prom](
+        const WssClient*,
+        const DescribeCertListRequest&,
+        DescribeCertListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 WssClient::UploadCertOutcome WssClient::UploadCert(const UploadCertRequest &request)
@@ -148,24 +162,31 @@ WssClient::UploadCertOutcome WssClient::UploadCert(const UploadCertRequest &requ
 
 void WssClient::UploadCertAsync(const UploadCertRequest& request, const UploadCertAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UploadCert(request), context);
-    };
+    using Req = const UploadCertRequest&;
+    using Resp = UploadCertResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UploadCert", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 WssClient::UploadCertOutcomeCallable WssClient::UploadCertCallable(const UploadCertRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UploadCertOutcome()>>(
-        [this, request]()
-        {
-            return this->UploadCert(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UploadCertOutcome>>();
+    UploadCertAsync(
+    request,
+    [prom](
+        const WssClient*,
+        const UploadCertRequest&,
+        UploadCertOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 

@@ -62,25 +62,32 @@ BizliveClient::CreateSessionOutcome BizliveClient::CreateSession(const CreateSes
 
 void BizliveClient::CreateSessionAsync(const CreateSessionRequest& request, const CreateSessionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateSession(request), context);
-    };
+    using Req = const CreateSessionRequest&;
+    using Resp = CreateSessionResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateSession", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BizliveClient::CreateSessionOutcomeCallable BizliveClient::CreateSessionCallable(const CreateSessionRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateSessionOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateSession(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateSessionOutcome>>();
+    CreateSessionAsync(
+    request,
+    [prom](
+        const BizliveClient*,
+        const CreateSessionRequest&,
+        CreateSessionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BizliveClient::DescribeStreamPlayInfoListOutcome BizliveClient::DescribeStreamPlayInfoList(const DescribeStreamPlayInfoListRequest &request)
@@ -105,25 +112,32 @@ BizliveClient::DescribeStreamPlayInfoListOutcome BizliveClient::DescribeStreamPl
 
 void BizliveClient::DescribeStreamPlayInfoListAsync(const DescribeStreamPlayInfoListRequest& request, const DescribeStreamPlayInfoListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeStreamPlayInfoList(request), context);
-    };
+    using Req = const DescribeStreamPlayInfoListRequest&;
+    using Resp = DescribeStreamPlayInfoListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeStreamPlayInfoList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BizliveClient::DescribeStreamPlayInfoListOutcomeCallable BizliveClient::DescribeStreamPlayInfoListCallable(const DescribeStreamPlayInfoListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeStreamPlayInfoListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeStreamPlayInfoList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeStreamPlayInfoListOutcome>>();
+    DescribeStreamPlayInfoListAsync(
+    request,
+    [prom](
+        const BizliveClient*,
+        const DescribeStreamPlayInfoListRequest&,
+        DescribeStreamPlayInfoListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BizliveClient::DescribeWorkersOutcome BizliveClient::DescribeWorkers(const DescribeWorkersRequest &request)
@@ -148,25 +162,32 @@ BizliveClient::DescribeWorkersOutcome BizliveClient::DescribeWorkers(const Descr
 
 void BizliveClient::DescribeWorkersAsync(const DescribeWorkersRequest& request, const DescribeWorkersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeWorkers(request), context);
-    };
+    using Req = const DescribeWorkersRequest&;
+    using Resp = DescribeWorkersResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeWorkers", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BizliveClient::DescribeWorkersOutcomeCallable BizliveClient::DescribeWorkersCallable(const DescribeWorkersRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeWorkersOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeWorkers(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeWorkersOutcome>>();
+    DescribeWorkersAsync(
+    request,
+    [prom](
+        const BizliveClient*,
+        const DescribeWorkersRequest&,
+        DescribeWorkersOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BizliveClient::ForbidLiveStreamOutcome BizliveClient::ForbidLiveStream(const ForbidLiveStreamRequest &request)
@@ -191,25 +212,32 @@ BizliveClient::ForbidLiveStreamOutcome BizliveClient::ForbidLiveStream(const For
 
 void BizliveClient::ForbidLiveStreamAsync(const ForbidLiveStreamRequest& request, const ForbidLiveStreamAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ForbidLiveStream(request), context);
-    };
+    using Req = const ForbidLiveStreamRequest&;
+    using Resp = ForbidLiveStreamResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ForbidLiveStream", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BizliveClient::ForbidLiveStreamOutcomeCallable BizliveClient::ForbidLiveStreamCallable(const ForbidLiveStreamRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ForbidLiveStreamOutcome()>>(
-        [this, request]()
-        {
-            return this->ForbidLiveStream(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ForbidLiveStreamOutcome>>();
+    ForbidLiveStreamAsync(
+    request,
+    [prom](
+        const BizliveClient*,
+        const ForbidLiveStreamRequest&,
+        ForbidLiveStreamOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BizliveClient::RegisterIMOutcome BizliveClient::RegisterIM(const RegisterIMRequest &request)
@@ -234,25 +262,32 @@ BizliveClient::RegisterIMOutcome BizliveClient::RegisterIM(const RegisterIMReque
 
 void BizliveClient::RegisterIMAsync(const RegisterIMRequest& request, const RegisterIMAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->RegisterIM(request), context);
-    };
+    using Req = const RegisterIMRequest&;
+    using Resp = RegisterIMResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "RegisterIM", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BizliveClient::RegisterIMOutcomeCallable BizliveClient::RegisterIMCallable(const RegisterIMRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<RegisterIMOutcome()>>(
-        [this, request]()
-        {
-            return this->RegisterIM(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<RegisterIMOutcome>>();
+    RegisterIMAsync(
+    request,
+    [prom](
+        const BizliveClient*,
+        const RegisterIMRequest&,
+        RegisterIMOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BizliveClient::StopGameOutcome BizliveClient::StopGame(const StopGameRequest &request)
@@ -277,24 +312,31 @@ BizliveClient::StopGameOutcome BizliveClient::StopGame(const StopGameRequest &re
 
 void BizliveClient::StopGameAsync(const StopGameRequest& request, const StopGameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->StopGame(request), context);
-    };
+    using Req = const StopGameRequest&;
+    using Resp = StopGameResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "StopGame", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BizliveClient::StopGameOutcomeCallable BizliveClient::StopGameCallable(const StopGameRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<StopGameOutcome()>>(
-        [this, request]()
-        {
-            return this->StopGame(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<StopGameOutcome>>();
+    StopGameAsync(
+    request,
+    [prom](
+        const BizliveClient*,
+        const StopGameRequest&,
+        StopGameOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 

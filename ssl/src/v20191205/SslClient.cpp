@@ -62,25 +62,32 @@ SslClient::ApplyCertificateOutcome SslClient::ApplyCertificate(const ApplyCertif
 
 void SslClient::ApplyCertificateAsync(const ApplyCertificateRequest& request, const ApplyCertificateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ApplyCertificate(request), context);
-    };
+    using Req = const ApplyCertificateRequest&;
+    using Resp = ApplyCertificateResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ApplyCertificate", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SslClient::ApplyCertificateOutcomeCallable SslClient::ApplyCertificateCallable(const ApplyCertificateRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ApplyCertificateOutcome()>>(
-        [this, request]()
-        {
-            return this->ApplyCertificate(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ApplyCertificateOutcome>>();
+    ApplyCertificateAsync(
+    request,
+    [prom](
+        const SslClient*,
+        const ApplyCertificateRequest&,
+        ApplyCertificateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SslClient::CancelAuditCertificateOutcome SslClient::CancelAuditCertificate(const CancelAuditCertificateRequest &request)
@@ -105,25 +112,32 @@ SslClient::CancelAuditCertificateOutcome SslClient::CancelAuditCertificate(const
 
 void SslClient::CancelAuditCertificateAsync(const CancelAuditCertificateRequest& request, const CancelAuditCertificateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CancelAuditCertificate(request), context);
-    };
+    using Req = const CancelAuditCertificateRequest&;
+    using Resp = CancelAuditCertificateResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CancelAuditCertificate", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SslClient::CancelAuditCertificateOutcomeCallable SslClient::CancelAuditCertificateCallable(const CancelAuditCertificateRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CancelAuditCertificateOutcome()>>(
-        [this, request]()
-        {
-            return this->CancelAuditCertificate(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CancelAuditCertificateOutcome>>();
+    CancelAuditCertificateAsync(
+    request,
+    [prom](
+        const SslClient*,
+        const CancelAuditCertificateRequest&,
+        CancelAuditCertificateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SslClient::CancelCertificateOrderOutcome SslClient::CancelCertificateOrder(const CancelCertificateOrderRequest &request)
@@ -148,25 +162,32 @@ SslClient::CancelCertificateOrderOutcome SslClient::CancelCertificateOrder(const
 
 void SslClient::CancelCertificateOrderAsync(const CancelCertificateOrderRequest& request, const CancelCertificateOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CancelCertificateOrder(request), context);
-    };
+    using Req = const CancelCertificateOrderRequest&;
+    using Resp = CancelCertificateOrderResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CancelCertificateOrder", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SslClient::CancelCertificateOrderOutcomeCallable SslClient::CancelCertificateOrderCallable(const CancelCertificateOrderRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CancelCertificateOrderOutcome()>>(
-        [this, request]()
-        {
-            return this->CancelCertificateOrder(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CancelCertificateOrderOutcome>>();
+    CancelCertificateOrderAsync(
+    request,
+    [prom](
+        const SslClient*,
+        const CancelCertificateOrderRequest&,
+        CancelCertificateOrderOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SslClient::CertificateInfoSubmitOutcome SslClient::CertificateInfoSubmit(const CertificateInfoSubmitRequest &request)
@@ -191,25 +212,32 @@ SslClient::CertificateInfoSubmitOutcome SslClient::CertificateInfoSubmit(const C
 
 void SslClient::CertificateInfoSubmitAsync(const CertificateInfoSubmitRequest& request, const CertificateInfoSubmitAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CertificateInfoSubmit(request), context);
-    };
+    using Req = const CertificateInfoSubmitRequest&;
+    using Resp = CertificateInfoSubmitResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CertificateInfoSubmit", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SslClient::CertificateInfoSubmitOutcomeCallable SslClient::CertificateInfoSubmitCallable(const CertificateInfoSubmitRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CertificateInfoSubmitOutcome()>>(
-        [this, request]()
-        {
-            return this->CertificateInfoSubmit(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CertificateInfoSubmitOutcome>>();
+    CertificateInfoSubmitAsync(
+    request,
+    [prom](
+        const SslClient*,
+        const CertificateInfoSubmitRequest&,
+        CertificateInfoSubmitOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SslClient::CertificateOrderSubmitOutcome SslClient::CertificateOrderSubmit(const CertificateOrderSubmitRequest &request)
@@ -234,25 +262,32 @@ SslClient::CertificateOrderSubmitOutcome SslClient::CertificateOrderSubmit(const
 
 void SslClient::CertificateOrderSubmitAsync(const CertificateOrderSubmitRequest& request, const CertificateOrderSubmitAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CertificateOrderSubmit(request), context);
-    };
+    using Req = const CertificateOrderSubmitRequest&;
+    using Resp = CertificateOrderSubmitResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CertificateOrderSubmit", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SslClient::CertificateOrderSubmitOutcomeCallable SslClient::CertificateOrderSubmitCallable(const CertificateOrderSubmitRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CertificateOrderSubmitOutcome()>>(
-        [this, request]()
-        {
-            return this->CertificateOrderSubmit(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CertificateOrderSubmitOutcome>>();
+    CertificateOrderSubmitAsync(
+    request,
+    [prom](
+        const SslClient*,
+        const CertificateOrderSubmitRequest&,
+        CertificateOrderSubmitOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SslClient::CheckCertificateChainOutcome SslClient::CheckCertificateChain(const CheckCertificateChainRequest &request)
@@ -277,25 +312,32 @@ SslClient::CheckCertificateChainOutcome SslClient::CheckCertificateChain(const C
 
 void SslClient::CheckCertificateChainAsync(const CheckCertificateChainRequest& request, const CheckCertificateChainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CheckCertificateChain(request), context);
-    };
+    using Req = const CheckCertificateChainRequest&;
+    using Resp = CheckCertificateChainResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CheckCertificateChain", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SslClient::CheckCertificateChainOutcomeCallable SslClient::CheckCertificateChainCallable(const CheckCertificateChainRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CheckCertificateChainOutcome()>>(
-        [this, request]()
-        {
-            return this->CheckCertificateChain(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CheckCertificateChainOutcome>>();
+    CheckCertificateChainAsync(
+    request,
+    [prom](
+        const SslClient*,
+        const CheckCertificateChainRequest&,
+        CheckCertificateChainOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SslClient::CheckCertificateDomainVerificationOutcome SslClient::CheckCertificateDomainVerification(const CheckCertificateDomainVerificationRequest &request)
@@ -320,25 +362,32 @@ SslClient::CheckCertificateDomainVerificationOutcome SslClient::CheckCertificate
 
 void SslClient::CheckCertificateDomainVerificationAsync(const CheckCertificateDomainVerificationRequest& request, const CheckCertificateDomainVerificationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CheckCertificateDomainVerification(request), context);
-    };
+    using Req = const CheckCertificateDomainVerificationRequest&;
+    using Resp = CheckCertificateDomainVerificationResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CheckCertificateDomainVerification", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SslClient::CheckCertificateDomainVerificationOutcomeCallable SslClient::CheckCertificateDomainVerificationCallable(const CheckCertificateDomainVerificationRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CheckCertificateDomainVerificationOutcome()>>(
-        [this, request]()
-        {
-            return this->CheckCertificateDomainVerification(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CheckCertificateDomainVerificationOutcome>>();
+    CheckCertificateDomainVerificationAsync(
+    request,
+    [prom](
+        const SslClient*,
+        const CheckCertificateDomainVerificationRequest&,
+        CheckCertificateDomainVerificationOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SslClient::CheckCertificateExistOutcome SslClient::CheckCertificateExist(const CheckCertificateExistRequest &request)
@@ -363,25 +412,32 @@ SslClient::CheckCertificateExistOutcome SslClient::CheckCertificateExist(const C
 
 void SslClient::CheckCertificateExistAsync(const CheckCertificateExistRequest& request, const CheckCertificateExistAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CheckCertificateExist(request), context);
-    };
+    using Req = const CheckCertificateExistRequest&;
+    using Resp = CheckCertificateExistResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CheckCertificateExist", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SslClient::CheckCertificateExistOutcomeCallable SslClient::CheckCertificateExistCallable(const CheckCertificateExistRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CheckCertificateExistOutcome()>>(
-        [this, request]()
-        {
-            return this->CheckCertificateExist(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CheckCertificateExistOutcome>>();
+    CheckCertificateExistAsync(
+    request,
+    [prom](
+        const SslClient*,
+        const CheckCertificateExistRequest&,
+        CheckCertificateExistOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SslClient::CommitCertificateInformationOutcome SslClient::CommitCertificateInformation(const CommitCertificateInformationRequest &request)
@@ -406,25 +462,32 @@ SslClient::CommitCertificateInformationOutcome SslClient::CommitCertificateInfor
 
 void SslClient::CommitCertificateInformationAsync(const CommitCertificateInformationRequest& request, const CommitCertificateInformationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CommitCertificateInformation(request), context);
-    };
+    using Req = const CommitCertificateInformationRequest&;
+    using Resp = CommitCertificateInformationResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CommitCertificateInformation", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SslClient::CommitCertificateInformationOutcomeCallable SslClient::CommitCertificateInformationCallable(const CommitCertificateInformationRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CommitCertificateInformationOutcome()>>(
-        [this, request]()
-        {
-            return this->CommitCertificateInformation(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CommitCertificateInformationOutcome>>();
+    CommitCertificateInformationAsync(
+    request,
+    [prom](
+        const SslClient*,
+        const CommitCertificateInformationRequest&,
+        CommitCertificateInformationOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SslClient::CompleteCertificateOutcome SslClient::CompleteCertificate(const CompleteCertificateRequest &request)
@@ -449,25 +512,32 @@ SslClient::CompleteCertificateOutcome SslClient::CompleteCertificate(const Compl
 
 void SslClient::CompleteCertificateAsync(const CompleteCertificateRequest& request, const CompleteCertificateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CompleteCertificate(request), context);
-    };
+    using Req = const CompleteCertificateRequest&;
+    using Resp = CompleteCertificateResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CompleteCertificate", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SslClient::CompleteCertificateOutcomeCallable SslClient::CompleteCertificateCallable(const CompleteCertificateRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CompleteCertificateOutcome()>>(
-        [this, request]()
-        {
-            return this->CompleteCertificate(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CompleteCertificateOutcome>>();
+    CompleteCertificateAsync(
+    request,
+    [prom](
+        const SslClient*,
+        const CompleteCertificateRequest&,
+        CompleteCertificateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SslClient::CreateCertificateOutcome SslClient::CreateCertificate(const CreateCertificateRequest &request)
@@ -492,25 +562,32 @@ SslClient::CreateCertificateOutcome SslClient::CreateCertificate(const CreateCer
 
 void SslClient::CreateCertificateAsync(const CreateCertificateRequest& request, const CreateCertificateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateCertificate(request), context);
-    };
+    using Req = const CreateCertificateRequest&;
+    using Resp = CreateCertificateResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateCertificate", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SslClient::CreateCertificateOutcomeCallable SslClient::CreateCertificateCallable(const CreateCertificateRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateCertificateOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateCertificate(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateCertificateOutcome>>();
+    CreateCertificateAsync(
+    request,
+    [prom](
+        const SslClient*,
+        const CreateCertificateRequest&,
+        CreateCertificateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SslClient::CreateCertificateBindResourceSyncTaskOutcome SslClient::CreateCertificateBindResourceSyncTask(const CreateCertificateBindResourceSyncTaskRequest &request)
@@ -535,25 +612,32 @@ SslClient::CreateCertificateBindResourceSyncTaskOutcome SslClient::CreateCertifi
 
 void SslClient::CreateCertificateBindResourceSyncTaskAsync(const CreateCertificateBindResourceSyncTaskRequest& request, const CreateCertificateBindResourceSyncTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateCertificateBindResourceSyncTask(request), context);
-    };
+    using Req = const CreateCertificateBindResourceSyncTaskRequest&;
+    using Resp = CreateCertificateBindResourceSyncTaskResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateCertificateBindResourceSyncTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SslClient::CreateCertificateBindResourceSyncTaskOutcomeCallable SslClient::CreateCertificateBindResourceSyncTaskCallable(const CreateCertificateBindResourceSyncTaskRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateCertificateBindResourceSyncTaskOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateCertificateBindResourceSyncTask(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateCertificateBindResourceSyncTaskOutcome>>();
+    CreateCertificateBindResourceSyncTaskAsync(
+    request,
+    [prom](
+        const SslClient*,
+        const CreateCertificateBindResourceSyncTaskRequest&,
+        CreateCertificateBindResourceSyncTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SslClient::CreateCertificateByPackageOutcome SslClient::CreateCertificateByPackage(const CreateCertificateByPackageRequest &request)
@@ -578,25 +662,32 @@ SslClient::CreateCertificateByPackageOutcome SslClient::CreateCertificateByPacka
 
 void SslClient::CreateCertificateByPackageAsync(const CreateCertificateByPackageRequest& request, const CreateCertificateByPackageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateCertificateByPackage(request), context);
-    };
+    using Req = const CreateCertificateByPackageRequest&;
+    using Resp = CreateCertificateByPackageResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateCertificateByPackage", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SslClient::CreateCertificateByPackageOutcomeCallable SslClient::CreateCertificateByPackageCallable(const CreateCertificateByPackageRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateCertificateByPackageOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateCertificateByPackage(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateCertificateByPackageOutcome>>();
+    CreateCertificateByPackageAsync(
+    request,
+    [prom](
+        const SslClient*,
+        const CreateCertificateByPackageRequest&,
+        CreateCertificateByPackageOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SslClient::DeleteCertificateOutcome SslClient::DeleteCertificate(const DeleteCertificateRequest &request)
@@ -621,25 +712,32 @@ SslClient::DeleteCertificateOutcome SslClient::DeleteCertificate(const DeleteCer
 
 void SslClient::DeleteCertificateAsync(const DeleteCertificateRequest& request, const DeleteCertificateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteCertificate(request), context);
-    };
+    using Req = const DeleteCertificateRequest&;
+    using Resp = DeleteCertificateResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteCertificate", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SslClient::DeleteCertificateOutcomeCallable SslClient::DeleteCertificateCallable(const DeleteCertificateRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteCertificateOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteCertificate(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteCertificateOutcome>>();
+    DeleteCertificateAsync(
+    request,
+    [prom](
+        const SslClient*,
+        const DeleteCertificateRequest&,
+        DeleteCertificateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SslClient::DeleteCertificatesOutcome SslClient::DeleteCertificates(const DeleteCertificatesRequest &request)
@@ -664,25 +762,32 @@ SslClient::DeleteCertificatesOutcome SslClient::DeleteCertificates(const DeleteC
 
 void SslClient::DeleteCertificatesAsync(const DeleteCertificatesRequest& request, const DeleteCertificatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteCertificates(request), context);
-    };
+    using Req = const DeleteCertificatesRequest&;
+    using Resp = DeleteCertificatesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteCertificates", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SslClient::DeleteCertificatesOutcomeCallable SslClient::DeleteCertificatesCallable(const DeleteCertificatesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteCertificatesOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteCertificates(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteCertificatesOutcome>>();
+    DeleteCertificatesAsync(
+    request,
+    [prom](
+        const SslClient*,
+        const DeleteCertificatesRequest&,
+        DeleteCertificatesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SslClient::DeleteManagerOutcome SslClient::DeleteManager(const DeleteManagerRequest &request)
@@ -707,25 +812,32 @@ SslClient::DeleteManagerOutcome SslClient::DeleteManager(const DeleteManagerRequ
 
 void SslClient::DeleteManagerAsync(const DeleteManagerRequest& request, const DeleteManagerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteManager(request), context);
-    };
+    using Req = const DeleteManagerRequest&;
+    using Resp = DeleteManagerResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteManager", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SslClient::DeleteManagerOutcomeCallable SslClient::DeleteManagerCallable(const DeleteManagerRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteManagerOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteManager(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteManagerOutcome>>();
+    DeleteManagerAsync(
+    request,
+    [prom](
+        const SslClient*,
+        const DeleteManagerRequest&,
+        DeleteManagerOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SslClient::DeployCertificateInstanceOutcome SslClient::DeployCertificateInstance(const DeployCertificateInstanceRequest &request)
@@ -750,25 +862,32 @@ SslClient::DeployCertificateInstanceOutcome SslClient::DeployCertificateInstance
 
 void SslClient::DeployCertificateInstanceAsync(const DeployCertificateInstanceRequest& request, const DeployCertificateInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeployCertificateInstance(request), context);
-    };
+    using Req = const DeployCertificateInstanceRequest&;
+    using Resp = DeployCertificateInstanceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeployCertificateInstance", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SslClient::DeployCertificateInstanceOutcomeCallable SslClient::DeployCertificateInstanceCallable(const DeployCertificateInstanceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeployCertificateInstanceOutcome()>>(
-        [this, request]()
-        {
-            return this->DeployCertificateInstance(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeployCertificateInstanceOutcome>>();
+    DeployCertificateInstanceAsync(
+    request,
+    [prom](
+        const SslClient*,
+        const DeployCertificateInstanceRequest&,
+        DeployCertificateInstanceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SslClient::DeployCertificateRecordRetryOutcome SslClient::DeployCertificateRecordRetry(const DeployCertificateRecordRetryRequest &request)
@@ -793,25 +912,32 @@ SslClient::DeployCertificateRecordRetryOutcome SslClient::DeployCertificateRecor
 
 void SslClient::DeployCertificateRecordRetryAsync(const DeployCertificateRecordRetryRequest& request, const DeployCertificateRecordRetryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeployCertificateRecordRetry(request), context);
-    };
+    using Req = const DeployCertificateRecordRetryRequest&;
+    using Resp = DeployCertificateRecordRetryResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeployCertificateRecordRetry", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SslClient::DeployCertificateRecordRetryOutcomeCallable SslClient::DeployCertificateRecordRetryCallable(const DeployCertificateRecordRetryRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeployCertificateRecordRetryOutcome()>>(
-        [this, request]()
-        {
-            return this->DeployCertificateRecordRetry(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeployCertificateRecordRetryOutcome>>();
+    DeployCertificateRecordRetryAsync(
+    request,
+    [prom](
+        const SslClient*,
+        const DeployCertificateRecordRetryRequest&,
+        DeployCertificateRecordRetryOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SslClient::DeployCertificateRecordRollbackOutcome SslClient::DeployCertificateRecordRollback(const DeployCertificateRecordRollbackRequest &request)
@@ -836,25 +962,32 @@ SslClient::DeployCertificateRecordRollbackOutcome SslClient::DeployCertificateRe
 
 void SslClient::DeployCertificateRecordRollbackAsync(const DeployCertificateRecordRollbackRequest& request, const DeployCertificateRecordRollbackAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeployCertificateRecordRollback(request), context);
-    };
+    using Req = const DeployCertificateRecordRollbackRequest&;
+    using Resp = DeployCertificateRecordRollbackResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeployCertificateRecordRollback", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SslClient::DeployCertificateRecordRollbackOutcomeCallable SslClient::DeployCertificateRecordRollbackCallable(const DeployCertificateRecordRollbackRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeployCertificateRecordRollbackOutcome()>>(
-        [this, request]()
-        {
-            return this->DeployCertificateRecordRollback(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeployCertificateRecordRollbackOutcome>>();
+    DeployCertificateRecordRollbackAsync(
+    request,
+    [prom](
+        const SslClient*,
+        const DeployCertificateRecordRollbackRequest&,
+        DeployCertificateRecordRollbackOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SslClient::DescribeCertificateOutcome SslClient::DescribeCertificate(const DescribeCertificateRequest &request)
@@ -879,25 +1012,32 @@ SslClient::DescribeCertificateOutcome SslClient::DescribeCertificate(const Descr
 
 void SslClient::DescribeCertificateAsync(const DescribeCertificateRequest& request, const DescribeCertificateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeCertificate(request), context);
-    };
+    using Req = const DescribeCertificateRequest&;
+    using Resp = DescribeCertificateResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeCertificate", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SslClient::DescribeCertificateOutcomeCallable SslClient::DescribeCertificateCallable(const DescribeCertificateRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeCertificateOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeCertificate(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeCertificateOutcome>>();
+    DescribeCertificateAsync(
+    request,
+    [prom](
+        const SslClient*,
+        const DescribeCertificateRequest&,
+        DescribeCertificateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SslClient::DescribeCertificateBindResourceTaskDetailOutcome SslClient::DescribeCertificateBindResourceTaskDetail(const DescribeCertificateBindResourceTaskDetailRequest &request)
@@ -922,25 +1062,32 @@ SslClient::DescribeCertificateBindResourceTaskDetailOutcome SslClient::DescribeC
 
 void SslClient::DescribeCertificateBindResourceTaskDetailAsync(const DescribeCertificateBindResourceTaskDetailRequest& request, const DescribeCertificateBindResourceTaskDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeCertificateBindResourceTaskDetail(request), context);
-    };
+    using Req = const DescribeCertificateBindResourceTaskDetailRequest&;
+    using Resp = DescribeCertificateBindResourceTaskDetailResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeCertificateBindResourceTaskDetail", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SslClient::DescribeCertificateBindResourceTaskDetailOutcomeCallable SslClient::DescribeCertificateBindResourceTaskDetailCallable(const DescribeCertificateBindResourceTaskDetailRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeCertificateBindResourceTaskDetailOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeCertificateBindResourceTaskDetail(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeCertificateBindResourceTaskDetailOutcome>>();
+    DescribeCertificateBindResourceTaskDetailAsync(
+    request,
+    [prom](
+        const SslClient*,
+        const DescribeCertificateBindResourceTaskDetailRequest&,
+        DescribeCertificateBindResourceTaskDetailOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SslClient::DescribeCertificateBindResourceTaskResultOutcome SslClient::DescribeCertificateBindResourceTaskResult(const DescribeCertificateBindResourceTaskResultRequest &request)
@@ -965,25 +1112,32 @@ SslClient::DescribeCertificateBindResourceTaskResultOutcome SslClient::DescribeC
 
 void SslClient::DescribeCertificateBindResourceTaskResultAsync(const DescribeCertificateBindResourceTaskResultRequest& request, const DescribeCertificateBindResourceTaskResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeCertificateBindResourceTaskResult(request), context);
-    };
+    using Req = const DescribeCertificateBindResourceTaskResultRequest&;
+    using Resp = DescribeCertificateBindResourceTaskResultResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeCertificateBindResourceTaskResult", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SslClient::DescribeCertificateBindResourceTaskResultOutcomeCallable SslClient::DescribeCertificateBindResourceTaskResultCallable(const DescribeCertificateBindResourceTaskResultRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeCertificateBindResourceTaskResultOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeCertificateBindResourceTaskResult(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeCertificateBindResourceTaskResultOutcome>>();
+    DescribeCertificateBindResourceTaskResultAsync(
+    request,
+    [prom](
+        const SslClient*,
+        const DescribeCertificateBindResourceTaskResultRequest&,
+        DescribeCertificateBindResourceTaskResultOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SslClient::DescribeCertificateDetailOutcome SslClient::DescribeCertificateDetail(const DescribeCertificateDetailRequest &request)
@@ -1008,25 +1162,32 @@ SslClient::DescribeCertificateDetailOutcome SslClient::DescribeCertificateDetail
 
 void SslClient::DescribeCertificateDetailAsync(const DescribeCertificateDetailRequest& request, const DescribeCertificateDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeCertificateDetail(request), context);
-    };
+    using Req = const DescribeCertificateDetailRequest&;
+    using Resp = DescribeCertificateDetailResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeCertificateDetail", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SslClient::DescribeCertificateDetailOutcomeCallable SslClient::DescribeCertificateDetailCallable(const DescribeCertificateDetailRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeCertificateDetailOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeCertificateDetail(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeCertificateDetailOutcome>>();
+    DescribeCertificateDetailAsync(
+    request,
+    [prom](
+        const SslClient*,
+        const DescribeCertificateDetailRequest&,
+        DescribeCertificateDetailOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SslClient::DescribeCertificateOperateLogsOutcome SslClient::DescribeCertificateOperateLogs(const DescribeCertificateOperateLogsRequest &request)
@@ -1051,25 +1212,32 @@ SslClient::DescribeCertificateOperateLogsOutcome SslClient::DescribeCertificateO
 
 void SslClient::DescribeCertificateOperateLogsAsync(const DescribeCertificateOperateLogsRequest& request, const DescribeCertificateOperateLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeCertificateOperateLogs(request), context);
-    };
+    using Req = const DescribeCertificateOperateLogsRequest&;
+    using Resp = DescribeCertificateOperateLogsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeCertificateOperateLogs", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SslClient::DescribeCertificateOperateLogsOutcomeCallable SslClient::DescribeCertificateOperateLogsCallable(const DescribeCertificateOperateLogsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeCertificateOperateLogsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeCertificateOperateLogs(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeCertificateOperateLogsOutcome>>();
+    DescribeCertificateOperateLogsAsync(
+    request,
+    [prom](
+        const SslClient*,
+        const DescribeCertificateOperateLogsRequest&,
+        DescribeCertificateOperateLogsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SslClient::DescribeCertificatesOutcome SslClient::DescribeCertificates(const DescribeCertificatesRequest &request)
@@ -1094,25 +1262,32 @@ SslClient::DescribeCertificatesOutcome SslClient::DescribeCertificates(const Des
 
 void SslClient::DescribeCertificatesAsync(const DescribeCertificatesRequest& request, const DescribeCertificatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeCertificates(request), context);
-    };
+    using Req = const DescribeCertificatesRequest&;
+    using Resp = DescribeCertificatesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeCertificates", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SslClient::DescribeCertificatesOutcomeCallable SslClient::DescribeCertificatesCallable(const DescribeCertificatesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeCertificatesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeCertificates(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeCertificatesOutcome>>();
+    DescribeCertificatesAsync(
+    request,
+    [prom](
+        const SslClient*,
+        const DescribeCertificatesRequest&,
+        DescribeCertificatesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SslClient::DescribeCompaniesOutcome SslClient::DescribeCompanies(const DescribeCompaniesRequest &request)
@@ -1137,25 +1312,32 @@ SslClient::DescribeCompaniesOutcome SslClient::DescribeCompanies(const DescribeC
 
 void SslClient::DescribeCompaniesAsync(const DescribeCompaniesRequest& request, const DescribeCompaniesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeCompanies(request), context);
-    };
+    using Req = const DescribeCompaniesRequest&;
+    using Resp = DescribeCompaniesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeCompanies", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SslClient::DescribeCompaniesOutcomeCallable SslClient::DescribeCompaniesCallable(const DescribeCompaniesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeCompaniesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeCompanies(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeCompaniesOutcome>>();
+    DescribeCompaniesAsync(
+    request,
+    [prom](
+        const SslClient*,
+        const DescribeCompaniesRequest&,
+        DescribeCompaniesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SslClient::DescribeDeleteCertificatesTaskResultOutcome SslClient::DescribeDeleteCertificatesTaskResult(const DescribeDeleteCertificatesTaskResultRequest &request)
@@ -1180,25 +1362,32 @@ SslClient::DescribeDeleteCertificatesTaskResultOutcome SslClient::DescribeDelete
 
 void SslClient::DescribeDeleteCertificatesTaskResultAsync(const DescribeDeleteCertificatesTaskResultRequest& request, const DescribeDeleteCertificatesTaskResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDeleteCertificatesTaskResult(request), context);
-    };
+    using Req = const DescribeDeleteCertificatesTaskResultRequest&;
+    using Resp = DescribeDeleteCertificatesTaskResultResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeDeleteCertificatesTaskResult", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SslClient::DescribeDeleteCertificatesTaskResultOutcomeCallable SslClient::DescribeDeleteCertificatesTaskResultCallable(const DescribeDeleteCertificatesTaskResultRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeDeleteCertificatesTaskResultOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDeleteCertificatesTaskResult(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeDeleteCertificatesTaskResultOutcome>>();
+    DescribeDeleteCertificatesTaskResultAsync(
+    request,
+    [prom](
+        const SslClient*,
+        const DescribeDeleteCertificatesTaskResultRequest&,
+        DescribeDeleteCertificatesTaskResultOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SslClient::DescribeDeployedResourcesOutcome SslClient::DescribeDeployedResources(const DescribeDeployedResourcesRequest &request)
@@ -1223,25 +1412,32 @@ SslClient::DescribeDeployedResourcesOutcome SslClient::DescribeDeployedResources
 
 void SslClient::DescribeDeployedResourcesAsync(const DescribeDeployedResourcesRequest& request, const DescribeDeployedResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDeployedResources(request), context);
-    };
+    using Req = const DescribeDeployedResourcesRequest&;
+    using Resp = DescribeDeployedResourcesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeDeployedResources", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SslClient::DescribeDeployedResourcesOutcomeCallable SslClient::DescribeDeployedResourcesCallable(const DescribeDeployedResourcesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeDeployedResourcesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDeployedResources(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeDeployedResourcesOutcome>>();
+    DescribeDeployedResourcesAsync(
+    request,
+    [prom](
+        const SslClient*,
+        const DescribeDeployedResourcesRequest&,
+        DescribeDeployedResourcesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SslClient::DescribeDownloadCertificateUrlOutcome SslClient::DescribeDownloadCertificateUrl(const DescribeDownloadCertificateUrlRequest &request)
@@ -1266,25 +1462,32 @@ SslClient::DescribeDownloadCertificateUrlOutcome SslClient::DescribeDownloadCert
 
 void SslClient::DescribeDownloadCertificateUrlAsync(const DescribeDownloadCertificateUrlRequest& request, const DescribeDownloadCertificateUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDownloadCertificateUrl(request), context);
-    };
+    using Req = const DescribeDownloadCertificateUrlRequest&;
+    using Resp = DescribeDownloadCertificateUrlResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeDownloadCertificateUrl", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SslClient::DescribeDownloadCertificateUrlOutcomeCallable SslClient::DescribeDownloadCertificateUrlCallable(const DescribeDownloadCertificateUrlRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeDownloadCertificateUrlOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDownloadCertificateUrl(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeDownloadCertificateUrlOutcome>>();
+    DescribeDownloadCertificateUrlAsync(
+    request,
+    [prom](
+        const SslClient*,
+        const DescribeDownloadCertificateUrlRequest&,
+        DescribeDownloadCertificateUrlOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SslClient::DescribeHostApiGatewayInstanceListOutcome SslClient::DescribeHostApiGatewayInstanceList(const DescribeHostApiGatewayInstanceListRequest &request)
@@ -1309,25 +1512,32 @@ SslClient::DescribeHostApiGatewayInstanceListOutcome SslClient::DescribeHostApiG
 
 void SslClient::DescribeHostApiGatewayInstanceListAsync(const DescribeHostApiGatewayInstanceListRequest& request, const DescribeHostApiGatewayInstanceListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeHostApiGatewayInstanceList(request), context);
-    };
+    using Req = const DescribeHostApiGatewayInstanceListRequest&;
+    using Resp = DescribeHostApiGatewayInstanceListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeHostApiGatewayInstanceList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SslClient::DescribeHostApiGatewayInstanceListOutcomeCallable SslClient::DescribeHostApiGatewayInstanceListCallable(const DescribeHostApiGatewayInstanceListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeHostApiGatewayInstanceListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeHostApiGatewayInstanceList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeHostApiGatewayInstanceListOutcome>>();
+    DescribeHostApiGatewayInstanceListAsync(
+    request,
+    [prom](
+        const SslClient*,
+        const DescribeHostApiGatewayInstanceListRequest&,
+        DescribeHostApiGatewayInstanceListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SslClient::DescribeHostCdnInstanceListOutcome SslClient::DescribeHostCdnInstanceList(const DescribeHostCdnInstanceListRequest &request)
@@ -1352,25 +1562,32 @@ SslClient::DescribeHostCdnInstanceListOutcome SslClient::DescribeHostCdnInstance
 
 void SslClient::DescribeHostCdnInstanceListAsync(const DescribeHostCdnInstanceListRequest& request, const DescribeHostCdnInstanceListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeHostCdnInstanceList(request), context);
-    };
+    using Req = const DescribeHostCdnInstanceListRequest&;
+    using Resp = DescribeHostCdnInstanceListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeHostCdnInstanceList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SslClient::DescribeHostCdnInstanceListOutcomeCallable SslClient::DescribeHostCdnInstanceListCallable(const DescribeHostCdnInstanceListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeHostCdnInstanceListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeHostCdnInstanceList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeHostCdnInstanceListOutcome>>();
+    DescribeHostCdnInstanceListAsync(
+    request,
+    [prom](
+        const SslClient*,
+        const DescribeHostCdnInstanceListRequest&,
+        DescribeHostCdnInstanceListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SslClient::DescribeHostClbInstanceListOutcome SslClient::DescribeHostClbInstanceList(const DescribeHostClbInstanceListRequest &request)
@@ -1395,25 +1612,32 @@ SslClient::DescribeHostClbInstanceListOutcome SslClient::DescribeHostClbInstance
 
 void SslClient::DescribeHostClbInstanceListAsync(const DescribeHostClbInstanceListRequest& request, const DescribeHostClbInstanceListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeHostClbInstanceList(request), context);
-    };
+    using Req = const DescribeHostClbInstanceListRequest&;
+    using Resp = DescribeHostClbInstanceListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeHostClbInstanceList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SslClient::DescribeHostClbInstanceListOutcomeCallable SslClient::DescribeHostClbInstanceListCallable(const DescribeHostClbInstanceListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeHostClbInstanceListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeHostClbInstanceList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeHostClbInstanceListOutcome>>();
+    DescribeHostClbInstanceListAsync(
+    request,
+    [prom](
+        const SslClient*,
+        const DescribeHostClbInstanceListRequest&,
+        DescribeHostClbInstanceListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SslClient::DescribeHostCosInstanceListOutcome SslClient::DescribeHostCosInstanceList(const DescribeHostCosInstanceListRequest &request)
@@ -1438,25 +1662,32 @@ SslClient::DescribeHostCosInstanceListOutcome SslClient::DescribeHostCosInstance
 
 void SslClient::DescribeHostCosInstanceListAsync(const DescribeHostCosInstanceListRequest& request, const DescribeHostCosInstanceListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeHostCosInstanceList(request), context);
-    };
+    using Req = const DescribeHostCosInstanceListRequest&;
+    using Resp = DescribeHostCosInstanceListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeHostCosInstanceList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SslClient::DescribeHostCosInstanceListOutcomeCallable SslClient::DescribeHostCosInstanceListCallable(const DescribeHostCosInstanceListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeHostCosInstanceListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeHostCosInstanceList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeHostCosInstanceListOutcome>>();
+    DescribeHostCosInstanceListAsync(
+    request,
+    [prom](
+        const SslClient*,
+        const DescribeHostCosInstanceListRequest&,
+        DescribeHostCosInstanceListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SslClient::DescribeHostDdosInstanceListOutcome SslClient::DescribeHostDdosInstanceList(const DescribeHostDdosInstanceListRequest &request)
@@ -1481,25 +1712,32 @@ SslClient::DescribeHostDdosInstanceListOutcome SslClient::DescribeHostDdosInstan
 
 void SslClient::DescribeHostDdosInstanceListAsync(const DescribeHostDdosInstanceListRequest& request, const DescribeHostDdosInstanceListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeHostDdosInstanceList(request), context);
-    };
+    using Req = const DescribeHostDdosInstanceListRequest&;
+    using Resp = DescribeHostDdosInstanceListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeHostDdosInstanceList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SslClient::DescribeHostDdosInstanceListOutcomeCallable SslClient::DescribeHostDdosInstanceListCallable(const DescribeHostDdosInstanceListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeHostDdosInstanceListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeHostDdosInstanceList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeHostDdosInstanceListOutcome>>();
+    DescribeHostDdosInstanceListAsync(
+    request,
+    [prom](
+        const SslClient*,
+        const DescribeHostDdosInstanceListRequest&,
+        DescribeHostDdosInstanceListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SslClient::DescribeHostDeployRecordOutcome SslClient::DescribeHostDeployRecord(const DescribeHostDeployRecordRequest &request)
@@ -1524,25 +1762,32 @@ SslClient::DescribeHostDeployRecordOutcome SslClient::DescribeHostDeployRecord(c
 
 void SslClient::DescribeHostDeployRecordAsync(const DescribeHostDeployRecordRequest& request, const DescribeHostDeployRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeHostDeployRecord(request), context);
-    };
+    using Req = const DescribeHostDeployRecordRequest&;
+    using Resp = DescribeHostDeployRecordResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeHostDeployRecord", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SslClient::DescribeHostDeployRecordOutcomeCallable SslClient::DescribeHostDeployRecordCallable(const DescribeHostDeployRecordRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeHostDeployRecordOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeHostDeployRecord(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeHostDeployRecordOutcome>>();
+    DescribeHostDeployRecordAsync(
+    request,
+    [prom](
+        const SslClient*,
+        const DescribeHostDeployRecordRequest&,
+        DescribeHostDeployRecordOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SslClient::DescribeHostDeployRecordDetailOutcome SslClient::DescribeHostDeployRecordDetail(const DescribeHostDeployRecordDetailRequest &request)
@@ -1567,25 +1812,32 @@ SslClient::DescribeHostDeployRecordDetailOutcome SslClient::DescribeHostDeployRe
 
 void SslClient::DescribeHostDeployRecordDetailAsync(const DescribeHostDeployRecordDetailRequest& request, const DescribeHostDeployRecordDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeHostDeployRecordDetail(request), context);
-    };
+    using Req = const DescribeHostDeployRecordDetailRequest&;
+    using Resp = DescribeHostDeployRecordDetailResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeHostDeployRecordDetail", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SslClient::DescribeHostDeployRecordDetailOutcomeCallable SslClient::DescribeHostDeployRecordDetailCallable(const DescribeHostDeployRecordDetailRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeHostDeployRecordDetailOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeHostDeployRecordDetail(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeHostDeployRecordDetailOutcome>>();
+    DescribeHostDeployRecordDetailAsync(
+    request,
+    [prom](
+        const SslClient*,
+        const DescribeHostDeployRecordDetailRequest&,
+        DescribeHostDeployRecordDetailOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SslClient::DescribeHostLighthouseInstanceListOutcome SslClient::DescribeHostLighthouseInstanceList(const DescribeHostLighthouseInstanceListRequest &request)
@@ -1610,25 +1862,32 @@ SslClient::DescribeHostLighthouseInstanceListOutcome SslClient::DescribeHostLigh
 
 void SslClient::DescribeHostLighthouseInstanceListAsync(const DescribeHostLighthouseInstanceListRequest& request, const DescribeHostLighthouseInstanceListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeHostLighthouseInstanceList(request), context);
-    };
+    using Req = const DescribeHostLighthouseInstanceListRequest&;
+    using Resp = DescribeHostLighthouseInstanceListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeHostLighthouseInstanceList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SslClient::DescribeHostLighthouseInstanceListOutcomeCallable SslClient::DescribeHostLighthouseInstanceListCallable(const DescribeHostLighthouseInstanceListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeHostLighthouseInstanceListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeHostLighthouseInstanceList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeHostLighthouseInstanceListOutcome>>();
+    DescribeHostLighthouseInstanceListAsync(
+    request,
+    [prom](
+        const SslClient*,
+        const DescribeHostLighthouseInstanceListRequest&,
+        DescribeHostLighthouseInstanceListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SslClient::DescribeHostLiveInstanceListOutcome SslClient::DescribeHostLiveInstanceList(const DescribeHostLiveInstanceListRequest &request)
@@ -1653,25 +1912,32 @@ SslClient::DescribeHostLiveInstanceListOutcome SslClient::DescribeHostLiveInstan
 
 void SslClient::DescribeHostLiveInstanceListAsync(const DescribeHostLiveInstanceListRequest& request, const DescribeHostLiveInstanceListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeHostLiveInstanceList(request), context);
-    };
+    using Req = const DescribeHostLiveInstanceListRequest&;
+    using Resp = DescribeHostLiveInstanceListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeHostLiveInstanceList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SslClient::DescribeHostLiveInstanceListOutcomeCallable SslClient::DescribeHostLiveInstanceListCallable(const DescribeHostLiveInstanceListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeHostLiveInstanceListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeHostLiveInstanceList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeHostLiveInstanceListOutcome>>();
+    DescribeHostLiveInstanceListAsync(
+    request,
+    [prom](
+        const SslClient*,
+        const DescribeHostLiveInstanceListRequest&,
+        DescribeHostLiveInstanceListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SslClient::DescribeHostTeoInstanceListOutcome SslClient::DescribeHostTeoInstanceList(const DescribeHostTeoInstanceListRequest &request)
@@ -1696,25 +1962,32 @@ SslClient::DescribeHostTeoInstanceListOutcome SslClient::DescribeHostTeoInstance
 
 void SslClient::DescribeHostTeoInstanceListAsync(const DescribeHostTeoInstanceListRequest& request, const DescribeHostTeoInstanceListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeHostTeoInstanceList(request), context);
-    };
+    using Req = const DescribeHostTeoInstanceListRequest&;
+    using Resp = DescribeHostTeoInstanceListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeHostTeoInstanceList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SslClient::DescribeHostTeoInstanceListOutcomeCallable SslClient::DescribeHostTeoInstanceListCallable(const DescribeHostTeoInstanceListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeHostTeoInstanceListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeHostTeoInstanceList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeHostTeoInstanceListOutcome>>();
+    DescribeHostTeoInstanceListAsync(
+    request,
+    [prom](
+        const SslClient*,
+        const DescribeHostTeoInstanceListRequest&,
+        DescribeHostTeoInstanceListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SslClient::DescribeHostTkeInstanceListOutcome SslClient::DescribeHostTkeInstanceList(const DescribeHostTkeInstanceListRequest &request)
@@ -1739,25 +2012,32 @@ SslClient::DescribeHostTkeInstanceListOutcome SslClient::DescribeHostTkeInstance
 
 void SslClient::DescribeHostTkeInstanceListAsync(const DescribeHostTkeInstanceListRequest& request, const DescribeHostTkeInstanceListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeHostTkeInstanceList(request), context);
-    };
+    using Req = const DescribeHostTkeInstanceListRequest&;
+    using Resp = DescribeHostTkeInstanceListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeHostTkeInstanceList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SslClient::DescribeHostTkeInstanceListOutcomeCallable SslClient::DescribeHostTkeInstanceListCallable(const DescribeHostTkeInstanceListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeHostTkeInstanceListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeHostTkeInstanceList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeHostTkeInstanceListOutcome>>();
+    DescribeHostTkeInstanceListAsync(
+    request,
+    [prom](
+        const SslClient*,
+        const DescribeHostTkeInstanceListRequest&,
+        DescribeHostTkeInstanceListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SslClient::DescribeHostUpdateRecordOutcome SslClient::DescribeHostUpdateRecord(const DescribeHostUpdateRecordRequest &request)
@@ -1782,25 +2062,32 @@ SslClient::DescribeHostUpdateRecordOutcome SslClient::DescribeHostUpdateRecord(c
 
 void SslClient::DescribeHostUpdateRecordAsync(const DescribeHostUpdateRecordRequest& request, const DescribeHostUpdateRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeHostUpdateRecord(request), context);
-    };
+    using Req = const DescribeHostUpdateRecordRequest&;
+    using Resp = DescribeHostUpdateRecordResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeHostUpdateRecord", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SslClient::DescribeHostUpdateRecordOutcomeCallable SslClient::DescribeHostUpdateRecordCallable(const DescribeHostUpdateRecordRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeHostUpdateRecordOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeHostUpdateRecord(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeHostUpdateRecordOutcome>>();
+    DescribeHostUpdateRecordAsync(
+    request,
+    [prom](
+        const SslClient*,
+        const DescribeHostUpdateRecordRequest&,
+        DescribeHostUpdateRecordOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SslClient::DescribeHostUpdateRecordDetailOutcome SslClient::DescribeHostUpdateRecordDetail(const DescribeHostUpdateRecordDetailRequest &request)
@@ -1825,25 +2112,32 @@ SslClient::DescribeHostUpdateRecordDetailOutcome SslClient::DescribeHostUpdateRe
 
 void SslClient::DescribeHostUpdateRecordDetailAsync(const DescribeHostUpdateRecordDetailRequest& request, const DescribeHostUpdateRecordDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeHostUpdateRecordDetail(request), context);
-    };
+    using Req = const DescribeHostUpdateRecordDetailRequest&;
+    using Resp = DescribeHostUpdateRecordDetailResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeHostUpdateRecordDetail", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SslClient::DescribeHostUpdateRecordDetailOutcomeCallable SslClient::DescribeHostUpdateRecordDetailCallable(const DescribeHostUpdateRecordDetailRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeHostUpdateRecordDetailOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeHostUpdateRecordDetail(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeHostUpdateRecordDetailOutcome>>();
+    DescribeHostUpdateRecordDetailAsync(
+    request,
+    [prom](
+        const SslClient*,
+        const DescribeHostUpdateRecordDetailRequest&,
+        DescribeHostUpdateRecordDetailOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SslClient::DescribeHostUploadUpdateRecordOutcome SslClient::DescribeHostUploadUpdateRecord(const DescribeHostUploadUpdateRecordRequest &request)
@@ -1868,25 +2162,32 @@ SslClient::DescribeHostUploadUpdateRecordOutcome SslClient::DescribeHostUploadUp
 
 void SslClient::DescribeHostUploadUpdateRecordAsync(const DescribeHostUploadUpdateRecordRequest& request, const DescribeHostUploadUpdateRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeHostUploadUpdateRecord(request), context);
-    };
+    using Req = const DescribeHostUploadUpdateRecordRequest&;
+    using Resp = DescribeHostUploadUpdateRecordResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeHostUploadUpdateRecord", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SslClient::DescribeHostUploadUpdateRecordOutcomeCallable SslClient::DescribeHostUploadUpdateRecordCallable(const DescribeHostUploadUpdateRecordRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeHostUploadUpdateRecordOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeHostUploadUpdateRecord(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeHostUploadUpdateRecordOutcome>>();
+    DescribeHostUploadUpdateRecordAsync(
+    request,
+    [prom](
+        const SslClient*,
+        const DescribeHostUploadUpdateRecordRequest&,
+        DescribeHostUploadUpdateRecordOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SslClient::DescribeHostUploadUpdateRecordDetailOutcome SslClient::DescribeHostUploadUpdateRecordDetail(const DescribeHostUploadUpdateRecordDetailRequest &request)
@@ -1911,25 +2212,32 @@ SslClient::DescribeHostUploadUpdateRecordDetailOutcome SslClient::DescribeHostUp
 
 void SslClient::DescribeHostUploadUpdateRecordDetailAsync(const DescribeHostUploadUpdateRecordDetailRequest& request, const DescribeHostUploadUpdateRecordDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeHostUploadUpdateRecordDetail(request), context);
-    };
+    using Req = const DescribeHostUploadUpdateRecordDetailRequest&;
+    using Resp = DescribeHostUploadUpdateRecordDetailResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeHostUploadUpdateRecordDetail", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SslClient::DescribeHostUploadUpdateRecordDetailOutcomeCallable SslClient::DescribeHostUploadUpdateRecordDetailCallable(const DescribeHostUploadUpdateRecordDetailRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeHostUploadUpdateRecordDetailOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeHostUploadUpdateRecordDetail(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeHostUploadUpdateRecordDetailOutcome>>();
+    DescribeHostUploadUpdateRecordDetailAsync(
+    request,
+    [prom](
+        const SslClient*,
+        const DescribeHostUploadUpdateRecordDetailRequest&,
+        DescribeHostUploadUpdateRecordDetailOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SslClient::DescribeHostVodInstanceListOutcome SslClient::DescribeHostVodInstanceList(const DescribeHostVodInstanceListRequest &request)
@@ -1954,25 +2262,32 @@ SslClient::DescribeHostVodInstanceListOutcome SslClient::DescribeHostVodInstance
 
 void SslClient::DescribeHostVodInstanceListAsync(const DescribeHostVodInstanceListRequest& request, const DescribeHostVodInstanceListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeHostVodInstanceList(request), context);
-    };
+    using Req = const DescribeHostVodInstanceListRequest&;
+    using Resp = DescribeHostVodInstanceListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeHostVodInstanceList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SslClient::DescribeHostVodInstanceListOutcomeCallable SslClient::DescribeHostVodInstanceListCallable(const DescribeHostVodInstanceListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeHostVodInstanceListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeHostVodInstanceList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeHostVodInstanceListOutcome>>();
+    DescribeHostVodInstanceListAsync(
+    request,
+    [prom](
+        const SslClient*,
+        const DescribeHostVodInstanceListRequest&,
+        DescribeHostVodInstanceListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SslClient::DescribeHostWafInstanceListOutcome SslClient::DescribeHostWafInstanceList(const DescribeHostWafInstanceListRequest &request)
@@ -1997,25 +2312,32 @@ SslClient::DescribeHostWafInstanceListOutcome SslClient::DescribeHostWafInstance
 
 void SslClient::DescribeHostWafInstanceListAsync(const DescribeHostWafInstanceListRequest& request, const DescribeHostWafInstanceListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeHostWafInstanceList(request), context);
-    };
+    using Req = const DescribeHostWafInstanceListRequest&;
+    using Resp = DescribeHostWafInstanceListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeHostWafInstanceList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SslClient::DescribeHostWafInstanceListOutcomeCallable SslClient::DescribeHostWafInstanceListCallable(const DescribeHostWafInstanceListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeHostWafInstanceListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeHostWafInstanceList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeHostWafInstanceListOutcome>>();
+    DescribeHostWafInstanceListAsync(
+    request,
+    [prom](
+        const SslClient*,
+        const DescribeHostWafInstanceListRequest&,
+        DescribeHostWafInstanceListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SslClient::DescribeManagerDetailOutcome SslClient::DescribeManagerDetail(const DescribeManagerDetailRequest &request)
@@ -2040,25 +2362,32 @@ SslClient::DescribeManagerDetailOutcome SslClient::DescribeManagerDetail(const D
 
 void SslClient::DescribeManagerDetailAsync(const DescribeManagerDetailRequest& request, const DescribeManagerDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeManagerDetail(request), context);
-    };
+    using Req = const DescribeManagerDetailRequest&;
+    using Resp = DescribeManagerDetailResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeManagerDetail", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SslClient::DescribeManagerDetailOutcomeCallable SslClient::DescribeManagerDetailCallable(const DescribeManagerDetailRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeManagerDetailOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeManagerDetail(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeManagerDetailOutcome>>();
+    DescribeManagerDetailAsync(
+    request,
+    [prom](
+        const SslClient*,
+        const DescribeManagerDetailRequest&,
+        DescribeManagerDetailOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SslClient::DescribeManagersOutcome SslClient::DescribeManagers(const DescribeManagersRequest &request)
@@ -2083,25 +2412,32 @@ SslClient::DescribeManagersOutcome SslClient::DescribeManagers(const DescribeMan
 
 void SslClient::DescribeManagersAsync(const DescribeManagersRequest& request, const DescribeManagersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeManagers(request), context);
-    };
+    using Req = const DescribeManagersRequest&;
+    using Resp = DescribeManagersResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeManagers", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SslClient::DescribeManagersOutcomeCallable SslClient::DescribeManagersCallable(const DescribeManagersRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeManagersOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeManagers(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeManagersOutcome>>();
+    DescribeManagersAsync(
+    request,
+    [prom](
+        const SslClient*,
+        const DescribeManagersRequest&,
+        DescribeManagersOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SslClient::DescribePackagesOutcome SslClient::DescribePackages(const DescribePackagesRequest &request)
@@ -2126,25 +2462,32 @@ SslClient::DescribePackagesOutcome SslClient::DescribePackages(const DescribePac
 
 void SslClient::DescribePackagesAsync(const DescribePackagesRequest& request, const DescribePackagesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribePackages(request), context);
-    };
+    using Req = const DescribePackagesRequest&;
+    using Resp = DescribePackagesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribePackages", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SslClient::DescribePackagesOutcomeCallable SslClient::DescribePackagesCallable(const DescribePackagesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribePackagesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribePackages(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribePackagesOutcome>>();
+    DescribePackagesAsync(
+    request,
+    [prom](
+        const SslClient*,
+        const DescribePackagesRequest&,
+        DescribePackagesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SslClient::DownloadCertificateOutcome SslClient::DownloadCertificate(const DownloadCertificateRequest &request)
@@ -2169,25 +2512,32 @@ SslClient::DownloadCertificateOutcome SslClient::DownloadCertificate(const Downl
 
 void SslClient::DownloadCertificateAsync(const DownloadCertificateRequest& request, const DownloadCertificateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DownloadCertificate(request), context);
-    };
+    using Req = const DownloadCertificateRequest&;
+    using Resp = DownloadCertificateResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DownloadCertificate", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SslClient::DownloadCertificateOutcomeCallable SslClient::DownloadCertificateCallable(const DownloadCertificateRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DownloadCertificateOutcome()>>(
-        [this, request]()
-        {
-            return this->DownloadCertificate(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DownloadCertificateOutcome>>();
+    DownloadCertificateAsync(
+    request,
+    [prom](
+        const SslClient*,
+        const DownloadCertificateRequest&,
+        DownloadCertificateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SslClient::ModifyCertificateAliasOutcome SslClient::ModifyCertificateAlias(const ModifyCertificateAliasRequest &request)
@@ -2212,25 +2562,32 @@ SslClient::ModifyCertificateAliasOutcome SslClient::ModifyCertificateAlias(const
 
 void SslClient::ModifyCertificateAliasAsync(const ModifyCertificateAliasRequest& request, const ModifyCertificateAliasAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyCertificateAlias(request), context);
-    };
+    using Req = const ModifyCertificateAliasRequest&;
+    using Resp = ModifyCertificateAliasResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyCertificateAlias", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SslClient::ModifyCertificateAliasOutcomeCallable SslClient::ModifyCertificateAliasCallable(const ModifyCertificateAliasRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyCertificateAliasOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyCertificateAlias(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyCertificateAliasOutcome>>();
+    ModifyCertificateAliasAsync(
+    request,
+    [prom](
+        const SslClient*,
+        const ModifyCertificateAliasRequest&,
+        ModifyCertificateAliasOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SslClient::ModifyCertificateProjectOutcome SslClient::ModifyCertificateProject(const ModifyCertificateProjectRequest &request)
@@ -2255,25 +2612,32 @@ SslClient::ModifyCertificateProjectOutcome SslClient::ModifyCertificateProject(c
 
 void SslClient::ModifyCertificateProjectAsync(const ModifyCertificateProjectRequest& request, const ModifyCertificateProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyCertificateProject(request), context);
-    };
+    using Req = const ModifyCertificateProjectRequest&;
+    using Resp = ModifyCertificateProjectResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyCertificateProject", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SslClient::ModifyCertificateProjectOutcomeCallable SslClient::ModifyCertificateProjectCallable(const ModifyCertificateProjectRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyCertificateProjectOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyCertificateProject(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyCertificateProjectOutcome>>();
+    ModifyCertificateProjectAsync(
+    request,
+    [prom](
+        const SslClient*,
+        const ModifyCertificateProjectRequest&,
+        ModifyCertificateProjectOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SslClient::ModifyCertificateResubmitOutcome SslClient::ModifyCertificateResubmit(const ModifyCertificateResubmitRequest &request)
@@ -2298,25 +2662,32 @@ SslClient::ModifyCertificateResubmitOutcome SslClient::ModifyCertificateResubmit
 
 void SslClient::ModifyCertificateResubmitAsync(const ModifyCertificateResubmitRequest& request, const ModifyCertificateResubmitAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyCertificateResubmit(request), context);
-    };
+    using Req = const ModifyCertificateResubmitRequest&;
+    using Resp = ModifyCertificateResubmitResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyCertificateResubmit", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SslClient::ModifyCertificateResubmitOutcomeCallable SslClient::ModifyCertificateResubmitCallable(const ModifyCertificateResubmitRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyCertificateResubmitOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyCertificateResubmit(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyCertificateResubmitOutcome>>();
+    ModifyCertificateResubmitAsync(
+    request,
+    [prom](
+        const SslClient*,
+        const ModifyCertificateResubmitRequest&,
+        ModifyCertificateResubmitOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SslClient::ModifyCertificatesExpiringNotificationSwitchOutcome SslClient::ModifyCertificatesExpiringNotificationSwitch(const ModifyCertificatesExpiringNotificationSwitchRequest &request)
@@ -2341,25 +2712,32 @@ SslClient::ModifyCertificatesExpiringNotificationSwitchOutcome SslClient::Modify
 
 void SslClient::ModifyCertificatesExpiringNotificationSwitchAsync(const ModifyCertificatesExpiringNotificationSwitchRequest& request, const ModifyCertificatesExpiringNotificationSwitchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyCertificatesExpiringNotificationSwitch(request), context);
-    };
+    using Req = const ModifyCertificatesExpiringNotificationSwitchRequest&;
+    using Resp = ModifyCertificatesExpiringNotificationSwitchResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyCertificatesExpiringNotificationSwitch", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SslClient::ModifyCertificatesExpiringNotificationSwitchOutcomeCallable SslClient::ModifyCertificatesExpiringNotificationSwitchCallable(const ModifyCertificatesExpiringNotificationSwitchRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyCertificatesExpiringNotificationSwitchOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyCertificatesExpiringNotificationSwitch(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyCertificatesExpiringNotificationSwitchOutcome>>();
+    ModifyCertificatesExpiringNotificationSwitchAsync(
+    request,
+    [prom](
+        const SslClient*,
+        const ModifyCertificatesExpiringNotificationSwitchRequest&,
+        ModifyCertificatesExpiringNotificationSwitchOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SslClient::ReplaceCertificateOutcome SslClient::ReplaceCertificate(const ReplaceCertificateRequest &request)
@@ -2384,25 +2762,32 @@ SslClient::ReplaceCertificateOutcome SslClient::ReplaceCertificate(const Replace
 
 void SslClient::ReplaceCertificateAsync(const ReplaceCertificateRequest& request, const ReplaceCertificateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ReplaceCertificate(request), context);
-    };
+    using Req = const ReplaceCertificateRequest&;
+    using Resp = ReplaceCertificateResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ReplaceCertificate", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SslClient::ReplaceCertificateOutcomeCallable SslClient::ReplaceCertificateCallable(const ReplaceCertificateRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ReplaceCertificateOutcome()>>(
-        [this, request]()
-        {
-            return this->ReplaceCertificate(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ReplaceCertificateOutcome>>();
+    ReplaceCertificateAsync(
+    request,
+    [prom](
+        const SslClient*,
+        const ReplaceCertificateRequest&,
+        ReplaceCertificateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SslClient::RevokeCertificateOutcome SslClient::RevokeCertificate(const RevokeCertificateRequest &request)
@@ -2427,25 +2812,32 @@ SslClient::RevokeCertificateOutcome SslClient::RevokeCertificate(const RevokeCer
 
 void SslClient::RevokeCertificateAsync(const RevokeCertificateRequest& request, const RevokeCertificateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->RevokeCertificate(request), context);
-    };
+    using Req = const RevokeCertificateRequest&;
+    using Resp = RevokeCertificateResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "RevokeCertificate", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SslClient::RevokeCertificateOutcomeCallable SslClient::RevokeCertificateCallable(const RevokeCertificateRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<RevokeCertificateOutcome()>>(
-        [this, request]()
-        {
-            return this->RevokeCertificate(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<RevokeCertificateOutcome>>();
+    RevokeCertificateAsync(
+    request,
+    [prom](
+        const SslClient*,
+        const RevokeCertificateRequest&,
+        RevokeCertificateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SslClient::SubmitAuditManagerOutcome SslClient::SubmitAuditManager(const SubmitAuditManagerRequest &request)
@@ -2470,25 +2862,32 @@ SslClient::SubmitAuditManagerOutcome SslClient::SubmitAuditManager(const SubmitA
 
 void SslClient::SubmitAuditManagerAsync(const SubmitAuditManagerRequest& request, const SubmitAuditManagerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->SubmitAuditManager(request), context);
-    };
+    using Req = const SubmitAuditManagerRequest&;
+    using Resp = SubmitAuditManagerResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "SubmitAuditManager", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SslClient::SubmitAuditManagerOutcomeCallable SslClient::SubmitAuditManagerCallable(const SubmitAuditManagerRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<SubmitAuditManagerOutcome()>>(
-        [this, request]()
-        {
-            return this->SubmitAuditManager(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<SubmitAuditManagerOutcome>>();
+    SubmitAuditManagerAsync(
+    request,
+    [prom](
+        const SslClient*,
+        const SubmitAuditManagerRequest&,
+        SubmitAuditManagerOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SslClient::SubmitCertificateInformationOutcome SslClient::SubmitCertificateInformation(const SubmitCertificateInformationRequest &request)
@@ -2513,25 +2912,32 @@ SslClient::SubmitCertificateInformationOutcome SslClient::SubmitCertificateInfor
 
 void SslClient::SubmitCertificateInformationAsync(const SubmitCertificateInformationRequest& request, const SubmitCertificateInformationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->SubmitCertificateInformation(request), context);
-    };
+    using Req = const SubmitCertificateInformationRequest&;
+    using Resp = SubmitCertificateInformationResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "SubmitCertificateInformation", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SslClient::SubmitCertificateInformationOutcomeCallable SslClient::SubmitCertificateInformationCallable(const SubmitCertificateInformationRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<SubmitCertificateInformationOutcome()>>(
-        [this, request]()
-        {
-            return this->SubmitCertificateInformation(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<SubmitCertificateInformationOutcome>>();
+    SubmitCertificateInformationAsync(
+    request,
+    [prom](
+        const SslClient*,
+        const SubmitCertificateInformationRequest&,
+        SubmitCertificateInformationOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SslClient::UpdateCertificateInstanceOutcome SslClient::UpdateCertificateInstance(const UpdateCertificateInstanceRequest &request)
@@ -2556,25 +2962,32 @@ SslClient::UpdateCertificateInstanceOutcome SslClient::UpdateCertificateInstance
 
 void SslClient::UpdateCertificateInstanceAsync(const UpdateCertificateInstanceRequest& request, const UpdateCertificateInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UpdateCertificateInstance(request), context);
-    };
+    using Req = const UpdateCertificateInstanceRequest&;
+    using Resp = UpdateCertificateInstanceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UpdateCertificateInstance", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SslClient::UpdateCertificateInstanceOutcomeCallable SslClient::UpdateCertificateInstanceCallable(const UpdateCertificateInstanceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UpdateCertificateInstanceOutcome()>>(
-        [this, request]()
-        {
-            return this->UpdateCertificateInstance(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UpdateCertificateInstanceOutcome>>();
+    UpdateCertificateInstanceAsync(
+    request,
+    [prom](
+        const SslClient*,
+        const UpdateCertificateInstanceRequest&,
+        UpdateCertificateInstanceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SslClient::UpdateCertificateRecordRetryOutcome SslClient::UpdateCertificateRecordRetry(const UpdateCertificateRecordRetryRequest &request)
@@ -2599,25 +3012,32 @@ SslClient::UpdateCertificateRecordRetryOutcome SslClient::UpdateCertificateRecor
 
 void SslClient::UpdateCertificateRecordRetryAsync(const UpdateCertificateRecordRetryRequest& request, const UpdateCertificateRecordRetryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UpdateCertificateRecordRetry(request), context);
-    };
+    using Req = const UpdateCertificateRecordRetryRequest&;
+    using Resp = UpdateCertificateRecordRetryResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UpdateCertificateRecordRetry", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SslClient::UpdateCertificateRecordRetryOutcomeCallable SslClient::UpdateCertificateRecordRetryCallable(const UpdateCertificateRecordRetryRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UpdateCertificateRecordRetryOutcome()>>(
-        [this, request]()
-        {
-            return this->UpdateCertificateRecordRetry(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UpdateCertificateRecordRetryOutcome>>();
+    UpdateCertificateRecordRetryAsync(
+    request,
+    [prom](
+        const SslClient*,
+        const UpdateCertificateRecordRetryRequest&,
+        UpdateCertificateRecordRetryOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SslClient::UpdateCertificateRecordRollbackOutcome SslClient::UpdateCertificateRecordRollback(const UpdateCertificateRecordRollbackRequest &request)
@@ -2642,25 +3062,32 @@ SslClient::UpdateCertificateRecordRollbackOutcome SslClient::UpdateCertificateRe
 
 void SslClient::UpdateCertificateRecordRollbackAsync(const UpdateCertificateRecordRollbackRequest& request, const UpdateCertificateRecordRollbackAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UpdateCertificateRecordRollback(request), context);
-    };
+    using Req = const UpdateCertificateRecordRollbackRequest&;
+    using Resp = UpdateCertificateRecordRollbackResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UpdateCertificateRecordRollback", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SslClient::UpdateCertificateRecordRollbackOutcomeCallable SslClient::UpdateCertificateRecordRollbackCallable(const UpdateCertificateRecordRollbackRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UpdateCertificateRecordRollbackOutcome()>>(
-        [this, request]()
-        {
-            return this->UpdateCertificateRecordRollback(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UpdateCertificateRecordRollbackOutcome>>();
+    UpdateCertificateRecordRollbackAsync(
+    request,
+    [prom](
+        const SslClient*,
+        const UpdateCertificateRecordRollbackRequest&,
+        UpdateCertificateRecordRollbackOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SslClient::UploadCertificateOutcome SslClient::UploadCertificate(const UploadCertificateRequest &request)
@@ -2685,25 +3112,32 @@ SslClient::UploadCertificateOutcome SslClient::UploadCertificate(const UploadCer
 
 void SslClient::UploadCertificateAsync(const UploadCertificateRequest& request, const UploadCertificateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UploadCertificate(request), context);
-    };
+    using Req = const UploadCertificateRequest&;
+    using Resp = UploadCertificateResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UploadCertificate", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SslClient::UploadCertificateOutcomeCallable SslClient::UploadCertificateCallable(const UploadCertificateRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UploadCertificateOutcome()>>(
-        [this, request]()
-        {
-            return this->UploadCertificate(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UploadCertificateOutcome>>();
+    UploadCertificateAsync(
+    request,
+    [prom](
+        const SslClient*,
+        const UploadCertificateRequest&,
+        UploadCertificateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SslClient::UploadConfirmLetterOutcome SslClient::UploadConfirmLetter(const UploadConfirmLetterRequest &request)
@@ -2728,25 +3162,32 @@ SslClient::UploadConfirmLetterOutcome SslClient::UploadConfirmLetter(const Uploa
 
 void SslClient::UploadConfirmLetterAsync(const UploadConfirmLetterRequest& request, const UploadConfirmLetterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UploadConfirmLetter(request), context);
-    };
+    using Req = const UploadConfirmLetterRequest&;
+    using Resp = UploadConfirmLetterResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UploadConfirmLetter", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SslClient::UploadConfirmLetterOutcomeCallable SslClient::UploadConfirmLetterCallable(const UploadConfirmLetterRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UploadConfirmLetterOutcome()>>(
-        [this, request]()
-        {
-            return this->UploadConfirmLetter(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UploadConfirmLetterOutcome>>();
+    UploadConfirmLetterAsync(
+    request,
+    [prom](
+        const SslClient*,
+        const UploadConfirmLetterRequest&,
+        UploadConfirmLetterOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SslClient::UploadRevokeLetterOutcome SslClient::UploadRevokeLetter(const UploadRevokeLetterRequest &request)
@@ -2771,25 +3212,32 @@ SslClient::UploadRevokeLetterOutcome SslClient::UploadRevokeLetter(const UploadR
 
 void SslClient::UploadRevokeLetterAsync(const UploadRevokeLetterRequest& request, const UploadRevokeLetterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UploadRevokeLetter(request), context);
-    };
+    using Req = const UploadRevokeLetterRequest&;
+    using Resp = UploadRevokeLetterResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UploadRevokeLetter", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SslClient::UploadRevokeLetterOutcomeCallable SslClient::UploadRevokeLetterCallable(const UploadRevokeLetterRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UploadRevokeLetterOutcome()>>(
-        [this, request]()
-        {
-            return this->UploadRevokeLetter(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UploadRevokeLetterOutcome>>();
+    UploadRevokeLetterAsync(
+    request,
+    [prom](
+        const SslClient*,
+        const UploadRevokeLetterRequest&,
+        UploadRevokeLetterOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SslClient::UploadUpdateCertificateInstanceOutcome SslClient::UploadUpdateCertificateInstance(const UploadUpdateCertificateInstanceRequest &request)
@@ -2814,25 +3262,32 @@ SslClient::UploadUpdateCertificateInstanceOutcome SslClient::UploadUpdateCertifi
 
 void SslClient::UploadUpdateCertificateInstanceAsync(const UploadUpdateCertificateInstanceRequest& request, const UploadUpdateCertificateInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UploadUpdateCertificateInstance(request), context);
-    };
+    using Req = const UploadUpdateCertificateInstanceRequest&;
+    using Resp = UploadUpdateCertificateInstanceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UploadUpdateCertificateInstance", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SslClient::UploadUpdateCertificateInstanceOutcomeCallable SslClient::UploadUpdateCertificateInstanceCallable(const UploadUpdateCertificateInstanceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UploadUpdateCertificateInstanceOutcome()>>(
-        [this, request]()
-        {
-            return this->UploadUpdateCertificateInstance(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UploadUpdateCertificateInstanceOutcome>>();
+    UploadUpdateCertificateInstanceAsync(
+    request,
+    [prom](
+        const SslClient*,
+        const UploadUpdateCertificateInstanceRequest&,
+        UploadUpdateCertificateInstanceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SslClient::UploadUpdateCertificateRecordRetryOutcome SslClient::UploadUpdateCertificateRecordRetry(const UploadUpdateCertificateRecordRetryRequest &request)
@@ -2857,25 +3312,32 @@ SslClient::UploadUpdateCertificateRecordRetryOutcome SslClient::UploadUpdateCert
 
 void SslClient::UploadUpdateCertificateRecordRetryAsync(const UploadUpdateCertificateRecordRetryRequest& request, const UploadUpdateCertificateRecordRetryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UploadUpdateCertificateRecordRetry(request), context);
-    };
+    using Req = const UploadUpdateCertificateRecordRetryRequest&;
+    using Resp = UploadUpdateCertificateRecordRetryResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UploadUpdateCertificateRecordRetry", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SslClient::UploadUpdateCertificateRecordRetryOutcomeCallable SslClient::UploadUpdateCertificateRecordRetryCallable(const UploadUpdateCertificateRecordRetryRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UploadUpdateCertificateRecordRetryOutcome()>>(
-        [this, request]()
-        {
-            return this->UploadUpdateCertificateRecordRetry(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UploadUpdateCertificateRecordRetryOutcome>>();
+    UploadUpdateCertificateRecordRetryAsync(
+    request,
+    [prom](
+        const SslClient*,
+        const UploadUpdateCertificateRecordRetryRequest&,
+        UploadUpdateCertificateRecordRetryOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SslClient::UploadUpdateCertificateRecordRollbackOutcome SslClient::UploadUpdateCertificateRecordRollback(const UploadUpdateCertificateRecordRollbackRequest &request)
@@ -2900,25 +3362,32 @@ SslClient::UploadUpdateCertificateRecordRollbackOutcome SslClient::UploadUpdateC
 
 void SslClient::UploadUpdateCertificateRecordRollbackAsync(const UploadUpdateCertificateRecordRollbackRequest& request, const UploadUpdateCertificateRecordRollbackAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UploadUpdateCertificateRecordRollback(request), context);
-    };
+    using Req = const UploadUpdateCertificateRecordRollbackRequest&;
+    using Resp = UploadUpdateCertificateRecordRollbackResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UploadUpdateCertificateRecordRollback", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SslClient::UploadUpdateCertificateRecordRollbackOutcomeCallable SslClient::UploadUpdateCertificateRecordRollbackCallable(const UploadUpdateCertificateRecordRollbackRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UploadUpdateCertificateRecordRollbackOutcome()>>(
-        [this, request]()
-        {
-            return this->UploadUpdateCertificateRecordRollback(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UploadUpdateCertificateRecordRollbackOutcome>>();
+    UploadUpdateCertificateRecordRollbackAsync(
+    request,
+    [prom](
+        const SslClient*,
+        const UploadUpdateCertificateRecordRollbackRequest&,
+        UploadUpdateCertificateRecordRollbackOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SslClient::VerifyManagerOutcome SslClient::VerifyManager(const VerifyManagerRequest &request)
@@ -2943,24 +3412,31 @@ SslClient::VerifyManagerOutcome SslClient::VerifyManager(const VerifyManagerRequ
 
 void SslClient::VerifyManagerAsync(const VerifyManagerRequest& request, const VerifyManagerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->VerifyManager(request), context);
-    };
+    using Req = const VerifyManagerRequest&;
+    using Resp = VerifyManagerResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "VerifyManager", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SslClient::VerifyManagerOutcomeCallable SslClient::VerifyManagerCallable(const VerifyManagerRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<VerifyManagerOutcome()>>(
-        [this, request]()
-        {
-            return this->VerifyManager(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<VerifyManagerOutcome>>();
+    VerifyManagerAsync(
+    request,
+    [prom](
+        const SslClient*,
+        const VerifyManagerRequest&,
+        VerifyManagerOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 

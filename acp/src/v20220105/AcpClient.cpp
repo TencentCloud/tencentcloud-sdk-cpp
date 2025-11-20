@@ -62,25 +62,32 @@ AcpClient::CreateAppScanTaskOutcome AcpClient::CreateAppScanTask(const CreateApp
 
 void AcpClient::CreateAppScanTaskAsync(const CreateAppScanTaskRequest& request, const CreateAppScanTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateAppScanTask(request), context);
-    };
+    using Req = const CreateAppScanTaskRequest&;
+    using Resp = CreateAppScanTaskResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateAppScanTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 AcpClient::CreateAppScanTaskOutcomeCallable AcpClient::CreateAppScanTaskCallable(const CreateAppScanTaskRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateAppScanTaskOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateAppScanTask(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateAppScanTaskOutcome>>();
+    CreateAppScanTaskAsync(
+    request,
+    [prom](
+        const AcpClient*,
+        const CreateAppScanTaskRequest&,
+        CreateAppScanTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 AcpClient::CreateAppScanTaskRepeatOutcome AcpClient::CreateAppScanTaskRepeat(const CreateAppScanTaskRepeatRequest &request)
@@ -105,25 +112,32 @@ AcpClient::CreateAppScanTaskRepeatOutcome AcpClient::CreateAppScanTaskRepeat(con
 
 void AcpClient::CreateAppScanTaskRepeatAsync(const CreateAppScanTaskRepeatRequest& request, const CreateAppScanTaskRepeatAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateAppScanTaskRepeat(request), context);
-    };
+    using Req = const CreateAppScanTaskRepeatRequest&;
+    using Resp = CreateAppScanTaskRepeatResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateAppScanTaskRepeat", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 AcpClient::CreateAppScanTaskRepeatOutcomeCallable AcpClient::CreateAppScanTaskRepeatCallable(const CreateAppScanTaskRepeatRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateAppScanTaskRepeatOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateAppScanTaskRepeat(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateAppScanTaskRepeatOutcome>>();
+    CreateAppScanTaskRepeatAsync(
+    request,
+    [prom](
+        const AcpClient*,
+        const CreateAppScanTaskRepeatRequest&,
+        CreateAppScanTaskRepeatOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 AcpClient::DescribeChannelTaskReportUrlOutcome AcpClient::DescribeChannelTaskReportUrl(const DescribeChannelTaskReportUrlRequest &request)
@@ -148,25 +162,32 @@ AcpClient::DescribeChannelTaskReportUrlOutcome AcpClient::DescribeChannelTaskRep
 
 void AcpClient::DescribeChannelTaskReportUrlAsync(const DescribeChannelTaskReportUrlRequest& request, const DescribeChannelTaskReportUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeChannelTaskReportUrl(request), context);
-    };
+    using Req = const DescribeChannelTaskReportUrlRequest&;
+    using Resp = DescribeChannelTaskReportUrlResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeChannelTaskReportUrl", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 AcpClient::DescribeChannelTaskReportUrlOutcomeCallable AcpClient::DescribeChannelTaskReportUrlCallable(const DescribeChannelTaskReportUrlRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeChannelTaskReportUrlOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeChannelTaskReportUrl(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeChannelTaskReportUrlOutcome>>();
+    DescribeChannelTaskReportUrlAsync(
+    request,
+    [prom](
+        const AcpClient*,
+        const DescribeChannelTaskReportUrlRequest&,
+        DescribeChannelTaskReportUrlOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 AcpClient::DescribeFileTicketOutcome AcpClient::DescribeFileTicket(const DescribeFileTicketRequest &request)
@@ -191,25 +212,32 @@ AcpClient::DescribeFileTicketOutcome AcpClient::DescribeFileTicket(const Describ
 
 void AcpClient::DescribeFileTicketAsync(const DescribeFileTicketRequest& request, const DescribeFileTicketAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeFileTicket(request), context);
-    };
+    using Req = const DescribeFileTicketRequest&;
+    using Resp = DescribeFileTicketResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeFileTicket", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 AcpClient::DescribeFileTicketOutcomeCallable AcpClient::DescribeFileTicketCallable(const DescribeFileTicketRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeFileTicketOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeFileTicket(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeFileTicketOutcome>>();
+    DescribeFileTicketAsync(
+    request,
+    [prom](
+        const AcpClient*,
+        const DescribeFileTicketRequest&,
+        DescribeFileTicketOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 AcpClient::DescribeResourceUsageInfoOutcome AcpClient::DescribeResourceUsageInfo(const DescribeResourceUsageInfoRequest &request)
@@ -234,25 +262,32 @@ AcpClient::DescribeResourceUsageInfoOutcome AcpClient::DescribeResourceUsageInfo
 
 void AcpClient::DescribeResourceUsageInfoAsync(const DescribeResourceUsageInfoRequest& request, const DescribeResourceUsageInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeResourceUsageInfo(request), context);
-    };
+    using Req = const DescribeResourceUsageInfoRequest&;
+    using Resp = DescribeResourceUsageInfoResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeResourceUsageInfo", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 AcpClient::DescribeResourceUsageInfoOutcomeCallable AcpClient::DescribeResourceUsageInfoCallable(const DescribeResourceUsageInfoRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeResourceUsageInfoOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeResourceUsageInfo(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeResourceUsageInfoOutcome>>();
+    DescribeResourceUsageInfoAsync(
+    request,
+    [prom](
+        const AcpClient*,
+        const DescribeResourceUsageInfoRequest&,
+        DescribeResourceUsageInfoOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 AcpClient::DescribeScanTaskListOutcome AcpClient::DescribeScanTaskList(const DescribeScanTaskListRequest &request)
@@ -277,25 +312,32 @@ AcpClient::DescribeScanTaskListOutcome AcpClient::DescribeScanTaskList(const Des
 
 void AcpClient::DescribeScanTaskListAsync(const DescribeScanTaskListRequest& request, const DescribeScanTaskListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeScanTaskList(request), context);
-    };
+    using Req = const DescribeScanTaskListRequest&;
+    using Resp = DescribeScanTaskListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeScanTaskList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 AcpClient::DescribeScanTaskListOutcomeCallable AcpClient::DescribeScanTaskListCallable(const DescribeScanTaskListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeScanTaskListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeScanTaskList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeScanTaskListOutcome>>();
+    DescribeScanTaskListAsync(
+    request,
+    [prom](
+        const AcpClient*,
+        const DescribeScanTaskListRequest&,
+        DescribeScanTaskListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 AcpClient::DescribeScanTaskReportUrlOutcome AcpClient::DescribeScanTaskReportUrl(const DescribeScanTaskReportUrlRequest &request)
@@ -320,25 +362,32 @@ AcpClient::DescribeScanTaskReportUrlOutcome AcpClient::DescribeScanTaskReportUrl
 
 void AcpClient::DescribeScanTaskReportUrlAsync(const DescribeScanTaskReportUrlRequest& request, const DescribeScanTaskReportUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeScanTaskReportUrl(request), context);
-    };
+    using Req = const DescribeScanTaskReportUrlRequest&;
+    using Resp = DescribeScanTaskReportUrlResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeScanTaskReportUrl", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 AcpClient::DescribeScanTaskReportUrlOutcomeCallable AcpClient::DescribeScanTaskReportUrlCallable(const DescribeScanTaskReportUrlRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeScanTaskReportUrlOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeScanTaskReportUrl(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeScanTaskReportUrlOutcome>>();
+    DescribeScanTaskReportUrlAsync(
+    request,
+    [prom](
+        const AcpClient*,
+        const DescribeScanTaskReportUrlRequest&,
+        DescribeScanTaskReportUrlOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 AcpClient::DescribeScanTaskStatusOutcome AcpClient::DescribeScanTaskStatus(const DescribeScanTaskStatusRequest &request)
@@ -363,24 +412,31 @@ AcpClient::DescribeScanTaskStatusOutcome AcpClient::DescribeScanTaskStatus(const
 
 void AcpClient::DescribeScanTaskStatusAsync(const DescribeScanTaskStatusRequest& request, const DescribeScanTaskStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeScanTaskStatus(request), context);
-    };
+    using Req = const DescribeScanTaskStatusRequest&;
+    using Resp = DescribeScanTaskStatusResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeScanTaskStatus", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 AcpClient::DescribeScanTaskStatusOutcomeCallable AcpClient::DescribeScanTaskStatusCallable(const DescribeScanTaskStatusRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeScanTaskStatusOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeScanTaskStatus(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeScanTaskStatusOutcome>>();
+    DescribeScanTaskStatusAsync(
+    request,
+    [prom](
+        const AcpClient*,
+        const DescribeScanTaskStatusRequest&,
+        DescribeScanTaskStatusOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 

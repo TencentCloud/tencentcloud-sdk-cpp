@@ -62,25 +62,32 @@ DbdcClient::DescribeDBInstancesOutcome DbdcClient::DescribeDBInstances(const Des
 
 void DbdcClient::DescribeDBInstancesAsync(const DescribeDBInstancesRequest& request, const DescribeDBInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDBInstances(request), context);
-    };
+    using Req = const DescribeDBInstancesRequest&;
+    using Resp = DescribeDBInstancesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeDBInstances", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DbdcClient::DescribeDBInstancesOutcomeCallable DbdcClient::DescribeDBInstancesCallable(const DescribeDBInstancesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeDBInstancesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDBInstances(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeDBInstancesOutcome>>();
+    DescribeDBInstancesAsync(
+    request,
+    [prom](
+        const DbdcClient*,
+        const DescribeDBInstancesRequest&,
+        DescribeDBInstancesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DbdcClient::DescribeHostListOutcome DbdcClient::DescribeHostList(const DescribeHostListRequest &request)
@@ -105,25 +112,32 @@ DbdcClient::DescribeHostListOutcome DbdcClient::DescribeHostList(const DescribeH
 
 void DbdcClient::DescribeHostListAsync(const DescribeHostListRequest& request, const DescribeHostListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeHostList(request), context);
-    };
+    using Req = const DescribeHostListRequest&;
+    using Resp = DescribeHostListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeHostList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DbdcClient::DescribeHostListOutcomeCallable DbdcClient::DescribeHostListCallable(const DescribeHostListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeHostListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeHostList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeHostListOutcome>>();
+    DescribeHostListAsync(
+    request,
+    [prom](
+        const DbdcClient*,
+        const DescribeHostListRequest&,
+        DescribeHostListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DbdcClient::DescribeInstanceDetailOutcome DbdcClient::DescribeInstanceDetail(const DescribeInstanceDetailRequest &request)
@@ -148,25 +162,32 @@ DbdcClient::DescribeInstanceDetailOutcome DbdcClient::DescribeInstanceDetail(con
 
 void DbdcClient::DescribeInstanceDetailAsync(const DescribeInstanceDetailRequest& request, const DescribeInstanceDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeInstanceDetail(request), context);
-    };
+    using Req = const DescribeInstanceDetailRequest&;
+    using Resp = DescribeInstanceDetailResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeInstanceDetail", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DbdcClient::DescribeInstanceDetailOutcomeCallable DbdcClient::DescribeInstanceDetailCallable(const DescribeInstanceDetailRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeInstanceDetailOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeInstanceDetail(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeInstanceDetailOutcome>>();
+    DescribeInstanceDetailAsync(
+    request,
+    [prom](
+        const DbdcClient*,
+        const DescribeInstanceDetailRequest&,
+        DescribeInstanceDetailOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DbdcClient::DescribeInstanceListOutcome DbdcClient::DescribeInstanceList(const DescribeInstanceListRequest &request)
@@ -191,25 +212,32 @@ DbdcClient::DescribeInstanceListOutcome DbdcClient::DescribeInstanceList(const D
 
 void DbdcClient::DescribeInstanceListAsync(const DescribeInstanceListRequest& request, const DescribeInstanceListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeInstanceList(request), context);
-    };
+    using Req = const DescribeInstanceListRequest&;
+    using Resp = DescribeInstanceListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeInstanceList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DbdcClient::DescribeInstanceListOutcomeCallable DbdcClient::DescribeInstanceListCallable(const DescribeInstanceListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeInstanceListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeInstanceList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeInstanceListOutcome>>();
+    DescribeInstanceListAsync(
+    request,
+    [prom](
+        const DbdcClient*,
+        const DescribeInstanceListRequest&,
+        DescribeInstanceListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DbdcClient::DescribeInstancesOutcome DbdcClient::DescribeInstances(const DescribeInstancesRequest &request)
@@ -234,25 +262,32 @@ DbdcClient::DescribeInstancesOutcome DbdcClient::DescribeInstances(const Describ
 
 void DbdcClient::DescribeInstancesAsync(const DescribeInstancesRequest& request, const DescribeInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeInstances(request), context);
-    };
+    using Req = const DescribeInstancesRequest&;
+    using Resp = DescribeInstancesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeInstances", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DbdcClient::DescribeInstancesOutcomeCallable DbdcClient::DescribeInstancesCallable(const DescribeInstancesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeInstancesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeInstances(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeInstancesOutcome>>();
+    DescribeInstancesAsync(
+    request,
+    [prom](
+        const DbdcClient*,
+        const DescribeInstancesRequest&,
+        DescribeInstancesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DbdcClient::ModifyInstanceNameOutcome DbdcClient::ModifyInstanceName(const ModifyInstanceNameRequest &request)
@@ -277,24 +312,31 @@ DbdcClient::ModifyInstanceNameOutcome DbdcClient::ModifyInstanceName(const Modif
 
 void DbdcClient::ModifyInstanceNameAsync(const ModifyInstanceNameRequest& request, const ModifyInstanceNameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyInstanceName(request), context);
-    };
+    using Req = const ModifyInstanceNameRequest&;
+    using Resp = ModifyInstanceNameResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyInstanceName", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DbdcClient::ModifyInstanceNameOutcomeCallable DbdcClient::ModifyInstanceNameCallable(const ModifyInstanceNameRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyInstanceNameOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyInstanceName(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyInstanceNameOutcome>>();
+    ModifyInstanceNameAsync(
+    request,
+    [prom](
+        const DbdcClient*,
+        const ModifyInstanceNameRequest&,
+        ModifyInstanceNameOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 

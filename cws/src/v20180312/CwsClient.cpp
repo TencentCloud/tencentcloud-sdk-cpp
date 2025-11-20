@@ -62,25 +62,32 @@ CwsClient::CreateMonitorsOutcome CwsClient::CreateMonitors(const CreateMonitorsR
 
 void CwsClient::CreateMonitorsAsync(const CreateMonitorsRequest& request, const CreateMonitorsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateMonitors(request), context);
-    };
+    using Req = const CreateMonitorsRequest&;
+    using Resp = CreateMonitorsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateMonitors", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwsClient::CreateMonitorsOutcomeCallable CwsClient::CreateMonitorsCallable(const CreateMonitorsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateMonitorsOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateMonitors(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateMonitorsOutcome>>();
+    CreateMonitorsAsync(
+    request,
+    [prom](
+        const CwsClient*,
+        const CreateMonitorsRequest&,
+        CreateMonitorsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwsClient::CreateSitesOutcome CwsClient::CreateSites(const CreateSitesRequest &request)
@@ -105,25 +112,32 @@ CwsClient::CreateSitesOutcome CwsClient::CreateSites(const CreateSitesRequest &r
 
 void CwsClient::CreateSitesAsync(const CreateSitesRequest& request, const CreateSitesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateSites(request), context);
-    };
+    using Req = const CreateSitesRequest&;
+    using Resp = CreateSitesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateSites", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwsClient::CreateSitesOutcomeCallable CwsClient::CreateSitesCallable(const CreateSitesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateSitesOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateSites(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateSitesOutcome>>();
+    CreateSitesAsync(
+    request,
+    [prom](
+        const CwsClient*,
+        const CreateSitesRequest&,
+        CreateSitesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwsClient::CreateSitesScansOutcome CwsClient::CreateSitesScans(const CreateSitesScansRequest &request)
@@ -148,25 +162,32 @@ CwsClient::CreateSitesScansOutcome CwsClient::CreateSitesScans(const CreateSites
 
 void CwsClient::CreateSitesScansAsync(const CreateSitesScansRequest& request, const CreateSitesScansAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateSitesScans(request), context);
-    };
+    using Req = const CreateSitesScansRequest&;
+    using Resp = CreateSitesScansResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateSitesScans", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwsClient::CreateSitesScansOutcomeCallable CwsClient::CreateSitesScansCallable(const CreateSitesScansRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateSitesScansOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateSitesScans(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateSitesScansOutcome>>();
+    CreateSitesScansAsync(
+    request,
+    [prom](
+        const CwsClient*,
+        const CreateSitesScansRequest&,
+        CreateSitesScansOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwsClient::CreateVulsMisinformationOutcome CwsClient::CreateVulsMisinformation(const CreateVulsMisinformationRequest &request)
@@ -191,25 +212,32 @@ CwsClient::CreateVulsMisinformationOutcome CwsClient::CreateVulsMisinformation(c
 
 void CwsClient::CreateVulsMisinformationAsync(const CreateVulsMisinformationRequest& request, const CreateVulsMisinformationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateVulsMisinformation(request), context);
-    };
+    using Req = const CreateVulsMisinformationRequest&;
+    using Resp = CreateVulsMisinformationResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateVulsMisinformation", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwsClient::CreateVulsMisinformationOutcomeCallable CwsClient::CreateVulsMisinformationCallable(const CreateVulsMisinformationRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateVulsMisinformationOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateVulsMisinformation(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateVulsMisinformationOutcome>>();
+    CreateVulsMisinformationAsync(
+    request,
+    [prom](
+        const CwsClient*,
+        const CreateVulsMisinformationRequest&,
+        CreateVulsMisinformationOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwsClient::CreateVulsReportOutcome CwsClient::CreateVulsReport(const CreateVulsReportRequest &request)
@@ -234,25 +262,32 @@ CwsClient::CreateVulsReportOutcome CwsClient::CreateVulsReport(const CreateVulsR
 
 void CwsClient::CreateVulsReportAsync(const CreateVulsReportRequest& request, const CreateVulsReportAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateVulsReport(request), context);
-    };
+    using Req = const CreateVulsReportRequest&;
+    using Resp = CreateVulsReportResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateVulsReport", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwsClient::CreateVulsReportOutcomeCallable CwsClient::CreateVulsReportCallable(const CreateVulsReportRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateVulsReportOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateVulsReport(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateVulsReportOutcome>>();
+    CreateVulsReportAsync(
+    request,
+    [prom](
+        const CwsClient*,
+        const CreateVulsReportRequest&,
+        CreateVulsReportOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwsClient::DeleteMonitorsOutcome CwsClient::DeleteMonitors(const DeleteMonitorsRequest &request)
@@ -277,25 +312,32 @@ CwsClient::DeleteMonitorsOutcome CwsClient::DeleteMonitors(const DeleteMonitorsR
 
 void CwsClient::DeleteMonitorsAsync(const DeleteMonitorsRequest& request, const DeleteMonitorsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteMonitors(request), context);
-    };
+    using Req = const DeleteMonitorsRequest&;
+    using Resp = DeleteMonitorsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteMonitors", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwsClient::DeleteMonitorsOutcomeCallable CwsClient::DeleteMonitorsCallable(const DeleteMonitorsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteMonitorsOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteMonitors(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteMonitorsOutcome>>();
+    DeleteMonitorsAsync(
+    request,
+    [prom](
+        const CwsClient*,
+        const DeleteMonitorsRequest&,
+        DeleteMonitorsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwsClient::DeleteSitesOutcome CwsClient::DeleteSites(const DeleteSitesRequest &request)
@@ -320,25 +362,32 @@ CwsClient::DeleteSitesOutcome CwsClient::DeleteSites(const DeleteSitesRequest &r
 
 void CwsClient::DeleteSitesAsync(const DeleteSitesRequest& request, const DeleteSitesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteSites(request), context);
-    };
+    using Req = const DeleteSitesRequest&;
+    using Resp = DeleteSitesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteSites", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwsClient::DeleteSitesOutcomeCallable CwsClient::DeleteSitesCallable(const DeleteSitesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteSitesOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteSites(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteSitesOutcome>>();
+    DeleteSitesAsync(
+    request,
+    [prom](
+        const CwsClient*,
+        const DeleteSitesRequest&,
+        DeleteSitesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwsClient::DescribeConfigOutcome CwsClient::DescribeConfig(const DescribeConfigRequest &request)
@@ -363,25 +412,32 @@ CwsClient::DescribeConfigOutcome CwsClient::DescribeConfig(const DescribeConfigR
 
 void CwsClient::DescribeConfigAsync(const DescribeConfigRequest& request, const DescribeConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeConfig(request), context);
-    };
+    using Req = const DescribeConfigRequest&;
+    using Resp = DescribeConfigResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeConfig", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwsClient::DescribeConfigOutcomeCallable CwsClient::DescribeConfigCallable(const DescribeConfigRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeConfigOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeConfig(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeConfigOutcome>>();
+    DescribeConfigAsync(
+    request,
+    [prom](
+        const CwsClient*,
+        const DescribeConfigRequest&,
+        DescribeConfigOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwsClient::DescribeMonitorsOutcome CwsClient::DescribeMonitors(const DescribeMonitorsRequest &request)
@@ -406,25 +462,32 @@ CwsClient::DescribeMonitorsOutcome CwsClient::DescribeMonitors(const DescribeMon
 
 void CwsClient::DescribeMonitorsAsync(const DescribeMonitorsRequest& request, const DescribeMonitorsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeMonitors(request), context);
-    };
+    using Req = const DescribeMonitorsRequest&;
+    using Resp = DescribeMonitorsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeMonitors", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwsClient::DescribeMonitorsOutcomeCallable CwsClient::DescribeMonitorsCallable(const DescribeMonitorsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeMonitorsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeMonitors(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeMonitorsOutcome>>();
+    DescribeMonitorsAsync(
+    request,
+    [prom](
+        const CwsClient*,
+        const DescribeMonitorsRequest&,
+        DescribeMonitorsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwsClient::DescribeSiteQuotaOutcome CwsClient::DescribeSiteQuota(const DescribeSiteQuotaRequest &request)
@@ -449,25 +512,32 @@ CwsClient::DescribeSiteQuotaOutcome CwsClient::DescribeSiteQuota(const DescribeS
 
 void CwsClient::DescribeSiteQuotaAsync(const DescribeSiteQuotaRequest& request, const DescribeSiteQuotaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeSiteQuota(request), context);
-    };
+    using Req = const DescribeSiteQuotaRequest&;
+    using Resp = DescribeSiteQuotaResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeSiteQuota", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwsClient::DescribeSiteQuotaOutcomeCallable CwsClient::DescribeSiteQuotaCallable(const DescribeSiteQuotaRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeSiteQuotaOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeSiteQuota(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeSiteQuotaOutcome>>();
+    DescribeSiteQuotaAsync(
+    request,
+    [prom](
+        const CwsClient*,
+        const DescribeSiteQuotaRequest&,
+        DescribeSiteQuotaOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwsClient::DescribeSitesOutcome CwsClient::DescribeSites(const DescribeSitesRequest &request)
@@ -492,25 +562,32 @@ CwsClient::DescribeSitesOutcome CwsClient::DescribeSites(const DescribeSitesRequ
 
 void CwsClient::DescribeSitesAsync(const DescribeSitesRequest& request, const DescribeSitesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeSites(request), context);
-    };
+    using Req = const DescribeSitesRequest&;
+    using Resp = DescribeSitesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeSites", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwsClient::DescribeSitesOutcomeCallable CwsClient::DescribeSitesCallable(const DescribeSitesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeSitesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeSites(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeSitesOutcome>>();
+    DescribeSitesAsync(
+    request,
+    [prom](
+        const CwsClient*,
+        const DescribeSitesRequest&,
+        DescribeSitesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwsClient::DescribeSitesVerificationOutcome CwsClient::DescribeSitesVerification(const DescribeSitesVerificationRequest &request)
@@ -535,25 +612,32 @@ CwsClient::DescribeSitesVerificationOutcome CwsClient::DescribeSitesVerification
 
 void CwsClient::DescribeSitesVerificationAsync(const DescribeSitesVerificationRequest& request, const DescribeSitesVerificationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeSitesVerification(request), context);
-    };
+    using Req = const DescribeSitesVerificationRequest&;
+    using Resp = DescribeSitesVerificationResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeSitesVerification", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwsClient::DescribeSitesVerificationOutcomeCallable CwsClient::DescribeSitesVerificationCallable(const DescribeSitesVerificationRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeSitesVerificationOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeSitesVerification(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeSitesVerificationOutcome>>();
+    DescribeSitesVerificationAsync(
+    request,
+    [prom](
+        const CwsClient*,
+        const DescribeSitesVerificationRequest&,
+        DescribeSitesVerificationOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwsClient::DescribeVulsOutcome CwsClient::DescribeVuls(const DescribeVulsRequest &request)
@@ -578,25 +662,32 @@ CwsClient::DescribeVulsOutcome CwsClient::DescribeVuls(const DescribeVulsRequest
 
 void CwsClient::DescribeVulsAsync(const DescribeVulsRequest& request, const DescribeVulsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeVuls(request), context);
-    };
+    using Req = const DescribeVulsRequest&;
+    using Resp = DescribeVulsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeVuls", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwsClient::DescribeVulsOutcomeCallable CwsClient::DescribeVulsCallable(const DescribeVulsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeVulsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeVuls(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeVulsOutcome>>();
+    DescribeVulsAsync(
+    request,
+    [prom](
+        const CwsClient*,
+        const DescribeVulsRequest&,
+        DescribeVulsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwsClient::DescribeVulsNumberOutcome CwsClient::DescribeVulsNumber(const DescribeVulsNumberRequest &request)
@@ -621,25 +712,32 @@ CwsClient::DescribeVulsNumberOutcome CwsClient::DescribeVulsNumber(const Describ
 
 void CwsClient::DescribeVulsNumberAsync(const DescribeVulsNumberRequest& request, const DescribeVulsNumberAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeVulsNumber(request), context);
-    };
+    using Req = const DescribeVulsNumberRequest&;
+    using Resp = DescribeVulsNumberResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeVulsNumber", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwsClient::DescribeVulsNumberOutcomeCallable CwsClient::DescribeVulsNumberCallable(const DescribeVulsNumberRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeVulsNumberOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeVulsNumber(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeVulsNumberOutcome>>();
+    DescribeVulsNumberAsync(
+    request,
+    [prom](
+        const CwsClient*,
+        const DescribeVulsNumberRequest&,
+        DescribeVulsNumberOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwsClient::DescribeVulsNumberTimelineOutcome CwsClient::DescribeVulsNumberTimeline(const DescribeVulsNumberTimelineRequest &request)
@@ -664,25 +762,32 @@ CwsClient::DescribeVulsNumberTimelineOutcome CwsClient::DescribeVulsNumberTimeli
 
 void CwsClient::DescribeVulsNumberTimelineAsync(const DescribeVulsNumberTimelineRequest& request, const DescribeVulsNumberTimelineAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeVulsNumberTimeline(request), context);
-    };
+    using Req = const DescribeVulsNumberTimelineRequest&;
+    using Resp = DescribeVulsNumberTimelineResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeVulsNumberTimeline", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwsClient::DescribeVulsNumberTimelineOutcomeCallable CwsClient::DescribeVulsNumberTimelineCallable(const DescribeVulsNumberTimelineRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeVulsNumberTimelineOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeVulsNumberTimeline(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeVulsNumberTimelineOutcome>>();
+    DescribeVulsNumberTimelineAsync(
+    request,
+    [prom](
+        const CwsClient*,
+        const DescribeVulsNumberTimelineRequest&,
+        DescribeVulsNumberTimelineOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwsClient::ModifyConfigAttributeOutcome CwsClient::ModifyConfigAttribute(const ModifyConfigAttributeRequest &request)
@@ -707,25 +812,32 @@ CwsClient::ModifyConfigAttributeOutcome CwsClient::ModifyConfigAttribute(const M
 
 void CwsClient::ModifyConfigAttributeAsync(const ModifyConfigAttributeRequest& request, const ModifyConfigAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyConfigAttribute(request), context);
-    };
+    using Req = const ModifyConfigAttributeRequest&;
+    using Resp = ModifyConfigAttributeResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyConfigAttribute", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwsClient::ModifyConfigAttributeOutcomeCallable CwsClient::ModifyConfigAttributeCallable(const ModifyConfigAttributeRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyConfigAttributeOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyConfigAttribute(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyConfigAttributeOutcome>>();
+    ModifyConfigAttributeAsync(
+    request,
+    [prom](
+        const CwsClient*,
+        const ModifyConfigAttributeRequest&,
+        ModifyConfigAttributeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwsClient::ModifyMonitorAttributeOutcome CwsClient::ModifyMonitorAttribute(const ModifyMonitorAttributeRequest &request)
@@ -750,25 +862,32 @@ CwsClient::ModifyMonitorAttributeOutcome CwsClient::ModifyMonitorAttribute(const
 
 void CwsClient::ModifyMonitorAttributeAsync(const ModifyMonitorAttributeRequest& request, const ModifyMonitorAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyMonitorAttribute(request), context);
-    };
+    using Req = const ModifyMonitorAttributeRequest&;
+    using Resp = ModifyMonitorAttributeResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyMonitorAttribute", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwsClient::ModifyMonitorAttributeOutcomeCallable CwsClient::ModifyMonitorAttributeCallable(const ModifyMonitorAttributeRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyMonitorAttributeOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyMonitorAttribute(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyMonitorAttributeOutcome>>();
+    ModifyMonitorAttributeAsync(
+    request,
+    [prom](
+        const CwsClient*,
+        const ModifyMonitorAttributeRequest&,
+        ModifyMonitorAttributeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwsClient::ModifySiteAttributeOutcome CwsClient::ModifySiteAttribute(const ModifySiteAttributeRequest &request)
@@ -793,25 +912,32 @@ CwsClient::ModifySiteAttributeOutcome CwsClient::ModifySiteAttribute(const Modif
 
 void CwsClient::ModifySiteAttributeAsync(const ModifySiteAttributeRequest& request, const ModifySiteAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifySiteAttribute(request), context);
-    };
+    using Req = const ModifySiteAttributeRequest&;
+    using Resp = ModifySiteAttributeResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifySiteAttribute", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwsClient::ModifySiteAttributeOutcomeCallable CwsClient::ModifySiteAttributeCallable(const ModifySiteAttributeRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifySiteAttributeOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifySiteAttribute(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifySiteAttributeOutcome>>();
+    ModifySiteAttributeAsync(
+    request,
+    [prom](
+        const CwsClient*,
+        const ModifySiteAttributeRequest&,
+        ModifySiteAttributeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CwsClient::VerifySitesOutcome CwsClient::VerifySites(const VerifySitesRequest &request)
@@ -836,24 +962,31 @@ CwsClient::VerifySitesOutcome CwsClient::VerifySites(const VerifySitesRequest &r
 
 void CwsClient::VerifySitesAsync(const VerifySitesRequest& request, const VerifySitesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->VerifySites(request), context);
-    };
+    using Req = const VerifySitesRequest&;
+    using Resp = VerifySitesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "VerifySites", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CwsClient::VerifySitesOutcomeCallable CwsClient::VerifySitesCallable(const VerifySitesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<VerifySitesOutcome()>>(
-        [this, request]()
-        {
-            return this->VerifySites(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<VerifySitesOutcome>>();
+    VerifySitesAsync(
+    request,
+    [prom](
+        const CwsClient*,
+        const VerifySitesRequest&,
+        VerifySitesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 

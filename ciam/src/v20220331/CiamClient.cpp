@@ -62,25 +62,32 @@ CiamClient::CreateApiImportUserJobOutcome CiamClient::CreateApiImportUserJob(con
 
 void CiamClient::CreateApiImportUserJobAsync(const CreateApiImportUserJobRequest& request, const CreateApiImportUserJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateApiImportUserJob(request), context);
-    };
+    using Req = const CreateApiImportUserJobRequest&;
+    using Resp = CreateApiImportUserJobResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateApiImportUserJob", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CiamClient::CreateApiImportUserJobOutcomeCallable CiamClient::CreateApiImportUserJobCallable(const CreateApiImportUserJobRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateApiImportUserJobOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateApiImportUserJob(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateApiImportUserJobOutcome>>();
+    CreateApiImportUserJobAsync(
+    request,
+    [prom](
+        const CiamClient*,
+        const CreateApiImportUserJobRequest&,
+        CreateApiImportUserJobOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CiamClient::CreateFileExportUserJobOutcome CiamClient::CreateFileExportUserJob(const CreateFileExportUserJobRequest &request)
@@ -105,25 +112,32 @@ CiamClient::CreateFileExportUserJobOutcome CiamClient::CreateFileExportUserJob(c
 
 void CiamClient::CreateFileExportUserJobAsync(const CreateFileExportUserJobRequest& request, const CreateFileExportUserJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateFileExportUserJob(request), context);
-    };
+    using Req = const CreateFileExportUserJobRequest&;
+    using Resp = CreateFileExportUserJobResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateFileExportUserJob", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CiamClient::CreateFileExportUserJobOutcomeCallable CiamClient::CreateFileExportUserJobCallable(const CreateFileExportUserJobRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateFileExportUserJobOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateFileExportUserJob(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateFileExportUserJobOutcome>>();
+    CreateFileExportUserJobAsync(
+    request,
+    [prom](
+        const CiamClient*,
+        const CreateFileExportUserJobRequest&,
+        CreateFileExportUserJobOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CiamClient::CreateUserOutcome CiamClient::CreateUser(const CreateUserRequest &request)
@@ -148,25 +162,32 @@ CiamClient::CreateUserOutcome CiamClient::CreateUser(const CreateUserRequest &re
 
 void CiamClient::CreateUserAsync(const CreateUserRequest& request, const CreateUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateUser(request), context);
-    };
+    using Req = const CreateUserRequest&;
+    using Resp = CreateUserResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateUser", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CiamClient::CreateUserOutcomeCallable CiamClient::CreateUserCallable(const CreateUserRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateUserOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateUser(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateUserOutcome>>();
+    CreateUserAsync(
+    request,
+    [prom](
+        const CiamClient*,
+        const CreateUserRequest&,
+        CreateUserOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CiamClient::CreateUserGroupOutcome CiamClient::CreateUserGroup(const CreateUserGroupRequest &request)
@@ -191,25 +212,32 @@ CiamClient::CreateUserGroupOutcome CiamClient::CreateUserGroup(const CreateUserG
 
 void CiamClient::CreateUserGroupAsync(const CreateUserGroupRequest& request, const CreateUserGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateUserGroup(request), context);
-    };
+    using Req = const CreateUserGroupRequest&;
+    using Resp = CreateUserGroupResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateUserGroup", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CiamClient::CreateUserGroupOutcomeCallable CiamClient::CreateUserGroupCallable(const CreateUserGroupRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateUserGroupOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateUserGroup(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateUserGroupOutcome>>();
+    CreateUserGroupAsync(
+    request,
+    [prom](
+        const CiamClient*,
+        const CreateUserGroupRequest&,
+        CreateUserGroupOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CiamClient::CreateUserStoreOutcome CiamClient::CreateUserStore(const CreateUserStoreRequest &request)
@@ -234,25 +262,32 @@ CiamClient::CreateUserStoreOutcome CiamClient::CreateUserStore(const CreateUserS
 
 void CiamClient::CreateUserStoreAsync(const CreateUserStoreRequest& request, const CreateUserStoreAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateUserStore(request), context);
-    };
+    using Req = const CreateUserStoreRequest&;
+    using Resp = CreateUserStoreResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateUserStore", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CiamClient::CreateUserStoreOutcomeCallable CiamClient::CreateUserStoreCallable(const CreateUserStoreRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateUserStoreOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateUserStore(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateUserStoreOutcome>>();
+    CreateUserStoreAsync(
+    request,
+    [prom](
+        const CiamClient*,
+        const CreateUserStoreRequest&,
+        CreateUserStoreOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CiamClient::DeleteUserGroupsOutcome CiamClient::DeleteUserGroups(const DeleteUserGroupsRequest &request)
@@ -277,25 +312,32 @@ CiamClient::DeleteUserGroupsOutcome CiamClient::DeleteUserGroups(const DeleteUse
 
 void CiamClient::DeleteUserGroupsAsync(const DeleteUserGroupsRequest& request, const DeleteUserGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteUserGroups(request), context);
-    };
+    using Req = const DeleteUserGroupsRequest&;
+    using Resp = DeleteUserGroupsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteUserGroups", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CiamClient::DeleteUserGroupsOutcomeCallable CiamClient::DeleteUserGroupsCallable(const DeleteUserGroupsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteUserGroupsOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteUserGroups(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteUserGroupsOutcome>>();
+    DeleteUserGroupsAsync(
+    request,
+    [prom](
+        const CiamClient*,
+        const DeleteUserGroupsRequest&,
+        DeleteUserGroupsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CiamClient::DeleteUserStoreOutcome CiamClient::DeleteUserStore(const DeleteUserStoreRequest &request)
@@ -320,25 +362,32 @@ CiamClient::DeleteUserStoreOutcome CiamClient::DeleteUserStore(const DeleteUserS
 
 void CiamClient::DeleteUserStoreAsync(const DeleteUserStoreRequest& request, const DeleteUserStoreAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteUserStore(request), context);
-    };
+    using Req = const DeleteUserStoreRequest&;
+    using Resp = DeleteUserStoreResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteUserStore", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CiamClient::DeleteUserStoreOutcomeCallable CiamClient::DeleteUserStoreCallable(const DeleteUserStoreRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteUserStoreOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteUserStore(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteUserStoreOutcome>>();
+    DeleteUserStoreAsync(
+    request,
+    [prom](
+        const CiamClient*,
+        const DeleteUserStoreRequest&,
+        DeleteUserStoreOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CiamClient::DeleteUsersOutcome CiamClient::DeleteUsers(const DeleteUsersRequest &request)
@@ -363,25 +412,32 @@ CiamClient::DeleteUsersOutcome CiamClient::DeleteUsers(const DeleteUsersRequest 
 
 void CiamClient::DeleteUsersAsync(const DeleteUsersRequest& request, const DeleteUsersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteUsers(request), context);
-    };
+    using Req = const DeleteUsersRequest&;
+    using Resp = DeleteUsersResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteUsers", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CiamClient::DeleteUsersOutcomeCallable CiamClient::DeleteUsersCallable(const DeleteUsersRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteUsersOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteUsers(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteUsersOutcome>>();
+    DeleteUsersAsync(
+    request,
+    [prom](
+        const CiamClient*,
+        const DeleteUsersRequest&,
+        DeleteUsersOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CiamClient::DescribeUserOutcome CiamClient::DescribeUser(const DescribeUserRequest &request)
@@ -406,25 +462,32 @@ CiamClient::DescribeUserOutcome CiamClient::DescribeUser(const DescribeUserReque
 
 void CiamClient::DescribeUserAsync(const DescribeUserRequest& request, const DescribeUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeUser(request), context);
-    };
+    using Req = const DescribeUserRequest&;
+    using Resp = DescribeUserResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeUser", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CiamClient::DescribeUserOutcomeCallable CiamClient::DescribeUserCallable(const DescribeUserRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeUserOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeUser(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeUserOutcome>>();
+    DescribeUserAsync(
+    request,
+    [prom](
+        const CiamClient*,
+        const DescribeUserRequest&,
+        DescribeUserOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CiamClient::DescribeUserByIdOutcome CiamClient::DescribeUserById(const DescribeUserByIdRequest &request)
@@ -449,25 +512,32 @@ CiamClient::DescribeUserByIdOutcome CiamClient::DescribeUserById(const DescribeU
 
 void CiamClient::DescribeUserByIdAsync(const DescribeUserByIdRequest& request, const DescribeUserByIdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeUserById(request), context);
-    };
+    using Req = const DescribeUserByIdRequest&;
+    using Resp = DescribeUserByIdResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeUserById", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CiamClient::DescribeUserByIdOutcomeCallable CiamClient::DescribeUserByIdCallable(const DescribeUserByIdRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeUserByIdOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeUserById(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeUserByIdOutcome>>();
+    DescribeUserByIdAsync(
+    request,
+    [prom](
+        const CiamClient*,
+        const DescribeUserByIdRequest&,
+        DescribeUserByIdOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CiamClient::LinkAccountOutcome CiamClient::LinkAccount(const LinkAccountRequest &request)
@@ -492,25 +562,32 @@ CiamClient::LinkAccountOutcome CiamClient::LinkAccount(const LinkAccountRequest 
 
 void CiamClient::LinkAccountAsync(const LinkAccountRequest& request, const LinkAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->LinkAccount(request), context);
-    };
+    using Req = const LinkAccountRequest&;
+    using Resp = LinkAccountResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "LinkAccount", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CiamClient::LinkAccountOutcomeCallable CiamClient::LinkAccountCallable(const LinkAccountRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<LinkAccountOutcome()>>(
-        [this, request]()
-        {
-            return this->LinkAccount(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<LinkAccountOutcome>>();
+    LinkAccountAsync(
+    request,
+    [prom](
+        const CiamClient*,
+        const LinkAccountRequest&,
+        LinkAccountOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CiamClient::ListJobsOutcome CiamClient::ListJobs(const ListJobsRequest &request)
@@ -535,25 +612,32 @@ CiamClient::ListJobsOutcome CiamClient::ListJobs(const ListJobsRequest &request)
 
 void CiamClient::ListJobsAsync(const ListJobsRequest& request, const ListJobsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ListJobs(request), context);
-    };
+    using Req = const ListJobsRequest&;
+    using Resp = ListJobsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ListJobs", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CiamClient::ListJobsOutcomeCallable CiamClient::ListJobsCallable(const ListJobsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ListJobsOutcome()>>(
-        [this, request]()
-        {
-            return this->ListJobs(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ListJobsOutcome>>();
+    ListJobsAsync(
+    request,
+    [prom](
+        const CiamClient*,
+        const ListJobsRequest&,
+        ListJobsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CiamClient::ListLogMessageByConditionOutcome CiamClient::ListLogMessageByCondition(const ListLogMessageByConditionRequest &request)
@@ -578,25 +662,32 @@ CiamClient::ListLogMessageByConditionOutcome CiamClient::ListLogMessageByConditi
 
 void CiamClient::ListLogMessageByConditionAsync(const ListLogMessageByConditionRequest& request, const ListLogMessageByConditionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ListLogMessageByCondition(request), context);
-    };
+    using Req = const ListLogMessageByConditionRequest&;
+    using Resp = ListLogMessageByConditionResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ListLogMessageByCondition", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CiamClient::ListLogMessageByConditionOutcomeCallable CiamClient::ListLogMessageByConditionCallable(const ListLogMessageByConditionRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ListLogMessageByConditionOutcome()>>(
-        [this, request]()
-        {
-            return this->ListLogMessageByCondition(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ListLogMessageByConditionOutcome>>();
+    ListLogMessageByConditionAsync(
+    request,
+    [prom](
+        const CiamClient*,
+        const ListLogMessageByConditionRequest&,
+        ListLogMessageByConditionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CiamClient::ListUserOutcome CiamClient::ListUser(const ListUserRequest &request)
@@ -621,25 +712,32 @@ CiamClient::ListUserOutcome CiamClient::ListUser(const ListUserRequest &request)
 
 void CiamClient::ListUserAsync(const ListUserRequest& request, const ListUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ListUser(request), context);
-    };
+    using Req = const ListUserRequest&;
+    using Resp = ListUserResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ListUser", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CiamClient::ListUserOutcomeCallable CiamClient::ListUserCallable(const ListUserRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ListUserOutcome()>>(
-        [this, request]()
-        {
-            return this->ListUser(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ListUserOutcome>>();
+    ListUserAsync(
+    request,
+    [prom](
+        const CiamClient*,
+        const ListUserRequest&,
+        ListUserOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CiamClient::ListUserByPropertyOutcome CiamClient::ListUserByProperty(const ListUserByPropertyRequest &request)
@@ -664,25 +762,32 @@ CiamClient::ListUserByPropertyOutcome CiamClient::ListUserByProperty(const ListU
 
 void CiamClient::ListUserByPropertyAsync(const ListUserByPropertyRequest& request, const ListUserByPropertyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ListUserByProperty(request), context);
-    };
+    using Req = const ListUserByPropertyRequest&;
+    using Resp = ListUserByPropertyResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ListUserByProperty", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CiamClient::ListUserByPropertyOutcomeCallable CiamClient::ListUserByPropertyCallable(const ListUserByPropertyRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ListUserByPropertyOutcome()>>(
-        [this, request]()
-        {
-            return this->ListUserByProperty(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ListUserByPropertyOutcome>>();
+    ListUserByPropertyAsync(
+    request,
+    [prom](
+        const CiamClient*,
+        const ListUserByPropertyRequest&,
+        ListUserByPropertyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CiamClient::ListUserGroupsOutcome CiamClient::ListUserGroups(const ListUserGroupsRequest &request)
@@ -707,25 +812,32 @@ CiamClient::ListUserGroupsOutcome CiamClient::ListUserGroups(const ListUserGroup
 
 void CiamClient::ListUserGroupsAsync(const ListUserGroupsRequest& request, const ListUserGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ListUserGroups(request), context);
-    };
+    using Req = const ListUserGroupsRequest&;
+    using Resp = ListUserGroupsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ListUserGroups", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CiamClient::ListUserGroupsOutcomeCallable CiamClient::ListUserGroupsCallable(const ListUserGroupsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ListUserGroupsOutcome()>>(
-        [this, request]()
-        {
-            return this->ListUserGroups(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ListUserGroupsOutcome>>();
+    ListUserGroupsAsync(
+    request,
+    [prom](
+        const CiamClient*,
+        const ListUserGroupsRequest&,
+        ListUserGroupsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CiamClient::ListUserStoreOutcome CiamClient::ListUserStore(const ListUserStoreRequest &request)
@@ -750,25 +862,32 @@ CiamClient::ListUserStoreOutcome CiamClient::ListUserStore(const ListUserStoreRe
 
 void CiamClient::ListUserStoreAsync(const ListUserStoreRequest& request, const ListUserStoreAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ListUserStore(request), context);
-    };
+    using Req = const ListUserStoreRequest&;
+    using Resp = ListUserStoreResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ListUserStore", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CiamClient::ListUserStoreOutcomeCallable CiamClient::ListUserStoreCallable(const ListUserStoreRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ListUserStoreOutcome()>>(
-        [this, request]()
-        {
-            return this->ListUserStore(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ListUserStoreOutcome>>();
+    ListUserStoreAsync(
+    request,
+    [prom](
+        const CiamClient*,
+        const ListUserStoreRequest&,
+        ListUserStoreOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CiamClient::ResetPasswordOutcome CiamClient::ResetPassword(const ResetPasswordRequest &request)
@@ -793,25 +912,32 @@ CiamClient::ResetPasswordOutcome CiamClient::ResetPassword(const ResetPasswordRe
 
 void CiamClient::ResetPasswordAsync(const ResetPasswordRequest& request, const ResetPasswordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ResetPassword(request), context);
-    };
+    using Req = const ResetPasswordRequest&;
+    using Resp = ResetPasswordResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ResetPassword", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CiamClient::ResetPasswordOutcomeCallable CiamClient::ResetPasswordCallable(const ResetPasswordRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ResetPasswordOutcome()>>(
-        [this, request]()
-        {
-            return this->ResetPassword(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ResetPasswordOutcome>>();
+    ResetPasswordAsync(
+    request,
+    [prom](
+        const CiamClient*,
+        const ResetPasswordRequest&,
+        ResetPasswordOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CiamClient::SetPasswordOutcome CiamClient::SetPassword(const SetPasswordRequest &request)
@@ -836,25 +962,32 @@ CiamClient::SetPasswordOutcome CiamClient::SetPassword(const SetPasswordRequest 
 
 void CiamClient::SetPasswordAsync(const SetPasswordRequest& request, const SetPasswordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->SetPassword(request), context);
-    };
+    using Req = const SetPasswordRequest&;
+    using Resp = SetPasswordResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "SetPassword", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CiamClient::SetPasswordOutcomeCallable CiamClient::SetPasswordCallable(const SetPasswordRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<SetPasswordOutcome()>>(
-        [this, request]()
-        {
-            return this->SetPassword(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<SetPasswordOutcome>>();
+    SetPasswordAsync(
+    request,
+    [prom](
+        const CiamClient*,
+        const SetPasswordRequest&,
+        SetPasswordOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CiamClient::UpdateUserOutcome CiamClient::UpdateUser(const UpdateUserRequest &request)
@@ -879,25 +1012,32 @@ CiamClient::UpdateUserOutcome CiamClient::UpdateUser(const UpdateUserRequest &re
 
 void CiamClient::UpdateUserAsync(const UpdateUserRequest& request, const UpdateUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UpdateUser(request), context);
-    };
+    using Req = const UpdateUserRequest&;
+    using Resp = UpdateUserResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UpdateUser", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CiamClient::UpdateUserOutcomeCallable CiamClient::UpdateUserCallable(const UpdateUserRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UpdateUserOutcome()>>(
-        [this, request]()
-        {
-            return this->UpdateUser(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UpdateUserOutcome>>();
+    UpdateUserAsync(
+    request,
+    [prom](
+        const CiamClient*,
+        const UpdateUserRequest&,
+        UpdateUserOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CiamClient::UpdateUserGroupOutcome CiamClient::UpdateUserGroup(const UpdateUserGroupRequest &request)
@@ -922,25 +1062,32 @@ CiamClient::UpdateUserGroupOutcome CiamClient::UpdateUserGroup(const UpdateUserG
 
 void CiamClient::UpdateUserGroupAsync(const UpdateUserGroupRequest& request, const UpdateUserGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UpdateUserGroup(request), context);
-    };
+    using Req = const UpdateUserGroupRequest&;
+    using Resp = UpdateUserGroupResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UpdateUserGroup", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CiamClient::UpdateUserGroupOutcomeCallable CiamClient::UpdateUserGroupCallable(const UpdateUserGroupRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UpdateUserGroupOutcome()>>(
-        [this, request]()
-        {
-            return this->UpdateUserGroup(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UpdateUserGroupOutcome>>();
+    UpdateUserGroupAsync(
+    request,
+    [prom](
+        const CiamClient*,
+        const UpdateUserGroupRequest&,
+        UpdateUserGroupOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CiamClient::UpdateUserStatusOutcome CiamClient::UpdateUserStatus(const UpdateUserStatusRequest &request)
@@ -965,25 +1112,32 @@ CiamClient::UpdateUserStatusOutcome CiamClient::UpdateUserStatus(const UpdateUse
 
 void CiamClient::UpdateUserStatusAsync(const UpdateUserStatusRequest& request, const UpdateUserStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UpdateUserStatus(request), context);
-    };
+    using Req = const UpdateUserStatusRequest&;
+    using Resp = UpdateUserStatusResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UpdateUserStatus", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CiamClient::UpdateUserStatusOutcomeCallable CiamClient::UpdateUserStatusCallable(const UpdateUserStatusRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UpdateUserStatusOutcome()>>(
-        [this, request]()
-        {
-            return this->UpdateUserStatus(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UpdateUserStatusOutcome>>();
+    UpdateUserStatusAsync(
+    request,
+    [prom](
+        const CiamClient*,
+        const UpdateUserStatusRequest&,
+        UpdateUserStatusOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CiamClient::UpdateUserStoreOutcome CiamClient::UpdateUserStore(const UpdateUserStoreRequest &request)
@@ -1008,24 +1162,31 @@ CiamClient::UpdateUserStoreOutcome CiamClient::UpdateUserStore(const UpdateUserS
 
 void CiamClient::UpdateUserStoreAsync(const UpdateUserStoreRequest& request, const UpdateUserStoreAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UpdateUserStore(request), context);
-    };
+    using Req = const UpdateUserStoreRequest&;
+    using Resp = UpdateUserStoreResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UpdateUserStore", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CiamClient::UpdateUserStoreOutcomeCallable CiamClient::UpdateUserStoreCallable(const UpdateUserStoreRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UpdateUserStoreOutcome()>>(
-        [this, request]()
-        {
-            return this->UpdateUserStore(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UpdateUserStoreOutcome>>();
+    UpdateUserStoreAsync(
+    request,
+    [prom](
+        const CiamClient*,
+        const UpdateUserStoreRequest&,
+        UpdateUserStoreOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 

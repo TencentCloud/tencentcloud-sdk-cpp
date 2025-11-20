@@ -62,25 +62,32 @@ DcClient::AcceptDirectConnectTunnelOutcome DcClient::AcceptDirectConnectTunnel(c
 
 void DcClient::AcceptDirectConnectTunnelAsync(const AcceptDirectConnectTunnelRequest& request, const AcceptDirectConnectTunnelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->AcceptDirectConnectTunnel(request), context);
-    };
+    using Req = const AcceptDirectConnectTunnelRequest&;
+    using Resp = AcceptDirectConnectTunnelResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "AcceptDirectConnectTunnel", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DcClient::AcceptDirectConnectTunnelOutcomeCallable DcClient::AcceptDirectConnectTunnelCallable(const AcceptDirectConnectTunnelRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<AcceptDirectConnectTunnelOutcome()>>(
-        [this, request]()
-        {
-            return this->AcceptDirectConnectTunnel(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<AcceptDirectConnectTunnelOutcome>>();
+    AcceptDirectConnectTunnelAsync(
+    request,
+    [prom](
+        const DcClient*,
+        const AcceptDirectConnectTunnelRequest&,
+        AcceptDirectConnectTunnelOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DcClient::ApplyInternetAddressOutcome DcClient::ApplyInternetAddress(const ApplyInternetAddressRequest &request)
@@ -105,25 +112,32 @@ DcClient::ApplyInternetAddressOutcome DcClient::ApplyInternetAddress(const Apply
 
 void DcClient::ApplyInternetAddressAsync(const ApplyInternetAddressRequest& request, const ApplyInternetAddressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ApplyInternetAddress(request), context);
-    };
+    using Req = const ApplyInternetAddressRequest&;
+    using Resp = ApplyInternetAddressResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ApplyInternetAddress", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DcClient::ApplyInternetAddressOutcomeCallable DcClient::ApplyInternetAddressCallable(const ApplyInternetAddressRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ApplyInternetAddressOutcome()>>(
-        [this, request]()
-        {
-            return this->ApplyInternetAddress(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ApplyInternetAddressOutcome>>();
+    ApplyInternetAddressAsync(
+    request,
+    [prom](
+        const DcClient*,
+        const ApplyInternetAddressRequest&,
+        ApplyInternetAddressOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DcClient::CreateCloudAttachServiceOutcome DcClient::CreateCloudAttachService(const CreateCloudAttachServiceRequest &request)
@@ -148,25 +162,32 @@ DcClient::CreateCloudAttachServiceOutcome DcClient::CreateCloudAttachService(con
 
 void DcClient::CreateCloudAttachServiceAsync(const CreateCloudAttachServiceRequest& request, const CreateCloudAttachServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateCloudAttachService(request), context);
-    };
+    using Req = const CreateCloudAttachServiceRequest&;
+    using Resp = CreateCloudAttachServiceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateCloudAttachService", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DcClient::CreateCloudAttachServiceOutcomeCallable DcClient::CreateCloudAttachServiceCallable(const CreateCloudAttachServiceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateCloudAttachServiceOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateCloudAttachService(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateCloudAttachServiceOutcome>>();
+    CreateCloudAttachServiceAsync(
+    request,
+    [prom](
+        const DcClient*,
+        const CreateCloudAttachServiceRequest&,
+        CreateCloudAttachServiceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DcClient::CreateDirectConnectOutcome DcClient::CreateDirectConnect(const CreateDirectConnectRequest &request)
@@ -191,25 +212,32 @@ DcClient::CreateDirectConnectOutcome DcClient::CreateDirectConnect(const CreateD
 
 void DcClient::CreateDirectConnectAsync(const CreateDirectConnectRequest& request, const CreateDirectConnectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateDirectConnect(request), context);
-    };
+    using Req = const CreateDirectConnectRequest&;
+    using Resp = CreateDirectConnectResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateDirectConnect", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DcClient::CreateDirectConnectOutcomeCallable DcClient::CreateDirectConnectCallable(const CreateDirectConnectRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateDirectConnectOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateDirectConnect(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateDirectConnectOutcome>>();
+    CreateDirectConnectAsync(
+    request,
+    [prom](
+        const DcClient*,
+        const CreateDirectConnectRequest&,
+        CreateDirectConnectOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DcClient::CreateDirectConnectTunnelOutcome DcClient::CreateDirectConnectTunnel(const CreateDirectConnectTunnelRequest &request)
@@ -234,25 +262,32 @@ DcClient::CreateDirectConnectTunnelOutcome DcClient::CreateDirectConnectTunnel(c
 
 void DcClient::CreateDirectConnectTunnelAsync(const CreateDirectConnectTunnelRequest& request, const CreateDirectConnectTunnelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateDirectConnectTunnel(request), context);
-    };
+    using Req = const CreateDirectConnectTunnelRequest&;
+    using Resp = CreateDirectConnectTunnelResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateDirectConnectTunnel", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DcClient::CreateDirectConnectTunnelOutcomeCallable DcClient::CreateDirectConnectTunnelCallable(const CreateDirectConnectTunnelRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateDirectConnectTunnelOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateDirectConnectTunnel(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateDirectConnectTunnelOutcome>>();
+    CreateDirectConnectTunnelAsync(
+    request,
+    [prom](
+        const DcClient*,
+        const CreateDirectConnectTunnelRequest&,
+        CreateDirectConnectTunnelOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DcClient::DeleteDirectConnectOutcome DcClient::DeleteDirectConnect(const DeleteDirectConnectRequest &request)
@@ -277,25 +312,32 @@ DcClient::DeleteDirectConnectOutcome DcClient::DeleteDirectConnect(const DeleteD
 
 void DcClient::DeleteDirectConnectAsync(const DeleteDirectConnectRequest& request, const DeleteDirectConnectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteDirectConnect(request), context);
-    };
+    using Req = const DeleteDirectConnectRequest&;
+    using Resp = DeleteDirectConnectResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteDirectConnect", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DcClient::DeleteDirectConnectOutcomeCallable DcClient::DeleteDirectConnectCallable(const DeleteDirectConnectRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteDirectConnectOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteDirectConnect(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteDirectConnectOutcome>>();
+    DeleteDirectConnectAsync(
+    request,
+    [prom](
+        const DcClient*,
+        const DeleteDirectConnectRequest&,
+        DeleteDirectConnectOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DcClient::DeleteDirectConnectTunnelOutcome DcClient::DeleteDirectConnectTunnel(const DeleteDirectConnectTunnelRequest &request)
@@ -320,25 +362,32 @@ DcClient::DeleteDirectConnectTunnelOutcome DcClient::DeleteDirectConnectTunnel(c
 
 void DcClient::DeleteDirectConnectTunnelAsync(const DeleteDirectConnectTunnelRequest& request, const DeleteDirectConnectTunnelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteDirectConnectTunnel(request), context);
-    };
+    using Req = const DeleteDirectConnectTunnelRequest&;
+    using Resp = DeleteDirectConnectTunnelResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteDirectConnectTunnel", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DcClient::DeleteDirectConnectTunnelOutcomeCallable DcClient::DeleteDirectConnectTunnelCallable(const DeleteDirectConnectTunnelRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteDirectConnectTunnelOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteDirectConnectTunnel(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteDirectConnectTunnelOutcome>>();
+    DeleteDirectConnectTunnelAsync(
+    request,
+    [prom](
+        const DcClient*,
+        const DeleteDirectConnectTunnelRequest&,
+        DeleteDirectConnectTunnelOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DcClient::DescribeAccessPointsOutcome DcClient::DescribeAccessPoints(const DescribeAccessPointsRequest &request)
@@ -363,25 +412,32 @@ DcClient::DescribeAccessPointsOutcome DcClient::DescribeAccessPoints(const Descr
 
 void DcClient::DescribeAccessPointsAsync(const DescribeAccessPointsRequest& request, const DescribeAccessPointsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAccessPoints(request), context);
-    };
+    using Req = const DescribeAccessPointsRequest&;
+    using Resp = DescribeAccessPointsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAccessPoints", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DcClient::DescribeAccessPointsOutcomeCallable DcClient::DescribeAccessPointsCallable(const DescribeAccessPointsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAccessPointsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAccessPoints(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAccessPointsOutcome>>();
+    DescribeAccessPointsAsync(
+    request,
+    [prom](
+        const DcClient*,
+        const DescribeAccessPointsRequest&,
+        DescribeAccessPointsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DcClient::DescribeDirectConnectTunnelExtraOutcome DcClient::DescribeDirectConnectTunnelExtra(const DescribeDirectConnectTunnelExtraRequest &request)
@@ -406,25 +462,32 @@ DcClient::DescribeDirectConnectTunnelExtraOutcome DcClient::DescribeDirectConnec
 
 void DcClient::DescribeDirectConnectTunnelExtraAsync(const DescribeDirectConnectTunnelExtraRequest& request, const DescribeDirectConnectTunnelExtraAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDirectConnectTunnelExtra(request), context);
-    };
+    using Req = const DescribeDirectConnectTunnelExtraRequest&;
+    using Resp = DescribeDirectConnectTunnelExtraResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeDirectConnectTunnelExtra", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DcClient::DescribeDirectConnectTunnelExtraOutcomeCallable DcClient::DescribeDirectConnectTunnelExtraCallable(const DescribeDirectConnectTunnelExtraRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeDirectConnectTunnelExtraOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDirectConnectTunnelExtra(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeDirectConnectTunnelExtraOutcome>>();
+    DescribeDirectConnectTunnelExtraAsync(
+    request,
+    [prom](
+        const DcClient*,
+        const DescribeDirectConnectTunnelExtraRequest&,
+        DescribeDirectConnectTunnelExtraOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DcClient::DescribeDirectConnectTunnelsOutcome DcClient::DescribeDirectConnectTunnels(const DescribeDirectConnectTunnelsRequest &request)
@@ -449,25 +512,32 @@ DcClient::DescribeDirectConnectTunnelsOutcome DcClient::DescribeDirectConnectTun
 
 void DcClient::DescribeDirectConnectTunnelsAsync(const DescribeDirectConnectTunnelsRequest& request, const DescribeDirectConnectTunnelsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDirectConnectTunnels(request), context);
-    };
+    using Req = const DescribeDirectConnectTunnelsRequest&;
+    using Resp = DescribeDirectConnectTunnelsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeDirectConnectTunnels", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DcClient::DescribeDirectConnectTunnelsOutcomeCallable DcClient::DescribeDirectConnectTunnelsCallable(const DescribeDirectConnectTunnelsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeDirectConnectTunnelsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDirectConnectTunnels(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeDirectConnectTunnelsOutcome>>();
+    DescribeDirectConnectTunnelsAsync(
+    request,
+    [prom](
+        const DcClient*,
+        const DescribeDirectConnectTunnelsRequest&,
+        DescribeDirectConnectTunnelsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DcClient::DescribeDirectConnectsOutcome DcClient::DescribeDirectConnects(const DescribeDirectConnectsRequest &request)
@@ -492,25 +562,32 @@ DcClient::DescribeDirectConnectsOutcome DcClient::DescribeDirectConnects(const D
 
 void DcClient::DescribeDirectConnectsAsync(const DescribeDirectConnectsRequest& request, const DescribeDirectConnectsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDirectConnects(request), context);
-    };
+    using Req = const DescribeDirectConnectsRequest&;
+    using Resp = DescribeDirectConnectsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeDirectConnects", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DcClient::DescribeDirectConnectsOutcomeCallable DcClient::DescribeDirectConnectsCallable(const DescribeDirectConnectsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeDirectConnectsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDirectConnects(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeDirectConnectsOutcome>>();
+    DescribeDirectConnectsAsync(
+    request,
+    [prom](
+        const DcClient*,
+        const DescribeDirectConnectsRequest&,
+        DescribeDirectConnectsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DcClient::DescribeInternetAddressOutcome DcClient::DescribeInternetAddress(const DescribeInternetAddressRequest &request)
@@ -535,25 +612,32 @@ DcClient::DescribeInternetAddressOutcome DcClient::DescribeInternetAddress(const
 
 void DcClient::DescribeInternetAddressAsync(const DescribeInternetAddressRequest& request, const DescribeInternetAddressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeInternetAddress(request), context);
-    };
+    using Req = const DescribeInternetAddressRequest&;
+    using Resp = DescribeInternetAddressResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeInternetAddress", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DcClient::DescribeInternetAddressOutcomeCallable DcClient::DescribeInternetAddressCallable(const DescribeInternetAddressRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeInternetAddressOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeInternetAddress(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeInternetAddressOutcome>>();
+    DescribeInternetAddressAsync(
+    request,
+    [prom](
+        const DcClient*,
+        const DescribeInternetAddressRequest&,
+        DescribeInternetAddressOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DcClient::DescribeInternetAddressQuotaOutcome DcClient::DescribeInternetAddressQuota(const DescribeInternetAddressQuotaRequest &request)
@@ -578,25 +662,32 @@ DcClient::DescribeInternetAddressQuotaOutcome DcClient::DescribeInternetAddressQ
 
 void DcClient::DescribeInternetAddressQuotaAsync(const DescribeInternetAddressQuotaRequest& request, const DescribeInternetAddressQuotaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeInternetAddressQuota(request), context);
-    };
+    using Req = const DescribeInternetAddressQuotaRequest&;
+    using Resp = DescribeInternetAddressQuotaResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeInternetAddressQuota", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DcClient::DescribeInternetAddressQuotaOutcomeCallable DcClient::DescribeInternetAddressQuotaCallable(const DescribeInternetAddressQuotaRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeInternetAddressQuotaOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeInternetAddressQuota(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeInternetAddressQuotaOutcome>>();
+    DescribeInternetAddressQuotaAsync(
+    request,
+    [prom](
+        const DcClient*,
+        const DescribeInternetAddressQuotaRequest&,
+        DescribeInternetAddressQuotaOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DcClient::DescribeInternetAddressStatisticsOutcome DcClient::DescribeInternetAddressStatistics(const DescribeInternetAddressStatisticsRequest &request)
@@ -621,25 +712,32 @@ DcClient::DescribeInternetAddressStatisticsOutcome DcClient::DescribeInternetAdd
 
 void DcClient::DescribeInternetAddressStatisticsAsync(const DescribeInternetAddressStatisticsRequest& request, const DescribeInternetAddressStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeInternetAddressStatistics(request), context);
-    };
+    using Req = const DescribeInternetAddressStatisticsRequest&;
+    using Resp = DescribeInternetAddressStatisticsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeInternetAddressStatistics", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DcClient::DescribeInternetAddressStatisticsOutcomeCallable DcClient::DescribeInternetAddressStatisticsCallable(const DescribeInternetAddressStatisticsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeInternetAddressStatisticsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeInternetAddressStatistics(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeInternetAddressStatisticsOutcome>>();
+    DescribeInternetAddressStatisticsAsync(
+    request,
+    [prom](
+        const DcClient*,
+        const DescribeInternetAddressStatisticsRequest&,
+        DescribeInternetAddressStatisticsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DcClient::DescribePublicDirectConnectTunnelRoutesOutcome DcClient::DescribePublicDirectConnectTunnelRoutes(const DescribePublicDirectConnectTunnelRoutesRequest &request)
@@ -664,25 +762,32 @@ DcClient::DescribePublicDirectConnectTunnelRoutesOutcome DcClient::DescribePubli
 
 void DcClient::DescribePublicDirectConnectTunnelRoutesAsync(const DescribePublicDirectConnectTunnelRoutesRequest& request, const DescribePublicDirectConnectTunnelRoutesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribePublicDirectConnectTunnelRoutes(request), context);
-    };
+    using Req = const DescribePublicDirectConnectTunnelRoutesRequest&;
+    using Resp = DescribePublicDirectConnectTunnelRoutesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribePublicDirectConnectTunnelRoutes", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DcClient::DescribePublicDirectConnectTunnelRoutesOutcomeCallable DcClient::DescribePublicDirectConnectTunnelRoutesCallable(const DescribePublicDirectConnectTunnelRoutesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribePublicDirectConnectTunnelRoutesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribePublicDirectConnectTunnelRoutes(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribePublicDirectConnectTunnelRoutesOutcome>>();
+    DescribePublicDirectConnectTunnelRoutesAsync(
+    request,
+    [prom](
+        const DcClient*,
+        const DescribePublicDirectConnectTunnelRoutesRequest&,
+        DescribePublicDirectConnectTunnelRoutesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DcClient::DisableInternetAddressOutcome DcClient::DisableInternetAddress(const DisableInternetAddressRequest &request)
@@ -707,25 +812,32 @@ DcClient::DisableInternetAddressOutcome DcClient::DisableInternetAddress(const D
 
 void DcClient::DisableInternetAddressAsync(const DisableInternetAddressRequest& request, const DisableInternetAddressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DisableInternetAddress(request), context);
-    };
+    using Req = const DisableInternetAddressRequest&;
+    using Resp = DisableInternetAddressResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DisableInternetAddress", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DcClient::DisableInternetAddressOutcomeCallable DcClient::DisableInternetAddressCallable(const DisableInternetAddressRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DisableInternetAddressOutcome()>>(
-        [this, request]()
-        {
-            return this->DisableInternetAddress(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DisableInternetAddressOutcome>>();
+    DisableInternetAddressAsync(
+    request,
+    [prom](
+        const DcClient*,
+        const DisableInternetAddressRequest&,
+        DisableInternetAddressOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DcClient::EnableInternetAddressOutcome DcClient::EnableInternetAddress(const EnableInternetAddressRequest &request)
@@ -750,25 +862,32 @@ DcClient::EnableInternetAddressOutcome DcClient::EnableInternetAddress(const Ena
 
 void DcClient::EnableInternetAddressAsync(const EnableInternetAddressRequest& request, const EnableInternetAddressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->EnableInternetAddress(request), context);
-    };
+    using Req = const EnableInternetAddressRequest&;
+    using Resp = EnableInternetAddressResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "EnableInternetAddress", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DcClient::EnableInternetAddressOutcomeCallable DcClient::EnableInternetAddressCallable(const EnableInternetAddressRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<EnableInternetAddressOutcome()>>(
-        [this, request]()
-        {
-            return this->EnableInternetAddress(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<EnableInternetAddressOutcome>>();
+    EnableInternetAddressAsync(
+    request,
+    [prom](
+        const DcClient*,
+        const EnableInternetAddressRequest&,
+        EnableInternetAddressOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DcClient::ModifyDirectConnectAttributeOutcome DcClient::ModifyDirectConnectAttribute(const ModifyDirectConnectAttributeRequest &request)
@@ -793,25 +912,32 @@ DcClient::ModifyDirectConnectAttributeOutcome DcClient::ModifyDirectConnectAttri
 
 void DcClient::ModifyDirectConnectAttributeAsync(const ModifyDirectConnectAttributeRequest& request, const ModifyDirectConnectAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyDirectConnectAttribute(request), context);
-    };
+    using Req = const ModifyDirectConnectAttributeRequest&;
+    using Resp = ModifyDirectConnectAttributeResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyDirectConnectAttribute", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DcClient::ModifyDirectConnectAttributeOutcomeCallable DcClient::ModifyDirectConnectAttributeCallable(const ModifyDirectConnectAttributeRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyDirectConnectAttributeOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyDirectConnectAttribute(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyDirectConnectAttributeOutcome>>();
+    ModifyDirectConnectAttributeAsync(
+    request,
+    [prom](
+        const DcClient*,
+        const ModifyDirectConnectAttributeRequest&,
+        ModifyDirectConnectAttributeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DcClient::ModifyDirectConnectTunnelAttributeOutcome DcClient::ModifyDirectConnectTunnelAttribute(const ModifyDirectConnectTunnelAttributeRequest &request)
@@ -836,25 +962,32 @@ DcClient::ModifyDirectConnectTunnelAttributeOutcome DcClient::ModifyDirectConnec
 
 void DcClient::ModifyDirectConnectTunnelAttributeAsync(const ModifyDirectConnectTunnelAttributeRequest& request, const ModifyDirectConnectTunnelAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyDirectConnectTunnelAttribute(request), context);
-    };
+    using Req = const ModifyDirectConnectTunnelAttributeRequest&;
+    using Resp = ModifyDirectConnectTunnelAttributeResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyDirectConnectTunnelAttribute", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DcClient::ModifyDirectConnectTunnelAttributeOutcomeCallable DcClient::ModifyDirectConnectTunnelAttributeCallable(const ModifyDirectConnectTunnelAttributeRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyDirectConnectTunnelAttributeOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyDirectConnectTunnelAttribute(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyDirectConnectTunnelAttributeOutcome>>();
+    ModifyDirectConnectTunnelAttributeAsync(
+    request,
+    [prom](
+        const DcClient*,
+        const ModifyDirectConnectTunnelAttributeRequest&,
+        ModifyDirectConnectTunnelAttributeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DcClient::ModifyDirectConnectTunnelExtraOutcome DcClient::ModifyDirectConnectTunnelExtra(const ModifyDirectConnectTunnelExtraRequest &request)
@@ -879,25 +1012,32 @@ DcClient::ModifyDirectConnectTunnelExtraOutcome DcClient::ModifyDirectConnectTun
 
 void DcClient::ModifyDirectConnectTunnelExtraAsync(const ModifyDirectConnectTunnelExtraRequest& request, const ModifyDirectConnectTunnelExtraAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyDirectConnectTunnelExtra(request), context);
-    };
+    using Req = const ModifyDirectConnectTunnelExtraRequest&;
+    using Resp = ModifyDirectConnectTunnelExtraResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyDirectConnectTunnelExtra", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DcClient::ModifyDirectConnectTunnelExtraOutcomeCallable DcClient::ModifyDirectConnectTunnelExtraCallable(const ModifyDirectConnectTunnelExtraRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyDirectConnectTunnelExtraOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyDirectConnectTunnelExtra(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyDirectConnectTunnelExtraOutcome>>();
+    ModifyDirectConnectTunnelExtraAsync(
+    request,
+    [prom](
+        const DcClient*,
+        const ModifyDirectConnectTunnelExtraRequest&,
+        ModifyDirectConnectTunnelExtraOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DcClient::RejectDirectConnectTunnelOutcome DcClient::RejectDirectConnectTunnel(const RejectDirectConnectTunnelRequest &request)
@@ -922,25 +1062,32 @@ DcClient::RejectDirectConnectTunnelOutcome DcClient::RejectDirectConnectTunnel(c
 
 void DcClient::RejectDirectConnectTunnelAsync(const RejectDirectConnectTunnelRequest& request, const RejectDirectConnectTunnelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->RejectDirectConnectTunnel(request), context);
-    };
+    using Req = const RejectDirectConnectTunnelRequest&;
+    using Resp = RejectDirectConnectTunnelResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "RejectDirectConnectTunnel", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DcClient::RejectDirectConnectTunnelOutcomeCallable DcClient::RejectDirectConnectTunnelCallable(const RejectDirectConnectTunnelRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<RejectDirectConnectTunnelOutcome()>>(
-        [this, request]()
-        {
-            return this->RejectDirectConnectTunnel(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<RejectDirectConnectTunnelOutcome>>();
+    RejectDirectConnectTunnelAsync(
+    request,
+    [prom](
+        const DcClient*,
+        const RejectDirectConnectTunnelRequest&,
+        RejectDirectConnectTunnelOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DcClient::ReleaseInternetAddressOutcome DcClient::ReleaseInternetAddress(const ReleaseInternetAddressRequest &request)
@@ -965,24 +1112,31 @@ DcClient::ReleaseInternetAddressOutcome DcClient::ReleaseInternetAddress(const R
 
 void DcClient::ReleaseInternetAddressAsync(const ReleaseInternetAddressRequest& request, const ReleaseInternetAddressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ReleaseInternetAddress(request), context);
-    };
+    using Req = const ReleaseInternetAddressRequest&;
+    using Resp = ReleaseInternetAddressResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ReleaseInternetAddress", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DcClient::ReleaseInternetAddressOutcomeCallable DcClient::ReleaseInternetAddressCallable(const ReleaseInternetAddressRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ReleaseInternetAddressOutcome()>>(
-        [this, request]()
-        {
-            return this->ReleaseInternetAddress(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ReleaseInternetAddressOutcome>>();
+    ReleaseInternetAddressAsync(
+    request,
+    [prom](
+        const DcClient*,
+        const ReleaseInternetAddressRequest&,
+        ReleaseInternetAddressOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 

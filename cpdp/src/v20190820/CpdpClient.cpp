@@ -62,25 +62,32 @@ CpdpClient::AddContractOutcome CpdpClient::AddContract(const AddContractRequest 
 
 void CpdpClient::AddContractAsync(const AddContractRequest& request, const AddContractAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->AddContract(request), context);
-    };
+    using Req = const AddContractRequest&;
+    using Resp = AddContractResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "AddContract", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::AddContractOutcomeCallable CpdpClient::AddContractCallable(const AddContractRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<AddContractOutcome()>>(
-        [this, request]()
-        {
-            return this->AddContract(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<AddContractOutcome>>();
+    AddContractAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const AddContractRequest&,
+        AddContractOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::AddFlexFundingAccountOutcome CpdpClient::AddFlexFundingAccount(const AddFlexFundingAccountRequest &request)
@@ -105,25 +112,32 @@ CpdpClient::AddFlexFundingAccountOutcome CpdpClient::AddFlexFundingAccount(const
 
 void CpdpClient::AddFlexFundingAccountAsync(const AddFlexFundingAccountRequest& request, const AddFlexFundingAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->AddFlexFundingAccount(request), context);
-    };
+    using Req = const AddFlexFundingAccountRequest&;
+    using Resp = AddFlexFundingAccountResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "AddFlexFundingAccount", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::AddFlexFundingAccountOutcomeCallable CpdpClient::AddFlexFundingAccountCallable(const AddFlexFundingAccountRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<AddFlexFundingAccountOutcome()>>(
-        [this, request]()
-        {
-            return this->AddFlexFundingAccount(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<AddFlexFundingAccountOutcome>>();
+    AddFlexFundingAccountAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const AddFlexFundingAccountRequest&,
+        AddFlexFundingAccountOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::AddFlexIdInfoOutcome CpdpClient::AddFlexIdInfo(const AddFlexIdInfoRequest &request)
@@ -148,25 +162,32 @@ CpdpClient::AddFlexIdInfoOutcome CpdpClient::AddFlexIdInfo(const AddFlexIdInfoRe
 
 void CpdpClient::AddFlexIdInfoAsync(const AddFlexIdInfoRequest& request, const AddFlexIdInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->AddFlexIdInfo(request), context);
-    };
+    using Req = const AddFlexIdInfoRequest&;
+    using Resp = AddFlexIdInfoResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "AddFlexIdInfo", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::AddFlexIdInfoOutcomeCallable CpdpClient::AddFlexIdInfoCallable(const AddFlexIdInfoRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<AddFlexIdInfoOutcome()>>(
-        [this, request]()
-        {
-            return this->AddFlexIdInfo(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<AddFlexIdInfoOutcome>>();
+    AddFlexIdInfoAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const AddFlexIdInfoRequest&,
+        AddFlexIdInfoOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::AddFlexPhoneNoOutcome CpdpClient::AddFlexPhoneNo(const AddFlexPhoneNoRequest &request)
@@ -191,25 +212,32 @@ CpdpClient::AddFlexPhoneNoOutcome CpdpClient::AddFlexPhoneNo(const AddFlexPhoneN
 
 void CpdpClient::AddFlexPhoneNoAsync(const AddFlexPhoneNoRequest& request, const AddFlexPhoneNoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->AddFlexPhoneNo(request), context);
-    };
+    using Req = const AddFlexPhoneNoRequest&;
+    using Resp = AddFlexPhoneNoResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "AddFlexPhoneNo", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::AddFlexPhoneNoOutcomeCallable CpdpClient::AddFlexPhoneNoCallable(const AddFlexPhoneNoRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<AddFlexPhoneNoOutcome()>>(
-        [this, request]()
-        {
-            return this->AddFlexPhoneNo(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<AddFlexPhoneNoOutcome>>();
+    AddFlexPhoneNoAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const AddFlexPhoneNoRequest&,
+        AddFlexPhoneNoOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::AddMerchantOutcome CpdpClient::AddMerchant(const AddMerchantRequest &request)
@@ -234,25 +262,32 @@ CpdpClient::AddMerchantOutcome CpdpClient::AddMerchant(const AddMerchantRequest 
 
 void CpdpClient::AddMerchantAsync(const AddMerchantRequest& request, const AddMerchantAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->AddMerchant(request), context);
-    };
+    using Req = const AddMerchantRequest&;
+    using Resp = AddMerchantResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "AddMerchant", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::AddMerchantOutcomeCallable CpdpClient::AddMerchantCallable(const AddMerchantRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<AddMerchantOutcome()>>(
-        [this, request]()
-        {
-            return this->AddMerchant(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<AddMerchantOutcome>>();
+    AddMerchantAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const AddMerchantRequest&,
+        AddMerchantOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::AddShopOutcome CpdpClient::AddShop(const AddShopRequest &request)
@@ -277,25 +312,32 @@ CpdpClient::AddShopOutcome CpdpClient::AddShop(const AddShopRequest &request)
 
 void CpdpClient::AddShopAsync(const AddShopRequest& request, const AddShopAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->AddShop(request), context);
-    };
+    using Req = const AddShopRequest&;
+    using Resp = AddShopResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "AddShop", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::AddShopOutcomeCallable CpdpClient::AddShopCallable(const AddShopRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<AddShopOutcome()>>(
-        [this, request]()
-        {
-            return this->AddShop(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<AddShopOutcome>>();
+    AddShopAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const AddShopRequest&,
+        AddShopOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::ApplyApplicationMaterialOutcome CpdpClient::ApplyApplicationMaterial(const ApplyApplicationMaterialRequest &request)
@@ -320,25 +362,32 @@ CpdpClient::ApplyApplicationMaterialOutcome CpdpClient::ApplyApplicationMaterial
 
 void CpdpClient::ApplyApplicationMaterialAsync(const ApplyApplicationMaterialRequest& request, const ApplyApplicationMaterialAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ApplyApplicationMaterial(request), context);
-    };
+    using Req = const ApplyApplicationMaterialRequest&;
+    using Resp = ApplyApplicationMaterialResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ApplyApplicationMaterial", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::ApplyApplicationMaterialOutcomeCallable CpdpClient::ApplyApplicationMaterialCallable(const ApplyApplicationMaterialRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ApplyApplicationMaterialOutcome()>>(
-        [this, request]()
-        {
-            return this->ApplyApplicationMaterial(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ApplyApplicationMaterialOutcome>>();
+    ApplyApplicationMaterialAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const ApplyApplicationMaterialRequest&,
+        ApplyApplicationMaterialOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::ApplyFlexPaymentOutcome CpdpClient::ApplyFlexPayment(const ApplyFlexPaymentRequest &request)
@@ -363,25 +412,32 @@ CpdpClient::ApplyFlexPaymentOutcome CpdpClient::ApplyFlexPayment(const ApplyFlex
 
 void CpdpClient::ApplyFlexPaymentAsync(const ApplyFlexPaymentRequest& request, const ApplyFlexPaymentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ApplyFlexPayment(request), context);
-    };
+    using Req = const ApplyFlexPaymentRequest&;
+    using Resp = ApplyFlexPaymentResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ApplyFlexPayment", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::ApplyFlexPaymentOutcomeCallable CpdpClient::ApplyFlexPaymentCallable(const ApplyFlexPaymentRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ApplyFlexPaymentOutcome()>>(
-        [this, request]()
-        {
-            return this->ApplyFlexPayment(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ApplyFlexPaymentOutcome>>();
+    ApplyFlexPaymentAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const ApplyFlexPaymentRequest&,
+        ApplyFlexPaymentOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::ApplyFlexSettlementOutcome CpdpClient::ApplyFlexSettlement(const ApplyFlexSettlementRequest &request)
@@ -406,25 +462,32 @@ CpdpClient::ApplyFlexSettlementOutcome CpdpClient::ApplyFlexSettlement(const App
 
 void CpdpClient::ApplyFlexSettlementAsync(const ApplyFlexSettlementRequest& request, const ApplyFlexSettlementAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ApplyFlexSettlement(request), context);
-    };
+    using Req = const ApplyFlexSettlementRequest&;
+    using Resp = ApplyFlexSettlementResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ApplyFlexSettlement", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::ApplyFlexSettlementOutcomeCallable CpdpClient::ApplyFlexSettlementCallable(const ApplyFlexSettlementRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ApplyFlexSettlementOutcome()>>(
-        [this, request]()
-        {
-            return this->ApplyFlexSettlement(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ApplyFlexSettlementOutcome>>();
+    ApplyFlexSettlementAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const ApplyFlexSettlementRequest&,
+        ApplyFlexSettlementOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::ApplyFlexWechatPreAuthOutcome CpdpClient::ApplyFlexWechatPreAuth(const ApplyFlexWechatPreAuthRequest &request)
@@ -449,25 +512,32 @@ CpdpClient::ApplyFlexWechatPreAuthOutcome CpdpClient::ApplyFlexWechatPreAuth(con
 
 void CpdpClient::ApplyFlexWechatPreAuthAsync(const ApplyFlexWechatPreAuthRequest& request, const ApplyFlexWechatPreAuthAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ApplyFlexWechatPreAuth(request), context);
-    };
+    using Req = const ApplyFlexWechatPreAuthRequest&;
+    using Resp = ApplyFlexWechatPreAuthResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ApplyFlexWechatPreAuth", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::ApplyFlexWechatPreAuthOutcomeCallable CpdpClient::ApplyFlexWechatPreAuthCallable(const ApplyFlexWechatPreAuthRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ApplyFlexWechatPreAuthOutcome()>>(
-        [this, request]()
-        {
-            return this->ApplyFlexWechatPreAuth(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ApplyFlexWechatPreAuthOutcome>>();
+    ApplyFlexWechatPreAuthAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const ApplyFlexWechatPreAuthRequest&,
+        ApplyFlexWechatPreAuthOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::ApplyOpenBankOrderDetailReceiptOutcome CpdpClient::ApplyOpenBankOrderDetailReceipt(const ApplyOpenBankOrderDetailReceiptRequest &request)
@@ -492,25 +562,32 @@ CpdpClient::ApplyOpenBankOrderDetailReceiptOutcome CpdpClient::ApplyOpenBankOrde
 
 void CpdpClient::ApplyOpenBankOrderDetailReceiptAsync(const ApplyOpenBankOrderDetailReceiptRequest& request, const ApplyOpenBankOrderDetailReceiptAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ApplyOpenBankOrderDetailReceipt(request), context);
-    };
+    using Req = const ApplyOpenBankOrderDetailReceiptRequest&;
+    using Resp = ApplyOpenBankOrderDetailReceiptResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ApplyOpenBankOrderDetailReceipt", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::ApplyOpenBankOrderDetailReceiptOutcomeCallable CpdpClient::ApplyOpenBankOrderDetailReceiptCallable(const ApplyOpenBankOrderDetailReceiptRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ApplyOpenBankOrderDetailReceiptOutcome()>>(
-        [this, request]()
-        {
-            return this->ApplyOpenBankOrderDetailReceipt(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ApplyOpenBankOrderDetailReceiptOutcome>>();
+    ApplyOpenBankOrderDetailReceiptAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const ApplyOpenBankOrderDetailReceiptRequest&,
+        ApplyOpenBankOrderDetailReceiptOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::ApplyOpenBankSettleOrderOutcome CpdpClient::ApplyOpenBankSettleOrder(const ApplyOpenBankSettleOrderRequest &request)
@@ -535,25 +612,32 @@ CpdpClient::ApplyOpenBankSettleOrderOutcome CpdpClient::ApplyOpenBankSettleOrder
 
 void CpdpClient::ApplyOpenBankSettleOrderAsync(const ApplyOpenBankSettleOrderRequest& request, const ApplyOpenBankSettleOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ApplyOpenBankSettleOrder(request), context);
-    };
+    using Req = const ApplyOpenBankSettleOrderRequest&;
+    using Resp = ApplyOpenBankSettleOrderResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ApplyOpenBankSettleOrder", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::ApplyOpenBankSettleOrderOutcomeCallable CpdpClient::ApplyOpenBankSettleOrderCallable(const ApplyOpenBankSettleOrderRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ApplyOpenBankSettleOrderOutcome()>>(
-        [this, request]()
-        {
-            return this->ApplyOpenBankSettleOrder(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ApplyOpenBankSettleOrderOutcome>>();
+    ApplyOpenBankSettleOrderAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const ApplyOpenBankSettleOrderRequest&,
+        ApplyOpenBankSettleOrderOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::ApplyOpenBankSubMerchantSignOnlineOutcome CpdpClient::ApplyOpenBankSubMerchantSignOnline(const ApplyOpenBankSubMerchantSignOnlineRequest &request)
@@ -578,25 +662,32 @@ CpdpClient::ApplyOpenBankSubMerchantSignOnlineOutcome CpdpClient::ApplyOpenBankS
 
 void CpdpClient::ApplyOpenBankSubMerchantSignOnlineAsync(const ApplyOpenBankSubMerchantSignOnlineRequest& request, const ApplyOpenBankSubMerchantSignOnlineAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ApplyOpenBankSubMerchantSignOnline(request), context);
-    };
+    using Req = const ApplyOpenBankSubMerchantSignOnlineRequest&;
+    using Resp = ApplyOpenBankSubMerchantSignOnlineResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ApplyOpenBankSubMerchantSignOnline", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::ApplyOpenBankSubMerchantSignOnlineOutcomeCallable CpdpClient::ApplyOpenBankSubMerchantSignOnlineCallable(const ApplyOpenBankSubMerchantSignOnlineRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ApplyOpenBankSubMerchantSignOnlineOutcome()>>(
-        [this, request]()
-        {
-            return this->ApplyOpenBankSubMerchantSignOnline(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ApplyOpenBankSubMerchantSignOnlineOutcome>>();
+    ApplyOpenBankSubMerchantSignOnlineAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const ApplyOpenBankSubMerchantSignOnlineRequest&,
+        ApplyOpenBankSubMerchantSignOnlineOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::ApplyOutwardOrderOutcome CpdpClient::ApplyOutwardOrder(const ApplyOutwardOrderRequest &request)
@@ -621,25 +712,32 @@ CpdpClient::ApplyOutwardOrderOutcome CpdpClient::ApplyOutwardOrder(const ApplyOu
 
 void CpdpClient::ApplyOutwardOrderAsync(const ApplyOutwardOrderRequest& request, const ApplyOutwardOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ApplyOutwardOrder(request), context);
-    };
+    using Req = const ApplyOutwardOrderRequest&;
+    using Resp = ApplyOutwardOrderResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ApplyOutwardOrder", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::ApplyOutwardOrderOutcomeCallable CpdpClient::ApplyOutwardOrderCallable(const ApplyOutwardOrderRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ApplyOutwardOrderOutcome()>>(
-        [this, request]()
-        {
-            return this->ApplyOutwardOrder(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ApplyOutwardOrderOutcome>>();
+    ApplyOutwardOrderAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const ApplyOutwardOrderRequest&,
+        ApplyOutwardOrderOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::ApplyPayerInfoOutcome CpdpClient::ApplyPayerInfo(const ApplyPayerInfoRequest &request)
@@ -664,25 +762,32 @@ CpdpClient::ApplyPayerInfoOutcome CpdpClient::ApplyPayerInfo(const ApplyPayerInf
 
 void CpdpClient::ApplyPayerInfoAsync(const ApplyPayerInfoRequest& request, const ApplyPayerInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ApplyPayerInfo(request), context);
-    };
+    using Req = const ApplyPayerInfoRequest&;
+    using Resp = ApplyPayerInfoResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ApplyPayerInfo", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::ApplyPayerInfoOutcomeCallable CpdpClient::ApplyPayerInfoCallable(const ApplyPayerInfoRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ApplyPayerInfoOutcome()>>(
-        [this, request]()
-        {
-            return this->ApplyPayerInfo(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ApplyPayerInfoOutcome>>();
+    ApplyPayerInfoAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const ApplyPayerInfoRequest&,
+        ApplyPayerInfoOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::ApplyReWithdrawalOutcome CpdpClient::ApplyReWithdrawal(const ApplyReWithdrawalRequest &request)
@@ -707,25 +812,32 @@ CpdpClient::ApplyReWithdrawalOutcome CpdpClient::ApplyReWithdrawal(const ApplyRe
 
 void CpdpClient::ApplyReWithdrawalAsync(const ApplyReWithdrawalRequest& request, const ApplyReWithdrawalAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ApplyReWithdrawal(request), context);
-    };
+    using Req = const ApplyReWithdrawalRequest&;
+    using Resp = ApplyReWithdrawalResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ApplyReWithdrawal", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::ApplyReWithdrawalOutcomeCallable CpdpClient::ApplyReWithdrawalCallable(const ApplyReWithdrawalRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ApplyReWithdrawalOutcome()>>(
-        [this, request]()
-        {
-            return this->ApplyReWithdrawal(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ApplyReWithdrawalOutcome>>();
+    ApplyReWithdrawalAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const ApplyReWithdrawalRequest&,
+        ApplyReWithdrawalOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::ApplyReconciliationFileOutcome CpdpClient::ApplyReconciliationFile(const ApplyReconciliationFileRequest &request)
@@ -750,25 +862,32 @@ CpdpClient::ApplyReconciliationFileOutcome CpdpClient::ApplyReconciliationFile(c
 
 void CpdpClient::ApplyReconciliationFileAsync(const ApplyReconciliationFileRequest& request, const ApplyReconciliationFileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ApplyReconciliationFile(request), context);
-    };
+    using Req = const ApplyReconciliationFileRequest&;
+    using Resp = ApplyReconciliationFileResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ApplyReconciliationFile", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::ApplyReconciliationFileOutcomeCallable CpdpClient::ApplyReconciliationFileCallable(const ApplyReconciliationFileRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ApplyReconciliationFileOutcome()>>(
-        [this, request]()
-        {
-            return this->ApplyReconciliationFile(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ApplyReconciliationFileOutcome>>();
+    ApplyReconciliationFileAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const ApplyReconciliationFileRequest&,
+        ApplyReconciliationFileOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::ApplyTradeOutcome CpdpClient::ApplyTrade(const ApplyTradeRequest &request)
@@ -793,25 +912,32 @@ CpdpClient::ApplyTradeOutcome CpdpClient::ApplyTrade(const ApplyTradeRequest &re
 
 void CpdpClient::ApplyTradeAsync(const ApplyTradeRequest& request, const ApplyTradeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ApplyTrade(request), context);
-    };
+    using Req = const ApplyTradeRequest&;
+    using Resp = ApplyTradeResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ApplyTrade", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::ApplyTradeOutcomeCallable CpdpClient::ApplyTradeCallable(const ApplyTradeRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ApplyTradeOutcome()>>(
-        [this, request]()
-        {
-            return this->ApplyTrade(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ApplyTradeOutcome>>();
+    ApplyTradeAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const ApplyTradeRequest&,
+        ApplyTradeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::ApplyWithdrawalOutcome CpdpClient::ApplyWithdrawal(const ApplyWithdrawalRequest &request)
@@ -836,25 +962,32 @@ CpdpClient::ApplyWithdrawalOutcome CpdpClient::ApplyWithdrawal(const ApplyWithdr
 
 void CpdpClient::ApplyWithdrawalAsync(const ApplyWithdrawalRequest& request, const ApplyWithdrawalAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ApplyWithdrawal(request), context);
-    };
+    using Req = const ApplyWithdrawalRequest&;
+    using Resp = ApplyWithdrawalResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ApplyWithdrawal", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::ApplyWithdrawalOutcomeCallable CpdpClient::ApplyWithdrawalCallable(const ApplyWithdrawalRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ApplyWithdrawalOutcome()>>(
-        [this, request]()
-        {
-            return this->ApplyWithdrawal(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ApplyWithdrawalOutcome>>();
+    ApplyWithdrawalAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const ApplyWithdrawalRequest&,
+        ApplyWithdrawalOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::BindAccountOutcome CpdpClient::BindAccount(const BindAccountRequest &request)
@@ -879,25 +1012,32 @@ CpdpClient::BindAccountOutcome CpdpClient::BindAccount(const BindAccountRequest 
 
 void CpdpClient::BindAccountAsync(const BindAccountRequest& request, const BindAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->BindAccount(request), context);
-    };
+    using Req = const BindAccountRequest&;
+    using Resp = BindAccountResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "BindAccount", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::BindAccountOutcomeCallable CpdpClient::BindAccountCallable(const BindAccountRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<BindAccountOutcome()>>(
-        [this, request]()
-        {
-            return this->BindAccount(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<BindAccountOutcome>>();
+    BindAccountAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const BindAccountRequest&,
+        BindAccountOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::BindAcctOutcome CpdpClient::BindAcct(const BindAcctRequest &request)
@@ -922,25 +1062,32 @@ CpdpClient::BindAcctOutcome CpdpClient::BindAcct(const BindAcctRequest &request)
 
 void CpdpClient::BindAcctAsync(const BindAcctRequest& request, const BindAcctAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->BindAcct(request), context);
-    };
+    using Req = const BindAcctRequest&;
+    using Resp = BindAcctResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "BindAcct", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::BindAcctOutcomeCallable CpdpClient::BindAcctCallable(const BindAcctRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<BindAcctOutcome()>>(
-        [this, request]()
-        {
-            return this->BindAcct(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<BindAcctOutcome>>();
+    BindAcctAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const BindAcctRequest&,
+        BindAcctOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::BindOpenBankExternalSubMerchantBankAccountOutcome CpdpClient::BindOpenBankExternalSubMerchantBankAccount(const BindOpenBankExternalSubMerchantBankAccountRequest &request)
@@ -965,25 +1112,32 @@ CpdpClient::BindOpenBankExternalSubMerchantBankAccountOutcome CpdpClient::BindOp
 
 void CpdpClient::BindOpenBankExternalSubMerchantBankAccountAsync(const BindOpenBankExternalSubMerchantBankAccountRequest& request, const BindOpenBankExternalSubMerchantBankAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->BindOpenBankExternalSubMerchantBankAccount(request), context);
-    };
+    using Req = const BindOpenBankExternalSubMerchantBankAccountRequest&;
+    using Resp = BindOpenBankExternalSubMerchantBankAccountResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "BindOpenBankExternalSubMerchantBankAccount", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::BindOpenBankExternalSubMerchantBankAccountOutcomeCallable CpdpClient::BindOpenBankExternalSubMerchantBankAccountCallable(const BindOpenBankExternalSubMerchantBankAccountRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<BindOpenBankExternalSubMerchantBankAccountOutcome()>>(
-        [this, request]()
-        {
-            return this->BindOpenBankExternalSubMerchantBankAccount(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<BindOpenBankExternalSubMerchantBankAccountOutcome>>();
+    BindOpenBankExternalSubMerchantBankAccountAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const BindOpenBankExternalSubMerchantBankAccountRequest&,
+        BindOpenBankExternalSubMerchantBankAccountOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::BindOpenBankProfitSharePayeeOutcome CpdpClient::BindOpenBankProfitSharePayee(const BindOpenBankProfitSharePayeeRequest &request)
@@ -1008,25 +1162,32 @@ CpdpClient::BindOpenBankProfitSharePayeeOutcome CpdpClient::BindOpenBankProfitSh
 
 void CpdpClient::BindOpenBankProfitSharePayeeAsync(const BindOpenBankProfitSharePayeeRequest& request, const BindOpenBankProfitSharePayeeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->BindOpenBankProfitSharePayee(request), context);
-    };
+    using Req = const BindOpenBankProfitSharePayeeRequest&;
+    using Resp = BindOpenBankProfitSharePayeeResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "BindOpenBankProfitSharePayee", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::BindOpenBankProfitSharePayeeOutcomeCallable CpdpClient::BindOpenBankProfitSharePayeeCallable(const BindOpenBankProfitSharePayeeRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<BindOpenBankProfitSharePayeeOutcome()>>(
-        [this, request]()
-        {
-            return this->BindOpenBankProfitSharePayee(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<BindOpenBankProfitSharePayeeOutcome>>();
+    BindOpenBankProfitSharePayeeAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const BindOpenBankProfitSharePayeeRequest&,
+        BindOpenBankProfitSharePayeeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::BindRelateAccReUnionPayOutcome CpdpClient::BindRelateAccReUnionPay(const BindRelateAccReUnionPayRequest &request)
@@ -1051,25 +1212,32 @@ CpdpClient::BindRelateAccReUnionPayOutcome CpdpClient::BindRelateAccReUnionPay(c
 
 void CpdpClient::BindRelateAccReUnionPayAsync(const BindRelateAccReUnionPayRequest& request, const BindRelateAccReUnionPayAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->BindRelateAccReUnionPay(request), context);
-    };
+    using Req = const BindRelateAccReUnionPayRequest&;
+    using Resp = BindRelateAccReUnionPayResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "BindRelateAccReUnionPay", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::BindRelateAccReUnionPayOutcomeCallable CpdpClient::BindRelateAccReUnionPayCallable(const BindRelateAccReUnionPayRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<BindRelateAccReUnionPayOutcome()>>(
-        [this, request]()
-        {
-            return this->BindRelateAccReUnionPay(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<BindRelateAccReUnionPayOutcome>>();
+    BindRelateAccReUnionPayAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const BindRelateAccReUnionPayRequest&,
+        BindRelateAccReUnionPayOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::BindRelateAcctSmallAmountOutcome CpdpClient::BindRelateAcctSmallAmount(const BindRelateAcctSmallAmountRequest &request)
@@ -1094,25 +1262,32 @@ CpdpClient::BindRelateAcctSmallAmountOutcome CpdpClient::BindRelateAcctSmallAmou
 
 void CpdpClient::BindRelateAcctSmallAmountAsync(const BindRelateAcctSmallAmountRequest& request, const BindRelateAcctSmallAmountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->BindRelateAcctSmallAmount(request), context);
-    };
+    using Req = const BindRelateAcctSmallAmountRequest&;
+    using Resp = BindRelateAcctSmallAmountResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "BindRelateAcctSmallAmount", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::BindRelateAcctSmallAmountOutcomeCallable CpdpClient::BindRelateAcctSmallAmountCallable(const BindRelateAcctSmallAmountRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<BindRelateAcctSmallAmountOutcome()>>(
-        [this, request]()
-        {
-            return this->BindRelateAcctSmallAmount(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<BindRelateAcctSmallAmountOutcome>>();
+    BindRelateAcctSmallAmountAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const BindRelateAcctSmallAmountRequest&,
+        BindRelateAcctSmallAmountOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::BindRelateAcctUnionPayOutcome CpdpClient::BindRelateAcctUnionPay(const BindRelateAcctUnionPayRequest &request)
@@ -1137,25 +1312,32 @@ CpdpClient::BindRelateAcctUnionPayOutcome CpdpClient::BindRelateAcctUnionPay(con
 
 void CpdpClient::BindRelateAcctUnionPayAsync(const BindRelateAcctUnionPayRequest& request, const BindRelateAcctUnionPayAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->BindRelateAcctUnionPay(request), context);
-    };
+    using Req = const BindRelateAcctUnionPayRequest&;
+    using Resp = BindRelateAcctUnionPayResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "BindRelateAcctUnionPay", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::BindRelateAcctUnionPayOutcomeCallable CpdpClient::BindRelateAcctUnionPayCallable(const BindRelateAcctUnionPayRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<BindRelateAcctUnionPayOutcome()>>(
-        [this, request]()
-        {
-            return this->BindRelateAcctUnionPay(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<BindRelateAcctUnionPayOutcome>>();
+    BindRelateAcctUnionPayAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const BindRelateAcctUnionPayRequest&,
+        BindRelateAcctUnionPayOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::CheckAcctOutcome CpdpClient::CheckAcct(const CheckAcctRequest &request)
@@ -1180,25 +1362,32 @@ CpdpClient::CheckAcctOutcome CpdpClient::CheckAcct(const CheckAcctRequest &reque
 
 void CpdpClient::CheckAcctAsync(const CheckAcctRequest& request, const CheckAcctAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CheckAcct(request), context);
-    };
+    using Req = const CheckAcctRequest&;
+    using Resp = CheckAcctResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CheckAcct", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::CheckAcctOutcomeCallable CpdpClient::CheckAcctCallable(const CheckAcctRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CheckAcctOutcome()>>(
-        [this, request]()
-        {
-            return this->CheckAcct(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CheckAcctOutcome>>();
+    CheckAcctAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const CheckAcctRequest&,
+        CheckAcctOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::CheckAmountOutcome CpdpClient::CheckAmount(const CheckAmountRequest &request)
@@ -1223,25 +1412,32 @@ CpdpClient::CheckAmountOutcome CpdpClient::CheckAmount(const CheckAmountRequest 
 
 void CpdpClient::CheckAmountAsync(const CheckAmountRequest& request, const CheckAmountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CheckAmount(request), context);
-    };
+    using Req = const CheckAmountRequest&;
+    using Resp = CheckAmountResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CheckAmount", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::CheckAmountOutcomeCallable CpdpClient::CheckAmountCallable(const CheckAmountRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CheckAmountOutcome()>>(
-        [this, request]()
-        {
-            return this->CheckAmount(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CheckAmountOutcome>>();
+    CheckAmountAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const CheckAmountRequest&,
+        CheckAmountOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::CloseCloudOrderOutcome CpdpClient::CloseCloudOrder(const CloseCloudOrderRequest &request)
@@ -1266,25 +1462,32 @@ CpdpClient::CloseCloudOrderOutcome CpdpClient::CloseCloudOrder(const CloseCloudO
 
 void CpdpClient::CloseCloudOrderAsync(const CloseCloudOrderRequest& request, const CloseCloudOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CloseCloudOrder(request), context);
-    };
+    using Req = const CloseCloudOrderRequest&;
+    using Resp = CloseCloudOrderResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CloseCloudOrder", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::CloseCloudOrderOutcomeCallable CpdpClient::CloseCloudOrderCallable(const CloseCloudOrderRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CloseCloudOrderOutcome()>>(
-        [this, request]()
-        {
-            return this->CloseCloudOrder(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CloseCloudOrderOutcome>>();
+    CloseCloudOrderAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const CloseCloudOrderRequest&,
+        CloseCloudOrderOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::CloseOpenBankPaymentOrderOutcome CpdpClient::CloseOpenBankPaymentOrder(const CloseOpenBankPaymentOrderRequest &request)
@@ -1309,25 +1512,32 @@ CpdpClient::CloseOpenBankPaymentOrderOutcome CpdpClient::CloseOpenBankPaymentOrd
 
 void CpdpClient::CloseOpenBankPaymentOrderAsync(const CloseOpenBankPaymentOrderRequest& request, const CloseOpenBankPaymentOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CloseOpenBankPaymentOrder(request), context);
-    };
+    using Req = const CloseOpenBankPaymentOrderRequest&;
+    using Resp = CloseOpenBankPaymentOrderResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CloseOpenBankPaymentOrder", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::CloseOpenBankPaymentOrderOutcomeCallable CpdpClient::CloseOpenBankPaymentOrderCallable(const CloseOpenBankPaymentOrderRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CloseOpenBankPaymentOrderOutcome()>>(
-        [this, request]()
-        {
-            return this->CloseOpenBankPaymentOrder(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CloseOpenBankPaymentOrderOutcome>>();
+    CloseOpenBankPaymentOrderAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const CloseOpenBankPaymentOrderRequest&,
+        CloseOpenBankPaymentOrderOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::CloseOrderOutcome CpdpClient::CloseOrder(const CloseOrderRequest &request)
@@ -1352,25 +1562,32 @@ CpdpClient::CloseOrderOutcome CpdpClient::CloseOrder(const CloseOrderRequest &re
 
 void CpdpClient::CloseOrderAsync(const CloseOrderRequest& request, const CloseOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CloseOrder(request), context);
-    };
+    using Req = const CloseOrderRequest&;
+    using Resp = CloseOrderResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CloseOrder", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::CloseOrderOutcomeCallable CpdpClient::CloseOrderCallable(const CloseOrderRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CloseOrderOutcome()>>(
-        [this, request]()
-        {
-            return this->CloseOrder(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CloseOrderOutcome>>();
+    CloseOrderAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const CloseOrderRequest&,
+        CloseOrderOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::ConfirmOrderOutcome CpdpClient::ConfirmOrder(const ConfirmOrderRequest &request)
@@ -1395,25 +1612,32 @@ CpdpClient::ConfirmOrderOutcome CpdpClient::ConfirmOrder(const ConfirmOrderReque
 
 void CpdpClient::ConfirmOrderAsync(const ConfirmOrderRequest& request, const ConfirmOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ConfirmOrder(request), context);
-    };
+    using Req = const ConfirmOrderRequest&;
+    using Resp = ConfirmOrderResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ConfirmOrder", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::ConfirmOrderOutcomeCallable CpdpClient::ConfirmOrderCallable(const ConfirmOrderRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ConfirmOrderOutcome()>>(
-        [this, request]()
-        {
-            return this->ConfirmOrder(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ConfirmOrderOutcome>>();
+    ConfirmOrderAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const ConfirmOrderRequest&,
+        ConfirmOrderOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::ContractOrderOutcome CpdpClient::ContractOrder(const ContractOrderRequest &request)
@@ -1438,25 +1662,32 @@ CpdpClient::ContractOrderOutcome CpdpClient::ContractOrder(const ContractOrderRe
 
 void CpdpClient::ContractOrderAsync(const ContractOrderRequest& request, const ContractOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ContractOrder(request), context);
-    };
+    using Req = const ContractOrderRequest&;
+    using Resp = ContractOrderResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ContractOrder", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::ContractOrderOutcomeCallable CpdpClient::ContractOrderCallable(const ContractOrderRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ContractOrderOutcome()>>(
-        [this, request]()
-        {
-            return this->ContractOrder(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ContractOrderOutcome>>();
+    ContractOrderAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const ContractOrderRequest&,
+        ContractOrderOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::CreateAcctOutcome CpdpClient::CreateAcct(const CreateAcctRequest &request)
@@ -1481,25 +1712,32 @@ CpdpClient::CreateAcctOutcome CpdpClient::CreateAcct(const CreateAcctRequest &re
 
 void CpdpClient::CreateAcctAsync(const CreateAcctRequest& request, const CreateAcctAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateAcct(request), context);
-    };
+    using Req = const CreateAcctRequest&;
+    using Resp = CreateAcctResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateAcct", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::CreateAcctOutcomeCallable CpdpClient::CreateAcctCallable(const CreateAcctRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateAcctOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateAcct(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateAcctOutcome>>();
+    CreateAcctAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const CreateAcctRequest&,
+        CreateAcctOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::CreateAgentTaxPaymentInfosOutcome CpdpClient::CreateAgentTaxPaymentInfos(const CreateAgentTaxPaymentInfosRequest &request)
@@ -1524,25 +1762,32 @@ CpdpClient::CreateAgentTaxPaymentInfosOutcome CpdpClient::CreateAgentTaxPaymentI
 
 void CpdpClient::CreateAgentTaxPaymentInfosAsync(const CreateAgentTaxPaymentInfosRequest& request, const CreateAgentTaxPaymentInfosAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateAgentTaxPaymentInfos(request), context);
-    };
+    using Req = const CreateAgentTaxPaymentInfosRequest&;
+    using Resp = CreateAgentTaxPaymentInfosResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateAgentTaxPaymentInfos", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::CreateAgentTaxPaymentInfosOutcomeCallable CpdpClient::CreateAgentTaxPaymentInfosCallable(const CreateAgentTaxPaymentInfosRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateAgentTaxPaymentInfosOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateAgentTaxPaymentInfos(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateAgentTaxPaymentInfosOutcome>>();
+    CreateAgentTaxPaymentInfosAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const CreateAgentTaxPaymentInfosRequest&,
+        CreateAgentTaxPaymentInfosOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::CreateAnchorOutcome CpdpClient::CreateAnchor(const CreateAnchorRequest &request)
@@ -1567,25 +1812,32 @@ CpdpClient::CreateAnchorOutcome CpdpClient::CreateAnchor(const CreateAnchorReque
 
 void CpdpClient::CreateAnchorAsync(const CreateAnchorRequest& request, const CreateAnchorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateAnchor(request), context);
-    };
+    using Req = const CreateAnchorRequest&;
+    using Resp = CreateAnchorResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateAnchor", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::CreateAnchorOutcomeCallable CpdpClient::CreateAnchorCallable(const CreateAnchorRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateAnchorOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateAnchor(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateAnchorOutcome>>();
+    CreateAnchorAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const CreateAnchorRequest&,
+        CreateAnchorOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::CreateBatchPaymentOutcome CpdpClient::CreateBatchPayment(const CreateBatchPaymentRequest &request)
@@ -1610,25 +1862,32 @@ CpdpClient::CreateBatchPaymentOutcome CpdpClient::CreateBatchPayment(const Creat
 
 void CpdpClient::CreateBatchPaymentAsync(const CreateBatchPaymentRequest& request, const CreateBatchPaymentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateBatchPayment(request), context);
-    };
+    using Req = const CreateBatchPaymentRequest&;
+    using Resp = CreateBatchPaymentResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateBatchPayment", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::CreateBatchPaymentOutcomeCallable CpdpClient::CreateBatchPaymentCallable(const CreateBatchPaymentRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateBatchPaymentOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateBatchPayment(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateBatchPaymentOutcome>>();
+    CreateBatchPaymentAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const CreateBatchPaymentRequest&,
+        CreateBatchPaymentOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::CreateCloudSubMerchantOutcome CpdpClient::CreateCloudSubMerchant(const CreateCloudSubMerchantRequest &request)
@@ -1653,25 +1912,32 @@ CpdpClient::CreateCloudSubMerchantOutcome CpdpClient::CreateCloudSubMerchant(con
 
 void CpdpClient::CreateCloudSubMerchantAsync(const CreateCloudSubMerchantRequest& request, const CreateCloudSubMerchantAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateCloudSubMerchant(request), context);
-    };
+    using Req = const CreateCloudSubMerchantRequest&;
+    using Resp = CreateCloudSubMerchantResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateCloudSubMerchant", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::CreateCloudSubMerchantOutcomeCallable CpdpClient::CreateCloudSubMerchantCallable(const CreateCloudSubMerchantRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateCloudSubMerchantOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateCloudSubMerchant(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateCloudSubMerchantOutcome>>();
+    CreateCloudSubMerchantAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const CreateCloudSubMerchantRequest&,
+        CreateCloudSubMerchantOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::CreateCustAcctIdOutcome CpdpClient::CreateCustAcctId(const CreateCustAcctIdRequest &request)
@@ -1696,25 +1962,32 @@ CpdpClient::CreateCustAcctIdOutcome CpdpClient::CreateCustAcctId(const CreateCus
 
 void CpdpClient::CreateCustAcctIdAsync(const CreateCustAcctIdRequest& request, const CreateCustAcctIdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateCustAcctId(request), context);
-    };
+    using Req = const CreateCustAcctIdRequest&;
+    using Resp = CreateCustAcctIdResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateCustAcctId", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::CreateCustAcctIdOutcomeCallable CpdpClient::CreateCustAcctIdCallable(const CreateCustAcctIdRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateCustAcctIdOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateCustAcctId(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateCustAcctIdOutcome>>();
+    CreateCustAcctIdAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const CreateCustAcctIdRequest&,
+        CreateCustAcctIdOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::CreateExternalAnchorOutcome CpdpClient::CreateExternalAnchor(const CreateExternalAnchorRequest &request)
@@ -1739,25 +2012,32 @@ CpdpClient::CreateExternalAnchorOutcome CpdpClient::CreateExternalAnchor(const C
 
 void CpdpClient::CreateExternalAnchorAsync(const CreateExternalAnchorRequest& request, const CreateExternalAnchorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateExternalAnchor(request), context);
-    };
+    using Req = const CreateExternalAnchorRequest&;
+    using Resp = CreateExternalAnchorResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateExternalAnchor", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::CreateExternalAnchorOutcomeCallable CpdpClient::CreateExternalAnchorCallable(const CreateExternalAnchorRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateExternalAnchorOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateExternalAnchor(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateExternalAnchorOutcome>>();
+    CreateExternalAnchorAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const CreateExternalAnchorRequest&,
+        CreateExternalAnchorOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::CreateFlexPayeeOutcome CpdpClient::CreateFlexPayee(const CreateFlexPayeeRequest &request)
@@ -1782,25 +2062,32 @@ CpdpClient::CreateFlexPayeeOutcome CpdpClient::CreateFlexPayee(const CreateFlexP
 
 void CpdpClient::CreateFlexPayeeAsync(const CreateFlexPayeeRequest& request, const CreateFlexPayeeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateFlexPayee(request), context);
-    };
+    using Req = const CreateFlexPayeeRequest&;
+    using Resp = CreateFlexPayeeResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateFlexPayee", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::CreateFlexPayeeOutcomeCallable CpdpClient::CreateFlexPayeeCallable(const CreateFlexPayeeRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateFlexPayeeOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateFlexPayee(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateFlexPayeeOutcome>>();
+    CreateFlexPayeeAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const CreateFlexPayeeRequest&,
+        CreateFlexPayeeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::CreateInvoiceOutcome CpdpClient::CreateInvoice(const CreateInvoiceRequest &request)
@@ -1825,25 +2112,32 @@ CpdpClient::CreateInvoiceOutcome CpdpClient::CreateInvoice(const CreateInvoiceRe
 
 void CpdpClient::CreateInvoiceAsync(const CreateInvoiceRequest& request, const CreateInvoiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateInvoice(request), context);
-    };
+    using Req = const CreateInvoiceRequest&;
+    using Resp = CreateInvoiceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateInvoice", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::CreateInvoiceOutcomeCallable CpdpClient::CreateInvoiceCallable(const CreateInvoiceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateInvoiceOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateInvoice(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateInvoiceOutcome>>();
+    CreateInvoiceAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const CreateInvoiceRequest&,
+        CreateInvoiceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::CreateInvoiceV2Outcome CpdpClient::CreateInvoiceV2(const CreateInvoiceV2Request &request)
@@ -1868,25 +2162,32 @@ CpdpClient::CreateInvoiceV2Outcome CpdpClient::CreateInvoiceV2(const CreateInvoi
 
 void CpdpClient::CreateInvoiceV2Async(const CreateInvoiceV2Request& request, const CreateInvoiceV2AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateInvoiceV2(request), context);
-    };
+    using Req = const CreateInvoiceV2Request&;
+    using Resp = CreateInvoiceV2Response;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateInvoiceV2", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::CreateInvoiceV2OutcomeCallable CpdpClient::CreateInvoiceV2Callable(const CreateInvoiceV2Request &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateInvoiceV2Outcome()>>(
-        [this, request]()
-        {
-            return this->CreateInvoiceV2(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateInvoiceV2Outcome>>();
+    CreateInvoiceV2Async(
+    request,
+    [prom](
+        const CpdpClient*,
+        const CreateInvoiceV2Request&,
+        CreateInvoiceV2Outcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::CreateMerchantOutcome CpdpClient::CreateMerchant(const CreateMerchantRequest &request)
@@ -1911,25 +2212,32 @@ CpdpClient::CreateMerchantOutcome CpdpClient::CreateMerchant(const CreateMerchan
 
 void CpdpClient::CreateMerchantAsync(const CreateMerchantRequest& request, const CreateMerchantAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateMerchant(request), context);
-    };
+    using Req = const CreateMerchantRequest&;
+    using Resp = CreateMerchantResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateMerchant", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::CreateMerchantOutcomeCallable CpdpClient::CreateMerchantCallable(const CreateMerchantRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateMerchantOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateMerchant(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateMerchantOutcome>>();
+    CreateMerchantAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const CreateMerchantRequest&,
+        CreateMerchantOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::CreateOpenBankAggregatedSubMerchantRegistrationOutcome CpdpClient::CreateOpenBankAggregatedSubMerchantRegistration(const CreateOpenBankAggregatedSubMerchantRegistrationRequest &request)
@@ -1954,25 +2262,32 @@ CpdpClient::CreateOpenBankAggregatedSubMerchantRegistrationOutcome CpdpClient::C
 
 void CpdpClient::CreateOpenBankAggregatedSubMerchantRegistrationAsync(const CreateOpenBankAggregatedSubMerchantRegistrationRequest& request, const CreateOpenBankAggregatedSubMerchantRegistrationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateOpenBankAggregatedSubMerchantRegistration(request), context);
-    };
+    using Req = const CreateOpenBankAggregatedSubMerchantRegistrationRequest&;
+    using Resp = CreateOpenBankAggregatedSubMerchantRegistrationResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateOpenBankAggregatedSubMerchantRegistration", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::CreateOpenBankAggregatedSubMerchantRegistrationOutcomeCallable CpdpClient::CreateOpenBankAggregatedSubMerchantRegistrationCallable(const CreateOpenBankAggregatedSubMerchantRegistrationRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateOpenBankAggregatedSubMerchantRegistrationOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateOpenBankAggregatedSubMerchantRegistration(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateOpenBankAggregatedSubMerchantRegistrationOutcome>>();
+    CreateOpenBankAggregatedSubMerchantRegistrationAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const CreateOpenBankAggregatedSubMerchantRegistrationRequest&,
+        CreateOpenBankAggregatedSubMerchantRegistrationOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::CreateOpenBankExternalSubMerchantAccountBookOutcome CpdpClient::CreateOpenBankExternalSubMerchantAccountBook(const CreateOpenBankExternalSubMerchantAccountBookRequest &request)
@@ -1997,25 +2312,32 @@ CpdpClient::CreateOpenBankExternalSubMerchantAccountBookOutcome CpdpClient::Crea
 
 void CpdpClient::CreateOpenBankExternalSubMerchantAccountBookAsync(const CreateOpenBankExternalSubMerchantAccountBookRequest& request, const CreateOpenBankExternalSubMerchantAccountBookAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateOpenBankExternalSubMerchantAccountBook(request), context);
-    };
+    using Req = const CreateOpenBankExternalSubMerchantAccountBookRequest&;
+    using Resp = CreateOpenBankExternalSubMerchantAccountBookResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateOpenBankExternalSubMerchantAccountBook", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::CreateOpenBankExternalSubMerchantAccountBookOutcomeCallable CpdpClient::CreateOpenBankExternalSubMerchantAccountBookCallable(const CreateOpenBankExternalSubMerchantAccountBookRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateOpenBankExternalSubMerchantAccountBookOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateOpenBankExternalSubMerchantAccountBook(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateOpenBankExternalSubMerchantAccountBookOutcome>>();
+    CreateOpenBankExternalSubMerchantAccountBookAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const CreateOpenBankExternalSubMerchantAccountBookRequest&,
+        CreateOpenBankExternalSubMerchantAccountBookOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::CreateOpenBankExternalSubMerchantRegistrationOutcome CpdpClient::CreateOpenBankExternalSubMerchantRegistration(const CreateOpenBankExternalSubMerchantRegistrationRequest &request)
@@ -2040,25 +2362,32 @@ CpdpClient::CreateOpenBankExternalSubMerchantRegistrationOutcome CpdpClient::Cre
 
 void CpdpClient::CreateOpenBankExternalSubMerchantRegistrationAsync(const CreateOpenBankExternalSubMerchantRegistrationRequest& request, const CreateOpenBankExternalSubMerchantRegistrationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateOpenBankExternalSubMerchantRegistration(request), context);
-    };
+    using Req = const CreateOpenBankExternalSubMerchantRegistrationRequest&;
+    using Resp = CreateOpenBankExternalSubMerchantRegistrationResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateOpenBankExternalSubMerchantRegistration", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::CreateOpenBankExternalSubMerchantRegistrationOutcomeCallable CpdpClient::CreateOpenBankExternalSubMerchantRegistrationCallable(const CreateOpenBankExternalSubMerchantRegistrationRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateOpenBankExternalSubMerchantRegistrationOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateOpenBankExternalSubMerchantRegistration(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateOpenBankExternalSubMerchantRegistrationOutcome>>();
+    CreateOpenBankExternalSubMerchantRegistrationAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const CreateOpenBankExternalSubMerchantRegistrationRequest&,
+        CreateOpenBankExternalSubMerchantRegistrationOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::CreateOpenBankGlobalPaymentOrderOutcome CpdpClient::CreateOpenBankGlobalPaymentOrder(const CreateOpenBankGlobalPaymentOrderRequest &request)
@@ -2083,25 +2412,32 @@ CpdpClient::CreateOpenBankGlobalPaymentOrderOutcome CpdpClient::CreateOpenBankGl
 
 void CpdpClient::CreateOpenBankGlobalPaymentOrderAsync(const CreateOpenBankGlobalPaymentOrderRequest& request, const CreateOpenBankGlobalPaymentOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateOpenBankGlobalPaymentOrder(request), context);
-    };
+    using Req = const CreateOpenBankGlobalPaymentOrderRequest&;
+    using Resp = CreateOpenBankGlobalPaymentOrderResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateOpenBankGlobalPaymentOrder", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::CreateOpenBankGlobalPaymentOrderOutcomeCallable CpdpClient::CreateOpenBankGlobalPaymentOrderCallable(const CreateOpenBankGlobalPaymentOrderRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateOpenBankGlobalPaymentOrderOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateOpenBankGlobalPaymentOrder(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateOpenBankGlobalPaymentOrderOutcome>>();
+    CreateOpenBankGlobalPaymentOrderAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const CreateOpenBankGlobalPaymentOrderRequest&,
+        CreateOpenBankGlobalPaymentOrderOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::CreateOpenBankMerchantOutcome CpdpClient::CreateOpenBankMerchant(const CreateOpenBankMerchantRequest &request)
@@ -2126,25 +2462,32 @@ CpdpClient::CreateOpenBankMerchantOutcome CpdpClient::CreateOpenBankMerchant(con
 
 void CpdpClient::CreateOpenBankMerchantAsync(const CreateOpenBankMerchantRequest& request, const CreateOpenBankMerchantAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateOpenBankMerchant(request), context);
-    };
+    using Req = const CreateOpenBankMerchantRequest&;
+    using Resp = CreateOpenBankMerchantResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateOpenBankMerchant", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::CreateOpenBankMerchantOutcomeCallable CpdpClient::CreateOpenBankMerchantCallable(const CreateOpenBankMerchantRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateOpenBankMerchantOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateOpenBankMerchant(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateOpenBankMerchantOutcome>>();
+    CreateOpenBankMerchantAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const CreateOpenBankMerchantRequest&,
+        CreateOpenBankMerchantOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::CreateOpenBankPaymentOrderOutcome CpdpClient::CreateOpenBankPaymentOrder(const CreateOpenBankPaymentOrderRequest &request)
@@ -2169,25 +2512,32 @@ CpdpClient::CreateOpenBankPaymentOrderOutcome CpdpClient::CreateOpenBankPaymentO
 
 void CpdpClient::CreateOpenBankPaymentOrderAsync(const CreateOpenBankPaymentOrderRequest& request, const CreateOpenBankPaymentOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateOpenBankPaymentOrder(request), context);
-    };
+    using Req = const CreateOpenBankPaymentOrderRequest&;
+    using Resp = CreateOpenBankPaymentOrderResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateOpenBankPaymentOrder", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::CreateOpenBankPaymentOrderOutcomeCallable CpdpClient::CreateOpenBankPaymentOrderCallable(const CreateOpenBankPaymentOrderRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateOpenBankPaymentOrderOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateOpenBankPaymentOrder(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateOpenBankPaymentOrderOutcome>>();
+    CreateOpenBankPaymentOrderAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const CreateOpenBankPaymentOrderRequest&,
+        CreateOpenBankPaymentOrderOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::CreateOpenBankRechargeOrderOutcome CpdpClient::CreateOpenBankRechargeOrder(const CreateOpenBankRechargeOrderRequest &request)
@@ -2212,25 +2562,32 @@ CpdpClient::CreateOpenBankRechargeOrderOutcome CpdpClient::CreateOpenBankRecharg
 
 void CpdpClient::CreateOpenBankRechargeOrderAsync(const CreateOpenBankRechargeOrderRequest& request, const CreateOpenBankRechargeOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateOpenBankRechargeOrder(request), context);
-    };
+    using Req = const CreateOpenBankRechargeOrderRequest&;
+    using Resp = CreateOpenBankRechargeOrderResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateOpenBankRechargeOrder", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::CreateOpenBankRechargeOrderOutcomeCallable CpdpClient::CreateOpenBankRechargeOrderCallable(const CreateOpenBankRechargeOrderRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateOpenBankRechargeOrderOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateOpenBankRechargeOrder(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateOpenBankRechargeOrderOutcome>>();
+    CreateOpenBankRechargeOrderAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const CreateOpenBankRechargeOrderRequest&,
+        CreateOpenBankRechargeOrderOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::CreateOpenBankSubMerchantRateConfigureOutcome CpdpClient::CreateOpenBankSubMerchantRateConfigure(const CreateOpenBankSubMerchantRateConfigureRequest &request)
@@ -2255,25 +2612,32 @@ CpdpClient::CreateOpenBankSubMerchantRateConfigureOutcome CpdpClient::CreateOpen
 
 void CpdpClient::CreateOpenBankSubMerchantRateConfigureAsync(const CreateOpenBankSubMerchantRateConfigureRequest& request, const CreateOpenBankSubMerchantRateConfigureAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateOpenBankSubMerchantRateConfigure(request), context);
-    };
+    using Req = const CreateOpenBankSubMerchantRateConfigureRequest&;
+    using Resp = CreateOpenBankSubMerchantRateConfigureResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateOpenBankSubMerchantRateConfigure", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::CreateOpenBankSubMerchantRateConfigureOutcomeCallable CpdpClient::CreateOpenBankSubMerchantRateConfigureCallable(const CreateOpenBankSubMerchantRateConfigureRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateOpenBankSubMerchantRateConfigureOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateOpenBankSubMerchantRateConfigure(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateOpenBankSubMerchantRateConfigureOutcome>>();
+    CreateOpenBankSubMerchantRateConfigureAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const CreateOpenBankSubMerchantRateConfigureRequest&,
+        CreateOpenBankSubMerchantRateConfigureOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::CreateOpenBankUnifiedOrderOutcome CpdpClient::CreateOpenBankUnifiedOrder(const CreateOpenBankUnifiedOrderRequest &request)
@@ -2298,25 +2662,32 @@ CpdpClient::CreateOpenBankUnifiedOrderOutcome CpdpClient::CreateOpenBankUnifiedO
 
 void CpdpClient::CreateOpenBankUnifiedOrderAsync(const CreateOpenBankUnifiedOrderRequest& request, const CreateOpenBankUnifiedOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateOpenBankUnifiedOrder(request), context);
-    };
+    using Req = const CreateOpenBankUnifiedOrderRequest&;
+    using Resp = CreateOpenBankUnifiedOrderResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateOpenBankUnifiedOrder", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::CreateOpenBankUnifiedOrderOutcomeCallable CpdpClient::CreateOpenBankUnifiedOrderCallable(const CreateOpenBankUnifiedOrderRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateOpenBankUnifiedOrderOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateOpenBankUnifiedOrder(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateOpenBankUnifiedOrderOutcome>>();
+    CreateOpenBankUnifiedOrderAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const CreateOpenBankUnifiedOrderRequest&,
+        CreateOpenBankUnifiedOrderOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::CreateOpenBankVerificationOrderOutcome CpdpClient::CreateOpenBankVerificationOrder(const CreateOpenBankVerificationOrderRequest &request)
@@ -2341,25 +2712,32 @@ CpdpClient::CreateOpenBankVerificationOrderOutcome CpdpClient::CreateOpenBankVer
 
 void CpdpClient::CreateOpenBankVerificationOrderAsync(const CreateOpenBankVerificationOrderRequest& request, const CreateOpenBankVerificationOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateOpenBankVerificationOrder(request), context);
-    };
+    using Req = const CreateOpenBankVerificationOrderRequest&;
+    using Resp = CreateOpenBankVerificationOrderResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateOpenBankVerificationOrder", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::CreateOpenBankVerificationOrderOutcomeCallable CpdpClient::CreateOpenBankVerificationOrderCallable(const CreateOpenBankVerificationOrderRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateOpenBankVerificationOrderOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateOpenBankVerificationOrder(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateOpenBankVerificationOrderOutcome>>();
+    CreateOpenBankVerificationOrderAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const CreateOpenBankVerificationOrderRequest&,
+        CreateOpenBankVerificationOrderOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::CreateOrderOutcome CpdpClient::CreateOrder(const CreateOrderRequest &request)
@@ -2384,25 +2762,32 @@ CpdpClient::CreateOrderOutcome CpdpClient::CreateOrder(const CreateOrderRequest 
 
 void CpdpClient::CreateOrderAsync(const CreateOrderRequest& request, const CreateOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateOrder(request), context);
-    };
+    using Req = const CreateOrderRequest&;
+    using Resp = CreateOrderResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateOrder", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::CreateOrderOutcomeCallable CpdpClient::CreateOrderCallable(const CreateOrderRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateOrderOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateOrder(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateOrderOutcome>>();
+    CreateOrderAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const CreateOrderRequest&,
+        CreateOrderOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::CreatePayMerchantOutcome CpdpClient::CreatePayMerchant(const CreatePayMerchantRequest &request)
@@ -2427,25 +2812,32 @@ CpdpClient::CreatePayMerchantOutcome CpdpClient::CreatePayMerchant(const CreateP
 
 void CpdpClient::CreatePayMerchantAsync(const CreatePayMerchantRequest& request, const CreatePayMerchantAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreatePayMerchant(request), context);
-    };
+    using Req = const CreatePayMerchantRequest&;
+    using Resp = CreatePayMerchantResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreatePayMerchant", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::CreatePayMerchantOutcomeCallable CpdpClient::CreatePayMerchantCallable(const CreatePayMerchantRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreatePayMerchantOutcome()>>(
-        [this, request]()
-        {
-            return this->CreatePayMerchant(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreatePayMerchantOutcome>>();
+    CreatePayMerchantAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const CreatePayMerchantRequest&,
+        CreatePayMerchantOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::CreatePayRollPreOrderOutcome CpdpClient::CreatePayRollPreOrder(const CreatePayRollPreOrderRequest &request)
@@ -2470,25 +2862,32 @@ CpdpClient::CreatePayRollPreOrderOutcome CpdpClient::CreatePayRollPreOrder(const
 
 void CpdpClient::CreatePayRollPreOrderAsync(const CreatePayRollPreOrderRequest& request, const CreatePayRollPreOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreatePayRollPreOrder(request), context);
-    };
+    using Req = const CreatePayRollPreOrderRequest&;
+    using Resp = CreatePayRollPreOrderResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreatePayRollPreOrder", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::CreatePayRollPreOrderOutcomeCallable CpdpClient::CreatePayRollPreOrderCallable(const CreatePayRollPreOrderRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreatePayRollPreOrderOutcome()>>(
-        [this, request]()
-        {
-            return this->CreatePayRollPreOrder(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreatePayRollPreOrderOutcome>>();
+    CreatePayRollPreOrderAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const CreatePayRollPreOrderRequest&,
+        CreatePayRollPreOrderOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::CreatePayRollPreOrderWithAuthOutcome CpdpClient::CreatePayRollPreOrderWithAuth(const CreatePayRollPreOrderWithAuthRequest &request)
@@ -2513,25 +2912,32 @@ CpdpClient::CreatePayRollPreOrderWithAuthOutcome CpdpClient::CreatePayRollPreOrd
 
 void CpdpClient::CreatePayRollPreOrderWithAuthAsync(const CreatePayRollPreOrderWithAuthRequest& request, const CreatePayRollPreOrderWithAuthAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreatePayRollPreOrderWithAuth(request), context);
-    };
+    using Req = const CreatePayRollPreOrderWithAuthRequest&;
+    using Resp = CreatePayRollPreOrderWithAuthResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreatePayRollPreOrderWithAuth", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::CreatePayRollPreOrderWithAuthOutcomeCallable CpdpClient::CreatePayRollPreOrderWithAuthCallable(const CreatePayRollPreOrderWithAuthRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreatePayRollPreOrderWithAuthOutcome()>>(
-        [this, request]()
-        {
-            return this->CreatePayRollPreOrderWithAuth(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreatePayRollPreOrderWithAuthOutcome>>();
+    CreatePayRollPreOrderWithAuthAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const CreatePayRollPreOrderWithAuthRequest&,
+        CreatePayRollPreOrderWithAuthOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::CreatePayRollTokenOutcome CpdpClient::CreatePayRollToken(const CreatePayRollTokenRequest &request)
@@ -2556,25 +2962,32 @@ CpdpClient::CreatePayRollTokenOutcome CpdpClient::CreatePayRollToken(const Creat
 
 void CpdpClient::CreatePayRollTokenAsync(const CreatePayRollTokenRequest& request, const CreatePayRollTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreatePayRollToken(request), context);
-    };
+    using Req = const CreatePayRollTokenRequest&;
+    using Resp = CreatePayRollTokenResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreatePayRollToken", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::CreatePayRollTokenOutcomeCallable CpdpClient::CreatePayRollTokenCallable(const CreatePayRollTokenRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreatePayRollTokenOutcome()>>(
-        [this, request]()
-        {
-            return this->CreatePayRollToken(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreatePayRollTokenOutcome>>();
+    CreatePayRollTokenAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const CreatePayRollTokenRequest&,
+        CreatePayRollTokenOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::CreateRedInvoiceOutcome CpdpClient::CreateRedInvoice(const CreateRedInvoiceRequest &request)
@@ -2599,25 +3012,32 @@ CpdpClient::CreateRedInvoiceOutcome CpdpClient::CreateRedInvoice(const CreateRed
 
 void CpdpClient::CreateRedInvoiceAsync(const CreateRedInvoiceRequest& request, const CreateRedInvoiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateRedInvoice(request), context);
-    };
+    using Req = const CreateRedInvoiceRequest&;
+    using Resp = CreateRedInvoiceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateRedInvoice", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::CreateRedInvoiceOutcomeCallable CpdpClient::CreateRedInvoiceCallable(const CreateRedInvoiceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateRedInvoiceOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateRedInvoice(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateRedInvoiceOutcome>>();
+    CreateRedInvoiceAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const CreateRedInvoiceRequest&,
+        CreateRedInvoiceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::CreateRedInvoiceV2Outcome CpdpClient::CreateRedInvoiceV2(const CreateRedInvoiceV2Request &request)
@@ -2642,25 +3062,32 @@ CpdpClient::CreateRedInvoiceV2Outcome CpdpClient::CreateRedInvoiceV2(const Creat
 
 void CpdpClient::CreateRedInvoiceV2Async(const CreateRedInvoiceV2Request& request, const CreateRedInvoiceV2AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateRedInvoiceV2(request), context);
-    };
+    using Req = const CreateRedInvoiceV2Request&;
+    using Resp = CreateRedInvoiceV2Response;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateRedInvoiceV2", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::CreateRedInvoiceV2OutcomeCallable CpdpClient::CreateRedInvoiceV2Callable(const CreateRedInvoiceV2Request &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateRedInvoiceV2Outcome()>>(
-        [this, request]()
-        {
-            return this->CreateRedInvoiceV2(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateRedInvoiceV2Outcome>>();
+    CreateRedInvoiceV2Async(
+    request,
+    [prom](
+        const CpdpClient*,
+        const CreateRedInvoiceV2Request&,
+        CreateRedInvoiceV2Outcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::CreateSinglePaymentOutcome CpdpClient::CreateSinglePayment(const CreateSinglePaymentRequest &request)
@@ -2685,25 +3112,32 @@ CpdpClient::CreateSinglePaymentOutcome CpdpClient::CreateSinglePayment(const Cre
 
 void CpdpClient::CreateSinglePaymentAsync(const CreateSinglePaymentRequest& request, const CreateSinglePaymentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateSinglePayment(request), context);
-    };
+    using Req = const CreateSinglePaymentRequest&;
+    using Resp = CreateSinglePaymentResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateSinglePayment", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::CreateSinglePaymentOutcomeCallable CpdpClient::CreateSinglePaymentCallable(const CreateSinglePaymentRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateSinglePaymentOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateSinglePayment(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateSinglePaymentOutcome>>();
+    CreateSinglePaymentAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const CreateSinglePaymentRequest&,
+        CreateSinglePaymentOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::CreateTransferBatchOutcome CpdpClient::CreateTransferBatch(const CreateTransferBatchRequest &request)
@@ -2728,25 +3162,32 @@ CpdpClient::CreateTransferBatchOutcome CpdpClient::CreateTransferBatch(const Cre
 
 void CpdpClient::CreateTransferBatchAsync(const CreateTransferBatchRequest& request, const CreateTransferBatchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateTransferBatch(request), context);
-    };
+    using Req = const CreateTransferBatchRequest&;
+    using Resp = CreateTransferBatchResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateTransferBatch", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::CreateTransferBatchOutcomeCallable CpdpClient::CreateTransferBatchCallable(const CreateTransferBatchRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateTransferBatchOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateTransferBatch(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateTransferBatchOutcome>>();
+    CreateTransferBatchAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const CreateTransferBatchRequest&,
+        CreateTransferBatchOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::DeduceQuotaOutcome CpdpClient::DeduceQuota(const DeduceQuotaRequest &request)
@@ -2771,25 +3212,32 @@ CpdpClient::DeduceQuotaOutcome CpdpClient::DeduceQuota(const DeduceQuotaRequest 
 
 void CpdpClient::DeduceQuotaAsync(const DeduceQuotaRequest& request, const DeduceQuotaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeduceQuota(request), context);
-    };
+    using Req = const DeduceQuotaRequest&;
+    using Resp = DeduceQuotaResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeduceQuota", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::DeduceQuotaOutcomeCallable CpdpClient::DeduceQuotaCallable(const DeduceQuotaRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeduceQuotaOutcome()>>(
-        [this, request]()
-        {
-            return this->DeduceQuota(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeduceQuotaOutcome>>();
+    DeduceQuotaAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const DeduceQuotaRequest&,
+        DeduceQuotaOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::DeleteAgentTaxPaymentInfoOutcome CpdpClient::DeleteAgentTaxPaymentInfo(const DeleteAgentTaxPaymentInfoRequest &request)
@@ -2814,25 +3262,32 @@ CpdpClient::DeleteAgentTaxPaymentInfoOutcome CpdpClient::DeleteAgentTaxPaymentIn
 
 void CpdpClient::DeleteAgentTaxPaymentInfoAsync(const DeleteAgentTaxPaymentInfoRequest& request, const DeleteAgentTaxPaymentInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteAgentTaxPaymentInfo(request), context);
-    };
+    using Req = const DeleteAgentTaxPaymentInfoRequest&;
+    using Resp = DeleteAgentTaxPaymentInfoResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteAgentTaxPaymentInfo", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::DeleteAgentTaxPaymentInfoOutcomeCallable CpdpClient::DeleteAgentTaxPaymentInfoCallable(const DeleteAgentTaxPaymentInfoRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteAgentTaxPaymentInfoOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteAgentTaxPaymentInfo(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteAgentTaxPaymentInfoOutcome>>();
+    DeleteAgentTaxPaymentInfoAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const DeleteAgentTaxPaymentInfoRequest&,
+        DeleteAgentTaxPaymentInfoOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::DeleteAgentTaxPaymentInfosOutcome CpdpClient::DeleteAgentTaxPaymentInfos(const DeleteAgentTaxPaymentInfosRequest &request)
@@ -2857,25 +3312,32 @@ CpdpClient::DeleteAgentTaxPaymentInfosOutcome CpdpClient::DeleteAgentTaxPaymentI
 
 void CpdpClient::DeleteAgentTaxPaymentInfosAsync(const DeleteAgentTaxPaymentInfosRequest& request, const DeleteAgentTaxPaymentInfosAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteAgentTaxPaymentInfos(request), context);
-    };
+    using Req = const DeleteAgentTaxPaymentInfosRequest&;
+    using Resp = DeleteAgentTaxPaymentInfosResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteAgentTaxPaymentInfos", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::DeleteAgentTaxPaymentInfosOutcomeCallable CpdpClient::DeleteAgentTaxPaymentInfosCallable(const DeleteAgentTaxPaymentInfosRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteAgentTaxPaymentInfosOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteAgentTaxPaymentInfos(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteAgentTaxPaymentInfosOutcome>>();
+    DeleteAgentTaxPaymentInfosAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const DeleteAgentTaxPaymentInfosRequest&,
+        DeleteAgentTaxPaymentInfosOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::DescribeChargeDetailOutcome CpdpClient::DescribeChargeDetail(const DescribeChargeDetailRequest &request)
@@ -2900,25 +3362,32 @@ CpdpClient::DescribeChargeDetailOutcome CpdpClient::DescribeChargeDetail(const D
 
 void CpdpClient::DescribeChargeDetailAsync(const DescribeChargeDetailRequest& request, const DescribeChargeDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeChargeDetail(request), context);
-    };
+    using Req = const DescribeChargeDetailRequest&;
+    using Resp = DescribeChargeDetailResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeChargeDetail", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::DescribeChargeDetailOutcomeCallable CpdpClient::DescribeChargeDetailCallable(const DescribeChargeDetailRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeChargeDetailOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeChargeDetail(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeChargeDetailOutcome>>();
+    DescribeChargeDetailAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const DescribeChargeDetailRequest&,
+        DescribeChargeDetailOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::DescribeOrderStatusOutcome CpdpClient::DescribeOrderStatus(const DescribeOrderStatusRequest &request)
@@ -2943,25 +3412,32 @@ CpdpClient::DescribeOrderStatusOutcome CpdpClient::DescribeOrderStatus(const Des
 
 void CpdpClient::DescribeOrderStatusAsync(const DescribeOrderStatusRequest& request, const DescribeOrderStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeOrderStatus(request), context);
-    };
+    using Req = const DescribeOrderStatusRequest&;
+    using Resp = DescribeOrderStatusResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeOrderStatus", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::DescribeOrderStatusOutcomeCallable CpdpClient::DescribeOrderStatusCallable(const DescribeOrderStatusRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeOrderStatusOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeOrderStatus(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeOrderStatusOutcome>>();
+    DescribeOrderStatusAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const DescribeOrderStatusRequest&,
+        DescribeOrderStatusOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::DistributeAccreditQueryOutcome CpdpClient::DistributeAccreditQuery(const DistributeAccreditQueryRequest &request)
@@ -2986,25 +3462,32 @@ CpdpClient::DistributeAccreditQueryOutcome CpdpClient::DistributeAccreditQuery(c
 
 void CpdpClient::DistributeAccreditQueryAsync(const DistributeAccreditQueryRequest& request, const DistributeAccreditQueryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DistributeAccreditQuery(request), context);
-    };
+    using Req = const DistributeAccreditQueryRequest&;
+    using Resp = DistributeAccreditQueryResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DistributeAccreditQuery", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::DistributeAccreditQueryOutcomeCallable CpdpClient::DistributeAccreditQueryCallable(const DistributeAccreditQueryRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DistributeAccreditQueryOutcome()>>(
-        [this, request]()
-        {
-            return this->DistributeAccreditQuery(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DistributeAccreditQueryOutcome>>();
+    DistributeAccreditQueryAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const DistributeAccreditQueryRequest&,
+        DistributeAccreditQueryOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::DistributeAccreditTlinxOutcome CpdpClient::DistributeAccreditTlinx(const DistributeAccreditTlinxRequest &request)
@@ -3029,25 +3512,32 @@ CpdpClient::DistributeAccreditTlinxOutcome CpdpClient::DistributeAccreditTlinx(c
 
 void CpdpClient::DistributeAccreditTlinxAsync(const DistributeAccreditTlinxRequest& request, const DistributeAccreditTlinxAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DistributeAccreditTlinx(request), context);
-    };
+    using Req = const DistributeAccreditTlinxRequest&;
+    using Resp = DistributeAccreditTlinxResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DistributeAccreditTlinx", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::DistributeAccreditTlinxOutcomeCallable CpdpClient::DistributeAccreditTlinxCallable(const DistributeAccreditTlinxRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DistributeAccreditTlinxOutcome()>>(
-        [this, request]()
-        {
-            return this->DistributeAccreditTlinx(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DistributeAccreditTlinxOutcome>>();
+    DistributeAccreditTlinxAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const DistributeAccreditTlinxRequest&,
+        DistributeAccreditTlinxOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::DistributeAddReceiverOutcome CpdpClient::DistributeAddReceiver(const DistributeAddReceiverRequest &request)
@@ -3072,25 +3562,32 @@ CpdpClient::DistributeAddReceiverOutcome CpdpClient::DistributeAddReceiver(const
 
 void CpdpClient::DistributeAddReceiverAsync(const DistributeAddReceiverRequest& request, const DistributeAddReceiverAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DistributeAddReceiver(request), context);
-    };
+    using Req = const DistributeAddReceiverRequest&;
+    using Resp = DistributeAddReceiverResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DistributeAddReceiver", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::DistributeAddReceiverOutcomeCallable CpdpClient::DistributeAddReceiverCallable(const DistributeAddReceiverRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DistributeAddReceiverOutcome()>>(
-        [this, request]()
-        {
-            return this->DistributeAddReceiver(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DistributeAddReceiverOutcome>>();
+    DistributeAddReceiverAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const DistributeAddReceiverRequest&,
+        DistributeAddReceiverOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::DistributeApplyOutcome CpdpClient::DistributeApply(const DistributeApplyRequest &request)
@@ -3115,25 +3612,32 @@ CpdpClient::DistributeApplyOutcome CpdpClient::DistributeApply(const DistributeA
 
 void CpdpClient::DistributeApplyAsync(const DistributeApplyRequest& request, const DistributeApplyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DistributeApply(request), context);
-    };
+    using Req = const DistributeApplyRequest&;
+    using Resp = DistributeApplyResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DistributeApply", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::DistributeApplyOutcomeCallable CpdpClient::DistributeApplyCallable(const DistributeApplyRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DistributeApplyOutcome()>>(
-        [this, request]()
-        {
-            return this->DistributeApply(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DistributeApplyOutcome>>();
+    DistributeApplyAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const DistributeApplyRequest&,
+        DistributeApplyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::DistributeCancelOutcome CpdpClient::DistributeCancel(const DistributeCancelRequest &request)
@@ -3158,25 +3662,32 @@ CpdpClient::DistributeCancelOutcome CpdpClient::DistributeCancel(const Distribut
 
 void CpdpClient::DistributeCancelAsync(const DistributeCancelRequest& request, const DistributeCancelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DistributeCancel(request), context);
-    };
+    using Req = const DistributeCancelRequest&;
+    using Resp = DistributeCancelResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DistributeCancel", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::DistributeCancelOutcomeCallable CpdpClient::DistributeCancelCallable(const DistributeCancelRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DistributeCancelOutcome()>>(
-        [this, request]()
-        {
-            return this->DistributeCancel(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DistributeCancelOutcome>>();
+    DistributeCancelAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const DistributeCancelRequest&,
+        DistributeCancelOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::DistributeQueryOutcome CpdpClient::DistributeQuery(const DistributeQueryRequest &request)
@@ -3201,25 +3712,32 @@ CpdpClient::DistributeQueryOutcome CpdpClient::DistributeQuery(const DistributeQ
 
 void CpdpClient::DistributeQueryAsync(const DistributeQueryRequest& request, const DistributeQueryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DistributeQuery(request), context);
-    };
+    using Req = const DistributeQueryRequest&;
+    using Resp = DistributeQueryResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DistributeQuery", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::DistributeQueryOutcomeCallable CpdpClient::DistributeQueryCallable(const DistributeQueryRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DistributeQueryOutcome()>>(
-        [this, request]()
-        {
-            return this->DistributeQuery(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DistributeQueryOutcome>>();
+    DistributeQueryAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const DistributeQueryRequest&,
+        DistributeQueryOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::DistributeQueryReceiverOutcome CpdpClient::DistributeQueryReceiver(const DistributeQueryReceiverRequest &request)
@@ -3244,25 +3762,32 @@ CpdpClient::DistributeQueryReceiverOutcome CpdpClient::DistributeQueryReceiver(c
 
 void CpdpClient::DistributeQueryReceiverAsync(const DistributeQueryReceiverRequest& request, const DistributeQueryReceiverAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DistributeQueryReceiver(request), context);
-    };
+    using Req = const DistributeQueryReceiverRequest&;
+    using Resp = DistributeQueryReceiverResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DistributeQueryReceiver", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::DistributeQueryReceiverOutcomeCallable CpdpClient::DistributeQueryReceiverCallable(const DistributeQueryReceiverRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DistributeQueryReceiverOutcome()>>(
-        [this, request]()
-        {
-            return this->DistributeQueryReceiver(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DistributeQueryReceiverOutcome>>();
+    DistributeQueryReceiverAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const DistributeQueryReceiverRequest&,
+        DistributeQueryReceiverOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::DistributeRemoveReceiverOutcome CpdpClient::DistributeRemoveReceiver(const DistributeRemoveReceiverRequest &request)
@@ -3287,25 +3812,32 @@ CpdpClient::DistributeRemoveReceiverOutcome CpdpClient::DistributeRemoveReceiver
 
 void CpdpClient::DistributeRemoveReceiverAsync(const DistributeRemoveReceiverRequest& request, const DistributeRemoveReceiverAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DistributeRemoveReceiver(request), context);
-    };
+    using Req = const DistributeRemoveReceiverRequest&;
+    using Resp = DistributeRemoveReceiverResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DistributeRemoveReceiver", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::DistributeRemoveReceiverOutcomeCallable CpdpClient::DistributeRemoveReceiverCallable(const DistributeRemoveReceiverRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DistributeRemoveReceiverOutcome()>>(
-        [this, request]()
-        {
-            return this->DistributeRemoveReceiver(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DistributeRemoveReceiverOutcome>>();
+    DistributeRemoveReceiverAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const DistributeRemoveReceiverRequest&,
+        DistributeRemoveReceiverOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::DownloadBillOutcome CpdpClient::DownloadBill(const DownloadBillRequest &request)
@@ -3330,25 +3862,32 @@ CpdpClient::DownloadBillOutcome CpdpClient::DownloadBill(const DownloadBillReque
 
 void CpdpClient::DownloadBillAsync(const DownloadBillRequest& request, const DownloadBillAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DownloadBill(request), context);
-    };
+    using Req = const DownloadBillRequest&;
+    using Resp = DownloadBillResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DownloadBill", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::DownloadBillOutcomeCallable CpdpClient::DownloadBillCallable(const DownloadBillRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DownloadBillOutcome()>>(
-        [this, request]()
-        {
-            return this->DownloadBill(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DownloadBillOutcome>>();
+    DownloadBillAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const DownloadBillRequest&,
+        DownloadBillOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::DownloadOrgFileOutcome CpdpClient::DownloadOrgFile(const DownloadOrgFileRequest &request)
@@ -3373,25 +3912,32 @@ CpdpClient::DownloadOrgFileOutcome CpdpClient::DownloadOrgFile(const DownloadOrg
 
 void CpdpClient::DownloadOrgFileAsync(const DownloadOrgFileRequest& request, const DownloadOrgFileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DownloadOrgFile(request), context);
-    };
+    using Req = const DownloadOrgFileRequest&;
+    using Resp = DownloadOrgFileResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DownloadOrgFile", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::DownloadOrgFileOutcomeCallable CpdpClient::DownloadOrgFileCallable(const DownloadOrgFileRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DownloadOrgFileOutcome()>>(
-        [this, request]()
-        {
-            return this->DownloadOrgFile(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DownloadOrgFileOutcome>>();
+    DownloadOrgFileAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const DownloadOrgFileRequest&,
+        DownloadOrgFileOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::DownloadReconciliationUrlOutcome CpdpClient::DownloadReconciliationUrl(const DownloadReconciliationUrlRequest &request)
@@ -3416,25 +3962,32 @@ CpdpClient::DownloadReconciliationUrlOutcome CpdpClient::DownloadReconciliationU
 
 void CpdpClient::DownloadReconciliationUrlAsync(const DownloadReconciliationUrlRequest& request, const DownloadReconciliationUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DownloadReconciliationUrl(request), context);
-    };
+    using Req = const DownloadReconciliationUrlRequest&;
+    using Resp = DownloadReconciliationUrlResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DownloadReconciliationUrl", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::DownloadReconciliationUrlOutcomeCallable CpdpClient::DownloadReconciliationUrlCallable(const DownloadReconciliationUrlRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DownloadReconciliationUrlOutcome()>>(
-        [this, request]()
-        {
-            return this->DownloadReconciliationUrl(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DownloadReconciliationUrlOutcome>>();
+    DownloadReconciliationUrlAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const DownloadReconciliationUrlRequest&,
+        DownloadReconciliationUrlOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::ExecuteMemberTransactionOutcome CpdpClient::ExecuteMemberTransaction(const ExecuteMemberTransactionRequest &request)
@@ -3459,25 +4012,32 @@ CpdpClient::ExecuteMemberTransactionOutcome CpdpClient::ExecuteMemberTransaction
 
 void CpdpClient::ExecuteMemberTransactionAsync(const ExecuteMemberTransactionRequest& request, const ExecuteMemberTransactionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ExecuteMemberTransaction(request), context);
-    };
+    using Req = const ExecuteMemberTransactionRequest&;
+    using Resp = ExecuteMemberTransactionResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ExecuteMemberTransaction", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::ExecuteMemberTransactionOutcomeCallable CpdpClient::ExecuteMemberTransactionCallable(const ExecuteMemberTransactionRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ExecuteMemberTransactionOutcome()>>(
-        [this, request]()
-        {
-            return this->ExecuteMemberTransaction(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ExecuteMemberTransactionOutcome>>();
+    ExecuteMemberTransactionAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const ExecuteMemberTransactionRequest&,
+        ExecuteMemberTransactionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::FreezeFlexBalanceOutcome CpdpClient::FreezeFlexBalance(const FreezeFlexBalanceRequest &request)
@@ -3502,25 +4062,32 @@ CpdpClient::FreezeFlexBalanceOutcome CpdpClient::FreezeFlexBalance(const FreezeF
 
 void CpdpClient::FreezeFlexBalanceAsync(const FreezeFlexBalanceRequest& request, const FreezeFlexBalanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->FreezeFlexBalance(request), context);
-    };
+    using Req = const FreezeFlexBalanceRequest&;
+    using Resp = FreezeFlexBalanceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "FreezeFlexBalance", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::FreezeFlexBalanceOutcomeCallable CpdpClient::FreezeFlexBalanceCallable(const FreezeFlexBalanceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<FreezeFlexBalanceOutcome()>>(
-        [this, request]()
-        {
-            return this->FreezeFlexBalance(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<FreezeFlexBalanceOutcome>>();
+    FreezeFlexBalanceAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const FreezeFlexBalanceRequest&,
+        FreezeFlexBalanceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::GetBillDownloadUrlOutcome CpdpClient::GetBillDownloadUrl(const GetBillDownloadUrlRequest &request)
@@ -3545,25 +4112,32 @@ CpdpClient::GetBillDownloadUrlOutcome CpdpClient::GetBillDownloadUrl(const GetBi
 
 void CpdpClient::GetBillDownloadUrlAsync(const GetBillDownloadUrlRequest& request, const GetBillDownloadUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->GetBillDownloadUrl(request), context);
-    };
+    using Req = const GetBillDownloadUrlRequest&;
+    using Resp = GetBillDownloadUrlResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "GetBillDownloadUrl", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::GetBillDownloadUrlOutcomeCallable CpdpClient::GetBillDownloadUrlCallable(const GetBillDownloadUrlRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<GetBillDownloadUrlOutcome()>>(
-        [this, request]()
-        {
-            return this->GetBillDownloadUrl(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<GetBillDownloadUrlOutcome>>();
+    GetBillDownloadUrlAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const GetBillDownloadUrlRequest&,
+        GetBillDownloadUrlOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::GetDistributeBillDownloadUrlOutcome CpdpClient::GetDistributeBillDownloadUrl(const GetDistributeBillDownloadUrlRequest &request)
@@ -3588,25 +4162,32 @@ CpdpClient::GetDistributeBillDownloadUrlOutcome CpdpClient::GetDistributeBillDow
 
 void CpdpClient::GetDistributeBillDownloadUrlAsync(const GetDistributeBillDownloadUrlRequest& request, const GetDistributeBillDownloadUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->GetDistributeBillDownloadUrl(request), context);
-    };
+    using Req = const GetDistributeBillDownloadUrlRequest&;
+    using Resp = GetDistributeBillDownloadUrlResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "GetDistributeBillDownloadUrl", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::GetDistributeBillDownloadUrlOutcomeCallable CpdpClient::GetDistributeBillDownloadUrlCallable(const GetDistributeBillDownloadUrlRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<GetDistributeBillDownloadUrlOutcome()>>(
-        [this, request]()
-        {
-            return this->GetDistributeBillDownloadUrl(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<GetDistributeBillDownloadUrlOutcome>>();
+    GetDistributeBillDownloadUrlAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const GetDistributeBillDownloadUrlRequest&,
+        GetDistributeBillDownloadUrlOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::GetPayRollAuthOutcome CpdpClient::GetPayRollAuth(const GetPayRollAuthRequest &request)
@@ -3631,25 +4212,32 @@ CpdpClient::GetPayRollAuthOutcome CpdpClient::GetPayRollAuth(const GetPayRollAut
 
 void CpdpClient::GetPayRollAuthAsync(const GetPayRollAuthRequest& request, const GetPayRollAuthAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->GetPayRollAuth(request), context);
-    };
+    using Req = const GetPayRollAuthRequest&;
+    using Resp = GetPayRollAuthResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "GetPayRollAuth", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::GetPayRollAuthOutcomeCallable CpdpClient::GetPayRollAuthCallable(const GetPayRollAuthRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<GetPayRollAuthOutcome()>>(
-        [this, request]()
-        {
-            return this->GetPayRollAuth(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<GetPayRollAuthOutcome>>();
+    GetPayRollAuthAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const GetPayRollAuthRequest&,
+        GetPayRollAuthOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::GetPayRollAuthListOutcome CpdpClient::GetPayRollAuthList(const GetPayRollAuthListRequest &request)
@@ -3674,25 +4262,32 @@ CpdpClient::GetPayRollAuthListOutcome CpdpClient::GetPayRollAuthList(const GetPa
 
 void CpdpClient::GetPayRollAuthListAsync(const GetPayRollAuthListRequest& request, const GetPayRollAuthListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->GetPayRollAuthList(request), context);
-    };
+    using Req = const GetPayRollAuthListRequest&;
+    using Resp = GetPayRollAuthListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "GetPayRollAuthList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::GetPayRollAuthListOutcomeCallable CpdpClient::GetPayRollAuthListCallable(const GetPayRollAuthListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<GetPayRollAuthListOutcome()>>(
-        [this, request]()
-        {
-            return this->GetPayRollAuthList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<GetPayRollAuthListOutcome>>();
+    GetPayRollAuthListAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const GetPayRollAuthListRequest&,
+        GetPayRollAuthListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::GetPayRollAuthResultOutcome CpdpClient::GetPayRollAuthResult(const GetPayRollAuthResultRequest &request)
@@ -3717,25 +4312,32 @@ CpdpClient::GetPayRollAuthResultOutcome CpdpClient::GetPayRollAuthResult(const G
 
 void CpdpClient::GetPayRollAuthResultAsync(const GetPayRollAuthResultRequest& request, const GetPayRollAuthResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->GetPayRollAuthResult(request), context);
-    };
+    using Req = const GetPayRollAuthResultRequest&;
+    using Resp = GetPayRollAuthResultResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "GetPayRollAuthResult", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::GetPayRollAuthResultOutcomeCallable CpdpClient::GetPayRollAuthResultCallable(const GetPayRollAuthResultRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<GetPayRollAuthResultOutcome()>>(
-        [this, request]()
-        {
-            return this->GetPayRollAuthResult(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<GetPayRollAuthResultOutcome>>();
+    GetPayRollAuthResultAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const GetPayRollAuthResultRequest&,
+        GetPayRollAuthResultOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::MigrateOrderRefundOutcome CpdpClient::MigrateOrderRefund(const MigrateOrderRefundRequest &request)
@@ -3760,25 +4362,32 @@ CpdpClient::MigrateOrderRefundOutcome CpdpClient::MigrateOrderRefund(const Migra
 
 void CpdpClient::MigrateOrderRefundAsync(const MigrateOrderRefundRequest& request, const MigrateOrderRefundAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->MigrateOrderRefund(request), context);
-    };
+    using Req = const MigrateOrderRefundRequest&;
+    using Resp = MigrateOrderRefundResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "MigrateOrderRefund", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::MigrateOrderRefundOutcomeCallable CpdpClient::MigrateOrderRefundCallable(const MigrateOrderRefundRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<MigrateOrderRefundOutcome()>>(
-        [this, request]()
-        {
-            return this->MigrateOrderRefund(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<MigrateOrderRefundOutcome>>();
+    MigrateOrderRefundAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const MigrateOrderRefundRequest&,
+        MigrateOrderRefundOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::MigrateOrderRefundQueryOutcome CpdpClient::MigrateOrderRefundQuery(const MigrateOrderRefundQueryRequest &request)
@@ -3803,25 +4412,32 @@ CpdpClient::MigrateOrderRefundQueryOutcome CpdpClient::MigrateOrderRefundQuery(c
 
 void CpdpClient::MigrateOrderRefundQueryAsync(const MigrateOrderRefundQueryRequest& request, const MigrateOrderRefundQueryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->MigrateOrderRefundQuery(request), context);
-    };
+    using Req = const MigrateOrderRefundQueryRequest&;
+    using Resp = MigrateOrderRefundQueryResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "MigrateOrderRefundQuery", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::MigrateOrderRefundQueryOutcomeCallable CpdpClient::MigrateOrderRefundQueryCallable(const MigrateOrderRefundQueryRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<MigrateOrderRefundQueryOutcome()>>(
-        [this, request]()
-        {
-            return this->MigrateOrderRefundQuery(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<MigrateOrderRefundQueryOutcome>>();
+    MigrateOrderRefundQueryAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const MigrateOrderRefundQueryRequest&,
+        MigrateOrderRefundQueryOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::ModifyAgentTaxPaymentInfoOutcome CpdpClient::ModifyAgentTaxPaymentInfo(const ModifyAgentTaxPaymentInfoRequest &request)
@@ -3846,25 +4462,32 @@ CpdpClient::ModifyAgentTaxPaymentInfoOutcome CpdpClient::ModifyAgentTaxPaymentIn
 
 void CpdpClient::ModifyAgentTaxPaymentInfoAsync(const ModifyAgentTaxPaymentInfoRequest& request, const ModifyAgentTaxPaymentInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyAgentTaxPaymentInfo(request), context);
-    };
+    using Req = const ModifyAgentTaxPaymentInfoRequest&;
+    using Resp = ModifyAgentTaxPaymentInfoResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyAgentTaxPaymentInfo", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::ModifyAgentTaxPaymentInfoOutcomeCallable CpdpClient::ModifyAgentTaxPaymentInfoCallable(const ModifyAgentTaxPaymentInfoRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyAgentTaxPaymentInfoOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyAgentTaxPaymentInfo(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyAgentTaxPaymentInfoOutcome>>();
+    ModifyAgentTaxPaymentInfoAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const ModifyAgentTaxPaymentInfoRequest&,
+        ModifyAgentTaxPaymentInfoOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::ModifyBindedAccountOutcome CpdpClient::ModifyBindedAccount(const ModifyBindedAccountRequest &request)
@@ -3889,25 +4512,32 @@ CpdpClient::ModifyBindedAccountOutcome CpdpClient::ModifyBindedAccount(const Mod
 
 void CpdpClient::ModifyBindedAccountAsync(const ModifyBindedAccountRequest& request, const ModifyBindedAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyBindedAccount(request), context);
-    };
+    using Req = const ModifyBindedAccountRequest&;
+    using Resp = ModifyBindedAccountResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyBindedAccount", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::ModifyBindedAccountOutcomeCallable CpdpClient::ModifyBindedAccountCallable(const ModifyBindedAccountRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyBindedAccountOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyBindedAccount(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyBindedAccountOutcome>>();
+    ModifyBindedAccountAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const ModifyBindedAccountRequest&,
+        ModifyBindedAccountOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::ModifyFlexFundingAccountOutcome CpdpClient::ModifyFlexFundingAccount(const ModifyFlexFundingAccountRequest &request)
@@ -3932,25 +4562,32 @@ CpdpClient::ModifyFlexFundingAccountOutcome CpdpClient::ModifyFlexFundingAccount
 
 void CpdpClient::ModifyFlexFundingAccountAsync(const ModifyFlexFundingAccountRequest& request, const ModifyFlexFundingAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyFlexFundingAccount(request), context);
-    };
+    using Req = const ModifyFlexFundingAccountRequest&;
+    using Resp = ModifyFlexFundingAccountResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyFlexFundingAccount", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::ModifyFlexFundingAccountOutcomeCallable CpdpClient::ModifyFlexFundingAccountCallable(const ModifyFlexFundingAccountRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyFlexFundingAccountOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyFlexFundingAccount(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyFlexFundingAccountOutcome>>();
+    ModifyFlexFundingAccountAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const ModifyFlexFundingAccountRequest&,
+        ModifyFlexFundingAccountOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::ModifyFlexPayeeAccountRightStatusOutcome CpdpClient::ModifyFlexPayeeAccountRightStatus(const ModifyFlexPayeeAccountRightStatusRequest &request)
@@ -3975,25 +4612,32 @@ CpdpClient::ModifyFlexPayeeAccountRightStatusOutcome CpdpClient::ModifyFlexPayee
 
 void CpdpClient::ModifyFlexPayeeAccountRightStatusAsync(const ModifyFlexPayeeAccountRightStatusRequest& request, const ModifyFlexPayeeAccountRightStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyFlexPayeeAccountRightStatus(request), context);
-    };
+    using Req = const ModifyFlexPayeeAccountRightStatusRequest&;
+    using Resp = ModifyFlexPayeeAccountRightStatusResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyFlexPayeeAccountRightStatus", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::ModifyFlexPayeeAccountRightStatusOutcomeCallable CpdpClient::ModifyFlexPayeeAccountRightStatusCallable(const ModifyFlexPayeeAccountRightStatusRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyFlexPayeeAccountRightStatusOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyFlexPayeeAccountRightStatus(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyFlexPayeeAccountRightStatusOutcome>>();
+    ModifyFlexPayeeAccountRightStatusAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const ModifyFlexPayeeAccountRightStatusRequest&,
+        ModifyFlexPayeeAccountRightStatusOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::ModifyMerchantOutcome CpdpClient::ModifyMerchant(const ModifyMerchantRequest &request)
@@ -4018,25 +4662,32 @@ CpdpClient::ModifyMerchantOutcome CpdpClient::ModifyMerchant(const ModifyMerchan
 
 void CpdpClient::ModifyMerchantAsync(const ModifyMerchantRequest& request, const ModifyMerchantAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyMerchant(request), context);
-    };
+    using Req = const ModifyMerchantRequest&;
+    using Resp = ModifyMerchantResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyMerchant", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::ModifyMerchantOutcomeCallable CpdpClient::ModifyMerchantCallable(const ModifyMerchantRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyMerchantOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyMerchant(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyMerchantOutcome>>();
+    ModifyMerchantAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const ModifyMerchantRequest&,
+        ModifyMerchantOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::ModifyMntMbrBindRelateAcctBankCodeOutcome CpdpClient::ModifyMntMbrBindRelateAcctBankCode(const ModifyMntMbrBindRelateAcctBankCodeRequest &request)
@@ -4061,25 +4712,32 @@ CpdpClient::ModifyMntMbrBindRelateAcctBankCodeOutcome CpdpClient::ModifyMntMbrBi
 
 void CpdpClient::ModifyMntMbrBindRelateAcctBankCodeAsync(const ModifyMntMbrBindRelateAcctBankCodeRequest& request, const ModifyMntMbrBindRelateAcctBankCodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyMntMbrBindRelateAcctBankCode(request), context);
-    };
+    using Req = const ModifyMntMbrBindRelateAcctBankCodeRequest&;
+    using Resp = ModifyMntMbrBindRelateAcctBankCodeResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyMntMbrBindRelateAcctBankCode", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::ModifyMntMbrBindRelateAcctBankCodeOutcomeCallable CpdpClient::ModifyMntMbrBindRelateAcctBankCodeCallable(const ModifyMntMbrBindRelateAcctBankCodeRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyMntMbrBindRelateAcctBankCodeOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyMntMbrBindRelateAcctBankCode(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyMntMbrBindRelateAcctBankCodeOutcome>>();
+    ModifyMntMbrBindRelateAcctBankCodeAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const ModifyMntMbrBindRelateAcctBankCodeRequest&,
+        ModifyMntMbrBindRelateAcctBankCodeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::QueryAcctBindingOutcome CpdpClient::QueryAcctBinding(const QueryAcctBindingRequest &request)
@@ -4104,25 +4762,32 @@ CpdpClient::QueryAcctBindingOutcome CpdpClient::QueryAcctBinding(const QueryAcct
 
 void CpdpClient::QueryAcctBindingAsync(const QueryAcctBindingRequest& request, const QueryAcctBindingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->QueryAcctBinding(request), context);
-    };
+    using Req = const QueryAcctBindingRequest&;
+    using Resp = QueryAcctBindingResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "QueryAcctBinding", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::QueryAcctBindingOutcomeCallable CpdpClient::QueryAcctBindingCallable(const QueryAcctBindingRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<QueryAcctBindingOutcome()>>(
-        [this, request]()
-        {
-            return this->QueryAcctBinding(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<QueryAcctBindingOutcome>>();
+    QueryAcctBindingAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const QueryAcctBindingRequest&,
+        QueryAcctBindingOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::QueryAcctInfoOutcome CpdpClient::QueryAcctInfo(const QueryAcctInfoRequest &request)
@@ -4147,25 +4812,32 @@ CpdpClient::QueryAcctInfoOutcome CpdpClient::QueryAcctInfo(const QueryAcctInfoRe
 
 void CpdpClient::QueryAcctInfoAsync(const QueryAcctInfoRequest& request, const QueryAcctInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->QueryAcctInfo(request), context);
-    };
+    using Req = const QueryAcctInfoRequest&;
+    using Resp = QueryAcctInfoResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "QueryAcctInfo", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::QueryAcctInfoOutcomeCallable CpdpClient::QueryAcctInfoCallable(const QueryAcctInfoRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<QueryAcctInfoOutcome()>>(
-        [this, request]()
-        {
-            return this->QueryAcctInfo(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<QueryAcctInfoOutcome>>();
+    QueryAcctInfoAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const QueryAcctInfoRequest&,
+        QueryAcctInfoOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::QueryAcctInfoListOutcome CpdpClient::QueryAcctInfoList(const QueryAcctInfoListRequest &request)
@@ -4190,25 +4862,32 @@ CpdpClient::QueryAcctInfoListOutcome CpdpClient::QueryAcctInfoList(const QueryAc
 
 void CpdpClient::QueryAcctInfoListAsync(const QueryAcctInfoListRequest& request, const QueryAcctInfoListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->QueryAcctInfoList(request), context);
-    };
+    using Req = const QueryAcctInfoListRequest&;
+    using Resp = QueryAcctInfoListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "QueryAcctInfoList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::QueryAcctInfoListOutcomeCallable CpdpClient::QueryAcctInfoListCallable(const QueryAcctInfoListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<QueryAcctInfoListOutcome()>>(
-        [this, request]()
-        {
-            return this->QueryAcctInfoList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<QueryAcctInfoListOutcome>>();
+    QueryAcctInfoListAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const QueryAcctInfoListRequest&,
+        QueryAcctInfoListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::QueryAgentStatementsOutcome CpdpClient::QueryAgentStatements(const QueryAgentStatementsRequest &request)
@@ -4233,25 +4912,32 @@ CpdpClient::QueryAgentStatementsOutcome CpdpClient::QueryAgentStatements(const Q
 
 void CpdpClient::QueryAgentStatementsAsync(const QueryAgentStatementsRequest& request, const QueryAgentStatementsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->QueryAgentStatements(request), context);
-    };
+    using Req = const QueryAgentStatementsRequest&;
+    using Resp = QueryAgentStatementsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "QueryAgentStatements", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::QueryAgentStatementsOutcomeCallable CpdpClient::QueryAgentStatementsCallable(const QueryAgentStatementsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<QueryAgentStatementsOutcome()>>(
-        [this, request]()
-        {
-            return this->QueryAgentStatements(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<QueryAgentStatementsOutcome>>();
+    QueryAgentStatementsAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const QueryAgentStatementsRequest&,
+        QueryAgentStatementsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::QueryAgentTaxPaymentBatchOutcome CpdpClient::QueryAgentTaxPaymentBatch(const QueryAgentTaxPaymentBatchRequest &request)
@@ -4276,25 +4962,32 @@ CpdpClient::QueryAgentTaxPaymentBatchOutcome CpdpClient::QueryAgentTaxPaymentBat
 
 void CpdpClient::QueryAgentTaxPaymentBatchAsync(const QueryAgentTaxPaymentBatchRequest& request, const QueryAgentTaxPaymentBatchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->QueryAgentTaxPaymentBatch(request), context);
-    };
+    using Req = const QueryAgentTaxPaymentBatchRequest&;
+    using Resp = QueryAgentTaxPaymentBatchResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "QueryAgentTaxPaymentBatch", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::QueryAgentTaxPaymentBatchOutcomeCallable CpdpClient::QueryAgentTaxPaymentBatchCallable(const QueryAgentTaxPaymentBatchRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<QueryAgentTaxPaymentBatchOutcome()>>(
-        [this, request]()
-        {
-            return this->QueryAgentTaxPaymentBatch(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<QueryAgentTaxPaymentBatchOutcome>>();
+    QueryAgentTaxPaymentBatchAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const QueryAgentTaxPaymentBatchRequest&,
+        QueryAgentTaxPaymentBatchOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::QueryAnchorContractInfoOutcome CpdpClient::QueryAnchorContractInfo(const QueryAnchorContractInfoRequest &request)
@@ -4319,25 +5012,32 @@ CpdpClient::QueryAnchorContractInfoOutcome CpdpClient::QueryAnchorContractInfo(c
 
 void CpdpClient::QueryAnchorContractInfoAsync(const QueryAnchorContractInfoRequest& request, const QueryAnchorContractInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->QueryAnchorContractInfo(request), context);
-    };
+    using Req = const QueryAnchorContractInfoRequest&;
+    using Resp = QueryAnchorContractInfoResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "QueryAnchorContractInfo", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::QueryAnchorContractInfoOutcomeCallable CpdpClient::QueryAnchorContractInfoCallable(const QueryAnchorContractInfoRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<QueryAnchorContractInfoOutcome()>>(
-        [this, request]()
-        {
-            return this->QueryAnchorContractInfo(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<QueryAnchorContractInfoOutcome>>();
+    QueryAnchorContractInfoAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const QueryAnchorContractInfoRequest&,
+        QueryAnchorContractInfoOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::QueryApplicationMaterialOutcome CpdpClient::QueryApplicationMaterial(const QueryApplicationMaterialRequest &request)
@@ -4362,25 +5062,32 @@ CpdpClient::QueryApplicationMaterialOutcome CpdpClient::QueryApplicationMaterial
 
 void CpdpClient::QueryApplicationMaterialAsync(const QueryApplicationMaterialRequest& request, const QueryApplicationMaterialAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->QueryApplicationMaterial(request), context);
-    };
+    using Req = const QueryApplicationMaterialRequest&;
+    using Resp = QueryApplicationMaterialResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "QueryApplicationMaterial", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::QueryApplicationMaterialOutcomeCallable CpdpClient::QueryApplicationMaterialCallable(const QueryApplicationMaterialRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<QueryApplicationMaterialOutcome()>>(
-        [this, request]()
-        {
-            return this->QueryApplicationMaterial(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<QueryApplicationMaterialOutcome>>();
+    QueryApplicationMaterialAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const QueryApplicationMaterialRequest&,
+        QueryApplicationMaterialOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::QueryAssignmentOutcome CpdpClient::QueryAssignment(const QueryAssignmentRequest &request)
@@ -4405,25 +5112,32 @@ CpdpClient::QueryAssignmentOutcome CpdpClient::QueryAssignment(const QueryAssign
 
 void CpdpClient::QueryAssignmentAsync(const QueryAssignmentRequest& request, const QueryAssignmentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->QueryAssignment(request), context);
-    };
+    using Req = const QueryAssignmentRequest&;
+    using Resp = QueryAssignmentResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "QueryAssignment", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::QueryAssignmentOutcomeCallable CpdpClient::QueryAssignmentCallable(const QueryAssignmentRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<QueryAssignmentOutcome()>>(
-        [this, request]()
-        {
-            return this->QueryAssignment(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<QueryAssignmentOutcome>>();
+    QueryAssignmentAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const QueryAssignmentRequest&,
+        QueryAssignmentOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::QueryBalanceOutcome CpdpClient::QueryBalance(const QueryBalanceRequest &request)
@@ -4448,25 +5162,32 @@ CpdpClient::QueryBalanceOutcome CpdpClient::QueryBalance(const QueryBalanceReque
 
 void CpdpClient::QueryBalanceAsync(const QueryBalanceRequest& request, const QueryBalanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->QueryBalance(request), context);
-    };
+    using Req = const QueryBalanceRequest&;
+    using Resp = QueryBalanceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "QueryBalance", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::QueryBalanceOutcomeCallable CpdpClient::QueryBalanceCallable(const QueryBalanceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<QueryBalanceOutcome()>>(
-        [this, request]()
-        {
-            return this->QueryBalance(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<QueryBalanceOutcome>>();
+    QueryBalanceAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const QueryBalanceRequest&,
+        QueryBalanceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::QueryBankClearOutcome CpdpClient::QueryBankClear(const QueryBankClearRequest &request)
@@ -4491,25 +5212,32 @@ CpdpClient::QueryBankClearOutcome CpdpClient::QueryBankClear(const QueryBankClea
 
 void CpdpClient::QueryBankClearAsync(const QueryBankClearRequest& request, const QueryBankClearAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->QueryBankClear(request), context);
-    };
+    using Req = const QueryBankClearRequest&;
+    using Resp = QueryBankClearResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "QueryBankClear", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::QueryBankClearOutcomeCallable CpdpClient::QueryBankClearCallable(const QueryBankClearRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<QueryBankClearOutcome()>>(
-        [this, request]()
-        {
-            return this->QueryBankClear(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<QueryBankClearOutcome>>();
+    QueryBankClearAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const QueryBankClearRequest&,
+        QueryBankClearOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::QueryBankTransactionDetailsOutcome CpdpClient::QueryBankTransactionDetails(const QueryBankTransactionDetailsRequest &request)
@@ -4534,25 +5262,32 @@ CpdpClient::QueryBankTransactionDetailsOutcome CpdpClient::QueryBankTransactionD
 
 void CpdpClient::QueryBankTransactionDetailsAsync(const QueryBankTransactionDetailsRequest& request, const QueryBankTransactionDetailsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->QueryBankTransactionDetails(request), context);
-    };
+    using Req = const QueryBankTransactionDetailsRequest&;
+    using Resp = QueryBankTransactionDetailsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "QueryBankTransactionDetails", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::QueryBankTransactionDetailsOutcomeCallable CpdpClient::QueryBankTransactionDetailsCallable(const QueryBankTransactionDetailsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<QueryBankTransactionDetailsOutcome()>>(
-        [this, request]()
-        {
-            return this->QueryBankTransactionDetails(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<QueryBankTransactionDetailsOutcome>>();
+    QueryBankTransactionDetailsAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const QueryBankTransactionDetailsRequest&,
+        QueryBankTransactionDetailsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::QueryBankWithdrawCashDetailsOutcome CpdpClient::QueryBankWithdrawCashDetails(const QueryBankWithdrawCashDetailsRequest &request)
@@ -4577,25 +5312,32 @@ CpdpClient::QueryBankWithdrawCashDetailsOutcome CpdpClient::QueryBankWithdrawCas
 
 void CpdpClient::QueryBankWithdrawCashDetailsAsync(const QueryBankWithdrawCashDetailsRequest& request, const QueryBankWithdrawCashDetailsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->QueryBankWithdrawCashDetails(request), context);
-    };
+    using Req = const QueryBankWithdrawCashDetailsRequest&;
+    using Resp = QueryBankWithdrawCashDetailsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "QueryBankWithdrawCashDetails", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::QueryBankWithdrawCashDetailsOutcomeCallable CpdpClient::QueryBankWithdrawCashDetailsCallable(const QueryBankWithdrawCashDetailsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<QueryBankWithdrawCashDetailsOutcome()>>(
-        [this, request]()
-        {
-            return this->QueryBankWithdrawCashDetails(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<QueryBankWithdrawCashDetailsOutcome>>();
+    QueryBankWithdrawCashDetailsAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const QueryBankWithdrawCashDetailsRequest&,
+        QueryBankWithdrawCashDetailsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::QueryBatchPaymentResultOutcome CpdpClient::QueryBatchPaymentResult(const QueryBatchPaymentResultRequest &request)
@@ -4620,25 +5362,32 @@ CpdpClient::QueryBatchPaymentResultOutcome CpdpClient::QueryBatchPaymentResult(c
 
 void CpdpClient::QueryBatchPaymentResultAsync(const QueryBatchPaymentResultRequest& request, const QueryBatchPaymentResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->QueryBatchPaymentResult(request), context);
-    };
+    using Req = const QueryBatchPaymentResultRequest&;
+    using Resp = QueryBatchPaymentResultResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "QueryBatchPaymentResult", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::QueryBatchPaymentResultOutcomeCallable CpdpClient::QueryBatchPaymentResultCallable(const QueryBatchPaymentResultRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<QueryBatchPaymentResultOutcome()>>(
-        [this, request]()
-        {
-            return this->QueryBatchPaymentResult(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<QueryBatchPaymentResultOutcome>>();
+    QueryBatchPaymentResultAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const QueryBatchPaymentResultRequest&,
+        QueryBatchPaymentResultOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::QueryBillDownloadURLOutcome CpdpClient::QueryBillDownloadURL(const QueryBillDownloadURLRequest &request)
@@ -4663,25 +5412,32 @@ CpdpClient::QueryBillDownloadURLOutcome CpdpClient::QueryBillDownloadURL(const Q
 
 void CpdpClient::QueryBillDownloadURLAsync(const QueryBillDownloadURLRequest& request, const QueryBillDownloadURLAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->QueryBillDownloadURL(request), context);
-    };
+    using Req = const QueryBillDownloadURLRequest&;
+    using Resp = QueryBillDownloadURLResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "QueryBillDownloadURL", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::QueryBillDownloadURLOutcomeCallable CpdpClient::QueryBillDownloadURLCallable(const QueryBillDownloadURLRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<QueryBillDownloadURLOutcome()>>(
-        [this, request]()
-        {
-            return this->QueryBillDownloadURL(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<QueryBillDownloadURLOutcome>>();
+    QueryBillDownloadURLAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const QueryBillDownloadURLRequest&,
+        QueryBillDownloadURLOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::QueryCityCodeOutcome CpdpClient::QueryCityCode(const QueryCityCodeRequest &request)
@@ -4706,25 +5462,32 @@ CpdpClient::QueryCityCodeOutcome CpdpClient::QueryCityCode(const QueryCityCodeRe
 
 void CpdpClient::QueryCityCodeAsync(const QueryCityCodeRequest& request, const QueryCityCodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->QueryCityCode(request), context);
-    };
+    using Req = const QueryCityCodeRequest&;
+    using Resp = QueryCityCodeResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "QueryCityCode", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::QueryCityCodeOutcomeCallable CpdpClient::QueryCityCodeCallable(const QueryCityCodeRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<QueryCityCodeOutcome()>>(
-        [this, request]()
-        {
-            return this->QueryCityCode(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<QueryCityCodeOutcome>>();
+    QueryCityCodeAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const QueryCityCodeRequest&,
+        QueryCityCodeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::QueryCloudChannelDataOutcome CpdpClient::QueryCloudChannelData(const QueryCloudChannelDataRequest &request)
@@ -4749,25 +5512,32 @@ CpdpClient::QueryCloudChannelDataOutcome CpdpClient::QueryCloudChannelData(const
 
 void CpdpClient::QueryCloudChannelDataAsync(const QueryCloudChannelDataRequest& request, const QueryCloudChannelDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->QueryCloudChannelData(request), context);
-    };
+    using Req = const QueryCloudChannelDataRequest&;
+    using Resp = QueryCloudChannelDataResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "QueryCloudChannelData", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::QueryCloudChannelDataOutcomeCallable CpdpClient::QueryCloudChannelDataCallable(const QueryCloudChannelDataRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<QueryCloudChannelDataOutcome()>>(
-        [this, request]()
-        {
-            return this->QueryCloudChannelData(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<QueryCloudChannelDataOutcome>>();
+    QueryCloudChannelDataAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const QueryCloudChannelDataRequest&,
+        QueryCloudChannelDataOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::QueryCloudOrderOutcome CpdpClient::QueryCloudOrder(const QueryCloudOrderRequest &request)
@@ -4792,25 +5562,32 @@ CpdpClient::QueryCloudOrderOutcome CpdpClient::QueryCloudOrder(const QueryCloudO
 
 void CpdpClient::QueryCloudOrderAsync(const QueryCloudOrderRequest& request, const QueryCloudOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->QueryCloudOrder(request), context);
-    };
+    using Req = const QueryCloudOrderRequest&;
+    using Resp = QueryCloudOrderResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "QueryCloudOrder", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::QueryCloudOrderOutcomeCallable CpdpClient::QueryCloudOrderCallable(const QueryCloudOrderRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<QueryCloudOrderOutcome()>>(
-        [this, request]()
-        {
-            return this->QueryCloudOrder(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<QueryCloudOrderOutcome>>();
+    QueryCloudOrderAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const QueryCloudOrderRequest&,
+        QueryCloudOrderOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::QueryCloudRefundOrderOutcome CpdpClient::QueryCloudRefundOrder(const QueryCloudRefundOrderRequest &request)
@@ -4835,25 +5612,32 @@ CpdpClient::QueryCloudRefundOrderOutcome CpdpClient::QueryCloudRefundOrder(const
 
 void CpdpClient::QueryCloudRefundOrderAsync(const QueryCloudRefundOrderRequest& request, const QueryCloudRefundOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->QueryCloudRefundOrder(request), context);
-    };
+    using Req = const QueryCloudRefundOrderRequest&;
+    using Resp = QueryCloudRefundOrderResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "QueryCloudRefundOrder", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::QueryCloudRefundOrderOutcomeCallable CpdpClient::QueryCloudRefundOrderCallable(const QueryCloudRefundOrderRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<QueryCloudRefundOrderOutcome()>>(
-        [this, request]()
-        {
-            return this->QueryCloudRefundOrder(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<QueryCloudRefundOrderOutcome>>();
+    QueryCloudRefundOrderAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const QueryCloudRefundOrderRequest&,
+        QueryCloudRefundOrderOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::QueryCommonTransferRechargeOutcome CpdpClient::QueryCommonTransferRecharge(const QueryCommonTransferRechargeRequest &request)
@@ -4878,25 +5662,32 @@ CpdpClient::QueryCommonTransferRechargeOutcome CpdpClient::QueryCommonTransferRe
 
 void CpdpClient::QueryCommonTransferRechargeAsync(const QueryCommonTransferRechargeRequest& request, const QueryCommonTransferRechargeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->QueryCommonTransferRecharge(request), context);
-    };
+    using Req = const QueryCommonTransferRechargeRequest&;
+    using Resp = QueryCommonTransferRechargeResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "QueryCommonTransferRecharge", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::QueryCommonTransferRechargeOutcomeCallable CpdpClient::QueryCommonTransferRechargeCallable(const QueryCommonTransferRechargeRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<QueryCommonTransferRechargeOutcome()>>(
-        [this, request]()
-        {
-            return this->QueryCommonTransferRecharge(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<QueryCommonTransferRechargeOutcome>>();
+    QueryCommonTransferRechargeAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const QueryCommonTransferRechargeRequest&,
+        QueryCommonTransferRechargeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::QueryCompanyTitleOutcome CpdpClient::QueryCompanyTitle(const QueryCompanyTitleRequest &request)
@@ -4921,25 +5712,32 @@ CpdpClient::QueryCompanyTitleOutcome CpdpClient::QueryCompanyTitle(const QueryCo
 
 void CpdpClient::QueryCompanyTitleAsync(const QueryCompanyTitleRequest& request, const QueryCompanyTitleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->QueryCompanyTitle(request), context);
-    };
+    using Req = const QueryCompanyTitleRequest&;
+    using Resp = QueryCompanyTitleResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "QueryCompanyTitle", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::QueryCompanyTitleOutcomeCallable CpdpClient::QueryCompanyTitleCallable(const QueryCompanyTitleRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<QueryCompanyTitleOutcome()>>(
-        [this, request]()
-        {
-            return this->QueryCompanyTitle(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<QueryCompanyTitleOutcome>>();
+    QueryCompanyTitleAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const QueryCompanyTitleRequest&,
+        QueryCompanyTitleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::QueryContractOutcome CpdpClient::QueryContract(const QueryContractRequest &request)
@@ -4964,25 +5762,32 @@ CpdpClient::QueryContractOutcome CpdpClient::QueryContract(const QueryContractRe
 
 void CpdpClient::QueryContractAsync(const QueryContractRequest& request, const QueryContractAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->QueryContract(request), context);
-    };
+    using Req = const QueryContractRequest&;
+    using Resp = QueryContractResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "QueryContract", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::QueryContractOutcomeCallable CpdpClient::QueryContractCallable(const QueryContractRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<QueryContractOutcome()>>(
-        [this, request]()
-        {
-            return this->QueryContract(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<QueryContractOutcome>>();
+    QueryContractAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const QueryContractRequest&,
+        QueryContractOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::QueryContractPayFeeOutcome CpdpClient::QueryContractPayFee(const QueryContractPayFeeRequest &request)
@@ -5007,25 +5812,32 @@ CpdpClient::QueryContractPayFeeOutcome CpdpClient::QueryContractPayFee(const Que
 
 void CpdpClient::QueryContractPayFeeAsync(const QueryContractPayFeeRequest& request, const QueryContractPayFeeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->QueryContractPayFee(request), context);
-    };
+    using Req = const QueryContractPayFeeRequest&;
+    using Resp = QueryContractPayFeeResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "QueryContractPayFee", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::QueryContractPayFeeOutcomeCallable CpdpClient::QueryContractPayFeeCallable(const QueryContractPayFeeRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<QueryContractPayFeeOutcome()>>(
-        [this, request]()
-        {
-            return this->QueryContractPayFee(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<QueryContractPayFeeOutcome>>();
+    QueryContractPayFeeAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const QueryContractPayFeeRequest&,
+        QueryContractPayFeeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::QueryContractPayWayListOutcome CpdpClient::QueryContractPayWayList(const QueryContractPayWayListRequest &request)
@@ -5050,25 +5862,32 @@ CpdpClient::QueryContractPayWayListOutcome CpdpClient::QueryContractPayWayList(c
 
 void CpdpClient::QueryContractPayWayListAsync(const QueryContractPayWayListRequest& request, const QueryContractPayWayListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->QueryContractPayWayList(request), context);
-    };
+    using Req = const QueryContractPayWayListRequest&;
+    using Resp = QueryContractPayWayListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "QueryContractPayWayList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::QueryContractPayWayListOutcomeCallable CpdpClient::QueryContractPayWayListCallable(const QueryContractPayWayListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<QueryContractPayWayListOutcome()>>(
-        [this, request]()
-        {
-            return this->QueryContractPayWayList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<QueryContractPayWayListOutcome>>();
+    QueryContractPayWayListAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const QueryContractPayWayListRequest&,
+        QueryContractPayWayListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::QueryContractRelateShopOutcome CpdpClient::QueryContractRelateShop(const QueryContractRelateShopRequest &request)
@@ -5093,25 +5912,32 @@ CpdpClient::QueryContractRelateShopOutcome CpdpClient::QueryContractRelateShop(c
 
 void CpdpClient::QueryContractRelateShopAsync(const QueryContractRelateShopRequest& request, const QueryContractRelateShopAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->QueryContractRelateShop(request), context);
-    };
+    using Req = const QueryContractRelateShopRequest&;
+    using Resp = QueryContractRelateShopResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "QueryContractRelateShop", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::QueryContractRelateShopOutcomeCallable CpdpClient::QueryContractRelateShopCallable(const QueryContractRelateShopRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<QueryContractRelateShopOutcome()>>(
-        [this, request]()
-        {
-            return this->QueryContractRelateShop(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<QueryContractRelateShopOutcome>>();
+    QueryContractRelateShopAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const QueryContractRelateShopRequest&,
+        QueryContractRelateShopOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::QueryCustAcctIdBalanceOutcome CpdpClient::QueryCustAcctIdBalance(const QueryCustAcctIdBalanceRequest &request)
@@ -5136,25 +5962,32 @@ CpdpClient::QueryCustAcctIdBalanceOutcome CpdpClient::QueryCustAcctIdBalance(con
 
 void CpdpClient::QueryCustAcctIdBalanceAsync(const QueryCustAcctIdBalanceRequest& request, const QueryCustAcctIdBalanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->QueryCustAcctIdBalance(request), context);
-    };
+    using Req = const QueryCustAcctIdBalanceRequest&;
+    using Resp = QueryCustAcctIdBalanceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "QueryCustAcctIdBalance", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::QueryCustAcctIdBalanceOutcomeCallable CpdpClient::QueryCustAcctIdBalanceCallable(const QueryCustAcctIdBalanceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<QueryCustAcctIdBalanceOutcome()>>(
-        [this, request]()
-        {
-            return this->QueryCustAcctIdBalance(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<QueryCustAcctIdBalanceOutcome>>();
+    QueryCustAcctIdBalanceAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const QueryCustAcctIdBalanceRequest&,
+        QueryCustAcctIdBalanceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::QueryDownloadBillURLOutcome CpdpClient::QueryDownloadBillURL(const QueryDownloadBillURLRequest &request)
@@ -5179,25 +6012,32 @@ CpdpClient::QueryDownloadBillURLOutcome CpdpClient::QueryDownloadBillURL(const Q
 
 void CpdpClient::QueryDownloadBillURLAsync(const QueryDownloadBillURLRequest& request, const QueryDownloadBillURLAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->QueryDownloadBillURL(request), context);
-    };
+    using Req = const QueryDownloadBillURLRequest&;
+    using Resp = QueryDownloadBillURLResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "QueryDownloadBillURL", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::QueryDownloadBillURLOutcomeCallable CpdpClient::QueryDownloadBillURLCallable(const QueryDownloadBillURLRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<QueryDownloadBillURLOutcome()>>(
-        [this, request]()
-        {
-            return this->QueryDownloadBillURL(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<QueryDownloadBillURLOutcome>>();
+    QueryDownloadBillURLAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const QueryDownloadBillURLRequest&,
+        QueryDownloadBillURLOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::QueryExceedingInfoOutcome CpdpClient::QueryExceedingInfo(const QueryExceedingInfoRequest &request)
@@ -5222,25 +6062,32 @@ CpdpClient::QueryExceedingInfoOutcome CpdpClient::QueryExceedingInfo(const Query
 
 void CpdpClient::QueryExceedingInfoAsync(const QueryExceedingInfoRequest& request, const QueryExceedingInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->QueryExceedingInfo(request), context);
-    };
+    using Req = const QueryExceedingInfoRequest&;
+    using Resp = QueryExceedingInfoResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "QueryExceedingInfo", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::QueryExceedingInfoOutcomeCallable CpdpClient::QueryExceedingInfoCallable(const QueryExceedingInfoRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<QueryExceedingInfoOutcome()>>(
-        [this, request]()
-        {
-            return this->QueryExceedingInfo(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<QueryExceedingInfoOutcome>>();
+    QueryExceedingInfoAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const QueryExceedingInfoRequest&,
+        QueryExceedingInfoOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::QueryExchangeRateOutcome CpdpClient::QueryExchangeRate(const QueryExchangeRateRequest &request)
@@ -5265,25 +6112,32 @@ CpdpClient::QueryExchangeRateOutcome CpdpClient::QueryExchangeRate(const QueryEx
 
 void CpdpClient::QueryExchangeRateAsync(const QueryExchangeRateRequest& request, const QueryExchangeRateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->QueryExchangeRate(request), context);
-    };
+    using Req = const QueryExchangeRateRequest&;
+    using Resp = QueryExchangeRateResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "QueryExchangeRate", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::QueryExchangeRateOutcomeCallable CpdpClient::QueryExchangeRateCallable(const QueryExchangeRateRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<QueryExchangeRateOutcome()>>(
-        [this, request]()
-        {
-            return this->QueryExchangeRate(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<QueryExchangeRateOutcome>>();
+    QueryExchangeRateAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const QueryExchangeRateRequest&,
+        QueryExchangeRateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::QueryFinancialDataUrlOutcome CpdpClient::QueryFinancialDataUrl(const QueryFinancialDataUrlRequest &request)
@@ -5308,25 +6162,32 @@ CpdpClient::QueryFinancialDataUrlOutcome CpdpClient::QueryFinancialDataUrl(const
 
 void CpdpClient::QueryFinancialDataUrlAsync(const QueryFinancialDataUrlRequest& request, const QueryFinancialDataUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->QueryFinancialDataUrl(request), context);
-    };
+    using Req = const QueryFinancialDataUrlRequest&;
+    using Resp = QueryFinancialDataUrlResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "QueryFinancialDataUrl", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::QueryFinancialDataUrlOutcomeCallable CpdpClient::QueryFinancialDataUrlCallable(const QueryFinancialDataUrlRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<QueryFinancialDataUrlOutcome()>>(
-        [this, request]()
-        {
-            return this->QueryFinancialDataUrl(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<QueryFinancialDataUrlOutcome>>();
+    QueryFinancialDataUrlAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const QueryFinancialDataUrlRequest&,
+        QueryFinancialDataUrlOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::QueryFlexAmountBeforeTaxOutcome CpdpClient::QueryFlexAmountBeforeTax(const QueryFlexAmountBeforeTaxRequest &request)
@@ -5351,25 +6212,32 @@ CpdpClient::QueryFlexAmountBeforeTaxOutcome CpdpClient::QueryFlexAmountBeforeTax
 
 void CpdpClient::QueryFlexAmountBeforeTaxAsync(const QueryFlexAmountBeforeTaxRequest& request, const QueryFlexAmountBeforeTaxAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->QueryFlexAmountBeforeTax(request), context);
-    };
+    using Req = const QueryFlexAmountBeforeTaxRequest&;
+    using Resp = QueryFlexAmountBeforeTaxResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "QueryFlexAmountBeforeTax", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::QueryFlexAmountBeforeTaxOutcomeCallable CpdpClient::QueryFlexAmountBeforeTaxCallable(const QueryFlexAmountBeforeTaxRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<QueryFlexAmountBeforeTaxOutcome()>>(
-        [this, request]()
-        {
-            return this->QueryFlexAmountBeforeTax(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<QueryFlexAmountBeforeTaxOutcome>>();
+    QueryFlexAmountBeforeTaxAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const QueryFlexAmountBeforeTaxRequest&,
+        QueryFlexAmountBeforeTaxOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::QueryFlexBillDownloadUrlOutcome CpdpClient::QueryFlexBillDownloadUrl(const QueryFlexBillDownloadUrlRequest &request)
@@ -5394,25 +6262,32 @@ CpdpClient::QueryFlexBillDownloadUrlOutcome CpdpClient::QueryFlexBillDownloadUrl
 
 void CpdpClient::QueryFlexBillDownloadUrlAsync(const QueryFlexBillDownloadUrlRequest& request, const QueryFlexBillDownloadUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->QueryFlexBillDownloadUrl(request), context);
-    };
+    using Req = const QueryFlexBillDownloadUrlRequest&;
+    using Resp = QueryFlexBillDownloadUrlResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "QueryFlexBillDownloadUrl", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::QueryFlexBillDownloadUrlOutcomeCallable CpdpClient::QueryFlexBillDownloadUrlCallable(const QueryFlexBillDownloadUrlRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<QueryFlexBillDownloadUrlOutcome()>>(
-        [this, request]()
-        {
-            return this->QueryFlexBillDownloadUrl(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<QueryFlexBillDownloadUrlOutcome>>();
+    QueryFlexBillDownloadUrlAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const QueryFlexBillDownloadUrlRequest&,
+        QueryFlexBillDownloadUrlOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::QueryFlexFreezeOrderListOutcome CpdpClient::QueryFlexFreezeOrderList(const QueryFlexFreezeOrderListRequest &request)
@@ -5437,25 +6312,32 @@ CpdpClient::QueryFlexFreezeOrderListOutcome CpdpClient::QueryFlexFreezeOrderList
 
 void CpdpClient::QueryFlexFreezeOrderListAsync(const QueryFlexFreezeOrderListRequest& request, const QueryFlexFreezeOrderListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->QueryFlexFreezeOrderList(request), context);
-    };
+    using Req = const QueryFlexFreezeOrderListRequest&;
+    using Resp = QueryFlexFreezeOrderListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "QueryFlexFreezeOrderList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::QueryFlexFreezeOrderListOutcomeCallable CpdpClient::QueryFlexFreezeOrderListCallable(const QueryFlexFreezeOrderListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<QueryFlexFreezeOrderListOutcome()>>(
-        [this, request]()
-        {
-            return this->QueryFlexFreezeOrderList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<QueryFlexFreezeOrderListOutcome>>();
+    QueryFlexFreezeOrderListAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const QueryFlexFreezeOrderListRequest&,
+        QueryFlexFreezeOrderListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::QueryFlexOrderSummaryListOutcome CpdpClient::QueryFlexOrderSummaryList(const QueryFlexOrderSummaryListRequest &request)
@@ -5480,25 +6362,32 @@ CpdpClient::QueryFlexOrderSummaryListOutcome CpdpClient::QueryFlexOrderSummaryLi
 
 void CpdpClient::QueryFlexOrderSummaryListAsync(const QueryFlexOrderSummaryListRequest& request, const QueryFlexOrderSummaryListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->QueryFlexOrderSummaryList(request), context);
-    };
+    using Req = const QueryFlexOrderSummaryListRequest&;
+    using Resp = QueryFlexOrderSummaryListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "QueryFlexOrderSummaryList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::QueryFlexOrderSummaryListOutcomeCallable CpdpClient::QueryFlexOrderSummaryListCallable(const QueryFlexOrderSummaryListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<QueryFlexOrderSummaryListOutcome()>>(
-        [this, request]()
-        {
-            return this->QueryFlexOrderSummaryList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<QueryFlexOrderSummaryListOutcome>>();
+    QueryFlexOrderSummaryListAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const QueryFlexOrderSummaryListRequest&,
+        QueryFlexOrderSummaryListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::QueryFlexPayeeAccountBalanceOutcome CpdpClient::QueryFlexPayeeAccountBalance(const QueryFlexPayeeAccountBalanceRequest &request)
@@ -5523,25 +6412,32 @@ CpdpClient::QueryFlexPayeeAccountBalanceOutcome CpdpClient::QueryFlexPayeeAccoun
 
 void CpdpClient::QueryFlexPayeeAccountBalanceAsync(const QueryFlexPayeeAccountBalanceRequest& request, const QueryFlexPayeeAccountBalanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->QueryFlexPayeeAccountBalance(request), context);
-    };
+    using Req = const QueryFlexPayeeAccountBalanceRequest&;
+    using Resp = QueryFlexPayeeAccountBalanceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "QueryFlexPayeeAccountBalance", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::QueryFlexPayeeAccountBalanceOutcomeCallable CpdpClient::QueryFlexPayeeAccountBalanceCallable(const QueryFlexPayeeAccountBalanceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<QueryFlexPayeeAccountBalanceOutcome()>>(
-        [this, request]()
-        {
-            return this->QueryFlexPayeeAccountBalance(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<QueryFlexPayeeAccountBalanceOutcome>>();
+    QueryFlexPayeeAccountBalanceAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const QueryFlexPayeeAccountBalanceRequest&,
+        QueryFlexPayeeAccountBalanceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::QueryFlexPayeeAccountInfoOutcome CpdpClient::QueryFlexPayeeAccountInfo(const QueryFlexPayeeAccountInfoRequest &request)
@@ -5566,25 +6462,32 @@ CpdpClient::QueryFlexPayeeAccountInfoOutcome CpdpClient::QueryFlexPayeeAccountIn
 
 void CpdpClient::QueryFlexPayeeAccountInfoAsync(const QueryFlexPayeeAccountInfoRequest& request, const QueryFlexPayeeAccountInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->QueryFlexPayeeAccountInfo(request), context);
-    };
+    using Req = const QueryFlexPayeeAccountInfoRequest&;
+    using Resp = QueryFlexPayeeAccountInfoResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "QueryFlexPayeeAccountInfo", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::QueryFlexPayeeAccountInfoOutcomeCallable CpdpClient::QueryFlexPayeeAccountInfoCallable(const QueryFlexPayeeAccountInfoRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<QueryFlexPayeeAccountInfoOutcome()>>(
-        [this, request]()
-        {
-            return this->QueryFlexPayeeAccountInfo(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<QueryFlexPayeeAccountInfoOutcome>>();
+    QueryFlexPayeeAccountInfoAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const QueryFlexPayeeAccountInfoRequest&,
+        QueryFlexPayeeAccountInfoOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::QueryFlexPayeeAccountListOutcome CpdpClient::QueryFlexPayeeAccountList(const QueryFlexPayeeAccountListRequest &request)
@@ -5609,25 +6512,32 @@ CpdpClient::QueryFlexPayeeAccountListOutcome CpdpClient::QueryFlexPayeeAccountLi
 
 void CpdpClient::QueryFlexPayeeAccountListAsync(const QueryFlexPayeeAccountListRequest& request, const QueryFlexPayeeAccountListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->QueryFlexPayeeAccountList(request), context);
-    };
+    using Req = const QueryFlexPayeeAccountListRequest&;
+    using Resp = QueryFlexPayeeAccountListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "QueryFlexPayeeAccountList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::QueryFlexPayeeAccountListOutcomeCallable CpdpClient::QueryFlexPayeeAccountListCallable(const QueryFlexPayeeAccountListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<QueryFlexPayeeAccountListOutcome()>>(
-        [this, request]()
-        {
-            return this->QueryFlexPayeeAccountList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<QueryFlexPayeeAccountListOutcome>>();
+    QueryFlexPayeeAccountListAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const QueryFlexPayeeAccountListRequest&,
+        QueryFlexPayeeAccountListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::QueryFlexPayeeInfoOutcome CpdpClient::QueryFlexPayeeInfo(const QueryFlexPayeeInfoRequest &request)
@@ -5652,25 +6562,32 @@ CpdpClient::QueryFlexPayeeInfoOutcome CpdpClient::QueryFlexPayeeInfo(const Query
 
 void CpdpClient::QueryFlexPayeeInfoAsync(const QueryFlexPayeeInfoRequest& request, const QueryFlexPayeeInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->QueryFlexPayeeInfo(request), context);
-    };
+    using Req = const QueryFlexPayeeInfoRequest&;
+    using Resp = QueryFlexPayeeInfoResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "QueryFlexPayeeInfo", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::QueryFlexPayeeInfoOutcomeCallable CpdpClient::QueryFlexPayeeInfoCallable(const QueryFlexPayeeInfoRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<QueryFlexPayeeInfoOutcome()>>(
-        [this, request]()
-        {
-            return this->QueryFlexPayeeInfo(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<QueryFlexPayeeInfoOutcome>>();
+    QueryFlexPayeeInfoAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const QueryFlexPayeeInfoRequest&,
+        QueryFlexPayeeInfoOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::QueryFlexPaymentOrderListOutcome CpdpClient::QueryFlexPaymentOrderList(const QueryFlexPaymentOrderListRequest &request)
@@ -5695,25 +6612,32 @@ CpdpClient::QueryFlexPaymentOrderListOutcome CpdpClient::QueryFlexPaymentOrderLi
 
 void CpdpClient::QueryFlexPaymentOrderListAsync(const QueryFlexPaymentOrderListRequest& request, const QueryFlexPaymentOrderListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->QueryFlexPaymentOrderList(request), context);
-    };
+    using Req = const QueryFlexPaymentOrderListRequest&;
+    using Resp = QueryFlexPaymentOrderListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "QueryFlexPaymentOrderList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::QueryFlexPaymentOrderListOutcomeCallable CpdpClient::QueryFlexPaymentOrderListCallable(const QueryFlexPaymentOrderListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<QueryFlexPaymentOrderListOutcome()>>(
-        [this, request]()
-        {
-            return this->QueryFlexPaymentOrderList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<QueryFlexPaymentOrderListOutcome>>();
+    QueryFlexPaymentOrderListAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const QueryFlexPaymentOrderListRequest&,
+        QueryFlexPaymentOrderListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::QueryFlexPaymentOrderStatusOutcome CpdpClient::QueryFlexPaymentOrderStatus(const QueryFlexPaymentOrderStatusRequest &request)
@@ -5738,25 +6662,32 @@ CpdpClient::QueryFlexPaymentOrderStatusOutcome CpdpClient::QueryFlexPaymentOrder
 
 void CpdpClient::QueryFlexPaymentOrderStatusAsync(const QueryFlexPaymentOrderStatusRequest& request, const QueryFlexPaymentOrderStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->QueryFlexPaymentOrderStatus(request), context);
-    };
+    using Req = const QueryFlexPaymentOrderStatusRequest&;
+    using Resp = QueryFlexPaymentOrderStatusResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "QueryFlexPaymentOrderStatus", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::QueryFlexPaymentOrderStatusOutcomeCallable CpdpClient::QueryFlexPaymentOrderStatusCallable(const QueryFlexPaymentOrderStatusRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<QueryFlexPaymentOrderStatusOutcome()>>(
-        [this, request]()
-        {
-            return this->QueryFlexPaymentOrderStatus(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<QueryFlexPaymentOrderStatusOutcome>>();
+    QueryFlexPaymentOrderStatusAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const QueryFlexPaymentOrderStatusRequest&,
+        QueryFlexPaymentOrderStatusOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::QueryFlexPlatformAccountBalanceOutcome CpdpClient::QueryFlexPlatformAccountBalance(const QueryFlexPlatformAccountBalanceRequest &request)
@@ -5781,25 +6712,32 @@ CpdpClient::QueryFlexPlatformAccountBalanceOutcome CpdpClient::QueryFlexPlatform
 
 void CpdpClient::QueryFlexPlatformAccountBalanceAsync(const QueryFlexPlatformAccountBalanceRequest& request, const QueryFlexPlatformAccountBalanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->QueryFlexPlatformAccountBalance(request), context);
-    };
+    using Req = const QueryFlexPlatformAccountBalanceRequest&;
+    using Resp = QueryFlexPlatformAccountBalanceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "QueryFlexPlatformAccountBalance", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::QueryFlexPlatformAccountBalanceOutcomeCallable CpdpClient::QueryFlexPlatformAccountBalanceCallable(const QueryFlexPlatformAccountBalanceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<QueryFlexPlatformAccountBalanceOutcome()>>(
-        [this, request]()
-        {
-            return this->QueryFlexPlatformAccountBalance(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<QueryFlexPlatformAccountBalanceOutcome>>();
+    QueryFlexPlatformAccountBalanceAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const QueryFlexPlatformAccountBalanceRequest&,
+        QueryFlexPlatformAccountBalanceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::QueryFlexServiceProviderAccountBalanceOutcome CpdpClient::QueryFlexServiceProviderAccountBalance(const QueryFlexServiceProviderAccountBalanceRequest &request)
@@ -5824,25 +6762,32 @@ CpdpClient::QueryFlexServiceProviderAccountBalanceOutcome CpdpClient::QueryFlexS
 
 void CpdpClient::QueryFlexServiceProviderAccountBalanceAsync(const QueryFlexServiceProviderAccountBalanceRequest& request, const QueryFlexServiceProviderAccountBalanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->QueryFlexServiceProviderAccountBalance(request), context);
-    };
+    using Req = const QueryFlexServiceProviderAccountBalanceRequest&;
+    using Resp = QueryFlexServiceProviderAccountBalanceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "QueryFlexServiceProviderAccountBalance", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::QueryFlexServiceProviderAccountBalanceOutcomeCallable CpdpClient::QueryFlexServiceProviderAccountBalanceCallable(const QueryFlexServiceProviderAccountBalanceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<QueryFlexServiceProviderAccountBalanceOutcome()>>(
-        [this, request]()
-        {
-            return this->QueryFlexServiceProviderAccountBalance(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<QueryFlexServiceProviderAccountBalanceOutcome>>();
+    QueryFlexServiceProviderAccountBalanceAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const QueryFlexServiceProviderAccountBalanceRequest&,
+        QueryFlexServiceProviderAccountBalanceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::QueryFlexSettlementOrderListOutcome CpdpClient::QueryFlexSettlementOrderList(const QueryFlexSettlementOrderListRequest &request)
@@ -5867,25 +6812,32 @@ CpdpClient::QueryFlexSettlementOrderListOutcome CpdpClient::QueryFlexSettlementO
 
 void CpdpClient::QueryFlexSettlementOrderListAsync(const QueryFlexSettlementOrderListRequest& request, const QueryFlexSettlementOrderListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->QueryFlexSettlementOrderList(request), context);
-    };
+    using Req = const QueryFlexSettlementOrderListRequest&;
+    using Resp = QueryFlexSettlementOrderListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "QueryFlexSettlementOrderList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::QueryFlexSettlementOrderListOutcomeCallable CpdpClient::QueryFlexSettlementOrderListCallable(const QueryFlexSettlementOrderListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<QueryFlexSettlementOrderListOutcome()>>(
-        [this, request]()
-        {
-            return this->QueryFlexSettlementOrderList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<QueryFlexSettlementOrderListOutcome>>();
+    QueryFlexSettlementOrderListAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const QueryFlexSettlementOrderListRequest&,
+        QueryFlexSettlementOrderListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::QueryFlexWechatAuthResultOutcome CpdpClient::QueryFlexWechatAuthResult(const QueryFlexWechatAuthResultRequest &request)
@@ -5910,25 +6862,32 @@ CpdpClient::QueryFlexWechatAuthResultOutcome CpdpClient::QueryFlexWechatAuthResu
 
 void CpdpClient::QueryFlexWechatAuthResultAsync(const QueryFlexWechatAuthResultRequest& request, const QueryFlexWechatAuthResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->QueryFlexWechatAuthResult(request), context);
-    };
+    using Req = const QueryFlexWechatAuthResultRequest&;
+    using Resp = QueryFlexWechatAuthResultResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "QueryFlexWechatAuthResult", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::QueryFlexWechatAuthResultOutcomeCallable CpdpClient::QueryFlexWechatAuthResultCallable(const QueryFlexWechatAuthResultRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<QueryFlexWechatAuthResultOutcome()>>(
-        [this, request]()
-        {
-            return this->QueryFlexWechatAuthResult(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<QueryFlexWechatAuthResultOutcome>>();
+    QueryFlexWechatAuthResultAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const QueryFlexWechatAuthResultRequest&,
+        QueryFlexWechatAuthResultOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::QueryFundsTransactionDetailsOutcome CpdpClient::QueryFundsTransactionDetails(const QueryFundsTransactionDetailsRequest &request)
@@ -5953,25 +6912,32 @@ CpdpClient::QueryFundsTransactionDetailsOutcome CpdpClient::QueryFundsTransactio
 
 void CpdpClient::QueryFundsTransactionDetailsAsync(const QueryFundsTransactionDetailsRequest& request, const QueryFundsTransactionDetailsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->QueryFundsTransactionDetails(request), context);
-    };
+    using Req = const QueryFundsTransactionDetailsRequest&;
+    using Resp = QueryFundsTransactionDetailsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "QueryFundsTransactionDetails", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::QueryFundsTransactionDetailsOutcomeCallable CpdpClient::QueryFundsTransactionDetailsCallable(const QueryFundsTransactionDetailsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<QueryFundsTransactionDetailsOutcome()>>(
-        [this, request]()
-        {
-            return this->QueryFundsTransactionDetails(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<QueryFundsTransactionDetailsOutcome>>();
+    QueryFundsTransactionDetailsAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const QueryFundsTransactionDetailsRequest&,
+        QueryFundsTransactionDetailsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::QueryInvoiceOutcome CpdpClient::QueryInvoice(const QueryInvoiceRequest &request)
@@ -5996,25 +6962,32 @@ CpdpClient::QueryInvoiceOutcome CpdpClient::QueryInvoice(const QueryInvoiceReque
 
 void CpdpClient::QueryInvoiceAsync(const QueryInvoiceRequest& request, const QueryInvoiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->QueryInvoice(request), context);
-    };
+    using Req = const QueryInvoiceRequest&;
+    using Resp = QueryInvoiceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "QueryInvoice", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::QueryInvoiceOutcomeCallable CpdpClient::QueryInvoiceCallable(const QueryInvoiceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<QueryInvoiceOutcome()>>(
-        [this, request]()
-        {
-            return this->QueryInvoice(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<QueryInvoiceOutcome>>();
+    QueryInvoiceAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const QueryInvoiceRequest&,
+        QueryInvoiceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::QueryInvoiceV2Outcome CpdpClient::QueryInvoiceV2(const QueryInvoiceV2Request &request)
@@ -6039,25 +7012,32 @@ CpdpClient::QueryInvoiceV2Outcome CpdpClient::QueryInvoiceV2(const QueryInvoiceV
 
 void CpdpClient::QueryInvoiceV2Async(const QueryInvoiceV2Request& request, const QueryInvoiceV2AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->QueryInvoiceV2(request), context);
-    };
+    using Req = const QueryInvoiceV2Request&;
+    using Resp = QueryInvoiceV2Response;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "QueryInvoiceV2", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::QueryInvoiceV2OutcomeCallable CpdpClient::QueryInvoiceV2Callable(const QueryInvoiceV2Request &request)
 {
-    auto task = std::make_shared<std::packaged_task<QueryInvoiceV2Outcome()>>(
-        [this, request]()
-        {
-            return this->QueryInvoiceV2(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<QueryInvoiceV2Outcome>>();
+    QueryInvoiceV2Async(
+    request,
+    [prom](
+        const CpdpClient*,
+        const QueryInvoiceV2Request&,
+        QueryInvoiceV2Outcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::QueryMaliciousRegistrationOutcome CpdpClient::QueryMaliciousRegistration(const QueryMaliciousRegistrationRequest &request)
@@ -6082,25 +7062,32 @@ CpdpClient::QueryMaliciousRegistrationOutcome CpdpClient::QueryMaliciousRegistra
 
 void CpdpClient::QueryMaliciousRegistrationAsync(const QueryMaliciousRegistrationRequest& request, const QueryMaliciousRegistrationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->QueryMaliciousRegistration(request), context);
-    };
+    using Req = const QueryMaliciousRegistrationRequest&;
+    using Resp = QueryMaliciousRegistrationResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "QueryMaliciousRegistration", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::QueryMaliciousRegistrationOutcomeCallable CpdpClient::QueryMaliciousRegistrationCallable(const QueryMaliciousRegistrationRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<QueryMaliciousRegistrationOutcome()>>(
-        [this, request]()
-        {
-            return this->QueryMaliciousRegistration(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<QueryMaliciousRegistrationOutcome>>();
+    QueryMaliciousRegistrationAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const QueryMaliciousRegistrationRequest&,
+        QueryMaliciousRegistrationOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::QueryMemberBindOutcome CpdpClient::QueryMemberBind(const QueryMemberBindRequest &request)
@@ -6125,25 +7112,32 @@ CpdpClient::QueryMemberBindOutcome CpdpClient::QueryMemberBind(const QueryMember
 
 void CpdpClient::QueryMemberBindAsync(const QueryMemberBindRequest& request, const QueryMemberBindAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->QueryMemberBind(request), context);
-    };
+    using Req = const QueryMemberBindRequest&;
+    using Resp = QueryMemberBindResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "QueryMemberBind", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::QueryMemberBindOutcomeCallable CpdpClient::QueryMemberBindCallable(const QueryMemberBindRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<QueryMemberBindOutcome()>>(
-        [this, request]()
-        {
-            return this->QueryMemberBind(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<QueryMemberBindOutcome>>();
+    QueryMemberBindAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const QueryMemberBindRequest&,
+        QueryMemberBindOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::QueryMemberTransactionOutcome CpdpClient::QueryMemberTransaction(const QueryMemberTransactionRequest &request)
@@ -6168,25 +7162,32 @@ CpdpClient::QueryMemberTransactionOutcome CpdpClient::QueryMemberTransaction(con
 
 void CpdpClient::QueryMemberTransactionAsync(const QueryMemberTransactionRequest& request, const QueryMemberTransactionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->QueryMemberTransaction(request), context);
-    };
+    using Req = const QueryMemberTransactionRequest&;
+    using Resp = QueryMemberTransactionResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "QueryMemberTransaction", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::QueryMemberTransactionOutcomeCallable CpdpClient::QueryMemberTransactionCallable(const QueryMemberTransactionRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<QueryMemberTransactionOutcome()>>(
-        [this, request]()
-        {
-            return this->QueryMemberTransaction(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<QueryMemberTransactionOutcome>>();
+    QueryMemberTransactionAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const QueryMemberTransactionRequest&,
+        QueryMemberTransactionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::QueryMemberTransactionDetailsOutcome CpdpClient::QueryMemberTransactionDetails(const QueryMemberTransactionDetailsRequest &request)
@@ -6211,25 +7212,32 @@ CpdpClient::QueryMemberTransactionDetailsOutcome CpdpClient::QueryMemberTransact
 
 void CpdpClient::QueryMemberTransactionDetailsAsync(const QueryMemberTransactionDetailsRequest& request, const QueryMemberTransactionDetailsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->QueryMemberTransactionDetails(request), context);
-    };
+    using Req = const QueryMemberTransactionDetailsRequest&;
+    using Resp = QueryMemberTransactionDetailsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "QueryMemberTransactionDetails", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::QueryMemberTransactionDetailsOutcomeCallable CpdpClient::QueryMemberTransactionDetailsCallable(const QueryMemberTransactionDetailsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<QueryMemberTransactionDetailsOutcome()>>(
-        [this, request]()
-        {
-            return this->QueryMemberTransactionDetails(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<QueryMemberTransactionDetailsOutcome>>();
+    QueryMemberTransactionDetailsAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const QueryMemberTransactionDetailsRequest&,
+        QueryMemberTransactionDetailsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::QueryMerchantOutcome CpdpClient::QueryMerchant(const QueryMerchantRequest &request)
@@ -6254,25 +7262,32 @@ CpdpClient::QueryMerchantOutcome CpdpClient::QueryMerchant(const QueryMerchantRe
 
 void CpdpClient::QueryMerchantAsync(const QueryMerchantRequest& request, const QueryMerchantAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->QueryMerchant(request), context);
-    };
+    using Req = const QueryMerchantRequest&;
+    using Resp = QueryMerchantResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "QueryMerchant", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::QueryMerchantOutcomeCallable CpdpClient::QueryMerchantCallable(const QueryMerchantRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<QueryMerchantOutcome()>>(
-        [this, request]()
-        {
-            return this->QueryMerchant(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<QueryMerchantOutcome>>();
+    QueryMerchantAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const QueryMerchantRequest&,
+        QueryMerchantOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::QueryMerchantBalanceOutcome CpdpClient::QueryMerchantBalance(const QueryMerchantBalanceRequest &request)
@@ -6297,25 +7312,32 @@ CpdpClient::QueryMerchantBalanceOutcome CpdpClient::QueryMerchantBalance(const Q
 
 void CpdpClient::QueryMerchantBalanceAsync(const QueryMerchantBalanceRequest& request, const QueryMerchantBalanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->QueryMerchantBalance(request), context);
-    };
+    using Req = const QueryMerchantBalanceRequest&;
+    using Resp = QueryMerchantBalanceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "QueryMerchantBalance", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::QueryMerchantBalanceOutcomeCallable CpdpClient::QueryMerchantBalanceCallable(const QueryMerchantBalanceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<QueryMerchantBalanceOutcome()>>(
-        [this, request]()
-        {
-            return this->QueryMerchantBalance(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<QueryMerchantBalanceOutcome>>();
+    QueryMerchantBalanceAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const QueryMerchantBalanceRequest&,
+        QueryMerchantBalanceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::QueryMerchantClassificationOutcome CpdpClient::QueryMerchantClassification(const QueryMerchantClassificationRequest &request)
@@ -6340,25 +7362,32 @@ CpdpClient::QueryMerchantClassificationOutcome CpdpClient::QueryMerchantClassifi
 
 void CpdpClient::QueryMerchantClassificationAsync(const QueryMerchantClassificationRequest& request, const QueryMerchantClassificationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->QueryMerchantClassification(request), context);
-    };
+    using Req = const QueryMerchantClassificationRequest&;
+    using Resp = QueryMerchantClassificationResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "QueryMerchantClassification", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::QueryMerchantClassificationOutcomeCallable CpdpClient::QueryMerchantClassificationCallable(const QueryMerchantClassificationRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<QueryMerchantClassificationOutcome()>>(
-        [this, request]()
-        {
-            return this->QueryMerchantClassification(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<QueryMerchantClassificationOutcome>>();
+    QueryMerchantClassificationAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const QueryMerchantClassificationRequest&,
+        QueryMerchantClassificationOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::QueryMerchantInfoForManagementOutcome CpdpClient::QueryMerchantInfoForManagement(const QueryMerchantInfoForManagementRequest &request)
@@ -6383,25 +7412,32 @@ CpdpClient::QueryMerchantInfoForManagementOutcome CpdpClient::QueryMerchantInfoF
 
 void CpdpClient::QueryMerchantInfoForManagementAsync(const QueryMerchantInfoForManagementRequest& request, const QueryMerchantInfoForManagementAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->QueryMerchantInfoForManagement(request), context);
-    };
+    using Req = const QueryMerchantInfoForManagementRequest&;
+    using Resp = QueryMerchantInfoForManagementResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "QueryMerchantInfoForManagement", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::QueryMerchantInfoForManagementOutcomeCallable CpdpClient::QueryMerchantInfoForManagementCallable(const QueryMerchantInfoForManagementRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<QueryMerchantInfoForManagementOutcome()>>(
-        [this, request]()
-        {
-            return this->QueryMerchantInfoForManagement(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<QueryMerchantInfoForManagementOutcome>>();
+    QueryMerchantInfoForManagementAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const QueryMerchantInfoForManagementRequest&,
+        QueryMerchantInfoForManagementOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::QueryMerchantOrderOutcome CpdpClient::QueryMerchantOrder(const QueryMerchantOrderRequest &request)
@@ -6426,25 +7462,32 @@ CpdpClient::QueryMerchantOrderOutcome CpdpClient::QueryMerchantOrder(const Query
 
 void CpdpClient::QueryMerchantOrderAsync(const QueryMerchantOrderRequest& request, const QueryMerchantOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->QueryMerchantOrder(request), context);
-    };
+    using Req = const QueryMerchantOrderRequest&;
+    using Resp = QueryMerchantOrderResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "QueryMerchantOrder", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::QueryMerchantOrderOutcomeCallable CpdpClient::QueryMerchantOrderCallable(const QueryMerchantOrderRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<QueryMerchantOrderOutcome()>>(
-        [this, request]()
-        {
-            return this->QueryMerchantOrder(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<QueryMerchantOrderOutcome>>();
+    QueryMerchantOrderAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const QueryMerchantOrderRequest&,
+        QueryMerchantOrderOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::QueryMerchantPayWayListOutcome CpdpClient::QueryMerchantPayWayList(const QueryMerchantPayWayListRequest &request)
@@ -6469,25 +7512,32 @@ CpdpClient::QueryMerchantPayWayListOutcome CpdpClient::QueryMerchantPayWayList(c
 
 void CpdpClient::QueryMerchantPayWayListAsync(const QueryMerchantPayWayListRequest& request, const QueryMerchantPayWayListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->QueryMerchantPayWayList(request), context);
-    };
+    using Req = const QueryMerchantPayWayListRequest&;
+    using Resp = QueryMerchantPayWayListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "QueryMerchantPayWayList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::QueryMerchantPayWayListOutcomeCallable CpdpClient::QueryMerchantPayWayListCallable(const QueryMerchantPayWayListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<QueryMerchantPayWayListOutcome()>>(
-        [this, request]()
-        {
-            return this->QueryMerchantPayWayList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<QueryMerchantPayWayListOutcome>>();
+    QueryMerchantPayWayListAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const QueryMerchantPayWayListRequest&,
+        QueryMerchantPayWayListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::QueryOpenBankBankAccountBalanceOutcome CpdpClient::QueryOpenBankBankAccountBalance(const QueryOpenBankBankAccountBalanceRequest &request)
@@ -6512,25 +7562,32 @@ CpdpClient::QueryOpenBankBankAccountBalanceOutcome CpdpClient::QueryOpenBankBank
 
 void CpdpClient::QueryOpenBankBankAccountBalanceAsync(const QueryOpenBankBankAccountBalanceRequest& request, const QueryOpenBankBankAccountBalanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->QueryOpenBankBankAccountBalance(request), context);
-    };
+    using Req = const QueryOpenBankBankAccountBalanceRequest&;
+    using Resp = QueryOpenBankBankAccountBalanceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "QueryOpenBankBankAccountBalance", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::QueryOpenBankBankAccountBalanceOutcomeCallable CpdpClient::QueryOpenBankBankAccountBalanceCallable(const QueryOpenBankBankAccountBalanceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<QueryOpenBankBankAccountBalanceOutcome()>>(
-        [this, request]()
-        {
-            return this->QueryOpenBankBankAccountBalance(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<QueryOpenBankBankAccountBalanceOutcome>>();
+    QueryOpenBankBankAccountBalanceAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const QueryOpenBankBankAccountBalanceRequest&,
+        QueryOpenBankBankAccountBalanceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::QueryOpenBankBankBranchListOutcome CpdpClient::QueryOpenBankBankBranchList(const QueryOpenBankBankBranchListRequest &request)
@@ -6555,25 +7612,32 @@ CpdpClient::QueryOpenBankBankBranchListOutcome CpdpClient::QueryOpenBankBankBran
 
 void CpdpClient::QueryOpenBankBankBranchListAsync(const QueryOpenBankBankBranchListRequest& request, const QueryOpenBankBankBranchListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->QueryOpenBankBankBranchList(request), context);
-    };
+    using Req = const QueryOpenBankBankBranchListRequest&;
+    using Resp = QueryOpenBankBankBranchListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "QueryOpenBankBankBranchList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::QueryOpenBankBankBranchListOutcomeCallable CpdpClient::QueryOpenBankBankBranchListCallable(const QueryOpenBankBankBranchListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<QueryOpenBankBankBranchListOutcome()>>(
-        [this, request]()
-        {
-            return this->QueryOpenBankBankBranchList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<QueryOpenBankBankBranchListOutcome>>();
+    QueryOpenBankBankBranchListAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const QueryOpenBankBankBranchListRequest&,
+        QueryOpenBankBankBranchListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::QueryOpenBankBillDataPageOutcome CpdpClient::QueryOpenBankBillDataPage(const QueryOpenBankBillDataPageRequest &request)
@@ -6598,25 +7662,32 @@ CpdpClient::QueryOpenBankBillDataPageOutcome CpdpClient::QueryOpenBankBillDataPa
 
 void CpdpClient::QueryOpenBankBillDataPageAsync(const QueryOpenBankBillDataPageRequest& request, const QueryOpenBankBillDataPageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->QueryOpenBankBillDataPage(request), context);
-    };
+    using Req = const QueryOpenBankBillDataPageRequest&;
+    using Resp = QueryOpenBankBillDataPageResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "QueryOpenBankBillDataPage", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::QueryOpenBankBillDataPageOutcomeCallable CpdpClient::QueryOpenBankBillDataPageCallable(const QueryOpenBankBillDataPageRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<QueryOpenBankBillDataPageOutcome()>>(
-        [this, request]()
-        {
-            return this->QueryOpenBankBillDataPage(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<QueryOpenBankBillDataPageOutcome>>();
+    QueryOpenBankBillDataPageAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const QueryOpenBankBillDataPageRequest&,
+        QueryOpenBankBillDataPageOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::QueryOpenBankBindExternalSubMerchantBankAccountOutcome CpdpClient::QueryOpenBankBindExternalSubMerchantBankAccount(const QueryOpenBankBindExternalSubMerchantBankAccountRequest &request)
@@ -6641,25 +7712,32 @@ CpdpClient::QueryOpenBankBindExternalSubMerchantBankAccountOutcome CpdpClient::Q
 
 void CpdpClient::QueryOpenBankBindExternalSubMerchantBankAccountAsync(const QueryOpenBankBindExternalSubMerchantBankAccountRequest& request, const QueryOpenBankBindExternalSubMerchantBankAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->QueryOpenBankBindExternalSubMerchantBankAccount(request), context);
-    };
+    using Req = const QueryOpenBankBindExternalSubMerchantBankAccountRequest&;
+    using Resp = QueryOpenBankBindExternalSubMerchantBankAccountResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "QueryOpenBankBindExternalSubMerchantBankAccount", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::QueryOpenBankBindExternalSubMerchantBankAccountOutcomeCallable CpdpClient::QueryOpenBankBindExternalSubMerchantBankAccountCallable(const QueryOpenBankBindExternalSubMerchantBankAccountRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<QueryOpenBankBindExternalSubMerchantBankAccountOutcome()>>(
-        [this, request]()
-        {
-            return this->QueryOpenBankBindExternalSubMerchantBankAccount(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<QueryOpenBankBindExternalSubMerchantBankAccountOutcome>>();
+    QueryOpenBankBindExternalSubMerchantBankAccountAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const QueryOpenBankBindExternalSubMerchantBankAccountRequest&,
+        QueryOpenBankBindExternalSubMerchantBankAccountOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::QueryOpenBankDailyReceiptDownloadUrlOutcome CpdpClient::QueryOpenBankDailyReceiptDownloadUrl(const QueryOpenBankDailyReceiptDownloadUrlRequest &request)
@@ -6684,25 +7762,32 @@ CpdpClient::QueryOpenBankDailyReceiptDownloadUrlOutcome CpdpClient::QueryOpenBan
 
 void CpdpClient::QueryOpenBankDailyReceiptDownloadUrlAsync(const QueryOpenBankDailyReceiptDownloadUrlRequest& request, const QueryOpenBankDailyReceiptDownloadUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->QueryOpenBankDailyReceiptDownloadUrl(request), context);
-    };
+    using Req = const QueryOpenBankDailyReceiptDownloadUrlRequest&;
+    using Resp = QueryOpenBankDailyReceiptDownloadUrlResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "QueryOpenBankDailyReceiptDownloadUrl", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::QueryOpenBankDailyReceiptDownloadUrlOutcomeCallable CpdpClient::QueryOpenBankDailyReceiptDownloadUrlCallable(const QueryOpenBankDailyReceiptDownloadUrlRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<QueryOpenBankDailyReceiptDownloadUrlOutcome()>>(
-        [this, request]()
-        {
-            return this->QueryOpenBankDailyReceiptDownloadUrl(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<QueryOpenBankDailyReceiptDownloadUrlOutcome>>();
+    QueryOpenBankDailyReceiptDownloadUrlAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const QueryOpenBankDailyReceiptDownloadUrlRequest&,
+        QueryOpenBankDailyReceiptDownloadUrlOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::QueryOpenBankDownLoadUrlOutcome CpdpClient::QueryOpenBankDownLoadUrl(const QueryOpenBankDownLoadUrlRequest &request)
@@ -6727,25 +7812,32 @@ CpdpClient::QueryOpenBankDownLoadUrlOutcome CpdpClient::QueryOpenBankDownLoadUrl
 
 void CpdpClient::QueryOpenBankDownLoadUrlAsync(const QueryOpenBankDownLoadUrlRequest& request, const QueryOpenBankDownLoadUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->QueryOpenBankDownLoadUrl(request), context);
-    };
+    using Req = const QueryOpenBankDownLoadUrlRequest&;
+    using Resp = QueryOpenBankDownLoadUrlResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "QueryOpenBankDownLoadUrl", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::QueryOpenBankDownLoadUrlOutcomeCallable CpdpClient::QueryOpenBankDownLoadUrlCallable(const QueryOpenBankDownLoadUrlRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<QueryOpenBankDownLoadUrlOutcome()>>(
-        [this, request]()
-        {
-            return this->QueryOpenBankDownLoadUrl(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<QueryOpenBankDownLoadUrlOutcome>>();
+    QueryOpenBankDownLoadUrlAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const QueryOpenBankDownLoadUrlRequest&,
+        QueryOpenBankDownLoadUrlOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::QueryOpenBankExternalSubAccountBookBalanceOutcome CpdpClient::QueryOpenBankExternalSubAccountBookBalance(const QueryOpenBankExternalSubAccountBookBalanceRequest &request)
@@ -6770,25 +7862,32 @@ CpdpClient::QueryOpenBankExternalSubAccountBookBalanceOutcome CpdpClient::QueryO
 
 void CpdpClient::QueryOpenBankExternalSubAccountBookBalanceAsync(const QueryOpenBankExternalSubAccountBookBalanceRequest& request, const QueryOpenBankExternalSubAccountBookBalanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->QueryOpenBankExternalSubAccountBookBalance(request), context);
-    };
+    using Req = const QueryOpenBankExternalSubAccountBookBalanceRequest&;
+    using Resp = QueryOpenBankExternalSubAccountBookBalanceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "QueryOpenBankExternalSubAccountBookBalance", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::QueryOpenBankExternalSubAccountBookBalanceOutcomeCallable CpdpClient::QueryOpenBankExternalSubAccountBookBalanceCallable(const QueryOpenBankExternalSubAccountBookBalanceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<QueryOpenBankExternalSubAccountBookBalanceOutcome()>>(
-        [this, request]()
-        {
-            return this->QueryOpenBankExternalSubAccountBookBalance(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<QueryOpenBankExternalSubAccountBookBalanceOutcome>>();
+    QueryOpenBankExternalSubAccountBookBalanceAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const QueryOpenBankExternalSubAccountBookBalanceRequest&,
+        QueryOpenBankExternalSubAccountBookBalanceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::QueryOpenBankExternalSubMerchantBankAccountOutcome CpdpClient::QueryOpenBankExternalSubMerchantBankAccount(const QueryOpenBankExternalSubMerchantBankAccountRequest &request)
@@ -6813,25 +7912,32 @@ CpdpClient::QueryOpenBankExternalSubMerchantBankAccountOutcome CpdpClient::Query
 
 void CpdpClient::QueryOpenBankExternalSubMerchantBankAccountAsync(const QueryOpenBankExternalSubMerchantBankAccountRequest& request, const QueryOpenBankExternalSubMerchantBankAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->QueryOpenBankExternalSubMerchantBankAccount(request), context);
-    };
+    using Req = const QueryOpenBankExternalSubMerchantBankAccountRequest&;
+    using Resp = QueryOpenBankExternalSubMerchantBankAccountResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "QueryOpenBankExternalSubMerchantBankAccount", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::QueryOpenBankExternalSubMerchantBankAccountOutcomeCallable CpdpClient::QueryOpenBankExternalSubMerchantBankAccountCallable(const QueryOpenBankExternalSubMerchantBankAccountRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<QueryOpenBankExternalSubMerchantBankAccountOutcome()>>(
-        [this, request]()
-        {
-            return this->QueryOpenBankExternalSubMerchantBankAccount(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<QueryOpenBankExternalSubMerchantBankAccountOutcome>>();
+    QueryOpenBankExternalSubMerchantBankAccountAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const QueryOpenBankExternalSubMerchantBankAccountRequest&,
+        QueryOpenBankExternalSubMerchantBankAccountOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::QueryOpenBankExternalSubMerchantRegistrationOutcome CpdpClient::QueryOpenBankExternalSubMerchantRegistration(const QueryOpenBankExternalSubMerchantRegistrationRequest &request)
@@ -6856,25 +7962,32 @@ CpdpClient::QueryOpenBankExternalSubMerchantRegistrationOutcome CpdpClient::Quer
 
 void CpdpClient::QueryOpenBankExternalSubMerchantRegistrationAsync(const QueryOpenBankExternalSubMerchantRegistrationRequest& request, const QueryOpenBankExternalSubMerchantRegistrationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->QueryOpenBankExternalSubMerchantRegistration(request), context);
-    };
+    using Req = const QueryOpenBankExternalSubMerchantRegistrationRequest&;
+    using Resp = QueryOpenBankExternalSubMerchantRegistrationResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "QueryOpenBankExternalSubMerchantRegistration", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::QueryOpenBankExternalSubMerchantRegistrationOutcomeCallable CpdpClient::QueryOpenBankExternalSubMerchantRegistrationCallable(const QueryOpenBankExternalSubMerchantRegistrationRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<QueryOpenBankExternalSubMerchantRegistrationOutcome()>>(
-        [this, request]()
-        {
-            return this->QueryOpenBankExternalSubMerchantRegistration(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<QueryOpenBankExternalSubMerchantRegistrationOutcome>>();
+    QueryOpenBankExternalSubMerchantRegistrationAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const QueryOpenBankExternalSubMerchantRegistrationRequest&,
+        QueryOpenBankExternalSubMerchantRegistrationOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::QueryOpenBankOrderDetailReceiptInfoOutcome CpdpClient::QueryOpenBankOrderDetailReceiptInfo(const QueryOpenBankOrderDetailReceiptInfoRequest &request)
@@ -6899,25 +8012,32 @@ CpdpClient::QueryOpenBankOrderDetailReceiptInfoOutcome CpdpClient::QueryOpenBank
 
 void CpdpClient::QueryOpenBankOrderDetailReceiptInfoAsync(const QueryOpenBankOrderDetailReceiptInfoRequest& request, const QueryOpenBankOrderDetailReceiptInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->QueryOpenBankOrderDetailReceiptInfo(request), context);
-    };
+    using Req = const QueryOpenBankOrderDetailReceiptInfoRequest&;
+    using Resp = QueryOpenBankOrderDetailReceiptInfoResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "QueryOpenBankOrderDetailReceiptInfo", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::QueryOpenBankOrderDetailReceiptInfoOutcomeCallable CpdpClient::QueryOpenBankOrderDetailReceiptInfoCallable(const QueryOpenBankOrderDetailReceiptInfoRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<QueryOpenBankOrderDetailReceiptInfoOutcome()>>(
-        [this, request]()
-        {
-            return this->QueryOpenBankOrderDetailReceiptInfo(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<QueryOpenBankOrderDetailReceiptInfoOutcome>>();
+    QueryOpenBankOrderDetailReceiptInfoAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const QueryOpenBankOrderDetailReceiptInfoRequest&,
+        QueryOpenBankOrderDetailReceiptInfoOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::QueryOpenBankPaymentOrderOutcome CpdpClient::QueryOpenBankPaymentOrder(const QueryOpenBankPaymentOrderRequest &request)
@@ -6942,25 +8062,32 @@ CpdpClient::QueryOpenBankPaymentOrderOutcome CpdpClient::QueryOpenBankPaymentOrd
 
 void CpdpClient::QueryOpenBankPaymentOrderAsync(const QueryOpenBankPaymentOrderRequest& request, const QueryOpenBankPaymentOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->QueryOpenBankPaymentOrder(request), context);
-    };
+    using Req = const QueryOpenBankPaymentOrderRequest&;
+    using Resp = QueryOpenBankPaymentOrderResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "QueryOpenBankPaymentOrder", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::QueryOpenBankPaymentOrderOutcomeCallable CpdpClient::QueryOpenBankPaymentOrderCallable(const QueryOpenBankPaymentOrderRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<QueryOpenBankPaymentOrderOutcome()>>(
-        [this, request]()
-        {
-            return this->QueryOpenBankPaymentOrder(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<QueryOpenBankPaymentOrderOutcome>>();
+    QueryOpenBankPaymentOrderAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const QueryOpenBankPaymentOrderRequest&,
+        QueryOpenBankPaymentOrderOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::QueryOpenBankProfitSharePayeeOutcome CpdpClient::QueryOpenBankProfitSharePayee(const QueryOpenBankProfitSharePayeeRequest &request)
@@ -6985,25 +8112,32 @@ CpdpClient::QueryOpenBankProfitSharePayeeOutcome CpdpClient::QueryOpenBankProfit
 
 void CpdpClient::QueryOpenBankProfitSharePayeeAsync(const QueryOpenBankProfitSharePayeeRequest& request, const QueryOpenBankProfitSharePayeeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->QueryOpenBankProfitSharePayee(request), context);
-    };
+    using Req = const QueryOpenBankProfitSharePayeeRequest&;
+    using Resp = QueryOpenBankProfitSharePayeeResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "QueryOpenBankProfitSharePayee", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::QueryOpenBankProfitSharePayeeOutcomeCallable CpdpClient::QueryOpenBankProfitSharePayeeCallable(const QueryOpenBankProfitSharePayeeRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<QueryOpenBankProfitSharePayeeOutcome()>>(
-        [this, request]()
-        {
-            return this->QueryOpenBankProfitSharePayee(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<QueryOpenBankProfitSharePayeeOutcome>>();
+    QueryOpenBankProfitSharePayeeAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const QueryOpenBankProfitSharePayeeRequest&,
+        QueryOpenBankProfitSharePayeeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::QueryOpenBankRefundOrderOutcome CpdpClient::QueryOpenBankRefundOrder(const QueryOpenBankRefundOrderRequest &request)
@@ -7028,25 +8162,32 @@ CpdpClient::QueryOpenBankRefundOrderOutcome CpdpClient::QueryOpenBankRefundOrder
 
 void CpdpClient::QueryOpenBankRefundOrderAsync(const QueryOpenBankRefundOrderRequest& request, const QueryOpenBankRefundOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->QueryOpenBankRefundOrder(request), context);
-    };
+    using Req = const QueryOpenBankRefundOrderRequest&;
+    using Resp = QueryOpenBankRefundOrderResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "QueryOpenBankRefundOrder", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::QueryOpenBankRefundOrderOutcomeCallable CpdpClient::QueryOpenBankRefundOrderCallable(const QueryOpenBankRefundOrderRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<QueryOpenBankRefundOrderOutcome()>>(
-        [this, request]()
-        {
-            return this->QueryOpenBankRefundOrder(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<QueryOpenBankRefundOrderOutcome>>();
+    QueryOpenBankRefundOrderAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const QueryOpenBankRefundOrderRequest&,
+        QueryOpenBankRefundOrderOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::QueryOpenBankSettleOrderOutcome CpdpClient::QueryOpenBankSettleOrder(const QueryOpenBankSettleOrderRequest &request)
@@ -7071,25 +8212,32 @@ CpdpClient::QueryOpenBankSettleOrderOutcome CpdpClient::QueryOpenBankSettleOrder
 
 void CpdpClient::QueryOpenBankSettleOrderAsync(const QueryOpenBankSettleOrderRequest& request, const QueryOpenBankSettleOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->QueryOpenBankSettleOrder(request), context);
-    };
+    using Req = const QueryOpenBankSettleOrderRequest&;
+    using Resp = QueryOpenBankSettleOrderResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "QueryOpenBankSettleOrder", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::QueryOpenBankSettleOrderOutcomeCallable CpdpClient::QueryOpenBankSettleOrderCallable(const QueryOpenBankSettleOrderRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<QueryOpenBankSettleOrderOutcome()>>(
-        [this, request]()
-        {
-            return this->QueryOpenBankSettleOrder(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<QueryOpenBankSettleOrderOutcome>>();
+    QueryOpenBankSettleOrderAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const QueryOpenBankSettleOrderRequest&,
+        QueryOpenBankSettleOrderOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::QueryOpenBankSubMerchantCredentialOutcome CpdpClient::QueryOpenBankSubMerchantCredential(const QueryOpenBankSubMerchantCredentialRequest &request)
@@ -7114,25 +8262,32 @@ CpdpClient::QueryOpenBankSubMerchantCredentialOutcome CpdpClient::QueryOpenBankS
 
 void CpdpClient::QueryOpenBankSubMerchantCredentialAsync(const QueryOpenBankSubMerchantCredentialRequest& request, const QueryOpenBankSubMerchantCredentialAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->QueryOpenBankSubMerchantCredential(request), context);
-    };
+    using Req = const QueryOpenBankSubMerchantCredentialRequest&;
+    using Resp = QueryOpenBankSubMerchantCredentialResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "QueryOpenBankSubMerchantCredential", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::QueryOpenBankSubMerchantCredentialOutcomeCallable CpdpClient::QueryOpenBankSubMerchantCredentialCallable(const QueryOpenBankSubMerchantCredentialRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<QueryOpenBankSubMerchantCredentialOutcome()>>(
-        [this, request]()
-        {
-            return this->QueryOpenBankSubMerchantCredential(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<QueryOpenBankSubMerchantCredentialOutcome>>();
+    QueryOpenBankSubMerchantCredentialAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const QueryOpenBankSubMerchantCredentialRequest&,
+        QueryOpenBankSubMerchantCredentialOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::QueryOpenBankSubMerchantRateConfigureOutcome CpdpClient::QueryOpenBankSubMerchantRateConfigure(const QueryOpenBankSubMerchantRateConfigureRequest &request)
@@ -7157,25 +8312,32 @@ CpdpClient::QueryOpenBankSubMerchantRateConfigureOutcome CpdpClient::QueryOpenBa
 
 void CpdpClient::QueryOpenBankSubMerchantRateConfigureAsync(const QueryOpenBankSubMerchantRateConfigureRequest& request, const QueryOpenBankSubMerchantRateConfigureAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->QueryOpenBankSubMerchantRateConfigure(request), context);
-    };
+    using Req = const QueryOpenBankSubMerchantRateConfigureRequest&;
+    using Resp = QueryOpenBankSubMerchantRateConfigureResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "QueryOpenBankSubMerchantRateConfigure", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::QueryOpenBankSubMerchantRateConfigureOutcomeCallable CpdpClient::QueryOpenBankSubMerchantRateConfigureCallable(const QueryOpenBankSubMerchantRateConfigureRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<QueryOpenBankSubMerchantRateConfigureOutcome()>>(
-        [this, request]()
-        {
-            return this->QueryOpenBankSubMerchantRateConfigure(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<QueryOpenBankSubMerchantRateConfigureOutcome>>();
+    QueryOpenBankSubMerchantRateConfigureAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const QueryOpenBankSubMerchantRateConfigureRequest&,
+        QueryOpenBankSubMerchantRateConfigureOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::QueryOpenBankSubMerchantSignOnlineOutcome CpdpClient::QueryOpenBankSubMerchantSignOnline(const QueryOpenBankSubMerchantSignOnlineRequest &request)
@@ -7200,25 +8362,32 @@ CpdpClient::QueryOpenBankSubMerchantSignOnlineOutcome CpdpClient::QueryOpenBankS
 
 void CpdpClient::QueryOpenBankSubMerchantSignOnlineAsync(const QueryOpenBankSubMerchantSignOnlineRequest& request, const QueryOpenBankSubMerchantSignOnlineAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->QueryOpenBankSubMerchantSignOnline(request), context);
-    };
+    using Req = const QueryOpenBankSubMerchantSignOnlineRequest&;
+    using Resp = QueryOpenBankSubMerchantSignOnlineResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "QueryOpenBankSubMerchantSignOnline", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::QueryOpenBankSubMerchantSignOnlineOutcomeCallable CpdpClient::QueryOpenBankSubMerchantSignOnlineCallable(const QueryOpenBankSubMerchantSignOnlineRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<QueryOpenBankSubMerchantSignOnlineOutcome()>>(
-        [this, request]()
-        {
-            return this->QueryOpenBankSubMerchantSignOnline(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<QueryOpenBankSubMerchantSignOnlineOutcome>>();
+    QueryOpenBankSubMerchantSignOnlineAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const QueryOpenBankSubMerchantSignOnlineRequest&,
+        QueryOpenBankSubMerchantSignOnlineOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::QueryOpenBankSupportBankListOutcome CpdpClient::QueryOpenBankSupportBankList(const QueryOpenBankSupportBankListRequest &request)
@@ -7243,25 +8412,32 @@ CpdpClient::QueryOpenBankSupportBankListOutcome CpdpClient::QueryOpenBankSupport
 
 void CpdpClient::QueryOpenBankSupportBankListAsync(const QueryOpenBankSupportBankListRequest& request, const QueryOpenBankSupportBankListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->QueryOpenBankSupportBankList(request), context);
-    };
+    using Req = const QueryOpenBankSupportBankListRequest&;
+    using Resp = QueryOpenBankSupportBankListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "QueryOpenBankSupportBankList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::QueryOpenBankSupportBankListOutcomeCallable CpdpClient::QueryOpenBankSupportBankListCallable(const QueryOpenBankSupportBankListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<QueryOpenBankSupportBankListOutcome()>>(
-        [this, request]()
-        {
-            return this->QueryOpenBankSupportBankList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<QueryOpenBankSupportBankListOutcome>>();
+    QueryOpenBankSupportBankListAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const QueryOpenBankSupportBankListRequest&,
+        QueryOpenBankSupportBankListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::QueryOpenBankUnbindExternalSubMerchantBankAccountOutcome CpdpClient::QueryOpenBankUnbindExternalSubMerchantBankAccount(const QueryOpenBankUnbindExternalSubMerchantBankAccountRequest &request)
@@ -7286,25 +8462,32 @@ CpdpClient::QueryOpenBankUnbindExternalSubMerchantBankAccountOutcome CpdpClient:
 
 void CpdpClient::QueryOpenBankUnbindExternalSubMerchantBankAccountAsync(const QueryOpenBankUnbindExternalSubMerchantBankAccountRequest& request, const QueryOpenBankUnbindExternalSubMerchantBankAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->QueryOpenBankUnbindExternalSubMerchantBankAccount(request), context);
-    };
+    using Req = const QueryOpenBankUnbindExternalSubMerchantBankAccountRequest&;
+    using Resp = QueryOpenBankUnbindExternalSubMerchantBankAccountResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "QueryOpenBankUnbindExternalSubMerchantBankAccount", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::QueryOpenBankUnbindExternalSubMerchantBankAccountOutcomeCallable CpdpClient::QueryOpenBankUnbindExternalSubMerchantBankAccountCallable(const QueryOpenBankUnbindExternalSubMerchantBankAccountRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<QueryOpenBankUnbindExternalSubMerchantBankAccountOutcome()>>(
-        [this, request]()
-        {
-            return this->QueryOpenBankUnbindExternalSubMerchantBankAccount(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<QueryOpenBankUnbindExternalSubMerchantBankAccountOutcome>>();
+    QueryOpenBankUnbindExternalSubMerchantBankAccountAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const QueryOpenBankUnbindExternalSubMerchantBankAccountRequest&,
+        QueryOpenBankUnbindExternalSubMerchantBankAccountOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::QueryOpenBankVerificationOrderOutcome CpdpClient::QueryOpenBankVerificationOrder(const QueryOpenBankVerificationOrderRequest &request)
@@ -7329,25 +8512,32 @@ CpdpClient::QueryOpenBankVerificationOrderOutcome CpdpClient::QueryOpenBankVerif
 
 void CpdpClient::QueryOpenBankVerificationOrderAsync(const QueryOpenBankVerificationOrderRequest& request, const QueryOpenBankVerificationOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->QueryOpenBankVerificationOrder(request), context);
-    };
+    using Req = const QueryOpenBankVerificationOrderRequest&;
+    using Resp = QueryOpenBankVerificationOrderResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "QueryOpenBankVerificationOrder", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::QueryOpenBankVerificationOrderOutcomeCallable CpdpClient::QueryOpenBankVerificationOrderCallable(const QueryOpenBankVerificationOrderRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<QueryOpenBankVerificationOrderOutcome()>>(
-        [this, request]()
-        {
-            return this->QueryOpenBankVerificationOrder(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<QueryOpenBankVerificationOrderOutcome>>();
+    QueryOpenBankVerificationOrderAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const QueryOpenBankVerificationOrderRequest&,
+        QueryOpenBankVerificationOrderOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::QueryOrderOutcome CpdpClient::QueryOrder(const QueryOrderRequest &request)
@@ -7372,25 +8562,32 @@ CpdpClient::QueryOrderOutcome CpdpClient::QueryOrder(const QueryOrderRequest &re
 
 void CpdpClient::QueryOrderAsync(const QueryOrderRequest& request, const QueryOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->QueryOrder(request), context);
-    };
+    using Req = const QueryOrderRequest&;
+    using Resp = QueryOrderResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "QueryOrder", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::QueryOrderOutcomeCallable CpdpClient::QueryOrderCallable(const QueryOrderRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<QueryOrderOutcome()>>(
-        [this, request]()
-        {
-            return this->QueryOrder(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<QueryOrderOutcome>>();
+    QueryOrderAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const QueryOrderRequest&,
+        QueryOrderOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::QueryOrderStatusOutcome CpdpClient::QueryOrderStatus(const QueryOrderStatusRequest &request)
@@ -7415,25 +8612,32 @@ CpdpClient::QueryOrderStatusOutcome CpdpClient::QueryOrderStatus(const QueryOrde
 
 void CpdpClient::QueryOrderStatusAsync(const QueryOrderStatusRequest& request, const QueryOrderStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->QueryOrderStatus(request), context);
-    };
+    using Req = const QueryOrderStatusRequest&;
+    using Resp = QueryOrderStatusResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "QueryOrderStatus", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::QueryOrderStatusOutcomeCallable CpdpClient::QueryOrderStatusCallable(const QueryOrderStatusRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<QueryOrderStatusOutcome()>>(
-        [this, request]()
-        {
-            return this->QueryOrderStatus(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<QueryOrderStatusOutcome>>();
+    QueryOrderStatusAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const QueryOrderStatusRequest&,
+        QueryOrderStatusOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::QueryOutwardOrderOutcome CpdpClient::QueryOutwardOrder(const QueryOutwardOrderRequest &request)
@@ -7458,25 +8662,32 @@ CpdpClient::QueryOutwardOrderOutcome CpdpClient::QueryOutwardOrder(const QueryOu
 
 void CpdpClient::QueryOutwardOrderAsync(const QueryOutwardOrderRequest& request, const QueryOutwardOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->QueryOutwardOrder(request), context);
-    };
+    using Req = const QueryOutwardOrderRequest&;
+    using Resp = QueryOutwardOrderResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "QueryOutwardOrder", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::QueryOutwardOrderOutcomeCallable CpdpClient::QueryOutwardOrderCallable(const QueryOutwardOrderRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<QueryOutwardOrderOutcome()>>(
-        [this, request]()
-        {
-            return this->QueryOutwardOrder(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<QueryOutwardOrderOutcome>>();
+    QueryOutwardOrderAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const QueryOutwardOrderRequest&,
+        QueryOutwardOrderOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::QueryPayerInfoOutcome CpdpClient::QueryPayerInfo(const QueryPayerInfoRequest &request)
@@ -7501,25 +8712,32 @@ CpdpClient::QueryPayerInfoOutcome CpdpClient::QueryPayerInfo(const QueryPayerInf
 
 void CpdpClient::QueryPayerInfoAsync(const QueryPayerInfoRequest& request, const QueryPayerInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->QueryPayerInfo(request), context);
-    };
+    using Req = const QueryPayerInfoRequest&;
+    using Resp = QueryPayerInfoResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "QueryPayerInfo", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::QueryPayerInfoOutcomeCallable CpdpClient::QueryPayerInfoCallable(const QueryPayerInfoRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<QueryPayerInfoOutcome()>>(
-        [this, request]()
-        {
-            return this->QueryPayerInfo(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<QueryPayerInfoOutcome>>();
+    QueryPayerInfoAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const QueryPayerInfoRequest&,
+        QueryPayerInfoOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::QueryReconciliationDocumentOutcome CpdpClient::QueryReconciliationDocument(const QueryReconciliationDocumentRequest &request)
@@ -7544,25 +8762,32 @@ CpdpClient::QueryReconciliationDocumentOutcome CpdpClient::QueryReconciliationDo
 
 void CpdpClient::QueryReconciliationDocumentAsync(const QueryReconciliationDocumentRequest& request, const QueryReconciliationDocumentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->QueryReconciliationDocument(request), context);
-    };
+    using Req = const QueryReconciliationDocumentRequest&;
+    using Resp = QueryReconciliationDocumentResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "QueryReconciliationDocument", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::QueryReconciliationDocumentOutcomeCallable CpdpClient::QueryReconciliationDocumentCallable(const QueryReconciliationDocumentRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<QueryReconciliationDocumentOutcome()>>(
-        [this, request]()
-        {
-            return this->QueryReconciliationDocument(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<QueryReconciliationDocumentOutcome>>();
+    QueryReconciliationDocumentAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const QueryReconciliationDocumentRequest&,
+        QueryReconciliationDocumentOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::QueryReconciliationFileApplyInfoOutcome CpdpClient::QueryReconciliationFileApplyInfo(const QueryReconciliationFileApplyInfoRequest &request)
@@ -7587,25 +8812,32 @@ CpdpClient::QueryReconciliationFileApplyInfoOutcome CpdpClient::QueryReconciliat
 
 void CpdpClient::QueryReconciliationFileApplyInfoAsync(const QueryReconciliationFileApplyInfoRequest& request, const QueryReconciliationFileApplyInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->QueryReconciliationFileApplyInfo(request), context);
-    };
+    using Req = const QueryReconciliationFileApplyInfoRequest&;
+    using Resp = QueryReconciliationFileApplyInfoResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "QueryReconciliationFileApplyInfo", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::QueryReconciliationFileApplyInfoOutcomeCallable CpdpClient::QueryReconciliationFileApplyInfoCallable(const QueryReconciliationFileApplyInfoRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<QueryReconciliationFileApplyInfoOutcome()>>(
-        [this, request]()
-        {
-            return this->QueryReconciliationFileApplyInfo(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<QueryReconciliationFileApplyInfoOutcome>>();
+    QueryReconciliationFileApplyInfoAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const QueryReconciliationFileApplyInfoRequest&,
+        QueryReconciliationFileApplyInfoOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::QueryRefundOutcome CpdpClient::QueryRefund(const QueryRefundRequest &request)
@@ -7630,25 +8862,32 @@ CpdpClient::QueryRefundOutcome CpdpClient::QueryRefund(const QueryRefundRequest 
 
 void CpdpClient::QueryRefundAsync(const QueryRefundRequest& request, const QueryRefundAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->QueryRefund(request), context);
-    };
+    using Req = const QueryRefundRequest&;
+    using Resp = QueryRefundResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "QueryRefund", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::QueryRefundOutcomeCallable CpdpClient::QueryRefundCallable(const QueryRefundRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<QueryRefundOutcome()>>(
-        [this, request]()
-        {
-            return this->QueryRefund(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<QueryRefundOutcome>>();
+    QueryRefundAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const QueryRefundRequest&,
+        QueryRefundOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::QueryShopOpenIdOutcome CpdpClient::QueryShopOpenId(const QueryShopOpenIdRequest &request)
@@ -7673,25 +8912,32 @@ CpdpClient::QueryShopOpenIdOutcome CpdpClient::QueryShopOpenId(const QueryShopOp
 
 void CpdpClient::QueryShopOpenIdAsync(const QueryShopOpenIdRequest& request, const QueryShopOpenIdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->QueryShopOpenId(request), context);
-    };
+    using Req = const QueryShopOpenIdRequest&;
+    using Resp = QueryShopOpenIdResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "QueryShopOpenId", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::QueryShopOpenIdOutcomeCallable CpdpClient::QueryShopOpenIdCallable(const QueryShopOpenIdRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<QueryShopOpenIdOutcome()>>(
-        [this, request]()
-        {
-            return this->QueryShopOpenId(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<QueryShopOpenIdOutcome>>();
+    QueryShopOpenIdAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const QueryShopOpenIdRequest&,
+        QueryShopOpenIdOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::QuerySinglePaymentResultOutcome CpdpClient::QuerySinglePaymentResult(const QuerySinglePaymentResultRequest &request)
@@ -7716,25 +8962,32 @@ CpdpClient::QuerySinglePaymentResultOutcome CpdpClient::QuerySinglePaymentResult
 
 void CpdpClient::QuerySinglePaymentResultAsync(const QuerySinglePaymentResultRequest& request, const QuerySinglePaymentResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->QuerySinglePaymentResult(request), context);
-    };
+    using Req = const QuerySinglePaymentResultRequest&;
+    using Resp = QuerySinglePaymentResultResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "QuerySinglePaymentResult", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::QuerySinglePaymentResultOutcomeCallable CpdpClient::QuerySinglePaymentResultCallable(const QuerySinglePaymentResultRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<QuerySinglePaymentResultOutcome()>>(
-        [this, request]()
-        {
-            return this->QuerySinglePaymentResult(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<QuerySinglePaymentResultOutcome>>();
+    QuerySinglePaymentResultAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const QuerySinglePaymentResultRequest&,
+        QuerySinglePaymentResultOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::QuerySingleTransactionStatusOutcome CpdpClient::QuerySingleTransactionStatus(const QuerySingleTransactionStatusRequest &request)
@@ -7759,25 +9012,32 @@ CpdpClient::QuerySingleTransactionStatusOutcome CpdpClient::QuerySingleTransacti
 
 void CpdpClient::QuerySingleTransactionStatusAsync(const QuerySingleTransactionStatusRequest& request, const QuerySingleTransactionStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->QuerySingleTransactionStatus(request), context);
-    };
+    using Req = const QuerySingleTransactionStatusRequest&;
+    using Resp = QuerySingleTransactionStatusResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "QuerySingleTransactionStatus", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::QuerySingleTransactionStatusOutcomeCallable CpdpClient::QuerySingleTransactionStatusCallable(const QuerySingleTransactionStatusRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<QuerySingleTransactionStatusOutcome()>>(
-        [this, request]()
-        {
-            return this->QuerySingleTransactionStatus(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<QuerySingleTransactionStatusOutcome>>();
+    QuerySingleTransactionStatusAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const QuerySingleTransactionStatusRequest&,
+        QuerySingleTransactionStatusOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::QuerySmallAmountTransferOutcome CpdpClient::QuerySmallAmountTransfer(const QuerySmallAmountTransferRequest &request)
@@ -7802,25 +9062,32 @@ CpdpClient::QuerySmallAmountTransferOutcome CpdpClient::QuerySmallAmountTransfer
 
 void CpdpClient::QuerySmallAmountTransferAsync(const QuerySmallAmountTransferRequest& request, const QuerySmallAmountTransferAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->QuerySmallAmountTransfer(request), context);
-    };
+    using Req = const QuerySmallAmountTransferRequest&;
+    using Resp = QuerySmallAmountTransferResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "QuerySmallAmountTransfer", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::QuerySmallAmountTransferOutcomeCallable CpdpClient::QuerySmallAmountTransferCallable(const QuerySmallAmountTransferRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<QuerySmallAmountTransferOutcome()>>(
-        [this, request]()
-        {
-            return this->QuerySmallAmountTransfer(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<QuerySmallAmountTransferOutcome>>();
+    QuerySmallAmountTransferAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const QuerySmallAmountTransferRequest&,
+        QuerySmallAmountTransferOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::QueryTradeOutcome CpdpClient::QueryTrade(const QueryTradeRequest &request)
@@ -7845,25 +9112,32 @@ CpdpClient::QueryTradeOutcome CpdpClient::QueryTrade(const QueryTradeRequest &re
 
 void CpdpClient::QueryTradeAsync(const QueryTradeRequest& request, const QueryTradeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->QueryTrade(request), context);
-    };
+    using Req = const QueryTradeRequest&;
+    using Resp = QueryTradeResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "QueryTrade", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::QueryTradeOutcomeCallable CpdpClient::QueryTradeCallable(const QueryTradeRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<QueryTradeOutcome()>>(
-        [this, request]()
-        {
-            return this->QueryTrade(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<QueryTradeOutcome>>();
+    QueryTradeAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const QueryTradeRequest&,
+        QueryTradeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::QueryTransferBatchOutcome CpdpClient::QueryTransferBatch(const QueryTransferBatchRequest &request)
@@ -7888,25 +9162,32 @@ CpdpClient::QueryTransferBatchOutcome CpdpClient::QueryTransferBatch(const Query
 
 void CpdpClient::QueryTransferBatchAsync(const QueryTransferBatchRequest& request, const QueryTransferBatchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->QueryTransferBatch(request), context);
-    };
+    using Req = const QueryTransferBatchRequest&;
+    using Resp = QueryTransferBatchResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "QueryTransferBatch", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::QueryTransferBatchOutcomeCallable CpdpClient::QueryTransferBatchCallable(const QueryTransferBatchRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<QueryTransferBatchOutcome()>>(
-        [this, request]()
-        {
-            return this->QueryTransferBatch(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<QueryTransferBatchOutcome>>();
+    QueryTransferBatchAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const QueryTransferBatchRequest&,
+        QueryTransferBatchOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::QueryTransferDetailOutcome CpdpClient::QueryTransferDetail(const QueryTransferDetailRequest &request)
@@ -7931,25 +9212,32 @@ CpdpClient::QueryTransferDetailOutcome CpdpClient::QueryTransferDetail(const Que
 
 void CpdpClient::QueryTransferDetailAsync(const QueryTransferDetailRequest& request, const QueryTransferDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->QueryTransferDetail(request), context);
-    };
+    using Req = const QueryTransferDetailRequest&;
+    using Resp = QueryTransferDetailResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "QueryTransferDetail", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::QueryTransferDetailOutcomeCallable CpdpClient::QueryTransferDetailCallable(const QueryTransferDetailRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<QueryTransferDetailOutcome()>>(
-        [this, request]()
-        {
-            return this->QueryTransferDetail(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<QueryTransferDetailOutcome>>();
+    QueryTransferDetailAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const QueryTransferDetailRequest&,
+        QueryTransferDetailOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::QueryTransferResultOutcome CpdpClient::QueryTransferResult(const QueryTransferResultRequest &request)
@@ -7974,25 +9262,32 @@ CpdpClient::QueryTransferResultOutcome CpdpClient::QueryTransferResult(const Que
 
 void CpdpClient::QueryTransferResultAsync(const QueryTransferResultRequest& request, const QueryTransferResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->QueryTransferResult(request), context);
-    };
+    using Req = const QueryTransferResultRequest&;
+    using Resp = QueryTransferResultResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "QueryTransferResult", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::QueryTransferResultOutcomeCallable CpdpClient::QueryTransferResultCallable(const QueryTransferResultRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<QueryTransferResultOutcome()>>(
-        [this, request]()
-        {
-            return this->QueryTransferResult(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<QueryTransferResultOutcome>>();
+    QueryTransferResultAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const QueryTransferResultRequest&,
+        QueryTransferResultOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::RechargeByThirdPayOutcome CpdpClient::RechargeByThirdPay(const RechargeByThirdPayRequest &request)
@@ -8017,25 +9312,32 @@ CpdpClient::RechargeByThirdPayOutcome CpdpClient::RechargeByThirdPay(const Recha
 
 void CpdpClient::RechargeByThirdPayAsync(const RechargeByThirdPayRequest& request, const RechargeByThirdPayAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->RechargeByThirdPay(request), context);
-    };
+    using Req = const RechargeByThirdPayRequest&;
+    using Resp = RechargeByThirdPayResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "RechargeByThirdPay", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::RechargeByThirdPayOutcomeCallable CpdpClient::RechargeByThirdPayCallable(const RechargeByThirdPayRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<RechargeByThirdPayOutcome()>>(
-        [this, request]()
-        {
-            return this->RechargeByThirdPay(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<RechargeByThirdPayOutcome>>();
+    RechargeByThirdPayAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const RechargeByThirdPayRequest&,
+        RechargeByThirdPayOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::RechargeMemberThirdPayOutcome CpdpClient::RechargeMemberThirdPay(const RechargeMemberThirdPayRequest &request)
@@ -8060,25 +9362,32 @@ CpdpClient::RechargeMemberThirdPayOutcome CpdpClient::RechargeMemberThirdPay(con
 
 void CpdpClient::RechargeMemberThirdPayAsync(const RechargeMemberThirdPayRequest& request, const RechargeMemberThirdPayAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->RechargeMemberThirdPay(request), context);
-    };
+    using Req = const RechargeMemberThirdPayRequest&;
+    using Resp = RechargeMemberThirdPayResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "RechargeMemberThirdPay", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::RechargeMemberThirdPayOutcomeCallable CpdpClient::RechargeMemberThirdPayCallable(const RechargeMemberThirdPayRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<RechargeMemberThirdPayOutcome()>>(
-        [this, request]()
-        {
-            return this->RechargeMemberThirdPay(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<RechargeMemberThirdPayOutcome>>();
+    RechargeMemberThirdPayAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const RechargeMemberThirdPayRequest&,
+        RechargeMemberThirdPayOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::RefundOutcome CpdpClient::Refund(const RefundRequest &request)
@@ -8103,25 +9412,32 @@ CpdpClient::RefundOutcome CpdpClient::Refund(const RefundRequest &request)
 
 void CpdpClient::RefundAsync(const RefundRequest& request, const RefundAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->Refund(request), context);
-    };
+    using Req = const RefundRequest&;
+    using Resp = RefundResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "Refund", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::RefundOutcomeCallable CpdpClient::RefundCallable(const RefundRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<RefundOutcome()>>(
-        [this, request]()
-        {
-            return this->Refund(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<RefundOutcome>>();
+    RefundAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const RefundRequest&,
+        RefundOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::RefundCloudOrderOutcome CpdpClient::RefundCloudOrder(const RefundCloudOrderRequest &request)
@@ -8146,25 +9462,32 @@ CpdpClient::RefundCloudOrderOutcome CpdpClient::RefundCloudOrder(const RefundClo
 
 void CpdpClient::RefundCloudOrderAsync(const RefundCloudOrderRequest& request, const RefundCloudOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->RefundCloudOrder(request), context);
-    };
+    using Req = const RefundCloudOrderRequest&;
+    using Resp = RefundCloudOrderResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "RefundCloudOrder", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::RefundCloudOrderOutcomeCallable CpdpClient::RefundCloudOrderCallable(const RefundCloudOrderRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<RefundCloudOrderOutcome()>>(
-        [this, request]()
-        {
-            return this->RefundCloudOrder(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<RefundCloudOrderOutcome>>();
+    RefundCloudOrderAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const RefundCloudOrderRequest&,
+        RefundCloudOrderOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::RefundMemberTransactionOutcome CpdpClient::RefundMemberTransaction(const RefundMemberTransactionRequest &request)
@@ -8189,25 +9512,32 @@ CpdpClient::RefundMemberTransactionOutcome CpdpClient::RefundMemberTransaction(c
 
 void CpdpClient::RefundMemberTransactionAsync(const RefundMemberTransactionRequest& request, const RefundMemberTransactionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->RefundMemberTransaction(request), context);
-    };
+    using Req = const RefundMemberTransactionRequest&;
+    using Resp = RefundMemberTransactionResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "RefundMemberTransaction", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::RefundMemberTransactionOutcomeCallable CpdpClient::RefundMemberTransactionCallable(const RefundMemberTransactionRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<RefundMemberTransactionOutcome()>>(
-        [this, request]()
-        {
-            return this->RefundMemberTransaction(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<RefundMemberTransactionOutcome>>();
+    RefundMemberTransactionAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const RefundMemberTransactionRequest&,
+        RefundMemberTransactionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::RefundOpenBankOrderOutcome CpdpClient::RefundOpenBankOrder(const RefundOpenBankOrderRequest &request)
@@ -8232,25 +9562,32 @@ CpdpClient::RefundOpenBankOrderOutcome CpdpClient::RefundOpenBankOrder(const Ref
 
 void CpdpClient::RefundOpenBankOrderAsync(const RefundOpenBankOrderRequest& request, const RefundOpenBankOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->RefundOpenBankOrder(request), context);
-    };
+    using Req = const RefundOpenBankOrderRequest&;
+    using Resp = RefundOpenBankOrderResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "RefundOpenBankOrder", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::RefundOpenBankOrderOutcomeCallable CpdpClient::RefundOpenBankOrderCallable(const RefundOpenBankOrderRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<RefundOpenBankOrderOutcome()>>(
-        [this, request]()
-        {
-            return this->RefundOpenBankOrder(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<RefundOpenBankOrderOutcome>>();
+    RefundOpenBankOrderAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const RefundOpenBankOrderRequest&,
+        RefundOpenBankOrderOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::RefundOrderOutcome CpdpClient::RefundOrder(const RefundOrderRequest &request)
@@ -8275,25 +9612,32 @@ CpdpClient::RefundOrderOutcome CpdpClient::RefundOrder(const RefundOrderRequest 
 
 void CpdpClient::RefundOrderAsync(const RefundOrderRequest& request, const RefundOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->RefundOrder(request), context);
-    };
+    using Req = const RefundOrderRequest&;
+    using Resp = RefundOrderResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "RefundOrder", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::RefundOrderOutcomeCallable CpdpClient::RefundOrderCallable(const RefundOrderRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<RefundOrderOutcome()>>(
-        [this, request]()
-        {
-            return this->RefundOrder(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<RefundOrderOutcome>>();
+    RefundOrderAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const RefundOrderRequest&,
+        RefundOrderOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::RefundTlinxOrderOutcome CpdpClient::RefundTlinxOrder(const RefundTlinxOrderRequest &request)
@@ -8318,25 +9662,32 @@ CpdpClient::RefundTlinxOrderOutcome CpdpClient::RefundTlinxOrder(const RefundTli
 
 void CpdpClient::RefundTlinxOrderAsync(const RefundTlinxOrderRequest& request, const RefundTlinxOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->RefundTlinxOrder(request), context);
-    };
+    using Req = const RefundTlinxOrderRequest&;
+    using Resp = RefundTlinxOrderResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "RefundTlinxOrder", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::RefundTlinxOrderOutcomeCallable CpdpClient::RefundTlinxOrderCallable(const RefundTlinxOrderRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<RefundTlinxOrderOutcome()>>(
-        [this, request]()
-        {
-            return this->RefundTlinxOrder(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<RefundTlinxOrderOutcome>>();
+    RefundTlinxOrderAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const RefundTlinxOrderRequest&,
+        RefundTlinxOrderOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::RegisterBehaviorOutcome CpdpClient::RegisterBehavior(const RegisterBehaviorRequest &request)
@@ -8361,25 +9712,32 @@ CpdpClient::RegisterBehaviorOutcome CpdpClient::RegisterBehavior(const RegisterB
 
 void CpdpClient::RegisterBehaviorAsync(const RegisterBehaviorRequest& request, const RegisterBehaviorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->RegisterBehavior(request), context);
-    };
+    using Req = const RegisterBehaviorRequest&;
+    using Resp = RegisterBehaviorResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "RegisterBehavior", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::RegisterBehaviorOutcomeCallable CpdpClient::RegisterBehaviorCallable(const RegisterBehaviorRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<RegisterBehaviorOutcome()>>(
-        [this, request]()
-        {
-            return this->RegisterBehavior(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<RegisterBehaviorOutcome>>();
+    RegisterBehaviorAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const RegisterBehaviorRequest&,
+        RegisterBehaviorOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::RegisterBillOutcome CpdpClient::RegisterBill(const RegisterBillRequest &request)
@@ -8404,25 +9762,32 @@ CpdpClient::RegisterBillOutcome CpdpClient::RegisterBill(const RegisterBillReque
 
 void CpdpClient::RegisterBillAsync(const RegisterBillRequest& request, const RegisterBillAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->RegisterBill(request), context);
-    };
+    using Req = const RegisterBillRequest&;
+    using Resp = RegisterBillResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "RegisterBill", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::RegisterBillOutcomeCallable CpdpClient::RegisterBillCallable(const RegisterBillRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<RegisterBillOutcome()>>(
-        [this, request]()
-        {
-            return this->RegisterBill(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<RegisterBillOutcome>>();
+    RegisterBillAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const RegisterBillRequest&,
+        RegisterBillOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::RegisterBillSupportWithdrawOutcome CpdpClient::RegisterBillSupportWithdraw(const RegisterBillSupportWithdrawRequest &request)
@@ -8447,25 +9812,32 @@ CpdpClient::RegisterBillSupportWithdrawOutcome CpdpClient::RegisterBillSupportWi
 
 void CpdpClient::RegisterBillSupportWithdrawAsync(const RegisterBillSupportWithdrawRequest& request, const RegisterBillSupportWithdrawAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->RegisterBillSupportWithdraw(request), context);
-    };
+    using Req = const RegisterBillSupportWithdrawRequest&;
+    using Resp = RegisterBillSupportWithdrawResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "RegisterBillSupportWithdraw", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::RegisterBillSupportWithdrawOutcomeCallable CpdpClient::RegisterBillSupportWithdrawCallable(const RegisterBillSupportWithdrawRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<RegisterBillSupportWithdrawOutcome()>>(
-        [this, request]()
-        {
-            return this->RegisterBillSupportWithdraw(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<RegisterBillSupportWithdrawOutcome>>();
+    RegisterBillSupportWithdrawAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const RegisterBillSupportWithdrawRequest&,
+        RegisterBillSupportWithdrawOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::ReviseMbrPropertyOutcome CpdpClient::ReviseMbrProperty(const ReviseMbrPropertyRequest &request)
@@ -8490,25 +9862,32 @@ CpdpClient::ReviseMbrPropertyOutcome CpdpClient::ReviseMbrProperty(const ReviseM
 
 void CpdpClient::ReviseMbrPropertyAsync(const ReviseMbrPropertyRequest& request, const ReviseMbrPropertyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ReviseMbrProperty(request), context);
-    };
+    using Req = const ReviseMbrPropertyRequest&;
+    using Resp = ReviseMbrPropertyResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ReviseMbrProperty", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::ReviseMbrPropertyOutcomeCallable CpdpClient::ReviseMbrPropertyCallable(const ReviseMbrPropertyRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ReviseMbrPropertyOutcome()>>(
-        [this, request]()
-        {
-            return this->ReviseMbrProperty(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ReviseMbrPropertyOutcome>>();
+    ReviseMbrPropertyAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const ReviseMbrPropertyRequest&,
+        ReviseMbrPropertyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::RevokeMemberRechargeThirdPayOutcome CpdpClient::RevokeMemberRechargeThirdPay(const RevokeMemberRechargeThirdPayRequest &request)
@@ -8533,25 +9912,32 @@ CpdpClient::RevokeMemberRechargeThirdPayOutcome CpdpClient::RevokeMemberRecharge
 
 void CpdpClient::RevokeMemberRechargeThirdPayAsync(const RevokeMemberRechargeThirdPayRequest& request, const RevokeMemberRechargeThirdPayAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->RevokeMemberRechargeThirdPay(request), context);
-    };
+    using Req = const RevokeMemberRechargeThirdPayRequest&;
+    using Resp = RevokeMemberRechargeThirdPayResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "RevokeMemberRechargeThirdPay", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::RevokeMemberRechargeThirdPayOutcomeCallable CpdpClient::RevokeMemberRechargeThirdPayCallable(const RevokeMemberRechargeThirdPayRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<RevokeMemberRechargeThirdPayOutcome()>>(
-        [this, request]()
-        {
-            return this->RevokeMemberRechargeThirdPay(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<RevokeMemberRechargeThirdPayOutcome>>();
+    RevokeMemberRechargeThirdPayAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const RevokeMemberRechargeThirdPayRequest&,
+        RevokeMemberRechargeThirdPayOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::RevokeRechargeByThirdPayOutcome CpdpClient::RevokeRechargeByThirdPay(const RevokeRechargeByThirdPayRequest &request)
@@ -8576,25 +9962,32 @@ CpdpClient::RevokeRechargeByThirdPayOutcome CpdpClient::RevokeRechargeByThirdPay
 
 void CpdpClient::RevokeRechargeByThirdPayAsync(const RevokeRechargeByThirdPayRequest& request, const RevokeRechargeByThirdPayAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->RevokeRechargeByThirdPay(request), context);
-    };
+    using Req = const RevokeRechargeByThirdPayRequest&;
+    using Resp = RevokeRechargeByThirdPayResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "RevokeRechargeByThirdPay", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::RevokeRechargeByThirdPayOutcomeCallable CpdpClient::RevokeRechargeByThirdPayCallable(const RevokeRechargeByThirdPayRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<RevokeRechargeByThirdPayOutcome()>>(
-        [this, request]()
-        {
-            return this->RevokeRechargeByThirdPay(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<RevokeRechargeByThirdPayOutcome>>();
+    RevokeRechargeByThirdPayAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const RevokeRechargeByThirdPayRequest&,
+        RevokeRechargeByThirdPayOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::SyncContractDataOutcome CpdpClient::SyncContractData(const SyncContractDataRequest &request)
@@ -8619,25 +10012,32 @@ CpdpClient::SyncContractDataOutcome CpdpClient::SyncContractData(const SyncContr
 
 void CpdpClient::SyncContractDataAsync(const SyncContractDataRequest& request, const SyncContractDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->SyncContractData(request), context);
-    };
+    using Req = const SyncContractDataRequest&;
+    using Resp = SyncContractDataResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "SyncContractData", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::SyncContractDataOutcomeCallable CpdpClient::SyncContractDataCallable(const SyncContractDataRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<SyncContractDataOutcome()>>(
-        [this, request]()
-        {
-            return this->SyncContractData(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<SyncContractDataOutcome>>();
+    SyncContractDataAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const SyncContractDataRequest&,
+        SyncContractDataOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::TerminateContractOutcome CpdpClient::TerminateContract(const TerminateContractRequest &request)
@@ -8662,25 +10062,32 @@ CpdpClient::TerminateContractOutcome CpdpClient::TerminateContract(const Termina
 
 void CpdpClient::TerminateContractAsync(const TerminateContractRequest& request, const TerminateContractAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->TerminateContract(request), context);
-    };
+    using Req = const TerminateContractRequest&;
+    using Resp = TerminateContractResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "TerminateContract", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::TerminateContractOutcomeCallable CpdpClient::TerminateContractCallable(const TerminateContractRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<TerminateContractOutcome()>>(
-        [this, request]()
-        {
-            return this->TerminateContract(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<TerminateContractOutcome>>();
+    TerminateContractAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const TerminateContractRequest&,
+        TerminateContractOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::TransferSinglePayOutcome CpdpClient::TransferSinglePay(const TransferSinglePayRequest &request)
@@ -8705,25 +10112,32 @@ CpdpClient::TransferSinglePayOutcome CpdpClient::TransferSinglePay(const Transfe
 
 void CpdpClient::TransferSinglePayAsync(const TransferSinglePayRequest& request, const TransferSinglePayAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->TransferSinglePay(request), context);
-    };
+    using Req = const TransferSinglePayRequest&;
+    using Resp = TransferSinglePayResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "TransferSinglePay", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::TransferSinglePayOutcomeCallable CpdpClient::TransferSinglePayCallable(const TransferSinglePayRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<TransferSinglePayOutcome()>>(
-        [this, request]()
-        {
-            return this->TransferSinglePay(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<TransferSinglePayOutcome>>();
+    TransferSinglePayAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const TransferSinglePayRequest&,
+        TransferSinglePayOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::UnBindAcctOutcome CpdpClient::UnBindAcct(const UnBindAcctRequest &request)
@@ -8748,25 +10162,32 @@ CpdpClient::UnBindAcctOutcome CpdpClient::UnBindAcct(const UnBindAcctRequest &re
 
 void CpdpClient::UnBindAcctAsync(const UnBindAcctRequest& request, const UnBindAcctAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UnBindAcct(request), context);
-    };
+    using Req = const UnBindAcctRequest&;
+    using Resp = UnBindAcctResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UnBindAcct", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::UnBindAcctOutcomeCallable CpdpClient::UnBindAcctCallable(const UnBindAcctRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UnBindAcctOutcome()>>(
-        [this, request]()
-        {
-            return this->UnBindAcct(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UnBindAcctOutcome>>();
+    UnBindAcctAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const UnBindAcctRequest&,
+        UnBindAcctOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::UnbindOpenBankExternalSubMerchantBankAccountOutcome CpdpClient::UnbindOpenBankExternalSubMerchantBankAccount(const UnbindOpenBankExternalSubMerchantBankAccountRequest &request)
@@ -8791,25 +10212,32 @@ CpdpClient::UnbindOpenBankExternalSubMerchantBankAccountOutcome CpdpClient::Unbi
 
 void CpdpClient::UnbindOpenBankExternalSubMerchantBankAccountAsync(const UnbindOpenBankExternalSubMerchantBankAccountRequest& request, const UnbindOpenBankExternalSubMerchantBankAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UnbindOpenBankExternalSubMerchantBankAccount(request), context);
-    };
+    using Req = const UnbindOpenBankExternalSubMerchantBankAccountRequest&;
+    using Resp = UnbindOpenBankExternalSubMerchantBankAccountResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UnbindOpenBankExternalSubMerchantBankAccount", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::UnbindOpenBankExternalSubMerchantBankAccountOutcomeCallable CpdpClient::UnbindOpenBankExternalSubMerchantBankAccountCallable(const UnbindOpenBankExternalSubMerchantBankAccountRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UnbindOpenBankExternalSubMerchantBankAccountOutcome()>>(
-        [this, request]()
-        {
-            return this->UnbindOpenBankExternalSubMerchantBankAccount(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UnbindOpenBankExternalSubMerchantBankAccountOutcome>>();
+    UnbindOpenBankExternalSubMerchantBankAccountAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const UnbindOpenBankExternalSubMerchantBankAccountRequest&,
+        UnbindOpenBankExternalSubMerchantBankAccountOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::UnbindRelateAcctOutcome CpdpClient::UnbindRelateAcct(const UnbindRelateAcctRequest &request)
@@ -8834,25 +10262,32 @@ CpdpClient::UnbindRelateAcctOutcome CpdpClient::UnbindRelateAcct(const UnbindRel
 
 void CpdpClient::UnbindRelateAcctAsync(const UnbindRelateAcctRequest& request, const UnbindRelateAcctAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UnbindRelateAcct(request), context);
-    };
+    using Req = const UnbindRelateAcctRequest&;
+    using Resp = UnbindRelateAcctResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UnbindRelateAcct", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::UnbindRelateAcctOutcomeCallable CpdpClient::UnbindRelateAcctCallable(const UnbindRelateAcctRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UnbindRelateAcctOutcome()>>(
-        [this, request]()
-        {
-            return this->UnbindRelateAcct(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UnbindRelateAcctOutcome>>();
+    UnbindRelateAcctAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const UnbindRelateAcctRequest&,
+        UnbindRelateAcctOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::UnifiedCloudOrderOutcome CpdpClient::UnifiedCloudOrder(const UnifiedCloudOrderRequest &request)
@@ -8877,25 +10312,32 @@ CpdpClient::UnifiedCloudOrderOutcome CpdpClient::UnifiedCloudOrder(const Unified
 
 void CpdpClient::UnifiedCloudOrderAsync(const UnifiedCloudOrderRequest& request, const UnifiedCloudOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UnifiedCloudOrder(request), context);
-    };
+    using Req = const UnifiedCloudOrderRequest&;
+    using Resp = UnifiedCloudOrderResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UnifiedCloudOrder", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::UnifiedCloudOrderOutcomeCallable CpdpClient::UnifiedCloudOrderCallable(const UnifiedCloudOrderRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UnifiedCloudOrderOutcome()>>(
-        [this, request]()
-        {
-            return this->UnifiedCloudOrder(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UnifiedCloudOrderOutcome>>();
+    UnifiedCloudOrderAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const UnifiedCloudOrderRequest&,
+        UnifiedCloudOrderOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::UnifiedOrderOutcome CpdpClient::UnifiedOrder(const UnifiedOrderRequest &request)
@@ -8920,25 +10362,32 @@ CpdpClient::UnifiedOrderOutcome CpdpClient::UnifiedOrder(const UnifiedOrderReque
 
 void CpdpClient::UnifiedOrderAsync(const UnifiedOrderRequest& request, const UnifiedOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UnifiedOrder(request), context);
-    };
+    using Req = const UnifiedOrderRequest&;
+    using Resp = UnifiedOrderResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UnifiedOrder", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::UnifiedOrderOutcomeCallable CpdpClient::UnifiedOrderCallable(const UnifiedOrderRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UnifiedOrderOutcome()>>(
-        [this, request]()
-        {
-            return this->UnifiedOrder(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UnifiedOrderOutcome>>();
+    UnifiedOrderAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const UnifiedOrderRequest&,
+        UnifiedOrderOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::UnifiedTlinxOrderOutcome CpdpClient::UnifiedTlinxOrder(const UnifiedTlinxOrderRequest &request)
@@ -8963,25 +10412,32 @@ CpdpClient::UnifiedTlinxOrderOutcome CpdpClient::UnifiedTlinxOrder(const Unified
 
 void CpdpClient::UnifiedTlinxOrderAsync(const UnifiedTlinxOrderRequest& request, const UnifiedTlinxOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UnifiedTlinxOrder(request), context);
-    };
+    using Req = const UnifiedTlinxOrderRequest&;
+    using Resp = UnifiedTlinxOrderResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UnifiedTlinxOrder", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::UnifiedTlinxOrderOutcomeCallable CpdpClient::UnifiedTlinxOrderCallable(const UnifiedTlinxOrderRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UnifiedTlinxOrderOutcome()>>(
-        [this, request]()
-        {
-            return this->UnifiedTlinxOrder(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UnifiedTlinxOrderOutcome>>();
+    UnifiedTlinxOrderAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const UnifiedTlinxOrderRequest&,
+        UnifiedTlinxOrderOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::UploadExternalAnchorInfoOutcome CpdpClient::UploadExternalAnchorInfo(const UploadExternalAnchorInfoRequest &request)
@@ -9006,25 +10462,32 @@ CpdpClient::UploadExternalAnchorInfoOutcome CpdpClient::UploadExternalAnchorInfo
 
 void CpdpClient::UploadExternalAnchorInfoAsync(const UploadExternalAnchorInfoRequest& request, const UploadExternalAnchorInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UploadExternalAnchorInfo(request), context);
-    };
+    using Req = const UploadExternalAnchorInfoRequest&;
+    using Resp = UploadExternalAnchorInfoResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UploadExternalAnchorInfo", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::UploadExternalAnchorInfoOutcomeCallable CpdpClient::UploadExternalAnchorInfoCallable(const UploadExternalAnchorInfoRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UploadExternalAnchorInfoOutcome()>>(
-        [this, request]()
-        {
-            return this->UploadExternalAnchorInfo(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UploadExternalAnchorInfoOutcome>>();
+    UploadExternalAnchorInfoAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const UploadExternalAnchorInfoRequest&,
+        UploadExternalAnchorInfoOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::UploadFileOutcome CpdpClient::UploadFile(const UploadFileRequest &request)
@@ -9049,25 +10512,32 @@ CpdpClient::UploadFileOutcome CpdpClient::UploadFile(const UploadFileRequest &re
 
 void CpdpClient::UploadFileAsync(const UploadFileRequest& request, const UploadFileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UploadFile(request), context);
-    };
+    using Req = const UploadFileRequest&;
+    using Resp = UploadFileResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UploadFile", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::UploadFileOutcomeCallable CpdpClient::UploadFileCallable(const UploadFileRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UploadFileOutcome()>>(
-        [this, request]()
-        {
-            return this->UploadFile(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UploadFileOutcome>>();
+    UploadFileAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const UploadFileRequest&,
+        UploadFileOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::UploadOpenBankSubMerchantCredentialOutcome CpdpClient::UploadOpenBankSubMerchantCredential(const UploadOpenBankSubMerchantCredentialRequest &request)
@@ -9092,25 +10562,32 @@ CpdpClient::UploadOpenBankSubMerchantCredentialOutcome CpdpClient::UploadOpenBan
 
 void CpdpClient::UploadOpenBankSubMerchantCredentialAsync(const UploadOpenBankSubMerchantCredentialRequest& request, const UploadOpenBankSubMerchantCredentialAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UploadOpenBankSubMerchantCredential(request), context);
-    };
+    using Req = const UploadOpenBankSubMerchantCredentialRequest&;
+    using Resp = UploadOpenBankSubMerchantCredentialResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UploadOpenBankSubMerchantCredential", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::UploadOpenBankSubMerchantCredentialOutcomeCallable CpdpClient::UploadOpenBankSubMerchantCredentialCallable(const UploadOpenBankSubMerchantCredentialRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UploadOpenBankSubMerchantCredentialOutcome()>>(
-        [this, request]()
-        {
-            return this->UploadOpenBankSubMerchantCredential(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UploadOpenBankSubMerchantCredentialOutcome>>();
+    UploadOpenBankSubMerchantCredentialAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const UploadOpenBankSubMerchantCredentialRequest&,
+        UploadOpenBankSubMerchantCredentialOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::UploadOrgFileOutcome CpdpClient::UploadOrgFile(const UploadOrgFileRequest &request)
@@ -9135,25 +10612,32 @@ CpdpClient::UploadOrgFileOutcome CpdpClient::UploadOrgFile(const UploadOrgFileRe
 
 void CpdpClient::UploadOrgFileAsync(const UploadOrgFileRequest& request, const UploadOrgFileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UploadOrgFile(request), context);
-    };
+    using Req = const UploadOrgFileRequest&;
+    using Resp = UploadOrgFileResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UploadOrgFile", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::UploadOrgFileOutcomeCallable CpdpClient::UploadOrgFileCallable(const UploadOrgFileRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UploadOrgFileOutcome()>>(
-        [this, request]()
-        {
-            return this->UploadOrgFile(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UploadOrgFileOutcome>>();
+    UploadOrgFileAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const UploadOrgFileRequest&,
+        UploadOrgFileOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::UploadTaxListOutcome CpdpClient::UploadTaxList(const UploadTaxListRequest &request)
@@ -9178,25 +10662,32 @@ CpdpClient::UploadTaxListOutcome CpdpClient::UploadTaxList(const UploadTaxListRe
 
 void CpdpClient::UploadTaxListAsync(const UploadTaxListRequest& request, const UploadTaxListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UploadTaxList(request), context);
-    };
+    using Req = const UploadTaxListRequest&;
+    using Resp = UploadTaxListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UploadTaxList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::UploadTaxListOutcomeCallable CpdpClient::UploadTaxListCallable(const UploadTaxListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UploadTaxListOutcome()>>(
-        [this, request]()
-        {
-            return this->UploadTaxList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UploadTaxListOutcome>>();
+    UploadTaxListAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const UploadTaxListRequest&,
+        UploadTaxListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::UploadTaxPaymentOutcome CpdpClient::UploadTaxPayment(const UploadTaxPaymentRequest &request)
@@ -9221,25 +10712,32 @@ CpdpClient::UploadTaxPaymentOutcome CpdpClient::UploadTaxPayment(const UploadTax
 
 void CpdpClient::UploadTaxPaymentAsync(const UploadTaxPaymentRequest& request, const UploadTaxPaymentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UploadTaxPayment(request), context);
-    };
+    using Req = const UploadTaxPaymentRequest&;
+    using Resp = UploadTaxPaymentResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UploadTaxPayment", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::UploadTaxPaymentOutcomeCallable CpdpClient::UploadTaxPaymentCallable(const UploadTaxPaymentRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UploadTaxPaymentOutcome()>>(
-        [this, request]()
-        {
-            return this->UploadTaxPayment(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UploadTaxPaymentOutcome>>();
+    UploadTaxPaymentAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const UploadTaxPaymentRequest&,
+        UploadTaxPaymentOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::VerifyOpenBankAccountOutcome CpdpClient::VerifyOpenBankAccount(const VerifyOpenBankAccountRequest &request)
@@ -9264,25 +10762,32 @@ CpdpClient::VerifyOpenBankAccountOutcome CpdpClient::VerifyOpenBankAccount(const
 
 void CpdpClient::VerifyOpenBankAccountAsync(const VerifyOpenBankAccountRequest& request, const VerifyOpenBankAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->VerifyOpenBankAccount(request), context);
-    };
+    using Req = const VerifyOpenBankAccountRequest&;
+    using Resp = VerifyOpenBankAccountResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "VerifyOpenBankAccount", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::VerifyOpenBankAccountOutcomeCallable CpdpClient::VerifyOpenBankAccountCallable(const VerifyOpenBankAccountRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<VerifyOpenBankAccountOutcome()>>(
-        [this, request]()
-        {
-            return this->VerifyOpenBankAccount(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<VerifyOpenBankAccountOutcome>>();
+    VerifyOpenBankAccountAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const VerifyOpenBankAccountRequest&,
+        VerifyOpenBankAccountOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::ViewContractOutcome CpdpClient::ViewContract(const ViewContractRequest &request)
@@ -9307,25 +10812,32 @@ CpdpClient::ViewContractOutcome CpdpClient::ViewContract(const ViewContractReque
 
 void CpdpClient::ViewContractAsync(const ViewContractRequest& request, const ViewContractAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ViewContract(request), context);
-    };
+    using Req = const ViewContractRequest&;
+    using Resp = ViewContractResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ViewContract", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::ViewContractOutcomeCallable CpdpClient::ViewContractCallable(const ViewContractRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ViewContractOutcome()>>(
-        [this, request]()
-        {
-            return this->ViewContract(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ViewContractOutcome>>();
+    ViewContractAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const ViewContractRequest&,
+        ViewContractOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::ViewMerchantOutcome CpdpClient::ViewMerchant(const ViewMerchantRequest &request)
@@ -9350,25 +10862,32 @@ CpdpClient::ViewMerchantOutcome CpdpClient::ViewMerchant(const ViewMerchantReque
 
 void CpdpClient::ViewMerchantAsync(const ViewMerchantRequest& request, const ViewMerchantAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ViewMerchant(request), context);
-    };
+    using Req = const ViewMerchantRequest&;
+    using Resp = ViewMerchantResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ViewMerchant", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::ViewMerchantOutcomeCallable CpdpClient::ViewMerchantCallable(const ViewMerchantRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ViewMerchantOutcome()>>(
-        [this, request]()
-        {
-            return this->ViewMerchant(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ViewMerchantOutcome>>();
+    ViewMerchantAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const ViewMerchantRequest&,
+        ViewMerchantOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::ViewShopOutcome CpdpClient::ViewShop(const ViewShopRequest &request)
@@ -9393,25 +10912,32 @@ CpdpClient::ViewShopOutcome CpdpClient::ViewShop(const ViewShopRequest &request)
 
 void CpdpClient::ViewShopAsync(const ViewShopRequest& request, const ViewShopAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ViewShop(request), context);
-    };
+    using Req = const ViewShopRequest&;
+    using Resp = ViewShopResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ViewShop", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::ViewShopOutcomeCallable CpdpClient::ViewShopCallable(const ViewShopRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ViewShopOutcome()>>(
-        [this, request]()
-        {
-            return this->ViewShop(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ViewShopOutcome>>();
+    ViewShopAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const ViewShopRequest&,
+        ViewShopOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CpdpClient::WithdrawCashMembershipOutcome CpdpClient::WithdrawCashMembership(const WithdrawCashMembershipRequest &request)
@@ -9436,24 +10962,31 @@ CpdpClient::WithdrawCashMembershipOutcome CpdpClient::WithdrawCashMembership(con
 
 void CpdpClient::WithdrawCashMembershipAsync(const WithdrawCashMembershipRequest& request, const WithdrawCashMembershipAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->WithdrawCashMembership(request), context);
-    };
+    using Req = const WithdrawCashMembershipRequest&;
+    using Resp = WithdrawCashMembershipResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "WithdrawCashMembership", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CpdpClient::WithdrawCashMembershipOutcomeCallable CpdpClient::WithdrawCashMembershipCallable(const WithdrawCashMembershipRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<WithdrawCashMembershipOutcome()>>(
-        [this, request]()
-        {
-            return this->WithdrawCashMembership(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<WithdrawCashMembershipOutcome>>();
+    WithdrawCashMembershipAsync(
+    request,
+    [prom](
+        const CpdpClient*,
+        const WithdrawCashMembershipRequest&,
+        WithdrawCashMembershipOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 

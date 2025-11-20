@@ -62,25 +62,32 @@ MariadbClient::ActivateHourDBInstanceOutcome MariadbClient::ActivateHourDBInstan
 
 void MariadbClient::ActivateHourDBInstanceAsync(const ActivateHourDBInstanceRequest& request, const ActivateHourDBInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ActivateHourDBInstance(request), context);
-    };
+    using Req = const ActivateHourDBInstanceRequest&;
+    using Resp = ActivateHourDBInstanceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ActivateHourDBInstance", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MariadbClient::ActivateHourDBInstanceOutcomeCallable MariadbClient::ActivateHourDBInstanceCallable(const ActivateHourDBInstanceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ActivateHourDBInstanceOutcome()>>(
-        [this, request]()
-        {
-            return this->ActivateHourDBInstance(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ActivateHourDBInstanceOutcome>>();
+    ActivateHourDBInstanceAsync(
+    request,
+    [prom](
+        const MariadbClient*,
+        const ActivateHourDBInstanceRequest&,
+        ActivateHourDBInstanceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MariadbClient::AssociateSecurityGroupsOutcome MariadbClient::AssociateSecurityGroups(const AssociateSecurityGroupsRequest &request)
@@ -105,25 +112,32 @@ MariadbClient::AssociateSecurityGroupsOutcome MariadbClient::AssociateSecurityGr
 
 void MariadbClient::AssociateSecurityGroupsAsync(const AssociateSecurityGroupsRequest& request, const AssociateSecurityGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->AssociateSecurityGroups(request), context);
-    };
+    using Req = const AssociateSecurityGroupsRequest&;
+    using Resp = AssociateSecurityGroupsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "AssociateSecurityGroups", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MariadbClient::AssociateSecurityGroupsOutcomeCallable MariadbClient::AssociateSecurityGroupsCallable(const AssociateSecurityGroupsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<AssociateSecurityGroupsOutcome()>>(
-        [this, request]()
-        {
-            return this->AssociateSecurityGroups(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<AssociateSecurityGroupsOutcome>>();
+    AssociateSecurityGroupsAsync(
+    request,
+    [prom](
+        const MariadbClient*,
+        const AssociateSecurityGroupsRequest&,
+        AssociateSecurityGroupsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MariadbClient::CancelDcnJobOutcome MariadbClient::CancelDcnJob(const CancelDcnJobRequest &request)
@@ -148,25 +162,32 @@ MariadbClient::CancelDcnJobOutcome MariadbClient::CancelDcnJob(const CancelDcnJo
 
 void MariadbClient::CancelDcnJobAsync(const CancelDcnJobRequest& request, const CancelDcnJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CancelDcnJob(request), context);
-    };
+    using Req = const CancelDcnJobRequest&;
+    using Resp = CancelDcnJobResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CancelDcnJob", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MariadbClient::CancelDcnJobOutcomeCallable MariadbClient::CancelDcnJobCallable(const CancelDcnJobRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CancelDcnJobOutcome()>>(
-        [this, request]()
-        {
-            return this->CancelDcnJob(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CancelDcnJobOutcome>>();
+    CancelDcnJobAsync(
+    request,
+    [prom](
+        const MariadbClient*,
+        const CancelDcnJobRequest&,
+        CancelDcnJobOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MariadbClient::CloneAccountOutcome MariadbClient::CloneAccount(const CloneAccountRequest &request)
@@ -191,25 +212,32 @@ MariadbClient::CloneAccountOutcome MariadbClient::CloneAccount(const CloneAccoun
 
 void MariadbClient::CloneAccountAsync(const CloneAccountRequest& request, const CloneAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CloneAccount(request), context);
-    };
+    using Req = const CloneAccountRequest&;
+    using Resp = CloneAccountResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CloneAccount", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MariadbClient::CloneAccountOutcomeCallable MariadbClient::CloneAccountCallable(const CloneAccountRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CloneAccountOutcome()>>(
-        [this, request]()
-        {
-            return this->CloneAccount(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CloneAccountOutcome>>();
+    CloneAccountAsync(
+    request,
+    [prom](
+        const MariadbClient*,
+        const CloneAccountRequest&,
+        CloneAccountOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MariadbClient::CloseDBExtranetAccessOutcome MariadbClient::CloseDBExtranetAccess(const CloseDBExtranetAccessRequest &request)
@@ -234,25 +262,32 @@ MariadbClient::CloseDBExtranetAccessOutcome MariadbClient::CloseDBExtranetAccess
 
 void MariadbClient::CloseDBExtranetAccessAsync(const CloseDBExtranetAccessRequest& request, const CloseDBExtranetAccessAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CloseDBExtranetAccess(request), context);
-    };
+    using Req = const CloseDBExtranetAccessRequest&;
+    using Resp = CloseDBExtranetAccessResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CloseDBExtranetAccess", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MariadbClient::CloseDBExtranetAccessOutcomeCallable MariadbClient::CloseDBExtranetAccessCallable(const CloseDBExtranetAccessRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CloseDBExtranetAccessOutcome()>>(
-        [this, request]()
-        {
-            return this->CloseDBExtranetAccess(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CloseDBExtranetAccessOutcome>>();
+    CloseDBExtranetAccessAsync(
+    request,
+    [prom](
+        const MariadbClient*,
+        const CloseDBExtranetAccessRequest&,
+        CloseDBExtranetAccessOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MariadbClient::CopyAccountPrivilegesOutcome MariadbClient::CopyAccountPrivileges(const CopyAccountPrivilegesRequest &request)
@@ -277,25 +312,32 @@ MariadbClient::CopyAccountPrivilegesOutcome MariadbClient::CopyAccountPrivileges
 
 void MariadbClient::CopyAccountPrivilegesAsync(const CopyAccountPrivilegesRequest& request, const CopyAccountPrivilegesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CopyAccountPrivileges(request), context);
-    };
+    using Req = const CopyAccountPrivilegesRequest&;
+    using Resp = CopyAccountPrivilegesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CopyAccountPrivileges", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MariadbClient::CopyAccountPrivilegesOutcomeCallable MariadbClient::CopyAccountPrivilegesCallable(const CopyAccountPrivilegesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CopyAccountPrivilegesOutcome()>>(
-        [this, request]()
-        {
-            return this->CopyAccountPrivileges(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CopyAccountPrivilegesOutcome>>();
+    CopyAccountPrivilegesAsync(
+    request,
+    [prom](
+        const MariadbClient*,
+        const CopyAccountPrivilegesRequest&,
+        CopyAccountPrivilegesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MariadbClient::CreateAccountOutcome MariadbClient::CreateAccount(const CreateAccountRequest &request)
@@ -320,25 +362,32 @@ MariadbClient::CreateAccountOutcome MariadbClient::CreateAccount(const CreateAcc
 
 void MariadbClient::CreateAccountAsync(const CreateAccountRequest& request, const CreateAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateAccount(request), context);
-    };
+    using Req = const CreateAccountRequest&;
+    using Resp = CreateAccountResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateAccount", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MariadbClient::CreateAccountOutcomeCallable MariadbClient::CreateAccountCallable(const CreateAccountRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateAccountOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateAccount(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateAccountOutcome>>();
+    CreateAccountAsync(
+    request,
+    [prom](
+        const MariadbClient*,
+        const CreateAccountRequest&,
+        CreateAccountOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MariadbClient::CreateDBInstanceOutcome MariadbClient::CreateDBInstance(const CreateDBInstanceRequest &request)
@@ -363,25 +412,32 @@ MariadbClient::CreateDBInstanceOutcome MariadbClient::CreateDBInstance(const Cre
 
 void MariadbClient::CreateDBInstanceAsync(const CreateDBInstanceRequest& request, const CreateDBInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateDBInstance(request), context);
-    };
+    using Req = const CreateDBInstanceRequest&;
+    using Resp = CreateDBInstanceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateDBInstance", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MariadbClient::CreateDBInstanceOutcomeCallable MariadbClient::CreateDBInstanceCallable(const CreateDBInstanceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateDBInstanceOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateDBInstance(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateDBInstanceOutcome>>();
+    CreateDBInstanceAsync(
+    request,
+    [prom](
+        const MariadbClient*,
+        const CreateDBInstanceRequest&,
+        CreateDBInstanceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MariadbClient::CreateDedicatedClusterDBInstanceOutcome MariadbClient::CreateDedicatedClusterDBInstance(const CreateDedicatedClusterDBInstanceRequest &request)
@@ -406,25 +462,32 @@ MariadbClient::CreateDedicatedClusterDBInstanceOutcome MariadbClient::CreateDedi
 
 void MariadbClient::CreateDedicatedClusterDBInstanceAsync(const CreateDedicatedClusterDBInstanceRequest& request, const CreateDedicatedClusterDBInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateDedicatedClusterDBInstance(request), context);
-    };
+    using Req = const CreateDedicatedClusterDBInstanceRequest&;
+    using Resp = CreateDedicatedClusterDBInstanceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateDedicatedClusterDBInstance", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MariadbClient::CreateDedicatedClusterDBInstanceOutcomeCallable MariadbClient::CreateDedicatedClusterDBInstanceCallable(const CreateDedicatedClusterDBInstanceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateDedicatedClusterDBInstanceOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateDedicatedClusterDBInstance(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateDedicatedClusterDBInstanceOutcome>>();
+    CreateDedicatedClusterDBInstanceAsync(
+    request,
+    [prom](
+        const MariadbClient*,
+        const CreateDedicatedClusterDBInstanceRequest&,
+        CreateDedicatedClusterDBInstanceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MariadbClient::CreateHourDBInstanceOutcome MariadbClient::CreateHourDBInstance(const CreateHourDBInstanceRequest &request)
@@ -449,25 +512,32 @@ MariadbClient::CreateHourDBInstanceOutcome MariadbClient::CreateHourDBInstance(c
 
 void MariadbClient::CreateHourDBInstanceAsync(const CreateHourDBInstanceRequest& request, const CreateHourDBInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateHourDBInstance(request), context);
-    };
+    using Req = const CreateHourDBInstanceRequest&;
+    using Resp = CreateHourDBInstanceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateHourDBInstance", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MariadbClient::CreateHourDBInstanceOutcomeCallable MariadbClient::CreateHourDBInstanceCallable(const CreateHourDBInstanceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateHourDBInstanceOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateHourDBInstance(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateHourDBInstanceOutcome>>();
+    CreateHourDBInstanceAsync(
+    request,
+    [prom](
+        const MariadbClient*,
+        const CreateHourDBInstanceRequest&,
+        CreateHourDBInstanceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MariadbClient::CreateTmpInstancesOutcome MariadbClient::CreateTmpInstances(const CreateTmpInstancesRequest &request)
@@ -492,25 +562,32 @@ MariadbClient::CreateTmpInstancesOutcome MariadbClient::CreateTmpInstances(const
 
 void MariadbClient::CreateTmpInstancesAsync(const CreateTmpInstancesRequest& request, const CreateTmpInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateTmpInstances(request), context);
-    };
+    using Req = const CreateTmpInstancesRequest&;
+    using Resp = CreateTmpInstancesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateTmpInstances", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MariadbClient::CreateTmpInstancesOutcomeCallable MariadbClient::CreateTmpInstancesCallable(const CreateTmpInstancesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateTmpInstancesOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateTmpInstances(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateTmpInstancesOutcome>>();
+    CreateTmpInstancesAsync(
+    request,
+    [prom](
+        const MariadbClient*,
+        const CreateTmpInstancesRequest&,
+        CreateTmpInstancesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MariadbClient::DeleteAccountOutcome MariadbClient::DeleteAccount(const DeleteAccountRequest &request)
@@ -535,25 +612,32 @@ MariadbClient::DeleteAccountOutcome MariadbClient::DeleteAccount(const DeleteAcc
 
 void MariadbClient::DeleteAccountAsync(const DeleteAccountRequest& request, const DeleteAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteAccount(request), context);
-    };
+    using Req = const DeleteAccountRequest&;
+    using Resp = DeleteAccountResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteAccount", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MariadbClient::DeleteAccountOutcomeCallable MariadbClient::DeleteAccountCallable(const DeleteAccountRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteAccountOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteAccount(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteAccountOutcome>>();
+    DeleteAccountAsync(
+    request,
+    [prom](
+        const MariadbClient*,
+        const DeleteAccountRequest&,
+        DeleteAccountOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MariadbClient::DescribeAccountPrivilegesOutcome MariadbClient::DescribeAccountPrivileges(const DescribeAccountPrivilegesRequest &request)
@@ -578,25 +662,32 @@ MariadbClient::DescribeAccountPrivilegesOutcome MariadbClient::DescribeAccountPr
 
 void MariadbClient::DescribeAccountPrivilegesAsync(const DescribeAccountPrivilegesRequest& request, const DescribeAccountPrivilegesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAccountPrivileges(request), context);
-    };
+    using Req = const DescribeAccountPrivilegesRequest&;
+    using Resp = DescribeAccountPrivilegesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAccountPrivileges", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MariadbClient::DescribeAccountPrivilegesOutcomeCallable MariadbClient::DescribeAccountPrivilegesCallable(const DescribeAccountPrivilegesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAccountPrivilegesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAccountPrivileges(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAccountPrivilegesOutcome>>();
+    DescribeAccountPrivilegesAsync(
+    request,
+    [prom](
+        const MariadbClient*,
+        const DescribeAccountPrivilegesRequest&,
+        DescribeAccountPrivilegesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MariadbClient::DescribeAccountsOutcome MariadbClient::DescribeAccounts(const DescribeAccountsRequest &request)
@@ -621,25 +712,32 @@ MariadbClient::DescribeAccountsOutcome MariadbClient::DescribeAccounts(const Des
 
 void MariadbClient::DescribeAccountsAsync(const DescribeAccountsRequest& request, const DescribeAccountsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAccounts(request), context);
-    };
+    using Req = const DescribeAccountsRequest&;
+    using Resp = DescribeAccountsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAccounts", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MariadbClient::DescribeAccountsOutcomeCallable MariadbClient::DescribeAccountsCallable(const DescribeAccountsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAccountsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAccounts(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAccountsOutcome>>();
+    DescribeAccountsAsync(
+    request,
+    [prom](
+        const MariadbClient*,
+        const DescribeAccountsRequest&,
+        DescribeAccountsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MariadbClient::DescribeBackupConfigsOutcome MariadbClient::DescribeBackupConfigs(const DescribeBackupConfigsRequest &request)
@@ -664,25 +762,32 @@ MariadbClient::DescribeBackupConfigsOutcome MariadbClient::DescribeBackupConfigs
 
 void MariadbClient::DescribeBackupConfigsAsync(const DescribeBackupConfigsRequest& request, const DescribeBackupConfigsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeBackupConfigs(request), context);
-    };
+    using Req = const DescribeBackupConfigsRequest&;
+    using Resp = DescribeBackupConfigsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeBackupConfigs", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MariadbClient::DescribeBackupConfigsOutcomeCallable MariadbClient::DescribeBackupConfigsCallable(const DescribeBackupConfigsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeBackupConfigsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeBackupConfigs(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeBackupConfigsOutcome>>();
+    DescribeBackupConfigsAsync(
+    request,
+    [prom](
+        const MariadbClient*,
+        const DescribeBackupConfigsRequest&,
+        DescribeBackupConfigsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MariadbClient::DescribeBackupFilesOutcome MariadbClient::DescribeBackupFiles(const DescribeBackupFilesRequest &request)
@@ -707,25 +812,32 @@ MariadbClient::DescribeBackupFilesOutcome MariadbClient::DescribeBackupFiles(con
 
 void MariadbClient::DescribeBackupFilesAsync(const DescribeBackupFilesRequest& request, const DescribeBackupFilesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeBackupFiles(request), context);
-    };
+    using Req = const DescribeBackupFilesRequest&;
+    using Resp = DescribeBackupFilesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeBackupFiles", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MariadbClient::DescribeBackupFilesOutcomeCallable MariadbClient::DescribeBackupFilesCallable(const DescribeBackupFilesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeBackupFilesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeBackupFiles(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeBackupFilesOutcome>>();
+    DescribeBackupFilesAsync(
+    request,
+    [prom](
+        const MariadbClient*,
+        const DescribeBackupFilesRequest&,
+        DescribeBackupFilesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MariadbClient::DescribeBackupTimeOutcome MariadbClient::DescribeBackupTime(const DescribeBackupTimeRequest &request)
@@ -750,25 +862,32 @@ MariadbClient::DescribeBackupTimeOutcome MariadbClient::DescribeBackupTime(const
 
 void MariadbClient::DescribeBackupTimeAsync(const DescribeBackupTimeRequest& request, const DescribeBackupTimeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeBackupTime(request), context);
-    };
+    using Req = const DescribeBackupTimeRequest&;
+    using Resp = DescribeBackupTimeResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeBackupTime", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MariadbClient::DescribeBackupTimeOutcomeCallable MariadbClient::DescribeBackupTimeCallable(const DescribeBackupTimeRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeBackupTimeOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeBackupTime(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeBackupTimeOutcome>>();
+    DescribeBackupTimeAsync(
+    request,
+    [prom](
+        const MariadbClient*,
+        const DescribeBackupTimeRequest&,
+        DescribeBackupTimeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MariadbClient::DescribeBinlogTimeOutcome MariadbClient::DescribeBinlogTime(const DescribeBinlogTimeRequest &request)
@@ -793,25 +912,32 @@ MariadbClient::DescribeBinlogTimeOutcome MariadbClient::DescribeBinlogTime(const
 
 void MariadbClient::DescribeBinlogTimeAsync(const DescribeBinlogTimeRequest& request, const DescribeBinlogTimeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeBinlogTime(request), context);
-    };
+    using Req = const DescribeBinlogTimeRequest&;
+    using Resp = DescribeBinlogTimeResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeBinlogTime", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MariadbClient::DescribeBinlogTimeOutcomeCallable MariadbClient::DescribeBinlogTimeCallable(const DescribeBinlogTimeRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeBinlogTimeOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeBinlogTime(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeBinlogTimeOutcome>>();
+    DescribeBinlogTimeAsync(
+    request,
+    [prom](
+        const MariadbClient*,
+        const DescribeBinlogTimeRequest&,
+        DescribeBinlogTimeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MariadbClient::DescribeDBEncryptAttributesOutcome MariadbClient::DescribeDBEncryptAttributes(const DescribeDBEncryptAttributesRequest &request)
@@ -836,25 +962,32 @@ MariadbClient::DescribeDBEncryptAttributesOutcome MariadbClient::DescribeDBEncry
 
 void MariadbClient::DescribeDBEncryptAttributesAsync(const DescribeDBEncryptAttributesRequest& request, const DescribeDBEncryptAttributesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDBEncryptAttributes(request), context);
-    };
+    using Req = const DescribeDBEncryptAttributesRequest&;
+    using Resp = DescribeDBEncryptAttributesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeDBEncryptAttributes", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MariadbClient::DescribeDBEncryptAttributesOutcomeCallable MariadbClient::DescribeDBEncryptAttributesCallable(const DescribeDBEncryptAttributesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeDBEncryptAttributesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDBEncryptAttributes(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeDBEncryptAttributesOutcome>>();
+    DescribeDBEncryptAttributesAsync(
+    request,
+    [prom](
+        const MariadbClient*,
+        const DescribeDBEncryptAttributesRequest&,
+        DescribeDBEncryptAttributesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MariadbClient::DescribeDBInstanceDetailOutcome MariadbClient::DescribeDBInstanceDetail(const DescribeDBInstanceDetailRequest &request)
@@ -879,25 +1012,32 @@ MariadbClient::DescribeDBInstanceDetailOutcome MariadbClient::DescribeDBInstance
 
 void MariadbClient::DescribeDBInstanceDetailAsync(const DescribeDBInstanceDetailRequest& request, const DescribeDBInstanceDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDBInstanceDetail(request), context);
-    };
+    using Req = const DescribeDBInstanceDetailRequest&;
+    using Resp = DescribeDBInstanceDetailResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeDBInstanceDetail", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MariadbClient::DescribeDBInstanceDetailOutcomeCallable MariadbClient::DescribeDBInstanceDetailCallable(const DescribeDBInstanceDetailRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeDBInstanceDetailOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDBInstanceDetail(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeDBInstanceDetailOutcome>>();
+    DescribeDBInstanceDetailAsync(
+    request,
+    [prom](
+        const MariadbClient*,
+        const DescribeDBInstanceDetailRequest&,
+        DescribeDBInstanceDetailOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MariadbClient::DescribeDBInstanceSpecsOutcome MariadbClient::DescribeDBInstanceSpecs(const DescribeDBInstanceSpecsRequest &request)
@@ -922,25 +1062,32 @@ MariadbClient::DescribeDBInstanceSpecsOutcome MariadbClient::DescribeDBInstanceS
 
 void MariadbClient::DescribeDBInstanceSpecsAsync(const DescribeDBInstanceSpecsRequest& request, const DescribeDBInstanceSpecsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDBInstanceSpecs(request), context);
-    };
+    using Req = const DescribeDBInstanceSpecsRequest&;
+    using Resp = DescribeDBInstanceSpecsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeDBInstanceSpecs", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MariadbClient::DescribeDBInstanceSpecsOutcomeCallable MariadbClient::DescribeDBInstanceSpecsCallable(const DescribeDBInstanceSpecsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeDBInstanceSpecsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDBInstanceSpecs(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeDBInstanceSpecsOutcome>>();
+    DescribeDBInstanceSpecsAsync(
+    request,
+    [prom](
+        const MariadbClient*,
+        const DescribeDBInstanceSpecsRequest&,
+        DescribeDBInstanceSpecsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MariadbClient::DescribeDBInstancesOutcome MariadbClient::DescribeDBInstances(const DescribeDBInstancesRequest &request)
@@ -965,25 +1112,32 @@ MariadbClient::DescribeDBInstancesOutcome MariadbClient::DescribeDBInstances(con
 
 void MariadbClient::DescribeDBInstancesAsync(const DescribeDBInstancesRequest& request, const DescribeDBInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDBInstances(request), context);
-    };
+    using Req = const DescribeDBInstancesRequest&;
+    using Resp = DescribeDBInstancesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeDBInstances", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MariadbClient::DescribeDBInstancesOutcomeCallable MariadbClient::DescribeDBInstancesCallable(const DescribeDBInstancesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeDBInstancesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDBInstances(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeDBInstancesOutcome>>();
+    DescribeDBInstancesAsync(
+    request,
+    [prom](
+        const MariadbClient*,
+        const DescribeDBInstancesRequest&,
+        DescribeDBInstancesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MariadbClient::DescribeDBLogFilesOutcome MariadbClient::DescribeDBLogFiles(const DescribeDBLogFilesRequest &request)
@@ -1008,25 +1162,32 @@ MariadbClient::DescribeDBLogFilesOutcome MariadbClient::DescribeDBLogFiles(const
 
 void MariadbClient::DescribeDBLogFilesAsync(const DescribeDBLogFilesRequest& request, const DescribeDBLogFilesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDBLogFiles(request), context);
-    };
+    using Req = const DescribeDBLogFilesRequest&;
+    using Resp = DescribeDBLogFilesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeDBLogFiles", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MariadbClient::DescribeDBLogFilesOutcomeCallable MariadbClient::DescribeDBLogFilesCallable(const DescribeDBLogFilesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeDBLogFilesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDBLogFiles(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeDBLogFilesOutcome>>();
+    DescribeDBLogFilesAsync(
+    request,
+    [prom](
+        const MariadbClient*,
+        const DescribeDBLogFilesRequest&,
+        DescribeDBLogFilesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MariadbClient::DescribeDBParametersOutcome MariadbClient::DescribeDBParameters(const DescribeDBParametersRequest &request)
@@ -1051,25 +1212,32 @@ MariadbClient::DescribeDBParametersOutcome MariadbClient::DescribeDBParameters(c
 
 void MariadbClient::DescribeDBParametersAsync(const DescribeDBParametersRequest& request, const DescribeDBParametersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDBParameters(request), context);
-    };
+    using Req = const DescribeDBParametersRequest&;
+    using Resp = DescribeDBParametersResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeDBParameters", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MariadbClient::DescribeDBParametersOutcomeCallable MariadbClient::DescribeDBParametersCallable(const DescribeDBParametersRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeDBParametersOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDBParameters(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeDBParametersOutcome>>();
+    DescribeDBParametersAsync(
+    request,
+    [prom](
+        const MariadbClient*,
+        const DescribeDBParametersRequest&,
+        DescribeDBParametersOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MariadbClient::DescribeDBSecurityGroupsOutcome MariadbClient::DescribeDBSecurityGroups(const DescribeDBSecurityGroupsRequest &request)
@@ -1094,25 +1262,32 @@ MariadbClient::DescribeDBSecurityGroupsOutcome MariadbClient::DescribeDBSecurity
 
 void MariadbClient::DescribeDBSecurityGroupsAsync(const DescribeDBSecurityGroupsRequest& request, const DescribeDBSecurityGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDBSecurityGroups(request), context);
-    };
+    using Req = const DescribeDBSecurityGroupsRequest&;
+    using Resp = DescribeDBSecurityGroupsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeDBSecurityGroups", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MariadbClient::DescribeDBSecurityGroupsOutcomeCallable MariadbClient::DescribeDBSecurityGroupsCallable(const DescribeDBSecurityGroupsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeDBSecurityGroupsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDBSecurityGroups(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeDBSecurityGroupsOutcome>>();
+    DescribeDBSecurityGroupsAsync(
+    request,
+    [prom](
+        const MariadbClient*,
+        const DescribeDBSecurityGroupsRequest&,
+        DescribeDBSecurityGroupsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MariadbClient::DescribeDBSlowLogsOutcome MariadbClient::DescribeDBSlowLogs(const DescribeDBSlowLogsRequest &request)
@@ -1137,25 +1312,32 @@ MariadbClient::DescribeDBSlowLogsOutcome MariadbClient::DescribeDBSlowLogs(const
 
 void MariadbClient::DescribeDBSlowLogsAsync(const DescribeDBSlowLogsRequest& request, const DescribeDBSlowLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDBSlowLogs(request), context);
-    };
+    using Req = const DescribeDBSlowLogsRequest&;
+    using Resp = DescribeDBSlowLogsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeDBSlowLogs", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MariadbClient::DescribeDBSlowLogsOutcomeCallable MariadbClient::DescribeDBSlowLogsCallable(const DescribeDBSlowLogsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeDBSlowLogsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDBSlowLogs(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeDBSlowLogsOutcome>>();
+    DescribeDBSlowLogsAsync(
+    request,
+    [prom](
+        const MariadbClient*,
+        const DescribeDBSlowLogsRequest&,
+        DescribeDBSlowLogsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MariadbClient::DescribeDBSyncModeOutcome MariadbClient::DescribeDBSyncMode(const DescribeDBSyncModeRequest &request)
@@ -1180,25 +1362,32 @@ MariadbClient::DescribeDBSyncModeOutcome MariadbClient::DescribeDBSyncMode(const
 
 void MariadbClient::DescribeDBSyncModeAsync(const DescribeDBSyncModeRequest& request, const DescribeDBSyncModeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDBSyncMode(request), context);
-    };
+    using Req = const DescribeDBSyncModeRequest&;
+    using Resp = DescribeDBSyncModeResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeDBSyncMode", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MariadbClient::DescribeDBSyncModeOutcomeCallable MariadbClient::DescribeDBSyncModeCallable(const DescribeDBSyncModeRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeDBSyncModeOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDBSyncMode(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeDBSyncModeOutcome>>();
+    DescribeDBSyncModeAsync(
+    request,
+    [prom](
+        const MariadbClient*,
+        const DescribeDBSyncModeRequest&,
+        DescribeDBSyncModeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MariadbClient::DescribeDBTmpInstancesOutcome MariadbClient::DescribeDBTmpInstances(const DescribeDBTmpInstancesRequest &request)
@@ -1223,25 +1412,32 @@ MariadbClient::DescribeDBTmpInstancesOutcome MariadbClient::DescribeDBTmpInstanc
 
 void MariadbClient::DescribeDBTmpInstancesAsync(const DescribeDBTmpInstancesRequest& request, const DescribeDBTmpInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDBTmpInstances(request), context);
-    };
+    using Req = const DescribeDBTmpInstancesRequest&;
+    using Resp = DescribeDBTmpInstancesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeDBTmpInstances", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MariadbClient::DescribeDBTmpInstancesOutcomeCallable MariadbClient::DescribeDBTmpInstancesCallable(const DescribeDBTmpInstancesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeDBTmpInstancesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDBTmpInstances(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeDBTmpInstancesOutcome>>();
+    DescribeDBTmpInstancesAsync(
+    request,
+    [prom](
+        const MariadbClient*,
+        const DescribeDBTmpInstancesRequest&,
+        DescribeDBTmpInstancesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MariadbClient::DescribeDatabaseObjectsOutcome MariadbClient::DescribeDatabaseObjects(const DescribeDatabaseObjectsRequest &request)
@@ -1266,25 +1462,32 @@ MariadbClient::DescribeDatabaseObjectsOutcome MariadbClient::DescribeDatabaseObj
 
 void MariadbClient::DescribeDatabaseObjectsAsync(const DescribeDatabaseObjectsRequest& request, const DescribeDatabaseObjectsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDatabaseObjects(request), context);
-    };
+    using Req = const DescribeDatabaseObjectsRequest&;
+    using Resp = DescribeDatabaseObjectsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeDatabaseObjects", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MariadbClient::DescribeDatabaseObjectsOutcomeCallable MariadbClient::DescribeDatabaseObjectsCallable(const DescribeDatabaseObjectsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeDatabaseObjectsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDatabaseObjects(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeDatabaseObjectsOutcome>>();
+    DescribeDatabaseObjectsAsync(
+    request,
+    [prom](
+        const MariadbClient*,
+        const DescribeDatabaseObjectsRequest&,
+        DescribeDatabaseObjectsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MariadbClient::DescribeDatabaseTableOutcome MariadbClient::DescribeDatabaseTable(const DescribeDatabaseTableRequest &request)
@@ -1309,25 +1512,32 @@ MariadbClient::DescribeDatabaseTableOutcome MariadbClient::DescribeDatabaseTable
 
 void MariadbClient::DescribeDatabaseTableAsync(const DescribeDatabaseTableRequest& request, const DescribeDatabaseTableAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDatabaseTable(request), context);
-    };
+    using Req = const DescribeDatabaseTableRequest&;
+    using Resp = DescribeDatabaseTableResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeDatabaseTable", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MariadbClient::DescribeDatabaseTableOutcomeCallable MariadbClient::DescribeDatabaseTableCallable(const DescribeDatabaseTableRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeDatabaseTableOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDatabaseTable(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeDatabaseTableOutcome>>();
+    DescribeDatabaseTableAsync(
+    request,
+    [prom](
+        const MariadbClient*,
+        const DescribeDatabaseTableRequest&,
+        DescribeDatabaseTableOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MariadbClient::DescribeDatabasesOutcome MariadbClient::DescribeDatabases(const DescribeDatabasesRequest &request)
@@ -1352,25 +1562,32 @@ MariadbClient::DescribeDatabasesOutcome MariadbClient::DescribeDatabases(const D
 
 void MariadbClient::DescribeDatabasesAsync(const DescribeDatabasesRequest& request, const DescribeDatabasesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDatabases(request), context);
-    };
+    using Req = const DescribeDatabasesRequest&;
+    using Resp = DescribeDatabasesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeDatabases", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MariadbClient::DescribeDatabasesOutcomeCallable MariadbClient::DescribeDatabasesCallable(const DescribeDatabasesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeDatabasesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDatabases(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeDatabasesOutcome>>();
+    DescribeDatabasesAsync(
+    request,
+    [prom](
+        const MariadbClient*,
+        const DescribeDatabasesRequest&,
+        DescribeDatabasesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MariadbClient::DescribeDcnDetailOutcome MariadbClient::DescribeDcnDetail(const DescribeDcnDetailRequest &request)
@@ -1395,25 +1612,32 @@ MariadbClient::DescribeDcnDetailOutcome MariadbClient::DescribeDcnDetail(const D
 
 void MariadbClient::DescribeDcnDetailAsync(const DescribeDcnDetailRequest& request, const DescribeDcnDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDcnDetail(request), context);
-    };
+    using Req = const DescribeDcnDetailRequest&;
+    using Resp = DescribeDcnDetailResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeDcnDetail", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MariadbClient::DescribeDcnDetailOutcomeCallable MariadbClient::DescribeDcnDetailCallable(const DescribeDcnDetailRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeDcnDetailOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDcnDetail(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeDcnDetailOutcome>>();
+    DescribeDcnDetailAsync(
+    request,
+    [prom](
+        const MariadbClient*,
+        const DescribeDcnDetailRequest&,
+        DescribeDcnDetailOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MariadbClient::DescribeFileDownloadUrlOutcome MariadbClient::DescribeFileDownloadUrl(const DescribeFileDownloadUrlRequest &request)
@@ -1438,25 +1662,32 @@ MariadbClient::DescribeFileDownloadUrlOutcome MariadbClient::DescribeFileDownloa
 
 void MariadbClient::DescribeFileDownloadUrlAsync(const DescribeFileDownloadUrlRequest& request, const DescribeFileDownloadUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeFileDownloadUrl(request), context);
-    };
+    using Req = const DescribeFileDownloadUrlRequest&;
+    using Resp = DescribeFileDownloadUrlResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeFileDownloadUrl", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MariadbClient::DescribeFileDownloadUrlOutcomeCallable MariadbClient::DescribeFileDownloadUrlCallable(const DescribeFileDownloadUrlRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeFileDownloadUrlOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeFileDownloadUrl(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeFileDownloadUrlOutcome>>();
+    DescribeFileDownloadUrlAsync(
+    request,
+    [prom](
+        const MariadbClient*,
+        const DescribeFileDownloadUrlRequest&,
+        DescribeFileDownloadUrlOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MariadbClient::DescribeFlowOutcome MariadbClient::DescribeFlow(const DescribeFlowRequest &request)
@@ -1481,25 +1712,32 @@ MariadbClient::DescribeFlowOutcome MariadbClient::DescribeFlow(const DescribeFlo
 
 void MariadbClient::DescribeFlowAsync(const DescribeFlowRequest& request, const DescribeFlowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeFlow(request), context);
-    };
+    using Req = const DescribeFlowRequest&;
+    using Resp = DescribeFlowResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeFlow", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MariadbClient::DescribeFlowOutcomeCallable MariadbClient::DescribeFlowCallable(const DescribeFlowRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeFlowOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeFlow(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeFlowOutcome>>();
+    DescribeFlowAsync(
+    request,
+    [prom](
+        const MariadbClient*,
+        const DescribeFlowRequest&,
+        DescribeFlowOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MariadbClient::DescribeInstanceNodeInfoOutcome MariadbClient::DescribeInstanceNodeInfo(const DescribeInstanceNodeInfoRequest &request)
@@ -1524,25 +1762,32 @@ MariadbClient::DescribeInstanceNodeInfoOutcome MariadbClient::DescribeInstanceNo
 
 void MariadbClient::DescribeInstanceNodeInfoAsync(const DescribeInstanceNodeInfoRequest& request, const DescribeInstanceNodeInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeInstanceNodeInfo(request), context);
-    };
+    using Req = const DescribeInstanceNodeInfoRequest&;
+    using Resp = DescribeInstanceNodeInfoResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeInstanceNodeInfo", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MariadbClient::DescribeInstanceNodeInfoOutcomeCallable MariadbClient::DescribeInstanceNodeInfoCallable(const DescribeInstanceNodeInfoRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeInstanceNodeInfoOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeInstanceNodeInfo(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeInstanceNodeInfoOutcome>>();
+    DescribeInstanceNodeInfoAsync(
+    request,
+    [prom](
+        const MariadbClient*,
+        const DescribeInstanceNodeInfoRequest&,
+        DescribeInstanceNodeInfoOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MariadbClient::DescribeInstanceSSLAttributesOutcome MariadbClient::DescribeInstanceSSLAttributes(const DescribeInstanceSSLAttributesRequest &request)
@@ -1567,25 +1812,32 @@ MariadbClient::DescribeInstanceSSLAttributesOutcome MariadbClient::DescribeInsta
 
 void MariadbClient::DescribeInstanceSSLAttributesAsync(const DescribeInstanceSSLAttributesRequest& request, const DescribeInstanceSSLAttributesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeInstanceSSLAttributes(request), context);
-    };
+    using Req = const DescribeInstanceSSLAttributesRequest&;
+    using Resp = DescribeInstanceSSLAttributesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeInstanceSSLAttributes", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MariadbClient::DescribeInstanceSSLAttributesOutcomeCallable MariadbClient::DescribeInstanceSSLAttributesCallable(const DescribeInstanceSSLAttributesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeInstanceSSLAttributesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeInstanceSSLAttributes(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeInstanceSSLAttributesOutcome>>();
+    DescribeInstanceSSLAttributesAsync(
+    request,
+    [prom](
+        const MariadbClient*,
+        const DescribeInstanceSSLAttributesRequest&,
+        DescribeInstanceSSLAttributesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MariadbClient::DescribeLogFileRetentionPeriodOutcome MariadbClient::DescribeLogFileRetentionPeriod(const DescribeLogFileRetentionPeriodRequest &request)
@@ -1610,25 +1862,32 @@ MariadbClient::DescribeLogFileRetentionPeriodOutcome MariadbClient::DescribeLogF
 
 void MariadbClient::DescribeLogFileRetentionPeriodAsync(const DescribeLogFileRetentionPeriodRequest& request, const DescribeLogFileRetentionPeriodAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeLogFileRetentionPeriod(request), context);
-    };
+    using Req = const DescribeLogFileRetentionPeriodRequest&;
+    using Resp = DescribeLogFileRetentionPeriodResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeLogFileRetentionPeriod", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MariadbClient::DescribeLogFileRetentionPeriodOutcomeCallable MariadbClient::DescribeLogFileRetentionPeriodCallable(const DescribeLogFileRetentionPeriodRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeLogFileRetentionPeriodOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeLogFileRetentionPeriod(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeLogFileRetentionPeriodOutcome>>();
+    DescribeLogFileRetentionPeriodAsync(
+    request,
+    [prom](
+        const MariadbClient*,
+        const DescribeLogFileRetentionPeriodRequest&,
+        DescribeLogFileRetentionPeriodOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MariadbClient::DescribeOrdersOutcome MariadbClient::DescribeOrders(const DescribeOrdersRequest &request)
@@ -1653,25 +1912,32 @@ MariadbClient::DescribeOrdersOutcome MariadbClient::DescribeOrders(const Describ
 
 void MariadbClient::DescribeOrdersAsync(const DescribeOrdersRequest& request, const DescribeOrdersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeOrders(request), context);
-    };
+    using Req = const DescribeOrdersRequest&;
+    using Resp = DescribeOrdersResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeOrders", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MariadbClient::DescribeOrdersOutcomeCallable MariadbClient::DescribeOrdersCallable(const DescribeOrdersRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeOrdersOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeOrders(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeOrdersOutcome>>();
+    DescribeOrdersAsync(
+    request,
+    [prom](
+        const MariadbClient*,
+        const DescribeOrdersRequest&,
+        DescribeOrdersOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MariadbClient::DescribePriceOutcome MariadbClient::DescribePrice(const DescribePriceRequest &request)
@@ -1696,25 +1962,32 @@ MariadbClient::DescribePriceOutcome MariadbClient::DescribePrice(const DescribeP
 
 void MariadbClient::DescribePriceAsync(const DescribePriceRequest& request, const DescribePriceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribePrice(request), context);
-    };
+    using Req = const DescribePriceRequest&;
+    using Resp = DescribePriceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribePrice", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MariadbClient::DescribePriceOutcomeCallable MariadbClient::DescribePriceCallable(const DescribePriceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribePriceOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribePrice(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribePriceOutcome>>();
+    DescribePriceAsync(
+    request,
+    [prom](
+        const MariadbClient*,
+        const DescribePriceRequest&,
+        DescribePriceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MariadbClient::DescribeProcessListOutcome MariadbClient::DescribeProcessList(const DescribeProcessListRequest &request)
@@ -1739,25 +2012,32 @@ MariadbClient::DescribeProcessListOutcome MariadbClient::DescribeProcessList(con
 
 void MariadbClient::DescribeProcessListAsync(const DescribeProcessListRequest& request, const DescribeProcessListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeProcessList(request), context);
-    };
+    using Req = const DescribeProcessListRequest&;
+    using Resp = DescribeProcessListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeProcessList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MariadbClient::DescribeProcessListOutcomeCallable MariadbClient::DescribeProcessListCallable(const DescribeProcessListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeProcessListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeProcessList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeProcessListOutcome>>();
+    DescribeProcessListAsync(
+    request,
+    [prom](
+        const MariadbClient*,
+        const DescribeProcessListRequest&,
+        DescribeProcessListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MariadbClient::DescribeProjectSecurityGroupsOutcome MariadbClient::DescribeProjectSecurityGroups(const DescribeProjectSecurityGroupsRequest &request)
@@ -1782,25 +2062,32 @@ MariadbClient::DescribeProjectSecurityGroupsOutcome MariadbClient::DescribeProje
 
 void MariadbClient::DescribeProjectSecurityGroupsAsync(const DescribeProjectSecurityGroupsRequest& request, const DescribeProjectSecurityGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeProjectSecurityGroups(request), context);
-    };
+    using Req = const DescribeProjectSecurityGroupsRequest&;
+    using Resp = DescribeProjectSecurityGroupsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeProjectSecurityGroups", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MariadbClient::DescribeProjectSecurityGroupsOutcomeCallable MariadbClient::DescribeProjectSecurityGroupsCallable(const DescribeProjectSecurityGroupsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeProjectSecurityGroupsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeProjectSecurityGroups(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeProjectSecurityGroupsOutcome>>();
+    DescribeProjectSecurityGroupsAsync(
+    request,
+    [prom](
+        const MariadbClient*,
+        const DescribeProjectSecurityGroupsRequest&,
+        DescribeProjectSecurityGroupsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MariadbClient::DescribeRenewalPriceOutcome MariadbClient::DescribeRenewalPrice(const DescribeRenewalPriceRequest &request)
@@ -1825,25 +2112,32 @@ MariadbClient::DescribeRenewalPriceOutcome MariadbClient::DescribeRenewalPrice(c
 
 void MariadbClient::DescribeRenewalPriceAsync(const DescribeRenewalPriceRequest& request, const DescribeRenewalPriceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeRenewalPrice(request), context);
-    };
+    using Req = const DescribeRenewalPriceRequest&;
+    using Resp = DescribeRenewalPriceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeRenewalPrice", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MariadbClient::DescribeRenewalPriceOutcomeCallable MariadbClient::DescribeRenewalPriceCallable(const DescribeRenewalPriceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeRenewalPriceOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeRenewalPrice(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeRenewalPriceOutcome>>();
+    DescribeRenewalPriceAsync(
+    request,
+    [prom](
+        const MariadbClient*,
+        const DescribeRenewalPriceRequest&,
+        DescribeRenewalPriceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MariadbClient::DescribeSaleInfoOutcome MariadbClient::DescribeSaleInfo(const DescribeSaleInfoRequest &request)
@@ -1868,25 +2162,32 @@ MariadbClient::DescribeSaleInfoOutcome MariadbClient::DescribeSaleInfo(const Des
 
 void MariadbClient::DescribeSaleInfoAsync(const DescribeSaleInfoRequest& request, const DescribeSaleInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeSaleInfo(request), context);
-    };
+    using Req = const DescribeSaleInfoRequest&;
+    using Resp = DescribeSaleInfoResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeSaleInfo", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MariadbClient::DescribeSaleInfoOutcomeCallable MariadbClient::DescribeSaleInfoCallable(const DescribeSaleInfoRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeSaleInfoOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeSaleInfo(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeSaleInfoOutcome>>();
+    DescribeSaleInfoAsync(
+    request,
+    [prom](
+        const MariadbClient*,
+        const DescribeSaleInfoRequest&,
+        DescribeSaleInfoOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MariadbClient::DescribeUpgradePriceOutcome MariadbClient::DescribeUpgradePrice(const DescribeUpgradePriceRequest &request)
@@ -1911,25 +2212,32 @@ MariadbClient::DescribeUpgradePriceOutcome MariadbClient::DescribeUpgradePrice(c
 
 void MariadbClient::DescribeUpgradePriceAsync(const DescribeUpgradePriceRequest& request, const DescribeUpgradePriceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeUpgradePrice(request), context);
-    };
+    using Req = const DescribeUpgradePriceRequest&;
+    using Resp = DescribeUpgradePriceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeUpgradePrice", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MariadbClient::DescribeUpgradePriceOutcomeCallable MariadbClient::DescribeUpgradePriceCallable(const DescribeUpgradePriceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeUpgradePriceOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeUpgradePrice(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeUpgradePriceOutcome>>();
+    DescribeUpgradePriceAsync(
+    request,
+    [prom](
+        const MariadbClient*,
+        const DescribeUpgradePriceRequest&,
+        DescribeUpgradePriceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MariadbClient::DestroyDBInstanceOutcome MariadbClient::DestroyDBInstance(const DestroyDBInstanceRequest &request)
@@ -1954,25 +2262,32 @@ MariadbClient::DestroyDBInstanceOutcome MariadbClient::DestroyDBInstance(const D
 
 void MariadbClient::DestroyDBInstanceAsync(const DestroyDBInstanceRequest& request, const DestroyDBInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DestroyDBInstance(request), context);
-    };
+    using Req = const DestroyDBInstanceRequest&;
+    using Resp = DestroyDBInstanceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DestroyDBInstance", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MariadbClient::DestroyDBInstanceOutcomeCallable MariadbClient::DestroyDBInstanceCallable(const DestroyDBInstanceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DestroyDBInstanceOutcome()>>(
-        [this, request]()
-        {
-            return this->DestroyDBInstance(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DestroyDBInstanceOutcome>>();
+    DestroyDBInstanceAsync(
+    request,
+    [prom](
+        const MariadbClient*,
+        const DestroyDBInstanceRequest&,
+        DestroyDBInstanceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MariadbClient::DestroyHourDBInstanceOutcome MariadbClient::DestroyHourDBInstance(const DestroyHourDBInstanceRequest &request)
@@ -1997,25 +2312,32 @@ MariadbClient::DestroyHourDBInstanceOutcome MariadbClient::DestroyHourDBInstance
 
 void MariadbClient::DestroyHourDBInstanceAsync(const DestroyHourDBInstanceRequest& request, const DestroyHourDBInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DestroyHourDBInstance(request), context);
-    };
+    using Req = const DestroyHourDBInstanceRequest&;
+    using Resp = DestroyHourDBInstanceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DestroyHourDBInstance", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MariadbClient::DestroyHourDBInstanceOutcomeCallable MariadbClient::DestroyHourDBInstanceCallable(const DestroyHourDBInstanceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DestroyHourDBInstanceOutcome()>>(
-        [this, request]()
-        {
-            return this->DestroyHourDBInstance(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DestroyHourDBInstanceOutcome>>();
+    DestroyHourDBInstanceAsync(
+    request,
+    [prom](
+        const MariadbClient*,
+        const DestroyHourDBInstanceRequest&,
+        DestroyHourDBInstanceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MariadbClient::DisassociateSecurityGroupsOutcome MariadbClient::DisassociateSecurityGroups(const DisassociateSecurityGroupsRequest &request)
@@ -2040,25 +2362,32 @@ MariadbClient::DisassociateSecurityGroupsOutcome MariadbClient::DisassociateSecu
 
 void MariadbClient::DisassociateSecurityGroupsAsync(const DisassociateSecurityGroupsRequest& request, const DisassociateSecurityGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DisassociateSecurityGroups(request), context);
-    };
+    using Req = const DisassociateSecurityGroupsRequest&;
+    using Resp = DisassociateSecurityGroupsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DisassociateSecurityGroups", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MariadbClient::DisassociateSecurityGroupsOutcomeCallable MariadbClient::DisassociateSecurityGroupsCallable(const DisassociateSecurityGroupsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DisassociateSecurityGroupsOutcome()>>(
-        [this, request]()
-        {
-            return this->DisassociateSecurityGroups(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DisassociateSecurityGroupsOutcome>>();
+    DisassociateSecurityGroupsAsync(
+    request,
+    [prom](
+        const MariadbClient*,
+        const DisassociateSecurityGroupsRequest&,
+        DisassociateSecurityGroupsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MariadbClient::FlushBinlogOutcome MariadbClient::FlushBinlog(const FlushBinlogRequest &request)
@@ -2083,25 +2412,32 @@ MariadbClient::FlushBinlogOutcome MariadbClient::FlushBinlog(const FlushBinlogRe
 
 void MariadbClient::FlushBinlogAsync(const FlushBinlogRequest& request, const FlushBinlogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->FlushBinlog(request), context);
-    };
+    using Req = const FlushBinlogRequest&;
+    using Resp = FlushBinlogResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "FlushBinlog", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MariadbClient::FlushBinlogOutcomeCallable MariadbClient::FlushBinlogCallable(const FlushBinlogRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<FlushBinlogOutcome()>>(
-        [this, request]()
-        {
-            return this->FlushBinlog(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<FlushBinlogOutcome>>();
+    FlushBinlogAsync(
+    request,
+    [prom](
+        const MariadbClient*,
+        const FlushBinlogRequest&,
+        FlushBinlogOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MariadbClient::GrantAccountPrivilegesOutcome MariadbClient::GrantAccountPrivileges(const GrantAccountPrivilegesRequest &request)
@@ -2126,25 +2462,32 @@ MariadbClient::GrantAccountPrivilegesOutcome MariadbClient::GrantAccountPrivileg
 
 void MariadbClient::GrantAccountPrivilegesAsync(const GrantAccountPrivilegesRequest& request, const GrantAccountPrivilegesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->GrantAccountPrivileges(request), context);
-    };
+    using Req = const GrantAccountPrivilegesRequest&;
+    using Resp = GrantAccountPrivilegesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "GrantAccountPrivileges", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MariadbClient::GrantAccountPrivilegesOutcomeCallable MariadbClient::GrantAccountPrivilegesCallable(const GrantAccountPrivilegesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<GrantAccountPrivilegesOutcome()>>(
-        [this, request]()
-        {
-            return this->GrantAccountPrivileges(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<GrantAccountPrivilegesOutcome>>();
+    GrantAccountPrivilegesAsync(
+    request,
+    [prom](
+        const MariadbClient*,
+        const GrantAccountPrivilegesRequest&,
+        GrantAccountPrivilegesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MariadbClient::InitDBInstancesOutcome MariadbClient::InitDBInstances(const InitDBInstancesRequest &request)
@@ -2169,25 +2512,32 @@ MariadbClient::InitDBInstancesOutcome MariadbClient::InitDBInstances(const InitD
 
 void MariadbClient::InitDBInstancesAsync(const InitDBInstancesRequest& request, const InitDBInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->InitDBInstances(request), context);
-    };
+    using Req = const InitDBInstancesRequest&;
+    using Resp = InitDBInstancesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "InitDBInstances", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MariadbClient::InitDBInstancesOutcomeCallable MariadbClient::InitDBInstancesCallable(const InitDBInstancesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<InitDBInstancesOutcome()>>(
-        [this, request]()
-        {
-            return this->InitDBInstances(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<InitDBInstancesOutcome>>();
+    InitDBInstancesAsync(
+    request,
+    [prom](
+        const MariadbClient*,
+        const InitDBInstancesRequest&,
+        InitDBInstancesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MariadbClient::IsolateDBInstanceOutcome MariadbClient::IsolateDBInstance(const IsolateDBInstanceRequest &request)
@@ -2212,25 +2562,32 @@ MariadbClient::IsolateDBInstanceOutcome MariadbClient::IsolateDBInstance(const I
 
 void MariadbClient::IsolateDBInstanceAsync(const IsolateDBInstanceRequest& request, const IsolateDBInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->IsolateDBInstance(request), context);
-    };
+    using Req = const IsolateDBInstanceRequest&;
+    using Resp = IsolateDBInstanceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "IsolateDBInstance", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MariadbClient::IsolateDBInstanceOutcomeCallable MariadbClient::IsolateDBInstanceCallable(const IsolateDBInstanceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<IsolateDBInstanceOutcome()>>(
-        [this, request]()
-        {
-            return this->IsolateDBInstance(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<IsolateDBInstanceOutcome>>();
+    IsolateDBInstanceAsync(
+    request,
+    [prom](
+        const MariadbClient*,
+        const IsolateDBInstanceRequest&,
+        IsolateDBInstanceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MariadbClient::IsolateDedicatedDBInstanceOutcome MariadbClient::IsolateDedicatedDBInstance(const IsolateDedicatedDBInstanceRequest &request)
@@ -2255,25 +2612,32 @@ MariadbClient::IsolateDedicatedDBInstanceOutcome MariadbClient::IsolateDedicated
 
 void MariadbClient::IsolateDedicatedDBInstanceAsync(const IsolateDedicatedDBInstanceRequest& request, const IsolateDedicatedDBInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->IsolateDedicatedDBInstance(request), context);
-    };
+    using Req = const IsolateDedicatedDBInstanceRequest&;
+    using Resp = IsolateDedicatedDBInstanceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "IsolateDedicatedDBInstance", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MariadbClient::IsolateDedicatedDBInstanceOutcomeCallable MariadbClient::IsolateDedicatedDBInstanceCallable(const IsolateDedicatedDBInstanceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<IsolateDedicatedDBInstanceOutcome()>>(
-        [this, request]()
-        {
-            return this->IsolateDedicatedDBInstance(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<IsolateDedicatedDBInstanceOutcome>>();
+    IsolateDedicatedDBInstanceAsync(
+    request,
+    [prom](
+        const MariadbClient*,
+        const IsolateDedicatedDBInstanceRequest&,
+        IsolateDedicatedDBInstanceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MariadbClient::IsolateHourDBInstanceOutcome MariadbClient::IsolateHourDBInstance(const IsolateHourDBInstanceRequest &request)
@@ -2298,25 +2662,32 @@ MariadbClient::IsolateHourDBInstanceOutcome MariadbClient::IsolateHourDBInstance
 
 void MariadbClient::IsolateHourDBInstanceAsync(const IsolateHourDBInstanceRequest& request, const IsolateHourDBInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->IsolateHourDBInstance(request), context);
-    };
+    using Req = const IsolateHourDBInstanceRequest&;
+    using Resp = IsolateHourDBInstanceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "IsolateHourDBInstance", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MariadbClient::IsolateHourDBInstanceOutcomeCallable MariadbClient::IsolateHourDBInstanceCallable(const IsolateHourDBInstanceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<IsolateHourDBInstanceOutcome()>>(
-        [this, request]()
-        {
-            return this->IsolateHourDBInstance(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<IsolateHourDBInstanceOutcome>>();
+    IsolateHourDBInstanceAsync(
+    request,
+    [prom](
+        const MariadbClient*,
+        const IsolateHourDBInstanceRequest&,
+        IsolateHourDBInstanceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MariadbClient::KillSessionOutcome MariadbClient::KillSession(const KillSessionRequest &request)
@@ -2341,25 +2712,32 @@ MariadbClient::KillSessionOutcome MariadbClient::KillSession(const KillSessionRe
 
 void MariadbClient::KillSessionAsync(const KillSessionRequest& request, const KillSessionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->KillSession(request), context);
-    };
+    using Req = const KillSessionRequest&;
+    using Resp = KillSessionResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "KillSession", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MariadbClient::KillSessionOutcomeCallable MariadbClient::KillSessionCallable(const KillSessionRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<KillSessionOutcome()>>(
-        [this, request]()
-        {
-            return this->KillSession(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<KillSessionOutcome>>();
+    KillSessionAsync(
+    request,
+    [prom](
+        const MariadbClient*,
+        const KillSessionRequest&,
+        KillSessionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MariadbClient::ModifyAccountDescriptionOutcome MariadbClient::ModifyAccountDescription(const ModifyAccountDescriptionRequest &request)
@@ -2384,25 +2762,32 @@ MariadbClient::ModifyAccountDescriptionOutcome MariadbClient::ModifyAccountDescr
 
 void MariadbClient::ModifyAccountDescriptionAsync(const ModifyAccountDescriptionRequest& request, const ModifyAccountDescriptionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyAccountDescription(request), context);
-    };
+    using Req = const ModifyAccountDescriptionRequest&;
+    using Resp = ModifyAccountDescriptionResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyAccountDescription", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MariadbClient::ModifyAccountDescriptionOutcomeCallable MariadbClient::ModifyAccountDescriptionCallable(const ModifyAccountDescriptionRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyAccountDescriptionOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyAccountDescription(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyAccountDescriptionOutcome>>();
+    ModifyAccountDescriptionAsync(
+    request,
+    [prom](
+        const MariadbClient*,
+        const ModifyAccountDescriptionRequest&,
+        ModifyAccountDescriptionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MariadbClient::ModifyAccountPrivilegesOutcome MariadbClient::ModifyAccountPrivileges(const ModifyAccountPrivilegesRequest &request)
@@ -2427,25 +2812,32 @@ MariadbClient::ModifyAccountPrivilegesOutcome MariadbClient::ModifyAccountPrivil
 
 void MariadbClient::ModifyAccountPrivilegesAsync(const ModifyAccountPrivilegesRequest& request, const ModifyAccountPrivilegesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyAccountPrivileges(request), context);
-    };
+    using Req = const ModifyAccountPrivilegesRequest&;
+    using Resp = ModifyAccountPrivilegesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyAccountPrivileges", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MariadbClient::ModifyAccountPrivilegesOutcomeCallable MariadbClient::ModifyAccountPrivilegesCallable(const ModifyAccountPrivilegesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyAccountPrivilegesOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyAccountPrivileges(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyAccountPrivilegesOutcome>>();
+    ModifyAccountPrivilegesAsync(
+    request,
+    [prom](
+        const MariadbClient*,
+        const ModifyAccountPrivilegesRequest&,
+        ModifyAccountPrivilegesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MariadbClient::ModifyBackupConfigsOutcome MariadbClient::ModifyBackupConfigs(const ModifyBackupConfigsRequest &request)
@@ -2470,25 +2862,32 @@ MariadbClient::ModifyBackupConfigsOutcome MariadbClient::ModifyBackupConfigs(con
 
 void MariadbClient::ModifyBackupConfigsAsync(const ModifyBackupConfigsRequest& request, const ModifyBackupConfigsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyBackupConfigs(request), context);
-    };
+    using Req = const ModifyBackupConfigsRequest&;
+    using Resp = ModifyBackupConfigsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyBackupConfigs", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MariadbClient::ModifyBackupConfigsOutcomeCallable MariadbClient::ModifyBackupConfigsCallable(const ModifyBackupConfigsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyBackupConfigsOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyBackupConfigs(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyBackupConfigsOutcome>>();
+    ModifyBackupConfigsAsync(
+    request,
+    [prom](
+        const MariadbClient*,
+        const ModifyBackupConfigsRequest&,
+        ModifyBackupConfigsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MariadbClient::ModifyBackupTimeOutcome MariadbClient::ModifyBackupTime(const ModifyBackupTimeRequest &request)
@@ -2513,25 +2912,32 @@ MariadbClient::ModifyBackupTimeOutcome MariadbClient::ModifyBackupTime(const Mod
 
 void MariadbClient::ModifyBackupTimeAsync(const ModifyBackupTimeRequest& request, const ModifyBackupTimeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyBackupTime(request), context);
-    };
+    using Req = const ModifyBackupTimeRequest&;
+    using Resp = ModifyBackupTimeResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyBackupTime", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MariadbClient::ModifyBackupTimeOutcomeCallable MariadbClient::ModifyBackupTimeCallable(const ModifyBackupTimeRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyBackupTimeOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyBackupTime(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyBackupTimeOutcome>>();
+    ModifyBackupTimeAsync(
+    request,
+    [prom](
+        const MariadbClient*,
+        const ModifyBackupTimeRequest&,
+        ModifyBackupTimeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MariadbClient::ModifyDBEncryptAttributesOutcome MariadbClient::ModifyDBEncryptAttributes(const ModifyDBEncryptAttributesRequest &request)
@@ -2556,25 +2962,32 @@ MariadbClient::ModifyDBEncryptAttributesOutcome MariadbClient::ModifyDBEncryptAt
 
 void MariadbClient::ModifyDBEncryptAttributesAsync(const ModifyDBEncryptAttributesRequest& request, const ModifyDBEncryptAttributesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyDBEncryptAttributes(request), context);
-    };
+    using Req = const ModifyDBEncryptAttributesRequest&;
+    using Resp = ModifyDBEncryptAttributesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyDBEncryptAttributes", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MariadbClient::ModifyDBEncryptAttributesOutcomeCallable MariadbClient::ModifyDBEncryptAttributesCallable(const ModifyDBEncryptAttributesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyDBEncryptAttributesOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyDBEncryptAttributes(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyDBEncryptAttributesOutcome>>();
+    ModifyDBEncryptAttributesAsync(
+    request,
+    [prom](
+        const MariadbClient*,
+        const ModifyDBEncryptAttributesRequest&,
+        ModifyDBEncryptAttributesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MariadbClient::ModifyDBInstanceNameOutcome MariadbClient::ModifyDBInstanceName(const ModifyDBInstanceNameRequest &request)
@@ -2599,25 +3012,32 @@ MariadbClient::ModifyDBInstanceNameOutcome MariadbClient::ModifyDBInstanceName(c
 
 void MariadbClient::ModifyDBInstanceNameAsync(const ModifyDBInstanceNameRequest& request, const ModifyDBInstanceNameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyDBInstanceName(request), context);
-    };
+    using Req = const ModifyDBInstanceNameRequest&;
+    using Resp = ModifyDBInstanceNameResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyDBInstanceName", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MariadbClient::ModifyDBInstanceNameOutcomeCallable MariadbClient::ModifyDBInstanceNameCallable(const ModifyDBInstanceNameRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyDBInstanceNameOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyDBInstanceName(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyDBInstanceNameOutcome>>();
+    ModifyDBInstanceNameAsync(
+    request,
+    [prom](
+        const MariadbClient*,
+        const ModifyDBInstanceNameRequest&,
+        ModifyDBInstanceNameOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MariadbClient::ModifyDBInstanceSecurityGroupsOutcome MariadbClient::ModifyDBInstanceSecurityGroups(const ModifyDBInstanceSecurityGroupsRequest &request)
@@ -2642,25 +3062,32 @@ MariadbClient::ModifyDBInstanceSecurityGroupsOutcome MariadbClient::ModifyDBInst
 
 void MariadbClient::ModifyDBInstanceSecurityGroupsAsync(const ModifyDBInstanceSecurityGroupsRequest& request, const ModifyDBInstanceSecurityGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyDBInstanceSecurityGroups(request), context);
-    };
+    using Req = const ModifyDBInstanceSecurityGroupsRequest&;
+    using Resp = ModifyDBInstanceSecurityGroupsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyDBInstanceSecurityGroups", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MariadbClient::ModifyDBInstanceSecurityGroupsOutcomeCallable MariadbClient::ModifyDBInstanceSecurityGroupsCallable(const ModifyDBInstanceSecurityGroupsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyDBInstanceSecurityGroupsOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyDBInstanceSecurityGroups(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyDBInstanceSecurityGroupsOutcome>>();
+    ModifyDBInstanceSecurityGroupsAsync(
+    request,
+    [prom](
+        const MariadbClient*,
+        const ModifyDBInstanceSecurityGroupsRequest&,
+        ModifyDBInstanceSecurityGroupsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MariadbClient::ModifyDBInstancesProjectOutcome MariadbClient::ModifyDBInstancesProject(const ModifyDBInstancesProjectRequest &request)
@@ -2685,25 +3112,32 @@ MariadbClient::ModifyDBInstancesProjectOutcome MariadbClient::ModifyDBInstancesP
 
 void MariadbClient::ModifyDBInstancesProjectAsync(const ModifyDBInstancesProjectRequest& request, const ModifyDBInstancesProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyDBInstancesProject(request), context);
-    };
+    using Req = const ModifyDBInstancesProjectRequest&;
+    using Resp = ModifyDBInstancesProjectResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyDBInstancesProject", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MariadbClient::ModifyDBInstancesProjectOutcomeCallable MariadbClient::ModifyDBInstancesProjectCallable(const ModifyDBInstancesProjectRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyDBInstancesProjectOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyDBInstancesProject(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyDBInstancesProjectOutcome>>();
+    ModifyDBInstancesProjectAsync(
+    request,
+    [prom](
+        const MariadbClient*,
+        const ModifyDBInstancesProjectRequest&,
+        ModifyDBInstancesProjectOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MariadbClient::ModifyDBParametersOutcome MariadbClient::ModifyDBParameters(const ModifyDBParametersRequest &request)
@@ -2728,25 +3162,32 @@ MariadbClient::ModifyDBParametersOutcome MariadbClient::ModifyDBParameters(const
 
 void MariadbClient::ModifyDBParametersAsync(const ModifyDBParametersRequest& request, const ModifyDBParametersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyDBParameters(request), context);
-    };
+    using Req = const ModifyDBParametersRequest&;
+    using Resp = ModifyDBParametersResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyDBParameters", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MariadbClient::ModifyDBParametersOutcomeCallable MariadbClient::ModifyDBParametersCallable(const ModifyDBParametersRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyDBParametersOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyDBParameters(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyDBParametersOutcome>>();
+    ModifyDBParametersAsync(
+    request,
+    [prom](
+        const MariadbClient*,
+        const ModifyDBParametersRequest&,
+        ModifyDBParametersOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MariadbClient::ModifyDBSyncModeOutcome MariadbClient::ModifyDBSyncMode(const ModifyDBSyncModeRequest &request)
@@ -2771,25 +3212,32 @@ MariadbClient::ModifyDBSyncModeOutcome MariadbClient::ModifyDBSyncMode(const Mod
 
 void MariadbClient::ModifyDBSyncModeAsync(const ModifyDBSyncModeRequest& request, const ModifyDBSyncModeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyDBSyncMode(request), context);
-    };
+    using Req = const ModifyDBSyncModeRequest&;
+    using Resp = ModifyDBSyncModeResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyDBSyncMode", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MariadbClient::ModifyDBSyncModeOutcomeCallable MariadbClient::ModifyDBSyncModeCallable(const ModifyDBSyncModeRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyDBSyncModeOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyDBSyncMode(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyDBSyncModeOutcome>>();
+    ModifyDBSyncModeAsync(
+    request,
+    [prom](
+        const MariadbClient*,
+        const ModifyDBSyncModeRequest&,
+        ModifyDBSyncModeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MariadbClient::ModifyInstanceNetworkOutcome MariadbClient::ModifyInstanceNetwork(const ModifyInstanceNetworkRequest &request)
@@ -2814,25 +3262,32 @@ MariadbClient::ModifyInstanceNetworkOutcome MariadbClient::ModifyInstanceNetwork
 
 void MariadbClient::ModifyInstanceNetworkAsync(const ModifyInstanceNetworkRequest& request, const ModifyInstanceNetworkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyInstanceNetwork(request), context);
-    };
+    using Req = const ModifyInstanceNetworkRequest&;
+    using Resp = ModifyInstanceNetworkResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyInstanceNetwork", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MariadbClient::ModifyInstanceNetworkOutcomeCallable MariadbClient::ModifyInstanceNetworkCallable(const ModifyInstanceNetworkRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyInstanceNetworkOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyInstanceNetwork(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyInstanceNetworkOutcome>>();
+    ModifyInstanceNetworkAsync(
+    request,
+    [prom](
+        const MariadbClient*,
+        const ModifyInstanceNetworkRequest&,
+        ModifyInstanceNetworkOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MariadbClient::ModifyInstanceProtectedPropertyOutcome MariadbClient::ModifyInstanceProtectedProperty(const ModifyInstanceProtectedPropertyRequest &request)
@@ -2857,25 +3312,32 @@ MariadbClient::ModifyInstanceProtectedPropertyOutcome MariadbClient::ModifyInsta
 
 void MariadbClient::ModifyInstanceProtectedPropertyAsync(const ModifyInstanceProtectedPropertyRequest& request, const ModifyInstanceProtectedPropertyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyInstanceProtectedProperty(request), context);
-    };
+    using Req = const ModifyInstanceProtectedPropertyRequest&;
+    using Resp = ModifyInstanceProtectedPropertyResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyInstanceProtectedProperty", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MariadbClient::ModifyInstanceProtectedPropertyOutcomeCallable MariadbClient::ModifyInstanceProtectedPropertyCallable(const ModifyInstanceProtectedPropertyRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyInstanceProtectedPropertyOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyInstanceProtectedProperty(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyInstanceProtectedPropertyOutcome>>();
+    ModifyInstanceProtectedPropertyAsync(
+    request,
+    [prom](
+        const MariadbClient*,
+        const ModifyInstanceProtectedPropertyRequest&,
+        ModifyInstanceProtectedPropertyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MariadbClient::ModifyInstanceSSLAttributesOutcome MariadbClient::ModifyInstanceSSLAttributes(const ModifyInstanceSSLAttributesRequest &request)
@@ -2900,25 +3362,32 @@ MariadbClient::ModifyInstanceSSLAttributesOutcome MariadbClient::ModifyInstanceS
 
 void MariadbClient::ModifyInstanceSSLAttributesAsync(const ModifyInstanceSSLAttributesRequest& request, const ModifyInstanceSSLAttributesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyInstanceSSLAttributes(request), context);
-    };
+    using Req = const ModifyInstanceSSLAttributesRequest&;
+    using Resp = ModifyInstanceSSLAttributesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyInstanceSSLAttributes", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MariadbClient::ModifyInstanceSSLAttributesOutcomeCallable MariadbClient::ModifyInstanceSSLAttributesCallable(const ModifyInstanceSSLAttributesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyInstanceSSLAttributesOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyInstanceSSLAttributes(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyInstanceSSLAttributesOutcome>>();
+    ModifyInstanceSSLAttributesAsync(
+    request,
+    [prom](
+        const MariadbClient*,
+        const ModifyInstanceSSLAttributesRequest&,
+        ModifyInstanceSSLAttributesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MariadbClient::ModifyInstanceVipOutcome MariadbClient::ModifyInstanceVip(const ModifyInstanceVipRequest &request)
@@ -2943,25 +3412,32 @@ MariadbClient::ModifyInstanceVipOutcome MariadbClient::ModifyInstanceVip(const M
 
 void MariadbClient::ModifyInstanceVipAsync(const ModifyInstanceVipRequest& request, const ModifyInstanceVipAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyInstanceVip(request), context);
-    };
+    using Req = const ModifyInstanceVipRequest&;
+    using Resp = ModifyInstanceVipResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyInstanceVip", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MariadbClient::ModifyInstanceVipOutcomeCallable MariadbClient::ModifyInstanceVipCallable(const ModifyInstanceVipRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyInstanceVipOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyInstanceVip(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyInstanceVipOutcome>>();
+    ModifyInstanceVipAsync(
+    request,
+    [prom](
+        const MariadbClient*,
+        const ModifyInstanceVipRequest&,
+        ModifyInstanceVipOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MariadbClient::ModifyInstanceVportOutcome MariadbClient::ModifyInstanceVport(const ModifyInstanceVportRequest &request)
@@ -2986,25 +3462,32 @@ MariadbClient::ModifyInstanceVportOutcome MariadbClient::ModifyInstanceVport(con
 
 void MariadbClient::ModifyInstanceVportAsync(const ModifyInstanceVportRequest& request, const ModifyInstanceVportAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyInstanceVport(request), context);
-    };
+    using Req = const ModifyInstanceVportRequest&;
+    using Resp = ModifyInstanceVportResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyInstanceVport", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MariadbClient::ModifyInstanceVportOutcomeCallable MariadbClient::ModifyInstanceVportCallable(const ModifyInstanceVportRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyInstanceVportOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyInstanceVport(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyInstanceVportOutcome>>();
+    ModifyInstanceVportAsync(
+    request,
+    [prom](
+        const MariadbClient*,
+        const ModifyInstanceVportRequest&,
+        ModifyInstanceVportOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MariadbClient::ModifyLogFileRetentionPeriodOutcome MariadbClient::ModifyLogFileRetentionPeriod(const ModifyLogFileRetentionPeriodRequest &request)
@@ -3029,25 +3512,32 @@ MariadbClient::ModifyLogFileRetentionPeriodOutcome MariadbClient::ModifyLogFileR
 
 void MariadbClient::ModifyLogFileRetentionPeriodAsync(const ModifyLogFileRetentionPeriodRequest& request, const ModifyLogFileRetentionPeriodAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyLogFileRetentionPeriod(request), context);
-    };
+    using Req = const ModifyLogFileRetentionPeriodRequest&;
+    using Resp = ModifyLogFileRetentionPeriodResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyLogFileRetentionPeriod", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MariadbClient::ModifyLogFileRetentionPeriodOutcomeCallable MariadbClient::ModifyLogFileRetentionPeriodCallable(const ModifyLogFileRetentionPeriodRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyLogFileRetentionPeriodOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyLogFileRetentionPeriod(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyLogFileRetentionPeriodOutcome>>();
+    ModifyLogFileRetentionPeriodAsync(
+    request,
+    [prom](
+        const MariadbClient*,
+        const ModifyLogFileRetentionPeriodRequest&,
+        ModifyLogFileRetentionPeriodOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MariadbClient::ModifyRealServerAccessStrategyOutcome MariadbClient::ModifyRealServerAccessStrategy(const ModifyRealServerAccessStrategyRequest &request)
@@ -3072,25 +3562,32 @@ MariadbClient::ModifyRealServerAccessStrategyOutcome MariadbClient::ModifyRealSe
 
 void MariadbClient::ModifyRealServerAccessStrategyAsync(const ModifyRealServerAccessStrategyRequest& request, const ModifyRealServerAccessStrategyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyRealServerAccessStrategy(request), context);
-    };
+    using Req = const ModifyRealServerAccessStrategyRequest&;
+    using Resp = ModifyRealServerAccessStrategyResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyRealServerAccessStrategy", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MariadbClient::ModifyRealServerAccessStrategyOutcomeCallable MariadbClient::ModifyRealServerAccessStrategyCallable(const ModifyRealServerAccessStrategyRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyRealServerAccessStrategyOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyRealServerAccessStrategy(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyRealServerAccessStrategyOutcome>>();
+    ModifyRealServerAccessStrategyAsync(
+    request,
+    [prom](
+        const MariadbClient*,
+        const ModifyRealServerAccessStrategyRequest&,
+        ModifyRealServerAccessStrategyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MariadbClient::ModifySyncTaskAttributeOutcome MariadbClient::ModifySyncTaskAttribute(const ModifySyncTaskAttributeRequest &request)
@@ -3115,25 +3612,32 @@ MariadbClient::ModifySyncTaskAttributeOutcome MariadbClient::ModifySyncTaskAttri
 
 void MariadbClient::ModifySyncTaskAttributeAsync(const ModifySyncTaskAttributeRequest& request, const ModifySyncTaskAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifySyncTaskAttribute(request), context);
-    };
+    using Req = const ModifySyncTaskAttributeRequest&;
+    using Resp = ModifySyncTaskAttributeResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifySyncTaskAttribute", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MariadbClient::ModifySyncTaskAttributeOutcomeCallable MariadbClient::ModifySyncTaskAttributeCallable(const ModifySyncTaskAttributeRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifySyncTaskAttributeOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifySyncTaskAttribute(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifySyncTaskAttributeOutcome>>();
+    ModifySyncTaskAttributeAsync(
+    request,
+    [prom](
+        const MariadbClient*,
+        const ModifySyncTaskAttributeRequest&,
+        ModifySyncTaskAttributeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MariadbClient::OpenDBExtranetAccessOutcome MariadbClient::OpenDBExtranetAccess(const OpenDBExtranetAccessRequest &request)
@@ -3158,25 +3662,32 @@ MariadbClient::OpenDBExtranetAccessOutcome MariadbClient::OpenDBExtranetAccess(c
 
 void MariadbClient::OpenDBExtranetAccessAsync(const OpenDBExtranetAccessRequest& request, const OpenDBExtranetAccessAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->OpenDBExtranetAccess(request), context);
-    };
+    using Req = const OpenDBExtranetAccessRequest&;
+    using Resp = OpenDBExtranetAccessResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "OpenDBExtranetAccess", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MariadbClient::OpenDBExtranetAccessOutcomeCallable MariadbClient::OpenDBExtranetAccessCallable(const OpenDBExtranetAccessRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<OpenDBExtranetAccessOutcome()>>(
-        [this, request]()
-        {
-            return this->OpenDBExtranetAccess(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<OpenDBExtranetAccessOutcome>>();
+    OpenDBExtranetAccessAsync(
+    request,
+    [prom](
+        const MariadbClient*,
+        const OpenDBExtranetAccessRequest&,
+        OpenDBExtranetAccessOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MariadbClient::RenewDBInstanceOutcome MariadbClient::RenewDBInstance(const RenewDBInstanceRequest &request)
@@ -3201,25 +3712,32 @@ MariadbClient::RenewDBInstanceOutcome MariadbClient::RenewDBInstance(const Renew
 
 void MariadbClient::RenewDBInstanceAsync(const RenewDBInstanceRequest& request, const RenewDBInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->RenewDBInstance(request), context);
-    };
+    using Req = const RenewDBInstanceRequest&;
+    using Resp = RenewDBInstanceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "RenewDBInstance", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MariadbClient::RenewDBInstanceOutcomeCallable MariadbClient::RenewDBInstanceCallable(const RenewDBInstanceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<RenewDBInstanceOutcome()>>(
-        [this, request]()
-        {
-            return this->RenewDBInstance(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<RenewDBInstanceOutcome>>();
+    RenewDBInstanceAsync(
+    request,
+    [prom](
+        const MariadbClient*,
+        const RenewDBInstanceRequest&,
+        RenewDBInstanceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MariadbClient::ResetAccountPasswordOutcome MariadbClient::ResetAccountPassword(const ResetAccountPasswordRequest &request)
@@ -3244,25 +3762,32 @@ MariadbClient::ResetAccountPasswordOutcome MariadbClient::ResetAccountPassword(c
 
 void MariadbClient::ResetAccountPasswordAsync(const ResetAccountPasswordRequest& request, const ResetAccountPasswordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ResetAccountPassword(request), context);
-    };
+    using Req = const ResetAccountPasswordRequest&;
+    using Resp = ResetAccountPasswordResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ResetAccountPassword", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MariadbClient::ResetAccountPasswordOutcomeCallable MariadbClient::ResetAccountPasswordCallable(const ResetAccountPasswordRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ResetAccountPasswordOutcome()>>(
-        [this, request]()
-        {
-            return this->ResetAccountPassword(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ResetAccountPasswordOutcome>>();
+    ResetAccountPasswordAsync(
+    request,
+    [prom](
+        const MariadbClient*,
+        const ResetAccountPasswordRequest&,
+        ResetAccountPasswordOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MariadbClient::RestartDBInstancesOutcome MariadbClient::RestartDBInstances(const RestartDBInstancesRequest &request)
@@ -3287,25 +3812,32 @@ MariadbClient::RestartDBInstancesOutcome MariadbClient::RestartDBInstances(const
 
 void MariadbClient::RestartDBInstancesAsync(const RestartDBInstancesRequest& request, const RestartDBInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->RestartDBInstances(request), context);
-    };
+    using Req = const RestartDBInstancesRequest&;
+    using Resp = RestartDBInstancesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "RestartDBInstances", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MariadbClient::RestartDBInstancesOutcomeCallable MariadbClient::RestartDBInstancesCallable(const RestartDBInstancesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<RestartDBInstancesOutcome()>>(
-        [this, request]()
-        {
-            return this->RestartDBInstances(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<RestartDBInstancesOutcome>>();
+    RestartDBInstancesAsync(
+    request,
+    [prom](
+        const MariadbClient*,
+        const RestartDBInstancesRequest&,
+        RestartDBInstancesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MariadbClient::SwitchDBInstanceHAOutcome MariadbClient::SwitchDBInstanceHA(const SwitchDBInstanceHARequest &request)
@@ -3330,25 +3862,32 @@ MariadbClient::SwitchDBInstanceHAOutcome MariadbClient::SwitchDBInstanceHA(const
 
 void MariadbClient::SwitchDBInstanceHAAsync(const SwitchDBInstanceHARequest& request, const SwitchDBInstanceHAAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->SwitchDBInstanceHA(request), context);
-    };
+    using Req = const SwitchDBInstanceHARequest&;
+    using Resp = SwitchDBInstanceHAResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "SwitchDBInstanceHA", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MariadbClient::SwitchDBInstanceHAOutcomeCallable MariadbClient::SwitchDBInstanceHACallable(const SwitchDBInstanceHARequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<SwitchDBInstanceHAOutcome()>>(
-        [this, request]()
-        {
-            return this->SwitchDBInstanceHA(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<SwitchDBInstanceHAOutcome>>();
+    SwitchDBInstanceHAAsync(
+    request,
+    [prom](
+        const MariadbClient*,
+        const SwitchDBInstanceHARequest&,
+        SwitchDBInstanceHAOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MariadbClient::TerminateDedicatedDBInstanceOutcome MariadbClient::TerminateDedicatedDBInstance(const TerminateDedicatedDBInstanceRequest &request)
@@ -3373,25 +3912,32 @@ MariadbClient::TerminateDedicatedDBInstanceOutcome MariadbClient::TerminateDedic
 
 void MariadbClient::TerminateDedicatedDBInstanceAsync(const TerminateDedicatedDBInstanceRequest& request, const TerminateDedicatedDBInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->TerminateDedicatedDBInstance(request), context);
-    };
+    using Req = const TerminateDedicatedDBInstanceRequest&;
+    using Resp = TerminateDedicatedDBInstanceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "TerminateDedicatedDBInstance", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MariadbClient::TerminateDedicatedDBInstanceOutcomeCallable MariadbClient::TerminateDedicatedDBInstanceCallable(const TerminateDedicatedDBInstanceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<TerminateDedicatedDBInstanceOutcome()>>(
-        [this, request]()
-        {
-            return this->TerminateDedicatedDBInstance(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<TerminateDedicatedDBInstanceOutcome>>();
+    TerminateDedicatedDBInstanceAsync(
+    request,
+    [prom](
+        const MariadbClient*,
+        const TerminateDedicatedDBInstanceRequest&,
+        TerminateDedicatedDBInstanceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MariadbClient::UpgradeDBInstanceOutcome MariadbClient::UpgradeDBInstance(const UpgradeDBInstanceRequest &request)
@@ -3416,25 +3962,32 @@ MariadbClient::UpgradeDBInstanceOutcome MariadbClient::UpgradeDBInstance(const U
 
 void MariadbClient::UpgradeDBInstanceAsync(const UpgradeDBInstanceRequest& request, const UpgradeDBInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UpgradeDBInstance(request), context);
-    };
+    using Req = const UpgradeDBInstanceRequest&;
+    using Resp = UpgradeDBInstanceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UpgradeDBInstance", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MariadbClient::UpgradeDBInstanceOutcomeCallable MariadbClient::UpgradeDBInstanceCallable(const UpgradeDBInstanceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UpgradeDBInstanceOutcome()>>(
-        [this, request]()
-        {
-            return this->UpgradeDBInstance(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UpgradeDBInstanceOutcome>>();
+    UpgradeDBInstanceAsync(
+    request,
+    [prom](
+        const MariadbClient*,
+        const UpgradeDBInstanceRequest&,
+        UpgradeDBInstanceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MariadbClient::UpgradeDedicatedDBInstanceOutcome MariadbClient::UpgradeDedicatedDBInstance(const UpgradeDedicatedDBInstanceRequest &request)
@@ -3459,25 +4012,32 @@ MariadbClient::UpgradeDedicatedDBInstanceOutcome MariadbClient::UpgradeDedicated
 
 void MariadbClient::UpgradeDedicatedDBInstanceAsync(const UpgradeDedicatedDBInstanceRequest& request, const UpgradeDedicatedDBInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UpgradeDedicatedDBInstance(request), context);
-    };
+    using Req = const UpgradeDedicatedDBInstanceRequest&;
+    using Resp = UpgradeDedicatedDBInstanceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UpgradeDedicatedDBInstance", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MariadbClient::UpgradeDedicatedDBInstanceOutcomeCallable MariadbClient::UpgradeDedicatedDBInstanceCallable(const UpgradeDedicatedDBInstanceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UpgradeDedicatedDBInstanceOutcome()>>(
-        [this, request]()
-        {
-            return this->UpgradeDedicatedDBInstance(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UpgradeDedicatedDBInstanceOutcome>>();
+    UpgradeDedicatedDBInstanceAsync(
+    request,
+    [prom](
+        const MariadbClient*,
+        const UpgradeDedicatedDBInstanceRequest&,
+        UpgradeDedicatedDBInstanceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 MariadbClient::UpgradeHourDBInstanceOutcome MariadbClient::UpgradeHourDBInstance(const UpgradeHourDBInstanceRequest &request)
@@ -3502,24 +4062,31 @@ MariadbClient::UpgradeHourDBInstanceOutcome MariadbClient::UpgradeHourDBInstance
 
 void MariadbClient::UpgradeHourDBInstanceAsync(const UpgradeHourDBInstanceRequest& request, const UpgradeHourDBInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UpgradeHourDBInstance(request), context);
-    };
+    using Req = const UpgradeHourDBInstanceRequest&;
+    using Resp = UpgradeHourDBInstanceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UpgradeHourDBInstance", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 MariadbClient::UpgradeHourDBInstanceOutcomeCallable MariadbClient::UpgradeHourDBInstanceCallable(const UpgradeHourDBInstanceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UpgradeHourDBInstanceOutcome()>>(
-        [this, request]()
-        {
-            return this->UpgradeHourDBInstance(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UpgradeHourDBInstanceOutcome>>();
+    UpgradeHourDBInstanceAsync(
+    request,
+    [prom](
+        const MariadbClient*,
+        const UpgradeHourDBInstanceRequest&,
+        UpgradeHourDBInstanceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 

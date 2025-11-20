@@ -62,25 +62,32 @@ TcbClient::BindEnvGatewayOutcome TcbClient::BindEnvGateway(const BindEnvGatewayR
 
 void TcbClient::BindEnvGatewayAsync(const BindEnvGatewayRequest& request, const BindEnvGatewayAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->BindEnvGateway(request), context);
-    };
+    using Req = const BindEnvGatewayRequest&;
+    using Resp = BindEnvGatewayResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "BindEnvGateway", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TcbClient::BindEnvGatewayOutcomeCallable TcbClient::BindEnvGatewayCallable(const BindEnvGatewayRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<BindEnvGatewayOutcome()>>(
-        [this, request]()
-        {
-            return this->BindEnvGateway(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<BindEnvGatewayOutcome>>();
+    BindEnvGatewayAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const BindEnvGatewayRequest&,
+        BindEnvGatewayOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TcbClient::CheckTcbServiceOutcome TcbClient::CheckTcbService(const CheckTcbServiceRequest &request)
@@ -105,25 +112,32 @@ TcbClient::CheckTcbServiceOutcome TcbClient::CheckTcbService(const CheckTcbServi
 
 void TcbClient::CheckTcbServiceAsync(const CheckTcbServiceRequest& request, const CheckTcbServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CheckTcbService(request), context);
-    };
+    using Req = const CheckTcbServiceRequest&;
+    using Resp = CheckTcbServiceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CheckTcbService", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TcbClient::CheckTcbServiceOutcomeCallable TcbClient::CheckTcbServiceCallable(const CheckTcbServiceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CheckTcbServiceOutcome()>>(
-        [this, request]()
-        {
-            return this->CheckTcbService(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CheckTcbServiceOutcome>>();
+    CheckTcbServiceAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const CheckTcbServiceRequest&,
+        CheckTcbServiceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TcbClient::CommonServiceAPIOutcome TcbClient::CommonServiceAPI(const CommonServiceAPIRequest &request)
@@ -148,25 +162,32 @@ TcbClient::CommonServiceAPIOutcome TcbClient::CommonServiceAPI(const CommonServi
 
 void TcbClient::CommonServiceAPIAsync(const CommonServiceAPIRequest& request, const CommonServiceAPIAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CommonServiceAPI(request), context);
-    };
+    using Req = const CommonServiceAPIRequest&;
+    using Resp = CommonServiceAPIResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CommonServiceAPI", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TcbClient::CommonServiceAPIOutcomeCallable TcbClient::CommonServiceAPICallable(const CommonServiceAPIRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CommonServiceAPIOutcome()>>(
-        [this, request]()
-        {
-            return this->CommonServiceAPI(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CommonServiceAPIOutcome>>();
+    CommonServiceAPIAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const CommonServiceAPIRequest&,
+        CommonServiceAPIOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TcbClient::CreateAndDeployCloudBaseProjectOutcome TcbClient::CreateAndDeployCloudBaseProject(const CreateAndDeployCloudBaseProjectRequest &request)
@@ -191,25 +212,32 @@ TcbClient::CreateAndDeployCloudBaseProjectOutcome TcbClient::CreateAndDeployClou
 
 void TcbClient::CreateAndDeployCloudBaseProjectAsync(const CreateAndDeployCloudBaseProjectRequest& request, const CreateAndDeployCloudBaseProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateAndDeployCloudBaseProject(request), context);
-    };
+    using Req = const CreateAndDeployCloudBaseProjectRequest&;
+    using Resp = CreateAndDeployCloudBaseProjectResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateAndDeployCloudBaseProject", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TcbClient::CreateAndDeployCloudBaseProjectOutcomeCallable TcbClient::CreateAndDeployCloudBaseProjectCallable(const CreateAndDeployCloudBaseProjectRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateAndDeployCloudBaseProjectOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateAndDeployCloudBaseProject(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateAndDeployCloudBaseProjectOutcome>>();
+    CreateAndDeployCloudBaseProjectAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const CreateAndDeployCloudBaseProjectRequest&,
+        CreateAndDeployCloudBaseProjectOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TcbClient::CreateAuthDomainOutcome TcbClient::CreateAuthDomain(const CreateAuthDomainRequest &request)
@@ -234,25 +262,32 @@ TcbClient::CreateAuthDomainOutcome TcbClient::CreateAuthDomain(const CreateAuthD
 
 void TcbClient::CreateAuthDomainAsync(const CreateAuthDomainRequest& request, const CreateAuthDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateAuthDomain(request), context);
-    };
+    using Req = const CreateAuthDomainRequest&;
+    using Resp = CreateAuthDomainResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateAuthDomain", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TcbClient::CreateAuthDomainOutcomeCallable TcbClient::CreateAuthDomainCallable(const CreateAuthDomainRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateAuthDomainOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateAuthDomain(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateAuthDomainOutcome>>();
+    CreateAuthDomainAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const CreateAuthDomainRequest&,
+        CreateAuthDomainOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TcbClient::CreateCloudBaseRunResourceOutcome TcbClient::CreateCloudBaseRunResource(const CreateCloudBaseRunResourceRequest &request)
@@ -277,25 +312,32 @@ TcbClient::CreateCloudBaseRunResourceOutcome TcbClient::CreateCloudBaseRunResour
 
 void TcbClient::CreateCloudBaseRunResourceAsync(const CreateCloudBaseRunResourceRequest& request, const CreateCloudBaseRunResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateCloudBaseRunResource(request), context);
-    };
+    using Req = const CreateCloudBaseRunResourceRequest&;
+    using Resp = CreateCloudBaseRunResourceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateCloudBaseRunResource", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TcbClient::CreateCloudBaseRunResourceOutcomeCallable TcbClient::CreateCloudBaseRunResourceCallable(const CreateCloudBaseRunResourceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateCloudBaseRunResourceOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateCloudBaseRunResource(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateCloudBaseRunResourceOutcome>>();
+    CreateCloudBaseRunResourceAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const CreateCloudBaseRunResourceRequest&,
+        CreateCloudBaseRunResourceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TcbClient::CreateCloudBaseRunServerVersionOutcome TcbClient::CreateCloudBaseRunServerVersion(const CreateCloudBaseRunServerVersionRequest &request)
@@ -320,25 +362,32 @@ TcbClient::CreateCloudBaseRunServerVersionOutcome TcbClient::CreateCloudBaseRunS
 
 void TcbClient::CreateCloudBaseRunServerVersionAsync(const CreateCloudBaseRunServerVersionRequest& request, const CreateCloudBaseRunServerVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateCloudBaseRunServerVersion(request), context);
-    };
+    using Req = const CreateCloudBaseRunServerVersionRequest&;
+    using Resp = CreateCloudBaseRunServerVersionResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateCloudBaseRunServerVersion", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TcbClient::CreateCloudBaseRunServerVersionOutcomeCallable TcbClient::CreateCloudBaseRunServerVersionCallable(const CreateCloudBaseRunServerVersionRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateCloudBaseRunServerVersionOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateCloudBaseRunServerVersion(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateCloudBaseRunServerVersionOutcome>>();
+    CreateCloudBaseRunServerVersionAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const CreateCloudBaseRunServerVersionRequest&,
+        CreateCloudBaseRunServerVersionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TcbClient::CreateHostingDomainOutcome TcbClient::CreateHostingDomain(const CreateHostingDomainRequest &request)
@@ -363,25 +412,32 @@ TcbClient::CreateHostingDomainOutcome TcbClient::CreateHostingDomain(const Creat
 
 void TcbClient::CreateHostingDomainAsync(const CreateHostingDomainRequest& request, const CreateHostingDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateHostingDomain(request), context);
-    };
+    using Req = const CreateHostingDomainRequest&;
+    using Resp = CreateHostingDomainResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateHostingDomain", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TcbClient::CreateHostingDomainOutcomeCallable TcbClient::CreateHostingDomainCallable(const CreateHostingDomainRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateHostingDomainOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateHostingDomain(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateHostingDomainOutcome>>();
+    CreateHostingDomainAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const CreateHostingDomainRequest&,
+        CreateHostingDomainOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TcbClient::CreatePostpayPackageOutcome TcbClient::CreatePostpayPackage(const CreatePostpayPackageRequest &request)
@@ -406,25 +462,32 @@ TcbClient::CreatePostpayPackageOutcome TcbClient::CreatePostpayPackage(const Cre
 
 void TcbClient::CreatePostpayPackageAsync(const CreatePostpayPackageRequest& request, const CreatePostpayPackageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreatePostpayPackage(request), context);
-    };
+    using Req = const CreatePostpayPackageRequest&;
+    using Resp = CreatePostpayPackageResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreatePostpayPackage", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TcbClient::CreatePostpayPackageOutcomeCallable TcbClient::CreatePostpayPackageCallable(const CreatePostpayPackageRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreatePostpayPackageOutcome()>>(
-        [this, request]()
-        {
-            return this->CreatePostpayPackage(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreatePostpayPackageOutcome>>();
+    CreatePostpayPackageAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const CreatePostpayPackageRequest&,
+        CreatePostpayPackageOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TcbClient::CreateStandaloneGatewayOutcome TcbClient::CreateStandaloneGateway(const CreateStandaloneGatewayRequest &request)
@@ -449,25 +512,32 @@ TcbClient::CreateStandaloneGatewayOutcome TcbClient::CreateStandaloneGateway(con
 
 void TcbClient::CreateStandaloneGatewayAsync(const CreateStandaloneGatewayRequest& request, const CreateStandaloneGatewayAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateStandaloneGateway(request), context);
-    };
+    using Req = const CreateStandaloneGatewayRequest&;
+    using Resp = CreateStandaloneGatewayResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateStandaloneGateway", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TcbClient::CreateStandaloneGatewayOutcomeCallable TcbClient::CreateStandaloneGatewayCallable(const CreateStandaloneGatewayRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateStandaloneGatewayOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateStandaloneGateway(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateStandaloneGatewayOutcome>>();
+    CreateStandaloneGatewayAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const CreateStandaloneGatewayRequest&,
+        CreateStandaloneGatewayOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TcbClient::CreateStaticStoreOutcome TcbClient::CreateStaticStore(const CreateStaticStoreRequest &request)
@@ -492,25 +562,32 @@ TcbClient::CreateStaticStoreOutcome TcbClient::CreateStaticStore(const CreateSta
 
 void TcbClient::CreateStaticStoreAsync(const CreateStaticStoreRequest& request, const CreateStaticStoreAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateStaticStore(request), context);
-    };
+    using Req = const CreateStaticStoreRequest&;
+    using Resp = CreateStaticStoreResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateStaticStore", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TcbClient::CreateStaticStoreOutcomeCallable TcbClient::CreateStaticStoreCallable(const CreateStaticStoreRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateStaticStoreOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateStaticStore(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateStaticStoreOutcome>>();
+    CreateStaticStoreAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const CreateStaticStoreRequest&,
+        CreateStaticStoreOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TcbClient::CreateWxCloudBaseRunEnvOutcome TcbClient::CreateWxCloudBaseRunEnv(const CreateWxCloudBaseRunEnvRequest &request)
@@ -535,25 +612,32 @@ TcbClient::CreateWxCloudBaseRunEnvOutcome TcbClient::CreateWxCloudBaseRunEnv(con
 
 void TcbClient::CreateWxCloudBaseRunEnvAsync(const CreateWxCloudBaseRunEnvRequest& request, const CreateWxCloudBaseRunEnvAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateWxCloudBaseRunEnv(request), context);
-    };
+    using Req = const CreateWxCloudBaseRunEnvRequest&;
+    using Resp = CreateWxCloudBaseRunEnvResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateWxCloudBaseRunEnv", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TcbClient::CreateWxCloudBaseRunEnvOutcomeCallable TcbClient::CreateWxCloudBaseRunEnvCallable(const CreateWxCloudBaseRunEnvRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateWxCloudBaseRunEnvOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateWxCloudBaseRunEnv(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateWxCloudBaseRunEnvOutcome>>();
+    CreateWxCloudBaseRunEnvAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const CreateWxCloudBaseRunEnvRequest&,
+        CreateWxCloudBaseRunEnvOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TcbClient::CreateWxCloudBaseRunServerDBClusterOutcome TcbClient::CreateWxCloudBaseRunServerDBCluster(const CreateWxCloudBaseRunServerDBClusterRequest &request)
@@ -578,25 +662,32 @@ TcbClient::CreateWxCloudBaseRunServerDBClusterOutcome TcbClient::CreateWxCloudBa
 
 void TcbClient::CreateWxCloudBaseRunServerDBClusterAsync(const CreateWxCloudBaseRunServerDBClusterRequest& request, const CreateWxCloudBaseRunServerDBClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateWxCloudBaseRunServerDBCluster(request), context);
-    };
+    using Req = const CreateWxCloudBaseRunServerDBClusterRequest&;
+    using Resp = CreateWxCloudBaseRunServerDBClusterResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateWxCloudBaseRunServerDBCluster", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TcbClient::CreateWxCloudBaseRunServerDBClusterOutcomeCallable TcbClient::CreateWxCloudBaseRunServerDBClusterCallable(const CreateWxCloudBaseRunServerDBClusterRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateWxCloudBaseRunServerDBClusterOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateWxCloudBaseRunServerDBCluster(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateWxCloudBaseRunServerDBClusterOutcome>>();
+    CreateWxCloudBaseRunServerDBClusterAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const CreateWxCloudBaseRunServerDBClusterRequest&,
+        CreateWxCloudBaseRunServerDBClusterOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TcbClient::DeleteCloudBaseProjectLatestVersionOutcome TcbClient::DeleteCloudBaseProjectLatestVersion(const DeleteCloudBaseProjectLatestVersionRequest &request)
@@ -621,25 +712,32 @@ TcbClient::DeleteCloudBaseProjectLatestVersionOutcome TcbClient::DeleteCloudBase
 
 void TcbClient::DeleteCloudBaseProjectLatestVersionAsync(const DeleteCloudBaseProjectLatestVersionRequest& request, const DeleteCloudBaseProjectLatestVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteCloudBaseProjectLatestVersion(request), context);
-    };
+    using Req = const DeleteCloudBaseProjectLatestVersionRequest&;
+    using Resp = DeleteCloudBaseProjectLatestVersionResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteCloudBaseProjectLatestVersion", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TcbClient::DeleteCloudBaseProjectLatestVersionOutcomeCallable TcbClient::DeleteCloudBaseProjectLatestVersionCallable(const DeleteCloudBaseProjectLatestVersionRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteCloudBaseProjectLatestVersionOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteCloudBaseProjectLatestVersion(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteCloudBaseProjectLatestVersionOutcome>>();
+    DeleteCloudBaseProjectLatestVersionAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const DeleteCloudBaseProjectLatestVersionRequest&,
+        DeleteCloudBaseProjectLatestVersionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TcbClient::DeleteCloudBaseRunServerVersionOutcome TcbClient::DeleteCloudBaseRunServerVersion(const DeleteCloudBaseRunServerVersionRequest &request)
@@ -664,25 +762,32 @@ TcbClient::DeleteCloudBaseRunServerVersionOutcome TcbClient::DeleteCloudBaseRunS
 
 void TcbClient::DeleteCloudBaseRunServerVersionAsync(const DeleteCloudBaseRunServerVersionRequest& request, const DeleteCloudBaseRunServerVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteCloudBaseRunServerVersion(request), context);
-    };
+    using Req = const DeleteCloudBaseRunServerVersionRequest&;
+    using Resp = DeleteCloudBaseRunServerVersionResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteCloudBaseRunServerVersion", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TcbClient::DeleteCloudBaseRunServerVersionOutcomeCallable TcbClient::DeleteCloudBaseRunServerVersionCallable(const DeleteCloudBaseRunServerVersionRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteCloudBaseRunServerVersionOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteCloudBaseRunServerVersion(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteCloudBaseRunServerVersionOutcome>>();
+    DeleteCloudBaseRunServerVersionAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const DeleteCloudBaseRunServerVersionRequest&,
+        DeleteCloudBaseRunServerVersionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TcbClient::DeleteEndUserOutcome TcbClient::DeleteEndUser(const DeleteEndUserRequest &request)
@@ -707,25 +812,32 @@ TcbClient::DeleteEndUserOutcome TcbClient::DeleteEndUser(const DeleteEndUserRequ
 
 void TcbClient::DeleteEndUserAsync(const DeleteEndUserRequest& request, const DeleteEndUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteEndUser(request), context);
-    };
+    using Req = const DeleteEndUserRequest&;
+    using Resp = DeleteEndUserResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteEndUser", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TcbClient::DeleteEndUserOutcomeCallable TcbClient::DeleteEndUserCallable(const DeleteEndUserRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteEndUserOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteEndUser(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteEndUserOutcome>>();
+    DeleteEndUserAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const DeleteEndUserRequest&,
+        DeleteEndUserOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TcbClient::DeleteGatewayVersionOutcome TcbClient::DeleteGatewayVersion(const DeleteGatewayVersionRequest &request)
@@ -750,25 +862,32 @@ TcbClient::DeleteGatewayVersionOutcome TcbClient::DeleteGatewayVersion(const Del
 
 void TcbClient::DeleteGatewayVersionAsync(const DeleteGatewayVersionRequest& request, const DeleteGatewayVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteGatewayVersion(request), context);
-    };
+    using Req = const DeleteGatewayVersionRequest&;
+    using Resp = DeleteGatewayVersionResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteGatewayVersion", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TcbClient::DeleteGatewayVersionOutcomeCallable TcbClient::DeleteGatewayVersionCallable(const DeleteGatewayVersionRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteGatewayVersionOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteGatewayVersion(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteGatewayVersionOutcome>>();
+    DeleteGatewayVersionAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const DeleteGatewayVersionRequest&,
+        DeleteGatewayVersionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TcbClient::DeleteWxGatewayRouteOutcome TcbClient::DeleteWxGatewayRoute(const DeleteWxGatewayRouteRequest &request)
@@ -793,25 +912,32 @@ TcbClient::DeleteWxGatewayRouteOutcome TcbClient::DeleteWxGatewayRoute(const Del
 
 void TcbClient::DeleteWxGatewayRouteAsync(const DeleteWxGatewayRouteRequest& request, const DeleteWxGatewayRouteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteWxGatewayRoute(request), context);
-    };
+    using Req = const DeleteWxGatewayRouteRequest&;
+    using Resp = DeleteWxGatewayRouteResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteWxGatewayRoute", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TcbClient::DeleteWxGatewayRouteOutcomeCallable TcbClient::DeleteWxGatewayRouteCallable(const DeleteWxGatewayRouteRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteWxGatewayRouteOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteWxGatewayRoute(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteWxGatewayRouteOutcome>>();
+    DeleteWxGatewayRouteAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const DeleteWxGatewayRouteRequest&,
+        DeleteWxGatewayRouteOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TcbClient::DescribeActivityRecordOutcome TcbClient::DescribeActivityRecord(const DescribeActivityRecordRequest &request)
@@ -836,25 +962,32 @@ TcbClient::DescribeActivityRecordOutcome TcbClient::DescribeActivityRecord(const
 
 void TcbClient::DescribeActivityRecordAsync(const DescribeActivityRecordRequest& request, const DescribeActivityRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeActivityRecord(request), context);
-    };
+    using Req = const DescribeActivityRecordRequest&;
+    using Resp = DescribeActivityRecordResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeActivityRecord", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TcbClient::DescribeActivityRecordOutcomeCallable TcbClient::DescribeActivityRecordCallable(const DescribeActivityRecordRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeActivityRecordOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeActivityRecord(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeActivityRecordOutcome>>();
+    DescribeActivityRecordAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const DescribeActivityRecordRequest&,
+        DescribeActivityRecordOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TcbClient::DescribeAuthDomainsOutcome TcbClient::DescribeAuthDomains(const DescribeAuthDomainsRequest &request)
@@ -879,25 +1012,32 @@ TcbClient::DescribeAuthDomainsOutcome TcbClient::DescribeAuthDomains(const Descr
 
 void TcbClient::DescribeAuthDomainsAsync(const DescribeAuthDomainsRequest& request, const DescribeAuthDomainsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAuthDomains(request), context);
-    };
+    using Req = const DescribeAuthDomainsRequest&;
+    using Resp = DescribeAuthDomainsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAuthDomains", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TcbClient::DescribeAuthDomainsOutcomeCallable TcbClient::DescribeAuthDomainsCallable(const DescribeAuthDomainsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAuthDomainsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAuthDomains(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAuthDomainsOutcome>>();
+    DescribeAuthDomainsAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const DescribeAuthDomainsRequest&,
+        DescribeAuthDomainsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TcbClient::DescribeBaasPackageListOutcome TcbClient::DescribeBaasPackageList(const DescribeBaasPackageListRequest &request)
@@ -922,25 +1062,32 @@ TcbClient::DescribeBaasPackageListOutcome TcbClient::DescribeBaasPackageList(con
 
 void TcbClient::DescribeBaasPackageListAsync(const DescribeBaasPackageListRequest& request, const DescribeBaasPackageListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeBaasPackageList(request), context);
-    };
+    using Req = const DescribeBaasPackageListRequest&;
+    using Resp = DescribeBaasPackageListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeBaasPackageList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TcbClient::DescribeBaasPackageListOutcomeCallable TcbClient::DescribeBaasPackageListCallable(const DescribeBaasPackageListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeBaasPackageListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeBaasPackageList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeBaasPackageListOutcome>>();
+    DescribeBaasPackageListAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const DescribeBaasPackageListRequest&,
+        DescribeBaasPackageListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TcbClient::DescribeBillingInfoOutcome TcbClient::DescribeBillingInfo(const DescribeBillingInfoRequest &request)
@@ -965,25 +1112,32 @@ TcbClient::DescribeBillingInfoOutcome TcbClient::DescribeBillingInfo(const Descr
 
 void TcbClient::DescribeBillingInfoAsync(const DescribeBillingInfoRequest& request, const DescribeBillingInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeBillingInfo(request), context);
-    };
+    using Req = const DescribeBillingInfoRequest&;
+    using Resp = DescribeBillingInfoResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeBillingInfo", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TcbClient::DescribeBillingInfoOutcomeCallable TcbClient::DescribeBillingInfoCallable(const DescribeBillingInfoRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeBillingInfoOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeBillingInfo(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeBillingInfoOutcome>>();
+    DescribeBillingInfoAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const DescribeBillingInfoRequest&,
+        DescribeBillingInfoOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TcbClient::DescribeCbrServerVersionOutcome TcbClient::DescribeCbrServerVersion(const DescribeCbrServerVersionRequest &request)
@@ -1008,25 +1162,32 @@ TcbClient::DescribeCbrServerVersionOutcome TcbClient::DescribeCbrServerVersion(c
 
 void TcbClient::DescribeCbrServerVersionAsync(const DescribeCbrServerVersionRequest& request, const DescribeCbrServerVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeCbrServerVersion(request), context);
-    };
+    using Req = const DescribeCbrServerVersionRequest&;
+    using Resp = DescribeCbrServerVersionResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeCbrServerVersion", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TcbClient::DescribeCbrServerVersionOutcomeCallable TcbClient::DescribeCbrServerVersionCallable(const DescribeCbrServerVersionRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeCbrServerVersionOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeCbrServerVersion(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeCbrServerVersionOutcome>>();
+    DescribeCbrServerVersionAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const DescribeCbrServerVersionRequest&,
+        DescribeCbrServerVersionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TcbClient::DescribeCloudBaseBuildServiceOutcome TcbClient::DescribeCloudBaseBuildService(const DescribeCloudBaseBuildServiceRequest &request)
@@ -1051,25 +1212,32 @@ TcbClient::DescribeCloudBaseBuildServiceOutcome TcbClient::DescribeCloudBaseBuil
 
 void TcbClient::DescribeCloudBaseBuildServiceAsync(const DescribeCloudBaseBuildServiceRequest& request, const DescribeCloudBaseBuildServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeCloudBaseBuildService(request), context);
-    };
+    using Req = const DescribeCloudBaseBuildServiceRequest&;
+    using Resp = DescribeCloudBaseBuildServiceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeCloudBaseBuildService", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TcbClient::DescribeCloudBaseBuildServiceOutcomeCallable TcbClient::DescribeCloudBaseBuildServiceCallable(const DescribeCloudBaseBuildServiceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeCloudBaseBuildServiceOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeCloudBaseBuildService(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeCloudBaseBuildServiceOutcome>>();
+    DescribeCloudBaseBuildServiceAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const DescribeCloudBaseBuildServiceRequest&,
+        DescribeCloudBaseBuildServiceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TcbClient::DescribeCloudBaseProjectLatestVersionListOutcome TcbClient::DescribeCloudBaseProjectLatestVersionList(const DescribeCloudBaseProjectLatestVersionListRequest &request)
@@ -1094,25 +1262,32 @@ TcbClient::DescribeCloudBaseProjectLatestVersionListOutcome TcbClient::DescribeC
 
 void TcbClient::DescribeCloudBaseProjectLatestVersionListAsync(const DescribeCloudBaseProjectLatestVersionListRequest& request, const DescribeCloudBaseProjectLatestVersionListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeCloudBaseProjectLatestVersionList(request), context);
-    };
+    using Req = const DescribeCloudBaseProjectLatestVersionListRequest&;
+    using Resp = DescribeCloudBaseProjectLatestVersionListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeCloudBaseProjectLatestVersionList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TcbClient::DescribeCloudBaseProjectLatestVersionListOutcomeCallable TcbClient::DescribeCloudBaseProjectLatestVersionListCallable(const DescribeCloudBaseProjectLatestVersionListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeCloudBaseProjectLatestVersionListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeCloudBaseProjectLatestVersionList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeCloudBaseProjectLatestVersionListOutcome>>();
+    DescribeCloudBaseProjectLatestVersionListAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const DescribeCloudBaseProjectLatestVersionListRequest&,
+        DescribeCloudBaseProjectLatestVersionListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TcbClient::DescribeCloudBaseProjectVersionListOutcome TcbClient::DescribeCloudBaseProjectVersionList(const DescribeCloudBaseProjectVersionListRequest &request)
@@ -1137,25 +1312,32 @@ TcbClient::DescribeCloudBaseProjectVersionListOutcome TcbClient::DescribeCloudBa
 
 void TcbClient::DescribeCloudBaseProjectVersionListAsync(const DescribeCloudBaseProjectVersionListRequest& request, const DescribeCloudBaseProjectVersionListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeCloudBaseProjectVersionList(request), context);
-    };
+    using Req = const DescribeCloudBaseProjectVersionListRequest&;
+    using Resp = DescribeCloudBaseProjectVersionListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeCloudBaseProjectVersionList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TcbClient::DescribeCloudBaseProjectVersionListOutcomeCallable TcbClient::DescribeCloudBaseProjectVersionListCallable(const DescribeCloudBaseProjectVersionListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeCloudBaseProjectVersionListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeCloudBaseProjectVersionList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeCloudBaseProjectVersionListOutcome>>();
+    DescribeCloudBaseProjectVersionListAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const DescribeCloudBaseProjectVersionListRequest&,
+        DescribeCloudBaseProjectVersionListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TcbClient::DescribeCloudBaseRunAllVpcsOutcome TcbClient::DescribeCloudBaseRunAllVpcs(const DescribeCloudBaseRunAllVpcsRequest &request)
@@ -1180,25 +1362,32 @@ TcbClient::DescribeCloudBaseRunAllVpcsOutcome TcbClient::DescribeCloudBaseRunAll
 
 void TcbClient::DescribeCloudBaseRunAllVpcsAsync(const DescribeCloudBaseRunAllVpcsRequest& request, const DescribeCloudBaseRunAllVpcsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeCloudBaseRunAllVpcs(request), context);
-    };
+    using Req = const DescribeCloudBaseRunAllVpcsRequest&;
+    using Resp = DescribeCloudBaseRunAllVpcsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeCloudBaseRunAllVpcs", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TcbClient::DescribeCloudBaseRunAllVpcsOutcomeCallable TcbClient::DescribeCloudBaseRunAllVpcsCallable(const DescribeCloudBaseRunAllVpcsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeCloudBaseRunAllVpcsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeCloudBaseRunAllVpcs(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeCloudBaseRunAllVpcsOutcome>>();
+    DescribeCloudBaseRunAllVpcsAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const DescribeCloudBaseRunAllVpcsRequest&,
+        DescribeCloudBaseRunAllVpcsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TcbClient::DescribeCloudBaseRunConfForGateWayOutcome TcbClient::DescribeCloudBaseRunConfForGateWay(const DescribeCloudBaseRunConfForGateWayRequest &request)
@@ -1223,25 +1412,32 @@ TcbClient::DescribeCloudBaseRunConfForGateWayOutcome TcbClient::DescribeCloudBas
 
 void TcbClient::DescribeCloudBaseRunConfForGateWayAsync(const DescribeCloudBaseRunConfForGateWayRequest& request, const DescribeCloudBaseRunConfForGateWayAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeCloudBaseRunConfForGateWay(request), context);
-    };
+    using Req = const DescribeCloudBaseRunConfForGateWayRequest&;
+    using Resp = DescribeCloudBaseRunConfForGateWayResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeCloudBaseRunConfForGateWay", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TcbClient::DescribeCloudBaseRunConfForGateWayOutcomeCallable TcbClient::DescribeCloudBaseRunConfForGateWayCallable(const DescribeCloudBaseRunConfForGateWayRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeCloudBaseRunConfForGateWayOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeCloudBaseRunConfForGateWay(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeCloudBaseRunConfForGateWayOutcome>>();
+    DescribeCloudBaseRunConfForGateWayAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const DescribeCloudBaseRunConfForGateWayRequest&,
+        DescribeCloudBaseRunConfForGateWayOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TcbClient::DescribeCloudBaseRunOneClickTaskExternalOutcome TcbClient::DescribeCloudBaseRunOneClickTaskExternal(const DescribeCloudBaseRunOneClickTaskExternalRequest &request)
@@ -1266,25 +1462,32 @@ TcbClient::DescribeCloudBaseRunOneClickTaskExternalOutcome TcbClient::DescribeCl
 
 void TcbClient::DescribeCloudBaseRunOneClickTaskExternalAsync(const DescribeCloudBaseRunOneClickTaskExternalRequest& request, const DescribeCloudBaseRunOneClickTaskExternalAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeCloudBaseRunOneClickTaskExternal(request), context);
-    };
+    using Req = const DescribeCloudBaseRunOneClickTaskExternalRequest&;
+    using Resp = DescribeCloudBaseRunOneClickTaskExternalResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeCloudBaseRunOneClickTaskExternal", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TcbClient::DescribeCloudBaseRunOneClickTaskExternalOutcomeCallable TcbClient::DescribeCloudBaseRunOneClickTaskExternalCallable(const DescribeCloudBaseRunOneClickTaskExternalRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeCloudBaseRunOneClickTaskExternalOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeCloudBaseRunOneClickTaskExternal(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeCloudBaseRunOneClickTaskExternalOutcome>>();
+    DescribeCloudBaseRunOneClickTaskExternalAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const DescribeCloudBaseRunOneClickTaskExternalRequest&,
+        DescribeCloudBaseRunOneClickTaskExternalOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TcbClient::DescribeCloudBaseRunOperationTypesOutcome TcbClient::DescribeCloudBaseRunOperationTypes(const DescribeCloudBaseRunOperationTypesRequest &request)
@@ -1309,25 +1512,32 @@ TcbClient::DescribeCloudBaseRunOperationTypesOutcome TcbClient::DescribeCloudBas
 
 void TcbClient::DescribeCloudBaseRunOperationTypesAsync(const DescribeCloudBaseRunOperationTypesRequest& request, const DescribeCloudBaseRunOperationTypesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeCloudBaseRunOperationTypes(request), context);
-    };
+    using Req = const DescribeCloudBaseRunOperationTypesRequest&;
+    using Resp = DescribeCloudBaseRunOperationTypesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeCloudBaseRunOperationTypes", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TcbClient::DescribeCloudBaseRunOperationTypesOutcomeCallable TcbClient::DescribeCloudBaseRunOperationTypesCallable(const DescribeCloudBaseRunOperationTypesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeCloudBaseRunOperationTypesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeCloudBaseRunOperationTypes(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeCloudBaseRunOperationTypesOutcome>>();
+    DescribeCloudBaseRunOperationTypesAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const DescribeCloudBaseRunOperationTypesRequest&,
+        DescribeCloudBaseRunOperationTypesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TcbClient::DescribeCloudBaseRunPodListOutcome TcbClient::DescribeCloudBaseRunPodList(const DescribeCloudBaseRunPodListRequest &request)
@@ -1352,25 +1562,32 @@ TcbClient::DescribeCloudBaseRunPodListOutcome TcbClient::DescribeCloudBaseRunPod
 
 void TcbClient::DescribeCloudBaseRunPodListAsync(const DescribeCloudBaseRunPodListRequest& request, const DescribeCloudBaseRunPodListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeCloudBaseRunPodList(request), context);
-    };
+    using Req = const DescribeCloudBaseRunPodListRequest&;
+    using Resp = DescribeCloudBaseRunPodListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeCloudBaseRunPodList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TcbClient::DescribeCloudBaseRunPodListOutcomeCallable TcbClient::DescribeCloudBaseRunPodListCallable(const DescribeCloudBaseRunPodListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeCloudBaseRunPodListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeCloudBaseRunPodList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeCloudBaseRunPodListOutcome>>();
+    DescribeCloudBaseRunPodListAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const DescribeCloudBaseRunPodListRequest&,
+        DescribeCloudBaseRunPodListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TcbClient::DescribeCloudBaseRunResourceOutcome TcbClient::DescribeCloudBaseRunResource(const DescribeCloudBaseRunResourceRequest &request)
@@ -1395,25 +1612,32 @@ TcbClient::DescribeCloudBaseRunResourceOutcome TcbClient::DescribeCloudBaseRunRe
 
 void TcbClient::DescribeCloudBaseRunResourceAsync(const DescribeCloudBaseRunResourceRequest& request, const DescribeCloudBaseRunResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeCloudBaseRunResource(request), context);
-    };
+    using Req = const DescribeCloudBaseRunResourceRequest&;
+    using Resp = DescribeCloudBaseRunResourceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeCloudBaseRunResource", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TcbClient::DescribeCloudBaseRunResourceOutcomeCallable TcbClient::DescribeCloudBaseRunResourceCallable(const DescribeCloudBaseRunResourceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeCloudBaseRunResourceOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeCloudBaseRunResource(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeCloudBaseRunResourceOutcome>>();
+    DescribeCloudBaseRunResourceAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const DescribeCloudBaseRunResourceRequest&,
+        DescribeCloudBaseRunResourceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TcbClient::DescribeCloudBaseRunResourceForExtendOutcome TcbClient::DescribeCloudBaseRunResourceForExtend(const DescribeCloudBaseRunResourceForExtendRequest &request)
@@ -1438,25 +1662,32 @@ TcbClient::DescribeCloudBaseRunResourceForExtendOutcome TcbClient::DescribeCloud
 
 void TcbClient::DescribeCloudBaseRunResourceForExtendAsync(const DescribeCloudBaseRunResourceForExtendRequest& request, const DescribeCloudBaseRunResourceForExtendAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeCloudBaseRunResourceForExtend(request), context);
-    };
+    using Req = const DescribeCloudBaseRunResourceForExtendRequest&;
+    using Resp = DescribeCloudBaseRunResourceForExtendResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeCloudBaseRunResourceForExtend", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TcbClient::DescribeCloudBaseRunResourceForExtendOutcomeCallable TcbClient::DescribeCloudBaseRunResourceForExtendCallable(const DescribeCloudBaseRunResourceForExtendRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeCloudBaseRunResourceForExtendOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeCloudBaseRunResourceForExtend(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeCloudBaseRunResourceForExtendOutcome>>();
+    DescribeCloudBaseRunResourceForExtendAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const DescribeCloudBaseRunResourceForExtendRequest&,
+        DescribeCloudBaseRunResourceForExtendOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TcbClient::DescribeCloudBaseRunServerOutcome TcbClient::DescribeCloudBaseRunServer(const DescribeCloudBaseRunServerRequest &request)
@@ -1481,25 +1712,32 @@ TcbClient::DescribeCloudBaseRunServerOutcome TcbClient::DescribeCloudBaseRunServ
 
 void TcbClient::DescribeCloudBaseRunServerAsync(const DescribeCloudBaseRunServerRequest& request, const DescribeCloudBaseRunServerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeCloudBaseRunServer(request), context);
-    };
+    using Req = const DescribeCloudBaseRunServerRequest&;
+    using Resp = DescribeCloudBaseRunServerResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeCloudBaseRunServer", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TcbClient::DescribeCloudBaseRunServerOutcomeCallable TcbClient::DescribeCloudBaseRunServerCallable(const DescribeCloudBaseRunServerRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeCloudBaseRunServerOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeCloudBaseRunServer(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeCloudBaseRunServerOutcome>>();
+    DescribeCloudBaseRunServerAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const DescribeCloudBaseRunServerRequest&,
+        DescribeCloudBaseRunServerOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TcbClient::DescribeCloudBaseRunServerDomainNameOutcome TcbClient::DescribeCloudBaseRunServerDomainName(const DescribeCloudBaseRunServerDomainNameRequest &request)
@@ -1524,25 +1762,32 @@ TcbClient::DescribeCloudBaseRunServerDomainNameOutcome TcbClient::DescribeCloudB
 
 void TcbClient::DescribeCloudBaseRunServerDomainNameAsync(const DescribeCloudBaseRunServerDomainNameRequest& request, const DescribeCloudBaseRunServerDomainNameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeCloudBaseRunServerDomainName(request), context);
-    };
+    using Req = const DescribeCloudBaseRunServerDomainNameRequest&;
+    using Resp = DescribeCloudBaseRunServerDomainNameResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeCloudBaseRunServerDomainName", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TcbClient::DescribeCloudBaseRunServerDomainNameOutcomeCallable TcbClient::DescribeCloudBaseRunServerDomainNameCallable(const DescribeCloudBaseRunServerDomainNameRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeCloudBaseRunServerDomainNameOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeCloudBaseRunServerDomainName(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeCloudBaseRunServerDomainNameOutcome>>();
+    DescribeCloudBaseRunServerDomainNameAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const DescribeCloudBaseRunServerDomainNameRequest&,
+        DescribeCloudBaseRunServerDomainNameOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TcbClient::DescribeCloudBaseRunServerVersionOutcome TcbClient::DescribeCloudBaseRunServerVersion(const DescribeCloudBaseRunServerVersionRequest &request)
@@ -1567,25 +1812,32 @@ TcbClient::DescribeCloudBaseRunServerVersionOutcome TcbClient::DescribeCloudBase
 
 void TcbClient::DescribeCloudBaseRunServerVersionAsync(const DescribeCloudBaseRunServerVersionRequest& request, const DescribeCloudBaseRunServerVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeCloudBaseRunServerVersion(request), context);
-    };
+    using Req = const DescribeCloudBaseRunServerVersionRequest&;
+    using Resp = DescribeCloudBaseRunServerVersionResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeCloudBaseRunServerVersion", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TcbClient::DescribeCloudBaseRunServerVersionOutcomeCallable TcbClient::DescribeCloudBaseRunServerVersionCallable(const DescribeCloudBaseRunServerVersionRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeCloudBaseRunServerVersionOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeCloudBaseRunServerVersion(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeCloudBaseRunServerVersionOutcome>>();
+    DescribeCloudBaseRunServerVersionAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const DescribeCloudBaseRunServerVersionRequest&,
+        DescribeCloudBaseRunServerVersionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TcbClient::DescribeCloudBaseRunVersionOutcome TcbClient::DescribeCloudBaseRunVersion(const DescribeCloudBaseRunVersionRequest &request)
@@ -1610,25 +1862,32 @@ TcbClient::DescribeCloudBaseRunVersionOutcome TcbClient::DescribeCloudBaseRunVer
 
 void TcbClient::DescribeCloudBaseRunVersionAsync(const DescribeCloudBaseRunVersionRequest& request, const DescribeCloudBaseRunVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeCloudBaseRunVersion(request), context);
-    };
+    using Req = const DescribeCloudBaseRunVersionRequest&;
+    using Resp = DescribeCloudBaseRunVersionResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeCloudBaseRunVersion", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TcbClient::DescribeCloudBaseRunVersionOutcomeCallable TcbClient::DescribeCloudBaseRunVersionCallable(const DescribeCloudBaseRunVersionRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeCloudBaseRunVersionOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeCloudBaseRunVersion(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeCloudBaseRunVersionOutcome>>();
+    DescribeCloudBaseRunVersionAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const DescribeCloudBaseRunVersionRequest&,
+        DescribeCloudBaseRunVersionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TcbClient::DescribeCloudBaseRunVersionRsByConditionOutcome TcbClient::DescribeCloudBaseRunVersionRsByCondition(const DescribeCloudBaseRunVersionRsByConditionRequest &request)
@@ -1653,25 +1912,32 @@ TcbClient::DescribeCloudBaseRunVersionRsByConditionOutcome TcbClient::DescribeCl
 
 void TcbClient::DescribeCloudBaseRunVersionRsByConditionAsync(const DescribeCloudBaseRunVersionRsByConditionRequest& request, const DescribeCloudBaseRunVersionRsByConditionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeCloudBaseRunVersionRsByCondition(request), context);
-    };
+    using Req = const DescribeCloudBaseRunVersionRsByConditionRequest&;
+    using Resp = DescribeCloudBaseRunVersionRsByConditionResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeCloudBaseRunVersionRsByCondition", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TcbClient::DescribeCloudBaseRunVersionRsByConditionOutcomeCallable TcbClient::DescribeCloudBaseRunVersionRsByConditionCallable(const DescribeCloudBaseRunVersionRsByConditionRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeCloudBaseRunVersionRsByConditionOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeCloudBaseRunVersionRsByCondition(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeCloudBaseRunVersionRsByConditionOutcome>>();
+    DescribeCloudBaseRunVersionRsByConditionAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const DescribeCloudBaseRunVersionRsByConditionRequest&,
+        DescribeCloudBaseRunVersionRsByConditionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TcbClient::DescribeCloudBaseRunVersionSnapshotOutcome TcbClient::DescribeCloudBaseRunVersionSnapshot(const DescribeCloudBaseRunVersionSnapshotRequest &request)
@@ -1696,25 +1962,32 @@ TcbClient::DescribeCloudBaseRunVersionSnapshotOutcome TcbClient::DescribeCloudBa
 
 void TcbClient::DescribeCloudBaseRunVersionSnapshotAsync(const DescribeCloudBaseRunVersionSnapshotRequest& request, const DescribeCloudBaseRunVersionSnapshotAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeCloudBaseRunVersionSnapshot(request), context);
-    };
+    using Req = const DescribeCloudBaseRunVersionSnapshotRequest&;
+    using Resp = DescribeCloudBaseRunVersionSnapshotResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeCloudBaseRunVersionSnapshot", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TcbClient::DescribeCloudBaseRunVersionSnapshotOutcomeCallable TcbClient::DescribeCloudBaseRunVersionSnapshotCallable(const DescribeCloudBaseRunVersionSnapshotRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeCloudBaseRunVersionSnapshotOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeCloudBaseRunVersionSnapshot(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeCloudBaseRunVersionSnapshotOutcome>>();
+    DescribeCloudBaseRunVersionSnapshotAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const DescribeCloudBaseRunVersionSnapshotRequest&,
+        DescribeCloudBaseRunVersionSnapshotOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TcbClient::DescribeCurveDataOutcome TcbClient::DescribeCurveData(const DescribeCurveDataRequest &request)
@@ -1739,25 +2012,32 @@ TcbClient::DescribeCurveDataOutcome TcbClient::DescribeCurveData(const DescribeC
 
 void TcbClient::DescribeCurveDataAsync(const DescribeCurveDataRequest& request, const DescribeCurveDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeCurveData(request), context);
-    };
+    using Req = const DescribeCurveDataRequest&;
+    using Resp = DescribeCurveDataResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeCurveData", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TcbClient::DescribeCurveDataOutcomeCallable TcbClient::DescribeCurveDataCallable(const DescribeCurveDataRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeCurveDataOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeCurveData(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeCurveDataOutcome>>();
+    DescribeCurveDataAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const DescribeCurveDataRequest&,
+        DescribeCurveDataOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TcbClient::DescribeDatabaseACLOutcome TcbClient::DescribeDatabaseACL(const DescribeDatabaseACLRequest &request)
@@ -1782,25 +2062,32 @@ TcbClient::DescribeDatabaseACLOutcome TcbClient::DescribeDatabaseACL(const Descr
 
 void TcbClient::DescribeDatabaseACLAsync(const DescribeDatabaseACLRequest& request, const DescribeDatabaseACLAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDatabaseACL(request), context);
-    };
+    using Req = const DescribeDatabaseACLRequest&;
+    using Resp = DescribeDatabaseACLResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeDatabaseACL", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TcbClient::DescribeDatabaseACLOutcomeCallable TcbClient::DescribeDatabaseACLCallable(const DescribeDatabaseACLRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeDatabaseACLOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDatabaseACL(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeDatabaseACLOutcome>>();
+    DescribeDatabaseACLAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const DescribeDatabaseACLRequest&,
+        DescribeDatabaseACLOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TcbClient::DescribeDownloadFileOutcome TcbClient::DescribeDownloadFile(const DescribeDownloadFileRequest &request)
@@ -1825,25 +2112,32 @@ TcbClient::DescribeDownloadFileOutcome TcbClient::DescribeDownloadFile(const Des
 
 void TcbClient::DescribeDownloadFileAsync(const DescribeDownloadFileRequest& request, const DescribeDownloadFileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDownloadFile(request), context);
-    };
+    using Req = const DescribeDownloadFileRequest&;
+    using Resp = DescribeDownloadFileResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeDownloadFile", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TcbClient::DescribeDownloadFileOutcomeCallable TcbClient::DescribeDownloadFileCallable(const DescribeDownloadFileRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeDownloadFileOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDownloadFile(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeDownloadFileOutcome>>();
+    DescribeDownloadFileAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const DescribeDownloadFileRequest&,
+        DescribeDownloadFileOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TcbClient::DescribeEndUserLoginStatisticOutcome TcbClient::DescribeEndUserLoginStatistic(const DescribeEndUserLoginStatisticRequest &request)
@@ -1868,25 +2162,32 @@ TcbClient::DescribeEndUserLoginStatisticOutcome TcbClient::DescribeEndUserLoginS
 
 void TcbClient::DescribeEndUserLoginStatisticAsync(const DescribeEndUserLoginStatisticRequest& request, const DescribeEndUserLoginStatisticAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeEndUserLoginStatistic(request), context);
-    };
+    using Req = const DescribeEndUserLoginStatisticRequest&;
+    using Resp = DescribeEndUserLoginStatisticResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeEndUserLoginStatistic", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TcbClient::DescribeEndUserLoginStatisticOutcomeCallable TcbClient::DescribeEndUserLoginStatisticCallable(const DescribeEndUserLoginStatisticRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeEndUserLoginStatisticOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeEndUserLoginStatistic(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeEndUserLoginStatisticOutcome>>();
+    DescribeEndUserLoginStatisticAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const DescribeEndUserLoginStatisticRequest&,
+        DescribeEndUserLoginStatisticOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TcbClient::DescribeEndUserStatisticOutcome TcbClient::DescribeEndUserStatistic(const DescribeEndUserStatisticRequest &request)
@@ -1911,25 +2212,32 @@ TcbClient::DescribeEndUserStatisticOutcome TcbClient::DescribeEndUserStatistic(c
 
 void TcbClient::DescribeEndUserStatisticAsync(const DescribeEndUserStatisticRequest& request, const DescribeEndUserStatisticAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeEndUserStatistic(request), context);
-    };
+    using Req = const DescribeEndUserStatisticRequest&;
+    using Resp = DescribeEndUserStatisticResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeEndUserStatistic", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TcbClient::DescribeEndUserStatisticOutcomeCallable TcbClient::DescribeEndUserStatisticCallable(const DescribeEndUserStatisticRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeEndUserStatisticOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeEndUserStatistic(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeEndUserStatisticOutcome>>();
+    DescribeEndUserStatisticAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const DescribeEndUserStatisticRequest&,
+        DescribeEndUserStatisticOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TcbClient::DescribeEndUsersOutcome TcbClient::DescribeEndUsers(const DescribeEndUsersRequest &request)
@@ -1954,25 +2262,32 @@ TcbClient::DescribeEndUsersOutcome TcbClient::DescribeEndUsers(const DescribeEnd
 
 void TcbClient::DescribeEndUsersAsync(const DescribeEndUsersRequest& request, const DescribeEndUsersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeEndUsers(request), context);
-    };
+    using Req = const DescribeEndUsersRequest&;
+    using Resp = DescribeEndUsersResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeEndUsers", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TcbClient::DescribeEndUsersOutcomeCallable TcbClient::DescribeEndUsersCallable(const DescribeEndUsersRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeEndUsersOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeEndUsers(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeEndUsersOutcome>>();
+    DescribeEndUsersAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const DescribeEndUsersRequest&,
+        DescribeEndUsersOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TcbClient::DescribeEnvDealRegionOutcome TcbClient::DescribeEnvDealRegion(const DescribeEnvDealRegionRequest &request)
@@ -1997,25 +2312,32 @@ TcbClient::DescribeEnvDealRegionOutcome TcbClient::DescribeEnvDealRegion(const D
 
 void TcbClient::DescribeEnvDealRegionAsync(const DescribeEnvDealRegionRequest& request, const DescribeEnvDealRegionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeEnvDealRegion(request), context);
-    };
+    using Req = const DescribeEnvDealRegionRequest&;
+    using Resp = DescribeEnvDealRegionResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeEnvDealRegion", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TcbClient::DescribeEnvDealRegionOutcomeCallable TcbClient::DescribeEnvDealRegionCallable(const DescribeEnvDealRegionRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeEnvDealRegionOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeEnvDealRegion(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeEnvDealRegionOutcome>>();
+    DescribeEnvDealRegionAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const DescribeEnvDealRegionRequest&,
+        DescribeEnvDealRegionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TcbClient::DescribeEnvFreeQuotaOutcome TcbClient::DescribeEnvFreeQuota(const DescribeEnvFreeQuotaRequest &request)
@@ -2040,25 +2362,32 @@ TcbClient::DescribeEnvFreeQuotaOutcome TcbClient::DescribeEnvFreeQuota(const Des
 
 void TcbClient::DescribeEnvFreeQuotaAsync(const DescribeEnvFreeQuotaRequest& request, const DescribeEnvFreeQuotaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeEnvFreeQuota(request), context);
-    };
+    using Req = const DescribeEnvFreeQuotaRequest&;
+    using Resp = DescribeEnvFreeQuotaResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeEnvFreeQuota", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TcbClient::DescribeEnvFreeQuotaOutcomeCallable TcbClient::DescribeEnvFreeQuotaCallable(const DescribeEnvFreeQuotaRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeEnvFreeQuotaOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeEnvFreeQuota(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeEnvFreeQuotaOutcome>>();
+    DescribeEnvFreeQuotaAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const DescribeEnvFreeQuotaRequest&,
+        DescribeEnvFreeQuotaOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TcbClient::DescribeEnvLimitOutcome TcbClient::DescribeEnvLimit(const DescribeEnvLimitRequest &request)
@@ -2083,25 +2412,32 @@ TcbClient::DescribeEnvLimitOutcome TcbClient::DescribeEnvLimit(const DescribeEnv
 
 void TcbClient::DescribeEnvLimitAsync(const DescribeEnvLimitRequest& request, const DescribeEnvLimitAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeEnvLimit(request), context);
-    };
+    using Req = const DescribeEnvLimitRequest&;
+    using Resp = DescribeEnvLimitResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeEnvLimit", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TcbClient::DescribeEnvLimitOutcomeCallable TcbClient::DescribeEnvLimitCallable(const DescribeEnvLimitRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeEnvLimitOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeEnvLimit(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeEnvLimitOutcome>>();
+    DescribeEnvLimitAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const DescribeEnvLimitRequest&,
+        DescribeEnvLimitOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TcbClient::DescribeEnvPostpaidDeductOutcome TcbClient::DescribeEnvPostpaidDeduct(const DescribeEnvPostpaidDeductRequest &request)
@@ -2126,25 +2462,32 @@ TcbClient::DescribeEnvPostpaidDeductOutcome TcbClient::DescribeEnvPostpaidDeduct
 
 void TcbClient::DescribeEnvPostpaidDeductAsync(const DescribeEnvPostpaidDeductRequest& request, const DescribeEnvPostpaidDeductAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeEnvPostpaidDeduct(request), context);
-    };
+    using Req = const DescribeEnvPostpaidDeductRequest&;
+    using Resp = DescribeEnvPostpaidDeductResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeEnvPostpaidDeduct", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TcbClient::DescribeEnvPostpaidDeductOutcomeCallable TcbClient::DescribeEnvPostpaidDeductCallable(const DescribeEnvPostpaidDeductRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeEnvPostpaidDeductOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeEnvPostpaidDeduct(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeEnvPostpaidDeductOutcome>>();
+    DescribeEnvPostpaidDeductAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const DescribeEnvPostpaidDeductRequest&,
+        DescribeEnvPostpaidDeductOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TcbClient::DescribeEnvsOutcome TcbClient::DescribeEnvs(const DescribeEnvsRequest &request)
@@ -2169,25 +2512,32 @@ TcbClient::DescribeEnvsOutcome TcbClient::DescribeEnvs(const DescribeEnvsRequest
 
 void TcbClient::DescribeEnvsAsync(const DescribeEnvsRequest& request, const DescribeEnvsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeEnvs(request), context);
-    };
+    using Req = const DescribeEnvsRequest&;
+    using Resp = DescribeEnvsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeEnvs", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TcbClient::DescribeEnvsOutcomeCallable TcbClient::DescribeEnvsCallable(const DescribeEnvsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeEnvsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeEnvs(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeEnvsOutcome>>();
+    DescribeEnvsAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const DescribeEnvsRequest&,
+        DescribeEnvsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TcbClient::DescribeExtensionUploadInfoOutcome TcbClient::DescribeExtensionUploadInfo(const DescribeExtensionUploadInfoRequest &request)
@@ -2212,25 +2562,32 @@ TcbClient::DescribeExtensionUploadInfoOutcome TcbClient::DescribeExtensionUpload
 
 void TcbClient::DescribeExtensionUploadInfoAsync(const DescribeExtensionUploadInfoRequest& request, const DescribeExtensionUploadInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeExtensionUploadInfo(request), context);
-    };
+    using Req = const DescribeExtensionUploadInfoRequest&;
+    using Resp = DescribeExtensionUploadInfoResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeExtensionUploadInfo", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TcbClient::DescribeExtensionUploadInfoOutcomeCallable TcbClient::DescribeExtensionUploadInfoCallable(const DescribeExtensionUploadInfoRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeExtensionUploadInfoOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeExtensionUploadInfo(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeExtensionUploadInfoOutcome>>();
+    DescribeExtensionUploadInfoAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const DescribeExtensionUploadInfoRequest&,
+        DescribeExtensionUploadInfoOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TcbClient::DescribeExtraPkgBillingInfoOutcome TcbClient::DescribeExtraPkgBillingInfo(const DescribeExtraPkgBillingInfoRequest &request)
@@ -2255,25 +2612,32 @@ TcbClient::DescribeExtraPkgBillingInfoOutcome TcbClient::DescribeExtraPkgBilling
 
 void TcbClient::DescribeExtraPkgBillingInfoAsync(const DescribeExtraPkgBillingInfoRequest& request, const DescribeExtraPkgBillingInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeExtraPkgBillingInfo(request), context);
-    };
+    using Req = const DescribeExtraPkgBillingInfoRequest&;
+    using Resp = DescribeExtraPkgBillingInfoResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeExtraPkgBillingInfo", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TcbClient::DescribeExtraPkgBillingInfoOutcomeCallable TcbClient::DescribeExtraPkgBillingInfoCallable(const DescribeExtraPkgBillingInfoRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeExtraPkgBillingInfoOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeExtraPkgBillingInfo(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeExtraPkgBillingInfoOutcome>>();
+    DescribeExtraPkgBillingInfoAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const DescribeExtraPkgBillingInfoRequest&,
+        DescribeExtraPkgBillingInfoOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TcbClient::DescribeGatewayCurveDataOutcome TcbClient::DescribeGatewayCurveData(const DescribeGatewayCurveDataRequest &request)
@@ -2298,25 +2662,32 @@ TcbClient::DescribeGatewayCurveDataOutcome TcbClient::DescribeGatewayCurveData(c
 
 void TcbClient::DescribeGatewayCurveDataAsync(const DescribeGatewayCurveDataRequest& request, const DescribeGatewayCurveDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeGatewayCurveData(request), context);
-    };
+    using Req = const DescribeGatewayCurveDataRequest&;
+    using Resp = DescribeGatewayCurveDataResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeGatewayCurveData", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TcbClient::DescribeGatewayCurveDataOutcomeCallable TcbClient::DescribeGatewayCurveDataCallable(const DescribeGatewayCurveDataRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeGatewayCurveDataOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeGatewayCurveData(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeGatewayCurveDataOutcome>>();
+    DescribeGatewayCurveDataAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const DescribeGatewayCurveDataRequest&,
+        DescribeGatewayCurveDataOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TcbClient::DescribeGatewayVersionsOutcome TcbClient::DescribeGatewayVersions(const DescribeGatewayVersionsRequest &request)
@@ -2341,25 +2712,32 @@ TcbClient::DescribeGatewayVersionsOutcome TcbClient::DescribeGatewayVersions(con
 
 void TcbClient::DescribeGatewayVersionsAsync(const DescribeGatewayVersionsRequest& request, const DescribeGatewayVersionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeGatewayVersions(request), context);
-    };
+    using Req = const DescribeGatewayVersionsRequest&;
+    using Resp = DescribeGatewayVersionsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeGatewayVersions", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TcbClient::DescribeGatewayVersionsOutcomeCallable TcbClient::DescribeGatewayVersionsCallable(const DescribeGatewayVersionsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeGatewayVersionsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeGatewayVersions(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeGatewayVersionsOutcome>>();
+    DescribeGatewayVersionsAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const DescribeGatewayVersionsRequest&,
+        DescribeGatewayVersionsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TcbClient::DescribeGraphDataOutcome TcbClient::DescribeGraphData(const DescribeGraphDataRequest &request)
@@ -2384,25 +2762,32 @@ TcbClient::DescribeGraphDataOutcome TcbClient::DescribeGraphData(const DescribeG
 
 void TcbClient::DescribeGraphDataAsync(const DescribeGraphDataRequest& request, const DescribeGraphDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeGraphData(request), context);
-    };
+    using Req = const DescribeGraphDataRequest&;
+    using Resp = DescribeGraphDataResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeGraphData", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TcbClient::DescribeGraphDataOutcomeCallable TcbClient::DescribeGraphDataCallable(const DescribeGraphDataRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeGraphDataOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeGraphData(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeGraphDataOutcome>>();
+    DescribeGraphDataAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const DescribeGraphDataRequest&,
+        DescribeGraphDataOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TcbClient::DescribeHostingDomainTaskOutcome TcbClient::DescribeHostingDomainTask(const DescribeHostingDomainTaskRequest &request)
@@ -2427,25 +2812,32 @@ TcbClient::DescribeHostingDomainTaskOutcome TcbClient::DescribeHostingDomainTask
 
 void TcbClient::DescribeHostingDomainTaskAsync(const DescribeHostingDomainTaskRequest& request, const DescribeHostingDomainTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeHostingDomainTask(request), context);
-    };
+    using Req = const DescribeHostingDomainTaskRequest&;
+    using Resp = DescribeHostingDomainTaskResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeHostingDomainTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TcbClient::DescribeHostingDomainTaskOutcomeCallable TcbClient::DescribeHostingDomainTaskCallable(const DescribeHostingDomainTaskRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeHostingDomainTaskOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeHostingDomainTask(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeHostingDomainTaskOutcome>>();
+    DescribeHostingDomainTaskAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const DescribeHostingDomainTaskRequest&,
+        DescribeHostingDomainTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TcbClient::DescribePostpayFreeQuotasOutcome TcbClient::DescribePostpayFreeQuotas(const DescribePostpayFreeQuotasRequest &request)
@@ -2470,25 +2862,32 @@ TcbClient::DescribePostpayFreeQuotasOutcome TcbClient::DescribePostpayFreeQuotas
 
 void TcbClient::DescribePostpayFreeQuotasAsync(const DescribePostpayFreeQuotasRequest& request, const DescribePostpayFreeQuotasAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribePostpayFreeQuotas(request), context);
-    };
+    using Req = const DescribePostpayFreeQuotasRequest&;
+    using Resp = DescribePostpayFreeQuotasResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribePostpayFreeQuotas", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TcbClient::DescribePostpayFreeQuotasOutcomeCallable TcbClient::DescribePostpayFreeQuotasCallable(const DescribePostpayFreeQuotasRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribePostpayFreeQuotasOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribePostpayFreeQuotas(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribePostpayFreeQuotasOutcome>>();
+    DescribePostpayFreeQuotasAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const DescribePostpayFreeQuotasRequest&,
+        DescribePostpayFreeQuotasOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TcbClient::DescribePostpayPackageFreeQuotasOutcome TcbClient::DescribePostpayPackageFreeQuotas(const DescribePostpayPackageFreeQuotasRequest &request)
@@ -2513,25 +2912,32 @@ TcbClient::DescribePostpayPackageFreeQuotasOutcome TcbClient::DescribePostpayPac
 
 void TcbClient::DescribePostpayPackageFreeQuotasAsync(const DescribePostpayPackageFreeQuotasRequest& request, const DescribePostpayPackageFreeQuotasAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribePostpayPackageFreeQuotas(request), context);
-    };
+    using Req = const DescribePostpayPackageFreeQuotasRequest&;
+    using Resp = DescribePostpayPackageFreeQuotasResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribePostpayPackageFreeQuotas", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TcbClient::DescribePostpayPackageFreeQuotasOutcomeCallable TcbClient::DescribePostpayPackageFreeQuotasCallable(const DescribePostpayPackageFreeQuotasRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribePostpayPackageFreeQuotasOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribePostpayPackageFreeQuotas(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribePostpayPackageFreeQuotasOutcome>>();
+    DescribePostpayPackageFreeQuotasAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const DescribePostpayPackageFreeQuotasRequest&,
+        DescribePostpayPackageFreeQuotasOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TcbClient::DescribeQuotaDataOutcome TcbClient::DescribeQuotaData(const DescribeQuotaDataRequest &request)
@@ -2556,25 +2962,32 @@ TcbClient::DescribeQuotaDataOutcome TcbClient::DescribeQuotaData(const DescribeQ
 
 void TcbClient::DescribeQuotaDataAsync(const DescribeQuotaDataRequest& request, const DescribeQuotaDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeQuotaData(request), context);
-    };
+    using Req = const DescribeQuotaDataRequest&;
+    using Resp = DescribeQuotaDataResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeQuotaData", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TcbClient::DescribeQuotaDataOutcomeCallable TcbClient::DescribeQuotaDataCallable(const DescribeQuotaDataRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeQuotaDataOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeQuotaData(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeQuotaDataOutcome>>();
+    DescribeQuotaDataAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const DescribeQuotaDataRequest&,
+        DescribeQuotaDataOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TcbClient::DescribeSmsQuotasOutcome TcbClient::DescribeSmsQuotas(const DescribeSmsQuotasRequest &request)
@@ -2599,25 +3012,32 @@ TcbClient::DescribeSmsQuotasOutcome TcbClient::DescribeSmsQuotas(const DescribeS
 
 void TcbClient::DescribeSmsQuotasAsync(const DescribeSmsQuotasRequest& request, const DescribeSmsQuotasAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeSmsQuotas(request), context);
-    };
+    using Req = const DescribeSmsQuotasRequest&;
+    using Resp = DescribeSmsQuotasResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeSmsQuotas", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TcbClient::DescribeSmsQuotasOutcomeCallable TcbClient::DescribeSmsQuotasCallable(const DescribeSmsQuotasRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeSmsQuotasOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeSmsQuotas(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeSmsQuotasOutcome>>();
+    DescribeSmsQuotasAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const DescribeSmsQuotasRequest&,
+        DescribeSmsQuotasOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TcbClient::DescribeSpecialCostItemsOutcome TcbClient::DescribeSpecialCostItems(const DescribeSpecialCostItemsRequest &request)
@@ -2642,25 +3062,32 @@ TcbClient::DescribeSpecialCostItemsOutcome TcbClient::DescribeSpecialCostItems(c
 
 void TcbClient::DescribeSpecialCostItemsAsync(const DescribeSpecialCostItemsRequest& request, const DescribeSpecialCostItemsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeSpecialCostItems(request), context);
-    };
+    using Req = const DescribeSpecialCostItemsRequest&;
+    using Resp = DescribeSpecialCostItemsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeSpecialCostItems", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TcbClient::DescribeSpecialCostItemsOutcomeCallable TcbClient::DescribeSpecialCostItemsCallable(const DescribeSpecialCostItemsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeSpecialCostItemsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeSpecialCostItems(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeSpecialCostItemsOutcome>>();
+    DescribeSpecialCostItemsAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const DescribeSpecialCostItemsRequest&,
+        DescribeSpecialCostItemsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TcbClient::DescribeStandaloneGatewayOutcome TcbClient::DescribeStandaloneGateway(const DescribeStandaloneGatewayRequest &request)
@@ -2685,25 +3112,32 @@ TcbClient::DescribeStandaloneGatewayOutcome TcbClient::DescribeStandaloneGateway
 
 void TcbClient::DescribeStandaloneGatewayAsync(const DescribeStandaloneGatewayRequest& request, const DescribeStandaloneGatewayAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeStandaloneGateway(request), context);
-    };
+    using Req = const DescribeStandaloneGatewayRequest&;
+    using Resp = DescribeStandaloneGatewayResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeStandaloneGateway", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TcbClient::DescribeStandaloneGatewayOutcomeCallable TcbClient::DescribeStandaloneGatewayCallable(const DescribeStandaloneGatewayRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeStandaloneGatewayOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeStandaloneGateway(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeStandaloneGatewayOutcome>>();
+    DescribeStandaloneGatewayAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const DescribeStandaloneGatewayRequest&,
+        DescribeStandaloneGatewayOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TcbClient::DescribeStandaloneGatewayPackageOutcome TcbClient::DescribeStandaloneGatewayPackage(const DescribeStandaloneGatewayPackageRequest &request)
@@ -2728,25 +3162,32 @@ TcbClient::DescribeStandaloneGatewayPackageOutcome TcbClient::DescribeStandalone
 
 void TcbClient::DescribeStandaloneGatewayPackageAsync(const DescribeStandaloneGatewayPackageRequest& request, const DescribeStandaloneGatewayPackageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeStandaloneGatewayPackage(request), context);
-    };
+    using Req = const DescribeStandaloneGatewayPackageRequest&;
+    using Resp = DescribeStandaloneGatewayPackageResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeStandaloneGatewayPackage", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TcbClient::DescribeStandaloneGatewayPackageOutcomeCallable TcbClient::DescribeStandaloneGatewayPackageCallable(const DescribeStandaloneGatewayPackageRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeStandaloneGatewayPackageOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeStandaloneGatewayPackage(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeStandaloneGatewayPackageOutcome>>();
+    DescribeStandaloneGatewayPackageAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const DescribeStandaloneGatewayPackageRequest&,
+        DescribeStandaloneGatewayPackageOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TcbClient::DescribeUserActivityInfoOutcome TcbClient::DescribeUserActivityInfo(const DescribeUserActivityInfoRequest &request)
@@ -2771,25 +3212,32 @@ TcbClient::DescribeUserActivityInfoOutcome TcbClient::DescribeUserActivityInfo(c
 
 void TcbClient::DescribeUserActivityInfoAsync(const DescribeUserActivityInfoRequest& request, const DescribeUserActivityInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeUserActivityInfo(request), context);
-    };
+    using Req = const DescribeUserActivityInfoRequest&;
+    using Resp = DescribeUserActivityInfoResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeUserActivityInfo", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TcbClient::DescribeUserActivityInfoOutcomeCallable TcbClient::DescribeUserActivityInfoCallable(const DescribeUserActivityInfoRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeUserActivityInfoOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeUserActivityInfo(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeUserActivityInfoOutcome>>();
+    DescribeUserActivityInfoAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const DescribeUserActivityInfoRequest&,
+        DescribeUserActivityInfoOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TcbClient::DescribeWxCloudBaseRunEnvsOutcome TcbClient::DescribeWxCloudBaseRunEnvs(const DescribeWxCloudBaseRunEnvsRequest &request)
@@ -2814,25 +3262,32 @@ TcbClient::DescribeWxCloudBaseRunEnvsOutcome TcbClient::DescribeWxCloudBaseRunEn
 
 void TcbClient::DescribeWxCloudBaseRunEnvsAsync(const DescribeWxCloudBaseRunEnvsRequest& request, const DescribeWxCloudBaseRunEnvsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeWxCloudBaseRunEnvs(request), context);
-    };
+    using Req = const DescribeWxCloudBaseRunEnvsRequest&;
+    using Resp = DescribeWxCloudBaseRunEnvsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeWxCloudBaseRunEnvs", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TcbClient::DescribeWxCloudBaseRunEnvsOutcomeCallable TcbClient::DescribeWxCloudBaseRunEnvsCallable(const DescribeWxCloudBaseRunEnvsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeWxCloudBaseRunEnvsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeWxCloudBaseRunEnvs(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeWxCloudBaseRunEnvsOutcome>>();
+    DescribeWxCloudBaseRunEnvsAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const DescribeWxCloudBaseRunEnvsRequest&,
+        DescribeWxCloudBaseRunEnvsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TcbClient::DescribeWxCloudBaseRunSubNetsOutcome TcbClient::DescribeWxCloudBaseRunSubNets(const DescribeWxCloudBaseRunSubNetsRequest &request)
@@ -2857,25 +3312,32 @@ TcbClient::DescribeWxCloudBaseRunSubNetsOutcome TcbClient::DescribeWxCloudBaseRu
 
 void TcbClient::DescribeWxCloudBaseRunSubNetsAsync(const DescribeWxCloudBaseRunSubNetsRequest& request, const DescribeWxCloudBaseRunSubNetsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeWxCloudBaseRunSubNets(request), context);
-    };
+    using Req = const DescribeWxCloudBaseRunSubNetsRequest&;
+    using Resp = DescribeWxCloudBaseRunSubNetsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeWxCloudBaseRunSubNets", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TcbClient::DescribeWxCloudBaseRunSubNetsOutcomeCallable TcbClient::DescribeWxCloudBaseRunSubNetsCallable(const DescribeWxCloudBaseRunSubNetsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeWxCloudBaseRunSubNetsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeWxCloudBaseRunSubNets(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeWxCloudBaseRunSubNetsOutcome>>();
+    DescribeWxCloudBaseRunSubNetsAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const DescribeWxCloudBaseRunSubNetsRequest&,
+        DescribeWxCloudBaseRunSubNetsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TcbClient::DescribeWxGatewayRoutesOutcome TcbClient::DescribeWxGatewayRoutes(const DescribeWxGatewayRoutesRequest &request)
@@ -2900,25 +3362,32 @@ TcbClient::DescribeWxGatewayRoutesOutcome TcbClient::DescribeWxGatewayRoutes(con
 
 void TcbClient::DescribeWxGatewayRoutesAsync(const DescribeWxGatewayRoutesRequest& request, const DescribeWxGatewayRoutesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeWxGatewayRoutes(request), context);
-    };
+    using Req = const DescribeWxGatewayRoutesRequest&;
+    using Resp = DescribeWxGatewayRoutesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeWxGatewayRoutes", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TcbClient::DescribeWxGatewayRoutesOutcomeCallable TcbClient::DescribeWxGatewayRoutesCallable(const DescribeWxGatewayRoutesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeWxGatewayRoutesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeWxGatewayRoutes(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeWxGatewayRoutesOutcome>>();
+    DescribeWxGatewayRoutesAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const DescribeWxGatewayRoutesRequest&,
+        DescribeWxGatewayRoutesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TcbClient::DescribeWxGatewaysOutcome TcbClient::DescribeWxGateways(const DescribeWxGatewaysRequest &request)
@@ -2943,25 +3412,32 @@ TcbClient::DescribeWxGatewaysOutcome TcbClient::DescribeWxGateways(const Describ
 
 void TcbClient::DescribeWxGatewaysAsync(const DescribeWxGatewaysRequest& request, const DescribeWxGatewaysAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeWxGateways(request), context);
-    };
+    using Req = const DescribeWxGatewaysRequest&;
+    using Resp = DescribeWxGatewaysResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeWxGateways", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TcbClient::DescribeWxGatewaysOutcomeCallable TcbClient::DescribeWxGatewaysCallable(const DescribeWxGatewaysRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeWxGatewaysOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeWxGateways(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeWxGatewaysOutcome>>();
+    DescribeWxGatewaysAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const DescribeWxGatewaysRequest&,
+        DescribeWxGatewaysOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TcbClient::DestroyEnvOutcome TcbClient::DestroyEnv(const DestroyEnvRequest &request)
@@ -2986,25 +3462,32 @@ TcbClient::DestroyEnvOutcome TcbClient::DestroyEnv(const DestroyEnvRequest &requ
 
 void TcbClient::DestroyEnvAsync(const DestroyEnvRequest& request, const DestroyEnvAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DestroyEnv(request), context);
-    };
+    using Req = const DestroyEnvRequest&;
+    using Resp = DestroyEnvResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DestroyEnv", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TcbClient::DestroyEnvOutcomeCallable TcbClient::DestroyEnvCallable(const DestroyEnvRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DestroyEnvOutcome()>>(
-        [this, request]()
-        {
-            return this->DestroyEnv(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DestroyEnvOutcome>>();
+    DestroyEnvAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const DestroyEnvRequest&,
+        DestroyEnvOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TcbClient::DestroyStandaloneGatewayOutcome TcbClient::DestroyStandaloneGateway(const DestroyStandaloneGatewayRequest &request)
@@ -3029,25 +3512,32 @@ TcbClient::DestroyStandaloneGatewayOutcome TcbClient::DestroyStandaloneGateway(c
 
 void TcbClient::DestroyStandaloneGatewayAsync(const DestroyStandaloneGatewayRequest& request, const DestroyStandaloneGatewayAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DestroyStandaloneGateway(request), context);
-    };
+    using Req = const DestroyStandaloneGatewayRequest&;
+    using Resp = DestroyStandaloneGatewayResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DestroyStandaloneGateway", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TcbClient::DestroyStandaloneGatewayOutcomeCallable TcbClient::DestroyStandaloneGatewayCallable(const DestroyStandaloneGatewayRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DestroyStandaloneGatewayOutcome()>>(
-        [this, request]()
-        {
-            return this->DestroyStandaloneGateway(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DestroyStandaloneGatewayOutcome>>();
+    DestroyStandaloneGatewayAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const DestroyStandaloneGatewayRequest&,
+        DestroyStandaloneGatewayOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TcbClient::DestroyStaticStoreOutcome TcbClient::DestroyStaticStore(const DestroyStaticStoreRequest &request)
@@ -3072,25 +3562,32 @@ TcbClient::DestroyStaticStoreOutcome TcbClient::DestroyStaticStore(const Destroy
 
 void TcbClient::DestroyStaticStoreAsync(const DestroyStaticStoreRequest& request, const DestroyStaticStoreAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DestroyStaticStore(request), context);
-    };
+    using Req = const DestroyStaticStoreRequest&;
+    using Resp = DestroyStaticStoreResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DestroyStaticStore", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TcbClient::DestroyStaticStoreOutcomeCallable TcbClient::DestroyStaticStoreCallable(const DestroyStaticStoreRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DestroyStaticStoreOutcome()>>(
-        [this, request]()
-        {
-            return this->DestroyStaticStore(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DestroyStaticStoreOutcome>>();
+    DestroyStaticStoreAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const DestroyStaticStoreRequest&,
+        DestroyStaticStoreOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TcbClient::EditAuthConfigOutcome TcbClient::EditAuthConfig(const EditAuthConfigRequest &request)
@@ -3115,25 +3612,32 @@ TcbClient::EditAuthConfigOutcome TcbClient::EditAuthConfig(const EditAuthConfigR
 
 void TcbClient::EditAuthConfigAsync(const EditAuthConfigRequest& request, const EditAuthConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->EditAuthConfig(request), context);
-    };
+    using Req = const EditAuthConfigRequest&;
+    using Resp = EditAuthConfigResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "EditAuthConfig", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TcbClient::EditAuthConfigOutcomeCallable TcbClient::EditAuthConfigCallable(const EditAuthConfigRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<EditAuthConfigOutcome()>>(
-        [this, request]()
-        {
-            return this->EditAuthConfig(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<EditAuthConfigOutcome>>();
+    EditAuthConfigAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const EditAuthConfigRequest&,
+        EditAuthConfigOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TcbClient::EstablishCloudBaseRunServerOutcome TcbClient::EstablishCloudBaseRunServer(const EstablishCloudBaseRunServerRequest &request)
@@ -3158,25 +3662,32 @@ TcbClient::EstablishCloudBaseRunServerOutcome TcbClient::EstablishCloudBaseRunSe
 
 void TcbClient::EstablishCloudBaseRunServerAsync(const EstablishCloudBaseRunServerRequest& request, const EstablishCloudBaseRunServerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->EstablishCloudBaseRunServer(request), context);
-    };
+    using Req = const EstablishCloudBaseRunServerRequest&;
+    using Resp = EstablishCloudBaseRunServerResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "EstablishCloudBaseRunServer", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TcbClient::EstablishCloudBaseRunServerOutcomeCallable TcbClient::EstablishCloudBaseRunServerCallable(const EstablishCloudBaseRunServerRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<EstablishCloudBaseRunServerOutcome()>>(
-        [this, request]()
-        {
-            return this->EstablishCloudBaseRunServer(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<EstablishCloudBaseRunServerOutcome>>();
+    EstablishCloudBaseRunServerAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const EstablishCloudBaseRunServerRequest&,
+        EstablishCloudBaseRunServerOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TcbClient::EstablishWxGatewayRouteOutcome TcbClient::EstablishWxGatewayRoute(const EstablishWxGatewayRouteRequest &request)
@@ -3201,25 +3712,32 @@ TcbClient::EstablishWxGatewayRouteOutcome TcbClient::EstablishWxGatewayRoute(con
 
 void TcbClient::EstablishWxGatewayRouteAsync(const EstablishWxGatewayRouteRequest& request, const EstablishWxGatewayRouteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->EstablishWxGatewayRoute(request), context);
-    };
+    using Req = const EstablishWxGatewayRouteRequest&;
+    using Resp = EstablishWxGatewayRouteResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "EstablishWxGatewayRoute", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TcbClient::EstablishWxGatewayRouteOutcomeCallable TcbClient::EstablishWxGatewayRouteCallable(const EstablishWxGatewayRouteRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<EstablishWxGatewayRouteOutcome()>>(
-        [this, request]()
-        {
-            return this->EstablishWxGatewayRoute(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<EstablishWxGatewayRouteOutcome>>();
+    EstablishWxGatewayRouteAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const EstablishWxGatewayRouteRequest&,
+        EstablishWxGatewayRouteOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TcbClient::FreezeCloudBaseRunServersOutcome TcbClient::FreezeCloudBaseRunServers(const FreezeCloudBaseRunServersRequest &request)
@@ -3244,25 +3762,32 @@ TcbClient::FreezeCloudBaseRunServersOutcome TcbClient::FreezeCloudBaseRunServers
 
 void TcbClient::FreezeCloudBaseRunServersAsync(const FreezeCloudBaseRunServersRequest& request, const FreezeCloudBaseRunServersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->FreezeCloudBaseRunServers(request), context);
-    };
+    using Req = const FreezeCloudBaseRunServersRequest&;
+    using Resp = FreezeCloudBaseRunServersResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "FreezeCloudBaseRunServers", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TcbClient::FreezeCloudBaseRunServersOutcomeCallable TcbClient::FreezeCloudBaseRunServersCallable(const FreezeCloudBaseRunServersRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<FreezeCloudBaseRunServersOutcome()>>(
-        [this, request]()
-        {
-            return this->FreezeCloudBaseRunServers(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<FreezeCloudBaseRunServersOutcome>>();
+    FreezeCloudBaseRunServersAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const FreezeCloudBaseRunServersRequest&,
+        FreezeCloudBaseRunServersOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TcbClient::ModifyCloudBaseRunServerFlowConfOutcome TcbClient::ModifyCloudBaseRunServerFlowConf(const ModifyCloudBaseRunServerFlowConfRequest &request)
@@ -3287,25 +3812,32 @@ TcbClient::ModifyCloudBaseRunServerFlowConfOutcome TcbClient::ModifyCloudBaseRun
 
 void TcbClient::ModifyCloudBaseRunServerFlowConfAsync(const ModifyCloudBaseRunServerFlowConfRequest& request, const ModifyCloudBaseRunServerFlowConfAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyCloudBaseRunServerFlowConf(request), context);
-    };
+    using Req = const ModifyCloudBaseRunServerFlowConfRequest&;
+    using Resp = ModifyCloudBaseRunServerFlowConfResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyCloudBaseRunServerFlowConf", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TcbClient::ModifyCloudBaseRunServerFlowConfOutcomeCallable TcbClient::ModifyCloudBaseRunServerFlowConfCallable(const ModifyCloudBaseRunServerFlowConfRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyCloudBaseRunServerFlowConfOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyCloudBaseRunServerFlowConf(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyCloudBaseRunServerFlowConfOutcome>>();
+    ModifyCloudBaseRunServerFlowConfAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const ModifyCloudBaseRunServerFlowConfRequest&,
+        ModifyCloudBaseRunServerFlowConfOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TcbClient::ModifyCloudBaseRunServerVersionOutcome TcbClient::ModifyCloudBaseRunServerVersion(const ModifyCloudBaseRunServerVersionRequest &request)
@@ -3330,25 +3862,32 @@ TcbClient::ModifyCloudBaseRunServerVersionOutcome TcbClient::ModifyCloudBaseRunS
 
 void TcbClient::ModifyCloudBaseRunServerVersionAsync(const ModifyCloudBaseRunServerVersionRequest& request, const ModifyCloudBaseRunServerVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyCloudBaseRunServerVersion(request), context);
-    };
+    using Req = const ModifyCloudBaseRunServerVersionRequest&;
+    using Resp = ModifyCloudBaseRunServerVersionResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyCloudBaseRunServerVersion", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TcbClient::ModifyCloudBaseRunServerVersionOutcomeCallable TcbClient::ModifyCloudBaseRunServerVersionCallable(const ModifyCloudBaseRunServerVersionRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyCloudBaseRunServerVersionOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyCloudBaseRunServerVersion(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyCloudBaseRunServerVersionOutcome>>();
+    ModifyCloudBaseRunServerVersionAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const ModifyCloudBaseRunServerVersionRequest&,
+        ModifyCloudBaseRunServerVersionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TcbClient::ModifyClsTopicOutcome TcbClient::ModifyClsTopic(const ModifyClsTopicRequest &request)
@@ -3373,25 +3912,32 @@ TcbClient::ModifyClsTopicOutcome TcbClient::ModifyClsTopic(const ModifyClsTopicR
 
 void TcbClient::ModifyClsTopicAsync(const ModifyClsTopicRequest& request, const ModifyClsTopicAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyClsTopic(request), context);
-    };
+    using Req = const ModifyClsTopicRequest&;
+    using Resp = ModifyClsTopicResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyClsTopic", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TcbClient::ModifyClsTopicOutcomeCallable TcbClient::ModifyClsTopicCallable(const ModifyClsTopicRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyClsTopicOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyClsTopic(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyClsTopicOutcome>>();
+    ModifyClsTopicAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const ModifyClsTopicRequest&,
+        ModifyClsTopicOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TcbClient::ModifyDatabaseACLOutcome TcbClient::ModifyDatabaseACL(const ModifyDatabaseACLRequest &request)
@@ -3416,25 +3962,32 @@ TcbClient::ModifyDatabaseACLOutcome TcbClient::ModifyDatabaseACL(const ModifyDat
 
 void TcbClient::ModifyDatabaseACLAsync(const ModifyDatabaseACLRequest& request, const ModifyDatabaseACLAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyDatabaseACL(request), context);
-    };
+    using Req = const ModifyDatabaseACLRequest&;
+    using Resp = ModifyDatabaseACLResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyDatabaseACL", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TcbClient::ModifyDatabaseACLOutcomeCallable TcbClient::ModifyDatabaseACLCallable(const ModifyDatabaseACLRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyDatabaseACLOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyDatabaseACL(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyDatabaseACLOutcome>>();
+    ModifyDatabaseACLAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const ModifyDatabaseACLRequest&,
+        ModifyDatabaseACLOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TcbClient::ModifyEndUserOutcome TcbClient::ModifyEndUser(const ModifyEndUserRequest &request)
@@ -3459,25 +4012,32 @@ TcbClient::ModifyEndUserOutcome TcbClient::ModifyEndUser(const ModifyEndUserRequ
 
 void TcbClient::ModifyEndUserAsync(const ModifyEndUserRequest& request, const ModifyEndUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyEndUser(request), context);
-    };
+    using Req = const ModifyEndUserRequest&;
+    using Resp = ModifyEndUserResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyEndUser", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TcbClient::ModifyEndUserOutcomeCallable TcbClient::ModifyEndUserCallable(const ModifyEndUserRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyEndUserOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyEndUser(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyEndUserOutcome>>();
+    ModifyEndUserAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const ModifyEndUserRequest&,
+        ModifyEndUserOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TcbClient::ModifyEnvOutcome TcbClient::ModifyEnv(const ModifyEnvRequest &request)
@@ -3502,25 +4062,32 @@ TcbClient::ModifyEnvOutcome TcbClient::ModifyEnv(const ModifyEnvRequest &request
 
 void TcbClient::ModifyEnvAsync(const ModifyEnvRequest& request, const ModifyEnvAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyEnv(request), context);
-    };
+    using Req = const ModifyEnvRequest&;
+    using Resp = ModifyEnvResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyEnv", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TcbClient::ModifyEnvOutcomeCallable TcbClient::ModifyEnvCallable(const ModifyEnvRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyEnvOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyEnv(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyEnvOutcome>>();
+    ModifyEnvAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const ModifyEnvRequest&,
+        ModifyEnvOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TcbClient::ModifyGatewayVersionTrafficOutcome TcbClient::ModifyGatewayVersionTraffic(const ModifyGatewayVersionTrafficRequest &request)
@@ -3545,25 +4112,32 @@ TcbClient::ModifyGatewayVersionTrafficOutcome TcbClient::ModifyGatewayVersionTra
 
 void TcbClient::ModifyGatewayVersionTrafficAsync(const ModifyGatewayVersionTrafficRequest& request, const ModifyGatewayVersionTrafficAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyGatewayVersionTraffic(request), context);
-    };
+    using Req = const ModifyGatewayVersionTrafficRequest&;
+    using Resp = ModifyGatewayVersionTrafficResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyGatewayVersionTraffic", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TcbClient::ModifyGatewayVersionTrafficOutcomeCallable TcbClient::ModifyGatewayVersionTrafficCallable(const ModifyGatewayVersionTrafficRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyGatewayVersionTrafficOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyGatewayVersionTraffic(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyGatewayVersionTrafficOutcome>>();
+    ModifyGatewayVersionTrafficAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const ModifyGatewayVersionTrafficRequest&,
+        ModifyGatewayVersionTrafficOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TcbClient::ReinstateEnvOutcome TcbClient::ReinstateEnv(const ReinstateEnvRequest &request)
@@ -3588,25 +4162,32 @@ TcbClient::ReinstateEnvOutcome TcbClient::ReinstateEnv(const ReinstateEnvRequest
 
 void TcbClient::ReinstateEnvAsync(const ReinstateEnvRequest& request, const ReinstateEnvAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ReinstateEnv(request), context);
-    };
+    using Req = const ReinstateEnvRequest&;
+    using Resp = ReinstateEnvResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ReinstateEnv", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TcbClient::ReinstateEnvOutcomeCallable TcbClient::ReinstateEnvCallable(const ReinstateEnvRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ReinstateEnvOutcome()>>(
-        [this, request]()
-        {
-            return this->ReinstateEnv(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ReinstateEnvOutcome>>();
+    ReinstateEnvAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const ReinstateEnvRequest&,
+        ReinstateEnvOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TcbClient::ReplaceActivityRecordOutcome TcbClient::ReplaceActivityRecord(const ReplaceActivityRecordRequest &request)
@@ -3631,25 +4212,32 @@ TcbClient::ReplaceActivityRecordOutcome TcbClient::ReplaceActivityRecord(const R
 
 void TcbClient::ReplaceActivityRecordAsync(const ReplaceActivityRecordRequest& request, const ReplaceActivityRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ReplaceActivityRecord(request), context);
-    };
+    using Req = const ReplaceActivityRecordRequest&;
+    using Resp = ReplaceActivityRecordResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ReplaceActivityRecord", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TcbClient::ReplaceActivityRecordOutcomeCallable TcbClient::ReplaceActivityRecordCallable(const ReplaceActivityRecordRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ReplaceActivityRecordOutcome()>>(
-        [this, request]()
-        {
-            return this->ReplaceActivityRecord(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ReplaceActivityRecordOutcome>>();
+    ReplaceActivityRecordAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const ReplaceActivityRecordRequest&,
+        ReplaceActivityRecordOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TcbClient::RollUpdateCloudBaseRunServerVersionOutcome TcbClient::RollUpdateCloudBaseRunServerVersion(const RollUpdateCloudBaseRunServerVersionRequest &request)
@@ -3674,25 +4262,32 @@ TcbClient::RollUpdateCloudBaseRunServerVersionOutcome TcbClient::RollUpdateCloud
 
 void TcbClient::RollUpdateCloudBaseRunServerVersionAsync(const RollUpdateCloudBaseRunServerVersionRequest& request, const RollUpdateCloudBaseRunServerVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->RollUpdateCloudBaseRunServerVersion(request), context);
-    };
+    using Req = const RollUpdateCloudBaseRunServerVersionRequest&;
+    using Resp = RollUpdateCloudBaseRunServerVersionResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "RollUpdateCloudBaseRunServerVersion", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TcbClient::RollUpdateCloudBaseRunServerVersionOutcomeCallable TcbClient::RollUpdateCloudBaseRunServerVersionCallable(const RollUpdateCloudBaseRunServerVersionRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<RollUpdateCloudBaseRunServerVersionOutcome()>>(
-        [this, request]()
-        {
-            return this->RollUpdateCloudBaseRunServerVersion(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<RollUpdateCloudBaseRunServerVersionOutcome>>();
+    RollUpdateCloudBaseRunServerVersionAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const RollUpdateCloudBaseRunServerVersionRequest&,
+        RollUpdateCloudBaseRunServerVersionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TcbClient::SearchClsLogOutcome TcbClient::SearchClsLog(const SearchClsLogRequest &request)
@@ -3717,25 +4312,32 @@ TcbClient::SearchClsLogOutcome TcbClient::SearchClsLog(const SearchClsLogRequest
 
 void TcbClient::SearchClsLogAsync(const SearchClsLogRequest& request, const SearchClsLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->SearchClsLog(request), context);
-    };
+    using Req = const SearchClsLogRequest&;
+    using Resp = SearchClsLogResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "SearchClsLog", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TcbClient::SearchClsLogOutcomeCallable TcbClient::SearchClsLogCallable(const SearchClsLogRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<SearchClsLogOutcome()>>(
-        [this, request]()
-        {
-            return this->SearchClsLog(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<SearchClsLogOutcome>>();
+    SearchClsLogAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const SearchClsLogRequest&,
+        SearchClsLogOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TcbClient::TurnOffStandaloneGatewayOutcome TcbClient::TurnOffStandaloneGateway(const TurnOffStandaloneGatewayRequest &request)
@@ -3760,25 +4362,32 @@ TcbClient::TurnOffStandaloneGatewayOutcome TcbClient::TurnOffStandaloneGateway(c
 
 void TcbClient::TurnOffStandaloneGatewayAsync(const TurnOffStandaloneGatewayRequest& request, const TurnOffStandaloneGatewayAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->TurnOffStandaloneGateway(request), context);
-    };
+    using Req = const TurnOffStandaloneGatewayRequest&;
+    using Resp = TurnOffStandaloneGatewayResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "TurnOffStandaloneGateway", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TcbClient::TurnOffStandaloneGatewayOutcomeCallable TcbClient::TurnOffStandaloneGatewayCallable(const TurnOffStandaloneGatewayRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<TurnOffStandaloneGatewayOutcome()>>(
-        [this, request]()
-        {
-            return this->TurnOffStandaloneGateway(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<TurnOffStandaloneGatewayOutcome>>();
+    TurnOffStandaloneGatewayAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const TurnOffStandaloneGatewayRequest&,
+        TurnOffStandaloneGatewayOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TcbClient::TurnOnStandaloneGatewayOutcome TcbClient::TurnOnStandaloneGateway(const TurnOnStandaloneGatewayRequest &request)
@@ -3803,25 +4412,32 @@ TcbClient::TurnOnStandaloneGatewayOutcome TcbClient::TurnOnStandaloneGateway(con
 
 void TcbClient::TurnOnStandaloneGatewayAsync(const TurnOnStandaloneGatewayRequest& request, const TurnOnStandaloneGatewayAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->TurnOnStandaloneGateway(request), context);
-    };
+    using Req = const TurnOnStandaloneGatewayRequest&;
+    using Resp = TurnOnStandaloneGatewayResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "TurnOnStandaloneGateway", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TcbClient::TurnOnStandaloneGatewayOutcomeCallable TcbClient::TurnOnStandaloneGatewayCallable(const TurnOnStandaloneGatewayRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<TurnOnStandaloneGatewayOutcome()>>(
-        [this, request]()
-        {
-            return this->TurnOnStandaloneGateway(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<TurnOnStandaloneGatewayOutcome>>();
+    TurnOnStandaloneGatewayAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const TurnOnStandaloneGatewayRequest&,
+        TurnOnStandaloneGatewayOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 TcbClient::UnfreezeCloudBaseRunServersOutcome TcbClient::UnfreezeCloudBaseRunServers(const UnfreezeCloudBaseRunServersRequest &request)
@@ -3846,24 +4462,31 @@ TcbClient::UnfreezeCloudBaseRunServersOutcome TcbClient::UnfreezeCloudBaseRunSer
 
 void TcbClient::UnfreezeCloudBaseRunServersAsync(const UnfreezeCloudBaseRunServersRequest& request, const UnfreezeCloudBaseRunServersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UnfreezeCloudBaseRunServers(request), context);
-    };
+    using Req = const UnfreezeCloudBaseRunServersRequest&;
+    using Resp = UnfreezeCloudBaseRunServersResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UnfreezeCloudBaseRunServers", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 TcbClient::UnfreezeCloudBaseRunServersOutcomeCallable TcbClient::UnfreezeCloudBaseRunServersCallable(const UnfreezeCloudBaseRunServersRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UnfreezeCloudBaseRunServersOutcome()>>(
-        [this, request]()
-        {
-            return this->UnfreezeCloudBaseRunServers(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UnfreezeCloudBaseRunServersOutcome>>();
+    UnfreezeCloudBaseRunServersAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const UnfreezeCloudBaseRunServersRequest&,
+        UnfreezeCloudBaseRunServersOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 

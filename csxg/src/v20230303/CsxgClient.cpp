@@ -62,25 +62,32 @@ CsxgClient::Create5GInstanceOutcome CsxgClient::Create5GInstance(const Create5GI
 
 void CsxgClient::Create5GInstanceAsync(const Create5GInstanceRequest& request, const Create5GInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->Create5GInstance(request), context);
-    };
+    using Req = const Create5GInstanceRequest&;
+    using Resp = Create5GInstanceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "Create5GInstance", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CsxgClient::Create5GInstanceOutcomeCallable CsxgClient::Create5GInstanceCallable(const Create5GInstanceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<Create5GInstanceOutcome()>>(
-        [this, request]()
-        {
-            return this->Create5GInstance(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<Create5GInstanceOutcome>>();
+    Create5GInstanceAsync(
+    request,
+    [prom](
+        const CsxgClient*,
+        const Create5GInstanceRequest&,
+        Create5GInstanceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CsxgClient::Delete5GInstanceOutcome CsxgClient::Delete5GInstance(const Delete5GInstanceRequest &request)
@@ -105,25 +112,32 @@ CsxgClient::Delete5GInstanceOutcome CsxgClient::Delete5GInstance(const Delete5GI
 
 void CsxgClient::Delete5GInstanceAsync(const Delete5GInstanceRequest& request, const Delete5GInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->Delete5GInstance(request), context);
-    };
+    using Req = const Delete5GInstanceRequest&;
+    using Resp = Delete5GInstanceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "Delete5GInstance", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CsxgClient::Delete5GInstanceOutcomeCallable CsxgClient::Delete5GInstanceCallable(const Delete5GInstanceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<Delete5GInstanceOutcome()>>(
-        [this, request]()
-        {
-            return this->Delete5GInstance(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<Delete5GInstanceOutcome>>();
+    Delete5GInstanceAsync(
+    request,
+    [prom](
+        const CsxgClient*,
+        const Delete5GInstanceRequest&,
+        Delete5GInstanceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CsxgClient::Describe5GAPNsOutcome CsxgClient::Describe5GAPNs(const Describe5GAPNsRequest &request)
@@ -148,25 +162,32 @@ CsxgClient::Describe5GAPNsOutcome CsxgClient::Describe5GAPNs(const Describe5GAPN
 
 void CsxgClient::Describe5GAPNsAsync(const Describe5GAPNsRequest& request, const Describe5GAPNsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->Describe5GAPNs(request), context);
-    };
+    using Req = const Describe5GAPNsRequest&;
+    using Resp = Describe5GAPNsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "Describe5GAPNs", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CsxgClient::Describe5GAPNsOutcomeCallable CsxgClient::Describe5GAPNsCallable(const Describe5GAPNsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<Describe5GAPNsOutcome()>>(
-        [this, request]()
-        {
-            return this->Describe5GAPNs(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<Describe5GAPNsOutcome>>();
+    Describe5GAPNsAsync(
+    request,
+    [prom](
+        const CsxgClient*,
+        const Describe5GAPNsRequest&,
+        Describe5GAPNsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CsxgClient::Describe5GInstancesOutcome CsxgClient::Describe5GInstances(const Describe5GInstancesRequest &request)
@@ -191,25 +212,32 @@ CsxgClient::Describe5GInstancesOutcome CsxgClient::Describe5GInstances(const Des
 
 void CsxgClient::Describe5GInstancesAsync(const Describe5GInstancesRequest& request, const Describe5GInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->Describe5GInstances(request), context);
-    };
+    using Req = const Describe5GInstancesRequest&;
+    using Resp = Describe5GInstancesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "Describe5GInstances", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CsxgClient::Describe5GInstancesOutcomeCallable CsxgClient::Describe5GInstancesCallable(const Describe5GInstancesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<Describe5GInstancesOutcome()>>(
-        [this, request]()
-        {
-            return this->Describe5GInstances(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<Describe5GInstancesOutcome>>();
+    Describe5GInstancesAsync(
+    request,
+    [prom](
+        const CsxgClient*,
+        const Describe5GInstancesRequest&,
+        Describe5GInstancesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CsxgClient::Modify5GInstanceAttributeOutcome CsxgClient::Modify5GInstanceAttribute(const Modify5GInstanceAttributeRequest &request)
@@ -234,24 +262,31 @@ CsxgClient::Modify5GInstanceAttributeOutcome CsxgClient::Modify5GInstanceAttribu
 
 void CsxgClient::Modify5GInstanceAttributeAsync(const Modify5GInstanceAttributeRequest& request, const Modify5GInstanceAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->Modify5GInstanceAttribute(request), context);
-    };
+    using Req = const Modify5GInstanceAttributeRequest&;
+    using Resp = Modify5GInstanceAttributeResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "Modify5GInstanceAttribute", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CsxgClient::Modify5GInstanceAttributeOutcomeCallable CsxgClient::Modify5GInstanceAttributeCallable(const Modify5GInstanceAttributeRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<Modify5GInstanceAttributeOutcome()>>(
-        [this, request]()
-        {
-            return this->Modify5GInstanceAttribute(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<Modify5GInstanceAttributeOutcome>>();
+    Modify5GInstanceAttributeAsync(
+    request,
+    [prom](
+        const CsxgClient*,
+        const Modify5GInstanceAttributeRequest&,
+        Modify5GInstanceAttributeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 

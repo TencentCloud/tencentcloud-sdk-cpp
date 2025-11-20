@@ -62,25 +62,32 @@ CdwdorisClient::ActionAlterUserOutcome CdwdorisClient::ActionAlterUser(const Act
 
 void CdwdorisClient::ActionAlterUserAsync(const ActionAlterUserRequest& request, const ActionAlterUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ActionAlterUser(request), context);
-    };
+    using Req = const ActionAlterUserRequest&;
+    using Resp = ActionAlterUserResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ActionAlterUser", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CdwdorisClient::ActionAlterUserOutcomeCallable CdwdorisClient::ActionAlterUserCallable(const ActionAlterUserRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ActionAlterUserOutcome()>>(
-        [this, request]()
-        {
-            return this->ActionAlterUser(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ActionAlterUserOutcome>>();
+    ActionAlterUserAsync(
+    request,
+    [prom](
+        const CdwdorisClient*,
+        const ActionAlterUserRequest&,
+        ActionAlterUserOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CdwdorisClient::CancelBackupJobOutcome CdwdorisClient::CancelBackupJob(const CancelBackupJobRequest &request)
@@ -105,25 +112,32 @@ CdwdorisClient::CancelBackupJobOutcome CdwdorisClient::CancelBackupJob(const Can
 
 void CdwdorisClient::CancelBackupJobAsync(const CancelBackupJobRequest& request, const CancelBackupJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CancelBackupJob(request), context);
-    };
+    using Req = const CancelBackupJobRequest&;
+    using Resp = CancelBackupJobResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CancelBackupJob", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CdwdorisClient::CancelBackupJobOutcomeCallable CdwdorisClient::CancelBackupJobCallable(const CancelBackupJobRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CancelBackupJobOutcome()>>(
-        [this, request]()
-        {
-            return this->CancelBackupJob(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CancelBackupJobOutcome>>();
+    CancelBackupJobAsync(
+    request,
+    [prom](
+        const CdwdorisClient*,
+        const CancelBackupJobRequest&,
+        CancelBackupJobOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CdwdorisClient::CheckCoolDownWorkingVariableConfigCorrectOutcome CdwdorisClient::CheckCoolDownWorkingVariableConfigCorrect(const CheckCoolDownWorkingVariableConfigCorrectRequest &request)
@@ -148,25 +162,32 @@ CdwdorisClient::CheckCoolDownWorkingVariableConfigCorrectOutcome CdwdorisClient:
 
 void CdwdorisClient::CheckCoolDownWorkingVariableConfigCorrectAsync(const CheckCoolDownWorkingVariableConfigCorrectRequest& request, const CheckCoolDownWorkingVariableConfigCorrectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CheckCoolDownWorkingVariableConfigCorrect(request), context);
-    };
+    using Req = const CheckCoolDownWorkingVariableConfigCorrectRequest&;
+    using Resp = CheckCoolDownWorkingVariableConfigCorrectResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CheckCoolDownWorkingVariableConfigCorrect", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CdwdorisClient::CheckCoolDownWorkingVariableConfigCorrectOutcomeCallable CdwdorisClient::CheckCoolDownWorkingVariableConfigCorrectCallable(const CheckCoolDownWorkingVariableConfigCorrectRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CheckCoolDownWorkingVariableConfigCorrectOutcome()>>(
-        [this, request]()
-        {
-            return this->CheckCoolDownWorkingVariableConfigCorrect(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CheckCoolDownWorkingVariableConfigCorrectOutcome>>();
+    CheckCoolDownWorkingVariableConfigCorrectAsync(
+    request,
+    [prom](
+        const CdwdorisClient*,
+        const CheckCoolDownWorkingVariableConfigCorrectRequest&,
+        CheckCoolDownWorkingVariableConfigCorrectOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CdwdorisClient::CreateBackUpScheduleOutcome CdwdorisClient::CreateBackUpSchedule(const CreateBackUpScheduleRequest &request)
@@ -191,25 +212,32 @@ CdwdorisClient::CreateBackUpScheduleOutcome CdwdorisClient::CreateBackUpSchedule
 
 void CdwdorisClient::CreateBackUpScheduleAsync(const CreateBackUpScheduleRequest& request, const CreateBackUpScheduleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateBackUpSchedule(request), context);
-    };
+    using Req = const CreateBackUpScheduleRequest&;
+    using Resp = CreateBackUpScheduleResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateBackUpSchedule", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CdwdorisClient::CreateBackUpScheduleOutcomeCallable CdwdorisClient::CreateBackUpScheduleCallable(const CreateBackUpScheduleRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateBackUpScheduleOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateBackUpSchedule(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateBackUpScheduleOutcome>>();
+    CreateBackUpScheduleAsync(
+    request,
+    [prom](
+        const CdwdorisClient*,
+        const CreateBackUpScheduleRequest&,
+        CreateBackUpScheduleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CdwdorisClient::CreateCoolDownPolicyOutcome CdwdorisClient::CreateCoolDownPolicy(const CreateCoolDownPolicyRequest &request)
@@ -234,25 +262,32 @@ CdwdorisClient::CreateCoolDownPolicyOutcome CdwdorisClient::CreateCoolDownPolicy
 
 void CdwdorisClient::CreateCoolDownPolicyAsync(const CreateCoolDownPolicyRequest& request, const CreateCoolDownPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateCoolDownPolicy(request), context);
-    };
+    using Req = const CreateCoolDownPolicyRequest&;
+    using Resp = CreateCoolDownPolicyResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateCoolDownPolicy", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CdwdorisClient::CreateCoolDownPolicyOutcomeCallable CdwdorisClient::CreateCoolDownPolicyCallable(const CreateCoolDownPolicyRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateCoolDownPolicyOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateCoolDownPolicy(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateCoolDownPolicyOutcome>>();
+    CreateCoolDownPolicyAsync(
+    request,
+    [prom](
+        const CdwdorisClient*,
+        const CreateCoolDownPolicyRequest&,
+        CreateCoolDownPolicyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CdwdorisClient::CreateInstanceNewOutcome CdwdorisClient::CreateInstanceNew(const CreateInstanceNewRequest &request)
@@ -277,25 +312,32 @@ CdwdorisClient::CreateInstanceNewOutcome CdwdorisClient::CreateInstanceNew(const
 
 void CdwdorisClient::CreateInstanceNewAsync(const CreateInstanceNewRequest& request, const CreateInstanceNewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateInstanceNew(request), context);
-    };
+    using Req = const CreateInstanceNewRequest&;
+    using Resp = CreateInstanceNewResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateInstanceNew", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CdwdorisClient::CreateInstanceNewOutcomeCallable CdwdorisClient::CreateInstanceNewCallable(const CreateInstanceNewRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateInstanceNewOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateInstanceNew(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateInstanceNewOutcome>>();
+    CreateInstanceNewAsync(
+    request,
+    [prom](
+        const CdwdorisClient*,
+        const CreateInstanceNewRequest&,
+        CreateInstanceNewOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CdwdorisClient::CreateWorkloadGroupOutcome CdwdorisClient::CreateWorkloadGroup(const CreateWorkloadGroupRequest &request)
@@ -320,25 +362,32 @@ CdwdorisClient::CreateWorkloadGroupOutcome CdwdorisClient::CreateWorkloadGroup(c
 
 void CdwdorisClient::CreateWorkloadGroupAsync(const CreateWorkloadGroupRequest& request, const CreateWorkloadGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateWorkloadGroup(request), context);
-    };
+    using Req = const CreateWorkloadGroupRequest&;
+    using Resp = CreateWorkloadGroupResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateWorkloadGroup", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CdwdorisClient::CreateWorkloadGroupOutcomeCallable CdwdorisClient::CreateWorkloadGroupCallable(const CreateWorkloadGroupRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateWorkloadGroupOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateWorkloadGroup(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateWorkloadGroupOutcome>>();
+    CreateWorkloadGroupAsync(
+    request,
+    [prom](
+        const CdwdorisClient*,
+        const CreateWorkloadGroupRequest&,
+        CreateWorkloadGroupOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CdwdorisClient::DeleteBackUpDataOutcome CdwdorisClient::DeleteBackUpData(const DeleteBackUpDataRequest &request)
@@ -363,25 +412,32 @@ CdwdorisClient::DeleteBackUpDataOutcome CdwdorisClient::DeleteBackUpData(const D
 
 void CdwdorisClient::DeleteBackUpDataAsync(const DeleteBackUpDataRequest& request, const DeleteBackUpDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteBackUpData(request), context);
-    };
+    using Req = const DeleteBackUpDataRequest&;
+    using Resp = DeleteBackUpDataResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteBackUpData", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CdwdorisClient::DeleteBackUpDataOutcomeCallable CdwdorisClient::DeleteBackUpDataCallable(const DeleteBackUpDataRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteBackUpDataOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteBackUpData(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteBackUpDataOutcome>>();
+    DeleteBackUpDataAsync(
+    request,
+    [prom](
+        const CdwdorisClient*,
+        const DeleteBackUpDataRequest&,
+        DeleteBackUpDataOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CdwdorisClient::DeleteWorkloadGroupOutcome CdwdorisClient::DeleteWorkloadGroup(const DeleteWorkloadGroupRequest &request)
@@ -406,25 +462,32 @@ CdwdorisClient::DeleteWorkloadGroupOutcome CdwdorisClient::DeleteWorkloadGroup(c
 
 void CdwdorisClient::DeleteWorkloadGroupAsync(const DeleteWorkloadGroupRequest& request, const DeleteWorkloadGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteWorkloadGroup(request), context);
-    };
+    using Req = const DeleteWorkloadGroupRequest&;
+    using Resp = DeleteWorkloadGroupResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteWorkloadGroup", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CdwdorisClient::DeleteWorkloadGroupOutcomeCallable CdwdorisClient::DeleteWorkloadGroupCallable(const DeleteWorkloadGroupRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteWorkloadGroupOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteWorkloadGroup(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteWorkloadGroupOutcome>>();
+    DeleteWorkloadGroupAsync(
+    request,
+    [prom](
+        const CdwdorisClient*,
+        const DeleteWorkloadGroupRequest&,
+        DeleteWorkloadGroupOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CdwdorisClient::DescribeAreaRegionOutcome CdwdorisClient::DescribeAreaRegion(const DescribeAreaRegionRequest &request)
@@ -449,25 +512,32 @@ CdwdorisClient::DescribeAreaRegionOutcome CdwdorisClient::DescribeAreaRegion(con
 
 void CdwdorisClient::DescribeAreaRegionAsync(const DescribeAreaRegionRequest& request, const DescribeAreaRegionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAreaRegion(request), context);
-    };
+    using Req = const DescribeAreaRegionRequest&;
+    using Resp = DescribeAreaRegionResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAreaRegion", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CdwdorisClient::DescribeAreaRegionOutcomeCallable CdwdorisClient::DescribeAreaRegionCallable(const DescribeAreaRegionRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAreaRegionOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAreaRegion(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAreaRegionOutcome>>();
+    DescribeAreaRegionAsync(
+    request,
+    [prom](
+        const CdwdorisClient*,
+        const DescribeAreaRegionRequest&,
+        DescribeAreaRegionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CdwdorisClient::DescribeBackUpJobOutcome CdwdorisClient::DescribeBackUpJob(const DescribeBackUpJobRequest &request)
@@ -492,25 +562,32 @@ CdwdorisClient::DescribeBackUpJobOutcome CdwdorisClient::DescribeBackUpJob(const
 
 void CdwdorisClient::DescribeBackUpJobAsync(const DescribeBackUpJobRequest& request, const DescribeBackUpJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeBackUpJob(request), context);
-    };
+    using Req = const DescribeBackUpJobRequest&;
+    using Resp = DescribeBackUpJobResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeBackUpJob", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CdwdorisClient::DescribeBackUpJobOutcomeCallable CdwdorisClient::DescribeBackUpJobCallable(const DescribeBackUpJobRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeBackUpJobOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeBackUpJob(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeBackUpJobOutcome>>();
+    DescribeBackUpJobAsync(
+    request,
+    [prom](
+        const CdwdorisClient*,
+        const DescribeBackUpJobRequest&,
+        DescribeBackUpJobOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CdwdorisClient::DescribeBackUpJobDetailOutcome CdwdorisClient::DescribeBackUpJobDetail(const DescribeBackUpJobDetailRequest &request)
@@ -535,25 +612,32 @@ CdwdorisClient::DescribeBackUpJobDetailOutcome CdwdorisClient::DescribeBackUpJob
 
 void CdwdorisClient::DescribeBackUpJobDetailAsync(const DescribeBackUpJobDetailRequest& request, const DescribeBackUpJobDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeBackUpJobDetail(request), context);
-    };
+    using Req = const DescribeBackUpJobDetailRequest&;
+    using Resp = DescribeBackUpJobDetailResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeBackUpJobDetail", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CdwdorisClient::DescribeBackUpJobDetailOutcomeCallable CdwdorisClient::DescribeBackUpJobDetailCallable(const DescribeBackUpJobDetailRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeBackUpJobDetailOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeBackUpJobDetail(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeBackUpJobDetailOutcome>>();
+    DescribeBackUpJobDetailAsync(
+    request,
+    [prom](
+        const CdwdorisClient*,
+        const DescribeBackUpJobDetailRequest&,
+        DescribeBackUpJobDetailOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CdwdorisClient::DescribeBackUpSchedulesOutcome CdwdorisClient::DescribeBackUpSchedules(const DescribeBackUpSchedulesRequest &request)
@@ -578,25 +662,32 @@ CdwdorisClient::DescribeBackUpSchedulesOutcome CdwdorisClient::DescribeBackUpSch
 
 void CdwdorisClient::DescribeBackUpSchedulesAsync(const DescribeBackUpSchedulesRequest& request, const DescribeBackUpSchedulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeBackUpSchedules(request), context);
-    };
+    using Req = const DescribeBackUpSchedulesRequest&;
+    using Resp = DescribeBackUpSchedulesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeBackUpSchedules", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CdwdorisClient::DescribeBackUpSchedulesOutcomeCallable CdwdorisClient::DescribeBackUpSchedulesCallable(const DescribeBackUpSchedulesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeBackUpSchedulesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeBackUpSchedules(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeBackUpSchedulesOutcome>>();
+    DescribeBackUpSchedulesAsync(
+    request,
+    [prom](
+        const CdwdorisClient*,
+        const DescribeBackUpSchedulesRequest&,
+        DescribeBackUpSchedulesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CdwdorisClient::DescribeBackUpTablesOutcome CdwdorisClient::DescribeBackUpTables(const DescribeBackUpTablesRequest &request)
@@ -621,25 +712,32 @@ CdwdorisClient::DescribeBackUpTablesOutcome CdwdorisClient::DescribeBackUpTables
 
 void CdwdorisClient::DescribeBackUpTablesAsync(const DescribeBackUpTablesRequest& request, const DescribeBackUpTablesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeBackUpTables(request), context);
-    };
+    using Req = const DescribeBackUpTablesRequest&;
+    using Resp = DescribeBackUpTablesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeBackUpTables", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CdwdorisClient::DescribeBackUpTablesOutcomeCallable CdwdorisClient::DescribeBackUpTablesCallable(const DescribeBackUpTablesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeBackUpTablesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeBackUpTables(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeBackUpTablesOutcome>>();
+    DescribeBackUpTablesAsync(
+    request,
+    [prom](
+        const CdwdorisClient*,
+        const DescribeBackUpTablesRequest&,
+        DescribeBackUpTablesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CdwdorisClient::DescribeBackUpTaskDetailOutcome CdwdorisClient::DescribeBackUpTaskDetail(const DescribeBackUpTaskDetailRequest &request)
@@ -664,25 +762,32 @@ CdwdorisClient::DescribeBackUpTaskDetailOutcome CdwdorisClient::DescribeBackUpTa
 
 void CdwdorisClient::DescribeBackUpTaskDetailAsync(const DescribeBackUpTaskDetailRequest& request, const DescribeBackUpTaskDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeBackUpTaskDetail(request), context);
-    };
+    using Req = const DescribeBackUpTaskDetailRequest&;
+    using Resp = DescribeBackUpTaskDetailResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeBackUpTaskDetail", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CdwdorisClient::DescribeBackUpTaskDetailOutcomeCallable CdwdorisClient::DescribeBackUpTaskDetailCallable(const DescribeBackUpTaskDetailRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeBackUpTaskDetailOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeBackUpTaskDetail(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeBackUpTaskDetailOutcome>>();
+    DescribeBackUpTaskDetailAsync(
+    request,
+    [prom](
+        const CdwdorisClient*,
+        const DescribeBackUpTaskDetailRequest&,
+        DescribeBackUpTaskDetailOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CdwdorisClient::DescribeClusterConfigsOutcome CdwdorisClient::DescribeClusterConfigs(const DescribeClusterConfigsRequest &request)
@@ -707,25 +812,32 @@ CdwdorisClient::DescribeClusterConfigsOutcome CdwdorisClient::DescribeClusterCon
 
 void CdwdorisClient::DescribeClusterConfigsAsync(const DescribeClusterConfigsRequest& request, const DescribeClusterConfigsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeClusterConfigs(request), context);
-    };
+    using Req = const DescribeClusterConfigsRequest&;
+    using Resp = DescribeClusterConfigsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeClusterConfigs", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CdwdorisClient::DescribeClusterConfigsOutcomeCallable CdwdorisClient::DescribeClusterConfigsCallable(const DescribeClusterConfigsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeClusterConfigsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeClusterConfigs(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeClusterConfigsOutcome>>();
+    DescribeClusterConfigsAsync(
+    request,
+    [prom](
+        const CdwdorisClient*,
+        const DescribeClusterConfigsRequest&,
+        DescribeClusterConfigsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CdwdorisClient::DescribeClusterConfigsHistoryOutcome CdwdorisClient::DescribeClusterConfigsHistory(const DescribeClusterConfigsHistoryRequest &request)
@@ -750,25 +862,32 @@ CdwdorisClient::DescribeClusterConfigsHistoryOutcome CdwdorisClient::DescribeClu
 
 void CdwdorisClient::DescribeClusterConfigsHistoryAsync(const DescribeClusterConfigsHistoryRequest& request, const DescribeClusterConfigsHistoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeClusterConfigsHistory(request), context);
-    };
+    using Req = const DescribeClusterConfigsHistoryRequest&;
+    using Resp = DescribeClusterConfigsHistoryResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeClusterConfigsHistory", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CdwdorisClient::DescribeClusterConfigsHistoryOutcomeCallable CdwdorisClient::DescribeClusterConfigsHistoryCallable(const DescribeClusterConfigsHistoryRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeClusterConfigsHistoryOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeClusterConfigsHistory(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeClusterConfigsHistoryOutcome>>();
+    DescribeClusterConfigsHistoryAsync(
+    request,
+    [prom](
+        const CdwdorisClient*,
+        const DescribeClusterConfigsHistoryRequest&,
+        DescribeClusterConfigsHistoryOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CdwdorisClient::DescribeCoolDownBackendsOutcome CdwdorisClient::DescribeCoolDownBackends(const DescribeCoolDownBackendsRequest &request)
@@ -793,25 +912,32 @@ CdwdorisClient::DescribeCoolDownBackendsOutcome CdwdorisClient::DescribeCoolDown
 
 void CdwdorisClient::DescribeCoolDownBackendsAsync(const DescribeCoolDownBackendsRequest& request, const DescribeCoolDownBackendsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeCoolDownBackends(request), context);
-    };
+    using Req = const DescribeCoolDownBackendsRequest&;
+    using Resp = DescribeCoolDownBackendsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeCoolDownBackends", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CdwdorisClient::DescribeCoolDownBackendsOutcomeCallable CdwdorisClient::DescribeCoolDownBackendsCallable(const DescribeCoolDownBackendsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeCoolDownBackendsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeCoolDownBackends(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeCoolDownBackendsOutcome>>();
+    DescribeCoolDownBackendsAsync(
+    request,
+    [prom](
+        const CdwdorisClient*,
+        const DescribeCoolDownBackendsRequest&,
+        DescribeCoolDownBackendsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CdwdorisClient::DescribeCoolDownPoliciesOutcome CdwdorisClient::DescribeCoolDownPolicies(const DescribeCoolDownPoliciesRequest &request)
@@ -836,25 +962,32 @@ CdwdorisClient::DescribeCoolDownPoliciesOutcome CdwdorisClient::DescribeCoolDown
 
 void CdwdorisClient::DescribeCoolDownPoliciesAsync(const DescribeCoolDownPoliciesRequest& request, const DescribeCoolDownPoliciesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeCoolDownPolicies(request), context);
-    };
+    using Req = const DescribeCoolDownPoliciesRequest&;
+    using Resp = DescribeCoolDownPoliciesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeCoolDownPolicies", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CdwdorisClient::DescribeCoolDownPoliciesOutcomeCallable CdwdorisClient::DescribeCoolDownPoliciesCallable(const DescribeCoolDownPoliciesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeCoolDownPoliciesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeCoolDownPolicies(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeCoolDownPoliciesOutcome>>();
+    DescribeCoolDownPoliciesAsync(
+    request,
+    [prom](
+        const CdwdorisClient*,
+        const DescribeCoolDownPoliciesRequest&,
+        DescribeCoolDownPoliciesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CdwdorisClient::DescribeCoolDownTableDataOutcome CdwdorisClient::DescribeCoolDownTableData(const DescribeCoolDownTableDataRequest &request)
@@ -879,25 +1012,32 @@ CdwdorisClient::DescribeCoolDownTableDataOutcome CdwdorisClient::DescribeCoolDow
 
 void CdwdorisClient::DescribeCoolDownTableDataAsync(const DescribeCoolDownTableDataRequest& request, const DescribeCoolDownTableDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeCoolDownTableData(request), context);
-    };
+    using Req = const DescribeCoolDownTableDataRequest&;
+    using Resp = DescribeCoolDownTableDataResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeCoolDownTableData", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CdwdorisClient::DescribeCoolDownTableDataOutcomeCallable CdwdorisClient::DescribeCoolDownTableDataCallable(const DescribeCoolDownTableDataRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeCoolDownTableDataOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeCoolDownTableData(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeCoolDownTableDataOutcome>>();
+    DescribeCoolDownTableDataAsync(
+    request,
+    [prom](
+        const CdwdorisClient*,
+        const DescribeCoolDownTableDataRequest&,
+        DescribeCoolDownTableDataOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CdwdorisClient::DescribeDatabaseAuditDownloadOutcome CdwdorisClient::DescribeDatabaseAuditDownload(const DescribeDatabaseAuditDownloadRequest &request)
@@ -922,25 +1062,32 @@ CdwdorisClient::DescribeDatabaseAuditDownloadOutcome CdwdorisClient::DescribeDat
 
 void CdwdorisClient::DescribeDatabaseAuditDownloadAsync(const DescribeDatabaseAuditDownloadRequest& request, const DescribeDatabaseAuditDownloadAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDatabaseAuditDownload(request), context);
-    };
+    using Req = const DescribeDatabaseAuditDownloadRequest&;
+    using Resp = DescribeDatabaseAuditDownloadResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeDatabaseAuditDownload", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CdwdorisClient::DescribeDatabaseAuditDownloadOutcomeCallable CdwdorisClient::DescribeDatabaseAuditDownloadCallable(const DescribeDatabaseAuditDownloadRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeDatabaseAuditDownloadOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDatabaseAuditDownload(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeDatabaseAuditDownloadOutcome>>();
+    DescribeDatabaseAuditDownloadAsync(
+    request,
+    [prom](
+        const CdwdorisClient*,
+        const DescribeDatabaseAuditDownloadRequest&,
+        DescribeDatabaseAuditDownloadOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CdwdorisClient::DescribeDatabaseAuditRecordsOutcome CdwdorisClient::DescribeDatabaseAuditRecords(const DescribeDatabaseAuditRecordsRequest &request)
@@ -965,25 +1112,32 @@ CdwdorisClient::DescribeDatabaseAuditRecordsOutcome CdwdorisClient::DescribeData
 
 void CdwdorisClient::DescribeDatabaseAuditRecordsAsync(const DescribeDatabaseAuditRecordsRequest& request, const DescribeDatabaseAuditRecordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDatabaseAuditRecords(request), context);
-    };
+    using Req = const DescribeDatabaseAuditRecordsRequest&;
+    using Resp = DescribeDatabaseAuditRecordsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeDatabaseAuditRecords", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CdwdorisClient::DescribeDatabaseAuditRecordsOutcomeCallable CdwdorisClient::DescribeDatabaseAuditRecordsCallable(const DescribeDatabaseAuditRecordsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeDatabaseAuditRecordsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDatabaseAuditRecords(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeDatabaseAuditRecordsOutcome>>();
+    DescribeDatabaseAuditRecordsAsync(
+    request,
+    [prom](
+        const CdwdorisClient*,
+        const DescribeDatabaseAuditRecordsRequest&,
+        DescribeDatabaseAuditRecordsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CdwdorisClient::DescribeInstanceOutcome CdwdorisClient::DescribeInstance(const DescribeInstanceRequest &request)
@@ -1008,25 +1162,32 @@ CdwdorisClient::DescribeInstanceOutcome CdwdorisClient::DescribeInstance(const D
 
 void CdwdorisClient::DescribeInstanceAsync(const DescribeInstanceRequest& request, const DescribeInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeInstance(request), context);
-    };
+    using Req = const DescribeInstanceRequest&;
+    using Resp = DescribeInstanceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeInstance", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CdwdorisClient::DescribeInstanceOutcomeCallable CdwdorisClient::DescribeInstanceCallable(const DescribeInstanceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeInstanceOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeInstance(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeInstanceOutcome>>();
+    DescribeInstanceAsync(
+    request,
+    [prom](
+        const CdwdorisClient*,
+        const DescribeInstanceRequest&,
+        DescribeInstanceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CdwdorisClient::DescribeInstanceNodesOutcome CdwdorisClient::DescribeInstanceNodes(const DescribeInstanceNodesRequest &request)
@@ -1051,25 +1212,32 @@ CdwdorisClient::DescribeInstanceNodesOutcome CdwdorisClient::DescribeInstanceNod
 
 void CdwdorisClient::DescribeInstanceNodesAsync(const DescribeInstanceNodesRequest& request, const DescribeInstanceNodesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeInstanceNodes(request), context);
-    };
+    using Req = const DescribeInstanceNodesRequest&;
+    using Resp = DescribeInstanceNodesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeInstanceNodes", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CdwdorisClient::DescribeInstanceNodesOutcomeCallable CdwdorisClient::DescribeInstanceNodesCallable(const DescribeInstanceNodesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeInstanceNodesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeInstanceNodes(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeInstanceNodesOutcome>>();
+    DescribeInstanceNodesAsync(
+    request,
+    [prom](
+        const CdwdorisClient*,
+        const DescribeInstanceNodesRequest&,
+        DescribeInstanceNodesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CdwdorisClient::DescribeInstanceNodesInfoOutcome CdwdorisClient::DescribeInstanceNodesInfo(const DescribeInstanceNodesInfoRequest &request)
@@ -1094,25 +1262,32 @@ CdwdorisClient::DescribeInstanceNodesInfoOutcome CdwdorisClient::DescribeInstanc
 
 void CdwdorisClient::DescribeInstanceNodesInfoAsync(const DescribeInstanceNodesInfoRequest& request, const DescribeInstanceNodesInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeInstanceNodesInfo(request), context);
-    };
+    using Req = const DescribeInstanceNodesInfoRequest&;
+    using Resp = DescribeInstanceNodesInfoResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeInstanceNodesInfo", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CdwdorisClient::DescribeInstanceNodesInfoOutcomeCallable CdwdorisClient::DescribeInstanceNodesInfoCallable(const DescribeInstanceNodesInfoRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeInstanceNodesInfoOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeInstanceNodesInfo(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeInstanceNodesInfoOutcome>>();
+    DescribeInstanceNodesInfoAsync(
+    request,
+    [prom](
+        const CdwdorisClient*,
+        const DescribeInstanceNodesInfoRequest&,
+        DescribeInstanceNodesInfoOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CdwdorisClient::DescribeInstanceNodesRoleOutcome CdwdorisClient::DescribeInstanceNodesRole(const DescribeInstanceNodesRoleRequest &request)
@@ -1137,25 +1312,32 @@ CdwdorisClient::DescribeInstanceNodesRoleOutcome CdwdorisClient::DescribeInstanc
 
 void CdwdorisClient::DescribeInstanceNodesRoleAsync(const DescribeInstanceNodesRoleRequest& request, const DescribeInstanceNodesRoleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeInstanceNodesRole(request), context);
-    };
+    using Req = const DescribeInstanceNodesRoleRequest&;
+    using Resp = DescribeInstanceNodesRoleResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeInstanceNodesRole", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CdwdorisClient::DescribeInstanceNodesRoleOutcomeCallable CdwdorisClient::DescribeInstanceNodesRoleCallable(const DescribeInstanceNodesRoleRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeInstanceNodesRoleOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeInstanceNodesRole(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeInstanceNodesRoleOutcome>>();
+    DescribeInstanceNodesRoleAsync(
+    request,
+    [prom](
+        const CdwdorisClient*,
+        const DescribeInstanceNodesRoleRequest&,
+        DescribeInstanceNodesRoleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CdwdorisClient::DescribeInstanceOperationsOutcome CdwdorisClient::DescribeInstanceOperations(const DescribeInstanceOperationsRequest &request)
@@ -1180,25 +1362,32 @@ CdwdorisClient::DescribeInstanceOperationsOutcome CdwdorisClient::DescribeInstan
 
 void CdwdorisClient::DescribeInstanceOperationsAsync(const DescribeInstanceOperationsRequest& request, const DescribeInstanceOperationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeInstanceOperations(request), context);
-    };
+    using Req = const DescribeInstanceOperationsRequest&;
+    using Resp = DescribeInstanceOperationsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeInstanceOperations", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CdwdorisClient::DescribeInstanceOperationsOutcomeCallable CdwdorisClient::DescribeInstanceOperationsCallable(const DescribeInstanceOperationsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeInstanceOperationsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeInstanceOperations(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeInstanceOperationsOutcome>>();
+    DescribeInstanceOperationsAsync(
+    request,
+    [prom](
+        const CdwdorisClient*,
+        const DescribeInstanceOperationsRequest&,
+        DescribeInstanceOperationsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CdwdorisClient::DescribeInstanceStateOutcome CdwdorisClient::DescribeInstanceState(const DescribeInstanceStateRequest &request)
@@ -1223,25 +1412,32 @@ CdwdorisClient::DescribeInstanceStateOutcome CdwdorisClient::DescribeInstanceSta
 
 void CdwdorisClient::DescribeInstanceStateAsync(const DescribeInstanceStateRequest& request, const DescribeInstanceStateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeInstanceState(request), context);
-    };
+    using Req = const DescribeInstanceStateRequest&;
+    using Resp = DescribeInstanceStateResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeInstanceState", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CdwdorisClient::DescribeInstanceStateOutcomeCallable CdwdorisClient::DescribeInstanceStateCallable(const DescribeInstanceStateRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeInstanceStateOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeInstanceState(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeInstanceStateOutcome>>();
+    DescribeInstanceStateAsync(
+    request,
+    [prom](
+        const CdwdorisClient*,
+        const DescribeInstanceStateRequest&,
+        DescribeInstanceStateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CdwdorisClient::DescribeInstanceUsedSubnetsOutcome CdwdorisClient::DescribeInstanceUsedSubnets(const DescribeInstanceUsedSubnetsRequest &request)
@@ -1266,25 +1462,32 @@ CdwdorisClient::DescribeInstanceUsedSubnetsOutcome CdwdorisClient::DescribeInsta
 
 void CdwdorisClient::DescribeInstanceUsedSubnetsAsync(const DescribeInstanceUsedSubnetsRequest& request, const DescribeInstanceUsedSubnetsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeInstanceUsedSubnets(request), context);
-    };
+    using Req = const DescribeInstanceUsedSubnetsRequest&;
+    using Resp = DescribeInstanceUsedSubnetsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeInstanceUsedSubnets", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CdwdorisClient::DescribeInstanceUsedSubnetsOutcomeCallable CdwdorisClient::DescribeInstanceUsedSubnetsCallable(const DescribeInstanceUsedSubnetsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeInstanceUsedSubnetsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeInstanceUsedSubnets(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeInstanceUsedSubnetsOutcome>>();
+    DescribeInstanceUsedSubnetsAsync(
+    request,
+    [prom](
+        const CdwdorisClient*,
+        const DescribeInstanceUsedSubnetsRequest&,
+        DescribeInstanceUsedSubnetsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CdwdorisClient::DescribeInstancesOutcome CdwdorisClient::DescribeInstances(const DescribeInstancesRequest &request)
@@ -1309,25 +1512,32 @@ CdwdorisClient::DescribeInstancesOutcome CdwdorisClient::DescribeInstances(const
 
 void CdwdorisClient::DescribeInstancesAsync(const DescribeInstancesRequest& request, const DescribeInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeInstances(request), context);
-    };
+    using Req = const DescribeInstancesRequest&;
+    using Resp = DescribeInstancesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeInstances", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CdwdorisClient::DescribeInstancesOutcomeCallable CdwdorisClient::DescribeInstancesCallable(const DescribeInstancesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeInstancesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeInstances(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeInstancesOutcome>>();
+    DescribeInstancesAsync(
+    request,
+    [prom](
+        const CdwdorisClient*,
+        const DescribeInstancesRequest&,
+        DescribeInstancesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CdwdorisClient::DescribeInstancesHealthStateOutcome CdwdorisClient::DescribeInstancesHealthState(const DescribeInstancesHealthStateRequest &request)
@@ -1352,25 +1562,32 @@ CdwdorisClient::DescribeInstancesHealthStateOutcome CdwdorisClient::DescribeInst
 
 void CdwdorisClient::DescribeInstancesHealthStateAsync(const DescribeInstancesHealthStateRequest& request, const DescribeInstancesHealthStateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeInstancesHealthState(request), context);
-    };
+    using Req = const DescribeInstancesHealthStateRequest&;
+    using Resp = DescribeInstancesHealthStateResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeInstancesHealthState", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CdwdorisClient::DescribeInstancesHealthStateOutcomeCallable CdwdorisClient::DescribeInstancesHealthStateCallable(const DescribeInstancesHealthStateRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeInstancesHealthStateOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeInstancesHealthState(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeInstancesHealthStateOutcome>>();
+    DescribeInstancesHealthStateAsync(
+    request,
+    [prom](
+        const CdwdorisClient*,
+        const DescribeInstancesHealthStateRequest&,
+        DescribeInstancesHealthStateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CdwdorisClient::DescribeRestoreTaskDetailOutcome CdwdorisClient::DescribeRestoreTaskDetail(const DescribeRestoreTaskDetailRequest &request)
@@ -1395,25 +1612,32 @@ CdwdorisClient::DescribeRestoreTaskDetailOutcome CdwdorisClient::DescribeRestore
 
 void CdwdorisClient::DescribeRestoreTaskDetailAsync(const DescribeRestoreTaskDetailRequest& request, const DescribeRestoreTaskDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeRestoreTaskDetail(request), context);
-    };
+    using Req = const DescribeRestoreTaskDetailRequest&;
+    using Resp = DescribeRestoreTaskDetailResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeRestoreTaskDetail", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CdwdorisClient::DescribeRestoreTaskDetailOutcomeCallable CdwdorisClient::DescribeRestoreTaskDetailCallable(const DescribeRestoreTaskDetailRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeRestoreTaskDetailOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeRestoreTaskDetail(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeRestoreTaskDetailOutcome>>();
+    DescribeRestoreTaskDetailAsync(
+    request,
+    [prom](
+        const CdwdorisClient*,
+        const DescribeRestoreTaskDetailRequest&,
+        DescribeRestoreTaskDetailOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CdwdorisClient::DescribeSlowQueryRecordsOutcome CdwdorisClient::DescribeSlowQueryRecords(const DescribeSlowQueryRecordsRequest &request)
@@ -1438,25 +1662,32 @@ CdwdorisClient::DescribeSlowQueryRecordsOutcome CdwdorisClient::DescribeSlowQuer
 
 void CdwdorisClient::DescribeSlowQueryRecordsAsync(const DescribeSlowQueryRecordsRequest& request, const DescribeSlowQueryRecordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeSlowQueryRecords(request), context);
-    };
+    using Req = const DescribeSlowQueryRecordsRequest&;
+    using Resp = DescribeSlowQueryRecordsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeSlowQueryRecords", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CdwdorisClient::DescribeSlowQueryRecordsOutcomeCallable CdwdorisClient::DescribeSlowQueryRecordsCallable(const DescribeSlowQueryRecordsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeSlowQueryRecordsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeSlowQueryRecords(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeSlowQueryRecordsOutcome>>();
+    DescribeSlowQueryRecordsAsync(
+    request,
+    [prom](
+        const CdwdorisClient*,
+        const DescribeSlowQueryRecordsRequest&,
+        DescribeSlowQueryRecordsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CdwdorisClient::DescribeSlowQueryRecordsDownloadOutcome CdwdorisClient::DescribeSlowQueryRecordsDownload(const DescribeSlowQueryRecordsDownloadRequest &request)
@@ -1481,25 +1712,32 @@ CdwdorisClient::DescribeSlowQueryRecordsDownloadOutcome CdwdorisClient::Describe
 
 void CdwdorisClient::DescribeSlowQueryRecordsDownloadAsync(const DescribeSlowQueryRecordsDownloadRequest& request, const DescribeSlowQueryRecordsDownloadAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeSlowQueryRecordsDownload(request), context);
-    };
+    using Req = const DescribeSlowQueryRecordsDownloadRequest&;
+    using Resp = DescribeSlowQueryRecordsDownloadResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeSlowQueryRecordsDownload", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CdwdorisClient::DescribeSlowQueryRecordsDownloadOutcomeCallable CdwdorisClient::DescribeSlowQueryRecordsDownloadCallable(const DescribeSlowQueryRecordsDownloadRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeSlowQueryRecordsDownloadOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeSlowQueryRecordsDownload(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeSlowQueryRecordsDownloadOutcome>>();
+    DescribeSlowQueryRecordsDownloadAsync(
+    request,
+    [prom](
+        const CdwdorisClient*,
+        const DescribeSlowQueryRecordsDownloadRequest&,
+        DescribeSlowQueryRecordsDownloadOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CdwdorisClient::DescribeSpecOutcome CdwdorisClient::DescribeSpec(const DescribeSpecRequest &request)
@@ -1524,25 +1762,32 @@ CdwdorisClient::DescribeSpecOutcome CdwdorisClient::DescribeSpec(const DescribeS
 
 void CdwdorisClient::DescribeSpecAsync(const DescribeSpecRequest& request, const DescribeSpecAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeSpec(request), context);
-    };
+    using Req = const DescribeSpecRequest&;
+    using Resp = DescribeSpecResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeSpec", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CdwdorisClient::DescribeSpecOutcomeCallable CdwdorisClient::DescribeSpecCallable(const DescribeSpecRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeSpecOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeSpec(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeSpecOutcome>>();
+    DescribeSpecAsync(
+    request,
+    [prom](
+        const CdwdorisClient*,
+        const DescribeSpecRequest&,
+        DescribeSpecOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CdwdorisClient::DescribeSqlApisOutcome CdwdorisClient::DescribeSqlApis(const DescribeSqlApisRequest &request)
@@ -1567,25 +1812,32 @@ CdwdorisClient::DescribeSqlApisOutcome CdwdorisClient::DescribeSqlApis(const Des
 
 void CdwdorisClient::DescribeSqlApisAsync(const DescribeSqlApisRequest& request, const DescribeSqlApisAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeSqlApis(request), context);
-    };
+    using Req = const DescribeSqlApisRequest&;
+    using Resp = DescribeSqlApisResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeSqlApis", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CdwdorisClient::DescribeSqlApisOutcomeCallable CdwdorisClient::DescribeSqlApisCallable(const DescribeSqlApisRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeSqlApisOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeSqlApis(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeSqlApisOutcome>>();
+    DescribeSqlApisAsync(
+    request,
+    [prom](
+        const CdwdorisClient*,
+        const DescribeSqlApisRequest&,
+        DescribeSqlApisOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CdwdorisClient::DescribeTableListOutcome CdwdorisClient::DescribeTableList(const DescribeTableListRequest &request)
@@ -1610,25 +1862,32 @@ CdwdorisClient::DescribeTableListOutcome CdwdorisClient::DescribeTableList(const
 
 void CdwdorisClient::DescribeTableListAsync(const DescribeTableListRequest& request, const DescribeTableListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeTableList(request), context);
-    };
+    using Req = const DescribeTableListRequest&;
+    using Resp = DescribeTableListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeTableList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CdwdorisClient::DescribeTableListOutcomeCallable CdwdorisClient::DescribeTableListCallable(const DescribeTableListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeTableListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeTableList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeTableListOutcome>>();
+    DescribeTableListAsync(
+    request,
+    [prom](
+        const CdwdorisClient*,
+        const DescribeTableListRequest&,
+        DescribeTableListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CdwdorisClient::DescribeUserBindWorkloadGroupOutcome CdwdorisClient::DescribeUserBindWorkloadGroup(const DescribeUserBindWorkloadGroupRequest &request)
@@ -1653,25 +1912,32 @@ CdwdorisClient::DescribeUserBindWorkloadGroupOutcome CdwdorisClient::DescribeUse
 
 void CdwdorisClient::DescribeUserBindWorkloadGroupAsync(const DescribeUserBindWorkloadGroupRequest& request, const DescribeUserBindWorkloadGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeUserBindWorkloadGroup(request), context);
-    };
+    using Req = const DescribeUserBindWorkloadGroupRequest&;
+    using Resp = DescribeUserBindWorkloadGroupResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeUserBindWorkloadGroup", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CdwdorisClient::DescribeUserBindWorkloadGroupOutcomeCallable CdwdorisClient::DescribeUserBindWorkloadGroupCallable(const DescribeUserBindWorkloadGroupRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeUserBindWorkloadGroupOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeUserBindWorkloadGroup(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeUserBindWorkloadGroupOutcome>>();
+    DescribeUserBindWorkloadGroupAsync(
+    request,
+    [prom](
+        const CdwdorisClient*,
+        const DescribeUserBindWorkloadGroupRequest&,
+        DescribeUserBindWorkloadGroupOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CdwdorisClient::DescribeWorkloadGroupOutcome CdwdorisClient::DescribeWorkloadGroup(const DescribeWorkloadGroupRequest &request)
@@ -1696,25 +1962,32 @@ CdwdorisClient::DescribeWorkloadGroupOutcome CdwdorisClient::DescribeWorkloadGro
 
 void CdwdorisClient::DescribeWorkloadGroupAsync(const DescribeWorkloadGroupRequest& request, const DescribeWorkloadGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeWorkloadGroup(request), context);
-    };
+    using Req = const DescribeWorkloadGroupRequest&;
+    using Resp = DescribeWorkloadGroupResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeWorkloadGroup", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CdwdorisClient::DescribeWorkloadGroupOutcomeCallable CdwdorisClient::DescribeWorkloadGroupCallable(const DescribeWorkloadGroupRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeWorkloadGroupOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeWorkloadGroup(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeWorkloadGroupOutcome>>();
+    DescribeWorkloadGroupAsync(
+    request,
+    [prom](
+        const CdwdorisClient*,
+        const DescribeWorkloadGroupRequest&,
+        DescribeWorkloadGroupOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CdwdorisClient::DestroyInstanceOutcome CdwdorisClient::DestroyInstance(const DestroyInstanceRequest &request)
@@ -1739,25 +2012,32 @@ CdwdorisClient::DestroyInstanceOutcome CdwdorisClient::DestroyInstance(const Des
 
 void CdwdorisClient::DestroyInstanceAsync(const DestroyInstanceRequest& request, const DestroyInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DestroyInstance(request), context);
-    };
+    using Req = const DestroyInstanceRequest&;
+    using Resp = DestroyInstanceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DestroyInstance", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CdwdorisClient::DestroyInstanceOutcomeCallable CdwdorisClient::DestroyInstanceCallable(const DestroyInstanceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DestroyInstanceOutcome()>>(
-        [this, request]()
-        {
-            return this->DestroyInstance(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DestroyInstanceOutcome>>();
+    DestroyInstanceAsync(
+    request,
+    [prom](
+        const CdwdorisClient*,
+        const DestroyInstanceRequest&,
+        DestroyInstanceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CdwdorisClient::ModifyClusterConfigsOutcome CdwdorisClient::ModifyClusterConfigs(const ModifyClusterConfigsRequest &request)
@@ -1782,25 +2062,32 @@ CdwdorisClient::ModifyClusterConfigsOutcome CdwdorisClient::ModifyClusterConfigs
 
 void CdwdorisClient::ModifyClusterConfigsAsync(const ModifyClusterConfigsRequest& request, const ModifyClusterConfigsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyClusterConfigs(request), context);
-    };
+    using Req = const ModifyClusterConfigsRequest&;
+    using Resp = ModifyClusterConfigsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyClusterConfigs", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CdwdorisClient::ModifyClusterConfigsOutcomeCallable CdwdorisClient::ModifyClusterConfigsCallable(const ModifyClusterConfigsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyClusterConfigsOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyClusterConfigs(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyClusterConfigsOutcome>>();
+    ModifyClusterConfigsAsync(
+    request,
+    [prom](
+        const CdwdorisClient*,
+        const ModifyClusterConfigsRequest&,
+        ModifyClusterConfigsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CdwdorisClient::ModifyCoolDownPolicyOutcome CdwdorisClient::ModifyCoolDownPolicy(const ModifyCoolDownPolicyRequest &request)
@@ -1825,25 +2112,32 @@ CdwdorisClient::ModifyCoolDownPolicyOutcome CdwdorisClient::ModifyCoolDownPolicy
 
 void CdwdorisClient::ModifyCoolDownPolicyAsync(const ModifyCoolDownPolicyRequest& request, const ModifyCoolDownPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyCoolDownPolicy(request), context);
-    };
+    using Req = const ModifyCoolDownPolicyRequest&;
+    using Resp = ModifyCoolDownPolicyResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyCoolDownPolicy", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CdwdorisClient::ModifyCoolDownPolicyOutcomeCallable CdwdorisClient::ModifyCoolDownPolicyCallable(const ModifyCoolDownPolicyRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyCoolDownPolicyOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyCoolDownPolicy(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyCoolDownPolicyOutcome>>();
+    ModifyCoolDownPolicyAsync(
+    request,
+    [prom](
+        const CdwdorisClient*,
+        const ModifyCoolDownPolicyRequest&,
+        ModifyCoolDownPolicyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CdwdorisClient::ModifyInstanceOutcome CdwdorisClient::ModifyInstance(const ModifyInstanceRequest &request)
@@ -1868,25 +2162,32 @@ CdwdorisClient::ModifyInstanceOutcome CdwdorisClient::ModifyInstance(const Modif
 
 void CdwdorisClient::ModifyInstanceAsync(const ModifyInstanceRequest& request, const ModifyInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyInstance(request), context);
-    };
+    using Req = const ModifyInstanceRequest&;
+    using Resp = ModifyInstanceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyInstance", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CdwdorisClient::ModifyInstanceOutcomeCallable CdwdorisClient::ModifyInstanceCallable(const ModifyInstanceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyInstanceOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyInstance(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyInstanceOutcome>>();
+    ModifyInstanceAsync(
+    request,
+    [prom](
+        const CdwdorisClient*,
+        const ModifyInstanceRequest&,
+        ModifyInstanceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CdwdorisClient::ModifyInstanceKeyValConfigsOutcome CdwdorisClient::ModifyInstanceKeyValConfigs(const ModifyInstanceKeyValConfigsRequest &request)
@@ -1911,25 +2212,32 @@ CdwdorisClient::ModifyInstanceKeyValConfigsOutcome CdwdorisClient::ModifyInstanc
 
 void CdwdorisClient::ModifyInstanceKeyValConfigsAsync(const ModifyInstanceKeyValConfigsRequest& request, const ModifyInstanceKeyValConfigsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyInstanceKeyValConfigs(request), context);
-    };
+    using Req = const ModifyInstanceKeyValConfigsRequest&;
+    using Resp = ModifyInstanceKeyValConfigsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyInstanceKeyValConfigs", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CdwdorisClient::ModifyInstanceKeyValConfigsOutcomeCallable CdwdorisClient::ModifyInstanceKeyValConfigsCallable(const ModifyInstanceKeyValConfigsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyInstanceKeyValConfigsOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyInstanceKeyValConfigs(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyInstanceKeyValConfigsOutcome>>();
+    ModifyInstanceKeyValConfigsAsync(
+    request,
+    [prom](
+        const CdwdorisClient*,
+        const ModifyInstanceKeyValConfigsRequest&,
+        ModifyInstanceKeyValConfigsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CdwdorisClient::ModifyNodeStatusOutcome CdwdorisClient::ModifyNodeStatus(const ModifyNodeStatusRequest &request)
@@ -1954,25 +2262,32 @@ CdwdorisClient::ModifyNodeStatusOutcome CdwdorisClient::ModifyNodeStatus(const M
 
 void CdwdorisClient::ModifyNodeStatusAsync(const ModifyNodeStatusRequest& request, const ModifyNodeStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyNodeStatus(request), context);
-    };
+    using Req = const ModifyNodeStatusRequest&;
+    using Resp = ModifyNodeStatusResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyNodeStatus", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CdwdorisClient::ModifyNodeStatusOutcomeCallable CdwdorisClient::ModifyNodeStatusCallable(const ModifyNodeStatusRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyNodeStatusOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyNodeStatus(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyNodeStatusOutcome>>();
+    ModifyNodeStatusAsync(
+    request,
+    [prom](
+        const CdwdorisClient*,
+        const ModifyNodeStatusRequest&,
+        ModifyNodeStatusOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CdwdorisClient::ModifySecurityGroupsOutcome CdwdorisClient::ModifySecurityGroups(const ModifySecurityGroupsRequest &request)
@@ -1997,25 +2312,32 @@ CdwdorisClient::ModifySecurityGroupsOutcome CdwdorisClient::ModifySecurityGroups
 
 void CdwdorisClient::ModifySecurityGroupsAsync(const ModifySecurityGroupsRequest& request, const ModifySecurityGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifySecurityGroups(request), context);
-    };
+    using Req = const ModifySecurityGroupsRequest&;
+    using Resp = ModifySecurityGroupsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifySecurityGroups", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CdwdorisClient::ModifySecurityGroupsOutcomeCallable CdwdorisClient::ModifySecurityGroupsCallable(const ModifySecurityGroupsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifySecurityGroupsOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifySecurityGroups(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifySecurityGroupsOutcome>>();
+    ModifySecurityGroupsAsync(
+    request,
+    [prom](
+        const CdwdorisClient*,
+        const ModifySecurityGroupsRequest&,
+        ModifySecurityGroupsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CdwdorisClient::ModifyUserBindWorkloadGroupOutcome CdwdorisClient::ModifyUserBindWorkloadGroup(const ModifyUserBindWorkloadGroupRequest &request)
@@ -2040,25 +2362,32 @@ CdwdorisClient::ModifyUserBindWorkloadGroupOutcome CdwdorisClient::ModifyUserBin
 
 void CdwdorisClient::ModifyUserBindWorkloadGroupAsync(const ModifyUserBindWorkloadGroupRequest& request, const ModifyUserBindWorkloadGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyUserBindWorkloadGroup(request), context);
-    };
+    using Req = const ModifyUserBindWorkloadGroupRequest&;
+    using Resp = ModifyUserBindWorkloadGroupResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyUserBindWorkloadGroup", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CdwdorisClient::ModifyUserBindWorkloadGroupOutcomeCallable CdwdorisClient::ModifyUserBindWorkloadGroupCallable(const ModifyUserBindWorkloadGroupRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyUserBindWorkloadGroupOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyUserBindWorkloadGroup(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyUserBindWorkloadGroupOutcome>>();
+    ModifyUserBindWorkloadGroupAsync(
+    request,
+    [prom](
+        const CdwdorisClient*,
+        const ModifyUserBindWorkloadGroupRequest&,
+        ModifyUserBindWorkloadGroupOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CdwdorisClient::ModifyUserPrivilegesV3Outcome CdwdorisClient::ModifyUserPrivilegesV3(const ModifyUserPrivilegesV3Request &request)
@@ -2083,25 +2412,32 @@ CdwdorisClient::ModifyUserPrivilegesV3Outcome CdwdorisClient::ModifyUserPrivileg
 
 void CdwdorisClient::ModifyUserPrivilegesV3Async(const ModifyUserPrivilegesV3Request& request, const ModifyUserPrivilegesV3AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyUserPrivilegesV3(request), context);
-    };
+    using Req = const ModifyUserPrivilegesV3Request&;
+    using Resp = ModifyUserPrivilegesV3Response;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyUserPrivilegesV3", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CdwdorisClient::ModifyUserPrivilegesV3OutcomeCallable CdwdorisClient::ModifyUserPrivilegesV3Callable(const ModifyUserPrivilegesV3Request &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyUserPrivilegesV3Outcome()>>(
-        [this, request]()
-        {
-            return this->ModifyUserPrivilegesV3(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyUserPrivilegesV3Outcome>>();
+    ModifyUserPrivilegesV3Async(
+    request,
+    [prom](
+        const CdwdorisClient*,
+        const ModifyUserPrivilegesV3Request&,
+        ModifyUserPrivilegesV3Outcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CdwdorisClient::ModifyWorkloadGroupOutcome CdwdorisClient::ModifyWorkloadGroup(const ModifyWorkloadGroupRequest &request)
@@ -2126,25 +2462,32 @@ CdwdorisClient::ModifyWorkloadGroupOutcome CdwdorisClient::ModifyWorkloadGroup(c
 
 void CdwdorisClient::ModifyWorkloadGroupAsync(const ModifyWorkloadGroupRequest& request, const ModifyWorkloadGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyWorkloadGroup(request), context);
-    };
+    using Req = const ModifyWorkloadGroupRequest&;
+    using Resp = ModifyWorkloadGroupResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyWorkloadGroup", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CdwdorisClient::ModifyWorkloadGroupOutcomeCallable CdwdorisClient::ModifyWorkloadGroupCallable(const ModifyWorkloadGroupRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyWorkloadGroupOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyWorkloadGroup(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyWorkloadGroupOutcome>>();
+    ModifyWorkloadGroupAsync(
+    request,
+    [prom](
+        const CdwdorisClient*,
+        const ModifyWorkloadGroupRequest&,
+        ModifyWorkloadGroupOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CdwdorisClient::ModifyWorkloadGroupStatusOutcome CdwdorisClient::ModifyWorkloadGroupStatus(const ModifyWorkloadGroupStatusRequest &request)
@@ -2169,25 +2512,32 @@ CdwdorisClient::ModifyWorkloadGroupStatusOutcome CdwdorisClient::ModifyWorkloadG
 
 void CdwdorisClient::ModifyWorkloadGroupStatusAsync(const ModifyWorkloadGroupStatusRequest& request, const ModifyWorkloadGroupStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyWorkloadGroupStatus(request), context);
-    };
+    using Req = const ModifyWorkloadGroupStatusRequest&;
+    using Resp = ModifyWorkloadGroupStatusResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyWorkloadGroupStatus", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CdwdorisClient::ModifyWorkloadGroupStatusOutcomeCallable CdwdorisClient::ModifyWorkloadGroupStatusCallable(const ModifyWorkloadGroupStatusRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyWorkloadGroupStatusOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyWorkloadGroupStatus(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyWorkloadGroupStatusOutcome>>();
+    ModifyWorkloadGroupStatusAsync(
+    request,
+    [prom](
+        const CdwdorisClient*,
+        const ModifyWorkloadGroupStatusRequest&,
+        ModifyWorkloadGroupStatusOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CdwdorisClient::OpenCoolDownOutcome CdwdorisClient::OpenCoolDown(const OpenCoolDownRequest &request)
@@ -2212,25 +2562,32 @@ CdwdorisClient::OpenCoolDownOutcome CdwdorisClient::OpenCoolDown(const OpenCoolD
 
 void CdwdorisClient::OpenCoolDownAsync(const OpenCoolDownRequest& request, const OpenCoolDownAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->OpenCoolDown(request), context);
-    };
+    using Req = const OpenCoolDownRequest&;
+    using Resp = OpenCoolDownResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "OpenCoolDown", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CdwdorisClient::OpenCoolDownOutcomeCallable CdwdorisClient::OpenCoolDownCallable(const OpenCoolDownRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<OpenCoolDownOutcome()>>(
-        [this, request]()
-        {
-            return this->OpenCoolDown(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<OpenCoolDownOutcome>>();
+    OpenCoolDownAsync(
+    request,
+    [prom](
+        const CdwdorisClient*,
+        const OpenCoolDownRequest&,
+        OpenCoolDownOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CdwdorisClient::OpenCoolDownPolicyOutcome CdwdorisClient::OpenCoolDownPolicy(const OpenCoolDownPolicyRequest &request)
@@ -2255,25 +2612,32 @@ CdwdorisClient::OpenCoolDownPolicyOutcome CdwdorisClient::OpenCoolDownPolicy(con
 
 void CdwdorisClient::OpenCoolDownPolicyAsync(const OpenCoolDownPolicyRequest& request, const OpenCoolDownPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->OpenCoolDownPolicy(request), context);
-    };
+    using Req = const OpenCoolDownPolicyRequest&;
+    using Resp = OpenCoolDownPolicyResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "OpenCoolDownPolicy", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CdwdorisClient::OpenCoolDownPolicyOutcomeCallable CdwdorisClient::OpenCoolDownPolicyCallable(const OpenCoolDownPolicyRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<OpenCoolDownPolicyOutcome()>>(
-        [this, request]()
-        {
-            return this->OpenCoolDownPolicy(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<OpenCoolDownPolicyOutcome>>();
+    OpenCoolDownPolicyAsync(
+    request,
+    [prom](
+        const CdwdorisClient*,
+        const OpenCoolDownPolicyRequest&,
+        OpenCoolDownPolicyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CdwdorisClient::RecoverBackUpJobOutcome CdwdorisClient::RecoverBackUpJob(const RecoverBackUpJobRequest &request)
@@ -2298,25 +2662,32 @@ CdwdorisClient::RecoverBackUpJobOutcome CdwdorisClient::RecoverBackUpJob(const R
 
 void CdwdorisClient::RecoverBackUpJobAsync(const RecoverBackUpJobRequest& request, const RecoverBackUpJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->RecoverBackUpJob(request), context);
-    };
+    using Req = const RecoverBackUpJobRequest&;
+    using Resp = RecoverBackUpJobResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "RecoverBackUpJob", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CdwdorisClient::RecoverBackUpJobOutcomeCallable CdwdorisClient::RecoverBackUpJobCallable(const RecoverBackUpJobRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<RecoverBackUpJobOutcome()>>(
-        [this, request]()
-        {
-            return this->RecoverBackUpJob(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<RecoverBackUpJobOutcome>>();
+    RecoverBackUpJobAsync(
+    request,
+    [prom](
+        const CdwdorisClient*,
+        const RecoverBackUpJobRequest&,
+        RecoverBackUpJobOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CdwdorisClient::ReduceInstanceOutcome CdwdorisClient::ReduceInstance(const ReduceInstanceRequest &request)
@@ -2341,25 +2712,32 @@ CdwdorisClient::ReduceInstanceOutcome CdwdorisClient::ReduceInstance(const Reduc
 
 void CdwdorisClient::ReduceInstanceAsync(const ReduceInstanceRequest& request, const ReduceInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ReduceInstance(request), context);
-    };
+    using Req = const ReduceInstanceRequest&;
+    using Resp = ReduceInstanceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ReduceInstance", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CdwdorisClient::ReduceInstanceOutcomeCallable CdwdorisClient::ReduceInstanceCallable(const ReduceInstanceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ReduceInstanceOutcome()>>(
-        [this, request]()
-        {
-            return this->ReduceInstance(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ReduceInstanceOutcome>>();
+    ReduceInstanceAsync(
+    request,
+    [prom](
+        const CdwdorisClient*,
+        const ReduceInstanceRequest&,
+        ReduceInstanceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CdwdorisClient::ResizeDiskOutcome CdwdorisClient::ResizeDisk(const ResizeDiskRequest &request)
@@ -2384,25 +2762,32 @@ CdwdorisClient::ResizeDiskOutcome CdwdorisClient::ResizeDisk(const ResizeDiskReq
 
 void CdwdorisClient::ResizeDiskAsync(const ResizeDiskRequest& request, const ResizeDiskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ResizeDisk(request), context);
-    };
+    using Req = const ResizeDiskRequest&;
+    using Resp = ResizeDiskResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ResizeDisk", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CdwdorisClient::ResizeDiskOutcomeCallable CdwdorisClient::ResizeDiskCallable(const ResizeDiskRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ResizeDiskOutcome()>>(
-        [this, request]()
-        {
-            return this->ResizeDisk(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ResizeDiskOutcome>>();
+    ResizeDiskAsync(
+    request,
+    [prom](
+        const CdwdorisClient*,
+        const ResizeDiskRequest&,
+        ResizeDiskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CdwdorisClient::RestartClusterForConfigsOutcome CdwdorisClient::RestartClusterForConfigs(const RestartClusterForConfigsRequest &request)
@@ -2427,25 +2812,32 @@ CdwdorisClient::RestartClusterForConfigsOutcome CdwdorisClient::RestartClusterFo
 
 void CdwdorisClient::RestartClusterForConfigsAsync(const RestartClusterForConfigsRequest& request, const RestartClusterForConfigsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->RestartClusterForConfigs(request), context);
-    };
+    using Req = const RestartClusterForConfigsRequest&;
+    using Resp = RestartClusterForConfigsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "RestartClusterForConfigs", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CdwdorisClient::RestartClusterForConfigsOutcomeCallable CdwdorisClient::RestartClusterForConfigsCallable(const RestartClusterForConfigsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<RestartClusterForConfigsOutcome()>>(
-        [this, request]()
-        {
-            return this->RestartClusterForConfigs(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<RestartClusterForConfigsOutcome>>();
+    RestartClusterForConfigsAsync(
+    request,
+    [prom](
+        const CdwdorisClient*,
+        const RestartClusterForConfigsRequest&,
+        RestartClusterForConfigsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CdwdorisClient::RestartClusterForNodeOutcome CdwdorisClient::RestartClusterForNode(const RestartClusterForNodeRequest &request)
@@ -2470,25 +2862,32 @@ CdwdorisClient::RestartClusterForNodeOutcome CdwdorisClient::RestartClusterForNo
 
 void CdwdorisClient::RestartClusterForNodeAsync(const RestartClusterForNodeRequest& request, const RestartClusterForNodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->RestartClusterForNode(request), context);
-    };
+    using Req = const RestartClusterForNodeRequest&;
+    using Resp = RestartClusterForNodeResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "RestartClusterForNode", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CdwdorisClient::RestartClusterForNodeOutcomeCallable CdwdorisClient::RestartClusterForNodeCallable(const RestartClusterForNodeRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<RestartClusterForNodeOutcome()>>(
-        [this, request]()
-        {
-            return this->RestartClusterForNode(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<RestartClusterForNodeOutcome>>();
+    RestartClusterForNodeAsync(
+    request,
+    [prom](
+        const CdwdorisClient*,
+        const RestartClusterForNodeRequest&,
+        RestartClusterForNodeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CdwdorisClient::ScaleOutInstanceOutcome CdwdorisClient::ScaleOutInstance(const ScaleOutInstanceRequest &request)
@@ -2513,25 +2912,32 @@ CdwdorisClient::ScaleOutInstanceOutcome CdwdorisClient::ScaleOutInstance(const S
 
 void CdwdorisClient::ScaleOutInstanceAsync(const ScaleOutInstanceRequest& request, const ScaleOutInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ScaleOutInstance(request), context);
-    };
+    using Req = const ScaleOutInstanceRequest&;
+    using Resp = ScaleOutInstanceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ScaleOutInstance", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CdwdorisClient::ScaleOutInstanceOutcomeCallable CdwdorisClient::ScaleOutInstanceCallable(const ScaleOutInstanceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ScaleOutInstanceOutcome()>>(
-        [this, request]()
-        {
-            return this->ScaleOutInstance(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ScaleOutInstanceOutcome>>();
+    ScaleOutInstanceAsync(
+    request,
+    [prom](
+        const CdwdorisClient*,
+        const ScaleOutInstanceRequest&,
+        ScaleOutInstanceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CdwdorisClient::ScaleUpInstanceOutcome CdwdorisClient::ScaleUpInstance(const ScaleUpInstanceRequest &request)
@@ -2556,25 +2962,32 @@ CdwdorisClient::ScaleUpInstanceOutcome CdwdorisClient::ScaleUpInstance(const Sca
 
 void CdwdorisClient::ScaleUpInstanceAsync(const ScaleUpInstanceRequest& request, const ScaleUpInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ScaleUpInstance(request), context);
-    };
+    using Req = const ScaleUpInstanceRequest&;
+    using Resp = ScaleUpInstanceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ScaleUpInstance", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CdwdorisClient::ScaleUpInstanceOutcomeCallable CdwdorisClient::ScaleUpInstanceCallable(const ScaleUpInstanceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ScaleUpInstanceOutcome()>>(
-        [this, request]()
-        {
-            return this->ScaleUpInstance(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ScaleUpInstanceOutcome>>();
+    ScaleUpInstanceAsync(
+    request,
+    [prom](
+        const CdwdorisClient*,
+        const ScaleUpInstanceRequest&,
+        ScaleUpInstanceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 CdwdorisClient::UpdateCoolDownOutcome CdwdorisClient::UpdateCoolDown(const UpdateCoolDownRequest &request)
@@ -2599,24 +3012,31 @@ CdwdorisClient::UpdateCoolDownOutcome CdwdorisClient::UpdateCoolDown(const Updat
 
 void CdwdorisClient::UpdateCoolDownAsync(const UpdateCoolDownRequest& request, const UpdateCoolDownAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UpdateCoolDown(request), context);
-    };
+    using Req = const UpdateCoolDownRequest&;
+    using Resp = UpdateCoolDownResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "UpdateCoolDown", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 CdwdorisClient::UpdateCoolDownOutcomeCallable CdwdorisClient::UpdateCoolDownCallable(const UpdateCoolDownRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UpdateCoolDownOutcome()>>(
-        [this, request]()
-        {
-            return this->UpdateCoolDown(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<UpdateCoolDownOutcome>>();
+    UpdateCoolDownAsync(
+    request,
+    [prom](
+        const CdwdorisClient*,
+        const UpdateCoolDownRequest&,
+        UpdateCoolDownOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 

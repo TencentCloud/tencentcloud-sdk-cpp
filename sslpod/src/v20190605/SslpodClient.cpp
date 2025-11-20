@@ -62,25 +62,32 @@ SslpodClient::CreateDomainOutcome SslpodClient::CreateDomain(const CreateDomainR
 
 void SslpodClient::CreateDomainAsync(const CreateDomainRequest& request, const CreateDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateDomain(request), context);
-    };
+    using Req = const CreateDomainRequest&;
+    using Resp = CreateDomainResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateDomain", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SslpodClient::CreateDomainOutcomeCallable SslpodClient::CreateDomainCallable(const CreateDomainRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateDomainOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateDomain(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateDomainOutcome>>();
+    CreateDomainAsync(
+    request,
+    [prom](
+        const SslpodClient*,
+        const CreateDomainRequest&,
+        CreateDomainOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SslpodClient::DeleteDomainOutcome SslpodClient::DeleteDomain(const DeleteDomainRequest &request)
@@ -105,25 +112,32 @@ SslpodClient::DeleteDomainOutcome SslpodClient::DeleteDomain(const DeleteDomainR
 
 void SslpodClient::DeleteDomainAsync(const DeleteDomainRequest& request, const DeleteDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteDomain(request), context);
-    };
+    using Req = const DeleteDomainRequest&;
+    using Resp = DeleteDomainResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteDomain", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SslpodClient::DeleteDomainOutcomeCallable SslpodClient::DeleteDomainCallable(const DeleteDomainRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteDomainOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteDomain(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteDomainOutcome>>();
+    DeleteDomainAsync(
+    request,
+    [prom](
+        const SslpodClient*,
+        const DeleteDomainRequest&,
+        DeleteDomainOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SslpodClient::DescribeDashboardOutcome SslpodClient::DescribeDashboard(const DescribeDashboardRequest &request)
@@ -148,25 +162,32 @@ SslpodClient::DescribeDashboardOutcome SslpodClient::DescribeDashboard(const Des
 
 void SslpodClient::DescribeDashboardAsync(const DescribeDashboardRequest& request, const DescribeDashboardAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDashboard(request), context);
-    };
+    using Req = const DescribeDashboardRequest&;
+    using Resp = DescribeDashboardResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeDashboard", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SslpodClient::DescribeDashboardOutcomeCallable SslpodClient::DescribeDashboardCallable(const DescribeDashboardRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeDashboardOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDashboard(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeDashboardOutcome>>();
+    DescribeDashboardAsync(
+    request,
+    [prom](
+        const SslpodClient*,
+        const DescribeDashboardRequest&,
+        DescribeDashboardOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SslpodClient::DescribeDomainCertsOutcome SslpodClient::DescribeDomainCerts(const DescribeDomainCertsRequest &request)
@@ -191,25 +212,32 @@ SslpodClient::DescribeDomainCertsOutcome SslpodClient::DescribeDomainCerts(const
 
 void SslpodClient::DescribeDomainCertsAsync(const DescribeDomainCertsRequest& request, const DescribeDomainCertsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDomainCerts(request), context);
-    };
+    using Req = const DescribeDomainCertsRequest&;
+    using Resp = DescribeDomainCertsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeDomainCerts", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SslpodClient::DescribeDomainCertsOutcomeCallable SslpodClient::DescribeDomainCertsCallable(const DescribeDomainCertsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeDomainCertsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDomainCerts(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeDomainCertsOutcome>>();
+    DescribeDomainCertsAsync(
+    request,
+    [prom](
+        const SslpodClient*,
+        const DescribeDomainCertsRequest&,
+        DescribeDomainCertsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SslpodClient::DescribeDomainTagsOutcome SslpodClient::DescribeDomainTags(const DescribeDomainTagsRequest &request)
@@ -234,25 +262,32 @@ SslpodClient::DescribeDomainTagsOutcome SslpodClient::DescribeDomainTags(const D
 
 void SslpodClient::DescribeDomainTagsAsync(const DescribeDomainTagsRequest& request, const DescribeDomainTagsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDomainTags(request), context);
-    };
+    using Req = const DescribeDomainTagsRequest&;
+    using Resp = DescribeDomainTagsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeDomainTags", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SslpodClient::DescribeDomainTagsOutcomeCallable SslpodClient::DescribeDomainTagsCallable(const DescribeDomainTagsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeDomainTagsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDomainTags(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeDomainTagsOutcome>>();
+    DescribeDomainTagsAsync(
+    request,
+    [prom](
+        const SslpodClient*,
+        const DescribeDomainTagsRequest&,
+        DescribeDomainTagsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SslpodClient::DescribeDomainsOutcome SslpodClient::DescribeDomains(const DescribeDomainsRequest &request)
@@ -277,25 +312,32 @@ SslpodClient::DescribeDomainsOutcome SslpodClient::DescribeDomains(const Describ
 
 void SslpodClient::DescribeDomainsAsync(const DescribeDomainsRequest& request, const DescribeDomainsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDomains(request), context);
-    };
+    using Req = const DescribeDomainsRequest&;
+    using Resp = DescribeDomainsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeDomains", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SslpodClient::DescribeDomainsOutcomeCallable SslpodClient::DescribeDomainsCallable(const DescribeDomainsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeDomainsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDomains(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeDomainsOutcome>>();
+    DescribeDomainsAsync(
+    request,
+    [prom](
+        const SslpodClient*,
+        const DescribeDomainsRequest&,
+        DescribeDomainsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SslpodClient::DescribeNoticeInfoOutcome SslpodClient::DescribeNoticeInfo(const DescribeNoticeInfoRequest &request)
@@ -320,25 +362,32 @@ SslpodClient::DescribeNoticeInfoOutcome SslpodClient::DescribeNoticeInfo(const D
 
 void SslpodClient::DescribeNoticeInfoAsync(const DescribeNoticeInfoRequest& request, const DescribeNoticeInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeNoticeInfo(request), context);
-    };
+    using Req = const DescribeNoticeInfoRequest&;
+    using Resp = DescribeNoticeInfoResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeNoticeInfo", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SslpodClient::DescribeNoticeInfoOutcomeCallable SslpodClient::DescribeNoticeInfoCallable(const DescribeNoticeInfoRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeNoticeInfoOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeNoticeInfo(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeNoticeInfoOutcome>>();
+    DescribeNoticeInfoAsync(
+    request,
+    [prom](
+        const SslpodClient*,
+        const DescribeNoticeInfoRequest&,
+        DescribeNoticeInfoOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SslpodClient::ModifyDomainTagsOutcome SslpodClient::ModifyDomainTags(const ModifyDomainTagsRequest &request)
@@ -363,25 +412,32 @@ SslpodClient::ModifyDomainTagsOutcome SslpodClient::ModifyDomainTags(const Modif
 
 void SslpodClient::ModifyDomainTagsAsync(const ModifyDomainTagsRequest& request, const ModifyDomainTagsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyDomainTags(request), context);
-    };
+    using Req = const ModifyDomainTagsRequest&;
+    using Resp = ModifyDomainTagsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyDomainTags", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SslpodClient::ModifyDomainTagsOutcomeCallable SslpodClient::ModifyDomainTagsCallable(const ModifyDomainTagsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyDomainTagsOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyDomainTags(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyDomainTagsOutcome>>();
+    ModifyDomainTagsAsync(
+    request,
+    [prom](
+        const SslpodClient*,
+        const ModifyDomainTagsRequest&,
+        ModifyDomainTagsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SslpodClient::RefreshDomainOutcome SslpodClient::RefreshDomain(const RefreshDomainRequest &request)
@@ -406,25 +462,32 @@ SslpodClient::RefreshDomainOutcome SslpodClient::RefreshDomain(const RefreshDoma
 
 void SslpodClient::RefreshDomainAsync(const RefreshDomainRequest& request, const RefreshDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->RefreshDomain(request), context);
-    };
+    using Req = const RefreshDomainRequest&;
+    using Resp = RefreshDomainResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "RefreshDomain", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SslpodClient::RefreshDomainOutcomeCallable SslpodClient::RefreshDomainCallable(const RefreshDomainRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<RefreshDomainOutcome()>>(
-        [this, request]()
-        {
-            return this->RefreshDomain(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<RefreshDomainOutcome>>();
+    RefreshDomainAsync(
+    request,
+    [prom](
+        const SslpodClient*,
+        const RefreshDomainRequest&,
+        RefreshDomainOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 SslpodClient::ResolveDomainOutcome SslpodClient::ResolveDomain(const ResolveDomainRequest &request)
@@ -449,24 +512,31 @@ SslpodClient::ResolveDomainOutcome SslpodClient::ResolveDomain(const ResolveDoma
 
 void SslpodClient::ResolveDomainAsync(const ResolveDomainRequest& request, const ResolveDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ResolveDomain(request), context);
-    };
+    using Req = const ResolveDomainRequest&;
+    using Resp = ResolveDomainResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ResolveDomain", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 SslpodClient::ResolveDomainOutcomeCallable SslpodClient::ResolveDomainCallable(const ResolveDomainRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ResolveDomainOutcome()>>(
-        [this, request]()
-        {
-            return this->ResolveDomain(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ResolveDomainOutcome>>();
+    ResolveDomainAsync(
+    request,
+    [prom](
+        const SslpodClient*,
+        const ResolveDomainRequest&,
+        ResolveDomainOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 

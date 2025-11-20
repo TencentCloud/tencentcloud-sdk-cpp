@@ -62,25 +62,32 @@ ChdfsClient::AssociateAccessGroupsOutcome ChdfsClient::AssociateAccessGroups(con
 
 void ChdfsClient::AssociateAccessGroupsAsync(const AssociateAccessGroupsRequest& request, const AssociateAccessGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->AssociateAccessGroups(request), context);
-    };
+    using Req = const AssociateAccessGroupsRequest&;
+    using Resp = AssociateAccessGroupsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "AssociateAccessGroups", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ChdfsClient::AssociateAccessGroupsOutcomeCallable ChdfsClient::AssociateAccessGroupsCallable(const AssociateAccessGroupsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<AssociateAccessGroupsOutcome()>>(
-        [this, request]()
-        {
-            return this->AssociateAccessGroups(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<AssociateAccessGroupsOutcome>>();
+    AssociateAccessGroupsAsync(
+    request,
+    [prom](
+        const ChdfsClient*,
+        const AssociateAccessGroupsRequest&,
+        AssociateAccessGroupsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ChdfsClient::CreateAccessGroupOutcome ChdfsClient::CreateAccessGroup(const CreateAccessGroupRequest &request)
@@ -105,25 +112,32 @@ ChdfsClient::CreateAccessGroupOutcome ChdfsClient::CreateAccessGroup(const Creat
 
 void ChdfsClient::CreateAccessGroupAsync(const CreateAccessGroupRequest& request, const CreateAccessGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateAccessGroup(request), context);
-    };
+    using Req = const CreateAccessGroupRequest&;
+    using Resp = CreateAccessGroupResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateAccessGroup", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ChdfsClient::CreateAccessGroupOutcomeCallable ChdfsClient::CreateAccessGroupCallable(const CreateAccessGroupRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateAccessGroupOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateAccessGroup(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateAccessGroupOutcome>>();
+    CreateAccessGroupAsync(
+    request,
+    [prom](
+        const ChdfsClient*,
+        const CreateAccessGroupRequest&,
+        CreateAccessGroupOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ChdfsClient::CreateAccessRulesOutcome ChdfsClient::CreateAccessRules(const CreateAccessRulesRequest &request)
@@ -148,25 +162,32 @@ ChdfsClient::CreateAccessRulesOutcome ChdfsClient::CreateAccessRules(const Creat
 
 void ChdfsClient::CreateAccessRulesAsync(const CreateAccessRulesRequest& request, const CreateAccessRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateAccessRules(request), context);
-    };
+    using Req = const CreateAccessRulesRequest&;
+    using Resp = CreateAccessRulesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateAccessRules", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ChdfsClient::CreateAccessRulesOutcomeCallable ChdfsClient::CreateAccessRulesCallable(const CreateAccessRulesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateAccessRulesOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateAccessRules(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateAccessRulesOutcome>>();
+    CreateAccessRulesAsync(
+    request,
+    [prom](
+        const ChdfsClient*,
+        const CreateAccessRulesRequest&,
+        CreateAccessRulesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ChdfsClient::CreateFileSystemOutcome ChdfsClient::CreateFileSystem(const CreateFileSystemRequest &request)
@@ -191,25 +212,32 @@ ChdfsClient::CreateFileSystemOutcome ChdfsClient::CreateFileSystem(const CreateF
 
 void ChdfsClient::CreateFileSystemAsync(const CreateFileSystemRequest& request, const CreateFileSystemAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateFileSystem(request), context);
-    };
+    using Req = const CreateFileSystemRequest&;
+    using Resp = CreateFileSystemResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateFileSystem", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ChdfsClient::CreateFileSystemOutcomeCallable ChdfsClient::CreateFileSystemCallable(const CreateFileSystemRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateFileSystemOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateFileSystem(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateFileSystemOutcome>>();
+    CreateFileSystemAsync(
+    request,
+    [prom](
+        const ChdfsClient*,
+        const CreateFileSystemRequest&,
+        CreateFileSystemOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ChdfsClient::CreateLifeCycleRulesOutcome ChdfsClient::CreateLifeCycleRules(const CreateLifeCycleRulesRequest &request)
@@ -234,25 +262,32 @@ ChdfsClient::CreateLifeCycleRulesOutcome ChdfsClient::CreateLifeCycleRules(const
 
 void ChdfsClient::CreateLifeCycleRulesAsync(const CreateLifeCycleRulesRequest& request, const CreateLifeCycleRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateLifeCycleRules(request), context);
-    };
+    using Req = const CreateLifeCycleRulesRequest&;
+    using Resp = CreateLifeCycleRulesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateLifeCycleRules", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ChdfsClient::CreateLifeCycleRulesOutcomeCallable ChdfsClient::CreateLifeCycleRulesCallable(const CreateLifeCycleRulesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateLifeCycleRulesOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateLifeCycleRules(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateLifeCycleRulesOutcome>>();
+    CreateLifeCycleRulesAsync(
+    request,
+    [prom](
+        const ChdfsClient*,
+        const CreateLifeCycleRulesRequest&,
+        CreateLifeCycleRulesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ChdfsClient::CreateMountPointOutcome ChdfsClient::CreateMountPoint(const CreateMountPointRequest &request)
@@ -277,25 +312,32 @@ ChdfsClient::CreateMountPointOutcome ChdfsClient::CreateMountPoint(const CreateM
 
 void ChdfsClient::CreateMountPointAsync(const CreateMountPointRequest& request, const CreateMountPointAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateMountPoint(request), context);
-    };
+    using Req = const CreateMountPointRequest&;
+    using Resp = CreateMountPointResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateMountPoint", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ChdfsClient::CreateMountPointOutcomeCallable ChdfsClient::CreateMountPointCallable(const CreateMountPointRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateMountPointOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateMountPoint(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateMountPointOutcome>>();
+    CreateMountPointAsync(
+    request,
+    [prom](
+        const ChdfsClient*,
+        const CreateMountPointRequest&,
+        CreateMountPointOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ChdfsClient::CreateRestoreTasksOutcome ChdfsClient::CreateRestoreTasks(const CreateRestoreTasksRequest &request)
@@ -320,25 +362,32 @@ ChdfsClient::CreateRestoreTasksOutcome ChdfsClient::CreateRestoreTasks(const Cre
 
 void ChdfsClient::CreateRestoreTasksAsync(const CreateRestoreTasksRequest& request, const CreateRestoreTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateRestoreTasks(request), context);
-    };
+    using Req = const CreateRestoreTasksRequest&;
+    using Resp = CreateRestoreTasksResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateRestoreTasks", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ChdfsClient::CreateRestoreTasksOutcomeCallable ChdfsClient::CreateRestoreTasksCallable(const CreateRestoreTasksRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateRestoreTasksOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateRestoreTasks(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateRestoreTasksOutcome>>();
+    CreateRestoreTasksAsync(
+    request,
+    [prom](
+        const ChdfsClient*,
+        const CreateRestoreTasksRequest&,
+        CreateRestoreTasksOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ChdfsClient::DeleteAccessGroupOutcome ChdfsClient::DeleteAccessGroup(const DeleteAccessGroupRequest &request)
@@ -363,25 +412,32 @@ ChdfsClient::DeleteAccessGroupOutcome ChdfsClient::DeleteAccessGroup(const Delet
 
 void ChdfsClient::DeleteAccessGroupAsync(const DeleteAccessGroupRequest& request, const DeleteAccessGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteAccessGroup(request), context);
-    };
+    using Req = const DeleteAccessGroupRequest&;
+    using Resp = DeleteAccessGroupResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteAccessGroup", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ChdfsClient::DeleteAccessGroupOutcomeCallable ChdfsClient::DeleteAccessGroupCallable(const DeleteAccessGroupRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteAccessGroupOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteAccessGroup(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteAccessGroupOutcome>>();
+    DeleteAccessGroupAsync(
+    request,
+    [prom](
+        const ChdfsClient*,
+        const DeleteAccessGroupRequest&,
+        DeleteAccessGroupOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ChdfsClient::DeleteAccessRulesOutcome ChdfsClient::DeleteAccessRules(const DeleteAccessRulesRequest &request)
@@ -406,25 +462,32 @@ ChdfsClient::DeleteAccessRulesOutcome ChdfsClient::DeleteAccessRules(const Delet
 
 void ChdfsClient::DeleteAccessRulesAsync(const DeleteAccessRulesRequest& request, const DeleteAccessRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteAccessRules(request), context);
-    };
+    using Req = const DeleteAccessRulesRequest&;
+    using Resp = DeleteAccessRulesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteAccessRules", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ChdfsClient::DeleteAccessRulesOutcomeCallable ChdfsClient::DeleteAccessRulesCallable(const DeleteAccessRulesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteAccessRulesOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteAccessRules(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteAccessRulesOutcome>>();
+    DeleteAccessRulesAsync(
+    request,
+    [prom](
+        const ChdfsClient*,
+        const DeleteAccessRulesRequest&,
+        DeleteAccessRulesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ChdfsClient::DeleteFileSystemOutcome ChdfsClient::DeleteFileSystem(const DeleteFileSystemRequest &request)
@@ -449,25 +512,32 @@ ChdfsClient::DeleteFileSystemOutcome ChdfsClient::DeleteFileSystem(const DeleteF
 
 void ChdfsClient::DeleteFileSystemAsync(const DeleteFileSystemRequest& request, const DeleteFileSystemAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteFileSystem(request), context);
-    };
+    using Req = const DeleteFileSystemRequest&;
+    using Resp = DeleteFileSystemResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteFileSystem", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ChdfsClient::DeleteFileSystemOutcomeCallable ChdfsClient::DeleteFileSystemCallable(const DeleteFileSystemRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteFileSystemOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteFileSystem(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteFileSystemOutcome>>();
+    DeleteFileSystemAsync(
+    request,
+    [prom](
+        const ChdfsClient*,
+        const DeleteFileSystemRequest&,
+        DeleteFileSystemOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ChdfsClient::DeleteLifeCycleRulesOutcome ChdfsClient::DeleteLifeCycleRules(const DeleteLifeCycleRulesRequest &request)
@@ -492,25 +562,32 @@ ChdfsClient::DeleteLifeCycleRulesOutcome ChdfsClient::DeleteLifeCycleRules(const
 
 void ChdfsClient::DeleteLifeCycleRulesAsync(const DeleteLifeCycleRulesRequest& request, const DeleteLifeCycleRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteLifeCycleRules(request), context);
-    };
+    using Req = const DeleteLifeCycleRulesRequest&;
+    using Resp = DeleteLifeCycleRulesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteLifeCycleRules", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ChdfsClient::DeleteLifeCycleRulesOutcomeCallable ChdfsClient::DeleteLifeCycleRulesCallable(const DeleteLifeCycleRulesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteLifeCycleRulesOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteLifeCycleRules(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteLifeCycleRulesOutcome>>();
+    DeleteLifeCycleRulesAsync(
+    request,
+    [prom](
+        const ChdfsClient*,
+        const DeleteLifeCycleRulesRequest&,
+        DeleteLifeCycleRulesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ChdfsClient::DeleteMountPointOutcome ChdfsClient::DeleteMountPoint(const DeleteMountPointRequest &request)
@@ -535,25 +612,32 @@ ChdfsClient::DeleteMountPointOutcome ChdfsClient::DeleteMountPoint(const DeleteM
 
 void ChdfsClient::DeleteMountPointAsync(const DeleteMountPointRequest& request, const DeleteMountPointAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteMountPoint(request), context);
-    };
+    using Req = const DeleteMountPointRequest&;
+    using Resp = DeleteMountPointResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteMountPoint", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ChdfsClient::DeleteMountPointOutcomeCallable ChdfsClient::DeleteMountPointCallable(const DeleteMountPointRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteMountPointOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteMountPoint(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteMountPointOutcome>>();
+    DeleteMountPointAsync(
+    request,
+    [prom](
+        const ChdfsClient*,
+        const DeleteMountPointRequest&,
+        DeleteMountPointOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ChdfsClient::DescribeAccessGroupOutcome ChdfsClient::DescribeAccessGroup(const DescribeAccessGroupRequest &request)
@@ -578,25 +662,32 @@ ChdfsClient::DescribeAccessGroupOutcome ChdfsClient::DescribeAccessGroup(const D
 
 void ChdfsClient::DescribeAccessGroupAsync(const DescribeAccessGroupRequest& request, const DescribeAccessGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAccessGroup(request), context);
-    };
+    using Req = const DescribeAccessGroupRequest&;
+    using Resp = DescribeAccessGroupResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAccessGroup", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ChdfsClient::DescribeAccessGroupOutcomeCallable ChdfsClient::DescribeAccessGroupCallable(const DescribeAccessGroupRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAccessGroupOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAccessGroup(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAccessGroupOutcome>>();
+    DescribeAccessGroupAsync(
+    request,
+    [prom](
+        const ChdfsClient*,
+        const DescribeAccessGroupRequest&,
+        DescribeAccessGroupOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ChdfsClient::DescribeAccessGroupsOutcome ChdfsClient::DescribeAccessGroups(const DescribeAccessGroupsRequest &request)
@@ -621,25 +712,32 @@ ChdfsClient::DescribeAccessGroupsOutcome ChdfsClient::DescribeAccessGroups(const
 
 void ChdfsClient::DescribeAccessGroupsAsync(const DescribeAccessGroupsRequest& request, const DescribeAccessGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAccessGroups(request), context);
-    };
+    using Req = const DescribeAccessGroupsRequest&;
+    using Resp = DescribeAccessGroupsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAccessGroups", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ChdfsClient::DescribeAccessGroupsOutcomeCallable ChdfsClient::DescribeAccessGroupsCallable(const DescribeAccessGroupsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAccessGroupsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAccessGroups(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAccessGroupsOutcome>>();
+    DescribeAccessGroupsAsync(
+    request,
+    [prom](
+        const ChdfsClient*,
+        const DescribeAccessGroupsRequest&,
+        DescribeAccessGroupsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ChdfsClient::DescribeAccessRulesOutcome ChdfsClient::DescribeAccessRules(const DescribeAccessRulesRequest &request)
@@ -664,25 +762,32 @@ ChdfsClient::DescribeAccessRulesOutcome ChdfsClient::DescribeAccessRules(const D
 
 void ChdfsClient::DescribeAccessRulesAsync(const DescribeAccessRulesRequest& request, const DescribeAccessRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAccessRules(request), context);
-    };
+    using Req = const DescribeAccessRulesRequest&;
+    using Resp = DescribeAccessRulesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAccessRules", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ChdfsClient::DescribeAccessRulesOutcomeCallable ChdfsClient::DescribeAccessRulesCallable(const DescribeAccessRulesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAccessRulesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAccessRules(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAccessRulesOutcome>>();
+    DescribeAccessRulesAsync(
+    request,
+    [prom](
+        const ChdfsClient*,
+        const DescribeAccessRulesRequest&,
+        DescribeAccessRulesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ChdfsClient::DescribeFileSystemOutcome ChdfsClient::DescribeFileSystem(const DescribeFileSystemRequest &request)
@@ -707,25 +812,32 @@ ChdfsClient::DescribeFileSystemOutcome ChdfsClient::DescribeFileSystem(const Des
 
 void ChdfsClient::DescribeFileSystemAsync(const DescribeFileSystemRequest& request, const DescribeFileSystemAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeFileSystem(request), context);
-    };
+    using Req = const DescribeFileSystemRequest&;
+    using Resp = DescribeFileSystemResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeFileSystem", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ChdfsClient::DescribeFileSystemOutcomeCallable ChdfsClient::DescribeFileSystemCallable(const DescribeFileSystemRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeFileSystemOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeFileSystem(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeFileSystemOutcome>>();
+    DescribeFileSystemAsync(
+    request,
+    [prom](
+        const ChdfsClient*,
+        const DescribeFileSystemRequest&,
+        DescribeFileSystemOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ChdfsClient::DescribeFileSystemsOutcome ChdfsClient::DescribeFileSystems(const DescribeFileSystemsRequest &request)
@@ -750,25 +862,32 @@ ChdfsClient::DescribeFileSystemsOutcome ChdfsClient::DescribeFileSystems(const D
 
 void ChdfsClient::DescribeFileSystemsAsync(const DescribeFileSystemsRequest& request, const DescribeFileSystemsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeFileSystems(request), context);
-    };
+    using Req = const DescribeFileSystemsRequest&;
+    using Resp = DescribeFileSystemsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeFileSystems", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ChdfsClient::DescribeFileSystemsOutcomeCallable ChdfsClient::DescribeFileSystemsCallable(const DescribeFileSystemsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeFileSystemsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeFileSystems(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeFileSystemsOutcome>>();
+    DescribeFileSystemsAsync(
+    request,
+    [prom](
+        const ChdfsClient*,
+        const DescribeFileSystemsRequest&,
+        DescribeFileSystemsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ChdfsClient::DescribeLifeCycleRulesOutcome ChdfsClient::DescribeLifeCycleRules(const DescribeLifeCycleRulesRequest &request)
@@ -793,25 +912,32 @@ ChdfsClient::DescribeLifeCycleRulesOutcome ChdfsClient::DescribeLifeCycleRules(c
 
 void ChdfsClient::DescribeLifeCycleRulesAsync(const DescribeLifeCycleRulesRequest& request, const DescribeLifeCycleRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeLifeCycleRules(request), context);
-    };
+    using Req = const DescribeLifeCycleRulesRequest&;
+    using Resp = DescribeLifeCycleRulesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeLifeCycleRules", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ChdfsClient::DescribeLifeCycleRulesOutcomeCallable ChdfsClient::DescribeLifeCycleRulesCallable(const DescribeLifeCycleRulesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeLifeCycleRulesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeLifeCycleRules(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeLifeCycleRulesOutcome>>();
+    DescribeLifeCycleRulesAsync(
+    request,
+    [prom](
+        const ChdfsClient*,
+        const DescribeLifeCycleRulesRequest&,
+        DescribeLifeCycleRulesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ChdfsClient::DescribeMountPointOutcome ChdfsClient::DescribeMountPoint(const DescribeMountPointRequest &request)
@@ -836,25 +962,32 @@ ChdfsClient::DescribeMountPointOutcome ChdfsClient::DescribeMountPoint(const Des
 
 void ChdfsClient::DescribeMountPointAsync(const DescribeMountPointRequest& request, const DescribeMountPointAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeMountPoint(request), context);
-    };
+    using Req = const DescribeMountPointRequest&;
+    using Resp = DescribeMountPointResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeMountPoint", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ChdfsClient::DescribeMountPointOutcomeCallable ChdfsClient::DescribeMountPointCallable(const DescribeMountPointRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeMountPointOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeMountPoint(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeMountPointOutcome>>();
+    DescribeMountPointAsync(
+    request,
+    [prom](
+        const ChdfsClient*,
+        const DescribeMountPointRequest&,
+        DescribeMountPointOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ChdfsClient::DescribeMountPointsOutcome ChdfsClient::DescribeMountPoints(const DescribeMountPointsRequest &request)
@@ -879,25 +1012,32 @@ ChdfsClient::DescribeMountPointsOutcome ChdfsClient::DescribeMountPoints(const D
 
 void ChdfsClient::DescribeMountPointsAsync(const DescribeMountPointsRequest& request, const DescribeMountPointsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeMountPoints(request), context);
-    };
+    using Req = const DescribeMountPointsRequest&;
+    using Resp = DescribeMountPointsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeMountPoints", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ChdfsClient::DescribeMountPointsOutcomeCallable ChdfsClient::DescribeMountPointsCallable(const DescribeMountPointsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeMountPointsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeMountPoints(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeMountPointsOutcome>>();
+    DescribeMountPointsAsync(
+    request,
+    [prom](
+        const ChdfsClient*,
+        const DescribeMountPointsRequest&,
+        DescribeMountPointsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ChdfsClient::DescribeResourceTagsOutcome ChdfsClient::DescribeResourceTags(const DescribeResourceTagsRequest &request)
@@ -922,25 +1062,32 @@ ChdfsClient::DescribeResourceTagsOutcome ChdfsClient::DescribeResourceTags(const
 
 void ChdfsClient::DescribeResourceTagsAsync(const DescribeResourceTagsRequest& request, const DescribeResourceTagsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeResourceTags(request), context);
-    };
+    using Req = const DescribeResourceTagsRequest&;
+    using Resp = DescribeResourceTagsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeResourceTags", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ChdfsClient::DescribeResourceTagsOutcomeCallable ChdfsClient::DescribeResourceTagsCallable(const DescribeResourceTagsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeResourceTagsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeResourceTags(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeResourceTagsOutcome>>();
+    DescribeResourceTagsAsync(
+    request,
+    [prom](
+        const ChdfsClient*,
+        const DescribeResourceTagsRequest&,
+        DescribeResourceTagsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ChdfsClient::DescribeRestoreTasksOutcome ChdfsClient::DescribeRestoreTasks(const DescribeRestoreTasksRequest &request)
@@ -965,25 +1112,32 @@ ChdfsClient::DescribeRestoreTasksOutcome ChdfsClient::DescribeRestoreTasks(const
 
 void ChdfsClient::DescribeRestoreTasksAsync(const DescribeRestoreTasksRequest& request, const DescribeRestoreTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeRestoreTasks(request), context);
-    };
+    using Req = const DescribeRestoreTasksRequest&;
+    using Resp = DescribeRestoreTasksResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeRestoreTasks", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ChdfsClient::DescribeRestoreTasksOutcomeCallable ChdfsClient::DescribeRestoreTasksCallable(const DescribeRestoreTasksRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeRestoreTasksOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeRestoreTasks(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeRestoreTasksOutcome>>();
+    DescribeRestoreTasksAsync(
+    request,
+    [prom](
+        const ChdfsClient*,
+        const DescribeRestoreTasksRequest&,
+        DescribeRestoreTasksOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ChdfsClient::DisassociateAccessGroupsOutcome ChdfsClient::DisassociateAccessGroups(const DisassociateAccessGroupsRequest &request)
@@ -1008,25 +1162,32 @@ ChdfsClient::DisassociateAccessGroupsOutcome ChdfsClient::DisassociateAccessGrou
 
 void ChdfsClient::DisassociateAccessGroupsAsync(const DisassociateAccessGroupsRequest& request, const DisassociateAccessGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DisassociateAccessGroups(request), context);
-    };
+    using Req = const DisassociateAccessGroupsRequest&;
+    using Resp = DisassociateAccessGroupsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DisassociateAccessGroups", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ChdfsClient::DisassociateAccessGroupsOutcomeCallable ChdfsClient::DisassociateAccessGroupsCallable(const DisassociateAccessGroupsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DisassociateAccessGroupsOutcome()>>(
-        [this, request]()
-        {
-            return this->DisassociateAccessGroups(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DisassociateAccessGroupsOutcome>>();
+    DisassociateAccessGroupsAsync(
+    request,
+    [prom](
+        const ChdfsClient*,
+        const DisassociateAccessGroupsRequest&,
+        DisassociateAccessGroupsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ChdfsClient::ModifyAccessGroupOutcome ChdfsClient::ModifyAccessGroup(const ModifyAccessGroupRequest &request)
@@ -1051,25 +1212,32 @@ ChdfsClient::ModifyAccessGroupOutcome ChdfsClient::ModifyAccessGroup(const Modif
 
 void ChdfsClient::ModifyAccessGroupAsync(const ModifyAccessGroupRequest& request, const ModifyAccessGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyAccessGroup(request), context);
-    };
+    using Req = const ModifyAccessGroupRequest&;
+    using Resp = ModifyAccessGroupResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyAccessGroup", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ChdfsClient::ModifyAccessGroupOutcomeCallable ChdfsClient::ModifyAccessGroupCallable(const ModifyAccessGroupRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyAccessGroupOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyAccessGroup(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyAccessGroupOutcome>>();
+    ModifyAccessGroupAsync(
+    request,
+    [prom](
+        const ChdfsClient*,
+        const ModifyAccessGroupRequest&,
+        ModifyAccessGroupOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ChdfsClient::ModifyAccessRulesOutcome ChdfsClient::ModifyAccessRules(const ModifyAccessRulesRequest &request)
@@ -1094,25 +1262,32 @@ ChdfsClient::ModifyAccessRulesOutcome ChdfsClient::ModifyAccessRules(const Modif
 
 void ChdfsClient::ModifyAccessRulesAsync(const ModifyAccessRulesRequest& request, const ModifyAccessRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyAccessRules(request), context);
-    };
+    using Req = const ModifyAccessRulesRequest&;
+    using Resp = ModifyAccessRulesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyAccessRules", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ChdfsClient::ModifyAccessRulesOutcomeCallable ChdfsClient::ModifyAccessRulesCallable(const ModifyAccessRulesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyAccessRulesOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyAccessRules(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyAccessRulesOutcome>>();
+    ModifyAccessRulesAsync(
+    request,
+    [prom](
+        const ChdfsClient*,
+        const ModifyAccessRulesRequest&,
+        ModifyAccessRulesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ChdfsClient::ModifyFileSystemOutcome ChdfsClient::ModifyFileSystem(const ModifyFileSystemRequest &request)
@@ -1137,25 +1312,32 @@ ChdfsClient::ModifyFileSystemOutcome ChdfsClient::ModifyFileSystem(const ModifyF
 
 void ChdfsClient::ModifyFileSystemAsync(const ModifyFileSystemRequest& request, const ModifyFileSystemAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyFileSystem(request), context);
-    };
+    using Req = const ModifyFileSystemRequest&;
+    using Resp = ModifyFileSystemResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyFileSystem", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ChdfsClient::ModifyFileSystemOutcomeCallable ChdfsClient::ModifyFileSystemCallable(const ModifyFileSystemRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyFileSystemOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyFileSystem(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyFileSystemOutcome>>();
+    ModifyFileSystemAsync(
+    request,
+    [prom](
+        const ChdfsClient*,
+        const ModifyFileSystemRequest&,
+        ModifyFileSystemOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ChdfsClient::ModifyLifeCycleRulesOutcome ChdfsClient::ModifyLifeCycleRules(const ModifyLifeCycleRulesRequest &request)
@@ -1180,25 +1362,32 @@ ChdfsClient::ModifyLifeCycleRulesOutcome ChdfsClient::ModifyLifeCycleRules(const
 
 void ChdfsClient::ModifyLifeCycleRulesAsync(const ModifyLifeCycleRulesRequest& request, const ModifyLifeCycleRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyLifeCycleRules(request), context);
-    };
+    using Req = const ModifyLifeCycleRulesRequest&;
+    using Resp = ModifyLifeCycleRulesResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyLifeCycleRules", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ChdfsClient::ModifyLifeCycleRulesOutcomeCallable ChdfsClient::ModifyLifeCycleRulesCallable(const ModifyLifeCycleRulesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyLifeCycleRulesOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyLifeCycleRules(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyLifeCycleRulesOutcome>>();
+    ModifyLifeCycleRulesAsync(
+    request,
+    [prom](
+        const ChdfsClient*,
+        const ModifyLifeCycleRulesRequest&,
+        ModifyLifeCycleRulesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ChdfsClient::ModifyMountPointOutcome ChdfsClient::ModifyMountPoint(const ModifyMountPointRequest &request)
@@ -1223,25 +1412,32 @@ ChdfsClient::ModifyMountPointOutcome ChdfsClient::ModifyMountPoint(const ModifyM
 
 void ChdfsClient::ModifyMountPointAsync(const ModifyMountPointRequest& request, const ModifyMountPointAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyMountPoint(request), context);
-    };
+    using Req = const ModifyMountPointRequest&;
+    using Resp = ModifyMountPointResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyMountPoint", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ChdfsClient::ModifyMountPointOutcomeCallable ChdfsClient::ModifyMountPointCallable(const ModifyMountPointRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyMountPointOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyMountPoint(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyMountPointOutcome>>();
+    ModifyMountPointAsync(
+    request,
+    [prom](
+        const ChdfsClient*,
+        const ModifyMountPointRequest&,
+        ModifyMountPointOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 ChdfsClient::ModifyResourceTagsOutcome ChdfsClient::ModifyResourceTags(const ModifyResourceTagsRequest &request)
@@ -1266,24 +1462,31 @@ ChdfsClient::ModifyResourceTagsOutcome ChdfsClient::ModifyResourceTags(const Mod
 
 void ChdfsClient::ModifyResourceTagsAsync(const ModifyResourceTagsRequest& request, const ModifyResourceTagsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyResourceTags(request), context);
-    };
+    using Req = const ModifyResourceTagsRequest&;
+    using Resp = ModifyResourceTagsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyResourceTags", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 ChdfsClient::ModifyResourceTagsOutcomeCallable ChdfsClient::ModifyResourceTagsCallable(const ModifyResourceTagsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyResourceTagsOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyResourceTags(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyResourceTagsOutcome>>();
+    ModifyResourceTagsAsync(
+    request,
+    [prom](
+        const ChdfsClient*,
+        const ModifyResourceTagsRequest&,
+        ModifyResourceTagsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 

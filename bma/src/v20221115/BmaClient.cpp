@@ -62,25 +62,32 @@ BmaClient::CreateBPBrandOutcome BmaClient::CreateBPBrand(const CreateBPBrandRequ
 
 void BmaClient::CreateBPBrandAsync(const CreateBPBrandRequest& request, const CreateBPBrandAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateBPBrand(request), context);
-    };
+    using Req = const CreateBPBrandRequest&;
+    using Resp = CreateBPBrandResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateBPBrand", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BmaClient::CreateBPBrandOutcomeCallable BmaClient::CreateBPBrandCallable(const CreateBPBrandRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateBPBrandOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateBPBrand(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateBPBrandOutcome>>();
+    CreateBPBrandAsync(
+    request,
+    [prom](
+        const BmaClient*,
+        const CreateBPBrandRequest&,
+        CreateBPBrandOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BmaClient::CreateBPFakeAPPOutcome BmaClient::CreateBPFakeAPP(const CreateBPFakeAPPRequest &request)
@@ -105,25 +112,32 @@ BmaClient::CreateBPFakeAPPOutcome BmaClient::CreateBPFakeAPP(const CreateBPFakeA
 
 void BmaClient::CreateBPFakeAPPAsync(const CreateBPFakeAPPRequest& request, const CreateBPFakeAPPAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateBPFakeAPP(request), context);
-    };
+    using Req = const CreateBPFakeAPPRequest&;
+    using Resp = CreateBPFakeAPPResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateBPFakeAPP", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BmaClient::CreateBPFakeAPPOutcomeCallable BmaClient::CreateBPFakeAPPCallable(const CreateBPFakeAPPRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateBPFakeAPPOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateBPFakeAPP(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateBPFakeAPPOutcome>>();
+    CreateBPFakeAPPAsync(
+    request,
+    [prom](
+        const BmaClient*,
+        const CreateBPFakeAPPRequest&,
+        CreateBPFakeAPPOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BmaClient::CreateBPFakeAPPListOutcome BmaClient::CreateBPFakeAPPList(const CreateBPFakeAPPListRequest &request)
@@ -148,25 +162,32 @@ BmaClient::CreateBPFakeAPPListOutcome BmaClient::CreateBPFakeAPPList(const Creat
 
 void BmaClient::CreateBPFakeAPPListAsync(const CreateBPFakeAPPListRequest& request, const CreateBPFakeAPPListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateBPFakeAPPList(request), context);
-    };
+    using Req = const CreateBPFakeAPPListRequest&;
+    using Resp = CreateBPFakeAPPListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateBPFakeAPPList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BmaClient::CreateBPFakeAPPListOutcomeCallable BmaClient::CreateBPFakeAPPListCallable(const CreateBPFakeAPPListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateBPFakeAPPListOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateBPFakeAPPList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateBPFakeAPPListOutcome>>();
+    CreateBPFakeAPPListAsync(
+    request,
+    [prom](
+        const BmaClient*,
+        const CreateBPFakeAPPListRequest&,
+        CreateBPFakeAPPListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BmaClient::CreateBPFakeURLOutcome BmaClient::CreateBPFakeURL(const CreateBPFakeURLRequest &request)
@@ -191,25 +212,32 @@ BmaClient::CreateBPFakeURLOutcome BmaClient::CreateBPFakeURL(const CreateBPFakeU
 
 void BmaClient::CreateBPFakeURLAsync(const CreateBPFakeURLRequest& request, const CreateBPFakeURLAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateBPFakeURL(request), context);
-    };
+    using Req = const CreateBPFakeURLRequest&;
+    using Resp = CreateBPFakeURLResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateBPFakeURL", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BmaClient::CreateBPFakeURLOutcomeCallable BmaClient::CreateBPFakeURLCallable(const CreateBPFakeURLRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateBPFakeURLOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateBPFakeURL(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateBPFakeURLOutcome>>();
+    CreateBPFakeURLAsync(
+    request,
+    [prom](
+        const BmaClient*,
+        const CreateBPFakeURLRequest&,
+        CreateBPFakeURLOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BmaClient::CreateBPFakeURLsOutcome BmaClient::CreateBPFakeURLs(const CreateBPFakeURLsRequest &request)
@@ -234,25 +262,32 @@ BmaClient::CreateBPFakeURLsOutcome BmaClient::CreateBPFakeURLs(const CreateBPFak
 
 void BmaClient::CreateBPFakeURLsAsync(const CreateBPFakeURLsRequest& request, const CreateBPFakeURLsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateBPFakeURLs(request), context);
-    };
+    using Req = const CreateBPFakeURLsRequest&;
+    using Resp = CreateBPFakeURLsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateBPFakeURLs", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BmaClient::CreateBPFakeURLsOutcomeCallable BmaClient::CreateBPFakeURLsCallable(const CreateBPFakeURLsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateBPFakeURLsOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateBPFakeURLs(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateBPFakeURLsOutcome>>();
+    CreateBPFakeURLsAsync(
+    request,
+    [prom](
+        const BmaClient*,
+        const CreateBPFakeURLsRequest&,
+        CreateBPFakeURLsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BmaClient::CreateBPWhiteListOutcome BmaClient::CreateBPWhiteList(const CreateBPWhiteListRequest &request)
@@ -277,25 +312,32 @@ BmaClient::CreateBPWhiteListOutcome BmaClient::CreateBPWhiteList(const CreateBPW
 
 void BmaClient::CreateBPWhiteListAsync(const CreateBPWhiteListRequest& request, const CreateBPWhiteListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateBPWhiteList(request), context);
-    };
+    using Req = const CreateBPWhiteListRequest&;
+    using Resp = CreateBPWhiteListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateBPWhiteList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BmaClient::CreateBPWhiteListOutcomeCallable BmaClient::CreateBPWhiteListCallable(const CreateBPWhiteListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateBPWhiteListOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateBPWhiteList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateBPWhiteListOutcome>>();
+    CreateBPWhiteListAsync(
+    request,
+    [prom](
+        const BmaClient*,
+        const CreateBPWhiteListRequest&,
+        CreateBPWhiteListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BmaClient::DeleteBPWhiteListOutcome BmaClient::DeleteBPWhiteList(const DeleteBPWhiteListRequest &request)
@@ -320,25 +362,32 @@ BmaClient::DeleteBPWhiteListOutcome BmaClient::DeleteBPWhiteList(const DeleteBPW
 
 void BmaClient::DeleteBPWhiteListAsync(const DeleteBPWhiteListRequest& request, const DeleteBPWhiteListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteBPWhiteList(request), context);
-    };
+    using Req = const DeleteBPWhiteListRequest&;
+    using Resp = DeleteBPWhiteListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteBPWhiteList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BmaClient::DeleteBPWhiteListOutcomeCallable BmaClient::DeleteBPWhiteListCallable(const DeleteBPWhiteListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteBPWhiteListOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteBPWhiteList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteBPWhiteListOutcome>>();
+    DeleteBPWhiteListAsync(
+    request,
+    [prom](
+        const BmaClient*,
+        const DeleteBPWhiteListRequest&,
+        DeleteBPWhiteListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BmaClient::DescribeBPBrandsOutcome BmaClient::DescribeBPBrands(const DescribeBPBrandsRequest &request)
@@ -363,25 +412,32 @@ BmaClient::DescribeBPBrandsOutcome BmaClient::DescribeBPBrands(const DescribeBPB
 
 void BmaClient::DescribeBPBrandsAsync(const DescribeBPBrandsRequest& request, const DescribeBPBrandsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeBPBrands(request), context);
-    };
+    using Req = const DescribeBPBrandsRequest&;
+    using Resp = DescribeBPBrandsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeBPBrands", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BmaClient::DescribeBPBrandsOutcomeCallable BmaClient::DescribeBPBrandsCallable(const DescribeBPBrandsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeBPBrandsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeBPBrands(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeBPBrandsOutcome>>();
+    DescribeBPBrandsAsync(
+    request,
+    [prom](
+        const BmaClient*,
+        const DescribeBPBrandsRequest&,
+        DescribeBPBrandsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BmaClient::DescribeBPFakeAPPListOutcome BmaClient::DescribeBPFakeAPPList(const DescribeBPFakeAPPListRequest &request)
@@ -406,25 +462,32 @@ BmaClient::DescribeBPFakeAPPListOutcome BmaClient::DescribeBPFakeAPPList(const D
 
 void BmaClient::DescribeBPFakeAPPListAsync(const DescribeBPFakeAPPListRequest& request, const DescribeBPFakeAPPListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeBPFakeAPPList(request), context);
-    };
+    using Req = const DescribeBPFakeAPPListRequest&;
+    using Resp = DescribeBPFakeAPPListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeBPFakeAPPList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BmaClient::DescribeBPFakeAPPListOutcomeCallable BmaClient::DescribeBPFakeAPPListCallable(const DescribeBPFakeAPPListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeBPFakeAPPListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeBPFakeAPPList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeBPFakeAPPListOutcome>>();
+    DescribeBPFakeAPPListAsync(
+    request,
+    [prom](
+        const BmaClient*,
+        const DescribeBPFakeAPPListRequest&,
+        DescribeBPFakeAPPListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BmaClient::DescribeBPFakeURLsOutcome BmaClient::DescribeBPFakeURLs(const DescribeBPFakeURLsRequest &request)
@@ -449,25 +512,32 @@ BmaClient::DescribeBPFakeURLsOutcome BmaClient::DescribeBPFakeURLs(const Describ
 
 void BmaClient::DescribeBPFakeURLsAsync(const DescribeBPFakeURLsRequest& request, const DescribeBPFakeURLsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeBPFakeURLs(request), context);
-    };
+    using Req = const DescribeBPFakeURLsRequest&;
+    using Resp = DescribeBPFakeURLsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeBPFakeURLs", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BmaClient::DescribeBPFakeURLsOutcomeCallable BmaClient::DescribeBPFakeURLsCallable(const DescribeBPFakeURLsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeBPFakeURLsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeBPFakeURLs(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeBPFakeURLsOutcome>>();
+    DescribeBPFakeURLsAsync(
+    request,
+    [prom](
+        const BmaClient*,
+        const DescribeBPFakeURLsRequest&,
+        DescribeBPFakeURLsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BmaClient::DescribeBPWhiteListsOutcome BmaClient::DescribeBPWhiteLists(const DescribeBPWhiteListsRequest &request)
@@ -492,24 +562,31 @@ BmaClient::DescribeBPWhiteListsOutcome BmaClient::DescribeBPWhiteLists(const Des
 
 void BmaClient::DescribeBPWhiteListsAsync(const DescribeBPWhiteListsRequest& request, const DescribeBPWhiteListsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeBPWhiteLists(request), context);
-    };
+    using Req = const DescribeBPWhiteListsRequest&;
+    using Resp = DescribeBPWhiteListsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeBPWhiteLists", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BmaClient::DescribeBPWhiteListsOutcomeCallable BmaClient::DescribeBPWhiteListsCallable(const DescribeBPWhiteListsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeBPWhiteListsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeBPWhiteLists(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeBPWhiteListsOutcome>>();
+    DescribeBPWhiteListsAsync(
+    request,
+    [prom](
+        const BmaClient*,
+        const DescribeBPWhiteListsRequest&,
+        DescribeBPWhiteListsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 

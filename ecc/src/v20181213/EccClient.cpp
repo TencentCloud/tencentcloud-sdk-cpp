@@ -62,25 +62,32 @@ EccClient::CorrectMultiImageOutcome EccClient::CorrectMultiImage(const CorrectMu
 
 void EccClient::CorrectMultiImageAsync(const CorrectMultiImageRequest& request, const CorrectMultiImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CorrectMultiImage(request), context);
-    };
+    using Req = const CorrectMultiImageRequest&;
+    using Resp = CorrectMultiImageResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CorrectMultiImage", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EccClient::CorrectMultiImageOutcomeCallable EccClient::CorrectMultiImageCallable(const CorrectMultiImageRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CorrectMultiImageOutcome()>>(
-        [this, request]()
-        {
-            return this->CorrectMultiImage(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CorrectMultiImageOutcome>>();
+    CorrectMultiImageAsync(
+    request,
+    [prom](
+        const EccClient*,
+        const CorrectMultiImageRequest&,
+        CorrectMultiImageOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EccClient::DescribeTaskOutcome EccClient::DescribeTask(const DescribeTaskRequest &request)
@@ -105,25 +112,32 @@ EccClient::DescribeTaskOutcome EccClient::DescribeTask(const DescribeTaskRequest
 
 void EccClient::DescribeTaskAsync(const DescribeTaskRequest& request, const DescribeTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeTask(request), context);
-    };
+    using Req = const DescribeTaskRequest&;
+    using Resp = DescribeTaskResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EccClient::DescribeTaskOutcomeCallable EccClient::DescribeTaskCallable(const DescribeTaskRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeTaskOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeTask(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeTaskOutcome>>();
+    DescribeTaskAsync(
+    request,
+    [prom](
+        const EccClient*,
+        const DescribeTaskRequest&,
+        DescribeTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EccClient::ECCOutcome EccClient::ECC(const ECCRequest &request)
@@ -148,25 +162,32 @@ EccClient::ECCOutcome EccClient::ECC(const ECCRequest &request)
 
 void EccClient::ECCAsync(const ECCRequest& request, const ECCAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ECC(request), context);
-    };
+    using Req = const ECCRequest&;
+    using Resp = ECCResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ECC", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EccClient::ECCOutcomeCallable EccClient::ECCCallable(const ECCRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ECCOutcome()>>(
-        [this, request]()
-        {
-            return this->ECC(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ECCOutcome>>();
+    ECCAsync(
+    request,
+    [prom](
+        const EccClient*,
+        const ECCRequest&,
+        ECCOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 EccClient::EHOCROutcome EccClient::EHOCR(const EHOCRRequest &request)
@@ -191,24 +212,31 @@ EccClient::EHOCROutcome EccClient::EHOCR(const EHOCRRequest &request)
 
 void EccClient::EHOCRAsync(const EHOCRRequest& request, const EHOCRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->EHOCR(request), context);
-    };
+    using Req = const EHOCRRequest&;
+    using Resp = EHOCRResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "EHOCR", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 EccClient::EHOCROutcomeCallable EccClient::EHOCRCallable(const EHOCRRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<EHOCROutcome()>>(
-        [this, request]()
-        {
-            return this->EHOCR(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<EHOCROutcome>>();
+    EHOCRAsync(
+    request,
+    [prom](
+        const EccClient*,
+        const EHOCRRequest&,
+        EHOCROutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 

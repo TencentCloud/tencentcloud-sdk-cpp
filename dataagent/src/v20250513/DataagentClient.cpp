@@ -62,25 +62,32 @@ DataagentClient::AddChunkOutcome DataagentClient::AddChunk(const AddChunkRequest
 
 void DataagentClient::AddChunkAsync(const AddChunkRequest& request, const AddChunkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->AddChunk(request), context);
-    };
+    using Req = const AddChunkRequest&;
+    using Resp = AddChunkResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "AddChunk", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DataagentClient::AddChunkOutcomeCallable DataagentClient::AddChunkCallable(const AddChunkRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<AddChunkOutcome()>>(
-        [this, request]()
-        {
-            return this->AddChunk(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<AddChunkOutcome>>();
+    AddChunkAsync(
+    request,
+    [prom](
+        const DataagentClient*,
+        const AddChunkRequest&,
+        AddChunkOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DataagentClient::ChatAIOutcome DataagentClient::ChatAI(const ChatAIRequest &request)
@@ -105,25 +112,32 @@ DataagentClient::ChatAIOutcome DataagentClient::ChatAI(const ChatAIRequest &requ
 
 void DataagentClient::ChatAIAsync(const ChatAIRequest& request, const ChatAIAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ChatAI(request), context);
-    };
+    using Req = const ChatAIRequest&;
+    using Resp = ChatAIResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ChatAI", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DataagentClient::ChatAIOutcomeCallable DataagentClient::ChatAICallable(const ChatAIRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ChatAIOutcome()>>(
-        [this, request]()
-        {
-            return this->ChatAI(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ChatAIOutcome>>();
+    ChatAIAsync(
+    request,
+    [prom](
+        const DataagentClient*,
+        const ChatAIRequest&,
+        ChatAIOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DataagentClient::CreateDataAgentSessionOutcome DataagentClient::CreateDataAgentSession(const CreateDataAgentSessionRequest &request)
@@ -148,25 +162,32 @@ DataagentClient::CreateDataAgentSessionOutcome DataagentClient::CreateDataAgentS
 
 void DataagentClient::CreateDataAgentSessionAsync(const CreateDataAgentSessionRequest& request, const CreateDataAgentSessionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateDataAgentSession(request), context);
-    };
+    using Req = const CreateDataAgentSessionRequest&;
+    using Resp = CreateDataAgentSessionResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateDataAgentSession", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DataagentClient::CreateDataAgentSessionOutcomeCallable DataagentClient::CreateDataAgentSessionCallable(const CreateDataAgentSessionRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateDataAgentSessionOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateDataAgentSession(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateDataAgentSessionOutcome>>();
+    CreateDataAgentSessionAsync(
+    request,
+    [prom](
+        const DataagentClient*,
+        const CreateDataAgentSessionRequest&,
+        CreateDataAgentSessionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DataagentClient::DeleteChunkOutcome DataagentClient::DeleteChunk(const DeleteChunkRequest &request)
@@ -191,25 +212,32 @@ DataagentClient::DeleteChunkOutcome DataagentClient::DeleteChunk(const DeleteChu
 
 void DataagentClient::DeleteChunkAsync(const DeleteChunkRequest& request, const DeleteChunkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteChunk(request), context);
-    };
+    using Req = const DeleteChunkRequest&;
+    using Resp = DeleteChunkResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteChunk", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DataagentClient::DeleteChunkOutcomeCallable DataagentClient::DeleteChunkCallable(const DeleteChunkRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteChunkOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteChunk(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteChunkOutcome>>();
+    DeleteChunkAsync(
+    request,
+    [prom](
+        const DataagentClient*,
+        const DeleteChunkRequest&,
+        DeleteChunkOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DataagentClient::DeleteDataAgentSessionOutcome DataagentClient::DeleteDataAgentSession(const DeleteDataAgentSessionRequest &request)
@@ -234,25 +262,32 @@ DataagentClient::DeleteDataAgentSessionOutcome DataagentClient::DeleteDataAgentS
 
 void DataagentClient::DeleteDataAgentSessionAsync(const DeleteDataAgentSessionRequest& request, const DeleteDataAgentSessionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteDataAgentSession(request), context);
-    };
+    using Req = const DeleteDataAgentSessionRequest&;
+    using Resp = DeleteDataAgentSessionResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteDataAgentSession", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DataagentClient::DeleteDataAgentSessionOutcomeCallable DataagentClient::DeleteDataAgentSessionCallable(const DeleteDataAgentSessionRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteDataAgentSessionOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteDataAgentSession(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteDataAgentSessionOutcome>>();
+    DeleteDataAgentSessionAsync(
+    request,
+    [prom](
+        const DataagentClient*,
+        const DeleteDataAgentSessionRequest&,
+        DeleteDataAgentSessionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DataagentClient::GetKnowledgeBaseListOutcome DataagentClient::GetKnowledgeBaseList(const GetKnowledgeBaseListRequest &request)
@@ -277,25 +312,32 @@ DataagentClient::GetKnowledgeBaseListOutcome DataagentClient::GetKnowledgeBaseLi
 
 void DataagentClient::GetKnowledgeBaseListAsync(const GetKnowledgeBaseListRequest& request, const GetKnowledgeBaseListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->GetKnowledgeBaseList(request), context);
-    };
+    using Req = const GetKnowledgeBaseListRequest&;
+    using Resp = GetKnowledgeBaseListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "GetKnowledgeBaseList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DataagentClient::GetKnowledgeBaseListOutcomeCallable DataagentClient::GetKnowledgeBaseListCallable(const GetKnowledgeBaseListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<GetKnowledgeBaseListOutcome()>>(
-        [this, request]()
-        {
-            return this->GetKnowledgeBaseList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<GetKnowledgeBaseListOutcome>>();
+    GetKnowledgeBaseListAsync(
+    request,
+    [prom](
+        const DataagentClient*,
+        const GetKnowledgeBaseListRequest&,
+        GetKnowledgeBaseListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DataagentClient::GetSessionDetailsOutcome DataagentClient::GetSessionDetails(const GetSessionDetailsRequest &request)
@@ -320,25 +362,32 @@ DataagentClient::GetSessionDetailsOutcome DataagentClient::GetSessionDetails(con
 
 void DataagentClient::GetSessionDetailsAsync(const GetSessionDetailsRequest& request, const GetSessionDetailsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->GetSessionDetails(request), context);
-    };
+    using Req = const GetSessionDetailsRequest&;
+    using Resp = GetSessionDetailsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "GetSessionDetails", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DataagentClient::GetSessionDetailsOutcomeCallable DataagentClient::GetSessionDetailsCallable(const GetSessionDetailsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<GetSessionDetailsOutcome()>>(
-        [this, request]()
-        {
-            return this->GetSessionDetails(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<GetSessionDetailsOutcome>>();
+    GetSessionDetailsAsync(
+    request,
+    [prom](
+        const DataagentClient*,
+        const GetSessionDetailsRequest&,
+        GetSessionDetailsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DataagentClient::ModifyChunkOutcome DataagentClient::ModifyChunk(const ModifyChunkRequest &request)
@@ -363,25 +412,32 @@ DataagentClient::ModifyChunkOutcome DataagentClient::ModifyChunk(const ModifyChu
 
 void DataagentClient::ModifyChunkAsync(const ModifyChunkRequest& request, const ModifyChunkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyChunk(request), context);
-    };
+    using Req = const ModifyChunkRequest&;
+    using Resp = ModifyChunkResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyChunk", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DataagentClient::ModifyChunkOutcomeCallable DataagentClient::ModifyChunkCallable(const ModifyChunkRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyChunkOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyChunk(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyChunkOutcome>>();
+    ModifyChunkAsync(
+    request,
+    [prom](
+        const DataagentClient*,
+        const ModifyChunkRequest&,
+        ModifyChunkOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DataagentClient::ModifyKnowledgeBaseOutcome DataagentClient::ModifyKnowledgeBase(const ModifyKnowledgeBaseRequest &request)
@@ -406,25 +462,32 @@ DataagentClient::ModifyKnowledgeBaseOutcome DataagentClient::ModifyKnowledgeBase
 
 void DataagentClient::ModifyKnowledgeBaseAsync(const ModifyKnowledgeBaseRequest& request, const ModifyKnowledgeBaseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyKnowledgeBase(request), context);
-    };
+    using Req = const ModifyKnowledgeBaseRequest&;
+    using Resp = ModifyKnowledgeBaseResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyKnowledgeBase", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DataagentClient::ModifyKnowledgeBaseOutcomeCallable DataagentClient::ModifyKnowledgeBaseCallable(const ModifyKnowledgeBaseRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyKnowledgeBaseOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyKnowledgeBase(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyKnowledgeBaseOutcome>>();
+    ModifyKnowledgeBaseAsync(
+    request,
+    [prom](
+        const DataagentClient*,
+        const ModifyKnowledgeBaseRequest&,
+        ModifyKnowledgeBaseOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DataagentClient::QueryChunkListOutcome DataagentClient::QueryChunkList(const QueryChunkListRequest &request)
@@ -449,25 +512,32 @@ DataagentClient::QueryChunkListOutcome DataagentClient::QueryChunkList(const Que
 
 void DataagentClient::QueryChunkListAsync(const QueryChunkListRequest& request, const QueryChunkListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->QueryChunkList(request), context);
-    };
+    using Req = const QueryChunkListRequest&;
+    using Resp = QueryChunkListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "QueryChunkList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DataagentClient::QueryChunkListOutcomeCallable DataagentClient::QueryChunkListCallable(const QueryChunkListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<QueryChunkListOutcome()>>(
-        [this, request]()
-        {
-            return this->QueryChunkList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<QueryChunkListOutcome>>();
+    QueryChunkListAsync(
+    request,
+    [prom](
+        const DataagentClient*,
+        const QueryChunkListRequest&,
+        QueryChunkListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 DataagentClient::StopChatAIOutcome DataagentClient::StopChatAI(const StopChatAIRequest &request)
@@ -492,24 +562,31 @@ DataagentClient::StopChatAIOutcome DataagentClient::StopChatAI(const StopChatAIR
 
 void DataagentClient::StopChatAIAsync(const StopChatAIRequest& request, const StopChatAIAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->StopChatAI(request), context);
-    };
+    using Req = const StopChatAIRequest&;
+    using Resp = StopChatAIResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "StopChatAI", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 DataagentClient::StopChatAIOutcomeCallable DataagentClient::StopChatAICallable(const StopChatAIRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<StopChatAIOutcome()>>(
-        [this, request]()
-        {
-            return this->StopChatAI(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<StopChatAIOutcome>>();
+    StopChatAIAsync(
+    request,
+    [prom](
+        const DataagentClient*,
+        const StopChatAIRequest&,
+        StopChatAIOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 

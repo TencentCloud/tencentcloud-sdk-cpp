@@ -62,25 +62,32 @@ BillingClient::CreateAllocationRuleOutcome BillingClient::CreateAllocationRule(c
 
 void BillingClient::CreateAllocationRuleAsync(const CreateAllocationRuleRequest& request, const CreateAllocationRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateAllocationRule(request), context);
-    };
+    using Req = const CreateAllocationRuleRequest&;
+    using Resp = CreateAllocationRuleResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateAllocationRule", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BillingClient::CreateAllocationRuleOutcomeCallable BillingClient::CreateAllocationRuleCallable(const CreateAllocationRuleRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateAllocationRuleOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateAllocationRule(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateAllocationRuleOutcome>>();
+    CreateAllocationRuleAsync(
+    request,
+    [prom](
+        const BillingClient*,
+        const CreateAllocationRuleRequest&,
+        CreateAllocationRuleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BillingClient::CreateAllocationTagOutcome BillingClient::CreateAllocationTag(const CreateAllocationTagRequest &request)
@@ -105,25 +112,32 @@ BillingClient::CreateAllocationTagOutcome BillingClient::CreateAllocationTag(con
 
 void BillingClient::CreateAllocationTagAsync(const CreateAllocationTagRequest& request, const CreateAllocationTagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateAllocationTag(request), context);
-    };
+    using Req = const CreateAllocationTagRequest&;
+    using Resp = CreateAllocationTagResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateAllocationTag", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BillingClient::CreateAllocationTagOutcomeCallable BillingClient::CreateAllocationTagCallable(const CreateAllocationTagRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateAllocationTagOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateAllocationTag(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateAllocationTagOutcome>>();
+    CreateAllocationTagAsync(
+    request,
+    [prom](
+        const BillingClient*,
+        const CreateAllocationTagRequest&,
+        CreateAllocationTagOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BillingClient::CreateAllocationUnitOutcome BillingClient::CreateAllocationUnit(const CreateAllocationUnitRequest &request)
@@ -148,25 +162,32 @@ BillingClient::CreateAllocationUnitOutcome BillingClient::CreateAllocationUnit(c
 
 void BillingClient::CreateAllocationUnitAsync(const CreateAllocationUnitRequest& request, const CreateAllocationUnitAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateAllocationUnit(request), context);
-    };
+    using Req = const CreateAllocationUnitRequest&;
+    using Resp = CreateAllocationUnitResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateAllocationUnit", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BillingClient::CreateAllocationUnitOutcomeCallable BillingClient::CreateAllocationUnitCallable(const CreateAllocationUnitRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateAllocationUnitOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateAllocationUnit(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateAllocationUnitOutcome>>();
+    CreateAllocationUnitAsync(
+    request,
+    [prom](
+        const BillingClient*,
+        const CreateAllocationUnitRequest&,
+        CreateAllocationUnitOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BillingClient::CreateBudgetOutcome BillingClient::CreateBudget(const CreateBudgetRequest &request)
@@ -191,25 +212,32 @@ BillingClient::CreateBudgetOutcome BillingClient::CreateBudget(const CreateBudge
 
 void BillingClient::CreateBudgetAsync(const CreateBudgetRequest& request, const CreateBudgetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateBudget(request), context);
-    };
+    using Req = const CreateBudgetRequest&;
+    using Resp = CreateBudgetResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateBudget", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BillingClient::CreateBudgetOutcomeCallable BillingClient::CreateBudgetCallable(const CreateBudgetRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateBudgetOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateBudget(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateBudgetOutcome>>();
+    CreateBudgetAsync(
+    request,
+    [prom](
+        const BillingClient*,
+        const CreateBudgetRequest&,
+        CreateBudgetOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BillingClient::CreateGatherRuleOutcome BillingClient::CreateGatherRule(const CreateGatherRuleRequest &request)
@@ -234,25 +262,32 @@ BillingClient::CreateGatherRuleOutcome BillingClient::CreateGatherRule(const Cre
 
 void BillingClient::CreateGatherRuleAsync(const CreateGatherRuleRequest& request, const CreateGatherRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateGatherRule(request), context);
-    };
+    using Req = const CreateGatherRuleRequest&;
+    using Resp = CreateGatherRuleResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "CreateGatherRule", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BillingClient::CreateGatherRuleOutcomeCallable BillingClient::CreateGatherRuleCallable(const CreateGatherRuleRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateGatherRuleOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateGatherRule(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<CreateGatherRuleOutcome>>();
+    CreateGatherRuleAsync(
+    request,
+    [prom](
+        const BillingClient*,
+        const CreateGatherRuleRequest&,
+        CreateGatherRuleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BillingClient::DeleteAllocationRuleOutcome BillingClient::DeleteAllocationRule(const DeleteAllocationRuleRequest &request)
@@ -277,25 +312,32 @@ BillingClient::DeleteAllocationRuleOutcome BillingClient::DeleteAllocationRule(c
 
 void BillingClient::DeleteAllocationRuleAsync(const DeleteAllocationRuleRequest& request, const DeleteAllocationRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteAllocationRule(request), context);
-    };
+    using Req = const DeleteAllocationRuleRequest&;
+    using Resp = DeleteAllocationRuleResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteAllocationRule", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BillingClient::DeleteAllocationRuleOutcomeCallable BillingClient::DeleteAllocationRuleCallable(const DeleteAllocationRuleRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteAllocationRuleOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteAllocationRule(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteAllocationRuleOutcome>>();
+    DeleteAllocationRuleAsync(
+    request,
+    [prom](
+        const BillingClient*,
+        const DeleteAllocationRuleRequest&,
+        DeleteAllocationRuleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BillingClient::DeleteAllocationTagOutcome BillingClient::DeleteAllocationTag(const DeleteAllocationTagRequest &request)
@@ -320,25 +362,32 @@ BillingClient::DeleteAllocationTagOutcome BillingClient::DeleteAllocationTag(con
 
 void BillingClient::DeleteAllocationTagAsync(const DeleteAllocationTagRequest& request, const DeleteAllocationTagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteAllocationTag(request), context);
-    };
+    using Req = const DeleteAllocationTagRequest&;
+    using Resp = DeleteAllocationTagResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteAllocationTag", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BillingClient::DeleteAllocationTagOutcomeCallable BillingClient::DeleteAllocationTagCallable(const DeleteAllocationTagRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteAllocationTagOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteAllocationTag(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteAllocationTagOutcome>>();
+    DeleteAllocationTagAsync(
+    request,
+    [prom](
+        const BillingClient*,
+        const DeleteAllocationTagRequest&,
+        DeleteAllocationTagOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BillingClient::DeleteAllocationUnitOutcome BillingClient::DeleteAllocationUnit(const DeleteAllocationUnitRequest &request)
@@ -363,25 +412,32 @@ BillingClient::DeleteAllocationUnitOutcome BillingClient::DeleteAllocationUnit(c
 
 void BillingClient::DeleteAllocationUnitAsync(const DeleteAllocationUnitRequest& request, const DeleteAllocationUnitAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteAllocationUnit(request), context);
-    };
+    using Req = const DeleteAllocationUnitRequest&;
+    using Resp = DeleteAllocationUnitResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteAllocationUnit", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BillingClient::DeleteAllocationUnitOutcomeCallable BillingClient::DeleteAllocationUnitCallable(const DeleteAllocationUnitRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteAllocationUnitOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteAllocationUnit(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteAllocationUnitOutcome>>();
+    DeleteAllocationUnitAsync(
+    request,
+    [prom](
+        const BillingClient*,
+        const DeleteAllocationUnitRequest&,
+        DeleteAllocationUnitOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BillingClient::DeleteBudgetOutcome BillingClient::DeleteBudget(const DeleteBudgetRequest &request)
@@ -406,25 +462,32 @@ BillingClient::DeleteBudgetOutcome BillingClient::DeleteBudget(const DeleteBudge
 
 void BillingClient::DeleteBudgetAsync(const DeleteBudgetRequest& request, const DeleteBudgetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteBudget(request), context);
-    };
+    using Req = const DeleteBudgetRequest&;
+    using Resp = DeleteBudgetResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteBudget", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BillingClient::DeleteBudgetOutcomeCallable BillingClient::DeleteBudgetCallable(const DeleteBudgetRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteBudgetOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteBudget(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteBudgetOutcome>>();
+    DeleteBudgetAsync(
+    request,
+    [prom](
+        const BillingClient*,
+        const DeleteBudgetRequest&,
+        DeleteBudgetOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BillingClient::DeleteGatherRuleOutcome BillingClient::DeleteGatherRule(const DeleteGatherRuleRequest &request)
@@ -449,25 +512,32 @@ BillingClient::DeleteGatherRuleOutcome BillingClient::DeleteGatherRule(const Del
 
 void BillingClient::DeleteGatherRuleAsync(const DeleteGatherRuleRequest& request, const DeleteGatherRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteGatherRule(request), context);
-    };
+    using Req = const DeleteGatherRuleRequest&;
+    using Resp = DeleteGatherRuleResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DeleteGatherRule", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BillingClient::DeleteGatherRuleOutcomeCallable BillingClient::DeleteGatherRuleCallable(const DeleteGatherRuleRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteGatherRuleOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteGatherRule(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DeleteGatherRuleOutcome>>();
+    DeleteGatherRuleAsync(
+    request,
+    [prom](
+        const BillingClient*,
+        const DeleteGatherRuleRequest&,
+        DeleteGatherRuleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BillingClient::DescribeAccountBalanceOutcome BillingClient::DescribeAccountBalance(const DescribeAccountBalanceRequest &request)
@@ -492,25 +562,32 @@ BillingClient::DescribeAccountBalanceOutcome BillingClient::DescribeAccountBalan
 
 void BillingClient::DescribeAccountBalanceAsync(const DescribeAccountBalanceRequest& request, const DescribeAccountBalanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAccountBalance(request), context);
-    };
+    using Req = const DescribeAccountBalanceRequest&;
+    using Resp = DescribeAccountBalanceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAccountBalance", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BillingClient::DescribeAccountBalanceOutcomeCallable BillingClient::DescribeAccountBalanceCallable(const DescribeAccountBalanceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAccountBalanceOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAccountBalance(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAccountBalanceOutcome>>();
+    DescribeAccountBalanceAsync(
+    request,
+    [prom](
+        const BillingClient*,
+        const DescribeAccountBalanceRequest&,
+        DescribeAccountBalanceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BillingClient::DescribeAllocateConditionsOutcome BillingClient::DescribeAllocateConditions(const DescribeAllocateConditionsRequest &request)
@@ -535,25 +612,32 @@ BillingClient::DescribeAllocateConditionsOutcome BillingClient::DescribeAllocate
 
 void BillingClient::DescribeAllocateConditionsAsync(const DescribeAllocateConditionsRequest& request, const DescribeAllocateConditionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAllocateConditions(request), context);
-    };
+    using Req = const DescribeAllocateConditionsRequest&;
+    using Resp = DescribeAllocateConditionsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAllocateConditions", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BillingClient::DescribeAllocateConditionsOutcomeCallable BillingClient::DescribeAllocateConditionsCallable(const DescribeAllocateConditionsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAllocateConditionsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAllocateConditions(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAllocateConditionsOutcome>>();
+    DescribeAllocateConditionsAsync(
+    request,
+    [prom](
+        const BillingClient*,
+        const DescribeAllocateConditionsRequest&,
+        DescribeAllocateConditionsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BillingClient::DescribeAllocationBillConditionsOutcome BillingClient::DescribeAllocationBillConditions(const DescribeAllocationBillConditionsRequest &request)
@@ -578,25 +662,32 @@ BillingClient::DescribeAllocationBillConditionsOutcome BillingClient::DescribeAl
 
 void BillingClient::DescribeAllocationBillConditionsAsync(const DescribeAllocationBillConditionsRequest& request, const DescribeAllocationBillConditionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAllocationBillConditions(request), context);
-    };
+    using Req = const DescribeAllocationBillConditionsRequest&;
+    using Resp = DescribeAllocationBillConditionsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAllocationBillConditions", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BillingClient::DescribeAllocationBillConditionsOutcomeCallable BillingClient::DescribeAllocationBillConditionsCallable(const DescribeAllocationBillConditionsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAllocationBillConditionsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAllocationBillConditions(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAllocationBillConditionsOutcome>>();
+    DescribeAllocationBillConditionsAsync(
+    request,
+    [prom](
+        const BillingClient*,
+        const DescribeAllocationBillConditionsRequest&,
+        DescribeAllocationBillConditionsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BillingClient::DescribeAllocationBillDetailOutcome BillingClient::DescribeAllocationBillDetail(const DescribeAllocationBillDetailRequest &request)
@@ -621,25 +712,32 @@ BillingClient::DescribeAllocationBillDetailOutcome BillingClient::DescribeAlloca
 
 void BillingClient::DescribeAllocationBillDetailAsync(const DescribeAllocationBillDetailRequest& request, const DescribeAllocationBillDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAllocationBillDetail(request), context);
-    };
+    using Req = const DescribeAllocationBillDetailRequest&;
+    using Resp = DescribeAllocationBillDetailResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAllocationBillDetail", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BillingClient::DescribeAllocationBillDetailOutcomeCallable BillingClient::DescribeAllocationBillDetailCallable(const DescribeAllocationBillDetailRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAllocationBillDetailOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAllocationBillDetail(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAllocationBillDetailOutcome>>();
+    DescribeAllocationBillDetailAsync(
+    request,
+    [prom](
+        const BillingClient*,
+        const DescribeAllocationBillDetailRequest&,
+        DescribeAllocationBillDetailOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BillingClient::DescribeAllocationMonthOverviewOutcome BillingClient::DescribeAllocationMonthOverview(const DescribeAllocationMonthOverviewRequest &request)
@@ -664,25 +762,32 @@ BillingClient::DescribeAllocationMonthOverviewOutcome BillingClient::DescribeAll
 
 void BillingClient::DescribeAllocationMonthOverviewAsync(const DescribeAllocationMonthOverviewRequest& request, const DescribeAllocationMonthOverviewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAllocationMonthOverview(request), context);
-    };
+    using Req = const DescribeAllocationMonthOverviewRequest&;
+    using Resp = DescribeAllocationMonthOverviewResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAllocationMonthOverview", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BillingClient::DescribeAllocationMonthOverviewOutcomeCallable BillingClient::DescribeAllocationMonthOverviewCallable(const DescribeAllocationMonthOverviewRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAllocationMonthOverviewOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAllocationMonthOverview(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAllocationMonthOverviewOutcome>>();
+    DescribeAllocationMonthOverviewAsync(
+    request,
+    [prom](
+        const BillingClient*,
+        const DescribeAllocationMonthOverviewRequest&,
+        DescribeAllocationMonthOverviewOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BillingClient::DescribeAllocationOverviewOutcome BillingClient::DescribeAllocationOverview(const DescribeAllocationOverviewRequest &request)
@@ -707,25 +812,32 @@ BillingClient::DescribeAllocationOverviewOutcome BillingClient::DescribeAllocati
 
 void BillingClient::DescribeAllocationOverviewAsync(const DescribeAllocationOverviewRequest& request, const DescribeAllocationOverviewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAllocationOverview(request), context);
-    };
+    using Req = const DescribeAllocationOverviewRequest&;
+    using Resp = DescribeAllocationOverviewResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAllocationOverview", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BillingClient::DescribeAllocationOverviewOutcomeCallable BillingClient::DescribeAllocationOverviewCallable(const DescribeAllocationOverviewRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAllocationOverviewOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAllocationOverview(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAllocationOverviewOutcome>>();
+    DescribeAllocationOverviewAsync(
+    request,
+    [prom](
+        const BillingClient*,
+        const DescribeAllocationOverviewRequest&,
+        DescribeAllocationOverviewOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BillingClient::DescribeAllocationRuleDetailOutcome BillingClient::DescribeAllocationRuleDetail(const DescribeAllocationRuleDetailRequest &request)
@@ -750,25 +862,32 @@ BillingClient::DescribeAllocationRuleDetailOutcome BillingClient::DescribeAlloca
 
 void BillingClient::DescribeAllocationRuleDetailAsync(const DescribeAllocationRuleDetailRequest& request, const DescribeAllocationRuleDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAllocationRuleDetail(request), context);
-    };
+    using Req = const DescribeAllocationRuleDetailRequest&;
+    using Resp = DescribeAllocationRuleDetailResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAllocationRuleDetail", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BillingClient::DescribeAllocationRuleDetailOutcomeCallable BillingClient::DescribeAllocationRuleDetailCallable(const DescribeAllocationRuleDetailRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAllocationRuleDetailOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAllocationRuleDetail(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAllocationRuleDetailOutcome>>();
+    DescribeAllocationRuleDetailAsync(
+    request,
+    [prom](
+        const BillingClient*,
+        const DescribeAllocationRuleDetailRequest&,
+        DescribeAllocationRuleDetailOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BillingClient::DescribeAllocationRuleSummaryOutcome BillingClient::DescribeAllocationRuleSummary(const DescribeAllocationRuleSummaryRequest &request)
@@ -793,25 +912,32 @@ BillingClient::DescribeAllocationRuleSummaryOutcome BillingClient::DescribeAlloc
 
 void BillingClient::DescribeAllocationRuleSummaryAsync(const DescribeAllocationRuleSummaryRequest& request, const DescribeAllocationRuleSummaryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAllocationRuleSummary(request), context);
-    };
+    using Req = const DescribeAllocationRuleSummaryRequest&;
+    using Resp = DescribeAllocationRuleSummaryResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAllocationRuleSummary", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BillingClient::DescribeAllocationRuleSummaryOutcomeCallable BillingClient::DescribeAllocationRuleSummaryCallable(const DescribeAllocationRuleSummaryRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAllocationRuleSummaryOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAllocationRuleSummary(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAllocationRuleSummaryOutcome>>();
+    DescribeAllocationRuleSummaryAsync(
+    request,
+    [prom](
+        const BillingClient*,
+        const DescribeAllocationRuleSummaryRequest&,
+        DescribeAllocationRuleSummaryOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BillingClient::DescribeAllocationSummaryByBusinessOutcome BillingClient::DescribeAllocationSummaryByBusiness(const DescribeAllocationSummaryByBusinessRequest &request)
@@ -836,25 +962,32 @@ BillingClient::DescribeAllocationSummaryByBusinessOutcome BillingClient::Describ
 
 void BillingClient::DescribeAllocationSummaryByBusinessAsync(const DescribeAllocationSummaryByBusinessRequest& request, const DescribeAllocationSummaryByBusinessAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAllocationSummaryByBusiness(request), context);
-    };
+    using Req = const DescribeAllocationSummaryByBusinessRequest&;
+    using Resp = DescribeAllocationSummaryByBusinessResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAllocationSummaryByBusiness", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BillingClient::DescribeAllocationSummaryByBusinessOutcomeCallable BillingClient::DescribeAllocationSummaryByBusinessCallable(const DescribeAllocationSummaryByBusinessRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAllocationSummaryByBusinessOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAllocationSummaryByBusiness(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAllocationSummaryByBusinessOutcome>>();
+    DescribeAllocationSummaryByBusinessAsync(
+    request,
+    [prom](
+        const BillingClient*,
+        const DescribeAllocationSummaryByBusinessRequest&,
+        DescribeAllocationSummaryByBusinessOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BillingClient::DescribeAllocationSummaryByItemOutcome BillingClient::DescribeAllocationSummaryByItem(const DescribeAllocationSummaryByItemRequest &request)
@@ -879,25 +1012,32 @@ BillingClient::DescribeAllocationSummaryByItemOutcome BillingClient::DescribeAll
 
 void BillingClient::DescribeAllocationSummaryByItemAsync(const DescribeAllocationSummaryByItemRequest& request, const DescribeAllocationSummaryByItemAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAllocationSummaryByItem(request), context);
-    };
+    using Req = const DescribeAllocationSummaryByItemRequest&;
+    using Resp = DescribeAllocationSummaryByItemResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAllocationSummaryByItem", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BillingClient::DescribeAllocationSummaryByItemOutcomeCallable BillingClient::DescribeAllocationSummaryByItemCallable(const DescribeAllocationSummaryByItemRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAllocationSummaryByItemOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAllocationSummaryByItem(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAllocationSummaryByItemOutcome>>();
+    DescribeAllocationSummaryByItemAsync(
+    request,
+    [prom](
+        const BillingClient*,
+        const DescribeAllocationSummaryByItemRequest&,
+        DescribeAllocationSummaryByItemOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BillingClient::DescribeAllocationSummaryByResourceOutcome BillingClient::DescribeAllocationSummaryByResource(const DescribeAllocationSummaryByResourceRequest &request)
@@ -922,25 +1062,32 @@ BillingClient::DescribeAllocationSummaryByResourceOutcome BillingClient::Describ
 
 void BillingClient::DescribeAllocationSummaryByResourceAsync(const DescribeAllocationSummaryByResourceRequest& request, const DescribeAllocationSummaryByResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAllocationSummaryByResource(request), context);
-    };
+    using Req = const DescribeAllocationSummaryByResourceRequest&;
+    using Resp = DescribeAllocationSummaryByResourceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAllocationSummaryByResource", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BillingClient::DescribeAllocationSummaryByResourceOutcomeCallable BillingClient::DescribeAllocationSummaryByResourceCallable(const DescribeAllocationSummaryByResourceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAllocationSummaryByResourceOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAllocationSummaryByResource(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAllocationSummaryByResourceOutcome>>();
+    DescribeAllocationSummaryByResourceAsync(
+    request,
+    [prom](
+        const BillingClient*,
+        const DescribeAllocationSummaryByResourceRequest&,
+        DescribeAllocationSummaryByResourceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BillingClient::DescribeAllocationTreeOutcome BillingClient::DescribeAllocationTree(const DescribeAllocationTreeRequest &request)
@@ -965,25 +1112,32 @@ BillingClient::DescribeAllocationTreeOutcome BillingClient::DescribeAllocationTr
 
 void BillingClient::DescribeAllocationTreeAsync(const DescribeAllocationTreeRequest& request, const DescribeAllocationTreeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAllocationTree(request), context);
-    };
+    using Req = const DescribeAllocationTreeRequest&;
+    using Resp = DescribeAllocationTreeResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAllocationTree", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BillingClient::DescribeAllocationTreeOutcomeCallable BillingClient::DescribeAllocationTreeCallable(const DescribeAllocationTreeRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAllocationTreeOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAllocationTree(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAllocationTreeOutcome>>();
+    DescribeAllocationTreeAsync(
+    request,
+    [prom](
+        const BillingClient*,
+        const DescribeAllocationTreeRequest&,
+        DescribeAllocationTreeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BillingClient::DescribeAllocationTrendByMonthOutcome BillingClient::DescribeAllocationTrendByMonth(const DescribeAllocationTrendByMonthRequest &request)
@@ -1008,25 +1162,32 @@ BillingClient::DescribeAllocationTrendByMonthOutcome BillingClient::DescribeAllo
 
 void BillingClient::DescribeAllocationTrendByMonthAsync(const DescribeAllocationTrendByMonthRequest& request, const DescribeAllocationTrendByMonthAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAllocationTrendByMonth(request), context);
-    };
+    using Req = const DescribeAllocationTrendByMonthRequest&;
+    using Resp = DescribeAllocationTrendByMonthResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAllocationTrendByMonth", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BillingClient::DescribeAllocationTrendByMonthOutcomeCallable BillingClient::DescribeAllocationTrendByMonthCallable(const DescribeAllocationTrendByMonthRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAllocationTrendByMonthOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAllocationTrendByMonth(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAllocationTrendByMonthOutcome>>();
+    DescribeAllocationTrendByMonthAsync(
+    request,
+    [prom](
+        const BillingClient*,
+        const DescribeAllocationTrendByMonthRequest&,
+        DescribeAllocationTrendByMonthOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BillingClient::DescribeAllocationUnitDetailOutcome BillingClient::DescribeAllocationUnitDetail(const DescribeAllocationUnitDetailRequest &request)
@@ -1051,25 +1212,32 @@ BillingClient::DescribeAllocationUnitDetailOutcome BillingClient::DescribeAlloca
 
 void BillingClient::DescribeAllocationUnitDetailAsync(const DescribeAllocationUnitDetailRequest& request, const DescribeAllocationUnitDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAllocationUnitDetail(request), context);
-    };
+    using Req = const DescribeAllocationUnitDetailRequest&;
+    using Resp = DescribeAllocationUnitDetailResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeAllocationUnitDetail", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BillingClient::DescribeAllocationUnitDetailOutcomeCallable BillingClient::DescribeAllocationUnitDetailCallable(const DescribeAllocationUnitDetailRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeAllocationUnitDetailOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAllocationUnitDetail(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeAllocationUnitDetailOutcome>>();
+    DescribeAllocationUnitDetailAsync(
+    request,
+    [prom](
+        const BillingClient*,
+        const DescribeAllocationUnitDetailRequest&,
+        DescribeAllocationUnitDetailOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BillingClient::DescribeBillAdjustInfoOutcome BillingClient::DescribeBillAdjustInfo(const DescribeBillAdjustInfoRequest &request)
@@ -1094,25 +1262,32 @@ BillingClient::DescribeBillAdjustInfoOutcome BillingClient::DescribeBillAdjustIn
 
 void BillingClient::DescribeBillAdjustInfoAsync(const DescribeBillAdjustInfoRequest& request, const DescribeBillAdjustInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeBillAdjustInfo(request), context);
-    };
+    using Req = const DescribeBillAdjustInfoRequest&;
+    using Resp = DescribeBillAdjustInfoResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeBillAdjustInfo", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BillingClient::DescribeBillAdjustInfoOutcomeCallable BillingClient::DescribeBillAdjustInfoCallable(const DescribeBillAdjustInfoRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeBillAdjustInfoOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeBillAdjustInfo(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeBillAdjustInfoOutcome>>();
+    DescribeBillAdjustInfoAsync(
+    request,
+    [prom](
+        const BillingClient*,
+        const DescribeBillAdjustInfoRequest&,
+        DescribeBillAdjustInfoOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BillingClient::DescribeBillDetailOutcome BillingClient::DescribeBillDetail(const DescribeBillDetailRequest &request)
@@ -1137,25 +1312,32 @@ BillingClient::DescribeBillDetailOutcome BillingClient::DescribeBillDetail(const
 
 void BillingClient::DescribeBillDetailAsync(const DescribeBillDetailRequest& request, const DescribeBillDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeBillDetail(request), context);
-    };
+    using Req = const DescribeBillDetailRequest&;
+    using Resp = DescribeBillDetailResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeBillDetail", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BillingClient::DescribeBillDetailOutcomeCallable BillingClient::DescribeBillDetailCallable(const DescribeBillDetailRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeBillDetailOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeBillDetail(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeBillDetailOutcome>>();
+    DescribeBillDetailAsync(
+    request,
+    [prom](
+        const BillingClient*,
+        const DescribeBillDetailRequest&,
+        DescribeBillDetailOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BillingClient::DescribeBillDetailForOrganizationOutcome BillingClient::DescribeBillDetailForOrganization(const DescribeBillDetailForOrganizationRequest &request)
@@ -1180,25 +1362,32 @@ BillingClient::DescribeBillDetailForOrganizationOutcome BillingClient::DescribeB
 
 void BillingClient::DescribeBillDetailForOrganizationAsync(const DescribeBillDetailForOrganizationRequest& request, const DescribeBillDetailForOrganizationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeBillDetailForOrganization(request), context);
-    };
+    using Req = const DescribeBillDetailForOrganizationRequest&;
+    using Resp = DescribeBillDetailForOrganizationResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeBillDetailForOrganization", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BillingClient::DescribeBillDetailForOrganizationOutcomeCallable BillingClient::DescribeBillDetailForOrganizationCallable(const DescribeBillDetailForOrganizationRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeBillDetailForOrganizationOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeBillDetailForOrganization(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeBillDetailForOrganizationOutcome>>();
+    DescribeBillDetailForOrganizationAsync(
+    request,
+    [prom](
+        const BillingClient*,
+        const DescribeBillDetailForOrganizationRequest&,
+        DescribeBillDetailForOrganizationOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BillingClient::DescribeBillDownloadUrlOutcome BillingClient::DescribeBillDownloadUrl(const DescribeBillDownloadUrlRequest &request)
@@ -1223,25 +1412,32 @@ BillingClient::DescribeBillDownloadUrlOutcome BillingClient::DescribeBillDownloa
 
 void BillingClient::DescribeBillDownloadUrlAsync(const DescribeBillDownloadUrlRequest& request, const DescribeBillDownloadUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeBillDownloadUrl(request), context);
-    };
+    using Req = const DescribeBillDownloadUrlRequest&;
+    using Resp = DescribeBillDownloadUrlResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeBillDownloadUrl", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BillingClient::DescribeBillDownloadUrlOutcomeCallable BillingClient::DescribeBillDownloadUrlCallable(const DescribeBillDownloadUrlRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeBillDownloadUrlOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeBillDownloadUrl(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeBillDownloadUrlOutcome>>();
+    DescribeBillDownloadUrlAsync(
+    request,
+    [prom](
+        const BillingClient*,
+        const DescribeBillDownloadUrlRequest&,
+        DescribeBillDownloadUrlOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BillingClient::DescribeBillListOutcome BillingClient::DescribeBillList(const DescribeBillListRequest &request)
@@ -1266,25 +1462,32 @@ BillingClient::DescribeBillListOutcome BillingClient::DescribeBillList(const Des
 
 void BillingClient::DescribeBillListAsync(const DescribeBillListRequest& request, const DescribeBillListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeBillList(request), context);
-    };
+    using Req = const DescribeBillListRequest&;
+    using Resp = DescribeBillListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeBillList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BillingClient::DescribeBillListOutcomeCallable BillingClient::DescribeBillListCallable(const DescribeBillListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeBillListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeBillList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeBillListOutcome>>();
+    DescribeBillListAsync(
+    request,
+    [prom](
+        const BillingClient*,
+        const DescribeBillListRequest&,
+        DescribeBillListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BillingClient::DescribeBillResourceSummaryOutcome BillingClient::DescribeBillResourceSummary(const DescribeBillResourceSummaryRequest &request)
@@ -1309,25 +1512,32 @@ BillingClient::DescribeBillResourceSummaryOutcome BillingClient::DescribeBillRes
 
 void BillingClient::DescribeBillResourceSummaryAsync(const DescribeBillResourceSummaryRequest& request, const DescribeBillResourceSummaryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeBillResourceSummary(request), context);
-    };
+    using Req = const DescribeBillResourceSummaryRequest&;
+    using Resp = DescribeBillResourceSummaryResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeBillResourceSummary", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BillingClient::DescribeBillResourceSummaryOutcomeCallable BillingClient::DescribeBillResourceSummaryCallable(const DescribeBillResourceSummaryRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeBillResourceSummaryOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeBillResourceSummary(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeBillResourceSummaryOutcome>>();
+    DescribeBillResourceSummaryAsync(
+    request,
+    [prom](
+        const BillingClient*,
+        const DescribeBillResourceSummaryRequest&,
+        DescribeBillResourceSummaryOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BillingClient::DescribeBillResourceSummaryForOrganizationOutcome BillingClient::DescribeBillResourceSummaryForOrganization(const DescribeBillResourceSummaryForOrganizationRequest &request)
@@ -1352,25 +1562,32 @@ BillingClient::DescribeBillResourceSummaryForOrganizationOutcome BillingClient::
 
 void BillingClient::DescribeBillResourceSummaryForOrganizationAsync(const DescribeBillResourceSummaryForOrganizationRequest& request, const DescribeBillResourceSummaryForOrganizationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeBillResourceSummaryForOrganization(request), context);
-    };
+    using Req = const DescribeBillResourceSummaryForOrganizationRequest&;
+    using Resp = DescribeBillResourceSummaryForOrganizationResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeBillResourceSummaryForOrganization", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BillingClient::DescribeBillResourceSummaryForOrganizationOutcomeCallable BillingClient::DescribeBillResourceSummaryForOrganizationCallable(const DescribeBillResourceSummaryForOrganizationRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeBillResourceSummaryForOrganizationOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeBillResourceSummaryForOrganization(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeBillResourceSummaryForOrganizationOutcome>>();
+    DescribeBillResourceSummaryForOrganizationAsync(
+    request,
+    [prom](
+        const BillingClient*,
+        const DescribeBillResourceSummaryForOrganizationRequest&,
+        DescribeBillResourceSummaryForOrganizationOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BillingClient::DescribeBillSummaryOutcome BillingClient::DescribeBillSummary(const DescribeBillSummaryRequest &request)
@@ -1395,25 +1612,32 @@ BillingClient::DescribeBillSummaryOutcome BillingClient::DescribeBillSummary(con
 
 void BillingClient::DescribeBillSummaryAsync(const DescribeBillSummaryRequest& request, const DescribeBillSummaryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeBillSummary(request), context);
-    };
+    using Req = const DescribeBillSummaryRequest&;
+    using Resp = DescribeBillSummaryResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeBillSummary", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BillingClient::DescribeBillSummaryOutcomeCallable BillingClient::DescribeBillSummaryCallable(const DescribeBillSummaryRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeBillSummaryOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeBillSummary(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeBillSummaryOutcome>>();
+    DescribeBillSummaryAsync(
+    request,
+    [prom](
+        const BillingClient*,
+        const DescribeBillSummaryRequest&,
+        DescribeBillSummaryOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BillingClient::DescribeBillSummaryByPayModeOutcome BillingClient::DescribeBillSummaryByPayMode(const DescribeBillSummaryByPayModeRequest &request)
@@ -1438,25 +1662,32 @@ BillingClient::DescribeBillSummaryByPayModeOutcome BillingClient::DescribeBillSu
 
 void BillingClient::DescribeBillSummaryByPayModeAsync(const DescribeBillSummaryByPayModeRequest& request, const DescribeBillSummaryByPayModeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeBillSummaryByPayMode(request), context);
-    };
+    using Req = const DescribeBillSummaryByPayModeRequest&;
+    using Resp = DescribeBillSummaryByPayModeResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeBillSummaryByPayMode", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BillingClient::DescribeBillSummaryByPayModeOutcomeCallable BillingClient::DescribeBillSummaryByPayModeCallable(const DescribeBillSummaryByPayModeRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeBillSummaryByPayModeOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeBillSummaryByPayMode(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeBillSummaryByPayModeOutcome>>();
+    DescribeBillSummaryByPayModeAsync(
+    request,
+    [prom](
+        const BillingClient*,
+        const DescribeBillSummaryByPayModeRequest&,
+        DescribeBillSummaryByPayModeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BillingClient::DescribeBillSummaryByProductOutcome BillingClient::DescribeBillSummaryByProduct(const DescribeBillSummaryByProductRequest &request)
@@ -1481,25 +1712,32 @@ BillingClient::DescribeBillSummaryByProductOutcome BillingClient::DescribeBillSu
 
 void BillingClient::DescribeBillSummaryByProductAsync(const DescribeBillSummaryByProductRequest& request, const DescribeBillSummaryByProductAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeBillSummaryByProduct(request), context);
-    };
+    using Req = const DescribeBillSummaryByProductRequest&;
+    using Resp = DescribeBillSummaryByProductResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeBillSummaryByProduct", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BillingClient::DescribeBillSummaryByProductOutcomeCallable BillingClient::DescribeBillSummaryByProductCallable(const DescribeBillSummaryByProductRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeBillSummaryByProductOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeBillSummaryByProduct(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeBillSummaryByProductOutcome>>();
+    DescribeBillSummaryByProductAsync(
+    request,
+    [prom](
+        const BillingClient*,
+        const DescribeBillSummaryByProductRequest&,
+        DescribeBillSummaryByProductOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BillingClient::DescribeBillSummaryByProjectOutcome BillingClient::DescribeBillSummaryByProject(const DescribeBillSummaryByProjectRequest &request)
@@ -1524,25 +1762,32 @@ BillingClient::DescribeBillSummaryByProjectOutcome BillingClient::DescribeBillSu
 
 void BillingClient::DescribeBillSummaryByProjectAsync(const DescribeBillSummaryByProjectRequest& request, const DescribeBillSummaryByProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeBillSummaryByProject(request), context);
-    };
+    using Req = const DescribeBillSummaryByProjectRequest&;
+    using Resp = DescribeBillSummaryByProjectResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeBillSummaryByProject", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BillingClient::DescribeBillSummaryByProjectOutcomeCallable BillingClient::DescribeBillSummaryByProjectCallable(const DescribeBillSummaryByProjectRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeBillSummaryByProjectOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeBillSummaryByProject(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeBillSummaryByProjectOutcome>>();
+    DescribeBillSummaryByProjectAsync(
+    request,
+    [prom](
+        const BillingClient*,
+        const DescribeBillSummaryByProjectRequest&,
+        DescribeBillSummaryByProjectOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BillingClient::DescribeBillSummaryByRegionOutcome BillingClient::DescribeBillSummaryByRegion(const DescribeBillSummaryByRegionRequest &request)
@@ -1567,25 +1812,32 @@ BillingClient::DescribeBillSummaryByRegionOutcome BillingClient::DescribeBillSum
 
 void BillingClient::DescribeBillSummaryByRegionAsync(const DescribeBillSummaryByRegionRequest& request, const DescribeBillSummaryByRegionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeBillSummaryByRegion(request), context);
-    };
+    using Req = const DescribeBillSummaryByRegionRequest&;
+    using Resp = DescribeBillSummaryByRegionResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeBillSummaryByRegion", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BillingClient::DescribeBillSummaryByRegionOutcomeCallable BillingClient::DescribeBillSummaryByRegionCallable(const DescribeBillSummaryByRegionRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeBillSummaryByRegionOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeBillSummaryByRegion(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeBillSummaryByRegionOutcome>>();
+    DescribeBillSummaryByRegionAsync(
+    request,
+    [prom](
+        const BillingClient*,
+        const DescribeBillSummaryByRegionRequest&,
+        DescribeBillSummaryByRegionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BillingClient::DescribeBillSummaryByTagOutcome BillingClient::DescribeBillSummaryByTag(const DescribeBillSummaryByTagRequest &request)
@@ -1610,25 +1862,32 @@ BillingClient::DescribeBillSummaryByTagOutcome BillingClient::DescribeBillSummar
 
 void BillingClient::DescribeBillSummaryByTagAsync(const DescribeBillSummaryByTagRequest& request, const DescribeBillSummaryByTagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeBillSummaryByTag(request), context);
-    };
+    using Req = const DescribeBillSummaryByTagRequest&;
+    using Resp = DescribeBillSummaryByTagResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeBillSummaryByTag", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BillingClient::DescribeBillSummaryByTagOutcomeCallable BillingClient::DescribeBillSummaryByTagCallable(const DescribeBillSummaryByTagRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeBillSummaryByTagOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeBillSummaryByTag(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeBillSummaryByTagOutcome>>();
+    DescribeBillSummaryByTagAsync(
+    request,
+    [prom](
+        const BillingClient*,
+        const DescribeBillSummaryByTagRequest&,
+        DescribeBillSummaryByTagOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BillingClient::DescribeBillSummaryForOrganizationOutcome BillingClient::DescribeBillSummaryForOrganization(const DescribeBillSummaryForOrganizationRequest &request)
@@ -1653,25 +1912,32 @@ BillingClient::DescribeBillSummaryForOrganizationOutcome BillingClient::Describe
 
 void BillingClient::DescribeBillSummaryForOrganizationAsync(const DescribeBillSummaryForOrganizationRequest& request, const DescribeBillSummaryForOrganizationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeBillSummaryForOrganization(request), context);
-    };
+    using Req = const DescribeBillSummaryForOrganizationRequest&;
+    using Resp = DescribeBillSummaryForOrganizationResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeBillSummaryForOrganization", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BillingClient::DescribeBillSummaryForOrganizationOutcomeCallable BillingClient::DescribeBillSummaryForOrganizationCallable(const DescribeBillSummaryForOrganizationRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeBillSummaryForOrganizationOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeBillSummaryForOrganization(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeBillSummaryForOrganizationOutcome>>();
+    DescribeBillSummaryForOrganizationAsync(
+    request,
+    [prom](
+        const BillingClient*,
+        const DescribeBillSummaryForOrganizationRequest&,
+        DescribeBillSummaryForOrganizationOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BillingClient::DescribeBudgetOutcome BillingClient::DescribeBudget(const DescribeBudgetRequest &request)
@@ -1696,25 +1962,32 @@ BillingClient::DescribeBudgetOutcome BillingClient::DescribeBudget(const Describ
 
 void BillingClient::DescribeBudgetAsync(const DescribeBudgetRequest& request, const DescribeBudgetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeBudget(request), context);
-    };
+    using Req = const DescribeBudgetRequest&;
+    using Resp = DescribeBudgetResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeBudget", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BillingClient::DescribeBudgetOutcomeCallable BillingClient::DescribeBudgetCallable(const DescribeBudgetRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeBudgetOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeBudget(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeBudgetOutcome>>();
+    DescribeBudgetAsync(
+    request,
+    [prom](
+        const BillingClient*,
+        const DescribeBudgetRequest&,
+        DescribeBudgetOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BillingClient::DescribeBudgetOperationLogOutcome BillingClient::DescribeBudgetOperationLog(const DescribeBudgetOperationLogRequest &request)
@@ -1739,25 +2012,32 @@ BillingClient::DescribeBudgetOperationLogOutcome BillingClient::DescribeBudgetOp
 
 void BillingClient::DescribeBudgetOperationLogAsync(const DescribeBudgetOperationLogRequest& request, const DescribeBudgetOperationLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeBudgetOperationLog(request), context);
-    };
+    using Req = const DescribeBudgetOperationLogRequest&;
+    using Resp = DescribeBudgetOperationLogResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeBudgetOperationLog", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BillingClient::DescribeBudgetOperationLogOutcomeCallable BillingClient::DescribeBudgetOperationLogCallable(const DescribeBudgetOperationLogRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeBudgetOperationLogOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeBudgetOperationLog(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeBudgetOperationLogOutcome>>();
+    DescribeBudgetOperationLogAsync(
+    request,
+    [prom](
+        const BillingClient*,
+        const DescribeBudgetOperationLogRequest&,
+        DescribeBudgetOperationLogOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BillingClient::DescribeBudgetRemindRecordListOutcome BillingClient::DescribeBudgetRemindRecordList(const DescribeBudgetRemindRecordListRequest &request)
@@ -1782,25 +2062,32 @@ BillingClient::DescribeBudgetRemindRecordListOutcome BillingClient::DescribeBudg
 
 void BillingClient::DescribeBudgetRemindRecordListAsync(const DescribeBudgetRemindRecordListRequest& request, const DescribeBudgetRemindRecordListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeBudgetRemindRecordList(request), context);
-    };
+    using Req = const DescribeBudgetRemindRecordListRequest&;
+    using Resp = DescribeBudgetRemindRecordListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeBudgetRemindRecordList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BillingClient::DescribeBudgetRemindRecordListOutcomeCallable BillingClient::DescribeBudgetRemindRecordListCallable(const DescribeBudgetRemindRecordListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeBudgetRemindRecordListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeBudgetRemindRecordList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeBudgetRemindRecordListOutcome>>();
+    DescribeBudgetRemindRecordListAsync(
+    request,
+    [prom](
+        const BillingClient*,
+        const DescribeBudgetRemindRecordListRequest&,
+        DescribeBudgetRemindRecordListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BillingClient::DescribeCostDetailOutcome BillingClient::DescribeCostDetail(const DescribeCostDetailRequest &request)
@@ -1825,25 +2112,32 @@ BillingClient::DescribeCostDetailOutcome BillingClient::DescribeCostDetail(const
 
 void BillingClient::DescribeCostDetailAsync(const DescribeCostDetailRequest& request, const DescribeCostDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeCostDetail(request), context);
-    };
+    using Req = const DescribeCostDetailRequest&;
+    using Resp = DescribeCostDetailResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeCostDetail", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BillingClient::DescribeCostDetailOutcomeCallable BillingClient::DescribeCostDetailCallable(const DescribeCostDetailRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeCostDetailOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeCostDetail(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeCostDetailOutcome>>();
+    DescribeCostDetailAsync(
+    request,
+    [prom](
+        const BillingClient*,
+        const DescribeCostDetailRequest&,
+        DescribeCostDetailOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BillingClient::DescribeCostExplorerSummaryOutcome BillingClient::DescribeCostExplorerSummary(const DescribeCostExplorerSummaryRequest &request)
@@ -1868,25 +2162,32 @@ BillingClient::DescribeCostExplorerSummaryOutcome BillingClient::DescribeCostExp
 
 void BillingClient::DescribeCostExplorerSummaryAsync(const DescribeCostExplorerSummaryRequest& request, const DescribeCostExplorerSummaryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeCostExplorerSummary(request), context);
-    };
+    using Req = const DescribeCostExplorerSummaryRequest&;
+    using Resp = DescribeCostExplorerSummaryResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeCostExplorerSummary", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BillingClient::DescribeCostExplorerSummaryOutcomeCallable BillingClient::DescribeCostExplorerSummaryCallable(const DescribeCostExplorerSummaryRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeCostExplorerSummaryOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeCostExplorerSummary(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeCostExplorerSummaryOutcome>>();
+    DescribeCostExplorerSummaryAsync(
+    request,
+    [prom](
+        const BillingClient*,
+        const DescribeCostExplorerSummaryRequest&,
+        DescribeCostExplorerSummaryOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BillingClient::DescribeCostSummaryByProductOutcome BillingClient::DescribeCostSummaryByProduct(const DescribeCostSummaryByProductRequest &request)
@@ -1911,25 +2212,32 @@ BillingClient::DescribeCostSummaryByProductOutcome BillingClient::DescribeCostSu
 
 void BillingClient::DescribeCostSummaryByProductAsync(const DescribeCostSummaryByProductRequest& request, const DescribeCostSummaryByProductAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeCostSummaryByProduct(request), context);
-    };
+    using Req = const DescribeCostSummaryByProductRequest&;
+    using Resp = DescribeCostSummaryByProductResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeCostSummaryByProduct", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BillingClient::DescribeCostSummaryByProductOutcomeCallable BillingClient::DescribeCostSummaryByProductCallable(const DescribeCostSummaryByProductRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeCostSummaryByProductOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeCostSummaryByProduct(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeCostSummaryByProductOutcome>>();
+    DescribeCostSummaryByProductAsync(
+    request,
+    [prom](
+        const BillingClient*,
+        const DescribeCostSummaryByProductRequest&,
+        DescribeCostSummaryByProductOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BillingClient::DescribeCostSummaryByProjectOutcome BillingClient::DescribeCostSummaryByProject(const DescribeCostSummaryByProjectRequest &request)
@@ -1954,25 +2262,32 @@ BillingClient::DescribeCostSummaryByProjectOutcome BillingClient::DescribeCostSu
 
 void BillingClient::DescribeCostSummaryByProjectAsync(const DescribeCostSummaryByProjectRequest& request, const DescribeCostSummaryByProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeCostSummaryByProject(request), context);
-    };
+    using Req = const DescribeCostSummaryByProjectRequest&;
+    using Resp = DescribeCostSummaryByProjectResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeCostSummaryByProject", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BillingClient::DescribeCostSummaryByProjectOutcomeCallable BillingClient::DescribeCostSummaryByProjectCallable(const DescribeCostSummaryByProjectRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeCostSummaryByProjectOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeCostSummaryByProject(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeCostSummaryByProjectOutcome>>();
+    DescribeCostSummaryByProjectAsync(
+    request,
+    [prom](
+        const BillingClient*,
+        const DescribeCostSummaryByProjectRequest&,
+        DescribeCostSummaryByProjectOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BillingClient::DescribeCostSummaryByRegionOutcome BillingClient::DescribeCostSummaryByRegion(const DescribeCostSummaryByRegionRequest &request)
@@ -1997,25 +2312,32 @@ BillingClient::DescribeCostSummaryByRegionOutcome BillingClient::DescribeCostSum
 
 void BillingClient::DescribeCostSummaryByRegionAsync(const DescribeCostSummaryByRegionRequest& request, const DescribeCostSummaryByRegionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeCostSummaryByRegion(request), context);
-    };
+    using Req = const DescribeCostSummaryByRegionRequest&;
+    using Resp = DescribeCostSummaryByRegionResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeCostSummaryByRegion", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BillingClient::DescribeCostSummaryByRegionOutcomeCallable BillingClient::DescribeCostSummaryByRegionCallable(const DescribeCostSummaryByRegionRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeCostSummaryByRegionOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeCostSummaryByRegion(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeCostSummaryByRegionOutcome>>();
+    DescribeCostSummaryByRegionAsync(
+    request,
+    [prom](
+        const BillingClient*,
+        const DescribeCostSummaryByRegionRequest&,
+        DescribeCostSummaryByRegionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BillingClient::DescribeCostSummaryByResourceOutcome BillingClient::DescribeCostSummaryByResource(const DescribeCostSummaryByResourceRequest &request)
@@ -2040,25 +2362,32 @@ BillingClient::DescribeCostSummaryByResourceOutcome BillingClient::DescribeCostS
 
 void BillingClient::DescribeCostSummaryByResourceAsync(const DescribeCostSummaryByResourceRequest& request, const DescribeCostSummaryByResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeCostSummaryByResource(request), context);
-    };
+    using Req = const DescribeCostSummaryByResourceRequest&;
+    using Resp = DescribeCostSummaryByResourceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeCostSummaryByResource", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BillingClient::DescribeCostSummaryByResourceOutcomeCallable BillingClient::DescribeCostSummaryByResourceCallable(const DescribeCostSummaryByResourceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeCostSummaryByResourceOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeCostSummaryByResource(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeCostSummaryByResourceOutcome>>();
+    DescribeCostSummaryByResourceAsync(
+    request,
+    [prom](
+        const BillingClient*,
+        const DescribeCostSummaryByResourceRequest&,
+        DescribeCostSummaryByResourceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BillingClient::DescribeDealsByCondOutcome BillingClient::DescribeDealsByCond(const DescribeDealsByCondRequest &request)
@@ -2083,25 +2412,32 @@ BillingClient::DescribeDealsByCondOutcome BillingClient::DescribeDealsByCond(con
 
 void BillingClient::DescribeDealsByCondAsync(const DescribeDealsByCondRequest& request, const DescribeDealsByCondAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDealsByCond(request), context);
-    };
+    using Req = const DescribeDealsByCondRequest&;
+    using Resp = DescribeDealsByCondResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeDealsByCond", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BillingClient::DescribeDealsByCondOutcomeCallable BillingClient::DescribeDealsByCondCallable(const DescribeDealsByCondRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeDealsByCondOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDealsByCond(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeDealsByCondOutcome>>();
+    DescribeDealsByCondAsync(
+    request,
+    [prom](
+        const BillingClient*,
+        const DescribeDealsByCondRequest&,
+        DescribeDealsByCondOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BillingClient::DescribeDosageCosDetailByDateOutcome BillingClient::DescribeDosageCosDetailByDate(const DescribeDosageCosDetailByDateRequest &request)
@@ -2126,25 +2462,32 @@ BillingClient::DescribeDosageCosDetailByDateOutcome BillingClient::DescribeDosag
 
 void BillingClient::DescribeDosageCosDetailByDateAsync(const DescribeDosageCosDetailByDateRequest& request, const DescribeDosageCosDetailByDateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDosageCosDetailByDate(request), context);
-    };
+    using Req = const DescribeDosageCosDetailByDateRequest&;
+    using Resp = DescribeDosageCosDetailByDateResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeDosageCosDetailByDate", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BillingClient::DescribeDosageCosDetailByDateOutcomeCallable BillingClient::DescribeDosageCosDetailByDateCallable(const DescribeDosageCosDetailByDateRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeDosageCosDetailByDateOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDosageCosDetailByDate(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeDosageCosDetailByDateOutcome>>();
+    DescribeDosageCosDetailByDateAsync(
+    request,
+    [prom](
+        const BillingClient*,
+        const DescribeDosageCosDetailByDateRequest&,
+        DescribeDosageCosDetailByDateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BillingClient::DescribeDosageDetailByDateOutcome BillingClient::DescribeDosageDetailByDate(const DescribeDosageDetailByDateRequest &request)
@@ -2169,25 +2512,32 @@ BillingClient::DescribeDosageDetailByDateOutcome BillingClient::DescribeDosageDe
 
 void BillingClient::DescribeDosageDetailByDateAsync(const DescribeDosageDetailByDateRequest& request, const DescribeDosageDetailByDateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDosageDetailByDate(request), context);
-    };
+    using Req = const DescribeDosageDetailByDateRequest&;
+    using Resp = DescribeDosageDetailByDateResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeDosageDetailByDate", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BillingClient::DescribeDosageDetailByDateOutcomeCallable BillingClient::DescribeDosageDetailByDateCallable(const DescribeDosageDetailByDateRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeDosageDetailByDateOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDosageDetailByDate(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeDosageDetailByDateOutcome>>();
+    DescribeDosageDetailByDateAsync(
+    request,
+    [prom](
+        const BillingClient*,
+        const DescribeDosageDetailByDateRequest&,
+        DescribeDosageDetailByDateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BillingClient::DescribeDosageDetailListOutcome BillingClient::DescribeDosageDetailList(const DescribeDosageDetailListRequest &request)
@@ -2212,25 +2562,32 @@ BillingClient::DescribeDosageDetailListOutcome BillingClient::DescribeDosageDeta
 
 void BillingClient::DescribeDosageDetailListAsync(const DescribeDosageDetailListRequest& request, const DescribeDosageDetailListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDosageDetailList(request), context);
-    };
+    using Req = const DescribeDosageDetailListRequest&;
+    using Resp = DescribeDosageDetailListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeDosageDetailList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BillingClient::DescribeDosageDetailListOutcomeCallable BillingClient::DescribeDosageDetailListCallable(const DescribeDosageDetailListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeDosageDetailListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDosageDetailList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeDosageDetailListOutcome>>();
+    DescribeDosageDetailListAsync(
+    request,
+    [prom](
+        const BillingClient*,
+        const DescribeDosageDetailListRequest&,
+        DescribeDosageDetailListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BillingClient::DescribeGatherResourceOutcome BillingClient::DescribeGatherResource(const DescribeGatherResourceRequest &request)
@@ -2255,25 +2612,32 @@ BillingClient::DescribeGatherResourceOutcome BillingClient::DescribeGatherResour
 
 void BillingClient::DescribeGatherResourceAsync(const DescribeGatherResourceRequest& request, const DescribeGatherResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeGatherResource(request), context);
-    };
+    using Req = const DescribeGatherResourceRequest&;
+    using Resp = DescribeGatherResourceResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeGatherResource", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BillingClient::DescribeGatherResourceOutcomeCallable BillingClient::DescribeGatherResourceCallable(const DescribeGatherResourceRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeGatherResourceOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeGatherResource(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeGatherResourceOutcome>>();
+    DescribeGatherResourceAsync(
+    request,
+    [prom](
+        const BillingClient*,
+        const DescribeGatherResourceRequest&,
+        DescribeGatherResourceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BillingClient::DescribeGatherRuleDetailOutcome BillingClient::DescribeGatherRuleDetail(const DescribeGatherRuleDetailRequest &request)
@@ -2298,25 +2662,32 @@ BillingClient::DescribeGatherRuleDetailOutcome BillingClient::DescribeGatherRule
 
 void BillingClient::DescribeGatherRuleDetailAsync(const DescribeGatherRuleDetailRequest& request, const DescribeGatherRuleDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeGatherRuleDetail(request), context);
-    };
+    using Req = const DescribeGatherRuleDetailRequest&;
+    using Resp = DescribeGatherRuleDetailResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeGatherRuleDetail", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BillingClient::DescribeGatherRuleDetailOutcomeCallable BillingClient::DescribeGatherRuleDetailCallable(const DescribeGatherRuleDetailRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeGatherRuleDetailOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeGatherRuleDetail(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeGatherRuleDetailOutcome>>();
+    DescribeGatherRuleDetailAsync(
+    request,
+    [prom](
+        const BillingClient*,
+        const DescribeGatherRuleDetailRequest&,
+        DescribeGatherRuleDetailOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BillingClient::DescribeSavingPlanResourceInfoOutcome BillingClient::DescribeSavingPlanResourceInfo(const DescribeSavingPlanResourceInfoRequest &request)
@@ -2341,25 +2712,32 @@ BillingClient::DescribeSavingPlanResourceInfoOutcome BillingClient::DescribeSavi
 
 void BillingClient::DescribeSavingPlanResourceInfoAsync(const DescribeSavingPlanResourceInfoRequest& request, const DescribeSavingPlanResourceInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeSavingPlanResourceInfo(request), context);
-    };
+    using Req = const DescribeSavingPlanResourceInfoRequest&;
+    using Resp = DescribeSavingPlanResourceInfoResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeSavingPlanResourceInfo", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BillingClient::DescribeSavingPlanResourceInfoOutcomeCallable BillingClient::DescribeSavingPlanResourceInfoCallable(const DescribeSavingPlanResourceInfoRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeSavingPlanResourceInfoOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeSavingPlanResourceInfo(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeSavingPlanResourceInfoOutcome>>();
+    DescribeSavingPlanResourceInfoAsync(
+    request,
+    [prom](
+        const BillingClient*,
+        const DescribeSavingPlanResourceInfoRequest&,
+        DescribeSavingPlanResourceInfoOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BillingClient::DescribeTagListOutcome BillingClient::DescribeTagList(const DescribeTagListRequest &request)
@@ -2384,25 +2762,32 @@ BillingClient::DescribeTagListOutcome BillingClient::DescribeTagList(const Descr
 
 void BillingClient::DescribeTagListAsync(const DescribeTagListRequest& request, const DescribeTagListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeTagList(request), context);
-    };
+    using Req = const DescribeTagListRequest&;
+    using Resp = DescribeTagListResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeTagList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BillingClient::DescribeTagListOutcomeCallable BillingClient::DescribeTagListCallable(const DescribeTagListRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeTagListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeTagList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeTagListOutcome>>();
+    DescribeTagListAsync(
+    request,
+    [prom](
+        const BillingClient*,
+        const DescribeTagListRequest&,
+        DescribeTagListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BillingClient::DescribeVoucherInfoOutcome BillingClient::DescribeVoucherInfo(const DescribeVoucherInfoRequest &request)
@@ -2427,25 +2812,32 @@ BillingClient::DescribeVoucherInfoOutcome BillingClient::DescribeVoucherInfo(con
 
 void BillingClient::DescribeVoucherInfoAsync(const DescribeVoucherInfoRequest& request, const DescribeVoucherInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeVoucherInfo(request), context);
-    };
+    using Req = const DescribeVoucherInfoRequest&;
+    using Resp = DescribeVoucherInfoResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeVoucherInfo", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BillingClient::DescribeVoucherInfoOutcomeCallable BillingClient::DescribeVoucherInfoCallable(const DescribeVoucherInfoRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeVoucherInfoOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeVoucherInfo(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeVoucherInfoOutcome>>();
+    DescribeVoucherInfoAsync(
+    request,
+    [prom](
+        const BillingClient*,
+        const DescribeVoucherInfoRequest&,
+        DescribeVoucherInfoOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BillingClient::DescribeVoucherUsageDetailsOutcome BillingClient::DescribeVoucherUsageDetails(const DescribeVoucherUsageDetailsRequest &request)
@@ -2470,25 +2862,32 @@ BillingClient::DescribeVoucherUsageDetailsOutcome BillingClient::DescribeVoucher
 
 void BillingClient::DescribeVoucherUsageDetailsAsync(const DescribeVoucherUsageDetailsRequest& request, const DescribeVoucherUsageDetailsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeVoucherUsageDetails(request), context);
-    };
+    using Req = const DescribeVoucherUsageDetailsRequest&;
+    using Resp = DescribeVoucherUsageDetailsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "DescribeVoucherUsageDetails", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BillingClient::DescribeVoucherUsageDetailsOutcomeCallable BillingClient::DescribeVoucherUsageDetailsCallable(const DescribeVoucherUsageDetailsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeVoucherUsageDetailsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeVoucherUsageDetails(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<DescribeVoucherUsageDetailsOutcome>>();
+    DescribeVoucherUsageDetailsAsync(
+    request,
+    [prom](
+        const BillingClient*,
+        const DescribeVoucherUsageDetailsRequest&,
+        DescribeVoucherUsageDetailsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BillingClient::ModifyAllocationRuleOutcome BillingClient::ModifyAllocationRule(const ModifyAllocationRuleRequest &request)
@@ -2513,25 +2912,32 @@ BillingClient::ModifyAllocationRuleOutcome BillingClient::ModifyAllocationRule(c
 
 void BillingClient::ModifyAllocationRuleAsync(const ModifyAllocationRuleRequest& request, const ModifyAllocationRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyAllocationRule(request), context);
-    };
+    using Req = const ModifyAllocationRuleRequest&;
+    using Resp = ModifyAllocationRuleResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyAllocationRule", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BillingClient::ModifyAllocationRuleOutcomeCallable BillingClient::ModifyAllocationRuleCallable(const ModifyAllocationRuleRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyAllocationRuleOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyAllocationRule(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyAllocationRuleOutcome>>();
+    ModifyAllocationRuleAsync(
+    request,
+    [prom](
+        const BillingClient*,
+        const ModifyAllocationRuleRequest&,
+        ModifyAllocationRuleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BillingClient::ModifyAllocationUnitOutcome BillingClient::ModifyAllocationUnit(const ModifyAllocationUnitRequest &request)
@@ -2556,25 +2962,32 @@ BillingClient::ModifyAllocationUnitOutcome BillingClient::ModifyAllocationUnit(c
 
 void BillingClient::ModifyAllocationUnitAsync(const ModifyAllocationUnitRequest& request, const ModifyAllocationUnitAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyAllocationUnit(request), context);
-    };
+    using Req = const ModifyAllocationUnitRequest&;
+    using Resp = ModifyAllocationUnitResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyAllocationUnit", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BillingClient::ModifyAllocationUnitOutcomeCallable BillingClient::ModifyAllocationUnitCallable(const ModifyAllocationUnitRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyAllocationUnitOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyAllocationUnit(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyAllocationUnitOutcome>>();
+    ModifyAllocationUnitAsync(
+    request,
+    [prom](
+        const BillingClient*,
+        const ModifyAllocationUnitRequest&,
+        ModifyAllocationUnitOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BillingClient::ModifyBudgetOutcome BillingClient::ModifyBudget(const ModifyBudgetRequest &request)
@@ -2599,25 +3012,32 @@ BillingClient::ModifyBudgetOutcome BillingClient::ModifyBudget(const ModifyBudge
 
 void BillingClient::ModifyBudgetAsync(const ModifyBudgetRequest& request, const ModifyBudgetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyBudget(request), context);
-    };
+    using Req = const ModifyBudgetRequest&;
+    using Resp = ModifyBudgetResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyBudget", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BillingClient::ModifyBudgetOutcomeCallable BillingClient::ModifyBudgetCallable(const ModifyBudgetRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyBudgetOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyBudget(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyBudgetOutcome>>();
+    ModifyBudgetAsync(
+    request,
+    [prom](
+        const BillingClient*,
+        const ModifyBudgetRequest&,
+        ModifyBudgetOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BillingClient::ModifyGatherRuleOutcome BillingClient::ModifyGatherRule(const ModifyGatherRuleRequest &request)
@@ -2642,25 +3062,32 @@ BillingClient::ModifyGatherRuleOutcome BillingClient::ModifyGatherRule(const Mod
 
 void BillingClient::ModifyGatherRuleAsync(const ModifyGatherRuleRequest& request, const ModifyGatherRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyGatherRule(request), context);
-    };
+    using Req = const ModifyGatherRuleRequest&;
+    using Resp = ModifyGatherRuleResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "ModifyGatherRule", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BillingClient::ModifyGatherRuleOutcomeCallable BillingClient::ModifyGatherRuleCallable(const ModifyGatherRuleRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyGatherRuleOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyGatherRule(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<ModifyGatherRuleOutcome>>();
+    ModifyGatherRuleAsync(
+    request,
+    [prom](
+        const BillingClient*,
+        const ModifyGatherRuleRequest&,
+        ModifyGatherRuleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
 BillingClient::PayDealsOutcome BillingClient::PayDeals(const PayDealsRequest &request)
@@ -2685,24 +3112,31 @@ BillingClient::PayDealsOutcome BillingClient::PayDeals(const PayDealsRequest &re
 
 void BillingClient::PayDealsAsync(const PayDealsRequest& request, const PayDealsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->PayDeals(request), context);
-    };
+    using Req = const PayDealsRequest&;
+    using Resp = PayDealsResponse;
 
-    Executor::GetInstance()->Submit(new Runnable(fn));
+    DoRequestAsync<Req, Resp>(
+        "PayDeals", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
 }
 
 BillingClient::PayDealsOutcomeCallable BillingClient::PayDealsCallable(const PayDealsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<PayDealsOutcome()>>(
-        [this, request]()
-        {
-            return this->PayDeals(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
+    const auto prom = std::make_shared<std::promise<PayDealsOutcome>>();
+    PayDealsAsync(
+    request,
+    [prom](
+        const BillingClient*,
+        const PayDealsRequest&,
+        PayDealsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
 }
 
