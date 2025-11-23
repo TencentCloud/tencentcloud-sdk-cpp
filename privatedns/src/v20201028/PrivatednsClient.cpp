@@ -340,6 +340,56 @@ PrivatednsClient::CreatePrivateZoneOutcomeCallable PrivatednsClient::CreatePriva
     return prom->get_future();
 }
 
+PrivatednsClient::CreatePrivateZoneListOutcome PrivatednsClient::CreatePrivateZoneList(const CreatePrivateZoneListRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreatePrivateZoneList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreatePrivateZoneListResponse rsp = CreatePrivateZoneListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreatePrivateZoneListOutcome(rsp);
+        else
+            return CreatePrivateZoneListOutcome(o.GetError());
+    }
+    else
+    {
+        return CreatePrivateZoneListOutcome(outcome.GetError());
+    }
+}
+
+void PrivatednsClient::CreatePrivateZoneListAsync(const CreatePrivateZoneListRequest& request, const CreatePrivateZoneListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreatePrivateZoneListRequest&;
+    using Resp = CreatePrivateZoneListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreatePrivateZoneList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+PrivatednsClient::CreatePrivateZoneListOutcomeCallable PrivatednsClient::CreatePrivateZoneListCallable(const CreatePrivateZoneListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreatePrivateZoneListOutcome>>();
+    CreatePrivateZoneListAsync(
+    request,
+    [prom](
+        const PrivatednsClient*,
+        const CreatePrivateZoneListRequest&,
+        CreatePrivateZoneListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 PrivatednsClient::CreatePrivateZoneRecordOutcome PrivatednsClient::CreatePrivateZoneRecord(const CreatePrivateZoneRecordRequest &request)
 {
     auto outcome = MakeRequest(request, "CreatePrivateZoneRecord");
@@ -382,6 +432,56 @@ PrivatednsClient::CreatePrivateZoneRecordOutcomeCallable PrivatednsClient::Creat
         const PrivatednsClient*,
         const CreatePrivateZoneRecordRequest&,
         CreatePrivateZoneRecordOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+PrivatednsClient::CreatePrivateZoneRecordListOutcome PrivatednsClient::CreatePrivateZoneRecordList(const CreatePrivateZoneRecordListRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreatePrivateZoneRecordList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreatePrivateZoneRecordListResponse rsp = CreatePrivateZoneRecordListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreatePrivateZoneRecordListOutcome(rsp);
+        else
+            return CreatePrivateZoneRecordListOutcome(o.GetError());
+    }
+    else
+    {
+        return CreatePrivateZoneRecordListOutcome(outcome.GetError());
+    }
+}
+
+void PrivatednsClient::CreatePrivateZoneRecordListAsync(const CreatePrivateZoneRecordListRequest& request, const CreatePrivateZoneRecordListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreatePrivateZoneRecordListRequest&;
+    using Resp = CreatePrivateZoneRecordListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreatePrivateZoneRecordList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+PrivatednsClient::CreatePrivateZoneRecordListOutcomeCallable PrivatednsClient::CreatePrivateZoneRecordListCallable(const CreatePrivateZoneRecordListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreatePrivateZoneRecordListOutcome>>();
+    CreatePrivateZoneRecordListAsync(
+    request,
+    [prom](
+        const PrivatednsClient*,
+        const CreatePrivateZoneRecordListRequest&,
+        CreatePrivateZoneRecordListOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -832,6 +932,106 @@ PrivatednsClient::DescribeAuditLogOutcomeCallable PrivatednsClient::DescribeAudi
         const PrivatednsClient*,
         const DescribeAuditLogRequest&,
         DescribeAuditLogOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+PrivatednsClient::DescribeCreateRecordListResultOutcome PrivatednsClient::DescribeCreateRecordListResult(const DescribeCreateRecordListResultRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCreateRecordListResult");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCreateRecordListResultResponse rsp = DescribeCreateRecordListResultResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCreateRecordListResultOutcome(rsp);
+        else
+            return DescribeCreateRecordListResultOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCreateRecordListResultOutcome(outcome.GetError());
+    }
+}
+
+void PrivatednsClient::DescribeCreateRecordListResultAsync(const DescribeCreateRecordListResultRequest& request, const DescribeCreateRecordListResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeCreateRecordListResultRequest&;
+    using Resp = DescribeCreateRecordListResultResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeCreateRecordListResult", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+PrivatednsClient::DescribeCreateRecordListResultOutcomeCallable PrivatednsClient::DescribeCreateRecordListResultCallable(const DescribeCreateRecordListResultRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeCreateRecordListResultOutcome>>();
+    DescribeCreateRecordListResultAsync(
+    request,
+    [prom](
+        const PrivatednsClient*,
+        const DescribeCreateRecordListResultRequest&,
+        DescribeCreateRecordListResultOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+PrivatednsClient::DescribeCreateZoneListResultOutcome PrivatednsClient::DescribeCreateZoneListResult(const DescribeCreateZoneListResultRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCreateZoneListResult");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCreateZoneListResultResponse rsp = DescribeCreateZoneListResultResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCreateZoneListResultOutcome(rsp);
+        else
+            return DescribeCreateZoneListResultOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCreateZoneListResultOutcome(outcome.GetError());
+    }
+}
+
+void PrivatednsClient::DescribeCreateZoneListResultAsync(const DescribeCreateZoneListResultRequest& request, const DescribeCreateZoneListResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeCreateZoneListResultRequest&;
+    using Resp = DescribeCreateZoneListResultResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeCreateZoneListResult", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+PrivatednsClient::DescribeCreateZoneListResultOutcomeCallable PrivatednsClient::DescribeCreateZoneListResultCallable(const DescribeCreateZoneListResultRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeCreateZoneListResultOutcome>>();
+    DescribeCreateZoneListResultAsync(
+    request,
+    [prom](
+        const PrivatednsClient*,
+        const DescribeCreateZoneListResultRequest&,
+        DescribeCreateZoneListResultOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

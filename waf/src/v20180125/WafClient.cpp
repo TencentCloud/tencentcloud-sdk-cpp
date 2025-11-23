@@ -990,6 +990,56 @@ WafClient::CreatePostCLSFlowOutcomeCallable WafClient::CreatePostCLSFlowCallable
     return prom->get_future();
 }
 
+WafClient::CreateRateLimitV2Outcome WafClient::CreateRateLimitV2(const CreateRateLimitV2Request &request)
+{
+    auto outcome = MakeRequest(request, "CreateRateLimitV2");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateRateLimitV2Response rsp = CreateRateLimitV2Response();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateRateLimitV2Outcome(rsp);
+        else
+            return CreateRateLimitV2Outcome(o.GetError());
+    }
+    else
+    {
+        return CreateRateLimitV2Outcome(outcome.GetError());
+    }
+}
+
+void WafClient::CreateRateLimitV2Async(const CreateRateLimitV2Request& request, const CreateRateLimitV2AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateRateLimitV2Request&;
+    using Resp = CreateRateLimitV2Response;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateRateLimitV2", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+WafClient::CreateRateLimitV2OutcomeCallable WafClient::CreateRateLimitV2Callable(const CreateRateLimitV2Request &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateRateLimitV2Outcome>>();
+    CreateRateLimitV2Async(
+    request,
+    [prom](
+        const WafClient*,
+        const CreateRateLimitV2Request&,
+        CreateRateLimitV2Outcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 WafClient::DeleteAccessExportOutcome WafClient::DeleteAccessExport(const DeleteAccessExportRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteAccessExport");
@@ -1832,6 +1882,56 @@ WafClient::DeleteOwaspWhiteRuleOutcomeCallable WafClient::DeleteOwaspWhiteRuleCa
         const WafClient*,
         const DeleteOwaspWhiteRuleRequest&,
         DeleteOwaspWhiteRuleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+WafClient::DeleteRateLimitsV2Outcome WafClient::DeleteRateLimitsV2(const DeleteRateLimitsV2Request &request)
+{
+    auto outcome = MakeRequest(request, "DeleteRateLimitsV2");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteRateLimitsV2Response rsp = DeleteRateLimitsV2Response();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteRateLimitsV2Outcome(rsp);
+        else
+            return DeleteRateLimitsV2Outcome(o.GetError());
+    }
+    else
+    {
+        return DeleteRateLimitsV2Outcome(outcome.GetError());
+    }
+}
+
+void WafClient::DeleteRateLimitsV2Async(const DeleteRateLimitsV2Request& request, const DeleteRateLimitsV2AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteRateLimitsV2Request&;
+    using Resp = DeleteRateLimitsV2Response;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteRateLimitsV2", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+WafClient::DeleteRateLimitsV2OutcomeCallable WafClient::DeleteRateLimitsV2Callable(const DeleteRateLimitsV2Request &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteRateLimitsV2Outcome>>();
+    DeleteRateLimitsV2Async(
+    request,
+    [prom](
+        const WafClient*,
+        const DeleteRateLimitsV2Request&,
+        DeleteRateLimitsV2Outcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -4740,6 +4840,56 @@ WafClient::DescribeProtectionModesOutcomeCallable WafClient::DescribeProtectionM
     return prom->get_future();
 }
 
+WafClient::DescribeRateLimitsV2Outcome WafClient::DescribeRateLimitsV2(const DescribeRateLimitsV2Request &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRateLimitsV2");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRateLimitsV2Response rsp = DescribeRateLimitsV2Response();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRateLimitsV2Outcome(rsp);
+        else
+            return DescribeRateLimitsV2Outcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRateLimitsV2Outcome(outcome.GetError());
+    }
+}
+
+void WafClient::DescribeRateLimitsV2Async(const DescribeRateLimitsV2Request& request, const DescribeRateLimitsV2AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeRateLimitsV2Request&;
+    using Resp = DescribeRateLimitsV2Response;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeRateLimitsV2", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+WafClient::DescribeRateLimitsV2OutcomeCallable WafClient::DescribeRateLimitsV2Callable(const DescribeRateLimitsV2Request &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeRateLimitsV2Outcome>>();
+    DescribeRateLimitsV2Async(
+    request,
+    [prom](
+        const WafClient*,
+        const DescribeRateLimitsV2Request&,
+        DescribeRateLimitsV2Outcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 WafClient::DescribeRuleLimitOutcome WafClient::DescribeRuleLimit(const DescribeRuleLimitRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeRuleLimit");
@@ -5790,6 +5940,56 @@ WafClient::DestroyPostCLSFlowOutcomeCallable WafClient::DestroyPostCLSFlowCallab
     return prom->get_future();
 }
 
+WafClient::EnableRateLimitsV2Outcome WafClient::EnableRateLimitsV2(const EnableRateLimitsV2Request &request)
+{
+    auto outcome = MakeRequest(request, "EnableRateLimitsV2");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        EnableRateLimitsV2Response rsp = EnableRateLimitsV2Response();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return EnableRateLimitsV2Outcome(rsp);
+        else
+            return EnableRateLimitsV2Outcome(o.GetError());
+    }
+    else
+    {
+        return EnableRateLimitsV2Outcome(outcome.GetError());
+    }
+}
+
+void WafClient::EnableRateLimitsV2Async(const EnableRateLimitsV2Request& request, const EnableRateLimitsV2AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const EnableRateLimitsV2Request&;
+    using Resp = EnableRateLimitsV2Response;
+
+    DoRequestAsync<Req, Resp>(
+        "EnableRateLimitsV2", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+WafClient::EnableRateLimitsV2OutcomeCallable WafClient::EnableRateLimitsV2Callable(const EnableRateLimitsV2Request &request)
+{
+    const auto prom = std::make_shared<std::promise<EnableRateLimitsV2Outcome>>();
+    EnableRateLimitsV2Async(
+    request,
+    [prom](
+        const WafClient*,
+        const EnableRateLimitsV2Request&,
+        EnableRateLimitsV2Outcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 WafClient::FreshAntiFakeUrlOutcome WafClient::FreshAntiFakeUrl(const FreshAntiFakeUrlRequest &request)
 {
     auto outcome = MakeRequest(request, "FreshAntiFakeUrl");
@@ -6440,6 +6640,56 @@ WafClient::ModifyApiSecEventChangeOutcomeCallable WafClient::ModifyApiSecEventCh
     return prom->get_future();
 }
 
+WafClient::ModifyApiSecSensitiveRuleOutcome WafClient::ModifyApiSecSensitiveRule(const ModifyApiSecSensitiveRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyApiSecSensitiveRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyApiSecSensitiveRuleResponse rsp = ModifyApiSecSensitiveRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyApiSecSensitiveRuleOutcome(rsp);
+        else
+            return ModifyApiSecSensitiveRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyApiSecSensitiveRuleOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::ModifyApiSecSensitiveRuleAsync(const ModifyApiSecSensitiveRuleRequest& request, const ModifyApiSecSensitiveRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyApiSecSensitiveRuleRequest&;
+    using Resp = ModifyApiSecSensitiveRuleResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyApiSecSensitiveRule", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+WafClient::ModifyApiSecSensitiveRuleOutcomeCallable WafClient::ModifyApiSecSensitiveRuleCallable(const ModifyApiSecSensitiveRuleRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyApiSecSensitiveRuleOutcome>>();
+    ModifyApiSecSensitiveRuleAsync(
+    request,
+    [prom](
+        const WafClient*,
+        const ModifyApiSecSensitiveRuleRequest&,
+        ModifyApiSecSensitiveRuleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 WafClient::ModifyAreaBanAreasOutcome WafClient::ModifyAreaBanAreas(const ModifyAreaBanAreasRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyAreaBanAreas");
@@ -6682,6 +6932,56 @@ WafClient::ModifyBatchIpAccessControlOutcomeCallable WafClient::ModifyBatchIpAcc
         const WafClient*,
         const ModifyBatchIpAccessControlRequest&,
         ModifyBatchIpAccessControlOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+WafClient::ModifyBotIdRuleOutcome WafClient::ModifyBotIdRule(const ModifyBotIdRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyBotIdRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyBotIdRuleResponse rsp = ModifyBotIdRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyBotIdRuleOutcome(rsp);
+        else
+            return ModifyBotIdRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyBotIdRuleOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::ModifyBotIdRuleAsync(const ModifyBotIdRuleRequest& request, const ModifyBotIdRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyBotIdRuleRequest&;
+    using Resp = ModifyBotIdRuleResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyBotIdRule", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+WafClient::ModifyBotIdRuleOutcomeCallable WafClient::ModifyBotIdRuleCallable(const ModifyBotIdRuleRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyBotIdRuleOutcome>>();
+    ModifyBotIdRuleAsync(
+    request,
+    [prom](
+        const WafClient*,
+        const ModifyBotIdRuleRequest&,
+        ModifyBotIdRuleOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -9082,6 +9382,56 @@ WafClient::UpdateProtectionModesOutcomeCallable WafClient::UpdateProtectionModes
         const WafClient*,
         const UpdateProtectionModesRequest&,
         UpdateProtectionModesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+WafClient::UpdateRateLimitV2Outcome WafClient::UpdateRateLimitV2(const UpdateRateLimitV2Request &request)
+{
+    auto outcome = MakeRequest(request, "UpdateRateLimitV2");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateRateLimitV2Response rsp = UpdateRateLimitV2Response();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateRateLimitV2Outcome(rsp);
+        else
+            return UpdateRateLimitV2Outcome(o.GetError());
+    }
+    else
+    {
+        return UpdateRateLimitV2Outcome(outcome.GetError());
+    }
+}
+
+void WafClient::UpdateRateLimitV2Async(const UpdateRateLimitV2Request& request, const UpdateRateLimitV2AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const UpdateRateLimitV2Request&;
+    using Resp = UpdateRateLimitV2Response;
+
+    DoRequestAsync<Req, Resp>(
+        "UpdateRateLimitV2", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+WafClient::UpdateRateLimitV2OutcomeCallable WafClient::UpdateRateLimitV2Callable(const UpdateRateLimitV2Request &request)
+{
+    const auto prom = std::make_shared<std::promise<UpdateRateLimitV2Outcome>>();
+    UpdateRateLimitV2Async(
+    request,
+    [prom](
+        const WafClient*,
+        const UpdateRateLimitV2Request&,
+        UpdateRateLimitV2Outcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

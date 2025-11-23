@@ -23,12 +23,58 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/ctem/v20231128/model/CreateAppRequest.h>
+#include <tencentcloud/ctem/v20231128/model/CreateAppResponse.h>
+#include <tencentcloud/ctem/v20231128/model/CreateAssetRequest.h>
+#include <tencentcloud/ctem/v20231128/model/CreateAssetResponse.h>
 #include <tencentcloud/ctem/v20231128/model/CreateCustomerRequest.h>
 #include <tencentcloud/ctem/v20231128/model/CreateCustomerResponse.h>
+#include <tencentcloud/ctem/v20231128/model/CreateDomainRequest.h>
+#include <tencentcloud/ctem/v20231128/model/CreateDomainResponse.h>
 #include <tencentcloud/ctem/v20231128/model/CreateEnterpriseRequest.h>
 #include <tencentcloud/ctem/v20231128/model/CreateEnterpriseResponse.h>
+#include <tencentcloud/ctem/v20231128/model/CreateHttpRequest.h>
+#include <tencentcloud/ctem/v20231128/model/CreateHttpResponse.h>
 #include <tencentcloud/ctem/v20231128/model/CreateJobRecordRequest.h>
 #include <tencentcloud/ctem/v20231128/model/CreateJobRecordResponse.h>
+#include <tencentcloud/ctem/v20231128/model/CreateManageRequest.h>
+#include <tencentcloud/ctem/v20231128/model/CreateManageResponse.h>
+#include <tencentcloud/ctem/v20231128/model/CreatePortRequest.h>
+#include <tencentcloud/ctem/v20231128/model/CreatePortResponse.h>
+#include <tencentcloud/ctem/v20231128/model/CreateSeedsRequest.h>
+#include <tencentcloud/ctem/v20231128/model/CreateSeedsResponse.h>
+#include <tencentcloud/ctem/v20231128/model/CreateSubDomainRequest.h>
+#include <tencentcloud/ctem/v20231128/model/CreateSubDomainResponse.h>
+#include <tencentcloud/ctem/v20231128/model/CreateSuspiciousAssetRequest.h>
+#include <tencentcloud/ctem/v20231128/model/CreateSuspiciousAssetResponse.h>
+#include <tencentcloud/ctem/v20231128/model/CreateWechatAppletRequest.h>
+#include <tencentcloud/ctem/v20231128/model/CreateWechatAppletResponse.h>
+#include <tencentcloud/ctem/v20231128/model/CreateWechatOfficialAccountRequest.h>
+#include <tencentcloud/ctem/v20231128/model/CreateWechatOfficialAccountResponse.h>
+#include <tencentcloud/ctem/v20231128/model/DeleteAppsRequest.h>
+#include <tencentcloud/ctem/v20231128/model/DeleteAppsResponse.h>
+#include <tencentcloud/ctem/v20231128/model/DeleteAssetsRequest.h>
+#include <tencentcloud/ctem/v20231128/model/DeleteAssetsResponse.h>
+#include <tencentcloud/ctem/v20231128/model/DeleteDomainsRequest.h>
+#include <tencentcloud/ctem/v20231128/model/DeleteDomainsResponse.h>
+#include <tencentcloud/ctem/v20231128/model/DeleteEnterprisesRequest.h>
+#include <tencentcloud/ctem/v20231128/model/DeleteEnterprisesResponse.h>
+#include <tencentcloud/ctem/v20231128/model/DeleteHttpsRequest.h>
+#include <tencentcloud/ctem/v20231128/model/DeleteHttpsResponse.h>
+#include <tencentcloud/ctem/v20231128/model/DeleteManagesRequest.h>
+#include <tencentcloud/ctem/v20231128/model/DeleteManagesResponse.h>
+#include <tencentcloud/ctem/v20231128/model/DeletePortsRequest.h>
+#include <tencentcloud/ctem/v20231128/model/DeletePortsResponse.h>
+#include <tencentcloud/ctem/v20231128/model/DeleteSeedsRequest.h>
+#include <tencentcloud/ctem/v20231128/model/DeleteSeedsResponse.h>
+#include <tencentcloud/ctem/v20231128/model/DeleteSubDomainsRequest.h>
+#include <tencentcloud/ctem/v20231128/model/DeleteSubDomainsResponse.h>
+#include <tencentcloud/ctem/v20231128/model/DeleteSuspiciousAssetsRequest.h>
+#include <tencentcloud/ctem/v20231128/model/DeleteSuspiciousAssetsResponse.h>
+#include <tencentcloud/ctem/v20231128/model/DeleteWechatAppletsRequest.h>
+#include <tencentcloud/ctem/v20231128/model/DeleteWechatAppletsResponse.h>
+#include <tencentcloud/ctem/v20231128/model/DeleteWechatOfficialAccountsRequest.h>
+#include <tencentcloud/ctem/v20231128/model/DeleteWechatOfficialAccountsResponse.h>
 #include <tencentcloud/ctem/v20231128/model/DescribeApiSecsRequest.h>
 #include <tencentcloud/ctem/v20231128/model/DescribeApiSecsResponse.h>
 #include <tencentcloud/ctem/v20231128/model/DescribeAppsRequest.h>
@@ -73,6 +119,8 @@
 #include <tencentcloud/ctem/v20231128/model/DescribeNetDisksResponse.h>
 #include <tencentcloud/ctem/v20231128/model/DescribePortsRequest.h>
 #include <tencentcloud/ctem/v20231128/model/DescribePortsResponse.h>
+#include <tencentcloud/ctem/v20231128/model/DescribeSeedsRequest.h>
+#include <tencentcloud/ctem/v20231128/model/DescribeSeedsResponse.h>
 #include <tencentcloud/ctem/v20231128/model/DescribeSensitiveInfosRequest.h>
 #include <tencentcloud/ctem/v20231128/model/DescribeSensitiveInfosResponse.h>
 #include <tencentcloud/ctem/v20231128/model/DescribeSubDomainsRequest.h>
@@ -87,10 +135,14 @@
 #include <tencentcloud/ctem/v20231128/model/DescribeWechatAppletsResponse.h>
 #include <tencentcloud/ctem/v20231128/model/DescribeWechatOfficialAccountsRequest.h>
 #include <tencentcloud/ctem/v20231128/model/DescribeWechatOfficialAccountsResponse.h>
+#include <tencentcloud/ctem/v20231128/model/IgnoreDataRequest.h>
+#include <tencentcloud/ctem/v20231128/model/IgnoreDataResponse.h>
 #include <tencentcloud/ctem/v20231128/model/ModifyCustomerRequest.h>
 #include <tencentcloud/ctem/v20231128/model/ModifyCustomerResponse.h>
 #include <tencentcloud/ctem/v20231128/model/ModifyLabelRequest.h>
 #include <tencentcloud/ctem/v20231128/model/ModifyLabelResponse.h>
+#include <tencentcloud/ctem/v20231128/model/ModifySeedStatusRequest.h>
+#include <tencentcloud/ctem/v20231128/model/ModifySeedStatusResponse.h>
 #include <tencentcloud/ctem/v20231128/model/StopJobRecordRequest.h>
 #include <tencentcloud/ctem/v20231128/model/StopJobRecordResponse.h>
 
@@ -107,15 +159,84 @@ namespace TencentCloud
                 CtemClient(const Credential &credential, const std::string &region);
                 CtemClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Core::Error, Model::CreateAppResponse> CreateAppOutcome;
+                typedef std::future<CreateAppOutcome> CreateAppOutcomeCallable;
+                typedef std::function<void(const CtemClient*, const Model::CreateAppRequest&, CreateAppOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAppAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateAssetResponse> CreateAssetOutcome;
+                typedef std::future<CreateAssetOutcome> CreateAssetOutcomeCallable;
+                typedef std::function<void(const CtemClient*, const Model::CreateAssetRequest&, CreateAssetOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAssetAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateCustomerResponse> CreateCustomerOutcome;
                 typedef std::future<CreateCustomerOutcome> CreateCustomerOutcomeCallable;
                 typedef std::function<void(const CtemClient*, const Model::CreateCustomerRequest&, CreateCustomerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCustomerAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateDomainResponse> CreateDomainOutcome;
+                typedef std::future<CreateDomainOutcome> CreateDomainOutcomeCallable;
+                typedef std::function<void(const CtemClient*, const Model::CreateDomainRequest&, CreateDomainOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDomainAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateEnterpriseResponse> CreateEnterpriseOutcome;
                 typedef std::future<CreateEnterpriseOutcome> CreateEnterpriseOutcomeCallable;
                 typedef std::function<void(const CtemClient*, const Model::CreateEnterpriseRequest&, CreateEnterpriseOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateEnterpriseAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateHttpResponse> CreateHttpOutcome;
+                typedef std::future<CreateHttpOutcome> CreateHttpOutcomeCallable;
+                typedef std::function<void(const CtemClient*, const Model::CreateHttpRequest&, CreateHttpOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateHttpAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateJobRecordResponse> CreateJobRecordOutcome;
                 typedef std::future<CreateJobRecordOutcome> CreateJobRecordOutcomeCallable;
                 typedef std::function<void(const CtemClient*, const Model::CreateJobRecordRequest&, CreateJobRecordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateJobRecordAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateManageResponse> CreateManageOutcome;
+                typedef std::future<CreateManageOutcome> CreateManageOutcomeCallable;
+                typedef std::function<void(const CtemClient*, const Model::CreateManageRequest&, CreateManageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateManageAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreatePortResponse> CreatePortOutcome;
+                typedef std::future<CreatePortOutcome> CreatePortOutcomeCallable;
+                typedef std::function<void(const CtemClient*, const Model::CreatePortRequest&, CreatePortOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreatePortAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateSeedsResponse> CreateSeedsOutcome;
+                typedef std::future<CreateSeedsOutcome> CreateSeedsOutcomeCallable;
+                typedef std::function<void(const CtemClient*, const Model::CreateSeedsRequest&, CreateSeedsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSeedsAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateSubDomainResponse> CreateSubDomainOutcome;
+                typedef std::future<CreateSubDomainOutcome> CreateSubDomainOutcomeCallable;
+                typedef std::function<void(const CtemClient*, const Model::CreateSubDomainRequest&, CreateSubDomainOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSubDomainAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateSuspiciousAssetResponse> CreateSuspiciousAssetOutcome;
+                typedef std::future<CreateSuspiciousAssetOutcome> CreateSuspiciousAssetOutcomeCallable;
+                typedef std::function<void(const CtemClient*, const Model::CreateSuspiciousAssetRequest&, CreateSuspiciousAssetOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSuspiciousAssetAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateWechatAppletResponse> CreateWechatAppletOutcome;
+                typedef std::future<CreateWechatAppletOutcome> CreateWechatAppletOutcomeCallable;
+                typedef std::function<void(const CtemClient*, const Model::CreateWechatAppletRequest&, CreateWechatAppletOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateWechatAppletAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateWechatOfficialAccountResponse> CreateWechatOfficialAccountOutcome;
+                typedef std::future<CreateWechatOfficialAccountOutcome> CreateWechatOfficialAccountOutcomeCallable;
+                typedef std::function<void(const CtemClient*, const Model::CreateWechatOfficialAccountRequest&, CreateWechatOfficialAccountOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateWechatOfficialAccountAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteAppsResponse> DeleteAppsOutcome;
+                typedef std::future<DeleteAppsOutcome> DeleteAppsOutcomeCallable;
+                typedef std::function<void(const CtemClient*, const Model::DeleteAppsRequest&, DeleteAppsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAppsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteAssetsResponse> DeleteAssetsOutcome;
+                typedef std::future<DeleteAssetsOutcome> DeleteAssetsOutcomeCallable;
+                typedef std::function<void(const CtemClient*, const Model::DeleteAssetsRequest&, DeleteAssetsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAssetsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteDomainsResponse> DeleteDomainsOutcome;
+                typedef std::future<DeleteDomainsOutcome> DeleteDomainsOutcomeCallable;
+                typedef std::function<void(const CtemClient*, const Model::DeleteDomainsRequest&, DeleteDomainsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDomainsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteEnterprisesResponse> DeleteEnterprisesOutcome;
+                typedef std::future<DeleteEnterprisesOutcome> DeleteEnterprisesOutcomeCallable;
+                typedef std::function<void(const CtemClient*, const Model::DeleteEnterprisesRequest&, DeleteEnterprisesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteEnterprisesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteHttpsResponse> DeleteHttpsOutcome;
+                typedef std::future<DeleteHttpsOutcome> DeleteHttpsOutcomeCallable;
+                typedef std::function<void(const CtemClient*, const Model::DeleteHttpsRequest&, DeleteHttpsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteHttpsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteManagesResponse> DeleteManagesOutcome;
+                typedef std::future<DeleteManagesOutcome> DeleteManagesOutcomeCallable;
+                typedef std::function<void(const CtemClient*, const Model::DeleteManagesRequest&, DeleteManagesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteManagesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeletePortsResponse> DeletePortsOutcome;
+                typedef std::future<DeletePortsOutcome> DeletePortsOutcomeCallable;
+                typedef std::function<void(const CtemClient*, const Model::DeletePortsRequest&, DeletePortsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeletePortsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteSeedsResponse> DeleteSeedsOutcome;
+                typedef std::future<DeleteSeedsOutcome> DeleteSeedsOutcomeCallable;
+                typedef std::function<void(const CtemClient*, const Model::DeleteSeedsRequest&, DeleteSeedsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSeedsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteSubDomainsResponse> DeleteSubDomainsOutcome;
+                typedef std::future<DeleteSubDomainsOutcome> DeleteSubDomainsOutcomeCallable;
+                typedef std::function<void(const CtemClient*, const Model::DeleteSubDomainsRequest&, DeleteSubDomainsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSubDomainsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteSuspiciousAssetsResponse> DeleteSuspiciousAssetsOutcome;
+                typedef std::future<DeleteSuspiciousAssetsOutcome> DeleteSuspiciousAssetsOutcomeCallable;
+                typedef std::function<void(const CtemClient*, const Model::DeleteSuspiciousAssetsRequest&, DeleteSuspiciousAssetsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSuspiciousAssetsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteWechatAppletsResponse> DeleteWechatAppletsOutcome;
+                typedef std::future<DeleteWechatAppletsOutcome> DeleteWechatAppletsOutcomeCallable;
+                typedef std::function<void(const CtemClient*, const Model::DeleteWechatAppletsRequest&, DeleteWechatAppletsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteWechatAppletsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteWechatOfficialAccountsResponse> DeleteWechatOfficialAccountsOutcome;
+                typedef std::future<DeleteWechatOfficialAccountsOutcome> DeleteWechatOfficialAccountsOutcomeCallable;
+                typedef std::function<void(const CtemClient*, const Model::DeleteWechatOfficialAccountsRequest&, DeleteWechatOfficialAccountsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteWechatOfficialAccountsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeApiSecsResponse> DescribeApiSecsOutcome;
                 typedef std::future<DescribeApiSecsOutcome> DescribeApiSecsOutcomeCallable;
                 typedef std::function<void(const CtemClient*, const Model::DescribeApiSecsRequest&, DescribeApiSecsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeApiSecsAsyncHandler;
@@ -182,6 +303,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribePortsResponse> DescribePortsOutcome;
                 typedef std::future<DescribePortsOutcome> DescribePortsOutcomeCallable;
                 typedef std::function<void(const CtemClient*, const Model::DescribePortsRequest&, DescribePortsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePortsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeSeedsResponse> DescribeSeedsOutcome;
+                typedef std::future<DescribeSeedsOutcome> DescribeSeedsOutcomeCallable;
+                typedef std::function<void(const CtemClient*, const Model::DescribeSeedsRequest&, DescribeSeedsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSeedsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeSensitiveInfosResponse> DescribeSensitiveInfosOutcome;
                 typedef std::future<DescribeSensitiveInfosOutcome> DescribeSensitiveInfosOutcomeCallable;
                 typedef std::function<void(const CtemClient*, const Model::DescribeSensitiveInfosRequest&, DescribeSensitiveInfosOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSensitiveInfosAsyncHandler;
@@ -203,17 +327,41 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeWechatOfficialAccountsResponse> DescribeWechatOfficialAccountsOutcome;
                 typedef std::future<DescribeWechatOfficialAccountsOutcome> DescribeWechatOfficialAccountsOutcomeCallable;
                 typedef std::function<void(const CtemClient*, const Model::DescribeWechatOfficialAccountsRequest&, DescribeWechatOfficialAccountsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeWechatOfficialAccountsAsyncHandler;
+                typedef Outcome<Core::Error, Model::IgnoreDataResponse> IgnoreDataOutcome;
+                typedef std::future<IgnoreDataOutcome> IgnoreDataOutcomeCallable;
+                typedef std::function<void(const CtemClient*, const Model::IgnoreDataRequest&, IgnoreDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> IgnoreDataAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyCustomerResponse> ModifyCustomerOutcome;
                 typedef std::future<ModifyCustomerOutcome> ModifyCustomerOutcomeCallable;
                 typedef std::function<void(const CtemClient*, const Model::ModifyCustomerRequest&, ModifyCustomerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCustomerAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyLabelResponse> ModifyLabelOutcome;
                 typedef std::future<ModifyLabelOutcome> ModifyLabelOutcomeCallable;
                 typedef std::function<void(const CtemClient*, const Model::ModifyLabelRequest&, ModifyLabelOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyLabelAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifySeedStatusResponse> ModifySeedStatusOutcome;
+                typedef std::future<ModifySeedStatusOutcome> ModifySeedStatusOutcomeCallable;
+                typedef std::function<void(const CtemClient*, const Model::ModifySeedStatusRequest&, ModifySeedStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifySeedStatusAsyncHandler;
                 typedef Outcome<Core::Error, Model::StopJobRecordResponse> StopJobRecordOutcome;
                 typedef std::future<StopJobRecordOutcome> StopJobRecordOutcomeCallable;
                 typedef std::function<void(const CtemClient*, const Model::StopJobRecordRequest&, StopJobRecordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopJobRecordAsyncHandler;
 
 
+
+                /**
+                 *添加APP资产
+                 * @param req CreateAppRequest
+                 * @return CreateAppOutcome
+                 */
+                CreateAppOutcome CreateApp(const Model::CreateAppRequest &request);
+                void CreateAppAsync(const Model::CreateAppRequest& request, const CreateAppAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateAppOutcomeCallable CreateAppCallable(const Model::CreateAppRequest& request);
+
+                /**
+                 *添加主机资产
+                 * @param req CreateAssetRequest
+                 * @return CreateAssetOutcome
+                 */
+                CreateAssetOutcome CreateAsset(const Model::CreateAssetRequest &request);
+                void CreateAssetAsync(const Model::CreateAssetRequest& request, const CreateAssetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateAssetOutcomeCallable CreateAssetCallable(const Model::CreateAssetRequest& request);
 
                 /**
                  *创建企业
@@ -225,13 +373,31 @@ namespace TencentCloud
                 CreateCustomerOutcomeCallable CreateCustomerCallable(const Model::CreateCustomerRequest& request);
 
                 /**
-                 *添加企业架构数据
+                 *添加主域名数据
+                 * @param req CreateDomainRequest
+                 * @return CreateDomainOutcome
+                 */
+                CreateDomainOutcome CreateDomain(const Model::CreateDomainRequest &request);
+                void CreateDomainAsync(const Model::CreateDomainRequest& request, const CreateDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateDomainOutcomeCallable CreateDomainCallable(const Model::CreateDomainRequest& request);
+
+                /**
+                 *添加企业架构资产
                  * @param req CreateEnterpriseRequest
                  * @return CreateEnterpriseOutcome
                  */
                 CreateEnterpriseOutcome CreateEnterprise(const Model::CreateEnterpriseRequest &request);
                 void CreateEnterpriseAsync(const Model::CreateEnterpriseRequest& request, const CreateEnterpriseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateEnterpriseOutcomeCallable CreateEnterpriseCallable(const Model::CreateEnterpriseRequest& request);
+
+                /**
+                 *添加网站资产
+                 * @param req CreateHttpRequest
+                 * @return CreateHttpOutcome
+                 */
+                CreateHttpOutcome CreateHttp(const Model::CreateHttpRequest &request);
+                void CreateHttpAsync(const Model::CreateHttpRequest& request, const CreateHttpAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateHttpOutcomeCallable CreateHttpCallable(const Model::CreateHttpRequest& request);
 
                 /**
                  *启动测绘
@@ -241,6 +407,177 @@ namespace TencentCloud
                 CreateJobRecordOutcome CreateJobRecord(const Model::CreateJobRecordRequest &request);
                 void CreateJobRecordAsync(const Model::CreateJobRecordRequest& request, const CreateJobRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateJobRecordOutcomeCallable CreateJobRecordCallable(const Model::CreateJobRecordRequest& request);
+
+                /**
+                 *添加后台数据
+                 * @param req CreateManageRequest
+                 * @return CreateManageOutcome
+                 */
+                CreateManageOutcome CreateManage(const Model::CreateManageRequest &request);
+                void CreateManageAsync(const Model::CreateManageRequest& request, const CreateManageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateManageOutcomeCallable CreateManageCallable(const Model::CreateManageRequest& request);
+
+                /**
+                 *添加端口服务资产
+                 * @param req CreatePortRequest
+                 * @return CreatePortOutcome
+                 */
+                CreatePortOutcome CreatePort(const Model::CreatePortRequest &request);
+                void CreatePortAsync(const Model::CreatePortRequest& request, const CreatePortAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreatePortOutcomeCallable CreatePortCallable(const Model::CreatePortRequest& request);
+
+                /**
+                 *创建种子
+                 * @param req CreateSeedsRequest
+                 * @return CreateSeedsOutcome
+                 */
+                CreateSeedsOutcome CreateSeeds(const Model::CreateSeedsRequest &request);
+                void CreateSeedsAsync(const Model::CreateSeedsRequest& request, const CreateSeedsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateSeedsOutcomeCallable CreateSeedsCallable(const Model::CreateSeedsRequest& request);
+
+                /**
+                 *添加子域名数据
+                 * @param req CreateSubDomainRequest
+                 * @return CreateSubDomainOutcome
+                 */
+                CreateSubDomainOutcome CreateSubDomain(const Model::CreateSubDomainRequest &request);
+                void CreateSubDomainAsync(const Model::CreateSubDomainRequest& request, const CreateSubDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateSubDomainOutcomeCallable CreateSubDomainCallable(const Model::CreateSubDomainRequest& request);
+
+                /**
+                 *添加影子资产
+                 * @param req CreateSuspiciousAssetRequest
+                 * @return CreateSuspiciousAssetOutcome
+                 */
+                CreateSuspiciousAssetOutcome CreateSuspiciousAsset(const Model::CreateSuspiciousAssetRequest &request);
+                void CreateSuspiciousAssetAsync(const Model::CreateSuspiciousAssetRequest& request, const CreateSuspiciousAssetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateSuspiciousAssetOutcomeCallable CreateSuspiciousAssetCallable(const Model::CreateSuspiciousAssetRequest& request);
+
+                /**
+                 *添加微信小程序资产
+                 * @param req CreateWechatAppletRequest
+                 * @return CreateWechatAppletOutcome
+                 */
+                CreateWechatAppletOutcome CreateWechatApplet(const Model::CreateWechatAppletRequest &request);
+                void CreateWechatAppletAsync(const Model::CreateWechatAppletRequest& request, const CreateWechatAppletAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateWechatAppletOutcomeCallable CreateWechatAppletCallable(const Model::CreateWechatAppletRequest& request);
+
+                /**
+                 *添加微信公众号资产
+                 * @param req CreateWechatOfficialAccountRequest
+                 * @return CreateWechatOfficialAccountOutcome
+                 */
+                CreateWechatOfficialAccountOutcome CreateWechatOfficialAccount(const Model::CreateWechatOfficialAccountRequest &request);
+                void CreateWechatOfficialAccountAsync(const Model::CreateWechatOfficialAccountRequest& request, const CreateWechatOfficialAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateWechatOfficialAccountOutcomeCallable CreateWechatOfficialAccountCallable(const Model::CreateWechatOfficialAccountRequest& request);
+
+                /**
+                 *删除APP数据
+                 * @param req DeleteAppsRequest
+                 * @return DeleteAppsOutcome
+                 */
+                DeleteAppsOutcome DeleteApps(const Model::DeleteAppsRequest &request);
+                void DeleteAppsAsync(const Model::DeleteAppsRequest& request, const DeleteAppsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteAppsOutcomeCallable DeleteAppsCallable(const Model::DeleteAppsRequest& request);
+
+                /**
+                 *删除主机资产数据
+                 * @param req DeleteAssetsRequest
+                 * @return DeleteAssetsOutcome
+                 */
+                DeleteAssetsOutcome DeleteAssets(const Model::DeleteAssetsRequest &request);
+                void DeleteAssetsAsync(const Model::DeleteAssetsRequest& request, const DeleteAssetsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteAssetsOutcomeCallable DeleteAssetsCallable(const Model::DeleteAssetsRequest& request);
+
+                /**
+                 *删除主域名数据
+                 * @param req DeleteDomainsRequest
+                 * @return DeleteDomainsOutcome
+                 */
+                DeleteDomainsOutcome DeleteDomains(const Model::DeleteDomainsRequest &request);
+                void DeleteDomainsAsync(const Model::DeleteDomainsRequest& request, const DeleteDomainsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteDomainsOutcomeCallable DeleteDomainsCallable(const Model::DeleteDomainsRequest& request);
+
+                /**
+                 *删除企业架构数据
+                 * @param req DeleteEnterprisesRequest
+                 * @return DeleteEnterprisesOutcome
+                 */
+                DeleteEnterprisesOutcome DeleteEnterprises(const Model::DeleteEnterprisesRequest &request);
+                void DeleteEnterprisesAsync(const Model::DeleteEnterprisesRequest& request, const DeleteEnterprisesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteEnterprisesOutcomeCallable DeleteEnterprisesCallable(const Model::DeleteEnterprisesRequest& request);
+
+                /**
+                 *删除网站资产数据
+                 * @param req DeleteHttpsRequest
+                 * @return DeleteHttpsOutcome
+                 */
+                DeleteHttpsOutcome DeleteHttps(const Model::DeleteHttpsRequest &request);
+                void DeleteHttpsAsync(const Model::DeleteHttpsRequest& request, const DeleteHttpsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteHttpsOutcomeCallable DeleteHttpsCallable(const Model::DeleteHttpsRequest& request);
+
+                /**
+                 *删除后台数据
+                 * @param req DeleteManagesRequest
+                 * @return DeleteManagesOutcome
+                 */
+                DeleteManagesOutcome DeleteManages(const Model::DeleteManagesRequest &request);
+                void DeleteManagesAsync(const Model::DeleteManagesRequest& request, const DeleteManagesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteManagesOutcomeCallable DeleteManagesCallable(const Model::DeleteManagesRequest& request);
+
+                /**
+                 *删除端口数据
+                 * @param req DeletePortsRequest
+                 * @return DeletePortsOutcome
+                 */
+                DeletePortsOutcome DeletePorts(const Model::DeletePortsRequest &request);
+                void DeletePortsAsync(const Model::DeletePortsRequest& request, const DeletePortsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeletePortsOutcomeCallable DeletePortsCallable(const Model::DeletePortsRequest& request);
+
+                /**
+                 *删除种子
+                 * @param req DeleteSeedsRequest
+                 * @return DeleteSeedsOutcome
+                 */
+                DeleteSeedsOutcome DeleteSeeds(const Model::DeleteSeedsRequest &request);
+                void DeleteSeedsAsync(const Model::DeleteSeedsRequest& request, const DeleteSeedsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteSeedsOutcomeCallable DeleteSeedsCallable(const Model::DeleteSeedsRequest& request);
+
+                /**
+                 *删除子域名数据
+                 * @param req DeleteSubDomainsRequest
+                 * @return DeleteSubDomainsOutcome
+                 */
+                DeleteSubDomainsOutcome DeleteSubDomains(const Model::DeleteSubDomainsRequest &request);
+                void DeleteSubDomainsAsync(const Model::DeleteSubDomainsRequest& request, const DeleteSubDomainsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteSubDomainsOutcomeCallable DeleteSubDomainsCallable(const Model::DeleteSubDomainsRequest& request);
+
+                /**
+                 *删除影子资产数据
+                 * @param req DeleteSuspiciousAssetsRequest
+                 * @return DeleteSuspiciousAssetsOutcome
+                 */
+                DeleteSuspiciousAssetsOutcome DeleteSuspiciousAssets(const Model::DeleteSuspiciousAssetsRequest &request);
+                void DeleteSuspiciousAssetsAsync(const Model::DeleteSuspiciousAssetsRequest& request, const DeleteSuspiciousAssetsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteSuspiciousAssetsOutcomeCallable DeleteSuspiciousAssetsCallable(const Model::DeleteSuspiciousAssetsRequest& request);
+
+                /**
+                 *删除微信小程序数据
+                 * @param req DeleteWechatAppletsRequest
+                 * @return DeleteWechatAppletsOutcome
+                 */
+                DeleteWechatAppletsOutcome DeleteWechatApplets(const Model::DeleteWechatAppletsRequest &request);
+                void DeleteWechatAppletsAsync(const Model::DeleteWechatAppletsRequest& request, const DeleteWechatAppletsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteWechatAppletsOutcomeCallable DeleteWechatAppletsCallable(const Model::DeleteWechatAppletsRequest& request);
+
+                /**
+                 *删除微信公众号数据
+                 * @param req DeleteWechatOfficialAccountsRequest
+                 * @return DeleteWechatOfficialAccountsOutcome
+                 */
+                DeleteWechatOfficialAccountsOutcome DeleteWechatOfficialAccounts(const Model::DeleteWechatOfficialAccountsRequest &request);
+                void DeleteWechatOfficialAccountsAsync(const Model::DeleteWechatOfficialAccountsRequest& request, const DeleteWechatOfficialAccountsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteWechatOfficialAccountsOutcomeCallable DeleteWechatOfficialAccountsCallable(const Model::DeleteWechatOfficialAccountsRequest& request);
 
                 /**
                  *查看API安全数据
@@ -441,6 +778,15 @@ namespace TencentCloud
                 DescribePortsOutcomeCallable DescribePortsCallable(const Model::DescribePortsRequest& request);
 
                 /**
+                 *查看种子列表
+                 * @param req DescribeSeedsRequest
+                 * @return DescribeSeedsOutcome
+                 */
+                DescribeSeedsOutcome DescribeSeeds(const Model::DescribeSeedsRequest &request);
+                void DescribeSeedsAsync(const Model::DescribeSeedsRequest& request, const DescribeSeedsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSeedsOutcomeCallable DescribeSeedsCallable(const Model::DescribeSeedsRequest& request);
+
+                /**
                  *查看敏感信息泄露数据
                  * @param req DescribeSensitiveInfosRequest
                  * @return DescribeSensitiveInfosOutcome
@@ -504,6 +850,15 @@ namespace TencentCloud
                 DescribeWechatOfficialAccountsOutcomeCallable DescribeWechatOfficialAccountsCallable(const Model::DescribeWechatOfficialAccountsRequest& request);
 
                 /**
+                 *忽略数据
+                 * @param req IgnoreDataRequest
+                 * @return IgnoreDataOutcome
+                 */
+                IgnoreDataOutcome IgnoreData(const Model::IgnoreDataRequest &request);
+                void IgnoreDataAsync(const Model::IgnoreDataRequest& request, const IgnoreDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                IgnoreDataOutcomeCallable IgnoreDataCallable(const Model::IgnoreDataRequest& request);
+
+                /**
                  *编辑企业
                  * @param req ModifyCustomerRequest
                  * @return ModifyCustomerOutcome
@@ -520,6 +875,15 @@ namespace TencentCloud
                 ModifyLabelOutcome ModifyLabel(const Model::ModifyLabelRequest &request);
                 void ModifyLabelAsync(const Model::ModifyLabelRequest& request, const ModifyLabelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyLabelOutcomeCallable ModifyLabelCallable(const Model::ModifyLabelRequest& request);
+
+                /**
+                 *修改种子状态
+                 * @param req ModifySeedStatusRequest
+                 * @return ModifySeedStatusOutcome
+                 */
+                ModifySeedStatusOutcome ModifySeedStatus(const Model::ModifySeedStatusRequest &request);
+                void ModifySeedStatusAsync(const Model::ModifySeedStatusRequest& request, const ModifySeedStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifySeedStatusOutcomeCallable ModifySeedStatusCallable(const Model::ModifySeedStatusRequest& request);
 
                 /**
                  *停止扫描

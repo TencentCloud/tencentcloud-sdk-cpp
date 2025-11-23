@@ -25,7 +25,8 @@ using namespace std;
 
 DescribeWorkflowRunResponse::DescribeWorkflowRunResponse() :
     m_workflowRunHasBeenSet(false),
-    m_nodeRunsHasBeenSet(false)
+    m_nodeRunsHasBeenSet(false),
+    m_subWorkflowNodePathHasBeenSet(false)
 {
 }
 
@@ -100,6 +101,16 @@ CoreInternalOutcome DescribeWorkflowRunResponse::Deserialize(const string &paylo
         m_nodeRunsHasBeenSet = true;
     }
 
+    if (rsp.HasMember("SubWorkflowNodePath") && !rsp["SubWorkflowNodePath"].IsNull())
+    {
+        if (!rsp["SubWorkflowNodePath"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SubWorkflowNodePath` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_subWorkflowNodePath = string(rsp["SubWorkflowNodePath"].GetString());
+        m_subWorkflowNodePathHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -134,6 +145,14 @@ string DescribeWorkflowRunResponse::ToJsonString() const
         }
     }
 
+    if (m_subWorkflowNodePathHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubWorkflowNodePath";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_subWorkflowNodePath.c_str(), allocator).Move(), allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
@@ -164,6 +183,16 @@ vector<NodeRunBase> DescribeWorkflowRunResponse::GetNodeRuns() const
 bool DescribeWorkflowRunResponse::NodeRunsHasBeenSet() const
 {
     return m_nodeRunsHasBeenSet;
+}
+
+string DescribeWorkflowRunResponse::GetSubWorkflowNodePath() const
+{
+    return m_subWorkflowNodePath;
+}
+
+bool DescribeWorkflowRunResponse::SubWorkflowNodePathHasBeenSet() const
+{
+    return m_subWorkflowNodePathHasBeenSet;
 }
 
 

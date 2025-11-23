@@ -61,6 +61,8 @@
 #include <tencentcloud/waf/v20180125/model/CreatePostCKafkaFlowResponse.h>
 #include <tencentcloud/waf/v20180125/model/CreatePostCLSFlowRequest.h>
 #include <tencentcloud/waf/v20180125/model/CreatePostCLSFlowResponse.h>
+#include <tencentcloud/waf/v20180125/model/CreateRateLimitV2Request.h>
+#include <tencentcloud/waf/v20180125/model/CreateRateLimitV2Response.h>
 #include <tencentcloud/waf/v20180125/model/DeleteAccessExportRequest.h>
 #include <tencentcloud/waf/v20180125/model/DeleteAccessExportResponse.h>
 #include <tencentcloud/waf/v20180125/model/DeleteAntiFakeUrlRequest.h>
@@ -95,6 +97,8 @@
 #include <tencentcloud/waf/v20180125/model/DeleteOwaspRuleStatusResponse.h>
 #include <tencentcloud/waf/v20180125/model/DeleteOwaspWhiteRuleRequest.h>
 #include <tencentcloud/waf/v20180125/model/DeleteOwaspWhiteRuleResponse.h>
+#include <tencentcloud/waf/v20180125/model/DeleteRateLimitsV2Request.h>
+#include <tencentcloud/waf/v20180125/model/DeleteRateLimitsV2Response.h>
 #include <tencentcloud/waf/v20180125/model/DeleteSessionRequest.h>
 #include <tencentcloud/waf/v20180125/model/DeleteSessionResponse.h>
 #include <tencentcloud/waf/v20180125/model/DeleteSpartaProtectionRequest.h>
@@ -211,6 +215,8 @@
 #include <tencentcloud/waf/v20180125/model/DescribePostCLSFlowsResponse.h>
 #include <tencentcloud/waf/v20180125/model/DescribeProtectionModesRequest.h>
 #include <tencentcloud/waf/v20180125/model/DescribeProtectionModesResponse.h>
+#include <tencentcloud/waf/v20180125/model/DescribeRateLimitsV2Request.h>
+#include <tencentcloud/waf/v20180125/model/DescribeRateLimitsV2Response.h>
 #include <tencentcloud/waf/v20180125/model/DescribeRuleLimitRequest.h>
 #include <tencentcloud/waf/v20180125/model/DescribeRuleLimitResponse.h>
 #include <tencentcloud/waf/v20180125/model/DescribeScanIpRequest.h>
@@ -253,6 +259,8 @@
 #include <tencentcloud/waf/v20180125/model/DestroyPostCKafkaFlowResponse.h>
 #include <tencentcloud/waf/v20180125/model/DestroyPostCLSFlowRequest.h>
 #include <tencentcloud/waf/v20180125/model/DestroyPostCLSFlowResponse.h>
+#include <tencentcloud/waf/v20180125/model/EnableRateLimitsV2Request.h>
+#include <tencentcloud/waf/v20180125/model/EnableRateLimitsV2Response.h>
 #include <tencentcloud/waf/v20180125/model/FreshAntiFakeUrlRequest.h>
 #include <tencentcloud/waf/v20180125/model/FreshAntiFakeUrlResponse.h>
 #include <tencentcloud/waf/v20180125/model/GenerateDealsAndPayNewRequest.h>
@@ -279,6 +287,8 @@
 #include <tencentcloud/waf/v20180125/model/ModifyApiAnalyzeStatusResponse.h>
 #include <tencentcloud/waf/v20180125/model/ModifyApiSecEventChangeRequest.h>
 #include <tencentcloud/waf/v20180125/model/ModifyApiSecEventChangeResponse.h>
+#include <tencentcloud/waf/v20180125/model/ModifyApiSecSensitiveRuleRequest.h>
+#include <tencentcloud/waf/v20180125/model/ModifyApiSecSensitiveRuleResponse.h>
 #include <tencentcloud/waf/v20180125/model/ModifyAreaBanAreasRequest.h>
 #include <tencentcloud/waf/v20180125/model/ModifyAreaBanAreasResponse.h>
 #include <tencentcloud/waf/v20180125/model/ModifyAreaBanRuleRequest.h>
@@ -289,6 +299,8 @@
 #include <tencentcloud/waf/v20180125/model/ModifyAttackWhiteRuleResponse.h>
 #include <tencentcloud/waf/v20180125/model/ModifyBatchIpAccessControlRequest.h>
 #include <tencentcloud/waf/v20180125/model/ModifyBatchIpAccessControlResponse.h>
+#include <tencentcloud/waf/v20180125/model/ModifyBotIdRuleRequest.h>
+#include <tencentcloud/waf/v20180125/model/ModifyBotIdRuleResponse.h>
 #include <tencentcloud/waf/v20180125/model/ModifyBotSceneStatusRequest.h>
 #include <tencentcloud/waf/v20180125/model/ModifyBotSceneStatusResponse.h>
 #include <tencentcloud/waf/v20180125/model/ModifyBotSceneUCBRuleRequest.h>
@@ -385,6 +397,8 @@
 #include <tencentcloud/waf/v20180125/model/SwitchElasticModeResponse.h>
 #include <tencentcloud/waf/v20180125/model/UpdateProtectionModesRequest.h>
 #include <tencentcloud/waf/v20180125/model/UpdateProtectionModesResponse.h>
+#include <tencentcloud/waf/v20180125/model/UpdateRateLimitV2Request.h>
+#include <tencentcloud/waf/v20180125/model/UpdateRateLimitV2Response.h>
 #include <tencentcloud/waf/v20180125/model/UpsertCCAutoStatusRequest.h>
 #include <tencentcloud/waf/v20180125/model/UpsertCCAutoStatusResponse.h>
 #include <tencentcloud/waf/v20180125/model/UpsertCCRuleRequest.h>
@@ -464,6 +478,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreatePostCLSFlowResponse> CreatePostCLSFlowOutcome;
                 typedef std::future<CreatePostCLSFlowOutcome> CreatePostCLSFlowOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::CreatePostCLSFlowRequest&, CreatePostCLSFlowOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreatePostCLSFlowAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateRateLimitV2Response> CreateRateLimitV2Outcome;
+                typedef std::future<CreateRateLimitV2Outcome> CreateRateLimitV2OutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::CreateRateLimitV2Request&, CreateRateLimitV2Outcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateRateLimitV2AsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteAccessExportResponse> DeleteAccessExportOutcome;
                 typedef std::future<DeleteAccessExportOutcome> DeleteAccessExportOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::DeleteAccessExportRequest&, DeleteAccessExportOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAccessExportAsyncHandler;
@@ -515,6 +532,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteOwaspWhiteRuleResponse> DeleteOwaspWhiteRuleOutcome;
                 typedef std::future<DeleteOwaspWhiteRuleOutcome> DeleteOwaspWhiteRuleOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::DeleteOwaspWhiteRuleRequest&, DeleteOwaspWhiteRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteOwaspWhiteRuleAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteRateLimitsV2Response> DeleteRateLimitsV2Outcome;
+                typedef std::future<DeleteRateLimitsV2Outcome> DeleteRateLimitsV2OutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::DeleteRateLimitsV2Request&, DeleteRateLimitsV2Outcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRateLimitsV2AsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteSessionResponse> DeleteSessionOutcome;
                 typedef std::future<DeleteSessionOutcome> DeleteSessionOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::DeleteSessionRequest&, DeleteSessionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSessionAsyncHandler;
@@ -689,6 +709,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeProtectionModesResponse> DescribeProtectionModesOutcome;
                 typedef std::future<DescribeProtectionModesOutcome> DescribeProtectionModesOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::DescribeProtectionModesRequest&, DescribeProtectionModesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeProtectionModesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeRateLimitsV2Response> DescribeRateLimitsV2Outcome;
+                typedef std::future<DescribeRateLimitsV2Outcome> DescribeRateLimitsV2OutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::DescribeRateLimitsV2Request&, DescribeRateLimitsV2Outcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRateLimitsV2AsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeRuleLimitResponse> DescribeRuleLimitOutcome;
                 typedef std::future<DescribeRuleLimitOutcome> DescribeRuleLimitOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::DescribeRuleLimitRequest&, DescribeRuleLimitOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRuleLimitAsyncHandler;
@@ -752,6 +775,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DestroyPostCLSFlowResponse> DestroyPostCLSFlowOutcome;
                 typedef std::future<DestroyPostCLSFlowOutcome> DestroyPostCLSFlowOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::DestroyPostCLSFlowRequest&, DestroyPostCLSFlowOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DestroyPostCLSFlowAsyncHandler;
+                typedef Outcome<Core::Error, Model::EnableRateLimitsV2Response> EnableRateLimitsV2Outcome;
+                typedef std::future<EnableRateLimitsV2Outcome> EnableRateLimitsV2OutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::EnableRateLimitsV2Request&, EnableRateLimitsV2Outcome, const std::shared_ptr<const AsyncCallerContext>&)> EnableRateLimitsV2AsyncHandler;
                 typedef Outcome<Core::Error, Model::FreshAntiFakeUrlResponse> FreshAntiFakeUrlOutcome;
                 typedef std::future<FreshAntiFakeUrlOutcome> FreshAntiFakeUrlOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::FreshAntiFakeUrlRequest&, FreshAntiFakeUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> FreshAntiFakeUrlAsyncHandler;
@@ -791,6 +817,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyApiSecEventChangeResponse> ModifyApiSecEventChangeOutcome;
                 typedef std::future<ModifyApiSecEventChangeOutcome> ModifyApiSecEventChangeOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::ModifyApiSecEventChangeRequest&, ModifyApiSecEventChangeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyApiSecEventChangeAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyApiSecSensitiveRuleResponse> ModifyApiSecSensitiveRuleOutcome;
+                typedef std::future<ModifyApiSecSensitiveRuleOutcome> ModifyApiSecSensitiveRuleOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::ModifyApiSecSensitiveRuleRequest&, ModifyApiSecSensitiveRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyApiSecSensitiveRuleAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyAreaBanAreasResponse> ModifyAreaBanAreasOutcome;
                 typedef std::future<ModifyAreaBanAreasOutcome> ModifyAreaBanAreasOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::ModifyAreaBanAreasRequest&, ModifyAreaBanAreasOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAreaBanAreasAsyncHandler;
@@ -806,6 +835,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyBatchIpAccessControlResponse> ModifyBatchIpAccessControlOutcome;
                 typedef std::future<ModifyBatchIpAccessControlOutcome> ModifyBatchIpAccessControlOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::ModifyBatchIpAccessControlRequest&, ModifyBatchIpAccessControlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyBatchIpAccessControlAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyBotIdRuleResponse> ModifyBotIdRuleOutcome;
+                typedef std::future<ModifyBotIdRuleOutcome> ModifyBotIdRuleOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::ModifyBotIdRuleRequest&, ModifyBotIdRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyBotIdRuleAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyBotSceneStatusResponse> ModifyBotSceneStatusOutcome;
                 typedef std::future<ModifyBotSceneStatusOutcome> ModifyBotSceneStatusOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::ModifyBotSceneStatusRequest&, ModifyBotSceneStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyBotSceneStatusAsyncHandler;
@@ -950,6 +982,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::UpdateProtectionModesResponse> UpdateProtectionModesOutcome;
                 typedef std::future<UpdateProtectionModesOutcome> UpdateProtectionModesOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::UpdateProtectionModesRequest&, UpdateProtectionModesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateProtectionModesAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpdateRateLimitV2Response> UpdateRateLimitV2Outcome;
+                typedef std::future<UpdateRateLimitV2Outcome> UpdateRateLimitV2OutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::UpdateRateLimitV2Request&, UpdateRateLimitV2Outcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateRateLimitV2AsyncHandler;
                 typedef Outcome<Core::Error, Model::UpsertCCAutoStatusResponse> UpsertCCAutoStatusOutcome;
                 typedef std::future<UpsertCCAutoStatusOutcome> UpsertCCAutoStatusOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::UpsertCCAutoStatusRequest&, UpsertCCAutoStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpsertCCAutoStatusAsyncHandler;
@@ -1137,6 +1172,15 @@ namespace TencentCloud
                 CreatePostCLSFlowOutcomeCallable CreatePostCLSFlowCallable(const Model::CreatePostCLSFlowRequest& request);
 
                 /**
+                 *创建限流规则
+                 * @param req CreateRateLimitV2Request
+                 * @return CreateRateLimitV2Outcome
+                 */
+                CreateRateLimitV2Outcome CreateRateLimitV2(const Model::CreateRateLimitV2Request &request);
+                void CreateRateLimitV2Async(const Model::CreateRateLimitV2Request& request, const CreateRateLimitV2AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateRateLimitV2OutcomeCallable CreateRateLimitV2Callable(const Model::CreateRateLimitV2Request& request);
+
+                /**
                  *本接口用于删除访问日志导出
                  * @param req DeleteAccessExportRequest
                  * @return DeleteAccessExportOutcome
@@ -1288,6 +1332,15 @@ namespace TencentCloud
                 DeleteOwaspWhiteRuleOutcome DeleteOwaspWhiteRule(const Model::DeleteOwaspWhiteRuleRequest &request);
                 void DeleteOwaspWhiteRuleAsync(const Model::DeleteOwaspWhiteRuleRequest& request, const DeleteOwaspWhiteRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteOwaspWhiteRuleOutcomeCallable DeleteOwaspWhiteRuleCallable(const Model::DeleteOwaspWhiteRuleRequest& request);
+
+                /**
+                 *删除自研版限流规则
+                 * @param req DeleteRateLimitsV2Request
+                 * @return DeleteRateLimitsV2Outcome
+                 */
+                DeleteRateLimitsV2Outcome DeleteRateLimitsV2(const Model::DeleteRateLimitsV2Request &request);
+                void DeleteRateLimitsV2Async(const Model::DeleteRateLimitsV2Request& request, const DeleteRateLimitsV2AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteRateLimitsV2OutcomeCallable DeleteRateLimitsV2Callable(const Model::DeleteRateLimitsV2Request& request);
 
                 /**
                  *删除CC攻击的session设置
@@ -1812,6 +1865,15 @@ namespace TencentCloud
                 DescribeProtectionModesOutcomeCallable DescribeProtectionModesCallable(const Model::DescribeProtectionModesRequest& request);
 
                 /**
+                 *查询限流规则列表接口
+                 * @param req DescribeRateLimitsV2Request
+                 * @return DescribeRateLimitsV2Outcome
+                 */
+                DescribeRateLimitsV2Outcome DescribeRateLimitsV2(const Model::DescribeRateLimitsV2Request &request);
+                void DescribeRateLimitsV2Async(const Model::DescribeRateLimitsV2Request& request, const DescribeRateLimitsV2AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRateLimitsV2OutcomeCallable DescribeRateLimitsV2Callable(const Model::DescribeRateLimitsV2Request& request);
+
+                /**
                  *获取各个模块具体的规格限制
                  * @param req DescribeRuleLimitRequest
                  * @return DescribeRuleLimitOutcome
@@ -2003,6 +2065,15 @@ namespace TencentCloud
                 DestroyPostCLSFlowOutcomeCallable DestroyPostCLSFlowCallable(const Model::DestroyPostCLSFlowRequest& request);
 
                 /**
+                 *批量更改自研版限流规则开关
+                 * @param req EnableRateLimitsV2Request
+                 * @return EnableRateLimitsV2Outcome
+                 */
+                EnableRateLimitsV2Outcome EnableRateLimitsV2(const Model::EnableRateLimitsV2Request &request);
+                void EnableRateLimitsV2Async(const Model::EnableRateLimitsV2Request& request, const EnableRateLimitsV2AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                EnableRateLimitsV2OutcomeCallable EnableRateLimitsV2Callable(const Model::EnableRateLimitsV2Request& request);
+
+                /**
                  *刷新防篡改url
                  * @param req FreshAntiFakeUrlRequest
                  * @return FreshAntiFakeUrlOutcome
@@ -2120,6 +2191,15 @@ namespace TencentCloud
                 ModifyApiSecEventChangeOutcomeCallable ModifyApiSecEventChangeCallable(const Model::ModifyApiSecEventChangeRequest& request);
 
                 /**
+                 *修改api安全敏感检测规则
+                 * @param req ModifyApiSecSensitiveRuleRequest
+                 * @return ModifyApiSecSensitiveRuleOutcome
+                 */
+                ModifyApiSecSensitiveRuleOutcome ModifyApiSecSensitiveRule(const Model::ModifyApiSecSensitiveRuleRequest &request);
+                void ModifyApiSecSensitiveRuleAsync(const Model::ModifyApiSecSensitiveRuleRequest& request, const ModifyApiSecSensitiveRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyApiSecSensitiveRuleOutcomeCallable ModifyApiSecSensitiveRuleCallable(const Model::ModifyApiSecSensitiveRuleRequest& request);
+
+                /**
                  *修改地域封禁中的地域信息
                  * @param req ModifyAreaBanAreasRequest
                  * @return ModifyAreaBanAreasOutcome
@@ -2163,6 +2243,15 @@ namespace TencentCloud
                 ModifyBatchIpAccessControlOutcome ModifyBatchIpAccessControl(const Model::ModifyBatchIpAccessControlRequest &request);
                 void ModifyBatchIpAccessControlAsync(const Model::ModifyBatchIpAccessControlRequest& request, const ModifyBatchIpAccessControlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyBatchIpAccessControlOutcomeCallable ModifyBatchIpAccessControlCallable(const Model::ModifyBatchIpAccessControlRequest& request);
+
+                /**
+                 *修改Bot-ID规则配置1
+                 * @param req ModifyBotIdRuleRequest
+                 * @return ModifyBotIdRuleOutcome
+                 */
+                ModifyBotIdRuleOutcome ModifyBotIdRule(const Model::ModifyBotIdRuleRequest &request);
+                void ModifyBotIdRuleAsync(const Model::ModifyBotIdRuleRequest& request, const ModifyBotIdRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyBotIdRuleOutcomeCallable ModifyBotIdRuleCallable(const Model::ModifyBotIdRuleRequest& request);
 
                 /**
                  *bot子场景开关
@@ -2599,6 +2688,15 @@ namespace TencentCloud
                 UpdateProtectionModesOutcome UpdateProtectionModes(const Model::UpdateProtectionModesRequest &request);
                 void UpdateProtectionModesAsync(const Model::UpdateProtectionModesRequest& request, const UpdateProtectionModesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 UpdateProtectionModesOutcomeCallable UpdateProtectionModesCallable(const Model::UpdateProtectionModesRequest& request);
+
+                /**
+                 *更新自研版限流规则
+                 * @param req UpdateRateLimitV2Request
+                 * @return UpdateRateLimitV2Outcome
+                 */
+                UpdateRateLimitV2Outcome UpdateRateLimitV2(const Model::UpdateRateLimitV2Request &request);
+                void UpdateRateLimitV2Async(const Model::UpdateRateLimitV2Request& request, const UpdateRateLimitV2AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdateRateLimitV2OutcomeCallable UpdateRateLimitV2Callable(const Model::UpdateRateLimitV2Request& request);
 
                 /**
                  *编辑SAAS型接入的紧急CC防护状态

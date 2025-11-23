@@ -88,6 +88,27 @@ namespace TencentCloud
                      */
                     bool LocalPathHasBeenSet() const;
 
+                    /**
+                     * 获取GooseFSx文件系统ID 文件系统ID通过调用接口[DescribeFileSystems](https://cloud.tencent.com/document/api/1424/95789)获取。
+                     * @return FileSystemId GooseFSx文件系统ID 文件系统ID通过调用接口[DescribeFileSystems](https://cloud.tencent.com/document/api/1424/95789)获取。
+                     * 
+                     */
+                    std::string GetFileSystemId() const;
+
+                    /**
+                     * 设置GooseFSx文件系统ID 文件系统ID通过调用接口[DescribeFileSystems](https://cloud.tencent.com/document/api/1424/95789)获取。
+                     * @param _fileSystemId GooseFSx文件系统ID 文件系统ID通过调用接口[DescribeFileSystems](https://cloud.tencent.com/document/api/1424/95789)获取。
+                     * 
+                     */
+                    void SetFileSystemId(const std::string& _fileSystemId);
+
+                    /**
+                     * 判断参数 FileSystemId 是否已赋值
+                     * @return FileSystemId 是否已赋值
+                     * 
+                     */
+                    bool FileSystemIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -101,6 +122,12 @@ namespace TencentCloud
                      */
                     std::string m_localPath;
                     bool m_localPathHasBeenSet;
+
+                    /**
+                     * GooseFSx文件系统ID 文件系统ID通过调用接口[DescribeFileSystems](https://cloud.tencent.com/document/api/1424/95789)获取。
+                     */
+                    std::string m_fileSystemId;
+                    bool m_fileSystemIdHasBeenSet;
 
                 };
             }

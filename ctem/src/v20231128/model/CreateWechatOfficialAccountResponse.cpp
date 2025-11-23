@@ -14,23 +14,21 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/iai/v20200303/model/DetectLiveFaceResponse.h>
+#include <tencentcloud/ctem/v20231128/model/CreateWechatOfficialAccountResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Iai::V20200303::Model;
+using namespace TencentCloud::Ctem::V20231128::Model;
 using namespace std;
 
-DetectLiveFaceResponse::DetectLiveFaceResponse() :
-    m_scoreHasBeenSet(false),
-    m_faceModelVersionHasBeenSet(false),
-    m_isLivenessHasBeenSet(false)
+CreateWechatOfficialAccountResponse::CreateWechatOfficialAccountResponse() :
+    m_idHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome DetectLiveFaceResponse::Deserialize(const string &payload)
+CoreInternalOutcome CreateWechatOfficialAccountResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -64,68 +62,32 @@ CoreInternalOutcome DetectLiveFaceResponse::Deserialize(const string &payload)
     }
 
 
-    if (rsp.HasMember("Score") && !rsp["Score"].IsNull())
+    if (rsp.HasMember("Id") && !rsp["Id"].IsNull())
     {
-        if (!rsp["Score"].IsLosslessDouble())
+        if (!rsp["Id"].IsInt64())
         {
-            return CoreInternalOutcome(Core::Error("response `Score` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Id` IsInt64=false incorrectly").SetRequestId(requestId));
         }
-        m_score = rsp["Score"].GetDouble();
-        m_scoreHasBeenSet = true;
-    }
-
-    if (rsp.HasMember("FaceModelVersion") && !rsp["FaceModelVersion"].IsNull())
-    {
-        if (!rsp["FaceModelVersion"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `FaceModelVersion` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_faceModelVersion = string(rsp["FaceModelVersion"].GetString());
-        m_faceModelVersionHasBeenSet = true;
-    }
-
-    if (rsp.HasMember("IsLiveness") && !rsp["IsLiveness"].IsNull())
-    {
-        if (!rsp["IsLiveness"].IsBool())
-        {
-            return CoreInternalOutcome(Core::Error("response `IsLiveness` IsBool=false incorrectly").SetRequestId(requestId));
-        }
-        m_isLiveness = rsp["IsLiveness"].GetBool();
-        m_isLivenessHasBeenSet = true;
+        m_id = rsp["Id"].GetInt64();
+        m_idHasBeenSet = true;
     }
 
 
     return CoreInternalOutcome(true);
 }
 
-string DetectLiveFaceResponse::ToJsonString() const
+string CreateWechatOfficialAccountResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
-    if (m_scoreHasBeenSet)
+    if (m_idHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Score";
+        string key = "Id";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_score, allocator);
-    }
-
-    if (m_faceModelVersionHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "FaceModelVersion";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_faceModelVersion.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_isLivenessHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "IsLiveness";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_isLiveness, allocator);
+        value.AddMember(iKey, m_id, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -140,34 +102,14 @@ string DetectLiveFaceResponse::ToJsonString() const
 }
 
 
-double DetectLiveFaceResponse::GetScore() const
+int64_t CreateWechatOfficialAccountResponse::GetId() const
 {
-    return m_score;
+    return m_id;
 }
 
-bool DetectLiveFaceResponse::ScoreHasBeenSet() const
+bool CreateWechatOfficialAccountResponse::IdHasBeenSet() const
 {
-    return m_scoreHasBeenSet;
-}
-
-string DetectLiveFaceResponse::GetFaceModelVersion() const
-{
-    return m_faceModelVersion;
-}
-
-bool DetectLiveFaceResponse::FaceModelVersionHasBeenSet() const
-{
-    return m_faceModelVersionHasBeenSet;
-}
-
-bool DetectLiveFaceResponse::GetIsLiveness() const
-{
-    return m_isLiveness;
-}
-
-bool DetectLiveFaceResponse::IsLivenessHasBeenSet() const
-{
-    return m_isLivenessHasBeenSet;
+    return m_idHasBeenSet;
 }
 
 

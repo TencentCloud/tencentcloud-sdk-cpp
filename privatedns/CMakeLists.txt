@@ -20,6 +20,7 @@ set(privatedns_public_header
 
 set(privatedns_public_header_model
   include/tencentcloud/privatedns/v20201028/model/QueryAsyncBindVpcStatusResponse.h
+  include/tencentcloud/privatedns/v20201028/model/CreatePrivateZoneRecordListRequest.h
   include/tencentcloud/privatedns/v20201028/model/SubnetIpInfo.h
   include/tencentcloud/privatedns/v20201028/model/DescribeAccountVpcListRequest.h
   include/tencentcloud/privatedns/v20201028/model/AccountVpcInfoOutput.h
@@ -27,10 +28,13 @@ set(privatedns_public_header_model
   include/tencentcloud/privatedns/v20201028/model/DescribeAccountVpcListResponse.h
   include/tencentcloud/privatedns/v20201028/model/DeletePrivateDNSAccountRequest.h
   include/tencentcloud/privatedns/v20201028/model/AddSpecifyPrivateZoneVpcRequest.h
+  include/tencentcloud/privatedns/v20201028/model/DescribeCreateRecordListResultResponse.h
   include/tencentcloud/privatedns/v20201028/model/ModifyInboundEndpointRequest.h
   include/tencentcloud/privatedns/v20201028/model/VpcInfo.h
   include/tencentcloud/privatedns/v20201028/model/CreatePrivateDNSAccountResponse.h
   include/tencentcloud/privatedns/v20201028/model/SubscribePrivateZoneServiceRequest.h
+  include/tencentcloud/privatedns/v20201028/model/DescribeCreateZoneListResultResponse.h
+  include/tencentcloud/privatedns/v20201028/model/ZoneInfo.h
   include/tencentcloud/privatedns/v20201028/model/PrivateZone.h
   include/tencentcloud/privatedns/v20201028/model/CreatePrivateDNSAccountRequest.h
   include/tencentcloud/privatedns/v20201028/model/FlowUsage.h
@@ -38,6 +42,7 @@ set(privatedns_public_header_model
   include/tencentcloud/privatedns/v20201028/model/ModifyPrivateZoneVpcRequest.h
   include/tencentcloud/privatedns/v20201028/model/DescribePrivateDNSAccountListResponse.h
   include/tencentcloud/privatedns/v20201028/model/CreateExtendEndpointRequest.h
+  include/tencentcloud/privatedns/v20201028/model/DescribeCreateRecordListResultRequest.h
   include/tencentcloud/privatedns/v20201028/model/PrivateZoneRecord.h
   include/tencentcloud/privatedns/v20201028/model/CreatePrivateZoneRecordRequest.h
   include/tencentcloud/privatedns/v20201028/model/ModifyPrivateZoneRecordResponse.h
@@ -50,8 +55,8 @@ set(privatedns_public_header_model
   include/tencentcloud/privatedns/v20201028/model/DeleteSpecifyPrivateZoneVpcRequest.h
   include/tencentcloud/privatedns/v20201028/model/ModifyPrivateZoneRequest.h
   include/tencentcloud/privatedns/v20201028/model/DescribeRecordResponse.h
-  include/tencentcloud/privatedns/v20201028/model/RecordInfo.h
   include/tencentcloud/privatedns/v20201028/model/DescribeDashboardResponse.h
+  include/tencentcloud/privatedns/v20201028/model/RecordInfo.h
   include/tencentcloud/privatedns/v20201028/model/ModifyForwardRuleResponse.h
   include/tencentcloud/privatedns/v20201028/model/SubscribePrivateZoneServiceResponse.h
   include/tencentcloud/privatedns/v20201028/model/AuditLogInfo.h
@@ -71,22 +76,28 @@ set(privatedns_public_header_model
   include/tencentcloud/privatedns/v20201028/model/DescribePrivateZoneListRequest.h
   include/tencentcloud/privatedns/v20201028/model/DescribeExtendEndpointListRequest.h
   include/tencentcloud/privatedns/v20201028/model/InboundEndpointSet.h
+  include/tencentcloud/privatedns/v20201028/model/CreatePrivateZoneRecordListResponse.h
   include/tencentcloud/privatedns/v20201028/model/AccountVpcInfoOut.h
+  include/tencentcloud/privatedns/v20201028/model/RecordsInfoResult.h
   include/tencentcloud/privatedns/v20201028/model/CreatePrivateZoneRequest.h
   include/tencentcloud/privatedns/v20201028/model/ModifyForwardRuleRequest.h
   include/tencentcloud/privatedns/v20201028/model/DescribePrivateZoneResponse.h
   include/tencentcloud/privatedns/v20201028/model/DescribeRequestDataRequest.h
   include/tencentcloud/privatedns/v20201028/model/DescribePrivateZoneServiceResponse.h
   include/tencentcloud/privatedns/v20201028/model/DescribeDashboardRequest.h
+  include/tencentcloud/privatedns/v20201028/model/RecordsInfoStatus.h
   include/tencentcloud/privatedns/v20201028/model/DescribeInboundEndpointListResponse.h
   include/tencentcloud/privatedns/v20201028/model/DeletePrivateZoneResponse.h
+  include/tencentcloud/privatedns/v20201028/model/RecordsInfo.h
   include/tencentcloud/privatedns/v20201028/model/DescribePrivateZoneListResponse.h
   include/tencentcloud/privatedns/v20201028/model/DescribePrivateZoneServiceRequest.h
+  include/tencentcloud/privatedns/v20201028/model/CreatePrivateZoneListResponse.h
   include/tencentcloud/privatedns/v20201028/model/DeleteInboundEndpointRequest.h
   include/tencentcloud/privatedns/v20201028/model/ModifyPrivateZoneVpcResponse.h
   include/tencentcloud/privatedns/v20201028/model/DescribeQuotaUsageResponse.h
   include/tencentcloud/privatedns/v20201028/model/DescribeAuditLogResponse.h
   include/tencentcloud/privatedns/v20201028/model/CreateForwardRuleRequest.h
+  include/tencentcloud/privatedns/v20201028/model/CreatePrivateZoneListRequest.h
   include/tencentcloud/privatedns/v20201028/model/AddSpecifyPrivateZoneVpcResponse.h
   include/tencentcloud/privatedns/v20201028/model/CreateExtendEndpointResponse.h
   include/tencentcloud/privatedns/v20201028/model/CreateInboundEndpointRequest.h
@@ -94,6 +105,7 @@ set(privatedns_public_header_model
   include/tencentcloud/privatedns/v20201028/model/TldQuota.h
   include/tencentcloud/privatedns/v20201028/model/AccountVpcInfo.h
   include/tencentcloud/privatedns/v20201028/model/ForwardRule.h
+  include/tencentcloud/privatedns/v20201028/model/DescribeCreateZoneListResultRequest.h
   include/tencentcloud/privatedns/v20201028/model/CreatePrivateZoneResponse.h
   include/tencentcloud/privatedns/v20201028/model/CreatePrivateZoneRecordResponse.h
   include/tencentcloud/privatedns/v20201028/model/DescribeForwardRuleListResponse.h
@@ -108,14 +120,15 @@ set(privatedns_public_header_model
   include/tencentcloud/privatedns/v20201028/model/DeleteForwardRuleResponse.h
   include/tencentcloud/privatedns/v20201028/model/ModifyInboundEndpointResponse.h
   include/tencentcloud/privatedns/v20201028/model/MetricData.h
-  include/tencentcloud/privatedns/v20201028/model/DeletePrivateZoneRecordResponse.h
-  include/tencentcloud/privatedns/v20201028/model/DeletePrivateDNSAccountResponse.h
   include/tencentcloud/privatedns/v20201028/model/QueryAsyncBindVpcStatusRequest.h
+  include/tencentcloud/privatedns/v20201028/model/DeletePrivateDNSAccountResponse.h
+  include/tencentcloud/privatedns/v20201028/model/DeletePrivateZoneRecordResponse.h
   )
 
 set(privatedns_src
   src/v20201028/PrivatednsClient.cpp
   src/v20201028/model/QueryAsyncBindVpcStatusResponse.cpp
+  src/v20201028/model/CreatePrivateZoneRecordListRequest.cpp
   src/v20201028/model/SubnetIpInfo.cpp
   src/v20201028/model/DescribeAccountVpcListRequest.cpp
   src/v20201028/model/AccountVpcInfoOutput.cpp
@@ -123,10 +136,13 @@ set(privatedns_src
   src/v20201028/model/DescribeAccountVpcListResponse.cpp
   src/v20201028/model/DeletePrivateDNSAccountRequest.cpp
   src/v20201028/model/AddSpecifyPrivateZoneVpcRequest.cpp
+  src/v20201028/model/DescribeCreateRecordListResultResponse.cpp
   src/v20201028/model/ModifyInboundEndpointRequest.cpp
   src/v20201028/model/VpcInfo.cpp
   src/v20201028/model/CreatePrivateDNSAccountResponse.cpp
   src/v20201028/model/SubscribePrivateZoneServiceRequest.cpp
+  src/v20201028/model/DescribeCreateZoneListResultResponse.cpp
+  src/v20201028/model/ZoneInfo.cpp
   src/v20201028/model/PrivateZone.cpp
   src/v20201028/model/CreatePrivateDNSAccountRequest.cpp
   src/v20201028/model/FlowUsage.cpp
@@ -134,6 +150,7 @@ set(privatedns_src
   src/v20201028/model/ModifyPrivateZoneVpcRequest.cpp
   src/v20201028/model/DescribePrivateDNSAccountListResponse.cpp
   src/v20201028/model/CreateExtendEndpointRequest.cpp
+  src/v20201028/model/DescribeCreateRecordListResultRequest.cpp
   src/v20201028/model/PrivateZoneRecord.cpp
   src/v20201028/model/CreatePrivateZoneRecordRequest.cpp
   src/v20201028/model/ModifyPrivateZoneRecordResponse.cpp
@@ -146,8 +163,8 @@ set(privatedns_src
   src/v20201028/model/DeleteSpecifyPrivateZoneVpcRequest.cpp
   src/v20201028/model/ModifyPrivateZoneRequest.cpp
   src/v20201028/model/DescribeRecordResponse.cpp
-  src/v20201028/model/RecordInfo.cpp
   src/v20201028/model/DescribeDashboardResponse.cpp
+  src/v20201028/model/RecordInfo.cpp
   src/v20201028/model/ModifyForwardRuleResponse.cpp
   src/v20201028/model/SubscribePrivateZoneServiceResponse.cpp
   src/v20201028/model/AuditLogInfo.cpp
@@ -167,22 +184,28 @@ set(privatedns_src
   src/v20201028/model/DescribePrivateZoneListRequest.cpp
   src/v20201028/model/DescribeExtendEndpointListRequest.cpp
   src/v20201028/model/InboundEndpointSet.cpp
+  src/v20201028/model/CreatePrivateZoneRecordListResponse.cpp
   src/v20201028/model/AccountVpcInfoOut.cpp
+  src/v20201028/model/RecordsInfoResult.cpp
   src/v20201028/model/CreatePrivateZoneRequest.cpp
   src/v20201028/model/ModifyForwardRuleRequest.cpp
   src/v20201028/model/DescribePrivateZoneResponse.cpp
   src/v20201028/model/DescribeRequestDataRequest.cpp
   src/v20201028/model/DescribePrivateZoneServiceResponse.cpp
   src/v20201028/model/DescribeDashboardRequest.cpp
+  src/v20201028/model/RecordsInfoStatus.cpp
   src/v20201028/model/DescribeInboundEndpointListResponse.cpp
   src/v20201028/model/DeletePrivateZoneResponse.cpp
+  src/v20201028/model/RecordsInfo.cpp
   src/v20201028/model/DescribePrivateZoneListResponse.cpp
   src/v20201028/model/DescribePrivateZoneServiceRequest.cpp
+  src/v20201028/model/CreatePrivateZoneListResponse.cpp
   src/v20201028/model/DeleteInboundEndpointRequest.cpp
   src/v20201028/model/ModifyPrivateZoneVpcResponse.cpp
   src/v20201028/model/DescribeQuotaUsageResponse.cpp
   src/v20201028/model/DescribeAuditLogResponse.cpp
   src/v20201028/model/CreateForwardRuleRequest.cpp
+  src/v20201028/model/CreatePrivateZoneListRequest.cpp
   src/v20201028/model/AddSpecifyPrivateZoneVpcResponse.cpp
   src/v20201028/model/CreateExtendEndpointResponse.cpp
   src/v20201028/model/CreateInboundEndpointRequest.cpp
@@ -190,6 +213,7 @@ set(privatedns_src
   src/v20201028/model/TldQuota.cpp
   src/v20201028/model/AccountVpcInfo.cpp
   src/v20201028/model/ForwardRule.cpp
+  src/v20201028/model/DescribeCreateZoneListResultRequest.cpp
   src/v20201028/model/CreatePrivateZoneResponse.cpp
   src/v20201028/model/CreatePrivateZoneRecordResponse.cpp
   src/v20201028/model/DescribeForwardRuleListResponse.cpp
@@ -204,9 +228,9 @@ set(privatedns_src
   src/v20201028/model/DeleteForwardRuleResponse.cpp
   src/v20201028/model/ModifyInboundEndpointResponse.cpp
   src/v20201028/model/MetricData.cpp
-  src/v20201028/model/DeletePrivateZoneRecordResponse.cpp
-  src/v20201028/model/DeletePrivateDNSAccountResponse.cpp
   src/v20201028/model/QueryAsyncBindVpcStatusRequest.cpp
+  src/v20201028/model/DeletePrivateDNSAccountResponse.cpp
+  src/v20201028/model/DeletePrivateZoneRecordResponse.cpp
   )
 
 set(privatedns_include

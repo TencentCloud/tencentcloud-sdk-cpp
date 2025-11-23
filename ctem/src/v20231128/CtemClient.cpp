@@ -40,6 +40,106 @@ CtemClient::CtemClient(const Credential &credential, const string &region, const
 }
 
 
+CtemClient::CreateAppOutcome CtemClient::CreateApp(const CreateAppRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateApp");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateAppResponse rsp = CreateAppResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateAppOutcome(rsp);
+        else
+            return CreateAppOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateAppOutcome(outcome.GetError());
+    }
+}
+
+void CtemClient::CreateAppAsync(const CreateAppRequest& request, const CreateAppAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateAppRequest&;
+    using Resp = CreateAppResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateApp", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CtemClient::CreateAppOutcomeCallable CtemClient::CreateAppCallable(const CreateAppRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateAppOutcome>>();
+    CreateAppAsync(
+    request,
+    [prom](
+        const CtemClient*,
+        const CreateAppRequest&,
+        CreateAppOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CtemClient::CreateAssetOutcome CtemClient::CreateAsset(const CreateAssetRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateAsset");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateAssetResponse rsp = CreateAssetResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateAssetOutcome(rsp);
+        else
+            return CreateAssetOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateAssetOutcome(outcome.GetError());
+    }
+}
+
+void CtemClient::CreateAssetAsync(const CreateAssetRequest& request, const CreateAssetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateAssetRequest&;
+    using Resp = CreateAssetResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateAsset", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CtemClient::CreateAssetOutcomeCallable CtemClient::CreateAssetCallable(const CreateAssetRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateAssetOutcome>>();
+    CreateAssetAsync(
+    request,
+    [prom](
+        const CtemClient*,
+        const CreateAssetRequest&,
+        CreateAssetOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 CtemClient::CreateCustomerOutcome CtemClient::CreateCustomer(const CreateCustomerRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateCustomer");
@@ -82,6 +182,56 @@ CtemClient::CreateCustomerOutcomeCallable CtemClient::CreateCustomerCallable(con
         const CtemClient*,
         const CreateCustomerRequest&,
         CreateCustomerOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CtemClient::CreateDomainOutcome CtemClient::CreateDomain(const CreateDomainRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateDomain");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateDomainResponse rsp = CreateDomainResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateDomainOutcome(rsp);
+        else
+            return CreateDomainOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateDomainOutcome(outcome.GetError());
+    }
+}
+
+void CtemClient::CreateDomainAsync(const CreateDomainRequest& request, const CreateDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateDomainRequest&;
+    using Resp = CreateDomainResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateDomain", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CtemClient::CreateDomainOutcomeCallable CtemClient::CreateDomainCallable(const CreateDomainRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateDomainOutcome>>();
+    CreateDomainAsync(
+    request,
+    [prom](
+        const CtemClient*,
+        const CreateDomainRequest&,
+        CreateDomainOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -140,6 +290,56 @@ CtemClient::CreateEnterpriseOutcomeCallable CtemClient::CreateEnterpriseCallable
     return prom->get_future();
 }
 
+CtemClient::CreateHttpOutcome CtemClient::CreateHttp(const CreateHttpRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateHttp");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateHttpResponse rsp = CreateHttpResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateHttpOutcome(rsp);
+        else
+            return CreateHttpOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateHttpOutcome(outcome.GetError());
+    }
+}
+
+void CtemClient::CreateHttpAsync(const CreateHttpRequest& request, const CreateHttpAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateHttpRequest&;
+    using Resp = CreateHttpResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateHttp", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CtemClient::CreateHttpOutcomeCallable CtemClient::CreateHttpCallable(const CreateHttpRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateHttpOutcome>>();
+    CreateHttpAsync(
+    request,
+    [prom](
+        const CtemClient*,
+        const CreateHttpRequest&,
+        CreateHttpOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 CtemClient::CreateJobRecordOutcome CtemClient::CreateJobRecord(const CreateJobRecordRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateJobRecord");
@@ -182,6 +382,956 @@ CtemClient::CreateJobRecordOutcomeCallable CtemClient::CreateJobRecordCallable(c
         const CtemClient*,
         const CreateJobRecordRequest&,
         CreateJobRecordOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CtemClient::CreateManageOutcome CtemClient::CreateManage(const CreateManageRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateManage");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateManageResponse rsp = CreateManageResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateManageOutcome(rsp);
+        else
+            return CreateManageOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateManageOutcome(outcome.GetError());
+    }
+}
+
+void CtemClient::CreateManageAsync(const CreateManageRequest& request, const CreateManageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateManageRequest&;
+    using Resp = CreateManageResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateManage", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CtemClient::CreateManageOutcomeCallable CtemClient::CreateManageCallable(const CreateManageRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateManageOutcome>>();
+    CreateManageAsync(
+    request,
+    [prom](
+        const CtemClient*,
+        const CreateManageRequest&,
+        CreateManageOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CtemClient::CreatePortOutcome CtemClient::CreatePort(const CreatePortRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreatePort");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreatePortResponse rsp = CreatePortResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreatePortOutcome(rsp);
+        else
+            return CreatePortOutcome(o.GetError());
+    }
+    else
+    {
+        return CreatePortOutcome(outcome.GetError());
+    }
+}
+
+void CtemClient::CreatePortAsync(const CreatePortRequest& request, const CreatePortAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreatePortRequest&;
+    using Resp = CreatePortResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreatePort", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CtemClient::CreatePortOutcomeCallable CtemClient::CreatePortCallable(const CreatePortRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreatePortOutcome>>();
+    CreatePortAsync(
+    request,
+    [prom](
+        const CtemClient*,
+        const CreatePortRequest&,
+        CreatePortOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CtemClient::CreateSeedsOutcome CtemClient::CreateSeeds(const CreateSeedsRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateSeeds");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateSeedsResponse rsp = CreateSeedsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateSeedsOutcome(rsp);
+        else
+            return CreateSeedsOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateSeedsOutcome(outcome.GetError());
+    }
+}
+
+void CtemClient::CreateSeedsAsync(const CreateSeedsRequest& request, const CreateSeedsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateSeedsRequest&;
+    using Resp = CreateSeedsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateSeeds", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CtemClient::CreateSeedsOutcomeCallable CtemClient::CreateSeedsCallable(const CreateSeedsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateSeedsOutcome>>();
+    CreateSeedsAsync(
+    request,
+    [prom](
+        const CtemClient*,
+        const CreateSeedsRequest&,
+        CreateSeedsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CtemClient::CreateSubDomainOutcome CtemClient::CreateSubDomain(const CreateSubDomainRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateSubDomain");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateSubDomainResponse rsp = CreateSubDomainResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateSubDomainOutcome(rsp);
+        else
+            return CreateSubDomainOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateSubDomainOutcome(outcome.GetError());
+    }
+}
+
+void CtemClient::CreateSubDomainAsync(const CreateSubDomainRequest& request, const CreateSubDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateSubDomainRequest&;
+    using Resp = CreateSubDomainResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateSubDomain", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CtemClient::CreateSubDomainOutcomeCallable CtemClient::CreateSubDomainCallable(const CreateSubDomainRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateSubDomainOutcome>>();
+    CreateSubDomainAsync(
+    request,
+    [prom](
+        const CtemClient*,
+        const CreateSubDomainRequest&,
+        CreateSubDomainOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CtemClient::CreateSuspiciousAssetOutcome CtemClient::CreateSuspiciousAsset(const CreateSuspiciousAssetRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateSuspiciousAsset");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateSuspiciousAssetResponse rsp = CreateSuspiciousAssetResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateSuspiciousAssetOutcome(rsp);
+        else
+            return CreateSuspiciousAssetOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateSuspiciousAssetOutcome(outcome.GetError());
+    }
+}
+
+void CtemClient::CreateSuspiciousAssetAsync(const CreateSuspiciousAssetRequest& request, const CreateSuspiciousAssetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateSuspiciousAssetRequest&;
+    using Resp = CreateSuspiciousAssetResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateSuspiciousAsset", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CtemClient::CreateSuspiciousAssetOutcomeCallable CtemClient::CreateSuspiciousAssetCallable(const CreateSuspiciousAssetRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateSuspiciousAssetOutcome>>();
+    CreateSuspiciousAssetAsync(
+    request,
+    [prom](
+        const CtemClient*,
+        const CreateSuspiciousAssetRequest&,
+        CreateSuspiciousAssetOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CtemClient::CreateWechatAppletOutcome CtemClient::CreateWechatApplet(const CreateWechatAppletRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateWechatApplet");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateWechatAppletResponse rsp = CreateWechatAppletResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateWechatAppletOutcome(rsp);
+        else
+            return CreateWechatAppletOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateWechatAppletOutcome(outcome.GetError());
+    }
+}
+
+void CtemClient::CreateWechatAppletAsync(const CreateWechatAppletRequest& request, const CreateWechatAppletAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateWechatAppletRequest&;
+    using Resp = CreateWechatAppletResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateWechatApplet", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CtemClient::CreateWechatAppletOutcomeCallable CtemClient::CreateWechatAppletCallable(const CreateWechatAppletRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateWechatAppletOutcome>>();
+    CreateWechatAppletAsync(
+    request,
+    [prom](
+        const CtemClient*,
+        const CreateWechatAppletRequest&,
+        CreateWechatAppletOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CtemClient::CreateWechatOfficialAccountOutcome CtemClient::CreateWechatOfficialAccount(const CreateWechatOfficialAccountRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateWechatOfficialAccount");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateWechatOfficialAccountResponse rsp = CreateWechatOfficialAccountResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateWechatOfficialAccountOutcome(rsp);
+        else
+            return CreateWechatOfficialAccountOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateWechatOfficialAccountOutcome(outcome.GetError());
+    }
+}
+
+void CtemClient::CreateWechatOfficialAccountAsync(const CreateWechatOfficialAccountRequest& request, const CreateWechatOfficialAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateWechatOfficialAccountRequest&;
+    using Resp = CreateWechatOfficialAccountResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateWechatOfficialAccount", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CtemClient::CreateWechatOfficialAccountOutcomeCallable CtemClient::CreateWechatOfficialAccountCallable(const CreateWechatOfficialAccountRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateWechatOfficialAccountOutcome>>();
+    CreateWechatOfficialAccountAsync(
+    request,
+    [prom](
+        const CtemClient*,
+        const CreateWechatOfficialAccountRequest&,
+        CreateWechatOfficialAccountOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CtemClient::DeleteAppsOutcome CtemClient::DeleteApps(const DeleteAppsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteApps");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteAppsResponse rsp = DeleteAppsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteAppsOutcome(rsp);
+        else
+            return DeleteAppsOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteAppsOutcome(outcome.GetError());
+    }
+}
+
+void CtemClient::DeleteAppsAsync(const DeleteAppsRequest& request, const DeleteAppsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteAppsRequest&;
+    using Resp = DeleteAppsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteApps", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CtemClient::DeleteAppsOutcomeCallable CtemClient::DeleteAppsCallable(const DeleteAppsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteAppsOutcome>>();
+    DeleteAppsAsync(
+    request,
+    [prom](
+        const CtemClient*,
+        const DeleteAppsRequest&,
+        DeleteAppsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CtemClient::DeleteAssetsOutcome CtemClient::DeleteAssets(const DeleteAssetsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteAssets");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteAssetsResponse rsp = DeleteAssetsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteAssetsOutcome(rsp);
+        else
+            return DeleteAssetsOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteAssetsOutcome(outcome.GetError());
+    }
+}
+
+void CtemClient::DeleteAssetsAsync(const DeleteAssetsRequest& request, const DeleteAssetsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteAssetsRequest&;
+    using Resp = DeleteAssetsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteAssets", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CtemClient::DeleteAssetsOutcomeCallable CtemClient::DeleteAssetsCallable(const DeleteAssetsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteAssetsOutcome>>();
+    DeleteAssetsAsync(
+    request,
+    [prom](
+        const CtemClient*,
+        const DeleteAssetsRequest&,
+        DeleteAssetsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CtemClient::DeleteDomainsOutcome CtemClient::DeleteDomains(const DeleteDomainsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteDomains");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteDomainsResponse rsp = DeleteDomainsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteDomainsOutcome(rsp);
+        else
+            return DeleteDomainsOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteDomainsOutcome(outcome.GetError());
+    }
+}
+
+void CtemClient::DeleteDomainsAsync(const DeleteDomainsRequest& request, const DeleteDomainsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteDomainsRequest&;
+    using Resp = DeleteDomainsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteDomains", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CtemClient::DeleteDomainsOutcomeCallable CtemClient::DeleteDomainsCallable(const DeleteDomainsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteDomainsOutcome>>();
+    DeleteDomainsAsync(
+    request,
+    [prom](
+        const CtemClient*,
+        const DeleteDomainsRequest&,
+        DeleteDomainsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CtemClient::DeleteEnterprisesOutcome CtemClient::DeleteEnterprises(const DeleteEnterprisesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteEnterprises");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteEnterprisesResponse rsp = DeleteEnterprisesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteEnterprisesOutcome(rsp);
+        else
+            return DeleteEnterprisesOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteEnterprisesOutcome(outcome.GetError());
+    }
+}
+
+void CtemClient::DeleteEnterprisesAsync(const DeleteEnterprisesRequest& request, const DeleteEnterprisesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteEnterprisesRequest&;
+    using Resp = DeleteEnterprisesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteEnterprises", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CtemClient::DeleteEnterprisesOutcomeCallable CtemClient::DeleteEnterprisesCallable(const DeleteEnterprisesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteEnterprisesOutcome>>();
+    DeleteEnterprisesAsync(
+    request,
+    [prom](
+        const CtemClient*,
+        const DeleteEnterprisesRequest&,
+        DeleteEnterprisesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CtemClient::DeleteHttpsOutcome CtemClient::DeleteHttps(const DeleteHttpsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteHttps");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteHttpsResponse rsp = DeleteHttpsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteHttpsOutcome(rsp);
+        else
+            return DeleteHttpsOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteHttpsOutcome(outcome.GetError());
+    }
+}
+
+void CtemClient::DeleteHttpsAsync(const DeleteHttpsRequest& request, const DeleteHttpsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteHttpsRequest&;
+    using Resp = DeleteHttpsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteHttps", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CtemClient::DeleteHttpsOutcomeCallable CtemClient::DeleteHttpsCallable(const DeleteHttpsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteHttpsOutcome>>();
+    DeleteHttpsAsync(
+    request,
+    [prom](
+        const CtemClient*,
+        const DeleteHttpsRequest&,
+        DeleteHttpsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CtemClient::DeleteManagesOutcome CtemClient::DeleteManages(const DeleteManagesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteManages");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteManagesResponse rsp = DeleteManagesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteManagesOutcome(rsp);
+        else
+            return DeleteManagesOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteManagesOutcome(outcome.GetError());
+    }
+}
+
+void CtemClient::DeleteManagesAsync(const DeleteManagesRequest& request, const DeleteManagesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteManagesRequest&;
+    using Resp = DeleteManagesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteManages", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CtemClient::DeleteManagesOutcomeCallable CtemClient::DeleteManagesCallable(const DeleteManagesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteManagesOutcome>>();
+    DeleteManagesAsync(
+    request,
+    [prom](
+        const CtemClient*,
+        const DeleteManagesRequest&,
+        DeleteManagesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CtemClient::DeletePortsOutcome CtemClient::DeletePorts(const DeletePortsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeletePorts");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeletePortsResponse rsp = DeletePortsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeletePortsOutcome(rsp);
+        else
+            return DeletePortsOutcome(o.GetError());
+    }
+    else
+    {
+        return DeletePortsOutcome(outcome.GetError());
+    }
+}
+
+void CtemClient::DeletePortsAsync(const DeletePortsRequest& request, const DeletePortsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeletePortsRequest&;
+    using Resp = DeletePortsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeletePorts", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CtemClient::DeletePortsOutcomeCallable CtemClient::DeletePortsCallable(const DeletePortsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeletePortsOutcome>>();
+    DeletePortsAsync(
+    request,
+    [prom](
+        const CtemClient*,
+        const DeletePortsRequest&,
+        DeletePortsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CtemClient::DeleteSeedsOutcome CtemClient::DeleteSeeds(const DeleteSeedsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteSeeds");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteSeedsResponse rsp = DeleteSeedsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteSeedsOutcome(rsp);
+        else
+            return DeleteSeedsOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteSeedsOutcome(outcome.GetError());
+    }
+}
+
+void CtemClient::DeleteSeedsAsync(const DeleteSeedsRequest& request, const DeleteSeedsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteSeedsRequest&;
+    using Resp = DeleteSeedsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteSeeds", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CtemClient::DeleteSeedsOutcomeCallable CtemClient::DeleteSeedsCallable(const DeleteSeedsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteSeedsOutcome>>();
+    DeleteSeedsAsync(
+    request,
+    [prom](
+        const CtemClient*,
+        const DeleteSeedsRequest&,
+        DeleteSeedsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CtemClient::DeleteSubDomainsOutcome CtemClient::DeleteSubDomains(const DeleteSubDomainsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteSubDomains");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteSubDomainsResponse rsp = DeleteSubDomainsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteSubDomainsOutcome(rsp);
+        else
+            return DeleteSubDomainsOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteSubDomainsOutcome(outcome.GetError());
+    }
+}
+
+void CtemClient::DeleteSubDomainsAsync(const DeleteSubDomainsRequest& request, const DeleteSubDomainsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteSubDomainsRequest&;
+    using Resp = DeleteSubDomainsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteSubDomains", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CtemClient::DeleteSubDomainsOutcomeCallable CtemClient::DeleteSubDomainsCallable(const DeleteSubDomainsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteSubDomainsOutcome>>();
+    DeleteSubDomainsAsync(
+    request,
+    [prom](
+        const CtemClient*,
+        const DeleteSubDomainsRequest&,
+        DeleteSubDomainsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CtemClient::DeleteSuspiciousAssetsOutcome CtemClient::DeleteSuspiciousAssets(const DeleteSuspiciousAssetsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteSuspiciousAssets");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteSuspiciousAssetsResponse rsp = DeleteSuspiciousAssetsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteSuspiciousAssetsOutcome(rsp);
+        else
+            return DeleteSuspiciousAssetsOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteSuspiciousAssetsOutcome(outcome.GetError());
+    }
+}
+
+void CtemClient::DeleteSuspiciousAssetsAsync(const DeleteSuspiciousAssetsRequest& request, const DeleteSuspiciousAssetsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteSuspiciousAssetsRequest&;
+    using Resp = DeleteSuspiciousAssetsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteSuspiciousAssets", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CtemClient::DeleteSuspiciousAssetsOutcomeCallable CtemClient::DeleteSuspiciousAssetsCallable(const DeleteSuspiciousAssetsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteSuspiciousAssetsOutcome>>();
+    DeleteSuspiciousAssetsAsync(
+    request,
+    [prom](
+        const CtemClient*,
+        const DeleteSuspiciousAssetsRequest&,
+        DeleteSuspiciousAssetsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CtemClient::DeleteWechatAppletsOutcome CtemClient::DeleteWechatApplets(const DeleteWechatAppletsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteWechatApplets");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteWechatAppletsResponse rsp = DeleteWechatAppletsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteWechatAppletsOutcome(rsp);
+        else
+            return DeleteWechatAppletsOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteWechatAppletsOutcome(outcome.GetError());
+    }
+}
+
+void CtemClient::DeleteWechatAppletsAsync(const DeleteWechatAppletsRequest& request, const DeleteWechatAppletsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteWechatAppletsRequest&;
+    using Resp = DeleteWechatAppletsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteWechatApplets", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CtemClient::DeleteWechatAppletsOutcomeCallable CtemClient::DeleteWechatAppletsCallable(const DeleteWechatAppletsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteWechatAppletsOutcome>>();
+    DeleteWechatAppletsAsync(
+    request,
+    [prom](
+        const CtemClient*,
+        const DeleteWechatAppletsRequest&,
+        DeleteWechatAppletsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CtemClient::DeleteWechatOfficialAccountsOutcome CtemClient::DeleteWechatOfficialAccounts(const DeleteWechatOfficialAccountsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteWechatOfficialAccounts");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteWechatOfficialAccountsResponse rsp = DeleteWechatOfficialAccountsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteWechatOfficialAccountsOutcome(rsp);
+        else
+            return DeleteWechatOfficialAccountsOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteWechatOfficialAccountsOutcome(outcome.GetError());
+    }
+}
+
+void CtemClient::DeleteWechatOfficialAccountsAsync(const DeleteWechatOfficialAccountsRequest& request, const DeleteWechatOfficialAccountsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteWechatOfficialAccountsRequest&;
+    using Resp = DeleteWechatOfficialAccountsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteWechatOfficialAccounts", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CtemClient::DeleteWechatOfficialAccountsOutcomeCallable CtemClient::DeleteWechatOfficialAccountsCallable(const DeleteWechatOfficialAccountsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteWechatOfficialAccountsOutcome>>();
+    DeleteWechatOfficialAccountsAsync(
+    request,
+    [prom](
+        const CtemClient*,
+        const DeleteWechatOfficialAccountsRequest&,
+        DeleteWechatOfficialAccountsOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -1290,6 +2440,56 @@ CtemClient::DescribePortsOutcomeCallable CtemClient::DescribePortsCallable(const
     return prom->get_future();
 }
 
+CtemClient::DescribeSeedsOutcome CtemClient::DescribeSeeds(const DescribeSeedsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSeeds");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSeedsResponse rsp = DescribeSeedsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSeedsOutcome(rsp);
+        else
+            return DescribeSeedsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSeedsOutcome(outcome.GetError());
+    }
+}
+
+void CtemClient::DescribeSeedsAsync(const DescribeSeedsRequest& request, const DescribeSeedsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeSeedsRequest&;
+    using Resp = DescribeSeedsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeSeeds", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CtemClient::DescribeSeedsOutcomeCallable CtemClient::DescribeSeedsCallable(const DescribeSeedsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeSeedsOutcome>>();
+    DescribeSeedsAsync(
+    request,
+    [prom](
+        const CtemClient*,
+        const DescribeSeedsRequest&,
+        DescribeSeedsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 CtemClient::DescribeSensitiveInfosOutcome CtemClient::DescribeSensitiveInfos(const DescribeSensitiveInfosRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeSensitiveInfos");
@@ -1640,6 +2840,56 @@ CtemClient::DescribeWechatOfficialAccountsOutcomeCallable CtemClient::DescribeWe
     return prom->get_future();
 }
 
+CtemClient::IgnoreDataOutcome CtemClient::IgnoreData(const IgnoreDataRequest &request)
+{
+    auto outcome = MakeRequest(request, "IgnoreData");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        IgnoreDataResponse rsp = IgnoreDataResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return IgnoreDataOutcome(rsp);
+        else
+            return IgnoreDataOutcome(o.GetError());
+    }
+    else
+    {
+        return IgnoreDataOutcome(outcome.GetError());
+    }
+}
+
+void CtemClient::IgnoreDataAsync(const IgnoreDataRequest& request, const IgnoreDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const IgnoreDataRequest&;
+    using Resp = IgnoreDataResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "IgnoreData", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CtemClient::IgnoreDataOutcomeCallable CtemClient::IgnoreDataCallable(const IgnoreDataRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<IgnoreDataOutcome>>();
+    IgnoreDataAsync(
+    request,
+    [prom](
+        const CtemClient*,
+        const IgnoreDataRequest&,
+        IgnoreDataOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 CtemClient::ModifyCustomerOutcome CtemClient::ModifyCustomer(const ModifyCustomerRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyCustomer");
@@ -1732,6 +2982,56 @@ CtemClient::ModifyLabelOutcomeCallable CtemClient::ModifyLabelCallable(const Mod
         const CtemClient*,
         const ModifyLabelRequest&,
         ModifyLabelOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CtemClient::ModifySeedStatusOutcome CtemClient::ModifySeedStatus(const ModifySeedStatusRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifySeedStatus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifySeedStatusResponse rsp = ModifySeedStatusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifySeedStatusOutcome(rsp);
+        else
+            return ModifySeedStatusOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifySeedStatusOutcome(outcome.GetError());
+    }
+}
+
+void CtemClient::ModifySeedStatusAsync(const ModifySeedStatusRequest& request, const ModifySeedStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifySeedStatusRequest&;
+    using Resp = ModifySeedStatusResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifySeedStatus", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CtemClient::ModifySeedStatusOutcomeCallable CtemClient::ModifySeedStatusCallable(const ModifySeedStatusRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifySeedStatusOutcome>>();
+    ModifySeedStatusAsync(
+    request,
+    [prom](
+        const CtemClient*,
+        const ModifySeedStatusRequest&,
+        ModifySeedStatusOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

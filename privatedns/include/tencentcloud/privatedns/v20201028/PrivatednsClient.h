@@ -35,8 +35,12 @@
 #include <tencentcloud/privatedns/v20201028/model/CreatePrivateDNSAccountResponse.h>
 #include <tencentcloud/privatedns/v20201028/model/CreatePrivateZoneRequest.h>
 #include <tencentcloud/privatedns/v20201028/model/CreatePrivateZoneResponse.h>
+#include <tencentcloud/privatedns/v20201028/model/CreatePrivateZoneListRequest.h>
+#include <tencentcloud/privatedns/v20201028/model/CreatePrivateZoneListResponse.h>
 #include <tencentcloud/privatedns/v20201028/model/CreatePrivateZoneRecordRequest.h>
 #include <tencentcloud/privatedns/v20201028/model/CreatePrivateZoneRecordResponse.h>
+#include <tencentcloud/privatedns/v20201028/model/CreatePrivateZoneRecordListRequest.h>
+#include <tencentcloud/privatedns/v20201028/model/CreatePrivateZoneRecordListResponse.h>
 #include <tencentcloud/privatedns/v20201028/model/DeleteEndPointRequest.h>
 #include <tencentcloud/privatedns/v20201028/model/DeleteEndPointResponse.h>
 #include <tencentcloud/privatedns/v20201028/model/DeleteForwardRuleRequest.h>
@@ -55,6 +59,10 @@
 #include <tencentcloud/privatedns/v20201028/model/DescribeAccountVpcListResponse.h>
 #include <tencentcloud/privatedns/v20201028/model/DescribeAuditLogRequest.h>
 #include <tencentcloud/privatedns/v20201028/model/DescribeAuditLogResponse.h>
+#include <tencentcloud/privatedns/v20201028/model/DescribeCreateRecordListResultRequest.h>
+#include <tencentcloud/privatedns/v20201028/model/DescribeCreateRecordListResultResponse.h>
+#include <tencentcloud/privatedns/v20201028/model/DescribeCreateZoneListResultRequest.h>
+#include <tencentcloud/privatedns/v20201028/model/DescribeCreateZoneListResultResponse.h>
 #include <tencentcloud/privatedns/v20201028/model/DescribeDashboardRequest.h>
 #include <tencentcloud/privatedns/v20201028/model/DescribeDashboardResponse.h>
 #include <tencentcloud/privatedns/v20201028/model/DescribeExtendEndpointListRequest.h>
@@ -127,9 +135,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreatePrivateZoneResponse> CreatePrivateZoneOutcome;
                 typedef std::future<CreatePrivateZoneOutcome> CreatePrivateZoneOutcomeCallable;
                 typedef std::function<void(const PrivatednsClient*, const Model::CreatePrivateZoneRequest&, CreatePrivateZoneOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreatePrivateZoneAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreatePrivateZoneListResponse> CreatePrivateZoneListOutcome;
+                typedef std::future<CreatePrivateZoneListOutcome> CreatePrivateZoneListOutcomeCallable;
+                typedef std::function<void(const PrivatednsClient*, const Model::CreatePrivateZoneListRequest&, CreatePrivateZoneListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreatePrivateZoneListAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreatePrivateZoneRecordResponse> CreatePrivateZoneRecordOutcome;
                 typedef std::future<CreatePrivateZoneRecordOutcome> CreatePrivateZoneRecordOutcomeCallable;
                 typedef std::function<void(const PrivatednsClient*, const Model::CreatePrivateZoneRecordRequest&, CreatePrivateZoneRecordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreatePrivateZoneRecordAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreatePrivateZoneRecordListResponse> CreatePrivateZoneRecordListOutcome;
+                typedef std::future<CreatePrivateZoneRecordListOutcome> CreatePrivateZoneRecordListOutcomeCallable;
+                typedef std::function<void(const PrivatednsClient*, const Model::CreatePrivateZoneRecordListRequest&, CreatePrivateZoneRecordListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreatePrivateZoneRecordListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteEndPointResponse> DeleteEndPointOutcome;
                 typedef std::future<DeleteEndPointOutcome> DeleteEndPointOutcomeCallable;
                 typedef std::function<void(const PrivatednsClient*, const Model::DeleteEndPointRequest&, DeleteEndPointOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteEndPointAsyncHandler;
@@ -157,6 +171,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeAuditLogResponse> DescribeAuditLogOutcome;
                 typedef std::future<DescribeAuditLogOutcome> DescribeAuditLogOutcomeCallable;
                 typedef std::function<void(const PrivatednsClient*, const Model::DescribeAuditLogRequest&, DescribeAuditLogOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAuditLogAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCreateRecordListResultResponse> DescribeCreateRecordListResultOutcome;
+                typedef std::future<DescribeCreateRecordListResultOutcome> DescribeCreateRecordListResultOutcomeCallable;
+                typedef std::function<void(const PrivatednsClient*, const Model::DescribeCreateRecordListResultRequest&, DescribeCreateRecordListResultOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCreateRecordListResultAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCreateZoneListResultResponse> DescribeCreateZoneListResultOutcome;
+                typedef std::future<DescribeCreateZoneListResultOutcome> DescribeCreateZoneListResultOutcomeCallable;
+                typedef std::function<void(const PrivatednsClient*, const Model::DescribeCreateZoneListResultRequest&, DescribeCreateZoneListResultOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCreateZoneListResultAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDashboardResponse> DescribeDashboardOutcome;
                 typedef std::future<DescribeDashboardOutcome> DescribeDashboardOutcomeCallable;
                 typedef std::function<void(const PrivatednsClient*, const Model::DescribeDashboardRequest&, DescribeDashboardOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDashboardAsyncHandler;
@@ -275,6 +295,15 @@ namespace TencentCloud
                 CreatePrivateZoneOutcomeCallable CreatePrivateZoneCallable(const Model::CreatePrivateZoneRequest& request);
 
                 /**
+                 *批量创建私有域
+                 * @param req CreatePrivateZoneListRequest
+                 * @return CreatePrivateZoneListOutcome
+                 */
+                CreatePrivateZoneListOutcome CreatePrivateZoneList(const Model::CreatePrivateZoneListRequest &request);
+                void CreatePrivateZoneListAsync(const Model::CreatePrivateZoneListRequest& request, const CreatePrivateZoneListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreatePrivateZoneListOutcomeCallable CreatePrivateZoneListCallable(const Model::CreatePrivateZoneListRequest& request);
+
+                /**
                  *添加私有域解析记录
                  * @param req CreatePrivateZoneRecordRequest
                  * @return CreatePrivateZoneRecordOutcome
@@ -282,6 +311,15 @@ namespace TencentCloud
                 CreatePrivateZoneRecordOutcome CreatePrivateZoneRecord(const Model::CreatePrivateZoneRecordRequest &request);
                 void CreatePrivateZoneRecordAsync(const Model::CreatePrivateZoneRecordRequest& request, const CreatePrivateZoneRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreatePrivateZoneRecordOutcomeCallable CreatePrivateZoneRecordCallable(const Model::CreatePrivateZoneRecordRequest& request);
+
+                /**
+                 *批量添加私有域解析记录
+                 * @param req CreatePrivateZoneRecordListRequest
+                 * @return CreatePrivateZoneRecordListOutcome
+                 */
+                CreatePrivateZoneRecordListOutcome CreatePrivateZoneRecordList(const Model::CreatePrivateZoneRecordListRequest &request);
+                void CreatePrivateZoneRecordListAsync(const Model::CreatePrivateZoneRecordListRequest& request, const CreatePrivateZoneRecordListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreatePrivateZoneRecordListOutcomeCallable CreatePrivateZoneRecordListCallable(const Model::CreatePrivateZoneRecordListRequest& request);
 
                 /**
                  *删除终端节点
@@ -347,7 +385,7 @@ namespace TencentCloud
                 DeleteSpecifyPrivateZoneVpcOutcomeCallable DeleteSpecifyPrivateZoneVpcCallable(const Model::DeleteSpecifyPrivateZoneVpcRequest& request);
 
                 /**
-                 *获取私有域解析账号的VPC列表
+                 *获取关联账号的VPC列表
                  * @param req DescribeAccountVpcListRequest
                  * @return DescribeAccountVpcListOutcome
                  */
@@ -363,6 +401,24 @@ namespace TencentCloud
                 DescribeAuditLogOutcome DescribeAuditLog(const Model::DescribeAuditLogRequest &request);
                 void DescribeAuditLogAsync(const Model::DescribeAuditLogRequest& request, const DescribeAuditLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeAuditLogOutcomeCallable DescribeAuditLogCallable(const Model::DescribeAuditLogRequest& request);
+
+                /**
+                 *查询批量添加私有域解析记录结果
+                 * @param req DescribeCreateRecordListResultRequest
+                 * @return DescribeCreateRecordListResultOutcome
+                 */
+                DescribeCreateRecordListResultOutcome DescribeCreateRecordListResult(const Model::DescribeCreateRecordListResultRequest &request);
+                void DescribeCreateRecordListResultAsync(const Model::DescribeCreateRecordListResultRequest& request, const DescribeCreateRecordListResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCreateRecordListResultOutcomeCallable DescribeCreateRecordListResultCallable(const Model::DescribeCreateRecordListResultRequest& request);
+
+                /**
+                 *查询批量添加私有域结果
+                 * @param req DescribeCreateZoneListResultRequest
+                 * @return DescribeCreateZoneListResultOutcome
+                 */
+                DescribeCreateZoneListResultOutcome DescribeCreateZoneListResult(const Model::DescribeCreateZoneListResultRequest &request);
+                void DescribeCreateZoneListResultAsync(const Model::DescribeCreateZoneListResultRequest& request, const DescribeCreateZoneListResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCreateZoneListResultOutcomeCallable DescribeCreateZoneListResultCallable(const Model::DescribeCreateZoneListResultRequest& request);
 
                 /**
                  *获取私有域解析概览

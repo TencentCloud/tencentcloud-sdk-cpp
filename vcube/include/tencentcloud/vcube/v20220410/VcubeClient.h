@@ -41,6 +41,10 @@
 #include <tencentcloud/vcube/v20220410/model/CreateTrialLicenseResponse.h>
 #include <tencentcloud/vcube/v20220410/model/CreateXMagicRequest.h>
 #include <tencentcloud/vcube/v20220410/model/CreateXMagicResponse.h>
+#include <tencentcloud/vcube/v20220410/model/DeleteApplicationAndVideoLicenseRequest.h>
+#include <tencentcloud/vcube/v20220410/model/DeleteApplicationAndVideoLicenseResponse.h>
+#include <tencentcloud/vcube/v20220410/model/DeleteApplicationAndWebPlayerLicenseRequest.h>
+#include <tencentcloud/vcube/v20220410/model/DeleteApplicationAndWebPlayerLicenseResponse.h>
 #include <tencentcloud/vcube/v20220410/model/DescribeFeatureListRequest.h>
 #include <tencentcloud/vcube/v20220410/model/DescribeFeatureListResponse.h>
 #include <tencentcloud/vcube/v20220410/model/DescribeLicenseListRequest.h>
@@ -132,6 +136,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateXMagicResponse> CreateXMagicOutcome;
                 typedef std::future<CreateXMagicOutcome> CreateXMagicOutcomeCallable;
                 typedef std::function<void(const VcubeClient*, const Model::CreateXMagicRequest&, CreateXMagicOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateXMagicAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteApplicationAndVideoLicenseResponse> DeleteApplicationAndVideoLicenseOutcome;
+                typedef std::future<DeleteApplicationAndVideoLicenseOutcome> DeleteApplicationAndVideoLicenseOutcomeCallable;
+                typedef std::function<void(const VcubeClient*, const Model::DeleteApplicationAndVideoLicenseRequest&, DeleteApplicationAndVideoLicenseOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteApplicationAndVideoLicenseAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteApplicationAndWebPlayerLicenseResponse> DeleteApplicationAndWebPlayerLicenseOutcome;
+                typedef std::future<DeleteApplicationAndWebPlayerLicenseOutcome> DeleteApplicationAndWebPlayerLicenseOutcomeCallable;
+                typedef std::function<void(const VcubeClient*, const Model::DeleteApplicationAndWebPlayerLicenseRequest&, DeleteApplicationAndWebPlayerLicenseOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteApplicationAndWebPlayerLicenseAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeFeatureListResponse> DescribeFeatureListOutcome;
                 typedef std::future<DescribeFeatureListOutcome> DescribeFeatureListOutcomeCallable;
                 typedef std::function<void(const VcubeClient*, const Model::DescribeFeatureListRequest&, DescribeFeatureListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFeatureListAsyncHandler;
@@ -290,6 +300,24 @@ namespace TencentCloud
                 CreateXMagicOutcome CreateXMagic(const Model::CreateXMagicRequest &request);
                 void CreateXMagicAsync(const Model::CreateXMagicRequest& request, const CreateXMagicAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateXMagicOutcomeCallable CreateXMagicCallable(const Model::CreateXMagicRequest& request);
+
+                /**
+                 *删除视频播放器 License 和相关应用
+                 * @param req DeleteApplicationAndVideoLicenseRequest
+                 * @return DeleteApplicationAndVideoLicenseOutcome
+                 */
+                DeleteApplicationAndVideoLicenseOutcome DeleteApplicationAndVideoLicense(const Model::DeleteApplicationAndVideoLicenseRequest &request);
+                void DeleteApplicationAndVideoLicenseAsync(const Model::DeleteApplicationAndVideoLicenseRequest& request, const DeleteApplicationAndVideoLicenseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteApplicationAndVideoLicenseOutcomeCallable DeleteApplicationAndVideoLicenseCallable(const Model::DeleteApplicationAndVideoLicenseRequest& request);
+
+                /**
+                 *删除web播放器license和应用
+                 * @param req DeleteApplicationAndWebPlayerLicenseRequest
+                 * @return DeleteApplicationAndWebPlayerLicenseOutcome
+                 */
+                DeleteApplicationAndWebPlayerLicenseOutcome DeleteApplicationAndWebPlayerLicense(const Model::DeleteApplicationAndWebPlayerLicenseRequest &request);
+                void DeleteApplicationAndWebPlayerLicenseAsync(const Model::DeleteApplicationAndWebPlayerLicenseRequest& request, const DeleteApplicationAndWebPlayerLicenseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteApplicationAndWebPlayerLicenseOutcomeCallable DeleteApplicationAndWebPlayerLicenseCallable(const Model::DeleteApplicationAndWebPlayerLicenseRequest& request);
 
                 /**
                  *查询功能列表

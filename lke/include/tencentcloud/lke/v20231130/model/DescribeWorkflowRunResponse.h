@@ -73,6 +73,20 @@ namespace TencentCloud
                      */
                     bool NodeRunsHasBeenSet() const;
 
+                    /**
+                     * 获取子工作流对应的NodePath
+                     * @return SubWorkflowNodePath 子工作流对应的NodePath
+                     * 
+                     */
+                    std::string GetSubWorkflowNodePath() const;
+
+                    /**
+                     * 判断参数 SubWorkflowNodePath 是否已赋值
+                     * @return SubWorkflowNodePath 是否已赋值
+                     * 
+                     */
+                    bool SubWorkflowNodePathHasBeenSet() const;
+
                 private:
 
                     /**
@@ -86,6 +100,12 @@ namespace TencentCloud
                      */
                     std::vector<NodeRunBase> m_nodeRuns;
                     bool m_nodeRunsHasBeenSet;
+
+                    /**
+                     * 子工作流对应的NodePath
+                     */
+                    std::string m_subWorkflowNodePath;
+                    bool m_subWorkflowNodePathHasBeenSet;
 
                 };
             }

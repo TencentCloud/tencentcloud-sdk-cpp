@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取转换的目标操系统信息，仅在入参 DryRun 为 true 时返回。
-                     * @return SupportTargetOSList 转换的目标操系统信息，仅在入参 DryRun 为 true 时返回。
+                     * 获取转换的目标操作系统信息，仅在入参 DryRun 为 true 时返回。
+                     * @return SupportTargetOSList 转换的目标操作系统信息，仅在入参 DryRun 为 true 时返回。
                      * 
                      */
                     std::vector<TargetOS> GetSupportTargetOSList() const;
@@ -75,7 +75,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 转换的目标操系统信息，仅在入参 DryRun 为 true 时返回。
+                     * 转换的目标操作系统信息，仅在入参 DryRun 为 true 时返回。
                      */
                     std::vector<TargetOS> m_supportTargetOSList;
                     bool m_supportTargetOSListHasBeenSet;

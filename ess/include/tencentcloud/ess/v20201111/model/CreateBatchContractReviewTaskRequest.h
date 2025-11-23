@@ -269,6 +269,43 @@ namespace TencentCloud
                      */
                     bool UserDataHasBeenSet() const;
 
+                    /**
+                     * 获取启用附加通用风险审查清单。默认为启用状态
+可选值如下：
+
+- 1: 启用系统提供的附加通用风险审查清单
+- 2:不启用系统提供的附加通用风险审查清单
+                     * @return EnableGeneralChecklist 启用附加通用风险审查清单。默认为启用状态
+可选值如下：
+
+- 1: 启用系统提供的附加通用风险审查清单
+- 2:不启用系统提供的附加通用风险审查清单
+                     * 
+                     */
+                    int64_t GetEnableGeneralChecklist() const;
+
+                    /**
+                     * 设置启用附加通用风险审查清单。默认为启用状态
+可选值如下：
+
+- 1: 启用系统提供的附加通用风险审查清单
+- 2:不启用系统提供的附加通用风险审查清单
+                     * @param _enableGeneralChecklist 启用附加通用风险审查清单。默认为启用状态
+可选值如下：
+
+- 1: 启用系统提供的附加通用风险审查清单
+- 2:不启用系统提供的附加通用风险审查清单
+                     * 
+                     */
+                    void SetEnableGeneralChecklist(const int64_t& _enableGeneralChecklist);
+
+                    /**
+                     * 判断参数 EnableGeneralChecklist 是否已赋值
+                     * @return EnableGeneralChecklist 是否已赋值
+                     * 
+                     */
+                    bool EnableGeneralChecklistHasBeenSet() const;
+
                 private:
 
                     /**
@@ -332,6 +369,16 @@ namespace TencentCloud
                      */
                     std::string m_userData;
                     bool m_userDataHasBeenSet;
+
+                    /**
+                     * 启用附加通用风险审查清单。默认为启用状态
+可选值如下：
+
+- 1: 启用系统提供的附加通用风险审查清单
+- 2:不启用系统提供的附加通用风险审查清单
+                     */
+                    int64_t m_enableGeneralChecklist;
+                    bool m_enableGeneralChecklistHasBeenSet;
 
                 };
             }

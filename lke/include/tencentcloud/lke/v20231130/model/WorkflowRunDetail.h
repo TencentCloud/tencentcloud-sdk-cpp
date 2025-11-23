@@ -302,21 +302,21 @@ namespace TencentCloud
                     /**
                      * 获取工作流画布Json
                      * @return DialogJson 工作流画布Json
-                     * 
+                     * @deprecated
                      */
                     std::string GetDialogJson() const;
 
                     /**
                      * 设置工作流画布Json
                      * @param _dialogJson 工作流画布Json
-                     * 
+                     * @deprecated
                      */
                     void SetDialogJson(const std::string& _dialogJson);
 
                     /**
                      * 判断参数 DialogJson 是否已赋值
                      * @return DialogJson 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool DialogJsonHasBeenSet() const;
 
@@ -382,6 +382,27 @@ namespace TencentCloud
                      * 
                      */
                     bool CustomVariablesHasBeenSet() const;
+
+                    /**
+                     * 获取工作流的流程图
+                     * @return WorkflowGraph 工作流的流程图
+                     * 
+                     */
+                    std::string GetWorkflowGraph() const;
+
+                    /**
+                     * 设置工作流的流程图
+                     * @param _workflowGraph 工作流的流程图
+                     * 
+                     */
+                    void SetWorkflowGraph(const std::string& _workflowGraph);
+
+                    /**
+                     * 判断参数 WorkflowGraph 是否已赋值
+                     * @return WorkflowGraph 是否已赋值
+                     * 
+                     */
+                    bool WorkflowGraphHasBeenSet() const;
 
                 private:
 
@@ -480,6 +501,12 @@ namespace TencentCloud
                      */
                     std::vector<CustomVariable> m_customVariables;
                     bool m_customVariablesHasBeenSet;
+
+                    /**
+                     * 工作流的流程图
+                     */
+                    std::string m_workflowGraph;
+                    bool m_workflowGraphHasBeenSet;
 
                 };
             }

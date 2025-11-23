@@ -22,7 +22,8 @@ using namespace std;
 
 InstanceNameIndexSettings::InstanceNameIndexSettings() :
     m_enabledHasBeenSet(false),
-    m_beginIndexHasBeenSet(false)
+    m_beginIndexHasBeenSet(false),
+    m_indexLengthHasBeenSet(false)
 {
 }
 
@@ -51,6 +52,16 @@ CoreInternalOutcome InstanceNameIndexSettings::Deserialize(const rapidjson::Valu
         m_beginIndexHasBeenSet = true;
     }
 
+    if (value.HasMember("IndexLength") && !value["IndexLength"].IsNull())
+    {
+        if (!value["IndexLength"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceNameIndexSettings.IndexLength` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_indexLength = value["IndexLength"].GetUint64();
+        m_indexLengthHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -72,6 +83,14 @@ void InstanceNameIndexSettings::ToJsonObject(rapidjson::Value &value, rapidjson:
         string key = "BeginIndex";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_beginIndex, allocator);
+    }
+
+    if (m_indexLengthHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IndexLength";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_indexLength, allocator);
     }
 
 }
@@ -107,5 +126,21 @@ void InstanceNameIndexSettings::SetBeginIndex(const int64_t& _beginIndex)
 bool InstanceNameIndexSettings::BeginIndexHasBeenSet() const
 {
     return m_beginIndexHasBeenSet;
+}
+
+uint64_t InstanceNameIndexSettings::GetIndexLength() const
+{
+    return m_indexLength;
+}
+
+void InstanceNameIndexSettings::SetIndexLength(const uint64_t& _indexLength)
+{
+    m_indexLength = _indexLength;
+    m_indexLengthHasBeenSet = true;
+}
+
+bool InstanceNameIndexSettings::IndexLengthHasBeenSet() const
+{
+    return m_indexLengthHasBeenSet;
 }
 

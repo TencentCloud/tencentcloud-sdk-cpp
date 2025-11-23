@@ -46,12 +46,10 @@ set(iai_public_header_model
   include/tencentcloud/iai/v20200303/model/GroupCandidate.h
   include/tencentcloud/iai/v20200303/model/DeleteFaceResponse.h
   include/tencentcloud/iai/v20200303/model/DeletePersonRequest.h
-  include/tencentcloud/iai/v20200303/model/DetectLiveFaceResponse.h
   include/tencentcloud/iai/v20200303/model/DeleteFaceRequest.h
   include/tencentcloud/iai/v20200303/model/ModifyGroupRequest.h
   include/tencentcloud/iai/v20200303/model/DeleteGroupRequest.h
   include/tencentcloud/iai/v20200303/model/UpgradeGroupFaceModelVersionRequest.h
-  include/tencentcloud/iai/v20200303/model/DetectLiveFaceRequest.h
   include/tencentcloud/iai/v20200303/model/GetPersonBaseInfoResponse.h
   include/tencentcloud/iai/v20200303/model/SearchPersonsResponse.h
   include/tencentcloud/iai/v20200303/model/GetUpgradeGroupFaceModelVersionResultRequest.h
@@ -245,12 +243,10 @@ set(iai_src
   src/v20200303/model/GroupCandidate.cpp
   src/v20200303/model/DeleteFaceResponse.cpp
   src/v20200303/model/DeletePersonRequest.cpp
-  src/v20200303/model/DetectLiveFaceResponse.cpp
   src/v20200303/model/DeleteFaceRequest.cpp
   src/v20200303/model/ModifyGroupRequest.cpp
   src/v20200303/model/DeleteGroupRequest.cpp
   src/v20200303/model/UpgradeGroupFaceModelVersionRequest.cpp
-  src/v20200303/model/DetectLiveFaceRequest.cpp
   src/v20200303/model/GetPersonBaseInfoResponse.cpp
   src/v20200303/model/SearchPersonsResponse.cpp
   src/v20200303/model/GetUpgradeGroupFaceModelVersionResultRequest.cpp

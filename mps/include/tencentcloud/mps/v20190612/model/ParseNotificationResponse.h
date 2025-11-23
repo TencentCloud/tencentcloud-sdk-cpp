@@ -25,6 +25,7 @@
 #include <tencentcloud/mps/v20190612/model/EditMediaTask.h>
 #include <tencentcloud/mps/v20190612/model/ScheduleTask.h>
 #include <tencentcloud/mps/v20190612/model/BatchSubTaskResult.h>
+#include <tencentcloud/mps/v20190612/model/ExtractBlindWatermarkTask.h>
 
 
 namespace TencentCloud
@@ -193,6 +194,22 @@ namespace TencentCloud
                      */
                     bool BatchTaskEventHasBeenSet() const;
 
+                    /**
+                     * 获取数字水印提取任务信息，仅当 EventType 为 ExtractBlindWatermark，该字段有值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ExtractBlindWatermarkTask 数字水印提取任务信息，仅当 EventType 为 ExtractBlindWatermark，该字段有值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    ExtractBlindWatermarkTask GetExtractBlindWatermarkTask() const;
+
+                    /**
+                     * 判断参数 ExtractBlindWatermarkTask 是否已赋值
+                     * @return ExtractBlindWatermarkTask 是否已赋值
+                     * 
+                     */
+                    bool ExtractBlindWatermarkTaskHasBeenSet() const;
+
                 private:
 
                     /**
@@ -258,6 +275,13 @@ namespace TencentCloud
                      */
                     BatchSubTaskResult m_batchTaskEvent;
                     bool m_batchTaskEventHasBeenSet;
+
+                    /**
+                     * 数字水印提取任务信息，仅当 EventType 为 ExtractBlindWatermark，该字段有值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    ExtractBlindWatermarkTask m_extractBlindWatermarkTask;
+                    bool m_extractBlindWatermarkTaskHasBeenSet;
 
                 };
             }

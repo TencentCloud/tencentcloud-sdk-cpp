@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取过滤参数，支持EndPointName，EndpointName，EndpointId
-                     * @return Filters 过滤参数，支持EndPointName，EndpointName，EndpointId
+                     * 获取过滤参数，支持EndPointName，EndpointName，EndPointId
+                     * @return Filters 过滤参数，支持EndPointName，EndpointName，EndPointId
                      * 
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
-                     * 设置过滤参数，支持EndPointName，EndpointName，EndpointId
-                     * @param _filters 过滤参数，支持EndPointName，EndpointName，EndpointId
+                     * 设置过滤参数，支持EndPointName，EndpointName，EndPointId
+                     * @param _filters 过滤参数，支持EndPointName，EndpointName，EndPointId
                      * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
@@ -121,7 +121,7 @@ namespace TencentCloud
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 过滤参数，支持EndPointName，EndpointName，EndpointId
+                     * 过滤参数，支持EndPointName，EndpointName，EndPointId
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;

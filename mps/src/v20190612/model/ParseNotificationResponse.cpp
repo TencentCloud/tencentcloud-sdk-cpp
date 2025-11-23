@@ -32,7 +32,8 @@ ParseNotificationResponse::ParseNotificationResponse() :
     m_scheduleTaskEventHasBeenSet(false),
     m_timestampHasBeenSet(false),
     m_signHasBeenSet(false),
-    m_batchTaskEventHasBeenSet(false)
+    m_batchTaskEventHasBeenSet(false),
+    m_extractBlindWatermarkTaskHasBeenSet(false)
 {
 }
 
@@ -188,6 +189,23 @@ CoreInternalOutcome ParseNotificationResponse::Deserialize(const string &payload
         m_batchTaskEventHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ExtractBlindWatermarkTask") && !rsp["ExtractBlindWatermarkTask"].IsNull())
+    {
+        if (!rsp["ExtractBlindWatermarkTask"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ExtractBlindWatermarkTask` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_extractBlindWatermarkTask.Deserialize(rsp["ExtractBlindWatermarkTask"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_extractBlindWatermarkTaskHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -272,6 +290,15 @@ string ParseNotificationResponse::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_batchTaskEvent.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_extractBlindWatermarkTaskHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExtractBlindWatermarkTask";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_extractBlindWatermarkTask.ToJsonObject(value[key.c_str()], allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -374,6 +401,16 @@ BatchSubTaskResult ParseNotificationResponse::GetBatchTaskEvent() const
 bool ParseNotificationResponse::BatchTaskEventHasBeenSet() const
 {
     return m_batchTaskEventHasBeenSet;
+}
+
+ExtractBlindWatermarkTask ParseNotificationResponse::GetExtractBlindWatermarkTask() const
+{
+    return m_extractBlindWatermarkTask;
+}
+
+bool ParseNotificationResponse::ExtractBlindWatermarkTaskHasBeenSet() const
+{
+    return m_extractBlindWatermarkTaskHasBeenSet;
 }
 
 

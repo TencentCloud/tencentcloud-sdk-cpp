@@ -490,6 +490,106 @@ VcubeClient::CreateXMagicOutcomeCallable VcubeClient::CreateXMagicCallable(const
     return prom->get_future();
 }
 
+VcubeClient::DeleteApplicationAndVideoLicenseOutcome VcubeClient::DeleteApplicationAndVideoLicense(const DeleteApplicationAndVideoLicenseRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteApplicationAndVideoLicense");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteApplicationAndVideoLicenseResponse rsp = DeleteApplicationAndVideoLicenseResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteApplicationAndVideoLicenseOutcome(rsp);
+        else
+            return DeleteApplicationAndVideoLicenseOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteApplicationAndVideoLicenseOutcome(outcome.GetError());
+    }
+}
+
+void VcubeClient::DeleteApplicationAndVideoLicenseAsync(const DeleteApplicationAndVideoLicenseRequest& request, const DeleteApplicationAndVideoLicenseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteApplicationAndVideoLicenseRequest&;
+    using Resp = DeleteApplicationAndVideoLicenseResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteApplicationAndVideoLicense", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+VcubeClient::DeleteApplicationAndVideoLicenseOutcomeCallable VcubeClient::DeleteApplicationAndVideoLicenseCallable(const DeleteApplicationAndVideoLicenseRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteApplicationAndVideoLicenseOutcome>>();
+    DeleteApplicationAndVideoLicenseAsync(
+    request,
+    [prom](
+        const VcubeClient*,
+        const DeleteApplicationAndVideoLicenseRequest&,
+        DeleteApplicationAndVideoLicenseOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+VcubeClient::DeleteApplicationAndWebPlayerLicenseOutcome VcubeClient::DeleteApplicationAndWebPlayerLicense(const DeleteApplicationAndWebPlayerLicenseRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteApplicationAndWebPlayerLicense");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteApplicationAndWebPlayerLicenseResponse rsp = DeleteApplicationAndWebPlayerLicenseResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteApplicationAndWebPlayerLicenseOutcome(rsp);
+        else
+            return DeleteApplicationAndWebPlayerLicenseOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteApplicationAndWebPlayerLicenseOutcome(outcome.GetError());
+    }
+}
+
+void VcubeClient::DeleteApplicationAndWebPlayerLicenseAsync(const DeleteApplicationAndWebPlayerLicenseRequest& request, const DeleteApplicationAndWebPlayerLicenseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteApplicationAndWebPlayerLicenseRequest&;
+    using Resp = DeleteApplicationAndWebPlayerLicenseResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteApplicationAndWebPlayerLicense", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+VcubeClient::DeleteApplicationAndWebPlayerLicenseOutcomeCallable VcubeClient::DeleteApplicationAndWebPlayerLicenseCallable(const DeleteApplicationAndWebPlayerLicenseRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteApplicationAndWebPlayerLicenseOutcome>>();
+    DeleteApplicationAndWebPlayerLicenseAsync(
+    request,
+    [prom](
+        const VcubeClient*,
+        const DeleteApplicationAndWebPlayerLicenseRequest&,
+        DeleteApplicationAndWebPlayerLicenseOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 VcubeClient::DescribeFeatureListOutcome VcubeClient::DescribeFeatureList(const DescribeFeatureListRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeFeatureList");

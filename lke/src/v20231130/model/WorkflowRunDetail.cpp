@@ -36,7 +36,8 @@ WorkflowRunDetail::WorkflowRunDetail() :
     m_dialogJsonHasBeenSet(false),
     m_queryHasBeenSet(false),
     m_mainModelNameHasBeenSet(false),
-    m_customVariablesHasBeenSet(false)
+    m_customVariablesHasBeenSet(false),
+    m_workflowGraphHasBeenSet(false)
 {
 }
 
@@ -215,6 +216,16 @@ CoreInternalOutcome WorkflowRunDetail::Deserialize(const rapidjson::Value &value
         m_customVariablesHasBeenSet = true;
     }
 
+    if (value.HasMember("WorkflowGraph") && !value["WorkflowGraph"].IsNull())
+    {
+        if (!value["WorkflowGraph"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `WorkflowRunDetail.WorkflowGraph` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_workflowGraph = string(value["WorkflowGraph"].GetString());
+        m_workflowGraphHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -355,6 +366,14 @@ void WorkflowRunDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_workflowGraphHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WorkflowGraph";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_workflowGraph.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -614,5 +633,21 @@ void WorkflowRunDetail::SetCustomVariables(const vector<CustomVariable>& _custom
 bool WorkflowRunDetail::CustomVariablesHasBeenSet() const
 {
     return m_customVariablesHasBeenSet;
+}
+
+string WorkflowRunDetail::GetWorkflowGraph() const
+{
+    return m_workflowGraph;
+}
+
+void WorkflowRunDetail::SetWorkflowGraph(const string& _workflowGraph)
+{
+    m_workflowGraph = _workflowGraph;
+    m_workflowGraphHasBeenSet = true;
+}
+
+bool WorkflowRunDetail::WorkflowGraphHasBeenSet() const
+{
+    return m_workflowGraphHasBeenSet;
 }
 

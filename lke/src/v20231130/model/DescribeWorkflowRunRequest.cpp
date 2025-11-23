@@ -24,7 +24,9 @@ using namespace std;
 
 DescribeWorkflowRunRequest::DescribeWorkflowRunRequest() :
     m_appBizIdHasBeenSet(false),
-    m_workflowRunIdHasBeenSet(false)
+    m_workflowRunIdHasBeenSet(false),
+    m_subWorkflowNodePathHasBeenSet(false),
+    m_includeWorkflowGraphHasBeenSet(false)
 {
 }
 
@@ -49,6 +51,22 @@ string DescribeWorkflowRunRequest::ToJsonString() const
         string key = "WorkflowRunId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_workflowRunId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_subWorkflowNodePathHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubWorkflowNodePath";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_subWorkflowNodePath.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_includeWorkflowGraphHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IncludeWorkflowGraph";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_includeWorkflowGraph, allocator);
     }
 
 
@@ -89,6 +107,38 @@ void DescribeWorkflowRunRequest::SetWorkflowRunId(const string& _workflowRunId)
 bool DescribeWorkflowRunRequest::WorkflowRunIdHasBeenSet() const
 {
     return m_workflowRunIdHasBeenSet;
+}
+
+string DescribeWorkflowRunRequest::GetSubWorkflowNodePath() const
+{
+    return m_subWorkflowNodePath;
+}
+
+void DescribeWorkflowRunRequest::SetSubWorkflowNodePath(const string& _subWorkflowNodePath)
+{
+    m_subWorkflowNodePath = _subWorkflowNodePath;
+    m_subWorkflowNodePathHasBeenSet = true;
+}
+
+bool DescribeWorkflowRunRequest::SubWorkflowNodePathHasBeenSet() const
+{
+    return m_subWorkflowNodePathHasBeenSet;
+}
+
+bool DescribeWorkflowRunRequest::GetIncludeWorkflowGraph() const
+{
+    return m_includeWorkflowGraph;
+}
+
+void DescribeWorkflowRunRequest::SetIncludeWorkflowGraph(const bool& _includeWorkflowGraph)
+{
+    m_includeWorkflowGraph = _includeWorkflowGraph;
+    m_includeWorkflowGraphHasBeenSet = true;
+}
+
+bool DescribeWorkflowRunRequest::IncludeWorkflowGraphHasBeenSet() const
+{
+    return m_includeWorkflowGraphHasBeenSet;
 }
 
 

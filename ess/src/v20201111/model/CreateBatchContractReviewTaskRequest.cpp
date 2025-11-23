@@ -30,7 +30,8 @@ CreateBatchContractReviewTaskRequest::CreateBatchContractReviewTaskRequest() :
     m_checklistIdHasBeenSet(false),
     m_agentHasBeenSet(false),
     m_commentHasBeenSet(false),
-    m_userDataHasBeenSet(false)
+    m_userDataHasBeenSet(false),
+    m_enableGeneralChecklistHasBeenSet(false)
 {
 }
 
@@ -111,6 +112,14 @@ string CreateBatchContractReviewTaskRequest::ToJsonString() const
         string key = "UserData";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_userData.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_enableGeneralChecklistHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableGeneralChecklist";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_enableGeneralChecklist, allocator);
     }
 
 
@@ -247,6 +256,22 @@ void CreateBatchContractReviewTaskRequest::SetUserData(const string& _userData)
 bool CreateBatchContractReviewTaskRequest::UserDataHasBeenSet() const
 {
     return m_userDataHasBeenSet;
+}
+
+int64_t CreateBatchContractReviewTaskRequest::GetEnableGeneralChecklist() const
+{
+    return m_enableGeneralChecklist;
+}
+
+void CreateBatchContractReviewTaskRequest::SetEnableGeneralChecklist(const int64_t& _enableGeneralChecklist)
+{
+    m_enableGeneralChecklist = _enableGeneralChecklist;
+    m_enableGeneralChecklistHasBeenSet = true;
+}
+
+bool CreateBatchContractReviewTaskRequest::EnableGeneralChecklistHasBeenSet() const
+{
+    return m_enableGeneralChecklistHasBeenSet;
 }
 
 

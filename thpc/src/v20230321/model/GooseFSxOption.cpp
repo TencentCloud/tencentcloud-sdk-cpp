@@ -22,7 +22,8 @@ using namespace std;
 
 GooseFSxOption::GooseFSxOption() :
     m_mastersHasBeenSet(false),
-    m_localPathHasBeenSet(false)
+    m_localPathHasBeenSet(false),
+    m_fileSystemIdHasBeenSet(false)
 {
 }
 
@@ -54,6 +55,16 @@ CoreInternalOutcome GooseFSxOption::Deserialize(const rapidjson::Value &value)
         m_localPathHasBeenSet = true;
     }
 
+    if (value.HasMember("FileSystemId") && !value["FileSystemId"].IsNull())
+    {
+        if (!value["FileSystemId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `GooseFSxOption.FileSystemId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_fileSystemId = string(value["FileSystemId"].GetString());
+        m_fileSystemIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -80,6 +91,14 @@ void GooseFSxOption::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "LocalPath";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_localPath.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_fileSystemIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FileSystemId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_fileSystemId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -115,5 +134,21 @@ void GooseFSxOption::SetLocalPath(const string& _localPath)
 bool GooseFSxOption::LocalPathHasBeenSet() const
 {
     return m_localPathHasBeenSet;
+}
+
+string GooseFSxOption::GetFileSystemId() const
+{
+    return m_fileSystemId;
+}
+
+void GooseFSxOption::SetFileSystemId(const string& _fileSystemId)
+{
+    m_fileSystemId = _fileSystemId;
+    m_fileSystemIdHasBeenSet = true;
+}
+
+bool GooseFSxOption::FileSystemIdHasBeenSet() const
+{
+    return m_fileSystemIdHasBeenSet;
 }
 
