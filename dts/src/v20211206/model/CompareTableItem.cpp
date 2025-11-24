@@ -23,7 +23,9 @@ using namespace std;
 CompareTableItem::CompareTableItem() :
     m_tableNameHasBeenSet(false),
     m_columnModeHasBeenSet(false),
-    m_columnsHasBeenSet(false)
+    m_columnsHasBeenSet(false),
+    m_filterConditionHasBeenSet(false),
+    m_filterTimeZoneHasBeenSet(false)
 {
 }
 
@@ -72,6 +74,26 @@ CoreInternalOutcome CompareTableItem::Deserialize(const rapidjson::Value &value)
         m_columnsHasBeenSet = true;
     }
 
+    if (value.HasMember("FilterCondition") && !value["FilterCondition"].IsNull())
+    {
+        if (!value["FilterCondition"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CompareTableItem.FilterCondition` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_filterCondition = string(value["FilterCondition"].GetString());
+        m_filterConditionHasBeenSet = true;
+    }
+
+    if (value.HasMember("FilterTimeZone") && !value["FilterTimeZone"].IsNull())
+    {
+        if (!value["FilterTimeZone"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CompareTableItem.FilterTimeZone` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_filterTimeZone = string(value["FilterTimeZone"].GetString());
+        m_filterTimeZoneHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -108,6 +130,22 @@ void CompareTableItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_filterConditionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FilterCondition";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_filterCondition.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_filterTimeZoneHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FilterTimeZone";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_filterTimeZone.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -159,5 +197,37 @@ void CompareTableItem::SetColumns(const vector<CompareColumnItem>& _columns)
 bool CompareTableItem::ColumnsHasBeenSet() const
 {
     return m_columnsHasBeenSet;
+}
+
+string CompareTableItem::GetFilterCondition() const
+{
+    return m_filterCondition;
+}
+
+void CompareTableItem::SetFilterCondition(const string& _filterCondition)
+{
+    m_filterCondition = _filterCondition;
+    m_filterConditionHasBeenSet = true;
+}
+
+bool CompareTableItem::FilterConditionHasBeenSet() const
+{
+    return m_filterConditionHasBeenSet;
+}
+
+string CompareTableItem::GetFilterTimeZone() const
+{
+    return m_filterTimeZone;
+}
+
+void CompareTableItem::SetFilterTimeZone(const string& _filterTimeZone)
+{
+    m_filterTimeZone = _filterTimeZone;
+    m_filterTimeZoneHasBeenSet = true;
+}
+
+bool CompareTableItem::FilterTimeZoneHasBeenSet() const
+{
+    return m_filterTimeZoneHasBeenSet;
 }
 

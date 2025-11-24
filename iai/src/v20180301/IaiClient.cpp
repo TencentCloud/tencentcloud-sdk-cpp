@@ -690,56 +690,6 @@ IaiClient::DetectFaceAttributesOutcomeCallable IaiClient::DetectFaceAttributesCa
     return prom->get_future();
 }
 
-IaiClient::DetectLiveFaceOutcome IaiClient::DetectLiveFace(const DetectLiveFaceRequest &request)
-{
-    auto outcome = MakeRequest(request, "DetectLiveFace");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DetectLiveFaceResponse rsp = DetectLiveFaceResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DetectLiveFaceOutcome(rsp);
-        else
-            return DetectLiveFaceOutcome(o.GetError());
-    }
-    else
-    {
-        return DetectLiveFaceOutcome(outcome.GetError());
-    }
-}
-
-void IaiClient::DetectLiveFaceAsync(const DetectLiveFaceRequest& request, const DetectLiveFaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    using Req = const DetectLiveFaceRequest&;
-    using Resp = DetectLiveFaceResponse;
-
-    DoRequestAsync<Req, Resp>(
-        "DetectLiveFace", request, {{{"Content-Type", "application/json"}}},
-        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
-        {
-            handler(this, req, std::move(resp), context);
-        });
-}
-
-IaiClient::DetectLiveFaceOutcomeCallable IaiClient::DetectLiveFaceCallable(const DetectLiveFaceRequest &request)
-{
-    const auto prom = std::make_shared<std::promise<DetectLiveFaceOutcome>>();
-    DetectLiveFaceAsync(
-    request,
-    [prom](
-        const IaiClient*,
-        const DetectLiveFaceRequest&,
-        DetectLiveFaceOutcome resp,
-        const std::shared_ptr<const AsyncCallerContext>&
-    )
-    {
-        prom->set_value(resp);
-    });
-    return prom->get_future();
-}
-
 IaiClient::GetGroupInfoOutcome IaiClient::GetGroupInfo(const GetGroupInfoRequest &request)
 {
     auto outcome = MakeRequest(request, "GetGroupInfo");

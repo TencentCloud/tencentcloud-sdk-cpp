@@ -108,6 +108,27 @@ namespace TencentCloud
                     bool InputURLHasBeenSet() const;
 
                     /**
+                     * 获取通道 ID
+                     * @return ChannelId 通道 ID
+                     * 
+                     */
+                    uint64_t GetChannelId() const;
+
+                    /**
+                     * 设置通道 ID
+                     * @param _channelId 通道 ID
+                     * 
+                     */
+                    void SetChannelId(const uint64_t& _channelId);
+
+                    /**
+                     * 判断参数 ChannelId 是否已赋值
+                     * @return ChannelId 是否已赋值
+                     * 
+                     */
+                    bool ChannelIdHasBeenSet() const;
+
+                    /**
                      * 获取自定义事件 ID
                      * @return CustomId 自定义事件 ID
                      * 
@@ -389,6 +410,12 @@ namespace TencentCloud
                      */
                     std::string m_inputURL;
                     bool m_inputURLHasBeenSet;
+
+                    /**
+                     * 通道 ID
+                     */
+                    uint64_t m_channelId;
+                    bool m_channelIdHasBeenSet;
 
                     /**
                      * 自定义事件 ID

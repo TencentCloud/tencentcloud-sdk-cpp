@@ -1640,6 +1640,56 @@ EmrClient::DescribeInspectionTaskResultOutcomeCallable EmrClient::DescribeInspec
     return prom->get_future();
 }
 
+EmrClient::DescribeInstanceOplogOutcome EmrClient::DescribeInstanceOplog(const DescribeInstanceOplogRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeInstanceOplog");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeInstanceOplogResponse rsp = DescribeInstanceOplogResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeInstanceOplogOutcome(rsp);
+        else
+            return DescribeInstanceOplogOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeInstanceOplogOutcome(outcome.GetError());
+    }
+}
+
+void EmrClient::DescribeInstanceOplogAsync(const DescribeInstanceOplogRequest& request, const DescribeInstanceOplogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeInstanceOplogRequest&;
+    using Resp = DescribeInstanceOplogResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeInstanceOplog", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+EmrClient::DescribeInstanceOplogOutcomeCallable EmrClient::DescribeInstanceOplogCallable(const DescribeInstanceOplogRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeInstanceOplogOutcome>>();
+    DescribeInstanceOplogAsync(
+    request,
+    [prom](
+        const EmrClient*,
+        const DescribeInstanceOplogRequest&,
+        DescribeInstanceOplogOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 EmrClient::DescribeInstanceRenewNodesOutcome EmrClient::DescribeInstanceRenewNodes(const DescribeInstanceRenewNodesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeInstanceRenewNodes");

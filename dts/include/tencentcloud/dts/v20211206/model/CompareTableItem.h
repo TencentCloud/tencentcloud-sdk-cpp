@@ -110,6 +110,48 @@ namespace TencentCloud
                      */
                     bool ColumnsHasBeenSet() const;
 
+                    /**
+                     * 获取过滤条件
+                     * @return FilterCondition 过滤条件
+                     * 
+                     */
+                    std::string GetFilterCondition() const;
+
+                    /**
+                     * 设置过滤条件
+                     * @param _filterCondition 过滤条件
+                     * 
+                     */
+                    void SetFilterCondition(const std::string& _filterCondition);
+
+                    /**
+                     * 判断参数 FilterCondition 是否已赋值
+                     * @return FilterCondition 是否已赋值
+                     * 
+                     */
+                    bool FilterConditionHasBeenSet() const;
+
+                    /**
+                     * 获取时区选择。如 "+08:00", "-08:00", "+00:00"（空值等价于"+00:00"）	
+                     * @return FilterTimeZone 时区选择。如 "+08:00", "-08:00", "+00:00"（空值等价于"+00:00"）	
+                     * 
+                     */
+                    std::string GetFilterTimeZone() const;
+
+                    /**
+                     * 设置时区选择。如 "+08:00", "-08:00", "+00:00"（空值等价于"+00:00"）	
+                     * @param _filterTimeZone 时区选择。如 "+08:00", "-08:00", "+00:00"（空值等价于"+00:00"）	
+                     * 
+                     */
+                    void SetFilterTimeZone(const std::string& _filterTimeZone);
+
+                    /**
+                     * 判断参数 FilterTimeZone 是否已赋值
+                     * @return FilterTimeZone 是否已赋值
+                     * 
+                     */
+                    bool FilterTimeZoneHasBeenSet() const;
+
                 private:
 
                     /**
@@ -129,6 +171,18 @@ namespace TencentCloud
                      */
                     std::vector<CompareColumnItem> m_columns;
                     bool m_columnsHasBeenSet;
+
+                    /**
+                     * 过滤条件
+                     */
+                    std::string m_filterCondition;
+                    bool m_filterConditionHasBeenSet;
+
+                    /**
+                     * 时区选择。如 "+08:00", "-08:00", "+00:00"（空值等价于"+00:00"）	
+                     */
+                    std::string m_filterTimeZone;
+                    bool m_filterTimeZoneHasBeenSet;
 
                 };
             }

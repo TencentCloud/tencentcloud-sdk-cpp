@@ -347,6 +347,7 @@ set(teo_public_header_model
   include/tencentcloud/teo/v20220901/model/DescribeSecurityPolicyRequest.h
   include/tencentcloud/teo/v20220901/model/DescribeEnvironmentsResponse.h
   include/tencentcloud/teo/v20220901/model/CacheParameters.h
+  include/tencentcloud/teo/v20220901/model/OriginAuthenticationRequestProperties.h
   include/tencentcloud/teo/v20220901/model/TimingDataItem.h
   include/tencentcloud/teo/v20220901/model/RateLimitUserRule.h
   include/tencentcloud/teo/v20220901/model/DeployRecord.h
@@ -763,6 +764,7 @@ set(teo_public_header_model
   include/tencentcloud/teo/v20220901/model/DescribeTimingL4DataRequest.h
   include/tencentcloud/teo/v20220901/model/DescribeTimingL4DataResponse.h
   include/tencentcloud/teo/v20220901/model/CNAMEDetail.h
+  include/tencentcloud/teo/v20220901/model/OriginAuthenticationParameters.h
   include/tencentcloud/teo/v20220901/model/RuleEngineAction.h
   include/tencentcloud/teo/v20220901/model/VanityNameServersIps.h
   )
@@ -1097,6 +1099,7 @@ set(teo_src
   src/v20220901/model/DescribeSecurityPolicyRequest.cpp
   src/v20220901/model/DescribeEnvironmentsResponse.cpp
   src/v20220901/model/CacheParameters.cpp
+  src/v20220901/model/OriginAuthenticationRequestProperties.cpp
   src/v20220901/model/TimingDataItem.cpp
   src/v20220901/model/RateLimitUserRule.cpp
   src/v20220901/model/DeployRecord.cpp
@@ -1513,6 +1516,7 @@ set(teo_src
   src/v20220901/model/DescribeTimingL4DataRequest.cpp
   src/v20220901/model/DescribeTimingL4DataResponse.cpp
   src/v20220901/model/CNAMEDetail.cpp
+  src/v20220901/model/OriginAuthenticationParameters.cpp
   src/v20220901/model/RuleEngineAction.cpp
   src/v20220901/model/VanityNameServersIps.cpp
   )

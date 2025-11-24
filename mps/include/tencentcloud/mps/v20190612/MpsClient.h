@@ -41,6 +41,8 @@
 #include <tencentcloud/mps/v20190612/model/CreateAnimatedGraphicsTemplateResponse.h>
 #include <tencentcloud/mps/v20190612/model/CreateAsrHotwordsRequest.h>
 #include <tencentcloud/mps/v20190612/model/CreateAsrHotwordsResponse.h>
+#include <tencentcloud/mps/v20190612/model/CreateBlindWatermarkTemplateRequest.h>
+#include <tencentcloud/mps/v20190612/model/CreateBlindWatermarkTemplateResponse.h>
 #include <tencentcloud/mps/v20190612/model/CreateContentReviewTemplateRequest.h>
 #include <tencentcloud/mps/v20190612/model/CreateContentReviewTemplateResponse.h>
 #include <tencentcloud/mps/v20190612/model/CreateImageSpriteTemplateRequest.h>
@@ -51,6 +53,8 @@
 #include <tencentcloud/mps/v20190612/model/CreateMediaEvaluationResponse.h>
 #include <tencentcloud/mps/v20190612/model/CreatePersonSampleRequest.h>
 #include <tencentcloud/mps/v20190612/model/CreatePersonSampleResponse.h>
+#include <tencentcloud/mps/v20190612/model/CreateProcessImageTemplateRequest.h>
+#include <tencentcloud/mps/v20190612/model/CreateProcessImageTemplateResponse.h>
 #include <tencentcloud/mps/v20190612/model/CreateQualityControlTemplateRequest.h>
 #include <tencentcloud/mps/v20190612/model/CreateQualityControlTemplateResponse.h>
 #include <tencentcloud/mps/v20190612/model/CreateSampleSnapshotTemplateRequest.h>
@@ -95,6 +99,8 @@
 #include <tencentcloud/mps/v20190612/model/DeleteAnimatedGraphicsTemplateResponse.h>
 #include <tencentcloud/mps/v20190612/model/DeleteAsrHotwordsRequest.h>
 #include <tencentcloud/mps/v20190612/model/DeleteAsrHotwordsResponse.h>
+#include <tencentcloud/mps/v20190612/model/DeleteBlindWatermarkTemplateRequest.h>
+#include <tencentcloud/mps/v20190612/model/DeleteBlindWatermarkTemplateResponse.h>
 #include <tencentcloud/mps/v20190612/model/DeleteContentReviewTemplateRequest.h>
 #include <tencentcloud/mps/v20190612/model/DeleteContentReviewTemplateResponse.h>
 #include <tencentcloud/mps/v20190612/model/DeleteImageSpriteTemplateRequest.h>
@@ -103,6 +109,8 @@
 #include <tencentcloud/mps/v20190612/model/DeleteLiveRecordTemplateResponse.h>
 #include <tencentcloud/mps/v20190612/model/DeletePersonSampleRequest.h>
 #include <tencentcloud/mps/v20190612/model/DeletePersonSampleResponse.h>
+#include <tencentcloud/mps/v20190612/model/DeleteProcessImageTemplateRequest.h>
+#include <tencentcloud/mps/v20190612/model/DeleteProcessImageTemplateResponse.h>
 #include <tencentcloud/mps/v20190612/model/DeleteQualityControlTemplateRequest.h>
 #include <tencentcloud/mps/v20190612/model/DeleteQualityControlTemplateResponse.h>
 #include <tencentcloud/mps/v20190612/model/DeleteSampleSnapshotTemplateRequest.h>
@@ -145,6 +153,8 @@
 #include <tencentcloud/mps/v20190612/model/DescribeAsrHotwordsListResponse.h>
 #include <tencentcloud/mps/v20190612/model/DescribeBatchTaskDetailRequest.h>
 #include <tencentcloud/mps/v20190612/model/DescribeBatchTaskDetailResponse.h>
+#include <tencentcloud/mps/v20190612/model/DescribeBlindWatermarkTemplatesRequest.h>
+#include <tencentcloud/mps/v20190612/model/DescribeBlindWatermarkTemplatesResponse.h>
 #include <tencentcloud/mps/v20190612/model/DescribeContentReviewTemplatesRequest.h>
 #include <tencentcloud/mps/v20190612/model/DescribeContentReviewTemplatesResponse.h>
 #include <tencentcloud/mps/v20190612/model/DescribeGroupAttachFlowsByIdRequest.h>
@@ -159,6 +169,8 @@
 #include <tencentcloud/mps/v20190612/model/DescribeMediaMetaDataResponse.h>
 #include <tencentcloud/mps/v20190612/model/DescribePersonSamplesRequest.h>
 #include <tencentcloud/mps/v20190612/model/DescribePersonSamplesResponse.h>
+#include <tencentcloud/mps/v20190612/model/DescribeProcessImageTemplatesRequest.h>
+#include <tencentcloud/mps/v20190612/model/DescribeProcessImageTemplatesResponse.h>
 #include <tencentcloud/mps/v20190612/model/DescribeQualityControlTemplatesRequest.h>
 #include <tencentcloud/mps/v20190612/model/DescribeQualityControlTemplatesResponse.h>
 #include <tencentcloud/mps/v20190612/model/DescribeSampleSnapshotTemplatesRequest.h>
@@ -227,6 +239,8 @@
 #include <tencentcloud/mps/v20190612/model/EnableWorkflowResponse.h>
 #include <tencentcloud/mps/v20190612/model/ExecuteFunctionRequest.h>
 #include <tencentcloud/mps/v20190612/model/ExecuteFunctionResponse.h>
+#include <tencentcloud/mps/v20190612/model/ExtractBlindWatermarkRequest.h>
+#include <tencentcloud/mps/v20190612/model/ExtractBlindWatermarkResponse.h>
 #include <tencentcloud/mps/v20190612/model/ManageTaskRequest.h>
 #include <tencentcloud/mps/v20190612/model/ManageTaskResponse.h>
 #include <tencentcloud/mps/v20190612/model/ModifyAIAnalysisTemplateRequest.h>
@@ -239,6 +253,8 @@
 #include <tencentcloud/mps/v20190612/model/ModifyAnimatedGraphicsTemplateResponse.h>
 #include <tencentcloud/mps/v20190612/model/ModifyAsrHotwordsRequest.h>
 #include <tencentcloud/mps/v20190612/model/ModifyAsrHotwordsResponse.h>
+#include <tencentcloud/mps/v20190612/model/ModifyBlindWatermarkTemplateRequest.h>
+#include <tencentcloud/mps/v20190612/model/ModifyBlindWatermarkTemplateResponse.h>
 #include <tencentcloud/mps/v20190612/model/ModifyContentReviewTemplateRequest.h>
 #include <tencentcloud/mps/v20190612/model/ModifyContentReviewTemplateResponse.h>
 #include <tencentcloud/mps/v20190612/model/ModifyImageSpriteTemplateRequest.h>
@@ -247,6 +263,8 @@
 #include <tencentcloud/mps/v20190612/model/ModifyLiveRecordTemplateResponse.h>
 #include <tencentcloud/mps/v20190612/model/ModifyPersonSampleRequest.h>
 #include <tencentcloud/mps/v20190612/model/ModifyPersonSampleResponse.h>
+#include <tencentcloud/mps/v20190612/model/ModifyProcessImageTemplateRequest.h>
+#include <tencentcloud/mps/v20190612/model/ModifyProcessImageTemplateResponse.h>
 #include <tencentcloud/mps/v20190612/model/ModifyQualityControlTemplateRequest.h>
 #include <tencentcloud/mps/v20190612/model/ModifyQualityControlTemplateResponse.h>
 #include <tencentcloud/mps/v20190612/model/ModifySampleSnapshotTemplateRequest.h>
@@ -336,6 +354,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateAsrHotwordsResponse> CreateAsrHotwordsOutcome;
                 typedef std::future<CreateAsrHotwordsOutcome> CreateAsrHotwordsOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::CreateAsrHotwordsRequest&, CreateAsrHotwordsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAsrHotwordsAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateBlindWatermarkTemplateResponse> CreateBlindWatermarkTemplateOutcome;
+                typedef std::future<CreateBlindWatermarkTemplateOutcome> CreateBlindWatermarkTemplateOutcomeCallable;
+                typedef std::function<void(const MpsClient*, const Model::CreateBlindWatermarkTemplateRequest&, CreateBlindWatermarkTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateBlindWatermarkTemplateAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateContentReviewTemplateResponse> CreateContentReviewTemplateOutcome;
                 typedef std::future<CreateContentReviewTemplateOutcome> CreateContentReviewTemplateOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::CreateContentReviewTemplateRequest&, CreateContentReviewTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateContentReviewTemplateAsyncHandler;
@@ -351,6 +372,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreatePersonSampleResponse> CreatePersonSampleOutcome;
                 typedef std::future<CreatePersonSampleOutcome> CreatePersonSampleOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::CreatePersonSampleRequest&, CreatePersonSampleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreatePersonSampleAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateProcessImageTemplateResponse> CreateProcessImageTemplateOutcome;
+                typedef std::future<CreateProcessImageTemplateOutcome> CreateProcessImageTemplateOutcomeCallable;
+                typedef std::function<void(const MpsClient*, const Model::CreateProcessImageTemplateRequest&, CreateProcessImageTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateProcessImageTemplateAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateQualityControlTemplateResponse> CreateQualityControlTemplateOutcome;
                 typedef std::future<CreateQualityControlTemplateOutcome> CreateQualityControlTemplateOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::CreateQualityControlTemplateRequest&, CreateQualityControlTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateQualityControlTemplateAsyncHandler;
@@ -417,6 +441,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteAsrHotwordsResponse> DeleteAsrHotwordsOutcome;
                 typedef std::future<DeleteAsrHotwordsOutcome> DeleteAsrHotwordsOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::DeleteAsrHotwordsRequest&, DeleteAsrHotwordsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAsrHotwordsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteBlindWatermarkTemplateResponse> DeleteBlindWatermarkTemplateOutcome;
+                typedef std::future<DeleteBlindWatermarkTemplateOutcome> DeleteBlindWatermarkTemplateOutcomeCallable;
+                typedef std::function<void(const MpsClient*, const Model::DeleteBlindWatermarkTemplateRequest&, DeleteBlindWatermarkTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteBlindWatermarkTemplateAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteContentReviewTemplateResponse> DeleteContentReviewTemplateOutcome;
                 typedef std::future<DeleteContentReviewTemplateOutcome> DeleteContentReviewTemplateOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::DeleteContentReviewTemplateRequest&, DeleteContentReviewTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteContentReviewTemplateAsyncHandler;
@@ -429,6 +456,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeletePersonSampleResponse> DeletePersonSampleOutcome;
                 typedef std::future<DeletePersonSampleOutcome> DeletePersonSampleOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::DeletePersonSampleRequest&, DeletePersonSampleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeletePersonSampleAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteProcessImageTemplateResponse> DeleteProcessImageTemplateOutcome;
+                typedef std::future<DeleteProcessImageTemplateOutcome> DeleteProcessImageTemplateOutcomeCallable;
+                typedef std::function<void(const MpsClient*, const Model::DeleteProcessImageTemplateRequest&, DeleteProcessImageTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteProcessImageTemplateAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteQualityControlTemplateResponse> DeleteQualityControlTemplateOutcome;
                 typedef std::future<DeleteQualityControlTemplateOutcome> DeleteQualityControlTemplateOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::DeleteQualityControlTemplateRequest&, DeleteQualityControlTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteQualityControlTemplateAsyncHandler;
@@ -492,6 +522,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeBatchTaskDetailResponse> DescribeBatchTaskDetailOutcome;
                 typedef std::future<DescribeBatchTaskDetailOutcome> DescribeBatchTaskDetailOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::DescribeBatchTaskDetailRequest&, DescribeBatchTaskDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBatchTaskDetailAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeBlindWatermarkTemplatesResponse> DescribeBlindWatermarkTemplatesOutcome;
+                typedef std::future<DescribeBlindWatermarkTemplatesOutcome> DescribeBlindWatermarkTemplatesOutcomeCallable;
+                typedef std::function<void(const MpsClient*, const Model::DescribeBlindWatermarkTemplatesRequest&, DescribeBlindWatermarkTemplatesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBlindWatermarkTemplatesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeContentReviewTemplatesResponse> DescribeContentReviewTemplatesOutcome;
                 typedef std::future<DescribeContentReviewTemplatesOutcome> DescribeContentReviewTemplatesOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::DescribeContentReviewTemplatesRequest&, DescribeContentReviewTemplatesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeContentReviewTemplatesAsyncHandler;
@@ -513,6 +546,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribePersonSamplesResponse> DescribePersonSamplesOutcome;
                 typedef std::future<DescribePersonSamplesOutcome> DescribePersonSamplesOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::DescribePersonSamplesRequest&, DescribePersonSamplesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePersonSamplesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeProcessImageTemplatesResponse> DescribeProcessImageTemplatesOutcome;
+                typedef std::future<DescribeProcessImageTemplatesOutcome> DescribeProcessImageTemplatesOutcomeCallable;
+                typedef std::function<void(const MpsClient*, const Model::DescribeProcessImageTemplatesRequest&, DescribeProcessImageTemplatesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeProcessImageTemplatesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeQualityControlTemplatesResponse> DescribeQualityControlTemplatesOutcome;
                 typedef std::future<DescribeQualityControlTemplatesOutcome> DescribeQualityControlTemplatesOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::DescribeQualityControlTemplatesRequest&, DescribeQualityControlTemplatesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeQualityControlTemplatesAsyncHandler;
@@ -615,6 +651,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ExecuteFunctionResponse> ExecuteFunctionOutcome;
                 typedef std::future<ExecuteFunctionOutcome> ExecuteFunctionOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::ExecuteFunctionRequest&, ExecuteFunctionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ExecuteFunctionAsyncHandler;
+                typedef Outcome<Core::Error, Model::ExtractBlindWatermarkResponse> ExtractBlindWatermarkOutcome;
+                typedef std::future<ExtractBlindWatermarkOutcome> ExtractBlindWatermarkOutcomeCallable;
+                typedef std::function<void(const MpsClient*, const Model::ExtractBlindWatermarkRequest&, ExtractBlindWatermarkOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ExtractBlindWatermarkAsyncHandler;
                 typedef Outcome<Core::Error, Model::ManageTaskResponse> ManageTaskOutcome;
                 typedef std::future<ManageTaskOutcome> ManageTaskOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::ManageTaskRequest&, ManageTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ManageTaskAsyncHandler;
@@ -633,6 +672,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyAsrHotwordsResponse> ModifyAsrHotwordsOutcome;
                 typedef std::future<ModifyAsrHotwordsOutcome> ModifyAsrHotwordsOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::ModifyAsrHotwordsRequest&, ModifyAsrHotwordsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAsrHotwordsAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyBlindWatermarkTemplateResponse> ModifyBlindWatermarkTemplateOutcome;
+                typedef std::future<ModifyBlindWatermarkTemplateOutcome> ModifyBlindWatermarkTemplateOutcomeCallable;
+                typedef std::function<void(const MpsClient*, const Model::ModifyBlindWatermarkTemplateRequest&, ModifyBlindWatermarkTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyBlindWatermarkTemplateAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyContentReviewTemplateResponse> ModifyContentReviewTemplateOutcome;
                 typedef std::future<ModifyContentReviewTemplateOutcome> ModifyContentReviewTemplateOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::ModifyContentReviewTemplateRequest&, ModifyContentReviewTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyContentReviewTemplateAsyncHandler;
@@ -645,6 +687,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyPersonSampleResponse> ModifyPersonSampleOutcome;
                 typedef std::future<ModifyPersonSampleOutcome> ModifyPersonSampleOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::ModifyPersonSampleRequest&, ModifyPersonSampleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyPersonSampleAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyProcessImageTemplateResponse> ModifyProcessImageTemplateOutcome;
+                typedef std::future<ModifyProcessImageTemplateOutcome> ModifyProcessImageTemplateOutcomeCallable;
+                typedef std::function<void(const MpsClient*, const Model::ModifyProcessImageTemplateRequest&, ModifyProcessImageTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyProcessImageTemplateAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyQualityControlTemplateResponse> ModifyQualityControlTemplateOutcome;
                 typedef std::future<ModifyQualityControlTemplateOutcome> ModifyQualityControlTemplateOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::ModifyQualityControlTemplateRequest&, ModifyQualityControlTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyQualityControlTemplateAsyncHandler;
@@ -803,6 +848,15 @@ namespace TencentCloud
                 CreateAsrHotwordsOutcomeCallable CreateAsrHotwordsCallable(const Model::CreateAsrHotwordsRequest& request);
 
                 /**
+                 *创建用户自定义数字水印模板，数量上限：1000。
+                 * @param req CreateBlindWatermarkTemplateRequest
+                 * @return CreateBlindWatermarkTemplateOutcome
+                 */
+                CreateBlindWatermarkTemplateOutcome CreateBlindWatermarkTemplate(const Model::CreateBlindWatermarkTemplateRequest &request);
+                void CreateBlindWatermarkTemplateAsync(const Model::CreateBlindWatermarkTemplateRequest& request, const CreateBlindWatermarkTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateBlindWatermarkTemplateOutcomeCallable CreateBlindWatermarkTemplateCallable(const Model::CreateBlindWatermarkTemplateRequest& request);
+
+                /**
                  *创建用户自定义内容审核模板，数量上限：50。
                  * @param req CreateContentReviewTemplateRequest
                  * @return CreateContentReviewTemplateOutcome
@@ -849,6 +903,15 @@ namespace TencentCloud
                 CreatePersonSampleOutcome CreatePersonSample(const Model::CreatePersonSampleRequest &request);
                 void CreatePersonSampleAsync(const Model::CreatePersonSampleRequest& request, const CreatePersonSampleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreatePersonSampleOutcomeCallable CreatePersonSampleCallable(const Model::CreatePersonSampleRequest& request);
+
+                /**
+                 *创建图片处理模板
+                 * @param req CreateProcessImageTemplateRequest
+                 * @return CreateProcessImageTemplateOutcome
+                 */
+                CreateProcessImageTemplateOutcome CreateProcessImageTemplate(const Model::CreateProcessImageTemplateRequest &request);
+                void CreateProcessImageTemplateAsync(const Model::CreateProcessImageTemplateRequest& request, const CreateProcessImageTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateProcessImageTemplateOutcomeCallable CreateProcessImageTemplateCallable(const Model::CreateProcessImageTemplateRequest& request);
 
                 /**
                  *创建媒体质检模板，数量上限：50。
@@ -1077,6 +1140,15 @@ namespace TencentCloud
                 DeleteAsrHotwordsOutcomeCallable DeleteAsrHotwordsCallable(const Model::DeleteAsrHotwordsRequest& request);
 
                 /**
+                 *删除用户自定义数字水印模板。
+                 * @param req DeleteBlindWatermarkTemplateRequest
+                 * @return DeleteBlindWatermarkTemplateOutcome
+                 */
+                DeleteBlindWatermarkTemplateOutcome DeleteBlindWatermarkTemplate(const Model::DeleteBlindWatermarkTemplateRequest &request);
+                void DeleteBlindWatermarkTemplateAsync(const Model::DeleteBlindWatermarkTemplateRequest& request, const DeleteBlindWatermarkTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteBlindWatermarkTemplateOutcomeCallable DeleteBlindWatermarkTemplateCallable(const Model::DeleteBlindWatermarkTemplateRequest& request);
+
+                /**
                  *删除用户自定义内容审核模板。
                  * @param req DeleteContentReviewTemplateRequest
                  * @return DeleteContentReviewTemplateOutcome
@@ -1111,6 +1183,15 @@ namespace TencentCloud
                 DeletePersonSampleOutcome DeletePersonSample(const Model::DeletePersonSampleRequest &request);
                 void DeletePersonSampleAsync(const Model::DeletePersonSampleRequest& request, const DeletePersonSampleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeletePersonSampleOutcomeCallable DeletePersonSampleCallable(const Model::DeletePersonSampleRequest& request);
+
+                /**
+                 *删除图片处理模板
+                 * @param req DeleteProcessImageTemplateRequest
+                 * @return DeleteProcessImageTemplateOutcome
+                 */
+                DeleteProcessImageTemplateOutcome DeleteProcessImageTemplate(const Model::DeleteProcessImageTemplateRequest &request);
+                void DeleteProcessImageTemplateAsync(const Model::DeleteProcessImageTemplateRequest& request, const DeleteProcessImageTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteProcessImageTemplateOutcomeCallable DeleteProcessImageTemplateCallable(const Model::DeleteProcessImageTemplateRequest& request);
 
                 /**
                  *删除媒体质检模板
@@ -1302,6 +1383,15 @@ namespace TencentCloud
                 DescribeBatchTaskDetailOutcomeCallable DescribeBatchTaskDetailCallable(const Model::DescribeBatchTaskDetailRequest& request);
 
                 /**
+                 *查询用户自定义数字水印模板，支持根据条件，分页查询。
+                 * @param req DescribeBlindWatermarkTemplatesRequest
+                 * @return DescribeBlindWatermarkTemplatesOutcome
+                 */
+                DescribeBlindWatermarkTemplatesOutcome DescribeBlindWatermarkTemplates(const Model::DescribeBlindWatermarkTemplatesRequest &request);
+                void DescribeBlindWatermarkTemplatesAsync(const Model::DescribeBlindWatermarkTemplatesRequest& request, const DescribeBlindWatermarkTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeBlindWatermarkTemplatesOutcomeCallable DescribeBlindWatermarkTemplatesCallable(const Model::DescribeBlindWatermarkTemplatesRequest& request);
+
+                /**
                  *根据智能审核模板唯一标识，获取智能审核模板详情列表。返回结果包含符合条件的所有用户自定义模板及系统预置智能审核模板。
                  * @param req DescribeContentReviewTemplatesRequest
                  * @return DescribeContentReviewTemplatesOutcome
@@ -1363,6 +1453,15 @@ namespace TencentCloud
                 DescribePersonSamplesOutcome DescribePersonSamples(const Model::DescribePersonSamplesRequest &request);
                 void DescribePersonSamplesAsync(const Model::DescribePersonSamplesRequest& request, const DescribePersonSamplesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribePersonSamplesOutcomeCallable DescribePersonSamplesCallable(const Model::DescribePersonSamplesRequest& request);
+
+                /**
+                 *查询图片处理模板列表。
+                 * @param req DescribeProcessImageTemplatesRequest
+                 * @return DescribeProcessImageTemplatesOutcome
+                 */
+                DescribeProcessImageTemplatesOutcome DescribeProcessImageTemplates(const Model::DescribeProcessImageTemplatesRequest &request);
+                void DescribeProcessImageTemplatesAsync(const Model::DescribeProcessImageTemplatesRequest& request, const DescribeProcessImageTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeProcessImageTemplatesOutcomeCallable DescribeProcessImageTemplatesCallable(const Model::DescribeProcessImageTemplatesRequest& request);
 
                 /**
                  *查询用户自定义媒体质检模板，支持根据条件，分页查询。
@@ -1685,6 +1784,15 @@ namespace TencentCloud
                 ExecuteFunctionOutcomeCallable ExecuteFunctionCallable(const Model::ExecuteFunctionRequest& request);
 
                 /**
+                 *用于发起提取视频数字水印任务，提取结果可以通过DescribeTaskDetail查询。
+                 * @param req ExtractBlindWatermarkRequest
+                 * @return ExtractBlindWatermarkOutcome
+                 */
+                ExtractBlindWatermarkOutcome ExtractBlindWatermark(const Model::ExtractBlindWatermarkRequest &request);
+                void ExtractBlindWatermarkAsync(const Model::ExtractBlindWatermarkRequest& request, const ExtractBlindWatermarkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ExtractBlindWatermarkOutcomeCallable ExtractBlindWatermarkCallable(const Model::ExtractBlindWatermarkRequest& request);
+
+                /**
                  *对已发起的任务进行管理。
                  * @param req ManageTaskRequest
                  * @return ManageTaskOutcome
@@ -1741,6 +1849,15 @@ namespace TencentCloud
                 ModifyAsrHotwordsOutcomeCallable ModifyAsrHotwordsCallable(const Model::ModifyAsrHotwordsRequest& request);
 
                 /**
+                 *修改用户自定义数字水印模板，数字水印类型不允许修改。
+                 * @param req ModifyBlindWatermarkTemplateRequest
+                 * @return ModifyBlindWatermarkTemplateOutcome
+                 */
+                ModifyBlindWatermarkTemplateOutcome ModifyBlindWatermarkTemplate(const Model::ModifyBlindWatermarkTemplateRequest &request);
+                void ModifyBlindWatermarkTemplateAsync(const Model::ModifyBlindWatermarkTemplateRequest& request, const ModifyBlindWatermarkTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyBlindWatermarkTemplateOutcomeCallable ModifyBlindWatermarkTemplateCallable(const Model::ModifyBlindWatermarkTemplateRequest& request);
+
+                /**
                  *修改用户自定义内容审核模板。
                  * @param req ModifyContentReviewTemplateRequest
                  * @return ModifyContentReviewTemplateOutcome
@@ -1775,6 +1892,15 @@ namespace TencentCloud
                 ModifyPersonSampleOutcome ModifyPersonSample(const Model::ModifyPersonSampleRequest &request);
                 void ModifyPersonSampleAsync(const Model::ModifyPersonSampleRequest& request, const ModifyPersonSampleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyPersonSampleOutcomeCallable ModifyPersonSampleCallable(const Model::ModifyPersonSampleRequest& request);
+
+                /**
+                 *修改图片处理模板。
+                 * @param req ModifyProcessImageTemplateRequest
+                 * @return ModifyProcessImageTemplateOutcome
+                 */
+                ModifyProcessImageTemplateOutcome ModifyProcessImageTemplate(const Model::ModifyProcessImageTemplateRequest &request);
+                void ModifyProcessImageTemplateAsync(const Model::ModifyProcessImageTemplateRequest& request, const ModifyProcessImageTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyProcessImageTemplateOutcomeCallable ModifyProcessImageTemplateCallable(const Model::ModifyProcessImageTemplateRequest& request);
 
                 /**
                  *修改媒体质检模板。

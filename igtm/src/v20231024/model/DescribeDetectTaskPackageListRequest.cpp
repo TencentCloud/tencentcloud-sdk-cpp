@@ -23,6 +23,7 @@ using namespace TencentCloud::Igtm::V20231024::Model;
 using namespace std;
 
 DescribeDetectTaskPackageListRequest::DescribeDetectTaskPackageListRequest() :
+    m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
     m_filtersHasBeenSet(false)
 {
@@ -34,6 +35,14 @@ string DescribeDetectTaskPackageListRequest::ToJsonString() const
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
+
+    if (m_offsetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Offset";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_offset, allocator);
+    }
 
     if (m_limitHasBeenSet)
     {
@@ -65,6 +74,22 @@ string DescribeDetectTaskPackageListRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+uint64_t DescribeDetectTaskPackageListRequest::GetOffset() const
+{
+    return m_offset;
+}
+
+void DescribeDetectTaskPackageListRequest::SetOffset(const uint64_t& _offset)
+{
+    m_offset = _offset;
+    m_offsetHasBeenSet = true;
+}
+
+bool DescribeDetectTaskPackageListRequest::OffsetHasBeenSet() const
+{
+    return m_offsetHasBeenSet;
+}
 
 uint64_t DescribeDetectTaskPackageListRequest::GetLimit() const
 {

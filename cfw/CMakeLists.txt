@@ -62,6 +62,7 @@ set(cfw_public_header_model
   include/tencentcloud/cfw/v20190904/model/DescribeNatFwVpcDnsLstRequest.h
   include/tencentcloud/cfw/v20190904/model/DescribeCfwEipsRequest.h
   include/tencentcloud/cfw/v20190904/model/DescribeTLogInfoResponse.h
+  include/tencentcloud/cfw/v20190904/model/CommonIdNameStatus.h
   include/tencentcloud/cfw/v20190904/model/DescribeUnHandleEventTabListRequest.h
   include/tencentcloud/cfw/v20190904/model/ModifyNatInstanceRequest.h
   include/tencentcloud/cfw/v20190904/model/DescribeNatFwDnatRuleRequest.h
@@ -161,6 +162,7 @@ set(cfw_public_header_model
   include/tencentcloud/cfw/v20190904/model/DeleteVpcFwGroupRequest.h
   include/tencentcloud/cfw/v20190904/model/IPDefendStatus.h
   include/tencentcloud/cfw/v20190904/model/RuleInfoData.h
+  include/tencentcloud/cfw/v20190904/model/NatSwitchListData.h
   include/tencentcloud/cfw/v20190904/model/DescribeAcListsResponse.h
   include/tencentcloud/cfw/v20190904/model/ModifyAllPublicIPSwitchStatusRequest.h
   include/tencentcloud/cfw/v20190904/model/ModifySequenceAclRulesResponse.h
@@ -220,7 +222,7 @@ set(cfw_public_header_model
   include/tencentcloud/cfw/v20190904/model/DescribeAcListsRequest.h
   include/tencentcloud/cfw/v20190904/model/DescribeGuideScanInfoRequest.h
   include/tencentcloud/cfw/v20190904/model/UnHandleEvent.h
-  include/tencentcloud/cfw/v20190904/model/DescribeBlockIgnoreListResponse.h
+  include/tencentcloud/cfw/v20190904/model/DescribeAssociatedInstanceListRequest.h
   include/tencentcloud/cfw/v20190904/model/ModifyVpcAcRuleResponse.h
   include/tencentcloud/cfw/v20190904/model/ModifyBlockIgnoreRuleNewRequest.h
   include/tencentcloud/cfw/v20190904/model/ModifyEWRuleStatusRequest.h
@@ -277,6 +279,7 @@ set(cfw_public_header_model
   include/tencentcloud/cfw/v20190904/model/CreateNatFwInstanceWithDomainRequest.h
   include/tencentcloud/cfw/v20190904/model/DescribeRuleOverviewRequest.h
   include/tencentcloud/cfw/v20190904/model/TagInfo.h
+  include/tencentcloud/cfw/v20190904/model/DescribeNatFwSwitchResponse.h
   include/tencentcloud/cfw/v20190904/model/DescribeResourceGroupResponse.h
   include/tencentcloud/cfw/v20190904/model/DeleteAddressTemplateResponse.h
   include/tencentcloud/cfw/v20190904/model/CreateBlockIgnoreRuleListResponse.h
@@ -294,6 +297,7 @@ set(cfw_public_header_model
   include/tencentcloud/cfw/v20190904/model/DeleteAddressTemplateRequest.h
   include/tencentcloud/cfw/v20190904/model/CreateAcRulesResponse.h
   include/tencentcloud/cfw/v20190904/model/DescribeEnterpriseSGRuleProgressResponse.h
+  include/tencentcloud/cfw/v20190904/model/CommonIdName.h
   include/tencentcloud/cfw/v20190904/model/DescribeSwitchListsResponse.h
   include/tencentcloud/cfw/v20190904/model/ModifyAcRuleRequest.h
   include/tencentcloud/cfw/v20190904/model/RemoveVpcAcRuleResponse.h
@@ -309,10 +313,11 @@ set(cfw_public_header_model
   include/tencentcloud/cfw/v20190904/model/CreateAcRulesRequest.h
   include/tencentcloud/cfw/v20190904/model/ModifyEnterpriseSecurityDispatchStatusRequest.h
   include/tencentcloud/cfw/v20190904/model/DescNatDnatRule.h
-  include/tencentcloud/cfw/v20190904/model/DescribeAssociatedInstanceListRequest.h
+  include/tencentcloud/cfw/v20190904/model/DescribeBlockIgnoreListResponse.h
   include/tencentcloud/cfw/v20190904/model/ModifyNatInstanceResponse.h
   include/tencentcloud/cfw/v20190904/model/ModifyTableStatusRequest.h
   include/tencentcloud/cfw/v20190904/model/ModifyTableStatusResponse.h
+  include/tencentcloud/cfw/v20190904/model/DescribeNatFwSwitchRequest.h
   include/tencentcloud/cfw/v20190904/model/DescribeBlockStaticListResponse.h
   include/tencentcloud/cfw/v20190904/model/DescribeGuideScanInfoResponse.h
   include/tencentcloud/cfw/v20190904/model/StorageHistogram.h
@@ -366,6 +371,7 @@ set(cfw_src
   src/v20190904/model/DescribeNatFwVpcDnsLstRequest.cpp
   src/v20190904/model/DescribeCfwEipsRequest.cpp
   src/v20190904/model/DescribeTLogInfoResponse.cpp
+  src/v20190904/model/CommonIdNameStatus.cpp
   src/v20190904/model/DescribeUnHandleEventTabListRequest.cpp
   src/v20190904/model/ModifyNatInstanceRequest.cpp
   src/v20190904/model/DescribeNatFwDnatRuleRequest.cpp
@@ -465,6 +471,7 @@ set(cfw_src
   src/v20190904/model/DeleteVpcFwGroupRequest.cpp
   src/v20190904/model/IPDefendStatus.cpp
   src/v20190904/model/RuleInfoData.cpp
+  src/v20190904/model/NatSwitchListData.cpp
   src/v20190904/model/DescribeAcListsResponse.cpp
   src/v20190904/model/ModifyAllPublicIPSwitchStatusRequest.cpp
   src/v20190904/model/ModifySequenceAclRulesResponse.cpp
@@ -524,7 +531,7 @@ set(cfw_src
   src/v20190904/model/DescribeAcListsRequest.cpp
   src/v20190904/model/DescribeGuideScanInfoRequest.cpp
   src/v20190904/model/UnHandleEvent.cpp
-  src/v20190904/model/DescribeBlockIgnoreListResponse.cpp
+  src/v20190904/model/DescribeAssociatedInstanceListRequest.cpp
   src/v20190904/model/ModifyVpcAcRuleResponse.cpp
   src/v20190904/model/ModifyBlockIgnoreRuleNewRequest.cpp
   src/v20190904/model/ModifyEWRuleStatusRequest.cpp
@@ -581,6 +588,7 @@ set(cfw_src
   src/v20190904/model/CreateNatFwInstanceWithDomainRequest.cpp
   src/v20190904/model/DescribeRuleOverviewRequest.cpp
   src/v20190904/model/TagInfo.cpp
+  src/v20190904/model/DescribeNatFwSwitchResponse.cpp
   src/v20190904/model/DescribeResourceGroupResponse.cpp
   src/v20190904/model/DeleteAddressTemplateResponse.cpp
   src/v20190904/model/CreateBlockIgnoreRuleListResponse.cpp
@@ -598,6 +606,7 @@ set(cfw_src
   src/v20190904/model/DeleteAddressTemplateRequest.cpp
   src/v20190904/model/CreateAcRulesResponse.cpp
   src/v20190904/model/DescribeEnterpriseSGRuleProgressResponse.cpp
+  src/v20190904/model/CommonIdName.cpp
   src/v20190904/model/DescribeSwitchListsResponse.cpp
   src/v20190904/model/ModifyAcRuleRequest.cpp
   src/v20190904/model/RemoveVpcAcRuleResponse.cpp
@@ -613,10 +622,11 @@ set(cfw_src
   src/v20190904/model/CreateAcRulesRequest.cpp
   src/v20190904/model/ModifyEnterpriseSecurityDispatchStatusRequest.cpp
   src/v20190904/model/DescNatDnatRule.cpp
-  src/v20190904/model/DescribeAssociatedInstanceListRequest.cpp
+  src/v20190904/model/DescribeBlockIgnoreListResponse.cpp
   src/v20190904/model/ModifyNatInstanceResponse.cpp
   src/v20190904/model/ModifyTableStatusRequest.cpp
   src/v20190904/model/ModifyTableStatusResponse.cpp
+  src/v20190904/model/DescribeNatFwSwitchRequest.cpp
   src/v20190904/model/DescribeBlockStaticListResponse.cpp
   src/v20190904/model/DescribeGuideScanInfoResponse.cpp
   src/v20190904/model/StorageHistogram.cpp

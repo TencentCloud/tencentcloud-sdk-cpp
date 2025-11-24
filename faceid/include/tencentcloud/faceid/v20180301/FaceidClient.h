@@ -75,8 +75,6 @@
 #include <tencentcloud/faceid/v20180301/model/ImageRecognitionResponse.h>
 #include <tencentcloud/faceid/v20180301/model/ImageRecognitionV2Request.h>
 #include <tencentcloud/faceid/v20180301/model/ImageRecognitionV2Response.h>
-#include <tencentcloud/faceid/v20180301/model/LivenessRequest.h>
-#include <tencentcloud/faceid/v20180301/model/LivenessResponse.h>
 #include <tencentcloud/faceid/v20180301/model/LivenessCompareRequest.h>
 #include <tencentcloud/faceid/v20180301/model/LivenessCompareResponse.h>
 #include <tencentcloud/faceid/v20180301/model/LivenessRecognitionRequest.h>
@@ -189,9 +187,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ImageRecognitionV2Response> ImageRecognitionV2Outcome;
                 typedef std::future<ImageRecognitionV2Outcome> ImageRecognitionV2OutcomeCallable;
                 typedef std::function<void(const FaceidClient*, const Model::ImageRecognitionV2Request&, ImageRecognitionV2Outcome, const std::shared_ptr<const AsyncCallerContext>&)> ImageRecognitionV2AsyncHandler;
-                typedef Outcome<Core::Error, Model::LivenessResponse> LivenessOutcome;
-                typedef std::future<LivenessOutcome> LivenessOutcomeCallable;
-                typedef std::function<void(const FaceidClient*, const Model::LivenessRequest&, LivenessOutcome, const std::shared_ptr<const AsyncCallerContext>&)> LivenessAsyncHandler;
                 typedef Outcome<Core::Error, Model::LivenessCompareResponse> LivenessCompareOutcome;
                 typedef std::future<LivenessCompareOutcome> LivenessCompareOutcomeCallable;
                 typedef std::function<void(const FaceidClient*, const Model::LivenessCompareRequest&, LivenessCompareOutcome, const std::shared_ptr<const AsyncCallerContext>&)> LivenessCompareAsyncHandler;
@@ -458,15 +453,6 @@ namespace TencentCloud
                 ImageRecognitionV2Outcome ImageRecognitionV2(const Model::ImageRecognitionV2Request &request);
                 void ImageRecognitionV2Async(const Model::ImageRecognitionV2Request& request, const ImageRecognitionV2AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ImageRecognitionV2OutcomeCallable ImageRecognitionV2Callable(const Model::ImageRecognitionV2Request& request);
-
-                /**
-                 *活体检测
-                 * @param req LivenessRequest
-                 * @return LivenessOutcome
-                 */
-                LivenessOutcome Liveness(const Model::LivenessRequest &request);
-                void LivenessAsync(const Model::LivenessRequest& request, const LivenessAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                LivenessOutcomeCallable LivenessCallable(const Model::LivenessRequest& request);
 
                 /**
                  *传入视频和照片，先判断视频中是否为真人，判断为真人后，再判断该视频中的人与上传照片是否属于同一个人。

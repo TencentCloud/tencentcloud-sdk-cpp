@@ -135,8 +135,10 @@ set(emr_public_header_model
   include/tencentcloud/emr/v20190103/model/TimeAutoScaleStrategy.h
   include/tencentcloud/emr/v20190103/model/EmrProductConfigOutter.h
   include/tencentcloud/emr/v20190103/model/HostPathVolumeSource.h
+  include/tencentcloud/emr/v20190103/model/OperationLog.h
   include/tencentcloud/emr/v20190103/model/DescribeServiceConfGroupInfosResponse.h
   include/tencentcloud/emr/v20190103/model/PodSpec.h
+  include/tencentcloud/emr/v20190103/model/DescribeInstanceOplogRequest.h
   include/tencentcloud/emr/v20190103/model/InspectionTaskSettings.h
   include/tencentcloud/emr/v20190103/model/GroupInfo.h
   include/tencentcloud/emr/v20190103/model/ModifyYarnDeployRequest.h
@@ -206,6 +208,7 @@ set(emr_public_header_model
   include/tencentcloud/emr/v20190103/model/UserManagerFilter.h
   include/tencentcloud/emr/v20190103/model/MetaDbInfo.h
   include/tencentcloud/emr/v20190103/model/JobFlowResourceSpec.h
+  include/tencentcloud/emr/v20190103/model/DescribeInstanceOplogResponse.h
   include/tencentcloud/emr/v20190103/model/ZoneDetailPriceResult.h
   include/tencentcloud/emr/v20190103/model/DescribeAutoScaleGroupGlobalConfRequest.h
   include/tencentcloud/emr/v20190103/model/ModifyResourceScheduleConfigResponse.h
@@ -495,8 +498,10 @@ set(emr_src
   src/v20190103/model/TimeAutoScaleStrategy.cpp
   src/v20190103/model/EmrProductConfigOutter.cpp
   src/v20190103/model/HostPathVolumeSource.cpp
+  src/v20190103/model/OperationLog.cpp
   src/v20190103/model/DescribeServiceConfGroupInfosResponse.cpp
   src/v20190103/model/PodSpec.cpp
+  src/v20190103/model/DescribeInstanceOplogRequest.cpp
   src/v20190103/model/InspectionTaskSettings.cpp
   src/v20190103/model/GroupInfo.cpp
   src/v20190103/model/ModifyYarnDeployRequest.cpp
@@ -566,6 +571,7 @@ set(emr_src
   src/v20190103/model/UserManagerFilter.cpp
   src/v20190103/model/MetaDbInfo.cpp
   src/v20190103/model/JobFlowResourceSpec.cpp
+  src/v20190103/model/DescribeInstanceOplogResponse.cpp
   src/v20190103/model/ZoneDetailPriceResult.cpp
   src/v20190103/model/DescribeAutoScaleGroupGlobalConfRequest.cpp
   src/v20190103/model/ModifyResourceScheduleConfigResponse.cpp

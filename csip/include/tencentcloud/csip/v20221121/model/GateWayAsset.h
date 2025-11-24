@@ -656,6 +656,27 @@ namespace TencentCloud
                      */
                     bool EngineRegionHasBeenSet() const;
 
+                    /**
+                     * 获取弱口令风险
+                     * @return WeakPasswordRisk 弱口令风险
+                     * 
+                     */
+                    uint64_t GetWeakPasswordRisk() const;
+
+                    /**
+                     * 设置弱口令风险
+                     * @param _weakPasswordRisk 弱口令风险
+                     * 
+                     */
+                    void SetWeakPasswordRisk(const uint64_t& _weakPasswordRisk);
+
+                    /**
+                     * 判断参数 WeakPasswordRisk 是否已赋值
+                     * @return WeakPasswordRisk 是否已赋值
+                     * 
+                     */
+                    bool WeakPasswordRiskHasBeenSet() const;
+
                 private:
 
                     /**
@@ -831,6 +852,12 @@ namespace TencentCloud
                      */
                     std::string m_engineRegion;
                     bool m_engineRegionHasBeenSet;
+
+                    /**
+                     * 弱口令风险
+                     */
+                    uint64_t m_weakPasswordRisk;
+                    bool m_weakPasswordRiskHasBeenSet;
 
                 };
             }

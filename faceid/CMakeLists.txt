@@ -39,11 +39,9 @@ set(faceid_public_header_model
   include/tencentcloud/faceid/v20180301/model/LivenessCompareResponse.h
   include/tencentcloud/faceid/v20180301/model/BankCard2EVerificationResponse.h
   include/tencentcloud/faceid/v20180301/model/MobileStatusResponse.h
-  include/tencentcloud/faceid/v20180301/model/LivenessResponse.h
   include/tencentcloud/faceid/v20180301/model/EncryptedPhoneVerificationRequest.h
   include/tencentcloud/faceid/v20180301/model/EncryptedPhoneVerificationResponse.h
   include/tencentcloud/faceid/v20180301/model/DetectInfoVideoData.h
-  include/tencentcloud/faceid/v20180301/model/LivenessRequest.h
   include/tencentcloud/faceid/v20180301/model/DetectAIFakeFacesRequest.h
   include/tencentcloud/faceid/v20180301/model/CheckBankCardInformationResponse.h
   include/tencentcloud/faceid/v20180301/model/GetEidTokenRequest.h
@@ -138,11 +136,9 @@ set(faceid_src
   src/v20180301/model/LivenessCompareResponse.cpp
   src/v20180301/model/BankCard2EVerificationResponse.cpp
   src/v20180301/model/MobileStatusResponse.cpp
-  src/v20180301/model/LivenessResponse.cpp
   src/v20180301/model/EncryptedPhoneVerificationRequest.cpp
   src/v20180301/model/EncryptedPhoneVerificationResponse.cpp
   src/v20180301/model/DetectInfoVideoData.cpp
-  src/v20180301/model/LivenessRequest.cpp
   src/v20180301/model/DetectAIFakeFacesRequest.cpp
   src/v20180301/model/CheckBankCardInformationResponse.cpp
   src/v20180301/model/GetEidTokenRequest.cpp

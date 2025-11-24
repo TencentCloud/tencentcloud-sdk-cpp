@@ -14,23 +14,21 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/iai/v20180301/model/DetectLiveFaceResponse.h>
+#include <tencentcloud/mps/v20190612/model/ExtractBlindWatermarkResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Iai::V20180301::Model;
+using namespace TencentCloud::Mps::V20190612::Model;
 using namespace std;
 
-DetectLiveFaceResponse::DetectLiveFaceResponse() :
-    m_scoreHasBeenSet(false),
-    m_faceModelVersionHasBeenSet(false),
-    m_isLivenessHasBeenSet(false)
+ExtractBlindWatermarkResponse::ExtractBlindWatermarkResponse() :
+    m_taskIdHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome DetectLiveFaceResponse::Deserialize(const string &payload)
+CoreInternalOutcome ExtractBlindWatermarkResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -64,68 +62,32 @@ CoreInternalOutcome DetectLiveFaceResponse::Deserialize(const string &payload)
     }
 
 
-    if (rsp.HasMember("Score") && !rsp["Score"].IsNull())
+    if (rsp.HasMember("TaskId") && !rsp["TaskId"].IsNull())
     {
-        if (!rsp["Score"].IsLosslessDouble())
+        if (!rsp["TaskId"].IsString())
         {
-            return CoreInternalOutcome(Core::Error("response `Score` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskId` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_score = rsp["Score"].GetDouble();
-        m_scoreHasBeenSet = true;
-    }
-
-    if (rsp.HasMember("FaceModelVersion") && !rsp["FaceModelVersion"].IsNull())
-    {
-        if (!rsp["FaceModelVersion"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `FaceModelVersion` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_faceModelVersion = string(rsp["FaceModelVersion"].GetString());
-        m_faceModelVersionHasBeenSet = true;
-    }
-
-    if (rsp.HasMember("IsLiveness") && !rsp["IsLiveness"].IsNull())
-    {
-        if (!rsp["IsLiveness"].IsBool())
-        {
-            return CoreInternalOutcome(Core::Error("response `IsLiveness` IsBool=false incorrectly").SetRequestId(requestId));
-        }
-        m_isLiveness = rsp["IsLiveness"].GetBool();
-        m_isLivenessHasBeenSet = true;
+        m_taskId = string(rsp["TaskId"].GetString());
+        m_taskIdHasBeenSet = true;
     }
 
 
     return CoreInternalOutcome(true);
 }
 
-string DetectLiveFaceResponse::ToJsonString() const
+string ExtractBlindWatermarkResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
-    if (m_scoreHasBeenSet)
+    if (m_taskIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Score";
+        string key = "TaskId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_score, allocator);
-    }
-
-    if (m_faceModelVersionHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "FaceModelVersion";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_faceModelVersion.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_isLivenessHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "IsLiveness";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_isLiveness, allocator);
+        value.AddMember(iKey, rapidjson::Value(m_taskId.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -140,34 +102,14 @@ string DetectLiveFaceResponse::ToJsonString() const
 }
 
 
-double DetectLiveFaceResponse::GetScore() const
+string ExtractBlindWatermarkResponse::GetTaskId() const
 {
-    return m_score;
+    return m_taskId;
 }
 
-bool DetectLiveFaceResponse::ScoreHasBeenSet() const
+bool ExtractBlindWatermarkResponse::TaskIdHasBeenSet() const
 {
-    return m_scoreHasBeenSet;
-}
-
-string DetectLiveFaceResponse::GetFaceModelVersion() const
-{
-    return m_faceModelVersion;
-}
-
-bool DetectLiveFaceResponse::FaceModelVersionHasBeenSet() const
-{
-    return m_faceModelVersionHasBeenSet;
-}
-
-bool DetectLiveFaceResponse::GetIsLiveness() const
-{
-    return m_isLiveness;
-}
-
-bool DetectLiveFaceResponse::IsLivenessHasBeenSet() const
-{
-    return m_isLivenessHasBeenSet;
+    return m_taskIdHasBeenSet;
 }
 
 

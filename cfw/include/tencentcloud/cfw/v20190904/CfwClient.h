@@ -131,6 +131,8 @@
 #include <tencentcloud/cfw/v20190904/model/DescribeNatFwInstanceWithRegionResponse.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeNatFwInstancesInfoRequest.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeNatFwInstancesInfoResponse.h>
+#include <tencentcloud/cfw/v20190904/model/DescribeNatFwSwitchRequest.h>
+#include <tencentcloud/cfw/v20190904/model/DescribeNatFwSwitchResponse.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeNatFwVpcDnsLstRequest.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeNatFwVpcDnsLstResponse.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeResourceGroupRequest.h>
@@ -423,6 +425,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeNatFwInstancesInfoResponse> DescribeNatFwInstancesInfoOutcome;
                 typedef std::future<DescribeNatFwInstancesInfoOutcome> DescribeNatFwInstancesInfoOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::DescribeNatFwInstancesInfoRequest&, DescribeNatFwInstancesInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNatFwInstancesInfoAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeNatFwSwitchResponse> DescribeNatFwSwitchOutcome;
+                typedef std::future<DescribeNatFwSwitchOutcome> DescribeNatFwSwitchOutcomeCallable;
+                typedef std::function<void(const CfwClient*, const Model::DescribeNatFwSwitchRequest&, DescribeNatFwSwitchOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNatFwSwitchAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeNatFwVpcDnsLstResponse> DescribeNatFwVpcDnsLstOutcome;
                 typedef std::future<DescribeNatFwVpcDnsLstOutcome> DescribeNatFwVpcDnsLstOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::DescribeNatFwVpcDnsLstRequest&, DescribeNatFwVpcDnsLstOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNatFwVpcDnsLstAsyncHandler;
@@ -1085,6 +1090,15 @@ namespace TencentCloud
                 DescribeNatFwInstancesInfoOutcome DescribeNatFwInstancesInfo(const Model::DescribeNatFwInstancesInfoRequest &request);
                 void DescribeNatFwInstancesInfoAsync(const Model::DescribeNatFwInstancesInfoRequest& request, const DescribeNatFwInstancesInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeNatFwInstancesInfoOutcomeCallable DescribeNatFwInstancesInfoCallable(const Model::DescribeNatFwInstancesInfoRequest& request);
+
+                /**
+                 *查询NAT边界防火墙开关列表
+                 * @param req DescribeNatFwSwitchRequest
+                 * @return DescribeNatFwSwitchOutcome
+                 */
+                DescribeNatFwSwitchOutcome DescribeNatFwSwitch(const Model::DescribeNatFwSwitchRequest &request);
+                void DescribeNatFwSwitchAsync(const Model::DescribeNatFwSwitchRequest& request, const DescribeNatFwSwitchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeNatFwSwitchOutcomeCallable DescribeNatFwSwitchCallable(const Model::DescribeNatFwSwitchRequest& request);
 
                 /**
                  *展示当前natfw 实例对应的vpc dns开关

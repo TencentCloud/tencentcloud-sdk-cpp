@@ -890,6 +890,56 @@ ClsClient::CreateDeliverCloudFunctionOutcomeCallable ClsClient::CreateDeliverClo
     return prom->get_future();
 }
 
+ClsClient::CreateDlcDeliverOutcome ClsClient::CreateDlcDeliver(const CreateDlcDeliverRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateDlcDeliver");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateDlcDeliverResponse rsp = CreateDlcDeliverResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateDlcDeliverOutcome(rsp);
+        else
+            return CreateDlcDeliverOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateDlcDeliverOutcome(outcome.GetError());
+    }
+}
+
+void ClsClient::CreateDlcDeliverAsync(const CreateDlcDeliverRequest& request, const CreateDlcDeliverAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateDlcDeliverRequest&;
+    using Resp = CreateDlcDeliverResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateDlcDeliver", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ClsClient::CreateDlcDeliverOutcomeCallable ClsClient::CreateDlcDeliverCallable(const CreateDlcDeliverRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateDlcDeliverOutcome>>();
+    CreateDlcDeliverAsync(
+    request,
+    [prom](
+        const ClsClient*,
+        const CreateDlcDeliverRequest&,
+        CreateDlcDeliverOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 ClsClient::CreateExportOutcome ClsClient::CreateExport(const CreateExportRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateExport");
@@ -1982,6 +2032,56 @@ ClsClient::DeleteDataTransformOutcomeCallable ClsClient::DeleteDataTransformCall
         const ClsClient*,
         const DeleteDataTransformRequest&,
         DeleteDataTransformOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+ClsClient::DeleteDlcDeliverOutcome ClsClient::DeleteDlcDeliver(const DeleteDlcDeliverRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteDlcDeliver");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteDlcDeliverResponse rsp = DeleteDlcDeliverResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteDlcDeliverOutcome(rsp);
+        else
+            return DeleteDlcDeliverOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteDlcDeliverOutcome(outcome.GetError());
+    }
+}
+
+void ClsClient::DeleteDlcDeliverAsync(const DeleteDlcDeliverRequest& request, const DeleteDlcDeliverAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteDlcDeliverRequest&;
+    using Resp = DeleteDlcDeliverResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteDlcDeliver", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ClsClient::DeleteDlcDeliverOutcomeCallable ClsClient::DeleteDlcDeliverCallable(const DeleteDlcDeliverRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteDlcDeliverOutcome>>();
+    DeleteDlcDeliverAsync(
+    request,
+    [prom](
+        const ClsClient*,
+        const DeleteDlcDeliverRequest&,
+        DeleteDlcDeliverOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -3232,6 +3332,56 @@ ClsClient::DescribeDataTransformInfoOutcomeCallable ClsClient::DescribeDataTrans
         const ClsClient*,
         const DescribeDataTransformInfoRequest&,
         DescribeDataTransformInfoOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+ClsClient::DescribeDlcDeliversOutcome ClsClient::DescribeDlcDelivers(const DescribeDlcDeliversRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDlcDelivers");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDlcDeliversResponse rsp = DescribeDlcDeliversResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDlcDeliversOutcome(rsp);
+        else
+            return DescribeDlcDeliversOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDlcDeliversOutcome(outcome.GetError());
+    }
+}
+
+void ClsClient::DescribeDlcDeliversAsync(const DescribeDlcDeliversRequest& request, const DescribeDlcDeliversAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeDlcDeliversRequest&;
+    using Resp = DescribeDlcDeliversResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeDlcDelivers", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ClsClient::DescribeDlcDeliversOutcomeCallable ClsClient::DescribeDlcDeliversCallable(const DescribeDlcDeliversRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeDlcDeliversOutcome>>();
+    DescribeDlcDeliversAsync(
+    request,
+    [prom](
+        const ClsClient*,
+        const DescribeDlcDeliversRequest&,
+        DescribeDlcDeliversOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -4832,6 +4982,56 @@ ClsClient::ModifyDataTransformOutcomeCallable ClsClient::ModifyDataTransformCall
         const ClsClient*,
         const ModifyDataTransformRequest&,
         ModifyDataTransformOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+ClsClient::ModifyDlcDeliverOutcome ClsClient::ModifyDlcDeliver(const ModifyDlcDeliverRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyDlcDeliver");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyDlcDeliverResponse rsp = ModifyDlcDeliverResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyDlcDeliverOutcome(rsp);
+        else
+            return ModifyDlcDeliverOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyDlcDeliverOutcome(outcome.GetError());
+    }
+}
+
+void ClsClient::ModifyDlcDeliverAsync(const ModifyDlcDeliverRequest& request, const ModifyDlcDeliverAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyDlcDeliverRequest&;
+    using Resp = ModifyDlcDeliverResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyDlcDeliver", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ClsClient::ModifyDlcDeliverOutcomeCallable ClsClient::ModifyDlcDeliverCallable(const ModifyDlcDeliverRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyDlcDeliverOutcome>>();
+    ModifyDlcDeliverAsync(
+    request,
+    [prom](
+        const ClsClient*,
+        const ModifyDlcDeliverRequest&,
+        ModifyDlcDeliverOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

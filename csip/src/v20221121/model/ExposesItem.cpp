@@ -52,7 +52,11 @@ ExposesItem::ExposesItem() :
     m_appIdStrHasBeenSet(false),
     m_exposureIDHasBeenSet(false),
     m_portDetectCountHasBeenSet(false),
-    m_portDetectResultHasBeenSet(false)
+    m_portDetectResultHasBeenSet(false),
+    m_tagHasBeenSet(false),
+    m_commentHasBeenSet(false),
+    m_toGovernedRiskCountHasBeenSet(false),
+    m_toGovernedRiskContentHasBeenSet(false)
 {
 }
 
@@ -381,6 +385,46 @@ CoreInternalOutcome ExposesItem::Deserialize(const rapidjson::Value &value)
         m_portDetectResultHasBeenSet = true;
     }
 
+    if (value.HasMember("Tag") && !value["Tag"].IsNull())
+    {
+        if (!value["Tag"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ExposesItem.Tag` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_tag = string(value["Tag"].GetString());
+        m_tagHasBeenSet = true;
+    }
+
+    if (value.HasMember("Comment") && !value["Comment"].IsNull())
+    {
+        if (!value["Comment"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ExposesItem.Comment` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_comment = string(value["Comment"].GetString());
+        m_commentHasBeenSet = true;
+    }
+
+    if (value.HasMember("ToGovernedRiskCount") && !value["ToGovernedRiskCount"].IsNull())
+    {
+        if (!value["ToGovernedRiskCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ExposesItem.ToGovernedRiskCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_toGovernedRiskCount = value["ToGovernedRiskCount"].GetUint64();
+        m_toGovernedRiskCountHasBeenSet = true;
+    }
+
+    if (value.HasMember("ToGovernedRiskContent") && !value["ToGovernedRiskContent"].IsNull())
+    {
+        if (!value["ToGovernedRiskContent"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ExposesItem.ToGovernedRiskContent` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_toGovernedRiskContent = string(value["ToGovernedRiskContent"].GetString());
+        m_toGovernedRiskContentHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -642,6 +686,38 @@ void ExposesItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "PortDetectResult";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_portDetectResult.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Tag";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_tag.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_commentHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Comment";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_comment.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_toGovernedRiskCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ToGovernedRiskCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_toGovernedRiskCount, allocator);
+    }
+
+    if (m_toGovernedRiskContentHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ToGovernedRiskContent";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_toGovernedRiskContent.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1157,5 +1233,69 @@ void ExposesItem::SetPortDetectResult(const string& _portDetectResult)
 bool ExposesItem::PortDetectResultHasBeenSet() const
 {
     return m_portDetectResultHasBeenSet;
+}
+
+string ExposesItem::GetTag() const
+{
+    return m_tag;
+}
+
+void ExposesItem::SetTag(const string& _tag)
+{
+    m_tag = _tag;
+    m_tagHasBeenSet = true;
+}
+
+bool ExposesItem::TagHasBeenSet() const
+{
+    return m_tagHasBeenSet;
+}
+
+string ExposesItem::GetComment() const
+{
+    return m_comment;
+}
+
+void ExposesItem::SetComment(const string& _comment)
+{
+    m_comment = _comment;
+    m_commentHasBeenSet = true;
+}
+
+bool ExposesItem::CommentHasBeenSet() const
+{
+    return m_commentHasBeenSet;
+}
+
+uint64_t ExposesItem::GetToGovernedRiskCount() const
+{
+    return m_toGovernedRiskCount;
+}
+
+void ExposesItem::SetToGovernedRiskCount(const uint64_t& _toGovernedRiskCount)
+{
+    m_toGovernedRiskCount = _toGovernedRiskCount;
+    m_toGovernedRiskCountHasBeenSet = true;
+}
+
+bool ExposesItem::ToGovernedRiskCountHasBeenSet() const
+{
+    return m_toGovernedRiskCountHasBeenSet;
+}
+
+string ExposesItem::GetToGovernedRiskContent() const
+{
+    return m_toGovernedRiskContent;
+}
+
+void ExposesItem::SetToGovernedRiskContent(const string& _toGovernedRiskContent)
+{
+    m_toGovernedRiskContent = _toGovernedRiskContent;
+    m_toGovernedRiskContentHasBeenSet = true;
+}
+
+bool ExposesItem::ToGovernedRiskContentHasBeenSet() const
+{
+    return m_toGovernedRiskContentHasBeenSet;
 }
 

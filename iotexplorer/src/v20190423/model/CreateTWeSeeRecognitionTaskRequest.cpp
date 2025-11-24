@@ -26,6 +26,7 @@ CreateTWeSeeRecognitionTaskRequest::CreateTWeSeeRecognitionTaskRequest() :
     m_productIdHasBeenSet(false),
     m_deviceNameHasBeenSet(false),
     m_inputURLHasBeenSet(false),
+    m_channelIdHasBeenSet(false),
     m_customIdHasBeenSet(false),
     m_enableSearchHasBeenSet(false),
     m_startTimeMsHasBeenSet(false),
@@ -69,6 +70,14 @@ string CreateTWeSeeRecognitionTaskRequest::ToJsonString() const
         string key = "InputURL";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_inputURL.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_channelIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ChannelId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_channelId, allocator);
     }
 
     if (m_customIdHasBeenSet)
@@ -215,6 +224,22 @@ void CreateTWeSeeRecognitionTaskRequest::SetInputURL(const string& _inputURL)
 bool CreateTWeSeeRecognitionTaskRequest::InputURLHasBeenSet() const
 {
     return m_inputURLHasBeenSet;
+}
+
+uint64_t CreateTWeSeeRecognitionTaskRequest::GetChannelId() const
+{
+    return m_channelId;
+}
+
+void CreateTWeSeeRecognitionTaskRequest::SetChannelId(const uint64_t& _channelId)
+{
+    m_channelId = _channelId;
+    m_channelIdHasBeenSet = true;
+}
+
+bool CreateTWeSeeRecognitionTaskRequest::ChannelIdHasBeenSet() const
+{
+    return m_channelIdHasBeenSet;
 }
 
 string CreateTWeSeeRecognitionTaskRequest::GetCustomId() const

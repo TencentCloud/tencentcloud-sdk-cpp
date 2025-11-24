@@ -44,6 +44,27 @@ namespace TencentCloud
 
 
                     /**
+                     * 获取偏移量
+                     * @return Offset 偏移量
+                     * 
+                     */
+                    uint64_t GetOffset() const;
+
+                    /**
+                     * 设置偏移量
+                     * @param _offset 偏移量
+                     * 
+                     */
+                    void SetOffset(const uint64_t& _offset);
+
+                    /**
+                     * 判断参数 Offset 是否已赋值
+                     * @return Offset 是否已赋值
+                     * 
+                     */
+                    bool OffsetHasBeenSet() const;
+
+                    /**
                      * 获取每页条数
                      * @return Limit 每页条数
                      * 
@@ -86,6 +107,12 @@ namespace TencentCloud
                     bool FiltersHasBeenSet() const;
 
                 private:
+
+                    /**
+                     * 偏移量
+                     */
+                    uint64_t m_offset;
+                    bool m_offsetHasBeenSet;
 
                     /**
                      * 每页条数

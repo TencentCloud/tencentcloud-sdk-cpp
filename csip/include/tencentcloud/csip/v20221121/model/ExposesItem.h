@@ -718,6 +718,90 @@ namespace TencentCloud
                      */
                     bool PortDetectResultHasBeenSet() const;
 
+                    /**
+                     * 获取标签
+                     * @return Tag 标签
+                     * 
+                     */
+                    std::string GetTag() const;
+
+                    /**
+                     * 设置标签
+                     * @param _tag 标签
+                     * 
+                     */
+                    void SetTag(const std::string& _tag);
+
+                    /**
+                     * 判断参数 Tag 是否已赋值
+                     * @return Tag 是否已赋值
+                     * 
+                     */
+                    bool TagHasBeenSet() const;
+
+                    /**
+                     * 获取备注
+                     * @return Comment 备注
+                     * 
+                     */
+                    std::string GetComment() const;
+
+                    /**
+                     * 设置备注
+                     * @param _comment 备注
+                     * 
+                     */
+                    void SetComment(const std::string& _comment);
+
+                    /**
+                     * 判断参数 Comment 是否已赋值
+                     * @return Comment 是否已赋值
+                     * 
+                     */
+                    bool CommentHasBeenSet() const;
+
+                    /**
+                     * 获取待治理风险数量
+                     * @return ToGovernedRiskCount 待治理风险数量
+                     * 
+                     */
+                    uint64_t GetToGovernedRiskCount() const;
+
+                    /**
+                     * 设置待治理风险数量
+                     * @param _toGovernedRiskCount 待治理风险数量
+                     * 
+                     */
+                    void SetToGovernedRiskCount(const uint64_t& _toGovernedRiskCount);
+
+                    /**
+                     * 判断参数 ToGovernedRiskCount 是否已赋值
+                     * @return ToGovernedRiskCount 是否已赋值
+                     * 
+                     */
+                    bool ToGovernedRiskCountHasBeenSet() const;
+
+                    /**
+                     * 获取待治理风险内容
+                     * @return ToGovernedRiskContent 待治理风险内容
+                     * 
+                     */
+                    std::string GetToGovernedRiskContent() const;
+
+                    /**
+                     * 设置待治理风险内容
+                     * @param _toGovernedRiskContent 待治理风险内容
+                     * 
+                     */
+                    void SetToGovernedRiskContent(const std::string& _toGovernedRiskContent);
+
+                    /**
+                     * 判断参数 ToGovernedRiskContent 是否已赋值
+                     * @return ToGovernedRiskContent 是否已赋值
+                     * 
+                     */
+                    bool ToGovernedRiskContentHasBeenSet() const;
+
                 private:
 
                     /**
@@ -911,6 +995,30 @@ namespace TencentCloud
                      */
                     std::string m_portDetectResult;
                     bool m_portDetectResultHasBeenSet;
+
+                    /**
+                     * 标签
+                     */
+                    std::string m_tag;
+                    bool m_tagHasBeenSet;
+
+                    /**
+                     * 备注
+                     */
+                    std::string m_comment;
+                    bool m_commentHasBeenSet;
+
+                    /**
+                     * 待治理风险数量
+                     */
+                    uint64_t m_toGovernedRiskCount;
+                    bool m_toGovernedRiskCountHasBeenSet;
+
+                    /**
+                     * 待治理风险内容
+                     */
+                    std::string m_toGovernedRiskContent;
+                    bool m_toGovernedRiskContentHasBeenSet;
 
                 };
             }

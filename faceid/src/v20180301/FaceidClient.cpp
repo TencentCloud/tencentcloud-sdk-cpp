@@ -1340,56 +1340,6 @@ FaceidClient::ImageRecognitionV2OutcomeCallable FaceidClient::ImageRecognitionV2
     return prom->get_future();
 }
 
-FaceidClient::LivenessOutcome FaceidClient::Liveness(const LivenessRequest &request)
-{
-    auto outcome = MakeRequest(request, "Liveness");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        LivenessResponse rsp = LivenessResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return LivenessOutcome(rsp);
-        else
-            return LivenessOutcome(o.GetError());
-    }
-    else
-    {
-        return LivenessOutcome(outcome.GetError());
-    }
-}
-
-void FaceidClient::LivenessAsync(const LivenessRequest& request, const LivenessAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    using Req = const LivenessRequest&;
-    using Resp = LivenessResponse;
-
-    DoRequestAsync<Req, Resp>(
-        "Liveness", request, {{{"Content-Type", "application/json"}}},
-        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
-        {
-            handler(this, req, std::move(resp), context);
-        });
-}
-
-FaceidClient::LivenessOutcomeCallable FaceidClient::LivenessCallable(const LivenessRequest &request)
-{
-    const auto prom = std::make_shared<std::promise<LivenessOutcome>>();
-    LivenessAsync(
-    request,
-    [prom](
-        const FaceidClient*,
-        const LivenessRequest&,
-        LivenessOutcome resp,
-        const std::shared_ptr<const AsyncCallerContext>&
-    )
-    {
-        prom->set_value(resp);
-    });
-    return prom->get_future();
-}
-
 FaceidClient::LivenessCompareOutcome FaceidClient::LivenessCompare(const LivenessCompareRequest &request)
 {
     auto outcome = MakeRequest(request, "LivenessCompare");

@@ -340,6 +340,27 @@ namespace TencentCloud
                      */
                     bool RiskRuleIdHasBeenSet() const;
 
+                    /**
+                     * 获取处置分类
+                     * @return Classify 处置分类
+                     * 
+                     */
+                    std::string GetClassify() const;
+
+                    /**
+                     * 设置处置分类
+                     * @param _classify 处置分类
+                     * 
+                     */
+                    void SetClassify(const std::string& _classify);
+
+                    /**
+                     * 判断参数 Classify 是否已赋值
+                     * @return Classify 是否已赋值
+                     * 
+                     */
+                    bool ClassifyHasBeenSet() const;
+
                 private:
 
                     /**
@@ -425,6 +446,12 @@ namespace TencentCloud
                      */
                     std::string m_riskRuleId;
                     bool m_riskRuleIdHasBeenSet;
+
+                    /**
+                     * 处置分类
+                     */
+                    std::string m_classify;
+                    bool m_classifyHasBeenSet;
 
                 };
             }

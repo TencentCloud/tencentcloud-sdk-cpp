@@ -49,7 +49,8 @@ GateWayAsset::GateWayAsset() :
     m_riskExposureHasBeenSet(false),
     m_isNewAssetHasBeenSet(false),
     m_statusHasBeenSet(false),
-    m_engineRegionHasBeenSet(false)
+    m_engineRegionHasBeenSet(false),
+    m_weakPasswordRiskHasBeenSet(false)
 {
 }
 
@@ -358,6 +359,16 @@ CoreInternalOutcome GateWayAsset::Deserialize(const rapidjson::Value &value)
         m_engineRegionHasBeenSet = true;
     }
 
+    if (value.HasMember("WeakPasswordRisk") && !value["WeakPasswordRisk"].IsNull())
+    {
+        if (!value["WeakPasswordRisk"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `GateWayAsset.WeakPasswordRisk` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_weakPasswordRisk = value["WeakPasswordRisk"].GetUint64();
+        m_weakPasswordRiskHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -602,6 +613,14 @@ void GateWayAsset::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "EngineRegion";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_engineRegion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_weakPasswordRiskHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WeakPasswordRisk";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_weakPasswordRisk, allocator);
     }
 
 }
@@ -1069,5 +1088,21 @@ void GateWayAsset::SetEngineRegion(const string& _engineRegion)
 bool GateWayAsset::EngineRegionHasBeenSet() const
 {
     return m_engineRegionHasBeenSet;
+}
+
+uint64_t GateWayAsset::GetWeakPasswordRisk() const
+{
+    return m_weakPasswordRisk;
+}
+
+void GateWayAsset::SetWeakPasswordRisk(const uint64_t& _weakPasswordRisk)
+{
+    m_weakPasswordRisk = _weakPasswordRisk;
+    m_weakPasswordRiskHasBeenSet = true;
+}
+
+bool GateWayAsset::WeakPasswordRiskHasBeenSet() const
+{
+    return m_weakPasswordRiskHasBeenSet;
 }
 

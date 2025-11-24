@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/igtm/v20231024/model/ResourceFilter.h>
 
 
 namespace TencentCloud
@@ -85,6 +86,27 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
+                     * 获取查询过滤条件：MonitorName：监控器名称；MonitorId：监控器id
+                     * @return Filters 查询过滤条件：MonitorName：监控器名称；MonitorId：监控器id
+                     * 
+                     */
+                    std::vector<ResourceFilter> GetFilters() const;
+
+                    /**
+                     * 设置查询过滤条件：MonitorName：监控器名称；MonitorId：监控器id
+                     * @param _filters 查询过滤条件：MonitorName：监控器名称；MonitorId：监控器id
+                     * 
+                     */
+                    void SetFilters(const std::vector<ResourceFilter>& _filters);
+
+                    /**
+                     * 判断参数 Filters 是否已赋值
+                     * @return Filters 是否已赋值
+                     * 
+                     */
+                    bool FiltersHasBeenSet() const;
+
+                    /**
                      * 获取是否查探测次数0否1是
                      * @return IsDetectNum 是否查探测次数0否1是
                      * 
@@ -118,6 +140,12 @@ namespace TencentCloud
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
+
+                    /**
+                     * 查询过滤条件：MonitorName：监控器名称；MonitorId：监控器id
+                     */
+                    std::vector<ResourceFilter> m_filters;
+                    bool m_filtersHasBeenSet;
 
                     /**
                      * 是否查探测次数0否1是

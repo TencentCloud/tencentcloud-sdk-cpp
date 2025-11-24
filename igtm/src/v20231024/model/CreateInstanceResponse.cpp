@@ -23,7 +23,8 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Igtm::V20231024::Model;
 using namespace std;
 
-CreateInstanceResponse::CreateInstanceResponse()
+CreateInstanceResponse::CreateInstanceResponse() :
+    m_instanceIdHasBeenSet(false)
 {
 }
 
@@ -61,6 +62,16 @@ CoreInternalOutcome CreateInstanceResponse::Deserialize(const string &payload)
     }
 
 
+    if (rsp.HasMember("InstanceId") && !rsp["InstanceId"].IsNull())
+    {
+        if (!rsp["InstanceId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_instanceId = string(rsp["InstanceId"].GetString());
+        m_instanceIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +81,14 @@ string CreateInstanceResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_instanceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +101,15 @@ string CreateInstanceResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string CreateInstanceResponse::GetInstanceId() const
+{
+    return m_instanceId;
+}
+
+bool CreateInstanceResponse::InstanceIdHasBeenSet() const
+{
+    return m_instanceIdHasBeenSet;
+}
 
 

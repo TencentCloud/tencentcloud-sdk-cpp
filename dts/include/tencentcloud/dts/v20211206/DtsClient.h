@@ -49,12 +49,16 @@
 #include <tencentcloud/dts/v20211206/model/CreateSubscribeResponse.h>
 #include <tencentcloud/dts/v20211206/model/CreateSubscribeCheckJobRequest.h>
 #include <tencentcloud/dts/v20211206/model/CreateSubscribeCheckJobResponse.h>
+#include <tencentcloud/dts/v20211206/model/CreateSyncCompareTaskRequest.h>
+#include <tencentcloud/dts/v20211206/model/CreateSyncCompareTaskResponse.h>
 #include <tencentcloud/dts/v20211206/model/CreateSyncJobRequest.h>
 #include <tencentcloud/dts/v20211206/model/CreateSyncJobResponse.h>
 #include <tencentcloud/dts/v20211206/model/DeleteCompareTaskRequest.h>
 #include <tencentcloud/dts/v20211206/model/DeleteCompareTaskResponse.h>
 #include <tencentcloud/dts/v20211206/model/DeleteConsumerGroupRequest.h>
 #include <tencentcloud/dts/v20211206/model/DeleteConsumerGroupResponse.h>
+#include <tencentcloud/dts/v20211206/model/DeleteSyncCompareTaskRequest.h>
+#include <tencentcloud/dts/v20211206/model/DeleteSyncCompareTaskResponse.h>
 #include <tencentcloud/dts/v20211206/model/DescribeCheckSyncJobResultRequest.h>
 #include <tencentcloud/dts/v20211206/model/DescribeCheckSyncJobResultResponse.h>
 #include <tencentcloud/dts/v20211206/model/DescribeCompareReportRequest.h>
@@ -83,6 +87,10 @@
 #include <tencentcloud/dts/v20211206/model/DescribeSubscribeJobsResponse.h>
 #include <tencentcloud/dts/v20211206/model/DescribeSubscribeReturnableRequest.h>
 #include <tencentcloud/dts/v20211206/model/DescribeSubscribeReturnableResponse.h>
+#include <tencentcloud/dts/v20211206/model/DescribeSyncCompareReportRequest.h>
+#include <tencentcloud/dts/v20211206/model/DescribeSyncCompareReportResponse.h>
+#include <tencentcloud/dts/v20211206/model/DescribeSyncCompareTasksRequest.h>
+#include <tencentcloud/dts/v20211206/model/DescribeSyncCompareTasksResponse.h>
 #include <tencentcloud/dts/v20211206/model/DescribeSyncJobsRequest.h>
 #include <tencentcloud/dts/v20211206/model/DescribeSyncJobsResponse.h>
 #include <tencentcloud/dts/v20211206/model/DestroyIsolatedSubscribeRequest.h>
@@ -121,6 +129,10 @@
 #include <tencentcloud/dts/v20211206/model/ModifySubscribeNameResponse.h>
 #include <tencentcloud/dts/v20211206/model/ModifySubscribeObjectsRequest.h>
 #include <tencentcloud/dts/v20211206/model/ModifySubscribeObjectsResponse.h>
+#include <tencentcloud/dts/v20211206/model/ModifySyncCompareTaskRequest.h>
+#include <tencentcloud/dts/v20211206/model/ModifySyncCompareTaskResponse.h>
+#include <tencentcloud/dts/v20211206/model/ModifySyncCompareTaskNameRequest.h>
+#include <tencentcloud/dts/v20211206/model/ModifySyncCompareTaskNameResponse.h>
 #include <tencentcloud/dts/v20211206/model/ModifySyncJobConfigRequest.h>
 #include <tencentcloud/dts/v20211206/model/ModifySyncJobConfigResponse.h>
 #include <tencentcloud/dts/v20211206/model/ModifySyncRateLimitRequest.h>
@@ -159,12 +171,16 @@
 #include <tencentcloud/dts/v20211206/model/StartModifySyncJobResponse.h>
 #include <tencentcloud/dts/v20211206/model/StartSubscribeRequest.h>
 #include <tencentcloud/dts/v20211206/model/StartSubscribeResponse.h>
+#include <tencentcloud/dts/v20211206/model/StartSyncCompareRequest.h>
+#include <tencentcloud/dts/v20211206/model/StartSyncCompareResponse.h>
 #include <tencentcloud/dts/v20211206/model/StartSyncJobRequest.h>
 #include <tencentcloud/dts/v20211206/model/StartSyncJobResponse.h>
 #include <tencentcloud/dts/v20211206/model/StopCompareRequest.h>
 #include <tencentcloud/dts/v20211206/model/StopCompareResponse.h>
 #include <tencentcloud/dts/v20211206/model/StopMigrateJobRequest.h>
 #include <tencentcloud/dts/v20211206/model/StopMigrateJobResponse.h>
+#include <tencentcloud/dts/v20211206/model/StopSyncCompareRequest.h>
+#include <tencentcloud/dts/v20211206/model/StopSyncCompareResponse.h>
 #include <tencentcloud/dts/v20211206/model/StopSyncJobRequest.h>
 #include <tencentcloud/dts/v20211206/model/StopSyncJobResponse.h>
 
@@ -220,6 +236,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateSubscribeCheckJobResponse> CreateSubscribeCheckJobOutcome;
                 typedef std::future<CreateSubscribeCheckJobOutcome> CreateSubscribeCheckJobOutcomeCallable;
                 typedef std::function<void(const DtsClient*, const Model::CreateSubscribeCheckJobRequest&, CreateSubscribeCheckJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSubscribeCheckJobAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateSyncCompareTaskResponse> CreateSyncCompareTaskOutcome;
+                typedef std::future<CreateSyncCompareTaskOutcome> CreateSyncCompareTaskOutcomeCallable;
+                typedef std::function<void(const DtsClient*, const Model::CreateSyncCompareTaskRequest&, CreateSyncCompareTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSyncCompareTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateSyncJobResponse> CreateSyncJobOutcome;
                 typedef std::future<CreateSyncJobOutcome> CreateSyncJobOutcomeCallable;
                 typedef std::function<void(const DtsClient*, const Model::CreateSyncJobRequest&, CreateSyncJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSyncJobAsyncHandler;
@@ -229,6 +248,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteConsumerGroupResponse> DeleteConsumerGroupOutcome;
                 typedef std::future<DeleteConsumerGroupOutcome> DeleteConsumerGroupOutcomeCallable;
                 typedef std::function<void(const DtsClient*, const Model::DeleteConsumerGroupRequest&, DeleteConsumerGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteConsumerGroupAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteSyncCompareTaskResponse> DeleteSyncCompareTaskOutcome;
+                typedef std::future<DeleteSyncCompareTaskOutcome> DeleteSyncCompareTaskOutcomeCallable;
+                typedef std::function<void(const DtsClient*, const Model::DeleteSyncCompareTaskRequest&, DeleteSyncCompareTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSyncCompareTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeCheckSyncJobResultResponse> DescribeCheckSyncJobResultOutcome;
                 typedef std::future<DescribeCheckSyncJobResultOutcome> DescribeCheckSyncJobResultOutcomeCallable;
                 typedef std::function<void(const DtsClient*, const Model::DescribeCheckSyncJobResultRequest&, DescribeCheckSyncJobResultOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCheckSyncJobResultAsyncHandler;
@@ -271,6 +293,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeSubscribeReturnableResponse> DescribeSubscribeReturnableOutcome;
                 typedef std::future<DescribeSubscribeReturnableOutcome> DescribeSubscribeReturnableOutcomeCallable;
                 typedef std::function<void(const DtsClient*, const Model::DescribeSubscribeReturnableRequest&, DescribeSubscribeReturnableOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSubscribeReturnableAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeSyncCompareReportResponse> DescribeSyncCompareReportOutcome;
+                typedef std::future<DescribeSyncCompareReportOutcome> DescribeSyncCompareReportOutcomeCallable;
+                typedef std::function<void(const DtsClient*, const Model::DescribeSyncCompareReportRequest&, DescribeSyncCompareReportOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSyncCompareReportAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeSyncCompareTasksResponse> DescribeSyncCompareTasksOutcome;
+                typedef std::future<DescribeSyncCompareTasksOutcome> DescribeSyncCompareTasksOutcomeCallable;
+                typedef std::function<void(const DtsClient*, const Model::DescribeSyncCompareTasksRequest&, DescribeSyncCompareTasksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSyncCompareTasksAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeSyncJobsResponse> DescribeSyncJobsOutcome;
                 typedef std::future<DescribeSyncJobsOutcome> DescribeSyncJobsOutcomeCallable;
                 typedef std::function<void(const DtsClient*, const Model::DescribeSyncJobsRequest&, DescribeSyncJobsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSyncJobsAsyncHandler;
@@ -328,6 +356,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifySubscribeObjectsResponse> ModifySubscribeObjectsOutcome;
                 typedef std::future<ModifySubscribeObjectsOutcome> ModifySubscribeObjectsOutcomeCallable;
                 typedef std::function<void(const DtsClient*, const Model::ModifySubscribeObjectsRequest&, ModifySubscribeObjectsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifySubscribeObjectsAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifySyncCompareTaskResponse> ModifySyncCompareTaskOutcome;
+                typedef std::future<ModifySyncCompareTaskOutcome> ModifySyncCompareTaskOutcomeCallable;
+                typedef std::function<void(const DtsClient*, const Model::ModifySyncCompareTaskRequest&, ModifySyncCompareTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifySyncCompareTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifySyncCompareTaskNameResponse> ModifySyncCompareTaskNameOutcome;
+                typedef std::future<ModifySyncCompareTaskNameOutcome> ModifySyncCompareTaskNameOutcomeCallable;
+                typedef std::function<void(const DtsClient*, const Model::ModifySyncCompareTaskNameRequest&, ModifySyncCompareTaskNameOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifySyncCompareTaskNameAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifySyncJobConfigResponse> ModifySyncJobConfigOutcome;
                 typedef std::future<ModifySyncJobConfigOutcome> ModifySyncJobConfigOutcomeCallable;
                 typedef std::function<void(const DtsClient*, const Model::ModifySyncJobConfigRequest&, ModifySyncJobConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifySyncJobConfigAsyncHandler;
@@ -385,6 +419,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::StartSubscribeResponse> StartSubscribeOutcome;
                 typedef std::future<StartSubscribeOutcome> StartSubscribeOutcomeCallable;
                 typedef std::function<void(const DtsClient*, const Model::StartSubscribeRequest&, StartSubscribeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StartSubscribeAsyncHandler;
+                typedef Outcome<Core::Error, Model::StartSyncCompareResponse> StartSyncCompareOutcome;
+                typedef std::future<StartSyncCompareOutcome> StartSyncCompareOutcomeCallable;
+                typedef std::function<void(const DtsClient*, const Model::StartSyncCompareRequest&, StartSyncCompareOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StartSyncCompareAsyncHandler;
                 typedef Outcome<Core::Error, Model::StartSyncJobResponse> StartSyncJobOutcome;
                 typedef std::future<StartSyncJobOutcome> StartSyncJobOutcomeCallable;
                 typedef std::function<void(const DtsClient*, const Model::StartSyncJobRequest&, StartSyncJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StartSyncJobAsyncHandler;
@@ -394,6 +431,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::StopMigrateJobResponse> StopMigrateJobOutcome;
                 typedef std::future<StopMigrateJobOutcome> StopMigrateJobOutcomeCallable;
                 typedef std::function<void(const DtsClient*, const Model::StopMigrateJobRequest&, StopMigrateJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopMigrateJobAsyncHandler;
+                typedef Outcome<Core::Error, Model::StopSyncCompareResponse> StopSyncCompareOutcome;
+                typedef std::future<StopSyncCompareOutcome> StopSyncCompareOutcomeCallable;
+                typedef std::function<void(const DtsClient*, const Model::StopSyncCompareRequest&, StopSyncCompareOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopSyncCompareAsyncHandler;
                 typedef Outcome<Core::Error, Model::StopSyncJobResponse> StopSyncJobOutcome;
                 typedef std::future<StopSyncJobOutcome> StopSyncJobOutcomeCallable;
                 typedef std::function<void(const DtsClient*, const Model::StopSyncJobRequest&, StopSyncJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopSyncJobAsyncHandler;
@@ -523,6 +563,15 @@ namespace TencentCloud
                 CreateSubscribeCheckJobOutcomeCallable CreateSubscribeCheckJobCallable(const Model::CreateSubscribeCheckJobRequest& request);
 
                 /**
+                 *本接口用于创建数据对比任务，创建成功后会返回数据对比任务 ID，形如：sync-8yv4w2i1-cmp-37skmii9，创建成功后可通过StartSyncCompare启动一致性校验任务
+                 * @param req CreateSyncCompareTaskRequest
+                 * @return CreateSyncCompareTaskOutcome
+                 */
+                CreateSyncCompareTaskOutcome CreateSyncCompareTask(const Model::CreateSyncCompareTaskRequest &request);
+                void CreateSyncCompareTaskAsync(const Model::CreateSyncCompareTaskRequest& request, const CreateSyncCompareTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateSyncCompareTaskOutcomeCallable CreateSyncCompareTaskCallable(const Model::CreateSyncCompareTaskRequest& request);
+
+                /**
                  *创建一个同步任务
                  * @param req CreateSyncJobRequest
                  * @return CreateSyncJobOutcome
@@ -548,6 +597,15 @@ namespace TencentCloud
                 DeleteConsumerGroupOutcome DeleteConsumerGroup(const Model::DeleteConsumerGroupRequest &request);
                 void DeleteConsumerGroupAsync(const Model::DeleteConsumerGroupRequest& request, const DeleteConsumerGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteConsumerGroupOutcomeCallable DeleteConsumerGroupCallable(const Model::DeleteConsumerGroupRequest& request);
+
+                /**
+                 *删除一致性校验任务。当一致性校验任务状态为success、failed、canceled 时可以执行此操作。
+                 * @param req DeleteSyncCompareTaskRequest
+                 * @return DeleteSyncCompareTaskOutcome
+                 */
+                DeleteSyncCompareTaskOutcome DeleteSyncCompareTask(const Model::DeleteSyncCompareTaskRequest &request);
+                void DeleteSyncCompareTaskAsync(const Model::DeleteSyncCompareTaskRequest& request, const DeleteSyncCompareTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteSyncCompareTaskOutcomeCallable DeleteSyncCompareTaskCallable(const Model::DeleteSyncCompareTaskRequest& request);
 
                 /**
                  *查询同步校验任务结果，检查必要参数和周边配置
@@ -680,6 +738,24 @@ namespace TencentCloud
                 DescribeSubscribeReturnableOutcome DescribeSubscribeReturnable(const Model::DescribeSubscribeReturnableRequest &request);
                 void DescribeSubscribeReturnableAsync(const Model::DescribeSubscribeReturnableRequest& request, const DescribeSubscribeReturnableAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeSubscribeReturnableOutcomeCallable DescribeSubscribeReturnableCallable(const Model::DescribeSubscribeReturnableRequest& request);
+
+                /**
+                 *查询一致性校验任务详情
+                 * @param req DescribeSyncCompareReportRequest
+                 * @return DescribeSyncCompareReportOutcome
+                 */
+                DescribeSyncCompareReportOutcome DescribeSyncCompareReport(const Model::DescribeSyncCompareReportRequest &request);
+                void DescribeSyncCompareReportAsync(const Model::DescribeSyncCompareReportRequest& request, const DescribeSyncCompareReportAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSyncCompareReportOutcomeCallable DescribeSyncCompareReportCallable(const Model::DescribeSyncCompareReportRequest& request);
+
+                /**
+                 *查询一致性校验任务列表。通过该接口可查看改任务下所有一致性校验任务。
+                 * @param req DescribeSyncCompareTasksRequest
+                 * @return DescribeSyncCompareTasksOutcome
+                 */
+                DescribeSyncCompareTasksOutcome DescribeSyncCompareTasks(const Model::DescribeSyncCompareTasksRequest &request);
+                void DescribeSyncCompareTasksAsync(const Model::DescribeSyncCompareTasksRequest& request, const DescribeSyncCompareTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSyncCompareTasksOutcomeCallable DescribeSyncCompareTasksCallable(const Model::DescribeSyncCompareTasksRequest& request);
 
                 /**
                  *查询同步任务信息
@@ -851,6 +927,24 @@ namespace TencentCloud
                 ModifySubscribeObjectsOutcome ModifySubscribeObjects(const Model::ModifySubscribeObjectsRequest &request);
                 void ModifySubscribeObjectsAsync(const Model::ModifySubscribeObjectsRequest& request, const ModifySubscribeObjectsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifySubscribeObjectsOutcomeCallable ModifySubscribeObjectsCallable(const Model::ModifySubscribeObjectsRequest& request);
+
+                /**
+                 *修改一致性校验任务，在任务创建后启动之前，可修改一致性校验参数
+                 * @param req ModifySyncCompareTaskRequest
+                 * @return ModifySyncCompareTaskOutcome
+                 */
+                ModifySyncCompareTaskOutcome ModifySyncCompareTask(const Model::ModifySyncCompareTaskRequest &request);
+                void ModifySyncCompareTaskAsync(const Model::ModifySyncCompareTaskRequest& request, const ModifySyncCompareTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifySyncCompareTaskOutcomeCallable ModifySyncCompareTaskCallable(const Model::ModifySyncCompareTaskRequest& request);
+
+                /**
+                 *修改同步一致性校验任务名称
+                 * @param req ModifySyncCompareTaskNameRequest
+                 * @return ModifySyncCompareTaskNameOutcome
+                 */
+                ModifySyncCompareTaskNameOutcome ModifySyncCompareTaskName(const Model::ModifySyncCompareTaskNameRequest &request);
+                void ModifySyncCompareTaskNameAsync(const Model::ModifySyncCompareTaskNameRequest& request, const ModifySyncCompareTaskNameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifySyncCompareTaskNameOutcomeCallable ModifySyncCompareTaskNameCallable(const Model::ModifySyncCompareTaskNameRequest& request);
 
                 /**
                  *该接口支持在同步任务启动后修改任务的配置
@@ -1026,6 +1120,15 @@ namespace TencentCloud
                 StartSubscribeOutcomeCallable StartSubscribeCallable(const Model::StartSubscribeRequest& request);
 
                 /**
+                 *启动一致性校验任务，启动之前需要先通过接口`CreateSyncCompareTask` 创建一致性校验任务，启动后可通过接口`DescribeSyncCompareTasks` 查询一致性校验任务列表来获得启动后的状态
+                 * @param req StartSyncCompareRequest
+                 * @return StartSyncCompareOutcome
+                 */
+                StartSyncCompareOutcome StartSyncCompare(const Model::StartSyncCompareRequest &request);
+                void StartSyncCompareAsync(const Model::StartSyncCompareRequest& request, const StartSyncCompareAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                StartSyncCompareOutcomeCallable StartSyncCompareCallable(const Model::StartSyncCompareRequest& request);
+
+                /**
                  *启动同步任务
                  * @param req StartSyncJobRequest
                  * @return StartSyncJobOutcome
@@ -1052,6 +1155,15 @@ namespace TencentCloud
                 StopMigrateJobOutcome StopMigrateJob(const Model::StopMigrateJobRequest &request);
                 void StopMigrateJobAsync(const Model::StopMigrateJobRequest& request, const StopMigrateJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 StopMigrateJobOutcomeCallable StopMigrateJobCallable(const Model::StopMigrateJobRequest& request);
+
+                /**
+                 *终止一致性校验任务
+                 * @param req StopSyncCompareRequest
+                 * @return StopSyncCompareOutcome
+                 */
+                StopSyncCompareOutcome StopSyncCompare(const Model::StopSyncCompareRequest &request);
+                void StopSyncCompareAsync(const Model::StopSyncCompareRequest& request, const StopSyncCompareAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                StopSyncCompareOutcomeCallable StopSyncCompareCallable(const Model::StopSyncCompareRequest& request);
 
                 /**
                  *结束同步任务，操作后可通过查询同步任务信息接口DescribeSyncJobs，获取操作后的状态。

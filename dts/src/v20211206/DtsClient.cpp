@@ -690,6 +690,56 @@ DtsClient::CreateSubscribeCheckJobOutcomeCallable DtsClient::CreateSubscribeChec
     return prom->get_future();
 }
 
+DtsClient::CreateSyncCompareTaskOutcome DtsClient::CreateSyncCompareTask(const CreateSyncCompareTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateSyncCompareTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateSyncCompareTaskResponse rsp = CreateSyncCompareTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateSyncCompareTaskOutcome(rsp);
+        else
+            return CreateSyncCompareTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateSyncCompareTaskOutcome(outcome.GetError());
+    }
+}
+
+void DtsClient::CreateSyncCompareTaskAsync(const CreateSyncCompareTaskRequest& request, const CreateSyncCompareTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateSyncCompareTaskRequest&;
+    using Resp = CreateSyncCompareTaskResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateSyncCompareTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DtsClient::CreateSyncCompareTaskOutcomeCallable DtsClient::CreateSyncCompareTaskCallable(const CreateSyncCompareTaskRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateSyncCompareTaskOutcome>>();
+    CreateSyncCompareTaskAsync(
+    request,
+    [prom](
+        const DtsClient*,
+        const CreateSyncCompareTaskRequest&,
+        CreateSyncCompareTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 DtsClient::CreateSyncJobOutcome DtsClient::CreateSyncJob(const CreateSyncJobRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateSyncJob");
@@ -832,6 +882,56 @@ DtsClient::DeleteConsumerGroupOutcomeCallable DtsClient::DeleteConsumerGroupCall
         const DtsClient*,
         const DeleteConsumerGroupRequest&,
         DeleteConsumerGroupOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+DtsClient::DeleteSyncCompareTaskOutcome DtsClient::DeleteSyncCompareTask(const DeleteSyncCompareTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteSyncCompareTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteSyncCompareTaskResponse rsp = DeleteSyncCompareTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteSyncCompareTaskOutcome(rsp);
+        else
+            return DeleteSyncCompareTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteSyncCompareTaskOutcome(outcome.GetError());
+    }
+}
+
+void DtsClient::DeleteSyncCompareTaskAsync(const DeleteSyncCompareTaskRequest& request, const DeleteSyncCompareTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteSyncCompareTaskRequest&;
+    using Resp = DeleteSyncCompareTaskResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteSyncCompareTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DtsClient::DeleteSyncCompareTaskOutcomeCallable DtsClient::DeleteSyncCompareTaskCallable(const DeleteSyncCompareTaskRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteSyncCompareTaskOutcome>>();
+    DeleteSyncCompareTaskAsync(
+    request,
+    [prom](
+        const DtsClient*,
+        const DeleteSyncCompareTaskRequest&,
+        DeleteSyncCompareTaskOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -1532,6 +1632,106 @@ DtsClient::DescribeSubscribeReturnableOutcomeCallable DtsClient::DescribeSubscri
         const DtsClient*,
         const DescribeSubscribeReturnableRequest&,
         DescribeSubscribeReturnableOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+DtsClient::DescribeSyncCompareReportOutcome DtsClient::DescribeSyncCompareReport(const DescribeSyncCompareReportRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSyncCompareReport");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSyncCompareReportResponse rsp = DescribeSyncCompareReportResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSyncCompareReportOutcome(rsp);
+        else
+            return DescribeSyncCompareReportOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSyncCompareReportOutcome(outcome.GetError());
+    }
+}
+
+void DtsClient::DescribeSyncCompareReportAsync(const DescribeSyncCompareReportRequest& request, const DescribeSyncCompareReportAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeSyncCompareReportRequest&;
+    using Resp = DescribeSyncCompareReportResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeSyncCompareReport", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DtsClient::DescribeSyncCompareReportOutcomeCallable DtsClient::DescribeSyncCompareReportCallable(const DescribeSyncCompareReportRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeSyncCompareReportOutcome>>();
+    DescribeSyncCompareReportAsync(
+    request,
+    [prom](
+        const DtsClient*,
+        const DescribeSyncCompareReportRequest&,
+        DescribeSyncCompareReportOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+DtsClient::DescribeSyncCompareTasksOutcome DtsClient::DescribeSyncCompareTasks(const DescribeSyncCompareTasksRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSyncCompareTasks");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSyncCompareTasksResponse rsp = DescribeSyncCompareTasksResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSyncCompareTasksOutcome(rsp);
+        else
+            return DescribeSyncCompareTasksOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSyncCompareTasksOutcome(outcome.GetError());
+    }
+}
+
+void DtsClient::DescribeSyncCompareTasksAsync(const DescribeSyncCompareTasksRequest& request, const DescribeSyncCompareTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeSyncCompareTasksRequest&;
+    using Resp = DescribeSyncCompareTasksResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeSyncCompareTasks", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DtsClient::DescribeSyncCompareTasksOutcomeCallable DtsClient::DescribeSyncCompareTasksCallable(const DescribeSyncCompareTasksRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeSyncCompareTasksOutcome>>();
+    DescribeSyncCompareTasksAsync(
+    request,
+    [prom](
+        const DtsClient*,
+        const DescribeSyncCompareTasksRequest&,
+        DescribeSyncCompareTasksOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -2490,6 +2690,106 @@ DtsClient::ModifySubscribeObjectsOutcomeCallable DtsClient::ModifySubscribeObjec
     return prom->get_future();
 }
 
+DtsClient::ModifySyncCompareTaskOutcome DtsClient::ModifySyncCompareTask(const ModifySyncCompareTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifySyncCompareTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifySyncCompareTaskResponse rsp = ModifySyncCompareTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifySyncCompareTaskOutcome(rsp);
+        else
+            return ModifySyncCompareTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifySyncCompareTaskOutcome(outcome.GetError());
+    }
+}
+
+void DtsClient::ModifySyncCompareTaskAsync(const ModifySyncCompareTaskRequest& request, const ModifySyncCompareTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifySyncCompareTaskRequest&;
+    using Resp = ModifySyncCompareTaskResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifySyncCompareTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DtsClient::ModifySyncCompareTaskOutcomeCallable DtsClient::ModifySyncCompareTaskCallable(const ModifySyncCompareTaskRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifySyncCompareTaskOutcome>>();
+    ModifySyncCompareTaskAsync(
+    request,
+    [prom](
+        const DtsClient*,
+        const ModifySyncCompareTaskRequest&,
+        ModifySyncCompareTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+DtsClient::ModifySyncCompareTaskNameOutcome DtsClient::ModifySyncCompareTaskName(const ModifySyncCompareTaskNameRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifySyncCompareTaskName");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifySyncCompareTaskNameResponse rsp = ModifySyncCompareTaskNameResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifySyncCompareTaskNameOutcome(rsp);
+        else
+            return ModifySyncCompareTaskNameOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifySyncCompareTaskNameOutcome(outcome.GetError());
+    }
+}
+
+void DtsClient::ModifySyncCompareTaskNameAsync(const ModifySyncCompareTaskNameRequest& request, const ModifySyncCompareTaskNameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifySyncCompareTaskNameRequest&;
+    using Resp = ModifySyncCompareTaskNameResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifySyncCompareTaskName", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DtsClient::ModifySyncCompareTaskNameOutcomeCallable DtsClient::ModifySyncCompareTaskNameCallable(const ModifySyncCompareTaskNameRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifySyncCompareTaskNameOutcome>>();
+    ModifySyncCompareTaskNameAsync(
+    request,
+    [prom](
+        const DtsClient*,
+        const ModifySyncCompareTaskNameRequest&,
+        ModifySyncCompareTaskNameOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 DtsClient::ModifySyncJobConfigOutcome DtsClient::ModifySyncJobConfig(const ModifySyncJobConfigRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifySyncJobConfig");
@@ -3440,6 +3740,56 @@ DtsClient::StartSubscribeOutcomeCallable DtsClient::StartSubscribeCallable(const
     return prom->get_future();
 }
 
+DtsClient::StartSyncCompareOutcome DtsClient::StartSyncCompare(const StartSyncCompareRequest &request)
+{
+    auto outcome = MakeRequest(request, "StartSyncCompare");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        StartSyncCompareResponse rsp = StartSyncCompareResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return StartSyncCompareOutcome(rsp);
+        else
+            return StartSyncCompareOutcome(o.GetError());
+    }
+    else
+    {
+        return StartSyncCompareOutcome(outcome.GetError());
+    }
+}
+
+void DtsClient::StartSyncCompareAsync(const StartSyncCompareRequest& request, const StartSyncCompareAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const StartSyncCompareRequest&;
+    using Resp = StartSyncCompareResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "StartSyncCompare", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DtsClient::StartSyncCompareOutcomeCallable DtsClient::StartSyncCompareCallable(const StartSyncCompareRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<StartSyncCompareOutcome>>();
+    StartSyncCompareAsync(
+    request,
+    [prom](
+        const DtsClient*,
+        const StartSyncCompareRequest&,
+        StartSyncCompareOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 DtsClient::StartSyncJobOutcome DtsClient::StartSyncJob(const StartSyncJobRequest &request)
 {
     auto outcome = MakeRequest(request, "StartSyncJob");
@@ -3582,6 +3932,56 @@ DtsClient::StopMigrateJobOutcomeCallable DtsClient::StopMigrateJobCallable(const
         const DtsClient*,
         const StopMigrateJobRequest&,
         StopMigrateJobOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+DtsClient::StopSyncCompareOutcome DtsClient::StopSyncCompare(const StopSyncCompareRequest &request)
+{
+    auto outcome = MakeRequest(request, "StopSyncCompare");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        StopSyncCompareResponse rsp = StopSyncCompareResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return StopSyncCompareOutcome(rsp);
+        else
+            return StopSyncCompareOutcome(o.GetError());
+    }
+    else
+    {
+        return StopSyncCompareOutcome(outcome.GetError());
+    }
+}
+
+void DtsClient::StopSyncCompareAsync(const StopSyncCompareRequest& request, const StopSyncCompareAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const StopSyncCompareRequest&;
+    using Resp = StopSyncCompareResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "StopSyncCompare", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DtsClient::StopSyncCompareOutcomeCallable DtsClient::StopSyncCompareCallable(const StopSyncCompareRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<StopSyncCompareOutcome>>();
+    StopSyncCompareAsync(
+    request,
+    [prom](
+        const DtsClient*,
+        const StopSyncCompareRequest&,
+        StopSyncCompareOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

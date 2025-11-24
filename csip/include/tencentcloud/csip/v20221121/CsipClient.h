@@ -667,7 +667,7 @@ namespace TencentCloud
                 DescribeCallRecordOutcomeCallable DescribeCallRecordCallable(const Model::DescribeCallRecordRequest& request);
 
                 /**
-                 *检查视角下云资源配置风险列表示例
+                 *检查视角下云资源配置风险列表
                  * @param req DescribeCheckViewRisksRequest
                  * @return DescribeCheckViewRisksOutcome
                  */

@@ -2740,6 +2740,56 @@ CfwClient::DescribeNatFwInstancesInfoOutcomeCallable CfwClient::DescribeNatFwIns
     return prom->get_future();
 }
 
+CfwClient::DescribeNatFwSwitchOutcome CfwClient::DescribeNatFwSwitch(const DescribeNatFwSwitchRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeNatFwSwitch");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeNatFwSwitchResponse rsp = DescribeNatFwSwitchResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeNatFwSwitchOutcome(rsp);
+        else
+            return DescribeNatFwSwitchOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeNatFwSwitchOutcome(outcome.GetError());
+    }
+}
+
+void CfwClient::DescribeNatFwSwitchAsync(const DescribeNatFwSwitchRequest& request, const DescribeNatFwSwitchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeNatFwSwitchRequest&;
+    using Resp = DescribeNatFwSwitchResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeNatFwSwitch", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CfwClient::DescribeNatFwSwitchOutcomeCallable CfwClient::DescribeNatFwSwitchCallable(const DescribeNatFwSwitchRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeNatFwSwitchOutcome>>();
+    DescribeNatFwSwitchAsync(
+    request,
+    [prom](
+        const CfwClient*,
+        const DescribeNatFwSwitchRequest&,
+        DescribeNatFwSwitchOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 CfwClient::DescribeNatFwVpcDnsLstOutcome CfwClient::DescribeNatFwVpcDnsLst(const DescribeNatFwVpcDnsLstRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeNatFwVpcDnsLst");

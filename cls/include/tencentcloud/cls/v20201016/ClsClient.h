@@ -57,6 +57,8 @@
 #include <tencentcloud/cls/v20201016/model/CreateDataTransformResponse.h>
 #include <tencentcloud/cls/v20201016/model/CreateDeliverCloudFunctionRequest.h>
 #include <tencentcloud/cls/v20201016/model/CreateDeliverCloudFunctionResponse.h>
+#include <tencentcloud/cls/v20201016/model/CreateDlcDeliverRequest.h>
+#include <tencentcloud/cls/v20201016/model/CreateDlcDeliverResponse.h>
 #include <tencentcloud/cls/v20201016/model/CreateExportRequest.h>
 #include <tencentcloud/cls/v20201016/model/CreateExportResponse.h>
 #include <tencentcloud/cls/v20201016/model/CreateIndexRequest.h>
@@ -101,6 +103,8 @@
 #include <tencentcloud/cls/v20201016/model/DeleteDashboardSubscribeResponse.h>
 #include <tencentcloud/cls/v20201016/model/DeleteDataTransformRequest.h>
 #include <tencentcloud/cls/v20201016/model/DeleteDataTransformResponse.h>
+#include <tencentcloud/cls/v20201016/model/DeleteDlcDeliverRequest.h>
+#include <tencentcloud/cls/v20201016/model/DeleteDlcDeliverResponse.h>
 #include <tencentcloud/cls/v20201016/model/DeleteExportRequest.h>
 #include <tencentcloud/cls/v20201016/model/DeleteExportResponse.h>
 #include <tencentcloud/cls/v20201016/model/DeleteIndexRequest.h>
@@ -151,6 +155,8 @@
 #include <tencentcloud/cls/v20201016/model/DescribeDashboardsResponse.h>
 #include <tencentcloud/cls/v20201016/model/DescribeDataTransformInfoRequest.h>
 #include <tencentcloud/cls/v20201016/model/DescribeDataTransformInfoResponse.h>
+#include <tencentcloud/cls/v20201016/model/DescribeDlcDeliversRequest.h>
+#include <tencentcloud/cls/v20201016/model/DescribeDlcDeliversResponse.h>
 #include <tencentcloud/cls/v20201016/model/DescribeExportsRequest.h>
 #include <tencentcloud/cls/v20201016/model/DescribeExportsResponse.h>
 #include <tencentcloud/cls/v20201016/model/DescribeIndexRequest.h>
@@ -215,6 +221,8 @@
 #include <tencentcloud/cls/v20201016/model/ModifyDashboardSubscribeResponse.h>
 #include <tencentcloud/cls/v20201016/model/ModifyDataTransformRequest.h>
 #include <tencentcloud/cls/v20201016/model/ModifyDataTransformResponse.h>
+#include <tencentcloud/cls/v20201016/model/ModifyDlcDeliverRequest.h>
+#include <tencentcloud/cls/v20201016/model/ModifyDlcDeliverResponse.h>
 #include <tencentcloud/cls/v20201016/model/ModifyIndexRequest.h>
 #include <tencentcloud/cls/v20201016/model/ModifyIndexResponse.h>
 #include <tencentcloud/cls/v20201016/model/ModifyKafkaConsumerRequest.h>
@@ -322,6 +330,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateDeliverCloudFunctionResponse> CreateDeliverCloudFunctionOutcome;
                 typedef std::future<CreateDeliverCloudFunctionOutcome> CreateDeliverCloudFunctionOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::CreateDeliverCloudFunctionRequest&, CreateDeliverCloudFunctionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDeliverCloudFunctionAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateDlcDeliverResponse> CreateDlcDeliverOutcome;
+                typedef std::future<CreateDlcDeliverOutcome> CreateDlcDeliverOutcomeCallable;
+                typedef std::function<void(const ClsClient*, const Model::CreateDlcDeliverRequest&, CreateDlcDeliverOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDlcDeliverAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateExportResponse> CreateExportOutcome;
                 typedef std::future<CreateExportOutcome> CreateExportOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::CreateExportRequest&, CreateExportOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateExportAsyncHandler;
@@ -388,6 +399,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteDataTransformResponse> DeleteDataTransformOutcome;
                 typedef std::future<DeleteDataTransformOutcome> DeleteDataTransformOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::DeleteDataTransformRequest&, DeleteDataTransformOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDataTransformAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteDlcDeliverResponse> DeleteDlcDeliverOutcome;
+                typedef std::future<DeleteDlcDeliverOutcome> DeleteDlcDeliverOutcomeCallable;
+                typedef std::function<void(const ClsClient*, const Model::DeleteDlcDeliverRequest&, DeleteDlcDeliverOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDlcDeliverAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteExportResponse> DeleteExportOutcome;
                 typedef std::future<DeleteExportOutcome> DeleteExportOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::DeleteExportRequest&, DeleteExportOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteExportAsyncHandler;
@@ -463,6 +477,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDataTransformInfoResponse> DescribeDataTransformInfoOutcome;
                 typedef std::future<DescribeDataTransformInfoOutcome> DescribeDataTransformInfoOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::DescribeDataTransformInfoRequest&, DescribeDataTransformInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDataTransformInfoAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDlcDeliversResponse> DescribeDlcDeliversOutcome;
+                typedef std::future<DescribeDlcDeliversOutcome> DescribeDlcDeliversOutcomeCallable;
+                typedef std::function<void(const ClsClient*, const Model::DescribeDlcDeliversRequest&, DescribeDlcDeliversOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDlcDeliversAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeExportsResponse> DescribeExportsOutcome;
                 typedef std::future<DescribeExportsOutcome> DescribeExportsOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::DescribeExportsRequest&, DescribeExportsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeExportsAsyncHandler;
@@ -559,6 +576,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyDataTransformResponse> ModifyDataTransformOutcome;
                 typedef std::future<ModifyDataTransformOutcome> ModifyDataTransformOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::ModifyDataTransformRequest&, ModifyDataTransformOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDataTransformAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyDlcDeliverResponse> ModifyDlcDeliverOutcome;
+                typedef std::future<ModifyDlcDeliverOutcome> ModifyDlcDeliverOutcomeCallable;
+                typedef std::function<void(const ClsClient*, const Model::ModifyDlcDeliverRequest&, ModifyDlcDeliverOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDlcDeliverAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyIndexResponse> ModifyIndexOutcome;
                 typedef std::future<ModifyIndexOutcome> ModifyIndexOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::ModifyIndexRequest&, ModifyIndexOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyIndexAsyncHandler;
@@ -786,6 +806,15 @@ namespace TencentCloud
                 CreateDeliverCloudFunctionOutcomeCallable CreateDeliverCloudFunctionCallable(const Model::CreateDeliverCloudFunctionRequest& request);
 
                 /**
+                 *创建DLC投递任务
+                 * @param req CreateDlcDeliverRequest
+                 * @return CreateDlcDeliverOutcome
+                 */
+                CreateDlcDeliverOutcome CreateDlcDeliver(const Model::CreateDlcDeliverRequest &request);
+                void CreateDlcDeliverAsync(const Model::CreateDlcDeliverRequest& request, const CreateDlcDeliverAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateDlcDeliverOutcomeCallable CreateDlcDeliverCallable(const Model::CreateDlcDeliverRequest& request);
+
+                /**
                  *本接口仅创建下载任务。任务返回的下载地址，请用户调用[DescribeExports](https://cloud.tencent.com/document/product/614/56449)查看任务列表，其中有下载地址CosPath参数。
                  * @param req CreateExportRequest
                  * @return CreateExportOutcome
@@ -982,6 +1011,15 @@ namespace TencentCloud
                 DeleteDataTransformOutcome DeleteDataTransform(const Model::DeleteDataTransformRequest &request);
                 void DeleteDataTransformAsync(const Model::DeleteDataTransformRequest& request, const DeleteDataTransformAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteDataTransformOutcomeCallable DeleteDataTransformCallable(const Model::DeleteDataTransformRequest& request);
+
+                /**
+                 *删除DLC投递任务
+                 * @param req DeleteDlcDeliverRequest
+                 * @return DeleteDlcDeliverOutcome
+                 */
+                DeleteDlcDeliverOutcome DeleteDlcDeliver(const Model::DeleteDlcDeliverRequest &request);
+                void DeleteDlcDeliverAsync(const Model::DeleteDlcDeliverRequest& request, const DeleteDlcDeliverAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteDlcDeliverOutcomeCallable DeleteDlcDeliverCallable(const Model::DeleteDlcDeliverRequest& request);
 
                 /**
                  *本接口用于删除日志下载任务
@@ -1207,6 +1245,15 @@ namespace TencentCloud
                 DescribeDataTransformInfoOutcome DescribeDataTransformInfo(const Model::DescribeDataTransformInfoRequest &request);
                 void DescribeDataTransformInfoAsync(const Model::DescribeDataTransformInfoRequest& request, const DescribeDataTransformInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeDataTransformInfoOutcomeCallable DescribeDataTransformInfoCallable(const Model::DescribeDataTransformInfoRequest& request);
+
+                /**
+                 *获取告警渠道回调配置列表。
+                 * @param req DescribeDlcDeliversRequest
+                 * @return DescribeDlcDeliversOutcome
+                 */
+                DescribeDlcDeliversOutcome DescribeDlcDelivers(const Model::DescribeDlcDeliversRequest &request);
+                void DescribeDlcDeliversAsync(const Model::DescribeDlcDeliversRequest& request, const DescribeDlcDeliversAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDlcDeliversOutcomeCallable DescribeDlcDeliversCallable(const Model::DescribeDlcDeliversRequest& request);
 
                 /**
                  *本接口用于获取日志下载任务列表
@@ -1496,6 +1543,15 @@ API返回数据包最大49MB，建议启用 gzip 压缩（HTTP Request Header Ac
                 ModifyDataTransformOutcome ModifyDataTransform(const Model::ModifyDataTransformRequest &request);
                 void ModifyDataTransformAsync(const Model::ModifyDataTransformRequest& request, const ModifyDataTransformAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyDataTransformOutcomeCallable ModifyDataTransformCallable(const Model::ModifyDataTransformRequest& request);
+
+                /**
+                 *修改DLC投递任务
+                 * @param req ModifyDlcDeliverRequest
+                 * @return ModifyDlcDeliverOutcome
+                 */
+                ModifyDlcDeliverOutcome ModifyDlcDeliver(const Model::ModifyDlcDeliverRequest &request);
+                void ModifyDlcDeliverAsync(const Model::ModifyDlcDeliverRequest& request, const ModifyDlcDeliverAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyDlcDeliverOutcomeCallable ModifyDlcDeliverCallable(const Model::ModifyDlcDeliverRequest& request);
 
                 /**
                  *本接口用于修改索引配置，该接口除受默认接口请求频率限制外，针对单个日志主题，并发数不能超过1，即同一时间同一个日志主题只能有一个正在执行的索引配置修改操作。

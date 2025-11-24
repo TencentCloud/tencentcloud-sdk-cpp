@@ -50,7 +50,8 @@ DetectInfoText::DetectInfoText() :
     m_nFCRequestIdsHasBeenSet(false),
     m_nFCBillingCountsHasBeenSet(false),
     m_passNoHasBeenSet(false),
-    m_visaNumHasBeenSet(false)
+    m_visaNumHasBeenSet(false),
+    m_livenessActionSequenceHasBeenSet(false)
 {
 }
 
@@ -375,6 +376,16 @@ CoreInternalOutcome DetectInfoText::Deserialize(const rapidjson::Value &value)
         m_visaNumHasBeenSet = true;
     }
 
+    if (value.HasMember("LivenessActionSequence") && !value["LivenessActionSequence"].IsNull())
+    {
+        if (!value["LivenessActionSequence"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DetectInfoText.LivenessActionSequence` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_livenessActionSequence = string(value["LivenessActionSequence"].GetString());
+        m_livenessActionSequenceHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -637,6 +648,14 @@ void DetectInfoText::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "VisaNum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_visaNum.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_livenessActionSequenceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LivenessActionSequence";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_livenessActionSequence.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1120,5 +1139,21 @@ void DetectInfoText::SetVisaNum(const string& _visaNum)
 bool DetectInfoText::VisaNumHasBeenSet() const
 {
     return m_visaNumHasBeenSet;
+}
+
+string DetectInfoText::GetLivenessActionSequence() const
+{
+    return m_livenessActionSequence;
+}
+
+void DetectInfoText::SetLivenessActionSequence(const string& _livenessActionSequence)
+{
+    m_livenessActionSequence = _livenessActionSequence;
+    m_livenessActionSequenceHasBeenSet = true;
+}
+
+bool DetectInfoText::LivenessActionSequenceHasBeenSet() const
+{
+    return m_livenessActionSequenceHasBeenSet;
 }
 

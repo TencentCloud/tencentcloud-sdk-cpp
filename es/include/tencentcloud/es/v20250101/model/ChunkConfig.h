@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取最大分片长度
-                     * @return MaxChunkSize 最大分片长度
+                     * 获取按照分隔符切片后，对分片长度会进行校验，当超过最大分片长度时，则用下一级分隔符分割，如无下一级分隔符，则保留原长度；默认值：1000
+                     * @return MaxChunkSize 按照分隔符切片后，对分片长度会进行校验，当超过最大分片长度时，则用下一级分隔符分割，如无下一级分隔符，则保留原长度；默认值：1000
                      * 
                      */
                     uint64_t GetMaxChunkSize() const;
 
                     /**
-                     * 设置最大分片长度
-                     * @param _maxChunkSize 最大分片长度
+                     * 设置按照分隔符切片后，对分片长度会进行校验，当超过最大分片长度时，则用下一级分隔符分割，如无下一级分隔符，则保留原长度；默认值：1000
+                     * @param _maxChunkSize 按照分隔符切片后，对分片长度会进行校验，当超过最大分片长度时，则用下一级分隔符分割，如无下一级分隔符，则保留原长度；默认值：1000
                      * 
                      */
                     void SetMaxChunkSize(const uint64_t& _maxChunkSize);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool MaxChunkSizeHasBeenSet() const;
 
                     /**
-                     * 获取分隔符列表
-                     * @return Delimiters 分隔符列表
+                     * 获取分隔符列表，优先靠前的分隔符；文件类型为TXT时，默认值：["\n\n", "\n", "。", "！", "？", "，", ""]
+                     * @return Delimiters 分隔符列表，优先靠前的分隔符；文件类型为TXT时，默认值：["\n\n", "\n", "。", "！", "？", "，", ""]
                      * 
                      */
                     std::vector<std::string> GetDelimiters() const;
 
                     /**
-                     * 设置分隔符列表
-                     * @param _delimiters 分隔符列表
+                     * 设置分隔符列表，优先靠前的分隔符；文件类型为TXT时，默认值：["\n\n", "\n", "。", "！", "？", "，", ""]
+                     * @param _delimiters 分隔符列表，优先靠前的分隔符；文件类型为TXT时，默认值：["\n\n", "\n", "。", "！", "？", "，", ""]
                      * 
                      */
                     void SetDelimiters(const std::vector<std::string>& _delimiters);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool DelimitersHasBeenSet() const;
 
                     /**
-                     * 获取相邻切片重合字符数，需要小于分片长度
-                     * @return ChunkOverlap 相邻切片重合字符数，需要小于分片长度
+                     * 获取相邻切片重合字符数，需要小于分片长度，若形成完全冗余的切片，则会自动过滤；默认值：0.2*MaxChunkSize
+                     * @return ChunkOverlap 相邻切片重合字符数，需要小于分片长度，若形成完全冗余的切片，则会自动过滤；默认值：0.2*MaxChunkSize
                      * 
                      */
                     uint64_t GetChunkOverlap() const;
 
                     /**
-                     * 设置相邻切片重合字符数，需要小于分片长度
-                     * @param _chunkOverlap 相邻切片重合字符数，需要小于分片长度
+                     * 设置相邻切片重合字符数，需要小于分片长度，若形成完全冗余的切片，则会自动过滤；默认值：0.2*MaxChunkSize
+                     * @param _chunkOverlap 相邻切片重合字符数，需要小于分片长度，若形成完全冗余的切片，则会自动过滤；默认值：0.2*MaxChunkSize
                      * 
                      */
                     void SetChunkOverlap(const uint64_t& _chunkOverlap);
@@ -112,19 +112,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 最大分片长度
+                     * 按照分隔符切片后，对分片长度会进行校验，当超过最大分片长度时，则用下一级分隔符分割，如无下一级分隔符，则保留原长度；默认值：1000
                      */
                     uint64_t m_maxChunkSize;
                     bool m_maxChunkSizeHasBeenSet;
 
                     /**
-                     * 分隔符列表
+                     * 分隔符列表，优先靠前的分隔符；文件类型为TXT时，默认值：["\n\n", "\n", "。", "！", "？", "，", ""]
                      */
                     std::vector<std::string> m_delimiters;
                     bool m_delimitersHasBeenSet;
 
                     /**
-                     * 相邻切片重合字符数，需要小于分片长度
+                     * 相邻切片重合字符数，需要小于分片长度，若形成完全冗余的切片，则会自动过滤；默认值：0.2*MaxChunkSize
                      */
                     uint64_t m_chunkOverlap;
                     bool m_chunkOverlapHasBeenSet;

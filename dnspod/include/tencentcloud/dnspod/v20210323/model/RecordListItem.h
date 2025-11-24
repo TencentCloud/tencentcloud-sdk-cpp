@@ -282,15 +282,15 @@ namespace TencentCloud
                     bool RemarkHasBeenSet() const;
 
                     /**
-                     * 获取记录缓存时间
-                     * @return TTL 记录缓存时间
+                     * 获取记录缓存时间，单位：秒
+                     * @return TTL 记录缓存时间，单位：秒
                      * 
                      */
                     uint64_t GetTTL() const;
 
                     /**
-                     * 设置记录缓存时间
-                     * @param _tTL 记录缓存时间
+                     * 设置记录缓存时间，单位：秒
+                     * @param _tTL 记录缓存时间，单位：秒
                      * 
                      */
                     void SetTTL(const uint64_t& _tTL);
@@ -414,7 +414,7 @@ namespace TencentCloud
                     bool m_remarkHasBeenSet;
 
                     /**
-                     * 记录缓存时间
+                     * 记录缓存时间，单位：秒
                      */
                     uint64_t m_tTL;
                     bool m_tTLHasBeenSet;

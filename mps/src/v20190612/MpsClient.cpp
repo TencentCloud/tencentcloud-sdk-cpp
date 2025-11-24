@@ -490,6 +490,56 @@ MpsClient::CreateAsrHotwordsOutcomeCallable MpsClient::CreateAsrHotwordsCallable
     return prom->get_future();
 }
 
+MpsClient::CreateBlindWatermarkTemplateOutcome MpsClient::CreateBlindWatermarkTemplate(const CreateBlindWatermarkTemplateRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateBlindWatermarkTemplate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateBlindWatermarkTemplateResponse rsp = CreateBlindWatermarkTemplateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateBlindWatermarkTemplateOutcome(rsp);
+        else
+            return CreateBlindWatermarkTemplateOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateBlindWatermarkTemplateOutcome(outcome.GetError());
+    }
+}
+
+void MpsClient::CreateBlindWatermarkTemplateAsync(const CreateBlindWatermarkTemplateRequest& request, const CreateBlindWatermarkTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateBlindWatermarkTemplateRequest&;
+    using Resp = CreateBlindWatermarkTemplateResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateBlindWatermarkTemplate", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MpsClient::CreateBlindWatermarkTemplateOutcomeCallable MpsClient::CreateBlindWatermarkTemplateCallable(const CreateBlindWatermarkTemplateRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateBlindWatermarkTemplateOutcome>>();
+    CreateBlindWatermarkTemplateAsync(
+    request,
+    [prom](
+        const MpsClient*,
+        const CreateBlindWatermarkTemplateRequest&,
+        CreateBlindWatermarkTemplateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 MpsClient::CreateContentReviewTemplateOutcome MpsClient::CreateContentReviewTemplate(const CreateContentReviewTemplateRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateContentReviewTemplate");
@@ -732,6 +782,56 @@ MpsClient::CreatePersonSampleOutcomeCallable MpsClient::CreatePersonSampleCallab
         const MpsClient*,
         const CreatePersonSampleRequest&,
         CreatePersonSampleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+MpsClient::CreateProcessImageTemplateOutcome MpsClient::CreateProcessImageTemplate(const CreateProcessImageTemplateRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateProcessImageTemplate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateProcessImageTemplateResponse rsp = CreateProcessImageTemplateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateProcessImageTemplateOutcome(rsp);
+        else
+            return CreateProcessImageTemplateOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateProcessImageTemplateOutcome(outcome.GetError());
+    }
+}
+
+void MpsClient::CreateProcessImageTemplateAsync(const CreateProcessImageTemplateRequest& request, const CreateProcessImageTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateProcessImageTemplateRequest&;
+    using Resp = CreateProcessImageTemplateResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateProcessImageTemplate", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MpsClient::CreateProcessImageTemplateOutcomeCallable MpsClient::CreateProcessImageTemplateCallable(const CreateProcessImageTemplateRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateProcessImageTemplateOutcome>>();
+    CreateProcessImageTemplateAsync(
+    request,
+    [prom](
+        const MpsClient*,
+        const CreateProcessImageTemplateRequest&,
+        CreateProcessImageTemplateOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -1840,6 +1940,56 @@ MpsClient::DeleteAsrHotwordsOutcomeCallable MpsClient::DeleteAsrHotwordsCallable
     return prom->get_future();
 }
 
+MpsClient::DeleteBlindWatermarkTemplateOutcome MpsClient::DeleteBlindWatermarkTemplate(const DeleteBlindWatermarkTemplateRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteBlindWatermarkTemplate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteBlindWatermarkTemplateResponse rsp = DeleteBlindWatermarkTemplateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteBlindWatermarkTemplateOutcome(rsp);
+        else
+            return DeleteBlindWatermarkTemplateOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteBlindWatermarkTemplateOutcome(outcome.GetError());
+    }
+}
+
+void MpsClient::DeleteBlindWatermarkTemplateAsync(const DeleteBlindWatermarkTemplateRequest& request, const DeleteBlindWatermarkTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteBlindWatermarkTemplateRequest&;
+    using Resp = DeleteBlindWatermarkTemplateResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteBlindWatermarkTemplate", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MpsClient::DeleteBlindWatermarkTemplateOutcomeCallable MpsClient::DeleteBlindWatermarkTemplateCallable(const DeleteBlindWatermarkTemplateRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteBlindWatermarkTemplateOutcome>>();
+    DeleteBlindWatermarkTemplateAsync(
+    request,
+    [prom](
+        const MpsClient*,
+        const DeleteBlindWatermarkTemplateRequest&,
+        DeleteBlindWatermarkTemplateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 MpsClient::DeleteContentReviewTemplateOutcome MpsClient::DeleteContentReviewTemplate(const DeleteContentReviewTemplateRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteContentReviewTemplate");
@@ -2032,6 +2182,56 @@ MpsClient::DeletePersonSampleOutcomeCallable MpsClient::DeletePersonSampleCallab
         const MpsClient*,
         const DeletePersonSampleRequest&,
         DeletePersonSampleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+MpsClient::DeleteProcessImageTemplateOutcome MpsClient::DeleteProcessImageTemplate(const DeleteProcessImageTemplateRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteProcessImageTemplate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteProcessImageTemplateResponse rsp = DeleteProcessImageTemplateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteProcessImageTemplateOutcome(rsp);
+        else
+            return DeleteProcessImageTemplateOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteProcessImageTemplateOutcome(outcome.GetError());
+    }
+}
+
+void MpsClient::DeleteProcessImageTemplateAsync(const DeleteProcessImageTemplateRequest& request, const DeleteProcessImageTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteProcessImageTemplateRequest&;
+    using Resp = DeleteProcessImageTemplateResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteProcessImageTemplate", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MpsClient::DeleteProcessImageTemplateOutcomeCallable MpsClient::DeleteProcessImageTemplateCallable(const DeleteProcessImageTemplateRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteProcessImageTemplateOutcome>>();
+    DeleteProcessImageTemplateAsync(
+    request,
+    [prom](
+        const MpsClient*,
+        const DeleteProcessImageTemplateRequest&,
+        DeleteProcessImageTemplateOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -3090,6 +3290,56 @@ MpsClient::DescribeBatchTaskDetailOutcomeCallable MpsClient::DescribeBatchTaskDe
     return prom->get_future();
 }
 
+MpsClient::DescribeBlindWatermarkTemplatesOutcome MpsClient::DescribeBlindWatermarkTemplates(const DescribeBlindWatermarkTemplatesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBlindWatermarkTemplates");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBlindWatermarkTemplatesResponse rsp = DescribeBlindWatermarkTemplatesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBlindWatermarkTemplatesOutcome(rsp);
+        else
+            return DescribeBlindWatermarkTemplatesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBlindWatermarkTemplatesOutcome(outcome.GetError());
+    }
+}
+
+void MpsClient::DescribeBlindWatermarkTemplatesAsync(const DescribeBlindWatermarkTemplatesRequest& request, const DescribeBlindWatermarkTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeBlindWatermarkTemplatesRequest&;
+    using Resp = DescribeBlindWatermarkTemplatesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeBlindWatermarkTemplates", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MpsClient::DescribeBlindWatermarkTemplatesOutcomeCallable MpsClient::DescribeBlindWatermarkTemplatesCallable(const DescribeBlindWatermarkTemplatesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeBlindWatermarkTemplatesOutcome>>();
+    DescribeBlindWatermarkTemplatesAsync(
+    request,
+    [prom](
+        const MpsClient*,
+        const DescribeBlindWatermarkTemplatesRequest&,
+        DescribeBlindWatermarkTemplatesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 MpsClient::DescribeContentReviewTemplatesOutcome MpsClient::DescribeContentReviewTemplates(const DescribeContentReviewTemplatesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeContentReviewTemplates");
@@ -3432,6 +3682,56 @@ MpsClient::DescribePersonSamplesOutcomeCallable MpsClient::DescribePersonSamples
         const MpsClient*,
         const DescribePersonSamplesRequest&,
         DescribePersonSamplesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+MpsClient::DescribeProcessImageTemplatesOutcome MpsClient::DescribeProcessImageTemplates(const DescribeProcessImageTemplatesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeProcessImageTemplates");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeProcessImageTemplatesResponse rsp = DescribeProcessImageTemplatesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeProcessImageTemplatesOutcome(rsp);
+        else
+            return DescribeProcessImageTemplatesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeProcessImageTemplatesOutcome(outcome.GetError());
+    }
+}
+
+void MpsClient::DescribeProcessImageTemplatesAsync(const DescribeProcessImageTemplatesRequest& request, const DescribeProcessImageTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeProcessImageTemplatesRequest&;
+    using Resp = DescribeProcessImageTemplatesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeProcessImageTemplates", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MpsClient::DescribeProcessImageTemplatesOutcomeCallable MpsClient::DescribeProcessImageTemplatesCallable(const DescribeProcessImageTemplatesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeProcessImageTemplatesOutcome>>();
+    DescribeProcessImageTemplatesAsync(
+    request,
+    [prom](
+        const MpsClient*,
+        const DescribeProcessImageTemplatesRequest&,
+        DescribeProcessImageTemplatesOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -5140,6 +5440,56 @@ MpsClient::ExecuteFunctionOutcomeCallable MpsClient::ExecuteFunctionCallable(con
     return prom->get_future();
 }
 
+MpsClient::ExtractBlindWatermarkOutcome MpsClient::ExtractBlindWatermark(const ExtractBlindWatermarkRequest &request)
+{
+    auto outcome = MakeRequest(request, "ExtractBlindWatermark");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ExtractBlindWatermarkResponse rsp = ExtractBlindWatermarkResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ExtractBlindWatermarkOutcome(rsp);
+        else
+            return ExtractBlindWatermarkOutcome(o.GetError());
+    }
+    else
+    {
+        return ExtractBlindWatermarkOutcome(outcome.GetError());
+    }
+}
+
+void MpsClient::ExtractBlindWatermarkAsync(const ExtractBlindWatermarkRequest& request, const ExtractBlindWatermarkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ExtractBlindWatermarkRequest&;
+    using Resp = ExtractBlindWatermarkResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ExtractBlindWatermark", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MpsClient::ExtractBlindWatermarkOutcomeCallable MpsClient::ExtractBlindWatermarkCallable(const ExtractBlindWatermarkRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ExtractBlindWatermarkOutcome>>();
+    ExtractBlindWatermarkAsync(
+    request,
+    [prom](
+        const MpsClient*,
+        const ExtractBlindWatermarkRequest&,
+        ExtractBlindWatermarkOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 MpsClient::ManageTaskOutcome MpsClient::ManageTask(const ManageTaskRequest &request)
 {
     auto outcome = MakeRequest(request, "ManageTask");
@@ -5440,6 +5790,56 @@ MpsClient::ModifyAsrHotwordsOutcomeCallable MpsClient::ModifyAsrHotwordsCallable
     return prom->get_future();
 }
 
+MpsClient::ModifyBlindWatermarkTemplateOutcome MpsClient::ModifyBlindWatermarkTemplate(const ModifyBlindWatermarkTemplateRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyBlindWatermarkTemplate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyBlindWatermarkTemplateResponse rsp = ModifyBlindWatermarkTemplateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyBlindWatermarkTemplateOutcome(rsp);
+        else
+            return ModifyBlindWatermarkTemplateOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyBlindWatermarkTemplateOutcome(outcome.GetError());
+    }
+}
+
+void MpsClient::ModifyBlindWatermarkTemplateAsync(const ModifyBlindWatermarkTemplateRequest& request, const ModifyBlindWatermarkTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyBlindWatermarkTemplateRequest&;
+    using Resp = ModifyBlindWatermarkTemplateResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyBlindWatermarkTemplate", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MpsClient::ModifyBlindWatermarkTemplateOutcomeCallable MpsClient::ModifyBlindWatermarkTemplateCallable(const ModifyBlindWatermarkTemplateRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyBlindWatermarkTemplateOutcome>>();
+    ModifyBlindWatermarkTemplateAsync(
+    request,
+    [prom](
+        const MpsClient*,
+        const ModifyBlindWatermarkTemplateRequest&,
+        ModifyBlindWatermarkTemplateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 MpsClient::ModifyContentReviewTemplateOutcome MpsClient::ModifyContentReviewTemplate(const ModifyContentReviewTemplateRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyContentReviewTemplate");
@@ -5632,6 +6032,56 @@ MpsClient::ModifyPersonSampleOutcomeCallable MpsClient::ModifyPersonSampleCallab
         const MpsClient*,
         const ModifyPersonSampleRequest&,
         ModifyPersonSampleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+MpsClient::ModifyProcessImageTemplateOutcome MpsClient::ModifyProcessImageTemplate(const ModifyProcessImageTemplateRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyProcessImageTemplate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyProcessImageTemplateResponse rsp = ModifyProcessImageTemplateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyProcessImageTemplateOutcome(rsp);
+        else
+            return ModifyProcessImageTemplateOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyProcessImageTemplateOutcome(outcome.GetError());
+    }
+}
+
+void MpsClient::ModifyProcessImageTemplateAsync(const ModifyProcessImageTemplateRequest& request, const ModifyProcessImageTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyProcessImageTemplateRequest&;
+    using Resp = ModifyProcessImageTemplateResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyProcessImageTemplate", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MpsClient::ModifyProcessImageTemplateOutcomeCallable MpsClient::ModifyProcessImageTemplateCallable(const ModifyProcessImageTemplateRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyProcessImageTemplateOutcome>>();
+    ModifyProcessImageTemplateAsync(
+    request,
+    [prom](
+        const MpsClient*,
+        const ModifyProcessImageTemplateRequest&,
+        ModifyProcessImageTemplateOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

@@ -113,21 +113,21 @@ namespace TencentCloud
                     /**
                      * 获取查询成员企业的企业名，模糊匹配
                      * @return Name 查询成员企业的企业名，模糊匹配
-                     * 
+                     * @deprecated
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置查询成员企业的企业名，模糊匹配
                      * @param _name 查询成员企业的企业名，模糊匹配
-                     * 
+                     * @deprecated
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool NameHasBeenSet() const;
 

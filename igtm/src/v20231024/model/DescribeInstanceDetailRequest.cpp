@@ -22,7 +22,8 @@
 using namespace TencentCloud::Igtm::V20231024::Model;
 using namespace std;
 
-DescribeInstanceDetailRequest::DescribeInstanceDetailRequest()
+DescribeInstanceDetailRequest::DescribeInstanceDetailRequest() :
+    m_instanceIdHasBeenSet(false)
 {
 }
 
@@ -33,6 +34,14 @@ string DescribeInstanceDetailRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_instanceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -40,5 +49,21 @@ string DescribeInstanceDetailRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string DescribeInstanceDetailRequest::GetInstanceId() const
+{
+    return m_instanceId;
+}
+
+void DescribeInstanceDetailRequest::SetInstanceId(const string& _instanceId)
+{
+    m_instanceId = _instanceId;
+    m_instanceIdHasBeenSet = true;
+}
+
+bool DescribeInstanceDetailRequest::InstanceIdHasBeenSet() const
+{
+    return m_instanceIdHasBeenSet;
+}
 
 

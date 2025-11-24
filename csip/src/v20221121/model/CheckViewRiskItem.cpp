@@ -33,7 +33,8 @@ CheckViewRiskItem::CheckViewRiskItem() :
     m_assetCountHasBeenSet(false),
     m_riskCountHasBeenSet(false),
     m_assetTypeHasBeenSet(false),
-    m_eventTypeHasBeenSet(false)
+    m_eventTypeHasBeenSet(false),
+    m_classifyHasBeenSet(false)
 {
 }
 
@@ -172,6 +173,16 @@ CoreInternalOutcome CheckViewRiskItem::Deserialize(const rapidjson::Value &value
         m_eventTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("Classify") && !value["Classify"].IsNull())
+    {
+        if (!value["Classify"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CheckViewRiskItem.Classify` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_classify = string(value["Classify"].GetString());
+        m_classifyHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -281,6 +292,14 @@ void CheckViewRiskItem::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "EventType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_eventType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_classifyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Classify";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_classify.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -492,5 +511,21 @@ void CheckViewRiskItem::SetEventType(const string& _eventType)
 bool CheckViewRiskItem::EventTypeHasBeenSet() const
 {
     return m_eventTypeHasBeenSet;
+}
+
+string CheckViewRiskItem::GetClassify() const
+{
+    return m_classify;
+}
+
+void CheckViewRiskItem::SetClassify(const string& _classify)
+{
+    m_classify = _classify;
+    m_classifyHasBeenSet = true;
+}
+
+bool CheckViewRiskItem::ClassifyHasBeenSet() const
+{
+    return m_classifyHasBeenSet;
 }
 
