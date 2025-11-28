@@ -4790,156 +4790,6 @@ TdmqClient::DescribeRocketMQSmoothMigrationTaskOutcomeCallable TdmqClient::Descr
     return prom->get_future();
 }
 
-TdmqClient::DescribeRocketMQSmoothMigrationTaskListOutcome TdmqClient::DescribeRocketMQSmoothMigrationTaskList(const DescribeRocketMQSmoothMigrationTaskListRequest &request)
-{
-    auto outcome = MakeRequest(request, "DescribeRocketMQSmoothMigrationTaskList");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DescribeRocketMQSmoothMigrationTaskListResponse rsp = DescribeRocketMQSmoothMigrationTaskListResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DescribeRocketMQSmoothMigrationTaskListOutcome(rsp);
-        else
-            return DescribeRocketMQSmoothMigrationTaskListOutcome(o.GetError());
-    }
-    else
-    {
-        return DescribeRocketMQSmoothMigrationTaskListOutcome(outcome.GetError());
-    }
-}
-
-void TdmqClient::DescribeRocketMQSmoothMigrationTaskListAsync(const DescribeRocketMQSmoothMigrationTaskListRequest& request, const DescribeRocketMQSmoothMigrationTaskListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    using Req = const DescribeRocketMQSmoothMigrationTaskListRequest&;
-    using Resp = DescribeRocketMQSmoothMigrationTaskListResponse;
-
-    DoRequestAsync<Req, Resp>(
-        "DescribeRocketMQSmoothMigrationTaskList", request, {{{"Content-Type", "application/json"}}},
-        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
-        {
-            handler(this, req, std::move(resp), context);
-        });
-}
-
-TdmqClient::DescribeRocketMQSmoothMigrationTaskListOutcomeCallable TdmqClient::DescribeRocketMQSmoothMigrationTaskListCallable(const DescribeRocketMQSmoothMigrationTaskListRequest &request)
-{
-    const auto prom = std::make_shared<std::promise<DescribeRocketMQSmoothMigrationTaskListOutcome>>();
-    DescribeRocketMQSmoothMigrationTaskListAsync(
-    request,
-    [prom](
-        const TdmqClient*,
-        const DescribeRocketMQSmoothMigrationTaskListRequest&,
-        DescribeRocketMQSmoothMigrationTaskListOutcome resp,
-        const std::shared_ptr<const AsyncCallerContext>&
-    )
-    {
-        prom->set_value(resp);
-    });
-    return prom->get_future();
-}
-
-TdmqClient::DescribeRocketMQSourceClusterGroupListOutcome TdmqClient::DescribeRocketMQSourceClusterGroupList(const DescribeRocketMQSourceClusterGroupListRequest &request)
-{
-    auto outcome = MakeRequest(request, "DescribeRocketMQSourceClusterGroupList");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DescribeRocketMQSourceClusterGroupListResponse rsp = DescribeRocketMQSourceClusterGroupListResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DescribeRocketMQSourceClusterGroupListOutcome(rsp);
-        else
-            return DescribeRocketMQSourceClusterGroupListOutcome(o.GetError());
-    }
-    else
-    {
-        return DescribeRocketMQSourceClusterGroupListOutcome(outcome.GetError());
-    }
-}
-
-void TdmqClient::DescribeRocketMQSourceClusterGroupListAsync(const DescribeRocketMQSourceClusterGroupListRequest& request, const DescribeRocketMQSourceClusterGroupListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    using Req = const DescribeRocketMQSourceClusterGroupListRequest&;
-    using Resp = DescribeRocketMQSourceClusterGroupListResponse;
-
-    DoRequestAsync<Req, Resp>(
-        "DescribeRocketMQSourceClusterGroupList", request, {{{"Content-Type", "application/json"}}},
-        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
-        {
-            handler(this, req, std::move(resp), context);
-        });
-}
-
-TdmqClient::DescribeRocketMQSourceClusterGroupListOutcomeCallable TdmqClient::DescribeRocketMQSourceClusterGroupListCallable(const DescribeRocketMQSourceClusterGroupListRequest &request)
-{
-    const auto prom = std::make_shared<std::promise<DescribeRocketMQSourceClusterGroupListOutcome>>();
-    DescribeRocketMQSourceClusterGroupListAsync(
-    request,
-    [prom](
-        const TdmqClient*,
-        const DescribeRocketMQSourceClusterGroupListRequest&,
-        DescribeRocketMQSourceClusterGroupListOutcome resp,
-        const std::shared_ptr<const AsyncCallerContext>&
-    )
-    {
-        prom->set_value(resp);
-    });
-    return prom->get_future();
-}
-
-TdmqClient::DescribeRocketMQSourceClusterTopicListOutcome TdmqClient::DescribeRocketMQSourceClusterTopicList(const DescribeRocketMQSourceClusterTopicListRequest &request)
-{
-    auto outcome = MakeRequest(request, "DescribeRocketMQSourceClusterTopicList");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DescribeRocketMQSourceClusterTopicListResponse rsp = DescribeRocketMQSourceClusterTopicListResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DescribeRocketMQSourceClusterTopicListOutcome(rsp);
-        else
-            return DescribeRocketMQSourceClusterTopicListOutcome(o.GetError());
-    }
-    else
-    {
-        return DescribeRocketMQSourceClusterTopicListOutcome(outcome.GetError());
-    }
-}
-
-void TdmqClient::DescribeRocketMQSourceClusterTopicListAsync(const DescribeRocketMQSourceClusterTopicListRequest& request, const DescribeRocketMQSourceClusterTopicListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    using Req = const DescribeRocketMQSourceClusterTopicListRequest&;
-    using Resp = DescribeRocketMQSourceClusterTopicListResponse;
-
-    DoRequestAsync<Req, Resp>(
-        "DescribeRocketMQSourceClusterTopicList", request, {{{"Content-Type", "application/json"}}},
-        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
-        {
-            handler(this, req, std::move(resp), context);
-        });
-}
-
-TdmqClient::DescribeRocketMQSourceClusterTopicListOutcomeCallable TdmqClient::DescribeRocketMQSourceClusterTopicListCallable(const DescribeRocketMQSourceClusterTopicListRequest &request)
-{
-    const auto prom = std::make_shared<std::promise<DescribeRocketMQSourceClusterTopicListOutcome>>();
-    DescribeRocketMQSourceClusterTopicListAsync(
-    request,
-    [prom](
-        const TdmqClient*,
-        const DescribeRocketMQSourceClusterTopicListRequest&,
-        DescribeRocketMQSourceClusterTopicListOutcome resp,
-        const std::shared_ptr<const AsyncCallerContext>&
-    )
-    {
-        prom->set_value(resp);
-    });
-    return prom->get_future();
-}
-
 TdmqClient::DescribeRocketMQSubscriptionsOutcome TdmqClient::DescribeRocketMQSubscriptions(const DescribeRocketMQSubscriptionsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeRocketMQSubscriptions");
@@ -5032,6 +4882,56 @@ TdmqClient::DescribeRocketMQTopUsagesOutcomeCallable TdmqClient::DescribeRocketM
         const TdmqClient*,
         const DescribeRocketMQTopUsagesRequest&,
         DescribeRocketMQTopUsagesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TdmqClient::DescribeRocketMQTopicOutcome TdmqClient::DescribeRocketMQTopic(const DescribeRocketMQTopicRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRocketMQTopic");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRocketMQTopicResponse rsp = DescribeRocketMQTopicResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRocketMQTopicOutcome(rsp);
+        else
+            return DescribeRocketMQTopicOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRocketMQTopicOutcome(outcome.GetError());
+    }
+}
+
+void TdmqClient::DescribeRocketMQTopicAsync(const DescribeRocketMQTopicRequest& request, const DescribeRocketMQTopicAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeRocketMQTopicRequest&;
+    using Resp = DescribeRocketMQTopicResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeRocketMQTopic", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TdmqClient::DescribeRocketMQTopicOutcomeCallable TdmqClient::DescribeRocketMQTopicCallable(const DescribeRocketMQTopicRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeRocketMQTopicOutcome>>();
+    DescribeRocketMQTopicAsync(
+    request,
+    [prom](
+        const TdmqClient*,
+        const DescribeRocketMQTopicRequest&,
+        DescribeRocketMQTopicOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

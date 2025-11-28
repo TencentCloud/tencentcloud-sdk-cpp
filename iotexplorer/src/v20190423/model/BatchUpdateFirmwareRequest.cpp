@@ -38,7 +38,8 @@ BatchUpdateFirmwareRequest::BatchUpdateFirmwareRequest() :
     m_maxRetryNumHasBeenSet(false),
     m_retryIntervalHasBeenSet(false),
     m_fwTypeHasBeenSet(false),
-    m_taskUserDefineHasBeenSet(false)
+    m_taskUserDefineHasBeenSet(false),
+    m_rateLimitHasBeenSet(false)
 {
 }
 
@@ -180,6 +181,14 @@ string BatchUpdateFirmwareRequest::ToJsonString() const
         string key = "TaskUserDefine";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_taskUserDefine.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_rateLimitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RateLimit";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_rateLimit, allocator);
     }
 
 
@@ -444,6 +453,22 @@ void BatchUpdateFirmwareRequest::SetTaskUserDefine(const string& _taskUserDefine
 bool BatchUpdateFirmwareRequest::TaskUserDefineHasBeenSet() const
 {
     return m_taskUserDefineHasBeenSet;
+}
+
+int64_t BatchUpdateFirmwareRequest::GetRateLimit() const
+{
+    return m_rateLimit;
+}
+
+void BatchUpdateFirmwareRequest::SetRateLimit(const int64_t& _rateLimit)
+{
+    m_rateLimit = _rateLimit;
+    m_rateLimitHasBeenSet = true;
+}
+
+bool BatchUpdateFirmwareRequest::RateLimitHasBeenSet() const
+{
+    return m_rateLimitHasBeenSet;
 }
 
 

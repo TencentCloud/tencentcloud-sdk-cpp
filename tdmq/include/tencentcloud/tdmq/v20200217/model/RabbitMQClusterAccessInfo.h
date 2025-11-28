@@ -371,6 +371,27 @@ OFF/ON/CREATING/DELETING
                      */
                     bool PublicTlsAccessEndpointHasBeenSet() const;
 
+                    /**
+                     * 获取公网IP是否复用
+                     * @return PublicIpReused 公网IP是否复用
+                     * 
+                     */
+                    bool GetPublicIpReused() const;
+
+                    /**
+                     * 设置公网IP是否复用
+                     * @param _publicIpReused 公网IP是否复用
+                     * 
+                     */
+                    void SetPublicIpReused(const bool& _publicIpReused);
+
+                    /**
+                     * 判断参数 PublicIpReused 是否已赋值
+                     * @return PublicIpReused 是否已赋值
+                     * 
+                     */
+                    bool PublicIpReusedHasBeenSet() const;
+
                 private:
 
                     /**
@@ -464,6 +485,12 @@ OFF/ON/CREATING/DELETING
                      */
                     std::string m_publicTlsAccessEndpoint;
                     bool m_publicTlsAccessEndpointHasBeenSet;
+
+                    /**
+                     * 公网IP是否复用
+                     */
+                    bool m_publicIpReused;
+                    bool m_publicIpReusedHasBeenSet;
 
                 };
             }

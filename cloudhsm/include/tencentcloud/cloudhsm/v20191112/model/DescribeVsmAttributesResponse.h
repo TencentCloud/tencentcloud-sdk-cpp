@@ -367,6 +367,20 @@ namespace TencentCloud
                      */
                     bool ManufacturerHasBeenSet() const;
 
+                    /**
+                     * 获取0-关闭，1-开启
+                     * @return PqcFlag 0-关闭，1-开启
+                     * 
+                     */
+                    int64_t GetPqcFlag() const;
+
+                    /**
+                     * 判断参数 PqcFlag 是否已赋值
+                     * @return PqcFlag 是否已赋值
+                     * 
+                     */
+                    bool PqcFlagHasBeenSet() const;
+
                 private:
 
                     /**
@@ -506,6 +520,12 @@ namespace TencentCloud
                      */
                     std::string m_manufacturer;
                     bool m_manufacturerHasBeenSet;
+
+                    /**
+                     * 0-关闭，1-开启
+                     */
+                    int64_t m_pqcFlag;
+                    bool m_pqcFlagHasBeenSet;
 
                 };
             }

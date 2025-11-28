@@ -32,7 +32,8 @@ DescribeRocketMQGroupsRequest::DescribeRocketMQGroupsRequest() :
     m_sortedByHasBeenSet(false),
     m_sortOrderHasBeenSet(false),
     m_filterOneGroupHasBeenSet(false),
-    m_typesHasBeenSet(false)
+    m_typesHasBeenSet(false),
+    m_tagFiltersHasBeenSet(false)
 {
 }
 
@@ -125,6 +126,21 @@ string DescribeRocketMQGroupsRequest::ToJsonString() const
         for (auto itr = m_types.begin(); itr != m_types.end(); ++itr)
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_tagFiltersHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TagFilters";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tagFilters.begin(); itr != m_tagFilters.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
     }
 
@@ -294,6 +310,22 @@ void DescribeRocketMQGroupsRequest::SetTypes(const vector<string>& _types)
 bool DescribeRocketMQGroupsRequest::TypesHasBeenSet() const
 {
     return m_typesHasBeenSet;
+}
+
+vector<TagFilter> DescribeRocketMQGroupsRequest::GetTagFilters() const
+{
+    return m_tagFilters;
+}
+
+void DescribeRocketMQGroupsRequest::SetTagFilters(const vector<TagFilter>& _tagFilters)
+{
+    m_tagFilters = _tagFilters;
+    m_tagFiltersHasBeenSet = true;
+}
+
+bool DescribeRocketMQGroupsRequest::TagFiltersHasBeenSet() const
+{
+    return m_tagFiltersHasBeenSet;
 }
 
 

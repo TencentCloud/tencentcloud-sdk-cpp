@@ -225,8 +225,6 @@
 #include <tencentcloud/live/v20180801/model/DescribeLiveDomainsResponse.h>
 #include <tencentcloud/live/v20180801/model/DescribeLiveEnhanceInfoListRequest.h>
 #include <tencentcloud/live/v20180801/model/DescribeLiveEnhanceInfoListResponse.h>
-#include <tencentcloud/live/v20180801/model/DescribeLiveForbidStreamListRequest.h>
-#include <tencentcloud/live/v20180801/model/DescribeLiveForbidStreamListResponse.h>
 #include <tencentcloud/live/v20180801/model/DescribeLivePackageInfoRequest.h>
 #include <tencentcloud/live/v20180801/model/DescribeLivePackageInfoResponse.h>
 #include <tencentcloud/live/v20180801/model/DescribeLivePadRulesRequest.h>
@@ -742,9 +740,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeLiveEnhanceInfoListResponse> DescribeLiveEnhanceInfoListOutcome;
                 typedef std::future<DescribeLiveEnhanceInfoListOutcome> DescribeLiveEnhanceInfoListOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::DescribeLiveEnhanceInfoListRequest&, DescribeLiveEnhanceInfoListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLiveEnhanceInfoListAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeLiveForbidStreamListResponse> DescribeLiveForbidStreamListOutcome;
-                typedef std::future<DescribeLiveForbidStreamListOutcome> DescribeLiveForbidStreamListOutcomeCallable;
-                typedef std::function<void(const LiveClient*, const Model::DescribeLiveForbidStreamListRequest&, DescribeLiveForbidStreamListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLiveForbidStreamListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeLivePackageInfoResponse> DescribeLivePackageInfoOutcome;
                 typedef std::future<DescribeLivePackageInfoOutcome> DescribeLivePackageInfoOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::DescribeLivePackageInfoRequest&, DescribeLivePackageInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLivePackageInfoAsyncHandler;
@@ -2028,17 +2023,6 @@ DomainName+AppName+StreamName+TemplateId唯一标识单个转码规则，如需�
                 DescribeLiveEnhanceInfoListOutcome DescribeLiveEnhanceInfoList(const Model::DescribeLiveEnhanceInfoListRequest &request);
                 void DescribeLiveEnhanceInfoListAsync(const Model::DescribeLiveEnhanceInfoListRequest& request, const DescribeLiveEnhanceInfoListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeLiveEnhanceInfoListOutcomeCallable DescribeLiveEnhanceInfoListCallable(const Model::DescribeLiveEnhanceInfoListRequest& request);
-
-                /**
-                 *获取禁推流列表。
-
-注意：该接口仅作为直播辅助查询接口，重要业务场景不可强依赖该接口。
-                 * @param req DescribeLiveForbidStreamListRequest
-                 * @return DescribeLiveForbidStreamListOutcome
-                 */
-                DescribeLiveForbidStreamListOutcome DescribeLiveForbidStreamList(const Model::DescribeLiveForbidStreamListRequest &request);
-                void DescribeLiveForbidStreamListAsync(const Model::DescribeLiveForbidStreamListRequest& request, const DescribeLiveForbidStreamListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeLiveForbidStreamListOutcomeCallable DescribeLiveForbidStreamListCallable(const Model::DescribeLiveForbidStreamListRequest& request);
 
                 /**
                  *查询用户套餐包总量、使用量、剩余量、包状态、购买时间和过期时间等。

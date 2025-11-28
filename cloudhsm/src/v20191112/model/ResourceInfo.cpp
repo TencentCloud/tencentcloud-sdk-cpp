@@ -43,7 +43,9 @@ ResourceInfo::ResourceInfo() :
     m_renewFlagHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_manufacturerHasBeenSet(false),
-    m_alarmStatusHasBeenSet(false)
+    m_alarmStatusHasBeenSet(false),
+    m_pqcStatusHasBeenSet(false),
+    m_pqcFlagHasBeenSet(false)
 {
 }
 
@@ -302,6 +304,26 @@ CoreInternalOutcome ResourceInfo::Deserialize(const rapidjson::Value &value)
         m_alarmStatusHasBeenSet = true;
     }
 
+    if (value.HasMember("PqcStatus") && !value["PqcStatus"].IsNull())
+    {
+        if (!value["PqcStatus"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ResourceInfo.PqcStatus` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_pqcStatus = value["PqcStatus"].GetInt64();
+        m_pqcStatusHasBeenSet = true;
+    }
+
+    if (value.HasMember("PqcFlag") && !value["PqcFlag"].IsNull())
+    {
+        if (!value["PqcFlag"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ResourceInfo.PqcFlag` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_pqcFlag = value["PqcFlag"].GetInt64();
+        m_pqcFlagHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -505,6 +527,22 @@ void ResourceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "AlarmStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_alarmStatus, allocator);
+    }
+
+    if (m_pqcStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PqcStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_pqcStatus, allocator);
+    }
+
+    if (m_pqcFlagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PqcFlag";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_pqcFlag, allocator);
     }
 
 }
@@ -876,5 +914,37 @@ void ResourceInfo::SetAlarmStatus(const int64_t& _alarmStatus)
 bool ResourceInfo::AlarmStatusHasBeenSet() const
 {
     return m_alarmStatusHasBeenSet;
+}
+
+int64_t ResourceInfo::GetPqcStatus() const
+{
+    return m_pqcStatus;
+}
+
+void ResourceInfo::SetPqcStatus(const int64_t& _pqcStatus)
+{
+    m_pqcStatus = _pqcStatus;
+    m_pqcStatusHasBeenSet = true;
+}
+
+bool ResourceInfo::PqcStatusHasBeenSet() const
+{
+    return m_pqcStatusHasBeenSet;
+}
+
+int64_t ResourceInfo::GetPqcFlag() const
+{
+    return m_pqcFlag;
+}
+
+void ResourceInfo::SetPqcFlag(const int64_t& _pqcFlag)
+{
+    m_pqcFlag = _pqcFlag;
+    m_pqcFlagHasBeenSet = true;
+}
+
+bool ResourceInfo::PqcFlagHasBeenSet() const
+{
+    return m_pqcFlagHasBeenSet;
 }
 

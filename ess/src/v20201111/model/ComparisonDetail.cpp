@@ -21,6 +21,7 @@ using namespace TencentCloud::Ess::V20201111::Model;
 using namespace std;
 
 ComparisonDetail::ComparisonDetail() :
+    m_comparisonPointIdHasBeenSet(false),
     m_comparisonTypeHasBeenSet(false),
     m_contentTypeHasBeenSet(false),
     m_originTextHasBeenSet(false),
@@ -32,6 +33,16 @@ CoreInternalOutcome ComparisonDetail::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
+
+    if (value.HasMember("ComparisonPointId") && !value["ComparisonPointId"].IsNull())
+    {
+        if (!value["ComparisonPointId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ComparisonDetail.ComparisonPointId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_comparisonPointId = string(value["ComparisonPointId"].GetString());
+        m_comparisonPointIdHasBeenSet = true;
+    }
 
     if (value.HasMember("ComparisonType") && !value["ComparisonType"].IsNull())
     {
@@ -80,6 +91,14 @@ CoreInternalOutcome ComparisonDetail::Deserialize(const rapidjson::Value &value)
 void ComparisonDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
+    if (m_comparisonPointIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ComparisonPointId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_comparisonPointId.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_comparisonTypeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -114,6 +133,22 @@ void ComparisonDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Document
 
 }
 
+
+string ComparisonDetail::GetComparisonPointId() const
+{
+    return m_comparisonPointId;
+}
+
+void ComparisonDetail::SetComparisonPointId(const string& _comparisonPointId)
+{
+    m_comparisonPointId = _comparisonPointId;
+    m_comparisonPointIdHasBeenSet = true;
+}
+
+bool ComparisonDetail::ComparisonPointIdHasBeenSet() const
+{
+    return m_comparisonPointIdHasBeenSet;
+}
 
 string ComparisonDetail::GetComparisonType() const
 {

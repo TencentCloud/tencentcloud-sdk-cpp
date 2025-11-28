@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取支持的STT类型，tencent-腾讯；azure-亚马逊；volcengine-火山引擎；deepgram-Deepgram;系统默认-tencent。
-                     * @return STTType 支持的STT类型，tencent-腾讯；azure-亚马逊；volcengine-火山引擎；deepgram-Deepgram;系统默认-tencent。
+                     * 获取支持的STT类型，tencent-腾讯；azure-亚马逊；deepgram-Deepgram;系统默认-tencent。
+                     * @return STTType 支持的STT类型，tencent-腾讯；azure-亚马逊；deepgram-Deepgram;系统默认-tencent。
                      * 
                      */
                     std::string GetSTTType() const;
 
                     /**
-                     * 设置支持的STT类型，tencent-腾讯；azure-亚马逊；volcengine-火山引擎；deepgram-Deepgram;系统默认-tencent。
-                     * @param _sTTType 支持的STT类型，tencent-腾讯；azure-亚马逊；volcengine-火山引擎；deepgram-Deepgram;系统默认-tencent。
+                     * 设置支持的STT类型，tencent-腾讯；azure-亚马逊；deepgram-Deepgram;系统默认-tencent。
+                     * @param _sTTType 支持的STT类型，tencent-腾讯；azure-亚马逊；deepgram-Deepgram;系统默认-tencent。
                      * 
                      */
                     void SetSTTType(const std::string& _sTTType);
@@ -110,16 +110,7 @@ namespace TencentCloud
   "SubscriptionKey": "*****"
 }
 ```
-## volcengine
-```
-{
-  "AppId": 123456,
-  "AccessToken": "*****",
-  "ResourceId": "SecretKey****",
-  "ModelName": "16k_zh",
-  "Language":""
-}
-```
+
 ## deepgram
 ```
 {
@@ -151,16 +142,7 @@ namespace TencentCloud
   "SubscriptionKey": "*****"
 }
 ```
-## volcengine
-```
-{
-  "AppId": 123456,
-  "AccessToken": "*****",
-  "ResourceId": "SecretKey****",
-  "ModelName": "16k_zh",
-  "Language":""
-}
-```
+
 ## deepgram
 ```
 {
@@ -197,16 +179,7 @@ namespace TencentCloud
   "SubscriptionKey": "*****"
 }
 ```
-## volcengine
-```
-{
-  "AppId": 123456,
-  "AccessToken": "*****",
-  "ResourceId": "SecretKey****",
-  "ModelName": "16k_zh",
-  "Language":""
-}
-```
+
 ## deepgram
 ```
 {
@@ -238,16 +211,7 @@ namespace TencentCloud
   "SubscriptionKey": "*****"
 }
 ```
-## volcengine
-```
-{
-  "AppId": 123456,
-  "AccessToken": "*****",
-  "ResourceId": "SecretKey****",
-  "ModelName": "16k_zh",
-  "Language":""
-}
-```
+
 ## deepgram
 ```
 {
@@ -272,7 +236,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 支持的STT类型，tencent-腾讯；azure-亚马逊；volcengine-火山引擎；deepgram-Deepgram;系统默认-tencent。
+                     * 支持的STT类型，tencent-腾讯；azure-亚马逊；deepgram-Deepgram;系统默认-tencent。
                      */
                     std::string m_sTTType;
                     bool m_sTTTypeHasBeenSet;
@@ -305,16 +269,7 @@ namespace TencentCloud
   "SubscriptionKey": "*****"
 }
 ```
-## volcengine
-```
-{
-  "AppId": 123456,
-  "AccessToken": "*****",
-  "ResourceId": "SecretKey****",
-  "ModelName": "16k_zh",
-  "Language":""
-}
-```
+
 ## deepgram
 ```
 {

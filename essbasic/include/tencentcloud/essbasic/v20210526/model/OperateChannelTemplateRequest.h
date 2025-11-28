@@ -152,15 +152,19 @@ namespace TencentCloud
                     bool TemplateIdHasBeenSet() const;
 
                     /**
-                     * 获取第三方平台子客企业的唯一标识，支持批量(用,分割)，
-                     * @return ProxyOrganizationOpenIds 第三方平台子客企业的唯一标识，支持批量(用,分割)，
+                     * 获取第三方平台子客企业的唯一标识，支持批量(用,分割) 
+一次批量操作最多支持100个第三方平台子客
+                     * @return ProxyOrganizationOpenIds 第三方平台子客企业的唯一标识，支持批量(用,分割) 
+一次批量操作最多支持100个第三方平台子客
                      * 
                      */
                     std::string GetProxyOrganizationOpenIds() const;
 
                     /**
-                     * 设置第三方平台子客企业的唯一标识，支持批量(用,分割)，
-                     * @param _proxyOrganizationOpenIds 第三方平台子客企业的唯一标识，支持批量(用,分割)，
+                     * 设置第三方平台子客企业的唯一标识，支持批量(用,分割) 
+一次批量操作最多支持100个第三方平台子客
+                     * @param _proxyOrganizationOpenIds 第三方平台子客企业的唯一标识，支持批量(用,分割) 
+一次批量操作最多支持100个第三方平台子客
                      * 
                      */
                     void SetProxyOrganizationOpenIds(const std::string& _proxyOrganizationOpenIds);
@@ -299,6 +303,52 @@ namespace TencentCloud
                      */
                     bool OperatorHasBeenSet() const;
 
+                    /**
+                     * 获取指定分页每页返回的数据条数，单页最大支持 100。
+不传默认值为 20
+                     * @return Limit 指定分页每页返回的数据条数，单页最大支持 100。
+不传默认值为 20
+                     * 
+                     */
+                    int64_t GetLimit() const;
+
+                    /**
+                     * 设置指定分页每页返回的数据条数，单页最大支持 100。
+不传默认值为 20
+                     * @param _limit 指定分页每页返回的数据条数，单页最大支持 100。
+不传默认值为 20
+                     * 
+                     */
+                    void SetLimit(const int64_t& _limit);
+
+                    /**
+                     * 判断参数 Limit 是否已赋值
+                     * @return Limit 是否已赋值
+                     * 
+                     */
+                    bool LimitHasBeenSet() const;
+
+                    /**
+                     * 获取分页查询偏移量，默认为0
+                     * @return Offset 分页查询偏移量，默认为0
+                     * 
+                     */
+                    int64_t GetOffset() const;
+
+                    /**
+                     * 设置分页查询偏移量，默认为0
+                     * @param _offset 分页查询偏移量，默认为0
+                     * 
+                     */
+                    void SetOffset(const int64_t& _offset);
+
+                    /**
+                     * 判断参数 Offset 是否已赋值
+                     * @return Offset 是否已赋值
+                     * 
+                     */
+                    bool OffsetHasBeenSet() const;
+
                 private:
 
                     /**
@@ -331,7 +381,8 @@ namespace TencentCloud
                     bool m_templateIdHasBeenSet;
 
                     /**
-                     * 第三方平台子客企业的唯一标识，支持批量(用,分割)，
+                     * 第三方平台子客企业的唯一标识，支持批量(用,分割) 
+一次批量操作最多支持100个第三方平台子客
                      */
                     std::string m_proxyOrganizationOpenIds;
                     bool m_proxyOrganizationOpenIdsHasBeenSet;
@@ -369,6 +420,19 @@ namespace TencentCloud
                      */
                     UserInfo m_operator;
                     bool m_operatorHasBeenSet;
+
+                    /**
+                     * 指定分页每页返回的数据条数，单页最大支持 100。
+不传默认值为 20
+                     */
+                    int64_t m_limit;
+                    bool m_limitHasBeenSet;
+
+                    /**
+                     * 分页查询偏移量，默认为0
+                     */
+                    int64_t m_offset;
+                    bool m_offsetHasBeenSet;
 
                 };
             }

@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/dlc/v20210125/model/FavorInfo.h>
+#include <tencentcloud/dlc/v20210125/model/ResourceConf.h>
 
 
 namespace TencentCloud
@@ -36,7 +37,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * ResourceInfo
+                * 数据优化资源信息结构
                 */
                 class ResourceInfo : public AbstractModel
                 {
@@ -198,6 +199,27 @@ namespace TencentCloud
                      */
                     bool ResourceGroupNameHasBeenSet() const;
 
+                    /**
+                     * 获取资源配置信息
+                     * @return ResourceConf 资源配置信息
+                     * 
+                     */
+                    ResourceConf GetResourceConf() const;
+
+                    /**
+                     * 设置资源配置信息
+                     * @param _resourceConf 资源配置信息
+                     * 
+                     */
+                    void SetResourceConf(const ResourceConf& _resourceConf);
+
+                    /**
+                     * 判断参数 ResourceConf 是否已赋值
+                     * @return ResourceConf 是否已赋值
+                     * 
+                     */
+                    bool ResourceConfHasBeenSet() const;
+
                 private:
 
                     /**
@@ -242,6 +264,12 @@ namespace TencentCloud
                      */
                     std::string m_resourceGroupName;
                     bool m_resourceGroupNameHasBeenSet;
+
+                    /**
+                     * 资源配置信息
+                     */
+                    ResourceConf m_resourceConf;
+                    bool m_resourceConfHasBeenSet;
 
                 };
             }

@@ -26,8 +26,16 @@ SetBackupRulesRequest::SetBackupRulesRequest() :
     m_instanceIdHasBeenSet(false),
     m_backupMethodHasBeenSet(false),
     m_backupTimeHasBeenSet(false),
+    m_backupFrequencyHasBeenSet(false),
     m_notifyHasBeenSet(false),
-    m_backupRetentionPeriodHasBeenSet(false)
+    m_backupRetentionPeriodHasBeenSet(false),
+    m_activeWeekdaysHasBeenSet(false),
+    m_longTermUnitHasBeenSet(false),
+    m_longTermActiveDaysHasBeenSet(false),
+    m_longTermExpiredDaysHasBeenSet(false),
+    m_oplogExpiredDaysHasBeenSet(false),
+    m_backupVersionHasBeenSet(false),
+    m_alarmWaterLevelHasBeenSet(false)
 {
 }
 
@@ -62,6 +70,14 @@ string SetBackupRulesRequest::ToJsonString() const
         d.AddMember(iKey, m_backupTime, allocator);
     }
 
+    if (m_backupFrequencyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BackupFrequency";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_backupFrequency, allocator);
+    }
+
     if (m_notifyHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -76,6 +92,62 @@ string SetBackupRulesRequest::ToJsonString() const
         string key = "BackupRetentionPeriod";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_backupRetentionPeriod, allocator);
+    }
+
+    if (m_activeWeekdaysHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ActiveWeekdays";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_activeWeekdays.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_longTermUnitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LongTermUnit";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_longTermUnit.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_longTermActiveDaysHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LongTermActiveDays";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_longTermActiveDays.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_longTermExpiredDaysHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LongTermExpiredDays";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_longTermExpiredDays, allocator);
+    }
+
+    if (m_oplogExpiredDaysHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OplogExpiredDays";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_oplogExpiredDays, allocator);
+    }
+
+    if (m_backupVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BackupVersion";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_backupVersion, allocator);
+    }
+
+    if (m_alarmWaterLevelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AlarmWaterLevel";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_alarmWaterLevel, allocator);
     }
 
 
@@ -134,6 +206,22 @@ bool SetBackupRulesRequest::BackupTimeHasBeenSet() const
     return m_backupTimeHasBeenSet;
 }
 
+uint64_t SetBackupRulesRequest::GetBackupFrequency() const
+{
+    return m_backupFrequency;
+}
+
+void SetBackupRulesRequest::SetBackupFrequency(const uint64_t& _backupFrequency)
+{
+    m_backupFrequency = _backupFrequency;
+    m_backupFrequencyHasBeenSet = true;
+}
+
+bool SetBackupRulesRequest::BackupFrequencyHasBeenSet() const
+{
+    return m_backupFrequencyHasBeenSet;
+}
+
 bool SetBackupRulesRequest::GetNotify() const
 {
     return m_notify;
@@ -164,6 +252,118 @@ void SetBackupRulesRequest::SetBackupRetentionPeriod(const uint64_t& _backupRete
 bool SetBackupRulesRequest::BackupRetentionPeriodHasBeenSet() const
 {
     return m_backupRetentionPeriodHasBeenSet;
+}
+
+string SetBackupRulesRequest::GetActiveWeekdays() const
+{
+    return m_activeWeekdays;
+}
+
+void SetBackupRulesRequest::SetActiveWeekdays(const string& _activeWeekdays)
+{
+    m_activeWeekdays = _activeWeekdays;
+    m_activeWeekdaysHasBeenSet = true;
+}
+
+bool SetBackupRulesRequest::ActiveWeekdaysHasBeenSet() const
+{
+    return m_activeWeekdaysHasBeenSet;
+}
+
+string SetBackupRulesRequest::GetLongTermUnit() const
+{
+    return m_longTermUnit;
+}
+
+void SetBackupRulesRequest::SetLongTermUnit(const string& _longTermUnit)
+{
+    m_longTermUnit = _longTermUnit;
+    m_longTermUnitHasBeenSet = true;
+}
+
+bool SetBackupRulesRequest::LongTermUnitHasBeenSet() const
+{
+    return m_longTermUnitHasBeenSet;
+}
+
+string SetBackupRulesRequest::GetLongTermActiveDays() const
+{
+    return m_longTermActiveDays;
+}
+
+void SetBackupRulesRequest::SetLongTermActiveDays(const string& _longTermActiveDays)
+{
+    m_longTermActiveDays = _longTermActiveDays;
+    m_longTermActiveDaysHasBeenSet = true;
+}
+
+bool SetBackupRulesRequest::LongTermActiveDaysHasBeenSet() const
+{
+    return m_longTermActiveDaysHasBeenSet;
+}
+
+int64_t SetBackupRulesRequest::GetLongTermExpiredDays() const
+{
+    return m_longTermExpiredDays;
+}
+
+void SetBackupRulesRequest::SetLongTermExpiredDays(const int64_t& _longTermExpiredDays)
+{
+    m_longTermExpiredDays = _longTermExpiredDays;
+    m_longTermExpiredDaysHasBeenSet = true;
+}
+
+bool SetBackupRulesRequest::LongTermExpiredDaysHasBeenSet() const
+{
+    return m_longTermExpiredDaysHasBeenSet;
+}
+
+int64_t SetBackupRulesRequest::GetOplogExpiredDays() const
+{
+    return m_oplogExpiredDays;
+}
+
+void SetBackupRulesRequest::SetOplogExpiredDays(const int64_t& _oplogExpiredDays)
+{
+    m_oplogExpiredDays = _oplogExpiredDays;
+    m_oplogExpiredDaysHasBeenSet = true;
+}
+
+bool SetBackupRulesRequest::OplogExpiredDaysHasBeenSet() const
+{
+    return m_oplogExpiredDaysHasBeenSet;
+}
+
+int64_t SetBackupRulesRequest::GetBackupVersion() const
+{
+    return m_backupVersion;
+}
+
+void SetBackupRulesRequest::SetBackupVersion(const int64_t& _backupVersion)
+{
+    m_backupVersion = _backupVersion;
+    m_backupVersionHasBeenSet = true;
+}
+
+bool SetBackupRulesRequest::BackupVersionHasBeenSet() const
+{
+    return m_backupVersionHasBeenSet;
+}
+
+int64_t SetBackupRulesRequest::GetAlarmWaterLevel() const
+{
+    return m_alarmWaterLevel;
+}
+
+void SetBackupRulesRequest::SetAlarmWaterLevel(const int64_t& _alarmWaterLevel)
+{
+    m_alarmWaterLevel = _alarmWaterLevel;
+    m_alarmWaterLevelHasBeenSet = true;
+}
+
+bool SetBackupRulesRequest::AlarmWaterLevelHasBeenSet() const
+{
+    return m_alarmWaterLevelHasBeenSet;
 }
 
 

@@ -37,11 +37,11 @@ CoreInternalOutcome ConsumersSchedule::Deserialize(const rapidjson::Value &value
 
     if (value.HasMember("Partitions") && !value["Partitions"].IsNull())
     {
-        if (!value["Partitions"].IsUint64())
+        if (!value["Partitions"].IsInt64())
         {
-            return CoreInternalOutcome(Core::Error("response `ConsumersSchedule.Partitions` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ConsumersSchedule.Partitions` IsInt64=false incorrectly").SetRequestId(requestId));
         }
-        m_partitions = value["Partitions"].GetUint64();
+        m_partitions = value["Partitions"].GetInt64();
         m_partitionsHasBeenSet = true;
     }
 
@@ -153,12 +153,12 @@ void ConsumersSchedule::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
 }
 
 
-uint64_t ConsumersSchedule::GetPartitions() const
+int64_t ConsumersSchedule::GetPartitions() const
 {
     return m_partitions;
 }
 
-void ConsumersSchedule::SetPartitions(const uint64_t& _partitions)
+void ConsumersSchedule::SetPartitions(const int64_t& _partitions)
 {
     m_partitions = _partitions;
     m_partitionsHasBeenSet = true;

@@ -215,6 +215,8 @@
 #include <tencentcloud/mps/v20190612/model/DescribeTasksResponse.h>
 #include <tencentcloud/mps/v20190612/model/DescribeTranscodeTemplatesRequest.h>
 #include <tencentcloud/mps/v20190612/model/DescribeTranscodeTemplatesResponse.h>
+#include <tencentcloud/mps/v20190612/model/DescribeUsageDataRequest.h>
+#include <tencentcloud/mps/v20190612/model/DescribeUsageDataResponse.h>
 #include <tencentcloud/mps/v20190612/model/DescribeVideoDatabaseEntryTaskDetailRequest.h>
 #include <tencentcloud/mps/v20190612/model/DescribeVideoDatabaseEntryTaskDetailResponse.h>
 #include <tencentcloud/mps/v20190612/model/DescribeVideoSearchTaskDetailRequest.h>
@@ -615,6 +617,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeTranscodeTemplatesResponse> DescribeTranscodeTemplatesOutcome;
                 typedef std::future<DescribeTranscodeTemplatesOutcome> DescribeTranscodeTemplatesOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::DescribeTranscodeTemplatesRequest&, DescribeTranscodeTemplatesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTranscodeTemplatesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeUsageDataResponse> DescribeUsageDataOutcome;
+                typedef std::future<DescribeUsageDataOutcome> DescribeUsageDataOutcomeCallable;
+                typedef std::function<void(const MpsClient*, const Model::DescribeUsageDataRequest&, DescribeUsageDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUsageDataAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeVideoDatabaseEntryTaskDetailResponse> DescribeVideoDatabaseEntryTaskDetailOutcome;
                 typedef std::future<DescribeVideoDatabaseEntryTaskDetailOutcome> DescribeVideoDatabaseEntryTaskDetailOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::DescribeVideoDatabaseEntryTaskDetailRequest&, DescribeVideoDatabaseEntryTaskDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVideoDatabaseEntryTaskDetailAsyncHandler;
@@ -1662,6 +1667,17 @@ namespace TencentCloud
                 DescribeTranscodeTemplatesOutcome DescribeTranscodeTemplates(const Model::DescribeTranscodeTemplatesRequest &request);
                 void DescribeTranscodeTemplatesAsync(const Model::DescribeTranscodeTemplatesRequest& request, const DescribeTranscodeTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeTranscodeTemplatesOutcomeCallable DescribeTranscodeTemplatesCallable(const Model::DescribeTranscodeTemplatesRequest& request);
+
+                /**
+                 *该接口返回查询时间范围内每天使用的媒体处理用量信息。
+   1. 可以查询最近365天内的媒体处理统计数据。
+   2. 查询时间跨度不超过90天。
+                 * @param req DescribeUsageDataRequest
+                 * @return DescribeUsageDataOutcome
+                 */
+                DescribeUsageDataOutcome DescribeUsageData(const Model::DescribeUsageDataRequest &request);
+                void DescribeUsageDataAsync(const Model::DescribeUsageDataRequest& request, const DescribeUsageDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeUsageDataOutcomeCallable DescribeUsageDataCallable(const Model::DescribeUsageDataRequest& request);
 
                 /**
                  *根据任务ID查询视频入库任务的状态。

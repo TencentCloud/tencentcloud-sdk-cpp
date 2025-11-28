@@ -29,7 +29,8 @@ OperateChannelTemplateResponse::OperateChannelTemplateResponse() :
     m_operateResultHasBeenSet(false),
     m_authTagHasBeenSet(false),
     m_proxyOrganizationOpenIdsHasBeenSet(false),
-    m_failMessageListHasBeenSet(false)
+    m_failMessageListHasBeenSet(false),
+    m_totalHasBeenSet(false)
 {
 }
 
@@ -140,6 +141,16 @@ CoreInternalOutcome OperateChannelTemplateResponse::Deserialize(const string &pa
         m_failMessageListHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Total") && !rsp["Total"].IsNull())
+    {
+        if (!rsp["Total"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Total` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_total = rsp["Total"].GetInt64();
+        m_totalHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -208,6 +219,14 @@ string OperateChannelTemplateResponse::ToJsonString() const
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_totalHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Total";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_total, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -280,6 +299,16 @@ vector<AuthFailMessage> OperateChannelTemplateResponse::GetFailMessageList() con
 bool OperateChannelTemplateResponse::FailMessageListHasBeenSet() const
 {
     return m_failMessageListHasBeenSet;
+}
+
+int64_t OperateChannelTemplateResponse::GetTotal() const
+{
+    return m_total;
+}
+
+bool OperateChannelTemplateResponse::TotalHasBeenSet() const
+{
+    return m_totalHasBeenSet;
 }
 
 

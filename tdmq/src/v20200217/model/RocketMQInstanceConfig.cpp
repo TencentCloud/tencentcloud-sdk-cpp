@@ -37,7 +37,8 @@ RocketMQInstanceConfig::RocketMQInstanceConfig() :
     m_minRetentionHasBeenSet(false),
     m_retentionHasBeenSet(false),
     m_topicNumLowerLimitHasBeenSet(false),
-    m_topicNumUpperLimitHasBeenSet(false)
+    m_topicNumUpperLimitHasBeenSet(false),
+    m_sendReceiveRatioHasBeenSet(false)
 {
 }
 
@@ -236,6 +237,16 @@ CoreInternalOutcome RocketMQInstanceConfig::Deserialize(const rapidjson::Value &
         m_topicNumUpperLimitHasBeenSet = true;
     }
 
+    if (value.HasMember("SendReceiveRatio") && !value["SendReceiveRatio"].IsNull())
+    {
+        if (!value["SendReceiveRatio"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `RocketMQInstanceConfig.SendReceiveRatio` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_sendReceiveRatio = value["SendReceiveRatio"].GetDouble();
+        m_sendReceiveRatioHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -391,6 +402,14 @@ void RocketMQInstanceConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Do
         string key = "TopicNumUpperLimit";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_topicNumUpperLimit, allocator);
+    }
+
+    if (m_sendReceiveRatioHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SendReceiveRatio";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_sendReceiveRatio, allocator);
     }
 
 }
@@ -666,5 +685,21 @@ void RocketMQInstanceConfig::SetTopicNumUpperLimit(const int64_t& _topicNumUpper
 bool RocketMQInstanceConfig::TopicNumUpperLimitHasBeenSet() const
 {
     return m_topicNumUpperLimitHasBeenSet;
+}
+
+double RocketMQInstanceConfig::GetSendReceiveRatio() const
+{
+    return m_sendReceiveRatio;
+}
+
+void RocketMQInstanceConfig::SetSendReceiveRatio(const double& _sendReceiveRatio)
+{
+    m_sendReceiveRatio = _sendReceiveRatio;
+    m_sendReceiveRatioHasBeenSet = true;
+}
+
+bool RocketMQInstanceConfig::SendReceiveRatioHasBeenSet() const
+{
+    return m_sendReceiveRatioHasBeenSet;
 }
 

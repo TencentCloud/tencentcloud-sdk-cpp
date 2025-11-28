@@ -204,6 +204,27 @@ RESET：对原有不健康实例进行重装系统操作，可保持数据盘、
                      */
                     bool DesiredCapacitySyncWithMaxMinSizeHasBeenSet() const;
 
+                    /**
+                     * 获取优先缩容不健康实例。若开启，缩容时会优先选择不健康实例。默认值为 False。
+                     * @return PriorityScaleInUnhealthy 优先缩容不健康实例。若开启，缩容时会优先选择不健康实例。默认值为 False。
+                     * 
+                     */
+                    bool GetPriorityScaleInUnhealthy() const;
+
+                    /**
+                     * 设置优先缩容不健康实例。若开启，缩容时会优先选择不健康实例。默认值为 False。
+                     * @param _priorityScaleInUnhealthy 优先缩容不健康实例。若开启，缩容时会优先选择不健康实例。默认值为 False。
+                     * 
+                     */
+                    void SetPriorityScaleInUnhealthy(const bool& _priorityScaleInUnhealthy);
+
+                    /**
+                     * 判断参数 PriorityScaleInUnhealthy 是否已赋值
+                     * @return PriorityScaleInUnhealthy 是否已赋值
+                     * 
+                     */
+                    bool PriorityScaleInUnhealthyHasBeenSet() const;
+
                 private:
 
                     /**
@@ -249,6 +270,12 @@ RESET：对原有不健康实例进行重装系统操作，可保持数据盘、
                      */
                     bool m_desiredCapacitySyncWithMaxMinSize;
                     bool m_desiredCapacitySyncWithMaxMinSizeHasBeenSet;
+
+                    /**
+                     * 优先缩容不健康实例。若开启，缩容时会优先选择不健康实例。默认值为 False。
+                     */
+                    bool m_priorityScaleInUnhealthy;
+                    bool m_priorityScaleInUnhealthyHasBeenSet;
 
                 };
             }

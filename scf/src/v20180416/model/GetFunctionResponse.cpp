@@ -69,6 +69,7 @@ GetFunctionResponse::GetFunctionResponse() :
     m_imageConfigHasBeenSet(false),
     m_protocolTypeHasBeenSet(false),
     m_protocolParamsHasBeenSet(false),
+    m_instanceConcurrencyConfigHasBeenSet(false),
     m_dnsCacheHasBeenSet(false),
     m_intranetConfigHasBeenSet(false)
 {
@@ -661,6 +662,23 @@ CoreInternalOutcome GetFunctionResponse::Deserialize(const string &payload)
         m_protocolParamsHasBeenSet = true;
     }
 
+    if (rsp.HasMember("InstanceConcurrencyConfig") && !rsp["InstanceConcurrencyConfig"].IsNull())
+    {
+        if (!rsp["InstanceConcurrencyConfig"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceConcurrencyConfig` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_instanceConcurrencyConfig.Deserialize(rsp["InstanceConcurrencyConfig"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_instanceConcurrencyConfigHasBeenSet = true;
+    }
+
     if (rsp.HasMember("DnsCache") && !rsp["DnsCache"].IsNull())
     {
         if (!rsp["DnsCache"].IsString())
@@ -1093,6 +1111,15 @@ string GetFunctionResponse::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_protocolParams.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_instanceConcurrencyConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceConcurrencyConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_instanceConcurrencyConfig.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_dnsCacheHasBeenSet)
@@ -1572,6 +1599,16 @@ ProtocolParams GetFunctionResponse::GetProtocolParams() const
 bool GetFunctionResponse::ProtocolParamsHasBeenSet() const
 {
     return m_protocolParamsHasBeenSet;
+}
+
+InstanceConcurrencyConfig GetFunctionResponse::GetInstanceConcurrencyConfig() const
+{
+    return m_instanceConcurrencyConfig;
+}
+
+bool GetFunctionResponse::InstanceConcurrencyConfigHasBeenSet() const
+{
+    return m_instanceConcurrencyConfigHasBeenSet;
 }
 
 string GetFunctionResponse::GetDnsCache() const

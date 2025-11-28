@@ -34,6 +34,7 @@
 #include <tencentcloud/scf/v20180416/model/StatusReason.h>
 #include <tencentcloud/scf/v20180416/model/ImageConfig.h>
 #include <tencentcloud/scf/v20180416/model/ProtocolParams.h>
+#include <tencentcloud/scf/v20180416/model/InstanceConcurrencyConfig.h>
 #include <tencentcloud/scf/v20180416/model/IntranetConfigOut.h>
 
 
@@ -700,6 +701,22 @@ namespace TencentCloud
                     bool ProtocolParamsHasBeenSet() const;
 
                     /**
+                     * 获取单实例多并发配置。只支持Web函数。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return InstanceConcurrencyConfig 单实例多并发配置。只支持Web函数。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    InstanceConcurrencyConfig GetInstanceConcurrencyConfig() const;
+
+                    /**
+                     * 判断参数 InstanceConcurrencyConfig 是否已赋值
+                     * @return InstanceConcurrencyConfig 是否已赋值
+                     * 
+                     */
+                    bool InstanceConcurrencyConfigHasBeenSet() const;
+
+                    /**
                      * 获取是否开启DNS缓存
                      * @return DnsCache 是否开启DNS缓存
                      * 
@@ -1006,6 +1023,13 @@ namespace TencentCloud
                      */
                     ProtocolParams m_protocolParams;
                     bool m_protocolParamsHasBeenSet;
+
+                    /**
+                     * 单实例多并发配置。只支持Web函数。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    InstanceConcurrencyConfig m_instanceConcurrencyConfig;
+                    bool m_instanceConcurrencyConfigHasBeenSet;
 
                     /**
                      * 是否开启DNS缓存

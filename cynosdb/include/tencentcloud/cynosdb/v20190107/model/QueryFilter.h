@@ -133,21 +133,21 @@ namespace TencentCloud
                     /**
                      * 获取操作符
                      * @return Operator 操作符
-                     * 
+                     * @deprecated
                      */
                     std::string GetOperator() const;
 
                     /**
                      * 设置操作符
                      * @param _operator 操作符
-                     * 
+                     * @deprecated
                      */
                     void SetOperator(const std::string& _operator);
 
                     /**
                      * 判断参数 Operator 是否已赋值
                      * @return Operator 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool OperatorHasBeenSet() const;
 

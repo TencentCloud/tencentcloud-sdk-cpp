@@ -299,6 +299,43 @@ namespace TencentCloud
                     bool HotPeriodHasBeenSet() const;
 
                     /**
+                     * 获取加密相关参数。 支持加密地域并且开白用户可以传此参数，其他场景不能传递该参数。
+0或者不传： 不加密
+1：kms-cls 云产品密钥加密
+
+支持地域：ap-beijing,ap-guangzhou,ap-shanghai,ap-singapore,ap-bangkok,ap-jakarta,eu-frankfurt,ap-seoul,ap-tokyo
+                     * @return Encryption 加密相关参数。 支持加密地域并且开白用户可以传此参数，其他场景不能传递该参数。
+0或者不传： 不加密
+1：kms-cls 云产品密钥加密
+
+支持地域：ap-beijing,ap-guangzhou,ap-shanghai,ap-singapore,ap-bangkok,ap-jakarta,eu-frankfurt,ap-seoul,ap-tokyo
+                     * 
+                     */
+                    uint64_t GetEncryption() const;
+
+                    /**
+                     * 设置加密相关参数。 支持加密地域并且开白用户可以传此参数，其他场景不能传递该参数。
+0或者不传： 不加密
+1：kms-cls 云产品密钥加密
+
+支持地域：ap-beijing,ap-guangzhou,ap-shanghai,ap-singapore,ap-bangkok,ap-jakarta,eu-frankfurt,ap-seoul,ap-tokyo
+                     * @param _encryption 加密相关参数。 支持加密地域并且开白用户可以传此参数，其他场景不能传递该参数。
+0或者不传： 不加密
+1：kms-cls 云产品密钥加密
+
+支持地域：ap-beijing,ap-guangzhou,ap-shanghai,ap-singapore,ap-bangkok,ap-jakarta,eu-frankfurt,ap-seoul,ap-tokyo
+                     * 
+                     */
+                    void SetEncryption(const uint64_t& _encryption);
+
+                    /**
+                     * 判断参数 Encryption 是否已赋值
+                     * @return Encryption 是否已赋值
+                     * 
+                     */
+                    bool EncryptionHasBeenSet() const;
+
+                    /**
                      * 获取主题类型
 - 0:日志主题，默认值
 - 1:指标主题
@@ -499,6 +536,16 @@ namespace TencentCloud
                      */
                     uint64_t m_hotPeriod;
                     bool m_hotPeriodHasBeenSet;
+
+                    /**
+                     * 加密相关参数。 支持加密地域并且开白用户可以传此参数，其他场景不能传递该参数。
+0或者不传： 不加密
+1：kms-cls 云产品密钥加密
+
+支持地域：ap-beijing,ap-guangzhou,ap-shanghai,ap-singapore,ap-bangkok,ap-jakarta,eu-frankfurt,ap-seoul,ap-tokyo
+                     */
+                    uint64_t m_encryption;
+                    bool m_encryptionHasBeenSet;
 
                     /**
                      * 主题类型

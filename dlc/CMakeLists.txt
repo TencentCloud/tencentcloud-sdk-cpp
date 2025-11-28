@@ -32,6 +32,7 @@ set(dlc_public_header_model
   include/tencentcloud/dlc/v20210125/model/DescribeNotebookSessionsRequest.h
   include/tencentcloud/dlc/v20210125/model/SmartOptimizerLifecyclePolicy.h
   include/tencentcloud/dlc/v20210125/model/DescribeDMSDatabaseResponse.h
+  include/tencentcloud/dlc/v20210125/model/DescribeTaskListResponse.h
   include/tencentcloud/dlc/v20210125/model/Policys.h
   include/tencentcloud/dlc/v20210125/model/DropDMSDatabaseRequest.h
   include/tencentcloud/dlc/v20210125/model/NotebookSessionStatementBatchInformation.h
@@ -71,6 +72,7 @@ set(dlc_public_header_model
   include/tencentcloud/dlc/v20210125/model/SmartOptimizerPolicy.h
   include/tencentcloud/dlc/v20210125/model/UnboundDatasourceHouseResponse.h
   include/tencentcloud/dlc/v20210125/model/DescribeUserInfoResponse.h
+  include/tencentcloud/dlc/v20210125/model/DescribeTaskListRequest.h
   include/tencentcloud/dlc/v20210125/model/ModifyUserTypeRequest.h
   include/tencentcloud/dlc/v20210125/model/NotebookSessionStatementInfo.h
   include/tencentcloud/dlc/v20210125/model/CreateImportTaskRequest.h
@@ -229,6 +231,7 @@ set(dlc_public_header_model
   include/tencentcloud/dlc/v20210125/model/DescribeTasksOverviewResponse.h
   include/tencentcloud/dlc/v20210125/model/KafkaInfo.h
   include/tencentcloud/dlc/v20210125/model/FavorInfo.h
+  include/tencentcloud/dlc/v20210125/model/TaskFullRespInfo.h
   include/tencentcloud/dlc/v20210125/model/DeleteDataEngineRequest.h
   include/tencentcloud/dlc/v20210125/model/SmartPolicy.h
   include/tencentcloud/dlc/v20210125/model/CreateSparkSessionBatchSQLResponse.h
@@ -508,6 +511,7 @@ set(dlc_public_header_model
   include/tencentcloud/dlc/v20210125/model/DescribeDataEngineResponse.h
   include/tencentcloud/dlc/v20210125/model/DataEngineScaleInfo.h
   include/tencentcloud/dlc/v20210125/model/DescribeDataEngineSessionParametersRequest.h
+  include/tencentcloud/dlc/v20210125/model/ResourceConf.h
   include/tencentcloud/dlc/v20210125/model/QueryTaskCostDetailRequest.h
   include/tencentcloud/dlc/v20210125/model/ModifyDataEngineDescriptionResponse.h
   include/tencentcloud/dlc/v20210125/model/UpdateDataEngineConfigRequest.h
@@ -543,6 +547,7 @@ set(dlc_src
   src/v20210125/model/DescribeNotebookSessionsRequest.cpp
   src/v20210125/model/SmartOptimizerLifecyclePolicy.cpp
   src/v20210125/model/DescribeDMSDatabaseResponse.cpp
+  src/v20210125/model/DescribeTaskListResponse.cpp
   src/v20210125/model/Policys.cpp
   src/v20210125/model/DropDMSDatabaseRequest.cpp
   src/v20210125/model/NotebookSessionStatementBatchInformation.cpp
@@ -582,6 +587,7 @@ set(dlc_src
   src/v20210125/model/SmartOptimizerPolicy.cpp
   src/v20210125/model/UnboundDatasourceHouseResponse.cpp
   src/v20210125/model/DescribeUserInfoResponse.cpp
+  src/v20210125/model/DescribeTaskListRequest.cpp
   src/v20210125/model/ModifyUserTypeRequest.cpp
   src/v20210125/model/NotebookSessionStatementInfo.cpp
   src/v20210125/model/CreateImportTaskRequest.cpp
@@ -740,6 +746,7 @@ set(dlc_src
   src/v20210125/model/DescribeTasksOverviewResponse.cpp
   src/v20210125/model/KafkaInfo.cpp
   src/v20210125/model/FavorInfo.cpp
+  src/v20210125/model/TaskFullRespInfo.cpp
   src/v20210125/model/DeleteDataEngineRequest.cpp
   src/v20210125/model/SmartPolicy.cpp
   src/v20210125/model/CreateSparkSessionBatchSQLResponse.cpp
@@ -1019,6 +1026,7 @@ set(dlc_src
   src/v20210125/model/DescribeDataEngineResponse.cpp
   src/v20210125/model/DataEngineScaleInfo.cpp
   src/v20210125/model/DescribeDataEngineSessionParametersRequest.cpp
+  src/v20210125/model/ResourceConf.cpp
   src/v20210125/model/QueryTaskCostDetailRequest.cpp
   src/v20210125/model/ModifyDataEngineDescriptionResponse.cpp
   src/v20210125/model/UpdateDataEngineConfigRequest.cpp

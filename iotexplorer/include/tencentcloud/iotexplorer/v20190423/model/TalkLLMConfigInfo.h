@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取支持的LLM类型，tencent-腾讯；openai-OPENAI格式；anthropic-ANTHROPIC；gemini-GEMINI;gemini-GEMINI;coze-扣子;dify-DIFY；tencent_lke-腾讯智能体平台；系统默认-openai。
-                     * @return LLMType 支持的LLM类型，tencent-腾讯；openai-OPENAI格式；anthropic-ANTHROPIC；gemini-GEMINI;gemini-GEMINI;coze-扣子;dify-DIFY；tencent_lke-腾讯智能体平台；系统默认-openai。
+                     * 获取支持的LLM类型，openai-OPENAI格式。
+                     * @return LLMType 支持的LLM类型，openai-OPENAI格式。
                      * 
                      */
                     std::string GetLLMType() const;
 
                     /**
-                     * 设置支持的LLM类型，tencent-腾讯；openai-OPENAI格式；anthropic-ANTHROPIC；gemini-GEMINI;gemini-GEMINI;coze-扣子;dify-DIFY；tencent_lke-腾讯智能体平台；系统默认-openai。
-                     * @param _lLMType 支持的LLM类型，tencent-腾讯；openai-OPENAI格式；anthropic-ANTHROPIC；gemini-GEMINI;gemini-GEMINI;coze-扣子;dify-DIFY；tencent_lke-腾讯智能体平台；系统默认-openai。
+                     * 设置支持的LLM类型，openai-OPENAI格式。
+                     * @param _lLMType 支持的LLM类型，openai-OPENAI格式。
                      * 
                      */
                     void SetLLMType(const std::string& _lLMType);
@@ -144,54 +144,6 @@ namespace TencentCloud
   "MetaInfo":{}
 }
 ```
-
-## anthropic
-```
-{
-   "ApiKey": "sk-XXXXXXXXXXXX",
-   "ApiUrl": "https://api.openai.com/v1",
-   "SystemPrompt": "一个小小助手"
-}
-```
-## gemini
-```
-{
-  "AppId": 123456,
-  "AccessToken": "*****",
-  "ResourceId": "SecretKey****",
-  "ModelName": "16k_zh",
-  "Language":""
-}
-```
-## coze
-```
-{
-   "ApiKey": "sk-XXXXXXXXXXXX",
-   "BotId": "v1",
-   "UserId": "xxx",
-  "ApiUrl": "https://api.coze.cn/v3/chat"
-}
-```
-## dify
-```
-{
-   "ApiKey": "sk-XXXXXXXXXXXX",
-   "ApiUrl": "https://api.openai.com/v1",
-   "User": "xxx",
-  "Inputs":{},
-  "ConversationId":"c1"
-}
-```
-## tencent_lke
-```
-{
-   "ApiKey": "sk-XXXXXXXXXXXX",
-   "ApiUrl": "https://api.openai.com/v1",
-   "SystemRole": "一个小小助手",
-  "SessionId":"123456"
-}
-```
-
                      * @return Config 配置信息JSON字符串，根据`LLMType`进行不同的值匹配。例如`LLMType`是`openai`，`Config`值是`{\"ApiKey\":\"sk-09***\",\"ApiUrl\":\"base_url\",\"SystemPrompt\":\"你是一个语音助手\",\"Timeout\":30,\"History\":0,\"MetaInfo\":{\"productID\":\"test\"}}`
 
 ## openai
@@ -205,54 +157,6 @@ namespace TencentCloud
   "MetaInfo":{}
 }
 ```
-
-## anthropic
-```
-{
-   "ApiKey": "sk-XXXXXXXXXXXX",
-   "ApiUrl": "https://api.openai.com/v1",
-   "SystemPrompt": "一个小小助手"
-}
-```
-## gemini
-```
-{
-  "AppId": 123456,
-  "AccessToken": "*****",
-  "ResourceId": "SecretKey****",
-  "ModelName": "16k_zh",
-  "Language":""
-}
-```
-## coze
-```
-{
-   "ApiKey": "sk-XXXXXXXXXXXX",
-   "BotId": "v1",
-   "UserId": "xxx",
-  "ApiUrl": "https://api.coze.cn/v3/chat"
-}
-```
-## dify
-```
-{
-   "ApiKey": "sk-XXXXXXXXXXXX",
-   "ApiUrl": "https://api.openai.com/v1",
-   "User": "xxx",
-  "Inputs":{},
-  "ConversationId":"c1"
-}
-```
-## tencent_lke
-```
-{
-   "ApiKey": "sk-XXXXXXXXXXXX",
-   "ApiUrl": "https://api.openai.com/v1",
-   "SystemRole": "一个小小助手",
-  "SessionId":"123456"
-}
-```
-
                      * 
                      */
                     std::string GetConfig() const;
@@ -271,54 +175,6 @@ namespace TencentCloud
   "MetaInfo":{}
 }
 ```
-
-## anthropic
-```
-{
-   "ApiKey": "sk-XXXXXXXXXXXX",
-   "ApiUrl": "https://api.openai.com/v1",
-   "SystemPrompt": "一个小小助手"
-}
-```
-## gemini
-```
-{
-  "AppId": 123456,
-  "AccessToken": "*****",
-  "ResourceId": "SecretKey****",
-  "ModelName": "16k_zh",
-  "Language":""
-}
-```
-## coze
-```
-{
-   "ApiKey": "sk-XXXXXXXXXXXX",
-   "BotId": "v1",
-   "UserId": "xxx",
-  "ApiUrl": "https://api.coze.cn/v3/chat"
-}
-```
-## dify
-```
-{
-   "ApiKey": "sk-XXXXXXXXXXXX",
-   "ApiUrl": "https://api.openai.com/v1",
-   "User": "xxx",
-  "Inputs":{},
-  "ConversationId":"c1"
-}
-```
-## tencent_lke
-```
-{
-   "ApiKey": "sk-XXXXXXXXXXXX",
-   "ApiUrl": "https://api.openai.com/v1",
-   "SystemRole": "一个小小助手",
-  "SessionId":"123456"
-}
-```
-
                      * @param _config 配置信息JSON字符串，根据`LLMType`进行不同的值匹配。例如`LLMType`是`openai`，`Config`值是`{\"ApiKey\":\"sk-09***\",\"ApiUrl\":\"base_url\",\"SystemPrompt\":\"你是一个语音助手\",\"Timeout\":30,\"History\":0,\"MetaInfo\":{\"productID\":\"test\"}}`
 
 ## openai
@@ -332,54 +188,6 @@ namespace TencentCloud
   "MetaInfo":{}
 }
 ```
-
-## anthropic
-```
-{
-   "ApiKey": "sk-XXXXXXXXXXXX",
-   "ApiUrl": "https://api.openai.com/v1",
-   "SystemPrompt": "一个小小助手"
-}
-```
-## gemini
-```
-{
-  "AppId": 123456,
-  "AccessToken": "*****",
-  "ResourceId": "SecretKey****",
-  "ModelName": "16k_zh",
-  "Language":""
-}
-```
-## coze
-```
-{
-   "ApiKey": "sk-XXXXXXXXXXXX",
-   "BotId": "v1",
-   "UserId": "xxx",
-  "ApiUrl": "https://api.coze.cn/v3/chat"
-}
-```
-## dify
-```
-{
-   "ApiKey": "sk-XXXXXXXXXXXX",
-   "ApiUrl": "https://api.openai.com/v1",
-   "User": "xxx",
-  "Inputs":{},
-  "ConversationId":"c1"
-}
-```
-## tencent_lke
-```
-{
-   "ApiKey": "sk-XXXXXXXXXXXX",
-   "ApiUrl": "https://api.openai.com/v1",
-   "SystemRole": "一个小小助手",
-  "SessionId":"123456"
-}
-```
-
                      * 
                      */
                     void SetConfig(const std::string& _config);
@@ -454,10 +262,31 @@ namespace TencentCloud
                      */
                     bool TopPHasBeenSet() const;
 
+                    /**
+                     * 获取工具ID列表
+                     * @return Tools 工具ID列表
+                     * 
+                     */
+                    std::vector<std::string> GetTools() const;
+
+                    /**
+                     * 设置工具ID列表
+                     * @param _tools 工具ID列表
+                     * 
+                     */
+                    void SetTools(const std::vector<std::string>& _tools);
+
+                    /**
+                     * 判断参数 Tools 是否已赋值
+                     * @return Tools 是否已赋值
+                     * 
+                     */
+                    bool ToolsHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 支持的LLM类型，tencent-腾讯；openai-OPENAI格式；anthropic-ANTHROPIC；gemini-GEMINI;gemini-GEMINI;coze-扣子;dify-DIFY；tencent_lke-腾讯智能体平台；系统默认-openai。
+                     * 支持的LLM类型，openai-OPENAI格式。
                      */
                     std::string m_lLMType;
                     bool m_lLMTypeHasBeenSet;
@@ -494,54 +323,6 @@ namespace TencentCloud
   "MetaInfo":{}
 }
 ```
-
-## anthropic
-```
-{
-   "ApiKey": "sk-XXXXXXXXXXXX",
-   "ApiUrl": "https://api.openai.com/v1",
-   "SystemPrompt": "一个小小助手"
-}
-```
-## gemini
-```
-{
-  "AppId": 123456,
-  "AccessToken": "*****",
-  "ResourceId": "SecretKey****",
-  "ModelName": "16k_zh",
-  "Language":""
-}
-```
-## coze
-```
-{
-   "ApiKey": "sk-XXXXXXXXXXXX",
-   "BotId": "v1",
-   "UserId": "xxx",
-  "ApiUrl": "https://api.coze.cn/v3/chat"
-}
-```
-## dify
-```
-{
-   "ApiKey": "sk-XXXXXXXXXXXX",
-   "ApiUrl": "https://api.openai.com/v1",
-   "User": "xxx",
-  "Inputs":{},
-  "ConversationId":"c1"
-}
-```
-## tencent_lke
-```
-{
-   "ApiKey": "sk-XXXXXXXXXXXX",
-   "ApiUrl": "https://api.openai.com/v1",
-   "SystemRole": "一个小小助手",
-  "SessionId":"123456"
-}
-```
-
                      */
                     std::string m_config;
                     bool m_configHasBeenSet;
@@ -563,6 +344,12 @@ namespace TencentCloud
                      */
                     double m_topP;
                     bool m_topPHasBeenSet;
+
+                    /**
+                     * 工具ID列表
+                     */
+                    std::vector<std::string> m_tools;
+                    bool m_toolsHasBeenSet;
 
                 };
             }

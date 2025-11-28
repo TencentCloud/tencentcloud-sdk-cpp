@@ -30,7 +30,9 @@ UpgradeProxyRequest::UpgradeProxyRequest() :
     m_proxyGroupIdHasBeenSet(false),
     m_reloadBalanceHasBeenSet(false),
     m_isInMaintainPeriodHasBeenSet(false),
-    m_proxyZonesHasBeenSet(false)
+    m_proxyZonesHasBeenSet(false),
+    m_isRollUpgradeHasBeenSet(false),
+    m_rollUpgradeWaitingTimeHasBeenSet(false)
 {
 }
 
@@ -110,6 +112,22 @@ string UpgradeProxyRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_isRollUpgradeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsRollUpgrade";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_isRollUpgrade.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_rollUpgradeWaitingTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RollUpgradeWaitingTime";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_rollUpgradeWaitingTime, allocator);
     }
 
 
@@ -246,6 +264,38 @@ void UpgradeProxyRequest::SetProxyZones(const vector<ProxyZone>& _proxyZones)
 bool UpgradeProxyRequest::ProxyZonesHasBeenSet() const
 {
     return m_proxyZonesHasBeenSet;
+}
+
+string UpgradeProxyRequest::GetIsRollUpgrade() const
+{
+    return m_isRollUpgrade;
+}
+
+void UpgradeProxyRequest::SetIsRollUpgrade(const string& _isRollUpgrade)
+{
+    m_isRollUpgrade = _isRollUpgrade;
+    m_isRollUpgradeHasBeenSet = true;
+}
+
+bool UpgradeProxyRequest::IsRollUpgradeHasBeenSet() const
+{
+    return m_isRollUpgradeHasBeenSet;
+}
+
+int64_t UpgradeProxyRequest::GetRollUpgradeWaitingTime() const
+{
+    return m_rollUpgradeWaitingTime;
+}
+
+void UpgradeProxyRequest::SetRollUpgradeWaitingTime(const int64_t& _rollUpgradeWaitingTime)
+{
+    m_rollUpgradeWaitingTime = _rollUpgradeWaitingTime;
+    m_rollUpgradeWaitingTimeHasBeenSet = true;
+}
+
+bool UpgradeProxyRequest::RollUpgradeWaitingTimeHasBeenSet() const
+{
+    return m_rollUpgradeWaitingTimeHasBeenSet;
 }
 
 

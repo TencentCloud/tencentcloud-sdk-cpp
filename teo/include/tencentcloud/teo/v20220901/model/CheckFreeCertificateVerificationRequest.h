@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool ZoneIdHasBeenSet() const;
 
                     /**
-                     * 获取加速域名，该域名为[申请免费证书](https://tcloud4api.woa.com/document/product/1657/927654?!preview&!document=1)时使用的域名。
-                     * @return Domain 加速域名，该域名为[申请免费证书](https://tcloud4api.woa.com/document/product/1657/927654?!preview&!document=1)时使用的域名。
+                     * 获取加速域名，该域名为[申请免费证书](https://cloud.tencent.com/document/product/1552/124807)时使用的域名。
+                     * @return Domain 加速域名，该域名为[申请免费证书](https://cloud.tencent.com/document/product/1552/124807)时使用的域名。
                      * 
                      */
                     std::string GetDomain() const;
 
                     /**
-                     * 设置加速域名，该域名为[申请免费证书](https://tcloud4api.woa.com/document/product/1657/927654?!preview&!document=1)时使用的域名。
-                     * @param _domain 加速域名，该域名为[申请免费证书](https://tcloud4api.woa.com/document/product/1657/927654?!preview&!document=1)时使用的域名。
+                     * 设置加速域名，该域名为[申请免费证书](https://cloud.tencent.com/document/product/1552/124807)时使用的域名。
+                     * @param _domain 加速域名，该域名为[申请免费证书](https://cloud.tencent.com/document/product/1552/124807)时使用的域名。
                      * 
                      */
                     void SetDomain(const std::string& _domain);
@@ -93,7 +93,7 @@ namespace TencentCloud
                     bool m_zoneIdHasBeenSet;
 
                     /**
-                     * 加速域名，该域名为[申请免费证书](https://tcloud4api.woa.com/document/product/1657/927654?!preview&!document=1)时使用的域名。
+                     * 加速域名，该域名为[申请免费证书](https://cloud.tencent.com/document/product/1552/124807)时使用的域名。
                      */
                     std::string m_domain;
                     bool m_domainHasBeenSet;

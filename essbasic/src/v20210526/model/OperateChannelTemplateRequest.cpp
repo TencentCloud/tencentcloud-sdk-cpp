@@ -29,7 +29,9 @@ OperateChannelTemplateRequest::OperateChannelTemplateRequest() :
     m_proxyOrganizationOpenIdsHasBeenSet(false),
     m_authTagHasBeenSet(false),
     m_availableHasBeenSet(false),
-    m_operatorHasBeenSet(false)
+    m_operatorHasBeenSet(false),
+    m_limitHasBeenSet(false),
+    m_offsetHasBeenSet(false)
 {
 }
 
@@ -96,6 +98,22 @@ string OperateChannelTemplateRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_operator.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_limitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Limit";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_limit, allocator);
+    }
+
+    if (m_offsetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Offset";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_offset, allocator);
     }
 
 
@@ -216,6 +234,38 @@ void OperateChannelTemplateRequest::SetOperator(const UserInfo& _operator)
 bool OperateChannelTemplateRequest::OperatorHasBeenSet() const
 {
     return m_operatorHasBeenSet;
+}
+
+int64_t OperateChannelTemplateRequest::GetLimit() const
+{
+    return m_limit;
+}
+
+void OperateChannelTemplateRequest::SetLimit(const int64_t& _limit)
+{
+    m_limit = _limit;
+    m_limitHasBeenSet = true;
+}
+
+bool OperateChannelTemplateRequest::LimitHasBeenSet() const
+{
+    return m_limitHasBeenSet;
+}
+
+int64_t OperateChannelTemplateRequest::GetOffset() const
+{
+    return m_offset;
+}
+
+void OperateChannelTemplateRequest::SetOffset(const int64_t& _offset)
+{
+    m_offset = _offset;
+    m_offsetHasBeenSet = true;
+}
+
+bool OperateChannelTemplateRequest::OffsetHasBeenSet() const
+{
+    return m_offsetHasBeenSet;
 }
 
 

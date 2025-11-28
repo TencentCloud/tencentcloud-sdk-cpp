@@ -38,6 +38,7 @@ set(iotexplorer_public_header_model
   include/tencentcloud/iotexplorer/v20190423/model/CreateFreeCloudStorageResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/DescribeTWeTalkProductConfigResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/ModifyPositionFenceResponse.h
+  include/tencentcloud/iotexplorer/v20190423/model/DescribeTWeSeeRecognitionTaskResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/DescribeCloudStorageAIServiceTaskRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/DescribeCloudStorageThumbnailListRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/CheckFirmwareUpdateResponse.h
@@ -78,6 +79,7 @@ set(iotexplorer_public_header_model
   include/tencentcloud/iotexplorer/v20190423/model/DeleteTopicPolicyRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/ResetCloudStorageEventRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/TopicItem.h
+  include/tencentcloud/iotexplorer/v20190423/model/CreateTWeTalkAIBotResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/GetFamilyDeviceUserListRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/CreateTRTCSignaturesWithRoomIdRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/DescribeSpaceFenceEventListRequest.h
@@ -117,7 +119,7 @@ set(iotexplorer_public_header_model
   include/tencentcloud/iotexplorer/v20190423/model/ModifyLoRaFrequencyResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/ActivateTWeCallLicenseRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/InstanceDetail.h
-  include/tencentcloud/iotexplorer/v20190423/model/ListEventHistoryResponse.h
+  include/tencentcloud/iotexplorer/v20190423/model/InvokeTWeSeeRecognitionTaskWithFileResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/GetBatchProductionsListResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/DescribeDeviceFirmwaresResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/DescribeCloudStorageUsersRequest.h
@@ -139,8 +141,10 @@ set(iotexplorer_public_header_model
   include/tencentcloud/iotexplorer/v20190423/model/GetDeviceListResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/DescribeCloudStorageMultiThumbnailResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/BindProductInfo.h
+  include/tencentcloud/iotexplorer/v20190423/model/TalkAIBotInfo.h
   include/tencentcloud/iotexplorer/v20190423/model/DescribeFreeCloudStorageNumRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/InvokeVideosKeywordsAnalyzerResponse.h
+  include/tencentcloud/iotexplorer/v20190423/model/ModifyTWeTalkAIBotRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/DescribeDevicePositionListRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/InvokeExternalSourceAIServiceTaskResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/CreateStudioProductRequest.h
@@ -156,6 +160,8 @@ set(iotexplorer_public_header_model
   include/tencentcloud/iotexplorer/v20190423/model/GenSingleDeviceSignatureOfPublicResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/DeleteTWeTalkProductConfigV2Request.h
   include/tencentcloud/iotexplorer/v20190423/model/SearchStudioProductResponse.h
+  include/tencentcloud/iotexplorer/v20190423/model/DescribeTWeTalkAIBotResponse.h
+  include/tencentcloud/iotexplorer/v20190423/model/TalkProductInfo.h
   include/tencentcloud/iotexplorer/v20190423/model/FenceBindDeviceItem.h
   include/tencentcloud/iotexplorer/v20190423/model/DescribeBatchProductionResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/DescribeProductCloudStorageAIServiceResponse.h
@@ -164,6 +170,7 @@ set(iotexplorer_public_header_model
   include/tencentcloud/iotexplorer/v20190423/model/DeleteCloudStorageEventRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/SearchPositionSpaceRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/DescribeCloudStorageAIServiceCallbackResponse.h
+  include/tencentcloud/iotexplorer/v20190423/model/DescribeTWeTalkAIBotRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/ModifyLoRaGatewayResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/CallDeviceActionSyncResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/CreateLoRaGatewayRequest.h
@@ -201,6 +208,7 @@ set(iotexplorer_public_header_model
   include/tencentcloud/iotexplorer/v20190423/model/DescribeInstanceResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/GetLoRaGatewayListRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/DescribeProjectRequest.h
+  include/tencentcloud/iotexplorer/v20190423/model/DescribeSubscribedTopicPolicyRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/UploadFirmwareResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/ModifyTopicPolicyRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/DeleteTopicRuleRequest.h
@@ -214,6 +222,7 @@ set(iotexplorer_public_header_model
   include/tencentcloud/iotexplorer/v20190423/model/CreateTWeTalkProductConfigResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/ListProductOtaModulesResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/AISearchInfo.h
+  include/tencentcloud/iotexplorer/v20190423/model/TalkAgentConfigInfo.h
   include/tencentcloud/iotexplorer/v20190423/model/ResetCloudStorageEventResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/DescribeCloudStorageAIServiceTasksResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/DeletePositionSpaceResponse.h
@@ -222,7 +231,7 @@ set(iotexplorer_public_header_model
   include/tencentcloud/iotexplorer/v20190423/model/AppDeviceInfo.h
   include/tencentcloud/iotexplorer/v20190423/model/DescribeCloudStorageResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/DescribeCloudStorageStreamDataRequest.h
-  include/tencentcloud/iotexplorer/v20190423/model/InvokeTWeSeeRecognitionTaskWithFileResponse.h
+  include/tencentcloud/iotexplorer/v20190423/model/ListEventHistoryResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/BatchCreateTWeSeeRecognitionTaskRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/ProjectEntryEx.h
   include/tencentcloud/iotexplorer/v20190423/model/PublishMessageResponse.h
@@ -254,6 +263,7 @@ set(iotexplorer_public_header_model
   include/tencentcloud/iotexplorer/v20190423/model/DescribeFirmwareUpdateStatusResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/PublishFirmwareUpdateMessageResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/DeviceFirmwareInfo.h
+  include/tencentcloud/iotexplorer/v20190423/model/UnbindTWeTalkAIBotResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/CallDeviceActionSyncRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/ProductDevicesPositionItem.h
   include/tencentcloud/iotexplorer/v20190423/model/ResetCloudStorageAIServiceResponse.h
@@ -261,6 +271,7 @@ set(iotexplorer_public_header_model
   include/tencentcloud/iotexplorer/v20190423/model/UpdateOtaTaskStatusRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/LoRaFrequencyEntry.h
   include/tencentcloud/iotexplorer/v20190423/model/ModifyFenceBindResponse.h
+  include/tencentcloud/iotexplorer/v20190423/model/UnbindTWeTalkAIBotRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/DescribeGatewayBindDevicesResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/DeletePositionFenceResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/TalkProductConfigInfo.h
@@ -278,7 +289,7 @@ set(iotexplorer_public_header_model
   include/tencentcloud/iotexplorer/v20190423/model/CreateCloudStorageAIServiceResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/VisionCustomDetectQuery.h
   include/tencentcloud/iotexplorer/v20190423/model/DeviceDataHistoryItem.h
-  include/tencentcloud/iotexplorer/v20190423/model/DescribeSubscribedTopicPolicyRequest.h
+  include/tencentcloud/iotexplorer/v20190423/model/GetTWeTalkAIBotListResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/GetTWeCallActiveStatusResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/InvokeTWeSeeRecognitionTaskRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/PauseTWeCallDeviceResponse.h
@@ -344,11 +355,13 @@ set(iotexplorer_public_header_model
   include/tencentcloud/iotexplorer/v20190423/model/DeleteLoRaGatewayResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/ChangeP2PRouteRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/LoRaGatewayItem.h
+  include/tencentcloud/iotexplorer/v20190423/model/BindTWeTalkAIBotRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/UpdateOtaModuleRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/ModifyLoRaFrequencyRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/DescribeTWeTalkProductConfigV2Request.h
   include/tencentcloud/iotexplorer/v20190423/model/BatchInvokeTWeSeeRecognitionTaskRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/VisionRecognitionTask.h
+  include/tencentcloud/iotexplorer/v20190423/model/ModifyTWeTalkAIBotResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/CreateLoRaFrequencyResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/EnableTopicRuleResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/GetGatewaySubDeviceListRequest.h
@@ -381,7 +394,7 @@ set(iotexplorer_public_header_model
   include/tencentcloud/iotexplorer/v20190423/model/DeleteTWeTalkProductConfigV2Response.h
   include/tencentcloud/iotexplorer/v20190423/model/VisionSummaryConfig.h
   include/tencentcloud/iotexplorer/v20190423/model/BatchInvokeTWeSeeRecognitionTaskResponse.h
-  include/tencentcloud/iotexplorer/v20190423/model/ModifyPositionFenceRequest.h
+  include/tencentcloud/iotexplorer/v20190423/model/BindTWeTalkAIBotResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/PositionFenceItem.h
   include/tencentcloud/iotexplorer/v20190423/model/DeleteTopicRuleResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/ModifyModelDefinitionRequest.h
@@ -418,7 +431,7 @@ set(iotexplorer_public_header_model
   include/tencentcloud/iotexplorer/v20190423/model/InvokeExternalSourceAIServiceTaskRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/DescribeProductCloudStorageAIServiceRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/DeleteLoRaGatewayRequest.h
-  include/tencentcloud/iotexplorer/v20190423/model/DescribeTWeSeeRecognitionTaskResponse.h
+  include/tencentcloud/iotexplorer/v20190423/model/DeleteTWeTalkAIBotRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/ModifyTopicPolicyResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/DescribeCloudStorageStreamDataResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/DeviceUpdateStatus.h
@@ -433,6 +446,7 @@ set(iotexplorer_public_header_model
   include/tencentcloud/iotexplorer/v20190423/model/ResumeWeCallDeviceRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/GetCOSURLRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/CreateFenceBindRequest.h
+  include/tencentcloud/iotexplorer/v20190423/model/CreateTWeTalkAIBotRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/AuthMiniProgramAppInfo.h
   include/tencentcloud/iotexplorer/v20190423/model/FamilySubDevice.h
   include/tencentcloud/iotexplorer/v20190423/model/DescribeModelDefinitionRequest.h
@@ -452,6 +466,7 @@ set(iotexplorer_public_header_model
   include/tencentcloud/iotexplorer/v20190423/model/PublishBroadcastMessageResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/DescribeFenceBindListRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/PositionSpaceInfo.h
+  include/tencentcloud/iotexplorer/v20190423/model/ModifyPositionFenceRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/CreateDeviceChannelResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/CreateTopicRuleRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/CreateTopicPolicyRequest.h
@@ -478,6 +493,7 @@ set(iotexplorer_public_header_model
   include/tencentcloud/iotexplorer/v20190423/model/CreateBatchProductionResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/VisionObjectDetectConfig.h
   include/tencentcloud/iotexplorer/v20190423/model/BatchUpdateFirmwareRequest.h
+  include/tencentcloud/iotexplorer/v20190423/model/GetTWeTalkAIBotListRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/GetTopicRuleListRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/ListOtaModulesRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/DeleteStudioProductRequest.h
@@ -490,6 +506,7 @@ set(iotexplorer_public_header_model
   include/tencentcloud/iotexplorer/v20190423/model/DescribeCloudStorageThumbnailResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/PublishFirmwareUpdateMessageRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/UpdateDevicesEnableStateRequest.h
+  include/tencentcloud/iotexplorer/v20190423/model/DeleteTWeTalkAIBotResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/ResetCloudStorageAIServiceRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/UpdateOtaTaskStatusResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/ModifyModelDefinitionResponse.h
@@ -522,6 +539,7 @@ set(iotexplorer_src
   src/v20190423/model/CreateFreeCloudStorageResponse.cpp
   src/v20190423/model/DescribeTWeTalkProductConfigResponse.cpp
   src/v20190423/model/ModifyPositionFenceResponse.cpp
+  src/v20190423/model/DescribeTWeSeeRecognitionTaskResponse.cpp
   src/v20190423/model/DescribeCloudStorageAIServiceTaskRequest.cpp
   src/v20190423/model/DescribeCloudStorageThumbnailListRequest.cpp
   src/v20190423/model/CheckFirmwareUpdateResponse.cpp
@@ -562,6 +580,7 @@ set(iotexplorer_src
   src/v20190423/model/DeleteTopicPolicyRequest.cpp
   src/v20190423/model/ResetCloudStorageEventRequest.cpp
   src/v20190423/model/TopicItem.cpp
+  src/v20190423/model/CreateTWeTalkAIBotResponse.cpp
   src/v20190423/model/GetFamilyDeviceUserListRequest.cpp
   src/v20190423/model/CreateTRTCSignaturesWithRoomIdRequest.cpp
   src/v20190423/model/DescribeSpaceFenceEventListRequest.cpp
@@ -601,7 +620,7 @@ set(iotexplorer_src
   src/v20190423/model/ModifyLoRaFrequencyResponse.cpp
   src/v20190423/model/ActivateTWeCallLicenseRequest.cpp
   src/v20190423/model/InstanceDetail.cpp
-  src/v20190423/model/ListEventHistoryResponse.cpp
+  src/v20190423/model/InvokeTWeSeeRecognitionTaskWithFileResponse.cpp
   src/v20190423/model/GetBatchProductionsListResponse.cpp
   src/v20190423/model/DescribeDeviceFirmwaresResponse.cpp
   src/v20190423/model/DescribeCloudStorageUsersRequest.cpp
@@ -623,8 +642,10 @@ set(iotexplorer_src
   src/v20190423/model/GetDeviceListResponse.cpp
   src/v20190423/model/DescribeCloudStorageMultiThumbnailResponse.cpp
   src/v20190423/model/BindProductInfo.cpp
+  src/v20190423/model/TalkAIBotInfo.cpp
   src/v20190423/model/DescribeFreeCloudStorageNumRequest.cpp
   src/v20190423/model/InvokeVideosKeywordsAnalyzerResponse.cpp
+  src/v20190423/model/ModifyTWeTalkAIBotRequest.cpp
   src/v20190423/model/DescribeDevicePositionListRequest.cpp
   src/v20190423/model/InvokeExternalSourceAIServiceTaskResponse.cpp
   src/v20190423/model/CreateStudioProductRequest.cpp
@@ -640,6 +661,8 @@ set(iotexplorer_src
   src/v20190423/model/GenSingleDeviceSignatureOfPublicResponse.cpp
   src/v20190423/model/DeleteTWeTalkProductConfigV2Request.cpp
   src/v20190423/model/SearchStudioProductResponse.cpp
+  src/v20190423/model/DescribeTWeTalkAIBotResponse.cpp
+  src/v20190423/model/TalkProductInfo.cpp
   src/v20190423/model/FenceBindDeviceItem.cpp
   src/v20190423/model/DescribeBatchProductionResponse.cpp
   src/v20190423/model/DescribeProductCloudStorageAIServiceResponse.cpp
@@ -648,6 +671,7 @@ set(iotexplorer_src
   src/v20190423/model/DeleteCloudStorageEventRequest.cpp
   src/v20190423/model/SearchPositionSpaceRequest.cpp
   src/v20190423/model/DescribeCloudStorageAIServiceCallbackResponse.cpp
+  src/v20190423/model/DescribeTWeTalkAIBotRequest.cpp
   src/v20190423/model/ModifyLoRaGatewayResponse.cpp
   src/v20190423/model/CallDeviceActionSyncResponse.cpp
   src/v20190423/model/CreateLoRaGatewayRequest.cpp
@@ -685,6 +709,7 @@ set(iotexplorer_src
   src/v20190423/model/DescribeInstanceResponse.cpp
   src/v20190423/model/GetLoRaGatewayListRequest.cpp
   src/v20190423/model/DescribeProjectRequest.cpp
+  src/v20190423/model/DescribeSubscribedTopicPolicyRequest.cpp
   src/v20190423/model/UploadFirmwareResponse.cpp
   src/v20190423/model/ModifyTopicPolicyRequest.cpp
   src/v20190423/model/DeleteTopicRuleRequest.cpp
@@ -698,6 +723,7 @@ set(iotexplorer_src
   src/v20190423/model/CreateTWeTalkProductConfigResponse.cpp
   src/v20190423/model/ListProductOtaModulesResponse.cpp
   src/v20190423/model/AISearchInfo.cpp
+  src/v20190423/model/TalkAgentConfigInfo.cpp
   src/v20190423/model/ResetCloudStorageEventResponse.cpp
   src/v20190423/model/DescribeCloudStorageAIServiceTasksResponse.cpp
   src/v20190423/model/DeletePositionSpaceResponse.cpp
@@ -706,7 +732,7 @@ set(iotexplorer_src
   src/v20190423/model/AppDeviceInfo.cpp
   src/v20190423/model/DescribeCloudStorageResponse.cpp
   src/v20190423/model/DescribeCloudStorageStreamDataRequest.cpp
-  src/v20190423/model/InvokeTWeSeeRecognitionTaskWithFileResponse.cpp
+  src/v20190423/model/ListEventHistoryResponse.cpp
   src/v20190423/model/BatchCreateTWeSeeRecognitionTaskRequest.cpp
   src/v20190423/model/ProjectEntryEx.cpp
   src/v20190423/model/PublishMessageResponse.cpp
@@ -738,6 +764,7 @@ set(iotexplorer_src
   src/v20190423/model/DescribeFirmwareUpdateStatusResponse.cpp
   src/v20190423/model/PublishFirmwareUpdateMessageResponse.cpp
   src/v20190423/model/DeviceFirmwareInfo.cpp
+  src/v20190423/model/UnbindTWeTalkAIBotResponse.cpp
   src/v20190423/model/CallDeviceActionSyncRequest.cpp
   src/v20190423/model/ProductDevicesPositionItem.cpp
   src/v20190423/model/ResetCloudStorageAIServiceResponse.cpp
@@ -745,6 +772,7 @@ set(iotexplorer_src
   src/v20190423/model/UpdateOtaTaskStatusRequest.cpp
   src/v20190423/model/LoRaFrequencyEntry.cpp
   src/v20190423/model/ModifyFenceBindResponse.cpp
+  src/v20190423/model/UnbindTWeTalkAIBotRequest.cpp
   src/v20190423/model/DescribeGatewayBindDevicesResponse.cpp
   src/v20190423/model/DeletePositionFenceResponse.cpp
   src/v20190423/model/TalkProductConfigInfo.cpp
@@ -762,7 +790,7 @@ set(iotexplorer_src
   src/v20190423/model/CreateCloudStorageAIServiceResponse.cpp
   src/v20190423/model/VisionCustomDetectQuery.cpp
   src/v20190423/model/DeviceDataHistoryItem.cpp
-  src/v20190423/model/DescribeSubscribedTopicPolicyRequest.cpp
+  src/v20190423/model/GetTWeTalkAIBotListResponse.cpp
   src/v20190423/model/GetTWeCallActiveStatusResponse.cpp
   src/v20190423/model/InvokeTWeSeeRecognitionTaskRequest.cpp
   src/v20190423/model/PauseTWeCallDeviceResponse.cpp
@@ -828,11 +856,13 @@ set(iotexplorer_src
   src/v20190423/model/DeleteLoRaGatewayResponse.cpp
   src/v20190423/model/ChangeP2PRouteRequest.cpp
   src/v20190423/model/LoRaGatewayItem.cpp
+  src/v20190423/model/BindTWeTalkAIBotRequest.cpp
   src/v20190423/model/UpdateOtaModuleRequest.cpp
   src/v20190423/model/ModifyLoRaFrequencyRequest.cpp
   src/v20190423/model/DescribeTWeTalkProductConfigV2Request.cpp
   src/v20190423/model/BatchInvokeTWeSeeRecognitionTaskRequest.cpp
   src/v20190423/model/VisionRecognitionTask.cpp
+  src/v20190423/model/ModifyTWeTalkAIBotResponse.cpp
   src/v20190423/model/CreateLoRaFrequencyResponse.cpp
   src/v20190423/model/EnableTopicRuleResponse.cpp
   src/v20190423/model/GetGatewaySubDeviceListRequest.cpp
@@ -865,7 +895,7 @@ set(iotexplorer_src
   src/v20190423/model/DeleteTWeTalkProductConfigV2Response.cpp
   src/v20190423/model/VisionSummaryConfig.cpp
   src/v20190423/model/BatchInvokeTWeSeeRecognitionTaskResponse.cpp
-  src/v20190423/model/ModifyPositionFenceRequest.cpp
+  src/v20190423/model/BindTWeTalkAIBotResponse.cpp
   src/v20190423/model/PositionFenceItem.cpp
   src/v20190423/model/DeleteTopicRuleResponse.cpp
   src/v20190423/model/ModifyModelDefinitionRequest.cpp
@@ -902,7 +932,7 @@ set(iotexplorer_src
   src/v20190423/model/InvokeExternalSourceAIServiceTaskRequest.cpp
   src/v20190423/model/DescribeProductCloudStorageAIServiceRequest.cpp
   src/v20190423/model/DeleteLoRaGatewayRequest.cpp
-  src/v20190423/model/DescribeTWeSeeRecognitionTaskResponse.cpp
+  src/v20190423/model/DeleteTWeTalkAIBotRequest.cpp
   src/v20190423/model/ModifyTopicPolicyResponse.cpp
   src/v20190423/model/DescribeCloudStorageStreamDataResponse.cpp
   src/v20190423/model/DeviceUpdateStatus.cpp
@@ -917,6 +947,7 @@ set(iotexplorer_src
   src/v20190423/model/ResumeWeCallDeviceRequest.cpp
   src/v20190423/model/GetCOSURLRequest.cpp
   src/v20190423/model/CreateFenceBindRequest.cpp
+  src/v20190423/model/CreateTWeTalkAIBotRequest.cpp
   src/v20190423/model/AuthMiniProgramAppInfo.cpp
   src/v20190423/model/FamilySubDevice.cpp
   src/v20190423/model/DescribeModelDefinitionRequest.cpp
@@ -936,6 +967,7 @@ set(iotexplorer_src
   src/v20190423/model/PublishBroadcastMessageResponse.cpp
   src/v20190423/model/DescribeFenceBindListRequest.cpp
   src/v20190423/model/PositionSpaceInfo.cpp
+  src/v20190423/model/ModifyPositionFenceRequest.cpp
   src/v20190423/model/CreateDeviceChannelResponse.cpp
   src/v20190423/model/CreateTopicRuleRequest.cpp
   src/v20190423/model/CreateTopicPolicyRequest.cpp
@@ -962,6 +994,7 @@ set(iotexplorer_src
   src/v20190423/model/CreateBatchProductionResponse.cpp
   src/v20190423/model/VisionObjectDetectConfig.cpp
   src/v20190423/model/BatchUpdateFirmwareRequest.cpp
+  src/v20190423/model/GetTWeTalkAIBotListRequest.cpp
   src/v20190423/model/GetTopicRuleListRequest.cpp
   src/v20190423/model/ListOtaModulesRequest.cpp
   src/v20190423/model/DeleteStudioProductRequest.cpp
@@ -974,6 +1007,7 @@ set(iotexplorer_src
   src/v20190423/model/DescribeCloudStorageThumbnailResponse.cpp
   src/v20190423/model/PublishFirmwareUpdateMessageRequest.cpp
   src/v20190423/model/UpdateDevicesEnableStateRequest.cpp
+  src/v20190423/model/DeleteTWeTalkAIBotResponse.cpp
   src/v20190423/model/ResetCloudStorageAIServiceRequest.cpp
   src/v20190423/model/UpdateOtaTaskStatusResponse.cpp
   src/v20190423/model/ModifyModelDefinitionResponse.cpp

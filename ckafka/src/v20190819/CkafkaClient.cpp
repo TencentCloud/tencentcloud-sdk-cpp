@@ -1440,6 +1440,56 @@ CkafkaClient::DeleteGroupOutcomeCallable CkafkaClient::DeleteGroupCallable(const
     return prom->get_future();
 }
 
+CkafkaClient::DeleteGroupSubscribeTopicOutcome CkafkaClient::DeleteGroupSubscribeTopic(const DeleteGroupSubscribeTopicRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteGroupSubscribeTopic");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteGroupSubscribeTopicResponse rsp = DeleteGroupSubscribeTopicResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteGroupSubscribeTopicOutcome(rsp);
+        else
+            return DeleteGroupSubscribeTopicOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteGroupSubscribeTopicOutcome(outcome.GetError());
+    }
+}
+
+void CkafkaClient::DeleteGroupSubscribeTopicAsync(const DeleteGroupSubscribeTopicRequest& request, const DeleteGroupSubscribeTopicAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteGroupSubscribeTopicRequest&;
+    using Resp = DeleteGroupSubscribeTopicResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteGroupSubscribeTopic", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CkafkaClient::DeleteGroupSubscribeTopicOutcomeCallable CkafkaClient::DeleteGroupSubscribeTopicCallable(const DeleteGroupSubscribeTopicRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteGroupSubscribeTopicOutcome>>();
+    DeleteGroupSubscribeTopicAsync(
+    request,
+    [prom](
+        const CkafkaClient*,
+        const DeleteGroupSubscribeTopicRequest&,
+        DeleteGroupSubscribeTopicOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 CkafkaClient::DeleteInstancePostOutcome CkafkaClient::DeleteInstancePost(const DeleteInstancePostRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteInstancePost");
@@ -2732,6 +2782,56 @@ CkafkaClient::DescribeInstancesDetailOutcomeCallable CkafkaClient::DescribeInsta
         const CkafkaClient*,
         const DescribeInstancesDetailRequest&,
         DescribeInstancesDetailOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CkafkaClient::DescribeModifyTypeOutcome CkafkaClient::DescribeModifyType(const DescribeModifyTypeRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeModifyType");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeModifyTypeResponse rsp = DescribeModifyTypeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeModifyTypeOutcome(rsp);
+        else
+            return DescribeModifyTypeOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeModifyTypeOutcome(outcome.GetError());
+    }
+}
+
+void CkafkaClient::DescribeModifyTypeAsync(const DescribeModifyTypeRequest& request, const DescribeModifyTypeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeModifyTypeRequest&;
+    using Resp = DescribeModifyTypeResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeModifyType", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CkafkaClient::DescribeModifyTypeOutcomeCallable CkafkaClient::DescribeModifyTypeCallable(const DescribeModifyTypeRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeModifyTypeOutcome>>();
+    DescribeModifyTypeAsync(
+    request,
+    [prom](
+        const CkafkaClient*,
+        const DescribeModifyTypeRequest&,
+        DescribeModifyTypeOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

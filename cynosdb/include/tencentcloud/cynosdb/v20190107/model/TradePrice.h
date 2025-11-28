@@ -172,6 +172,69 @@ namespace TencentCloud
                      */
                     bool ChargeUnitHasBeenSet() const;
 
+                    /**
+                     * 获取高精度下不包含优惠价格
+                     * @return UnitPriceHighPrecision 高精度下不包含优惠价格
+                     * 
+                     */
+                    std::string GetUnitPriceHighPrecision() const;
+
+                    /**
+                     * 设置高精度下不包含优惠价格
+                     * @param _unitPriceHighPrecision 高精度下不包含优惠价格
+                     * 
+                     */
+                    void SetUnitPriceHighPrecision(const std::string& _unitPriceHighPrecision);
+
+                    /**
+                     * 判断参数 UnitPriceHighPrecision 是否已赋值
+                     * @return UnitPriceHighPrecision 是否已赋值
+                     * 
+                     */
+                    bool UnitPriceHighPrecisionHasBeenSet() const;
+
+                    /**
+                     * 获取高精度下优惠后价格
+                     * @return UnitPriceDiscountHighPrecision 高精度下优惠后价格
+                     * 
+                     */
+                    std::string GetUnitPriceDiscountHighPrecision() const;
+
+                    /**
+                     * 设置高精度下优惠后价格
+                     * @param _unitPriceDiscountHighPrecision 高精度下优惠后价格
+                     * 
+                     */
+                    void SetUnitPriceDiscountHighPrecision(const std::string& _unitPriceDiscountHighPrecision);
+
+                    /**
+                     * 判断参数 UnitPriceDiscountHighPrecision 是否已赋值
+                     * @return UnitPriceDiscountHighPrecision 是否已赋值
+                     * 
+                     */
+                    bool UnitPriceDiscountHighPrecisionHasBeenSet() const;
+
+                    /**
+                     * 获取货币单位
+                     * @return AmountUnit 货币单位
+                     * 
+                     */
+                    std::string GetAmountUnit() const;
+
+                    /**
+                     * 设置货币单位
+                     * @param _amountUnit 货币单位
+                     * 
+                     */
+                    void SetAmountUnit(const std::string& _amountUnit);
+
+                    /**
+                     * 判断参数 AmountUnit 是否已赋值
+                     * @return AmountUnit 是否已赋值
+                     * 
+                     */
+                    bool AmountUnitHasBeenSet() const;
+
                 private:
 
                     /**
@@ -209,6 +272,24 @@ namespace TencentCloud
                      */
                     std::string m_chargeUnit;
                     bool m_chargeUnitHasBeenSet;
+
+                    /**
+                     * 高精度下不包含优惠价格
+                     */
+                    std::string m_unitPriceHighPrecision;
+                    bool m_unitPriceHighPrecisionHasBeenSet;
+
+                    /**
+                     * 高精度下优惠后价格
+                     */
+                    std::string m_unitPriceDiscountHighPrecision;
+                    bool m_unitPriceDiscountHighPrecisionHasBeenSet;
+
+                    /**
+                     * 货币单位
+                     */
+                    std::string m_amountUnit;
+                    bool m_amountUnitHasBeenSet;
 
                 };
             }

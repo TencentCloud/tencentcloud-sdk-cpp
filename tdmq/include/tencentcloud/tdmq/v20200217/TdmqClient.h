@@ -213,16 +213,12 @@
 #include <tencentcloud/tdmq/v20200217/model/DescribeRocketMQRolesResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribeRocketMQSmoothMigrationTaskRequest.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribeRocketMQSmoothMigrationTaskResponse.h>
-#include <tencentcloud/tdmq/v20200217/model/DescribeRocketMQSmoothMigrationTaskListRequest.h>
-#include <tencentcloud/tdmq/v20200217/model/DescribeRocketMQSmoothMigrationTaskListResponse.h>
-#include <tencentcloud/tdmq/v20200217/model/DescribeRocketMQSourceClusterGroupListRequest.h>
-#include <tencentcloud/tdmq/v20200217/model/DescribeRocketMQSourceClusterGroupListResponse.h>
-#include <tencentcloud/tdmq/v20200217/model/DescribeRocketMQSourceClusterTopicListRequest.h>
-#include <tencentcloud/tdmq/v20200217/model/DescribeRocketMQSourceClusterTopicListResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribeRocketMQSubscriptionsRequest.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribeRocketMQSubscriptionsResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribeRocketMQTopUsagesRequest.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribeRocketMQTopUsagesResponse.h>
+#include <tencentcloud/tdmq/v20200217/model/DescribeRocketMQTopicRequest.h>
+#include <tencentcloud/tdmq/v20200217/model/DescribeRocketMQTopicResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribeRocketMQTopicMsgsRequest.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribeRocketMQTopicMsgsResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribeRocketMQTopicStatsRequest.h>
@@ -622,21 +618,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeRocketMQSmoothMigrationTaskResponse> DescribeRocketMQSmoothMigrationTaskOutcome;
                 typedef std::future<DescribeRocketMQSmoothMigrationTaskOutcome> DescribeRocketMQSmoothMigrationTaskOutcomeCallable;
                 typedef std::function<void(const TdmqClient*, const Model::DescribeRocketMQSmoothMigrationTaskRequest&, DescribeRocketMQSmoothMigrationTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRocketMQSmoothMigrationTaskAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeRocketMQSmoothMigrationTaskListResponse> DescribeRocketMQSmoothMigrationTaskListOutcome;
-                typedef std::future<DescribeRocketMQSmoothMigrationTaskListOutcome> DescribeRocketMQSmoothMigrationTaskListOutcomeCallable;
-                typedef std::function<void(const TdmqClient*, const Model::DescribeRocketMQSmoothMigrationTaskListRequest&, DescribeRocketMQSmoothMigrationTaskListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRocketMQSmoothMigrationTaskListAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeRocketMQSourceClusterGroupListResponse> DescribeRocketMQSourceClusterGroupListOutcome;
-                typedef std::future<DescribeRocketMQSourceClusterGroupListOutcome> DescribeRocketMQSourceClusterGroupListOutcomeCallable;
-                typedef std::function<void(const TdmqClient*, const Model::DescribeRocketMQSourceClusterGroupListRequest&, DescribeRocketMQSourceClusterGroupListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRocketMQSourceClusterGroupListAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeRocketMQSourceClusterTopicListResponse> DescribeRocketMQSourceClusterTopicListOutcome;
-                typedef std::future<DescribeRocketMQSourceClusterTopicListOutcome> DescribeRocketMQSourceClusterTopicListOutcomeCallable;
-                typedef std::function<void(const TdmqClient*, const Model::DescribeRocketMQSourceClusterTopicListRequest&, DescribeRocketMQSourceClusterTopicListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRocketMQSourceClusterTopicListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeRocketMQSubscriptionsResponse> DescribeRocketMQSubscriptionsOutcome;
                 typedef std::future<DescribeRocketMQSubscriptionsOutcome> DescribeRocketMQSubscriptionsOutcomeCallable;
                 typedef std::function<void(const TdmqClient*, const Model::DescribeRocketMQSubscriptionsRequest&, DescribeRocketMQSubscriptionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRocketMQSubscriptionsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeRocketMQTopUsagesResponse> DescribeRocketMQTopUsagesOutcome;
                 typedef std::future<DescribeRocketMQTopUsagesOutcome> DescribeRocketMQTopUsagesOutcomeCallable;
                 typedef std::function<void(const TdmqClient*, const Model::DescribeRocketMQTopUsagesRequest&, DescribeRocketMQTopUsagesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRocketMQTopUsagesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeRocketMQTopicResponse> DescribeRocketMQTopicOutcome;
+                typedef std::future<DescribeRocketMQTopicOutcome> DescribeRocketMQTopicOutcomeCallable;
+                typedef std::function<void(const TdmqClient*, const Model::DescribeRocketMQTopicRequest&, DescribeRocketMQTopicOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRocketMQTopicAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeRocketMQTopicMsgsResponse> DescribeRocketMQTopicMsgsOutcome;
                 typedef std::future<DescribeRocketMQTopicMsgsOutcome> DescribeRocketMQTopicMsgsOutcomeCallable;
                 typedef std::function<void(const TdmqClient*, const Model::DescribeRocketMQTopicMsgsRequest&, DescribeRocketMQTopicMsgsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRocketMQTopicMsgsAsyncHandler;
@@ -1648,39 +1638,6 @@ namespace TencentCloud
                 DescribeRocketMQSmoothMigrationTaskOutcomeCallable DescribeRocketMQSmoothMigrationTaskCallable(const Model::DescribeRocketMQSmoothMigrationTaskRequest& request);
 
                 /**
-                 *平滑迁移相关接口已迁移至trocket产品下，该接口已废弃
-
-用于查询RocketMQ平滑迁移任务列表
-                 * @param req DescribeRocketMQSmoothMigrationTaskListRequest
-                 * @return DescribeRocketMQSmoothMigrationTaskListOutcome
-                 */
-                DescribeRocketMQSmoothMigrationTaskListOutcome DescribeRocketMQSmoothMigrationTaskList(const Model::DescribeRocketMQSmoothMigrationTaskListRequest &request);
-                void DescribeRocketMQSmoothMigrationTaskListAsync(const Model::DescribeRocketMQSmoothMigrationTaskListRequest& request, const DescribeRocketMQSmoothMigrationTaskListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeRocketMQSmoothMigrationTaskListOutcomeCallable DescribeRocketMQSmoothMigrationTaskListCallable(const Model::DescribeRocketMQSmoothMigrationTaskListRequest& request);
-
-                /**
-                 *平滑迁移相关接口已迁移至trocket产品下，该接口已废弃
-
-平滑迁移过程获取源集群group列表接口
-                 * @param req DescribeRocketMQSourceClusterGroupListRequest
-                 * @return DescribeRocketMQSourceClusterGroupListOutcome
-                 */
-                DescribeRocketMQSourceClusterGroupListOutcome DescribeRocketMQSourceClusterGroupList(const Model::DescribeRocketMQSourceClusterGroupListRequest &request);
-                void DescribeRocketMQSourceClusterGroupListAsync(const Model::DescribeRocketMQSourceClusterGroupListRequest& request, const DescribeRocketMQSourceClusterGroupListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeRocketMQSourceClusterGroupListOutcomeCallable DescribeRocketMQSourceClusterGroupListCallable(const Model::DescribeRocketMQSourceClusterGroupListRequest& request);
-
-                /**
-                 *平滑迁移相关接口已迁移至trocket产品下，该接口已废弃
-
-平滑迁移过程获取源集群topic列表接口
-                 * @param req DescribeRocketMQSourceClusterTopicListRequest
-                 * @return DescribeRocketMQSourceClusterTopicListOutcome
-                 */
-                DescribeRocketMQSourceClusterTopicListOutcome DescribeRocketMQSourceClusterTopicList(const Model::DescribeRocketMQSourceClusterTopicListRequest &request);
-                void DescribeRocketMQSourceClusterTopicListAsync(const Model::DescribeRocketMQSourceClusterTopicListRequest& request, const DescribeRocketMQSourceClusterTopicListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeRocketMQSourceClusterTopicListOutcomeCallable DescribeRocketMQSourceClusterTopicListCallable(const Model::DescribeRocketMQSourceClusterTopicListRequest& request);
-
-                /**
                  *用于获取RocketMQ消费组订阅关系数据
                  * @param req DescribeRocketMQSubscriptionsRequest
                  * @return DescribeRocketMQSubscriptionsOutcome
@@ -1697,6 +1654,15 @@ namespace TencentCloud
                 DescribeRocketMQTopUsagesOutcome DescribeRocketMQTopUsages(const Model::DescribeRocketMQTopUsagesRequest &request);
                 void DescribeRocketMQTopUsagesAsync(const Model::DescribeRocketMQTopUsagesRequest& request, const DescribeRocketMQTopUsagesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeRocketMQTopUsagesOutcomeCallable DescribeRocketMQTopUsagesCallable(const Model::DescribeRocketMQTopUsagesRequest& request);
+
+                /**
+                 *获取RocketMQ主题详情
+                 * @param req DescribeRocketMQTopicRequest
+                 * @return DescribeRocketMQTopicOutcome
+                 */
+                DescribeRocketMQTopicOutcome DescribeRocketMQTopic(const Model::DescribeRocketMQTopicRequest &request);
+                void DescribeRocketMQTopicAsync(const Model::DescribeRocketMQTopicRequest& request, const DescribeRocketMQTopicAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRocketMQTopicOutcomeCallable DescribeRocketMQTopicCallable(const Model::DescribeRocketMQTopicRequest& request);
 
                 /**
                  *rocketmq 消息查询

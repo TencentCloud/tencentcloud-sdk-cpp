@@ -27,7 +27,8 @@ ModifyRocketMQInstanceRequest::ModifyRocketMQInstanceRequest() :
     m_nameHasBeenSet(false),
     m_remarkHasBeenSet(false),
     m_messageRetentionHasBeenSet(false),
-    m_enableDeletionProtectionHasBeenSet(false)
+    m_enableDeletionProtectionHasBeenSet(false),
+    m_sendReceiveRatioHasBeenSet(false)
 {
 }
 
@@ -76,6 +77,14 @@ string ModifyRocketMQInstanceRequest::ToJsonString() const
         string key = "EnableDeletionProtection";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_enableDeletionProtection, allocator);
+    }
+
+    if (m_sendReceiveRatioHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SendReceiveRatio";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_sendReceiveRatio, allocator);
     }
 
 
@@ -164,6 +173,22 @@ void ModifyRocketMQInstanceRequest::SetEnableDeletionProtection(const bool& _ena
 bool ModifyRocketMQInstanceRequest::EnableDeletionProtectionHasBeenSet() const
 {
     return m_enableDeletionProtectionHasBeenSet;
+}
+
+double ModifyRocketMQInstanceRequest::GetSendReceiveRatio() const
+{
+    return m_sendReceiveRatio;
+}
+
+void ModifyRocketMQInstanceRequest::SetSendReceiveRatio(const double& _sendReceiveRatio)
+{
+    m_sendReceiveRatio = _sendReceiveRatio;
+    m_sendReceiveRatioHasBeenSet = true;
+}
+
+bool ModifyRocketMQInstanceRequest::SendReceiveRatioHasBeenSet() const
+{
+    return m_sendReceiveRatioHasBeenSet;
 }
 
 

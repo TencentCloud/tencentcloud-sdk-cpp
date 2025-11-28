@@ -27,7 +27,8 @@ ResourceInfo::ResourceInfo() :
     m_instanceHasBeenSet(false),
     m_favorHasBeenSet(false),
     m_statusHasBeenSet(false),
-    m_resourceGroupNameHasBeenSet(false)
+    m_resourceGroupNameHasBeenSet(false),
+    m_resourceConfHasBeenSet(false)
 {
 }
 
@@ -116,6 +117,23 @@ CoreInternalOutcome ResourceInfo::Deserialize(const rapidjson::Value &value)
         m_resourceGroupNameHasBeenSet = true;
     }
 
+    if (value.HasMember("ResourceConf") && !value["ResourceConf"].IsNull())
+    {
+        if (!value["ResourceConf"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ResourceInfo.ResourceConf` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_resourceConf.Deserialize(value["ResourceConf"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_resourceConfHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -184,6 +202,15 @@ void ResourceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "ResourceGroupName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_resourceGroupName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_resourceConfHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResourceConf";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_resourceConf.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -299,5 +326,21 @@ void ResourceInfo::SetResourceGroupName(const string& _resourceGroupName)
 bool ResourceInfo::ResourceGroupNameHasBeenSet() const
 {
     return m_resourceGroupNameHasBeenSet;
+}
+
+ResourceConf ResourceInfo::GetResourceConf() const
+{
+    return m_resourceConf;
+}
+
+void ResourceInfo::SetResourceConf(const ResourceConf& _resourceConf)
+{
+    m_resourceConf = _resourceConf;
+    m_resourceConfHasBeenSet = true;
+}
+
+bool ResourceInfo::ResourceConfHasBeenSet() const
+{
+    return m_resourceConfHasBeenSet;
 }
 

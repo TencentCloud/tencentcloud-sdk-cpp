@@ -27,7 +27,8 @@ AttachNodesRequest::AttachNodesRequest() :
     m_resourceSetHasBeenSet(false),
     m_queueNameHasBeenSet(false),
     m_imageIdHasBeenSet(false),
-    m_resourceTypeHasBeenSet(false)
+    m_resourceTypeHasBeenSet(false),
+    m_userDataHasBeenSet(false)
 {
 }
 
@@ -81,6 +82,14 @@ string AttachNodesRequest::ToJsonString() const
         string key = "ResourceType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_resourceType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_userDataHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserData";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_userData.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -169,6 +178,22 @@ void AttachNodesRequest::SetResourceType(const string& _resourceType)
 bool AttachNodesRequest::ResourceTypeHasBeenSet() const
 {
     return m_resourceTypeHasBeenSet;
+}
+
+string AttachNodesRequest::GetUserData() const
+{
+    return m_userData;
+}
+
+void AttachNodesRequest::SetUserData(const string& _userData)
+{
+    m_userData = _userData;
+    m_userDataHasBeenSet = true;
+}
+
+bool AttachNodesRequest::UserDataHasBeenSet() const
+{
+    return m_userDataHasBeenSet;
 }
 
 

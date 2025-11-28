@@ -531,6 +531,56 @@ namespace TencentCloud
                      */
                     bool AlarmStatusHasBeenSet() const;
 
+                    /**
+                     * 获取0不支持
+1关闭
+2开启
+                     * @return PqcStatus 0不支持
+1关闭
+2开启
+                     * 
+                     */
+                    int64_t GetPqcStatus() const;
+
+                    /**
+                     * 设置0不支持
+1关闭
+2开启
+                     * @param _pqcStatus 0不支持
+1关闭
+2开启
+                     * 
+                     */
+                    void SetPqcStatus(const int64_t& _pqcStatus);
+
+                    /**
+                     * 判断参数 PqcStatus 是否已赋值
+                     * @return PqcStatus 是否已赋值
+                     * 
+                     */
+                    bool PqcStatusHasBeenSet() const;
+
+                    /**
+                     * 获取0关闭，1开启
+                     * @return PqcFlag 0关闭，1开启
+                     * 
+                     */
+                    int64_t GetPqcFlag() const;
+
+                    /**
+                     * 设置0关闭，1开启
+                     * @param _pqcFlag 0关闭，1开启
+                     * 
+                     */
+                    void SetPqcFlag(const int64_t& _pqcFlag);
+
+                    /**
+                     * 判断参数 PqcFlag 是否已赋值
+                     * @return PqcFlag 是否已赋值
+                     * 
+                     */
+                    bool PqcFlagHasBeenSet() const;
+
                 private:
 
                     /**
@@ -670,6 +720,20 @@ namespace TencentCloud
                      */
                     int64_t m_alarmStatus;
                     bool m_alarmStatusHasBeenSet;
+
+                    /**
+                     * 0不支持
+1关闭
+2开启
+                     */
+                    int64_t m_pqcStatus;
+                    bool m_pqcStatusHasBeenSet;
+
+                    /**
+                     * 0关闭，1开启
+                     */
+                    int64_t m_pqcFlag;
+                    bool m_pqcFlagHasBeenSet;
 
                 };
             }

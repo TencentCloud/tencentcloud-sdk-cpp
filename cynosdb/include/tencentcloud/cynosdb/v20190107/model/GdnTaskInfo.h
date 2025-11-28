@@ -173,15 +173,15 @@ namespace TencentCloud
                     bool StandbyClusterIdHasBeenSet() const;
 
                     /**
-                     * 获取从集群别名
-                     * @return StandbyClusterName 从集群别名
+                     * 获取从集群名称
+                     * @return StandbyClusterName 从集群名称
                      * 
                      */
                     std::string GetStandbyClusterName() const;
 
                     /**
-                     * 设置从集群别名
-                     * @param _standbyClusterName 从集群别名
+                     * 设置从集群名称
+                     * @param _standbyClusterName 从集群名称
                      * 
                      */
                     void SetStandbyClusterName(const std::string& _standbyClusterName);
@@ -232,7 +232,7 @@ namespace TencentCloud
                     bool m_standbyClusterIdHasBeenSet;
 
                     /**
-                     * 从集群别名
+                     * 从集群名称
                      */
                     std::string m_standbyClusterName;
                     bool m_standbyClusterNameHasBeenSet;

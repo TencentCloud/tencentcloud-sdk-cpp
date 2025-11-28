@@ -127,6 +127,38 @@ namespace TencentCloud
                      */
                     bool ProducerNameHasBeenSet() const;
 
+                    /**
+                     * 获取消息 key
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Key 消息 key
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetKey() const;
+
+                    /**
+                     * 判断参数 Key 是否已赋值
+                     * @return Key 是否已赋值
+                     * 
+                     */
+                    bool KeyHasBeenSet() const;
+
+                    /**
+                     * 获取消息的元数据信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Metadata 消息的元数据信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetMetadata() const;
+
+                    /**
+                     * 判断参数 Metadata 是否已赋值
+                     * @return Metadata 是否已赋值
+                     * 
+                     */
+                    bool MetadataHasBeenSet() const;
+
                 private:
 
                     /**
@@ -164,6 +196,20 @@ namespace TencentCloud
                      */
                     std::string m_producerName;
                     bool m_producerNameHasBeenSet;
+
+                    /**
+                     * 消息 key
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_key;
+                    bool m_keyHasBeenSet;
+
+                    /**
+                     * 消息的元数据信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_metadata;
+                    bool m_metadataHasBeenSet;
 
                 };
             }

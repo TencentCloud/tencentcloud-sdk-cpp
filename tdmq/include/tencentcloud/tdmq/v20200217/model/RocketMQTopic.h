@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/tdmq/v20200217/model/RocketMQSubscription.h>
+#include <tencentcloud/tdmq/v20200217/model/Tag.h>
 
 
 namespace TencentCloud
@@ -323,6 +324,27 @@ namespace TencentCloud
                      */
                     bool SubscriptionDataHasBeenSet() const;
 
+                    /**
+                     * 获取绑定的标签列表
+                     * @return TagList 绑定的标签列表
+                     * 
+                     */
+                    std::vector<Tag> GetTagList() const;
+
+                    /**
+                     * 设置绑定的标签列表
+                     * @param _tagList 绑定的标签列表
+                     * 
+                     */
+                    void SetTagList(const std::vector<Tag>& _tagList);
+
+                    /**
+                     * 判断参数 TagList 是否已赋值
+                     * @return TagList 是否已赋值
+                     * 
+                     */
+                    bool TagListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -402,6 +424,12 @@ namespace TencentCloud
                      */
                     std::vector<RocketMQSubscription> m_subscriptionData;
                     bool m_subscriptionDataHasBeenSet;
+
+                    /**
+                     * 绑定的标签列表
+                     */
+                    std::vector<Tag> m_tagList;
+                    bool m_tagListHasBeenSet;
 
                 };
             }

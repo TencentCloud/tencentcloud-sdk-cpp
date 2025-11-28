@@ -26,7 +26,9 @@ ModifyRabbitMQVipInstanceRequest::ModifyRabbitMQVipInstanceRequest() :
     m_instanceIdHasBeenSet(false),
     m_clusterNameHasBeenSet(false),
     m_remarkHasBeenSet(false),
-    m_enableDeletionProtectionHasBeenSet(false)
+    m_enableDeletionProtectionHasBeenSet(false),
+    m_removeAllTagsHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -67,6 +69,29 @@ string ModifyRabbitMQVipInstanceRequest::ToJsonString() const
         string key = "EnableDeletionProtection";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_enableDeletionProtection, allocator);
+    }
+
+    if (m_removeAllTagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RemoveAllTags";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_removeAllTags, allocator);
+    }
+
+    if (m_tagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Tags";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -139,6 +164,38 @@ void ModifyRabbitMQVipInstanceRequest::SetEnableDeletionProtection(const bool& _
 bool ModifyRabbitMQVipInstanceRequest::EnableDeletionProtectionHasBeenSet() const
 {
     return m_enableDeletionProtectionHasBeenSet;
+}
+
+bool ModifyRabbitMQVipInstanceRequest::GetRemoveAllTags() const
+{
+    return m_removeAllTags;
+}
+
+void ModifyRabbitMQVipInstanceRequest::SetRemoveAllTags(const bool& _removeAllTags)
+{
+    m_removeAllTags = _removeAllTags;
+    m_removeAllTagsHasBeenSet = true;
+}
+
+bool ModifyRabbitMQVipInstanceRequest::RemoveAllTagsHasBeenSet() const
+{
+    return m_removeAllTagsHasBeenSet;
+}
+
+vector<Tag> ModifyRabbitMQVipInstanceRequest::GetTags() const
+{
+    return m_tags;
+}
+
+void ModifyRabbitMQVipInstanceRequest::SetTags(const vector<Tag>& _tags)
+{
+    m_tags = _tags;
+    m_tagsHasBeenSet = true;
+}
+
+bool ModifyRabbitMQVipInstanceRequest::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
 }
 
 

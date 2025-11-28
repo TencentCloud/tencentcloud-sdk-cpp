@@ -31,6 +31,8 @@
 #include <tencentcloud/waf/v20180125/model/AddAreaBanAreasResponse.h>
 #include <tencentcloud/waf/v20180125/model/AddAttackWhiteRuleRequest.h>
 #include <tencentcloud/waf/v20180125/model/AddAttackWhiteRuleResponse.h>
+#include <tencentcloud/waf/v20180125/model/AddBypassAllRuleRequest.h>
+#include <tencentcloud/waf/v20180125/model/AddBypassAllRuleResponse.h>
 #include <tencentcloud/waf/v20180125/model/AddCustomRuleRequest.h>
 #include <tencentcloud/waf/v20180125/model/AddCustomRuleResponse.h>
 #include <tencentcloud/waf/v20180125/model/AddCustomWhiteRuleRequest.h>
@@ -383,8 +385,12 @@
 #include <tencentcloud/waf/v20180125/model/ModifyWebshellStatusResponse.h>
 #include <tencentcloud/waf/v20180125/model/PostAttackDownloadTaskRequest.h>
 #include <tencentcloud/waf/v20180125/model/PostAttackDownloadTaskResponse.h>
+#include <tencentcloud/waf/v20180125/model/QueryBypassAllStatusRequest.h>
+#include <tencentcloud/waf/v20180125/model/QueryBypassAllStatusResponse.h>
 #include <tencentcloud/waf/v20180125/model/RefreshAccessCheckResultRequest.h>
 #include <tencentcloud/waf/v20180125/model/RefreshAccessCheckResultResponse.h>
+#include <tencentcloud/waf/v20180125/model/RemoveBypassAllRuleRequest.h>
+#include <tencentcloud/waf/v20180125/model/RemoveBypassAllRuleResponse.h>
 #include <tencentcloud/waf/v20180125/model/SearchAccessLogRequest.h>
 #include <tencentcloud/waf/v20180125/model/SearchAccessLogResponse.h>
 #include <tencentcloud/waf/v20180125/model/SearchAttackLogRequest.h>
@@ -433,6 +439,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::AddAttackWhiteRuleResponse> AddAttackWhiteRuleOutcome;
                 typedef std::future<AddAttackWhiteRuleOutcome> AddAttackWhiteRuleOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::AddAttackWhiteRuleRequest&, AddAttackWhiteRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddAttackWhiteRuleAsyncHandler;
+                typedef Outcome<Core::Error, Model::AddBypassAllRuleResponse> AddBypassAllRuleOutcome;
+                typedef std::future<AddBypassAllRuleOutcome> AddBypassAllRuleOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::AddBypassAllRuleRequest&, AddBypassAllRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddBypassAllRuleAsyncHandler;
                 typedef Outcome<Core::Error, Model::AddCustomRuleResponse> AddCustomRuleOutcome;
                 typedef std::future<AddCustomRuleOutcome> AddCustomRuleOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::AddCustomRuleRequest&, AddCustomRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddCustomRuleAsyncHandler;
@@ -961,9 +970,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::PostAttackDownloadTaskResponse> PostAttackDownloadTaskOutcome;
                 typedef std::future<PostAttackDownloadTaskOutcome> PostAttackDownloadTaskOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::PostAttackDownloadTaskRequest&, PostAttackDownloadTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> PostAttackDownloadTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::QueryBypassAllStatusResponse> QueryBypassAllStatusOutcome;
+                typedef std::future<QueryBypassAllStatusOutcome> QueryBypassAllStatusOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::QueryBypassAllStatusRequest&, QueryBypassAllStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryBypassAllStatusAsyncHandler;
                 typedef Outcome<Core::Error, Model::RefreshAccessCheckResultResponse> RefreshAccessCheckResultOutcome;
                 typedef std::future<RefreshAccessCheckResultOutcome> RefreshAccessCheckResultOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::RefreshAccessCheckResultRequest&, RefreshAccessCheckResultOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RefreshAccessCheckResultAsyncHandler;
+                typedef Outcome<Core::Error, Model::RemoveBypassAllRuleResponse> RemoveBypassAllRuleOutcome;
+                typedef std::future<RemoveBypassAllRuleOutcome> RemoveBypassAllRuleOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::RemoveBypassAllRuleRequest&, RemoveBypassAllRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RemoveBypassAllRuleAsyncHandler;
                 typedef Outcome<Core::Error, Model::SearchAccessLogResponse> SearchAccessLogOutcome;
                 typedef std::future<SearchAccessLogOutcome> SearchAccessLogOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::SearchAccessLogRequest&, SearchAccessLogOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SearchAccessLogAsyncHandler;
@@ -1035,6 +1050,15 @@ namespace TencentCloud
                 AddAttackWhiteRuleOutcome AddAttackWhiteRule(const Model::AddAttackWhiteRuleRequest &request);
                 void AddAttackWhiteRuleAsync(const Model::AddAttackWhiteRuleRequest& request, const AddAttackWhiteRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 AddAttackWhiteRuleOutcomeCallable AddAttackWhiteRuleCallable(const Model::AddAttackWhiteRuleRequest& request);
+
+                /**
+                 *添加一键bypass能力支持,直接添加APPID
+                 * @param req AddBypassAllRuleRequest
+                 * @return AddBypassAllRuleOutcome
+                 */
+                AddBypassAllRuleOutcome AddBypassAllRule(const Model::AddBypassAllRuleRequest &request);
+                void AddBypassAllRuleAsync(const Model::AddBypassAllRuleRequest& request, const AddBypassAllRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                AddBypassAllRuleOutcomeCallable AddBypassAllRuleCallable(const Model::AddBypassAllRuleRequest& request);
 
                 /**
                  *增加访问控制（自定义策略）
@@ -2624,6 +2648,15 @@ namespace TencentCloud
                 PostAttackDownloadTaskOutcomeCallable PostAttackDownloadTaskCallable(const Model::PostAttackDownloadTaskRequest& request);
 
                 /**
+                 *查询该用户是否被加入了全局的bypass列表
+                 * @param req QueryBypassAllStatusRequest
+                 * @return QueryBypassAllStatusOutcome
+                 */
+                QueryBypassAllStatusOutcome QueryBypassAllStatus(const Model::QueryBypassAllStatusRequest &request);
+                void QueryBypassAllStatusAsync(const Model::QueryBypassAllStatusRequest& request, const QueryBypassAllStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                QueryBypassAllStatusOutcomeCallable QueryBypassAllStatusCallable(const Model::QueryBypassAllStatusRequest& request);
+
+                /**
                  *刷新接入检查的结果，后台会生成接入检查任务
                  * @param req RefreshAccessCheckResultRequest
                  * @return RefreshAccessCheckResultOutcome
@@ -2631,6 +2664,15 @@ namespace TencentCloud
                 RefreshAccessCheckResultOutcome RefreshAccessCheckResult(const Model::RefreshAccessCheckResultRequest &request);
                 void RefreshAccessCheckResultAsync(const Model::RefreshAccessCheckResultRequest& request, const RefreshAccessCheckResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 RefreshAccessCheckResultOutcomeCallable RefreshAccessCheckResultCallable(const Model::RefreshAccessCheckResultRequest& request);
+
+                /**
+                 *删除一键bypass规则
+                 * @param req RemoveBypassAllRuleRequest
+                 * @return RemoveBypassAllRuleOutcome
+                 */
+                RemoveBypassAllRuleOutcome RemoveBypassAllRule(const Model::RemoveBypassAllRuleRequest &request);
+                void RemoveBypassAllRuleAsync(const Model::RemoveBypassAllRuleRequest& request, const RemoveBypassAllRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RemoveBypassAllRuleOutcomeCallable RemoveBypassAllRuleCallable(const Model::RemoveBypassAllRuleRequest& request);
 
                 /**
                  *本接口用于搜索WAF访问日志

@@ -33,6 +33,7 @@ CreateTopicRequest::CreateTopicRequest() :
     m_periodHasBeenSet(false),
     m_describesHasBeenSet(false),
     m_hotPeriodHasBeenSet(false),
+    m_encryptionHasBeenSet(false),
     m_bizTypeHasBeenSet(false),
     m_topicIdHasBeenSet(false),
     m_isWebTrackingHasBeenSet(false),
@@ -133,6 +134,14 @@ string CreateTopicRequest::ToJsonString() const
         string key = "HotPeriod";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_hotPeriod, allocator);
+    }
+
+    if (m_encryptionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Encryption";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_encryption, allocator);
     }
 
     if (m_bizTypeHasBeenSet)
@@ -342,6 +351,22 @@ void CreateTopicRequest::SetHotPeriod(const uint64_t& _hotPeriod)
 bool CreateTopicRequest::HotPeriodHasBeenSet() const
 {
     return m_hotPeriodHasBeenSet;
+}
+
+uint64_t CreateTopicRequest::GetEncryption() const
+{
+    return m_encryption;
+}
+
+void CreateTopicRequest::SetEncryption(const uint64_t& _encryption)
+{
+    m_encryption = _encryption;
+    m_encryptionHasBeenSet = true;
+}
+
+bool CreateTopicRequest::EncryptionHasBeenSet() const
+{
+    return m_encryptionHasBeenSet;
 }
 
 uint64_t CreateTopicRequest::GetBizType() const

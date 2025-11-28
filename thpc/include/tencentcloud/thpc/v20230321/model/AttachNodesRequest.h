@@ -155,6 +155,27 @@ SLURM默认队列为：compute。
                      */
                     bool ResourceTypeHasBeenSet() const;
 
+                    /**
+                     * 获取提供给实例使用的用户数据，需要以 base64 方式编码，支持的最大数据大小为 16KB。关于获取此参数的详细介绍，请参阅[Windows](https://cloud.tencent.com/document/product/213/17526)和[Linux](https://cloud.tencent.com/document/product/213/17525)启动时运行命令。
+                     * @return UserData 提供给实例使用的用户数据，需要以 base64 方式编码，支持的最大数据大小为 16KB。关于获取此参数的详细介绍，请参阅[Windows](https://cloud.tencent.com/document/product/213/17526)和[Linux](https://cloud.tencent.com/document/product/213/17525)启动时运行命令。
+                     * 
+                     */
+                    std::string GetUserData() const;
+
+                    /**
+                     * 设置提供给实例使用的用户数据，需要以 base64 方式编码，支持的最大数据大小为 16KB。关于获取此参数的详细介绍，请参阅[Windows](https://cloud.tencent.com/document/product/213/17526)和[Linux](https://cloud.tencent.com/document/product/213/17525)启动时运行命令。
+                     * @param _userData 提供给实例使用的用户数据，需要以 base64 方式编码，支持的最大数据大小为 16KB。关于获取此参数的详细介绍，请参阅[Windows](https://cloud.tencent.com/document/product/213/17526)和[Linux](https://cloud.tencent.com/document/product/213/17525)启动时运行命令。
+                     * 
+                     */
+                    void SetUserData(const std::string& _userData);
+
+                    /**
+                     * 判断参数 UserData 是否已赋值
+                     * @return UserData 是否已赋值
+                     * 
+                     */
+                    bool UserDataHasBeenSet() const;
+
                 private:
 
                     /**
@@ -188,6 +209,12 @@ SLURM默认队列为：compute。
                      */
                     std::string m_resourceType;
                     bool m_resourceTypeHasBeenSet;
+
+                    /**
+                     * 提供给实例使用的用户数据，需要以 base64 方式编码，支持的最大数据大小为 16KB。关于获取此参数的详细介绍，请参阅[Windows](https://cloud.tencent.com/document/product/213/17526)和[Linux](https://cloud.tencent.com/document/product/213/17525)启动时运行命令。
+                     */
+                    std::string m_userData;
+                    bool m_userDataHasBeenSet;
 
                 };
             }

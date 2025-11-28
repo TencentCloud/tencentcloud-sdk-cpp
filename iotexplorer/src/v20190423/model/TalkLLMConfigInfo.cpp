@@ -28,7 +28,8 @@ TalkLLMConfigInfo::TalkLLMConfigInfo() :
     m_configHasBeenSet(false),
     m_temperatureHasBeenSet(false),
     m_maxTokensHasBeenSet(false),
-    m_topPHasBeenSet(false)
+    m_topPHasBeenSet(false),
+    m_toolsHasBeenSet(false)
 {
 }
 
@@ -117,6 +118,19 @@ CoreInternalOutcome TalkLLMConfigInfo::Deserialize(const rapidjson::Value &value
         m_topPHasBeenSet = true;
     }
 
+    if (value.HasMember("Tools") && !value["Tools"].IsNull())
+    {
+        if (!value["Tools"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `TalkLLMConfigInfo.Tools` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Tools"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_tools.push_back((*itr).GetString());
+        }
+        m_toolsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -186,6 +200,19 @@ void TalkLLMConfigInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "TopP";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_topP, allocator);
+    }
+
+    if (m_toolsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Tools";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_tools.begin(); itr != m_tools.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 }
@@ -317,5 +344,21 @@ void TalkLLMConfigInfo::SetTopP(const double& _topP)
 bool TalkLLMConfigInfo::TopPHasBeenSet() const
 {
     return m_topPHasBeenSet;
+}
+
+vector<string> TalkLLMConfigInfo::GetTools() const
+{
+    return m_tools;
+}
+
+void TalkLLMConfigInfo::SetTools(const vector<string>& _tools)
+{
+    m_tools = _tools;
+    m_toolsHasBeenSet = true;
+}
+
+bool TalkLLMConfigInfo::ToolsHasBeenSet() const
+{
+    return m_toolsHasBeenSet;
 }
 

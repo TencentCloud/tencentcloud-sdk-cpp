@@ -4840,6 +4840,56 @@ MpsClient::DescribeTranscodeTemplatesOutcomeCallable MpsClient::DescribeTranscod
     return prom->get_future();
 }
 
+MpsClient::DescribeUsageDataOutcome MpsClient::DescribeUsageData(const DescribeUsageDataRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeUsageData");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeUsageDataResponse rsp = DescribeUsageDataResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeUsageDataOutcome(rsp);
+        else
+            return DescribeUsageDataOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeUsageDataOutcome(outcome.GetError());
+    }
+}
+
+void MpsClient::DescribeUsageDataAsync(const DescribeUsageDataRequest& request, const DescribeUsageDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeUsageDataRequest&;
+    using Resp = DescribeUsageDataResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeUsageData", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MpsClient::DescribeUsageDataOutcomeCallable MpsClient::DescribeUsageDataCallable(const DescribeUsageDataRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeUsageDataOutcome>>();
+    DescribeUsageDataAsync(
+    request,
+    [prom](
+        const MpsClient*,
+        const DescribeUsageDataRequest&,
+        DescribeUsageDataOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 MpsClient::DescribeVideoDatabaseEntryTaskDetailOutcome MpsClient::DescribeVideoDatabaseEntryTaskDetail(const DescribeVideoDatabaseEntryTaskDetailRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeVideoDatabaseEntryTaskDetail");

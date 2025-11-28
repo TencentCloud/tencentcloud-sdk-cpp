@@ -81,15 +81,15 @@ namespace TencentCloud
                     bool IndexHasBeenSet() const;
 
                     /**
-                     * 获取每页条数，最大支持2000
-                     * @return Limit 每页条数，最大支持2000
+                     * 获取每页条数，最大支持1000
+                     * @return Limit 每页条数，最大支持1000
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置每页条数，最大支持2000
-                     * @param _limit 每页条数，最大支持2000
+                     * 设置每页条数，最大支持1000
+                     * @param _limit 每页条数，最大支持1000
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -198,7 +198,7 @@ namespace TencentCloud
                     bool m_indexHasBeenSet;
 
                     /**
-                     * 每页条数，最大支持2000
+                     * 每页条数，最大支持1000
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;

@@ -240,6 +240,56 @@ WafClient::AddAttackWhiteRuleOutcomeCallable WafClient::AddAttackWhiteRuleCallab
     return prom->get_future();
 }
 
+WafClient::AddBypassAllRuleOutcome WafClient::AddBypassAllRule(const AddBypassAllRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "AddBypassAllRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        AddBypassAllRuleResponse rsp = AddBypassAllRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return AddBypassAllRuleOutcome(rsp);
+        else
+            return AddBypassAllRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return AddBypassAllRuleOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::AddBypassAllRuleAsync(const AddBypassAllRuleRequest& request, const AddBypassAllRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const AddBypassAllRuleRequest&;
+    using Resp = AddBypassAllRuleResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "AddBypassAllRule", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+WafClient::AddBypassAllRuleOutcomeCallable WafClient::AddBypassAllRuleCallable(const AddBypassAllRuleRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<AddBypassAllRuleOutcome>>();
+    AddBypassAllRuleAsync(
+    request,
+    [prom](
+        const WafClient*,
+        const AddBypassAllRuleRequest&,
+        AddBypassAllRuleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 WafClient::AddCustomRuleOutcome WafClient::AddCustomRule(const AddCustomRuleRequest &request)
 {
     auto outcome = MakeRequest(request, "AddCustomRule");
@@ -9040,6 +9090,56 @@ WafClient::PostAttackDownloadTaskOutcomeCallable WafClient::PostAttackDownloadTa
     return prom->get_future();
 }
 
+WafClient::QueryBypassAllStatusOutcome WafClient::QueryBypassAllStatus(const QueryBypassAllStatusRequest &request)
+{
+    auto outcome = MakeRequest(request, "QueryBypassAllStatus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        QueryBypassAllStatusResponse rsp = QueryBypassAllStatusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return QueryBypassAllStatusOutcome(rsp);
+        else
+            return QueryBypassAllStatusOutcome(o.GetError());
+    }
+    else
+    {
+        return QueryBypassAllStatusOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::QueryBypassAllStatusAsync(const QueryBypassAllStatusRequest& request, const QueryBypassAllStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const QueryBypassAllStatusRequest&;
+    using Resp = QueryBypassAllStatusResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "QueryBypassAllStatus", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+WafClient::QueryBypassAllStatusOutcomeCallable WafClient::QueryBypassAllStatusCallable(const QueryBypassAllStatusRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<QueryBypassAllStatusOutcome>>();
+    QueryBypassAllStatusAsync(
+    request,
+    [prom](
+        const WafClient*,
+        const QueryBypassAllStatusRequest&,
+        QueryBypassAllStatusOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 WafClient::RefreshAccessCheckResultOutcome WafClient::RefreshAccessCheckResult(const RefreshAccessCheckResultRequest &request)
 {
     auto outcome = MakeRequest(request, "RefreshAccessCheckResult");
@@ -9082,6 +9182,56 @@ WafClient::RefreshAccessCheckResultOutcomeCallable WafClient::RefreshAccessCheck
         const WafClient*,
         const RefreshAccessCheckResultRequest&,
         RefreshAccessCheckResultOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+WafClient::RemoveBypassAllRuleOutcome WafClient::RemoveBypassAllRule(const RemoveBypassAllRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "RemoveBypassAllRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RemoveBypassAllRuleResponse rsp = RemoveBypassAllRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RemoveBypassAllRuleOutcome(rsp);
+        else
+            return RemoveBypassAllRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return RemoveBypassAllRuleOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::RemoveBypassAllRuleAsync(const RemoveBypassAllRuleRequest& request, const RemoveBypassAllRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const RemoveBypassAllRuleRequest&;
+    using Resp = RemoveBypassAllRuleResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "RemoveBypassAllRule", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+WafClient::RemoveBypassAllRuleOutcomeCallable WafClient::RemoveBypassAllRuleCallable(const RemoveBypassAllRuleRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<RemoveBypassAllRuleOutcome>>();
+    RemoveBypassAllRuleAsync(
+    request,
+    [prom](
+        const WafClient*,
+        const RemoveBypassAllRuleRequest&,
+        RemoveBypassAllRuleOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

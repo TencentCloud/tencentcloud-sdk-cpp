@@ -147,6 +147,27 @@ namespace TencentCloud
                      */
                     bool EnableDeletionProtectionHasBeenSet() const;
 
+                    /**
+                     * 获取控制生产和消费消息的 TPS 占比，取值范围0～1，默认值为0.5
+                     * @return SendReceiveRatio 控制生产和消费消息的 TPS 占比，取值范围0～1，默认值为0.5
+                     * 
+                     */
+                    double GetSendReceiveRatio() const;
+
+                    /**
+                     * 设置控制生产和消费消息的 TPS 占比，取值范围0～1，默认值为0.5
+                     * @param _sendReceiveRatio 控制生产和消费消息的 TPS 占比，取值范围0～1，默认值为0.5
+                     * 
+                     */
+                    void SetSendReceiveRatio(const double& _sendReceiveRatio);
+
+                    /**
+                     * 判断参数 SendReceiveRatio 是否已赋值
+                     * @return SendReceiveRatio 是否已赋值
+                     * 
+                     */
+                    bool SendReceiveRatioHasBeenSet() const;
+
                 private:
 
                     /**
@@ -178,6 +199,12 @@ namespace TencentCloud
                      */
                     bool m_enableDeletionProtection;
                     bool m_enableDeletionProtectionHasBeenSet;
+
+                    /**
+                     * 控制生产和消费消息的 TPS 占比，取值范围0～1，默认值为0.5
+                     */
+                    double m_sendReceiveRatio;
+                    bool m_sendReceiveRatioHasBeenSet;
 
                 };
             }

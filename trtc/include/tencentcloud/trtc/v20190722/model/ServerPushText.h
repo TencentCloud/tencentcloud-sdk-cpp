@@ -237,6 +237,27 @@ namespace TencentCloud
                      */
                     bool AddHistoryHasBeenSet() const;
 
+                    /**
+                     * 获取如果填写，会和字幕绑定发送到端上，注意确保内容为json字符串
+                     * @return MetaInfo 如果填写，会和字幕绑定发送到端上，注意确保内容为json字符串
+                     * 
+                     */
+                    std::string GetMetaInfo() const;
+
+                    /**
+                     * 设置如果填写，会和字幕绑定发送到端上，注意确保内容为json字符串
+                     * @param _metaInfo 如果填写，会和字幕绑定发送到端上，注意确保内容为json字符串
+                     * 
+                     */
+                    void SetMetaInfo(const std::string& _metaInfo);
+
+                    /**
+                     * 判断参数 MetaInfo 是否已赋值
+                     * @return MetaInfo 是否已赋值
+                     * 
+                     */
+                    bool MetaInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -291,6 +312,12 @@ namespace TencentCloud
                      */
                     bool m_addHistory;
                     bool m_addHistoryHasBeenSet;
+
+                    /**
+                     * 如果填写，会和字幕绑定发送到端上，注意确保内容为json字符串
+                     */
+                    std::string m_metaInfo;
+                    bool m_metaInfoHasBeenSet;
 
                 };
             }

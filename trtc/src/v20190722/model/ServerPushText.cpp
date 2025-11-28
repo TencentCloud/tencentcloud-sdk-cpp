@@ -27,7 +27,8 @@ ServerPushText::ServerPushText() :
     m_audioHasBeenSet(false),
     m_dropModeHasBeenSet(false),
     m_priorityHasBeenSet(false),
-    m_addHistoryHasBeenSet(false)
+    m_addHistoryHasBeenSet(false),
+    m_metaInfoHasBeenSet(false)
 {
 }
 
@@ -106,6 +107,16 @@ CoreInternalOutcome ServerPushText::Deserialize(const rapidjson::Value &value)
         m_addHistoryHasBeenSet = true;
     }
 
+    if (value.HasMember("MetaInfo") && !value["MetaInfo"].IsNull())
+    {
+        if (!value["MetaInfo"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ServerPushText.MetaInfo` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_metaInfo = string(value["MetaInfo"].GetString());
+        m_metaInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -167,6 +178,14 @@ void ServerPushText::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "AddHistory";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_addHistory, allocator);
+    }
+
+    if (m_metaInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MetaInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_metaInfo.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -282,5 +301,21 @@ void ServerPushText::SetAddHistory(const bool& _addHistory)
 bool ServerPushText::AddHistoryHasBeenSet() const
 {
     return m_addHistoryHasBeenSet;
+}
+
+string ServerPushText::GetMetaInfo() const
+{
+    return m_metaInfo;
+}
+
+void ServerPushText::SetMetaInfo(const string& _metaInfo)
+{
+    m_metaInfo = _metaInfo;
+    m_metaInfoHasBeenSet = true;
+}
+
+bool ServerPushText::MetaInfoHasBeenSet() const
+{
+    return m_metaInfoHasBeenSet;
 }
 

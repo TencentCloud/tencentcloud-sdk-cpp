@@ -47,6 +47,27 @@ namespace TencentCloud
 
 
                     /**
+                     * 获取合同对比差异点唯一ID。
+                     * @return ComparisonPointId 合同对比差异点唯一ID。
+                     * 
+                     */
+                    std::string GetComparisonPointId() const;
+
+                    /**
+                     * 设置合同对比差异点唯一ID。
+                     * @param _comparisonPointId 合同对比差异点唯一ID。
+                     * 
+                     */
+                    void SetComparisonPointId(const std::string& _comparisonPointId);
+
+                    /**
+                     * 判断参数 ComparisonPointId 是否已赋值
+                     * @return ComparisonPointId 是否已赋值
+                     * 
+                     */
+                    bool ComparisonPointIdHasBeenSet() const;
+
+                    /**
                      * 获取对比前后差异类型，具体如下：
 <ul><li> **add**：新增</li>
 <li> **change**：变更</li>
@@ -163,6 +184,12 @@ namespace TencentCloud
                     bool DiffTextHasBeenSet() const;
 
                 private:
+
+                    /**
+                     * 合同对比差异点唯一ID。
+                     */
+                    std::string m_comparisonPointId;
+                    bool m_comparisonPointIdHasBeenSet;
 
                     /**
                      * 对比前后差异类型，具体如下：

@@ -35,7 +35,8 @@ RabbitMQClusterAccessInfo::RabbitMQClusterAccessInfo() :
     m_prometheusEndpointInfoHasBeenSet(false),
     m_webConsoleDomainEndpointHasBeenSet(false),
     m_controlPlaneEndpointInfoHasBeenSet(false),
-    m_publicTlsAccessEndpointHasBeenSet(false)
+    m_publicTlsAccessEndpointHasBeenSet(false),
+    m_publicIpReusedHasBeenSet(false)
 {
 }
 
@@ -208,6 +209,16 @@ CoreInternalOutcome RabbitMQClusterAccessInfo::Deserialize(const rapidjson::Valu
         m_publicTlsAccessEndpointHasBeenSet = true;
     }
 
+    if (value.HasMember("PublicIpReused") && !value["PublicIpReused"].IsNull())
+    {
+        if (!value["PublicIpReused"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `RabbitMQClusterAccessInfo.PublicIpReused` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_publicIpReused = value["PublicIpReused"].GetBool();
+        m_publicIpReusedHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -335,6 +346,14 @@ void RabbitMQClusterAccessInfo::ToJsonObject(rapidjson::Value &value, rapidjson:
         string key = "PublicTlsAccessEndpoint";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_publicTlsAccessEndpoint.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_publicIpReusedHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PublicIpReused";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_publicIpReused, allocator);
     }
 
 }
@@ -578,5 +597,21 @@ void RabbitMQClusterAccessInfo::SetPublicTlsAccessEndpoint(const string& _public
 bool RabbitMQClusterAccessInfo::PublicTlsAccessEndpointHasBeenSet() const
 {
     return m_publicTlsAccessEndpointHasBeenSet;
+}
+
+bool RabbitMQClusterAccessInfo::GetPublicIpReused() const
+{
+    return m_publicIpReused;
+}
+
+void RabbitMQClusterAccessInfo::SetPublicIpReused(const bool& _publicIpReused)
+{
+    m_publicIpReused = _publicIpReused;
+    m_publicIpReusedHasBeenSet = true;
+}
+
+bool RabbitMQClusterAccessInfo::PublicIpReusedHasBeenSet() const
+{
+    return m_publicIpReusedHasBeenSet;
 }
 

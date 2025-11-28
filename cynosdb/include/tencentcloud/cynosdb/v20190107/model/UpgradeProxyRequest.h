@@ -211,6 +211,48 @@ namespace TencentCloud
                      */
                     bool ProxyZonesHasBeenSet() const;
 
+                    /**
+                     * 获取是否滚动升级
+                     * @return IsRollUpgrade 是否滚动升级
+                     * 
+                     */
+                    std::string GetIsRollUpgrade() const;
+
+                    /**
+                     * 设置是否滚动升级
+                     * @param _isRollUpgrade 是否滚动升级
+                     * 
+                     */
+                    void SetIsRollUpgrade(const std::string& _isRollUpgrade);
+
+                    /**
+                     * 判断参数 IsRollUpgrade 是否已赋值
+                     * @return IsRollUpgrade 是否已赋值
+                     * 
+                     */
+                    bool IsRollUpgradeHasBeenSet() const;
+
+                    /**
+                     * 获取滚动升级等待时间，单位：秒
+                     * @return RollUpgradeWaitingTime 滚动升级等待时间，单位：秒
+                     * 
+                     */
+                    int64_t GetRollUpgradeWaitingTime() const;
+
+                    /**
+                     * 设置滚动升级等待时间，单位：秒
+                     * @param _rollUpgradeWaitingTime 滚动升级等待时间，单位：秒
+                     * 
+                     */
+                    void SetRollUpgradeWaitingTime(const int64_t& _rollUpgradeWaitingTime);
+
+                    /**
+                     * 判断参数 RollUpgradeWaitingTime 是否已赋值
+                     * @return RollUpgradeWaitingTime 是否已赋值
+                     * 
+                     */
+                    bool RollUpgradeWaitingTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -260,6 +302,18 @@ namespace TencentCloud
                      */
                     std::vector<ProxyZone> m_proxyZones;
                     bool m_proxyZonesHasBeenSet;
+
+                    /**
+                     * 是否滚动升级
+                     */
+                    std::string m_isRollUpgrade;
+                    bool m_isRollUpgradeHasBeenSet;
+
+                    /**
+                     * 滚动升级等待时间，单位：秒
+                     */
+                    int64_t m_rollUpgradeWaitingTime;
+                    bool m_rollUpgradeWaitingTimeHasBeenSet;
 
                 };
             }

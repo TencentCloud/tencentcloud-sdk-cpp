@@ -360,6 +360,27 @@ namespace TencentCloud
                      */
                     bool AIAgentIdHasBeenSet() const;
 
+                    /**
+                     * 获取任务失败重试时间间隔，重试间隔 600秒～86400 秒
+                     * @return RetryInterval 任务失败重试时间间隔，重试间隔 600秒～86400 秒
+                     * 
+                     */
+                    int64_t GetRetryInterval() const;
+
+                    /**
+                     * 设置任务失败重试时间间隔，重试间隔 600秒～86400 秒
+                     * @param _retryInterval 任务失败重试时间间隔，重试间隔 600秒～86400 秒
+                     * 
+                     */
+                    void SetRetryInterval(const int64_t& _retryInterval);
+
+                    /**
+                     * 判断参数 RetryInterval 是否已赋值
+                     * @return RetryInterval 是否已赋值
+                     * 
+                     */
+                    bool RetryIntervalHasBeenSet() const;
+
                 private:
 
                     /**
@@ -451,6 +472,12 @@ namespace TencentCloud
                      */
                     int64_t m_aIAgentId;
                     bool m_aIAgentIdHasBeenSet;
+
+                    /**
+                     * 任务失败重试时间间隔，重试间隔 600秒～86400 秒
+                     */
+                    int64_t m_retryInterval;
+                    bool m_retryIntervalHasBeenSet;
 
                 };
             }

@@ -29,7 +29,9 @@ DescribeMsgResponse::DescribeMsgResponse() :
     m_batchIdHasBeenSet(false),
     m_produceTimeHasBeenSet(false),
     m_msgIdHasBeenSet(false),
-    m_producerNameHasBeenSet(false)
+    m_producerNameHasBeenSet(false),
+    m_keyHasBeenSet(false),
+    m_metadataHasBeenSet(false)
 {
 }
 
@@ -127,6 +129,26 @@ CoreInternalOutcome DescribeMsgResponse::Deserialize(const string &payload)
         m_producerNameHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Key") && !rsp["Key"].IsNull())
+    {
+        if (!rsp["Key"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Key` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_key = string(rsp["Key"].GetString());
+        m_keyHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("Metadata") && !rsp["Metadata"].IsNull())
+    {
+        if (!rsp["Metadata"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Metadata` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_metadata = string(rsp["Metadata"].GetString());
+        m_metadataHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -183,6 +205,22 @@ string DescribeMsgResponse::ToJsonString() const
         string key = "ProducerName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_producerName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_keyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Key";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_key.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_metadataHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Metadata";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_metadata.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -255,6 +293,26 @@ string DescribeMsgResponse::GetProducerName() const
 bool DescribeMsgResponse::ProducerNameHasBeenSet() const
 {
     return m_producerNameHasBeenSet;
+}
+
+string DescribeMsgResponse::GetKey() const
+{
+    return m_key;
+}
+
+bool DescribeMsgResponse::KeyHasBeenSet() const
+{
+    return m_keyHasBeenSet;
+}
+
+string DescribeMsgResponse::GetMetadata() const
+{
+    return m_metadata;
+}
+
+bool DescribeMsgResponse::MetadataHasBeenSet() const
+{
+    return m_metadataHasBeenSet;
 }
 
 

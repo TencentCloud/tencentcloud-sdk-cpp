@@ -340,6 +340,56 @@ TkeClient::CancelClusterReleaseOutcomeCallable TkeClient::CancelClusterReleaseCa
     return prom->get_future();
 }
 
+TkeClient::CancelUpgradePlanOutcome TkeClient::CancelUpgradePlan(const CancelUpgradePlanRequest &request)
+{
+    auto outcome = MakeRequest(request, "CancelUpgradePlan");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CancelUpgradePlanResponse rsp = CancelUpgradePlanResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CancelUpgradePlanOutcome(rsp);
+        else
+            return CancelUpgradePlanOutcome(o.GetError());
+    }
+    else
+    {
+        return CancelUpgradePlanOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::CancelUpgradePlanAsync(const CancelUpgradePlanRequest& request, const CancelUpgradePlanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CancelUpgradePlanRequest&;
+    using Resp = CancelUpgradePlanResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CancelUpgradePlan", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TkeClient::CancelUpgradePlanOutcomeCallable TkeClient::CancelUpgradePlanCallable(const CancelUpgradePlanRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CancelUpgradePlanOutcome>>();
+    CancelUpgradePlanAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const CancelUpgradePlanRequest&,
+        CancelUpgradePlanOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TkeClient::CheckEdgeClusterCIDROutcome TkeClient::CheckEdgeClusterCIDR(const CheckEdgeClusterCIDRRequest &request)
 {
     auto outcome = MakeRequest(request, "CheckEdgeClusterCIDR");
@@ -732,6 +782,56 @@ TkeClient::CreateClusterInstancesOutcomeCallable TkeClient::CreateClusterInstanc
         const TkeClient*,
         const CreateClusterInstancesRequest&,
         CreateClusterInstancesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TkeClient::CreateClusterMaintenanceWindowAndExclusionsOutcome TkeClient::CreateClusterMaintenanceWindowAndExclusions(const CreateClusterMaintenanceWindowAndExclusionsRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateClusterMaintenanceWindowAndExclusions");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateClusterMaintenanceWindowAndExclusionsResponse rsp = CreateClusterMaintenanceWindowAndExclusionsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateClusterMaintenanceWindowAndExclusionsOutcome(rsp);
+        else
+            return CreateClusterMaintenanceWindowAndExclusionsOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateClusterMaintenanceWindowAndExclusionsOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::CreateClusterMaintenanceWindowAndExclusionsAsync(const CreateClusterMaintenanceWindowAndExclusionsRequest& request, const CreateClusterMaintenanceWindowAndExclusionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateClusterMaintenanceWindowAndExclusionsRequest&;
+    using Resp = CreateClusterMaintenanceWindowAndExclusionsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateClusterMaintenanceWindowAndExclusions", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TkeClient::CreateClusterMaintenanceWindowAndExclusionsOutcomeCallable TkeClient::CreateClusterMaintenanceWindowAndExclusionsCallable(const CreateClusterMaintenanceWindowAndExclusionsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateClusterMaintenanceWindowAndExclusionsOutcome>>();
+    CreateClusterMaintenanceWindowAndExclusionsAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const CreateClusterMaintenanceWindowAndExclusionsRequest&,
+        CreateClusterMaintenanceWindowAndExclusionsOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -1340,6 +1440,56 @@ TkeClient::CreateEksLogConfigOutcomeCallable TkeClient::CreateEksLogConfigCallab
     return prom->get_future();
 }
 
+TkeClient::CreateGlobalMaintenanceWindowAndExclusionsOutcome TkeClient::CreateGlobalMaintenanceWindowAndExclusions(const CreateGlobalMaintenanceWindowAndExclusionsRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateGlobalMaintenanceWindowAndExclusions");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateGlobalMaintenanceWindowAndExclusionsResponse rsp = CreateGlobalMaintenanceWindowAndExclusionsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateGlobalMaintenanceWindowAndExclusionsOutcome(rsp);
+        else
+            return CreateGlobalMaintenanceWindowAndExclusionsOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateGlobalMaintenanceWindowAndExclusionsOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::CreateGlobalMaintenanceWindowAndExclusionsAsync(const CreateGlobalMaintenanceWindowAndExclusionsRequest& request, const CreateGlobalMaintenanceWindowAndExclusionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateGlobalMaintenanceWindowAndExclusionsRequest&;
+    using Resp = CreateGlobalMaintenanceWindowAndExclusionsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateGlobalMaintenanceWindowAndExclusions", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TkeClient::CreateGlobalMaintenanceWindowAndExclusionsOutcomeCallable TkeClient::CreateGlobalMaintenanceWindowAndExclusionsCallable(const CreateGlobalMaintenanceWindowAndExclusionsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateGlobalMaintenanceWindowAndExclusionsOutcome>>();
+    CreateGlobalMaintenanceWindowAndExclusionsAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const CreateGlobalMaintenanceWindowAndExclusionsRequest&,
+        CreateGlobalMaintenanceWindowAndExclusionsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TkeClient::CreateImageCacheOutcome TkeClient::CreateImageCache(const CreateImageCacheRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateImageCache");
@@ -1890,6 +2040,56 @@ TkeClient::CreateReservedInstancesOutcomeCallable TkeClient::CreateReservedInsta
     return prom->get_future();
 }
 
+TkeClient::CreateRollOutSequenceOutcome TkeClient::CreateRollOutSequence(const CreateRollOutSequenceRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateRollOutSequence");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateRollOutSequenceResponse rsp = CreateRollOutSequenceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateRollOutSequenceOutcome(rsp);
+        else
+            return CreateRollOutSequenceOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateRollOutSequenceOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::CreateRollOutSequenceAsync(const CreateRollOutSequenceRequest& request, const CreateRollOutSequenceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateRollOutSequenceRequest&;
+    using Resp = CreateRollOutSequenceResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateRollOutSequence", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TkeClient::CreateRollOutSequenceOutcomeCallable TkeClient::CreateRollOutSequenceCallable(const CreateRollOutSequenceRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateRollOutSequenceOutcome>>();
+    CreateRollOutSequenceAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const CreateRollOutSequenceRequest&,
+        CreateRollOutSequenceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TkeClient::CreateTKEEdgeClusterOutcome TkeClient::CreateTKEEdgeCluster(const CreateTKEEdgeClusterRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateTKEEdgeCluster");
@@ -2282,6 +2482,56 @@ TkeClient::DeleteClusterInstancesOutcomeCallable TkeClient::DeleteClusterInstanc
         const TkeClient*,
         const DeleteClusterInstancesRequest&,
         DeleteClusterInstancesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TkeClient::DeleteClusterMaintenanceWindowAndExclusionOutcome TkeClient::DeleteClusterMaintenanceWindowAndExclusion(const DeleteClusterMaintenanceWindowAndExclusionRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteClusterMaintenanceWindowAndExclusion");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteClusterMaintenanceWindowAndExclusionResponse rsp = DeleteClusterMaintenanceWindowAndExclusionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteClusterMaintenanceWindowAndExclusionOutcome(rsp);
+        else
+            return DeleteClusterMaintenanceWindowAndExclusionOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteClusterMaintenanceWindowAndExclusionOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::DeleteClusterMaintenanceWindowAndExclusionAsync(const DeleteClusterMaintenanceWindowAndExclusionRequest& request, const DeleteClusterMaintenanceWindowAndExclusionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteClusterMaintenanceWindowAndExclusionRequest&;
+    using Resp = DeleteClusterMaintenanceWindowAndExclusionResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteClusterMaintenanceWindowAndExclusion", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TkeClient::DeleteClusterMaintenanceWindowAndExclusionOutcomeCallable TkeClient::DeleteClusterMaintenanceWindowAndExclusionCallable(const DeleteClusterMaintenanceWindowAndExclusionRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteClusterMaintenanceWindowAndExclusionOutcome>>();
+    DeleteClusterMaintenanceWindowAndExclusionAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const DeleteClusterMaintenanceWindowAndExclusionRequest&,
+        DeleteClusterMaintenanceWindowAndExclusionOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -2782,6 +3032,56 @@ TkeClient::DeleteEdgeClusterInstancesOutcomeCallable TkeClient::DeleteEdgeCluste
         const TkeClient*,
         const DeleteEdgeClusterInstancesRequest&,
         DeleteEdgeClusterInstancesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TkeClient::DeleteGlobalMaintenanceWindowAndExclusionOutcome TkeClient::DeleteGlobalMaintenanceWindowAndExclusion(const DeleteGlobalMaintenanceWindowAndExclusionRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteGlobalMaintenanceWindowAndExclusion");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteGlobalMaintenanceWindowAndExclusionResponse rsp = DeleteGlobalMaintenanceWindowAndExclusionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteGlobalMaintenanceWindowAndExclusionOutcome(rsp);
+        else
+            return DeleteGlobalMaintenanceWindowAndExclusionOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteGlobalMaintenanceWindowAndExclusionOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::DeleteGlobalMaintenanceWindowAndExclusionAsync(const DeleteGlobalMaintenanceWindowAndExclusionRequest& request, const DeleteGlobalMaintenanceWindowAndExclusionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteGlobalMaintenanceWindowAndExclusionRequest&;
+    using Resp = DeleteGlobalMaintenanceWindowAndExclusionResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteGlobalMaintenanceWindowAndExclusion", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TkeClient::DeleteGlobalMaintenanceWindowAndExclusionOutcomeCallable TkeClient::DeleteGlobalMaintenanceWindowAndExclusionCallable(const DeleteGlobalMaintenanceWindowAndExclusionRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteGlobalMaintenanceWindowAndExclusionOutcome>>();
+    DeleteGlobalMaintenanceWindowAndExclusionAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const DeleteGlobalMaintenanceWindowAndExclusionRequest&,
+        DeleteGlobalMaintenanceWindowAndExclusionOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -3382,6 +3682,56 @@ TkeClient::DeleteReservedInstancesOutcomeCallable TkeClient::DeleteReservedInsta
         const TkeClient*,
         const DeleteReservedInstancesRequest&,
         DeleteReservedInstancesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TkeClient::DeleteRollOutSequenceOutcome TkeClient::DeleteRollOutSequence(const DeleteRollOutSequenceRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteRollOutSequence");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteRollOutSequenceResponse rsp = DeleteRollOutSequenceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteRollOutSequenceOutcome(rsp);
+        else
+            return DeleteRollOutSequenceOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteRollOutSequenceOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::DeleteRollOutSequenceAsync(const DeleteRollOutSequenceRequest& request, const DeleteRollOutSequenceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteRollOutSequenceRequest&;
+    using Resp = DeleteRollOutSequenceResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteRollOutSequence", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TkeClient::DeleteRollOutSequenceOutcomeCallable TkeClient::DeleteRollOutSequenceCallable(const DeleteRollOutSequenceRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteRollOutSequenceOutcome>>();
+    DeleteRollOutSequenceAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const DeleteRollOutSequenceRequest&,
+        DeleteRollOutSequenceOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -4490,6 +4840,56 @@ TkeClient::DescribeClusterLevelChangeRecordsOutcomeCallable TkeClient::DescribeC
     return prom->get_future();
 }
 
+TkeClient::DescribeClusterMaintenanceWindowAndExclusionsOutcome TkeClient::DescribeClusterMaintenanceWindowAndExclusions(const DescribeClusterMaintenanceWindowAndExclusionsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeClusterMaintenanceWindowAndExclusions");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeClusterMaintenanceWindowAndExclusionsResponse rsp = DescribeClusterMaintenanceWindowAndExclusionsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeClusterMaintenanceWindowAndExclusionsOutcome(rsp);
+        else
+            return DescribeClusterMaintenanceWindowAndExclusionsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeClusterMaintenanceWindowAndExclusionsOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::DescribeClusterMaintenanceWindowAndExclusionsAsync(const DescribeClusterMaintenanceWindowAndExclusionsRequest& request, const DescribeClusterMaintenanceWindowAndExclusionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeClusterMaintenanceWindowAndExclusionsRequest&;
+    using Resp = DescribeClusterMaintenanceWindowAndExclusionsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeClusterMaintenanceWindowAndExclusions", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TkeClient::DescribeClusterMaintenanceWindowAndExclusionsOutcomeCallable TkeClient::DescribeClusterMaintenanceWindowAndExclusionsCallable(const DescribeClusterMaintenanceWindowAndExclusionsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeClusterMaintenanceWindowAndExclusionsOutcome>>();
+    DescribeClusterMaintenanceWindowAndExclusionsAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const DescribeClusterMaintenanceWindowAndExclusionsRequest&,
+        DescribeClusterMaintenanceWindowAndExclusionsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TkeClient::DescribeClusterNodePoolDetailOutcome TkeClient::DescribeClusterNodePoolDetail(const DescribeClusterNodePoolDetailRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeClusterNodePoolDetail");
@@ -4782,6 +5182,56 @@ TkeClient::DescribeClusterReleasesOutcomeCallable TkeClient::DescribeClusterRele
         const TkeClient*,
         const DescribeClusterReleasesRequest&,
         DescribeClusterReleasesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TkeClient::DescribeClusterRollOutSequenceTagsOutcome TkeClient::DescribeClusterRollOutSequenceTags(const DescribeClusterRollOutSequenceTagsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeClusterRollOutSequenceTags");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeClusterRollOutSequenceTagsResponse rsp = DescribeClusterRollOutSequenceTagsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeClusterRollOutSequenceTagsOutcome(rsp);
+        else
+            return DescribeClusterRollOutSequenceTagsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeClusterRollOutSequenceTagsOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::DescribeClusterRollOutSequenceTagsAsync(const DescribeClusterRollOutSequenceTagsRequest& request, const DescribeClusterRollOutSequenceTagsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeClusterRollOutSequenceTagsRequest&;
+    using Resp = DescribeClusterRollOutSequenceTagsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeClusterRollOutSequenceTags", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TkeClient::DescribeClusterRollOutSequenceTagsOutcomeCallable TkeClient::DescribeClusterRollOutSequenceTagsCallable(const DescribeClusterRollOutSequenceTagsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeClusterRollOutSequenceTagsOutcome>>();
+    DescribeClusterRollOutSequenceTagsAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const DescribeClusterRollOutSequenceTagsRequest&,
+        DescribeClusterRollOutSequenceTagsOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -5982,6 +6432,56 @@ TkeClient::DescribeExternalNodeSupportConfigOutcomeCallable TkeClient::DescribeE
         const TkeClient*,
         const DescribeExternalNodeSupportConfigRequest&,
         DescribeExternalNodeSupportConfigOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TkeClient::DescribeGlobalMaintenanceWindowAndExclusionsOutcome TkeClient::DescribeGlobalMaintenanceWindowAndExclusions(const DescribeGlobalMaintenanceWindowAndExclusionsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeGlobalMaintenanceWindowAndExclusions");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeGlobalMaintenanceWindowAndExclusionsResponse rsp = DescribeGlobalMaintenanceWindowAndExclusionsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeGlobalMaintenanceWindowAndExclusionsOutcome(rsp);
+        else
+            return DescribeGlobalMaintenanceWindowAndExclusionsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeGlobalMaintenanceWindowAndExclusionsOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::DescribeGlobalMaintenanceWindowAndExclusionsAsync(const DescribeGlobalMaintenanceWindowAndExclusionsRequest& request, const DescribeGlobalMaintenanceWindowAndExclusionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeGlobalMaintenanceWindowAndExclusionsRequest&;
+    using Resp = DescribeGlobalMaintenanceWindowAndExclusionsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeGlobalMaintenanceWindowAndExclusions", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TkeClient::DescribeGlobalMaintenanceWindowAndExclusionsOutcomeCallable TkeClient::DescribeGlobalMaintenanceWindowAndExclusionsCallable(const DescribeGlobalMaintenanceWindowAndExclusionsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeGlobalMaintenanceWindowAndExclusionsOutcome>>();
+    DescribeGlobalMaintenanceWindowAndExclusionsAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const DescribeGlobalMaintenanceWindowAndExclusionsRequest&,
+        DescribeGlobalMaintenanceWindowAndExclusionsOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -7790,6 +8290,56 @@ TkeClient::DescribeResourceUsageOutcomeCallable TkeClient::DescribeResourceUsage
     return prom->get_future();
 }
 
+TkeClient::DescribeRollOutSequencesOutcome TkeClient::DescribeRollOutSequences(const DescribeRollOutSequencesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRollOutSequences");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRollOutSequencesResponse rsp = DescribeRollOutSequencesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRollOutSequencesOutcome(rsp);
+        else
+            return DescribeRollOutSequencesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRollOutSequencesOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::DescribeRollOutSequencesAsync(const DescribeRollOutSequencesRequest& request, const DescribeRollOutSequencesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeRollOutSequencesRequest&;
+    using Resp = DescribeRollOutSequencesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeRollOutSequences", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TkeClient::DescribeRollOutSequencesOutcomeCallable TkeClient::DescribeRollOutSequencesCallable(const DescribeRollOutSequencesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeRollOutSequencesOutcome>>();
+    DescribeRollOutSequencesAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const DescribeRollOutSequencesRequest&,
+        DescribeRollOutSequencesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TkeClient::DescribeRouteTableConflictsOutcome TkeClient::DescribeRouteTableConflicts(const DescribeRouteTableConflictsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeRouteTableConflicts");
@@ -8182,6 +8732,106 @@ TkeClient::DescribeTasksOutcomeCallable TkeClient::DescribeTasksCallable(const D
         const TkeClient*,
         const DescribeTasksRequest&,
         DescribeTasksOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TkeClient::DescribeUpgradeTaskDetailOutcome TkeClient::DescribeUpgradeTaskDetail(const DescribeUpgradeTaskDetailRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeUpgradeTaskDetail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeUpgradeTaskDetailResponse rsp = DescribeUpgradeTaskDetailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeUpgradeTaskDetailOutcome(rsp);
+        else
+            return DescribeUpgradeTaskDetailOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeUpgradeTaskDetailOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::DescribeUpgradeTaskDetailAsync(const DescribeUpgradeTaskDetailRequest& request, const DescribeUpgradeTaskDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeUpgradeTaskDetailRequest&;
+    using Resp = DescribeUpgradeTaskDetailResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeUpgradeTaskDetail", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TkeClient::DescribeUpgradeTaskDetailOutcomeCallable TkeClient::DescribeUpgradeTaskDetailCallable(const DescribeUpgradeTaskDetailRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeUpgradeTaskDetailOutcome>>();
+    DescribeUpgradeTaskDetailAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const DescribeUpgradeTaskDetailRequest&,
+        DescribeUpgradeTaskDetailOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TkeClient::DescribeUpgradeTasksOutcome TkeClient::DescribeUpgradeTasks(const DescribeUpgradeTasksRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeUpgradeTasks");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeUpgradeTasksResponse rsp = DescribeUpgradeTasksResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeUpgradeTasksOutcome(rsp);
+        else
+            return DescribeUpgradeTasksOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeUpgradeTasksOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::DescribeUpgradeTasksAsync(const DescribeUpgradeTasksRequest& request, const DescribeUpgradeTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeUpgradeTasksRequest&;
+    using Resp = DescribeUpgradeTasksResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeUpgradeTasks", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TkeClient::DescribeUpgradeTasksOutcomeCallable TkeClient::DescribeUpgradeTasksCallable(const DescribeUpgradeTasksRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeUpgradeTasksOutcome>>();
+    DescribeUpgradeTasksAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const DescribeUpgradeTasksRequest&,
+        DescribeUpgradeTasksOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -9740,6 +10390,56 @@ TkeClient::ModifyClusterImageOutcomeCallable TkeClient::ModifyClusterImageCallab
     return prom->get_future();
 }
 
+TkeClient::ModifyClusterMaintenanceWindowAndExclusionsOutcome TkeClient::ModifyClusterMaintenanceWindowAndExclusions(const ModifyClusterMaintenanceWindowAndExclusionsRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyClusterMaintenanceWindowAndExclusions");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyClusterMaintenanceWindowAndExclusionsResponse rsp = ModifyClusterMaintenanceWindowAndExclusionsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyClusterMaintenanceWindowAndExclusionsOutcome(rsp);
+        else
+            return ModifyClusterMaintenanceWindowAndExclusionsOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyClusterMaintenanceWindowAndExclusionsOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::ModifyClusterMaintenanceWindowAndExclusionsAsync(const ModifyClusterMaintenanceWindowAndExclusionsRequest& request, const ModifyClusterMaintenanceWindowAndExclusionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyClusterMaintenanceWindowAndExclusionsRequest&;
+    using Resp = ModifyClusterMaintenanceWindowAndExclusionsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyClusterMaintenanceWindowAndExclusions", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TkeClient::ModifyClusterMaintenanceWindowAndExclusionsOutcomeCallable TkeClient::ModifyClusterMaintenanceWindowAndExclusionsCallable(const ModifyClusterMaintenanceWindowAndExclusionsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyClusterMaintenanceWindowAndExclusionsOutcome>>();
+    ModifyClusterMaintenanceWindowAndExclusionsAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const ModifyClusterMaintenanceWindowAndExclusionsRequest&,
+        ModifyClusterMaintenanceWindowAndExclusionsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TkeClient::ModifyClusterNodePoolOutcome TkeClient::ModifyClusterNodePool(const ModifyClusterNodePoolRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyClusterNodePool");
@@ -9782,6 +10482,56 @@ TkeClient::ModifyClusterNodePoolOutcomeCallable TkeClient::ModifyClusterNodePool
         const TkeClient*,
         const ModifyClusterNodePoolRequest&,
         ModifyClusterNodePoolOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TkeClient::ModifyClusterRollOutSequenceTagsOutcome TkeClient::ModifyClusterRollOutSequenceTags(const ModifyClusterRollOutSequenceTagsRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyClusterRollOutSequenceTags");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyClusterRollOutSequenceTagsResponse rsp = ModifyClusterRollOutSequenceTagsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyClusterRollOutSequenceTagsOutcome(rsp);
+        else
+            return ModifyClusterRollOutSequenceTagsOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyClusterRollOutSequenceTagsOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::ModifyClusterRollOutSequenceTagsAsync(const ModifyClusterRollOutSequenceTagsRequest& request, const ModifyClusterRollOutSequenceTagsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyClusterRollOutSequenceTagsRequest&;
+    using Resp = ModifyClusterRollOutSequenceTagsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyClusterRollOutSequenceTags", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TkeClient::ModifyClusterRollOutSequenceTagsOutcomeCallable TkeClient::ModifyClusterRollOutSequenceTagsCallable(const ModifyClusterRollOutSequenceTagsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyClusterRollOutSequenceTagsOutcome>>();
+    ModifyClusterRollOutSequenceTagsAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const ModifyClusterRollOutSequenceTagsRequest&,
+        ModifyClusterRollOutSequenceTagsOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -9932,6 +10682,56 @@ TkeClient::ModifyClusterVirtualNodePoolOutcomeCallable TkeClient::ModifyClusterV
         const TkeClient*,
         const ModifyClusterVirtualNodePoolRequest&,
         ModifyClusterVirtualNodePoolOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TkeClient::ModifyGlobalMaintenanceWindowAndExclusionsOutcome TkeClient::ModifyGlobalMaintenanceWindowAndExclusions(const ModifyGlobalMaintenanceWindowAndExclusionsRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyGlobalMaintenanceWindowAndExclusions");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyGlobalMaintenanceWindowAndExclusionsResponse rsp = ModifyGlobalMaintenanceWindowAndExclusionsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyGlobalMaintenanceWindowAndExclusionsOutcome(rsp);
+        else
+            return ModifyGlobalMaintenanceWindowAndExclusionsOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyGlobalMaintenanceWindowAndExclusionsOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::ModifyGlobalMaintenanceWindowAndExclusionsAsync(const ModifyGlobalMaintenanceWindowAndExclusionsRequest& request, const ModifyGlobalMaintenanceWindowAndExclusionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyGlobalMaintenanceWindowAndExclusionsRequest&;
+    using Resp = ModifyGlobalMaintenanceWindowAndExclusionsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyGlobalMaintenanceWindowAndExclusions", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TkeClient::ModifyGlobalMaintenanceWindowAndExclusionsOutcomeCallable TkeClient::ModifyGlobalMaintenanceWindowAndExclusionsCallable(const ModifyGlobalMaintenanceWindowAndExclusionsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyGlobalMaintenanceWindowAndExclusionsOutcome>>();
+    ModifyGlobalMaintenanceWindowAndExclusionsAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const ModifyGlobalMaintenanceWindowAndExclusionsRequest&,
+        ModifyGlobalMaintenanceWindowAndExclusionsOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -10590,6 +11390,56 @@ TkeClient::ModifyReservedInstanceScopeOutcomeCallable TkeClient::ModifyReservedI
     return prom->get_future();
 }
 
+TkeClient::ModifyRollOutSequenceOutcome TkeClient::ModifyRollOutSequence(const ModifyRollOutSequenceRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyRollOutSequence");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyRollOutSequenceResponse rsp = ModifyRollOutSequenceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyRollOutSequenceOutcome(rsp);
+        else
+            return ModifyRollOutSequenceOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyRollOutSequenceOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::ModifyRollOutSequenceAsync(const ModifyRollOutSequenceRequest& request, const ModifyRollOutSequenceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyRollOutSequenceRequest&;
+    using Resp = ModifyRollOutSequenceResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyRollOutSequence", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TkeClient::ModifyRollOutSequenceOutcomeCallable TkeClient::ModifyRollOutSequenceCallable(const ModifyRollOutSequenceRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyRollOutSequenceOutcome>>();
+    ModifyRollOutSequenceAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const ModifyRollOutSequenceRequest&,
+        ModifyRollOutSequenceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TkeClient::RemoveNodeFromNodePoolOutcome TkeClient::RemoveNodeFromNodePool(const RemoveNodeFromNodePoolRequest &request)
 {
     auto outcome = MakeRequest(request, "RemoveNodeFromNodePool");
@@ -10982,6 +11832,56 @@ TkeClient::SetNodePoolNodeProtectionOutcomeCallable TkeClient::SetNodePoolNodePr
         const TkeClient*,
         const SetNodePoolNodeProtectionRequest&,
         SetNodePoolNodeProtectionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TkeClient::SwitchClusterEndpointOutcome TkeClient::SwitchClusterEndpoint(const SwitchClusterEndpointRequest &request)
+{
+    auto outcome = MakeRequest(request, "SwitchClusterEndpoint");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SwitchClusterEndpointResponse rsp = SwitchClusterEndpointResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SwitchClusterEndpointOutcome(rsp);
+        else
+            return SwitchClusterEndpointOutcome(o.GetError());
+    }
+    else
+    {
+        return SwitchClusterEndpointOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::SwitchClusterEndpointAsync(const SwitchClusterEndpointRequest& request, const SwitchClusterEndpointAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const SwitchClusterEndpointRequest&;
+    using Resp = SwitchClusterEndpointResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "SwitchClusterEndpoint", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TkeClient::SwitchClusterEndpointOutcomeCallable TkeClient::SwitchClusterEndpointCallable(const SwitchClusterEndpointRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<SwitchClusterEndpointOutcome>>();
+    SwitchClusterEndpointAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const SwitchClusterEndpointRequest&,
+        SwitchClusterEndpointOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

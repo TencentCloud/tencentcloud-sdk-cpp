@@ -46,7 +46,8 @@ DescribeVsmAttributesResponse::DescribeVsmAttributesResponse() :
     m_subnetCidrBlockHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_renewFlagHasBeenSet(false),
-    m_manufacturerHasBeenSet(false)
+    m_manufacturerHasBeenSet(false),
+    m_pqcFlagHasBeenSet(false)
 {
 }
 
@@ -334,6 +335,16 @@ CoreInternalOutcome DescribeVsmAttributesResponse::Deserialize(const string &pay
         m_manufacturerHasBeenSet = true;
     }
 
+    if (rsp.HasMember("PqcFlag") && !rsp["PqcFlag"].IsNull())
+    {
+        if (!rsp["PqcFlag"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `PqcFlag` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_pqcFlag = rsp["PqcFlag"].GetInt64();
+        m_pqcFlagHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -540,6 +551,14 @@ string DescribeVsmAttributesResponse::ToJsonString() const
         string key = "Manufacturer";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_manufacturer.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_pqcFlagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PqcFlag";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_pqcFlag, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -782,6 +801,16 @@ string DescribeVsmAttributesResponse::GetManufacturer() const
 bool DescribeVsmAttributesResponse::ManufacturerHasBeenSet() const
 {
     return m_manufacturerHasBeenSet;
+}
+
+int64_t DescribeVsmAttributesResponse::GetPqcFlag() const
+{
+    return m_pqcFlag;
+}
+
+bool DescribeVsmAttributesResponse::PqcFlagHasBeenSet() const
+{
+    return m_pqcFlagHasBeenSet;
 }
 
 

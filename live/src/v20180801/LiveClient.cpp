@@ -5090,56 +5090,6 @@ LiveClient::DescribeLiveEnhanceInfoListOutcomeCallable LiveClient::DescribeLiveE
     return prom->get_future();
 }
 
-LiveClient::DescribeLiveForbidStreamListOutcome LiveClient::DescribeLiveForbidStreamList(const DescribeLiveForbidStreamListRequest &request)
-{
-    auto outcome = MakeRequest(request, "DescribeLiveForbidStreamList");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DescribeLiveForbidStreamListResponse rsp = DescribeLiveForbidStreamListResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DescribeLiveForbidStreamListOutcome(rsp);
-        else
-            return DescribeLiveForbidStreamListOutcome(o.GetError());
-    }
-    else
-    {
-        return DescribeLiveForbidStreamListOutcome(outcome.GetError());
-    }
-}
-
-void LiveClient::DescribeLiveForbidStreamListAsync(const DescribeLiveForbidStreamListRequest& request, const DescribeLiveForbidStreamListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    using Req = const DescribeLiveForbidStreamListRequest&;
-    using Resp = DescribeLiveForbidStreamListResponse;
-
-    DoRequestAsync<Req, Resp>(
-        "DescribeLiveForbidStreamList", request, {{{"Content-Type", "application/json"}}},
-        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
-        {
-            handler(this, req, std::move(resp), context);
-        });
-}
-
-LiveClient::DescribeLiveForbidStreamListOutcomeCallable LiveClient::DescribeLiveForbidStreamListCallable(const DescribeLiveForbidStreamListRequest &request)
-{
-    const auto prom = std::make_shared<std::promise<DescribeLiveForbidStreamListOutcome>>();
-    DescribeLiveForbidStreamListAsync(
-    request,
-    [prom](
-        const LiveClient*,
-        const DescribeLiveForbidStreamListRequest&,
-        DescribeLiveForbidStreamListOutcome resp,
-        const std::shared_ptr<const AsyncCallerContext>&
-    )
-    {
-        prom->set_value(resp);
-    });
-    return prom->get_future();
-}
-
 LiveClient::DescribeLivePackageInfoOutcome LiveClient::DescribeLivePackageInfo(const DescribeLivePackageInfoRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeLivePackageInfo");

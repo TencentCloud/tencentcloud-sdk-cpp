@@ -53,7 +53,7 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    uint64_t GetPartitions() const;
+                    int64_t GetPartitions() const;
 
                     /**
                      * 设置当前分区id。
@@ -62,7 +62,7 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    void SetPartitions(const uint64_t& _partitions);
+                    void SetPartitions(const int64_t& _partitions);
 
                     /**
                      * 判断参数 Partitions 是否已赋值
@@ -194,7 +194,7 @@ namespace TencentCloud
                      * 当前分区id。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    uint64_t m_partitions;
+                    int64_t m_partitions;
                     bool m_partitionsHasBeenSet;
 
                     /**

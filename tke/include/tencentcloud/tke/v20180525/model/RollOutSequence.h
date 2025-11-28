@@ -1,0 +1,166 @@
+/*
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#ifndef TENCENTCLOUD_TKE_V20180525_MODEL_ROLLOUTSEQUENCE_H_
+#define TENCENTCLOUD_TKE_V20180525_MODEL_ROLLOUTSEQUENCE_H_
+
+#include <string>
+#include <vector>
+#include <map>
+#include <tencentcloud/core/utils/rapidjson/document.h>
+#include <tencentcloud/core/utils/rapidjson/writer.h>
+#include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
+#include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/tke/v20180525/model/SequenceFlow.h>
+
+
+namespace TencentCloud
+{
+    namespace Tke
+    {
+        namespace V20180525
+        {
+            namespace Model
+            {
+                /**
+                * 发布序列
+                */
+                class RollOutSequence : public AbstractModel
+                {
+                public:
+                    RollOutSequence();
+                    ~RollOutSequence() = default;
+                    void ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const;
+                    CoreInternalOutcome Deserialize(const rapidjson::Value &value);
+
+
+                    /**
+                     * 获取发布序列名称
+                     * @return Name 发布序列名称
+                     * 
+                     */
+                    std::string GetName() const;
+
+                    /**
+                     * 设置发布序列名称
+                     * @param _name 发布序列名称
+                     * 
+                     */
+                    void SetName(const std::string& _name);
+
+                    /**
+                     * 判断参数 Name 是否已赋值
+                     * @return Name 是否已赋值
+                     * 
+                     */
+                    bool NameHasBeenSet() const;
+
+                    /**
+                     * 获取发布序列步骤
+                     * @return SequenceFlows 发布序列步骤
+                     * 
+                     */
+                    std::vector<SequenceFlow> GetSequenceFlows() const;
+
+                    /**
+                     * 设置发布序列步骤
+                     * @param _sequenceFlows 发布序列步骤
+                     * 
+                     */
+                    void SetSequenceFlows(const std::vector<SequenceFlow>& _sequenceFlows);
+
+                    /**
+                     * 判断参数 SequenceFlows 是否已赋值
+                     * @return SequenceFlows 是否已赋值
+                     * 
+                     */
+                    bool SequenceFlowsHasBeenSet() const;
+
+                    /**
+                     * 获取是否启用
+                     * @return Enabled 是否启用
+                     * 
+                     */
+                    bool GetEnabled() const;
+
+                    /**
+                     * 设置是否启用
+                     * @param _enabled 是否启用
+                     * 
+                     */
+                    void SetEnabled(const bool& _enabled);
+
+                    /**
+                     * 判断参数 Enabled 是否已赋值
+                     * @return Enabled 是否已赋值
+                     * 
+                     */
+                    bool EnabledHasBeenSet() const;
+
+                    /**
+                     * 获取发布序列ID
+                     * @return ID 发布序列ID
+                     * 
+                     */
+                    int64_t GetID() const;
+
+                    /**
+                     * 设置发布序列ID
+                     * @param _iD 发布序列ID
+                     * 
+                     */
+                    void SetID(const int64_t& _iD);
+
+                    /**
+                     * 判断参数 ID 是否已赋值
+                     * @return ID 是否已赋值
+                     * 
+                     */
+                    bool IDHasBeenSet() const;
+
+                private:
+
+                    /**
+                     * 发布序列名称
+                     */
+                    std::string m_name;
+                    bool m_nameHasBeenSet;
+
+                    /**
+                     * 发布序列步骤
+                     */
+                    std::vector<SequenceFlow> m_sequenceFlows;
+                    bool m_sequenceFlowsHasBeenSet;
+
+                    /**
+                     * 是否启用
+                     */
+                    bool m_enabled;
+                    bool m_enabledHasBeenSet;
+
+                    /**
+                     * 发布序列ID
+                     */
+                    int64_t m_iD;
+                    bool m_iDHasBeenSet;
+
+                };
+            }
+        }
+    }
+}
+
+#endif // !TENCENTCLOUD_TKE_V20180525_MODEL_ROLLOUTSEQUENCE_H_

@@ -27,6 +27,7 @@ set(scf_public_header_model
   include/tencentcloud/scf/v20180416/model/ListAliasesResponse.h
   include/tencentcloud/scf/v20180416/model/DeleteLayerVersionResponse.h
   include/tencentcloud/scf/v20180416/model/DeleteFunctionVersionRequest.h
+  include/tencentcloud/scf/v20180416/model/SessionConfig.h
   include/tencentcloud/scf/v20180416/model/GetReservedConcurrencyConfigResponse.h
   include/tencentcloud/scf/v20180416/model/ProtocolParams.h
   include/tencentcloud/scf/v20180416/model/RoutingConfig.h
@@ -89,6 +90,7 @@ set(scf_public_header_model
   include/tencentcloud/scf/v20180416/model/DeleteNamespaceRequest.h
   include/tencentcloud/scf/v20180416/model/ListFunctionsRequest.h
   include/tencentcloud/scf/v20180416/model/CreateTriggerRequest.h
+  include/tencentcloud/scf/v20180416/model/MixNodeConfig.h
   include/tencentcloud/scf/v20180416/model/UpdateNamespaceResponse.h
   include/tencentcloud/scf/v20180416/model/GetAccountResponse.h
   include/tencentcloud/scf/v20180416/model/DeleteFunctionResponse.h
@@ -195,6 +197,7 @@ set(scf_src
   src/v20180416/model/ListAliasesResponse.cpp
   src/v20180416/model/DeleteLayerVersionResponse.cpp
   src/v20180416/model/DeleteFunctionVersionRequest.cpp
+  src/v20180416/model/SessionConfig.cpp
   src/v20180416/model/GetReservedConcurrencyConfigResponse.cpp
   src/v20180416/model/ProtocolParams.cpp
   src/v20180416/model/RoutingConfig.cpp
@@ -257,6 +260,7 @@ set(scf_src
   src/v20180416/model/DeleteNamespaceRequest.cpp
   src/v20180416/model/ListFunctionsRequest.cpp
   src/v20180416/model/CreateTriggerRequest.cpp
+  src/v20180416/model/MixNodeConfig.cpp
   src/v20180416/model/UpdateNamespaceResponse.cpp
   src/v20180416/model/GetAccountResponse.cpp
   src/v20180416/model/DeleteFunctionResponse.cpp

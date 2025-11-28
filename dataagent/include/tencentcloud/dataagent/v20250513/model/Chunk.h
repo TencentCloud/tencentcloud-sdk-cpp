@@ -109,6 +109,27 @@ namespace TencentCloud
                      */
                     bool SizeHasBeenSet() const;
 
+                    /**
+                     * 获取切片概要
+                     * @return Summary 切片概要
+                     * 
+                     */
+                    std::string GetSummary() const;
+
+                    /**
+                     * 设置切片概要
+                     * @param _summary 切片概要
+                     * 
+                     */
+                    void SetSummary(const std::string& _summary);
+
+                    /**
+                     * 判断参数 Summary 是否已赋值
+                     * @return Summary 是否已赋值
+                     * 
+                     */
+                    bool SummaryHasBeenSet() const;
+
                 private:
 
                     /**
@@ -128,6 +149,12 @@ namespace TencentCloud
                      */
                     int64_t m_size;
                     bool m_sizeHasBeenSet;
+
+                    /**
+                     * 切片概要
+                     */
+                    std::string m_summary;
+                    bool m_summaryHasBeenSet;
 
                 };
             }

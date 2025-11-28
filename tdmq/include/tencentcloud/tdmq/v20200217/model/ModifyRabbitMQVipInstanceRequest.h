@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/tdmq/v20200217/model/Tag.h>
 
 
 namespace TencentCloud
@@ -126,6 +127,48 @@ namespace TencentCloud
                      */
                     bool EnableDeletionProtectionHasBeenSet() const;
 
+                    /**
+                     * 获取是否删除所有标签，默认为false
+                     * @return RemoveAllTags 是否删除所有标签，默认为false
+                     * 
+                     */
+                    bool GetRemoveAllTags() const;
+
+                    /**
+                     * 设置是否删除所有标签，默认为false
+                     * @param _removeAllTags 是否删除所有标签，默认为false
+                     * 
+                     */
+                    void SetRemoveAllTags(const bool& _removeAllTags);
+
+                    /**
+                     * 判断参数 RemoveAllTags 是否已赋值
+                     * @return RemoveAllTags 是否已赋值
+                     * 
+                     */
+                    bool RemoveAllTagsHasBeenSet() const;
+
+                    /**
+                     * 获取修改实例的标签信息，全量标签信息，非增量
+                     * @return Tags 修改实例的标签信息，全量标签信息，非增量
+                     * 
+                     */
+                    std::vector<Tag> GetTags() const;
+
+                    /**
+                     * 设置修改实例的标签信息，全量标签信息，非增量
+                     * @param _tags 修改实例的标签信息，全量标签信息，非增量
+                     * 
+                     */
+                    void SetTags(const std::vector<Tag>& _tags);
+
+                    /**
+                     * 判断参数 Tags 是否已赋值
+                     * @return Tags 是否已赋值
+                     * 
+                     */
+                    bool TagsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -151,6 +194,18 @@ namespace TencentCloud
                      */
                     bool m_enableDeletionProtection;
                     bool m_enableDeletionProtectionHasBeenSet;
+
+                    /**
+                     * 是否删除所有标签，默认为false
+                     */
+                    bool m_removeAllTags;
+                    bool m_removeAllTagsHasBeenSet;
+
+                    /**
+                     * 修改实例的标签信息，全量标签信息，非增量
+                     */
+                    std::vector<Tag> m_tags;
+                    bool m_tagsHasBeenSet;
 
                 };
             }

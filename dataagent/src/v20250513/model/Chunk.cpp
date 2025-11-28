@@ -23,7 +23,8 @@ using namespace std;
 Chunk::Chunk() :
     m_idHasBeenSet(false),
     m_contentHasBeenSet(false),
-    m_sizeHasBeenSet(false)
+    m_sizeHasBeenSet(false),
+    m_summaryHasBeenSet(false)
 {
 }
 
@@ -62,6 +63,16 @@ CoreInternalOutcome Chunk::Deserialize(const rapidjson::Value &value)
         m_sizeHasBeenSet = true;
     }
 
+    if (value.HasMember("Summary") && !value["Summary"].IsNull())
+    {
+        if (!value["Summary"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Chunk.Summary` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_summary = string(value["Summary"].GetString());
+        m_summaryHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +102,14 @@ void Chunk::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocator
         string key = "Size";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_size, allocator);
+    }
+
+    if (m_summaryHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Summary";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_summary.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -142,5 +161,21 @@ void Chunk::SetSize(const int64_t& _size)
 bool Chunk::SizeHasBeenSet() const
 {
     return m_sizeHasBeenSet;
+}
+
+string Chunk::GetSummary() const
+{
+    return m_summary;
+}
+
+void Chunk::SetSummary(const string& _summary)
+{
+    m_summary = _summary;
+    m_summaryHasBeenSet = true;
+}
+
+bool Chunk::SummaryHasBeenSet() const
+{
+    return m_summaryHasBeenSet;
 }
 

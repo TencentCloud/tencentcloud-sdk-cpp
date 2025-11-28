@@ -26,7 +26,10 @@ TradePrice::TradePrice() :
     m_totalPriceDiscountHasBeenSet(false),
     m_unitPriceHasBeenSet(false),
     m_unitPriceDiscountHasBeenSet(false),
-    m_chargeUnitHasBeenSet(false)
+    m_chargeUnitHasBeenSet(false),
+    m_unitPriceHighPrecisionHasBeenSet(false),
+    m_unitPriceDiscountHighPrecisionHasBeenSet(false),
+    m_amountUnitHasBeenSet(false)
 {
 }
 
@@ -95,6 +98,36 @@ CoreInternalOutcome TradePrice::Deserialize(const rapidjson::Value &value)
         m_chargeUnitHasBeenSet = true;
     }
 
+    if (value.HasMember("UnitPriceHighPrecision") && !value["UnitPriceHighPrecision"].IsNull())
+    {
+        if (!value["UnitPriceHighPrecision"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TradePrice.UnitPriceHighPrecision` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_unitPriceHighPrecision = string(value["UnitPriceHighPrecision"].GetString());
+        m_unitPriceHighPrecisionHasBeenSet = true;
+    }
+
+    if (value.HasMember("UnitPriceDiscountHighPrecision") && !value["UnitPriceDiscountHighPrecision"].IsNull())
+    {
+        if (!value["UnitPriceDiscountHighPrecision"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TradePrice.UnitPriceDiscountHighPrecision` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_unitPriceDiscountHighPrecision = string(value["UnitPriceDiscountHighPrecision"].GetString());
+        m_unitPriceDiscountHighPrecisionHasBeenSet = true;
+    }
+
+    if (value.HasMember("AmountUnit") && !value["AmountUnit"].IsNull())
+    {
+        if (!value["AmountUnit"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TradePrice.AmountUnit` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_amountUnit = string(value["AmountUnit"].GetString());
+        m_amountUnitHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -148,6 +181,30 @@ void TradePrice::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "ChargeUnit";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_chargeUnit.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_unitPriceHighPrecisionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UnitPriceHighPrecision";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_unitPriceHighPrecision.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_unitPriceDiscountHighPrecisionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UnitPriceDiscountHighPrecision";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_unitPriceDiscountHighPrecision.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_amountUnitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AmountUnit";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_amountUnit.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -247,5 +304,53 @@ void TradePrice::SetChargeUnit(const string& _chargeUnit)
 bool TradePrice::ChargeUnitHasBeenSet() const
 {
     return m_chargeUnitHasBeenSet;
+}
+
+string TradePrice::GetUnitPriceHighPrecision() const
+{
+    return m_unitPriceHighPrecision;
+}
+
+void TradePrice::SetUnitPriceHighPrecision(const string& _unitPriceHighPrecision)
+{
+    m_unitPriceHighPrecision = _unitPriceHighPrecision;
+    m_unitPriceHighPrecisionHasBeenSet = true;
+}
+
+bool TradePrice::UnitPriceHighPrecisionHasBeenSet() const
+{
+    return m_unitPriceHighPrecisionHasBeenSet;
+}
+
+string TradePrice::GetUnitPriceDiscountHighPrecision() const
+{
+    return m_unitPriceDiscountHighPrecision;
+}
+
+void TradePrice::SetUnitPriceDiscountHighPrecision(const string& _unitPriceDiscountHighPrecision)
+{
+    m_unitPriceDiscountHighPrecision = _unitPriceDiscountHighPrecision;
+    m_unitPriceDiscountHighPrecisionHasBeenSet = true;
+}
+
+bool TradePrice::UnitPriceDiscountHighPrecisionHasBeenSet() const
+{
+    return m_unitPriceDiscountHighPrecisionHasBeenSet;
+}
+
+string TradePrice::GetAmountUnit() const
+{
+    return m_amountUnit;
+}
+
+void TradePrice::SetAmountUnit(const string& _amountUnit)
+{
+    m_amountUnit = _amountUnit;
+    m_amountUnitHasBeenSet = true;
+}
+
+bool TradePrice::AmountUnitHasBeenSet() const
+{
+    return m_amountUnitHasBeenSet;
 }
 

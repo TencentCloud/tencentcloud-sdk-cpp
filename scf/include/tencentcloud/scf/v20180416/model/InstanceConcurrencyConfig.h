@@ -24,6 +24,8 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/scf/v20180416/model/MixNodeConfig.h>
+#include <tencentcloud/scf/v20180416/model/SessionConfig.h>
 
 
 namespace TencentCloud
@@ -96,6 +98,90 @@ namespace TencentCloud
                      */
                     bool MaxConcurrencyHasBeenSet() const;
 
+                    /**
+                     * 获取安全隔离开关
+                     * @return InstanceIsolationEnabled 安全隔离开关
+                     * 
+                     */
+                    std::string GetInstanceIsolationEnabled() const;
+
+                    /**
+                     * 设置安全隔离开关
+                     * @param _instanceIsolationEnabled 安全隔离开关
+                     * 
+                     */
+                    void SetInstanceIsolationEnabled(const std::string& _instanceIsolationEnabled);
+
+                    /**
+                     * 判断参数 InstanceIsolationEnabled 是否已赋值
+                     * @return InstanceIsolationEnabled 是否已赋值
+                     * 
+                     */
+                    bool InstanceIsolationEnabledHasBeenSet() const;
+
+                    /**
+                     * 获取基于会话：Session-Based ， 或者基于请求：Request-Based，二选一
+                     * @return Type 基于会话：Session-Based ， 或者基于请求：Request-Based，二选一
+                     * 
+                     */
+                    std::string GetType() const;
+
+                    /**
+                     * 设置基于会话：Session-Based ， 或者基于请求：Request-Based，二选一
+                     * @param _type 基于会话：Session-Based ， 或者基于请求：Request-Based，二选一
+                     * 
+                     */
+                    void SetType(const std::string& _type);
+
+                    /**
+                     * 判断参数 Type 是否已赋值
+                     * @return Type 是否已赋值
+                     * 
+                     */
+                    bool TypeHasBeenSet() const;
+
+                    /**
+                     * 获取动态并发参数
+                     * @return MixNodeConfig 动态并发参数
+                     * 
+                     */
+                    std::vector<MixNodeConfig> GetMixNodeConfig() const;
+
+                    /**
+                     * 设置动态并发参数
+                     * @param _mixNodeConfig 动态并发参数
+                     * 
+                     */
+                    void SetMixNodeConfig(const std::vector<MixNodeConfig>& _mixNodeConfig);
+
+                    /**
+                     * 判断参数 MixNodeConfig 是否已赋值
+                     * @return MixNodeConfig 是否已赋值
+                     * 
+                     */
+                    bool MixNodeConfigHasBeenSet() const;
+
+                    /**
+                     * 获取会话配置参数
+                     * @return SessionConfig 会话配置参数
+                     * 
+                     */
+                    SessionConfig GetSessionConfig() const;
+
+                    /**
+                     * 设置会话配置参数
+                     * @param _sessionConfig 会话配置参数
+                     * 
+                     */
+                    void SetSessionConfig(const SessionConfig& _sessionConfig);
+
+                    /**
+                     * 判断参数 SessionConfig 是否已赋值
+                     * @return SessionConfig 是否已赋值
+                     * 
+                     */
+                    bool SessionConfigHasBeenSet() const;
+
                 private:
 
                     /**
@@ -111,6 +197,30 @@ namespace TencentCloud
                      */
                     uint64_t m_maxConcurrency;
                     bool m_maxConcurrencyHasBeenSet;
+
+                    /**
+                     * 安全隔离开关
+                     */
+                    std::string m_instanceIsolationEnabled;
+                    bool m_instanceIsolationEnabledHasBeenSet;
+
+                    /**
+                     * 基于会话：Session-Based ， 或者基于请求：Request-Based，二选一
+                     */
+                    std::string m_type;
+                    bool m_typeHasBeenSet;
+
+                    /**
+                     * 动态并发参数
+                     */
+                    std::vector<MixNodeConfig> m_mixNodeConfig;
+                    bool m_mixNodeConfigHasBeenSet;
+
+                    /**
+                     * 会话配置参数
+                     */
+                    SessionConfig m_sessionConfig;
+                    bool m_sessionConfigHasBeenSet;
 
                 };
             }

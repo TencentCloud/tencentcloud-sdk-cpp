@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/tdmq/v20200217/model/TagFilter.h>
 
 
 namespace TencentCloud
@@ -189,6 +190,27 @@ namespace TencentCloud
                      */
                     bool FilterGroupHasBeenSet() const;
 
+                    /**
+                     * 获取标签过滤器
+                     * @return TagFilters 标签过滤器
+                     * 
+                     */
+                    std::vector<TagFilter> GetTagFilters() const;
+
+                    /**
+                     * 设置标签过滤器
+                     * @param _tagFilters 标签过滤器
+                     * 
+                     */
+                    void SetTagFilters(const std::vector<TagFilter>& _tagFilters);
+
+                    /**
+                     * 判断参数 TagFilters 是否已赋值
+                     * @return TagFilters 是否已赋值
+                     * 
+                     */
+                    bool TagFiltersHasBeenSet() const;
+
                 private:
 
                     /**
@@ -232,6 +254,12 @@ namespace TencentCloud
                      */
                     std::string m_filterGroup;
                     bool m_filterGroupHasBeenSet;
+
+                    /**
+                     * 标签过滤器
+                     */
+                    std::vector<TagFilter> m_tagFilters;
+                    bool m_tagFiltersHasBeenSet;
 
                 };
             }

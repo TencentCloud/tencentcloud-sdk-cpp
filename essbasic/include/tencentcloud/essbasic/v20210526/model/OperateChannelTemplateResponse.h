@@ -115,8 +115,8 @@ namespace TencentCloud
                     bool AuthTagHasBeenSet() const;
 
                     /**
-                     * 获取第三方平台子客企业标识列表
-                     * @return ProxyOrganizationOpenIds 第三方平台子客企业标识列表
+                     * 获取第三方平台子客企业标识列表，仅在select 模式下返回
+                     * @return ProxyOrganizationOpenIds 第三方平台子客企业标识列表，仅在select 模式下返回
                      * 
                      */
                     std::vector<std::string> GetProxyOrganizationOpenIds() const;
@@ -141,6 +141,20 @@ namespace TencentCloud
                      * 
                      */
                     bool FailMessageListHasBeenSet() const;
+
+                    /**
+                     * 获取授权的平台子企业数量，OperateType 为select 时返回。
+                     * @return Total 授权的平台子企业数量，OperateType 为select 时返回。
+                     * 
+                     */
+                    int64_t GetTotal() const;
+
+                    /**
+                     * 判断参数 Total 是否已赋值
+                     * @return Total 是否已赋值
+                     * 
+                     */
+                    bool TotalHasBeenSet() const;
 
                 private:
 
@@ -176,7 +190,7 @@ namespace TencentCloud
                     bool m_authTagHasBeenSet;
 
                     /**
-                     * 第三方平台子客企业标识列表
+                     * 第三方平台子客企业标识列表，仅在select 模式下返回
                      */
                     std::vector<std::string> m_proxyOrganizationOpenIds;
                     bool m_proxyOrganizationOpenIdsHasBeenSet;
@@ -186,6 +200,12 @@ namespace TencentCloud
                      */
                     std::vector<AuthFailMessage> m_failMessageList;
                     bool m_failMessageListHasBeenSet;
+
+                    /**
+                     * 授权的平台子企业数量，OperateType 为select 时返回。
+                     */
+                    int64_t m_total;
+                    bool m_totalHasBeenSet;
 
                 };
             }
