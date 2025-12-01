@@ -20,6 +20,7 @@
 #include <string>
 #include "Outcome.h"
 #include "Error.h"
+#include <cstdint>
 
 namespace TencentCloud
 {

@@ -25,6 +25,8 @@
 #include <tencentcloud/core/NetworkProxy.h>
 #include "HttpResponse.h"
 #include <string>
+#include <vector>
+#include <mutex>
 
 namespace TencentCloud
 {
