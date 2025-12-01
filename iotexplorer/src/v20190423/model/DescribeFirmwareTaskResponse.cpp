@@ -41,7 +41,8 @@ DescribeFirmwareTaskResponse::DescribeFirmwareTaskResponse() :
     m_fwTypeHasBeenSet(false),
     m_retryIntervalHasBeenSet(false),
     m_overrideModeHasBeenSet(false),
-    m_taskUserDefineHasBeenSet(false)
+    m_taskUserDefineHasBeenSet(false),
+    m_rateLimitHasBeenSet(false)
 {
 }
 
@@ -259,6 +260,16 @@ CoreInternalOutcome DescribeFirmwareTaskResponse::Deserialize(const string &payl
         m_taskUserDefineHasBeenSet = true;
     }
 
+    if (rsp.HasMember("RateLimit") && !rsp["RateLimit"].IsNull())
+    {
+        if (!rsp["RateLimit"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RateLimit` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_rateLimit = rsp["RateLimit"].GetInt64();
+        m_rateLimitHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -411,6 +422,14 @@ string DescribeFirmwareTaskResponse::ToJsonString() const
         string key = "TaskUserDefine";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_taskUserDefine.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_rateLimitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RateLimit";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_rateLimit, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -603,6 +622,16 @@ string DescribeFirmwareTaskResponse::GetTaskUserDefine() const
 bool DescribeFirmwareTaskResponse::TaskUserDefineHasBeenSet() const
 {
     return m_taskUserDefineHasBeenSet;
+}
+
+int64_t DescribeFirmwareTaskResponse::GetRateLimit() const
+{
+    return m_rateLimit;
+}
+
+bool DescribeFirmwareTaskResponse::RateLimitHasBeenSet() const
+{
+    return m_rateLimitHasBeenSet;
 }
 
 

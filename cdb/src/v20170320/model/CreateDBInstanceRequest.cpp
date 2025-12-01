@@ -63,7 +63,8 @@ CreateDBInstanceRequest::CreateDBInstanceRequest() :
     m_vipsHasBeenSet(false),
     m_dataProtectVolumeHasBeenSet(false),
     m_clusterTopologyHasBeenSet(false),
-    m_diskTypeHasBeenSet(false)
+    m_diskTypeHasBeenSet(false),
+    m_destroyProtectHasBeenSet(false)
 {
 }
 
@@ -436,6 +437,14 @@ string CreateDBInstanceRequest::ToJsonString() const
         string key = "DiskType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_diskType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_destroyProtectHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DestroyProtect";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_destroyProtect.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -1100,6 +1109,22 @@ void CreateDBInstanceRequest::SetDiskType(const string& _diskType)
 bool CreateDBInstanceRequest::DiskTypeHasBeenSet() const
 {
     return m_diskTypeHasBeenSet;
+}
+
+string CreateDBInstanceRequest::GetDestroyProtect() const
+{
+    return m_destroyProtect;
+}
+
+void CreateDBInstanceRequest::SetDestroyProtect(const string& _destroyProtect)
+{
+    m_destroyProtect = _destroyProtect;
+    m_destroyProtectHasBeenSet = true;
+}
+
+bool CreateDBInstanceRequest::DestroyProtectHasBeenSet() const
+{
+    return m_destroyProtectHasBeenSet;
 }
 
 

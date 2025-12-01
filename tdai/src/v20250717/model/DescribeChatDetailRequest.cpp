@@ -25,7 +25,9 @@ using namespace std;
 DescribeChatDetailRequest::DescribeChatDetailRequest() :
     m_instanceIdHasBeenSet(false),
     m_chatIdHasBeenSet(false),
-    m_lastStreamingTokenIdHasBeenSet(false)
+    m_streamingIdHasBeenSet(false),
+    m_beginStreamingTokenIdHasBeenSet(false),
+    m_tokenLimitHasBeenSet(false)
 {
 }
 
@@ -52,12 +54,28 @@ string DescribeChatDetailRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_chatId.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_lastStreamingTokenIdHasBeenSet)
+    if (m_streamingIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "LastStreamingTokenId";
+        string key = "StreamingId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_lastStreamingTokenId, allocator);
+        d.AddMember(iKey, rapidjson::Value(m_streamingId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_beginStreamingTokenIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BeginStreamingTokenId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_beginStreamingTokenId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tokenLimitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TokenLimit";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_tokenLimit, allocator);
     }
 
 
@@ -100,20 +118,52 @@ bool DescribeChatDetailRequest::ChatIdHasBeenSet() const
     return m_chatIdHasBeenSet;
 }
 
-int64_t DescribeChatDetailRequest::GetLastStreamingTokenId() const
+string DescribeChatDetailRequest::GetStreamingId() const
 {
-    return m_lastStreamingTokenId;
+    return m_streamingId;
 }
 
-void DescribeChatDetailRequest::SetLastStreamingTokenId(const int64_t& _lastStreamingTokenId)
+void DescribeChatDetailRequest::SetStreamingId(const string& _streamingId)
 {
-    m_lastStreamingTokenId = _lastStreamingTokenId;
-    m_lastStreamingTokenIdHasBeenSet = true;
+    m_streamingId = _streamingId;
+    m_streamingIdHasBeenSet = true;
 }
 
-bool DescribeChatDetailRequest::LastStreamingTokenIdHasBeenSet() const
+bool DescribeChatDetailRequest::StreamingIdHasBeenSet() const
 {
-    return m_lastStreamingTokenIdHasBeenSet;
+    return m_streamingIdHasBeenSet;
+}
+
+string DescribeChatDetailRequest::GetBeginStreamingTokenId() const
+{
+    return m_beginStreamingTokenId;
+}
+
+void DescribeChatDetailRequest::SetBeginStreamingTokenId(const string& _beginStreamingTokenId)
+{
+    m_beginStreamingTokenId = _beginStreamingTokenId;
+    m_beginStreamingTokenIdHasBeenSet = true;
+}
+
+bool DescribeChatDetailRequest::BeginStreamingTokenIdHasBeenSet() const
+{
+    return m_beginStreamingTokenIdHasBeenSet;
+}
+
+int64_t DescribeChatDetailRequest::GetTokenLimit() const
+{
+    return m_tokenLimit;
+}
+
+void DescribeChatDetailRequest::SetTokenLimit(const int64_t& _tokenLimit)
+{
+    m_tokenLimit = _tokenLimit;
+    m_tokenLimitHasBeenSet = true;
+}
+
+bool DescribeChatDetailRequest::TokenLimitHasBeenSet() const
+{
+    return m_tokenLimitHasBeenSet;
 }
 
 

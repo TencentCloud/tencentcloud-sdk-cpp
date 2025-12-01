@@ -117,10 +117,12 @@ namespace TencentCloud
                      * 获取图片框选区域类型，可选值：
 <li>logo：图标；</li>
 <li>text：文字；</li>
+<li>watermark：水印；</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DetectTypes 图片框选区域类型，可选值：
 <li>logo：图标；</li>
 <li>text：文字；</li>
+<li>watermark：水印；</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -130,10 +132,12 @@ namespace TencentCloud
                      * 设置图片框选区域类型，可选值：
 <li>logo：图标；</li>
 <li>text：文字；</li>
+<li>watermark：水印；</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      * @param _detectTypes 图片框选区域类型，可选值：
 <li>logo：图标；</li>
 <li>text：文字；</li>
+<li>watermark：水印；</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -170,6 +174,7 @@ namespace TencentCloud
                      * 图片框选区域类型，可选值：
 <li>logo：图标；</li>
 <li>text：文字；</li>
+<li>watermark：水印；</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_detectTypes;

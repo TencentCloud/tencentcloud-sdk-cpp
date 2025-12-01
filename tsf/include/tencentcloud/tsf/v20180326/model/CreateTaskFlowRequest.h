@@ -108,15 +108,15 @@ namespace TencentCloud
                     bool FlowEdgesHasBeenSet() const;
 
                     /**
-                     * 获取工作流执行超时时间
-                     * @return TimeOut 工作流执行超时时间
+                     * 获取工作流执行超时时间，单位：毫秒
+                     * @return TimeOut 工作流执行超时时间，单位：毫秒
                      * 
                      */
                     uint64_t GetTimeOut() const;
 
                     /**
-                     * 设置工作流执行超时时间
-                     * @param _timeOut 工作流执行超时时间
+                     * 设置工作流执行超时时间，单位：毫秒
+                     * @param _timeOut 工作流执行超时时间，单位：毫秒
                      * 
                      */
                     void SetTimeOut(const uint64_t& _timeOut);
@@ -129,15 +129,15 @@ namespace TencentCloud
                     bool TimeOutHasBeenSet() const;
 
                     /**
-                     * 获取无
-                     * @return ProgramIdList 无
+                     * 获取数据集列表
+                     * @return ProgramIdList 数据集列表
                      * 
                      */
                     std::vector<std::string> GetProgramIdList() const;
 
                     /**
-                     * 设置无
-                     * @param _programIdList 无
+                     * 设置数据集列表
+                     * @param _programIdList 数据集列表
                      * 
                      */
                     void SetProgramIdList(const std::vector<std::string>& _programIdList);
@@ -170,13 +170,13 @@ namespace TencentCloud
                     bool m_flowEdgesHasBeenSet;
 
                     /**
-                     * 工作流执行超时时间
+                     * 工作流执行超时时间，单位：毫秒
                      */
                     uint64_t m_timeOut;
                     bool m_timeOutHasBeenSet;
 
                     /**
-                     * 无
+                     * 数据集列表
                      */
                     std::vector<std::string> m_programIdList;
                     bool m_programIdListHasBeenSet;

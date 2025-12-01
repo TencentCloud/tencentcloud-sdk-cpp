@@ -63,7 +63,8 @@ CreateDBInstanceHourRequest::CreateDBInstanceHourRequest() :
     m_dataProtectVolumeHasBeenSet(false),
     m_clusterTopologyHasBeenSet(false),
     m_diskTypeHasBeenSet(false),
-    m_clusterTypeHasBeenSet(false)
+    m_clusterTypeHasBeenSet(false),
+    m_destroyProtectHasBeenSet(false)
 {
 }
 
@@ -436,6 +437,14 @@ string CreateDBInstanceHourRequest::ToJsonString() const
         string key = "ClusterType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_clusterType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_destroyProtectHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DestroyProtect";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_destroyProtect.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -1100,6 +1109,22 @@ void CreateDBInstanceHourRequest::SetClusterType(const string& _clusterType)
 bool CreateDBInstanceHourRequest::ClusterTypeHasBeenSet() const
 {
     return m_clusterTypeHasBeenSet;
+}
+
+string CreateDBInstanceHourRequest::GetDestroyProtect() const
+{
+    return m_destroyProtect;
+}
+
+void CreateDBInstanceHourRequest::SetDestroyProtect(const string& _destroyProtect)
+{
+    m_destroyProtect = _destroyProtect;
+    m_destroyProtectHasBeenSet = true;
+}
+
+bool CreateDBInstanceHourRequest::DestroyProtectHasBeenSet() const
+{
+    return m_destroyProtectHasBeenSet;
 }
 
 

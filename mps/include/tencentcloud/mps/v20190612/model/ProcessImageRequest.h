@@ -159,14 +159,18 @@ namespace TencentCloud
 
                     /**
                      * 获取图片处理模板唯一标识。
+图片模板功能内测中，如需使用请提交工单申请。
                      * @return Definition 图片处理模板唯一标识。
+图片模板功能内测中，如需使用请提交工单申请。
                      * 
                      */
                     uint64_t GetDefinition() const;
 
                     /**
                      * 设置图片处理模板唯一标识。
+图片模板功能内测中，如需使用请提交工单申请。
                      * @param _definition 图片处理模板唯一标识。
+图片模板功能内测中，如需使用请提交工单申请。
                      * 
                      */
                     void SetDefinition(const uint64_t& _definition);
@@ -179,15 +183,15 @@ namespace TencentCloud
                     bool DefinitionHasBeenSet() const;
 
                     /**
-                     * 获取资源ID，需要保证对应资源是开启状态。默认为帐号主资源ID。
-                     * @return ResourceId 资源ID，需要保证对应资源是开启状态。默认为帐号主资源ID。
+                     * 获取资源ID，需要保证对应资源是开启状态。默认为账号主资源ID。
+                     * @return ResourceId 资源ID，需要保证对应资源是开启状态。默认为账号主资源ID。
                      * 
                      */
                     std::string GetResourceId() const;
 
                     /**
-                     * 设置资源ID，需要保证对应资源是开启状态。默认为帐号主资源ID。
-                     * @param _resourceId 资源ID，需要保证对应资源是开启状态。默认为帐号主资源ID。
+                     * 设置资源ID，需要保证对应资源是开启状态。默认为账号主资源ID。
+                     * @param _resourceId 资源ID，需要保证对应资源是开启状态。默认为账号主资源ID。
                      * 
                      */
                     void SetResourceId(const std::string& _resourceId);
@@ -255,12 +259,13 @@ namespace TencentCloud
 
                     /**
                      * 图片处理模板唯一标识。
+图片模板功能内测中，如需使用请提交工单申请。
                      */
                     uint64_t m_definition;
                     bool m_definitionHasBeenSet;
 
                     /**
-                     * 资源ID，需要保证对应资源是开启状态。默认为帐号主资源ID。
+                     * 资源ID，需要保证对应资源是开启状态。默认为账号主资源ID。
                      */
                     std::string m_resourceId;
                     bool m_resourceIdHasBeenSet;
