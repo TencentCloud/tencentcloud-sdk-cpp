@@ -24,7 +24,8 @@ ConfigSubmitContext::ConfigSubmitContext() :
     m_fileNameHasBeenSet(false),
     m_oldConfValueHasBeenSet(false),
     m_newConfValueHasBeenSet(false),
-    m_filePathHasBeenSet(false)
+    m_filePathHasBeenSet(false),
+    m_ipHasBeenSet(false)
 {
 }
 
@@ -73,6 +74,16 @@ CoreInternalOutcome ConfigSubmitContext::Deserialize(const rapidjson::Value &val
         m_filePathHasBeenSet = true;
     }
 
+    if (value.HasMember("Ip") && !value["Ip"].IsNull())
+    {
+        if (!value["Ip"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ConfigSubmitContext.Ip` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_ip = string(value["Ip"].GetString());
+        m_ipHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +121,14 @@ void ConfigSubmitContext::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         string key = "FilePath";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_filePath.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ipHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Ip";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ip.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -177,5 +196,21 @@ void ConfigSubmitContext::SetFilePath(const string& _filePath)
 bool ConfigSubmitContext::FilePathHasBeenSet() const
 {
     return m_filePathHasBeenSet;
+}
+
+string ConfigSubmitContext::GetIp() const
+{
+    return m_ip;
+}
+
+void ConfigSubmitContext::SetIp(const string& _ip)
+{
+    m_ip = _ip;
+    m_ipHasBeenSet = true;
+}
+
+bool ConfigSubmitContext::IpHasBeenSet() const
+{
+    return m_ipHasBeenSet;
 }
 

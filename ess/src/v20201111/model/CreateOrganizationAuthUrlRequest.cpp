@@ -48,7 +48,9 @@ CreateOrganizationAuthUrlRequest::CreateOrganizationAuthUrlRequest() :
     m_bankAccountNumberHasBeenSet(false),
     m_bankAccountNumberSameHasBeenSet(false),
     m_jumpEventsHasBeenSet(false),
-    m_organizationIdCardTypeHasBeenSet(false)
+    m_organizationIdCardTypeHasBeenSet(false),
+    m_organizationIdCardTypeSameHasBeenSet(false),
+    m_authorizationMethodHasBeenSet(false)
 {
 }
 
@@ -288,6 +290,27 @@ string CreateOrganizationAuthUrlRequest::ToJsonString() const
         string key = "OrganizationIdCardType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_organizationIdCardType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_organizationIdCardTypeSameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OrganizationIdCardTypeSame";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_organizationIdCardTypeSame, allocator);
+    }
+
+    if (m_authorizationMethodHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AuthorizationMethod";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_authorizationMethod.begin(); itr != m_authorizationMethod.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetUint64(*itr), allocator);
+        }
     }
 
 
@@ -712,6 +735,38 @@ void CreateOrganizationAuthUrlRequest::SetOrganizationIdCardType(const string& _
 bool CreateOrganizationAuthUrlRequest::OrganizationIdCardTypeHasBeenSet() const
 {
     return m_organizationIdCardTypeHasBeenSet;
+}
+
+bool CreateOrganizationAuthUrlRequest::GetOrganizationIdCardTypeSame() const
+{
+    return m_organizationIdCardTypeSame;
+}
+
+void CreateOrganizationAuthUrlRequest::SetOrganizationIdCardTypeSame(const bool& _organizationIdCardTypeSame)
+{
+    m_organizationIdCardTypeSame = _organizationIdCardTypeSame;
+    m_organizationIdCardTypeSameHasBeenSet = true;
+}
+
+bool CreateOrganizationAuthUrlRequest::OrganizationIdCardTypeSameHasBeenSet() const
+{
+    return m_organizationIdCardTypeSameHasBeenSet;
+}
+
+vector<uint64_t> CreateOrganizationAuthUrlRequest::GetAuthorizationMethod() const
+{
+    return m_authorizationMethod;
+}
+
+void CreateOrganizationAuthUrlRequest::SetAuthorizationMethod(const vector<uint64_t>& _authorizationMethod)
+{
+    m_authorizationMethod = _authorizationMethod;
+    m_authorizationMethodHasBeenSet = true;
+}
+
+bool CreateOrganizationAuthUrlRequest::AuthorizationMethodHasBeenSet() const
+{
+    return m_authorizationMethodHasBeenSet;
 }
 
 

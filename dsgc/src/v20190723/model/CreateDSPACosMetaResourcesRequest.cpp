@@ -24,9 +24,9 @@ using namespace std;
 
 CreateDSPACosMetaResourcesRequest::CreateDSPACosMetaResourcesRequest() :
     m_dspaIdHasBeenSet(false),
+    m_cosBucketItemsHasBeenSet(false),
     m_resourceRegionHasBeenSet(false),
-    m_bucketsHasBeenSet(false),
-    m_cosBucketItemsHasBeenSet(false)
+    m_bucketsHasBeenSet(false)
 {
 }
 
@@ -43,6 +43,21 @@ string CreateDSPACosMetaResourcesRequest::ToJsonString() const
         string key = "DspaId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_dspaId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_cosBucketItemsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CosBucketItems";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_cosBucketItems.begin(); itr != m_cosBucketItems.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
     if (m_resourceRegionHasBeenSet)
@@ -63,21 +78,6 @@ string CreateDSPACosMetaResourcesRequest::ToJsonString() const
         for (auto itr = m_buckets.begin(); itr != m_buckets.end(); ++itr)
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
-        }
-    }
-
-    if (m_cosBucketItemsHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "CosBucketItems";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
-
-        int i=0;
-        for (auto itr = m_cosBucketItems.begin(); itr != m_cosBucketItems.end(); ++itr, ++i)
-        {
-            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
     }
 
@@ -103,6 +103,22 @@ void CreateDSPACosMetaResourcesRequest::SetDspaId(const string& _dspaId)
 bool CreateDSPACosMetaResourcesRequest::DspaIdHasBeenSet() const
 {
     return m_dspaIdHasBeenSet;
+}
+
+vector<CosBucketItem> CreateDSPACosMetaResourcesRequest::GetCosBucketItems() const
+{
+    return m_cosBucketItems;
+}
+
+void CreateDSPACosMetaResourcesRequest::SetCosBucketItems(const vector<CosBucketItem>& _cosBucketItems)
+{
+    m_cosBucketItems = _cosBucketItems;
+    m_cosBucketItemsHasBeenSet = true;
+}
+
+bool CreateDSPACosMetaResourcesRequest::CosBucketItemsHasBeenSet() const
+{
+    return m_cosBucketItemsHasBeenSet;
 }
 
 string CreateDSPACosMetaResourcesRequest::GetResourceRegion() const
@@ -135,22 +151,6 @@ void CreateDSPACosMetaResourcesRequest::SetBuckets(const vector<string>& _bucket
 bool CreateDSPACosMetaResourcesRequest::BucketsHasBeenSet() const
 {
     return m_bucketsHasBeenSet;
-}
-
-vector<CosBucketItem> CreateDSPACosMetaResourcesRequest::GetCosBucketItems() const
-{
-    return m_cosBucketItems;
-}
-
-void CreateDSPACosMetaResourcesRequest::SetCosBucketItems(const vector<CosBucketItem>& _cosBucketItems)
-{
-    m_cosBucketItems = _cosBucketItems;
-    m_cosBucketItemsHasBeenSet = true;
-}
-
-bool CreateDSPACosMetaResourcesRequest::CosBucketItemsHasBeenSet() const
-{
-    return m_cosBucketItemsHasBeenSet;
 }
 
 

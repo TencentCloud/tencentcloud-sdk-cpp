@@ -24,7 +24,8 @@ using namespace std;
 
 ModifyAndroidInstancesUserIdRequest::ModifyAndroidInstancesUserIdRequest() :
     m_androidInstanceIdsHasBeenSet(false),
-    m_userIdHasBeenSet(false)
+    m_userIdHasBeenSet(false),
+    m_expirationDurationHasBeenSet(false)
 {
 }
 
@@ -54,6 +55,14 @@ string ModifyAndroidInstancesUserIdRequest::ToJsonString() const
         string key = "UserId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_userId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_expirationDurationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExpirationDuration";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_expirationDuration.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -94,6 +103,22 @@ void ModifyAndroidInstancesUserIdRequest::SetUserId(const string& _userId)
 bool ModifyAndroidInstancesUserIdRequest::UserIdHasBeenSet() const
 {
     return m_userIdHasBeenSet;
+}
+
+string ModifyAndroidInstancesUserIdRequest::GetExpirationDuration() const
+{
+    return m_expirationDuration;
+}
+
+void ModifyAndroidInstancesUserIdRequest::SetExpirationDuration(const string& _expirationDuration)
+{
+    m_expirationDuration = _expirationDuration;
+    m_expirationDurationHasBeenSet = true;
+}
+
+bool ModifyAndroidInstancesUserIdRequest::ExpirationDurationHasBeenSet() const
+{
+    return m_expirationDurationHasBeenSet;
 }
 
 

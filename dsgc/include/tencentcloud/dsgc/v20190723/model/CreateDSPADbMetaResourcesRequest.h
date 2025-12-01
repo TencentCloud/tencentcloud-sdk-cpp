@@ -21,8 +21,8 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/dsgc/v20190723/model/DspaCloudResourceMeta.h>
 #include <tencentcloud/dsgc/v20190723/model/CloudResourceItem.h>
+#include <tencentcloud/dsgc/v20190723/model/DspaCloudResourceMeta.h>
 
 
 namespace TencentCloud
@@ -85,6 +85,27 @@ namespace TencentCloud
                      * 
                      */
                     bool MetaTypeHasBeenSet() const;
+
+                    /**
+                     * 获取必填，云数据库资源列表。
+                     * @return CloudResourceItems 必填，云数据库资源列表。
+                     * 
+                     */
+                    std::vector<CloudResourceItem> GetCloudResourceItems() const;
+
+                    /**
+                     * 设置必填，云数据库资源列表。
+                     * @param _cloudResourceItems 必填，云数据库资源列表。
+                     * 
+                     */
+                    void SetCloudResourceItems(const std::vector<CloudResourceItem>& _cloudResourceItems);
+
+                    /**
+                     * 判断参数 CloudResourceItems 是否已赋值
+                     * @return CloudResourceItems 是否已赋值
+                     * 
+                     */
+                    bool CloudResourceItemsHasBeenSet() const;
 
                     /**
                      * 获取资源所处地域。
@@ -170,27 +191,6 @@ namespace TencentCloud
                      */
                     bool ItemsHasBeenSet() const;
 
-                    /**
-                     * 获取必填，云数据库资源列表。
-                     * @return CloudResourceItems 必填，云数据库资源列表。
-                     * 
-                     */
-                    std::vector<CloudResourceItem> GetCloudResourceItems() const;
-
-                    /**
-                     * 设置必填，云数据库资源列表。
-                     * @param _cloudResourceItems 必填，云数据库资源列表。
-                     * 
-                     */
-                    void SetCloudResourceItems(const std::vector<CloudResourceItem>& _cloudResourceItems);
-
-                    /**
-                     * 判断参数 CloudResourceItems 是否已赋值
-                     * @return CloudResourceItems 是否已赋值
-                     * 
-                     */
-                    bool CloudResourceItemsHasBeenSet() const;
-
                 private:
 
                     /**
@@ -204,6 +204,12 @@ namespace TencentCloud
                      */
                     std::string m_metaType;
                     bool m_metaTypeHasBeenSet;
+
+                    /**
+                     * 必填，云数据库资源列表。
+                     */
+                    std::vector<CloudResourceItem> m_cloudResourceItems;
+                    bool m_cloudResourceItemsHasBeenSet;
 
                     /**
                      * 资源所处地域。
@@ -228,12 +234,6 @@ namespace TencentCloud
                      */
                     std::vector<DspaCloudResourceMeta> m_items;
                     bool m_itemsHasBeenSet;
-
-                    /**
-                     * 必填，云数据库资源列表。
-                     */
-                    std::vector<CloudResourceItem> m_cloudResourceItems;
-                    bool m_cloudResourceItemsHasBeenSet;
 
                 };
             }

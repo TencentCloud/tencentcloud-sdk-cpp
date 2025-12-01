@@ -853,7 +853,7 @@ namespace TencentCloud
                 CreateAsrHotwordsOutcomeCallable CreateAsrHotwordsCallable(const Model::CreateAsrHotwordsRequest& request);
 
                 /**
-                 *创建用户自定义数字水印模板，数量上限：1000。
+                 *创建用户自定义数字水印模板。
                  * @param req CreateBlindWatermarkTemplateRequest
                  * @return CreateBlindWatermarkTemplateOutcome
                  */

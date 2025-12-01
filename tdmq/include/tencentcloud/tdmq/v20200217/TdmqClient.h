@@ -63,6 +63,8 @@
 #include <tencentcloud/tdmq/v20200217/model/CreateRocketMQRoleResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/CreateRocketMQTopicRequest.h>
 #include <tencentcloud/tdmq/v20200217/model/CreateRocketMQTopicResponse.h>
+#include <tencentcloud/tdmq/v20200217/model/CreateRocketMQTopicV2Request.h>
+#include <tencentcloud/tdmq/v20200217/model/CreateRocketMQTopicV2Response.h>
 #include <tencentcloud/tdmq/v20200217/model/CreateRocketMQVipInstanceRequest.h>
 #include <tencentcloud/tdmq/v20200217/model/CreateRocketMQVipInstanceResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/CreateRoleRequest.h>
@@ -393,6 +395,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateRocketMQTopicResponse> CreateRocketMQTopicOutcome;
                 typedef std::future<CreateRocketMQTopicOutcome> CreateRocketMQTopicOutcomeCallable;
                 typedef std::function<void(const TdmqClient*, const Model::CreateRocketMQTopicRequest&, CreateRocketMQTopicOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateRocketMQTopicAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateRocketMQTopicV2Response> CreateRocketMQTopicV2Outcome;
+                typedef std::future<CreateRocketMQTopicV2Outcome> CreateRocketMQTopicV2OutcomeCallable;
+                typedef std::function<void(const TdmqClient*, const Model::CreateRocketMQTopicV2Request&, CreateRocketMQTopicV2Outcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateRocketMQTopicV2AsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateRocketMQVipInstanceResponse> CreateRocketMQVipInstanceOutcome;
                 typedef std::future<CreateRocketMQVipInstanceOutcome> CreateRocketMQVipInstanceOutcomeCallable;
                 typedef std::function<void(const TdmqClient*, const Model::CreateRocketMQVipInstanceRequest&, CreateRocketMQVipInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateRocketMQVipInstanceAsyncHandler;
@@ -959,6 +964,15 @@ namespace TencentCloud
                 CreateRocketMQTopicOutcome CreateRocketMQTopic(const Model::CreateRocketMQTopicRequest &request);
                 void CreateRocketMQTopicAsync(const Model::CreateRocketMQTopicRequest& request, const CreateRocketMQTopicAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateRocketMQTopicOutcomeCallable CreateRocketMQTopicCallable(const Model::CreateRocketMQTopicRequest& request);
+
+                /**
+                 *创建RocketMQ主题
+                 * @param req CreateRocketMQTopicV2Request
+                 * @return CreateRocketMQTopicV2Outcome
+                 */
+                CreateRocketMQTopicV2Outcome CreateRocketMQTopicV2(const Model::CreateRocketMQTopicV2Request &request);
+                void CreateRocketMQTopicV2Async(const Model::CreateRocketMQTopicV2Request& request, const CreateRocketMQTopicV2AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateRocketMQTopicV2OutcomeCallable CreateRocketMQTopicV2Callable(const Model::CreateRocketMQTopicV2Request& request);
 
                 /**
                  *创建RocketMQ专享实例

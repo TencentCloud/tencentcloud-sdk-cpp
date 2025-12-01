@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/ess/v20201111/model/RegisterInfoOption.h>
 
 
 namespace TencentCloud
@@ -35,7 +36,8 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 发起流程快速注册相关信息
+                * 创建合同，若对方签署人的企业信息还未在腾讯电子签注册。则在进行引导企业注册时控制企业填写的信息。
+具体可查看[视频](https://qian.tencent.com/developers/video/?menu=scene&id=6)
                 */
                 class RegisterInfo : public AbstractModel
                 {
@@ -147,7 +149,7 @@ namespace TencentCloud
 <li><strong>2</strong>: 法人授权方式</li>
 <li><strong>5</strong>: 授权书+对公打款方式</li>
 </ul>
-                     * @deprecated
+                     * 
                      */
                     std::vector<uint64_t> GetAuthorizationTypes() const;
 
@@ -164,14 +166,14 @@ namespace TencentCloud
 <li><strong>2</strong>: 法人授权方式</li>
 <li><strong>5</strong>: 授权书+对公打款方式</li>
 </ul>
-                     * @deprecated
+                     * 
                      */
                     void SetAuthorizationTypes(const std::vector<uint64_t>& _authorizationTypes);
 
                     /**
                      * 判断参数 AuthorizationTypes 是否已赋值
                      * @return AuthorizationTypes 是否已赋值
-                     * @deprecated
+                     * 
                      */
                     bool AuthorizationTypesHasBeenSet() const;
 
@@ -188,7 +190,7 @@ namespace TencentCloud
 <li><strong>2</strong>: 法人授权方式</li>
 <li><strong>5</strong>: 授权书+对公打款方式</li>
 </ul>
-                     * 
+                     * @deprecated
                      */
                     int64_t GetAuthorizationType() const;
 
@@ -205,16 +207,131 @@ namespace TencentCloud
 <li><strong>2</strong>: 法人授权方式</li>
 <li><strong>5</strong>: 授权书+对公打款方式</li>
 </ul>
-                     * 
+                     * @deprecated
                      */
                     void SetAuthorizationType(const int64_t& _authorizationType);
 
                     /**
                      * 判断参数 AuthorizationType 是否已赋值
                      * @return AuthorizationType 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool AuthorizationTypeHasBeenSet() const;
+
+                    /**
+                     * 获取指定企业认证的授权方式 支持多选:
+
+<ul>
+<li><strong>1</strong>: 上传营业执照</li>
+<li><strong>2</strong>: 腾讯云快速认证</li>
+<li><strong>3</strong>: 腾讯商户号授权<font color="red">（仅支持小程序端）</font></li>
+</ul>
+                     * @return AuthorizationMethods 指定企业认证的授权方式 支持多选:
+
+<ul>
+<li><strong>1</strong>: 上传营业执照</li>
+<li><strong>2</strong>: 腾讯云快速认证</li>
+<li><strong>3</strong>: 腾讯商户号授权<font color="red">（仅支持小程序端）</font></li>
+</ul>
+                     * 
+                     */
+                    std::vector<uint64_t> GetAuthorizationMethods() const;
+
+                    /**
+                     * 设置指定企业认证的授权方式 支持多选:
+
+<ul>
+<li><strong>1</strong>: 上传营业执照</li>
+<li><strong>2</strong>: 腾讯云快速认证</li>
+<li><strong>3</strong>: 腾讯商户号授权<font color="red">（仅支持小程序端）</font></li>
+</ul>
+                     * @param _authorizationMethods 指定企业认证的授权方式 支持多选:
+
+<ul>
+<li><strong>1</strong>: 上传营业执照</li>
+<li><strong>2</strong>: 腾讯云快速认证</li>
+<li><strong>3</strong>: 腾讯商户号授权<font color="red">（仅支持小程序端）</font></li>
+</ul>
+                     * 
+                     */
+                    void SetAuthorizationMethods(const std::vector<uint64_t>& _authorizationMethods);
+
+                    /**
+                     * 判断参数 AuthorizationMethods 是否已赋值
+                     * @return AuthorizationMethods 是否已赋值
+                     * 
+                     */
+                    bool AuthorizationMethodsHasBeenSet() const;
+
+                    /**
+                     * 获取企业证照类型：
+
+USCC :(默认)工商组织营业执照
+PRACTICELICENSEOFMEDICALINSTITUTION :医疗机构执业许可证
+                     * @return OrganizationIdCardType 企业证照类型：
+
+USCC :(默认)工商组织营业执照
+PRACTICELICENSEOFMEDICALINSTITUTION :医疗机构执业许可证
+                     * 
+                     */
+                    std::string GetOrganizationIdCardType() const;
+
+                    /**
+                     * 设置企业证照类型：
+
+USCC :(默认)工商组织营业执照
+PRACTICELICENSEOFMEDICALINSTITUTION :医疗机构执业许可证
+                     * @param _organizationIdCardType 企业证照类型：
+
+USCC :(默认)工商组织营业执照
+PRACTICELICENSEOFMEDICALINSTITUTION :医疗机构执业许可证
+                     * 
+                     */
+                    void SetOrganizationIdCardType(const std::string& _organizationIdCardType);
+
+                    /**
+                     * 判断参数 OrganizationIdCardType 是否已赋值
+                     * @return OrganizationIdCardType 是否已赋值
+                     * 
+                     */
+                    bool OrganizationIdCardTypeHasBeenSet() const;
+
+                    /**
+                     * 获取企业创建时候的个性化参数。
+其中，包括一下内容：
+LegalNameSame  是否可以编辑法人。
+UnifiedSocialCreditCodeSame  是否可以编辑证件号码。
+OrganizationIdCardTypeSame  是否可以更改证照类型。
+                     * @return RegisterInfoOption 企业创建时候的个性化参数。
+其中，包括一下内容：
+LegalNameSame  是否可以编辑法人。
+UnifiedSocialCreditCodeSame  是否可以编辑证件号码。
+OrganizationIdCardTypeSame  是否可以更改证照类型。
+                     * 
+                     */
+                    RegisterInfoOption GetRegisterInfoOption() const;
+
+                    /**
+                     * 设置企业创建时候的个性化参数。
+其中，包括一下内容：
+LegalNameSame  是否可以编辑法人。
+UnifiedSocialCreditCodeSame  是否可以编辑证件号码。
+OrganizationIdCardTypeSame  是否可以更改证照类型。
+                     * @param _registerInfoOption 企业创建时候的个性化参数。
+其中，包括一下内容：
+LegalNameSame  是否可以编辑法人。
+UnifiedSocialCreditCodeSame  是否可以编辑证件号码。
+OrganizationIdCardTypeSame  是否可以更改证照类型。
+                     * 
+                     */
+                    void SetRegisterInfoOption(const RegisterInfoOption& _registerInfoOption);
+
+                    /**
+                     * 判断参数 RegisterInfoOption 是否已赋值
+                     * @return RegisterInfoOption 是否已赋值
+                     * 
+                     */
+                    bool RegisterInfoOptionHasBeenSet() const;
 
                 private:
 
@@ -264,6 +381,37 @@ namespace TencentCloud
                      */
                     int64_t m_authorizationType;
                     bool m_authorizationTypeHasBeenSet;
+
+                    /**
+                     * 指定企业认证的授权方式 支持多选:
+
+<ul>
+<li><strong>1</strong>: 上传营业执照</li>
+<li><strong>2</strong>: 腾讯云快速认证</li>
+<li><strong>3</strong>: 腾讯商户号授权<font color="red">（仅支持小程序端）</font></li>
+</ul>
+                     */
+                    std::vector<uint64_t> m_authorizationMethods;
+                    bool m_authorizationMethodsHasBeenSet;
+
+                    /**
+                     * 企业证照类型：
+
+USCC :(默认)工商组织营业执照
+PRACTICELICENSEOFMEDICALINSTITUTION :医疗机构执业许可证
+                     */
+                    std::string m_organizationIdCardType;
+                    bool m_organizationIdCardTypeHasBeenSet;
+
+                    /**
+                     * 企业创建时候的个性化参数。
+其中，包括一下内容：
+LegalNameSame  是否可以编辑法人。
+UnifiedSocialCreditCodeSame  是否可以编辑证件号码。
+OrganizationIdCardTypeSame  是否可以更改证照类型。
+                     */
+                    RegisterInfoOption m_registerInfoOption;
+                    bool m_registerInfoOptionHasBeenSet;
 
                 };
             }

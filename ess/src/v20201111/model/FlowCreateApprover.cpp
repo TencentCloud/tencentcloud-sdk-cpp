@@ -49,7 +49,8 @@ FlowCreateApprover::FlowCreateApprover() :
     m_signTypeSelectorHasBeenSet(false),
     m_deadlineHasBeenSet(false),
     m_intentionHasBeenSet(false),
-    m_signEndpointsHasBeenSet(false)
+    m_signEndpointsHasBeenSet(false),
+    m_notSaveContactHasBeenSet(false)
 {
 }
 
@@ -404,6 +405,16 @@ CoreInternalOutcome FlowCreateApprover::Deserialize(const rapidjson::Value &valu
         m_signEndpointsHasBeenSet = true;
     }
 
+    if (value.HasMember("NotSaveContact") && !value["NotSaveContact"].IsNull())
+    {
+        if (!value["NotSaveContact"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `FlowCreateApprover.NotSaveContact` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_notSaveContact = value["NotSaveContact"].GetBool();
+        m_notSaveContactHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -683,6 +694,14 @@ void FlowCreateApprover::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_notSaveContactHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NotSaveContact";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_notSaveContact, allocator);
     }
 
 }
@@ -1150,5 +1169,21 @@ void FlowCreateApprover::SetSignEndpoints(const vector<string>& _signEndpoints)
 bool FlowCreateApprover::SignEndpointsHasBeenSet() const
 {
     return m_signEndpointsHasBeenSet;
+}
+
+bool FlowCreateApprover::GetNotSaveContact() const
+{
+    return m_notSaveContact;
+}
+
+void FlowCreateApprover::SetNotSaveContact(const bool& _notSaveContact)
+{
+    m_notSaveContact = _notSaveContact;
+    m_notSaveContactHasBeenSet = true;
+}
+
+bool FlowCreateApprover::NotSaveContactHasBeenSet() const
+{
+    return m_notSaveContactHasBeenSet;
 }
 

@@ -65,6 +65,27 @@ namespace TencentCloud
                     bool DspaIdHasBeenSet() const;
 
                     /**
+                     * 获取必填，COS资源列表
+                     * @return CosBucketItems 必填，COS资源列表
+                     * 
+                     */
+                    std::vector<CosBucketItem> GetCosBucketItems() const;
+
+                    /**
+                     * 设置必填，COS资源列表
+                     * @param _cosBucketItems 必填，COS资源列表
+                     * 
+                     */
+                    void SetCosBucketItems(const std::vector<CosBucketItem>& _cosBucketItems);
+
+                    /**
+                     * 判断参数 CosBucketItems 是否已赋值
+                     * @return CosBucketItems 是否已赋值
+                     * 
+                     */
+                    bool CosBucketItemsHasBeenSet() const;
+
+                    /**
                      * 获取资源所处地域。
                      * @return ResourceRegion 资源所处地域。
                      * @deprecated
@@ -106,27 +127,6 @@ namespace TencentCloud
                      */
                     bool BucketsHasBeenSet() const;
 
-                    /**
-                     * 获取必填，COS资源列表
-                     * @return CosBucketItems 必填，COS资源列表
-                     * 
-                     */
-                    std::vector<CosBucketItem> GetCosBucketItems() const;
-
-                    /**
-                     * 设置必填，COS资源列表
-                     * @param _cosBucketItems 必填，COS资源列表
-                     * 
-                     */
-                    void SetCosBucketItems(const std::vector<CosBucketItem>& _cosBucketItems);
-
-                    /**
-                     * 判断参数 CosBucketItems 是否已赋值
-                     * @return CosBucketItems 是否已赋值
-                     * 
-                     */
-                    bool CosBucketItemsHasBeenSet() const;
-
                 private:
 
                     /**
@@ -134,6 +134,12 @@ namespace TencentCloud
                      */
                     std::string m_dspaId;
                     bool m_dspaIdHasBeenSet;
+
+                    /**
+                     * 必填，COS资源列表
+                     */
+                    std::vector<CosBucketItem> m_cosBucketItems;
+                    bool m_cosBucketItemsHasBeenSet;
 
                     /**
                      * 资源所处地域。
@@ -146,12 +152,6 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_buckets;
                     bool m_bucketsHasBeenSet;
-
-                    /**
-                     * 必填，COS资源列表
-                     */
-                    std::vector<CosBucketItem> m_cosBucketItems;
-                    bool m_cosBucketItemsHasBeenSet;
 
                 };
             }

@@ -23,7 +23,8 @@ using namespace TencentCloud::Tdai::V20250717::Model;
 using namespace std;
 
 CreateChatCompletionRequest::CreateChatCompletionRequest() :
-    m_isHiddenHasBeenSet(false)
+    m_isHiddenHasBeenSet(false),
+    m_isChatHiddenHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,14 @@ string CreateChatCompletionRequest::ToJsonString() const
         string key = "IsHidden";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_isHidden, allocator);
+    }
+
+    if (m_isChatHiddenHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsChatHidden";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isChatHidden, allocator);
     }
 
 
@@ -64,6 +73,22 @@ void CreateChatCompletionRequest::SetIsHidden(const bool& _isHidden)
 bool CreateChatCompletionRequest::IsHiddenHasBeenSet() const
 {
     return m_isHiddenHasBeenSet;
+}
+
+bool CreateChatCompletionRequest::GetIsChatHidden() const
+{
+    return m_isChatHidden;
+}
+
+void CreateChatCompletionRequest::SetIsChatHidden(const bool& _isChatHidden)
+{
+    m_isChatHidden = _isChatHidden;
+    m_isChatHiddenHasBeenSet = true;
+}
+
+bool CreateChatCompletionRequest::IsChatHiddenHasBeenSet() const
+{
+    return m_isChatHiddenHasBeenSet;
 }
 
 

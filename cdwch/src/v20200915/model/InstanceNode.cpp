@@ -35,7 +35,8 @@ InstanceNode::InstanceNode() :
     m_uUIDHasBeenSet(false),
     m_zoneHasBeenSet(false),
     m_zoneDescHasBeenSet(false),
-    m_realResourceIdHasBeenSet(false)
+    m_realResourceIdHasBeenSet(false),
+    m_subnetIdHasBeenSet(false)
 {
 }
 
@@ -204,6 +205,16 @@ CoreInternalOutcome InstanceNode::Deserialize(const rapidjson::Value &value)
         m_realResourceIdHasBeenSet = true;
     }
 
+    if (value.HasMember("SubnetId") && !value["SubnetId"].IsNull())
+    {
+        if (!value["SubnetId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceNode.SubnetId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_subnetId = string(value["SubnetId"].GetString());
+        m_subnetIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -336,6 +347,14 @@ void InstanceNode::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "RealResourceId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_realResourceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_subnetIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubnetId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_subnetId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -579,5 +598,21 @@ void InstanceNode::SetRealResourceId(const string& _realResourceId)
 bool InstanceNode::RealResourceIdHasBeenSet() const
 {
     return m_realResourceIdHasBeenSet;
+}
+
+string InstanceNode::GetSubnetId() const
+{
+    return m_subnetId;
+}
+
+void InstanceNode::SetSubnetId(const string& _subnetId)
+{
+    m_subnetId = _subnetId;
+    m_subnetIdHasBeenSet = true;
+}
+
+bool InstanceNode::SubnetIdHasBeenSet() const
+{
+    return m_subnetIdHasBeenSet;
 }
 

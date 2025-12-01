@@ -130,6 +130,27 @@ namespace TencentCloud
                      */
                     bool FilePathHasBeenSet() const;
 
+                    /**
+                     * 获取节点ip信息，可选参数，当修改集群节点级配置（例如keeper_config.xml）时此参数必填；
+                     * @return Ip 节点ip信息，可选参数，当修改集群节点级配置（例如keeper_config.xml）时此参数必填；
+                     * 
+                     */
+                    std::string GetIp() const;
+
+                    /**
+                     * 设置节点ip信息，可选参数，当修改集群节点级配置（例如keeper_config.xml）时此参数必填；
+                     * @param _ip 节点ip信息，可选参数，当修改集群节点级配置（例如keeper_config.xml）时此参数必填；
+                     * 
+                     */
+                    void SetIp(const std::string& _ip);
+
+                    /**
+                     * 判断参数 Ip 是否已赋值
+                     * @return Ip 是否已赋值
+                     * 
+                     */
+                    bool IpHasBeenSet() const;
+
                 private:
 
                     /**
@@ -155,6 +176,12 @@ namespace TencentCloud
                      */
                     std::string m_filePath;
                     bool m_filePathHasBeenSet;
+
+                    /**
+                     * 节点ip信息，可选参数，当修改集群节点级配置（例如keeper_config.xml）时此参数必填；
+                     */
+                    std::string m_ip;
+                    bool m_ipHasBeenSet;
 
                 };
             }

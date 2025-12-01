@@ -25,11 +25,11 @@ using namespace std;
 CreateDSPADbMetaResourcesRequest::CreateDSPADbMetaResourcesRequest() :
     m_dspaIdHasBeenSet(false),
     m_metaTypeHasBeenSet(false),
+    m_cloudResourceItemsHasBeenSet(false),
     m_resourceRegionHasBeenSet(false),
     m_updateStatusHasBeenSet(false),
     m_updateIdHasBeenSet(false),
-    m_itemsHasBeenSet(false),
-    m_cloudResourceItemsHasBeenSet(false)
+    m_itemsHasBeenSet(false)
 {
 }
 
@@ -54,6 +54,21 @@ string CreateDSPADbMetaResourcesRequest::ToJsonString() const
         string key = "MetaType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_metaType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_cloudResourceItemsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CloudResourceItems";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_cloudResourceItems.begin(); itr != m_cloudResourceItems.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
     if (m_resourceRegionHasBeenSet)
@@ -89,21 +104,6 @@ string CreateDSPADbMetaResourcesRequest::ToJsonString() const
 
         int i=0;
         for (auto itr = m_items.begin(); itr != m_items.end(); ++itr, ++i)
-        {
-            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
-        }
-    }
-
-    if (m_cloudResourceItemsHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "CloudResourceItems";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
-
-        int i=0;
-        for (auto itr = m_cloudResourceItems.begin(); itr != m_cloudResourceItems.end(); ++itr, ++i)
         {
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
@@ -148,6 +148,22 @@ void CreateDSPADbMetaResourcesRequest::SetMetaType(const string& _metaType)
 bool CreateDSPADbMetaResourcesRequest::MetaTypeHasBeenSet() const
 {
     return m_metaTypeHasBeenSet;
+}
+
+vector<CloudResourceItem> CreateDSPADbMetaResourcesRequest::GetCloudResourceItems() const
+{
+    return m_cloudResourceItems;
+}
+
+void CreateDSPADbMetaResourcesRequest::SetCloudResourceItems(const vector<CloudResourceItem>& _cloudResourceItems)
+{
+    m_cloudResourceItems = _cloudResourceItems;
+    m_cloudResourceItemsHasBeenSet = true;
+}
+
+bool CreateDSPADbMetaResourcesRequest::CloudResourceItemsHasBeenSet() const
+{
+    return m_cloudResourceItemsHasBeenSet;
 }
 
 string CreateDSPADbMetaResourcesRequest::GetResourceRegion() const
@@ -212,22 +228,6 @@ void CreateDSPADbMetaResourcesRequest::SetItems(const vector<DspaCloudResourceMe
 bool CreateDSPADbMetaResourcesRequest::ItemsHasBeenSet() const
 {
     return m_itemsHasBeenSet;
-}
-
-vector<CloudResourceItem> CreateDSPADbMetaResourcesRequest::GetCloudResourceItems() const
-{
-    return m_cloudResourceItems;
-}
-
-void CreateDSPADbMetaResourcesRequest::SetCloudResourceItems(const vector<CloudResourceItem>& _cloudResourceItems)
-{
-    m_cloudResourceItems = _cloudResourceItems;
-    m_cloudResourceItemsHasBeenSet = true;
-}
-
-bool CreateDSPADbMetaResourcesRequest::CloudResourceItemsHasBeenSet() const
-{
-    return m_cloudResourceItemsHasBeenSet;
 }
 
 

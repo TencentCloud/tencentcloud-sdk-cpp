@@ -105,6 +105,35 @@ namespace TencentCloud
                      */
                     bool AndroidAppVersionHasBeenSet() const;
 
+                    /**
+                     * 获取安装方式。
+CLEAR_DATA 默认，清理数据
+KEEP_DATA 保留数据
+                     * @return InstallationMethod 安装方式。
+CLEAR_DATA 默认，清理数据
+KEEP_DATA 保留数据
+                     * 
+                     */
+                    std::string GetInstallationMethod() const;
+
+                    /**
+                     * 设置安装方式。
+CLEAR_DATA 默认，清理数据
+KEEP_DATA 保留数据
+                     * @param _installationMethod 安装方式。
+CLEAR_DATA 默认，清理数据
+KEEP_DATA 保留数据
+                     * 
+                     */
+                    void SetInstallationMethod(const std::string& _installationMethod);
+
+                    /**
+                     * 判断参数 InstallationMethod 是否已赋值
+                     * @return InstallationMethod 是否已赋值
+                     * 
+                     */
+                    bool InstallationMethodHasBeenSet() const;
+
                 private:
 
                     /**
@@ -124,6 +153,14 @@ namespace TencentCloud
                      */
                     std::string m_androidAppVersion;
                     bool m_androidAppVersionHasBeenSet;
+
+                    /**
+                     * 安装方式。
+CLEAR_DATA 默认，清理数据
+KEEP_DATA 保留数据
+                     */
+                    std::string m_installationMethod;
+                    bool m_installationMethodHasBeenSet;
 
                 };
             }

@@ -1040,6 +1040,56 @@ TdmqClient::CreateRocketMQTopicOutcomeCallable TdmqClient::CreateRocketMQTopicCa
     return prom->get_future();
 }
 
+TdmqClient::CreateRocketMQTopicV2Outcome TdmqClient::CreateRocketMQTopicV2(const CreateRocketMQTopicV2Request &request)
+{
+    auto outcome = MakeRequest(request, "CreateRocketMQTopicV2");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateRocketMQTopicV2Response rsp = CreateRocketMQTopicV2Response();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateRocketMQTopicV2Outcome(rsp);
+        else
+            return CreateRocketMQTopicV2Outcome(o.GetError());
+    }
+    else
+    {
+        return CreateRocketMQTopicV2Outcome(outcome.GetError());
+    }
+}
+
+void TdmqClient::CreateRocketMQTopicV2Async(const CreateRocketMQTopicV2Request& request, const CreateRocketMQTopicV2AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateRocketMQTopicV2Request&;
+    using Resp = CreateRocketMQTopicV2Response;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateRocketMQTopicV2", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TdmqClient::CreateRocketMQTopicV2OutcomeCallable TdmqClient::CreateRocketMQTopicV2Callable(const CreateRocketMQTopicV2Request &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateRocketMQTopicV2Outcome>>();
+    CreateRocketMQTopicV2Async(
+    request,
+    [prom](
+        const TdmqClient*,
+        const CreateRocketMQTopicV2Request&,
+        CreateRocketMQTopicV2Outcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TdmqClient::CreateRocketMQVipInstanceOutcome TdmqClient::CreateRocketMQVipInstance(const CreateRocketMQVipInstanceRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateRocketMQVipInstance");

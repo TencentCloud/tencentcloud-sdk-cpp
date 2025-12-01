@@ -26,7 +26,10 @@ RegisterInfo::RegisterInfo() :
     m_unifiedSocialCreditCodeHasBeenSet(false),
     m_organizationAddressHasBeenSet(false),
     m_authorizationTypesHasBeenSet(false),
-    m_authorizationTypeHasBeenSet(false)
+    m_authorizationTypeHasBeenSet(false),
+    m_authorizationMethodsHasBeenSet(false),
+    m_organizationIdCardTypeHasBeenSet(false),
+    m_registerInfoOptionHasBeenSet(false)
 {
 }
 
@@ -98,6 +101,46 @@ CoreInternalOutcome RegisterInfo::Deserialize(const rapidjson::Value &value)
         m_authorizationTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("AuthorizationMethods") && !value["AuthorizationMethods"].IsNull())
+    {
+        if (!value["AuthorizationMethods"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `RegisterInfo.AuthorizationMethods` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["AuthorizationMethods"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_authorizationMethods.push_back((*itr).GetUint64());
+        }
+        m_authorizationMethodsHasBeenSet = true;
+    }
+
+    if (value.HasMember("OrganizationIdCardType") && !value["OrganizationIdCardType"].IsNull())
+    {
+        if (!value["OrganizationIdCardType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RegisterInfo.OrganizationIdCardType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_organizationIdCardType = string(value["OrganizationIdCardType"].GetString());
+        m_organizationIdCardTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("RegisterInfoOption") && !value["RegisterInfoOption"].IsNull())
+    {
+        if (!value["RegisterInfoOption"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `RegisterInfo.RegisterInfoOption` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_registerInfoOption.Deserialize(value["RegisterInfoOption"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_registerInfoOptionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -156,6 +199,36 @@ void RegisterInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "AuthorizationType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_authorizationType, allocator);
+    }
+
+    if (m_authorizationMethodsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AuthorizationMethods";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_authorizationMethods.begin(); itr != m_authorizationMethods.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetUint64(*itr), allocator);
+        }
+    }
+
+    if (m_organizationIdCardTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OrganizationIdCardType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_organizationIdCardType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_registerInfoOptionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RegisterInfoOption";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_registerInfoOption.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -255,5 +328,53 @@ void RegisterInfo::SetAuthorizationType(const int64_t& _authorizationType)
 bool RegisterInfo::AuthorizationTypeHasBeenSet() const
 {
     return m_authorizationTypeHasBeenSet;
+}
+
+vector<uint64_t> RegisterInfo::GetAuthorizationMethods() const
+{
+    return m_authorizationMethods;
+}
+
+void RegisterInfo::SetAuthorizationMethods(const vector<uint64_t>& _authorizationMethods)
+{
+    m_authorizationMethods = _authorizationMethods;
+    m_authorizationMethodsHasBeenSet = true;
+}
+
+bool RegisterInfo::AuthorizationMethodsHasBeenSet() const
+{
+    return m_authorizationMethodsHasBeenSet;
+}
+
+string RegisterInfo::GetOrganizationIdCardType() const
+{
+    return m_organizationIdCardType;
+}
+
+void RegisterInfo::SetOrganizationIdCardType(const string& _organizationIdCardType)
+{
+    m_organizationIdCardType = _organizationIdCardType;
+    m_organizationIdCardTypeHasBeenSet = true;
+}
+
+bool RegisterInfo::OrganizationIdCardTypeHasBeenSet() const
+{
+    return m_organizationIdCardTypeHasBeenSet;
+}
+
+RegisterInfoOption RegisterInfo::GetRegisterInfoOption() const
+{
+    return m_registerInfoOption;
+}
+
+void RegisterInfo::SetRegisterInfoOption(const RegisterInfoOption& _registerInfoOption)
+{
+    m_registerInfoOption = _registerInfoOption;
+    m_registerInfoOptionHasBeenSet = true;
+}
+
+bool RegisterInfo::RegisterInfoOptionHasBeenSet() const
+{
+    return m_registerInfoOptionHasBeenSet;
 }
 

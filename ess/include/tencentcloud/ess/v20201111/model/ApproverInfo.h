@@ -999,6 +999,51 @@ namespace TencentCloud
                      */
                     bool RegisterInfoHasBeenSet() const;
 
+                    /**
+                     * 获取是否不保存联系人
+默认 false 保存联系人  true 不保存联系人
+
+设置这个参数为保存联系人的时候,他方企业签署人会被保存进发起人的联系人中。
+联系人查看可登录[电子签控制台](https://test.qian.tencent.cn/console/) 进行查看。
+如下图位置：
+![](https://qcloudimg.tencent-cloud.cn/raw/fb8a22cd615d24c21acfa0e37e2cd873.png)
+                     * @return NotSaveContact 是否不保存联系人
+默认 false 保存联系人  true 不保存联系人
+
+设置这个参数为保存联系人的时候,他方企业签署人会被保存进发起人的联系人中。
+联系人查看可登录[电子签控制台](https://test.qian.tencent.cn/console/) 进行查看。
+如下图位置：
+![](https://qcloudimg.tencent-cloud.cn/raw/fb8a22cd615d24c21acfa0e37e2cd873.png)
+                     * 
+                     */
+                    bool GetNotSaveContact() const;
+
+                    /**
+                     * 设置是否不保存联系人
+默认 false 保存联系人  true 不保存联系人
+
+设置这个参数为保存联系人的时候,他方企业签署人会被保存进发起人的联系人中。
+联系人查看可登录[电子签控制台](https://test.qian.tencent.cn/console/) 进行查看。
+如下图位置：
+![](https://qcloudimg.tencent-cloud.cn/raw/fb8a22cd615d24c21acfa0e37e2cd873.png)
+                     * @param _notSaveContact 是否不保存联系人
+默认 false 保存联系人  true 不保存联系人
+
+设置这个参数为保存联系人的时候,他方企业签署人会被保存进发起人的联系人中。
+联系人查看可登录[电子签控制台](https://test.qian.tencent.cn/console/) 进行查看。
+如下图位置：
+![](https://qcloudimg.tencent-cloud.cn/raw/fb8a22cd615d24c21acfa0e37e2cd873.png)
+                     * 
+                     */
+                    void SetNotSaveContact(const bool& _notSaveContact);
+
+                    /**
+                     * 判断参数 NotSaveContact 是否已赋值
+                     * @return NotSaveContact 是否已赋值
+                     * 
+                     */
+                    bool NotSaveContactHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1256,6 +1301,18 @@ namespace TencentCloud
                      */
                     RegisterInfo m_registerInfo;
                     bool m_registerInfoHasBeenSet;
+
+                    /**
+                     * 是否不保存联系人
+默认 false 保存联系人  true 不保存联系人
+
+设置这个参数为保存联系人的时候,他方企业签署人会被保存进发起人的联系人中。
+联系人查看可登录[电子签控制台](https://test.qian.tencent.cn/console/) 进行查看。
+如下图位置：
+![](https://qcloudimg.tencent-cloud.cn/raw/fb8a22cd615d24c21acfa0e37e2cd873.png)
+                     */
+                    bool m_notSaveContact;
+                    bool m_notSaveContactHasBeenSet;
 
                 };
             }

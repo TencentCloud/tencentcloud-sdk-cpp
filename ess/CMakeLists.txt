@@ -373,6 +373,7 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/CreateModifyAdminAuthorizationUrlRequest.h
   include/tencentcloud/ess/v20201111/model/ApproverInfo.h
   include/tencentcloud/ess/v20201111/model/Filter.h
+  include/tencentcloud/ess/v20201111/model/RegisterInfoOption.h
   include/tencentcloud/ess/v20201111/model/DynamicFlowApproverResult.h
   include/tencentcloud/ess/v20201111/model/DeleteOrganizationAuthorizationsRequest.h
   include/tencentcloud/ess/v20201111/model/CancelUserAutoSignEnableUrlRequest.h
@@ -759,6 +760,7 @@ set(ess_src
   src/v20201111/model/CreateModifyAdminAuthorizationUrlRequest.cpp
   src/v20201111/model/ApproverInfo.cpp
   src/v20201111/model/Filter.cpp
+  src/v20201111/model/RegisterInfoOption.cpp
   src/v20201111/model/DynamicFlowApproverResult.cpp
   src/v20201111/model/DeleteOrganizationAuthorizationsRequest.cpp
   src/v20201111/model/CancelUserAutoSignEnableUrlRequest.cpp

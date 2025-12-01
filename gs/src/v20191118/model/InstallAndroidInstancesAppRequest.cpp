@@ -25,7 +25,8 @@ using namespace std;
 InstallAndroidInstancesAppRequest::InstallAndroidInstancesAppRequest() :
     m_androidInstanceIdsHasBeenSet(false),
     m_androidAppIdHasBeenSet(false),
-    m_androidAppVersionHasBeenSet(false)
+    m_androidAppVersionHasBeenSet(false),
+    m_installationMethodHasBeenSet(false)
 {
 }
 
@@ -63,6 +64,14 @@ string InstallAndroidInstancesAppRequest::ToJsonString() const
         string key = "AndroidAppVersion";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_androidAppVersion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_installationMethodHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstallationMethod";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_installationMethod.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -119,6 +128,22 @@ void InstallAndroidInstancesAppRequest::SetAndroidAppVersion(const string& _andr
 bool InstallAndroidInstancesAppRequest::AndroidAppVersionHasBeenSet() const
 {
     return m_androidAppVersionHasBeenSet;
+}
+
+string InstallAndroidInstancesAppRequest::GetInstallationMethod() const
+{
+    return m_installationMethod;
+}
+
+void InstallAndroidInstancesAppRequest::SetInstallationMethod(const string& _installationMethod)
+{
+    m_installationMethod = _installationMethod;
+    m_installationMethodHasBeenSet = true;
+}
+
+bool InstallAndroidInstancesAppRequest::InstallationMethodHasBeenSet() const
+{
+    return m_installationMethodHasBeenSet;
 }
 
 

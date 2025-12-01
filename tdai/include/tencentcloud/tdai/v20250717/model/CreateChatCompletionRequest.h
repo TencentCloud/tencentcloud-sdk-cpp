@@ -63,6 +63,27 @@ namespace TencentCloud
                      */
                     bool IsHiddenHasBeenSet() const;
 
+                    /**
+                     * 获取是否隐藏会话
+                     * @return IsChatHidden 是否隐藏会话
+                     * 
+                     */
+                    bool GetIsChatHidden() const;
+
+                    /**
+                     * 设置是否隐藏会话
+                     * @param _isChatHidden 是否隐藏会话
+                     * 
+                     */
+                    void SetIsChatHidden(const bool& _isChatHidden);
+
+                    /**
+                     * 判断参数 IsChatHidden 是否已赋值
+                     * @return IsChatHidden 是否已赋值
+                     * 
+                     */
+                    bool IsChatHiddenHasBeenSet() const;
+
                 private:
 
                     /**
@@ -70,6 +91,12 @@ namespace TencentCloud
                      */
                     bool m_isHidden;
                     bool m_isHiddenHasBeenSet;
+
+                    /**
+                     * 是否隐藏会话
+                     */
+                    bool m_isChatHidden;
+                    bool m_isChatHiddenHasBeenSet;
 
                 };
             }

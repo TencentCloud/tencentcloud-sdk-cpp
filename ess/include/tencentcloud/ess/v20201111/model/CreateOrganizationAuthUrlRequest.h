@@ -819,14 +819,30 @@ p.s. 如果Endpoint是 APP，传递的跳转地址无效，不会进行跳转，
 
                     /**
                      * 获取企业证照类型：<ul><li> **USCC** :(默认)工商组织营业执照</li><li> **PRACTICELICENSEOFMEDICALINSTITUTION** :医疗机构执业许可证</li></ul>
+
+注意 ：
+如果企业证照类型是医疗机构，则参数设置企业授权方式(AuthorizationTypes)和企业认证方式(AuthorizationMethods)都无效.
+医疗机构的企业授权方式  仅有授权书的方式。企业认证仅有上传营业执照的方式。
                      * @return OrganizationIdCardType 企业证照类型：<ul><li> **USCC** :(默认)工商组织营业执照</li><li> **PRACTICELICENSEOFMEDICALINSTITUTION** :医疗机构执业许可证</li></ul>
+
+注意 ：
+如果企业证照类型是医疗机构，则参数设置企业授权方式(AuthorizationTypes)和企业认证方式(AuthorizationMethods)都无效.
+医疗机构的企业授权方式  仅有授权书的方式。企业认证仅有上传营业执照的方式。
                      * 
                      */
                     std::string GetOrganizationIdCardType() const;
 
                     /**
                      * 设置企业证照类型：<ul><li> **USCC** :(默认)工商组织营业执照</li><li> **PRACTICELICENSEOFMEDICALINSTITUTION** :医疗机构执业许可证</li></ul>
+
+注意 ：
+如果企业证照类型是医疗机构，则参数设置企业授权方式(AuthorizationTypes)和企业认证方式(AuthorizationMethods)都无效.
+医疗机构的企业授权方式  仅有授权书的方式。企业认证仅有上传营业执照的方式。
                      * @param _organizationIdCardType 企业证照类型：<ul><li> **USCC** :(默认)工商组织营业执照</li><li> **PRACTICELICENSEOFMEDICALINSTITUTION** :医疗机构执业许可证</li></ul>
+
+注意 ：
+如果企业证照类型是医疗机构，则参数设置企业授权方式(AuthorizationTypes)和企业认证方式(AuthorizationMethods)都无效.
+医疗机构的企业授权方式  仅有授权书的方式。企业认证仅有上传营业执照的方式。
                      * 
                      */
                     void SetOrganizationIdCardType(const std::string& _organizationIdCardType);
@@ -837,6 +853,120 @@ p.s. 如果Endpoint是 APP，传递的跳转地址无效，不会进行跳转，
                      * 
                      */
                     bool OrganizationIdCardTypeHasBeenSet() const;
+
+                    /**
+                     * 获取是否允许编辑企业注册时的证照类型
+
+true:不允许编辑。
+
+false:允许编辑（默认值）。
+
+
+注意：
+入参中的OrganizationIdCardType值不为空的时候，才可设置为不可编辑。
+                     * @return OrganizationIdCardTypeSame 是否允许编辑企业注册时的证照类型
+
+true:不允许编辑。
+
+false:允许编辑（默认值）。
+
+
+注意：
+入参中的OrganizationIdCardType值不为空的时候，才可设置为不可编辑。
+                     * 
+                     */
+                    bool GetOrganizationIdCardTypeSame() const;
+
+                    /**
+                     * 设置是否允许编辑企业注册时的证照类型
+
+true:不允许编辑。
+
+false:允许编辑（默认值）。
+
+
+注意：
+入参中的OrganizationIdCardType值不为空的时候，才可设置为不可编辑。
+                     * @param _organizationIdCardTypeSame 是否允许编辑企业注册时的证照类型
+
+true:不允许编辑。
+
+false:允许编辑（默认值）。
+
+
+注意：
+入参中的OrganizationIdCardType值不为空的时候，才可设置为不可编辑。
+                     * 
+                     */
+                    void SetOrganizationIdCardTypeSame(const bool& _organizationIdCardTypeSame);
+
+                    /**
+                     * 判断参数 OrganizationIdCardTypeSame 是否已赋值
+                     * @return OrganizationIdCardTypeSame 是否已赋值
+                     * 
+                     */
+                    bool OrganizationIdCardTypeSameHasBeenSet() const;
+
+                    /**
+                     * 获取指定企业认证的授权方式 支持多选:
+
+<ul>
+<li><strong>1</strong>: 上传营业执照</li>
+<li><strong>2</strong>: 腾讯云快速认证</li>
+<li><strong>3</strong>: 腾讯商户号授权<font color="red">（仅支持小程序端）</font></li>
+</ul>
+
+注意：
+1.如果没有指定，则默认是1,仅有上传营业执照。
+2.H5 仅支持上传营业执照。
+                     * @return AuthorizationMethod 指定企业认证的授权方式 支持多选:
+
+<ul>
+<li><strong>1</strong>: 上传营业执照</li>
+<li><strong>2</strong>: 腾讯云快速认证</li>
+<li><strong>3</strong>: 腾讯商户号授权<font color="red">（仅支持小程序端）</font></li>
+</ul>
+
+注意：
+1.如果没有指定，则默认是1,仅有上传营业执照。
+2.H5 仅支持上传营业执照。
+                     * 
+                     */
+                    std::vector<uint64_t> GetAuthorizationMethod() const;
+
+                    /**
+                     * 设置指定企业认证的授权方式 支持多选:
+
+<ul>
+<li><strong>1</strong>: 上传营业执照</li>
+<li><strong>2</strong>: 腾讯云快速认证</li>
+<li><strong>3</strong>: 腾讯商户号授权<font color="red">（仅支持小程序端）</font></li>
+</ul>
+
+注意：
+1.如果没有指定，则默认是1,仅有上传营业执照。
+2.H5 仅支持上传营业执照。
+                     * @param _authorizationMethod 指定企业认证的授权方式 支持多选:
+
+<ul>
+<li><strong>1</strong>: 上传营业执照</li>
+<li><strong>2</strong>: 腾讯云快速认证</li>
+<li><strong>3</strong>: 腾讯商户号授权<font color="red">（仅支持小程序端）</font></li>
+</ul>
+
+注意：
+1.如果没有指定，则默认是1,仅有上传营业执照。
+2.H5 仅支持上传营业执照。
+                     * 
+                     */
+                    void SetAuthorizationMethod(const std::vector<uint64_t>& _authorizationMethod);
+
+                    /**
+                     * 判断参数 AuthorizationMethod 是否已赋值
+                     * @return AuthorizationMethod 是否已赋值
+                     * 
+                     */
+                    bool AuthorizationMethodHasBeenSet() const;
 
                 private:
 
@@ -1054,9 +1184,43 @@ p.s. 如果Endpoint是 APP，传递的跳转地址无效，不会进行跳转，
 
                     /**
                      * 企业证照类型：<ul><li> **USCC** :(默认)工商组织营业执照</li><li> **PRACTICELICENSEOFMEDICALINSTITUTION** :医疗机构执业许可证</li></ul>
+
+注意 ：
+如果企业证照类型是医疗机构，则参数设置企业授权方式(AuthorizationTypes)和企业认证方式(AuthorizationMethods)都无效.
+医疗机构的企业授权方式  仅有授权书的方式。企业认证仅有上传营业执照的方式。
                      */
                     std::string m_organizationIdCardType;
                     bool m_organizationIdCardTypeHasBeenSet;
+
+                    /**
+                     * 是否允许编辑企业注册时的证照类型
+
+true:不允许编辑。
+
+false:允许编辑（默认值）。
+
+
+注意：
+入参中的OrganizationIdCardType值不为空的时候，才可设置为不可编辑。
+                     */
+                    bool m_organizationIdCardTypeSame;
+                    bool m_organizationIdCardTypeSameHasBeenSet;
+
+                    /**
+                     * 指定企业认证的授权方式 支持多选:
+
+<ul>
+<li><strong>1</strong>: 上传营业执照</li>
+<li><strong>2</strong>: 腾讯云快速认证</li>
+<li><strong>3</strong>: 腾讯商户号授权<font color="red">（仅支持小程序端）</font></li>
+</ul>
+
+注意：
+1.如果没有指定，则默认是1,仅有上传营业执照。
+2.H5 仅支持上传营业执照。
+                     */
+                    std::vector<uint64_t> m_authorizationMethod;
+                    bool m_authorizationMethodHasBeenSet;
 
                 };
             }

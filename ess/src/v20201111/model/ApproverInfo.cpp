@@ -45,7 +45,8 @@ ApproverInfo::ApproverInfo() :
     m_deadlineHasBeenSet(false),
     m_componentsHasBeenSet(false),
     m_signEndpointsHasBeenSet(false),
-    m_registerInfoHasBeenSet(false)
+    m_registerInfoHasBeenSet(false),
+    m_notSaveContactHasBeenSet(false)
 {
 }
 
@@ -360,6 +361,16 @@ CoreInternalOutcome ApproverInfo::Deserialize(const rapidjson::Value &value)
         m_registerInfoHasBeenSet = true;
     }
 
+    if (value.HasMember("NotSaveContact") && !value["NotSaveContact"].IsNull())
+    {
+        if (!value["NotSaveContact"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApproverInfo.NotSaveContact` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_notSaveContact = value["NotSaveContact"].GetBool();
+        m_notSaveContactHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -608,6 +619,14 @@ void ApproverInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_registerInfo.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_notSaveContactHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NotSaveContact";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_notSaveContact, allocator);
     }
 
 }
@@ -1011,5 +1030,21 @@ void ApproverInfo::SetRegisterInfo(const RegisterInfo& _registerInfo)
 bool ApproverInfo::RegisterInfoHasBeenSet() const
 {
     return m_registerInfoHasBeenSet;
+}
+
+bool ApproverInfo::GetNotSaveContact() const
+{
+    return m_notSaveContact;
+}
+
+void ApproverInfo::SetNotSaveContact(const bool& _notSaveContact)
+{
+    m_notSaveContact = _notSaveContact;
+    m_notSaveContactHasBeenSet = true;
+}
+
+bool ApproverInfo::NotSaveContactHasBeenSet() const
+{
+    return m_notSaveContactHasBeenSet;
 }
 
