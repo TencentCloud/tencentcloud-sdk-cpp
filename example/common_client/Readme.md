@@ -1,12 +1,14 @@
-## 简介
-从3.0.297开始，腾讯云 C++ SDK 支持使用泛用型的API调用方式(Common Client)进行请求。您只需安装 tencentcloud-sdk-cpp-core 基础依赖库, 即可向任何产品发起调用。
+## Introduction
 
-**注意，您必须明确知道您调用的接口所需参数，否则可能会调用失败。**
+Starting from version 3.0.297, the Tencent Cloud C++ SDK allows you to make requests using a **general-purpose API calling method** (Common Client). You only need to install the base library, `tencentcloud-sdk-cpp-core`, to make calls to **any** product.
 
-## 环境依赖
-请参考[README](https://github.com/milezhang/tencentcloud-sdk-cpp/blob/master/README.md)中的环境依赖项进行配置
+**Important Note: You must clearly know what inputs (parameters) the API you are calling needs, or your call might fail.**
 
-**注意，由于Common Client只依赖基础库tencentcloud-sdk-cpp-core，所以在"从源代码构建 SDK"说明项，指定产品编译步骤中，不需要编译产品，直接执行cmake ..即可，更改后执行步骤如下所示：**
+## Environment Dependencies
+
+Please check the environment setup instructions in the [README](https://github.com/milezhang/tencentcloud-sdk-cpp/blob/master/README.md) file.
+
+**Important Note: Because the Common Client only needs the base library (`tencentcloud-sdk-cpp-core`), when you follow the instructions for "Building SDK from Source Code," you do not need to build specific products. You can run `cmake ..` right away. The updated steps are:**
 
 ```
 cd <path/to/tencentcloud-sdk-cpp>
@@ -18,11 +20,11 @@ make
 sudo make install
 ```
 
-## 编译common client示例代码步骤
+## Steps to Build the Common Client Example Code
 
-- 新建并且进入build目录 mkdir build
-- 执行cmake ../
-- 执行make命令
-- 运行common client示例代码  ./DescribeInstances or ./ClsUploadLog 
+* Create and go into the build folder: `mkdir build`
+* Run `cmake ../`
+* Run the `make` command
+* Run the common client example code: `./DescribeInstances` or `./ClsUploadLog`
 
-**注意：如执行./ClsUploadLog示例代码，示例中使用的是在bulid文件上层目录下的二进制文件binary.data，如用户需使用其他二进制文件，将filein读取二进制接口路径替换为目标二进制文件即可。**
+**Important Note: If you run the `./ClsUploadLog` example, it uses a binary file called `binary.data` which is located in the folder *above* the build folder. If you want to use a different binary file, just change the file path in the `filein` read binary file part to point to your new file.**

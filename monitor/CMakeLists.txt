@@ -15,14 +15,11 @@
 #
 
 set(monitor_public_header
-  include/tencentcloud/monitor/v20230616/MonitorClient.h
   include/tencentcloud/monitor/v20180724/MonitorClient.h
+  include/tencentcloud/monitor/v20230616/MonitorClient.h
   )
 
 set(monitor_public_header_model
-  include/tencentcloud/monitor/v20230616/model/DescribeAlarmNotifyHistoriesRequest.h
-  include/tencentcloud/monitor/v20230616/model/DescribeAlarmNotifyHistoriesResponse.h
-  include/tencentcloud/monitor/v20230616/model/PageByNoParams.h
   include/tencentcloud/monitor/v20180724/model/DeleteAlarmShieldsRequest.h
   include/tencentcloud/monitor/v20180724/model/ModifyAlarmPolicyInfoRequest.h
   include/tencentcloud/monitor/v20180724/model/AlarmPolicyTriggerTask.h
@@ -508,14 +505,14 @@ set(monitor_public_header_model
   include/tencentcloud/monitor/v20180724/model/DeleteAlarmShieldsResponse.h
   include/tencentcloud/monitor/v20180724/model/SetDefaultAlarmPolicyResponse.h
   include/tencentcloud/monitor/v20180724/model/BindingPolicyObjectResponse.h
+  include/tencentcloud/monitor/v20230616/model/DescribeAlarmNotifyHistoriesRequest.h
+  include/tencentcloud/monitor/v20230616/model/DescribeAlarmNotifyHistoriesResponse.h
+  include/tencentcloud/monitor/v20230616/model/PageByNoParams.h
   )
 
 set(monitor_src
-  src/v20230616/MonitorClient.cpp
   src/v20180724/MonitorClient.cpp
-  src/v20230616/model/DescribeAlarmNotifyHistoriesRequest.cpp
-  src/v20230616/model/DescribeAlarmNotifyHistoriesResponse.cpp
-  src/v20230616/model/PageByNoParams.cpp
+  src/v20230616/MonitorClient.cpp
   src/v20180724/model/DeleteAlarmShieldsRequest.cpp
   src/v20180724/model/ModifyAlarmPolicyInfoRequest.cpp
   src/v20180724/model/AlarmPolicyTriggerTask.cpp
@@ -1001,6 +998,9 @@ set(monitor_src
   src/v20180724/model/DeleteAlarmShieldsResponse.cpp
   src/v20180724/model/SetDefaultAlarmPolicyResponse.cpp
   src/v20180724/model/BindingPolicyObjectResponse.cpp
+  src/v20230616/model/DescribeAlarmNotifyHistoriesRequest.cpp
+  src/v20230616/model/DescribeAlarmNotifyHistoriesResponse.cpp
+  src/v20230616/model/PageByNoParams.cpp
   )
 
 set(monitor_include
@@ -1029,9 +1029,9 @@ target_link_libraries(monitor
   core)
 
 #install(FILES ${monitor_public_header}
-#  DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/tencentcloud/monitor/v20180724)
+#  DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/tencentcloud/monitor/v20230616)
 #install(FILES ${monitor_public_header_model}
-#  DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/tencentcloud/monitor/v20180724/model)
+#  DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/tencentcloud/monitor/v20230616/model)
 install(DIRECTORY ${monitor_include}
   DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/tencentcloud)
 

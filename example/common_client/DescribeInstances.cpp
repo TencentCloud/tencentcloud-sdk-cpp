@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *    http://www.apache.org/licenses/LICENSE-2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -37,12 +37,12 @@ int main()
     Credential cred = Credential(cloud_secret_id, cloud_secret_key);
 
     HttpProfile httpProfile = HttpProfile();
-    // 域名首段必须和下文中CommonClient初始化的产品名严格匹配
+    // The first part of the domain name **must exactly match** the product name used when setting up the CommonClient below.
     httpProfile.SetEndpoint("cvm.tencentcloudapi.com");
     httpProfile.SetReqTimeout(5);
 
     ClientProfile clientProfile = ClientProfile(httpProfile);
-    // 实例化要请求的common client对象，clientProfile是可选的。
+    // Create an instance of the Common Client object to make the request. clientProfile is optional (you don't have to use it).
     CommonClient common_client = CommonClient("cvm", "2017-03-12", cred, "ap-shanghai", clientProfile);
 
     auto outcome = common_client.MakeRequestJson("DescribeInstances", "{\"Limit\": 10}");
