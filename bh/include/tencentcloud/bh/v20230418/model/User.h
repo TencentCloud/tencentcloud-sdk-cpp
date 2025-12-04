@@ -50,15 +50,19 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取用户名, 3-20个字符 必须以英文字母开头，且不能包含字母、数字、.、_、-以外的字符
-                     * @return UserName 用户名, 3-20个字符 必须以英文字母开头，且不能包含字母、数字、.、_、-以外的字符
+                     * 获取用户名,1 - 128个字符 必须以英文字母开头，只能由a-zA-Z0-9以及+=,.@_-组成，支持邮箱格式
+
+                     * @return UserName 用户名,1 - 128个字符 必须以英文字母开头，只能由a-zA-Z0-9以及+=,.@_-组成，支持邮箱格式
+
                      * 
                      */
                     std::string GetUserName() const;
 
                     /**
-                     * 设置用户名, 3-20个字符 必须以英文字母开头，且不能包含字母、数字、.、_、-以外的字符
-                     * @param _userName 用户名, 3-20个字符 必须以英文字母开头，且不能包含字母、数字、.、_、-以外的字符
+                     * 设置用户名,1 - 128个字符 必须以英文字母开头，只能由a-zA-Z0-9以及+=,.@_-组成，支持邮箱格式
+
+                     * @param _userName 用户名,1 - 128个字符 必须以英文字母开头，只能由a-zA-Z0-9以及+=,.@_-组成，支持邮箱格式
+
                      * 
                      */
                     void SetUserName(const std::string& _userName);
@@ -456,10 +460,32 @@ namespace TencentCloud
                      */
                     bool IOAUserGroupHasBeenSet() const;
 
+                    /**
+                     * 获取cam角色用户载体
+                     * @return RoleArn cam角色用户载体
+                     * 
+                     */
+                    std::string GetRoleArn() const;
+
+                    /**
+                     * 设置cam角色用户载体
+                     * @param _roleArn cam角色用户载体
+                     * 
+                     */
+                    void SetRoleArn(const std::string& _roleArn);
+
+                    /**
+                     * 判断参数 RoleArn 是否已赋值
+                     * @return RoleArn 是否已赋值
+                     * 
+                     */
+                    bool RoleArnHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 用户名, 3-20个字符 必须以英文字母开头，且不能包含字母、数字、.、_、-以外的字符
+                     * 用户名,1 - 128个字符 必须以英文字母开头，只能由a-zA-Z0-9以及+=,.@_-组成，支持邮箱格式
+
                      */
                     std::string m_userName;
                     bool m_userNameHasBeenSet;
@@ -573,6 +599,12 @@ namespace TencentCloud
                      */
                     IOAUserGroup m_iOAUserGroup;
                     bool m_iOAUserGroupHasBeenSet;
+
+                    /**
+                     * cam角色用户载体
+                     */
+                    std::string m_roleArn;
+                    bool m_roleArnHasBeenSet;
 
                 };
             }

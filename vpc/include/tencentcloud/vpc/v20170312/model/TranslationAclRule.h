@@ -89,27 +89,6 @@ namespace TencentCloud
                     bool SourcePortHasBeenSet() const;
 
                     /**
-                     * 获取源地址。支持`ip`或`cidr`格式"xxx.xxx.xxx.000/xx"
-                     * @return SourceCidr 源地址。支持`ip`或`cidr`格式"xxx.xxx.xxx.000/xx"
-                     * 
-                     */
-                    std::string GetSourceCidr() const;
-
-                    /**
-                     * 设置源地址。支持`ip`或`cidr`格式"xxx.xxx.xxx.000/xx"
-                     * @param _sourceCidr 源地址。支持`ip`或`cidr`格式"xxx.xxx.xxx.000/xx"
-                     * 
-                     */
-                    void SetSourceCidr(const std::string& _sourceCidr);
-
-                    /**
-                     * 判断参数 SourceCidr 是否已赋值
-                     * @return SourceCidr 是否已赋值
-                     * 
-                     */
-                    bool SourceCidrHasBeenSet() const;
-
-                    /**
                      * 获取目的端口。
                      * @return DestinationPort 目的端口。
                      * 
@@ -150,6 +129,27 @@ namespace TencentCloud
                      * 
                      */
                     bool DestinationCidrHasBeenSet() const;
+
+                    /**
+                     * 获取源地址。支持`ip`或`cidr`格式"xxx.xxx.xxx.000/xx"
+                     * @return SourceCidr 源地址。支持`ip`或`cidr`格式"xxx.xxx.xxx.000/xx"
+                     * 
+                     */
+                    std::string GetSourceCidr() const;
+
+                    /**
+                     * 设置源地址。支持`ip`或`cidr`格式"xxx.xxx.xxx.000/xx"
+                     * @param _sourceCidr 源地址。支持`ip`或`cidr`格式"xxx.xxx.xxx.000/xx"
+                     * 
+                     */
+                    void SetSourceCidr(const std::string& _sourceCidr);
+
+                    /**
+                     * 判断参数 SourceCidr 是否已赋值
+                     * @return SourceCidr 是否已赋值
+                     * 
+                     */
+                    bool SourceCidrHasBeenSet() const;
 
                     /**
                      * 获取ACL规则`ID`。
@@ -229,12 +229,6 @@ namespace TencentCloud
                     bool m_sourcePortHasBeenSet;
 
                     /**
-                     * 源地址。支持`ip`或`cidr`格式"xxx.xxx.xxx.000/xx"
-                     */
-                    std::string m_sourceCidr;
-                    bool m_sourceCidrHasBeenSet;
-
-                    /**
                      * 目的端口。
                      */
                     std::string m_destinationPort;
@@ -245,6 +239,12 @@ namespace TencentCloud
                      */
                     std::string m_destinationCidr;
                     bool m_destinationCidrHasBeenSet;
+
+                    /**
+                     * 源地址。支持`ip`或`cidr`格式"xxx.xxx.xxx.000/xx"
+                     */
+                    std::string m_sourceCidr;
+                    bool m_sourceCidrHasBeenSet;
 
                     /**
                      * ACL规则`ID`。

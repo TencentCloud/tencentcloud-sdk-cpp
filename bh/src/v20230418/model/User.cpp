@@ -39,7 +39,8 @@ User::User() :
     m_statusHasBeenSet(false),
     m_aclVersionHasBeenSet(false),
     m_userFromHasBeenSet(false),
-    m_iOAUserGroupHasBeenSet(false)
+    m_iOAUserGroupHasBeenSet(false),
+    m_roleArnHasBeenSet(false)
 {
 }
 
@@ -262,6 +263,16 @@ CoreInternalOutcome User::Deserialize(const rapidjson::Value &value)
         m_iOAUserGroupHasBeenSet = true;
     }
 
+    if (value.HasMember("RoleArn") && !value["RoleArn"].IsNull())
+    {
+        if (!value["RoleArn"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `User.RoleArn` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_roleArn = string(value["RoleArn"].GetString());
+        m_roleArnHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -428,6 +439,14 @@ void User::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorT
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_iOAUserGroup.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_roleArnHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RoleArn";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_roleArn.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -735,5 +754,21 @@ void User::SetIOAUserGroup(const IOAUserGroup& _iOAUserGroup)
 bool User::IOAUserGroupHasBeenSet() const
 {
     return m_iOAUserGroupHasBeenSet;
+}
+
+string User::GetRoleArn() const
+{
+    return m_roleArn;
+}
+
+void User::SetRoleArn(const string& _roleArn)
+{
+    m_roleArn = _roleArn;
+    m_roleArnHasBeenSet = true;
+}
+
+bool User::RoleArnHasBeenSet() const
+{
+    return m_roleArnHasBeenSet;
 }
 

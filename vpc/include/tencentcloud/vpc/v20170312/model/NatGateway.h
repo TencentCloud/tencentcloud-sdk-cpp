@@ -28,6 +28,7 @@
 #include <tencentcloud/vpc/v20170312/model/DestinationIpPortTranslationNatRule.h>
 #include <tencentcloud/vpc/v20170312/model/Tag.h>
 #include <tencentcloud/vpc/v20170312/model/SourceIpTranslationNatRule.h>
+#include <tencentcloud/vpc/v20170312/model/ConnectionStateTimeouts.h>
 
 
 namespace TencentCloud
@@ -541,6 +542,48 @@ namespace TencentCloud
                      */
                     bool DeletionProtectionEnabledHasBeenSet() const;
 
+                    /**
+                     * 获取NAT实例连接超时时间
+                     * @return ConnectionStateTimeouts NAT实例连接超时时间
+                     * 
+                     */
+                    ConnectionStateTimeouts GetConnectionStateTimeouts() const;
+
+                    /**
+                     * 设置NAT实例连接超时时间
+                     * @param _connectionStateTimeouts NAT实例连接超时时间
+                     * 
+                     */
+                    void SetConnectionStateTimeouts(const ConnectionStateTimeouts& _connectionStateTimeouts);
+
+                    /**
+                     * 判断参数 ConnectionStateTimeouts 是否已赋值
+                     * @return ConnectionStateTimeouts 是否已赋值
+                     * 
+                     */
+                    bool ConnectionStateTimeoutsHasBeenSet() const;
+
+                    /**
+                     * 获取独享实例规格。取值范围：ExclusiveSmall/ExclusiveMedium1/ExclusiveLarge1
+                     * @return ExclusiveType 独享实例规格。取值范围：ExclusiveSmall/ExclusiveMedium1/ExclusiveLarge1
+                     * 
+                     */
+                    std::string GetExclusiveType() const;
+
+                    /**
+                     * 设置独享实例规格。取值范围：ExclusiveSmall/ExclusiveMedium1/ExclusiveLarge1
+                     * @param _exclusiveType 独享实例规格。取值范围：ExclusiveSmall/ExclusiveMedium1/ExclusiveLarge1
+                     * 
+                     */
+                    void SetExclusiveType(const std::string& _exclusiveType);
+
+                    /**
+                     * 判断参数 ExclusiveType 是否已赋值
+                     * @return ExclusiveType 是否已赋值
+                     * 
+                     */
+                    bool ExclusiveTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -682,6 +725,18 @@ namespace TencentCloud
                      */
                     bool m_deletionProtectionEnabled;
                     bool m_deletionProtectionEnabledHasBeenSet;
+
+                    /**
+                     * NAT实例连接超时时间
+                     */
+                    ConnectionStateTimeouts m_connectionStateTimeouts;
+                    bool m_connectionStateTimeoutsHasBeenSet;
+
+                    /**
+                     * 独享实例规格。取值范围：ExclusiveSmall/ExclusiveMedium1/ExclusiveLarge1
+                     */
+                    std::string m_exclusiveType;
+                    bool m_exclusiveTypeHasBeenSet;
 
                 };
             }

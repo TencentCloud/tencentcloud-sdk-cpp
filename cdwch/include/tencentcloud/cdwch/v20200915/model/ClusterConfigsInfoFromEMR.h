@@ -172,6 +172,48 @@ namespace TencentCloud
                      */
                     bool FilePathHasBeenSet() const;
 
+                    /**
+                     * 获取节点级配置的ip，当ConfigLevel取值为node时，此参数必选；
+                     * @return Ip 节点级配置的ip，当ConfigLevel取值为node时，此参数必选；
+                     * 
+                     */
+                    std::string GetIp() const;
+
+                    /**
+                     * 设置节点级配置的ip，当ConfigLevel取值为node时，此参数必选；
+                     * @param _ip 节点级配置的ip，当ConfigLevel取值为node时，此参数必选；
+                     * 
+                     */
+                    void SetIp(const std::string& _ip);
+
+                    /**
+                     * 判断参数 Ip 是否已赋值
+                     * @return Ip 是否已赋值
+                     * 
+                     */
+                    bool IpHasBeenSet() const;
+
+                    /**
+                     * 获取可选参数，参数取值：node,cluster; node: 节点级参数配置，cluster: 实例级参数配置；
+                     * @return ConfigLevel 可选参数，参数取值：node,cluster; node: 节点级参数配置，cluster: 实例级参数配置；
+                     * 
+                     */
+                    std::string GetConfigLevel() const;
+
+                    /**
+                     * 设置可选参数，参数取值：node,cluster; node: 节点级参数配置，cluster: 实例级参数配置；
+                     * @param _configLevel 可选参数，参数取值：node,cluster; node: 节点级参数配置，cluster: 实例级参数配置；
+                     * 
+                     */
+                    void SetConfigLevel(const std::string& _configLevel);
+
+                    /**
+                     * 判断参数 ConfigLevel 是否已赋值
+                     * @return ConfigLevel 是否已赋值
+                     * 
+                     */
+                    bool ConfigLevelHasBeenSet() const;
+
                 private:
 
                     /**
@@ -209,6 +251,18 @@ namespace TencentCloud
                      */
                     std::string m_filePath;
                     bool m_filePathHasBeenSet;
+
+                    /**
+                     * 节点级配置的ip，当ConfigLevel取值为node时，此参数必选；
+                     */
+                    std::string m_ip;
+                    bool m_ipHasBeenSet;
+
+                    /**
+                     * 可选参数，参数取值：node,cluster; node: 节点级参数配置，cluster: 实例级参数配置；
+                     */
+                    std::string m_configLevel;
+                    bool m_configLevelHasBeenSet;
 
                 };
             }

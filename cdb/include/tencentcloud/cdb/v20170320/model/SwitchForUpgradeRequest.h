@@ -63,6 +63,27 @@ namespace TencentCloud
                      */
                     bool InstanceIdHasBeenSet() const;
 
+                    /**
+                     * 获取是否开启关联切换，true为开启，false为关闭，默认false
+                     * @return IsRelatedSwitch 是否开启关联切换，true为开启，false为关闭，默认false
+                     * 
+                     */
+                    bool GetIsRelatedSwitch() const;
+
+                    /**
+                     * 设置是否开启关联切换，true为开启，false为关闭，默认false
+                     * @param _isRelatedSwitch 是否开启关联切换，true为开启，false为关闭，默认false
+                     * 
+                     */
+                    void SetIsRelatedSwitch(const bool& _isRelatedSwitch);
+
+                    /**
+                     * 判断参数 IsRelatedSwitch 是否已赋值
+                     * @return IsRelatedSwitch 是否已赋值
+                     * 
+                     */
+                    bool IsRelatedSwitchHasBeenSet() const;
+
                 private:
 
                     /**
@@ -70,6 +91,12 @@ namespace TencentCloud
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
+
+                    /**
+                     * 是否开启关联切换，true为开启，false为关闭，默认false
+                     */
+                    bool m_isRelatedSwitch;
+                    bool m_isRelatedSwitchHasBeenSet;
 
                 };
             }

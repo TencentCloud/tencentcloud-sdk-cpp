@@ -238,6 +238,7 @@ set(clb_public_header_model
   include/tencentcloud/clb/v20180317/model/ModifyFunctionTargetsRequest.h
   include/tencentcloud/clb/v20180317/model/DescribeRewriteResponse.h
   include/tencentcloud/clb/v20180317/model/Quota.h
+  include/tencentcloud/clb/v20180317/model/AvailableZoneAffinityInfo.h
   include/tencentcloud/clb/v20180317/model/SetLoadBalancerClsLogRequest.h
   include/tencentcloud/clb/v20180317/model/LBItem.h
   include/tencentcloud/clb/v20180317/model/ModifyTargetGroupAttributeResponse.h
@@ -489,6 +490,7 @@ set(clb_src
   src/v20180317/model/ModifyFunctionTargetsRequest.cpp
   src/v20180317/model/DescribeRewriteResponse.cpp
   src/v20180317/model/Quota.cpp
+  src/v20180317/model/AvailableZoneAffinityInfo.cpp
   src/v20180317/model/SetLoadBalancerClsLogRequest.cpp
   src/v20180317/model/LBItem.cpp
   src/v20180317/model/ModifyTargetGroupAttributeResponse.cpp

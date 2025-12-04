@@ -25,7 +25,8 @@ using namespace std;
 
 DescribeAppAgentListResponse::DescribeAppAgentListResponse() :
     m_staringAgentIdHasBeenSet(false),
-    m_agentsHasBeenSet(false)
+    m_agentsHasBeenSet(false),
+    m_handoffAdvancedSettingHasBeenSet(false)
 {
 }
 
@@ -93,6 +94,23 @@ CoreInternalOutcome DescribeAppAgentListResponse::Deserialize(const string &payl
         m_agentsHasBeenSet = true;
     }
 
+    if (rsp.HasMember("HandoffAdvancedSetting") && !rsp["HandoffAdvancedSetting"].IsNull())
+    {
+        if (!rsp["HandoffAdvancedSetting"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `HandoffAdvancedSetting` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_handoffAdvancedSetting.Deserialize(rsp["HandoffAdvancedSetting"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_handoffAdvancedSettingHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -126,6 +144,15 @@ string DescribeAppAgentListResponse::ToJsonString() const
         }
     }
 
+    if (m_handoffAdvancedSettingHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HandoffAdvancedSetting";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_handoffAdvancedSetting.ToJsonObject(value[key.c_str()], allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
@@ -156,6 +183,16 @@ vector<Agent> DescribeAppAgentListResponse::GetAgents() const
 bool DescribeAppAgentListResponse::AgentsHasBeenSet() const
 {
     return m_agentsHasBeenSet;
+}
+
+AgentHandoffAdvancedSetting DescribeAppAgentListResponse::GetHandoffAdvancedSetting() const
+{
+    return m_handoffAdvancedSetting;
+}
+
+bool DescribeAppAgentListResponse::HandoffAdvancedSettingHasBeenSet() const
+{
+    return m_handoffAdvancedSettingHasBeenSet;
 }
 
 

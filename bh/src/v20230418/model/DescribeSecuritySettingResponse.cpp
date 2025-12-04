@@ -23,7 +23,8 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Bh::V20230418::Model;
 using namespace std;
 
-DescribeSecuritySettingResponse::DescribeSecuritySettingResponse()
+DescribeSecuritySettingResponse::DescribeSecuritySettingResponse() :
+    m_securitySettingHasBeenSet(false)
 {
 }
 
@@ -61,6 +62,23 @@ CoreInternalOutcome DescribeSecuritySettingResponse::Deserialize(const string &p
     }
 
 
+    if (rsp.HasMember("SecuritySetting") && !rsp["SecuritySetting"].IsNull())
+    {
+        if (!rsp["SecuritySetting"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `SecuritySetting` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_securitySetting.Deserialize(rsp["SecuritySetting"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_securitySettingHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +88,15 @@ string DescribeSecuritySettingResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_securitySettingHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SecuritySetting";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_securitySetting.ToJsonObject(value[key.c_str()], allocator);
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +109,15 @@ string DescribeSecuritySettingResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+SecuritySetting DescribeSecuritySettingResponse::GetSecuritySetting() const
+{
+    return m_securitySetting;
+}
+
+bool DescribeSecuritySettingResponse::SecuritySettingHasBeenSet() const
+{
+    return m_securitySettingHasBeenSet;
+}
 
 

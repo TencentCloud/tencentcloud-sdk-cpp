@@ -91,18 +91,18 @@ namespace TencentCloud
                     bool SsoApplicationIdHasBeenSet() const;
 
                     /**
-                     * 获取需要删除的单点登录员工的唯一Id 值.不能超过 200 个。
+                     * 获取需要查询的单点登录员工的唯一Id 值.不能超过 200 个。
 如果传递了 openIds，limit 和 offset 参数无效，
-                     * @return OpenIds 需要删除的单点登录员工的唯一Id 值.不能超过 200 个。
+                     * @return OpenIds 需要查询的单点登录员工的唯一Id 值.不能超过 200 个。
 如果传递了 openIds，limit 和 offset 参数无效，
                      * 
                      */
                     std::vector<std::string> GetOpenIds() const;
 
                     /**
-                     * 设置需要删除的单点登录员工的唯一Id 值.不能超过 200 个。
+                     * 设置需要查询的单点登录员工的唯一Id 值.不能超过 200 个。
 如果传递了 openIds，limit 和 offset 参数无效，
-                     * @param _openIds 需要删除的单点登录员工的唯一Id 值.不能超过 200 个。
+                     * @param _openIds 需要查询的单点登录员工的唯一Id 值.不能超过 200 个。
 如果传递了 openIds，limit 和 offset 参数无效，
                      * 
                      */
@@ -198,7 +198,7 @@ namespace TencentCloud
                     bool m_ssoApplicationIdHasBeenSet;
 
                     /**
-                     * 需要删除的单点登录员工的唯一Id 值.不能超过 200 个。
+                     * 需要查询的单点登录员工的唯一Id 值.不能超过 200 个。
 如果传递了 openIds，limit 和 offset 参数无效，
                      */
                     std::vector<std::string> m_openIds;

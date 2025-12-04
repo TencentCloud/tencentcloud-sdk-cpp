@@ -441,6 +441,27 @@ namespace TencentCloud
                      */
                     bool ToolSourceHasBeenSet() const;
 
+                    /**
+                     * 获取计费状态；0-不计费，1-限时免费，2-官方收费
+                     * @return FinanceType 计费状态；0-不计费，1-限时免费，2-官方收费
+                     * 
+                     */
+                    int64_t GetFinanceType() const;
+
+                    /**
+                     * 设置计费状态；0-不计费，1-限时免费，2-官方收费
+                     * @param _financeType 计费状态；0-不计费，1-限时免费，2-官方收费
+                     * 
+                     */
+                    void SetFinanceType(const int64_t& _financeType);
+
+                    /**
+                     * 判断参数 FinanceType 是否已赋值
+                     * @return FinanceType 是否已赋值
+                     * 
+                     */
+                    bool FinanceTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -553,6 +574,12 @@ namespace TencentCloud
                      */
                     uint64_t m_toolSource;
                     bool m_toolSourceHasBeenSet;
+
+                    /**
+                     * 计费状态；0-不计费，1-限时免费，2-官方收费
+                     */
+                    int64_t m_financeType;
+                    bool m_financeTypeHasBeenSet;
 
                 };
             }

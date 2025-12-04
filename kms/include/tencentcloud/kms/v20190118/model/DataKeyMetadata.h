@@ -89,6 +89,27 @@ namespace TencentCloud
                     bool KeyIdHasBeenSet() const;
 
                     /**
+                     * 获取CMK的名称
+                     * @return KeyName CMK的名称
+                     * 
+                     */
+                    std::string GetKeyName() const;
+
+                    /**
+                     * 设置CMK的名称
+                     * @param _keyName CMK的名称
+                     * 
+                     */
+                    void SetKeyName(const std::string& _keyName);
+
+                    /**
+                     * 判断参数 KeyName 是否已赋值
+                     * @return KeyName 是否已赋值
+                     * 
+                     */
+                    bool KeyNameHasBeenSet() const;
+
+                    /**
                      * 获取作为密钥更容易辨识，更容易被人看懂的数据密钥名称
                      * @return DataKeyName 作为密钥更容易辨识，更容易被人看懂的数据密钥名称
                      * 
@@ -479,6 +500,12 @@ namespace TencentCloud
                      */
                     std::string m_keyId;
                     bool m_keyIdHasBeenSet;
+
+                    /**
+                     * CMK的名称
+                     */
+                    std::string m_keyName;
+                    bool m_keyNameHasBeenSet;
 
                     /**
                      * 作为密钥更容易辨识，更容易被人看懂的数据密钥名称

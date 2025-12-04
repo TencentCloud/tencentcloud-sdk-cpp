@@ -24,7 +24,8 @@ Objects::Objects() :
     m_modeHasBeenSet(false),
     m_databasesHasBeenSet(false),
     m_advancedObjectsHasBeenSet(false),
-    m_onlineDDLHasBeenSet(false)
+    m_onlineDDLHasBeenSet(false),
+    m_databasesOpFilterHasBeenSet(false)
 {
 }
 
@@ -93,6 +94,26 @@ CoreInternalOutcome Objects::Deserialize(const rapidjson::Value &value)
         m_onlineDDLHasBeenSet = true;
     }
 
+    if (value.HasMember("DatabasesOpFilter") && !value["DatabasesOpFilter"].IsNull())
+    {
+        if (!value["DatabasesOpFilter"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Objects.DatabasesOpFilter` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["DatabasesOpFilter"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            DBOpFilter item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_databasesOpFilter.push_back(item);
+        }
+        m_databasesOpFilterHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -143,6 +164,21 @@ void Objects::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_onlineDDL.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_databasesOpFilterHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DatabasesOpFilter";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_databasesOpFilter.begin(); itr != m_databasesOpFilter.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -210,5 +246,21 @@ void Objects::SetOnlineDDL(const OnlineDDL& _onlineDDL)
 bool Objects::OnlineDDLHasBeenSet() const
 {
     return m_onlineDDLHasBeenSet;
+}
+
+vector<DBOpFilter> Objects::GetDatabasesOpFilter() const
+{
+    return m_databasesOpFilter;
+}
+
+void Objects::SetDatabasesOpFilter(const vector<DBOpFilter>& _databasesOpFilter)
+{
+    m_databasesOpFilter = _databasesOpFilter;
+    m_databasesOpFilterHasBeenSet = true;
+}
+
+bool Objects::DatabasesOpFilterHasBeenSet() const
+{
+    return m_databasesOpFilterHasBeenSet;
 }
 

@@ -32,6 +32,7 @@
 #include <tencentcloud/clb/v20180317/model/ExtraInfo.h>
 #include <tencentcloud/clb/v20180317/model/ExclusiveCluster.h>
 #include <tencentcloud/clb/v20180317/model/SnatIp.h>
+#include <tencentcloud/clb/v20180317/model/AvailableZoneAffinityInfo.h>
 
 
 namespace TencentCloud
@@ -1484,6 +1485,27 @@ ToaClean: TOA（TCP Option Address）清理，清除TCP选项中的地址信息�
                      */
                     bool AssociateEndpointHasBeenSet() const;
 
+                    /**
+                     * 获取可用区转发亲和信息
+                     * @return AvailableZoneAffinityInfo 可用区转发亲和信息
+                     * 
+                     */
+                    AvailableZoneAffinityInfo GetAvailableZoneAffinityInfo() const;
+
+                    /**
+                     * 设置可用区转发亲和信息
+                     * @param _availableZoneAffinityInfo 可用区转发亲和信息
+                     * 
+                     */
+                    void SetAvailableZoneAffinityInfo(const AvailableZoneAffinityInfo& _availableZoneAffinityInfo);
+
+                    /**
+                     * 判断参数 AvailableZoneAffinityInfo 是否已赋值
+                     * @return AvailableZoneAffinityInfo 是否已赋值
+                     * 
+                     */
+                    bool AvailableZoneAffinityInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1886,6 +1908,12 @@ ToaClean: TOA（TCP Option Address）清理，清除TCP选项中的地址信息�
                      */
                     std::string m_associateEndpoint;
                     bool m_associateEndpointHasBeenSet;
+
+                    /**
+                     * 可用区转发亲和信息
+                     */
+                    AvailableZoneAffinityInfo m_availableZoneAffinityInfo;
+                    bool m_availableZoneAffinityInfoHasBeenSet;
 
                 };
             }

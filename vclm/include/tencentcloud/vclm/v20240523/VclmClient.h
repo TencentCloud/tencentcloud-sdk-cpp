@@ -35,6 +35,8 @@
 #include <tencentcloud/vclm/v20240523/model/DescribePortraitSingJobResponse.h>
 #include <tencentcloud/vclm/v20240523/model/DescribeTemplateToVideoJobRequest.h>
 #include <tencentcloud/vclm/v20240523/model/DescribeTemplateToVideoJobResponse.h>
+#include <tencentcloud/vclm/v20240523/model/DescribeVideoFaceFusionJobRequest.h>
+#include <tencentcloud/vclm/v20240523/model/DescribeVideoFaceFusionJobResponse.h>
 #include <tencentcloud/vclm/v20240523/model/DescribeVideoStylizationJobRequest.h>
 #include <tencentcloud/vclm/v20240523/model/DescribeVideoStylizationJobResponse.h>
 #include <tencentcloud/vclm/v20240523/model/SubmitHumanActorJobRequest.h>
@@ -47,6 +49,8 @@
 #include <tencentcloud/vclm/v20240523/model/SubmitPortraitSingJobResponse.h>
 #include <tencentcloud/vclm/v20240523/model/SubmitTemplateToVideoJobRequest.h>
 #include <tencentcloud/vclm/v20240523/model/SubmitTemplateToVideoJobResponse.h>
+#include <tencentcloud/vclm/v20240523/model/SubmitVideoFaceFusionJobRequest.h>
+#include <tencentcloud/vclm/v20240523/model/SubmitVideoFaceFusionJobResponse.h>
 #include <tencentcloud/vclm/v20240523/model/SubmitVideoStylizationJobRequest.h>
 #include <tencentcloud/vclm/v20240523/model/SubmitVideoStylizationJobResponse.h>
 
@@ -81,6 +85,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeTemplateToVideoJobResponse> DescribeTemplateToVideoJobOutcome;
                 typedef std::future<DescribeTemplateToVideoJobOutcome> DescribeTemplateToVideoJobOutcomeCallable;
                 typedef std::function<void(const VclmClient*, const Model::DescribeTemplateToVideoJobRequest&, DescribeTemplateToVideoJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTemplateToVideoJobAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeVideoFaceFusionJobResponse> DescribeVideoFaceFusionJobOutcome;
+                typedef std::future<DescribeVideoFaceFusionJobOutcome> DescribeVideoFaceFusionJobOutcomeCallable;
+                typedef std::function<void(const VclmClient*, const Model::DescribeVideoFaceFusionJobRequest&, DescribeVideoFaceFusionJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVideoFaceFusionJobAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeVideoStylizationJobResponse> DescribeVideoStylizationJobOutcome;
                 typedef std::future<DescribeVideoStylizationJobOutcome> DescribeVideoStylizationJobOutcomeCallable;
                 typedef std::function<void(const VclmClient*, const Model::DescribeVideoStylizationJobRequest&, DescribeVideoStylizationJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVideoStylizationJobAsyncHandler;
@@ -99,6 +106,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::SubmitTemplateToVideoJobResponse> SubmitTemplateToVideoJobOutcome;
                 typedef std::future<SubmitTemplateToVideoJobOutcome> SubmitTemplateToVideoJobOutcomeCallable;
                 typedef std::function<void(const VclmClient*, const Model::SubmitTemplateToVideoJobRequest&, SubmitTemplateToVideoJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SubmitTemplateToVideoJobAsyncHandler;
+                typedef Outcome<Core::Error, Model::SubmitVideoFaceFusionJobResponse> SubmitVideoFaceFusionJobOutcome;
+                typedef std::future<SubmitVideoFaceFusionJobOutcome> SubmitVideoFaceFusionJobOutcomeCallable;
+                typedef std::function<void(const VclmClient*, const Model::SubmitVideoFaceFusionJobRequest&, SubmitVideoFaceFusionJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SubmitVideoFaceFusionJobAsyncHandler;
                 typedef Outcome<Core::Error, Model::SubmitVideoStylizationJobResponse> SubmitVideoStylizationJobOutcome;
                 typedef std::future<SubmitVideoStylizationJobOutcome> SubmitVideoStylizationJobOutcomeCallable;
                 typedef std::function<void(const VclmClient*, const Model::SubmitVideoStylizationJobRequest&, SubmitVideoStylizationJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SubmitVideoStylizationJobAsyncHandler;
@@ -161,6 +171,15 @@ namespace TencentCloud
                 DescribeTemplateToVideoJobOutcomeCallable DescribeTemplateToVideoJobCallable(const Model::DescribeTemplateToVideoJobRequest& request);
 
                 /**
+                 *查询视频人脸融合任务
+                 * @param req DescribeVideoFaceFusionJobRequest
+                 * @return DescribeVideoFaceFusionJobOutcome
+                 */
+                DescribeVideoFaceFusionJobOutcome DescribeVideoFaceFusionJob(const Model::DescribeVideoFaceFusionJobRequest &request);
+                void DescribeVideoFaceFusionJobAsync(const Model::DescribeVideoFaceFusionJobRequest& request, const DescribeVideoFaceFusionJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeVideoFaceFusionJobOutcomeCallable DescribeVideoFaceFusionJobCallable(const Model::DescribeVideoFaceFusionJobRequest& request);
+
+                /**
                  *用于查询视频风格化任务。视频风格化支持将输入视频生成特定风格的视频。生成后的视频画面风格多样、流畅自然，能够满足社交娱乐、互动营销、视频素材制作等场景的需求。
                  * @param req DescribeVideoStylizationJobRequest
                  * @return DescribeVideoStylizationJobOutcome
@@ -215,6 +234,15 @@ namespace TencentCloud
                 SubmitTemplateToVideoJobOutcome SubmitTemplateToVideoJob(const Model::SubmitTemplateToVideoJobRequest &request);
                 void SubmitTemplateToVideoJobAsync(const Model::SubmitTemplateToVideoJobRequest& request, const SubmitTemplateToVideoJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 SubmitTemplateToVideoJobOutcomeCallable SubmitTemplateToVideoJobCallable(const Model::SubmitTemplateToVideoJobRequest& request);
+
+                /**
+                 *提交视频人脸融合任务
+                 * @param req SubmitVideoFaceFusionJobRequest
+                 * @return SubmitVideoFaceFusionJobOutcome
+                 */
+                SubmitVideoFaceFusionJobOutcome SubmitVideoFaceFusionJob(const Model::SubmitVideoFaceFusionJobRequest &request);
+                void SubmitVideoFaceFusionJobAsync(const Model::SubmitVideoFaceFusionJobRequest& request, const SubmitVideoFaceFusionJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SubmitVideoFaceFusionJobOutcomeCallable SubmitVideoFaceFusionJobCallable(const Model::SubmitVideoFaceFusionJobRequest& request);
 
                 /**
                  *用于提交视频风格化任务。支持将输入视频生成特定风格的视频。生成后的视频画面风格多样、流畅自然，能够满足社交娱乐、互动营销、视频素材制作等场景的需求。

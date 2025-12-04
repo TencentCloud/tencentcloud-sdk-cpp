@@ -106,6 +106,27 @@ namespace TencentCloud
                      */
                     bool AccountsHasBeenSet() const;
 
+                    /**
+                     * 获取是否跳过校验密码复杂度
+                     * @return SkipValidatePassword 是否跳过校验密码复杂度
+                     * 
+                     */
+                    bool GetSkipValidatePassword() const;
+
+                    /**
+                     * 设置是否跳过校验密码复杂度
+                     * @param _skipValidatePassword 是否跳过校验密码复杂度
+                     * 
+                     */
+                    void SetSkipValidatePassword(const bool& _skipValidatePassword);
+
+                    /**
+                     * 判断参数 SkipValidatePassword 是否已赋值
+                     * @return SkipValidatePassword 是否已赋值
+                     * 
+                     */
+                    bool SkipValidatePasswordHasBeenSet() const;
+
                 private:
 
                     /**
@@ -125,6 +146,12 @@ namespace TencentCloud
                      */
                     std::vector<Account> m_accounts;
                     bool m_accountsHasBeenSet;
+
+                    /**
+                     * 是否跳过校验密码复杂度
+                     */
+                    bool m_skipValidatePassword;
+                    bool m_skipValidatePasswordHasBeenSet;
 
                 };
             }

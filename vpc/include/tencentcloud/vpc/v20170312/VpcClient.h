@@ -6190,7 +6190,7 @@ LimitTypes取值范围：
                 ResetHighPriorityRoutesOutcomeCallable ResetHighPriorityRoutesCallable(const Model::ResetHighPriorityRoutesRequest& request);
 
                 /**
-                 *本接口（ResetNatGatewayConnection）用来NAT网关并发连接上限。
+                 *本接口（ResetNatGatewayConnection）用于调整传统型NAT网关并发连接数上限。
                  * @param req ResetNatGatewayConnectionRequest
                  * @return ResetNatGatewayConnectionOutcome
                  */

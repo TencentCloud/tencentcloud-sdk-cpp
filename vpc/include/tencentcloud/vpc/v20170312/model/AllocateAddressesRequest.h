@@ -148,6 +148,31 @@ namespace TencentCloud
                     bool InternetChargeTypeHasBeenSet() const;
 
                     /**
+                     * 获取IP 资源计费模式，当前仅支持原生 IP。
+<ul style="margin:0"><li>账号为标准账户类型的用户，可选值：<ul><li>IP_POSTPAID_BY_HOUR：IP资源按小时后付费</li><li>IP_PREPAID_BY_MONTH：IP资源包月预付费</li></ul></li></ul>
+                     * @return IPChargeType IP 资源计费模式，当前仅支持原生 IP。
+<ul style="margin:0"><li>账号为标准账户类型的用户，可选值：<ul><li>IP_POSTPAID_BY_HOUR：IP资源按小时后付费</li><li>IP_PREPAID_BY_MONTH：IP资源包月预付费</li></ul></li></ul>
+                     * 
+                     */
+                    std::string GetIPChargeType() const;
+
+                    /**
+                     * 设置IP 资源计费模式，当前仅支持原生 IP。
+<ul style="margin:0"><li>账号为标准账户类型的用户，可选值：<ul><li>IP_POSTPAID_BY_HOUR：IP资源按小时后付费</li><li>IP_PREPAID_BY_MONTH：IP资源包月预付费</li></ul></li></ul>
+                     * @param _iPChargeType IP 资源计费模式，当前仅支持原生 IP。
+<ul style="margin:0"><li>账号为标准账户类型的用户，可选值：<ul><li>IP_POSTPAID_BY_HOUR：IP资源按小时后付费</li><li>IP_PREPAID_BY_MONTH：IP资源包月预付费</li></ul></li></ul>
+                     * 
+                     */
+                    void SetIPChargeType(const std::string& _iPChargeType);
+
+                    /**
+                     * 判断参数 IPChargeType 是否已赋值
+                     * @return IPChargeType 是否已赋值
+                     * 
+                     */
+                    bool IPChargeTypeHasBeenSet() const;
+
+                    /**
                      * 获取EIP出带宽上限，单位：Mbps。
 <ul style="margin:0"><li>标准账户类型EIP出带宽上限，可选值范围取决于EIP计费方式：<ul><li>BANDWIDTH_PACKAGE：1 Mbps 至 2000 Mbps</li>
 <li>BANDWIDTH_POSTPAID_BY_HOUR：1 Mbps 至 100 Mbps</li>
@@ -214,12 +239,16 @@ namespace TencentCloud
 <li>EIP：弹性公网 IP。 </li>
 <li>AnycastEIP：加速 IP，已开通 [Anycast 公网加速](https://cloud.tencent.com/document/product/644)白名单的用户可选。仅部分地域支持加速IP，详情可见Anycast公网加速[购买指南](https://cloud.tencent.com/document/product/644/12617)。</li>
 <li>HighQualityEIP：精品 IP。仅新加坡和中国香港支持精品IP。</li>
-<li>AntiDDoSEIP：高防 IP。仅部分地域支持高防IP，详情可见弹性公网IP[产品概述](https://cloud.tencent.com/document/product/1199/41646)。</li>
+<li>AntiDDoSEIP：高防 IP。仅部分地域支持高防IP。</li>
+<li>ResidentialEIP：原生 IP。仅部分地域支持原生IP。</li>
+关于弹性公网 IP 支持的 IP 类型，请见[产品概述](https://cloud.tencent.com/document/product/1199/41646)。
                      * @return AddressType EIP类型。各种EIP类型详情可参考：[EIP 的 IP 地址类型](https://cloud.tencent.com/document/product/1199/41646)。默认值：EIP。
 <li>EIP：弹性公网 IP。 </li>
 <li>AnycastEIP：加速 IP，已开通 [Anycast 公网加速](https://cloud.tencent.com/document/product/644)白名单的用户可选。仅部分地域支持加速IP，详情可见Anycast公网加速[购买指南](https://cloud.tencent.com/document/product/644/12617)。</li>
 <li>HighQualityEIP：精品 IP。仅新加坡和中国香港支持精品IP。</li>
-<li>AntiDDoSEIP：高防 IP。仅部分地域支持高防IP，详情可见弹性公网IP[产品概述](https://cloud.tencent.com/document/product/1199/41646)。</li>
+<li>AntiDDoSEIP：高防 IP。仅部分地域支持高防IP。</li>
+<li>ResidentialEIP：原生 IP。仅部分地域支持原生IP。</li>
+关于弹性公网 IP 支持的 IP 类型，请见[产品概述](https://cloud.tencent.com/document/product/1199/41646)。
                      * 
                      */
                     std::string GetAddressType() const;
@@ -229,12 +258,16 @@ namespace TencentCloud
 <li>EIP：弹性公网 IP。 </li>
 <li>AnycastEIP：加速 IP，已开通 [Anycast 公网加速](https://cloud.tencent.com/document/product/644)白名单的用户可选。仅部分地域支持加速IP，详情可见Anycast公网加速[购买指南](https://cloud.tencent.com/document/product/644/12617)。</li>
 <li>HighQualityEIP：精品 IP。仅新加坡和中国香港支持精品IP。</li>
-<li>AntiDDoSEIP：高防 IP。仅部分地域支持高防IP，详情可见弹性公网IP[产品概述](https://cloud.tencent.com/document/product/1199/41646)。</li>
+<li>AntiDDoSEIP：高防 IP。仅部分地域支持高防IP。</li>
+<li>ResidentialEIP：原生 IP。仅部分地域支持原生IP。</li>
+关于弹性公网 IP 支持的 IP 类型，请见[产品概述](https://cloud.tencent.com/document/product/1199/41646)。
                      * @param _addressType EIP类型。各种EIP类型详情可参考：[EIP 的 IP 地址类型](https://cloud.tencent.com/document/product/1199/41646)。默认值：EIP。
 <li>EIP：弹性公网 IP。 </li>
 <li>AnycastEIP：加速 IP，已开通 [Anycast 公网加速](https://cloud.tencent.com/document/product/644)白名单的用户可选。仅部分地域支持加速IP，详情可见Anycast公网加速[购买指南](https://cloud.tencent.com/document/product/644/12617)。</li>
 <li>HighQualityEIP：精品 IP。仅新加坡和中国香港支持精品IP。</li>
-<li>AntiDDoSEIP：高防 IP。仅部分地域支持高防IP，详情可见弹性公网IP[产品概述](https://cloud.tencent.com/document/product/1199/41646)。</li>
+<li>AntiDDoSEIP：高防 IP。仅部分地域支持高防IP。</li>
+<li>ResidentialEIP：原生 IP。仅部分地域支持原生IP。</li>
+关于弹性公网 IP 支持的 IP 类型，请见[产品概述](https://cloud.tencent.com/document/product/1199/41646)。
                      * 
                      */
                     void SetAddressType(const std::string& _addressType);
@@ -509,47 +542,6 @@ AnycastEIP是否用于绑定负载均衡。
                      */
                     bool ClientTokenHasBeenSet() const;
 
-                    /**
-                     * 获取原生EIP IP资源的计费方式。
-<ul style="margin:0"><li>账号为标准账户类型的用户，可选值：<ul>
-<li>IP_POSTPAID_BY_HOUR：IP资源按小时后付费</li>
-<li>IP_PREPAID_BY_MONTH：IP资源包月预付费</li>
-</ul></li>
-</ul>
-                     * @return IPChargeType 原生EIP IP资源的计费方式。
-<ul style="margin:0"><li>账号为标准账户类型的用户，可选值：<ul>
-<li>IP_POSTPAID_BY_HOUR：IP资源按小时后付费</li>
-<li>IP_PREPAID_BY_MONTH：IP资源包月预付费</li>
-</ul></li>
-</ul>
-                     * 
-                     */
-                    std::string GetIPChargeType() const;
-
-                    /**
-                     * 设置原生EIP IP资源的计费方式。
-<ul style="margin:0"><li>账号为标准账户类型的用户，可选值：<ul>
-<li>IP_POSTPAID_BY_HOUR：IP资源按小时后付费</li>
-<li>IP_PREPAID_BY_MONTH：IP资源包月预付费</li>
-</ul></li>
-</ul>
-                     * @param _iPChargeType 原生EIP IP资源的计费方式。
-<ul style="margin:0"><li>账号为标准账户类型的用户，可选值：<ul>
-<li>IP_POSTPAID_BY_HOUR：IP资源按小时后付费</li>
-<li>IP_PREPAID_BY_MONTH：IP资源包月预付费</li>
-</ul></li>
-</ul>
-                     * 
-                     */
-                    void SetIPChargeType(const std::string& _iPChargeType);
-
-                    /**
-                     * 判断参数 IPChargeType 是否已赋值
-                     * @return IPChargeType 是否已赋值
-                     * 
-                     */
-                    bool IPChargeTypeHasBeenSet() const;
-
                 private:
 
                     /**
@@ -581,6 +573,13 @@ AnycastEIP是否用于绑定负载均衡。
                     bool m_internetChargeTypeHasBeenSet;
 
                     /**
+                     * IP 资源计费模式，当前仅支持原生 IP。
+<ul style="margin:0"><li>账号为标准账户类型的用户，可选值：<ul><li>IP_POSTPAID_BY_HOUR：IP资源按小时后付费</li><li>IP_PREPAID_BY_MONTH：IP资源包月预付费</li></ul></li></ul>
+                     */
+                    std::string m_iPChargeType;
+                    bool m_iPChargeTypeHasBeenSet;
+
+                    /**
                      * EIP出带宽上限，单位：Mbps。
 <ul style="margin:0"><li>标准账户类型EIP出带宽上限，可选值范围取决于EIP计费方式：<ul><li>BANDWIDTH_PACKAGE：1 Mbps 至 2000 Mbps</li>
 <li>BANDWIDTH_POSTPAID_BY_HOUR：1 Mbps 至 100 Mbps</li>
@@ -602,7 +601,9 @@ AnycastEIP是否用于绑定负载均衡。
 <li>EIP：弹性公网 IP。 </li>
 <li>AnycastEIP：加速 IP，已开通 [Anycast 公网加速](https://cloud.tencent.com/document/product/644)白名单的用户可选。仅部分地域支持加速IP，详情可见Anycast公网加速[购买指南](https://cloud.tencent.com/document/product/644/12617)。</li>
 <li>HighQualityEIP：精品 IP。仅新加坡和中国香港支持精品IP。</li>
-<li>AntiDDoSEIP：高防 IP。仅部分地域支持高防IP，详情可见弹性公网IP[产品概述](https://cloud.tencent.com/document/product/1199/41646)。</li>
+<li>AntiDDoSEIP：高防 IP。仅部分地域支持高防IP。</li>
+<li>ResidentialEIP：原生 IP。仅部分地域支持原生IP。</li>
+关于弹性公网 IP 支持的 IP 类型，请见[产品概述](https://cloud.tencent.com/document/product/1199/41646)。
                      */
                     std::string m_addressType;
                     bool m_addressTypeHasBeenSet;
@@ -680,17 +681,6 @@ AnycastEIP是否用于绑定负载均衡。
                      */
                     std::string m_clientToken;
                     bool m_clientTokenHasBeenSet;
-
-                    /**
-                     * 原生EIP IP资源的计费方式。
-<ul style="margin:0"><li>账号为标准账户类型的用户，可选值：<ul>
-<li>IP_POSTPAID_BY_HOUR：IP资源按小时后付费</li>
-<li>IP_PREPAID_BY_MONTH：IP资源包月预付费</li>
-</ul></li>
-</ul>
-                     */
-                    std::string m_iPChargeType;
-                    bool m_iPChargeTypeHasBeenSet;
 
                 };
             }

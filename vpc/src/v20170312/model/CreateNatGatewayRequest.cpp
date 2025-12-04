@@ -36,7 +36,8 @@ CreateNatGatewayRequest::CreateNatGatewayRequest() :
     m_publicIpAddressesBandwidthOutHasBeenSet(false),
     m_publicIpFromSameZoneHasBeenSet(false),
     m_natProductVersionHasBeenSet(false),
-    m_deletionProtectionEnabledHasBeenSet(false)
+    m_deletionProtectionEnabledHasBeenSet(false),
+    m_exclusiveTypeHasBeenSet(false)
 {
 }
 
@@ -169,6 +170,14 @@ string CreateNatGatewayRequest::ToJsonString() const
         string key = "DeletionProtectionEnabled";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_deletionProtectionEnabled, allocator);
+    }
+
+    if (m_exclusiveTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExclusiveType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_exclusiveType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -401,6 +410,22 @@ void CreateNatGatewayRequest::SetDeletionProtectionEnabled(const bool& _deletion
 bool CreateNatGatewayRequest::DeletionProtectionEnabledHasBeenSet() const
 {
     return m_deletionProtectionEnabledHasBeenSet;
+}
+
+string CreateNatGatewayRequest::GetExclusiveType() const
+{
+    return m_exclusiveType;
+}
+
+void CreateNatGatewayRequest::SetExclusiveType(const string& _exclusiveType)
+{
+    m_exclusiveType = _exclusiveType;
+    m_exclusiveTypeHasBeenSet = true;
+}
+
+bool CreateNatGatewayRequest::ExclusiveTypeHasBeenSet() const
+{
+    return m_exclusiveTypeHasBeenSet;
 }
 
 

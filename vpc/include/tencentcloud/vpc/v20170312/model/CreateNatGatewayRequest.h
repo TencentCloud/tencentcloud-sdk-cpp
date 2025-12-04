@@ -337,6 +337,27 @@ namespace TencentCloud
                      */
                     bool DeletionProtectionEnabledHasBeenSet() const;
 
+                    /**
+                     * 获取独享实例规格。取值范围：ExclusiveSmall/ExclusiveMedium1/ExclusiveLarge1
+                     * @return ExclusiveType 独享实例规格。取值范围：ExclusiveSmall/ExclusiveMedium1/ExclusiveLarge1
+                     * 
+                     */
+                    std::string GetExclusiveType() const;
+
+                    /**
+                     * 设置独享实例规格。取值范围：ExclusiveSmall/ExclusiveMedium1/ExclusiveLarge1
+                     * @param _exclusiveType 独享实例规格。取值范围：ExclusiveSmall/ExclusiveMedium1/ExclusiveLarge1
+                     * 
+                     */
+                    void SetExclusiveType(const std::string& _exclusiveType);
+
+                    /**
+                     * 判断参数 ExclusiveType 是否已赋值
+                     * @return ExclusiveType 是否已赋值
+                     * 
+                     */
+                    bool ExclusiveTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -422,6 +443,12 @@ namespace TencentCloud
                      */
                     bool m_deletionProtectionEnabled;
                     bool m_deletionProtectionEnabledHasBeenSet;
+
+                    /**
+                     * 独享实例规格。取值范围：ExclusiveSmall/ExclusiveMedium1/ExclusiveLarge1
+                     */
+                    std::string m_exclusiveType;
+                    bool m_exclusiveTypeHasBeenSet;
 
                 };
             }

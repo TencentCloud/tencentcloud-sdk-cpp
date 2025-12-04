@@ -32,7 +32,8 @@ ListDataKeyDetailRequest::ListDataKeyDetailRequest() :
     m_originHasBeenSet(false),
     m_hsmClusterIdHasBeenSet(false),
     m_keyIdHasBeenSet(false),
-    m_dataKeyLenHasBeenSet(false)
+    m_dataKeyLenHasBeenSet(false),
+    m_tagFiltersHasBeenSet(false)
 {
 }
 
@@ -121,6 +122,21 @@ string ListDataKeyDetailRequest::ToJsonString() const
         string key = "DataKeyLen";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_dataKeyLen, allocator);
+    }
+
+    if (m_tagFiltersHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TagFilters";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tagFilters.begin(); itr != m_tagFilters.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -289,6 +305,22 @@ void ListDataKeyDetailRequest::SetDataKeyLen(const uint64_t& _dataKeyLen)
 bool ListDataKeyDetailRequest::DataKeyLenHasBeenSet() const
 {
     return m_dataKeyLenHasBeenSet;
+}
+
+vector<TagFilter> ListDataKeyDetailRequest::GetTagFilters() const
+{
+    return m_tagFilters;
+}
+
+void ListDataKeyDetailRequest::SetTagFilters(const vector<TagFilter>& _tagFilters)
+{
+    m_tagFilters = _tagFilters;
+    m_tagFiltersHasBeenSet = true;
+}
+
+bool ListDataKeyDetailRequest::TagFiltersHasBeenSet() const
+{
+    return m_tagFiltersHasBeenSet;
 }
 
 

@@ -37,6 +37,8 @@
 #include <tencentcloud/dataagent/v20250513/model/GetKnowledgeBaseListResponse.h>
 #include <tencentcloud/dataagent/v20250513/model/GetSessionDetailsRequest.h>
 #include <tencentcloud/dataagent/v20250513/model/GetSessionDetailsResponse.h>
+#include <tencentcloud/dataagent/v20250513/model/GetUploadJobDetailsRequest.h>
+#include <tencentcloud/dataagent/v20250513/model/GetUploadJobDetailsResponse.h>
 #include <tencentcloud/dataagent/v20250513/model/ModifyChunkRequest.h>
 #include <tencentcloud/dataagent/v20250513/model/ModifyChunkResponse.h>
 #include <tencentcloud/dataagent/v20250513/model/ModifyKnowledgeBaseRequest.h>
@@ -45,6 +47,8 @@
 #include <tencentcloud/dataagent/v20250513/model/QueryChunkListResponse.h>
 #include <tencentcloud/dataagent/v20250513/model/StopChatAIRequest.h>
 #include <tencentcloud/dataagent/v20250513/model/StopChatAIResponse.h>
+#include <tencentcloud/dataagent/v20250513/model/UploadAndCommitFileRequest.h>
+#include <tencentcloud/dataagent/v20250513/model/UploadAndCommitFileResponse.h>
 
 
 namespace TencentCloud
@@ -80,6 +84,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::GetSessionDetailsResponse> GetSessionDetailsOutcome;
                 typedef std::future<GetSessionDetailsOutcome> GetSessionDetailsOutcomeCallable;
                 typedef std::function<void(const DataagentClient*, const Model::GetSessionDetailsRequest&, GetSessionDetailsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetSessionDetailsAsyncHandler;
+                typedef Outcome<Core::Error, Model::GetUploadJobDetailsResponse> GetUploadJobDetailsOutcome;
+                typedef std::future<GetUploadJobDetailsOutcome> GetUploadJobDetailsOutcomeCallable;
+                typedef std::function<void(const DataagentClient*, const Model::GetUploadJobDetailsRequest&, GetUploadJobDetailsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetUploadJobDetailsAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyChunkResponse> ModifyChunkOutcome;
                 typedef std::future<ModifyChunkOutcome> ModifyChunkOutcomeCallable;
                 typedef std::function<void(const DataagentClient*, const Model::ModifyChunkRequest&, ModifyChunkOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyChunkAsyncHandler;
@@ -92,6 +99,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::StopChatAIResponse> StopChatAIOutcome;
                 typedef std::future<StopChatAIOutcome> StopChatAIOutcomeCallable;
                 typedef std::function<void(const DataagentClient*, const Model::StopChatAIRequest&, StopChatAIOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopChatAIAsyncHandler;
+                typedef Outcome<Core::Error, Model::UploadAndCommitFileResponse> UploadAndCommitFileOutcome;
+                typedef std::future<UploadAndCommitFileOutcome> UploadAndCommitFileOutcomeCallable;
+                typedef std::function<void(const DataagentClient*, const Model::UploadAndCommitFileRequest&, UploadAndCommitFileOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UploadAndCommitFileAsyncHandler;
 
 
 
@@ -159,6 +169,15 @@ namespace TencentCloud
                 GetSessionDetailsOutcomeCallable GetSessionDetailsCallable(const Model::GetSessionDetailsRequest& request);
 
                 /**
+                 *查询上传任务
+                 * @param req GetUploadJobDetailsRequest
+                 * @return GetUploadJobDetailsOutcome
+                 */
+                GetUploadJobDetailsOutcome GetUploadJobDetails(const Model::GetUploadJobDetailsRequest &request);
+                void GetUploadJobDetailsAsync(const Model::GetUploadJobDetailsRequest& request, const GetUploadJobDetailsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetUploadJobDetailsOutcomeCallable GetUploadJobDetailsCallable(const Model::GetUploadJobDetailsRequest& request);
+
+                /**
                  *编辑修改分片
                  * @param req ModifyChunkRequest
                  * @return ModifyChunkOutcome
@@ -193,6 +212,15 @@ namespace TencentCloud
                 StopChatAIOutcome StopChatAI(const Model::StopChatAIRequest &request);
                 void StopChatAIAsync(const Model::StopChatAIRequest& request, const StopChatAIAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 StopChatAIOutcomeCallable StopChatAICallable(const Model::StopChatAIRequest& request);
+
+                /**
+                 *上传提交文件
+                 * @param req UploadAndCommitFileRequest
+                 * @return UploadAndCommitFileOutcome
+                 */
+                UploadAndCommitFileOutcome UploadAndCommitFile(const Model::UploadAndCommitFileRequest &request);
+                void UploadAndCommitFileAsync(const Model::UploadAndCommitFileRequest& request, const UploadAndCommitFileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UploadAndCommitFileOutcomeCallable UploadAndCommitFileCallable(const Model::UploadAndCommitFileRequest& request);
 
             };
         }

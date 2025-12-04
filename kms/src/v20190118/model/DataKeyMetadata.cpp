@@ -23,6 +23,7 @@ using namespace std;
 DataKeyMetadata::DataKeyMetadata() :
     m_dataKeyIdHasBeenSet(false),
     m_keyIdHasBeenSet(false),
+    m_keyNameHasBeenSet(false),
     m_dataKeyNameHasBeenSet(false),
     m_numberOfBytesHasBeenSet(false),
     m_createTimeHasBeenSet(false),
@@ -67,6 +68,16 @@ CoreInternalOutcome DataKeyMetadata::Deserialize(const rapidjson::Value &value)
         }
         m_keyId = string(value["KeyId"].GetString());
         m_keyIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("KeyName") && !value["KeyName"].IsNull())
+    {
+        if (!value["KeyName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DataKeyMetadata.KeyName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_keyName = string(value["KeyName"].GetString());
+        m_keyNameHasBeenSet = true;
     }
 
     if (value.HasMember("DataKeyName") && !value["DataKeyName"].IsNull())
@@ -272,6 +283,14 @@ void DataKeyMetadata::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         value.AddMember(iKey, rapidjson::Value(m_keyId.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_keyNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "KeyName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_keyName.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_dataKeyNameHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -449,6 +468,22 @@ void DataKeyMetadata::SetKeyId(const string& _keyId)
 bool DataKeyMetadata::KeyIdHasBeenSet() const
 {
     return m_keyIdHasBeenSet;
+}
+
+string DataKeyMetadata::GetKeyName() const
+{
+    return m_keyName;
+}
+
+void DataKeyMetadata::SetKeyName(const string& _keyName)
+{
+    m_keyName = _keyName;
+    m_keyNameHasBeenSet = true;
+}
+
+bool DataKeyMetadata::KeyNameHasBeenSet() const
+{
+    return m_keyNameHasBeenSet;
 }
 
 string DataKeyMetadata::GetDataKeyName() const

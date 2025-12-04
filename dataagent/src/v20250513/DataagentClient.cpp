@@ -390,6 +390,56 @@ DataagentClient::GetSessionDetailsOutcomeCallable DataagentClient::GetSessionDet
     return prom->get_future();
 }
 
+DataagentClient::GetUploadJobDetailsOutcome DataagentClient::GetUploadJobDetails(const GetUploadJobDetailsRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetUploadJobDetails");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetUploadJobDetailsResponse rsp = GetUploadJobDetailsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetUploadJobDetailsOutcome(rsp);
+        else
+            return GetUploadJobDetailsOutcome(o.GetError());
+    }
+    else
+    {
+        return GetUploadJobDetailsOutcome(outcome.GetError());
+    }
+}
+
+void DataagentClient::GetUploadJobDetailsAsync(const GetUploadJobDetailsRequest& request, const GetUploadJobDetailsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const GetUploadJobDetailsRequest&;
+    using Resp = GetUploadJobDetailsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "GetUploadJobDetails", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DataagentClient::GetUploadJobDetailsOutcomeCallable DataagentClient::GetUploadJobDetailsCallable(const GetUploadJobDetailsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<GetUploadJobDetailsOutcome>>();
+    GetUploadJobDetailsAsync(
+    request,
+    [prom](
+        const DataagentClient*,
+        const GetUploadJobDetailsRequest&,
+        GetUploadJobDetailsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 DataagentClient::ModifyChunkOutcome DataagentClient::ModifyChunk(const ModifyChunkRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyChunk");
@@ -582,6 +632,56 @@ DataagentClient::StopChatAIOutcomeCallable DataagentClient::StopChatAICallable(c
         const DataagentClient*,
         const StopChatAIRequest&,
         StopChatAIOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+DataagentClient::UploadAndCommitFileOutcome DataagentClient::UploadAndCommitFile(const UploadAndCommitFileRequest &request)
+{
+    auto outcome = MakeRequest(request, "UploadAndCommitFile");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UploadAndCommitFileResponse rsp = UploadAndCommitFileResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UploadAndCommitFileOutcome(rsp);
+        else
+            return UploadAndCommitFileOutcome(o.GetError());
+    }
+    else
+    {
+        return UploadAndCommitFileOutcome(outcome.GetError());
+    }
+}
+
+void DataagentClient::UploadAndCommitFileAsync(const UploadAndCommitFileRequest& request, const UploadAndCommitFileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const UploadAndCommitFileRequest&;
+    using Resp = UploadAndCommitFileResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "UploadAndCommitFile", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DataagentClient::UploadAndCommitFileOutcomeCallable DataagentClient::UploadAndCommitFileCallable(const UploadAndCommitFileRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<UploadAndCommitFileOutcome>>();
+    UploadAndCommitFileAsync(
+    request,
+    [prom](
+        const DataagentClient*,
+        const UploadAndCommitFileRequest&,
+        UploadAndCommitFileOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

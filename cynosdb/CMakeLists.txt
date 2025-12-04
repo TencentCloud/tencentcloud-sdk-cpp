@@ -268,6 +268,7 @@ set(cynosdb_public_header_model
   include/tencentcloud/cynosdb/v20190107/model/DescribeClusterPasswordComplexityRequest.h
   include/tencentcloud/cynosdb/v20190107/model/QueryFilter.h
   include/tencentcloud/cynosdb/v20190107/model/CreateAccountsResponse.h
+  include/tencentcloud/cynosdb/v20190107/model/ModifyClusterGlobalEncryptionResponse.h
   include/tencentcloud/cynosdb/v20190107/model/CloseWanResponse.h
   include/tencentcloud/cynosdb/v20190107/model/DescribeInstancesResponse.h
   include/tencentcloud/cynosdb/v20190107/model/SalePackageSpec.h
@@ -337,6 +338,7 @@ set(cynosdb_public_header_model
   include/tencentcloud/cynosdb/v20190107/model/OpenWanResponse.h
   include/tencentcloud/cynosdb/v20190107/model/OfflineClusterResponse.h
   include/tencentcloud/cynosdb/v20190107/model/ClusterTaskId.h
+  include/tencentcloud/cynosdb/v20190107/model/ModifyClusterGlobalEncryptionRequest.h
   include/tencentcloud/cynosdb/v20190107/model/ModifyAccountHostRequest.h
   include/tencentcloud/cynosdb/v20190107/model/DescribeFlowRequest.h
   include/tencentcloud/cynosdb/v20190107/model/DescribeClusterDatabaseTablesResponse.h
@@ -738,6 +740,7 @@ set(cynosdb_src
   src/v20190107/model/DescribeClusterPasswordComplexityRequest.cpp
   src/v20190107/model/QueryFilter.cpp
   src/v20190107/model/CreateAccountsResponse.cpp
+  src/v20190107/model/ModifyClusterGlobalEncryptionResponse.cpp
   src/v20190107/model/CloseWanResponse.cpp
   src/v20190107/model/DescribeInstancesResponse.cpp
   src/v20190107/model/SalePackageSpec.cpp
@@ -807,6 +810,7 @@ set(cynosdb_src
   src/v20190107/model/OpenWanResponse.cpp
   src/v20190107/model/OfflineClusterResponse.cpp
   src/v20190107/model/ClusterTaskId.cpp
+  src/v20190107/model/ModifyClusterGlobalEncryptionRequest.cpp
   src/v20190107/model/ModifyAccountHostRequest.cpp
   src/v20190107/model/DescribeFlowRequest.cpp
   src/v20190107/model/DescribeClusterDatabaseTablesResponse.cpp

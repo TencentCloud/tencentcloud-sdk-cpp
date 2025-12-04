@@ -45,6 +45,8 @@
 #include <tencentcloud/mqtt/v20240516/model/CreateJWKSAuthenticatorResponse.h>
 #include <tencentcloud/mqtt/v20240516/model/CreateJWTAuthenticatorRequest.h>
 #include <tencentcloud/mqtt/v20240516/model/CreateJWTAuthenticatorResponse.h>
+#include <tencentcloud/mqtt/v20240516/model/CreateMessageEnrichmentRuleRequest.h>
+#include <tencentcloud/mqtt/v20240516/model/CreateMessageEnrichmentRuleResponse.h>
 #include <tencentcloud/mqtt/v20240516/model/CreateTopicRequest.h>
 #include <tencentcloud/mqtt/v20240516/model/CreateTopicResponse.h>
 #include <tencentcloud/mqtt/v20240516/model/CreateUserRequest.h>
@@ -69,6 +71,8 @@
 #include <tencentcloud/mqtt/v20240516/model/DeleteInsPublicEndpointResponse.h>
 #include <tencentcloud/mqtt/v20240516/model/DeleteInstanceRequest.h>
 #include <tencentcloud/mqtt/v20240516/model/DeleteInstanceResponse.h>
+#include <tencentcloud/mqtt/v20240516/model/DeleteMessageEnrichmentRuleRequest.h>
+#include <tencentcloud/mqtt/v20240516/model/DeleteMessageEnrichmentRuleResponse.h>
 #include <tencentcloud/mqtt/v20240516/model/DeleteTopicRequest.h>
 #include <tencentcloud/mqtt/v20240516/model/DeleteTopicResponse.h>
 #include <tencentcloud/mqtt/v20240516/model/DeleteUserRequest.h>
@@ -103,6 +107,8 @@
 #include <tencentcloud/mqtt/v20240516/model/DescribeMessageByTopicResponse.h>
 #include <tencentcloud/mqtt/v20240516/model/DescribeMessageDetailsRequest.h>
 #include <tencentcloud/mqtt/v20240516/model/DescribeMessageDetailsResponse.h>
+#include <tencentcloud/mqtt/v20240516/model/DescribeMessageEnrichmentRulesRequest.h>
+#include <tencentcloud/mqtt/v20240516/model/DescribeMessageEnrichmentRulesResponse.h>
 #include <tencentcloud/mqtt/v20240516/model/DescribeMessageListRequest.h>
 #include <tencentcloud/mqtt/v20240516/model/DescribeMessageListResponse.h>
 #include <tencentcloud/mqtt/v20240516/model/DescribeProductSKUListRequest.h>
@@ -133,6 +139,8 @@
 #include <tencentcloud/mqtt/v20240516/model/ModifyJWKSAuthenticatorResponse.h>
 #include <tencentcloud/mqtt/v20240516/model/ModifyJWTAuthenticatorRequest.h>
 #include <tencentcloud/mqtt/v20240516/model/ModifyJWTAuthenticatorResponse.h>
+#include <tencentcloud/mqtt/v20240516/model/ModifyMessageEnrichmentRuleRequest.h>
+#include <tencentcloud/mqtt/v20240516/model/ModifyMessageEnrichmentRuleResponse.h>
 #include <tencentcloud/mqtt/v20240516/model/ModifyTopicRequest.h>
 #include <tencentcloud/mqtt/v20240516/model/ModifyTopicResponse.h>
 #include <tencentcloud/mqtt/v20240516/model/ModifyUserRequest.h>
@@ -147,6 +155,8 @@
 #include <tencentcloud/mqtt/v20240516/model/RevokedDeviceCertificateResponse.h>
 #include <tencentcloud/mqtt/v20240516/model/UpdateAuthorizationPolicyPriorityRequest.h>
 #include <tencentcloud/mqtt/v20240516/model/UpdateAuthorizationPolicyPriorityResponse.h>
+#include <tencentcloud/mqtt/v20240516/model/UpdateMessageEnrichmentRulePriorityRequest.h>
+#include <tencentcloud/mqtt/v20240516/model/UpdateMessageEnrichmentRulePriorityResponse.h>
 
 
 namespace TencentCloud
@@ -194,6 +204,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateJWTAuthenticatorResponse> CreateJWTAuthenticatorOutcome;
                 typedef std::future<CreateJWTAuthenticatorOutcome> CreateJWTAuthenticatorOutcomeCallable;
                 typedef std::function<void(const MqttClient*, const Model::CreateJWTAuthenticatorRequest&, CreateJWTAuthenticatorOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateJWTAuthenticatorAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateMessageEnrichmentRuleResponse> CreateMessageEnrichmentRuleOutcome;
+                typedef std::future<CreateMessageEnrichmentRuleOutcome> CreateMessageEnrichmentRuleOutcomeCallable;
+                typedef std::function<void(const MqttClient*, const Model::CreateMessageEnrichmentRuleRequest&, CreateMessageEnrichmentRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateMessageEnrichmentRuleAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateTopicResponse> CreateTopicOutcome;
                 typedef std::future<CreateTopicOutcome> CreateTopicOutcomeCallable;
                 typedef std::function<void(const MqttClient*, const Model::CreateTopicRequest&, CreateTopicOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateTopicAsyncHandler;
@@ -230,6 +243,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteInstanceResponse> DeleteInstanceOutcome;
                 typedef std::future<DeleteInstanceOutcome> DeleteInstanceOutcomeCallable;
                 typedef std::function<void(const MqttClient*, const Model::DeleteInstanceRequest&, DeleteInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteInstanceAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteMessageEnrichmentRuleResponse> DeleteMessageEnrichmentRuleOutcome;
+                typedef std::future<DeleteMessageEnrichmentRuleOutcome> DeleteMessageEnrichmentRuleOutcomeCallable;
+                typedef std::function<void(const MqttClient*, const Model::DeleteMessageEnrichmentRuleRequest&, DeleteMessageEnrichmentRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteMessageEnrichmentRuleAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteTopicResponse> DeleteTopicOutcome;
                 typedef std::future<DeleteTopicOutcome> DeleteTopicOutcomeCallable;
                 typedef std::function<void(const MqttClient*, const Model::DeleteTopicRequest&, DeleteTopicOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteTopicAsyncHandler;
@@ -281,6 +297,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeMessageDetailsResponse> DescribeMessageDetailsOutcome;
                 typedef std::future<DescribeMessageDetailsOutcome> DescribeMessageDetailsOutcomeCallable;
                 typedef std::function<void(const MqttClient*, const Model::DescribeMessageDetailsRequest&, DescribeMessageDetailsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMessageDetailsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeMessageEnrichmentRulesResponse> DescribeMessageEnrichmentRulesOutcome;
+                typedef std::future<DescribeMessageEnrichmentRulesOutcome> DescribeMessageEnrichmentRulesOutcomeCallable;
+                typedef std::function<void(const MqttClient*, const Model::DescribeMessageEnrichmentRulesRequest&, DescribeMessageEnrichmentRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMessageEnrichmentRulesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeMessageListResponse> DescribeMessageListOutcome;
                 typedef std::future<DescribeMessageListOutcome> DescribeMessageListOutcomeCallable;
                 typedef std::function<void(const MqttClient*, const Model::DescribeMessageListRequest&, DescribeMessageListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMessageListAsyncHandler;
@@ -326,6 +345,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyJWTAuthenticatorResponse> ModifyJWTAuthenticatorOutcome;
                 typedef std::future<ModifyJWTAuthenticatorOutcome> ModifyJWTAuthenticatorOutcomeCallable;
                 typedef std::function<void(const MqttClient*, const Model::ModifyJWTAuthenticatorRequest&, ModifyJWTAuthenticatorOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyJWTAuthenticatorAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyMessageEnrichmentRuleResponse> ModifyMessageEnrichmentRuleOutcome;
+                typedef std::future<ModifyMessageEnrichmentRuleOutcome> ModifyMessageEnrichmentRuleOutcomeCallable;
+                typedef std::function<void(const MqttClient*, const Model::ModifyMessageEnrichmentRuleRequest&, ModifyMessageEnrichmentRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyMessageEnrichmentRuleAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyTopicResponse> ModifyTopicOutcome;
                 typedef std::future<ModifyTopicOutcome> ModifyTopicOutcomeCallable;
                 typedef std::function<void(const MqttClient*, const Model::ModifyTopicRequest&, ModifyTopicOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyTopicAsyncHandler;
@@ -347,6 +369,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::UpdateAuthorizationPolicyPriorityResponse> UpdateAuthorizationPolicyPriorityOutcome;
                 typedef std::future<UpdateAuthorizationPolicyPriorityOutcome> UpdateAuthorizationPolicyPriorityOutcomeCallable;
                 typedef std::function<void(const MqttClient*, const Model::UpdateAuthorizationPolicyPriorityRequest&, UpdateAuthorizationPolicyPriorityOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateAuthorizationPolicyPriorityAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpdateMessageEnrichmentRulePriorityResponse> UpdateMessageEnrichmentRulePriorityOutcome;
+                typedef std::future<UpdateMessageEnrichmentRulePriorityOutcome> UpdateMessageEnrichmentRulePriorityOutcomeCallable;
+                typedef std::function<void(const MqttClient*, const Model::UpdateMessageEnrichmentRulePriorityRequest&, UpdateMessageEnrichmentRulePriorityOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateMessageEnrichmentRulePriorityAsyncHandler;
 
 
 
@@ -448,6 +473,15 @@ namespace TencentCloud
                 CreateJWTAuthenticatorOutcome CreateJWTAuthenticator(const Model::CreateJWTAuthenticatorRequest &request);
                 void CreateJWTAuthenticatorAsync(const Model::CreateJWTAuthenticatorRequest& request, const CreateJWTAuthenticatorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateJWTAuthenticatorOutcomeCallable CreateJWTAuthenticatorCallable(const Model::CreateJWTAuthenticatorRequest& request);
+
+                /**
+                 *创建一条消息属性增强规则
+                 * @param req CreateMessageEnrichmentRuleRequest
+                 * @return CreateMessageEnrichmentRuleOutcome
+                 */
+                CreateMessageEnrichmentRuleOutcome CreateMessageEnrichmentRule(const Model::CreateMessageEnrichmentRuleRequest &request);
+                void CreateMessageEnrichmentRuleAsync(const Model::CreateMessageEnrichmentRuleRequest& request, const CreateMessageEnrichmentRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateMessageEnrichmentRuleOutcomeCallable CreateMessageEnrichmentRuleCallable(const Model::CreateMessageEnrichmentRuleRequest& request);
 
                 /**
                  *创建主题
@@ -556,6 +590,15 @@ namespace TencentCloud
                 DeleteInstanceOutcome DeleteInstance(const Model::DeleteInstanceRequest &request);
                 void DeleteInstanceAsync(const Model::DeleteInstanceRequest& request, const DeleteInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteInstanceOutcomeCallable DeleteInstanceCallable(const Model::DeleteInstanceRequest& request);
+
+                /**
+                 *删除消息属性增强规则
+                 * @param req DeleteMessageEnrichmentRuleRequest
+                 * @return DeleteMessageEnrichmentRuleOutcome
+                 */
+                DeleteMessageEnrichmentRuleOutcome DeleteMessageEnrichmentRule(const Model::DeleteMessageEnrichmentRuleRequest &request);
+                void DeleteMessageEnrichmentRuleAsync(const Model::DeleteMessageEnrichmentRuleRequest& request, const DeleteMessageEnrichmentRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteMessageEnrichmentRuleOutcomeCallable DeleteMessageEnrichmentRuleCallable(const Model::DeleteMessageEnrichmentRuleRequest& request);
 
                 /**
                  *删除MQTT主题
@@ -716,6 +759,15 @@ namespace TencentCloud
                 DescribeMessageDetailsOutcomeCallable DescribeMessageDetailsCallable(const Model::DescribeMessageDetailsRequest& request);
 
                 /**
+                 *查询消息属性增强规则
+                 * @param req DescribeMessageEnrichmentRulesRequest
+                 * @return DescribeMessageEnrichmentRulesOutcome
+                 */
+                DescribeMessageEnrichmentRulesOutcome DescribeMessageEnrichmentRules(const Model::DescribeMessageEnrichmentRulesRequest &request);
+                void DescribeMessageEnrichmentRulesAsync(const Model::DescribeMessageEnrichmentRulesRequest& request, const DescribeMessageEnrichmentRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeMessageEnrichmentRulesOutcomeCallable DescribeMessageEnrichmentRulesCallable(const Model::DescribeMessageEnrichmentRulesRequest& request);
+
+                /**
                  *根据一级Topic查询消息列表
                  * @param req DescribeMessageListRequest
                  * @return DescribeMessageListOutcome
@@ -857,6 +909,16 @@ namespace TencentCloud
                 ModifyJWTAuthenticatorOutcomeCallable ModifyJWTAuthenticatorCallable(const Model::ModifyJWTAuthenticatorRequest& request);
 
                 /**
+                 *修改消息属性增强规则
+注意：需要提交当前规则的所有属性，即使某些字段没有修改。
+                 * @param req ModifyMessageEnrichmentRuleRequest
+                 * @return ModifyMessageEnrichmentRuleOutcome
+                 */
+                ModifyMessageEnrichmentRuleOutcome ModifyMessageEnrichmentRule(const Model::ModifyMessageEnrichmentRuleRequest &request);
+                void ModifyMessageEnrichmentRuleAsync(const Model::ModifyMessageEnrichmentRuleRequest& request, const ModifyMessageEnrichmentRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyMessageEnrichmentRuleOutcomeCallable ModifyMessageEnrichmentRuleCallable(const Model::ModifyMessageEnrichmentRuleRequest& request);
+
+                /**
                  *修改主题属性
                  * @param req ModifyTopicRequest
                  * @return ModifyTopicOutcome
@@ -918,6 +980,15 @@ namespace TencentCloud
                 UpdateAuthorizationPolicyPriorityOutcome UpdateAuthorizationPolicyPriority(const Model::UpdateAuthorizationPolicyPriorityRequest &request);
                 void UpdateAuthorizationPolicyPriorityAsync(const Model::UpdateAuthorizationPolicyPriorityRequest& request, const UpdateAuthorizationPolicyPriorityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 UpdateAuthorizationPolicyPriorityOutcomeCallable UpdateAuthorizationPolicyPriorityCallable(const Model::UpdateAuthorizationPolicyPriorityRequest& request);
+
+                /**
+                 *修改消息属性增强规则优先级
+                 * @param req UpdateMessageEnrichmentRulePriorityRequest
+                 * @return UpdateMessageEnrichmentRulePriorityOutcome
+                 */
+                UpdateMessageEnrichmentRulePriorityOutcome UpdateMessageEnrichmentRulePriority(const Model::UpdateMessageEnrichmentRulePriorityRequest &request);
+                void UpdateMessageEnrichmentRulePriorityAsync(const Model::UpdateMessageEnrichmentRulePriorityRequest& request, const UpdateMessageEnrichmentRulePriorityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdateMessageEnrichmentRulePriorityOutcomeCallable UpdateMessageEnrichmentRulePriorityCallable(const Model::UpdateMessageEnrichmentRulePriorityRequest& request);
 
             };
         }

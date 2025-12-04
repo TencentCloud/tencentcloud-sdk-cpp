@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/lke/v20231130/model/Agent.h>
+#include <tencentcloud/lke/v20231130/model/AgentHandoffAdvancedSetting.h>
 
 
 namespace TencentCloud
@@ -72,6 +73,20 @@ namespace TencentCloud
                      */
                     bool AgentsHasBeenSet() const;
 
+                    /**
+                     * 获取Agent转交高级设置
+                     * @return HandoffAdvancedSetting Agent转交高级设置
+                     * 
+                     */
+                    AgentHandoffAdvancedSetting GetHandoffAdvancedSetting() const;
+
+                    /**
+                     * 判断参数 HandoffAdvancedSetting 是否已赋值
+                     * @return HandoffAdvancedSetting 是否已赋值
+                     * 
+                     */
+                    bool HandoffAdvancedSettingHasBeenSet() const;
+
                 private:
 
                     /**
@@ -85,6 +100,12 @@ namespace TencentCloud
                      */
                     std::vector<Agent> m_agents;
                     bool m_agentsHasBeenSet;
+
+                    /**
+                     * Agent转交高级设置
+                     */
+                    AgentHandoffAdvancedSetting m_handoffAdvancedSetting;
+                    bool m_handoffAdvancedSettingHasBeenSet;
 
                 };
             }

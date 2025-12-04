@@ -157,7 +157,7 @@ set(lke_public_header_model
   include/tencentcloud/lke/v20231130/model/ListAttributeLabelResponse.h
   include/tencentcloud/lke/v20231130/model/ModifyQAAttrRangeRequest.h
   include/tencentcloud/lke/v20231130/model/CateInfo.h
-  include/tencentcloud/lke/v20231130/model/AICallConfig.h
+  include/tencentcloud/lke/v20231130/model/DeleteRejectedQuestionResponse.h
   include/tencentcloud/lke/v20231130/model/ListRejectedQuestionPreviewRequest.h
   include/tencentcloud/lke/v20231130/model/ListSelectDocRequest.h
   include/tencentcloud/lke/v20231130/model/FileInfo.h
@@ -219,7 +219,7 @@ set(lke_public_header_model
   include/tencentcloud/lke/v20231130/model/AgentProcedureDebugging.h
   include/tencentcloud/lke/v20231130/model/DescribeTokenUsageGraphRequest.h
   include/tencentcloud/lke/v20231130/model/DescribeConcurrencyUsageGraphRequest.h
-  include/tencentcloud/lke/v20231130/model/YuanQi.h
+  include/tencentcloud/lke/v20231130/model/DescribeReleaseRequest.h
   include/tencentcloud/lke/v20231130/model/ReleaseQA.h
   include/tencentcloud/lke/v20231130/model/UnsatisfiedReply.h
   include/tencentcloud/lke/v20231130/model/AgentToolRspParam.h
@@ -253,7 +253,7 @@ set(lke_public_header_model
   include/tencentcloud/lke/v20231130/model/ModifyDocRequest.h
   include/tencentcloud/lke/v20231130/model/KnowledgeModelConfig.h
   include/tencentcloud/lke/v20231130/model/ListWorkflowRunsResponse.h
-  include/tencentcloud/lke/v20231130/model/DescribeReleaseRequest.h
+  include/tencentcloud/lke/v20231130/model/YuanQi.h
   include/tencentcloud/lke/v20231130/model/NodeRunDetail.h
   include/tencentcloud/lke/v20231130/model/BaseConfig.h
   include/tencentcloud/lke/v20231130/model/SimilarQuestion.h
@@ -331,7 +331,7 @@ set(lke_public_header_model
   include/tencentcloud/lke/v20231130/model/RetryDocAuditResponse.h
   include/tencentcloud/lke/v20231130/model/RetryReleaseResponse.h
   include/tencentcloud/lke/v20231130/model/NodeRunBase.h
-  include/tencentcloud/lke/v20231130/model/DeleteRejectedQuestionResponse.h
+  include/tencentcloud/lke/v20231130/model/AICallConfig.h
   include/tencentcloud/lke/v20231130/model/Credentials.h
   include/tencentcloud/lke/v20231130/model/AppInfo.h
   include/tencentcloud/lke/v20231130/model/DescribeSharedKnowledgeResponse.h
@@ -361,6 +361,7 @@ set(lke_public_header_model
   include/tencentcloud/lke/v20231130/model/DescribeSegmentsRequest.h
   include/tencentcloud/lke/v20231130/model/Filters.h
   include/tencentcloud/lke/v20231130/model/IgnoreUnsatisfiedReplyResponse.h
+  include/tencentcloud/lke/v20231130/model/AgentHandoffAdvancedSetting.h
   )
 
 set(lke_src
@@ -503,7 +504,7 @@ set(lke_src
   src/v20231130/model/ListAttributeLabelResponse.cpp
   src/v20231130/model/ModifyQAAttrRangeRequest.cpp
   src/v20231130/model/CateInfo.cpp
-  src/v20231130/model/AICallConfig.cpp
+  src/v20231130/model/DeleteRejectedQuestionResponse.cpp
   src/v20231130/model/ListRejectedQuestionPreviewRequest.cpp
   src/v20231130/model/ListSelectDocRequest.cpp
   src/v20231130/model/FileInfo.cpp
@@ -565,7 +566,7 @@ set(lke_src
   src/v20231130/model/AgentProcedureDebugging.cpp
   src/v20231130/model/DescribeTokenUsageGraphRequest.cpp
   src/v20231130/model/DescribeConcurrencyUsageGraphRequest.cpp
-  src/v20231130/model/YuanQi.cpp
+  src/v20231130/model/DescribeReleaseRequest.cpp
   src/v20231130/model/ReleaseQA.cpp
   src/v20231130/model/UnsatisfiedReply.cpp
   src/v20231130/model/AgentToolRspParam.cpp
@@ -599,7 +600,7 @@ set(lke_src
   src/v20231130/model/ModifyDocRequest.cpp
   src/v20231130/model/KnowledgeModelConfig.cpp
   src/v20231130/model/ListWorkflowRunsResponse.cpp
-  src/v20231130/model/DescribeReleaseRequest.cpp
+  src/v20231130/model/YuanQi.cpp
   src/v20231130/model/NodeRunDetail.cpp
   src/v20231130/model/BaseConfig.cpp
   src/v20231130/model/SimilarQuestion.cpp
@@ -677,7 +678,7 @@ set(lke_src
   src/v20231130/model/RetryDocAuditResponse.cpp
   src/v20231130/model/RetryReleaseResponse.cpp
   src/v20231130/model/NodeRunBase.cpp
-  src/v20231130/model/DeleteRejectedQuestionResponse.cpp
+  src/v20231130/model/AICallConfig.cpp
   src/v20231130/model/Credentials.cpp
   src/v20231130/model/AppInfo.cpp
   src/v20231130/model/DescribeSharedKnowledgeResponse.cpp
@@ -707,6 +708,7 @@ set(lke_src
   src/v20231130/model/DescribeSegmentsRequest.cpp
   src/v20231130/model/Filters.cpp
   src/v20231130/model/IgnoreUnsatisfiedReplyResponse.cpp
+  src/v20231130/model/AgentHandoffAdvancedSetting.cpp
   )
 
 set(lke_include

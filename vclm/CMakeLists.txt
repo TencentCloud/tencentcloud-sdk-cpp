@@ -23,11 +23,17 @@ set(vclm_public_header_model
   include/tencentcloud/vclm/v20240523/model/SubmitVideoStylizationJobRequest.h
   include/tencentcloud/vclm/v20240523/model/LogoParam.h
   include/tencentcloud/vclm/v20240523/model/SubmitHumanActorJobRequest.h
+  include/tencentcloud/vclm/v20240523/model/DescribeImageAnimateJobRequest.h
+  include/tencentcloud/vclm/v20240523/model/FaceTemplateInfo.h
   include/tencentcloud/vclm/v20240523/model/SubmitImageAnimateJobRequest.h
   include/tencentcloud/vclm/v20240523/model/SubmitImageToVideoGeneralJobResponse.h
+  include/tencentcloud/vclm/v20240523/model/DescribeVideoFaceFusionJobResponse.h
+  include/tencentcloud/vclm/v20240523/model/DescribeVideoFaceFusionJobRequest.h
   include/tencentcloud/vclm/v20240523/model/DescribePortraitSingJobRequest.h
   include/tencentcloud/vclm/v20240523/model/SubmitImageAnimateJobResponse.h
+  include/tencentcloud/vclm/v20240523/model/SubmitVideoFaceFusionJobResponse.h
   include/tencentcloud/vclm/v20240523/model/DescribeTemplateToVideoJobResponse.h
+  include/tencentcloud/vclm/v20240523/model/FaceMergeInfo.h
   include/tencentcloud/vclm/v20240523/model/CheckAnimateImageJobResponse.h
   include/tencentcloud/vclm/v20240523/model/SubmitTemplateToVideoJobResponse.h
   include/tencentcloud/vclm/v20240523/model/CheckAnimateImageJobRequest.h
@@ -40,6 +46,7 @@ set(vclm_public_header_model
   include/tencentcloud/vclm/v20240523/model/ExtraParam.h
   include/tencentcloud/vclm/v20240523/model/DescribeVideoStylizationJobResponse.h
   include/tencentcloud/vclm/v20240523/model/SubmitVideoStylizationJobResponse.h
+  include/tencentcloud/vclm/v20240523/model/SubmitVideoFaceFusionJobRequest.h
   include/tencentcloud/vclm/v20240523/model/SubmitPortraitSingJobResponse.h
   include/tencentcloud/vclm/v20240523/model/SubmitTemplateToVideoJobRequest.h
   include/tencentcloud/vclm/v20240523/model/SubmitImageToVideoGeneralJobRequest.h
@@ -47,7 +54,7 @@ set(vclm_public_header_model
   include/tencentcloud/vclm/v20240523/model/DescribeHumanActorJobRequest.h
   include/tencentcloud/vclm/v20240523/model/DescribeImageToVideoGeneralJobRequest.h
   include/tencentcloud/vclm/v20240523/model/DescribeTemplateToVideoJobRequest.h
-  include/tencentcloud/vclm/v20240523/model/DescribeImageAnimateJobRequest.h
+  include/tencentcloud/vclm/v20240523/model/FaceRect.h
   include/tencentcloud/vclm/v20240523/model/DescribePortraitSingJobResponse.h
   )
 
@@ -57,11 +64,17 @@ set(vclm_src
   src/v20240523/model/SubmitVideoStylizationJobRequest.cpp
   src/v20240523/model/LogoParam.cpp
   src/v20240523/model/SubmitHumanActorJobRequest.cpp
+  src/v20240523/model/DescribeImageAnimateJobRequest.cpp
+  src/v20240523/model/FaceTemplateInfo.cpp
   src/v20240523/model/SubmitImageAnimateJobRequest.cpp
   src/v20240523/model/SubmitImageToVideoGeneralJobResponse.cpp
+  src/v20240523/model/DescribeVideoFaceFusionJobResponse.cpp
+  src/v20240523/model/DescribeVideoFaceFusionJobRequest.cpp
   src/v20240523/model/DescribePortraitSingJobRequest.cpp
   src/v20240523/model/SubmitImageAnimateJobResponse.cpp
+  src/v20240523/model/SubmitVideoFaceFusionJobResponse.cpp
   src/v20240523/model/DescribeTemplateToVideoJobResponse.cpp
+  src/v20240523/model/FaceMergeInfo.cpp
   src/v20240523/model/CheckAnimateImageJobResponse.cpp
   src/v20240523/model/SubmitTemplateToVideoJobResponse.cpp
   src/v20240523/model/CheckAnimateImageJobRequest.cpp
@@ -74,6 +87,7 @@ set(vclm_src
   src/v20240523/model/ExtraParam.cpp
   src/v20240523/model/DescribeVideoStylizationJobResponse.cpp
   src/v20240523/model/SubmitVideoStylizationJobResponse.cpp
+  src/v20240523/model/SubmitVideoFaceFusionJobRequest.cpp
   src/v20240523/model/SubmitPortraitSingJobResponse.cpp
   src/v20240523/model/SubmitTemplateToVideoJobRequest.cpp
   src/v20240523/model/SubmitImageToVideoGeneralJobRequest.cpp
@@ -81,7 +95,7 @@ set(vclm_src
   src/v20240523/model/DescribeHumanActorJobRequest.cpp
   src/v20240523/model/DescribeImageToVideoGeneralJobRequest.cpp
   src/v20240523/model/DescribeTemplateToVideoJobRequest.cpp
-  src/v20240523/model/DescribeImageAnimateJobRequest.cpp
+  src/v20240523/model/FaceRect.cpp
   src/v20240523/model/DescribePortraitSingJobResponse.cpp
   )
 

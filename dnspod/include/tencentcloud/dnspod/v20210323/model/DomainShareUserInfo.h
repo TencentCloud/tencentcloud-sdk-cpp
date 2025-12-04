@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool DomainShareIdHasBeenSet() const;
 
                     /**
-                     * 获取共享模式。r-只读；w-可写；rw-可读写。
-                     * @return Mode 共享模式。r-只读；w-可写；rw-可读写。
+                     * 获取共享模式。r-只读；rw-可读写。
+                     * @return Mode 共享模式。r-只读；rw-可读写。
                      * 
                      */
                     std::string GetMode() const;
 
                     /**
-                     * 设置共享模式。r-只读；w-可写；rw-可读写。
-                     * @param _mode 共享模式。r-只读；w-可写；rw-可读写。
+                     * 设置共享模式。r-只读；rw-可读写。
+                     * @param _mode 共享模式。r-只读；rw-可读写。
                      * 
                      */
                     void SetMode(const std::string& _mode);
@@ -181,7 +181,7 @@ namespace TencentCloud
                     bool m_domainShareIdHasBeenSet;
 
                     /**
-                     * 共享模式。r-只读；w-可写；rw-可读写。
+                     * 共享模式。r-只读；rw-可读写。
                      */
                     std::string m_mode;
                     bool m_modeHasBeenSet;

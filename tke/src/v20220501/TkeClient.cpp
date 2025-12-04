@@ -590,6 +590,56 @@ TkeClient::DescribeNodePoolsOutcomeCallable TkeClient::DescribeNodePoolsCallable
     return prom->get_future();
 }
 
+TkeClient::ModifyClusterMachineOutcome TkeClient::ModifyClusterMachine(const ModifyClusterMachineRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyClusterMachine");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyClusterMachineResponse rsp = ModifyClusterMachineResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyClusterMachineOutcome(rsp);
+        else
+            return ModifyClusterMachineOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyClusterMachineOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::ModifyClusterMachineAsync(const ModifyClusterMachineRequest& request, const ModifyClusterMachineAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyClusterMachineRequest&;
+    using Resp = ModifyClusterMachineResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyClusterMachine", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TkeClient::ModifyClusterMachineOutcomeCallable TkeClient::ModifyClusterMachineCallable(const ModifyClusterMachineRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyClusterMachineOutcome>>();
+    ModifyClusterMachineAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const ModifyClusterMachineRequest&,
+        ModifyClusterMachineOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TkeClient::ModifyHealthCheckPolicyOutcome TkeClient::ModifyHealthCheckPolicy(const ModifyHealthCheckPolicyRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyHealthCheckPolicy");

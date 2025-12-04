@@ -24,7 +24,8 @@ using namespace std;
 
 ResetNatGatewayConnectionRequest::ResetNatGatewayConnectionRequest() :
     m_natGatewayIdHasBeenSet(false),
-    m_maxConcurrentConnectionHasBeenSet(false)
+    m_maxConcurrentConnectionHasBeenSet(false),
+    m_exclusiveTypeHasBeenSet(false)
 {
 }
 
@@ -49,6 +50,14 @@ string ResetNatGatewayConnectionRequest::ToJsonString() const
         string key = "MaxConcurrentConnection";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_maxConcurrentConnection, allocator);
+    }
+
+    if (m_exclusiveTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExclusiveType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_exclusiveType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -89,6 +98,22 @@ void ResetNatGatewayConnectionRequest::SetMaxConcurrentConnection(const uint64_t
 bool ResetNatGatewayConnectionRequest::MaxConcurrentConnectionHasBeenSet() const
 {
     return m_maxConcurrentConnectionHasBeenSet;
+}
+
+string ResetNatGatewayConnectionRequest::GetExclusiveType() const
+{
+    return m_exclusiveType;
+}
+
+void ResetNatGatewayConnectionRequest::SetExclusiveType(const string& _exclusiveType)
+{
+    m_exclusiveType = _exclusiveType;
+    m_exclusiveTypeHasBeenSet = true;
+}
+
+bool ResetNatGatewayConnectionRequest::ExclusiveTypeHasBeenSet() const
+{
+    return m_exclusiveTypeHasBeenSet;
 }
 
 

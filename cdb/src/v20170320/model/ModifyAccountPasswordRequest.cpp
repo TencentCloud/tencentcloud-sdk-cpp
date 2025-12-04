@@ -25,7 +25,8 @@ using namespace std;
 ModifyAccountPasswordRequest::ModifyAccountPasswordRequest() :
     m_instanceIdHasBeenSet(false),
     m_newPasswordHasBeenSet(false),
-    m_accountsHasBeenSet(false)
+    m_accountsHasBeenSet(false),
+    m_skipValidatePasswordHasBeenSet(false)
 {
 }
 
@@ -65,6 +66,14 @@ string ModifyAccountPasswordRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_skipValidatePasswordHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SkipValidatePassword";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_skipValidatePassword, allocator);
     }
 
 
@@ -121,6 +130,22 @@ void ModifyAccountPasswordRequest::SetAccounts(const vector<Account>& _accounts)
 bool ModifyAccountPasswordRequest::AccountsHasBeenSet() const
 {
     return m_accountsHasBeenSet;
+}
+
+bool ModifyAccountPasswordRequest::GetSkipValidatePassword() const
+{
+    return m_skipValidatePassword;
+}
+
+void ModifyAccountPasswordRequest::SetSkipValidatePassword(const bool& _skipValidatePassword)
+{
+    m_skipValidatePassword = _skipValidatePassword;
+    m_skipValidatePasswordHasBeenSet = true;
+}
+
+bool ModifyAccountPasswordRequest::SkipValidatePasswordHasBeenSet() const
+{
+    return m_skipValidatePasswordHasBeenSet;
 }
 
 

@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/dts/v20211206/model/Database.h>
 #include <tencentcloud/dts/v20211206/model/OnlineDDL.h>
+#include <tencentcloud/dts/v20211206/model/DBOpFilter.h>
 
 
 namespace TencentCloud
@@ -136,6 +137,27 @@ namespace TencentCloud
                      */
                     bool OnlineDDLHasBeenSet() const;
 
+                    /**
+                     * 获取库/表/视图级 DML/DDL 白名单
+                     * @return DatabasesOpFilter 库/表/视图级 DML/DDL 白名单
+                     * 
+                     */
+                    std::vector<DBOpFilter> GetDatabasesOpFilter() const;
+
+                    /**
+                     * 设置库/表/视图级 DML/DDL 白名单
+                     * @param _databasesOpFilter 库/表/视图级 DML/DDL 白名单
+                     * 
+                     */
+                    void SetDatabasesOpFilter(const std::vector<DBOpFilter>& _databasesOpFilter);
+
+                    /**
+                     * 判断参数 DatabasesOpFilter 是否已赋值
+                     * @return DatabasesOpFilter 是否已赋值
+                     * 
+                     */
+                    bool DatabasesOpFilterHasBeenSet() const;
+
                 private:
 
                     /**
@@ -162,6 +184,12 @@ namespace TencentCloud
                      */
                     OnlineDDL m_onlineDDL;
                     bool m_onlineDDLHasBeenSet;
+
+                    /**
+                     * 库/表/视图级 DML/DDL 白名单
+                     */
+                    std::vector<DBOpFilter> m_databasesOpFilter;
+                    bool m_databasesOpFilterHasBeenSet;
 
                 };
             }

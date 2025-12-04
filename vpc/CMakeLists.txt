@@ -105,7 +105,7 @@ set(vpc_public_header_model
   include/tencentcloud/vpc/v20170312/model/CreateIp6TranslatorsResponse.h
   include/tencentcloud/vpc/v20170312/model/DescribeFlowLogsRequest.h
   include/tencentcloud/vpc/v20170312/model/CcnRegionBandwidthLimitInfo.h
-  include/tencentcloud/vpc/v20170312/model/CloneSecurityGroupRequest.h
+  include/tencentcloud/vpc/v20170312/model/ConnectionStateTimeouts.h
   include/tencentcloud/vpc/v20170312/model/AssociateNatGatewayAddressRequest.h
   include/tencentcloud/vpc/v20170312/model/DescribeFlowLogsResponse.h
   include/tencentcloud/vpc/v20170312/model/InstanceBind.h
@@ -284,7 +284,7 @@ set(vpc_public_header_model
   include/tencentcloud/vpc/v20170312/model/DescribeAssistantCidrResponse.h
   include/tencentcloud/vpc/v20170312/model/DescribeHaVipsRequest.h
   include/tencentcloud/vpc/v20170312/model/UpdateTrafficMirrorDirectionResponse.h
-  include/tencentcloud/vpc/v20170312/model/IpAddressStates.h
+  include/tencentcloud/vpc/v20170312/model/DescribeCcnRouteTableInputPolicysRequest.h
   include/tencentcloud/vpc/v20170312/model/DescribeRouteTableSelectionPoliciesRequest.h
   include/tencentcloud/vpc/v20170312/model/InstanceStatistic.h
   include/tencentcloud/vpc/v20170312/model/InternetPriceDetail.h
@@ -555,7 +555,7 @@ set(vpc_public_header_model
   include/tencentcloud/vpc/v20170312/model/ModifyAddressesBandwidthResponse.h
   include/tencentcloud/vpc/v20170312/model/LocalGateway.h
   include/tencentcloud/vpc/v20170312/model/RejectAttachCcnInstancesResponse.h
-  include/tencentcloud/vpc/v20170312/model/DescribeCcnRouteTableInputPolicysRequest.h
+  include/tencentcloud/vpc/v20170312/model/CloneSecurityGroupRequest.h
   include/tencentcloud/vpc/v20170312/model/ModifySnapshotPoliciesResponse.h
   include/tencentcloud/vpc/v20170312/model/ResetRoutePolicyEntriesRequest.h
   include/tencentcloud/vpc/v20170312/model/InquiryPriceRenewAddressesResponse.h
@@ -565,6 +565,7 @@ set(vpc_public_header_model
   include/tencentcloud/vpc/v20170312/model/RenewAddressesResponse.h
   include/tencentcloud/vpc/v20170312/model/ModifyVpnGatewaySslServerRequest.h
   include/tencentcloud/vpc/v20170312/model/CcnInstanceWithoutRegion.h
+  include/tencentcloud/vpc/v20170312/model/IpAddressStates.h
   include/tencentcloud/vpc/v20170312/model/DescribeCcnRoutesRequest.h
   include/tencentcloud/vpc/v20170312/model/GenerateVpnConnectionDefaultHealthCheckIpResponse.h
   include/tencentcloud/vpc/v20170312/model/CheckTrafficMirrorResponse.h
@@ -1150,7 +1151,7 @@ set(vpc_src
   src/v20170312/model/CreateIp6TranslatorsResponse.cpp
   src/v20170312/model/DescribeFlowLogsRequest.cpp
   src/v20170312/model/CcnRegionBandwidthLimitInfo.cpp
-  src/v20170312/model/CloneSecurityGroupRequest.cpp
+  src/v20170312/model/ConnectionStateTimeouts.cpp
   src/v20170312/model/AssociateNatGatewayAddressRequest.cpp
   src/v20170312/model/DescribeFlowLogsResponse.cpp
   src/v20170312/model/InstanceBind.cpp
@@ -1329,7 +1330,7 @@ set(vpc_src
   src/v20170312/model/DescribeAssistantCidrResponse.cpp
   src/v20170312/model/DescribeHaVipsRequest.cpp
   src/v20170312/model/UpdateTrafficMirrorDirectionResponse.cpp
-  src/v20170312/model/IpAddressStates.cpp
+  src/v20170312/model/DescribeCcnRouteTableInputPolicysRequest.cpp
   src/v20170312/model/DescribeRouteTableSelectionPoliciesRequest.cpp
   src/v20170312/model/InstanceStatistic.cpp
   src/v20170312/model/InternetPriceDetail.cpp
@@ -1600,7 +1601,7 @@ set(vpc_src
   src/v20170312/model/ModifyAddressesBandwidthResponse.cpp
   src/v20170312/model/LocalGateway.cpp
   src/v20170312/model/RejectAttachCcnInstancesResponse.cpp
-  src/v20170312/model/DescribeCcnRouteTableInputPolicysRequest.cpp
+  src/v20170312/model/CloneSecurityGroupRequest.cpp
   src/v20170312/model/ModifySnapshotPoliciesResponse.cpp
   src/v20170312/model/ResetRoutePolicyEntriesRequest.cpp
   src/v20170312/model/InquiryPriceRenewAddressesResponse.cpp
@@ -1610,6 +1611,7 @@ set(vpc_src
   src/v20170312/model/RenewAddressesResponse.cpp
   src/v20170312/model/ModifyVpnGatewaySslServerRequest.cpp
   src/v20170312/model/CcnInstanceWithoutRegion.cpp
+  src/v20170312/model/IpAddressStates.cpp
   src/v20170312/model/DescribeCcnRoutesRequest.cpp
   src/v20170312/model/GenerateVpnConnectionDefaultHealthCheckIpResponse.cpp
   src/v20170312/model/CheckTrafficMirrorResponse.cpp

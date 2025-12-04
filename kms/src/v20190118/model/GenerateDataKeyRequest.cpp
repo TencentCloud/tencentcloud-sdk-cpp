@@ -32,7 +32,8 @@ GenerateDataKeyRequest::GenerateDataKeyRequest() :
     m_isHostedByKmsHasBeenSet(false),
     m_dataKeyNameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_hsmClusterIdHasBeenSet(false)
+    m_hsmClusterIdHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -121,6 +122,21 @@ string GenerateDataKeyRequest::ToJsonString() const
         string key = "HsmClusterId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_hsmClusterId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Tags";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -289,6 +305,22 @@ void GenerateDataKeyRequest::SetHsmClusterId(const string& _hsmClusterId)
 bool GenerateDataKeyRequest::HsmClusterIdHasBeenSet() const
 {
     return m_hsmClusterIdHasBeenSet;
+}
+
+vector<Tag> GenerateDataKeyRequest::GetTags() const
+{
+    return m_tags;
+}
+
+void GenerateDataKeyRequest::SetTags(const vector<Tag>& _tags)
+{
+    m_tags = _tags;
+    m_tagsHasBeenSet = true;
+}
+
+bool GenerateDataKeyRequest::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
 }
 
 

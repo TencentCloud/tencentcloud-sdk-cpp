@@ -43,7 +43,9 @@ NatGateway::NatGateway() :
     m_natProductVersionHasBeenSet(false),
     m_smartScheduleModeHasBeenSet(false),
     m_dedicatedClusterIdHasBeenSet(false),
-    m_deletionProtectionEnabledHasBeenSet(false)
+    m_deletionProtectionEnabledHasBeenSet(false),
+    m_connectionStateTimeoutsHasBeenSet(false),
+    m_exclusiveTypeHasBeenSet(false)
 {
 }
 
@@ -328,6 +330,33 @@ CoreInternalOutcome NatGateway::Deserialize(const rapidjson::Value &value)
         m_deletionProtectionEnabledHasBeenSet = true;
     }
 
+    if (value.HasMember("ConnectionStateTimeouts") && !value["ConnectionStateTimeouts"].IsNull())
+    {
+        if (!value["ConnectionStateTimeouts"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `NatGateway.ConnectionStateTimeouts` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_connectionStateTimeouts.Deserialize(value["ConnectionStateTimeouts"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_connectionStateTimeoutsHasBeenSet = true;
+    }
+
+    if (value.HasMember("ExclusiveType") && !value["ExclusiveType"].IsNull())
+    {
+        if (!value["ExclusiveType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `NatGateway.ExclusiveType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_exclusiveType = string(value["ExclusiveType"].GetString());
+        m_exclusiveTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -555,6 +584,23 @@ void NatGateway::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "DeletionProtectionEnabled";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_deletionProtectionEnabled, allocator);
+    }
+
+    if (m_connectionStateTimeoutsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ConnectionStateTimeouts";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_connectionStateTimeouts.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_exclusiveTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExclusiveType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_exclusiveType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -926,5 +972,37 @@ void NatGateway::SetDeletionProtectionEnabled(const bool& _deletionProtectionEna
 bool NatGateway::DeletionProtectionEnabledHasBeenSet() const
 {
     return m_deletionProtectionEnabledHasBeenSet;
+}
+
+ConnectionStateTimeouts NatGateway::GetConnectionStateTimeouts() const
+{
+    return m_connectionStateTimeouts;
+}
+
+void NatGateway::SetConnectionStateTimeouts(const ConnectionStateTimeouts& _connectionStateTimeouts)
+{
+    m_connectionStateTimeouts = _connectionStateTimeouts;
+    m_connectionStateTimeoutsHasBeenSet = true;
+}
+
+bool NatGateway::ConnectionStateTimeoutsHasBeenSet() const
+{
+    return m_connectionStateTimeoutsHasBeenSet;
+}
+
+string NatGateway::GetExclusiveType() const
+{
+    return m_exclusiveType;
+}
+
+void NatGateway::SetExclusiveType(const string& _exclusiveType)
+{
+    m_exclusiveType = _exclusiveType;
+    m_exclusiveTypeHasBeenSet = true;
+}
+
+bool NatGateway::ExclusiveTypeHasBeenSet() const
+{
+    return m_exclusiveTypeHasBeenSet;
 }
 

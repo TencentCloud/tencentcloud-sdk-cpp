@@ -364,6 +364,27 @@ namespace TencentCloud
                      */
                     bool Ipv6CidrBlockSetHasBeenSet() const;
 
+                    /**
+                     * 获取vpc关联云联网时IPv6类型路由发布策略， true：开启cidr路由发布，false：开启subnet子网路由发布。创建vpc时默认为子网路由发布，当选择cidr路由发布时，请通过工单加入白名单。
+                     * @return EnableRouteVpcPublishIpv6 vpc关联云联网时IPv6类型路由发布策略， true：开启cidr路由发布，false：开启subnet子网路由发布。创建vpc时默认为子网路由发布，当选择cidr路由发布时，请通过工单加入白名单。
+                     * 
+                     */
+                    bool GetEnableRouteVpcPublishIpv6() const;
+
+                    /**
+                     * 设置vpc关联云联网时IPv6类型路由发布策略， true：开启cidr路由发布，false：开启subnet子网路由发布。创建vpc时默认为子网路由发布，当选择cidr路由发布时，请通过工单加入白名单。
+                     * @param _enableRouteVpcPublishIpv6 vpc关联云联网时IPv6类型路由发布策略， true：开启cidr路由发布，false：开启subnet子网路由发布。创建vpc时默认为子网路由发布，当选择cidr路由发布时，请通过工单加入白名单。
+                     * 
+                     */
+                    void SetEnableRouteVpcPublishIpv6(const bool& _enableRouteVpcPublishIpv6);
+
+                    /**
+                     * 判断参数 EnableRouteVpcPublishIpv6 是否已赋值
+                     * @return EnableRouteVpcPublishIpv6 是否已赋值
+                     * 
+                     */
+                    bool EnableRouteVpcPublishIpv6HasBeenSet() const;
+
                 private:
 
                     /**
@@ -455,6 +476,12 @@ namespace TencentCloud
                      */
                     std::vector<ISPIPv6CidrBlock> m_ipv6CidrBlockSet;
                     bool m_ipv6CidrBlockSetHasBeenSet;
+
+                    /**
+                     * vpc关联云联网时IPv6类型路由发布策略， true：开启cidr路由发布，false：开启subnet子网路由发布。创建vpc时默认为子网路由发布，当选择cidr路由发布时，请通过工单加入白名单。
+                     */
+                    bool m_enableRouteVpcPublishIpv6;
+                    bool m_enableRouteVpcPublishIpv6HasBeenSet;
 
                 };
             }

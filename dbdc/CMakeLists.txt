@@ -33,6 +33,7 @@ set(dbdc_public_header_model
   include/tencentcloud/dbdc/v20201029/model/InstanceExpand.h
   include/tencentcloud/dbdc/v20201029/model/DescribeHostListResponse.h
   include/tencentcloud/dbdc/v20201029/model/DescribeInstanceListResponse.h
+  include/tencentcloud/dbdc/v20201029/model/ResourceTag.h
   include/tencentcloud/dbdc/v20201029/model/DescribeDBInstancesResponse.h
   include/tencentcloud/dbdc/v20201029/model/DescribeHostListRequest.h
   include/tencentcloud/dbdc/v20201029/model/DescribeInstancesResponse.h
@@ -56,6 +57,7 @@ set(dbdc_src
   src/v20201029/model/InstanceExpand.cpp
   src/v20201029/model/DescribeHostListResponse.cpp
   src/v20201029/model/DescribeInstanceListResponse.cpp
+  src/v20201029/model/ResourceTag.cpp
   src/v20201029/model/DescribeDBInstancesResponse.cpp
   src/v20201029/model/DescribeHostListRequest.cpp
   src/v20201029/model/DescribeInstancesResponse.cpp

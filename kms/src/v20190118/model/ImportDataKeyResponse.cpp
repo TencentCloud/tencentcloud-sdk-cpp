@@ -25,7 +25,9 @@ using namespace std;
 
 ImportDataKeyResponse::ImportDataKeyResponse() :
     m_keyIdHasBeenSet(false),
-    m_dataKeyIdHasBeenSet(false)
+    m_dataKeyIdHasBeenSet(false),
+    m_tagCodeHasBeenSet(false),
+    m_tagMsgHasBeenSet(false)
 {
 }
 
@@ -83,6 +85,26 @@ CoreInternalOutcome ImportDataKeyResponse::Deserialize(const string &payload)
         m_dataKeyIdHasBeenSet = true;
     }
 
+    if (rsp.HasMember("TagCode") && !rsp["TagCode"].IsNull())
+    {
+        if (!rsp["TagCode"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TagCode` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_tagCode = rsp["TagCode"].GetUint64();
+        m_tagCodeHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("TagMsg") && !rsp["TagMsg"].IsNull())
+    {
+        if (!rsp["TagMsg"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TagMsg` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_tagMsg = string(rsp["TagMsg"].GetString());
+        m_tagMsgHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -107,6 +129,22 @@ string ImportDataKeyResponse::ToJsonString() const
         string key = "DataKeyId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_dataKeyId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tagCodeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TagCode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_tagCode, allocator);
+    }
+
+    if (m_tagMsgHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TagMsg";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_tagMsg.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -139,6 +177,26 @@ string ImportDataKeyResponse::GetDataKeyId() const
 bool ImportDataKeyResponse::DataKeyIdHasBeenSet() const
 {
     return m_dataKeyIdHasBeenSet;
+}
+
+uint64_t ImportDataKeyResponse::GetTagCode() const
+{
+    return m_tagCode;
+}
+
+bool ImportDataKeyResponse::TagCodeHasBeenSet() const
+{
+    return m_tagCodeHasBeenSet;
+}
+
+string ImportDataKeyResponse::GetTagMsg() const
+{
+    return m_tagMsg;
+}
+
+bool ImportDataKeyResponse::TagMsgHasBeenSet() const
+{
+    return m_tagMsgHasBeenSet;
 }
 
 

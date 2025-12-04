@@ -340,6 +340,56 @@ VclmClient::DescribeTemplateToVideoJobOutcomeCallable VclmClient::DescribeTempla
     return prom->get_future();
 }
 
+VclmClient::DescribeVideoFaceFusionJobOutcome VclmClient::DescribeVideoFaceFusionJob(const DescribeVideoFaceFusionJobRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeVideoFaceFusionJob");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeVideoFaceFusionJobResponse rsp = DescribeVideoFaceFusionJobResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeVideoFaceFusionJobOutcome(rsp);
+        else
+            return DescribeVideoFaceFusionJobOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeVideoFaceFusionJobOutcome(outcome.GetError());
+    }
+}
+
+void VclmClient::DescribeVideoFaceFusionJobAsync(const DescribeVideoFaceFusionJobRequest& request, const DescribeVideoFaceFusionJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeVideoFaceFusionJobRequest&;
+    using Resp = DescribeVideoFaceFusionJobResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeVideoFaceFusionJob", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+VclmClient::DescribeVideoFaceFusionJobOutcomeCallable VclmClient::DescribeVideoFaceFusionJobCallable(const DescribeVideoFaceFusionJobRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeVideoFaceFusionJobOutcome>>();
+    DescribeVideoFaceFusionJobAsync(
+    request,
+    [prom](
+        const VclmClient*,
+        const DescribeVideoFaceFusionJobRequest&,
+        DescribeVideoFaceFusionJobOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 VclmClient::DescribeVideoStylizationJobOutcome VclmClient::DescribeVideoStylizationJob(const DescribeVideoStylizationJobRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeVideoStylizationJob");
@@ -632,6 +682,56 @@ VclmClient::SubmitTemplateToVideoJobOutcomeCallable VclmClient::SubmitTemplateTo
         const VclmClient*,
         const SubmitTemplateToVideoJobRequest&,
         SubmitTemplateToVideoJobOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+VclmClient::SubmitVideoFaceFusionJobOutcome VclmClient::SubmitVideoFaceFusionJob(const SubmitVideoFaceFusionJobRequest &request)
+{
+    auto outcome = MakeRequest(request, "SubmitVideoFaceFusionJob");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SubmitVideoFaceFusionJobResponse rsp = SubmitVideoFaceFusionJobResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SubmitVideoFaceFusionJobOutcome(rsp);
+        else
+            return SubmitVideoFaceFusionJobOutcome(o.GetError());
+    }
+    else
+    {
+        return SubmitVideoFaceFusionJobOutcome(outcome.GetError());
+    }
+}
+
+void VclmClient::SubmitVideoFaceFusionJobAsync(const SubmitVideoFaceFusionJobRequest& request, const SubmitVideoFaceFusionJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const SubmitVideoFaceFusionJobRequest&;
+    using Resp = SubmitVideoFaceFusionJobResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "SubmitVideoFaceFusionJob", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+VclmClient::SubmitVideoFaceFusionJobOutcomeCallable VclmClient::SubmitVideoFaceFusionJobCallable(const SubmitVideoFaceFusionJobRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<SubmitVideoFaceFusionJobOutcome>>();
+    SubmitVideoFaceFusionJobAsync(
+    request,
+    [prom](
+        const VclmClient*,
+        const SubmitVideoFaceFusionJobRequest&,
+        SubmitVideoFaceFusionJobOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

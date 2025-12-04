@@ -78,7 +78,8 @@ LoadBalancer::LoadBalancer() :
     m_egressHasBeenSet(false),
     m_exclusiveHasBeenSet(false),
     m_targetCountHasBeenSet(false),
-    m_associateEndpointHasBeenSet(false)
+    m_associateEndpointHasBeenSet(false),
+    m_availableZoneAffinityInfoHasBeenSet(false)
 {
 }
 
@@ -754,6 +755,23 @@ CoreInternalOutcome LoadBalancer::Deserialize(const rapidjson::Value &value)
         m_associateEndpointHasBeenSet = true;
     }
 
+    if (value.HasMember("AvailableZoneAffinityInfo") && !value["AvailableZoneAffinityInfo"].IsNull())
+    {
+        if (!value["AvailableZoneAffinityInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `LoadBalancer.AvailableZoneAffinityInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_availableZoneAffinityInfo.Deserialize(value["AvailableZoneAffinityInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_availableZoneAffinityInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1275,6 +1293,15 @@ void LoadBalancer::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "AssociateEndpoint";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_associateEndpoint.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_availableZoneAffinityInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AvailableZoneAffinityInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_availableZoneAffinityInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -2206,5 +2233,21 @@ void LoadBalancer::SetAssociateEndpoint(const string& _associateEndpoint)
 bool LoadBalancer::AssociateEndpointHasBeenSet() const
 {
     return m_associateEndpointHasBeenSet;
+}
+
+AvailableZoneAffinityInfo LoadBalancer::GetAvailableZoneAffinityInfo() const
+{
+    return m_availableZoneAffinityInfo;
+}
+
+void LoadBalancer::SetAvailableZoneAffinityInfo(const AvailableZoneAffinityInfo& _availableZoneAffinityInfo)
+{
+    m_availableZoneAffinityInfo = _availableZoneAffinityInfo;
+    m_availableZoneAffinityInfoHasBeenSet = true;
+}
+
+bool LoadBalancer::AvailableZoneAffinityInfoHasBeenSet() const
+{
+    return m_availableZoneAffinityInfoHasBeenSet;
 }
 

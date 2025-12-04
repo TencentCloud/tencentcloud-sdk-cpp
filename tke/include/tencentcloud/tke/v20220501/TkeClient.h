@@ -45,6 +45,8 @@
 #include <tencentcloud/tke/v20220501/model/DescribeHealthCheckTemplateResponse.h>
 #include <tencentcloud/tke/v20220501/model/DescribeNodePoolsRequest.h>
 #include <tencentcloud/tke/v20220501/model/DescribeNodePoolsResponse.h>
+#include <tencentcloud/tke/v20220501/model/ModifyClusterMachineRequest.h>
+#include <tencentcloud/tke/v20220501/model/ModifyClusterMachineResponse.h>
 #include <tencentcloud/tke/v20220501/model/ModifyHealthCheckPolicyRequest.h>
 #include <tencentcloud/tke/v20220501/model/ModifyHealthCheckPolicyResponse.h>
 #include <tencentcloud/tke/v20220501/model/ModifyNodePoolRequest.h>
@@ -104,6 +106,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeNodePoolsResponse> DescribeNodePoolsOutcome;
                 typedef std::future<DescribeNodePoolsOutcome> DescribeNodePoolsOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::DescribeNodePoolsRequest&, DescribeNodePoolsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNodePoolsAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyClusterMachineResponse> ModifyClusterMachineOutcome;
+                typedef std::future<ModifyClusterMachineOutcome> ModifyClusterMachineOutcomeCallable;
+                typedef std::function<void(const TkeClient*, const Model::ModifyClusterMachineRequest&, ModifyClusterMachineOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyClusterMachineAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyHealthCheckPolicyResponse> ModifyHealthCheckPolicyOutcome;
                 typedef std::future<ModifyHealthCheckPolicyOutcome> ModifyHealthCheckPolicyOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::ModifyHealthCheckPolicyRequest&, ModifyHealthCheckPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyHealthCheckPolicyAsyncHandler;
@@ -223,6 +228,15 @@ namespace TencentCloud
                 DescribeNodePoolsOutcome DescribeNodePools(const Model::DescribeNodePoolsRequest &request);
                 void DescribeNodePoolsAsync(const Model::DescribeNodePoolsRequest& request, const DescribeNodePoolsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeNodePoolsOutcomeCallable DescribeNodePoolsCallable(const Model::DescribeNodePoolsRequest& request);
+
+                /**
+                 *修改原生节点
+                 * @param req ModifyClusterMachineRequest
+                 * @return ModifyClusterMachineOutcome
+                 */
+                ModifyClusterMachineOutcome ModifyClusterMachine(const Model::ModifyClusterMachineRequest &request);
+                void ModifyClusterMachineAsync(const Model::ModifyClusterMachineRequest& request, const ModifyClusterMachineAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyClusterMachineOutcomeCallable ModifyClusterMachineCallable(const Model::ModifyClusterMachineRequest& request);
 
                 /**
                  *修改健康检测策略

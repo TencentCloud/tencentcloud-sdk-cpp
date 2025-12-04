@@ -26,6 +26,7 @@ AllocateAddressesRequest::AllocateAddressesRequest() :
     m_addressCountHasBeenSet(false),
     m_internetServiceProviderHasBeenSet(false),
     m_internetChargeTypeHasBeenSet(false),
+    m_iPChargeTypeHasBeenSet(false),
     m_internetMaxBandwidthOutHasBeenSet(false),
     m_addressChargePrepaidHasBeenSet(false),
     m_addressTypeHasBeenSet(false),
@@ -39,8 +40,7 @@ AllocateAddressesRequest::AllocateAddressesRequest() :
     m_isDedicatedAddressPoolHasBeenSet(false),
     m_egressHasBeenSet(false),
     m_antiDDoSPackageIdHasBeenSet(false),
-    m_clientTokenHasBeenSet(false),
-    m_iPChargeTypeHasBeenSet(false)
+    m_clientTokenHasBeenSet(false)
 {
 }
 
@@ -73,6 +73,14 @@ string AllocateAddressesRequest::ToJsonString() const
         string key = "InternetChargeType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_internetChargeType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_iPChargeTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IPChargeType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_iPChargeType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_internetMaxBandwidthOutHasBeenSet)
@@ -200,14 +208,6 @@ string AllocateAddressesRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_clientToken.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_iPChargeTypeHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "IPChargeType";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_iPChargeType.c_str(), allocator).Move(), allocator);
-    }
-
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -262,6 +262,22 @@ void AllocateAddressesRequest::SetInternetChargeType(const string& _internetChar
 bool AllocateAddressesRequest::InternetChargeTypeHasBeenSet() const
 {
     return m_internetChargeTypeHasBeenSet;
+}
+
+string AllocateAddressesRequest::GetIPChargeType() const
+{
+    return m_iPChargeType;
+}
+
+void AllocateAddressesRequest::SetIPChargeType(const string& _iPChargeType)
+{
+    m_iPChargeType = _iPChargeType;
+    m_iPChargeTypeHasBeenSet = true;
+}
+
+bool AllocateAddressesRequest::IPChargeTypeHasBeenSet() const
+{
+    return m_iPChargeTypeHasBeenSet;
 }
 
 int64_t AllocateAddressesRequest::GetInternetMaxBandwidthOut() const
@@ -486,22 +502,6 @@ void AllocateAddressesRequest::SetClientToken(const string& _clientToken)
 bool AllocateAddressesRequest::ClientTokenHasBeenSet() const
 {
     return m_clientTokenHasBeenSet;
-}
-
-string AllocateAddressesRequest::GetIPChargeType() const
-{
-    return m_iPChargeType;
-}
-
-void AllocateAddressesRequest::SetIPChargeType(const string& _iPChargeType)
-{
-    m_iPChargeType = _iPChargeType;
-    m_iPChargeTypeHasBeenSet = true;
-}
-
-bool AllocateAddressesRequest::IPChargeTypeHasBeenSet() const
-{
-    return m_iPChargeTypeHasBeenSet;
 }
 
 

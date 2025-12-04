@@ -23,7 +23,8 @@ using namespace TencentCloud::Cdb::V20170320::Model;
 using namespace std;
 
 SwitchForUpgradeRequest::SwitchForUpgradeRequest() :
-    m_instanceIdHasBeenSet(false)
+    m_instanceIdHasBeenSet(false),
+    m_isRelatedSwitchHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,14 @@ string SwitchForUpgradeRequest::ToJsonString() const
         string key = "InstanceId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isRelatedSwitchHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsRelatedSwitch";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isRelatedSwitch, allocator);
     }
 
 
@@ -64,6 +73,22 @@ void SwitchForUpgradeRequest::SetInstanceId(const string& _instanceId)
 bool SwitchForUpgradeRequest::InstanceIdHasBeenSet() const
 {
     return m_instanceIdHasBeenSet;
+}
+
+bool SwitchForUpgradeRequest::GetIsRelatedSwitch() const
+{
+    return m_isRelatedSwitch;
+}
+
+void SwitchForUpgradeRequest::SetIsRelatedSwitch(const bool& _isRelatedSwitch)
+{
+    m_isRelatedSwitch = _isRelatedSwitch;
+    m_isRelatedSwitchHasBeenSet = true;
+}
+
+bool SwitchForUpgradeRequest::IsRelatedSwitchHasBeenSet() const
+{
+    return m_isRelatedSwitchHasBeenSet;
 }
 
 

@@ -23,9 +23,9 @@ using namespace std;
 TranslationAclRule::TranslationAclRule() :
     m_protocolHasBeenSet(false),
     m_sourcePortHasBeenSet(false),
-    m_sourceCidrHasBeenSet(false),
     m_destinationPortHasBeenSet(false),
     m_destinationCidrHasBeenSet(false),
+    m_sourceCidrHasBeenSet(false),
     m_aclRuleIdHasBeenSet(false),
     m_actionHasBeenSet(false),
     m_descriptionHasBeenSet(false)
@@ -57,16 +57,6 @@ CoreInternalOutcome TranslationAclRule::Deserialize(const rapidjson::Value &valu
         m_sourcePortHasBeenSet = true;
     }
 
-    if (value.HasMember("SourceCidr") && !value["SourceCidr"].IsNull())
-    {
-        if (!value["SourceCidr"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `TranslationAclRule.SourceCidr` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_sourceCidr = string(value["SourceCidr"].GetString());
-        m_sourceCidrHasBeenSet = true;
-    }
-
     if (value.HasMember("DestinationPort") && !value["DestinationPort"].IsNull())
     {
         if (!value["DestinationPort"].IsString())
@@ -85,6 +75,16 @@ CoreInternalOutcome TranslationAclRule::Deserialize(const rapidjson::Value &valu
         }
         m_destinationCidr = string(value["DestinationCidr"].GetString());
         m_destinationCidrHasBeenSet = true;
+    }
+
+    if (value.HasMember("SourceCidr") && !value["SourceCidr"].IsNull())
+    {
+        if (!value["SourceCidr"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TranslationAclRule.SourceCidr` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_sourceCidr = string(value["SourceCidr"].GetString());
+        m_sourceCidrHasBeenSet = true;
     }
 
     if (value.HasMember("AclRuleId") && !value["AclRuleId"].IsNull())
@@ -140,14 +140,6 @@ void TranslationAclRule::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         value.AddMember(iKey, rapidjson::Value(m_sourcePort.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_sourceCidrHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "SourceCidr";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_sourceCidr.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_destinationPortHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -162,6 +154,14 @@ void TranslationAclRule::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "DestinationCidr";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_destinationCidr.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sourceCidrHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SourceCidr";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sourceCidr.c_str(), allocator).Move(), allocator);
     }
 
     if (m_aclRuleIdHasBeenSet)
@@ -223,22 +223,6 @@ bool TranslationAclRule::SourcePortHasBeenSet() const
     return m_sourcePortHasBeenSet;
 }
 
-string TranslationAclRule::GetSourceCidr() const
-{
-    return m_sourceCidr;
-}
-
-void TranslationAclRule::SetSourceCidr(const string& _sourceCidr)
-{
-    m_sourceCidr = _sourceCidr;
-    m_sourceCidrHasBeenSet = true;
-}
-
-bool TranslationAclRule::SourceCidrHasBeenSet() const
-{
-    return m_sourceCidrHasBeenSet;
-}
-
 string TranslationAclRule::GetDestinationPort() const
 {
     return m_destinationPort;
@@ -269,6 +253,22 @@ void TranslationAclRule::SetDestinationCidr(const string& _destinationCidr)
 bool TranslationAclRule::DestinationCidrHasBeenSet() const
 {
     return m_destinationCidrHasBeenSet;
+}
+
+string TranslationAclRule::GetSourceCidr() const
+{
+    return m_sourceCidr;
+}
+
+void TranslationAclRule::SetSourceCidr(const string& _sourceCidr)
+{
+    m_sourceCidr = _sourceCidr;
+    m_sourceCidrHasBeenSet = true;
+}
+
+bool TranslationAclRule::SourceCidrHasBeenSet() const
+{
+    return m_sourceCidrHasBeenSet;
 }
 
 uint64_t TranslationAclRule::GetAclRuleId() const

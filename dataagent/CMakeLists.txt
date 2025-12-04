@@ -19,6 +19,7 @@ set(dataagent_public_header
   )
 
 set(dataagent_public_header_model
+  include/tencentcloud/dataagent/v20250513/model/UploadAndCommitFileRequest.h
   include/tencentcloud/dataagent/v20250513/model/GetKnowledgeBaseListRequest.h
   include/tencentcloud/dataagent/v20250513/model/AddChunkRequest.h
   include/tencentcloud/dataagent/v20250513/model/ModifyChunkResponse.h
@@ -27,22 +28,27 @@ set(dataagent_public_header_model
   include/tencentcloud/dataagent/v20250513/model/GetSessionDetailsResponse.h
   include/tencentcloud/dataagent/v20250513/model/DeleteChunkResponse.h
   include/tencentcloud/dataagent/v20250513/model/QueryChunkListResponse.h
+  include/tencentcloud/dataagent/v20250513/model/UploadJob.h
   include/tencentcloud/dataagent/v20250513/model/QueryChunkListRequest.h
   include/tencentcloud/dataagent/v20250513/model/StopChatAIRequest.h
   include/tencentcloud/dataagent/v20250513/model/StepExpand.h
   include/tencentcloud/dataagent/v20250513/model/GetSessionDetailsRequest.h
-  include/tencentcloud/dataagent/v20250513/model/ModifyKnowledgeBaseRequest.h
-  include/tencentcloud/dataagent/v20250513/model/ModifyChunkRequest.h
   include/tencentcloud/dataagent/v20250513/model/CreateDataAgentSessionResponse.h
+  include/tencentcloud/dataagent/v20250513/model/ModifyChunkRequest.h
+  include/tencentcloud/dataagent/v20250513/model/ModifyKnowledgeBaseRequest.h
+  include/tencentcloud/dataagent/v20250513/model/CosFileInfo.h
   include/tencentcloud/dataagent/v20250513/model/KnowledgeBase.h
   include/tencentcloud/dataagent/v20250513/model/StopChatAIResponse.h
+  include/tencentcloud/dataagent/v20250513/model/GetUploadJobDetailsResponse.h
   include/tencentcloud/dataagent/v20250513/model/Task.h
   include/tencentcloud/dataagent/v20250513/model/DeleteDataAgentSessionResponse.h
   include/tencentcloud/dataagent/v20250513/model/Record.h
   include/tencentcloud/dataagent/v20250513/model/ChatAIRequest.h
+  include/tencentcloud/dataagent/v20250513/model/GetUploadJobDetailsRequest.h
   include/tencentcloud/dataagent/v20250513/model/AddChunkResponse.h
   include/tencentcloud/dataagent/v20250513/model/StepInfo.h
   include/tencentcloud/dataagent/v20250513/model/Chunk.h
+  include/tencentcloud/dataagent/v20250513/model/UploadAndCommitFileResponse.h
   include/tencentcloud/dataagent/v20250513/model/CreateDataAgentSessionRequest.h
   include/tencentcloud/dataagent/v20250513/model/ModifyKnowledgeBaseResponse.h
   include/tencentcloud/dataagent/v20250513/model/DeleteDataAgentSessionRequest.h
@@ -51,6 +57,7 @@ set(dataagent_public_header_model
 
 set(dataagent_src
   src/v20250513/DataagentClient.cpp
+  src/v20250513/model/UploadAndCommitFileRequest.cpp
   src/v20250513/model/GetKnowledgeBaseListRequest.cpp
   src/v20250513/model/AddChunkRequest.cpp
   src/v20250513/model/ModifyChunkResponse.cpp
@@ -59,22 +66,27 @@ set(dataagent_src
   src/v20250513/model/GetSessionDetailsResponse.cpp
   src/v20250513/model/DeleteChunkResponse.cpp
   src/v20250513/model/QueryChunkListResponse.cpp
+  src/v20250513/model/UploadJob.cpp
   src/v20250513/model/QueryChunkListRequest.cpp
   src/v20250513/model/StopChatAIRequest.cpp
   src/v20250513/model/StepExpand.cpp
   src/v20250513/model/GetSessionDetailsRequest.cpp
-  src/v20250513/model/ModifyKnowledgeBaseRequest.cpp
-  src/v20250513/model/ModifyChunkRequest.cpp
   src/v20250513/model/CreateDataAgentSessionResponse.cpp
+  src/v20250513/model/ModifyChunkRequest.cpp
+  src/v20250513/model/ModifyKnowledgeBaseRequest.cpp
+  src/v20250513/model/CosFileInfo.cpp
   src/v20250513/model/KnowledgeBase.cpp
   src/v20250513/model/StopChatAIResponse.cpp
+  src/v20250513/model/GetUploadJobDetailsResponse.cpp
   src/v20250513/model/Task.cpp
   src/v20250513/model/DeleteDataAgentSessionResponse.cpp
   src/v20250513/model/Record.cpp
   src/v20250513/model/ChatAIRequest.cpp
+  src/v20250513/model/GetUploadJobDetailsRequest.cpp
   src/v20250513/model/AddChunkResponse.cpp
   src/v20250513/model/StepInfo.cpp
   src/v20250513/model/Chunk.cpp
+  src/v20250513/model/UploadAndCommitFileResponse.cpp
   src/v20250513/model/CreateDataAgentSessionRequest.cpp
   src/v20250513/model/ModifyKnowledgeBaseResponse.cpp
   src/v20250513/model/DeleteDataAgentSessionRequest.cpp

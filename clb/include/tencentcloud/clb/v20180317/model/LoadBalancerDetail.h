@@ -28,6 +28,7 @@
 #include <tencentcloud/clb/v20180317/model/LBChargePrepaid.h>
 #include <tencentcloud/clb/v20180317/model/ExtraInfo.h>
 #include <tencentcloud/clb/v20180317/model/TagInfo.h>
+#include <tencentcloud/clb/v20180317/model/AvailableZoneAffinityInfo.h>
 
 
 namespace TencentCloud
@@ -1096,6 +1097,31 @@ Public：公网属性，Private：内网属性；对于内网属性的负载均�
                      */
                     bool ExclusiveHasBeenSet() const;
 
+                    /**
+                     * 获取可用区转发亲和信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AvailableZoneAffinityInfo 可用区转发亲和信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    AvailableZoneAffinityInfo GetAvailableZoneAffinityInfo() const;
+
+                    /**
+                     * 设置可用区转发亲和信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _availableZoneAffinityInfo 可用区转发亲和信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAvailableZoneAffinityInfo(const AvailableZoneAffinityInfo& _availableZoneAffinityInfo);
+
+                    /**
+                     * 判断参数 AvailableZoneAffinityInfo 是否已赋值
+                     * @return AvailableZoneAffinityInfo 是否已赋值
+                     * 
+                     */
+                    bool AvailableZoneAffinityInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1390,6 +1416,13 @@ Public：公网属性，Private：内网属性；对于内网属性的负载均�
                      */
                     uint64_t m_exclusive;
                     bool m_exclusiveHasBeenSet;
+
+                    /**
+                     * 可用区转发亲和信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    AvailableZoneAffinityInfo m_availableZoneAffinityInfo;
+                    bool m_availableZoneAffinityInfoHasBeenSet;
 
                 };
             }

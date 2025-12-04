@@ -26,7 +26,9 @@ ClusterConfigsInfoFromEMR::ClusterConfigsInfoFromEMR() :
     m_keyConfHasBeenSet(false),
     m_oriParamHasBeenSet(false),
     m_needRestartHasBeenSet(false),
-    m_filePathHasBeenSet(false)
+    m_filePathHasBeenSet(false),
+    m_ipHasBeenSet(false),
+    m_configLevelHasBeenSet(false)
 {
 }
 
@@ -95,6 +97,26 @@ CoreInternalOutcome ClusterConfigsInfoFromEMR::Deserialize(const rapidjson::Valu
         m_filePathHasBeenSet = true;
     }
 
+    if (value.HasMember("Ip") && !value["Ip"].IsNull())
+    {
+        if (!value["Ip"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClusterConfigsInfoFromEMR.Ip` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_ip = string(value["Ip"].GetString());
+        m_ipHasBeenSet = true;
+    }
+
+    if (value.HasMember("ConfigLevel") && !value["ConfigLevel"].IsNull())
+    {
+        if (!value["ConfigLevel"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClusterConfigsInfoFromEMR.ConfigLevel` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_configLevel = string(value["ConfigLevel"].GetString());
+        m_configLevelHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -148,6 +170,22 @@ void ClusterConfigsInfoFromEMR::ToJsonObject(rapidjson::Value &value, rapidjson:
         string key = "FilePath";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_filePath.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ipHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Ip";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ip.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_configLevelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ConfigLevel";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_configLevel.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -247,5 +285,37 @@ void ClusterConfigsInfoFromEMR::SetFilePath(const string& _filePath)
 bool ClusterConfigsInfoFromEMR::FilePathHasBeenSet() const
 {
     return m_filePathHasBeenSet;
+}
+
+string ClusterConfigsInfoFromEMR::GetIp() const
+{
+    return m_ip;
+}
+
+void ClusterConfigsInfoFromEMR::SetIp(const string& _ip)
+{
+    m_ip = _ip;
+    m_ipHasBeenSet = true;
+}
+
+bool ClusterConfigsInfoFromEMR::IpHasBeenSet() const
+{
+    return m_ipHasBeenSet;
+}
+
+string ClusterConfigsInfoFromEMR::GetConfigLevel() const
+{
+    return m_configLevel;
+}
+
+void ClusterConfigsInfoFromEMR::SetConfigLevel(const string& _configLevel)
+{
+    m_configLevel = _configLevel;
+    m_configLevelHasBeenSet = true;
+}
+
+bool ClusterConfigsInfoFromEMR::ConfigLevelHasBeenSet() const
+{
+    return m_configLevelHasBeenSet;
 }
 
