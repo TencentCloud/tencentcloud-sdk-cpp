@@ -27,7 +27,9 @@ CreateEnvironmentResponse::CreateEnvironmentResponse() :
     m_environmentIdHasBeenSet(false),
     m_msgTTLHasBeenSet(false),
     m_remarkHasBeenSet(false),
-    m_namespaceIdHasBeenSet(false)
+    m_namespaceIdHasBeenSet(false),
+    m_subscriptionExpirationTimeHasBeenSet(false),
+    m_subscriptionExpirationTimeEnableHasBeenSet(false)
 {
 }
 
@@ -105,6 +107,26 @@ CoreInternalOutcome CreateEnvironmentResponse::Deserialize(const string &payload
         m_namespaceIdHasBeenSet = true;
     }
 
+    if (rsp.HasMember("SubscriptionExpirationTime") && !rsp["SubscriptionExpirationTime"].IsNull())
+    {
+        if (!rsp["SubscriptionExpirationTime"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `SubscriptionExpirationTime` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_subscriptionExpirationTime = rsp["SubscriptionExpirationTime"].GetUint64();
+        m_subscriptionExpirationTimeHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("SubscriptionExpirationTimeEnable") && !rsp["SubscriptionExpirationTimeEnable"].IsNull())
+    {
+        if (!rsp["SubscriptionExpirationTimeEnable"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `SubscriptionExpirationTimeEnable` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_subscriptionExpirationTimeEnable = rsp["SubscriptionExpirationTimeEnable"].GetBool();
+        m_subscriptionExpirationTimeEnableHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -145,6 +167,22 @@ string CreateEnvironmentResponse::ToJsonString() const
         string key = "NamespaceId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_namespaceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_subscriptionExpirationTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubscriptionExpirationTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_subscriptionExpirationTime, allocator);
+    }
+
+    if (m_subscriptionExpirationTimeEnableHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubscriptionExpirationTimeEnable";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_subscriptionExpirationTimeEnable, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -197,6 +235,26 @@ string CreateEnvironmentResponse::GetNamespaceId() const
 bool CreateEnvironmentResponse::NamespaceIdHasBeenSet() const
 {
     return m_namespaceIdHasBeenSet;
+}
+
+uint64_t CreateEnvironmentResponse::GetSubscriptionExpirationTime() const
+{
+    return m_subscriptionExpirationTime;
+}
+
+bool CreateEnvironmentResponse::SubscriptionExpirationTimeHasBeenSet() const
+{
+    return m_subscriptionExpirationTimeHasBeenSet;
+}
+
+bool CreateEnvironmentResponse::GetSubscriptionExpirationTimeEnable() const
+{
+    return m_subscriptionExpirationTimeEnable;
+}
+
+bool CreateEnvironmentResponse::SubscriptionExpirationTimeEnableHasBeenSet() const
+{
+    return m_subscriptionExpirationTimeEnableHasBeenSet;
 }
 
 

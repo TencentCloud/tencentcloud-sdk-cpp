@@ -154,18 +154,18 @@ namespace TencentCloud
 
                     /**
                      * 获取实例只读权重。
-该参数必填。
+
                      * @return InstanceWeights 实例只读权重。
-该参数必填。
+
                      * 
                      */
                     std::vector<ProxyInstanceWeight> GetInstanceWeights() const;
 
                     /**
                      * 设置实例只读权重。
-该参数必填。
+
                      * @param _instanceWeights 实例只读权重。
-该参数必填。
+
                      * 
                      */
                     void SetInstanceWeights(const std::vector<ProxyInstanceWeight>& _instanceWeights);
@@ -471,7 +471,7 @@ SessionConnectionPool
 
                     /**
                      * 实例只读权重。
-该参数必填。
+
                      */
                     std::vector<ProxyInstanceWeight> m_instanceWeights;
                     bool m_instanceWeightsHasBeenSet;

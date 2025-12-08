@@ -29,7 +29,8 @@ DescribeMsgTraceRequest::DescribeMsgTraceRequest() :
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
     m_subscriptionNameHasBeenSet(false),
-    m_clusterIdHasBeenSet(false)
+    m_clusterIdHasBeenSet(false),
+    m_topicNameHasBeenSet(false)
 {
 }
 
@@ -94,6 +95,14 @@ string DescribeMsgTraceRequest::ToJsonString() const
         string key = "ClusterId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_clusterId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_topicNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TopicName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_topicName.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -214,6 +223,22 @@ void DescribeMsgTraceRequest::SetClusterId(const string& _clusterId)
 bool DescribeMsgTraceRequest::ClusterIdHasBeenSet() const
 {
     return m_clusterIdHasBeenSet;
+}
+
+string DescribeMsgTraceRequest::GetTopicName() const
+{
+    return m_topicName;
+}
+
+void DescribeMsgTraceRequest::SetTopicName(const string& _topicName)
+{
+    m_topicName = _topicName;
+    m_topicNameHasBeenSet = true;
+}
+
+bool DescribeMsgTraceRequest::TopicNameHasBeenSet() const
+{
+    return m_topicNameHasBeenSet;
 }
 
 

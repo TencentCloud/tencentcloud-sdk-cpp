@@ -81,10 +81,10 @@ namespace TencentCloud
 
                     /**
                      * 获取售卖规格有效标志，取值范围如下：
-- 0：停止售卖，
+- 0：停止售卖。
 - 1：开放售卖。
                      * @return Status 售卖规格有效标志，取值范围如下：
-- 0：停止售卖，
+- 0：停止售卖。
 - 1：开放售卖。
                      * 
                      */
@@ -92,10 +92,10 @@ namespace TencentCloud
 
                     /**
                      * 设置售卖规格有效标志，取值范围如下：
-- 0：停止售卖，
+- 0：停止售卖。
 - 1：开放售卖。
                      * @param _status 售卖规格有效标志，取值范围如下：
-- 0：停止售卖，
+- 0：停止售卖。
 - 1：开放售卖。
                      * 
                      */
@@ -263,6 +263,7 @@ namespace TencentCloud
 - MONGO_50_WT：MongoDB 5.0 WiredTiger存储引擎版本。
 - MONGO_60_WT：MongoDB 6.0 WiredTiger存储引擎版本。
 - MONGO_70_WT：MongoDB 7.0 WiredTiger存储引擎版本。
+- MONGO_80_WT：MongoDB 8.0 WiredTiger存储引擎版本。
                      * @return MongoVersionCode 实例存储引擎版本信息。
 - MONGO_40_WT：MongoDB 4.0 WiredTiger存储引擎版本。
 - MONGO_42_WT：MongoDB 4.2 WiredTiger存储引擎版本。
@@ -270,6 +271,7 @@ namespace TencentCloud
 - MONGO_50_WT：MongoDB 5.0 WiredTiger存储引擎版本。
 - MONGO_60_WT：MongoDB 6.0 WiredTiger存储引擎版本。
 - MONGO_70_WT：MongoDB 7.0 WiredTiger存储引擎版本。
+- MONGO_80_WT：MongoDB 8.0 WiredTiger存储引擎版本。
                      * 
                      */
                     std::string GetMongoVersionCode() const;
@@ -282,6 +284,7 @@ namespace TencentCloud
 - MONGO_50_WT：MongoDB 5.0 WiredTiger存储引擎版本。
 - MONGO_60_WT：MongoDB 6.0 WiredTiger存储引擎版本。
 - MONGO_70_WT：MongoDB 7.0 WiredTiger存储引擎版本。
+- MONGO_80_WT：MongoDB 8.0 WiredTiger存储引擎版本。
                      * @param _mongoVersionCode 实例存储引擎版本信息。
 - MONGO_40_WT：MongoDB 4.0 WiredTiger存储引擎版本。
 - MONGO_42_WT：MongoDB 4.2 WiredTiger存储引擎版本。
@@ -289,6 +292,7 @@ namespace TencentCloud
 - MONGO_50_WT：MongoDB 5.0 WiredTiger存储引擎版本。
 - MONGO_60_WT：MongoDB 6.0 WiredTiger存储引擎版本。
 - MONGO_70_WT：MongoDB 7.0 WiredTiger存储引擎版本。
+- MONGO_80_WT：MongoDB 8.0 WiredTiger存储引擎版本。
                      * 
                      */
                     void SetMongoVersionCode(const std::string& _mongoVersionCode);
@@ -302,14 +306,50 @@ namespace TencentCloud
 
                     /**
                      * 获取实例版本对应的数字版本。
+- MongoDB 3.2 版本：2。
+- MongoDB 3.6 版本：4。
+- MongoDB 4.0 版本：5。
+- MongoDB 4.2 版本：9。
+- MongoDB 4.4 版本：10。
+- MongoDB 5.0 版本：11。
+- MongoDB 6.0 版本：12。
+- MongoDB 7.0 版本：13。
+- MongoDB 8.0 版本：14。
                      * @return MongoVersionValue 实例版本对应的数字版本。
+- MongoDB 3.2 版本：2。
+- MongoDB 3.6 版本：4。
+- MongoDB 4.0 版本：5。
+- MongoDB 4.2 版本：9。
+- MongoDB 4.4 版本：10。
+- MongoDB 5.0 版本：11。
+- MongoDB 6.0 版本：12。
+- MongoDB 7.0 版本：13。
+- MongoDB 8.0 版本：14。
                      * 
                      */
                     uint64_t GetMongoVersionValue() const;
 
                     /**
                      * 设置实例版本对应的数字版本。
+- MongoDB 3.2 版本：2。
+- MongoDB 3.6 版本：4。
+- MongoDB 4.0 版本：5。
+- MongoDB 4.2 版本：9。
+- MongoDB 4.4 版本：10。
+- MongoDB 5.0 版本：11。
+- MongoDB 6.0 版本：12。
+- MongoDB 7.0 版本：13。
+- MongoDB 8.0 版本：14。
                      * @param _mongoVersionValue 实例版本对应的数字版本。
+- MongoDB 3.2 版本：2。
+- MongoDB 3.6 版本：4。
+- MongoDB 4.0 版本：5。
+- MongoDB 4.2 版本：9。
+- MongoDB 4.4 版本：10。
+- MongoDB 5.0 版本：11。
+- MongoDB 6.0 版本：12。
+- MongoDB 7.0 版本：13。
+- MongoDB 8.0 版本：14。
                      * 
                      */
                     void SetMongoVersionValue(const uint64_t& _mongoVersionValue);
@@ -322,15 +362,15 @@ namespace TencentCloud
                     bool MongoVersionValueHasBeenSet() const;
 
                     /**
-                     * 获取实例版本信息。支持：4.2、4.4、5.0、6.0、7.0。
-                     * @return Version 实例版本信息。支持：4.2、4.4、5.0、6.0、7.0。
+                     * 获取实例版本信息。支持：4.2、4.4、5.0、6.0、7.0、8.0。
+                     * @return Version 实例版本信息。支持：4.2、4.4、5.0、6.0、7.0、8.0。
                      * 
                      */
                     std::string GetVersion() const;
 
                     /**
-                     * 设置实例版本信息。支持：4.2、4.4、5.0、6.0、7.0。
-                     * @param _version 实例版本信息。支持：4.2、4.4、5.0、6.0、7.0。
+                     * 设置实例版本信息。支持：4.2、4.4、5.0、6.0、7.0、8.0。
+                     * @param _version 实例版本信息。支持：4.2、4.4、5.0、6.0、7.0、8.0。
                      * 
                      */
                     void SetVersion(const std::string& _version);
@@ -343,15 +383,15 @@ namespace TencentCloud
                     bool VersionHasBeenSet() const;
 
                     /**
-                     * 获取存储引擎。
-                     * @return EngineName 存储引擎。
+                     * 获取存储引擎，仅支持 WiredTiger。
+                     * @return EngineName 存储引擎，仅支持 WiredTiger。
                      * 
                      */
                     std::string GetEngineName() const;
 
                     /**
-                     * 设置存储引擎。
-                     * @param _engineName 存储引擎。
+                     * 设置存储引擎，仅支持 WiredTiger。
+                     * @param _engineName 存储引擎，仅支持 WiredTiger。
                      * 
                      */
                     void SetEngineName(const std::string& _engineName);
@@ -560,7 +600,7 @@ namespace TencentCloud
 
                     /**
                      * 售卖规格有效标志，取值范围如下：
-- 0：停止售卖，
+- 0：停止售卖。
 - 1：开放售卖。
                      */
                     uint64_t m_status;
@@ -616,24 +656,34 @@ namespace TencentCloud
 - MONGO_50_WT：MongoDB 5.0 WiredTiger存储引擎版本。
 - MONGO_60_WT：MongoDB 6.0 WiredTiger存储引擎版本。
 - MONGO_70_WT：MongoDB 7.0 WiredTiger存储引擎版本。
+- MONGO_80_WT：MongoDB 8.0 WiredTiger存储引擎版本。
                      */
                     std::string m_mongoVersionCode;
                     bool m_mongoVersionCodeHasBeenSet;
 
                     /**
                      * 实例版本对应的数字版本。
+- MongoDB 3.2 版本：2。
+- MongoDB 3.6 版本：4。
+- MongoDB 4.0 版本：5。
+- MongoDB 4.2 版本：9。
+- MongoDB 4.4 版本：10。
+- MongoDB 5.0 版本：11。
+- MongoDB 6.0 版本：12。
+- MongoDB 7.0 版本：13。
+- MongoDB 8.0 版本：14。
                      */
                     uint64_t m_mongoVersionValue;
                     bool m_mongoVersionValueHasBeenSet;
 
                     /**
-                     * 实例版本信息。支持：4.2、4.4、5.0、6.0、7.0。
+                     * 实例版本信息。支持：4.2、4.4、5.0、6.0、7.0、8.0。
                      */
                     std::string m_version;
                     bool m_versionHasBeenSet;
 
                     /**
-                     * 存储引擎。
+                     * 存储引擎，仅支持 WiredTiger。
                      */
                     std::string m_engineName;
                     bool m_engineNameHasBeenSet;

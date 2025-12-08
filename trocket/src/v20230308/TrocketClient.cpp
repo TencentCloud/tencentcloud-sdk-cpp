@@ -3540,3 +3540,103 @@ TrocketClient::RollbackMigratingTopicStageOutcomeCallable TrocketClient::Rollbac
     return prom->get_future();
 }
 
+TrocketClient::SendMessageOutcome TrocketClient::SendMessage(const SendMessageRequest &request)
+{
+    auto outcome = MakeRequest(request, "SendMessage");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SendMessageResponse rsp = SendMessageResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SendMessageOutcome(rsp);
+        else
+            return SendMessageOutcome(o.GetError());
+    }
+    else
+    {
+        return SendMessageOutcome(outcome.GetError());
+    }
+}
+
+void TrocketClient::SendMessageAsync(const SendMessageRequest& request, const SendMessageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const SendMessageRequest&;
+    using Resp = SendMessageResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "SendMessage", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TrocketClient::SendMessageOutcomeCallable TrocketClient::SendMessageCallable(const SendMessageRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<SendMessageOutcome>>();
+    SendMessageAsync(
+    request,
+    [prom](
+        const TrocketClient*,
+        const SendMessageRequest&,
+        SendMessageOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TrocketClient::VerifyMessageConsumptionOutcome TrocketClient::VerifyMessageConsumption(const VerifyMessageConsumptionRequest &request)
+{
+    auto outcome = MakeRequest(request, "VerifyMessageConsumption");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        VerifyMessageConsumptionResponse rsp = VerifyMessageConsumptionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return VerifyMessageConsumptionOutcome(rsp);
+        else
+            return VerifyMessageConsumptionOutcome(o.GetError());
+    }
+    else
+    {
+        return VerifyMessageConsumptionOutcome(outcome.GetError());
+    }
+}
+
+void TrocketClient::VerifyMessageConsumptionAsync(const VerifyMessageConsumptionRequest& request, const VerifyMessageConsumptionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const VerifyMessageConsumptionRequest&;
+    using Resp = VerifyMessageConsumptionResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "VerifyMessageConsumption", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TrocketClient::VerifyMessageConsumptionOutcomeCallable TrocketClient::VerifyMessageConsumptionCallable(const VerifyMessageConsumptionRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<VerifyMessageConsumptionOutcome>>();
+    VerifyMessageConsumptionAsync(
+    request,
+    [prom](
+        const TrocketClient*,
+        const VerifyMessageConsumptionRequest&,
+        VerifyMessageConsumptionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+

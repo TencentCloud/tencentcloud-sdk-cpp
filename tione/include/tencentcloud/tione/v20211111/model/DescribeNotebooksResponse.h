@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取详情
-                     * @return NotebookSet 详情
+                     * 获取notebook详情
+                     * @return NotebookSet notebook详情
                      * 
                      */
                     std::vector<NotebookSetItem> GetNotebookSet() const;
@@ -75,7 +75,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 详情
+                     * notebook详情
                      */
                     std::vector<NotebookSetItem> m_notebookSet;
                     bool m_notebookSetHasBeenSet;

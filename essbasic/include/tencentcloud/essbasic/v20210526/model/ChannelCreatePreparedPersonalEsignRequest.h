@@ -348,6 +348,27 @@ namespace TencentCloud
                      */
                     bool SceneKeyHasBeenSet() const;
 
+                    /**
+                     * 获取印章图片文件 id取值：填写的FileId通过UploadFiles接口上传文件获取。
+                     * @return FileId 印章图片文件 id取值：填写的FileId通过UploadFiles接口上传文件获取。
+                     * 
+                     */
+                    std::string GetFileId() const;
+
+                    /**
+                     * 设置印章图片文件 id取值：填写的FileId通过UploadFiles接口上传文件获取。
+                     * @param _fileId 印章图片文件 id取值：填写的FileId通过UploadFiles接口上传文件获取。
+                     * 
+                     */
+                    void SetFileId(const std::string& _fileId);
+
+                    /**
+                     * 判断参数 FileId 是否已赋值
+                     * @return FileId 是否已赋值
+                     * 
+                     */
+                    bool FileIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -434,6 +455,12 @@ namespace TencentCloud
                      */
                     std::string m_sceneKey;
                     bool m_sceneKeyHasBeenSet;
+
+                    /**
+                     * 印章图片文件 id取值：填写的FileId通过UploadFiles接口上传文件获取。
+                     */
+                    std::string m_fileId;
+                    bool m_fileIdHasBeenSet;
 
                 };
             }

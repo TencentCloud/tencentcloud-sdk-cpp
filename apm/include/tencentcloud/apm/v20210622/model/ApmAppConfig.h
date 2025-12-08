@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/apm/v20210622/model/Instrument.h>
 #include <tencentcloud/apm/v20210622/model/AgentOperationConfigView.h>
+#include <tencentcloud/apm/v20210622/model/ApmTag.h>
 
 
 namespace TencentCloud
@@ -1232,6 +1233,48 @@ namespace TencentCloud
                      */
                     bool DisableCpuUsedHasBeenSet() const;
 
+                    /**
+                     * 获取是否开启SQL参数获取
+                     * @return DbStatementParametersEnabled 是否开启SQL参数获取
+                     * 
+                     */
+                    bool GetDbStatementParametersEnabled() const;
+
+                    /**
+                     * 设置是否开启SQL参数获取
+                     * @param _dbStatementParametersEnabled 是否开启SQL参数获取
+                     * 
+                     */
+                    void SetDbStatementParametersEnabled(const bool& _dbStatementParametersEnabled);
+
+                    /**
+                     * 判断参数 DbStatementParametersEnabled 是否已赋值
+                     * @return DbStatementParametersEnabled 是否已赋值
+                     * 
+                     */
+                    bool DbStatementParametersEnabledHasBeenSet() const;
+
+                    /**
+                     * 获取慢SQL阈值
+                     * @return SlowSQLThresholds 慢SQL阈值
+                     * 
+                     */
+                    std::vector<ApmTag> GetSlowSQLThresholds() const;
+
+                    /**
+                     * 设置慢SQL阈值
+                     * @param _slowSQLThresholds 慢SQL阈值
+                     * 
+                     */
+                    void SetSlowSQLThresholds(const std::vector<ApmTag>& _slowSQLThresholds);
+
+                    /**
+                     * 判断参数 SlowSQLThresholds 是否已赋值
+                     * @return SlowSQLThresholds 是否已赋值
+                     * 
+                     */
+                    bool SlowSQLThresholdsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1568,6 +1611,18 @@ namespace TencentCloud
                      */
                     int64_t m_disableCpuUsed;
                     bool m_disableCpuUsedHasBeenSet;
+
+                    /**
+                     * 是否开启SQL参数获取
+                     */
+                    bool m_dbStatementParametersEnabled;
+                    bool m_dbStatementParametersEnabledHasBeenSet;
+
+                    /**
+                     * 慢SQL阈值
+                     */
+                    std::vector<ApmTag> m_slowSQLThresholds;
+                    bool m_slowSQLThresholdsHasBeenSet;
 
                 };
             }

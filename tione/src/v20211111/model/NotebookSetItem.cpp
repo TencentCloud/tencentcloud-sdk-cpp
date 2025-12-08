@@ -50,7 +50,8 @@ NotebookSetItem::NotebookSetItem() :
     m_volumeSourceGooseFSHasBeenSet(false),
     m_subUinHasBeenSet(false),
     m_subUinNameHasBeenSet(false),
-    m_appIdHasBeenSet(false)
+    m_appIdHasBeenSet(false),
+    m_exposePortConfigHasBeenSet(false)
 {
 }
 
@@ -403,6 +404,23 @@ CoreInternalOutcome NotebookSetItem::Deserialize(const rapidjson::Value &value)
         m_appIdHasBeenSet = true;
     }
 
+    if (value.HasMember("ExposePortConfig") && !value["ExposePortConfig"].IsNull())
+    {
+        if (!value["ExposePortConfig"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `NotebookSetItem.ExposePortConfig` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_exposePortConfig.Deserialize(value["ExposePortConfig"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_exposePortConfigHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -669,6 +687,15 @@ void NotebookSetItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "AppId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_appId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_exposePortConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExposePortConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_exposePortConfig.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -1152,5 +1179,21 @@ void NotebookSetItem::SetAppId(const string& _appId)
 bool NotebookSetItem::AppIdHasBeenSet() const
 {
     return m_appIdHasBeenSet;
+}
+
+ExposePortConfig NotebookSetItem::GetExposePortConfig() const
+{
+    return m_exposePortConfig;
+}
+
+void NotebookSetItem::SetExposePortConfig(const ExposePortConfig& _exposePortConfig)
+{
+    m_exposePortConfig = _exposePortConfig;
+    m_exposePortConfigHasBeenSet = true;
+}
+
+bool NotebookSetItem::ExposePortConfigHasBeenSet() const
+{
+    return m_exposePortConfigHasBeenSet;
 }
 

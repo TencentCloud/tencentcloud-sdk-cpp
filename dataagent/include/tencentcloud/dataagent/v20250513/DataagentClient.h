@@ -33,6 +33,8 @@
 #include <tencentcloud/dataagent/v20250513/model/DeleteChunkResponse.h>
 #include <tencentcloud/dataagent/v20250513/model/DeleteDataAgentSessionRequest.h>
 #include <tencentcloud/dataagent/v20250513/model/DeleteDataAgentSessionResponse.h>
+#include <tencentcloud/dataagent/v20250513/model/GetKnowledgeBaseFileListRequest.h>
+#include <tencentcloud/dataagent/v20250513/model/GetKnowledgeBaseFileListResponse.h>
 #include <tencentcloud/dataagent/v20250513/model/GetKnowledgeBaseListRequest.h>
 #include <tencentcloud/dataagent/v20250513/model/GetKnowledgeBaseListResponse.h>
 #include <tencentcloud/dataagent/v20250513/model/GetSessionDetailsRequest.h>
@@ -78,6 +80,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteDataAgentSessionResponse> DeleteDataAgentSessionOutcome;
                 typedef std::future<DeleteDataAgentSessionOutcome> DeleteDataAgentSessionOutcomeCallable;
                 typedef std::function<void(const DataagentClient*, const Model::DeleteDataAgentSessionRequest&, DeleteDataAgentSessionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDataAgentSessionAsyncHandler;
+                typedef Outcome<Core::Error, Model::GetKnowledgeBaseFileListResponse> GetKnowledgeBaseFileListOutcome;
+                typedef std::future<GetKnowledgeBaseFileListOutcome> GetKnowledgeBaseFileListOutcomeCallable;
+                typedef std::function<void(const DataagentClient*, const Model::GetKnowledgeBaseFileListRequest&, GetKnowledgeBaseFileListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetKnowledgeBaseFileListAsyncHandler;
                 typedef Outcome<Core::Error, Model::GetKnowledgeBaseListResponse> GetKnowledgeBaseListOutcome;
                 typedef std::future<GetKnowledgeBaseListOutcome> GetKnowledgeBaseListOutcomeCallable;
                 typedef std::function<void(const DataagentClient*, const Model::GetKnowledgeBaseListRequest&, GetKnowledgeBaseListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetKnowledgeBaseListAsyncHandler;
@@ -149,6 +154,15 @@ namespace TencentCloud
                 DeleteDataAgentSessionOutcome DeleteDataAgentSession(const Model::DeleteDataAgentSessionRequest &request);
                 void DeleteDataAgentSessionAsync(const Model::DeleteDataAgentSessionRequest& request, const DeleteDataAgentSessionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteDataAgentSessionOutcomeCallable DeleteDataAgentSessionCallable(const Model::DeleteDataAgentSessionRequest& request);
+
+                /**
+                 *获取知识库文件信息列表
+                 * @param req GetKnowledgeBaseFileListRequest
+                 * @return GetKnowledgeBaseFileListOutcome
+                 */
+                GetKnowledgeBaseFileListOutcome GetKnowledgeBaseFileList(const Model::GetKnowledgeBaseFileListRequest &request);
+                void GetKnowledgeBaseFileListAsync(const Model::GetKnowledgeBaseFileListRequest& request, const GetKnowledgeBaseFileListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetKnowledgeBaseFileListOutcomeCallable GetKnowledgeBaseFileListCallable(const Model::GetKnowledgeBaseFileListRequest& request);
 
                 /**
                  *获取知识库列表

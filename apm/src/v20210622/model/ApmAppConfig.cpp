@@ -72,7 +72,9 @@ ApmAppConfig::ApmAppConfig() :
     m_urlLongSegmentThresholdHasBeenSet(false),
     m_urlNumberSegmentThresholdHasBeenSet(false),
     m_disableMemoryUsedHasBeenSet(false),
-    m_disableCpuUsedHasBeenSet(false)
+    m_disableCpuUsedHasBeenSet(false),
+    m_dbStatementParametersEnabledHasBeenSet(false),
+    m_slowSQLThresholdsHasBeenSet(false)
 {
 }
 
@@ -618,6 +620,36 @@ CoreInternalOutcome ApmAppConfig::Deserialize(const rapidjson::Value &value)
         m_disableCpuUsedHasBeenSet = true;
     }
 
+    if (value.HasMember("DbStatementParametersEnabled") && !value["DbStatementParametersEnabled"].IsNull())
+    {
+        if (!value["DbStatementParametersEnabled"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApmAppConfig.DbStatementParametersEnabled` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_dbStatementParametersEnabled = value["DbStatementParametersEnabled"].GetBool();
+        m_dbStatementParametersEnabledHasBeenSet = true;
+    }
+
+    if (value.HasMember("SlowSQLThresholds") && !value["SlowSQLThresholds"].IsNull())
+    {
+        if (!value["SlowSQLThresholds"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ApmAppConfig.SlowSQLThresholds` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["SlowSQLThresholds"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            ApmTag item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_slowSQLThresholds.push_back(item);
+        }
+        m_slowSQLThresholdsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1047,6 +1079,29 @@ void ApmAppConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "DisableCpuUsed";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_disableCpuUsed, allocator);
+    }
+
+    if (m_dbStatementParametersEnabledHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DbStatementParametersEnabled";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_dbStatementParametersEnabled, allocator);
+    }
+
+    if (m_slowSQLThresholdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SlowSQLThresholds";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_slowSQLThresholds.begin(); itr != m_slowSQLThresholds.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -1882,5 +1937,37 @@ void ApmAppConfig::SetDisableCpuUsed(const int64_t& _disableCpuUsed)
 bool ApmAppConfig::DisableCpuUsedHasBeenSet() const
 {
     return m_disableCpuUsedHasBeenSet;
+}
+
+bool ApmAppConfig::GetDbStatementParametersEnabled() const
+{
+    return m_dbStatementParametersEnabled;
+}
+
+void ApmAppConfig::SetDbStatementParametersEnabled(const bool& _dbStatementParametersEnabled)
+{
+    m_dbStatementParametersEnabled = _dbStatementParametersEnabled;
+    m_dbStatementParametersEnabledHasBeenSet = true;
+}
+
+bool ApmAppConfig::DbStatementParametersEnabledHasBeenSet() const
+{
+    return m_dbStatementParametersEnabledHasBeenSet;
+}
+
+vector<ApmTag> ApmAppConfig::GetSlowSQLThresholds() const
+{
+    return m_slowSQLThresholds;
+}
+
+void ApmAppConfig::SetSlowSQLThresholds(const vector<ApmTag>& _slowSQLThresholds)
+{
+    m_slowSQLThresholds = _slowSQLThresholds;
+    m_slowSQLThresholdsHasBeenSet = true;
+}
+
+bool ApmAppConfig::SlowSQLThresholdsHasBeenSet() const
+{
+    return m_slowSQLThresholdsHasBeenSet;
 }
 

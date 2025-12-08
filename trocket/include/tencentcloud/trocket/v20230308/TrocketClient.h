@@ -163,6 +163,10 @@
 #include <tencentcloud/trocket/v20230308/model/ResetConsumerGroupOffsetResponse.h>
 #include <tencentcloud/trocket/v20230308/model/RollbackMigratingTopicStageRequest.h>
 #include <tencentcloud/trocket/v20230308/model/RollbackMigratingTopicStageResponse.h>
+#include <tencentcloud/trocket/v20230308/model/SendMessageRequest.h>
+#include <tencentcloud/trocket/v20230308/model/SendMessageResponse.h>
+#include <tencentcloud/trocket/v20230308/model/VerifyMessageConsumptionRequest.h>
+#include <tencentcloud/trocket/v20230308/model/VerifyMessageConsumptionResponse.h>
 
 
 namespace TencentCloud
@@ -387,6 +391,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::RollbackMigratingTopicStageResponse> RollbackMigratingTopicStageOutcome;
                 typedef std::future<RollbackMigratingTopicStageOutcome> RollbackMigratingTopicStageOutcomeCallable;
                 typedef std::function<void(const TrocketClient*, const Model::RollbackMigratingTopicStageRequest&, RollbackMigratingTopicStageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RollbackMigratingTopicStageAsyncHandler;
+                typedef Outcome<Core::Error, Model::SendMessageResponse> SendMessageOutcome;
+                typedef std::future<SendMessageOutcome> SendMessageOutcomeCallable;
+                typedef std::function<void(const TrocketClient*, const Model::SendMessageRequest&, SendMessageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SendMessageAsyncHandler;
+                typedef Outcome<Core::Error, Model::VerifyMessageConsumptionResponse> VerifyMessageConsumptionOutcome;
+                typedef std::future<VerifyMessageConsumptionOutcome> VerifyMessageConsumptionOutcomeCallable;
+                typedef std::function<void(const TrocketClient*, const Model::VerifyMessageConsumptionRequest&, VerifyMessageConsumptionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> VerifyMessageConsumptionAsyncHandler;
 
 
 
@@ -1124,6 +1134,24 @@ Filters示例：
                 RollbackMigratingTopicStageOutcome RollbackMigratingTopicStage(const Model::RollbackMigratingTopicStageRequest &request);
                 void RollbackMigratingTopicStageAsync(const Model::RollbackMigratingTopicStageRequest& request, const RollbackMigratingTopicStageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 RollbackMigratingTopicStageOutcomeCallable RollbackMigratingTopicStageCallable(const Model::RollbackMigratingTopicStageRequest& request);
+
+                /**
+                 *发送 RocketMQ 消息，该接口仅用于控制台发送少量测试消息，不保证SLA，且云 API 存在限流，在真实业务场景下，请使用 RocketMQ SDK 发送消息。
+                 * @param req SendMessageRequest
+                 * @return SendMessageOutcome
+                 */
+                SendMessageOutcome SendMessage(const Model::SendMessageRequest &request);
+                void SendMessageAsync(const Model::SendMessageRequest& request, const SendMessageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SendMessageOutcomeCallable SendMessageCallable(const Model::SendMessageRequest& request);
+
+                /**
+                 *消息消费验证
+                 * @param req VerifyMessageConsumptionRequest
+                 * @return VerifyMessageConsumptionOutcome
+                 */
+                VerifyMessageConsumptionOutcome VerifyMessageConsumption(const Model::VerifyMessageConsumptionRequest &request);
+                void VerifyMessageConsumptionAsync(const Model::VerifyMessageConsumptionRequest& request, const VerifyMessageConsumptionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                VerifyMessageConsumptionOutcomeCallable VerifyMessageConsumptionCallable(const Model::VerifyMessageConsumptionRequest& request);
 
             };
         }

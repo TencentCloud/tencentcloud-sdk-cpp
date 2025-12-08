@@ -26,7 +26,10 @@ MediaAiAnalysisDescriptionItem::MediaAiAnalysisDescriptionItem() :
     m_titleHasBeenSet(false),
     m_keywordsHasBeenSet(false),
     m_paragraphsHasBeenSet(false),
-    m_mindMapUrlHasBeenSet(false)
+    m_mindMapUrlHasBeenSet(false),
+    m_mindMapPathHasBeenSet(false),
+    m_subtitlePathHasBeenSet(false),
+    m_outputStorageHasBeenSet(false)
 {
 }
 
@@ -108,6 +111,43 @@ CoreInternalOutcome MediaAiAnalysisDescriptionItem::Deserialize(const rapidjson:
         m_mindMapUrlHasBeenSet = true;
     }
 
+    if (value.HasMember("MindMapPath") && !value["MindMapPath"].IsNull())
+    {
+        if (!value["MindMapPath"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `MediaAiAnalysisDescriptionItem.MindMapPath` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_mindMapPath = string(value["MindMapPath"].GetString());
+        m_mindMapPathHasBeenSet = true;
+    }
+
+    if (value.HasMember("SubtitlePath") && !value["SubtitlePath"].IsNull())
+    {
+        if (!value["SubtitlePath"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `MediaAiAnalysisDescriptionItem.SubtitlePath` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_subtitlePath = string(value["SubtitlePath"].GetString());
+        m_subtitlePathHasBeenSet = true;
+    }
+
+    if (value.HasMember("OutputStorage") && !value["OutputStorage"].IsNull())
+    {
+        if (!value["OutputStorage"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `MediaAiAnalysisDescriptionItem.OutputStorage` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_outputStorage.Deserialize(value["OutputStorage"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_outputStorageHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -173,6 +213,31 @@ void MediaAiAnalysisDescriptionItem::ToJsonObject(rapidjson::Value &value, rapid
         string key = "MindMapUrl";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_mindMapUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_mindMapPathHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MindMapPath";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_mindMapPath.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_subtitlePathHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubtitlePath";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_subtitlePath.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_outputStorageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OutputStorage";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_outputStorage.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -272,5 +337,53 @@ void MediaAiAnalysisDescriptionItem::SetMindMapUrl(const string& _mindMapUrl)
 bool MediaAiAnalysisDescriptionItem::MindMapUrlHasBeenSet() const
 {
     return m_mindMapUrlHasBeenSet;
+}
+
+string MediaAiAnalysisDescriptionItem::GetMindMapPath() const
+{
+    return m_mindMapPath;
+}
+
+void MediaAiAnalysisDescriptionItem::SetMindMapPath(const string& _mindMapPath)
+{
+    m_mindMapPath = _mindMapPath;
+    m_mindMapPathHasBeenSet = true;
+}
+
+bool MediaAiAnalysisDescriptionItem::MindMapPathHasBeenSet() const
+{
+    return m_mindMapPathHasBeenSet;
+}
+
+string MediaAiAnalysisDescriptionItem::GetSubtitlePath() const
+{
+    return m_subtitlePath;
+}
+
+void MediaAiAnalysisDescriptionItem::SetSubtitlePath(const string& _subtitlePath)
+{
+    m_subtitlePath = _subtitlePath;
+    m_subtitlePathHasBeenSet = true;
+}
+
+bool MediaAiAnalysisDescriptionItem::SubtitlePathHasBeenSet() const
+{
+    return m_subtitlePathHasBeenSet;
+}
+
+TaskOutputStorage MediaAiAnalysisDescriptionItem::GetOutputStorage() const
+{
+    return m_outputStorage;
+}
+
+void MediaAiAnalysisDescriptionItem::SetOutputStorage(const TaskOutputStorage& _outputStorage)
+{
+    m_outputStorage = _outputStorage;
+    m_outputStorageHasBeenSet = true;
+}
+
+bool MediaAiAnalysisDescriptionItem::OutputStorageHasBeenSet() const
+{
+    return m_outputStorageHasBeenSet;
 }
 

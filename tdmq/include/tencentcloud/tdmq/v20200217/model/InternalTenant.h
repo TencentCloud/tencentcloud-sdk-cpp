@@ -524,6 +524,48 @@ namespace TencentCloud
                      */
                     bool PublicAccessEnabledHasBeenSet() const;
 
+                    /**
+                     * 获取实例标签列表
+                     * @return TagList 实例标签列表
+                     * 
+                     */
+                    std::vector<std::string> GetTagList() const;
+
+                    /**
+                     * 设置实例标签列表
+                     * @param _tagList 实例标签列表
+                     * 
+                     */
+                    void SetTagList(const std::vector<std::string>& _tagList);
+
+                    /**
+                     * 判断参数 TagList 是否已赋值
+                     * @return TagList 是否已赋值
+                     * 
+                     */
+                    bool TagListHasBeenSet() const;
+
+                    /**
+                     * 获取实例规格
+                     * @return TenantSpec 实例规格
+                     * 
+                     */
+                    std::string GetTenantSpec() const;
+
+                    /**
+                     * 设置实例规格
+                     * @param _tenantSpec 实例规格
+                     * 
+                     */
+                    void SetTenantSpec(const std::string& _tenantSpec);
+
+                    /**
+                     * 判断参数 TenantSpec 是否已赋值
+                     * @return TenantSpec 是否已赋值
+                     * 
+                     */
+                    bool TenantSpecHasBeenSet() const;
+
                 private:
 
                     /**
@@ -661,6 +703,18 @@ namespace TencentCloud
                      */
                     bool m_publicAccessEnabled;
                     bool m_publicAccessEnabledHasBeenSet;
+
+                    /**
+                     * 实例标签列表
+                     */
+                    std::vector<std::string> m_tagList;
+                    bool m_tagListHasBeenSet;
+
+                    /**
+                     * 实例规格
+                     */
+                    std::string m_tenantSpec;
+                    bool m_tenantSpecHasBeenSet;
 
                 };
             }

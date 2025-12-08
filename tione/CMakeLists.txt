@@ -152,7 +152,7 @@ set(tione_public_header_model
   include/tencentcloud/tione/v20211111/model/HorizontalPodAutoscaler.h
   include/tencentcloud/tione/v20211111/model/ResourceConfigInfo.h
   include/tencentcloud/tione/v20211111/model/PublicDataSourceFS.h
-  include/tencentcloud/tione/v20211111/model/GooseFS.h
+  include/tencentcloud/tione/v20211111/model/ExposePortConfig.h
   include/tencentcloud/tione/v20211111/model/DescribeBillingResourceGroupsRequest.h
   include/tencentcloud/tione/v20211111/model/Option.h
   include/tencentcloud/tione/v20211111/model/DeleteExportResponse.h
@@ -223,6 +223,7 @@ set(tione_public_header_model
   include/tencentcloud/tione/v20211111/model/DeleteNotebookResponse.h
   include/tencentcloud/tione/v20211111/model/DeleteTrainingTaskRequest.h
   include/tencentcloud/tione/v20211111/model/CreateModelServiceAuthTokenResponse.h
+  include/tencentcloud/tione/v20211111/model/GooseFS.h
   include/tencentcloud/tione/v20211111/model/NotebookDetail.h
   include/tencentcloud/tione/v20211111/model/DescribeBillingResourceInstanceRunningJobsRequest.h
   include/tencentcloud/tione/v20211111/model/ModifyModelServiceResponse.h
@@ -435,7 +436,7 @@ set(tione_src
   src/v20211111/model/HorizontalPodAutoscaler.cpp
   src/v20211111/model/ResourceConfigInfo.cpp
   src/v20211111/model/PublicDataSourceFS.cpp
-  src/v20211111/model/GooseFS.cpp
+  src/v20211111/model/ExposePortConfig.cpp
   src/v20211111/model/DescribeBillingResourceGroupsRequest.cpp
   src/v20211111/model/Option.cpp
   src/v20211111/model/DeleteExportResponse.cpp
@@ -506,6 +507,7 @@ set(tione_src
   src/v20211111/model/DeleteNotebookResponse.cpp
   src/v20211111/model/DeleteTrainingTaskRequest.cpp
   src/v20211111/model/CreateModelServiceAuthTokenResponse.cpp
+  src/v20211111/model/GooseFS.cpp
   src/v20211111/model/NotebookDetail.cpp
   src/v20211111/model/DescribeBillingResourceInstanceRunningJobsRequest.cpp
   src/v20211111/model/ModifyModelServiceResponse.cpp

@@ -27,6 +27,8 @@
 #include <tencentcloud/vclm/v20240523/model/CheckAnimateImageJobResponse.h>
 #include <tencentcloud/vclm/v20240523/model/DescribeHumanActorJobRequest.h>
 #include <tencentcloud/vclm/v20240523/model/DescribeHumanActorJobResponse.h>
+#include <tencentcloud/vclm/v20240523/model/DescribeHunyuanToVideoJobRequest.h>
+#include <tencentcloud/vclm/v20240523/model/DescribeHunyuanToVideoJobResponse.h>
 #include <tencentcloud/vclm/v20240523/model/DescribeImageAnimateJobRequest.h>
 #include <tencentcloud/vclm/v20240523/model/DescribeImageAnimateJobResponse.h>
 #include <tencentcloud/vclm/v20240523/model/DescribeImageToVideoGeneralJobRequest.h>
@@ -39,8 +41,12 @@
 #include <tencentcloud/vclm/v20240523/model/DescribeVideoFaceFusionJobResponse.h>
 #include <tencentcloud/vclm/v20240523/model/DescribeVideoStylizationJobRequest.h>
 #include <tencentcloud/vclm/v20240523/model/DescribeVideoStylizationJobResponse.h>
+#include <tencentcloud/vclm/v20240523/model/DescribeVideoVoiceJobRequest.h>
+#include <tencentcloud/vclm/v20240523/model/DescribeVideoVoiceJobResponse.h>
 #include <tencentcloud/vclm/v20240523/model/SubmitHumanActorJobRequest.h>
 #include <tencentcloud/vclm/v20240523/model/SubmitHumanActorJobResponse.h>
+#include <tencentcloud/vclm/v20240523/model/SubmitHunyuanToVideoJobRequest.h>
+#include <tencentcloud/vclm/v20240523/model/SubmitHunyuanToVideoJobResponse.h>
 #include <tencentcloud/vclm/v20240523/model/SubmitImageAnimateJobRequest.h>
 #include <tencentcloud/vclm/v20240523/model/SubmitImageAnimateJobResponse.h>
 #include <tencentcloud/vclm/v20240523/model/SubmitImageToVideoGeneralJobRequest.h>
@@ -53,6 +59,8 @@
 #include <tencentcloud/vclm/v20240523/model/SubmitVideoFaceFusionJobResponse.h>
 #include <tencentcloud/vclm/v20240523/model/SubmitVideoStylizationJobRequest.h>
 #include <tencentcloud/vclm/v20240523/model/SubmitVideoStylizationJobResponse.h>
+#include <tencentcloud/vclm/v20240523/model/SubmitVideoVoiceJobRequest.h>
+#include <tencentcloud/vclm/v20240523/model/SubmitVideoVoiceJobResponse.h>
 
 
 namespace TencentCloud
@@ -73,6 +81,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeHumanActorJobResponse> DescribeHumanActorJobOutcome;
                 typedef std::future<DescribeHumanActorJobOutcome> DescribeHumanActorJobOutcomeCallable;
                 typedef std::function<void(const VclmClient*, const Model::DescribeHumanActorJobRequest&, DescribeHumanActorJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeHumanActorJobAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeHunyuanToVideoJobResponse> DescribeHunyuanToVideoJobOutcome;
+                typedef std::future<DescribeHunyuanToVideoJobOutcome> DescribeHunyuanToVideoJobOutcomeCallable;
+                typedef std::function<void(const VclmClient*, const Model::DescribeHunyuanToVideoJobRequest&, DescribeHunyuanToVideoJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeHunyuanToVideoJobAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeImageAnimateJobResponse> DescribeImageAnimateJobOutcome;
                 typedef std::future<DescribeImageAnimateJobOutcome> DescribeImageAnimateJobOutcomeCallable;
                 typedef std::function<void(const VclmClient*, const Model::DescribeImageAnimateJobRequest&, DescribeImageAnimateJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeImageAnimateJobAsyncHandler;
@@ -91,9 +102,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeVideoStylizationJobResponse> DescribeVideoStylizationJobOutcome;
                 typedef std::future<DescribeVideoStylizationJobOutcome> DescribeVideoStylizationJobOutcomeCallable;
                 typedef std::function<void(const VclmClient*, const Model::DescribeVideoStylizationJobRequest&, DescribeVideoStylizationJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVideoStylizationJobAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeVideoVoiceJobResponse> DescribeVideoVoiceJobOutcome;
+                typedef std::future<DescribeVideoVoiceJobOutcome> DescribeVideoVoiceJobOutcomeCallable;
+                typedef std::function<void(const VclmClient*, const Model::DescribeVideoVoiceJobRequest&, DescribeVideoVoiceJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVideoVoiceJobAsyncHandler;
                 typedef Outcome<Core::Error, Model::SubmitHumanActorJobResponse> SubmitHumanActorJobOutcome;
                 typedef std::future<SubmitHumanActorJobOutcome> SubmitHumanActorJobOutcomeCallable;
                 typedef std::function<void(const VclmClient*, const Model::SubmitHumanActorJobRequest&, SubmitHumanActorJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SubmitHumanActorJobAsyncHandler;
+                typedef Outcome<Core::Error, Model::SubmitHunyuanToVideoJobResponse> SubmitHunyuanToVideoJobOutcome;
+                typedef std::future<SubmitHunyuanToVideoJobOutcome> SubmitHunyuanToVideoJobOutcomeCallable;
+                typedef std::function<void(const VclmClient*, const Model::SubmitHunyuanToVideoJobRequest&, SubmitHunyuanToVideoJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SubmitHunyuanToVideoJobAsyncHandler;
                 typedef Outcome<Core::Error, Model::SubmitImageAnimateJobResponse> SubmitImageAnimateJobOutcome;
                 typedef std::future<SubmitImageAnimateJobOutcome> SubmitImageAnimateJobOutcomeCallable;
                 typedef std::function<void(const VclmClient*, const Model::SubmitImageAnimateJobRequest&, SubmitImageAnimateJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SubmitImageAnimateJobAsyncHandler;
@@ -112,6 +129,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::SubmitVideoStylizationJobResponse> SubmitVideoStylizationJobOutcome;
                 typedef std::future<SubmitVideoStylizationJobOutcome> SubmitVideoStylizationJobOutcomeCallable;
                 typedef std::function<void(const VclmClient*, const Model::SubmitVideoStylizationJobRequest&, SubmitVideoStylizationJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SubmitVideoStylizationJobAsyncHandler;
+                typedef Outcome<Core::Error, Model::SubmitVideoVoiceJobResponse> SubmitVideoVoiceJobOutcome;
+                typedef std::future<SubmitVideoVoiceJobOutcome> SubmitVideoVoiceJobOutcomeCallable;
+                typedef std::function<void(const VclmClient*, const Model::SubmitVideoVoiceJobRequest&, SubmitVideoVoiceJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SubmitVideoVoiceJobAsyncHandler;
 
 
 
@@ -132,6 +152,15 @@ namespace TencentCloud
                 DescribeHumanActorJobOutcome DescribeHumanActorJob(const Model::DescribeHumanActorJobRequest &request);
                 void DescribeHumanActorJobAsync(const Model::DescribeHumanActorJobRequest& request, const DescribeHumanActorJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeHumanActorJobOutcomeCallable DescribeHumanActorJobCallable(const Model::DescribeHumanActorJobRequest& request);
+
+                /**
+                 *查询混元生视频任务
+                 * @param req DescribeHunyuanToVideoJobRequest
+                 * @return DescribeHunyuanToVideoJobOutcome
+                 */
+                DescribeHunyuanToVideoJobOutcome DescribeHunyuanToVideoJob(const Model::DescribeHunyuanToVideoJobRequest &request);
+                void DescribeHunyuanToVideoJobAsync(const Model::DescribeHunyuanToVideoJobRequest& request, const DescribeHunyuanToVideoJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeHunyuanToVideoJobOutcomeCallable DescribeHunyuanToVideoJobCallable(const Model::DescribeHunyuanToVideoJobRequest& request);
 
                 /**
                  *用于查询图片跳舞任务。图片跳舞能力支持舞蹈动作结合图片生成跳舞视频，满足社交娱乐、互动营销等场景的需求。
@@ -189,6 +218,15 @@ namespace TencentCloud
                 DescribeVideoStylizationJobOutcomeCallable DescribeVideoStylizationJobCallable(const Model::DescribeVideoStylizationJobRequest& request);
 
                 /**
+                 *通过JobId提交请求，获取视频配音频任务的结果信息。
+                 * @param req DescribeVideoVoiceJobRequest
+                 * @return DescribeVideoVoiceJobOutcome
+                 */
+                DescribeVideoVoiceJobOutcome DescribeVideoVoiceJob(const Model::DescribeVideoVoiceJobRequest &request);
+                void DescribeVideoVoiceJobAsync(const Model::DescribeVideoVoiceJobRequest& request, const DescribeVideoVoiceJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeVideoVoiceJobOutcomeCallable DescribeVideoVoiceJobCallable(const Model::DescribeVideoVoiceJobRequest& request);
+
+                /**
                  *用于提交人像驱动任务
 支持提交音频和图文来生成对应视频，满足动态交互、内容生产等场景需求。
                  * @param req SubmitHumanActorJobRequest
@@ -197,6 +235,17 @@ namespace TencentCloud
                 SubmitHumanActorJobOutcome SubmitHumanActorJob(const Model::SubmitHumanActorJobRequest &request);
                 void SubmitHumanActorJobAsync(const Model::SubmitHumanActorJobRequest& request, const SubmitHumanActorJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 SubmitHumanActorJobOutcomeCallable SubmitHumanActorJobCallable(const Model::SubmitHumanActorJobRequest& request);
+
+                /**
+                 *●混元生视频接口，基于混元大模型，根据输入的文本或图片智能生成视频。
+
+●默认提供1个并发，代表最多能同时处理1个已提交的任务，上一个任务处理完毕后，才能开始处理下一个任务。
+                 * @param req SubmitHunyuanToVideoJobRequest
+                 * @return SubmitHunyuanToVideoJobOutcome
+                 */
+                SubmitHunyuanToVideoJobOutcome SubmitHunyuanToVideoJob(const Model::SubmitHunyuanToVideoJobRequest &request);
+                void SubmitHunyuanToVideoJobAsync(const Model::SubmitHunyuanToVideoJobRequest& request, const SubmitHunyuanToVideoJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SubmitHunyuanToVideoJobOutcomeCallable SubmitHunyuanToVideoJobCallable(const Model::SubmitHunyuanToVideoJobRequest& request);
 
                 /**
                  *用于提交图片跳舞任务。图片跳舞能力支持舞蹈动作结合图片生成跳舞视频，满足社交娱乐、互动营销等场景的需求。
@@ -252,6 +301,15 @@ namespace TencentCloud
                 SubmitVideoStylizationJobOutcome SubmitVideoStylizationJob(const Model::SubmitVideoStylizationJobRequest &request);
                 void SubmitVideoStylizationJobAsync(const Model::SubmitVideoStylizationJobRequest& request, const SubmitVideoStylizationJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 SubmitVideoStylizationJobOutcomeCallable SubmitVideoStylizationJobCallable(const Model::SubmitVideoStylizationJobRequest& request);
+
+                /**
+                 *提交视频配音效任务，输入视频后提交请求，会返回一个JobId，用于查询视频配音效的处理进度。
+                 * @param req SubmitVideoVoiceJobRequest
+                 * @return SubmitVideoVoiceJobOutcome
+                 */
+                SubmitVideoVoiceJobOutcome SubmitVideoVoiceJob(const Model::SubmitVideoVoiceJobRequest &request);
+                void SubmitVideoVoiceJobAsync(const Model::SubmitVideoVoiceJobRequest& request, const SubmitVideoVoiceJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SubmitVideoVoiceJobOutcomeCallable SubmitVideoVoiceJobCallable(const Model::SubmitVideoVoiceJobRequest& request);
 
             };
         }

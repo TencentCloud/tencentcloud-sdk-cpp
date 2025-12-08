@@ -36,6 +36,7 @@
 #include <tencentcloud/vod/v20180717/model/MediaMiniProgramReviewInfo.h>
 #include <tencentcloud/vod/v20180717/model/MediaSubtitleInfo.h>
 #include <tencentcloud/vod/v20180717/model/FileReviewInfo.h>
+#include <tencentcloud/vod/v20180717/model/MPSAiMediaInfo.h>
 
 
 namespace TencentCloud
@@ -379,6 +380,27 @@ namespace TencentCloud
                      */
                     bool ReviewInfoHasBeenSet() const;
 
+                    /**
+                     * 获取MPS智能媒资信息
+                     * @return MPSAiMediaInfo MPS智能媒资信息
+                     * 
+                     */
+                    MPSAiMediaInfo GetMPSAiMediaInfo() const;
+
+                    /**
+                     * 设置MPS智能媒资信息
+                     * @param _mPSAiMediaInfo MPS智能媒资信息
+                     * 
+                     */
+                    void SetMPSAiMediaInfo(const MPSAiMediaInfo& _mPSAiMediaInfo);
+
+                    /**
+                     * 判断参数 MPSAiMediaInfo 是否已赋值
+                     * @return MPSAiMediaInfo 是否已赋值
+                     * 
+                     */
+                    bool MPSAiMediaInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -470,6 +492,12 @@ namespace TencentCloud
                      */
                     FileReviewInfo m_reviewInfo;
                     bool m_reviewInfoHasBeenSet;
+
+                    /**
+                     * MPS智能媒资信息
+                     */
+                    MPSAiMediaInfo m_mPSAiMediaInfo;
+                    bool m_mPSAiMediaInfoHasBeenSet;
 
                 };
             }

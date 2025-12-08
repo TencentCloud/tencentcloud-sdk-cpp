@@ -3990,6 +3990,56 @@ DnspodClient::ModifyPackageAutoRenewOutcomeCallable DnspodClient::ModifyPackageA
     return prom->get_future();
 }
 
+DnspodClient::ModifyPackageDomainOutcome DnspodClient::ModifyPackageDomain(const ModifyPackageDomainRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyPackageDomain");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyPackageDomainResponse rsp = ModifyPackageDomainResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyPackageDomainOutcome(rsp);
+        else
+            return ModifyPackageDomainOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyPackageDomainOutcome(outcome.GetError());
+    }
+}
+
+void DnspodClient::ModifyPackageDomainAsync(const ModifyPackageDomainRequest& request, const ModifyPackageDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyPackageDomainRequest&;
+    using Resp = ModifyPackageDomainResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyPackageDomain", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DnspodClient::ModifyPackageDomainOutcomeCallable DnspodClient::ModifyPackageDomainCallable(const ModifyPackageDomainRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyPackageDomainOutcome>>();
+    ModifyPackageDomainAsync(
+    request,
+    [prom](
+        const DnspodClient*,
+        const ModifyPackageDomainRequest&,
+        ModifyPackageDomainOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 DnspodClient::ModifyRecordOutcome DnspodClient::ModifyRecord(const ModifyRecordRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyRecord");

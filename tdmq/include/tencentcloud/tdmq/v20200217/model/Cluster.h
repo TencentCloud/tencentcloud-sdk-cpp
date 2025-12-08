@@ -375,6 +375,27 @@ namespace TencentCloud
                     bool PublicEndPointHasBeenSet() const;
 
                     /**
+                     * 获取旧的公网访问接入点
+                     * @return OldPublicEndPoint 旧的公网访问接入点
+                     * 
+                     */
+                    std::string GetOldPublicEndPoint() const;
+
+                    /**
+                     * 设置旧的公网访问接入点
+                     * @param _oldPublicEndPoint 旧的公网访问接入点
+                     * 
+                     */
+                    void SetOldPublicEndPoint(const std::string& _oldPublicEndPoint);
+
+                    /**
+                     * 判断参数 OldPublicEndPoint 是否已赋值
+                     * @return OldPublicEndPoint 是否已赋值
+                     * 
+                     */
+                    bool OldPublicEndPointHasBeenSet() const;
+
+                    /**
                      * 获取VPC访问接入点
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return VpcEndPoint VPC访问接入点
@@ -398,6 +419,27 @@ namespace TencentCloud
                      * 
                      */
                     bool VpcEndPointHasBeenSet() const;
+
+                    /**
+                     * 获取旧的VPC访问接入点
+                     * @return OldVpcEndPoint 旧的VPC访问接入点
+                     * 
+                     */
+                    std::string GetOldVpcEndPoint() const;
+
+                    /**
+                     * 设置旧的VPC访问接入点
+                     * @param _oldVpcEndPoint 旧的VPC访问接入点
+                     * 
+                     */
+                    void SetOldVpcEndPoint(const std::string& _oldVpcEndPoint);
+
+                    /**
+                     * 判断参数 OldVpcEndPoint 是否已赋值
+                     * @return OldVpcEndPoint 是否已赋值
+                     * 
+                     */
+                    bool OldVpcEndPointHasBeenSet() const;
 
                     /**
                      * 获取命名空间数量
@@ -650,6 +692,48 @@ namespace TencentCloud
                     bool TagsHasBeenSet() const;
 
                     /**
+                     * 获取旧的支撑网 Pulsar 接入点
+                     * @return OldInternalPulsarEndPoint 旧的支撑网 Pulsar 接入点
+                     * 
+                     */
+                    std::string GetOldInternalPulsarEndPoint() const;
+
+                    /**
+                     * 设置旧的支撑网 Pulsar 接入点
+                     * @param _oldInternalPulsarEndPoint 旧的支撑网 Pulsar 接入点
+                     * 
+                     */
+                    void SetOldInternalPulsarEndPoint(const std::string& _oldInternalPulsarEndPoint);
+
+                    /**
+                     * 判断参数 OldInternalPulsarEndPoint 是否已赋值
+                     * @return OldInternalPulsarEndPoint 是否已赋值
+                     * 
+                     */
+                    bool OldInternalPulsarEndPointHasBeenSet() const;
+
+                    /**
+                     * 获取旧的支撑网 HTTP 接入点
+                     * @return OldInternalHttpEndPoint 旧的支撑网 HTTP 接入点
+                     * 
+                     */
+                    std::string GetOldInternalHttpEndPoint() const;
+
+                    /**
+                     * 设置旧的支撑网 HTTP 接入点
+                     * @param _oldInternalHttpEndPoint 旧的支撑网 HTTP 接入点
+                     * 
+                     */
+                    void SetOldInternalHttpEndPoint(const std::string& _oldInternalHttpEndPoint);
+
+                    /**
+                     * 判断参数 OldInternalHttpEndPoint 是否已赋值
+                     * @return OldInternalHttpEndPoint 是否已赋值
+                     * 
+                     */
+                    bool OldInternalHttpEndPointHasBeenSet() const;
+
+                    /**
                      * 获取计费模式：
 0: 按量计费
 1: 包年包月
@@ -849,11 +933,23 @@ namespace TencentCloud
                     bool m_publicEndPointHasBeenSet;
 
                     /**
+                     * 旧的公网访问接入点
+                     */
+                    std::string m_oldPublicEndPoint;
+                    bool m_oldPublicEndPointHasBeenSet;
+
+                    /**
                      * VPC访问接入点
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_vpcEndPoint;
                     bool m_vpcEndPointHasBeenSet;
+
+                    /**
+                     * 旧的VPC访问接入点
+                     */
+                    std::string m_oldVpcEndPoint;
+                    bool m_oldVpcEndPointHasBeenSet;
 
                     /**
                      * 命名空间数量
@@ -924,6 +1020,18 @@ namespace TencentCloud
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;
+
+                    /**
+                     * 旧的支撑网 Pulsar 接入点
+                     */
+                    std::string m_oldInternalPulsarEndPoint;
+                    bool m_oldInternalPulsarEndPointHasBeenSet;
+
+                    /**
+                     * 旧的支撑网 HTTP 接入点
+                     */
+                    std::string m_oldInternalHttpEndPoint;
+                    bool m_oldInternalHttpEndPointHasBeenSet;
 
                     /**
                      * 计费模式：

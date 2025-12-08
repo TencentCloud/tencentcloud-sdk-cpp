@@ -85,27 +85,6 @@ namespace TencentCloud
                     bool UidHasBeenSet() const;
 
                     /**
-                     * 获取有效期，单位秒，不超过 1 小时
-                     * @return ExpiredTime 有效期，单位秒，不超过 1 小时
-                     * 
-                     */
-                    int64_t GetExpiredTime() const;
-
-                    /**
-                     * 设置有效期，单位秒，不超过 1 小时
-                     * @param _expiredTime 有效期，单位秒，不超过 1 小时
-                     * 
-                     */
-                    void SetExpiredTime(const int64_t& _expiredTime);
-
-                    /**
-                     * 判断参数 ExpiredTime 是否已赋值
-                     * @return ExpiredTime 是否已赋值
-                     * 
-                     */
-                    bool ExpiredTimeHasBeenSet() const;
-
-                    /**
                      * 获取用户签名数据，必填字段，为标准 JSON 格式
                      * @return ClientData 用户签名数据，必填字段，为标准 JSON 格式
                      * 
@@ -126,6 +105,27 @@ namespace TencentCloud
                      */
                     bool ClientDataHasBeenSet() const;
 
+                    /**
+                     * 获取有效期，单位秒，不超过 1 小时
+                     * @return ExpiredTime 有效期，单位秒，不超过 1 小时
+                     * 
+                     */
+                    int64_t GetExpiredTime() const;
+
+                    /**
+                     * 设置有效期，单位秒，不超过 1 小时
+                     * @param _expiredTime 有效期，单位秒，不超过 1 小时
+                     * 
+                     */
+                    void SetExpiredTime(const int64_t& _expiredTime);
+
+                    /**
+                     * 判断参数 ExpiredTime 是否已赋值
+                     * @return ExpiredTime 是否已赋值
+                     * 
+                     */
+                    bool ExpiredTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -141,16 +141,16 @@ namespace TencentCloud
                     bool m_uidHasBeenSet;
 
                     /**
-                     * 有效期，单位秒，不超过 1 小时
-                     */
-                    int64_t m_expiredTime;
-                    bool m_expiredTimeHasBeenSet;
-
-                    /**
                      * 用户签名数据，必填字段，为标准 JSON 格式
                      */
                     std::string m_clientData;
                     bool m_clientDataHasBeenSet;
+
+                    /**
+                     * 有效期，单位秒，不超过 1 小时
+                     */
+                    int64_t m_expiredTime;
+                    bool m_expiredTimeHasBeenSet;
 
                 };
             }

@@ -309,6 +309,27 @@ namespace TencentCloud
                      */
                     bool AckTimeOutHasBeenSet() const;
 
+                    /**
+                     * 获取Pulsar主题消息类型0: 混合消息1:普通消息2:延迟消息
+                     * @return PulsarTopicMessageType Pulsar主题消息类型0: 混合消息1:普通消息2:延迟消息
+                     * 
+                     */
+                    int64_t GetPulsarTopicMessageType() const;
+
+                    /**
+                     * 设置Pulsar主题消息类型0: 混合消息1:普通消息2:延迟消息
+                     * @param _pulsarTopicMessageType Pulsar主题消息类型0: 混合消息1:普通消息2:延迟消息
+                     * 
+                     */
+                    void SetPulsarTopicMessageType(const int64_t& _pulsarTopicMessageType);
+
+                    /**
+                     * 判断参数 PulsarTopicMessageType 是否已赋值
+                     * @return PulsarTopicMessageType 是否已赋值
+                     * 
+                     */
+                    bool PulsarTopicMessageTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -385,6 +406,12 @@ namespace TencentCloud
                      */
                     int64_t m_ackTimeOut;
                     bool m_ackTimeOutHasBeenSet;
+
+                    /**
+                     * Pulsar主题消息类型0: 混合消息1:普通消息2:延迟消息
+                     */
+                    int64_t m_pulsarTopicMessageType;
+                    bool m_pulsarTopicMessageTypeHasBeenSet;
 
                 };
             }

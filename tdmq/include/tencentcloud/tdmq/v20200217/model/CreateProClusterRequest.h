@@ -99,31 +99,6 @@ namespace TencentCloud
                     bool ProductNameHasBeenSet() const;
 
                     /**
-                     * 获取存储规格
-参考 [专业集群规格](https://cloud.tencent.com/document/product/1179/83705)
-                     * @return StorageSize 存储规格
-参考 [专业集群规格](https://cloud.tencent.com/document/product/1179/83705)
-                     * 
-                     */
-                    int64_t GetStorageSize() const;
-
-                    /**
-                     * 设置存储规格
-参考 [专业集群规格](https://cloud.tencent.com/document/product/1179/83705)
-                     * @param _storageSize 存储规格
-参考 [专业集群规格](https://cloud.tencent.com/document/product/1179/83705)
-                     * 
-                     */
-                    void SetStorageSize(const int64_t& _storageSize);
-
-                    /**
-                     * 判断参数 StorageSize 是否已赋值
-                     * @return StorageSize 是否已赋值
-                     * 
-                     */
-                    bool StorageSizeHasBeenSet() const;
-
-                    /**
                      * 获取1: true，开启自动按月续费
 
 0: false，关闭自动按月续费
@@ -216,6 +191,31 @@ namespace TencentCloud
                     bool AutoVoucherHasBeenSet() const;
 
                     /**
+                     * 获取存储规格
+参考 [专业集群规格](https://cloud.tencent.com/document/product/1179/83705)
+                     * @return StorageSize 存储规格
+参考 [专业集群规格](https://cloud.tencent.com/document/product/1179/83705)
+                     * 
+                     */
+                    int64_t GetStorageSize() const;
+
+                    /**
+                     * 设置存储规格
+参考 [专业集群规格](https://cloud.tencent.com/document/product/1179/83705)
+                     * @param _storageSize 存储规格
+参考 [专业集群规格](https://cloud.tencent.com/document/product/1179/83705)
+                     * 
+                     */
+                    void SetStorageSize(const int64_t& _storageSize);
+
+                    /**
+                     * 判断参数 StorageSize 是否已赋值
+                     * @return StorageSize 是否已赋值
+                     * 
+                     */
+                    bool StorageSizeHasBeenSet() const;
+
+                    /**
                      * 获取vpc网络标签
                      * @return Vpc vpc网络标签
                      * 
@@ -275,13 +275,6 @@ namespace TencentCloud
                     bool m_productNameHasBeenSet;
 
                     /**
-                     * 存储规格
-参考 [专业集群规格](https://cloud.tencent.com/document/product/1179/83705)
-                     */
-                    int64_t m_storageSize;
-                    bool m_storageSizeHasBeenSet;
-
-                    /**
                      * 1: true，开启自动按月续费
 
 0: false，关闭自动按月续费
@@ -306,6 +299,13 @@ namespace TencentCloud
                      */
                     int64_t m_autoVoucher;
                     bool m_autoVoucherHasBeenSet;
+
+                    /**
+                     * 存储规格
+参考 [专业集群规格](https://cloud.tencent.com/document/product/1179/83705)
+                     */
+                    int64_t m_storageSize;
+                    bool m_storageSizeHasBeenSet;
 
                     /**
                      * vpc网络标签

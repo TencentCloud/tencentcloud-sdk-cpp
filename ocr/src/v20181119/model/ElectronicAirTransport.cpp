@@ -36,7 +36,11 @@ ElectronicAirTransport::ElectronicAirTransport() :
     m_passengerNameHasBeenSet(false),
     m_passengerNoHasBeenSet(false),
     m_electronicNumberHasBeenSet(false),
-    m_electronicAirTransportDetailsHasBeenSet(false)
+    m_electronicAirTransportDetailsHasBeenSet(false),
+    m_fareHasBeenSet(false),
+    m_fuelSurchargeHasBeenSet(false),
+    m_taxAmountHasBeenSet(false),
+    m_developmentFundHasBeenSet(false)
 {
 }
 
@@ -215,6 +219,46 @@ CoreInternalOutcome ElectronicAirTransport::Deserialize(const rapidjson::Value &
         m_electronicAirTransportDetailsHasBeenSet = true;
     }
 
+    if (value.HasMember("Fare") && !value["Fare"].IsNull())
+    {
+        if (!value["Fare"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ElectronicAirTransport.Fare` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_fare = string(value["Fare"].GetString());
+        m_fareHasBeenSet = true;
+    }
+
+    if (value.HasMember("FuelSurcharge") && !value["FuelSurcharge"].IsNull())
+    {
+        if (!value["FuelSurcharge"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ElectronicAirTransport.FuelSurcharge` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_fuelSurcharge = string(value["FuelSurcharge"].GetString());
+        m_fuelSurchargeHasBeenSet = true;
+    }
+
+    if (value.HasMember("TaxAmount") && !value["TaxAmount"].IsNull())
+    {
+        if (!value["TaxAmount"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ElectronicAirTransport.TaxAmount` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_taxAmount = string(value["TaxAmount"].GetString());
+        m_taxAmountHasBeenSet = true;
+    }
+
+    if (value.HasMember("DevelopmentFund") && !value["DevelopmentFund"].IsNull())
+    {
+        if (!value["DevelopmentFund"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ElectronicAirTransport.DevelopmentFund` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_developmentFund = string(value["DevelopmentFund"].GetString());
+        m_developmentFundHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -355,6 +399,38 @@ void ElectronicAirTransport::ToJsonObject(rapidjson::Value &value, rapidjson::Do
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_fareHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Fare";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_fare.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_fuelSurchargeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FuelSurcharge";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_fuelSurcharge.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_taxAmountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaxAmount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_taxAmount.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_developmentFundHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DevelopmentFund";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_developmentFund.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -614,5 +690,69 @@ void ElectronicAirTransport::SetElectronicAirTransportDetails(const vector<Elect
 bool ElectronicAirTransport::ElectronicAirTransportDetailsHasBeenSet() const
 {
     return m_electronicAirTransportDetailsHasBeenSet;
+}
+
+string ElectronicAirTransport::GetFare() const
+{
+    return m_fare;
+}
+
+void ElectronicAirTransport::SetFare(const string& _fare)
+{
+    m_fare = _fare;
+    m_fareHasBeenSet = true;
+}
+
+bool ElectronicAirTransport::FareHasBeenSet() const
+{
+    return m_fareHasBeenSet;
+}
+
+string ElectronicAirTransport::GetFuelSurcharge() const
+{
+    return m_fuelSurcharge;
+}
+
+void ElectronicAirTransport::SetFuelSurcharge(const string& _fuelSurcharge)
+{
+    m_fuelSurcharge = _fuelSurcharge;
+    m_fuelSurchargeHasBeenSet = true;
+}
+
+bool ElectronicAirTransport::FuelSurchargeHasBeenSet() const
+{
+    return m_fuelSurchargeHasBeenSet;
+}
+
+string ElectronicAirTransport::GetTaxAmount() const
+{
+    return m_taxAmount;
+}
+
+void ElectronicAirTransport::SetTaxAmount(const string& _taxAmount)
+{
+    m_taxAmount = _taxAmount;
+    m_taxAmountHasBeenSet = true;
+}
+
+bool ElectronicAirTransport::TaxAmountHasBeenSet() const
+{
+    return m_taxAmountHasBeenSet;
+}
+
+string ElectronicAirTransport::GetDevelopmentFund() const
+{
+    return m_developmentFund;
+}
+
+void ElectronicAirTransport::SetDevelopmentFund(const string& _developmentFund)
+{
+    m_developmentFund = _developmentFund;
+    m_developmentFundHasBeenSet = true;
+}
+
+bool ElectronicAirTransport::DevelopmentFundHasBeenSet() const
+{
+    return m_developmentFundHasBeenSet;
 }
 

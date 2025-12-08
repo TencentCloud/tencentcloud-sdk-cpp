@@ -269,6 +269,48 @@ namespace TencentCloud
                      */
                     bool AutoSubscriptionCreationHasBeenSet() const;
 
+                    /**
+                     * 获取离线订阅过期自动清理时间
+                     * @return SubscriptionExpirationTime 离线订阅过期自动清理时间
+                     * 
+                     */
+                    uint64_t GetSubscriptionExpirationTime() const;
+
+                    /**
+                     * 设置离线订阅过期自动清理时间
+                     * @param _subscriptionExpirationTime 离线订阅过期自动清理时间
+                     * 
+                     */
+                    void SetSubscriptionExpirationTime(const uint64_t& _subscriptionExpirationTime);
+
+                    /**
+                     * 判断参数 SubscriptionExpirationTime 是否已赋值
+                     * @return SubscriptionExpirationTime 是否已赋值
+                     * 
+                     */
+                    bool SubscriptionExpirationTimeHasBeenSet() const;
+
+                    /**
+                     * 获取离线订阅过期自动清理时间开关
+                     * @return SubscriptionExpirationTimeEnable 离线订阅过期自动清理时间开关
+                     * 
+                     */
+                    bool GetSubscriptionExpirationTimeEnable() const;
+
+                    /**
+                     * 设置离线订阅过期自动清理时间开关
+                     * @param _subscriptionExpirationTimeEnable 离线订阅过期自动清理时间开关
+                     * 
+                     */
+                    void SetSubscriptionExpirationTimeEnable(const bool& _subscriptionExpirationTimeEnable);
+
+                    /**
+                     * 判断参数 SubscriptionExpirationTimeEnable 是否已赋值
+                     * @return SubscriptionExpirationTimeEnable 是否已赋值
+                     * 
+                     */
+                    bool SubscriptionExpirationTimeEnableHasBeenSet() const;
+
                 private:
 
                     /**
@@ -333,6 +375,18 @@ namespace TencentCloud
                      */
                     bool m_autoSubscriptionCreation;
                     bool m_autoSubscriptionCreationHasBeenSet;
+
+                    /**
+                     * 离线订阅过期自动清理时间
+                     */
+                    uint64_t m_subscriptionExpirationTime;
+                    bool m_subscriptionExpirationTimeHasBeenSet;
+
+                    /**
+                     * 离线订阅过期自动清理时间开关
+                     */
+                    bool m_subscriptionExpirationTimeEnable;
+                    bool m_subscriptionExpirationTimeEnableHasBeenSet;
 
                 };
             }

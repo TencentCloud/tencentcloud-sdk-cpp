@@ -181,6 +181,8 @@
 #include <tencentcloud/dnspod/v20210323/model/ModifyLineGroupResponse.h>
 #include <tencentcloud/dnspod/v20210323/model/ModifyPackageAutoRenewRequest.h>
 #include <tencentcloud/dnspod/v20210323/model/ModifyPackageAutoRenewResponse.h>
+#include <tencentcloud/dnspod/v20210323/model/ModifyPackageDomainRequest.h>
+#include <tencentcloud/dnspod/v20210323/model/ModifyPackageDomainResponse.h>
 #include <tencentcloud/dnspod/v20210323/model/ModifyRecordRequest.h>
 #include <tencentcloud/dnspod/v20210323/model/ModifyRecordResponse.h>
 #include <tencentcloud/dnspod/v20210323/model/ModifyRecordBatchRequest.h>
@@ -460,6 +462,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyPackageAutoRenewResponse> ModifyPackageAutoRenewOutcome;
                 typedef std::future<ModifyPackageAutoRenewOutcome> ModifyPackageAutoRenewOutcomeCallable;
                 typedef std::function<void(const DnspodClient*, const Model::ModifyPackageAutoRenewRequest&, ModifyPackageAutoRenewOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyPackageAutoRenewAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyPackageDomainResponse> ModifyPackageDomainOutcome;
+                typedef std::future<ModifyPackageDomainOutcome> ModifyPackageDomainOutcomeCallable;
+                typedef std::function<void(const DnspodClient*, const Model::ModifyPackageDomainRequest&, ModifyPackageDomainOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyPackageDomainAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyRecordResponse> ModifyRecordOutcome;
                 typedef std::future<ModifyRecordOutcome> ModifyRecordOutcomeCallable;
                 typedef std::function<void(const DnspodClient*, const Model::ModifyRecordRequest&, ModifyRecordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyRecordAsyncHandler;
@@ -1225,6 +1230,15 @@ namespace TencentCloud
                 ModifyPackageAutoRenewOutcome ModifyPackageAutoRenew(const Model::ModifyPackageAutoRenewRequest &request);
                 void ModifyPackageAutoRenewAsync(const Model::ModifyPackageAutoRenewRequest& request, const ModifyPackageAutoRenewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyPackageAutoRenewOutcomeCallable ModifyPackageAutoRenewCallable(const Model::ModifyPackageAutoRenewRequest& request);
+
+                /**
+                 *套餐绑定、解绑、更换域名
+                 * @param req ModifyPackageDomainRequest
+                 * @return ModifyPackageDomainOutcome
+                 */
+                ModifyPackageDomainOutcome ModifyPackageDomain(const Model::ModifyPackageDomainRequest &request);
+                void ModifyPackageDomainAsync(const Model::ModifyPackageDomainRequest& request, const ModifyPackageDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyPackageDomainOutcomeCallable ModifyPackageDomainCallable(const Model::ModifyPackageDomainRequest& request);
 
                 /**
                  *修改记录

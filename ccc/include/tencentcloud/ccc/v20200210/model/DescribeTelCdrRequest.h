@@ -85,69 +85,6 @@ namespace TencentCloud
                     bool EndTimeStampHasBeenSet() const;
 
                     /**
-                     * 获取实例 ID（废弃）
-                     * @return InstanceId 实例 ID（废弃）
-                     * @deprecated
-                     */
-                    int64_t GetInstanceId() const;
-
-                    /**
-                     * 设置实例 ID（废弃）
-                     * @param _instanceId 实例 ID（废弃）
-                     * @deprecated
-                     */
-                    void SetInstanceId(const int64_t& _instanceId);
-
-                    /**
-                     * 判断参数 InstanceId 是否已赋值
-                     * @return InstanceId 是否已赋值
-                     * @deprecated
-                     */
-                    bool InstanceIdHasBeenSet() const;
-
-                    /**
-                     * 获取返回数据条数，上限（废弃）
-                     * @return Limit 返回数据条数，上限（废弃）
-                     * 
-                     */
-                    int64_t GetLimit() const;
-
-                    /**
-                     * 设置返回数据条数，上限（废弃）
-                     * @param _limit 返回数据条数，上限（废弃）
-                     * 
-                     */
-                    void SetLimit(const int64_t& _limit);
-
-                    /**
-                     * 判断参数 Limit 是否已赋值
-                     * @return Limit 是否已赋值
-                     * 
-                     */
-                    bool LimitHasBeenSet() const;
-
-                    /**
-                     * 获取偏移（废弃）
-                     * @return Offset 偏移（废弃）
-                     * 
-                     */
-                    int64_t GetOffset() const;
-
-                    /**
-                     * 设置偏移（废弃）
-                     * @param _offset 偏移（废弃）
-                     * 
-                     */
-                    void SetOffset(const int64_t& _offset);
-
-                    /**
-                     * 判断参数 Offset 是否已赋值
-                     * @return Offset 是否已赋值
-                     * 
-                     */
-                    bool OffsetHasBeenSet() const;
-
-                    /**
                      * 获取应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc
                      * @return SdkAppId 应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc
                      * 
@@ -211,6 +148,69 @@ namespace TencentCloud
                     bool PageNumberHasBeenSet() const;
 
                     /**
+                     * 获取实例 ID（废弃）
+                     * @return InstanceId 实例 ID（废弃）
+                     * @deprecated
+                     */
+                    int64_t GetInstanceId() const;
+
+                    /**
+                     * 设置实例 ID（废弃）
+                     * @param _instanceId 实例 ID（废弃）
+                     * @deprecated
+                     */
+                    void SetInstanceId(const int64_t& _instanceId);
+
+                    /**
+                     * 判断参数 InstanceId 是否已赋值
+                     * @return InstanceId 是否已赋值
+                     * @deprecated
+                     */
+                    bool InstanceIdHasBeenSet() const;
+
+                    /**
+                     * 获取返回数据条数，上限（废弃）
+                     * @return Limit 返回数据条数，上限（废弃）
+                     * 
+                     */
+                    int64_t GetLimit() const;
+
+                    /**
+                     * 设置返回数据条数，上限（废弃）
+                     * @param _limit 返回数据条数，上限（废弃）
+                     * 
+                     */
+                    void SetLimit(const int64_t& _limit);
+
+                    /**
+                     * 判断参数 Limit 是否已赋值
+                     * @return Limit 是否已赋值
+                     * 
+                     */
+                    bool LimitHasBeenSet() const;
+
+                    /**
+                     * 获取偏移（废弃）
+                     * @return Offset 偏移（废弃）
+                     * 
+                     */
+                    int64_t GetOffset() const;
+
+                    /**
+                     * 设置偏移（废弃）
+                     * @param _offset 偏移（废弃）
+                     * 
+                     */
+                    void SetOffset(const int64_t& _offset);
+
+                    /**
+                     * 判断参数 Offset 是否已赋值
+                     * @return Offset 是否已赋值
+                     * 
+                     */
+                    bool OffsetHasBeenSet() const;
+
+                    /**
                      * 获取按手机号筛选
                      * @return Phones 按手机号筛选
                      * 
@@ -267,24 +267,6 @@ namespace TencentCloud
                     bool m_endTimeStampHasBeenSet;
 
                     /**
-                     * 实例 ID（废弃）
-                     */
-                    int64_t m_instanceId;
-                    bool m_instanceIdHasBeenSet;
-
-                    /**
-                     * 返回数据条数，上限（废弃）
-                     */
-                    int64_t m_limit;
-                    bool m_limitHasBeenSet;
-
-                    /**
-                     * 偏移（废弃）
-                     */
-                    int64_t m_offset;
-                    bool m_offsetHasBeenSet;
-
-                    /**
                      * 应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc
                      */
                     int64_t m_sdkAppId;
@@ -301,6 +283,24 @@ namespace TencentCloud
                      */
                     int64_t m_pageNumber;
                     bool m_pageNumberHasBeenSet;
+
+                    /**
+                     * 实例 ID（废弃）
+                     */
+                    int64_t m_instanceId;
+                    bool m_instanceIdHasBeenSet;
+
+                    /**
+                     * 返回数据条数，上限（废弃）
+                     */
+                    int64_t m_limit;
+                    bool m_limitHasBeenSet;
+
+                    /**
+                     * 偏移（废弃）
+                     */
+                    int64_t m_offset;
+                    bool m_offsetHasBeenSet;
 
                     /**
                      * 按手机号筛选

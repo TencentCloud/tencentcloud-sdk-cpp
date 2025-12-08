@@ -33,7 +33,8 @@ CreateTopicRequest::CreateTopicRequest() :
     m_msgTTLHasBeenSet(false),
     m_unackPolicyHasBeenSet(false),
     m_isolateConsumerEnableHasBeenSet(false),
-    m_ackTimeOutHasBeenSet(false)
+    m_ackTimeOutHasBeenSet(false),
+    m_pulsarTopicMessageTypeHasBeenSet(false)
 {
 }
 
@@ -130,6 +131,14 @@ string CreateTopicRequest::ToJsonString() const
         string key = "AckTimeOut";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_ackTimeOut, allocator);
+    }
+
+    if (m_pulsarTopicMessageTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PulsarTopicMessageType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_pulsarTopicMessageType, allocator);
     }
 
 
@@ -314,6 +323,22 @@ void CreateTopicRequest::SetAckTimeOut(const int64_t& _ackTimeOut)
 bool CreateTopicRequest::AckTimeOutHasBeenSet() const
 {
     return m_ackTimeOutHasBeenSet;
+}
+
+int64_t CreateTopicRequest::GetPulsarTopicMessageType() const
+{
+    return m_pulsarTopicMessageType;
+}
+
+void CreateTopicRequest::SetPulsarTopicMessageType(const int64_t& _pulsarTopicMessageType)
+{
+    m_pulsarTopicMessageType = _pulsarTopicMessageType;
+    m_pulsarTopicMessageTypeHasBeenSet = true;
+}
+
+bool CreateTopicRequest::PulsarTopicMessageTypeHasBeenSet() const
+{
+    return m_pulsarTopicMessageTypeHasBeenSet;
 }
 
 

@@ -25,11 +25,11 @@ using namespace std;
 CreateProClusterRequest::CreateProClusterRequest() :
     m_zoneIdsHasBeenSet(false),
     m_productNameHasBeenSet(false),
-    m_storageSizeHasBeenSet(false),
     m_autoRenewFlagHasBeenSet(false),
     m_timeSpanHasBeenSet(false),
     m_clusterNameHasBeenSet(false),
     m_autoVoucherHasBeenSet(false),
+    m_storageSizeHasBeenSet(false),
     m_vpcHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
@@ -63,14 +63,6 @@ string CreateProClusterRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_productName.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_storageSizeHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "StorageSize";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_storageSize, allocator);
-    }
-
     if (m_autoRenewFlagHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -101,6 +93,14 @@ string CreateProClusterRequest::ToJsonString() const
         string key = "AutoVoucher";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_autoVoucher, allocator);
+    }
+
+    if (m_storageSizeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StorageSize";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_storageSize, allocator);
     }
 
     if (m_vpcHasBeenSet)
@@ -167,22 +167,6 @@ bool CreateProClusterRequest::ProductNameHasBeenSet() const
     return m_productNameHasBeenSet;
 }
 
-int64_t CreateProClusterRequest::GetStorageSize() const
-{
-    return m_storageSize;
-}
-
-void CreateProClusterRequest::SetStorageSize(const int64_t& _storageSize)
-{
-    m_storageSize = _storageSize;
-    m_storageSizeHasBeenSet = true;
-}
-
-bool CreateProClusterRequest::StorageSizeHasBeenSet() const
-{
-    return m_storageSizeHasBeenSet;
-}
-
 int64_t CreateProClusterRequest::GetAutoRenewFlag() const
 {
     return m_autoRenewFlag;
@@ -245,6 +229,22 @@ void CreateProClusterRequest::SetAutoVoucher(const int64_t& _autoVoucher)
 bool CreateProClusterRequest::AutoVoucherHasBeenSet() const
 {
     return m_autoVoucherHasBeenSet;
+}
+
+int64_t CreateProClusterRequest::GetStorageSize() const
+{
+    return m_storageSize;
+}
+
+void CreateProClusterRequest::SetStorageSize(const int64_t& _storageSize)
+{
+    m_storageSize = _storageSize;
+    m_storageSizeHasBeenSet = true;
+}
+
+bool CreateProClusterRequest::StorageSizeHasBeenSet() const
+{
+    return m_storageSizeHasBeenSet;
 }
 
 VpcInfo CreateProClusterRequest::GetVpc() const

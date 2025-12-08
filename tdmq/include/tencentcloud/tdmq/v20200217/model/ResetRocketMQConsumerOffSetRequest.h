@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool ClusterIdHasBeenSet() const;
 
                     /**
-                     * 获取命名空间名称
-                     * @return NamespaceId 命名空间名称
+                     * 获取命名空间，4.x 通用集群命名空间固定为: tdmq_default
+                     * @return NamespaceId 命名空间，4.x 通用集群命名空间固定为: tdmq_default
                      * 
                      */
                     std::string GetNamespaceId() const;
 
                     /**
-                     * 设置命名空间名称
-                     * @param _namespaceId 命名空间名称
+                     * 设置命名空间，4.x 通用集群命名空间固定为: tdmq_default
+                     * @param _namespaceId 命名空间，4.x 通用集群命名空间固定为: tdmq_default
                      * 
                      */
                     void SetNamespaceId(const std::string& _namespaceId);
@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool TopicHasBeenSet() const;
 
                     /**
-                     * 获取重置指定的时间戳，仅在 Type 为1是生效，以毫秒为单位
-                     * @return ResetTimestamp 重置指定的时间戳，仅在 Type 为1是生效，以毫秒为单位
+                     * 获取重置指定的时间戳，仅在 Type 为1时生效，以毫秒为单位
+                     * @return ResetTimestamp 重置指定的时间戳，仅在 Type 为1时生效，以毫秒为单位
                      * 
                      */
                     uint64_t GetResetTimestamp() const;
 
                     /**
-                     * 设置重置指定的时间戳，仅在 Type 为1是生效，以毫秒为单位
-                     * @param _resetTimestamp 重置指定的时间戳，仅在 Type 为1是生效，以毫秒为单位
+                     * 设置重置指定的时间戳，仅在 Type 为1时生效，以毫秒为单位
+                     * @param _resetTimestamp 重置指定的时间戳，仅在 Type 为1时生效，以毫秒为单位
                      * 
                      */
                     void SetResetTimestamp(const uint64_t& _resetTimestamp);
@@ -198,7 +198,7 @@ namespace TencentCloud
                     bool m_clusterIdHasBeenSet;
 
                     /**
-                     * 命名空间名称
+                     * 命名空间，4.x 通用集群命名空间固定为: tdmq_default
                      */
                     std::string m_namespaceId;
                     bool m_namespaceIdHasBeenSet;
@@ -222,7 +222,7 @@ namespace TencentCloud
                     bool m_topicHasBeenSet;
 
                     /**
-                     * 重置指定的时间戳，仅在 Type 为1是生效，以毫秒为单位
+                     * 重置指定的时间戳，仅在 Type 为1时生效，以毫秒为单位
                      */
                     uint64_t m_resetTimestamp;
                     bool m_resetTimestampHasBeenSet;

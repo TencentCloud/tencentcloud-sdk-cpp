@@ -455,6 +455,90 @@ namespace TencentCloud
                      */
                     bool ElectronicAirTransportDetailsHasBeenSet() const;
 
+                    /**
+                     * 获取票价
+                     * @return Fare 票价
+                     * 
+                     */
+                    std::string GetFare() const;
+
+                    /**
+                     * 设置票价
+                     * @param _fare 票价
+                     * 
+                     */
+                    void SetFare(const std::string& _fare);
+
+                    /**
+                     * 判断参数 Fare 是否已赋值
+                     * @return Fare 是否已赋值
+                     * 
+                     */
+                    bool FareHasBeenSet() const;
+
+                    /**
+                     * 获取燃油附加费
+                     * @return FuelSurcharge 燃油附加费
+                     * 
+                     */
+                    std::string GetFuelSurcharge() const;
+
+                    /**
+                     * 设置燃油附加费
+                     * @param _fuelSurcharge 燃油附加费
+                     * 
+                     */
+                    void SetFuelSurcharge(const std::string& _fuelSurcharge);
+
+                    /**
+                     * 判断参数 FuelSurcharge 是否已赋值
+                     * @return FuelSurcharge 是否已赋值
+                     * 
+                     */
+                    bool FuelSurchargeHasBeenSet() const;
+
+                    /**
+                     * 获取增值税税额
+                     * @return TaxAmount 增值税税额
+                     * 
+                     */
+                    std::string GetTaxAmount() const;
+
+                    /**
+                     * 设置增值税税额
+                     * @param _taxAmount 增值税税额
+                     * 
+                     */
+                    void SetTaxAmount(const std::string& _taxAmount);
+
+                    /**
+                     * 判断参数 TaxAmount 是否已赋值
+                     * @return TaxAmount 是否已赋值
+                     * 
+                     */
+                    bool TaxAmountHasBeenSet() const;
+
+                    /**
+                     * 获取民航发展基金
+                     * @return DevelopmentFund 民航发展基金
+                     * 
+                     */
+                    std::string GetDevelopmentFund() const;
+
+                    /**
+                     * 设置民航发展基金
+                     * @param _developmentFund 民航发展基金
+                     * 
+                     */
+                    void SetDevelopmentFund(const std::string& _developmentFund);
+
+                    /**
+                     * 判断参数 DevelopmentFund 是否已赋值
+                     * @return DevelopmentFund 是否已赋值
+                     * 
+                     */
+                    bool DevelopmentFundHasBeenSet() const;
+
                 private:
 
                     /**
@@ -570,6 +654,30 @@ namespace TencentCloud
                      */
                     std::vector<ElectronicAirTransportDetail> m_electronicAirTransportDetails;
                     bool m_electronicAirTransportDetailsHasBeenSet;
+
+                    /**
+                     * 票价
+                     */
+                    std::string m_fare;
+                    bool m_fareHasBeenSet;
+
+                    /**
+                     * 燃油附加费
+                     */
+                    std::string m_fuelSurcharge;
+                    bool m_fuelSurchargeHasBeenSet;
+
+                    /**
+                     * 增值税税额
+                     */
+                    std::string m_taxAmount;
+                    bool m_taxAmountHasBeenSet;
+
+                    /**
+                     * 民航发展基金
+                     */
+                    std::string m_developmentFund;
+                    bool m_developmentFundHasBeenSet;
 
                 };
             }

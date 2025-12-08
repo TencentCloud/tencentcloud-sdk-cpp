@@ -33,17 +33,19 @@ set(dataagent_public_header_model
   include/tencentcloud/dataagent/v20250513/model/StopChatAIRequest.h
   include/tencentcloud/dataagent/v20250513/model/StepExpand.h
   include/tencentcloud/dataagent/v20250513/model/GetSessionDetailsRequest.h
-  include/tencentcloud/dataagent/v20250513/model/CreateDataAgentSessionResponse.h
-  include/tencentcloud/dataagent/v20250513/model/ModifyChunkRequest.h
   include/tencentcloud/dataagent/v20250513/model/ModifyKnowledgeBaseRequest.h
+  include/tencentcloud/dataagent/v20250513/model/ModifyChunkRequest.h
+  include/tencentcloud/dataagent/v20250513/model/CreateDataAgentSessionResponse.h
   include/tencentcloud/dataagent/v20250513/model/CosFileInfo.h
   include/tencentcloud/dataagent/v20250513/model/KnowledgeBase.h
   include/tencentcloud/dataagent/v20250513/model/StopChatAIResponse.h
   include/tencentcloud/dataagent/v20250513/model/GetUploadJobDetailsResponse.h
   include/tencentcloud/dataagent/v20250513/model/Task.h
   include/tencentcloud/dataagent/v20250513/model/DeleteDataAgentSessionResponse.h
+  include/tencentcloud/dataagent/v20250513/model/GetKnowledgeBaseFileListResponse.h
   include/tencentcloud/dataagent/v20250513/model/Record.h
   include/tencentcloud/dataagent/v20250513/model/ChatAIRequest.h
+  include/tencentcloud/dataagent/v20250513/model/GetKnowledgeBaseFileListRequest.h
   include/tencentcloud/dataagent/v20250513/model/GetUploadJobDetailsRequest.h
   include/tencentcloud/dataagent/v20250513/model/AddChunkResponse.h
   include/tencentcloud/dataagent/v20250513/model/StepInfo.h
@@ -71,17 +73,19 @@ set(dataagent_src
   src/v20250513/model/StopChatAIRequest.cpp
   src/v20250513/model/StepExpand.cpp
   src/v20250513/model/GetSessionDetailsRequest.cpp
-  src/v20250513/model/CreateDataAgentSessionResponse.cpp
-  src/v20250513/model/ModifyChunkRequest.cpp
   src/v20250513/model/ModifyKnowledgeBaseRequest.cpp
+  src/v20250513/model/ModifyChunkRequest.cpp
+  src/v20250513/model/CreateDataAgentSessionResponse.cpp
   src/v20250513/model/CosFileInfo.cpp
   src/v20250513/model/KnowledgeBase.cpp
   src/v20250513/model/StopChatAIResponse.cpp
   src/v20250513/model/GetUploadJobDetailsResponse.cpp
   src/v20250513/model/Task.cpp
   src/v20250513/model/DeleteDataAgentSessionResponse.cpp
+  src/v20250513/model/GetKnowledgeBaseFileListResponse.cpp
   src/v20250513/model/Record.cpp
   src/v20250513/model/ChatAIRequest.cpp
+  src/v20250513/model/GetKnowledgeBaseFileListRequest.cpp
   src/v20250513/model/GetUploadJobDetailsRequest.cpp
   src/v20250513/model/AddChunkResponse.cpp
   src/v20250513/model/StepInfo.cpp

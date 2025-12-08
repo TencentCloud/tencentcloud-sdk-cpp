@@ -25,8 +25,8 @@ using namespace std;
 CreateUserSigRequest::CreateUserSigRequest() :
     m_sdkAppIdHasBeenSet(false),
     m_uidHasBeenSet(false),
-    m_expiredTimeHasBeenSet(false),
-    m_clientDataHasBeenSet(false)
+    m_clientDataHasBeenSet(false),
+    m_expiredTimeHasBeenSet(false)
 {
 }
 
@@ -53,20 +53,20 @@ string CreateUserSigRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_uid.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_expiredTimeHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ExpiredTime";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_expiredTime, allocator);
-    }
-
     if (m_clientDataHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ClientData";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_clientData.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_expiredTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExpiredTime";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_expiredTime, allocator);
     }
 
 
@@ -109,22 +109,6 @@ bool CreateUserSigRequest::UidHasBeenSet() const
     return m_uidHasBeenSet;
 }
 
-int64_t CreateUserSigRequest::GetExpiredTime() const
-{
-    return m_expiredTime;
-}
-
-void CreateUserSigRequest::SetExpiredTime(const int64_t& _expiredTime)
-{
-    m_expiredTime = _expiredTime;
-    m_expiredTimeHasBeenSet = true;
-}
-
-bool CreateUserSigRequest::ExpiredTimeHasBeenSet() const
-{
-    return m_expiredTimeHasBeenSet;
-}
-
 string CreateUserSigRequest::GetClientData() const
 {
     return m_clientData;
@@ -139,6 +123,22 @@ void CreateUserSigRequest::SetClientData(const string& _clientData)
 bool CreateUserSigRequest::ClientDataHasBeenSet() const
 {
     return m_clientDataHasBeenSet;
+}
+
+int64_t CreateUserSigRequest::GetExpiredTime() const
+{
+    return m_expiredTime;
+}
+
+void CreateUserSigRequest::SetExpiredTime(const int64_t& _expiredTime)
+{
+    m_expiredTime = _expiredTime;
+    m_expiredTimeHasBeenSet = true;
+}
+
+bool CreateUserSigRequest::ExpiredTimeHasBeenSet() const
+{
+    return m_expiredTimeHasBeenSet;
 }
 
 

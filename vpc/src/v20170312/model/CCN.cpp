@@ -43,7 +43,9 @@ CCN::CCN() :
     m_directConnectAccelerateChannelFlagHasBeenSet(false),
     m_ipv6FlagHasBeenSet(false),
     m_mrtbAggregatePolicyFlagHasBeenSet(false),
-    m_mrtbPolicyValueFlagHasBeenSet(false)
+    m_mrtbPolicyValueFlagHasBeenSet(false),
+    m_routeTablePolicyValueCommunityFlagHasBeenSet(false),
+    m_policyBasedRoutingFlagHasBeenSet(false)
 {
 }
 
@@ -292,6 +294,26 @@ CoreInternalOutcome CCN::Deserialize(const rapidjson::Value &value)
         m_mrtbPolicyValueFlagHasBeenSet = true;
     }
 
+    if (value.HasMember("RouteTablePolicyValueCommunityFlag") && !value["RouteTablePolicyValueCommunityFlag"].IsNull())
+    {
+        if (!value["RouteTablePolicyValueCommunityFlag"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `CCN.RouteTablePolicyValueCommunityFlag` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_routeTablePolicyValueCommunityFlag = value["RouteTablePolicyValueCommunityFlag"].GetBool();
+        m_routeTablePolicyValueCommunityFlagHasBeenSet = true;
+    }
+
+    if (value.HasMember("PolicyBasedRoutingFlag") && !value["PolicyBasedRoutingFlag"].IsNull())
+    {
+        if (!value["PolicyBasedRoutingFlag"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `CCN.PolicyBasedRoutingFlag` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_policyBasedRoutingFlag = value["PolicyBasedRoutingFlag"].GetBool();
+        m_policyBasedRoutingFlagHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -488,6 +510,22 @@ void CCN::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorTy
         string key = "MrtbPolicyValueFlag";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_mrtbPolicyValueFlag, allocator);
+    }
+
+    if (m_routeTablePolicyValueCommunityFlagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RouteTablePolicyValueCommunityFlag";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_routeTablePolicyValueCommunityFlag, allocator);
+    }
+
+    if (m_policyBasedRoutingFlagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PolicyBasedRoutingFlag";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_policyBasedRoutingFlag, allocator);
     }
 
 }
@@ -859,5 +897,37 @@ void CCN::SetMrtbPolicyValueFlag(const bool& _mrtbPolicyValueFlag)
 bool CCN::MrtbPolicyValueFlagHasBeenSet() const
 {
     return m_mrtbPolicyValueFlagHasBeenSet;
+}
+
+bool CCN::GetRouteTablePolicyValueCommunityFlag() const
+{
+    return m_routeTablePolicyValueCommunityFlag;
+}
+
+void CCN::SetRouteTablePolicyValueCommunityFlag(const bool& _routeTablePolicyValueCommunityFlag)
+{
+    m_routeTablePolicyValueCommunityFlag = _routeTablePolicyValueCommunityFlag;
+    m_routeTablePolicyValueCommunityFlagHasBeenSet = true;
+}
+
+bool CCN::RouteTablePolicyValueCommunityFlagHasBeenSet() const
+{
+    return m_routeTablePolicyValueCommunityFlagHasBeenSet;
+}
+
+bool CCN::GetPolicyBasedRoutingFlag() const
+{
+    return m_policyBasedRoutingFlag;
+}
+
+void CCN::SetPolicyBasedRoutingFlag(const bool& _policyBasedRoutingFlag)
+{
+    m_policyBasedRoutingFlag = _policyBasedRoutingFlag;
+    m_policyBasedRoutingFlagHasBeenSet = true;
+}
+
+bool CCN::PolicyBasedRoutingFlagHasBeenSet() const
+{
+    return m_policyBasedRoutingFlagHasBeenSet;
 }
 

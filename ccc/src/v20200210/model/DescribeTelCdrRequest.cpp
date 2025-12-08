@@ -25,12 +25,12 @@ using namespace std;
 DescribeTelCdrRequest::DescribeTelCdrRequest() :
     m_startTimeStampHasBeenSet(false),
     m_endTimeStampHasBeenSet(false),
-    m_instanceIdHasBeenSet(false),
-    m_limitHasBeenSet(false),
-    m_offsetHasBeenSet(false),
     m_sdkAppIdHasBeenSet(false),
     m_pageSizeHasBeenSet(false),
     m_pageNumberHasBeenSet(false),
+    m_instanceIdHasBeenSet(false),
+    m_limitHasBeenSet(false),
+    m_offsetHasBeenSet(false),
     m_phonesHasBeenSet(false),
     m_sessionIdsHasBeenSet(false)
 {
@@ -59,30 +59,6 @@ string DescribeTelCdrRequest::ToJsonString() const
         d.AddMember(iKey, m_endTimeStamp, allocator);
     }
 
-    if (m_instanceIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "InstanceId";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_instanceId, allocator);
-    }
-
-    if (m_limitHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Limit";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_limit, allocator);
-    }
-
-    if (m_offsetHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Offset";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_offset, allocator);
-    }
-
     if (m_sdkAppIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -105,6 +81,30 @@ string DescribeTelCdrRequest::ToJsonString() const
         string key = "PageNumber";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_pageNumber, allocator);
+    }
+
+    if (m_instanceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_instanceId, allocator);
+    }
+
+    if (m_limitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Limit";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_limit, allocator);
+    }
+
+    if (m_offsetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Offset";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_offset, allocator);
     }
 
     if (m_phonesHasBeenSet)
@@ -173,54 +173,6 @@ bool DescribeTelCdrRequest::EndTimeStampHasBeenSet() const
     return m_endTimeStampHasBeenSet;
 }
 
-int64_t DescribeTelCdrRequest::GetInstanceId() const
-{
-    return m_instanceId;
-}
-
-void DescribeTelCdrRequest::SetInstanceId(const int64_t& _instanceId)
-{
-    m_instanceId = _instanceId;
-    m_instanceIdHasBeenSet = true;
-}
-
-bool DescribeTelCdrRequest::InstanceIdHasBeenSet() const
-{
-    return m_instanceIdHasBeenSet;
-}
-
-int64_t DescribeTelCdrRequest::GetLimit() const
-{
-    return m_limit;
-}
-
-void DescribeTelCdrRequest::SetLimit(const int64_t& _limit)
-{
-    m_limit = _limit;
-    m_limitHasBeenSet = true;
-}
-
-bool DescribeTelCdrRequest::LimitHasBeenSet() const
-{
-    return m_limitHasBeenSet;
-}
-
-int64_t DescribeTelCdrRequest::GetOffset() const
-{
-    return m_offset;
-}
-
-void DescribeTelCdrRequest::SetOffset(const int64_t& _offset)
-{
-    m_offset = _offset;
-    m_offsetHasBeenSet = true;
-}
-
-bool DescribeTelCdrRequest::OffsetHasBeenSet() const
-{
-    return m_offsetHasBeenSet;
-}
-
 int64_t DescribeTelCdrRequest::GetSdkAppId() const
 {
     return m_sdkAppId;
@@ -267,6 +219,54 @@ void DescribeTelCdrRequest::SetPageNumber(const int64_t& _pageNumber)
 bool DescribeTelCdrRequest::PageNumberHasBeenSet() const
 {
     return m_pageNumberHasBeenSet;
+}
+
+int64_t DescribeTelCdrRequest::GetInstanceId() const
+{
+    return m_instanceId;
+}
+
+void DescribeTelCdrRequest::SetInstanceId(const int64_t& _instanceId)
+{
+    m_instanceId = _instanceId;
+    m_instanceIdHasBeenSet = true;
+}
+
+bool DescribeTelCdrRequest::InstanceIdHasBeenSet() const
+{
+    return m_instanceIdHasBeenSet;
+}
+
+int64_t DescribeTelCdrRequest::GetLimit() const
+{
+    return m_limit;
+}
+
+void DescribeTelCdrRequest::SetLimit(const int64_t& _limit)
+{
+    m_limit = _limit;
+    m_limitHasBeenSet = true;
+}
+
+bool DescribeTelCdrRequest::LimitHasBeenSet() const
+{
+    return m_limitHasBeenSet;
+}
+
+int64_t DescribeTelCdrRequest::GetOffset() const
+{
+    return m_offset;
+}
+
+void DescribeTelCdrRequest::SetOffset(const int64_t& _offset)
+{
+    m_offset = _offset;
+    m_offsetHasBeenSet = true;
+}
+
+bool DescribeTelCdrRequest::OffsetHasBeenSet() const
+{
+    return m_offsetHasBeenSet;
 }
 
 vector<string> DescribeTelCdrRequest::GetPhones() const

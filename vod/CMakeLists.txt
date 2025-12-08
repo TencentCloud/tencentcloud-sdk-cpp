@@ -15,11 +15,41 @@
 #
 
 set(vod_public_header
-  include/tencentcloud/vod/v20180717/VodClient.h
   include/tencentcloud/vod/v20240718/VodClient.h
+  include/tencentcloud/vod/v20180717/VodClient.h
   )
 
 set(vod_public_header_model
+  include/tencentcloud/vod/v20240718/model/CreateIncrementalMigrationStrategyResponse.h
+  include/tencentcloud/vod/v20240718/model/IncrementalMigrationStrategyInfo.h
+  include/tencentcloud/vod/v20240718/model/DeleteIncrementalMigrationStrategyRequest.h
+  include/tencentcloud/vod/v20240718/model/IncrementalMigrationHttpOriginInfo.h
+  include/tencentcloud/vod/v20240718/model/CreateStorageCredentialsRequest.h
+  include/tencentcloud/vod/v20240718/model/IncrementalMigrationHttpEndpointInfo.h
+  include/tencentcloud/vod/v20240718/model/IncrementalMigrationOriginPrefixConfig.h
+  include/tencentcloud/vod/v20240718/model/DescribeIncrementalMigrationStrategyInfosResponse.h
+  include/tencentcloud/vod/v20240718/model/IncrementalMigrationHttpHeader.h
+  include/tencentcloud/vod/v20240718/model/StorageInfo.h
+  include/tencentcloud/vod/v20240718/model/DescribeStorageRequest.h
+  include/tencentcloud/vod/v20240718/model/DescribeIncrementalMigrationStrategyInfosRequest.h
+  include/tencentcloud/vod/v20240718/model/IncrementalMigrationHttpHeaderInfo.h
+  include/tencentcloud/vod/v20240718/model/ModifyIncrementalMigrationStrategyRequest.h
+  include/tencentcloud/vod/v20240718/model/CreateStorageCredentialsResponse.h
+  include/tencentcloud/vod/v20240718/model/IncrementalMigrationOriginFixedFileConfig.h
+  include/tencentcloud/vod/v20240718/model/Filter.h
+  include/tencentcloud/vod/v20240718/model/DeleteIncrementalMigrationStrategyResponse.h
+  include/tencentcloud/vod/v20240718/model/IncrementalMigrationOriginFileInfo.h
+  include/tencentcloud/vod/v20240718/model/Credentials.h
+  include/tencentcloud/vod/v20240718/model/CreateStorageRequest.h
+  include/tencentcloud/vod/v20240718/model/DescribeStorageResponse.h
+  include/tencentcloud/vod/v20240718/model/ModifyIncrementalMigrationStrategyResponse.h
+  include/tencentcloud/vod/v20240718/model/IncrementalMigrationHttpOriginCondition.h
+  include/tencentcloud/vod/v20240718/model/CreateStorageResponse.h
+  include/tencentcloud/vod/v20240718/model/IncrementalMigrationHttpOriginParameter.h
+  include/tencentcloud/vod/v20240718/model/IncrementalMigrationOriginSuffixConfig.h
+  include/tencentcloud/vod/v20240718/model/IncrementalMigrationHttpOriginConfig.h
+  include/tencentcloud/vod/v20240718/model/SortBy.h
+  include/tencentcloud/vod/v20240718/model/CreateIncrementalMigrationStrategyRequest.h
   include/tencentcloud/vod/v20180717/model/Canvas.h
   include/tencentcloud/vod/v20180717/model/ModifySampleSnapshotTemplateResponse.h
   include/tencentcloud/vod/v20180717/model/ModifyWatermarkTemplateRequest.h
@@ -295,6 +325,7 @@ set(vod_public_header_model
   include/tencentcloud/vod/v20180717/model/DeleteWordSamplesRequest.h
   include/tencentcloud/vod/v20180717/model/FastEditMediaResponse.h
   include/tencentcloud/vod/v20180717/model/EmptyTrackItem.h
+  include/tencentcloud/vod/v20180717/model/ProcessMediaByUrlResponse.h
   include/tencentcloud/vod/v20180717/model/StickerTrackItem.h
   include/tencentcloud/vod/v20180717/model/DescribeDrmDataKeyResponse.h
   include/tencentcloud/vod/v20180717/model/ProcessMediaRequest.h
@@ -488,7 +519,7 @@ set(vod_public_header_model
   include/tencentcloud/vod/v20180717/model/ProcedureTemplate.h
   include/tencentcloud/vod/v20180717/model/DomainDetailInfo.h
   include/tencentcloud/vod/v20180717/model/AiReviewTaskTerrorismResult.h
-  include/tencentcloud/vod/v20180717/model/ProcessMediaByUrlResponse.h
+  include/tencentcloud/vod/v20180717/model/MPSAiMediaTask.h
   include/tencentcloud/vod/v20180717/model/DescribeImageReviewUsageDataRequest.h
   include/tencentcloud/vod/v20180717/model/MediaContentReviewAsrTextSegmentItem.h
   include/tencentcloud/vod/v20180717/model/DescribeEventConfigResponse.h
@@ -596,6 +627,7 @@ set(vod_public_header_model
   include/tencentcloud/vod/v20180717/model/TEHDConfigForUpdate.h
   include/tencentcloud/vod/v20180717/model/ComposeMediaTaskOutput.h
   include/tencentcloud/vod/v20180717/model/DescribeQualityInspectTemplatesRequest.h
+  include/tencentcloud/vod/v20180717/model/MPSOutputFileInfo.h
   include/tencentcloud/vod/v20180717/model/DescribeMediaInfosRequest.h
   include/tencentcloud/vod/v20180717/model/ModifyPersonSampleRequest.h
   include/tencentcloud/vod/v20180717/model/DescribeDrmDataKeyRequest.h
@@ -608,6 +640,7 @@ set(vod_public_header_model
   include/tencentcloud/vod/v20180717/model/DescribeTaskDetailRequest.h
   include/tencentcloud/vod/v20180717/model/MediaAiAnalysisClassificationItem.h
   include/tencentcloud/vod/v20180717/model/AiAnalysisTaskFrameTagResult.h
+  include/tencentcloud/vod/v20180717/model/MPSAiMediaInfo.h
   include/tencentcloud/vod/v20180717/model/AiReviewPornTaskOutput.h
   include/tencentcloud/vod/v20180717/model/SDMCDrmKeyProviderInfo.h
   include/tencentcloud/vod/v20180717/model/AiRecognitionTaskAsrFullTextResult.h
@@ -730,6 +763,7 @@ set(vod_public_header_model
   include/tencentcloud/vod/v20180717/model/AiContentReviewResult.h
   include/tencentcloud/vod/v20180717/model/ReduceMediaBitrateTask.h
   include/tencentcloud/vod/v20180717/model/TerrorismImgReviewTemplateInfo.h
+  include/tencentcloud/vod/v20180717/model/MPSAiMediaItem.h
   include/tencentcloud/vod/v20180717/model/ApplyUploadResponse.h
   include/tencentcloud/vod/v20180717/model/ReviewAudioVideoResponse.h
   include/tencentcloud/vod/v20180717/model/DeleteClassRequest.h
@@ -859,41 +893,41 @@ set(vod_public_header_model
   include/tencentcloud/vod/v20180717/model/HDRInfo.h
   include/tencentcloud/vod/v20180717/model/EditMediaTEHDConfig.h
   include/tencentcloud/vod/v20180717/model/AiRecognitionResult.h
-  include/tencentcloud/vod/v20240718/model/CreateIncrementalMigrationStrategyResponse.h
-  include/tencentcloud/vod/v20240718/model/IncrementalMigrationStrategyInfo.h
-  include/tencentcloud/vod/v20240718/model/DeleteIncrementalMigrationStrategyRequest.h
-  include/tencentcloud/vod/v20240718/model/IncrementalMigrationHttpOriginInfo.h
-  include/tencentcloud/vod/v20240718/model/CreateStorageCredentialsRequest.h
-  include/tencentcloud/vod/v20240718/model/IncrementalMigrationHttpEndpointInfo.h
-  include/tencentcloud/vod/v20240718/model/IncrementalMigrationOriginPrefixConfig.h
-  include/tencentcloud/vod/v20240718/model/DescribeIncrementalMigrationStrategyInfosResponse.h
-  include/tencentcloud/vod/v20240718/model/IncrementalMigrationHttpHeader.h
-  include/tencentcloud/vod/v20240718/model/StorageInfo.h
-  include/tencentcloud/vod/v20240718/model/DescribeStorageRequest.h
-  include/tencentcloud/vod/v20240718/model/DescribeIncrementalMigrationStrategyInfosRequest.h
-  include/tencentcloud/vod/v20240718/model/IncrementalMigrationHttpHeaderInfo.h
-  include/tencentcloud/vod/v20240718/model/ModifyIncrementalMigrationStrategyRequest.h
-  include/tencentcloud/vod/v20240718/model/CreateStorageCredentialsResponse.h
-  include/tencentcloud/vod/v20240718/model/IncrementalMigrationOriginFixedFileConfig.h
-  include/tencentcloud/vod/v20240718/model/Filter.h
-  include/tencentcloud/vod/v20240718/model/DeleteIncrementalMigrationStrategyResponse.h
-  include/tencentcloud/vod/v20240718/model/IncrementalMigrationOriginFileInfo.h
-  include/tencentcloud/vod/v20240718/model/Credentials.h
-  include/tencentcloud/vod/v20240718/model/CreateStorageRequest.h
-  include/tencentcloud/vod/v20240718/model/DescribeStorageResponse.h
-  include/tencentcloud/vod/v20240718/model/ModifyIncrementalMigrationStrategyResponse.h
-  include/tencentcloud/vod/v20240718/model/IncrementalMigrationHttpOriginCondition.h
-  include/tencentcloud/vod/v20240718/model/CreateStorageResponse.h
-  include/tencentcloud/vod/v20240718/model/IncrementalMigrationHttpOriginParameter.h
-  include/tencentcloud/vod/v20240718/model/IncrementalMigrationOriginSuffixConfig.h
-  include/tencentcloud/vod/v20240718/model/IncrementalMigrationHttpOriginConfig.h
-  include/tencentcloud/vod/v20240718/model/SortBy.h
-  include/tencentcloud/vod/v20240718/model/CreateIncrementalMigrationStrategyRequest.h
   )
 
 set(vod_src
-  src/v20180717/VodClient.cpp
   src/v20240718/VodClient.cpp
+  src/v20180717/VodClient.cpp
+  src/v20240718/model/CreateIncrementalMigrationStrategyResponse.cpp
+  src/v20240718/model/IncrementalMigrationStrategyInfo.cpp
+  src/v20240718/model/DeleteIncrementalMigrationStrategyRequest.cpp
+  src/v20240718/model/IncrementalMigrationHttpOriginInfo.cpp
+  src/v20240718/model/CreateStorageCredentialsRequest.cpp
+  src/v20240718/model/IncrementalMigrationHttpEndpointInfo.cpp
+  src/v20240718/model/IncrementalMigrationOriginPrefixConfig.cpp
+  src/v20240718/model/DescribeIncrementalMigrationStrategyInfosResponse.cpp
+  src/v20240718/model/IncrementalMigrationHttpHeader.cpp
+  src/v20240718/model/StorageInfo.cpp
+  src/v20240718/model/DescribeStorageRequest.cpp
+  src/v20240718/model/DescribeIncrementalMigrationStrategyInfosRequest.cpp
+  src/v20240718/model/IncrementalMigrationHttpHeaderInfo.cpp
+  src/v20240718/model/ModifyIncrementalMigrationStrategyRequest.cpp
+  src/v20240718/model/CreateStorageCredentialsResponse.cpp
+  src/v20240718/model/IncrementalMigrationOriginFixedFileConfig.cpp
+  src/v20240718/model/Filter.cpp
+  src/v20240718/model/DeleteIncrementalMigrationStrategyResponse.cpp
+  src/v20240718/model/IncrementalMigrationOriginFileInfo.cpp
+  src/v20240718/model/Credentials.cpp
+  src/v20240718/model/CreateStorageRequest.cpp
+  src/v20240718/model/DescribeStorageResponse.cpp
+  src/v20240718/model/ModifyIncrementalMigrationStrategyResponse.cpp
+  src/v20240718/model/IncrementalMigrationHttpOriginCondition.cpp
+  src/v20240718/model/CreateStorageResponse.cpp
+  src/v20240718/model/IncrementalMigrationHttpOriginParameter.cpp
+  src/v20240718/model/IncrementalMigrationOriginSuffixConfig.cpp
+  src/v20240718/model/IncrementalMigrationHttpOriginConfig.cpp
+  src/v20240718/model/SortBy.cpp
+  src/v20240718/model/CreateIncrementalMigrationStrategyRequest.cpp
   src/v20180717/model/Canvas.cpp
   src/v20180717/model/ModifySampleSnapshotTemplateResponse.cpp
   src/v20180717/model/ModifyWatermarkTemplateRequest.cpp
@@ -1169,6 +1203,7 @@ set(vod_src
   src/v20180717/model/DeleteWordSamplesRequest.cpp
   src/v20180717/model/FastEditMediaResponse.cpp
   src/v20180717/model/EmptyTrackItem.cpp
+  src/v20180717/model/ProcessMediaByUrlResponse.cpp
   src/v20180717/model/StickerTrackItem.cpp
   src/v20180717/model/DescribeDrmDataKeyResponse.cpp
   src/v20180717/model/ProcessMediaRequest.cpp
@@ -1362,7 +1397,7 @@ set(vod_src
   src/v20180717/model/ProcedureTemplate.cpp
   src/v20180717/model/DomainDetailInfo.cpp
   src/v20180717/model/AiReviewTaskTerrorismResult.cpp
-  src/v20180717/model/ProcessMediaByUrlResponse.cpp
+  src/v20180717/model/MPSAiMediaTask.cpp
   src/v20180717/model/DescribeImageReviewUsageDataRequest.cpp
   src/v20180717/model/MediaContentReviewAsrTextSegmentItem.cpp
   src/v20180717/model/DescribeEventConfigResponse.cpp
@@ -1470,6 +1505,7 @@ set(vod_src
   src/v20180717/model/TEHDConfigForUpdate.cpp
   src/v20180717/model/ComposeMediaTaskOutput.cpp
   src/v20180717/model/DescribeQualityInspectTemplatesRequest.cpp
+  src/v20180717/model/MPSOutputFileInfo.cpp
   src/v20180717/model/DescribeMediaInfosRequest.cpp
   src/v20180717/model/ModifyPersonSampleRequest.cpp
   src/v20180717/model/DescribeDrmDataKeyRequest.cpp
@@ -1482,6 +1518,7 @@ set(vod_src
   src/v20180717/model/DescribeTaskDetailRequest.cpp
   src/v20180717/model/MediaAiAnalysisClassificationItem.cpp
   src/v20180717/model/AiAnalysisTaskFrameTagResult.cpp
+  src/v20180717/model/MPSAiMediaInfo.cpp
   src/v20180717/model/AiReviewPornTaskOutput.cpp
   src/v20180717/model/SDMCDrmKeyProviderInfo.cpp
   src/v20180717/model/AiRecognitionTaskAsrFullTextResult.cpp
@@ -1604,6 +1641,7 @@ set(vod_src
   src/v20180717/model/AiContentReviewResult.cpp
   src/v20180717/model/ReduceMediaBitrateTask.cpp
   src/v20180717/model/TerrorismImgReviewTemplateInfo.cpp
+  src/v20180717/model/MPSAiMediaItem.cpp
   src/v20180717/model/ApplyUploadResponse.cpp
   src/v20180717/model/ReviewAudioVideoResponse.cpp
   src/v20180717/model/DeleteClassRequest.cpp
@@ -1733,36 +1771,6 @@ set(vod_src
   src/v20180717/model/HDRInfo.cpp
   src/v20180717/model/EditMediaTEHDConfig.cpp
   src/v20180717/model/AiRecognitionResult.cpp
-  src/v20240718/model/CreateIncrementalMigrationStrategyResponse.cpp
-  src/v20240718/model/IncrementalMigrationStrategyInfo.cpp
-  src/v20240718/model/DeleteIncrementalMigrationStrategyRequest.cpp
-  src/v20240718/model/IncrementalMigrationHttpOriginInfo.cpp
-  src/v20240718/model/CreateStorageCredentialsRequest.cpp
-  src/v20240718/model/IncrementalMigrationHttpEndpointInfo.cpp
-  src/v20240718/model/IncrementalMigrationOriginPrefixConfig.cpp
-  src/v20240718/model/DescribeIncrementalMigrationStrategyInfosResponse.cpp
-  src/v20240718/model/IncrementalMigrationHttpHeader.cpp
-  src/v20240718/model/StorageInfo.cpp
-  src/v20240718/model/DescribeStorageRequest.cpp
-  src/v20240718/model/DescribeIncrementalMigrationStrategyInfosRequest.cpp
-  src/v20240718/model/IncrementalMigrationHttpHeaderInfo.cpp
-  src/v20240718/model/ModifyIncrementalMigrationStrategyRequest.cpp
-  src/v20240718/model/CreateStorageCredentialsResponse.cpp
-  src/v20240718/model/IncrementalMigrationOriginFixedFileConfig.cpp
-  src/v20240718/model/Filter.cpp
-  src/v20240718/model/DeleteIncrementalMigrationStrategyResponse.cpp
-  src/v20240718/model/IncrementalMigrationOriginFileInfo.cpp
-  src/v20240718/model/Credentials.cpp
-  src/v20240718/model/CreateStorageRequest.cpp
-  src/v20240718/model/DescribeStorageResponse.cpp
-  src/v20240718/model/ModifyIncrementalMigrationStrategyResponse.cpp
-  src/v20240718/model/IncrementalMigrationHttpOriginCondition.cpp
-  src/v20240718/model/CreateStorageResponse.cpp
-  src/v20240718/model/IncrementalMigrationHttpOriginParameter.cpp
-  src/v20240718/model/IncrementalMigrationOriginSuffixConfig.cpp
-  src/v20240718/model/IncrementalMigrationHttpOriginConfig.cpp
-  src/v20240718/model/SortBy.cpp
-  src/v20240718/model/CreateIncrementalMigrationStrategyRequest.cpp
   )
 
 set(vod_include
@@ -1791,9 +1799,9 @@ target_link_libraries(vod
   core)
 
 #install(FILES ${vod_public_header}
-#  DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/tencentcloud/vod/v20240718)
+#  DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/tencentcloud/vod/v20180717)
 #install(FILES ${vod_public_header_model}
-#  DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/tencentcloud/vod/v20240718/model)
+#  DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/tencentcloud/vod/v20180717/model)
 install(DIRECTORY ${vod_include}
   DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/tencentcloud)
 

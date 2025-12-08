@@ -380,6 +380,27 @@ namespace TencentCloud
                      */
                     bool CustomUrlHasBeenSet() const;
 
+                    /**
+                     * 获取接入点绑定的安全组id列表，仅限vpc接入点有效
+                     * @return SecurityGroupIds 接入点绑定的安全组id列表，仅限vpc接入点有效
+                     * 
+                     */
+                    std::vector<std::string> GetSecurityGroupIds() const;
+
+                    /**
+                     * 设置接入点绑定的安全组id列表，仅限vpc接入点有效
+                     * @param _securityGroupIds 接入点绑定的安全组id列表，仅限vpc接入点有效
+                     * 
+                     */
+                    void SetSecurityGroupIds(const std::vector<std::string>& _securityGroupIds);
+
+                    /**
+                     * 判断参数 SecurityGroupIds 是否已赋值
+                     * @return SecurityGroupIds 是否已赋值
+                     * 
+                     */
+                    bool SecurityGroupIdsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -474,6 +495,12 @@ namespace TencentCloud
                      */
                     std::string m_customUrl;
                     bool m_customUrlHasBeenSet;
+
+                    /**
+                     * 接入点绑定的安全组id列表，仅限vpc接入点有效
+                     */
+                    std::vector<std::string> m_securityGroupIds;
+                    bool m_securityGroupIdsHasBeenSet;
 
                 };
             }

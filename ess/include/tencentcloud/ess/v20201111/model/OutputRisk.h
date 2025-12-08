@@ -111,14 +111,14 @@ namespace TencentCloud
                     bool RiskDescriptionHasBeenSet() const;
 
                     /**
-                     * 获取风险等级。
+                     * 获取风险等级别名。
 
 等级描述如下：
 <ul>
     <li>**HIGH** - 高风险</li> 
     <li>**NORMAL** - 风险</li>   
 </ul>
-                     * @return RiskLevel 风险等级。
+                     * @return RiskLevel 风险等级别名。
 
 等级描述如下：
 <ul>
@@ -130,14 +130,14 @@ namespace TencentCloud
                     std::string GetRiskLevel() const;
 
                     /**
-                     * 设置风险等级。
+                     * 设置风险等级别名。
 
 等级描述如下：
 <ul>
     <li>**HIGH** - 高风险</li> 
     <li>**NORMAL** - 风险</li>   
 </ul>
-                     * @param _riskLevel 风险等级。
+                     * @param _riskLevel 风险等级别名。
 
 等级描述如下：
 <ul>
@@ -261,15 +261,15 @@ namespace TencentCloud
                     bool RiskBasisHasBeenSet() const;
 
                     /**
-                     * 获取风险等级id
-                     * @return RiskLevelId 风险等级id
+                     * 获取风险等级id。1 为最高风险等级，0 为最低风险等级，从[2,n]数字越大风险等级逐渐降低。
+                     * @return RiskLevelId 风险等级id。1 为最高风险等级，0 为最低风险等级，从[2,n]数字越大风险等级逐渐降低。
                      * 
                      */
                     int64_t GetRiskLevelId() const;
 
                     /**
-                     * 设置风险等级id
-                     * @param _riskLevelId 风险等级id
+                     * 设置风险等级id。1 为最高风险等级，0 为最低风险等级，从[2,n]数字越大风险等级逐渐降低。
+                     * @param _riskLevelId 风险等级id。1 为最高风险等级，0 为最低风险等级，从[2,n]数字越大风险等级逐渐降低。
                      * 
                      */
                     void SetRiskLevelId(const int64_t& _riskLevelId);
@@ -302,7 +302,7 @@ namespace TencentCloud
                     bool m_riskDescriptionHasBeenSet;
 
                     /**
-                     * 风险等级。
+                     * 风险等级别名。
 
 等级描述如下：
 <ul>
@@ -344,7 +344,7 @@ namespace TencentCloud
                     bool m_riskBasisHasBeenSet;
 
                     /**
-                     * 风险等级id
+                     * 风险等级id。1 为最高风险等级，0 为最低风险等级，从[2,n]数字越大风险等级逐渐降低。
                      */
                     int64_t m_riskLevelId;
                     bool m_riskLevelIdHasBeenSet;

@@ -23,7 +23,8 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Apm::V20210622::Model;
 using namespace std;
 
-CreateApmPrometheusRuleResponse::CreateApmPrometheusRuleResponse()
+CreateApmPrometheusRuleResponse::CreateApmPrometheusRuleResponse() :
+    m_ruleIdHasBeenSet(false)
 {
 }
 
@@ -61,6 +62,16 @@ CoreInternalOutcome CreateApmPrometheusRuleResponse::Deserialize(const string &p
     }
 
 
+    if (rsp.HasMember("RuleId") && !rsp["RuleId"].IsNull())
+    {
+        if (!rsp["RuleId"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RuleId` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_ruleId = rsp["RuleId"].GetInt64();
+        m_ruleIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +81,14 @@ string CreateApmPrometheusRuleResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_ruleIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RuleId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_ruleId, allocator);
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +101,15 @@ string CreateApmPrometheusRuleResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+int64_t CreateApmPrometheusRuleResponse::GetRuleId() const
+{
+    return m_ruleId;
+}
+
+bool CreateApmPrometheusRuleResponse::RuleIdHasBeenSet() const
+{
+    return m_ruleIdHasBeenSet;
+}
 
 

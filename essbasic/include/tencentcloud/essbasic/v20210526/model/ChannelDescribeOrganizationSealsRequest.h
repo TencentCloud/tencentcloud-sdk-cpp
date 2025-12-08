@@ -97,15 +97,15 @@ namespace TencentCloud
                     bool AgentHasBeenSet() const;
 
                     /**
-                     * 获取指定分页每页返回的数据条数，单页最大支持 100。
-                     * @return Limit 指定分页每页返回的数据条数，单页最大支持 100。
+                     * 获取指定分页每页返回的数据条数，单页最大支持 100。默认值为20
+                     * @return Limit 指定分页每页返回的数据条数，单页最大支持 100。默认值为20
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置指定分页每页返回的数据条数，单页最大支持 100。
-                     * @param _limit 指定分页每页返回的数据条数，单页最大支持 100。
+                     * 设置指定分页每页返回的数据条数，单页最大支持 100。默认值为20
+                     * @param _limit 指定分页每页返回的数据条数，单页最大支持 100。默认值为20
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -267,7 +267,7 @@ namespace TencentCloud
                     bool m_agentHasBeenSet;
 
                     /**
-                     * 指定分页每页返回的数据条数，单页最大支持 100。
+                     * 指定分页每页返回的数据条数，单页最大支持 100。默认值为20
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;

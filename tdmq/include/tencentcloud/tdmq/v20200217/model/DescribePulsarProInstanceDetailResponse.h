@@ -24,6 +24,7 @@
 #include <tencentcloud/tdmq/v20200217/model/PulsarProClusterInfo.h>
 #include <tencentcloud/tdmq/v20200217/model/PulsarNetworkAccessPointInfo.h>
 #include <tencentcloud/tdmq/v20200217/model/PulsarProClusterSpecInfo.h>
+#include <tencentcloud/tdmq/v20200217/model/CertificateInfo.h>
 
 
 namespace TencentCloud
@@ -92,6 +93,20 @@ namespace TencentCloud
                      */
                     bool ClusterSpecInfoHasBeenSet() const;
 
+                    /**
+                     * 获取集群的证书列表
+                     * @return CertificateList 集群的证书列表
+                     * 
+                     */
+                    std::vector<CertificateInfo> GetCertificateList() const;
+
+                    /**
+                     * 判断参数 CertificateList 是否已赋值
+                     * @return CertificateList 是否已赋值
+                     * 
+                     */
+                    bool CertificateListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -113,6 +128,12 @@ namespace TencentCloud
                      */
                     PulsarProClusterSpecInfo m_clusterSpecInfo;
                     bool m_clusterSpecInfoHasBeenSet;
+
+                    /**
+                     * 集群的证书列表
+                     */
+                    std::vector<CertificateInfo> m_certificateList;
+                    bool m_certificateListHasBeenSet;
 
                 };
             }

@@ -33,7 +33,8 @@ MediaInfo::MediaInfo() :
     m_miniProgramReviewInfoHasBeenSet(false),
     m_subtitleInfoHasBeenSet(false),
     m_fileIdHasBeenSet(false),
-    m_reviewInfoHasBeenSet(false)
+    m_reviewInfoHasBeenSet(false),
+    m_mPSAiMediaInfoHasBeenSet(false)
 {
 }
 
@@ -256,6 +257,23 @@ CoreInternalOutcome MediaInfo::Deserialize(const rapidjson::Value &value)
         m_reviewInfoHasBeenSet = true;
     }
 
+    if (value.HasMember("MPSAiMediaInfo") && !value["MPSAiMediaInfo"].IsNull())
+    {
+        if (!value["MPSAiMediaInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `MediaInfo.MPSAiMediaInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_mPSAiMediaInfo.Deserialize(value["MPSAiMediaInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_mPSAiMediaInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -377,6 +395,15 @@ void MediaInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_reviewInfo.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_mPSAiMediaInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MPSAiMediaInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_mPSAiMediaInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -588,5 +615,21 @@ void MediaInfo::SetReviewInfo(const FileReviewInfo& _reviewInfo)
 bool MediaInfo::ReviewInfoHasBeenSet() const
 {
     return m_reviewInfoHasBeenSet;
+}
+
+MPSAiMediaInfo MediaInfo::GetMPSAiMediaInfo() const
+{
+    return m_mPSAiMediaInfo;
+}
+
+void MediaInfo::SetMPSAiMediaInfo(const MPSAiMediaInfo& _mPSAiMediaInfo)
+{
+    m_mPSAiMediaInfo = _mPSAiMediaInfo;
+    m_mPSAiMediaInfoHasBeenSet = true;
+}
+
+bool MediaInfo::MPSAiMediaInfoHasBeenSet() const
+{
+    return m_mPSAiMediaInfoHasBeenSet;
 }
 

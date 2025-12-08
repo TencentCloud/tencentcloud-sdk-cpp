@@ -27,7 +27,8 @@ SubmitHunyuanTo3DRapidJobRequest::SubmitHunyuanTo3DRapidJobRequest() :
     m_imageBase64HasBeenSet(false),
     m_imageUrlHasBeenSet(false),
     m_resultFormatHasBeenSet(false),
-    m_enablePBRHasBeenSet(false)
+    m_enablePBRHasBeenSet(false),
+    m_enableGeometryHasBeenSet(false)
 {
 }
 
@@ -76,6 +77,14 @@ string SubmitHunyuanTo3DRapidJobRequest::ToJsonString() const
         string key = "EnablePBR";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_enablePBR, allocator);
+    }
+
+    if (m_enableGeometryHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableGeometry";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_enableGeometry, allocator);
     }
 
 
@@ -164,6 +173,22 @@ void SubmitHunyuanTo3DRapidJobRequest::SetEnablePBR(const bool& _enablePBR)
 bool SubmitHunyuanTo3DRapidJobRequest::EnablePBRHasBeenSet() const
 {
     return m_enablePBRHasBeenSet;
+}
+
+bool SubmitHunyuanTo3DRapidJobRequest::GetEnableGeometry() const
+{
+    return m_enableGeometry;
+}
+
+void SubmitHunyuanTo3DRapidJobRequest::SetEnableGeometry(const bool& _enableGeometry)
+{
+    m_enableGeometry = _enableGeometry;
+    m_enableGeometryHasBeenSet = true;
+}
+
+bool SubmitHunyuanTo3DRapidJobRequest::EnableGeometryHasBeenSet() const
+{
+    return m_enableGeometryHasBeenSet;
 }
 
 

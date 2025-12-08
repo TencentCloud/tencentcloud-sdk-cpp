@@ -29,6 +29,7 @@
 #include <tencentcloud/tione/v20211111/model/CFSConfig.h>
 #include <tencentcloud/tione/v20211111/model/SSHConfig.h>
 #include <tencentcloud/tione/v20211111/model/GooseFS.h>
+#include <tencentcloud/tione/v20211111/model/ExposePortConfig.h>
 
 
 namespace TencentCloud
@@ -781,6 +782,27 @@ namespace TencentCloud
                      */
                     bool AppIdHasBeenSet() const;
 
+                    /**
+                     * 获取容器服务暴露端口配置
+                     * @return ExposePortConfig 容器服务暴露端口配置
+                     * 
+                     */
+                    ExposePortConfig GetExposePortConfig() const;
+
+                    /**
+                     * 设置容器服务暴露端口配置
+                     * @param _exposePortConfig 容器服务暴露端口配置
+                     * 
+                     */
+                    void SetExposePortConfig(const ExposePortConfig& _exposePortConfig);
+
+                    /**
+                     * 判断参数 ExposePortConfig 是否已赋值
+                     * @return ExposePortConfig 是否已赋值
+                     * 
+                     */
+                    bool ExposePortConfigHasBeenSet() const;
+
                 private:
 
                     /**
@@ -987,6 +1009,12 @@ namespace TencentCloud
                      */
                     std::string m_appId;
                     bool m_appIdHasBeenSet;
+
+                    /**
+                     * 容器服务暴露端口配置
+                     */
+                    ExposePortConfig m_exposePortConfig;
+                    bool m_exposePortConfigHasBeenSet;
 
                 };
             }

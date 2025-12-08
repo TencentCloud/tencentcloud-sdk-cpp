@@ -47,7 +47,8 @@ Topic::Topic() :
     m_clusterIdHasBeenSet(false),
     m_tenantHasBeenSet(false),
     m_isolateConsumerEnableHasBeenSet(false),
-    m_ackTimeOutHasBeenSet(false)
+    m_ackTimeOutHasBeenSet(false),
+    m_pulsarTopicMessageTypeHasBeenSet(false)
 {
 }
 
@@ -336,6 +337,16 @@ CoreInternalOutcome Topic::Deserialize(const rapidjson::Value &value)
         m_ackTimeOutHasBeenSet = true;
     }
 
+    if (value.HasMember("PulsarTopicMessageType") && !value["PulsarTopicMessageType"].IsNull())
+    {
+        if (!value["PulsarTopicMessageType"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Topic.PulsarTopicMessageType` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_pulsarTopicMessageType = value["PulsarTopicMessageType"].GetInt64();
+        m_pulsarTopicMessageTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -564,6 +575,14 @@ void Topic::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocator
         string key = "AckTimeOut";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_ackTimeOut, allocator);
+    }
+
+    if (m_pulsarTopicMessageTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PulsarTopicMessageType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_pulsarTopicMessageType, allocator);
     }
 
 }
@@ -999,5 +1018,21 @@ void Topic::SetAckTimeOut(const int64_t& _ackTimeOut)
 bool Topic::AckTimeOutHasBeenSet() const
 {
     return m_ackTimeOutHasBeenSet;
+}
+
+int64_t Topic::GetPulsarTopicMessageType() const
+{
+    return m_pulsarTopicMessageType;
+}
+
+void Topic::SetPulsarTopicMessageType(const int64_t& _pulsarTopicMessageType)
+{
+    m_pulsarTopicMessageType = _pulsarTopicMessageType;
+    m_pulsarTopicMessageTypeHasBeenSet = true;
+}
+
+bool Topic::PulsarTopicMessageTypeHasBeenSet() const
+{
+    return m_pulsarTopicMessageTypeHasBeenSet;
 }
 

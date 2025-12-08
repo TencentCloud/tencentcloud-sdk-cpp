@@ -68,6 +68,27 @@ namespace TencentCloud
                      */
                     bool OutputFilesHasBeenSet() const;
 
+                    /**
+                     * 获取任务返回的结果JSON
+                     * @return OutputText 任务返回的结果JSON
+                     * 
+                     */
+                    std::string GetOutputText() const;
+
+                    /**
+                     * 设置任务返回的结果JSON
+                     * @param _outputText 任务返回的结果JSON
+                     * 
+                     */
+                    void SetOutputText(const std::string& _outputText);
+
+                    /**
+                     * 判断参数 OutputText 是否已赋值
+                     * @return OutputText 是否已赋值
+                     * 
+                     */
+                    bool OutputTextHasBeenSet() const;
+
                 private:
 
                     /**
@@ -75,6 +96,12 @@ namespace TencentCloud
                      */
                     std::vector<MPSOutputFile> m_outputFiles;
                     bool m_outputFilesHasBeenSet;
+
+                    /**
+                     * 任务返回的结果JSON
+                     */
+                    std::string m_outputText;
+                    bool m_outputTextHasBeenSet;
 
                 };
             }

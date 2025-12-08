@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool EventTypeHasBeenSet() const;
 
                     /**
-                     * 获取事件记录状态，1-成功，2-失败，3-文件待删除，4-写入中
-                     * @return Status 事件记录状态，1-成功，2-失败，3-文件待删除，4-写入中
+                     * 获取事件记录状态，1-成功，4-写入中
+                     * @return Status 事件记录状态，1-成功，4-写入中
                      * 
                      */
                     int64_t GetStatus() const;
 
                     /**
-                     * 设置事件记录状态，1-成功，2-失败，3-文件待删除，4-写入中
-                     * @param _status 事件记录状态，1-成功，2-失败，3-文件待删除，4-写入中
+                     * 设置事件记录状态，1-成功，4-写入中
+                     * @param _status 事件记录状态，1-成功，4-写入中
                      * 
                      */
                     void SetStatus(const int64_t& _status);
@@ -262,7 +262,7 @@ namespace TencentCloud
                     bool m_eventTypeHasBeenSet;
 
                     /**
-                     * 事件记录状态，1-成功，2-失败，3-文件待删除，4-写入中
+                     * 事件记录状态，1-成功，4-写入中
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;

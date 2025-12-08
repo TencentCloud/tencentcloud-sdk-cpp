@@ -21,7 +21,8 @@ using namespace TencentCloud::Vod::V20180717::Model;
 using namespace std;
 
 MPSTaskOutput::MPSTaskOutput() :
-    m_outputFilesHasBeenSet(false)
+    m_outputFilesHasBeenSet(false),
+    m_outputTextHasBeenSet(false)
 {
 }
 
@@ -50,6 +51,16 @@ CoreInternalOutcome MPSTaskOutput::Deserialize(const rapidjson::Value &value)
         m_outputFilesHasBeenSet = true;
     }
 
+    if (value.HasMember("OutputText") && !value["OutputText"].IsNull())
+    {
+        if (!value["OutputText"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `MPSTaskOutput.OutputText` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_outputText = string(value["OutputText"].GetString());
+        m_outputTextHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -72,6 +83,14 @@ void MPSTaskOutput::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         }
     }
 
+    if (m_outputTextHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OutputText";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_outputText.c_str(), allocator).Move(), allocator);
+    }
+
 }
 
 
@@ -89,5 +108,21 @@ void MPSTaskOutput::SetOutputFiles(const vector<MPSOutputFile>& _outputFiles)
 bool MPSTaskOutput::OutputFilesHasBeenSet() const
 {
     return m_outputFilesHasBeenSet;
+}
+
+string MPSTaskOutput::GetOutputText() const
+{
+    return m_outputText;
+}
+
+void MPSTaskOutput::SetOutputText(const string& _outputText)
+{
+    m_outputText = _outputText;
+    m_outputTextHasBeenSet = true;
+}
+
+bool MPSTaskOutput::OutputTextHasBeenSet() const
+{
+    return m_outputTextHasBeenSet;
 }
 

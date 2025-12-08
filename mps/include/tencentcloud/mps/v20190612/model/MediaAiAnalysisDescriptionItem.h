@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/mps/v20190612/model/AiParagraphInfo.h>
+#include <tencentcloud/mps/v20190612/model/TaskOutputStorage.h>
 
 
 namespace TencentCloud
@@ -181,6 +182,69 @@ namespace TencentCloud
                      */
                     bool MindMapUrlHasBeenSet() const;
 
+                    /**
+                     * 获取摘要思维导图路径。
+                     * @return MindMapPath 摘要思维导图路径。
+                     * 
+                     */
+                    std::string GetMindMapPath() const;
+
+                    /**
+                     * 设置摘要思维导图路径。
+                     * @param _mindMapPath 摘要思维导图路径。
+                     * 
+                     */
+                    void SetMindMapPath(const std::string& _mindMapPath);
+
+                    /**
+                     * 判断参数 MindMapPath 是否已赋值
+                     * @return MindMapPath 是否已赋值
+                     * 
+                     */
+                    bool MindMapPathHasBeenSet() const;
+
+                    /**
+                     * 获取视频字幕文件路径。
+                     * @return SubtitlePath 视频字幕文件路径。
+                     * 
+                     */
+                    std::string GetSubtitlePath() const;
+
+                    /**
+                     * 设置视频字幕文件路径。
+                     * @param _subtitlePath 视频字幕文件路径。
+                     * 
+                     */
+                    void SetSubtitlePath(const std::string& _subtitlePath);
+
+                    /**
+                     * 判断参数 SubtitlePath 是否已赋值
+                     * @return SubtitlePath 是否已赋值
+                     * 
+                     */
+                    bool SubtitlePathHasBeenSet() const;
+
+                    /**
+                     * 获取摘要文件存储位置。
+                     * @return OutputStorage 摘要文件存储位置。
+                     * 
+                     */
+                    TaskOutputStorage GetOutputStorage() const;
+
+                    /**
+                     * 设置摘要文件存储位置。
+                     * @param _outputStorage 摘要文件存储位置。
+                     * 
+                     */
+                    void SetOutputStorage(const TaskOutputStorage& _outputStorage);
+
+                    /**
+                     * 判断参数 OutputStorage 是否已赋值
+                     * @return OutputStorage 是否已赋值
+                     * 
+                     */
+                    bool OutputStorageHasBeenSet() const;
+
                 private:
 
                     /**
@@ -220,6 +284,24 @@ namespace TencentCloud
                      */
                     std::string m_mindMapUrl;
                     bool m_mindMapUrlHasBeenSet;
+
+                    /**
+                     * 摘要思维导图路径。
+                     */
+                    std::string m_mindMapPath;
+                    bool m_mindMapPathHasBeenSet;
+
+                    /**
+                     * 视频字幕文件路径。
+                     */
+                    std::string m_subtitlePath;
+                    bool m_subtitlePathHasBeenSet;
+
+                    /**
+                     * 摘要文件存储位置。
+                     */
+                    TaskOutputStorage m_outputStorage;
+                    bool m_outputStorageHasBeenSet;
 
                 };
             }

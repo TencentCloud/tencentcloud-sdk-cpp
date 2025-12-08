@@ -79,7 +79,8 @@ DescribeDCDBInstanceDetailResponse::DescribeDCDBInstanceDetailResponse() :
     m_isDcnStrongSyncSupportedHasBeenSet(false),
     m_isDcnSwitchSupportedHasBeenSet(false),
     m_cpuTypeHasBeenSet(false),
-    m_protectedPropertyHasBeenSet(false)
+    m_protectedPropertyHasBeenSet(false),
+    m_flowIdHasBeenSet(false)
 {
 }
 
@@ -710,6 +711,16 @@ CoreInternalOutcome DescribeDCDBInstanceDetailResponse::Deserialize(const string
         m_protectedPropertyHasBeenSet = true;
     }
 
+    if (rsp.HasMember("FlowId") && !rsp["FlowId"].IsNull())
+    {
+        if (!rsp["FlowId"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `FlowId` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_flowId = rsp["FlowId"].GetInt64();
+        m_flowIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1192,6 +1203,14 @@ string DescribeDCDBInstanceDetailResponse::ToJsonString() const
         string key = "ProtectedProperty";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_protectedProperty, allocator);
+    }
+
+    if (m_flowIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FlowId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_flowId, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -1764,6 +1783,16 @@ int64_t DescribeDCDBInstanceDetailResponse::GetProtectedProperty() const
 bool DescribeDCDBInstanceDetailResponse::ProtectedPropertyHasBeenSet() const
 {
     return m_protectedPropertyHasBeenSet;
+}
+
+int64_t DescribeDCDBInstanceDetailResponse::GetFlowId() const
+{
+    return m_flowId;
+}
+
+bool DescribeDCDBInstanceDetailResponse::FlowIdHasBeenSet() const
+{
+    return m_flowIdHasBeenSet;
 }
 
 

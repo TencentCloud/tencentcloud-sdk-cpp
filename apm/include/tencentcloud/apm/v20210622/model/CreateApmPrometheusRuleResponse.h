@@ -43,7 +43,27 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取指标匹配规则的ID
+                     * @return RuleId 指标匹配规则的ID
+                     * 
+                     */
+                    int64_t GetRuleId() const;
+
+                    /**
+                     * 判断参数 RuleId 是否已赋值
+                     * @return RuleId 是否已赋值
+                     * 
+                     */
+                    bool RuleIdHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 指标匹配规则的ID
+                     */
+                    int64_t m_ruleId;
+                    bool m_ruleIdHasBeenSet;
 
                 };
             }

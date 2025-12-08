@@ -42,7 +42,9 @@ InternalTenant::InternalTenant() :
     m_maxDispatchRateInBytesHasBeenSet(false),
     m_maxPublishRateInBytesHasBeenSet(false),
     m_maxRetentionSizeInMBHasBeenSet(false),
-    m_publicAccessEnabledHasBeenSet(false)
+    m_publicAccessEnabledHasBeenSet(false),
+    m_tagListHasBeenSet(false),
+    m_tenantSpecHasBeenSet(false)
 {
 }
 
@@ -271,6 +273,29 @@ CoreInternalOutcome InternalTenant::Deserialize(const rapidjson::Value &value)
         m_publicAccessEnabledHasBeenSet = true;
     }
 
+    if (value.HasMember("TagList") && !value["TagList"].IsNull())
+    {
+        if (!value["TagList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `InternalTenant.TagList` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["TagList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_tagList.push_back((*itr).GetString());
+        }
+        m_tagListHasBeenSet = true;
+    }
+
+    if (value.HasMember("TenantSpec") && !value["TenantSpec"].IsNull())
+    {
+        if (!value["TenantSpec"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InternalTenant.TenantSpec` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_tenantSpec = string(value["TenantSpec"].GetString());
+        m_tenantSpecHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -452,6 +477,27 @@ void InternalTenant::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "PublicAccessEnabled";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_publicAccessEnabled, allocator);
+    }
+
+    if (m_tagListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TagList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_tagList.begin(); itr != m_tagList.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_tenantSpecHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TenantSpec";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_tenantSpec.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -807,5 +853,37 @@ void InternalTenant::SetPublicAccessEnabled(const bool& _publicAccessEnabled)
 bool InternalTenant::PublicAccessEnabledHasBeenSet() const
 {
     return m_publicAccessEnabledHasBeenSet;
+}
+
+vector<string> InternalTenant::GetTagList() const
+{
+    return m_tagList;
+}
+
+void InternalTenant::SetTagList(const vector<string>& _tagList)
+{
+    m_tagList = _tagList;
+    m_tagListHasBeenSet = true;
+}
+
+bool InternalTenant::TagListHasBeenSet() const
+{
+    return m_tagListHasBeenSet;
+}
+
+string InternalTenant::GetTenantSpec() const
+{
+    return m_tenantSpec;
+}
+
+void InternalTenant::SetTenantSpec(const string& _tenantSpec)
+{
+    m_tenantSpec = _tenantSpec;
+    m_tenantSpecHasBeenSet = true;
+}
+
+bool InternalTenant::TenantSpecHasBeenSet() const
+{
+    return m_tenantSpecHasBeenSet;
 }
 

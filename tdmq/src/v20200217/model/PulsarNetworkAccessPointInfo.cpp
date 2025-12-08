@@ -33,7 +33,8 @@ PulsarNetworkAccessPointInfo::PulsarNetworkAccessPointInfo() :
     m_standardAccessPointHasBeenSet(false),
     m_zoneNameHasBeenSet(false),
     m_tlsHasBeenSet(false),
-    m_customUrlHasBeenSet(false)
+    m_customUrlHasBeenSet(false),
+    m_securityGroupIdsHasBeenSet(false)
 {
 }
 
@@ -182,6 +183,19 @@ CoreInternalOutcome PulsarNetworkAccessPointInfo::Deserialize(const rapidjson::V
         m_customUrlHasBeenSet = true;
     }
 
+    if (value.HasMember("SecurityGroupIds") && !value["SecurityGroupIds"].IsNull())
+    {
+        if (!value["SecurityGroupIds"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `PulsarNetworkAccessPointInfo.SecurityGroupIds` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["SecurityGroupIds"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_securityGroupIds.push_back((*itr).GetString());
+        }
+        m_securityGroupIdsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -298,6 +312,19 @@ void PulsarNetworkAccessPointInfo::ToJsonObject(rapidjson::Value &value, rapidjs
         string key = "CustomUrl";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_customUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_securityGroupIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SecurityGroupIds";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_securityGroupIds.begin(); itr != m_securityGroupIds.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 }
@@ -509,5 +536,21 @@ void PulsarNetworkAccessPointInfo::SetCustomUrl(const string& _customUrl)
 bool PulsarNetworkAccessPointInfo::CustomUrlHasBeenSet() const
 {
     return m_customUrlHasBeenSet;
+}
+
+vector<string> PulsarNetworkAccessPointInfo::GetSecurityGroupIds() const
+{
+    return m_securityGroupIds;
+}
+
+void PulsarNetworkAccessPointInfo::SetSecurityGroupIds(const vector<string>& _securityGroupIds)
+{
+    m_securityGroupIds = _securityGroupIds;
+    m_securityGroupIdsHasBeenSet = true;
+}
+
+bool PulsarNetworkAccessPointInfo::SecurityGroupIdsHasBeenSet() const
+{
+    return m_securityGroupIdsHasBeenSet;
 }
 

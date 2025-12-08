@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取关联的产品名，当前只支持Prometheus
-                     * @return ProductName 关联的产品名，当前只支持Prometheus
+                     * 获取关联的产品名，当前只支持Prometheus、CKafka
+                     * @return ProductName 关联的产品名，当前只支持Prometheus、CKafka
                      * 
                      */
                     std::string GetProductName() const;
 
                     /**
-                     * 设置关联的产品名，当前只支持Prometheus
-                     * @param _productName 关联的产品名，当前只支持Prometheus
+                     * 设置关联的产品名，当前只支持Prometheus、CKafka
+                     * @param _productName 关联的产品名，当前只支持Prometheus、CKafka
                      * 
                      */
                     void SetProductName(const std::string& _productName);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool ProductNameHasBeenSet() const;
 
                     /**
-                     * 获取关联关系的状态：// 关联关系状态：1（启用）、2（不启用）、4（已删除）
-                     * @return Status 关联关系的状态：// 关联关系状态：1（启用）、2（不启用）、4（已删除）
+                     * 获取关联关系的状态：// 关联关系状态：1（启用）、2（不启用）
+                     * @return Status 关联关系的状态：// 关联关系状态：1（启用）、2（不启用）
                      * 
                      */
                     uint64_t GetStatus() const;
 
                     /**
-                     * 设置关联关系的状态：// 关联关系状态：1（启用）、2（不启用）、4（已删除）
-                     * @param _status 关联关系的状态：// 关联关系状态：1（启用）、2（不启用）、4（已删除）
+                     * 设置关联关系的状态：// 关联关系状态：1（启用）、2（不启用）
+                     * @param _status 关联关系的状态：// 关联关系状态：1（启用）、2（不启用）
                      * 
                      */
                     void SetStatus(const uint64_t& _status);
@@ -150,13 +150,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 关联的产品名，当前只支持Prometheus
+                     * 关联的产品名，当前只支持Prometheus、CKafka
                      */
                     std::string m_productName;
                     bool m_productNameHasBeenSet;
 
                     /**
-                     * 关联关系的状态：// 关联关系状态：1（启用）、2（不启用）、4（已删除）
+                     * 关联关系的状态：// 关联关系状态：1（启用）、2（不启用）
                      */
                     uint64_t m_status;
                     bool m_statusHasBeenSet;

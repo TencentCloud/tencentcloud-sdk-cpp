@@ -101,6 +101,34 @@ namespace TencentCloud
                      */
                     bool NamespaceIdHasBeenSet() const;
 
+                    /**
+                     * 获取离线订阅过期自动清理时间
+                     * @return SubscriptionExpirationTime 离线订阅过期自动清理时间
+                     * 
+                     */
+                    uint64_t GetSubscriptionExpirationTime() const;
+
+                    /**
+                     * 判断参数 SubscriptionExpirationTime 是否已赋值
+                     * @return SubscriptionExpirationTime 是否已赋值
+                     * 
+                     */
+                    bool SubscriptionExpirationTimeHasBeenSet() const;
+
+                    /**
+                     * 获取离线订阅过期自动清理时间
+                     * @return SubscriptionExpirationTimeEnable 离线订阅过期自动清理时间
+                     * 
+                     */
+                    bool GetSubscriptionExpirationTimeEnable() const;
+
+                    /**
+                     * 判断参数 SubscriptionExpirationTimeEnable 是否已赋值
+                     * @return SubscriptionExpirationTimeEnable 是否已赋值
+                     * 
+                     */
+                    bool SubscriptionExpirationTimeEnableHasBeenSet() const;
+
                 private:
 
                     /**
@@ -127,6 +155,18 @@ namespace TencentCloud
                      */
                     std::string m_namespaceId;
                     bool m_namespaceIdHasBeenSet;
+
+                    /**
+                     * 离线订阅过期自动清理时间
+                     */
+                    uint64_t m_subscriptionExpirationTime;
+                    bool m_subscriptionExpirationTimeHasBeenSet;
+
+                    /**
+                     * 离线订阅过期自动清理时间
+                     */
+                    bool m_subscriptionExpirationTimeEnable;
+                    bool m_subscriptionExpirationTimeEnableHasBeenSet;
 
                 };
             }

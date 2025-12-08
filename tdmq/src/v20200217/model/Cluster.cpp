@@ -36,7 +36,9 @@ Cluster::Cluster() :
     m_maxStorageCapacityHasBeenSet(false),
     m_versionHasBeenSet(false),
     m_publicEndPointHasBeenSet(false),
+    m_oldPublicEndPointHasBeenSet(false),
     m_vpcEndPointHasBeenSet(false),
+    m_oldVpcEndPointHasBeenSet(false),
     m_namespaceNumHasBeenSet(false),
     m_usedStorageBudgetHasBeenSet(false),
     m_maxPublishRateInMessagesHasBeenSet(false),
@@ -47,6 +49,8 @@ Cluster::Cluster() :
     m_maxMessageDelayInSecondsHasBeenSet(false),
     m_publicAccessEnabledHasBeenSet(false),
     m_tagsHasBeenSet(false),
+    m_oldInternalPulsarEndPointHasBeenSet(false),
+    m_oldInternalHttpEndPointHasBeenSet(false),
     m_payModeHasBeenSet(false),
     m_projectIdHasBeenSet(false),
     m_projectNameHasBeenSet(false),
@@ -209,6 +213,16 @@ CoreInternalOutcome Cluster::Deserialize(const rapidjson::Value &value)
         m_publicEndPointHasBeenSet = true;
     }
 
+    if (value.HasMember("OldPublicEndPoint") && !value["OldPublicEndPoint"].IsNull())
+    {
+        if (!value["OldPublicEndPoint"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Cluster.OldPublicEndPoint` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_oldPublicEndPoint = string(value["OldPublicEndPoint"].GetString());
+        m_oldPublicEndPointHasBeenSet = true;
+    }
+
     if (value.HasMember("VpcEndPoint") && !value["VpcEndPoint"].IsNull())
     {
         if (!value["VpcEndPoint"].IsString())
@@ -217,6 +231,16 @@ CoreInternalOutcome Cluster::Deserialize(const rapidjson::Value &value)
         }
         m_vpcEndPoint = string(value["VpcEndPoint"].GetString());
         m_vpcEndPointHasBeenSet = true;
+    }
+
+    if (value.HasMember("OldVpcEndPoint") && !value["OldVpcEndPoint"].IsNull())
+    {
+        if (!value["OldVpcEndPoint"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Cluster.OldVpcEndPoint` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_oldVpcEndPoint = string(value["OldVpcEndPoint"].GetString());
+        m_oldVpcEndPointHasBeenSet = true;
     }
 
     if (value.HasMember("NamespaceNum") && !value["NamespaceNum"].IsNull())
@@ -327,6 +351,26 @@ CoreInternalOutcome Cluster::Deserialize(const rapidjson::Value &value)
             m_tags.push_back(item);
         }
         m_tagsHasBeenSet = true;
+    }
+
+    if (value.HasMember("OldInternalPulsarEndPoint") && !value["OldInternalPulsarEndPoint"].IsNull())
+    {
+        if (!value["OldInternalPulsarEndPoint"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Cluster.OldInternalPulsarEndPoint` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_oldInternalPulsarEndPoint = string(value["OldInternalPulsarEndPoint"].GetString());
+        m_oldInternalPulsarEndPointHasBeenSet = true;
+    }
+
+    if (value.HasMember("OldInternalHttpEndPoint") && !value["OldInternalHttpEndPoint"].IsNull())
+    {
+        if (!value["OldInternalHttpEndPoint"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Cluster.OldInternalHttpEndPoint` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_oldInternalHttpEndPoint = string(value["OldInternalHttpEndPoint"].GetString());
+        m_oldInternalHttpEndPointHasBeenSet = true;
     }
 
     if (value.HasMember("PayMode") && !value["PayMode"].IsNull())
@@ -496,12 +540,28 @@ void Cluster::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         value.AddMember(iKey, rapidjson::Value(m_publicEndPoint.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_oldPublicEndPointHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OldPublicEndPoint";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_oldPublicEndPoint.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_vpcEndPointHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "VpcEndPoint";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_vpcEndPoint.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_oldVpcEndPointHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OldVpcEndPoint";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_oldVpcEndPoint.c_str(), allocator).Move(), allocator);
     }
 
     if (m_namespaceNumHasBeenSet)
@@ -589,6 +649,22 @@ void Cluster::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_oldInternalPulsarEndPointHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OldInternalPulsarEndPoint";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_oldInternalPulsarEndPoint.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_oldInternalHttpEndPointHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OldInternalHttpEndPoint";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_oldInternalHttpEndPoint.c_str(), allocator).Move(), allocator);
     }
 
     if (m_payModeHasBeenSet)
@@ -866,6 +942,22 @@ bool Cluster::PublicEndPointHasBeenSet() const
     return m_publicEndPointHasBeenSet;
 }
 
+string Cluster::GetOldPublicEndPoint() const
+{
+    return m_oldPublicEndPoint;
+}
+
+void Cluster::SetOldPublicEndPoint(const string& _oldPublicEndPoint)
+{
+    m_oldPublicEndPoint = _oldPublicEndPoint;
+    m_oldPublicEndPointHasBeenSet = true;
+}
+
+bool Cluster::OldPublicEndPointHasBeenSet() const
+{
+    return m_oldPublicEndPointHasBeenSet;
+}
+
 string Cluster::GetVpcEndPoint() const
 {
     return m_vpcEndPoint;
@@ -880,6 +972,22 @@ void Cluster::SetVpcEndPoint(const string& _vpcEndPoint)
 bool Cluster::VpcEndPointHasBeenSet() const
 {
     return m_vpcEndPointHasBeenSet;
+}
+
+string Cluster::GetOldVpcEndPoint() const
+{
+    return m_oldVpcEndPoint;
+}
+
+void Cluster::SetOldVpcEndPoint(const string& _oldVpcEndPoint)
+{
+    m_oldVpcEndPoint = _oldVpcEndPoint;
+    m_oldVpcEndPointHasBeenSet = true;
+}
+
+bool Cluster::OldVpcEndPointHasBeenSet() const
+{
+    return m_oldVpcEndPointHasBeenSet;
 }
 
 int64_t Cluster::GetNamespaceNum() const
@@ -1040,6 +1148,38 @@ void Cluster::SetTags(const vector<Tag>& _tags)
 bool Cluster::TagsHasBeenSet() const
 {
     return m_tagsHasBeenSet;
+}
+
+string Cluster::GetOldInternalPulsarEndPoint() const
+{
+    return m_oldInternalPulsarEndPoint;
+}
+
+void Cluster::SetOldInternalPulsarEndPoint(const string& _oldInternalPulsarEndPoint)
+{
+    m_oldInternalPulsarEndPoint = _oldInternalPulsarEndPoint;
+    m_oldInternalPulsarEndPointHasBeenSet = true;
+}
+
+bool Cluster::OldInternalPulsarEndPointHasBeenSet() const
+{
+    return m_oldInternalPulsarEndPointHasBeenSet;
+}
+
+string Cluster::GetOldInternalHttpEndPoint() const
+{
+    return m_oldInternalHttpEndPoint;
+}
+
+void Cluster::SetOldInternalHttpEndPoint(const string& _oldInternalHttpEndPoint)
+{
+    m_oldInternalHttpEndPoint = _oldInternalHttpEndPoint;
+    m_oldInternalHttpEndPointHasBeenSet = true;
+}
+
+bool Cluster::OldInternalHttpEndPointHasBeenSet() const
+{
+    return m_oldInternalHttpEndPointHasBeenSet;
 }
 
 int64_t Cluster::GetPayMode() const
