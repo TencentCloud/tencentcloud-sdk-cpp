@@ -1094,6 +1094,27 @@ namespace TencentCloud
                      */
                     bool DatasourceTypeHasBeenSet() const;
 
+                    /**
+                     * 获取是否开通tccatalog,默认没有开启
+                     * @return TcCatalogOpen 是否开通tccatalog,默认没有开启
+                     * 
+                     */
+                    bool GetTcCatalogOpen() const;
+
+                    /**
+                     * 设置是否开通tccatalog,默认没有开启
+                     * @param _tcCatalogOpen 是否开通tccatalog,默认没有开启
+                     * 
+                     */
+                    void SetTcCatalogOpen(const bool& _tcCatalogOpen);
+
+                    /**
+                     * 判断参数 TcCatalogOpen 是否已赋值
+                     * @return TcCatalogOpen 是否已赋值
+                     * 
+                     */
+                    bool TcCatalogOpenHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1388,6 +1409,12 @@ namespace TencentCloud
                      */
                     std::string m_datasourceType;
                     bool m_datasourceTypeHasBeenSet;
+
+                    /**
+                     * 是否开通tccatalog,默认没有开启
+                     */
+                    bool m_tcCatalogOpen;
+                    bool m_tcCatalogOpenHasBeenSet;
 
                 };
             }

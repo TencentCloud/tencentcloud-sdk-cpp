@@ -399,6 +399,35 @@ namespace TencentCloud
                      */
                     bool ScheduleTimeZoneHasBeenSet() const;
 
+                    /**
+                     * 获取是否过滤无权限的工作流
+true: 过滤无权限的仅返回有权限的工作流列表(默认)
+false： 返回所有的工作流列表
+                     * @return CheckPrivilege 是否过滤无权限的工作流
+true: 过滤无权限的仅返回有权限的工作流列表(默认)
+false： 返回所有的工作流列表
+                     * 
+                     */
+                    bool GetCheckPrivilege() const;
+
+                    /**
+                     * 设置是否过滤无权限的工作流
+true: 过滤无权限的仅返回有权限的工作流列表(默认)
+false： 返回所有的工作流列表
+                     * @param _checkPrivilege 是否过滤无权限的工作流
+true: 过滤无权限的仅返回有权限的工作流列表(默认)
+false： 返回所有的工作流列表
+                     * 
+                     */
+                    void SetCheckPrivilege(const bool& _checkPrivilege);
+
+                    /**
+                     * 判断参数 CheckPrivilege 是否已赋值
+                     * @return CheckPrivilege 是否已赋值
+                     * 
+                     */
+                    bool CheckPrivilegeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -502,6 +531,14 @@ namespace TencentCloud
                      */
                     std::string m_scheduleTimeZone;
                     bool m_scheduleTimeZoneHasBeenSet;
+
+                    /**
+                     * 是否过滤无权限的工作流
+true: 过滤无权限的仅返回有权限的工作流列表(默认)
+false： 返回所有的工作流列表
+                     */
+                    bool m_checkPrivilege;
+                    bool m_checkPrivilegeHasBeenSet;
 
                 };
             }

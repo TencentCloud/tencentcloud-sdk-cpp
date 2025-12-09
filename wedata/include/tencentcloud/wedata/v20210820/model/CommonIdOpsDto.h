@@ -71,6 +71,31 @@ namespace TencentCloud
                      */
                     bool IdHasBeenSet() const;
 
+                    /**
+                     * 获取补录计划Id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MakeId 补录计划Id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetMakeId() const;
+
+                    /**
+                     * 设置补录计划Id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _makeId 补录计划Id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetMakeId(const std::string& _makeId);
+
+                    /**
+                     * 判断参数 MakeId 是否已赋值
+                     * @return MakeId 是否已赋值
+                     * 
+                     */
+                    bool MakeIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -79,6 +104,13 @@ namespace TencentCloud
                      */
                     std::string m_id;
                     bool m_idHasBeenSet;
+
+                    /**
+                     * 补录计划Id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_makeId;
+                    bool m_makeIdHasBeenSet;
 
                 };
             }

@@ -34,7 +34,11 @@ ColumnMeta::ColumnMeta() :
     m_levelNameHasBeenSet(false),
     m_levelRankHasBeenSet(false),
     m_influxCategoryHasBeenSet(false),
-    m_specificationHasBeenSet(false)
+    m_specificationHasBeenSet(false),
+    m_categoryNameHasBeenSet(false),
+    m_originTypeHasBeenSet(false),
+    m_indicatorBaseHasBeenSet(false),
+    m_assetDimHasBeenSet(false)
 {
 }
 
@@ -193,6 +197,60 @@ CoreInternalOutcome ColumnMeta::Deserialize(const rapidjson::Value &value)
         m_specificationHasBeenSet = true;
     }
 
+    if (value.HasMember("CategoryName") && !value["CategoryName"].IsNull())
+    {
+        if (!value["CategoryName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ColumnMeta.CategoryName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_categoryName = string(value["CategoryName"].GetString());
+        m_categoryNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("OriginType") && !value["OriginType"].IsNull())
+    {
+        if (!value["OriginType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ColumnMeta.OriginType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_originType = string(value["OriginType"].GetString());
+        m_originTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("IndicatorBase") && !value["IndicatorBase"].IsNull())
+    {
+        if (!value["IndicatorBase"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ColumnMeta.IndicatorBase` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_indicatorBase.Deserialize(value["IndicatorBase"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_indicatorBaseHasBeenSet = true;
+    }
+
+    if (value.HasMember("AssetDim") && !value["AssetDim"].IsNull())
+    {
+        if (!value["AssetDim"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ColumnMeta.AssetDim` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_assetDim.Deserialize(value["AssetDim"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_assetDimHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -317,6 +375,40 @@ void ColumnMeta::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "Specification";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_specification.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_categoryNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CategoryName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_categoryName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_originTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OriginType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_originType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_indicatorBaseHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IndicatorBase";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_indicatorBase.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_assetDimHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AssetDim";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_assetDim.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -544,5 +636,69 @@ void ColumnMeta::SetSpecification(const string& _specification)
 bool ColumnMeta::SpecificationHasBeenSet() const
 {
     return m_specificationHasBeenSet;
+}
+
+string ColumnMeta::GetCategoryName() const
+{
+    return m_categoryName;
+}
+
+void ColumnMeta::SetCategoryName(const string& _categoryName)
+{
+    m_categoryName = _categoryName;
+    m_categoryNameHasBeenSet = true;
+}
+
+bool ColumnMeta::CategoryNameHasBeenSet() const
+{
+    return m_categoryNameHasBeenSet;
+}
+
+string ColumnMeta::GetOriginType() const
+{
+    return m_originType;
+}
+
+void ColumnMeta::SetOriginType(const string& _originType)
+{
+    m_originType = _originType;
+    m_originTypeHasBeenSet = true;
+}
+
+bool ColumnMeta::OriginTypeHasBeenSet() const
+{
+    return m_originTypeHasBeenSet;
+}
+
+IndicatorBaseSimpleInfo ColumnMeta::GetIndicatorBase() const
+{
+    return m_indicatorBase;
+}
+
+void ColumnMeta::SetIndicatorBase(const IndicatorBaseSimpleInfo& _indicatorBase)
+{
+    m_indicatorBase = _indicatorBase;
+    m_indicatorBaseHasBeenSet = true;
+}
+
+bool ColumnMeta::IndicatorBaseHasBeenSet() const
+{
+    return m_indicatorBaseHasBeenSet;
+}
+
+AssetDim ColumnMeta::GetAssetDim() const
+{
+    return m_assetDim;
+}
+
+void ColumnMeta::SetAssetDim(const AssetDim& _assetDim)
+{
+    m_assetDim = _assetDim;
+    m_assetDimHasBeenSet = true;
+}
+
+bool ColumnMeta::AssetDimHasBeenSet() const
+{
+    return m_assetDimHasBeenSet;
 }
 

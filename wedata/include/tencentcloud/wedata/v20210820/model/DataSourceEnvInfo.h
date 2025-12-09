@@ -246,6 +246,27 @@ namespace TencentCloud
                      */
                     bool BizParamsHasBeenSet() const;
 
+                    /**
+                     * 获取是否支持tccatalog
+                     * @return TcCatalogOpen 是否支持tccatalog
+                     * 
+                     */
+                    bool GetTcCatalogOpen() const;
+
+                    /**
+                     * 设置是否支持tccatalog
+                     * @param _tcCatalogOpen 是否支持tccatalog
+                     * 
+                     */
+                    void SetTcCatalogOpen(const bool& _tcCatalogOpen);
+
+                    /**
+                     * 判断参数 TcCatalogOpen 是否已赋值
+                     * @return TcCatalogOpen 是否已赋值
+                     * 
+                     */
+                    bool TcCatalogOpenHasBeenSet() const;
+
                 private:
 
                     /**
@@ -303,6 +324,12 @@ namespace TencentCloud
                      */
                     std::string m_bizParams;
                     bool m_bizParamsHasBeenSet;
+
+                    /**
+                     * 是否支持tccatalog
+                     */
+                    bool m_tcCatalogOpen;
+                    bool m_tcCatalogOpenHasBeenSet;
 
                 };
             }

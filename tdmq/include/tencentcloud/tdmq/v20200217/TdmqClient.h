@@ -912,7 +912,8 @@ namespace TencentCloud
                 CreateRabbitMQVirtualHostOutcomeCallable CreateRabbitMQVirtualHostCallable(const Model::CreateRabbitMQVirtualHostRequest& request);
 
                 /**
-                 *此接口用于创建一个RocketMQ集群
+                 *创建 RocketMQ 集群。
+当前 API 适用集群：4.x 虚拟集群。创建 4.x 专享或通用集群的接口文档见 [CreateRocketMQVipInstance](https://cloud.tencent.com/document/api/1179/95721)，创建 5.x 集群接口文档见 [CreateInstance](https://cloud.tencent.com/document/api/1493/97868)。
                  * @param req CreateRocketMQClusterRequest
                  * @return CreateRocketMQClusterOutcome
                  */
@@ -931,7 +932,8 @@ namespace TencentCloud
                 CreateRocketMQEnvironmentRoleOutcomeCallable CreateRocketMQEnvironmentRoleCallable(const Model::CreateRocketMQEnvironmentRoleRequest& request);
 
                 /**
-                 *创建RocketMQ消费组
+                 *创建 RocketMQ 消费组。
+当前 API 适用集群：4.x 虚拟集群，4.x 专享集群 和 4.x 通用集群。创建 5.x 集群消费组的接口文档见 [CreateConsumerGroup](https://cloud.tencent.com/document/api/1493/97943)。
                  * @param req CreateRocketMQGroupRequest
                  * @return CreateRocketMQGroupOutcome
                  */
@@ -940,7 +942,8 @@ namespace TencentCloud
                 CreateRocketMQGroupOutcomeCallable CreateRocketMQGroupCallable(const Model::CreateRocketMQGroupRequest& request);
 
                 /**
-                 *创建RocketMQ命名空间
+                 *创建 RocketMQ 命名空间。
+当前 API 适用集群：4.x 虚拟集群和 4.x 专享集群，其他集群类型均不支持该功能。
                  * @param req CreateRocketMQNamespaceRequest
                  * @return CreateRocketMQNamespaceOutcome
                  */
@@ -959,7 +962,8 @@ namespace TencentCloud
                 CreateRocketMQRoleOutcomeCallable CreateRocketMQRoleCallable(const Model::CreateRocketMQRoleRequest& request);
 
                 /**
-                 *创建RocketMQ主题
+                 *批量创建 RocketMQ 主题。
+当前云 API 适用集群：4.x 虚拟集群，4.x 专享集群 和 4.x 通用集群。5.x 集群的创建 Topic 接口文档见 [CreateTopic](https://cloud.tencent.com/document/api/1493/97947)。
                  * @param req CreateRocketMQTopicRequest
                  * @return CreateRocketMQTopicOutcome
                  */
@@ -968,7 +972,8 @@ namespace TencentCloud
                 CreateRocketMQTopicOutcomeCallable CreateRocketMQTopicCallable(const Model::CreateRocketMQTopicRequest& request);
 
                 /**
-                 *创建RocketMQ主题
+                 *创建 RocketMQ 主题。
+当前云 API 适用集群：4.x 虚拟集群，4.x 专享集群 和 4.x 通用集群。5.x 集群的创建 Topic 接口文档见 [CreateTopic](https://cloud.tencent.com/document/api/1493/97947)。
                  * @param req CreateRocketMQTopicV2Request
                  * @return CreateRocketMQTopicV2Outcome
                  */
@@ -1121,7 +1126,8 @@ namespace TencentCloud
                 DeleteRabbitMQVirtualHostOutcomeCallable DeleteRabbitMQVirtualHostCallable(const Model::DeleteRabbitMQVirtualHostRequest& request);
 
                 /**
-                 *删除RocketMQ集群
+                 *删除 RocketMQ 集群。
+当前 API 适用集群：4.x 虚拟集群。删除 4.x 专享或通用集群的接口文档见 [DeleteRocketMQVipInstance](https://cloud.tencent.com/document/api/1179/95802)，删除 5.x 集群的接口文档见 [DeleteInstance](https://cloud.tencent.com/document/product/1493/97867)。
                  * @param req DeleteRocketMQClusterRequest
                  * @return DeleteRocketMQClusterOutcome
                  */
@@ -1140,7 +1146,8 @@ namespace TencentCloud
                 DeleteRocketMQEnvironmentRolesOutcomeCallable DeleteRocketMQEnvironmentRolesCallable(const Model::DeleteRocketMQEnvironmentRolesRequest& request);
 
                 /**
-                 *删除RocketMQ消费组
+                 *删除 RocketMQ 消费组。
+当前 API 适用集群：4.x 虚拟集群，4.x 专享集群 和 4.x 通用集群。删除 5.x 集群消费组的接口文档见 [DeleteConsumerGroup](https://cloud.tencent.com/document/api/1493/97942)。
                  * @param req DeleteRocketMQGroupRequest
                  * @return DeleteRocketMQGroupOutcome
                  */
@@ -1149,7 +1156,8 @@ namespace TencentCloud
                 DeleteRocketMQGroupOutcomeCallable DeleteRocketMQGroupCallable(const Model::DeleteRocketMQGroupRequest& request);
 
                 /**
-                 *删除RocketMQ命名空间
+                 *删除 RocketMQ 命名空间。
+当前 API 适用集群：4.x 虚拟集群和 4.x 专享集群，其他集群类型均不支持该功能。
                  * @param req DeleteRocketMQNamespaceRequest
                  * @return DeleteRocketMQNamespaceOutcome
                  */
@@ -1168,7 +1176,8 @@ namespace TencentCloud
                 DeleteRocketMQRolesOutcomeCallable DeleteRocketMQRolesCallable(const Model::DeleteRocketMQRolesRequest& request);
 
                 /**
-                 *删除RocketMQ主题
+                 *删除 RocketMQ 主题。
+当前 API 适用集群：4.x 虚拟集群，4.x 专享集群 和 4.x 通用集群。删除 5.x 集群主题的接口文档见 [DeleteTopic](https://cloud.tencent.com/document/api/1493/97946)。
                  * @param req DeleteRocketMQTopicRequest
                  * @return DeleteRocketMQTopicOutcome
                  */
@@ -1530,7 +1539,8 @@ namespace TencentCloud
                 DescribeRocketMQClustersOutcomeCallable DescribeRocketMQClustersCallable(const Model::DescribeRocketMQClustersRequest& request);
 
                 /**
-                 *获取消费详情列表
+                 *查询 RocketMQ 消费详情列表。
+当前 API 适用集群：4.x 虚拟集群，4.x 专享集群 和 4.x 通用集群。查询 5.x 集群消费详情的接口文档见 [DescribeConsumerGroup](https://cloud.tencent.com/document/api/1493/97941)。
                  * @param req DescribeRocketMQConsumeStatsRequest
                  * @return DescribeRocketMQConsumeStatsOutcome
                  */
@@ -1539,7 +1549,8 @@ namespace TencentCloud
                 DescribeRocketMQConsumeStatsOutcomeCallable DescribeRocketMQConsumeStatsCallable(const Model::DescribeRocketMQConsumeStatsRequest& request);
 
                 /**
-                 *获取在线消费端详情
+                 *查询 RocketMQ 消费者客户端详情。
+当前 API 适用集群：4.x 虚拟集群，4.x 专享集群 和 4.x 通用集群。5.x 集群的查询消费者客户端详情接口文档见 [DescribeConsumerClient](https://cloud.tencent.com/document/api/1493/115240)。
                  * @param req DescribeRocketMQConsumerConnectionDetailRequest
                  * @return DescribeRocketMQConsumerConnectionDetailOutcome
                  */
@@ -1548,7 +1559,8 @@ namespace TencentCloud
                 DescribeRocketMQConsumerConnectionDetailOutcomeCallable DescribeRocketMQConsumerConnectionDetailCallable(const Model::DescribeRocketMQConsumerConnectionDetailRequest& request);
 
                 /**
-                 *获取指定消费组下当前客户端的连接情况
+                 *查询 RocketMQ 消费组下的客户端连接列表。
+当前 API 适用集群：4.x 虚拟集群，4.x 专享集群 和 4.x 通用集群。5.x 集群查询消费组下的客户端连接列表接口文档见 [DescribeConsumerClientList](https://cloud.tencent.com/document/api/1493/120140)。
                  * @param req DescribeRocketMQConsumerConnectionsRequest
                  * @return DescribeRocketMQConsumerConnectionsOutcome
                  */
@@ -1567,7 +1579,8 @@ namespace TencentCloud
                 DescribeRocketMQEnvironmentRolesOutcomeCallable DescribeRocketMQEnvironmentRolesCallable(const Model::DescribeRocketMQEnvironmentRolesRequest& request);
 
                 /**
-                 *获取RocketMQ消费组列表
+                 *查询 RocketMQ 消费组列表。
+当前 API 适用集群：4.x 虚拟集群，4.x 专享集群 和 4.x 通用集群。查询 5.x 集群的消费组列表接口文档见 [DescribeConsumerGroupList](https://cloud.tencent.com/document/api/1493/101535)。
                  * @param req DescribeRocketMQGroupsRequest
                  * @return DescribeRocketMQGroupsOutcome
                  */
@@ -1594,7 +1607,8 @@ namespace TencentCloud
                 DescribeRocketMQMsgOutcomeCallable DescribeRocketMQMsgCallable(const Model::DescribeRocketMQMsgRequest& request);
 
                 /**
-                 *查询消息轨迹
+                 *查询消息轨迹。
+当前 API 适用集群：4.x 虚拟集群，4.x 专享集群 和 4.x 通用集群。5.x 集群查询消息轨迹的接口文档见 [DescribeMessageTrace](https://cloud.tencent.com/document/api/1493/114302)。
                  * @param req DescribeRocketMQMsgTraceRequest
                  * @return DescribeRocketMQMsgTraceOutcome
                  */
@@ -1603,7 +1617,8 @@ namespace TencentCloud
                 DescribeRocketMQMsgTraceOutcomeCallable DescribeRocketMQMsgTraceCallable(const Model::DescribeRocketMQMsgTraceRequest& request);
 
                 /**
-                 *获取RocketMQ命名空间列表
+                 *获取 RocketMQ 命名空间列表。
+当前 API 适用集群：4.x 虚拟集群和 4.x 专享集群，其他集群类型均不支持该功能。
                  * @param req DescribeRocketMQNamespacesRequest
                  * @return DescribeRocketMQNamespacesOutcome
                  */
@@ -1659,7 +1674,8 @@ namespace TencentCloud
                 DescribeRocketMQSmoothMigrationTaskOutcomeCallable DescribeRocketMQSmoothMigrationTaskCallable(const Model::DescribeRocketMQSmoothMigrationTaskRequest& request);
 
                 /**
-                 *用于获取RocketMQ消费组订阅关系数据
+                 *查询 RocketMQ 消费组订阅关系列表。
+当前 API 适用集群：4.x 虚拟集群，4.x 专享集群 和 4.x 通用集群。5.x 集群查询消费组订阅的主题列表接口文档见 [DescribeTopicListByGroup](https://cloud.tencent.com/document/api/1493/115314)。
                  * @param req DescribeRocketMQSubscriptionsRequest
                  * @return DescribeRocketMQSubscriptionsOutcome
                  */
@@ -1686,7 +1702,8 @@ namespace TencentCloud
                 DescribeRocketMQTopicOutcomeCallable DescribeRocketMQTopicCallable(const Model::DescribeRocketMQTopicRequest& request);
 
                 /**
-                 *rocketmq 消息查询
+                 *查询 RocketMQ 消息列表。
+当前 API 适用集群：4.x 虚拟集群，4.x 专享集群 和 4.x 通用集群。5.x 集群的查询消息列表接口文档见 [DescribeMessageList](https://cloud.tencent.com/document/api/1493/114593)。
                  * @param req DescribeRocketMQTopicMsgsRequest
                  * @return DescribeRocketMQTopicMsgsOutcome
                  */
@@ -1695,7 +1712,8 @@ namespace TencentCloud
                 DescribeRocketMQTopicMsgsOutcomeCallable DescribeRocketMQTopicMsgsCallable(const Model::DescribeRocketMQTopicMsgsRequest& request);
 
                 /**
-                 *获取Topic生产详情列表
+                 *查询 RocketMQ 主题生产详情列表。
+当前 API 适用集群：4.x 虚拟集群，4.x 专享集群 和 4.x 通用集群。5.x 集群暂不支持该功能。
                  * @param req DescribeRocketMQTopicStatsRequest
                  * @return DescribeRocketMQTopicStatsOutcome
                  */
@@ -1704,7 +1722,8 @@ namespace TencentCloud
                 DescribeRocketMQTopicStatsOutcomeCallable DescribeRocketMQTopicStatsCallable(const Model::DescribeRocketMQTopicStatsRequest& request);
 
                 /**
-                 *获取RocketMQ主题列表
+                 *查询 RocketMQ 主题列表。
+当前 API 适用集群：4.x 虚拟集群，4.x 专享集群 和 4.x 通用集群。查询 5.x 集群的主题列表接口文档见 [DescribeTopicList](https://cloud.tencent.com/document/api/1493/96030)。
                  * @param req DescribeRocketMQTopicsRequest
                  * @return DescribeRocketMQTopicsOutcome
                  */
@@ -1713,7 +1732,8 @@ namespace TencentCloud
                 DescribeRocketMQTopicsOutcomeCallable DescribeRocketMQTopicsCallable(const Model::DescribeRocketMQTopicsRequest& request);
 
                 /**
-                 *获取指定消费组下订阅的主题列表
+                 *查询 RocketMQ 消费组订阅的主题列表。
+当前 API 适用集群：4.x 虚拟集群，4.x 专享集群 和 4.x 通用集群。5.x 集群查询消费组订阅的主题列表接口文档见 [DescribeTopicListByGroup](https://cloud.tencent.com/document/api/1493/115314)。
                  * @param req DescribeRocketMQTopicsByGroupRequest
                  * @return DescribeRocketMQTopicsByGroupOutcome
                  */
@@ -1939,7 +1959,8 @@ namespace TencentCloud
                 ModifyRocketMQEnvironmentRoleOutcomeCallable ModifyRocketMQEnvironmentRoleCallable(const Model::ModifyRocketMQEnvironmentRoleRequest& request);
 
                 /**
-                 *更新RocketMQ消费组信息
+                 *修改 RocketMQ 消费组属性。
+当前 API 适用集群：4.x 虚拟集群，4.x 专享集群 和 4.x 通用集群。修改 5.x 集群消费组属性的接口文档见 [ModifyConsumerGroup](https://cloud.tencent.com/document/api/1493/97940)。
                  * @param req ModifyRocketMQGroupRequest
                  * @return ModifyRocketMQGroupOutcome
                  */
@@ -1966,7 +1987,8 @@ namespace TencentCloud
                 ModifyRocketMQInstanceSpecOutcomeCallable ModifyRocketMQInstanceSpecCallable(const Model::ModifyRocketMQInstanceSpecRequest& request);
 
                 /**
-                 *更新RocketMQ命名空间
+                 *更新 RocketMQ 命名空间。
+当前 API 适用集群：4.x 虚拟集群和 4.x 专享集群，其他集群类型均不支持该功能。
                  * @param req ModifyRocketMQNamespaceRequest
                  * @return ModifyRocketMQNamespaceOutcome
                  */
@@ -1985,7 +2007,8 @@ namespace TencentCloud
                 ModifyRocketMQRoleOutcomeCallable ModifyRocketMQRoleCallable(const Model::ModifyRocketMQRoleRequest& request);
 
                 /**
-                 *更新RocketMQ主题信息
+                 *修改 RocketMQ 主题属性。
+当前 API 适用集群：4.x 虚拟集群，4.x 专享集群 和 4.x 通用集群。修改 5.x 集群主题属性的接口文档见 [ModifyTopic](https://cloud.tencent.com/document/api/1493/97944)。
                  * @param req ModifyRocketMQTopicRequest
                  * @return ModifyRocketMQTopicOutcome
                  */
@@ -2068,7 +2091,8 @@ BatchReceivePolicy 的接口会一次性返回多条消息：
                 ResetRocketMQConsumerOffSetOutcomeCallable ResetRocketMQConsumerOffSetCallable(const Model::ResetRocketMQConsumerOffSetRequest& request);
 
                 /**
-                 *重发RocketMQ死信消息
+                 *重发 RocketMQ 死信消息。
+当前 API 适用集群：4.x 虚拟集群，4.x 专享集群 和 4.x 通用集群。5.x 集群的重发死信消息接口文档见 [ResendDeadLetterMessage](https://cloud.tencent.com/document/api/1493/114592)。
                  * @param req RetryRocketMQDlqMessageRequest
                  * @return RetryRocketMQDlqMessageOutcome
                  */

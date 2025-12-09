@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/dataagent/v20250513/model/FileInfo.h>
 
 
 namespace TencentCloud
@@ -43,7 +44,47 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取文件信息列表
+                     * @return FileList 文件信息列表
+                     * 
+                     */
+                    std::vector<FileInfo> GetFileList() const;
+
+                    /**
+                     * 判断参数 FileList 是否已赋值
+                     * @return FileList 是否已赋值
+                     * 
+                     */
+                    bool FileListHasBeenSet() const;
+
+                    /**
+                     * 获取文件信息总数
+                     * @return Total 文件信息总数
+                     * 
+                     */
+                    int64_t GetTotal() const;
+
+                    /**
+                     * 判断参数 Total 是否已赋值
+                     * @return Total 是否已赋值
+                     * 
+                     */
+                    bool TotalHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 文件信息列表
+                     */
+                    std::vector<FileInfo> m_fileList;
+                    bool m_fileListHasBeenSet;
+
+                    /**
+                     * 文件信息总数
+                     */
+                    int64_t m_total;
+                    bool m_totalHasBeenSet;
 
                 };
             }

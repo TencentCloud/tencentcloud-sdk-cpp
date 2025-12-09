@@ -24,7 +24,8 @@ using namespace std;
 
 CreateEmployeeQualificationSealQrCodeRequest::CreateEmployeeQualificationSealQrCodeRequest() :
     m_agentHasBeenSet(false),
-    m_hintTextHasBeenSet(false)
+    m_hintTextHasBeenSet(false),
+    m_userDataHasBeenSet(false)
 {
 }
 
@@ -50,6 +51,14 @@ string CreateEmployeeQualificationSealQrCodeRequest::ToJsonString() const
         string key = "HintText";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_hintText.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_userDataHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserData";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_userData.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -90,6 +99,22 @@ void CreateEmployeeQualificationSealQrCodeRequest::SetHintText(const string& _hi
 bool CreateEmployeeQualificationSealQrCodeRequest::HintTextHasBeenSet() const
 {
     return m_hintTextHasBeenSet;
+}
+
+string CreateEmployeeQualificationSealQrCodeRequest::GetUserData() const
+{
+    return m_userData;
+}
+
+void CreateEmployeeQualificationSealQrCodeRequest::SetUserData(const string& _userData)
+{
+    m_userData = _userData;
+    m_userDataHasBeenSet = true;
+}
+
+bool CreateEmployeeQualificationSealQrCodeRequest::UserDataHasBeenSet() const
+{
+    return m_userDataHasBeenSet;
 }
 
 

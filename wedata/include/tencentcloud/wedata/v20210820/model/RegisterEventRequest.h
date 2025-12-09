@@ -169,15 +169,15 @@ namespace TencentCloud
                     bool OwnerHasBeenSet() const;
 
                     /**
-                     * 获取必填，事件类型，默认值：TIME_SERIES
-                     * @return EventType 必填，事件类型，默认值：TIME_SERIES
+                     * 获取事件类型，不填会使用默认值 TIME_SERIES 填充
+                     * @return EventType 事件类型，不填会使用默认值 TIME_SERIES 填充
                      * 
                      */
                     std::string GetEventType() const;
 
                     /**
-                     * 设置必填，事件类型，默认值：TIME_SERIES
-                     * @param _eventType 必填，事件类型，默认值：TIME_SERIES
+                     * 设置事件类型，不填会使用默认值 TIME_SERIES 填充
+                     * @param _eventType 事件类型，不填会使用默认值 TIME_SERIES 填充
                      * 
                      */
                     void SetEventType(const std::string& _eventType);
@@ -190,15 +190,15 @@ namespace TencentCloud
                     bool EventTypeHasBeenSet() const;
 
                     /**
-                     * 获取必填，对应day： yyyyMMdd，对应HOUR：yyyyMMddHH，对应MIN：yyyyMMddHHmm，对应SECOND：yyyyMMddHHmmss，默认值：yyyyMMdd
-                     * @return DimensionFormat 必填，对应day： yyyyMMdd，对应HOUR：yyyyMMddHH，对应MIN：yyyyMMddHHmm，对应SECOND：yyyyMMddHHmmss，默认值：yyyyMMdd
+                     * 获取对应day： yyyyMMdd，对应HOUR：yyyyMMddHH，对应MIN：yyyyMMddHHmm，对应SECOND：yyyyMMddHHmmss，默认值：yyyyMMdd
+                     * @return DimensionFormat 对应day： yyyyMMdd，对应HOUR：yyyyMMddHH，对应MIN：yyyyMMddHHmm，对应SECOND：yyyyMMddHHmmss，默认值：yyyyMMdd
                      * 
                      */
                     std::string GetDimensionFormat() const;
 
                     /**
-                     * 设置必填，对应day： yyyyMMdd，对应HOUR：yyyyMMddHH，对应MIN：yyyyMMddHHmm，对应SECOND：yyyyMMddHHmmss，默认值：yyyyMMdd
-                     * @param _dimensionFormat 必填，对应day： yyyyMMdd，对应HOUR：yyyyMMddHH，对应MIN：yyyyMMddHHmm，对应SECOND：yyyyMMddHHmmss，默认值：yyyyMMdd
+                     * 设置对应day： yyyyMMdd，对应HOUR：yyyyMMddHH，对应MIN：yyyyMMddHHmm，对应SECOND：yyyyMMddHHmmss，默认值：yyyyMMdd
+                     * @param _dimensionFormat 对应day： yyyyMMdd，对应HOUR：yyyyMMddHH，对应MIN：yyyyMMddHHmm，对应SECOND：yyyyMMddHHmmss，默认值：yyyyMMdd
                      * 
                      */
                     void SetDimensionFormat(const std::string& _dimensionFormat);
@@ -291,13 +291,13 @@ namespace TencentCloud
                     bool m_ownerHasBeenSet;
 
                     /**
-                     * 必填，事件类型，默认值：TIME_SERIES
+                     * 事件类型，不填会使用默认值 TIME_SERIES 填充
                      */
                     std::string m_eventType;
                     bool m_eventTypeHasBeenSet;
 
                     /**
-                     * 必填，对应day： yyyyMMdd，对应HOUR：yyyyMMddHH，对应MIN：yyyyMMddHHmm，对应SECOND：yyyyMMddHHmmss，默认值：yyyyMMdd
+                     * 对应day： yyyyMMdd，对应HOUR：yyyyMMddHH，对应MIN：yyyyMMddHHmm，对应SECOND：yyyyMMddHHmmss，默认值：yyyyMMdd
                      */
                     std::string m_dimensionFormat;
                     bool m_dimensionFormatHasBeenSet;

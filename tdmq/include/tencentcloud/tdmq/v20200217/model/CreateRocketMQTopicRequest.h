@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool TopicHasBeenSet() const;
 
                     /**
-                     * 获取主题所在的命名空间，目前支持在单个命名空间下创建主题
-                     * @return Namespaces 主题所在的命名空间，目前支持在单个命名空间下创建主题
+                     * 获取主题所在的命名空间，4.x 通用集群命名空间固定为: tdmq_default
+                     * @return Namespaces 主题所在的命名空间，4.x 通用集群命名空间固定为: tdmq_default
                      * 
                      */
                     std::vector<std::string> GetNamespaces() const;
 
                     /**
-                     * 设置主题所在的命名空间，目前支持在单个命名空间下创建主题
-                     * @param _namespaces 主题所在的命名空间，目前支持在单个命名空间下创建主题
+                     * 设置主题所在的命名空间，4.x 通用集群命名空间固定为: tdmq_default
+                     * @param _namespaces 主题所在的命名空间，4.x 通用集群命名空间固定为: tdmq_default
                      * 
                      */
                     void SetNamespaces(const std::vector<std::string>& _namespaces);
@@ -177,7 +177,7 @@ namespace TencentCloud
                     bool m_topicHasBeenSet;
 
                     /**
-                     * 主题所在的命名空间，目前支持在单个命名空间下创建主题
+                     * 主题所在的命名空间，4.x 通用集群命名空间固定为: tdmq_default
                      */
                     std::vector<std::string> m_namespaces;
                     bool m_namespacesHasBeenSet;

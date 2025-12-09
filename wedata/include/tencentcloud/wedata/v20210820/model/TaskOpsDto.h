@@ -2357,6 +2357,81 @@ no：任务无需满足自依赖
                      */
                     bool OwnerIdHasBeenSet() const;
 
+                    /**
+                     * 获取当前用户对该任务的权限列表， 当前支持
+CAN_MANAGE : 有权限管理操作
+                     * @return Privileges 当前用户对该任务的权限列表， 当前支持
+CAN_MANAGE : 有权限管理操作
+                     * 
+                     */
+                    std::vector<std::string> GetPrivileges() const;
+
+                    /**
+                     * 设置当前用户对该任务的权限列表， 当前支持
+CAN_MANAGE : 有权限管理操作
+                     * @param _privileges 当前用户对该任务的权限列表， 当前支持
+CAN_MANAGE : 有权限管理操作
+                     * 
+                     */
+                    void SetPrivileges(const std::vector<std::string>& _privileges);
+
+                    /**
+                     * 判断参数 Privileges 是否已赋值
+                     * @return Privileges 是否已赋值
+                     * 
+                     */
+                    bool PrivilegesHasBeenSet() const;
+
+                    /**
+                     * 获取bundle客户端唯一id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return BundleId bundle客户端唯一id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetBundleId() const;
+
+                    /**
+                     * 设置bundle客户端唯一id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _bundleId bundle客户端唯一id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetBundleId(const std::string& _bundleId);
+
+                    /**
+                     * 判断参数 BundleId 是否已赋值
+                     * @return BundleId 是否已赋值
+                     * 
+                     */
+                    bool BundleIdHasBeenSet() const;
+
+                    /**
+                     * 获取bundle客户端信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return BundleInfo bundle客户端信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetBundleInfo() const;
+
+                    /**
+                     * 设置bundle客户端信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _bundleInfo bundle客户端信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetBundleInfo(const std::string& _bundleInfo);
+
+                    /**
+                     * 判断参数 BundleInfo 是否已赋值
+                     * @return BundleInfo 是否已赋值
+                     * 
+                     */
+                    bool BundleInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -3003,6 +3078,27 @@ no：任务无需满足自依赖
                      */
                     std::string m_ownerId;
                     bool m_ownerIdHasBeenSet;
+
+                    /**
+                     * 当前用户对该任务的权限列表， 当前支持
+CAN_MANAGE : 有权限管理操作
+                     */
+                    std::vector<std::string> m_privileges;
+                    bool m_privilegesHasBeenSet;
+
+                    /**
+                     * bundle客户端唯一id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_bundleId;
+                    bool m_bundleIdHasBeenSet;
+
+                    /**
+                     * bundle客户端信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_bundleInfo;
+                    bool m_bundleInfoHasBeenSet;
 
                 };
             }

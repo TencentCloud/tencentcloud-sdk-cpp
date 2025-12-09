@@ -62,7 +62,8 @@ DataSourceInfo::DataSourceInfo() :
     m_modelHasBeenSet(false),
     m_dataSourceEnvInfosHasBeenSet(false),
     m_forbidProbeHasBeenSet(false),
-    m_datasourceTypeHasBeenSet(false)
+    m_datasourceTypeHasBeenSet(false),
+    m_tcCatalogOpenHasBeenSet(false)
 {
 }
 
@@ -508,6 +509,16 @@ CoreInternalOutcome DataSourceInfo::Deserialize(const rapidjson::Value &value)
         m_datasourceTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("TcCatalogOpen") && !value["TcCatalogOpen"].IsNull())
+    {
+        if (!value["TcCatalogOpen"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `DataSourceInfo.TcCatalogOpen` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_tcCatalogOpen = value["TcCatalogOpen"].GetBool();
+        m_tcCatalogOpenHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -857,6 +868,14 @@ void DataSourceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "DatasourceType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_datasourceType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tcCatalogOpenHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TcCatalogOpen";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_tcCatalogOpen, allocator);
     }
 
 }
@@ -1532,5 +1551,21 @@ void DataSourceInfo::SetDatasourceType(const string& _datasourceType)
 bool DataSourceInfo::DatasourceTypeHasBeenSet() const
 {
     return m_datasourceTypeHasBeenSet;
+}
+
+bool DataSourceInfo::GetTcCatalogOpen() const
+{
+    return m_tcCatalogOpen;
+}
+
+void DataSourceInfo::SetTcCatalogOpen(const bool& _tcCatalogOpen)
+{
+    m_tcCatalogOpen = _tcCatalogOpen;
+    m_tcCatalogOpenHasBeenSet = true;
+}
+
+bool DataSourceInfo::TcCatalogOpenHasBeenSet() const
+{
+    return m_tcCatalogOpenHasBeenSet;
 }
 

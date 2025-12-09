@@ -331,6 +331,35 @@ namespace TencentCloud
                      */
                     bool TaskTypeDescHasBeenSet() const;
 
+                    /**
+                     * 获取当前用户对该资源的权限列表
+CAN_MANAGE 有修改操作权限
+NO_PERMISSION 无权限
+                     * @return Privileges 当前用户对该资源的权限列表
+CAN_MANAGE 有修改操作权限
+NO_PERMISSION 无权限
+                     * 
+                     */
+                    std::vector<std::string> GetPrivileges() const;
+
+                    /**
+                     * 设置当前用户对该资源的权限列表
+CAN_MANAGE 有修改操作权限
+NO_PERMISSION 无权限
+                     * @param _privileges 当前用户对该资源的权限列表
+CAN_MANAGE 有修改操作权限
+NO_PERMISSION 无权限
+                     * 
+                     */
+                    void SetPrivileges(const std::vector<std::string>& _privileges);
+
+                    /**
+                     * 判断参数 Privileges 是否已赋值
+                     * @return Privileges 是否已赋值
+                     * 
+                     */
+                    bool PrivilegesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -413,6 +442,14 @@ namespace TencentCloud
                      */
                     std::string m_taskTypeDesc;
                     bool m_taskTypeDescHasBeenSet;
+
+                    /**
+                     * 当前用户对该资源的权限列表
+CAN_MANAGE 有修改操作权限
+NO_PERMISSION 无权限
+                     */
+                    std::vector<std::string> m_privileges;
+                    bool m_privilegesHasBeenSet;
 
                 };
             }

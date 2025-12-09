@@ -51,7 +51,9 @@ DescribeOperateOpsTasksRequest::DescribeOperateOpsTasksRequest() :
     m_projectIdsHasBeenSet(false),
     m_blackTaskIdListHasBeenSet(false),
     m_scheduleTimeZoneHasBeenSet(false),
-    m_runPriorityListHasBeenSet(false)
+    m_runPriorityListHasBeenSet(false),
+    m_includeManualTaskHasBeenSet(false),
+    m_checkPrivilegeHasBeenSet(false)
 {
 }
 
@@ -319,6 +321,22 @@ string DescribeOperateOpsTasksRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
         }
+    }
+
+    if (m_includeManualTaskHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IncludeManualTask";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_includeManualTask.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_checkPrivilegeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CheckPrivilege";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_checkPrivilege, allocator);
     }
 
 
@@ -791,6 +809,38 @@ void DescribeOperateOpsTasksRequest::SetRunPriorityList(const vector<int64_t>& _
 bool DescribeOperateOpsTasksRequest::RunPriorityListHasBeenSet() const
 {
     return m_runPriorityListHasBeenSet;
+}
+
+string DescribeOperateOpsTasksRequest::GetIncludeManualTask() const
+{
+    return m_includeManualTask;
+}
+
+void DescribeOperateOpsTasksRequest::SetIncludeManualTask(const string& _includeManualTask)
+{
+    m_includeManualTask = _includeManualTask;
+    m_includeManualTaskHasBeenSet = true;
+}
+
+bool DescribeOperateOpsTasksRequest::IncludeManualTaskHasBeenSet() const
+{
+    return m_includeManualTaskHasBeenSet;
+}
+
+bool DescribeOperateOpsTasksRequest::GetCheckPrivilege() const
+{
+    return m_checkPrivilege;
+}
+
+void DescribeOperateOpsTasksRequest::SetCheckPrivilege(const bool& _checkPrivilege)
+{
+    m_checkPrivilege = _checkPrivilege;
+    m_checkPrivilegeHasBeenSet = true;
+}
+
+bool DescribeOperateOpsTasksRequest::CheckPrivilegeHasBeenSet() const
+{
+    return m_checkPrivilegeHasBeenSet;
 }
 
 

@@ -24,8 +24,8 @@ using namespace std;
 
 CreateFinancialLLMTaskRequest::CreateFinancialLLMTaskRequest() :
     m_bizTypeHasBeenSet(false),
-    m_fileTypeHasBeenSet(false),
     m_contentTypeHasBeenSet(false),
+    m_fileTypeHasBeenSet(false),
     m_contentHasBeenSet(false)
 {
 }
@@ -45,20 +45,20 @@ string CreateFinancialLLMTaskRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_bizType.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_fileTypeHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "FileType";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_fileType.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_contentTypeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ContentType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_contentType, allocator);
+    }
+
+    if (m_fileTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FileType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_fileType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_contentHasBeenSet)
@@ -93,22 +93,6 @@ bool CreateFinancialLLMTaskRequest::BizTypeHasBeenSet() const
     return m_bizTypeHasBeenSet;
 }
 
-string CreateFinancialLLMTaskRequest::GetFileType() const
-{
-    return m_fileType;
-}
-
-void CreateFinancialLLMTaskRequest::SetFileType(const string& _fileType)
-{
-    m_fileType = _fileType;
-    m_fileTypeHasBeenSet = true;
-}
-
-bool CreateFinancialLLMTaskRequest::FileTypeHasBeenSet() const
-{
-    return m_fileTypeHasBeenSet;
-}
-
 int64_t CreateFinancialLLMTaskRequest::GetContentType() const
 {
     return m_contentType;
@@ -123,6 +107,22 @@ void CreateFinancialLLMTaskRequest::SetContentType(const int64_t& _contentType)
 bool CreateFinancialLLMTaskRequest::ContentTypeHasBeenSet() const
 {
     return m_contentTypeHasBeenSet;
+}
+
+string CreateFinancialLLMTaskRequest::GetFileType() const
+{
+    return m_fileType;
+}
+
+void CreateFinancialLLMTaskRequest::SetFileType(const string& _fileType)
+{
+    m_fileType = _fileType;
+    m_fileTypeHasBeenSet = true;
+}
+
+bool CreateFinancialLLMTaskRequest::FileTypeHasBeenSet() const
+{
+    return m_fileTypeHasBeenSet;
 }
 
 string CreateFinancialLLMTaskRequest::GetContent() const

@@ -44,6 +44,8 @@
 #include <tencentcloud/vod/v20180717/model/QualityEnhanceTask.h>
 #include <tencentcloud/vod/v20180717/model/ComplexAdaptiveDynamicStreamingTask.h>
 #include <tencentcloud/vod/v20180717/model/ProcessMediaByMPS.h>
+#include <tencentcloud/vod/v20180717/model/AigcImageTask.h>
+#include <tencentcloud/vod/v20180717/model/AigcVideoTask.h>
 
 
 namespace TencentCloud
@@ -510,6 +512,34 @@ namespace TencentCloud
                      */
                     bool ProcessMediaByMPSTaskHasBeenSet() const;
 
+                    /**
+                     * 获取AIGC 生图任务信息，仅当 TaskType 为 AigcImageTask，该字段有值。
+                     * @return AigcImageTask AIGC 生图任务信息，仅当 TaskType 为 AigcImageTask，该字段有值。
+                     * 
+                     */
+                    AigcImageTask GetAigcImageTask() const;
+
+                    /**
+                     * 判断参数 AigcImageTask 是否已赋值
+                     * @return AigcImageTask 是否已赋值
+                     * 
+                     */
+                    bool AigcImageTaskHasBeenSet() const;
+
+                    /**
+                     * 获取AIGC 生视频任务信息，仅当 TaskType 为 AigcVideoTask，该字段有值。
+                     * @return AigcVideoTask AIGC 生视频任务信息，仅当 TaskType 为 AigcVideoTask，该字段有值。
+                     * 
+                     */
+                    AigcVideoTask GetAigcVideoTask() const;
+
+                    /**
+                     * 判断参数 AigcVideoTask 是否已赋值
+                     * @return AigcVideoTask 是否已赋值
+                     * 
+                     */
+                    bool AigcVideoTaskHasBeenSet() const;
+
                 private:
 
                     /**
@@ -705,6 +735,18 @@ namespace TencentCloud
                      */
                     ProcessMediaByMPS m_processMediaByMPSTask;
                     bool m_processMediaByMPSTaskHasBeenSet;
+
+                    /**
+                     * AIGC 生图任务信息，仅当 TaskType 为 AigcImageTask，该字段有值。
+                     */
+                    AigcImageTask m_aigcImageTask;
+                    bool m_aigcImageTaskHasBeenSet;
+
+                    /**
+                     * AIGC 生视频任务信息，仅当 TaskType 为 AigcVideoTask，该字段有值。
+                     */
+                    AigcVideoTask m_aigcVideoTask;
+                    bool m_aigcVideoTaskHasBeenSet;
 
                 };
             }

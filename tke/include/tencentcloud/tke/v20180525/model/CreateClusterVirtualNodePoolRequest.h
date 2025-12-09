@@ -88,6 +88,27 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
+                     * 获取安全组ID列表
+                     * @return SecurityGroupIds 安全组ID列表
+                     * 
+                     */
+                    std::vector<std::string> GetSecurityGroupIds() const;
+
+                    /**
+                     * 设置安全组ID列表
+                     * @param _securityGroupIds 安全组ID列表
+                     * 
+                     */
+                    void SetSecurityGroupIds(const std::vector<std::string>& _securityGroupIds);
+
+                    /**
+                     * 判断参数 SecurityGroupIds 是否已赋值
+                     * @return SecurityGroupIds 是否已赋值
+                     * 
+                     */
+                    bool SecurityGroupIdsHasBeenSet() const;
+
+                    /**
                      * 获取子网ID列表
                      * @return SubnetIds 子网ID列表
                      * 
@@ -107,27 +128,6 @@ namespace TencentCloud
                      * 
                      */
                     bool SubnetIdsHasBeenSet() const;
-
-                    /**
-                     * 获取安全组ID列表，必选参数
-                     * @return SecurityGroupIds 安全组ID列表，必选参数
-                     * 
-                     */
-                    std::vector<std::string> GetSecurityGroupIds() const;
-
-                    /**
-                     * 设置安全组ID列表，必选参数
-                     * @param _securityGroupIds 安全组ID列表，必选参数
-                     * 
-                     */
-                    void SetSecurityGroupIds(const std::vector<std::string>& _securityGroupIds);
-
-                    /**
-                     * 判断参数 SecurityGroupIds 是否已赋值
-                     * @return SecurityGroupIds 是否已赋值
-                     * 
-                     */
-                    bool SecurityGroupIdsHasBeenSet() const;
 
                     /**
                      * 获取虚拟节点label
@@ -257,16 +257,16 @@ namespace TencentCloud
                     bool m_nameHasBeenSet;
 
                     /**
+                     * 安全组ID列表
+                     */
+                    std::vector<std::string> m_securityGroupIds;
+                    bool m_securityGroupIdsHasBeenSet;
+
+                    /**
                      * 子网ID列表
                      */
                     std::vector<std::string> m_subnetIds;
                     bool m_subnetIdsHasBeenSet;
-
-                    /**
-                     * 安全组ID列表，必选参数
-                     */
-                    std::vector<std::string> m_securityGroupIds;
-                    bool m_securityGroupIdsHasBeenSet;
 
                     /**
                      * 虚拟节点label

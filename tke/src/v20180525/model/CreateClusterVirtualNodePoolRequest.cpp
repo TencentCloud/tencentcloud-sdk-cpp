@@ -25,8 +25,8 @@ using namespace std;
 CreateClusterVirtualNodePoolRequest::CreateClusterVirtualNodePoolRequest() :
     m_clusterIdHasBeenSet(false),
     m_nameHasBeenSet(false),
-    m_subnetIdsHasBeenSet(false),
     m_securityGroupIdsHasBeenSet(false),
+    m_subnetIdsHasBeenSet(false),
     m_labelsHasBeenSet(false),
     m_taintsHasBeenSet(false),
     m_virtualNodesHasBeenSet(false),
@@ -58,19 +58,6 @@ string CreateClusterVirtualNodePoolRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_subnetIdsHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "SubnetIds";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
-
-        for (auto itr = m_subnetIds.begin(); itr != m_subnetIds.end(); ++itr)
-        {
-            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
-        }
-    }
-
     if (m_securityGroupIdsHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -79,6 +66,19 @@ string CreateClusterVirtualNodePoolRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_securityGroupIds.begin(); itr != m_securityGroupIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_subnetIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubnetIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_subnetIds.begin(); itr != m_subnetIds.end(); ++itr)
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
@@ -185,22 +185,6 @@ bool CreateClusterVirtualNodePoolRequest::NameHasBeenSet() const
     return m_nameHasBeenSet;
 }
 
-vector<string> CreateClusterVirtualNodePoolRequest::GetSubnetIds() const
-{
-    return m_subnetIds;
-}
-
-void CreateClusterVirtualNodePoolRequest::SetSubnetIds(const vector<string>& _subnetIds)
-{
-    m_subnetIds = _subnetIds;
-    m_subnetIdsHasBeenSet = true;
-}
-
-bool CreateClusterVirtualNodePoolRequest::SubnetIdsHasBeenSet() const
-{
-    return m_subnetIdsHasBeenSet;
-}
-
 vector<string> CreateClusterVirtualNodePoolRequest::GetSecurityGroupIds() const
 {
     return m_securityGroupIds;
@@ -215,6 +199,22 @@ void CreateClusterVirtualNodePoolRequest::SetSecurityGroupIds(const vector<strin
 bool CreateClusterVirtualNodePoolRequest::SecurityGroupIdsHasBeenSet() const
 {
     return m_securityGroupIdsHasBeenSet;
+}
+
+vector<string> CreateClusterVirtualNodePoolRequest::GetSubnetIds() const
+{
+    return m_subnetIds;
+}
+
+void CreateClusterVirtualNodePoolRequest::SetSubnetIds(const vector<string>& _subnetIds)
+{
+    m_subnetIds = _subnetIds;
+    m_subnetIdsHasBeenSet = true;
+}
+
+bool CreateClusterVirtualNodePoolRequest::SubnetIdsHasBeenSet() const
+{
+    return m_subnetIdsHasBeenSet;
 }
 
 vector<Label> CreateClusterVirtualNodePoolRequest::GetLabels() const

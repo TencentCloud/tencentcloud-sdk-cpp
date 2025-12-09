@@ -23,7 +23,9 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Dataagent::V20250513::Model;
 using namespace std;
 
-GetKnowledgeBaseFileListResponse::GetKnowledgeBaseFileListResponse()
+GetKnowledgeBaseFileListResponse::GetKnowledgeBaseFileListResponse() :
+    m_fileListHasBeenSet(false),
+    m_totalHasBeenSet(false)
 {
 }
 
@@ -61,6 +63,36 @@ CoreInternalOutcome GetKnowledgeBaseFileListResponse::Deserialize(const string &
     }
 
 
+    if (rsp.HasMember("FileList") && !rsp["FileList"].IsNull())
+    {
+        if (!rsp["FileList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `FileList` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["FileList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            FileInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_fileList.push_back(item);
+        }
+        m_fileListHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("Total") && !rsp["Total"].IsNull())
+    {
+        if (!rsp["Total"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Total` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_total = rsp["Total"].GetInt64();
+        m_totalHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +102,29 @@ string GetKnowledgeBaseFileListResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_fileListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FileList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_fileList.begin(); itr != m_fileList.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_totalHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Total";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_total, allocator);
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +137,25 @@ string GetKnowledgeBaseFileListResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+vector<FileInfo> GetKnowledgeBaseFileListResponse::GetFileList() const
+{
+    return m_fileList;
+}
+
+bool GetKnowledgeBaseFileListResponse::FileListHasBeenSet() const
+{
+    return m_fileListHasBeenSet;
+}
+
+int64_t GetKnowledgeBaseFileListResponse::GetTotal() const
+{
+    return m_total;
+}
+
+bool GetKnowledgeBaseFileListResponse::TotalHasBeenSet() const
+{
+    return m_totalHasBeenSet;
+}
 
 

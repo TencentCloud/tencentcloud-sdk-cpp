@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool GroupIdHasBeenSet() const;
 
                     /**
-                     * 获取命名空间，目前只支持单个命名空间
-                     * @return Namespaces 命名空间，目前只支持单个命名空间
+                     * 获取消费组所在的命名空间，4.x 通用集群命名空间固定为: tdmq_default
+                     * @return Namespaces 消费组所在的命名空间，4.x 通用集群命名空间固定为: tdmq_default
                      * 
                      */
                     std::vector<std::string> GetNamespaces() const;
 
                     /**
-                     * 设置命名空间，目前只支持单个命名空间
-                     * @param _namespaces 命名空间，目前只支持单个命名空间
+                     * 设置消费组所在的命名空间，4.x 通用集群命名空间固定为: tdmq_default
+                     * @param _namespaces 消费组所在的命名空间，4.x 通用集群命名空间固定为: tdmq_default
                      * 
                      */
                     void SetNamespaces(const std::vector<std::string>& _namespaces);
@@ -219,7 +219,7 @@ namespace TencentCloud
                     bool m_groupIdHasBeenSet;
 
                     /**
-                     * 命名空间，目前只支持单个命名空间
+                     * 消费组所在的命名空间，4.x 通用集群命名空间固定为: tdmq_default
                      */
                     std::vector<std::string> m_namespaces;
                     bool m_namespacesHasBeenSet;

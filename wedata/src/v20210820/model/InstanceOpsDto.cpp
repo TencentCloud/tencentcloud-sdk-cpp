@@ -87,7 +87,8 @@ InstanceOpsDto::InstanceOpsDto() :
     m_scheduleRunTypeHasBeenSet(false),
     m_allowRedoTypeHasBeenSet(false),
     m_instanceCycleTypeHasBeenSet(false),
-    m_instanceSchedulerDescHasBeenSet(false)
+    m_instanceSchedulerDescHasBeenSet(false),
+    m_privilegesHasBeenSet(false)
 {
 }
 
@@ -803,6 +804,19 @@ CoreInternalOutcome InstanceOpsDto::Deserialize(const rapidjson::Value &value)
         m_instanceSchedulerDescHasBeenSet = true;
     }
 
+    if (value.HasMember("Privileges") && !value["Privileges"].IsNull())
+    {
+        if (!value["Privileges"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `InstanceOpsDto.Privileges` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Privileges"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_privileges.push_back((*itr).GetString());
+        }
+        m_privilegesHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1365,6 +1379,19 @@ void InstanceOpsDto::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "InstanceSchedulerDesc";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_instanceSchedulerDesc.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_privilegesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Privileges";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_privileges.begin(); itr != m_privileges.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 }
@@ -2440,5 +2467,21 @@ void InstanceOpsDto::SetInstanceSchedulerDesc(const string& _instanceSchedulerDe
 bool InstanceOpsDto::InstanceSchedulerDescHasBeenSet() const
 {
     return m_instanceSchedulerDescHasBeenSet;
+}
+
+vector<string> InstanceOpsDto::GetPrivileges() const
+{
+    return m_privileges;
+}
+
+void InstanceOpsDto::SetPrivileges(const vector<string>& _privileges)
+{
+    m_privileges = _privileges;
+    m_privilegesHasBeenSet = true;
+}
+
+bool InstanceOpsDto::PrivilegesHasBeenSet() const
+{
+    return m_privilegesHasBeenSet;
 }
 

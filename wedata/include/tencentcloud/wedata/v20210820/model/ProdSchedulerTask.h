@@ -196,6 +196,56 @@ namespace TencentCloud
                      */
                     bool ScheduleTimeZoneHasBeenSet() const;
 
+                    /**
+                     * 获取负责人id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return InChargeIdList 负责人id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<std::string> GetInChargeIdList() const;
+
+                    /**
+                     * 设置负责人id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _inChargeIdList 负责人id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetInChargeIdList(const std::vector<std::string>& _inChargeIdList);
+
+                    /**
+                     * 判断参数 InChargeIdList 是否已赋值
+                     * @return InChargeIdList 是否已赋值
+                     * 
+                     */
+                    bool InChargeIdListHasBeenSet() const;
+
+                    /**
+                     * 获取负责人name
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return InChargeNameList 负责人name
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<std::string> GetInChargeNameList() const;
+
+                    /**
+                     * 设置负责人name
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _inChargeNameList 负责人name
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetInChargeNameList(const std::vector<std::string>& _inChargeNameList);
+
+                    /**
+                     * 判断参数 InChargeNameList 是否已赋值
+                     * @return InChargeNameList 是否已赋值
+                     * 
+                     */
+                    bool InChargeNameListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -239,6 +289,20 @@ namespace TencentCloud
                      */
                     std::string m_scheduleTimeZone;
                     bool m_scheduleTimeZoneHasBeenSet;
+
+                    /**
+                     * 负责人id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_inChargeIdList;
+                    bool m_inChargeIdListHasBeenSet;
+
+                    /**
+                     * 负责人name
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_inChargeNameList;
+                    bool m_inChargeNameListHasBeenSet;
 
                 };
             }

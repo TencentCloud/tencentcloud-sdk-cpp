@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool ClusterIdHasBeenSet() const;
 
                     /**
-                     * 获取命名空间
-                     * @return Namespace 命名空间
+                     * 获取主题所在的命名空间，4.x 通用集群命名空间固定为: tdmq_default
+                     * @return Namespace 主题所在的命名空间，4.x 通用集群命名空间固定为: tdmq_default
                      * 
                      */
                     std::string GetNamespace() const;
 
                     /**
-                     * 设置命名空间
-                     * @param _namespace 命名空间
+                     * 设置主题所在的命名空间，4.x 通用集群命名空间固定为: tdmq_default
+                     * @param _namespace 主题所在的命名空间，4.x 通用集群命名空间固定为: tdmq_default
                      * 
                      */
                     void SetNamespace(const std::string& _namespace);
@@ -211,7 +211,7 @@ namespace TencentCloud
                     bool m_clusterIdHasBeenSet;
 
                     /**
-                     * 命名空间
+                     * 主题所在的命名空间，4.x 通用集群命名空间固定为: tdmq_default
                      */
                     std::string m_namespace;
                     bool m_namespaceHasBeenSet;

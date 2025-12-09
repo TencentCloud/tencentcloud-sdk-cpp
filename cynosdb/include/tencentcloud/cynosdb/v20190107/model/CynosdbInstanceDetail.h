@@ -241,21 +241,19 @@ creating：创建中
 running：运行中
 isolating：隔离中
 isolated：已隔离
-activating：解隔离中
+activating：恢复中
 offlining：下线中
 offlined：已下线
-deleting：删除中
-deleted：已删除
+
                      * @return Status 实例状态
 creating：创建中
 running：运行中
 isolating：隔离中
 isolated：已隔离
-activating：解隔离中
+activating：恢复中
 offlining：下线中
 offlined：已下线
-deleting：删除中
-deleted：已删除
+
                      * 
                      */
                     std::string GetStatus() const;
@@ -266,21 +264,19 @@ creating：创建中
 running：运行中
 isolating：隔离中
 isolated：已隔离
-activating：解隔离中
+activating：恢复中
 offlining：下线中
 offlined：已下线
-deleting：删除中
-deleted：已删除
+
                      * @param _status 实例状态
 creating：创建中
 running：运行中
 isolating：隔离中
 isolated：已隔离
-activating：解隔离中
+activating：恢复中
 offlining：下线中
 offlined：已下线
-deleting：删除中
-deleted：已删除
+
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -887,11 +883,10 @@ creating：创建中
 running：运行中
 isolating：隔离中
 isolated：已隔离
-activating：解隔离中
+activating：恢复中
 offlining：下线中
 offlined：已下线
-deleting：删除中
-deleted：已删除
+
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;

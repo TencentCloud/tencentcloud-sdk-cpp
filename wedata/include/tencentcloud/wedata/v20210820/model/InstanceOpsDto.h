@@ -1712,6 +1712,27 @@ namespace TencentCloud
                      */
                     bool InstanceSchedulerDescHasBeenSet() const;
 
+                    /**
+                     * 获取当前用户对该实例的权限列表
+                     * @return Privileges 当前用户对该实例的权限列表
+                     * 
+                     */
+                    std::vector<std::string> GetPrivileges() const;
+
+                    /**
+                     * 设置当前用户对该实例的权限列表
+                     * @param _privileges 当前用户对该实例的权限列表
+                     * 
+                     */
+                    void SetPrivileges(const std::vector<std::string>& _privileges);
+
+                    /**
+                     * 判断参数 Privileges 是否已赋值
+                     * @return Privileges 是否已赋值
+                     * 
+                     */
+                    bool PrivilegesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -2179,6 +2200,12 @@ namespace TencentCloud
                      */
                     std::string m_instanceSchedulerDesc;
                     bool m_instanceSchedulerDescHasBeenSet;
+
+                    /**
+                     * 当前用户对该实例的权限列表
+                     */
+                    std::vector<std::string> m_privileges;
+                    bool m_privilegesHasBeenSet;
 
                 };
             }

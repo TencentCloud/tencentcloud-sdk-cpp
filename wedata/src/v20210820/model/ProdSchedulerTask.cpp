@@ -26,7 +26,9 @@ ProdSchedulerTask::ProdSchedulerTask() :
     m_taskNameHasBeenSet(false),
     m_cycleTypeHasBeenSet(false),
     m_taskTypeHasBeenSet(false),
-    m_scheduleTimeZoneHasBeenSet(false)
+    m_scheduleTimeZoneHasBeenSet(false),
+    m_inChargeIdListHasBeenSet(false),
+    m_inChargeNameListHasBeenSet(false)
 {
 }
 
@@ -95,6 +97,32 @@ CoreInternalOutcome ProdSchedulerTask::Deserialize(const rapidjson::Value &value
         m_scheduleTimeZoneHasBeenSet = true;
     }
 
+    if (value.HasMember("InChargeIdList") && !value["InChargeIdList"].IsNull())
+    {
+        if (!value["InChargeIdList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ProdSchedulerTask.InChargeIdList` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["InChargeIdList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_inChargeIdList.push_back((*itr).GetString());
+        }
+        m_inChargeIdListHasBeenSet = true;
+    }
+
+    if (value.HasMember("InChargeNameList") && !value["InChargeNameList"].IsNull())
+    {
+        if (!value["InChargeNameList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ProdSchedulerTask.InChargeNameList` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["InChargeNameList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_inChargeNameList.push_back((*itr).GetString());
+        }
+        m_inChargeNameListHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -148,6 +176,32 @@ void ProdSchedulerTask::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "ScheduleTimeZone";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_scheduleTimeZone.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_inChargeIdListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InChargeIdList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_inChargeIdList.begin(); itr != m_inChargeIdList.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_inChargeNameListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InChargeNameList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_inChargeNameList.begin(); itr != m_inChargeNameList.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 }
@@ -247,5 +301,37 @@ void ProdSchedulerTask::SetScheduleTimeZone(const string& _scheduleTimeZone)
 bool ProdSchedulerTask::ScheduleTimeZoneHasBeenSet() const
 {
     return m_scheduleTimeZoneHasBeenSet;
+}
+
+vector<string> ProdSchedulerTask::GetInChargeIdList() const
+{
+    return m_inChargeIdList;
+}
+
+void ProdSchedulerTask::SetInChargeIdList(const vector<string>& _inChargeIdList)
+{
+    m_inChargeIdList = _inChargeIdList;
+    m_inChargeIdListHasBeenSet = true;
+}
+
+bool ProdSchedulerTask::InChargeIdListHasBeenSet() const
+{
+    return m_inChargeIdListHasBeenSet;
+}
+
+vector<string> ProdSchedulerTask::GetInChargeNameList() const
+{
+    return m_inChargeNameList;
+}
+
+void ProdSchedulerTask::SetInChargeNameList(const vector<string>& _inChargeNameList)
+{
+    m_inChargeNameList = _inChargeNameList;
+    m_inChargeNameListHasBeenSet = true;
+}
+
+bool ProdSchedulerTask::InChargeNameListHasBeenSet() const
+{
+    return m_inChargeNameListHasBeenSet;
 }
 

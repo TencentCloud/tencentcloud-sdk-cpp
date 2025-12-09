@@ -50,7 +50,9 @@ EventContent::EventContent() :
     m_mediaCastStatusChangedEventHasBeenSet(false),
     m_persistenceCompleteEventHasBeenSet(false),
     m_complexAdaptiveDynamicStreamingCompleteEventHasBeenSet(false),
-    m_processMediaByMPSCompleteEventHasBeenSet(false)
+    m_processMediaByMPSCompleteEventHasBeenSet(false),
+    m_aigcImageCompleteEventHasBeenSet(false),
+    m_aigcVideoCompleteEventHasBeenSet(false)
 {
 }
 
@@ -555,6 +557,40 @@ CoreInternalOutcome EventContent::Deserialize(const rapidjson::Value &value)
         m_processMediaByMPSCompleteEventHasBeenSet = true;
     }
 
+    if (value.HasMember("AigcImageCompleteEvent") && !value["AigcImageCompleteEvent"].IsNull())
+    {
+        if (!value["AigcImageCompleteEvent"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `EventContent.AigcImageCompleteEvent` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_aigcImageCompleteEvent.Deserialize(value["AigcImageCompleteEvent"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_aigcImageCompleteEventHasBeenSet = true;
+    }
+
+    if (value.HasMember("AigcVideoCompleteEvent") && !value["AigcVideoCompleteEvent"].IsNull())
+    {
+        if (!value["AigcVideoCompleteEvent"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `EventContent.AigcVideoCompleteEvent` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_aigcVideoCompleteEvent.Deserialize(value["AigcVideoCompleteEvent"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_aigcVideoCompleteEventHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -828,6 +864,24 @@ void EventContent::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_processMediaByMPSCompleteEvent.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_aigcImageCompleteEventHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AigcImageCompleteEvent";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_aigcImageCompleteEvent.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_aigcVideoCompleteEventHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AigcVideoCompleteEvent";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_aigcVideoCompleteEvent.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -1311,5 +1365,37 @@ void EventContent::SetProcessMediaByMPSCompleteEvent(const ProcessMediaByMPS& _p
 bool EventContent::ProcessMediaByMPSCompleteEventHasBeenSet() const
 {
     return m_processMediaByMPSCompleteEventHasBeenSet;
+}
+
+AigcImageTask EventContent::GetAigcImageCompleteEvent() const
+{
+    return m_aigcImageCompleteEvent;
+}
+
+void EventContent::SetAigcImageCompleteEvent(const AigcImageTask& _aigcImageCompleteEvent)
+{
+    m_aigcImageCompleteEvent = _aigcImageCompleteEvent;
+    m_aigcImageCompleteEventHasBeenSet = true;
+}
+
+bool EventContent::AigcImageCompleteEventHasBeenSet() const
+{
+    return m_aigcImageCompleteEventHasBeenSet;
+}
+
+AigcVideoTask EventContent::GetAigcVideoCompleteEvent() const
+{
+    return m_aigcVideoCompleteEvent;
+}
+
+void EventContent::SetAigcVideoCompleteEvent(const AigcVideoTask& _aigcVideoCompleteEvent)
+{
+    m_aigcVideoCompleteEvent = _aigcVideoCompleteEvent;
+    m_aigcVideoCompleteEventHasBeenSet = true;
+}
+
+bool EventContent::AigcVideoCompleteEventHasBeenSet() const
+{
+    return m_aigcVideoCompleteEventHasBeenSet;
 }
 

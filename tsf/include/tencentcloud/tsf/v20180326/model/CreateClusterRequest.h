@@ -328,15 +328,15 @@ namespace TencentCloud
                     bool KuberneteApiServerHasBeenSet() const;
 
                     /**
-                     * 获取K : kubeconfig, S : service account
-                     * @return KuberneteNativeType K : kubeconfig, S : service account
+                     * 获取K : kubeconfig, S : service account (公有云不支持通过kubeconfig和service account的方式创建集群)
+                     * @return KuberneteNativeType K : kubeconfig, S : service account (公有云不支持通过kubeconfig和service account的方式创建集群)
                      * 
                      */
                     std::string GetKuberneteNativeType() const;
 
                     /**
-                     * 设置K : kubeconfig, S : service account
-                     * @param _kuberneteNativeType K : kubeconfig, S : service account
+                     * 设置K : kubeconfig, S : service account (公有云不支持通过kubeconfig和service account的方式创建集群)
+                     * @param _kuberneteNativeType K : kubeconfig, S : service account (公有云不支持通过kubeconfig和service account的方式创建集群)
                      * 
                      */
                     void SetKuberneteNativeType(const std::string& _kuberneteNativeType);
@@ -495,7 +495,7 @@ namespace TencentCloud
                     bool m_kuberneteApiServerHasBeenSet;
 
                     /**
-                     * K : kubeconfig, S : service account
+                     * K : kubeconfig, S : service account (公有云不支持通过kubeconfig和service account的方式创建集群)
                      */
                     std::string m_kuberneteNativeType;
                     bool m_kuberneteNativeTypeHasBeenSet;

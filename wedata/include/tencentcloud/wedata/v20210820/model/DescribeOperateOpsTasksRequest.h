@@ -652,6 +652,48 @@ namespace TencentCloud
                      */
                     bool RunPriorityListHasBeenSet() const;
 
+                    /**
+                     * 获取是否包含手动工作流
+                     * @return IncludeManualTask 是否包含手动工作流
+                     * 
+                     */
+                    std::string GetIncludeManualTask() const;
+
+                    /**
+                     * 设置是否包含手动工作流
+                     * @param _includeManualTask 是否包含手动工作流
+                     * 
+                     */
+                    void SetIncludeManualTask(const std::string& _includeManualTask);
+
+                    /**
+                     * 判断参数 IncludeManualTask 是否已赋值
+                     * @return IncludeManualTask 是否已赋值
+                     * 
+                     */
+                    bool IncludeManualTaskHasBeenSet() const;
+
+                    /**
+                     * 获取是否检查权限
+                     * @return CheckPrivilege 是否检查权限
+                     * 
+                     */
+                    bool GetCheckPrivilege() const;
+
+                    /**
+                     * 设置是否检查权限
+                     * @param _checkPrivilege 是否检查权限
+                     * 
+                     */
+                    void SetCheckPrivilege(const bool& _checkPrivilege);
+
+                    /**
+                     * 判断参数 CheckPrivilege 是否已赋值
+                     * @return CheckPrivilege 是否已赋值
+                     * 
+                     */
+                    bool CheckPrivilegeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -827,6 +869,18 @@ namespace TencentCloud
                      */
                     std::vector<int64_t> m_runPriorityList;
                     bool m_runPriorityListHasBeenSet;
+
+                    /**
+                     * 是否包含手动工作流
+                     */
+                    std::string m_includeManualTask;
+                    bool m_includeManualTaskHasBeenSet;
+
+                    /**
+                     * 是否检查权限
+                     */
+                    bool m_checkPrivilege;
+                    bool m_checkPrivilegeHasBeenSet;
 
                 };
             }

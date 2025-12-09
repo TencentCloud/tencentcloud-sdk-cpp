@@ -446,6 +446,48 @@ namespace TencentCloud
                      */
                     bool WorkflowTypeHasBeenSet() const;
 
+                    /**
+                     * 获取bundle客户端绑定唯一id
+                     * @return BundleId bundle客户端绑定唯一id
+                     * 
+                     */
+                    std::string GetBundleId() const;
+
+                    /**
+                     * 设置bundle客户端绑定唯一id
+                     * @param _bundleId bundle客户端绑定唯一id
+                     * 
+                     */
+                    void SetBundleId(const std::string& _bundleId);
+
+                    /**
+                     * 判断参数 BundleId 是否已赋值
+                     * @return BundleId 是否已赋值
+                     * 
+                     */
+                    bool BundleIdHasBeenSet() const;
+
+                    /**
+                     * 获取bundle客户端扩展信息，json格式
+                     * @return BundleInfo bundle客户端扩展信息，json格式
+                     * 
+                     */
+                    std::string GetBundleInfo() const;
+
+                    /**
+                     * 设置bundle客户端扩展信息，json格式
+                     * @param _bundleInfo bundle客户端扩展信息，json格式
+                     * 
+                     */
+                    void SetBundleInfo(const std::string& _bundleInfo);
+
+                    /**
+                     * 判断参数 BundleInfo 是否已赋值
+                     * @return BundleInfo 是否已赋值
+                     * 
+                     */
+                    bool BundleInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -559,6 +601,18 @@ namespace TencentCloud
                      */
                     std::string m_workflowType;
                     bool m_workflowTypeHasBeenSet;
+
+                    /**
+                     * bundle客户端绑定唯一id
+                     */
+                    std::string m_bundleId;
+                    bool m_bundleIdHasBeenSet;
+
+                    /**
+                     * bundle客户端扩展信息，json格式
+                     */
+                    std::string m_bundleInfo;
+                    bool m_bundleInfoHasBeenSet;
 
                 };
             }

@@ -33,7 +33,8 @@ SuccessorTaskInfo::SuccessorTaskInfo() :
     m_workflowNameHasBeenSet(false),
     m_cycleUnitHasBeenSet(false),
     m_scheduleDescHasBeenSet(false),
-    m_taskTypeDescHasBeenSet(false)
+    m_taskTypeDescHasBeenSet(false),
+    m_privilegesHasBeenSet(false)
 {
 }
 
@@ -172,6 +173,19 @@ CoreInternalOutcome SuccessorTaskInfo::Deserialize(const rapidjson::Value &value
         m_taskTypeDescHasBeenSet = true;
     }
 
+    if (value.HasMember("Privileges") && !value["Privileges"].IsNull())
+    {
+        if (!value["Privileges"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `SuccessorTaskInfo.Privileges` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Privileges"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_privileges.push_back((*itr).GetString());
+        }
+        m_privilegesHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -281,6 +295,19 @@ void SuccessorTaskInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "TaskTypeDesc";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_taskTypeDesc.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_privilegesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Privileges";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_privileges.begin(); itr != m_privileges.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 }
@@ -492,5 +519,21 @@ void SuccessorTaskInfo::SetTaskTypeDesc(const string& _taskTypeDesc)
 bool SuccessorTaskInfo::TaskTypeDescHasBeenSet() const
 {
     return m_taskTypeDescHasBeenSet;
+}
+
+vector<string> SuccessorTaskInfo::GetPrivileges() const
+{
+    return m_privileges;
+}
+
+void SuccessorTaskInfo::SetPrivileges(const vector<string>& _privileges)
+{
+    m_privileges = _privileges;
+    m_privilegesHasBeenSet = true;
+}
+
+bool SuccessorTaskInfo::PrivilegesHasBeenSet() const
+{
+    return m_privilegesHasBeenSet;
 }
 

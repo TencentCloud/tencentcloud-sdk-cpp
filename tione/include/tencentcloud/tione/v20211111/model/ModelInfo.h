@@ -181,14 +181,18 @@ namespace TencentCloud
 
                     /**
                      * 获取GooseFSx的配置，ModelSource为GooseFSx时有效
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return GooseFSx GooseFSx的配置，ModelSource为GooseFSx时有效
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     GooseFSx GetGooseFSx() const;
 
                     /**
                      * 设置GooseFSx的配置，ModelSource为GooseFSx时有效
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _gooseFSx GooseFSx的配置，ModelSource为GooseFSx时有效
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGooseFSx(const GooseFSx& _gooseFSx);
@@ -383,6 +387,7 @@ namespace TencentCloud
 
                     /**
                      * GooseFSx的配置，ModelSource为GooseFSx时有效
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     GooseFSx m_gooseFSx;
                     bool m_gooseFSxHasBeenSet;

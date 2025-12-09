@@ -51,7 +51,9 @@ DescribeTaskDetailResponse::DescribeTaskDetailResponse() :
     m_qualityInspectTaskHasBeenSet(false),
     m_qualityEnhanceTaskHasBeenSet(false),
     m_complexAdaptiveDynamicStreamingTaskHasBeenSet(false),
-    m_processMediaByMPSTaskHasBeenSet(false)
+    m_processMediaByMPSTaskHasBeenSet(false),
+    m_aigcImageTaskHasBeenSet(false),
+    m_aigcVideoTaskHasBeenSet(false)
 {
 }
 
@@ -530,6 +532,40 @@ CoreInternalOutcome DescribeTaskDetailResponse::Deserialize(const string &payloa
         m_processMediaByMPSTaskHasBeenSet = true;
     }
 
+    if (rsp.HasMember("AigcImageTask") && !rsp["AigcImageTask"].IsNull())
+    {
+        if (!rsp["AigcImageTask"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `AigcImageTask` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_aigcImageTask.Deserialize(rsp["AigcImageTask"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_aigcImageTaskHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("AigcVideoTask") && !rsp["AigcVideoTask"].IsNull())
+    {
+        if (!rsp["AigcVideoTask"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `AigcVideoTask` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_aigcVideoTask.Deserialize(rsp["AigcVideoTask"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_aigcVideoTaskHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -785,6 +821,24 @@ string DescribeTaskDetailResponse::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_processMediaByMPSTask.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_aigcImageTaskHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AigcImageTask";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_aigcImageTask.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_aigcVideoTaskHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AigcVideoTask";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_aigcVideoTask.ToJsonObject(value[key.c_str()], allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -1077,6 +1131,26 @@ ProcessMediaByMPS DescribeTaskDetailResponse::GetProcessMediaByMPSTask() const
 bool DescribeTaskDetailResponse::ProcessMediaByMPSTaskHasBeenSet() const
 {
     return m_processMediaByMPSTaskHasBeenSet;
+}
+
+AigcImageTask DescribeTaskDetailResponse::GetAigcImageTask() const
+{
+    return m_aigcImageTask;
+}
+
+bool DescribeTaskDetailResponse::AigcImageTaskHasBeenSet() const
+{
+    return m_aigcImageTaskHasBeenSet;
+}
+
+AigcVideoTask DescribeTaskDetailResponse::GetAigcVideoTask() const
+{
+    return m_aigcVideoTask;
+}
+
+bool DescribeTaskDetailResponse::AigcVideoTaskHasBeenSet() const
+{
+    return m_aigcVideoTaskHasBeenSet;
 }
 
 

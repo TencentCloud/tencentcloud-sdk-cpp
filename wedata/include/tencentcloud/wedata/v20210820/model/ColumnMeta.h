@@ -25,6 +25,8 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/wedata/v20210820/model/Pair.h>
+#include <tencentcloud/wedata/v20210820/model/IndicatorBaseSimpleInfo.h>
+#include <tencentcloud/wedata/v20210820/model/AssetDim.h>
 
 
 namespace TencentCloud
@@ -397,6 +399,106 @@ namespace TencentCloud
                      */
                     bool SpecificationHasBeenSet() const;
 
+                    /**
+                     * 获取目录名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CategoryName 目录名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetCategoryName() const;
+
+                    /**
+                     * 设置目录名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _categoryName 目录名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCategoryName(const std::string& _categoryName);
+
+                    /**
+                     * 判断参数 CategoryName 是否已赋值
+                     * @return CategoryName 是否已赋值
+                     * 
+                     */
+                    bool CategoryNameHasBeenSet() const;
+
+                    /**
+                     * 获取源类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return OriginType 源类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetOriginType() const;
+
+                    /**
+                     * 设置源类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _originType 源类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetOriginType(const std::string& _originType);
+
+                    /**
+                     * 判断参数 OriginType 是否已赋值
+                     * @return OriginType 是否已赋值
+                     * 
+                     */
+                    bool OriginTypeHasBeenSet() const;
+
+                    /**
+                     * 获取列绑定的指标信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IndicatorBase 列绑定的指标信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    IndicatorBaseSimpleInfo GetIndicatorBase() const;
+
+                    /**
+                     * 设置列绑定的指标信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _indicatorBase 列绑定的指标信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetIndicatorBase(const IndicatorBaseSimpleInfo& _indicatorBase);
+
+                    /**
+                     * 判断参数 IndicatorBase 是否已赋值
+                     * @return IndicatorBase 是否已赋值
+                     * 
+                     */
+                    bool IndicatorBaseHasBeenSet() const;
+
+                    /**
+                     * 获取列绑定的维度信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AssetDim 列绑定的维度信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    AssetDim GetAssetDim() const;
+
+                    /**
+                     * 设置列绑定的维度信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _assetDim 列绑定的维度信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAssetDim(const AssetDim& _assetDim);
+
+                    /**
+                     * 判断参数 AssetDim 是否已赋值
+                     * @return AssetDim 是否已赋值
+                     * 
+                     */
+                    bool AssetDimHasBeenSet() const;
+
                 private:
 
                     /**
@@ -496,6 +598,34 @@ namespace TencentCloud
                      */
                     std::string m_specification;
                     bool m_specificationHasBeenSet;
+
+                    /**
+                     * 目录名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_categoryName;
+                    bool m_categoryNameHasBeenSet;
+
+                    /**
+                     * 源类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_originType;
+                    bool m_originTypeHasBeenSet;
+
+                    /**
+                     * 列绑定的指标信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    IndicatorBaseSimpleInfo m_indicatorBase;
+                    bool m_indicatorBaseHasBeenSet;
+
+                    /**
+                     * 列绑定的维度信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    AssetDim m_assetDim;
+                    bool m_assetDimHasBeenSet;
 
                 };
             }
