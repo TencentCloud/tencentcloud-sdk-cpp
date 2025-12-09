@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/wedata/v20210820/model/OrderCondition.h>
 
 
 namespace TencentCloud
@@ -231,6 +232,48 @@ namespace TencentCloud
                      */
                     bool PageIndexHasBeenSet() const;
 
+                    /**
+                     * 获取状态列表  LAUNCHED:等待运行 RUNNING:运行中 KILLING:终止中 KILLED:已终止 SUCCESS:成功 FAILED:失败 SKIP_RUNNING 跳过运行 NEVER_RUN:未运行
+                     * @return StatusList 状态列表  LAUNCHED:等待运行 RUNNING:运行中 KILLING:终止中 KILLED:已终止 SUCCESS:成功 FAILED:失败 SKIP_RUNNING 跳过运行 NEVER_RUN:未运行
+                     * 
+                     */
+                    std::vector<std::string> GetStatusList() const;
+
+                    /**
+                     * 设置状态列表  LAUNCHED:等待运行 RUNNING:运行中 KILLING:终止中 KILLED:已终止 SUCCESS:成功 FAILED:失败 SKIP_RUNNING 跳过运行 NEVER_RUN:未运行
+                     * @param _statusList 状态列表  LAUNCHED:等待运行 RUNNING:运行中 KILLING:终止中 KILLED:已终止 SUCCESS:成功 FAILED:失败 SKIP_RUNNING 跳过运行 NEVER_RUN:未运行
+                     * 
+                     */
+                    void SetStatusList(const std::vector<std::string>& _statusList);
+
+                    /**
+                     * 判断参数 StatusList 是否已赋值
+                     * @return StatusList 是否已赋值
+                     * 
+                     */
+                    bool StatusListHasBeenSet() const;
+
+                    /**
+                     * 获取排序条件 排序的key：timeCost,startTime
+                     * @return OrderConditionList 排序条件 排序的key：timeCost,startTime
+                     * 
+                     */
+                    std::vector<OrderCondition> GetOrderConditionList() const;
+
+                    /**
+                     * 设置排序条件 排序的key：timeCost,startTime
+                     * @param _orderConditionList 排序条件 排序的key：timeCost,startTime
+                     * 
+                     */
+                    void SetOrderConditionList(const std::vector<OrderCondition>& _orderConditionList);
+
+                    /**
+                     * 判断参数 OrderConditionList 是否已赋值
+                     * @return OrderConditionList 是否已赋值
+                     * 
+                     */
+                    bool OrderConditionListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -286,6 +329,18 @@ namespace TencentCloud
                      */
                     int64_t m_pageIndex;
                     bool m_pageIndexHasBeenSet;
+
+                    /**
+                     * 状态列表  LAUNCHED:等待运行 RUNNING:运行中 KILLING:终止中 KILLED:已终止 SUCCESS:成功 FAILED:失败 SKIP_RUNNING 跳过运行 NEVER_RUN:未运行
+                     */
+                    std::vector<std::string> m_statusList;
+                    bool m_statusListHasBeenSet;
+
+                    /**
+                     * 排序条件 排序的key：timeCost,startTime
+                     */
+                    std::vector<OrderCondition> m_orderConditionList;
+                    bool m_orderConditionListHasBeenSet;
 
                 };
             }

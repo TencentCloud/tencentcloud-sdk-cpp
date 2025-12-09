@@ -31,7 +31,9 @@ DescribeTestRunningRecordRequest::DescribeTestRunningRecordRequest() :
     m_endTimeHasBeenSet(false),
     m_recordIdListHasBeenSet(false),
     m_pageSizeHasBeenSet(false),
-    m_pageIndexHasBeenSet(false)
+    m_pageIndexHasBeenSet(false),
+    m_statusListHasBeenSet(false),
+    m_orderConditionListHasBeenSet(false)
 {
 }
 
@@ -117,6 +119,34 @@ string DescribeTestRunningRecordRequest::ToJsonString() const
         string key = "PageIndex";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_pageIndex, allocator);
+    }
+
+    if (m_statusListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StatusList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_statusList.begin(); itr != m_statusList.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_orderConditionListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OrderConditionList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_orderConditionList.begin(); itr != m_orderConditionList.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -269,6 +299,38 @@ void DescribeTestRunningRecordRequest::SetPageIndex(const int64_t& _pageIndex)
 bool DescribeTestRunningRecordRequest::PageIndexHasBeenSet() const
 {
     return m_pageIndexHasBeenSet;
+}
+
+vector<string> DescribeTestRunningRecordRequest::GetStatusList() const
+{
+    return m_statusList;
+}
+
+void DescribeTestRunningRecordRequest::SetStatusList(const vector<string>& _statusList)
+{
+    m_statusList = _statusList;
+    m_statusListHasBeenSet = true;
+}
+
+bool DescribeTestRunningRecordRequest::StatusListHasBeenSet() const
+{
+    return m_statusListHasBeenSet;
+}
+
+vector<OrderCondition> DescribeTestRunningRecordRequest::GetOrderConditionList() const
+{
+    return m_orderConditionList;
+}
+
+void DescribeTestRunningRecordRequest::SetOrderConditionList(const vector<OrderCondition>& _orderConditionList)
+{
+    m_orderConditionList = _orderConditionList;
+    m_orderConditionListHasBeenSet = true;
+}
+
+bool DescribeTestRunningRecordRequest::OrderConditionListHasBeenSet() const
+{
+    return m_orderConditionListHasBeenSet;
 }
 
 

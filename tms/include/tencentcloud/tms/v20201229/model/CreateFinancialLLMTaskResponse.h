@@ -45,9 +45,7 @@ namespace TencentCloud
 
                     /**
                      * 获取本次请求返回的任务ID将用于后续查询接口，以获取对应的审校结果。
-示例值：3570106e-b156-45d9-8af5-99b46f7eb2f9。
                      * @return TaskId 本次请求返回的任务ID将用于后续查询接口，以获取对应的审校结果。
-示例值：3570106e-b156-45d9-8af5-99b46f7eb2f9。
                      * 
                      */
                     std::string GetTaskId() const;
@@ -63,7 +61,6 @@ namespace TencentCloud
 
                     /**
                      * 本次请求返回的任务ID将用于后续查询接口，以获取对应的审校结果。
-示例值：3570106e-b156-45d9-8af5-99b46f7eb2f9。
                      */
                     std::string m_taskId;
                     bool m_taskIdHasBeenSet;

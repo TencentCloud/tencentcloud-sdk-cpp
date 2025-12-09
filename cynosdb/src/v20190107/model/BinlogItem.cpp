@@ -25,7 +25,8 @@ BinlogItem::BinlogItem() :
     m_fileSizeHasBeenSet(false),
     m_startTimeHasBeenSet(false),
     m_finishTimeHasBeenSet(false),
-    m_binlogIdHasBeenSet(false)
+    m_binlogIdHasBeenSet(false),
+    m_crossRegionsHasBeenSet(false)
 {
 }
 
@@ -84,6 +85,19 @@ CoreInternalOutcome BinlogItem::Deserialize(const rapidjson::Value &value)
         m_binlogIdHasBeenSet = true;
     }
 
+    if (value.HasMember("CrossRegions") && !value["CrossRegions"].IsNull())
+    {
+        if (!value["CrossRegions"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `BinlogItem.CrossRegions` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["CrossRegions"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_crossRegions.push_back((*itr).GetString());
+        }
+        m_crossRegionsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -129,6 +143,19 @@ void BinlogItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "BinlogId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_binlogId, allocator);
+    }
+
+    if (m_crossRegionsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CrossRegions";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_crossRegions.begin(); itr != m_crossRegions.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 }
@@ -212,5 +239,21 @@ void BinlogItem::SetBinlogId(const int64_t& _binlogId)
 bool BinlogItem::BinlogIdHasBeenSet() const
 {
     return m_binlogIdHasBeenSet;
+}
+
+vector<string> BinlogItem::GetCrossRegions() const
+{
+    return m_crossRegions;
+}
+
+void BinlogItem::SetCrossRegions(const vector<string>& _crossRegions)
+{
+    m_crossRegions = _crossRegions;
+    m_crossRegionsHasBeenSet = true;
+}
+
+bool BinlogItem::CrossRegionsHasBeenSet() const
+{
+    return m_crossRegionsHasBeenSet;
 }
 

@@ -44,18 +44,14 @@ namespace TencentCloud
 
                     /**
                      * 获取接口使用的识别策略 ID，请参考 [快速指引](https://cloud.tencent.com/document/product/1124/124604) 获取该值。  
-示例值：TencentCloudFinancialLLMDefault
                      * @return BizType 接口使用的识别策略 ID，请参考 [快速指引](https://cloud.tencent.com/document/product/1124/124604) 获取该值。  
-示例值：TencentCloudFinancialLLMDefault
                      * 
                      */
                     std::string GetBizType() const;
 
                     /**
                      * 设置接口使用的识别策略 ID，请参考 [快速指引](https://cloud.tencent.com/document/product/1124/124604) 获取该值。  
-示例值：TencentCloudFinancialLLMDefault
                      * @param _bizType 接口使用的识别策略 ID，请参考 [快速指引](https://cloud.tencent.com/document/product/1124/124604) 获取该值。  
-示例值：TencentCloudFinancialLLMDefault
                      * 
                      */
                     void SetBizType(const std::string& _bizType);
@@ -71,13 +67,9 @@ namespace TencentCloud
                      * 获取送审内容的格式，有两个可选值：
 - 1：代表送审内容为**文档**，如DOC文档
 - 2：代表送审内容为**纯文本**
-
-示例值：1
                      * @return ContentType 送审内容的格式，有两个可选值：
 - 1：代表送审内容为**文档**，如DOC文档
 - 2：代表送审内容为**纯文本**
-
-示例值：1
                      * 
                      */
                     int64_t GetContentType() const;
@@ -86,13 +78,9 @@ namespace TencentCloud
                      * 设置送审内容的格式，有两个可选值：
 - 1：代表送审内容为**文档**，如DOC文档
 - 2：代表送审内容为**纯文本**
-
-示例值：1
                      * @param _contentType 送审内容的格式，有两个可选值：
 - 1：代表送审内容为**文档**，如DOC文档
 - 2：代表送审内容为**纯文本**
-
-示例值：1
                      * 
                      */
                     void SetContentType(const int64_t& _contentType);
@@ -133,13 +121,9 @@ namespace TencentCloud
                      * 获取送审内容的传入方式如下：
 - 若为文档类，需传入文档的URL（原文档文字数不超过10,000字），例如：http://xxxxxxxxxxxx/financial_test.doc
 - 若为纯文本类，请以UTF-8格式进行Base64编码后传入（编码后字符数不超过10,000字），例如：5piO5aSpNjAz5LiA5a6a5rao
-
-示例值：5piO5aSpNjAz5LiA5a6a5rao
                      * @return Content 送审内容的传入方式如下：
 - 若为文档类，需传入文档的URL（原文档文字数不超过10,000字），例如：http://xxxxxxxxxxxx/financial_test.doc
 - 若为纯文本类，请以UTF-8格式进行Base64编码后传入（编码后字符数不超过10,000字），例如：5piO5aSpNjAz5LiA5a6a5rao
-
-示例值：5piO5aSpNjAz5LiA5a6a5rao
                      * 
                      */
                     std::string GetContent() const;
@@ -148,13 +132,9 @@ namespace TencentCloud
                      * 设置送审内容的传入方式如下：
 - 若为文档类，需传入文档的URL（原文档文字数不超过10,000字），例如：http://xxxxxxxxxxxx/financial_test.doc
 - 若为纯文本类，请以UTF-8格式进行Base64编码后传入（编码后字符数不超过10,000字），例如：5piO5aSpNjAz5LiA5a6a5rao
-
-示例值：5piO5aSpNjAz5LiA5a6a5rao
                      * @param _content 送审内容的传入方式如下：
 - 若为文档类，需传入文档的URL（原文档文字数不超过10,000字），例如：http://xxxxxxxxxxxx/financial_test.doc
 - 若为纯文本类，请以UTF-8格式进行Base64编码后传入（编码后字符数不超过10,000字），例如：5piO5aSpNjAz5LiA5a6a5rao
-
-示例值：5piO5aSpNjAz5LiA5a6a5rao
                      * 
                      */
                     void SetContent(const std::string& _content);
@@ -170,7 +150,6 @@ namespace TencentCloud
 
                     /**
                      * 接口使用的识别策略 ID，请参考 [快速指引](https://cloud.tencent.com/document/product/1124/124604) 获取该值。  
-示例值：TencentCloudFinancialLLMDefault
                      */
                     std::string m_bizType;
                     bool m_bizTypeHasBeenSet;
@@ -179,8 +158,6 @@ namespace TencentCloud
                      * 送审内容的格式，有两个可选值：
 - 1：代表送审内容为**文档**，如DOC文档
 - 2：代表送审内容为**纯文本**
-
-示例值：1
                      */
                     int64_t m_contentType;
                     bool m_contentTypeHasBeenSet;
@@ -196,8 +173,6 @@ namespace TencentCloud
                      * 送审内容的传入方式如下：
 - 若为文档类，需传入文档的URL（原文档文字数不超过10,000字），例如：http://xxxxxxxxxxxx/financial_test.doc
 - 若为纯文本类，请以UTF-8格式进行Base64编码后传入（编码后字符数不超过10,000字），例如：5piO5aSpNjAz5LiA5a6a5rao
-
-示例值：5piO5aSpNjAz5LiA5a6a5rao
                      */
                     std::string m_content;
                     bool m_contentHasBeenSet;

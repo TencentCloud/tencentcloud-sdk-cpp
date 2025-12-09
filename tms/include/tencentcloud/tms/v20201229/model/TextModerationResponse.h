@@ -48,9 +48,7 @@ namespace TencentCloud
 
                     /**
                      * 获取该字段用于回显检测对象请求参数中的 BizType，与输入的 BizType 值对应。
-示例值：TencentCloudDefault
                      * @return BizType 该字段用于回显检测对象请求参数中的 BizType，与输入的 BizType 值对应。
-示例值：TencentCloudDefault
                      * 
                      */
                     std::string GetBizType() const;
@@ -94,9 +92,7 @@ namespace TencentCloud
 
                     /**
                      * 获取对应 Label 字段下的二级子标签，表示该 Label 下更细分的违规点。
-示例值：SexualBehavior（该值为 Porn 下的一个二级标签）
                      * @return SubLabel 对应 Label 字段下的二级子标签，表示该 Label 下更细分的违规点。
-示例值：SexualBehavior（该值为 Porn 下的一个二级标签）
                      * 
                      */
                     std::string GetSubLabel() const;
@@ -110,9 +106,7 @@ namespace TencentCloud
 
                     /**
                      * 获取该字段标识 SubLabel 的置信度，取值范围为 0 - 100，值越高代表置信度越高。
-示例值：85
                      * @return Score 该字段标识 SubLabel 的置信度，取值范围为 0 - 100，值越高代表置信度越高。
-示例值：85
                      * 
                      */
                     int64_t GetScore() const;
@@ -126,10 +120,8 @@ namespace TencentCloud
 
                     /**
                      * 获取该字段标识被检测文本所命中的关键词，可能返回0个或多个关键词。
-示例值：["优惠券", "线下兑换"]
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Keywords 该字段标识被检测文本所命中的关键词，可能返回0个或多个关键词。
-示例值：["优惠券", "线下兑换"]
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -192,9 +184,7 @@ namespace TencentCloud
 
                     /**
                      * 获取该字段用于回显检测对象请求参数中的 DataId，与输入的 DataId 值对应。
-示例值：a6127dd-c2a0-43e7-a3da-d27022d39ba7
                      * @return DataId 该字段用于回显检测对象请求参数中的 DataId，与输入的 DataId 值对应。
-示例值：a6127dd-c2a0-43e7-a3da-d27022d39ba7
                      * 
                      */
                     std::string GetDataId() const;
@@ -252,9 +242,7 @@ namespace TencentCloud
 
                     /**
                      * 获取该字段用于回显检测对象请求参数中的 SessionId，与输入的 SessionId 值对应。
-示例值：7e8f9a0b1c2d3e4f5a6b7c8d9e0f1a2b
                      * @return SessionId 该字段用于回显检测对象请求参数中的 SessionId，与输入的 SessionId 值对应。
-示例值：7e8f9a0b1c2d3e4f5a6b7c8d9e0f1a2b
                      * 
                      */
                     std::string GetSessionId() const;
@@ -270,7 +258,6 @@ namespace TencentCloud
 
                     /**
                      * 该字段用于回显检测对象请求参数中的 BizType，与输入的 BizType 值对应。
-示例值：TencentCloudDefault
                      */
                     std::string m_bizType;
                     bool m_bizTypeHasBeenSet;
@@ -290,21 +277,18 @@ namespace TencentCloud
 
                     /**
                      * 对应 Label 字段下的二级子标签，表示该 Label 下更细分的违规点。
-示例值：SexualBehavior（该值为 Porn 下的一个二级标签）
                      */
                     std::string m_subLabel;
                     bool m_subLabelHasBeenSet;
 
                     /**
                      * 该字段标识 SubLabel 的置信度，取值范围为 0 - 100，值越高代表置信度越高。
-示例值：85
                      */
                     int64_t m_score;
                     bool m_scoreHasBeenSet;
 
                     /**
                      * 该字段标识被检测文本所命中的关键词，可能返回0个或多个关键词。
-示例值：["优惠券", "线下兑换"]
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_keywords;
@@ -333,7 +317,6 @@ namespace TencentCloud
 
                     /**
                      * 该字段用于回显检测对象请求参数中的 DataId，与输入的 DataId 值对应。
-示例值：a6127dd-c2a0-43e7-a3da-d27022d39ba7
                      */
                     std::string m_dataId;
                     bool m_dataIdHasBeenSet;
@@ -359,7 +342,6 @@ namespace TencentCloud
 
                     /**
                      * 该字段用于回显检测对象请求参数中的 SessionId，与输入的 SessionId 值对应。
-示例值：7e8f9a0b1c2d3e4f5a6b7c8d9e0f1a2b
                      */
                     std::string m_sessionId;
                     bool m_sessionIdHasBeenSet;

@@ -359,15 +359,15 @@ namespace TencentCloud
                     bool CdbErrorsHasBeenSet() const;
 
                     /**
-                     * 获取返回结果集排序的字段，目前支持："InstanceId"，"InstanceName"，"CreateTime"，"DeadlineTime"。
-                     * @return OrderBy 返回结果集排序的字段，目前支持："InstanceId"，"InstanceName"，"CreateTime"，"DeadlineTime"。
+                     * 获取返回结果集排序的字段，目前支持："instanceId"，"instanceName"，"createTime"，"deadlineTime"。
+                     * @return OrderBy 返回结果集排序的字段，目前支持："instanceId"，"instanceName"，"createTime"，"deadlineTime"。
                      * 
                      */
                     std::string GetOrderBy() const;
 
                     /**
-                     * 设置返回结果集排序的字段，目前支持："InstanceId"，"InstanceName"，"CreateTime"，"DeadlineTime"。
-                     * @param _orderBy 返回结果集排序的字段，目前支持："InstanceId"，"InstanceName"，"CreateTime"，"DeadlineTime"。
+                     * 设置返回结果集排序的字段，目前支持："instanceId"，"instanceName"，"createTime"，"deadlineTime"。
+                     * @param _orderBy 返回结果集排序的字段，目前支持："instanceId"，"instanceName"，"createTime"，"deadlineTime"。
                      * 
                      */
                     void SetOrderBy(const std::string& _orderBy);
@@ -787,15 +787,15 @@ namespace TencentCloud
                     bool EngineTypesHasBeenSet() const;
 
                     /**
-                     * 获取是否获取集群版实例节点信息，可填：true 或 false。默认为 false。
-                     * @return QueryClusterInfo 是否获取集群版实例节点信息，可填：true 或 false。默认为 false。
+                     * 获取是否获取云盘版实例节点信息，可填：true 或 false。默认为 false。
+                     * @return QueryClusterInfo 是否获取云盘版实例节点信息，可填：true 或 false。默认为 false。
                      * 
                      */
                     bool GetQueryClusterInfo() const;
 
                     /**
-                     * 设置是否获取集群版实例节点信息，可填：true 或 false。默认为 false。
-                     * @param _queryClusterInfo 是否获取集群版实例节点信息，可填：true 或 false。默认为 false。
+                     * 设置是否获取云盘版实例节点信息，可填：true 或 false。默认为 false。
+                     * @param _queryClusterInfo 是否获取云盘版实例节点信息，可填：true 或 false。默认为 false。
                      * 
                      */
                     void SetQueryClusterInfo(const bool& _queryClusterInfo);
@@ -900,7 +900,7 @@ namespace TencentCloud
                     bool m_cdbErrorsHasBeenSet;
 
                     /**
-                     * 返回结果集排序的字段，目前支持："InstanceId"，"InstanceName"，"CreateTime"，"DeadlineTime"。
+                     * 返回结果集排序的字段，目前支持："instanceId"，"instanceName"，"createTime"，"deadlineTime"。
                      */
                     std::string m_orderBy;
                     bool m_orderByHasBeenSet;
@@ -1022,7 +1022,7 @@ namespace TencentCloud
                     bool m_engineTypesHasBeenSet;
 
                     /**
-                     * 是否获取集群版实例节点信息，可填：true 或 false。默认为 false。
+                     * 是否获取云盘版实例节点信息，可填：true 或 false。默认为 false。
                      */
                     bool m_queryClusterInfo;
                     bool m_queryClusterInfoHasBeenSet;

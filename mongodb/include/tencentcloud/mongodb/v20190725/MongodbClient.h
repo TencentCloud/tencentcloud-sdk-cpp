@@ -917,7 +917,7 @@ namespace TencentCloud
                 SetAccountUserPrivilegeOutcomeCallable SetAccountUserPrivilegeCallable(const Model::SetAccountUserPrivilegeRequest& request);
 
                 /**
-                 *本接口(SetBackupRules)用于设置 MongoDB 云数据库的自动备份规则。
+                 *本接口（SetBackupRules）用于设置 MongoDB 云数据库的自动备份规则。
                  * @param req SetBackupRulesRequest
                  * @return SetBackupRulesOutcome
                  */

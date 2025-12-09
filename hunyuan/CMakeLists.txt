@@ -27,6 +27,7 @@ set(hunyuan_public_header_model
   include/tencentcloud/hunyuan/v20230901/model/RunThreadRequest.h
   include/tencentcloud/hunyuan/v20230901/model/SubmitHunyuanImageChatJobRequest.h
   include/tencentcloud/hunyuan/v20230901/model/QueryHunyuanImageJobRequest.h
+  include/tencentcloud/hunyuan/v20230901/model/PromptTokensDetails.h
   include/tencentcloud/hunyuan/v20230901/model/QueryHunyuanImageChatJobRequest.h
   include/tencentcloud/hunyuan/v20230901/model/EmbeddingData.h
   include/tencentcloud/hunyuan/v20230901/model/SetPayModeResponse.h
@@ -120,6 +121,7 @@ set(hunyuan_src
   src/v20230901/model/RunThreadRequest.cpp
   src/v20230901/model/SubmitHunyuanImageChatJobRequest.cpp
   src/v20230901/model/QueryHunyuanImageJobRequest.cpp
+  src/v20230901/model/PromptTokensDetails.cpp
   src/v20230901/model/QueryHunyuanImageChatJobRequest.cpp
   src/v20230901/model/EmbeddingData.cpp
   src/v20230901/model/SetPayModeResponse.cpp

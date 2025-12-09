@@ -23,7 +23,8 @@ using namespace std;
 Usage::Usage() :
     m_promptTokensHasBeenSet(false),
     m_completionTokensHasBeenSet(false),
-    m_totalTokensHasBeenSet(false)
+    m_totalTokensHasBeenSet(false),
+    m_promptTokensDetailsHasBeenSet(false)
 {
 }
 
@@ -62,6 +63,23 @@ CoreInternalOutcome Usage::Deserialize(const rapidjson::Value &value)
         m_totalTokensHasBeenSet = true;
     }
 
+    if (value.HasMember("PromptTokensDetails") && !value["PromptTokensDetails"].IsNull())
+    {
+        if (!value["PromptTokensDetails"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `Usage.PromptTokensDetails` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_promptTokensDetails.Deserialize(value["PromptTokensDetails"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_promptTokensDetailsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +109,15 @@ void Usage::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocator
         string key = "TotalTokens";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_totalTokens, allocator);
+    }
+
+    if (m_promptTokensDetailsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PromptTokensDetails";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_promptTokensDetails.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -142,5 +169,21 @@ void Usage::SetTotalTokens(const int64_t& _totalTokens)
 bool Usage::TotalTokensHasBeenSet() const
 {
     return m_totalTokensHasBeenSet;
+}
+
+PromptTokensDetails Usage::GetPromptTokensDetails() const
+{
+    return m_promptTokensDetails;
+}
+
+void Usage::SetPromptTokensDetails(const PromptTokensDetails& _promptTokensDetails)
+{
+    m_promptTokensDetails = _promptTokensDetails;
+    m_promptTokensDetailsHasBeenSet = true;
+}
+
+bool Usage::PromptTokensDetailsHasBeenSet() const
+{
+    return m_promptTokensDetailsHasBeenSet;
 }
 

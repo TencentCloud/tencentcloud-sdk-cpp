@@ -296,6 +296,27 @@ namespace TencentCloud
                      */
                     bool GeneralTaskParamsHasBeenSet() const;
 
+                    /**
+                     * 获取工作流依赖，yes/no。开启后表示当前任务依赖本工作流上个周期的所有任务。仅支持当前任务所在工作流的任务全部为同周期的情况，如果非同周期则不生效，请在工作流-统一调度上进行配置。
+                     * @return DependencyWorkflow 工作流依赖，yes/no。开启后表示当前任务依赖本工作流上个周期的所有任务。仅支持当前任务所在工作流的任务全部为同周期的情况，如果非同周期则不生效，请在工作流-统一调度上进行配置。
+                     * 
+                     */
+                    std::string GetDependencyWorkflow() const;
+
+                    /**
+                     * 设置工作流依赖，yes/no。开启后表示当前任务依赖本工作流上个周期的所有任务。仅支持当前任务所在工作流的任务全部为同周期的情况，如果非同周期则不生效，请在工作流-统一调度上进行配置。
+                     * @param _dependencyWorkflow 工作流依赖，yes/no。开启后表示当前任务依赖本工作流上个周期的所有任务。仅支持当前任务所在工作流的任务全部为同周期的情况，如果非同周期则不生效，请在工作流-统一调度上进行配置。
+                     * 
+                     */
+                    void SetDependencyWorkflow(const std::string& _dependencyWorkflow);
+
+                    /**
+                     * 判断参数 DependencyWorkflow 是否已赋值
+                     * @return DependencyWorkflow 是否已赋值
+                     * 
+                     */
+                    bool DependencyWorkflowHasBeenSet() const;
+
                 private:
 
                     /**
@@ -369,6 +390,12 @@ namespace TencentCloud
                      */
                     std::vector<GeneralTaskParam> m_generalTaskParams;
                     bool m_generalTaskParamsHasBeenSet;
+
+                    /**
+                     * 工作流依赖，yes/no。开启后表示当前任务依赖本工作流上个周期的所有任务。仅支持当前任务所在工作流的任务全部为同周期的情况，如果非同周期则不生效，请在工作流-统一调度上进行配置。
+                     */
+                    std::string m_dependencyWorkflow;
+                    bool m_dependencyWorkflowHasBeenSet;
 
                 };
             }

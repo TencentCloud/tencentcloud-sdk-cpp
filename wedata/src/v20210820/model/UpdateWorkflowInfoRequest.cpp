@@ -34,7 +34,8 @@ UpdateWorkflowInfoRequest::UpdateWorkflowInfoRequest() :
     m_userGroupIdHasBeenSet(false),
     m_userGroupNameHasBeenSet(false),
     m_workflowParamsHasBeenSet(false),
-    m_generalTaskParamsHasBeenSet(false)
+    m_generalTaskParamsHasBeenSet(false),
+    m_dependencyWorkflowHasBeenSet(false)
 {
 }
 
@@ -153,6 +154,14 @@ string UpdateWorkflowInfoRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_dependencyWorkflowHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DependencyWorkflow";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_dependencyWorkflow.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -353,6 +362,22 @@ void UpdateWorkflowInfoRequest::SetGeneralTaskParams(const vector<GeneralTaskPar
 bool UpdateWorkflowInfoRequest::GeneralTaskParamsHasBeenSet() const
 {
     return m_generalTaskParamsHasBeenSet;
+}
+
+string UpdateWorkflowInfoRequest::GetDependencyWorkflow() const
+{
+    return m_dependencyWorkflow;
+}
+
+void UpdateWorkflowInfoRequest::SetDependencyWorkflow(const string& _dependencyWorkflow)
+{
+    m_dependencyWorkflow = _dependencyWorkflow;
+    m_dependencyWorkflowHasBeenSet = true;
+}
+
+bool UpdateWorkflowInfoRequest::DependencyWorkflowHasBeenSet() const
+{
+    return m_dependencyWorkflowHasBeenSet;
 }
 
 

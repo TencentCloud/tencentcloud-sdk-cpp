@@ -283,6 +283,27 @@ namespace TencentCloud
                      */
                     bool ModifyTimeHasBeenSet() const;
 
+                    /**
+                     * 获取安全组规则优先级，值会随着安全组规则的变更动态变化。使用Priority时，请先调用`DescribeSecurityGroupPolicies`获取到规则的Priority，并且结合返回值中的Version一起使用处理规则。
+                     * @return Priority 安全组规则优先级，值会随着安全组规则的变更动态变化。使用Priority时，请先调用`DescribeSecurityGroupPolicies`获取到规则的Priority，并且结合返回值中的Version一起使用处理规则。
+                     * 
+                     */
+                    int64_t GetPriority() const;
+
+                    /**
+                     * 设置安全组规则优先级，值会随着安全组规则的变更动态变化。使用Priority时，请先调用`DescribeSecurityGroupPolicies`获取到规则的Priority，并且结合返回值中的Version一起使用处理规则。
+                     * @param _priority 安全组规则优先级，值会随着安全组规则的变更动态变化。使用Priority时，请先调用`DescribeSecurityGroupPolicies`获取到规则的Priority，并且结合返回值中的Version一起使用处理规则。
+                     * 
+                     */
+                    void SetPriority(const int64_t& _priority);
+
+                    /**
+                     * 判断参数 Priority 是否已赋值
+                     * @return Priority 是否已赋值
+                     * 
+                     */
+                    bool PriorityHasBeenSet() const;
+
                 private:
 
                     /**
@@ -351,6 +372,12 @@ namespace TencentCloud
                      */
                     std::string m_modifyTime;
                     bool m_modifyTimeHasBeenSet;
+
+                    /**
+                     * 安全组规则优先级，值会随着安全组规则的变更动态变化。使用Priority时，请先调用`DescribeSecurityGroupPolicies`获取到规则的Priority，并且结合返回值中的Version一起使用处理规则。
+                     */
+                    int64_t m_priority;
+                    bool m_priorityHasBeenSet;
 
                 };
             }

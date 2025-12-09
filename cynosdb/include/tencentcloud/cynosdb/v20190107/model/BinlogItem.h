@@ -151,6 +151,27 @@ namespace TencentCloud
                      */
                     bool BinlogIdHasBeenSet() const;
 
+                    /**
+                     * 获取binlog所跨地域
+                     * @return CrossRegions binlog所跨地域
+                     * 
+                     */
+                    std::vector<std::string> GetCrossRegions() const;
+
+                    /**
+                     * 设置binlog所跨地域
+                     * @param _crossRegions binlog所跨地域
+                     * 
+                     */
+                    void SetCrossRegions(const std::vector<std::string>& _crossRegions);
+
+                    /**
+                     * 判断参数 CrossRegions 是否已赋值
+                     * @return CrossRegions 是否已赋值
+                     * 
+                     */
+                    bool CrossRegionsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -182,6 +203,12 @@ namespace TencentCloud
                      */
                     int64_t m_binlogId;
                     bool m_binlogIdHasBeenSet;
+
+                    /**
+                     * binlog所跨地域
+                     */
+                    std::vector<std::string> m_crossRegions;
+                    bool m_crossRegionsHasBeenSet;
 
                 };
             }

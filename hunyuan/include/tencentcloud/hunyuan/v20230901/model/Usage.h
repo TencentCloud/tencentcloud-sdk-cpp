@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/hunyuan/v20230901/model/PromptTokensDetails.h>
 
 
 namespace TencentCloud
@@ -109,6 +110,27 @@ namespace TencentCloud
                      */
                     bool TotalTokensHasBeenSet() const;
 
+                    /**
+                     * 获取输入 token 的详情。
+                     * @return PromptTokensDetails 输入 token 的详情。
+                     * 
+                     */
+                    PromptTokensDetails GetPromptTokensDetails() const;
+
+                    /**
+                     * 设置输入 token 的详情。
+                     * @param _promptTokensDetails 输入 token 的详情。
+                     * 
+                     */
+                    void SetPromptTokensDetails(const PromptTokensDetails& _promptTokensDetails);
+
+                    /**
+                     * 判断参数 PromptTokensDetails 是否已赋值
+                     * @return PromptTokensDetails 是否已赋值
+                     * 
+                     */
+                    bool PromptTokensDetailsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -128,6 +150,12 @@ namespace TencentCloud
                      */
                     int64_t m_totalTokens;
                     bool m_totalTokensHasBeenSet;
+
+                    /**
+                     * 输入 token 的详情。
+                     */
+                    PromptTokensDetails m_promptTokensDetails;
+                    bool m_promptTokensDetailsHasBeenSet;
 
                 };
             }

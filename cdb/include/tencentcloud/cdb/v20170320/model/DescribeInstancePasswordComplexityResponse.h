@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例的参数总数
-                     * @return TotalCount 实例的参数总数
+                     * 获取密码复杂度相关参数总数
+                     * @return TotalCount 密码复杂度相关参数总数
                      * 
                      */
                     int64_t GetTotalCount() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool TotalCountHasBeenSet() const;
 
                     /**
-                     * 获取参数详情
-                     * @return Items 参数详情
+                     * 获取密码复杂度参数详情，policy取值范围["","LOW","MEDIUM"],空或者LOW表示：密码复杂度关，MEDIUM表示：密码复杂度开；当policy参数值是MEDIUM时，以下参数才有意义，length:取值范围[8-64],表示：最少字符数；mixed_case_count：取值范围[1-16]，表示大写字母和小写字母的最少个数。number_count：取值范围[1-16]，表示数字字符的最少个数。special_char_count：取值范围[1-16]，表示特殊字符的最少个数。
+                     * @return Items 密码复杂度参数详情，policy取值范围["","LOW","MEDIUM"],空或者LOW表示：密码复杂度关，MEDIUM表示：密码复杂度开；当policy参数值是MEDIUM时，以下参数才有意义，length:取值范围[8-64],表示：最少字符数；mixed_case_count：取值范围[1-16]，表示大写字母和小写字母的最少个数。number_count：取值范围[1-16]，表示数字字符的最少个数。special_char_count：取值范围[1-16]，表示特殊字符的最少个数。
                      * 
                      */
                     std::vector<ParameterDetail> GetItems() const;
@@ -75,13 +75,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例的参数总数
+                     * 密码复杂度相关参数总数
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
-                     * 参数详情
+                     * 密码复杂度参数详情，policy取值范围["","LOW","MEDIUM"],空或者LOW表示：密码复杂度关，MEDIUM表示：密码复杂度开；当policy参数值是MEDIUM时，以下参数才有意义，length:取值范围[8-64],表示：最少字符数；mixed_case_count：取值范围[1-16]，表示大写字母和小写字母的最少个数。number_count：取值范围[1-16]，表示数字字符的最少个数。special_char_count：取值范围[1-16]，表示特殊字符的最少个数。
                      */
                     std::vector<ParameterDetail> m_items;
                     bool m_itemsHasBeenSet;

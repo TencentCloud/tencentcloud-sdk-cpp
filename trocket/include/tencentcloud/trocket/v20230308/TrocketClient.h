@@ -428,7 +428,9 @@ namespace TencentCloud
                 CreateInstanceOutcomeCallable CreateInstanceCallable(const Model::CreateInstanceRequest& request);
 
                 /**
-                 *为MQTT实例创建公网接入点
+                 *下线trocket下mqtt接口
+
+为MQTT实例创建公网接入点
                  * @param req CreateMQTTInsPublicEndpointRequest
                  * @return CreateMQTTInsPublicEndpointOutcome
                  */
@@ -437,7 +439,9 @@ namespace TencentCloud
                 CreateMQTTInsPublicEndpointOutcomeCallable CreateMQTTInsPublicEndpointCallable(const Model::CreateMQTTInsPublicEndpointRequest& request);
 
                 /**
-                 *购买新的MQTT实例
+                 *下线trocket下mqtt接口
+
+购买新的MQTT实例
                  * @param req CreateMQTTInstanceRequest
                  * @return CreateMQTTInstanceOutcome
                  */
@@ -446,7 +450,9 @@ namespace TencentCloud
                 CreateMQTTInstanceOutcomeCallable CreateMQTTInstanceCallable(const Model::CreateMQTTInstanceRequest& request);
 
                 /**
-                 *创建主题
+                 *下线trocket下mqtt接口
+
+创建主题
                  * @param req CreateMQTTTopicRequest
                  * @return CreateMQTTTopicOutcome
                  */
@@ -455,7 +461,9 @@ namespace TencentCloud
                 CreateMQTTTopicOutcomeCallable CreateMQTTTopicCallable(const Model::CreateMQTTTopicRequest& request);
 
                 /**
-                 *添加mqtt角色
+                 *下线trocket下mqtt接口
+
+添加mqtt角色
                  * @param req CreateMQTTUserRequest
                  * @return CreateMQTTUserOutcome
                  */
@@ -500,7 +508,9 @@ namespace TencentCloud
                 DeleteInstanceOutcomeCallable DeleteInstanceCallable(const Model::DeleteInstanceRequest& request);
 
                 /**
-                 *删除MQTT实例的公网接入点
+                 *下线trocket下mqtt接口
+
+删除MQTT实例的公网接入点
                  * @param req DeleteMQTTInsPublicEndpointRequest
                  * @return DeleteMQTTInsPublicEndpointOutcome
                  */
@@ -509,7 +519,9 @@ namespace TencentCloud
                 DeleteMQTTInsPublicEndpointOutcomeCallable DeleteMQTTInsPublicEndpointCallable(const Model::DeleteMQTTInsPublicEndpointRequest& request);
 
                 /**
-                 *删除MQTT实例
+                 *下线trocket下mqtt接口
+
+删除MQTT实例
                  * @param req DeleteMQTTInstanceRequest
                  * @return DeleteMQTTInstanceOutcome
                  */
@@ -518,7 +530,9 @@ namespace TencentCloud
                 DeleteMQTTInstanceOutcomeCallable DeleteMQTTInstanceCallable(const Model::DeleteMQTTInstanceRequest& request);
 
                 /**
-                 *删除MQTT主题
+                 *下线trocket下mqtt接口
+
+删除MQTT主题
                  * @param req DeleteMQTTTopicRequest
                  * @return DeleteMQTTTopicOutcome
                  */
@@ -527,7 +541,9 @@ namespace TencentCloud
                 DeleteMQTTTopicOutcomeCallable DeleteMQTTTopicCallable(const Model::DeleteMQTTTopicRequest& request);
 
                 /**
-                 *删除MQTT访问用户
+                 *下线trocket下mqtt接口
+
+删除MQTT访问用户
                  * @param req DeleteMQTTUserRequest
                  * @return DeleteMQTTUserOutcome
                  */
@@ -664,7 +680,9 @@ Filters示例：
                 DescribeInstanceListOutcomeCallable DescribeInstanceListCallable(const Model::DescribeInstanceListRequest& request);
 
                 /**
-                 *查询 MQTT 客户端详情
+                 *下线trocket下mqtt接口
+
+查询 MQTT 客户端详情
                  * @param req DescribeMQTTClientRequest
                  * @return DescribeMQTTClientOutcome
                  */
@@ -673,7 +691,9 @@ Filters示例：
                 DescribeMQTTClientOutcomeCallable DescribeMQTTClientCallable(const Model::DescribeMQTTClientRequest& request);
 
                 /**
-                 *查询MQTT实例公网接入点
+                 *下线trocket下mqtt接口
+
+查询MQTT实例公网接入点
                  * @param req DescribeMQTTInsPublicEndpointsRequest
                  * @return DescribeMQTTInsPublicEndpointsOutcome
                  */
@@ -682,7 +702,9 @@ Filters示例：
                 DescribeMQTTInsPublicEndpointsOutcomeCallable DescribeMQTTInsPublicEndpointsCallable(const Model::DescribeMQTTInsPublicEndpointsRequest& request);
 
                 /**
-                 *查询MQTT实例公网接入点
+                 *下线trocket下mqtt接口
+
+查询MQTT实例公网接入点
                  * @param req DescribeMQTTInsVPCEndpointsRequest
                  * @return DescribeMQTTInsVPCEndpointsOutcome
                  */
@@ -691,7 +713,9 @@ Filters示例：
                 DescribeMQTTInsVPCEndpointsOutcomeCallable DescribeMQTTInsVPCEndpointsCallable(const Model::DescribeMQTTInsVPCEndpointsRequest& request);
 
                 /**
-                 *查询实例信息
+                 *下线trocket下mqtt接口
+
+查询实例信息
                  * @param req DescribeMQTTInstanceRequest
                  * @return DescribeMQTTInstanceOutcome
                  */
@@ -700,7 +724,9 @@ Filters示例：
                 DescribeMQTTInstanceOutcomeCallable DescribeMQTTInstanceCallable(const Model::DescribeMQTTInstanceRequest& request);
 
                 /**
-                 *查询MQTT集群证书列表
+                 *下线trocket下mqtt接口
+
+查询MQTT集群证书列表
                  * @param req DescribeMQTTInstanceCertRequest
                  * @return DescribeMQTTInstanceCertOutcome
                  */
@@ -709,7 +735,9 @@ Filters示例：
                 DescribeMQTTInstanceCertOutcomeCallable DescribeMQTTInstanceCertCallable(const Model::DescribeMQTTInstanceCertRequest& request);
 
                 /**
-                 *获取实例列表，Filters参数使用说明如下：
+                 *下线trocket下mqtt接口
+
+获取实例列表，Filters参数使用说明如下：
 1. InstanceName, 名称模糊查询
 2. InstanceId，实例ID查询
 3. InstanceType, 实例类型查询，支持多选
@@ -724,7 +752,9 @@ Filters示例：
                 DescribeMQTTInstanceListOutcomeCallable DescribeMQTTInstanceListCallable(const Model::DescribeMQTTInstanceListRequest& request);
 
                 /**
-                 *查询MQTT消息详情
+                 *下线trocket下mqtt接口
+
+查询MQTT消息详情
                  * @param req DescribeMQTTMessageRequest
                  * @return DescribeMQTTMessageOutcome
                  */
@@ -733,7 +763,9 @@ Filters示例：
                 DescribeMQTTMessageOutcomeCallable DescribeMQTTMessageCallable(const Model::DescribeMQTTMessageRequest& request);
 
                 /**
-                 *查询消息列表，如查询死信，请设置ConsumerGroup参数
+                 *下线trocket下mqtt接口
+
+查询消息列表，如查询死信，请设置ConsumerGroup参数
                  * @param req DescribeMQTTMessageListRequest
                  * @return DescribeMQTTMessageListOutcome
                  */
@@ -742,7 +774,9 @@ Filters示例：
                 DescribeMQTTMessageListOutcomeCallable DescribeMQTTMessageListCallable(const Model::DescribeMQTTMessageListRequest& request);
 
                 /**
-                 *获取产品售卖规格
+                 *下线trocket下mqtt接口
+
+获取产品售卖规格
                  * @param req DescribeMQTTProductSKUListRequest
                  * @return DescribeMQTTProductSKUListOutcome
                  */
@@ -751,7 +785,9 @@ Filters示例：
                 DescribeMQTTProductSKUListOutcomeCallable DescribeMQTTProductSKUListCallable(const Model::DescribeMQTTProductSKUListRequest& request);
 
                 /**
-                 *查询mqtt主题详情
+                 *下线trocket下mqtt接口
+
+查询mqtt主题详情
                  * @param req DescribeMQTTTopicRequest
                  * @return DescribeMQTTTopicOutcome
                  */
@@ -760,7 +796,9 @@ Filters示例：
                 DescribeMQTTTopicOutcomeCallable DescribeMQTTTopicCallable(const Model::DescribeMQTTTopicRequest& request);
 
                 /**
-                 *获取主题列表，Filter参数使用说明如下：
+                 *下线trocket下mqtt接口
+
+获取主题列表，Filter参数使用说明如下：
 
 1. TopicName，主题名称模糊搜索
 2. TopicType，主题类型查询，支持多选，可选值：Normal,Order,Transaction,DelayScheduled
@@ -772,7 +810,9 @@ Filters示例：
                 DescribeMQTTTopicListOutcomeCallable DescribeMQTTTopicListCallable(const Model::DescribeMQTTTopicListRequest& request);
 
                 /**
-                 *查询用户列表，Filter参数使用说明如下：
+                 *下线trocket下mqtt接口
+
+查询用户列表，Filter参数使用说明如下：
 
 1. Username，用户名称模糊搜索
                  * @param req DescribeMQTTUserListRequest
@@ -865,6 +905,7 @@ Type，根据任务类型精确查找
                  *查询主题关联的生产者列表信息，Filters支持以下筛选条件：
 - ClientIP，客户端IP
 - ClientID，客户端ID
+当前 API 适用集群：5.x 集群。4.x 集群的查询生产者客户端列表接口文档见 [DescribeRocketMQProducers](https://cloud.tencent.com/document/api/1179/122749)。
                  * @param req DescribeProducerListRequest
                  * @return DescribeProducerListOutcome
                  */
@@ -1036,7 +1077,9 @@ Filters示例：
                 ModifyInstanceEndpointOutcomeCallable ModifyInstanceEndpointCallable(const Model::ModifyInstanceEndpointRequest& request);
 
                 /**
-                 *更新MQTT实例公网接入点
+                 *下线trocket下mqtt接口
+
+更新MQTT实例公网接入点
                  * @param req ModifyMQTTInsPublicEndpointRequest
                  * @return ModifyMQTTInsPublicEndpointOutcome
                  */
@@ -1045,7 +1088,9 @@ Filters示例：
                 ModifyMQTTInsPublicEndpointOutcomeCallable ModifyMQTTInsPublicEndpointCallable(const Model::ModifyMQTTInsPublicEndpointRequest& request);
 
                 /**
-                 *修改实例属性
+                 *下线trocket下mqtt接口
+
+修改实例属性
                  * @param req ModifyMQTTInstanceRequest
                  * @return ModifyMQTTInstanceOutcome
                  */
@@ -1054,7 +1099,9 @@ Filters示例：
                 ModifyMQTTInstanceOutcomeCallable ModifyMQTTInstanceCallable(const Model::ModifyMQTTInstanceRequest& request);
 
                 /**
-                 *更新MQTT集群绑定证书
+                 *下线trocket下mqtt接口
+
+更新MQTT集群绑定证书
 参数传空，则为删除证书
                  * @param req ModifyMQTTInstanceCertBindingRequest
                  * @return ModifyMQTTInstanceCertBindingOutcome
@@ -1064,7 +1111,9 @@ Filters示例：
                 ModifyMQTTInstanceCertBindingOutcomeCallable ModifyMQTTInstanceCertBindingCallable(const Model::ModifyMQTTInstanceCertBindingRequest& request);
 
                 /**
-                 *修改主题属性
+                 *下线trocket下mqtt接口
+
+修改主题属性
                  * @param req ModifyMQTTTopicRequest
                  * @return ModifyMQTTTopicOutcome
                  */
@@ -1073,7 +1122,9 @@ Filters示例：
                 ModifyMQTTTopicOutcomeCallable ModifyMQTTTopicCallable(const Model::ModifyMQTTTopicRequest& request);
 
                 /**
-                 *修改MQTT角色
+                 *下线trocket下mqtt接口
+
+修改MQTT角色
                  * @param req ModifyMQTTUserRequest
                  * @return ModifyMQTTUserOutcome
                  */
@@ -1109,7 +1160,8 @@ Filters示例：
                 RemoveMigratingTopicOutcomeCallable RemoveMigratingTopicCallable(const Model::RemoveMigratingTopicRequest& request);
 
                 /**
-                 *重新发送死信消息
+                 *重新发送死信消息。
+当前 API 适用集群：5.x集群。4.x 集群的重发死信消息接口文档见 [RetryRocketMQDlqMessage](https://cloud.tencent.com/document/api/1179/114595)。
                  * @param req ResendDeadLetterMessageRequest
                  * @return ResendDeadLetterMessageOutcome
                  */
@@ -1136,7 +1188,8 @@ Filters示例：
                 RollbackMigratingTopicStageOutcomeCallable RollbackMigratingTopicStageCallable(const Model::RollbackMigratingTopicStageRequest& request);
 
                 /**
-                 *发送 RocketMQ 消息，该接口仅用于控制台发送少量测试消息，不保证SLA，且云 API 存在限流，在真实业务场景下，请使用 RocketMQ SDK 发送消息。
+                 *发送 RocketMQ 消息，该接口仅用于控制台发送少量测试消息，不保证 SLA，且云 API 存在限流，在真实业务场景下，请使用 RocketMQ SDK 发送消息。
+当前 API 适用集群：5.x 集群。4.x 集群的发送消息接口文档见 [SendRocketMQMessage](https://cloud.tencent.com/document/api/1179/94179)。
                  * @param req SendMessageRequest
                  * @return SendMessageOutcome
                  */
@@ -1145,7 +1198,8 @@ Filters示例：
                 SendMessageOutcomeCallable SendMessageCallable(const Model::SendMessageRequest& request);
 
                 /**
-                 *消息消费验证
+                 *消息消费验证。
+当前 API 适用集群：5.x 集群。4.x 集群的消息消费验证接口文档见 [VerifyRocketMQConsume](https://cloud.tencent.com/document/api/1179/101061)。
                  * @param req VerifyMessageConsumptionRequest
                  * @return VerifyMessageConsumptionOutcome
                  */

@@ -159,15 +159,51 @@ namespace TencentCloud
                     bool PhysicalZoneHasBeenSet() const;
 
                     /**
-                     * 获取状态
-                     * @return Status 状态
+                     * 获取状态，支持的值如下：
+- creating：创建中
+- running：运行中
+- isolating：隔离中
+- isolated：已隔离
+- activating：从回收站重新恢复
+- offlining：下线中
+- offlined：已下线
+- deleting：删除中
+- deleted：已删除
+                     * @return Status 状态，支持的值如下：
+- creating：创建中
+- running：运行中
+- isolating：隔离中
+- isolated：已隔离
+- activating：从回收站重新恢复
+- offlining：下线中
+- offlined：已下线
+- deleting：删除中
+- deleted：已删除
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置状态
-                     * @param _status 状态
+                     * 设置状态，支持的值如下：
+- creating：创建中
+- running：运行中
+- isolating：隔离中
+- isolated：已隔离
+- activating：从回收站重新恢复
+- offlining：下线中
+- offlined：已下线
+- deleting：删除中
+- deleted：已删除
+                     * @param _status 状态，支持的值如下：
+- creating：创建中
+- running：运行中
+- isolating：隔离中
+- isolated：已隔离
+- activating：从回收站重新恢复
+- offlining：下线中
+- offlined：已下线
+- deleting：删除中
+- deleted：已删除
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -1290,7 +1326,16 @@ pausing
                     bool m_physicalZoneHasBeenSet;
 
                     /**
-                     * 状态
+                     * 状态，支持的值如下：
+- creating：创建中
+- running：运行中
+- isolating：隔离中
+- isolated：已隔离
+- activating：从回收站重新恢复
+- offlining：下线中
+- offlined：已下线
+- deleting：删除中
+- deleted：已删除
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;

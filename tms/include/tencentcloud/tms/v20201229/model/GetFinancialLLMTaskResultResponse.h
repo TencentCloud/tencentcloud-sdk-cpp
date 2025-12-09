@@ -96,9 +96,7 @@ namespace TencentCloud
 
                     /**
                      * 获取审校任务的开始时间
-示例值：2025-09-25 19:42:35
                      * @return StartTime 审校任务的开始时间
-示例值：2025-09-25 19:42:35
                      * 
                      */
                     std::string GetStartTime() const;
@@ -112,9 +110,7 @@ namespace TencentCloud
 
                     /**
                      * 获取若审校任务失败（Status="Failed"），该字段返回失败的具体原因。
-示例值：文档解析失败
                      * @return FailureReason 若审校任务失败（Status="Failed"），该字段返回失败的具体原因。
-示例值：文档解析失败
                      * 
                      */
                     std::string GetFailureReason() const;
@@ -166,14 +162,12 @@ namespace TencentCloud
 
                     /**
                      * 审校任务的开始时间
-示例值：2025-09-25 19:42:35
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
                      * 若审校任务失败（Status="Failed"），该字段返回失败的具体原因。
-示例值：文档解析失败
                      */
                     std::string m_failureReason;
                     bool m_failureReasonHasBeenSet;
