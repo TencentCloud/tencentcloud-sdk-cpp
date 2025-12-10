@@ -376,10 +376,12 @@ day：天粒度，指定查询区间大于 31 天，可返回天粒度明细数�
 all：所有协议
 http：指定查询 HTTP 对应指标
 https：指定查询 HTTPS 对应指标
+quic：指定查询 QUIC 对应指标
                      * @return Protocol 指定协议查询，不填充表示查询所有协议
 all：所有协议
 http：指定查询 HTTP 对应指标
 https：指定查询 HTTPS 对应指标
+quic：指定查询 QUIC 对应指标
                      * 
                      */
                     std::string GetProtocol() const;
@@ -389,10 +391,12 @@ https：指定查询 HTTPS 对应指标
 all：所有协议
 http：指定查询 HTTP 对应指标
 https：指定查询 HTTPS 对应指标
+quic：指定查询 QUIC 对应指标
                      * @param _protocol 指定协议查询，不填充表示查询所有协议
 all：所有协议
 http：指定查询 HTTP 对应指标
 https：指定查询 HTTPS 对应指标
+quic：指定查询 QUIC 对应指标
                      * 
                      */
                     void SetProtocol(const std::string& _protocol);
@@ -405,15 +409,19 @@ https：指定查询 HTTPS 对应指标
                     bool ProtocolHasBeenSet() const;
 
                     /**
-                     * 获取指定数据源查询，白名单功能
-                     * @return DataSource 指定数据源查询，白名单功能
+                     * 获取指定数据源查询
+monitor：监控数据
+                     * @return DataSource 指定数据源查询
+monitor：监控数据
                      * 
                      */
                     std::string GetDataSource() const;
 
                     /**
-                     * 设置指定数据源查询，白名单功能
-                     * @param _dataSource 指定数据源查询，白名单功能
+                     * 设置指定数据源查询
+monitor：监控数据
+                     * @param _dataSource 指定数据源查询
+monitor：监控数据
                      * 
                      */
                     void SetDataSource(const std::string& _dataSource);
@@ -662,12 +670,14 @@ day：天粒度，指定查询区间大于 31 天，可返回天粒度明细数�
 all：所有协议
 http：指定查询 HTTP 对应指标
 https：指定查询 HTTPS 对应指标
+quic：指定查询 QUIC 对应指标
                      */
                     std::string m_protocol;
                     bool m_protocolHasBeenSet;
 
                     /**
-                     * 指定数据源查询，白名单功能
+                     * 指定数据源查询
+monitor：监控数据
                      */
                     std::string m_dataSource;
                     bool m_dataSourceHasBeenSet;

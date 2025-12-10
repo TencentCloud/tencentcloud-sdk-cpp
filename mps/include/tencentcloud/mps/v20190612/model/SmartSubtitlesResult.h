@@ -27,6 +27,7 @@
 #include <tencentcloud/mps/v20190612/model/SmartSubtitleTaskAsrFullTextResult.h>
 #include <tencentcloud/mps/v20190612/model/SmartSubtitleTaskTransTextResult.h>
 #include <tencentcloud/mps/v20190612/model/PureSubtitleTransResult.h>
+#include <tencentcloud/mps/v20190612/model/SmartSubtitleTaskFullTextResult.h>
 
 
 namespace TencentCloud
@@ -54,10 +55,12 @@ namespace TencentCloud
 - AsrFullTextRecognition：语音全文识别
 - TransTextRecognition：语音翻译
 - PureSubtitleTrans:   纯字幕翻译
+- OcrFullTextRecognition：文字提取字幕
                      * @return Type 任务的类型，取值范围：
 - AsrFullTextRecognition：语音全文识别
 - TransTextRecognition：语音翻译
 - PureSubtitleTrans:   纯字幕翻译
+- OcrFullTextRecognition：文字提取字幕
                      * 
                      */
                     std::string GetType() const;
@@ -67,10 +70,12 @@ namespace TencentCloud
 - AsrFullTextRecognition：语音全文识别
 - TransTextRecognition：语音翻译
 - PureSubtitleTrans:   纯字幕翻译
+- OcrFullTextRecognition：文字提取字幕
                      * @param _type 任务的类型，取值范围：
 - AsrFullTextRecognition：语音全文识别
 - TransTextRecognition：语音翻译
 - PureSubtitleTrans:   纯字幕翻译
+- OcrFullTextRecognition：文字提取字幕
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -169,6 +174,35 @@ TransTextRecognition 时有效。
                      */
                     bool PureSubtitleTransTaskHasBeenSet() const;
 
+                    /**
+                     * 获取文字提取字幕结果，当 Type 为
+ OcrFullTextRecognition 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return OcrFullTextTask 文字提取字幕结果，当 Type 为
+ OcrFullTextRecognition 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    SmartSubtitleTaskFullTextResult GetOcrFullTextTask() const;
+
+                    /**
+                     * 设置文字提取字幕结果，当 Type 为
+ OcrFullTextRecognition 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _ocrFullTextTask 文字提取字幕结果，当 Type 为
+ OcrFullTextRecognition 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetOcrFullTextTask(const SmartSubtitleTaskFullTextResult& _ocrFullTextTask);
+
+                    /**
+                     * 判断参数 OcrFullTextTask 是否已赋值
+                     * @return OcrFullTextTask 是否已赋值
+                     * 
+                     */
+                    bool OcrFullTextTaskHasBeenSet() const;
+
                 private:
 
                     /**
@@ -176,6 +210,7 @@ TransTextRecognition 时有效。
 - AsrFullTextRecognition：语音全文识别
 - TransTextRecognition：语音翻译
 - PureSubtitleTrans:   纯字幕翻译
+- OcrFullTextRecognition：文字提取字幕
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
@@ -203,6 +238,14 @@ TransTextRecognition 时有效。
                      */
                     PureSubtitleTransResult m_pureSubtitleTransTask;
                     bool m_pureSubtitleTransTaskHasBeenSet;
+
+                    /**
+                     * 文字提取字幕结果，当 Type 为
+ OcrFullTextRecognition 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    SmartSubtitleTaskFullTextResult m_ocrFullTextTask;
+                    bool m_ocrFullTextTaskHasBeenSet;
 
                 };
             }

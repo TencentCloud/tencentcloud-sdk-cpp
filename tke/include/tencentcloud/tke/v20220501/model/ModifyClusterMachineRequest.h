@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/tke/v20220501/model/Disk.h>
 #include <tencentcloud/tke/v20220501/model/InstanceChargePrepaid.h>
 
 
@@ -107,6 +108,27 @@ namespace TencentCloud
                     bool DisplayNameHasBeenSet() const;
 
                     /**
+                     * 获取系统盘的信息
+                     * @return SystemDisk 系统盘的信息
+                     * 
+                     */
+                    Disk GetSystemDisk() const;
+
+                    /**
+                     * 设置系统盘的信息
+                     * @param _systemDisk 系统盘的信息
+                     * 
+                     */
+                    void SetSystemDisk(const Disk& _systemDisk);
+
+                    /**
+                     * 判断参数 SystemDisk 是否已赋值
+                     * @return SystemDisk 是否已赋值
+                     * 
+                     */
+                    bool SystemDiskHasBeenSet() const;
+
+                    /**
                      * 获取节点预付费信息
                      * @return InstanceChargePrepaid 节点预付费信息
                      * 
@@ -146,6 +168,12 @@ namespace TencentCloud
                      */
                     std::string m_displayName;
                     bool m_displayNameHasBeenSet;
+
+                    /**
+                     * 系统盘的信息
+                     */
+                    Disk m_systemDisk;
+                    bool m_systemDiskHasBeenSet;
 
                     /**
                      * 节点预付费信息

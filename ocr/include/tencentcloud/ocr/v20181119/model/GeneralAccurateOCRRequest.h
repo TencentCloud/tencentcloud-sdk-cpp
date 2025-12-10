@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool ImageUrlHasBeenSet() const;
 
                     /**
-                     * 获取是否返回单字信息，默认关
-                     * @return IsWords 是否返回单字信息，默认关
+                     * 获取是否返回单字信息，默认值为false，注：仅ConfigID配置为OCR时支持。
+                     * @return IsWords 是否返回单字信息，默认值为false，注：仅ConfigID配置为OCR时支持。
                      * 
                      */
                     bool GetIsWords() const;
 
                     /**
-                     * 设置是否返回单字信息，默认关
-                     * @param _isWords 是否返回单字信息，默认关
+                     * 设置是否返回单字信息，默认值为false，注：仅ConfigID配置为OCR时支持。
+                     * @param _isWords 是否返回单字信息，默认值为false，注：仅ConfigID配置为OCR时支持。
                      * 
                      */
                     void SetIsWords(const bool& _isWords);
@@ -190,15 +190,15 @@ namespace TencentCloud
                     bool EnableDetectTextHasBeenSet() const;
 
                     /**
-                     * 获取配置ID支持：  OCR -- 通用场景  MulOCR--多语种场景，注：仅ConfigID配置为OCR时支持
-                     * @return ConfigID 配置ID支持：  OCR -- 通用场景  MulOCR--多语种场景，注：仅ConfigID配置为OCR时支持
+                     * 获取配置ID支持： OCR -- 通用场景 MulOCR--多语种场景，默认值为OCR
+                     * @return ConfigID 配置ID支持： OCR -- 通用场景 MulOCR--多语种场景，默认值为OCR
                      * 
                      */
                     std::string GetConfigID() const;
 
                     /**
-                     * 设置配置ID支持：  OCR -- 通用场景  MulOCR--多语种场景，注：仅ConfigID配置为OCR时支持
-                     * @param _configID 配置ID支持：  OCR -- 通用场景  MulOCR--多语种场景，注：仅ConfigID配置为OCR时支持
+                     * 设置配置ID支持： OCR -- 通用场景 MulOCR--多语种场景，默认值为OCR
+                     * @param _configID 配置ID支持： OCR -- 通用场景 MulOCR--多语种场景，默认值为OCR
                      * 
                      */
                     void SetConfigID(const std::string& _configID);
@@ -225,7 +225,7 @@ namespace TencentCloud
                     bool m_imageUrlHasBeenSet;
 
                     /**
-                     * 是否返回单字信息，默认关
+                     * 是否返回单字信息，默认值为false，注：仅ConfigID配置为OCR时支持。
                      */
                     bool m_isWords;
                     bool m_isWordsHasBeenSet;
@@ -255,7 +255,7 @@ namespace TencentCloud
                     bool m_enableDetectTextHasBeenSet;
 
                     /**
-                     * 配置ID支持：  OCR -- 通用场景  MulOCR--多语种场景，注：仅ConfigID配置为OCR时支持
+                     * 配置ID支持： OCR -- 通用场景 MulOCR--多语种场景，默认值为OCR
                      */
                     std::string m_configID;
                     bool m_configIDHasBeenSet;

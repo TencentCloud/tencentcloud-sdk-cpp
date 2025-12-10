@@ -38,7 +38,10 @@ DescribeBatchOperateTaskDTO::DescribeBatchOperateTaskDTO() :
     m_cycleUnitHasBeenSet(false),
     m_scheduleDescHasBeenSet(false),
     m_datasourceIdHasBeenSet(false),
-    m_datasourceTypeHasBeenSet(false)
+    m_datasourceTypeHasBeenSet(false),
+    m_computeResourceHasBeenSet(false),
+    m_dlcRegionHasBeenSet(false),
+    m_isInheritHasBeenSet(false)
 {
 }
 
@@ -227,6 +230,36 @@ CoreInternalOutcome DescribeBatchOperateTaskDTO::Deserialize(const rapidjson::Va
         m_datasourceTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("ComputeResource") && !value["ComputeResource"].IsNull())
+    {
+        if (!value["ComputeResource"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DescribeBatchOperateTaskDTO.ComputeResource` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_computeResource = string(value["ComputeResource"].GetString());
+        m_computeResourceHasBeenSet = true;
+    }
+
+    if (value.HasMember("DlcRegion") && !value["DlcRegion"].IsNull())
+    {
+        if (!value["DlcRegion"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DescribeBatchOperateTaskDTO.DlcRegion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_dlcRegion = string(value["DlcRegion"].GetString());
+        m_dlcRegionHasBeenSet = true;
+    }
+
+    if (value.HasMember("IsInherit") && !value["IsInherit"].IsNull())
+    {
+        if (!value["IsInherit"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DescribeBatchOperateTaskDTO.IsInherit` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_isInherit = string(value["IsInherit"].GetString());
+        m_isInheritHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -376,6 +409,30 @@ void DescribeBatchOperateTaskDTO::ToJsonObject(rapidjson::Value &value, rapidjso
         string key = "DatasourceType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_datasourceType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_computeResourceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ComputeResource";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_computeResource.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dlcRegionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DlcRegion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dlcRegion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isInheritHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsInherit";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_isInherit.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -667,5 +724,53 @@ void DescribeBatchOperateTaskDTO::SetDatasourceType(const string& _datasourceTyp
 bool DescribeBatchOperateTaskDTO::DatasourceTypeHasBeenSet() const
 {
     return m_datasourceTypeHasBeenSet;
+}
+
+string DescribeBatchOperateTaskDTO::GetComputeResource() const
+{
+    return m_computeResource;
+}
+
+void DescribeBatchOperateTaskDTO::SetComputeResource(const string& _computeResource)
+{
+    m_computeResource = _computeResource;
+    m_computeResourceHasBeenSet = true;
+}
+
+bool DescribeBatchOperateTaskDTO::ComputeResourceHasBeenSet() const
+{
+    return m_computeResourceHasBeenSet;
+}
+
+string DescribeBatchOperateTaskDTO::GetDlcRegion() const
+{
+    return m_dlcRegion;
+}
+
+void DescribeBatchOperateTaskDTO::SetDlcRegion(const string& _dlcRegion)
+{
+    m_dlcRegion = _dlcRegion;
+    m_dlcRegionHasBeenSet = true;
+}
+
+bool DescribeBatchOperateTaskDTO::DlcRegionHasBeenSet() const
+{
+    return m_dlcRegionHasBeenSet;
+}
+
+string DescribeBatchOperateTaskDTO::GetIsInherit() const
+{
+    return m_isInherit;
+}
+
+void DescribeBatchOperateTaskDTO::SetIsInherit(const string& _isInherit)
+{
+    m_isInherit = _isInherit;
+    m_isInheritHasBeenSet = true;
+}
+
+bool DescribeBatchOperateTaskDTO::IsInheritHasBeenSet() const
+{
+    return m_isInheritHasBeenSet;
 }
 

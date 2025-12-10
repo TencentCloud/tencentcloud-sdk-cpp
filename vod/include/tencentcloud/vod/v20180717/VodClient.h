@@ -281,6 +281,8 @@
 #include <tencentcloud/vod/v20180717/model/ForbidMediaDistributionResponse.h>
 #include <tencentcloud/vod/v20180717/model/HandleCurrentPlaylistRequest.h>
 #include <tencentcloud/vod/v20180717/model/HandleCurrentPlaylistResponse.h>
+#include <tencentcloud/vod/v20180717/model/ImportMediaKnowledgeRequest.h>
+#include <tencentcloud/vod/v20180717/model/ImportMediaKnowledgeResponse.h>
 #include <tencentcloud/vod/v20180717/model/InspectMediaQualityRequest.h>
 #include <tencentcloud/vod/v20180717/model/InspectMediaQualityResponse.h>
 #include <tencentcloud/vod/v20180717/model/LiveRealTimeClipRequest.h>
@@ -385,6 +387,8 @@
 #include <tencentcloud/vod/v20180717/model/ReviewImageResponse.h>
 #include <tencentcloud/vod/v20180717/model/SearchMediaRequest.h>
 #include <tencentcloud/vod/v20180717/model/SearchMediaResponse.h>
+#include <tencentcloud/vod/v20180717/model/SearchMediaBySemanticsRequest.h>
+#include <tencentcloud/vod/v20180717/model/SearchMediaBySemanticsResponse.h>
 #include <tencentcloud/vod/v20180717/model/SetCLSPushTargetRequest.h>
 #include <tencentcloud/vod/v20180717/model/SetCLSPushTargetResponse.h>
 #include <tencentcloud/vod/v20180717/model/SetDrmKeyProviderInfoRequest.h>
@@ -800,6 +804,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::HandleCurrentPlaylistResponse> HandleCurrentPlaylistOutcome;
                 typedef std::future<HandleCurrentPlaylistOutcome> HandleCurrentPlaylistOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::HandleCurrentPlaylistRequest&, HandleCurrentPlaylistOutcome, const std::shared_ptr<const AsyncCallerContext>&)> HandleCurrentPlaylistAsyncHandler;
+                typedef Outcome<Core::Error, Model::ImportMediaKnowledgeResponse> ImportMediaKnowledgeOutcome;
+                typedef std::future<ImportMediaKnowledgeOutcome> ImportMediaKnowledgeOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::ImportMediaKnowledgeRequest&, ImportMediaKnowledgeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ImportMediaKnowledgeAsyncHandler;
                 typedef Outcome<Core::Error, Model::InspectMediaQualityResponse> InspectMediaQualityOutcome;
                 typedef std::future<InspectMediaQualityOutcome> InspectMediaQualityOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::InspectMediaQualityRequest&, InspectMediaQualityOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InspectMediaQualityAsyncHandler;
@@ -956,6 +963,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::SearchMediaResponse> SearchMediaOutcome;
                 typedef std::future<SearchMediaOutcome> SearchMediaOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::SearchMediaRequest&, SearchMediaOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SearchMediaAsyncHandler;
+                typedef Outcome<Core::Error, Model::SearchMediaBySemanticsResponse> SearchMediaBySemanticsOutcome;
+                typedef std::future<SearchMediaBySemanticsOutcome> SearchMediaBySemanticsOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::SearchMediaBySemanticsRequest&, SearchMediaBySemanticsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SearchMediaBySemanticsAsyncHandler;
                 typedef Outcome<Core::Error, Model::SetCLSPushTargetResponse> SetCLSPushTargetOutcome;
                 typedef std::future<SetCLSPushTargetOutcome> SetCLSPushTargetOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::SetCLSPushTargetRequest&, SetCLSPushTargetOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SetCLSPushTargetAsyncHandler;
@@ -2308,6 +2318,15 @@ namespace TencentCloud
                 HandleCurrentPlaylistOutcomeCallable HandleCurrentPlaylistCallable(const Model::HandleCurrentPlaylistRequest& request);
 
                 /**
+                 *用于将智能分析的结果导入到知识库中。
+                 * @param req ImportMediaKnowledgeRequest
+                 * @return ImportMediaKnowledgeOutcome
+                 */
+                ImportMediaKnowledgeOutcome ImportMediaKnowledge(const Model::ImportMediaKnowledgeRequest &request);
+                void ImportMediaKnowledgeAsync(const Model::ImportMediaKnowledgeRequest& request, const ImportMediaKnowledgeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ImportMediaKnowledgeOutcomeCallable ImportMediaKnowledgeCallable(const Model::ImportMediaKnowledgeRequest& request);
+
+                /**
                  *对点播中的音视频媒体发起音画质检测任务。
                  * @param req InspectMediaQualityRequest
                  * @return InspectMediaQualityOutcome
@@ -2923,6 +2942,15 @@ namespace TencentCloud
                 SearchMediaOutcome SearchMedia(const Model::SearchMediaRequest &request);
                 void SearchMediaAsync(const Model::SearchMediaRequest& request, const SearchMediaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 SearchMediaOutcomeCallable SearchMediaCallable(const Model::SearchMediaRequest& request);
+
+                /**
+                 *使用自然语言对媒体进行语义搜索。
+                 * @param req SearchMediaBySemanticsRequest
+                 * @return SearchMediaBySemanticsOutcome
+                 */
+                SearchMediaBySemanticsOutcome SearchMediaBySemantics(const Model::SearchMediaBySemanticsRequest &request);
+                void SearchMediaBySemanticsAsync(const Model::SearchMediaBySemanticsRequest& request, const SearchMediaBySemanticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SearchMediaBySemanticsOutcomeCallable SearchMediaBySemanticsCallable(const Model::SearchMediaBySemanticsRequest& request);
 
                 /**
                  *为点播域名设置投递 CLS 的目标。

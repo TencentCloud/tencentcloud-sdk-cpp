@@ -72,7 +72,9 @@ InstanceInfo::InstanceInfo() :
     m_lLMPkgHasBeenSet(false),
     m_elasticResourceIdHasBeenSet(false),
     m_lLMMonPkgHasBeenSet(false),
-    m_regionIdHasBeenSet(false)
+    m_regionIdHasBeenSet(false),
+    m_botSecurityPkgHasBeenSet(false),
+    m_botMonitorPkgHasBeenSet(false)
 {
 }
 
@@ -706,6 +708,40 @@ CoreInternalOutcome InstanceInfo::Deserialize(const rapidjson::Value &value)
         m_regionIdHasBeenSet = true;
     }
 
+    if (value.HasMember("BotSecurityPkg") && !value["BotSecurityPkg"].IsNull())
+    {
+        if (!value["BotSecurityPkg"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.BotSecurityPkg` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_botSecurityPkg.Deserialize(value["BotSecurityPkg"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_botSecurityPkgHasBeenSet = true;
+    }
+
+    if (value.HasMember("BotMonitorPkg") && !value["BotMonitorPkg"].IsNull())
+    {
+        if (!value["BotMonitorPkg"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.BotMonitorPkg` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_botMonitorPkg.Deserialize(value["BotMonitorPkg"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_botMonitorPkgHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1142,6 +1178,24 @@ void InstanceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "RegionId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_regionId, allocator);
+    }
+
+    if (m_botSecurityPkgHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BotSecurityPkg";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_botSecurityPkg.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_botMonitorPkgHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BotMonitorPkg";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_botMonitorPkg.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -1977,5 +2031,37 @@ void InstanceInfo::SetRegionId(const uint64_t& _regionId)
 bool InstanceInfo::RegionIdHasBeenSet() const
 {
     return m_regionIdHasBeenSet;
+}
+
+BotSecurityPkg InstanceInfo::GetBotSecurityPkg() const
+{
+    return m_botSecurityPkg;
+}
+
+void InstanceInfo::SetBotSecurityPkg(const BotSecurityPkg& _botSecurityPkg)
+{
+    m_botSecurityPkg = _botSecurityPkg;
+    m_botSecurityPkgHasBeenSet = true;
+}
+
+bool InstanceInfo::BotSecurityPkgHasBeenSet() const
+{
+    return m_botSecurityPkgHasBeenSet;
+}
+
+BotMonitorPkg InstanceInfo::GetBotMonitorPkg() const
+{
+    return m_botMonitorPkg;
+}
+
+void InstanceInfo::SetBotMonitorPkg(const BotMonitorPkg& _botMonitorPkg)
+{
+    m_botMonitorPkg = _botMonitorPkg;
+    m_botMonitorPkgHasBeenSet = true;
+}
+
+bool InstanceInfo::BotMonitorPkgHasBeenSet() const
+{
+    return m_botMonitorPkgHasBeenSet;
 }
 

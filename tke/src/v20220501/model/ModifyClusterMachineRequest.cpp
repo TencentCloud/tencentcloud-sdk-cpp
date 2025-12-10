@@ -26,6 +26,7 @@ ModifyClusterMachineRequest::ModifyClusterMachineRequest() :
     m_clusterIdHasBeenSet(false),
     m_machineNamesHasBeenSet(false),
     m_displayNameHasBeenSet(false),
+    m_systemDiskHasBeenSet(false),
     m_instanceChargePrepaidHasBeenSet(false)
 {
 }
@@ -64,6 +65,15 @@ string ModifyClusterMachineRequest::ToJsonString() const
         string key = "DisplayName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_displayName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_systemDiskHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SystemDisk";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_systemDisk.ToJsonObject(d[key.c_str()], allocator);
     }
 
     if (m_instanceChargePrepaidHasBeenSet)
@@ -129,6 +139,22 @@ void ModifyClusterMachineRequest::SetDisplayName(const string& _displayName)
 bool ModifyClusterMachineRequest::DisplayNameHasBeenSet() const
 {
     return m_displayNameHasBeenSet;
+}
+
+Disk ModifyClusterMachineRequest::GetSystemDisk() const
+{
+    return m_systemDisk;
+}
+
+void ModifyClusterMachineRequest::SetSystemDisk(const Disk& _systemDisk)
+{
+    m_systemDisk = _systemDisk;
+    m_systemDiskHasBeenSet = true;
+}
+
+bool ModifyClusterMachineRequest::SystemDiskHasBeenSet() const
+{
+    return m_systemDiskHasBeenSet;
 }
 
 InstanceChargePrepaid ModifyClusterMachineRequest::GetInstanceChargePrepaid() const

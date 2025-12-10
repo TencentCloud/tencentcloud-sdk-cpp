@@ -6490,6 +6490,56 @@ VodClient::HandleCurrentPlaylistOutcomeCallable VodClient::HandleCurrentPlaylist
     return prom->get_future();
 }
 
+VodClient::ImportMediaKnowledgeOutcome VodClient::ImportMediaKnowledge(const ImportMediaKnowledgeRequest &request)
+{
+    auto outcome = MakeRequest(request, "ImportMediaKnowledge");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ImportMediaKnowledgeResponse rsp = ImportMediaKnowledgeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ImportMediaKnowledgeOutcome(rsp);
+        else
+            return ImportMediaKnowledgeOutcome(o.GetError());
+    }
+    else
+    {
+        return ImportMediaKnowledgeOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::ImportMediaKnowledgeAsync(const ImportMediaKnowledgeRequest& request, const ImportMediaKnowledgeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ImportMediaKnowledgeRequest&;
+    using Resp = ImportMediaKnowledgeResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ImportMediaKnowledge", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+VodClient::ImportMediaKnowledgeOutcomeCallable VodClient::ImportMediaKnowledgeCallable(const ImportMediaKnowledgeRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ImportMediaKnowledgeOutcome>>();
+    ImportMediaKnowledgeAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const ImportMediaKnowledgeRequest&,
+        ImportMediaKnowledgeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 VodClient::InspectMediaQualityOutcome VodClient::InspectMediaQuality(const InspectMediaQualityRequest &request)
 {
     auto outcome = MakeRequest(request, "InspectMediaQuality");
@@ -9082,6 +9132,56 @@ VodClient::SearchMediaOutcomeCallable VodClient::SearchMediaCallable(const Searc
         const VodClient*,
         const SearchMediaRequest&,
         SearchMediaOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+VodClient::SearchMediaBySemanticsOutcome VodClient::SearchMediaBySemantics(const SearchMediaBySemanticsRequest &request)
+{
+    auto outcome = MakeRequest(request, "SearchMediaBySemantics");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SearchMediaBySemanticsResponse rsp = SearchMediaBySemanticsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SearchMediaBySemanticsOutcome(rsp);
+        else
+            return SearchMediaBySemanticsOutcome(o.GetError());
+    }
+    else
+    {
+        return SearchMediaBySemanticsOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::SearchMediaBySemanticsAsync(const SearchMediaBySemanticsRequest& request, const SearchMediaBySemanticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const SearchMediaBySemanticsRequest&;
+    using Resp = SearchMediaBySemanticsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "SearchMediaBySemantics", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+VodClient::SearchMediaBySemanticsOutcomeCallable VodClient::SearchMediaBySemanticsCallable(const SearchMediaBySemanticsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<SearchMediaBySemanticsOutcome>>();
+    SearchMediaBySemanticsAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const SearchMediaBySemanticsRequest&,
+        SearchMediaBySemanticsOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

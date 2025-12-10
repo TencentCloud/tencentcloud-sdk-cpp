@@ -162,16 +162,16 @@ namespace TencentCloud
                     /**
                      * 获取生成视频的分辨率。
 <li>当 ModelName 是 Kling，可选值为 720P、1080P，默认为 720P；</li>
-<li>当 ModelName 是 Jimeng，可选值为 768P、1080P，默认为 768P；</li>
-<li>当 ModelName 是 Hailuo，可选值为 1080P；</li>
+<li>当 ModelName 是 Hailuo，可选值为 768P、1080P，默认为 768P；</li>
+<li>当 ModelName 是 Jimeng，可选值为 1080P；</li>
 <li>当 ModelName 是 Vidu，可选值为 720P、1080P，默认为 720P；</li>
 <li>当 ModelName 是 GV，可选值为 720P、1080P，默认为 720P；</li>
 <li>当 ModelName 是 OS，可选值为 720P；</li>
 说明：除模型可支持的分辨率外，还支持 2K、4K分辨率。
                      * @return Resolution 生成视频的分辨率。
 <li>当 ModelName 是 Kling，可选值为 720P、1080P，默认为 720P；</li>
-<li>当 ModelName 是 Jimeng，可选值为 768P、1080P，默认为 768P；</li>
-<li>当 ModelName 是 Hailuo，可选值为 1080P；</li>
+<li>当 ModelName 是 Hailuo，可选值为 768P、1080P，默认为 768P；</li>
+<li>当 ModelName 是 Jimeng，可选值为 1080P；</li>
 <li>当 ModelName 是 Vidu，可选值为 720P、1080P，默认为 720P；</li>
 <li>当 ModelName 是 GV，可选值为 720P、1080P，默认为 720P；</li>
 <li>当 ModelName 是 OS，可选值为 720P；</li>
@@ -183,16 +183,16 @@ namespace TencentCloud
                     /**
                      * 设置生成视频的分辨率。
 <li>当 ModelName 是 Kling，可选值为 720P、1080P，默认为 720P；</li>
-<li>当 ModelName 是 Jimeng，可选值为 768P、1080P，默认为 768P；</li>
-<li>当 ModelName 是 Hailuo，可选值为 1080P；</li>
+<li>当 ModelName 是 Hailuo，可选值为 768P、1080P，默认为 768P；</li>
+<li>当 ModelName 是 Jimeng，可选值为 1080P；</li>
 <li>当 ModelName 是 Vidu，可选值为 720P、1080P，默认为 720P；</li>
 <li>当 ModelName 是 GV，可选值为 720P、1080P，默认为 720P；</li>
 <li>当 ModelName 是 OS，可选值为 720P；</li>
 说明：除模型可支持的分辨率外，还支持 2K、4K分辨率。
                      * @param _resolution 生成视频的分辨率。
 <li>当 ModelName 是 Kling，可选值为 720P、1080P，默认为 720P；</li>
-<li>当 ModelName 是 Jimeng，可选值为 768P、1080P，默认为 768P；</li>
-<li>当 ModelName 是 Hailuo，可选值为 1080P；</li>
+<li>当 ModelName 是 Hailuo，可选值为 768P、1080P，默认为 768P；</li>
+<li>当 ModelName 是 Jimeng，可选值为 1080P；</li>
 <li>当 ModelName 是 Vidu，可选值为 720P、1080P，默认为 720P；</li>
 <li>当 ModelName 是 GV，可选值为 720P、1080P，默认为 720P；</li>
 <li>当 ModelName 是 OS，可选值为 720P；</li>
@@ -411,8 +411,8 @@ namespace TencentCloud
                     /**
                      * 生成视频的分辨率。
 <li>当 ModelName 是 Kling，可选值为 720P、1080P，默认为 720P；</li>
-<li>当 ModelName 是 Jimeng，可选值为 768P、1080P，默认为 768P；</li>
-<li>当 ModelName 是 Hailuo，可选值为 1080P；</li>
+<li>当 ModelName 是 Hailuo，可选值为 768P、1080P，默认为 768P；</li>
+<li>当 ModelName 是 Jimeng，可选值为 1080P；</li>
 <li>当 ModelName 是 Vidu，可选值为 720P、1080P，默认为 720P；</li>
 <li>当 ModelName 是 GV，可选值为 720P、1080P，默认为 720P；</li>
 <li>当 ModelName 是 OS，可选值为 720P；</li>

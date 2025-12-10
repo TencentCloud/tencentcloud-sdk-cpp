@@ -43,7 +43,10 @@ DescribeBatchOperateTaskRequest::DescribeBatchOperateTaskRequest() :
     m_datasourceIdListHasBeenSet(false),
     m_datasourceTypeListHasBeenSet(false),
     m_cycleUnitListHasBeenSet(false),
-    m_canSubmitHasBeenSet(false)
+    m_canSubmitHasBeenSet(false),
+    m_timeZoneHasBeenSet(false),
+    m_minUpdateTimeHasBeenSet(false),
+    m_maxUpdateTimeHasBeenSet(false)
 {
 }
 
@@ -265,6 +268,30 @@ string DescribeBatchOperateTaskRequest::ToJsonString() const
         string key = "CanSubmit";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_canSubmit, allocator);
+    }
+
+    if (m_timeZoneHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TimeZone";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_timeZone.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_minUpdateTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MinUpdateTime";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_minUpdateTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_maxUpdateTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MaxUpdateTime";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_maxUpdateTime.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -609,6 +636,54 @@ void DescribeBatchOperateTaskRequest::SetCanSubmit(const bool& _canSubmit)
 bool DescribeBatchOperateTaskRequest::CanSubmitHasBeenSet() const
 {
     return m_canSubmitHasBeenSet;
+}
+
+string DescribeBatchOperateTaskRequest::GetTimeZone() const
+{
+    return m_timeZone;
+}
+
+void DescribeBatchOperateTaskRequest::SetTimeZone(const string& _timeZone)
+{
+    m_timeZone = _timeZone;
+    m_timeZoneHasBeenSet = true;
+}
+
+bool DescribeBatchOperateTaskRequest::TimeZoneHasBeenSet() const
+{
+    return m_timeZoneHasBeenSet;
+}
+
+string DescribeBatchOperateTaskRequest::GetMinUpdateTime() const
+{
+    return m_minUpdateTime;
+}
+
+void DescribeBatchOperateTaskRequest::SetMinUpdateTime(const string& _minUpdateTime)
+{
+    m_minUpdateTime = _minUpdateTime;
+    m_minUpdateTimeHasBeenSet = true;
+}
+
+bool DescribeBatchOperateTaskRequest::MinUpdateTimeHasBeenSet() const
+{
+    return m_minUpdateTimeHasBeenSet;
+}
+
+string DescribeBatchOperateTaskRequest::GetMaxUpdateTime() const
+{
+    return m_maxUpdateTime;
+}
+
+void DescribeBatchOperateTaskRequest::SetMaxUpdateTime(const string& _maxUpdateTime)
+{
+    m_maxUpdateTime = _maxUpdateTime;
+    m_maxUpdateTimeHasBeenSet = true;
+}
+
+bool DescribeBatchOperateTaskRequest::MaxUpdateTimeHasBeenSet() const
+{
+    return m_maxUpdateTimeHasBeenSet;
 }
 
 

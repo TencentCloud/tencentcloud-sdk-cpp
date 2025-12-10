@@ -284,22 +284,22 @@ namespace TencentCloud
 
                     /**
                      * 获取指定用于长期保留的具体备份日期。此设置仅在 **LongTermUnit** 被设为**weekly** 或 **monthly** 时生效。
-- 按周（weekly）保留：请输入 0-6 之间的数字来代表周日至周六。多个日期请用英文逗号 , 分隔。
-- 按月（monthly）保留：请输入 1-31 之间的数字来代表月份中的具体日期。多个日期请用英文逗号 , 分隔。
+- 按周（weekly）保留：请输入 0-6 之间的数字来代表周日至周六。多个日期请用英文逗号分隔。
+- 按月（monthly）保留：请输入 1-31 之间的数字来代表月份中的具体日期。多个日期请用英文逗号分隔。
                      * @return LongTermActiveDays 指定用于长期保留的具体备份日期。此设置仅在 **LongTermUnit** 被设为**weekly** 或 **monthly** 时生效。
-- 按周（weekly）保留：请输入 0-6 之间的数字来代表周日至周六。多个日期请用英文逗号 , 分隔。
-- 按月（monthly）保留：请输入 1-31 之间的数字来代表月份中的具体日期。多个日期请用英文逗号 , 分隔。
+- 按周（weekly）保留：请输入 0-6 之间的数字来代表周日至周六。多个日期请用英文逗号分隔。
+- 按月（monthly）保留：请输入 1-31 之间的数字来代表月份中的具体日期。多个日期请用英文逗号分隔。
                      * 
                      */
                     std::string GetLongTermActiveDays() const;
 
                     /**
                      * 设置指定用于长期保留的具体备份日期。此设置仅在 **LongTermUnit** 被设为**weekly** 或 **monthly** 时生效。
-- 按周（weekly）保留：请输入 0-6 之间的数字来代表周日至周六。多个日期请用英文逗号 , 分隔。
-- 按月（monthly）保留：请输入 1-31 之间的数字来代表月份中的具体日期。多个日期请用英文逗号 , 分隔。
+- 按周（weekly）保留：请输入 0-6 之间的数字来代表周日至周六。多个日期请用英文逗号分隔。
+- 按月（monthly）保留：请输入 1-31 之间的数字来代表月份中的具体日期。多个日期请用英文逗号分隔。
                      * @param _longTermActiveDays 指定用于长期保留的具体备份日期。此设置仅在 **LongTermUnit** 被设为**weekly** 或 **monthly** 时生效。
-- 按周（weekly）保留：请输入 0-6 之间的数字来代表周日至周六。多个日期请用英文逗号 , 分隔。
-- 按月（monthly）保留：请输入 1-31 之间的数字来代表月份中的具体日期。多个日期请用英文逗号 , 分隔。
+- 按周（weekly）保留：请输入 0-6 之间的数字来代表周日至周六。多个日期请用英文逗号分隔。
+- 按月（monthly）保留：请输入 1-31 之间的数字来代表月份中的具体日期。多个日期请用英文逗号分隔。
                      * 
                      */
                     void SetLongTermActiveDays(const std::string& _longTermActiveDays);
@@ -337,12 +337,10 @@ namespace TencentCloud
 - 单位：天。
 - 默认值：7天。
 - 取值范围：[7,365]。
-
                      * @return OplogExpiredDays 增量备份保留时长。
 - 单位：天。
 - 默认值：7天。
 - 取值范围：[7,365]。
-
                      * 
                      */
                     int64_t GetOplogExpiredDays() const;
@@ -352,12 +350,10 @@ namespace TencentCloud
 - 单位：天。
 - 默认值：7天。
 - 取值范围：[7,365]。
-
                      * @param _oplogExpiredDays 增量备份保留时长。
 - 单位：天。
 - 默认值：7天。
 - 取值范围：[7,365]。
-
                      * 
                      */
                     void SetOplogExpiredDays(const int64_t& _oplogExpiredDays);
@@ -501,8 +497,8 @@ namespace TencentCloud
 
                     /**
                      * 指定用于长期保留的具体备份日期。此设置仅在 **LongTermUnit** 被设为**weekly** 或 **monthly** 时生效。
-- 按周（weekly）保留：请输入 0-6 之间的数字来代表周日至周六。多个日期请用英文逗号 , 分隔。
-- 按月（monthly）保留：请输入 1-31 之间的数字来代表月份中的具体日期。多个日期请用英文逗号 , 分隔。
+- 按周（weekly）保留：请输入 0-6 之间的数字来代表周日至周六。多个日期请用英文逗号分隔。
+- 按月（monthly）保留：请输入 1-31 之间的数字来代表月份中的具体日期。多个日期请用英文逗号分隔。
                      */
                     std::string m_longTermActiveDays;
                     bool m_longTermActiveDaysHasBeenSet;
@@ -518,7 +514,6 @@ namespace TencentCloud
 - 单位：天。
 - 默认值：7天。
 - 取值范围：[7,365]。
-
                      */
                     int64_t m_oplogExpiredDays;
                     bool m_oplogExpiredDaysHasBeenSet;

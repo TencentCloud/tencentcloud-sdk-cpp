@@ -24,7 +24,8 @@ CkUserAlterInfo::CkUserAlterInfo() :
     m_instanceIdHasBeenSet(false),
     m_userNameHasBeenSet(false),
     m_passWordHasBeenSet(false),
-    m_describeHasBeenSet(false)
+    m_describeHasBeenSet(false),
+    m_originalPasswordHasBeenSet(false)
 {
 }
 
@@ -73,6 +74,16 @@ CoreInternalOutcome CkUserAlterInfo::Deserialize(const rapidjson::Value &value)
         m_describeHasBeenSet = true;
     }
 
+    if (value.HasMember("OriginalPassword") && !value["OriginalPassword"].IsNull())
+    {
+        if (!value["OriginalPassword"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CkUserAlterInfo.OriginalPassword` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_originalPassword = string(value["OriginalPassword"].GetString());
+        m_originalPasswordHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +121,14 @@ void CkUserAlterInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "Describe";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_describe.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_originalPasswordHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OriginalPassword";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_originalPassword.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -177,5 +196,21 @@ void CkUserAlterInfo::SetDescribe(const string& _describe)
 bool CkUserAlterInfo::DescribeHasBeenSet() const
 {
     return m_describeHasBeenSet;
+}
+
+string CkUserAlterInfo::GetOriginalPassword() const
+{
+    return m_originalPassword;
+}
+
+void CkUserAlterInfo::SetOriginalPassword(const string& _originalPassword)
+{
+    m_originalPassword = _originalPassword;
+    m_originalPasswordHasBeenSet = true;
+}
+
+bool CkUserAlterInfo::OriginalPasswordHasBeenSet() const
+{
+    return m_originalPasswordHasBeenSet;
 }
 

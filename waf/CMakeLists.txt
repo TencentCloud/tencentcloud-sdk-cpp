@@ -85,7 +85,7 @@ set(waf_public_header_model
   include/tencentcloud/waf/v20180125/model/ApiSecCustomSensitiveRule.h
   include/tencentcloud/waf/v20180125/model/DescribeSessionRequest.h
   include/tencentcloud/waf/v20180125/model/DescribePolicyStatusRequest.h
-  include/tencentcloud/waf/v20180125/model/ModifyIpAccessControlRequest.h
+  include/tencentcloud/waf/v20180125/model/BotSecurityPkg.h
   include/tencentcloud/waf/v20180125/model/DescribeAccessFastAnalysisRequest.h
   include/tencentcloud/waf/v20180125/model/UCBActionProportion.h
   include/tencentcloud/waf/v20180125/model/DeleteIpAccessControlRequest.h
@@ -165,7 +165,7 @@ set(waf_public_header_model
   include/tencentcloud/waf/v20180125/model/DeleteBotSceneUCBRuleRequest.h
   include/tencentcloud/waf/v20180125/model/BotIdConfig.h
   include/tencentcloud/waf/v20180125/model/DeleteHostRequest.h
-  include/tencentcloud/waf/v20180125/model/QpsData.h
+  include/tencentcloud/waf/v20180125/model/ModifyIpAccessControlRequest.h
   include/tencentcloud/waf/v20180125/model/AddCustomWhiteRuleResponse.h
   include/tencentcloud/waf/v20180125/model/ModifyUserSignatureClassRequest.h
   include/tencentcloud/waf/v20180125/model/HostDel.h
@@ -345,6 +345,7 @@ set(waf_public_header_model
   include/tencentcloud/waf/v20180125/model/SessionData.h
   include/tencentcloud/waf/v20180125/model/DescribeAutoDenyIPResponse.h
   include/tencentcloud/waf/v20180125/model/SwitchDomainRulesResponse.h
+  include/tencentcloud/waf/v20180125/model/QpsData.h
   include/tencentcloud/waf/v20180125/model/ModifyCustomRuleResponse.h
   include/tencentcloud/waf/v20180125/model/LogItem.h
   include/tencentcloud/waf/v20180125/model/ApiSecPrivilegeRule.h
@@ -353,6 +354,7 @@ set(waf_public_header_model
   include/tencentcloud/waf/v20180125/model/DeleteSpartaProtectionRequest.h
   include/tencentcloud/waf/v20180125/model/UserDomainInfo.h
   include/tencentcloud/waf/v20180125/model/DescribeAntiFakeRulesResponse.h
+  include/tencentcloud/waf/v20180125/model/BotMonitorPkg.h
   include/tencentcloud/waf/v20180125/model/DescribeTopicsRequest.h
   include/tencentcloud/waf/v20180125/model/BatchDomainResult.h
   include/tencentcloud/waf/v20180125/model/ApiNameOp.h
@@ -653,7 +655,7 @@ set(waf_src
   src/v20180125/model/ApiSecCustomSensitiveRule.cpp
   src/v20180125/model/DescribeSessionRequest.cpp
   src/v20180125/model/DescribePolicyStatusRequest.cpp
-  src/v20180125/model/ModifyIpAccessControlRequest.cpp
+  src/v20180125/model/BotSecurityPkg.cpp
   src/v20180125/model/DescribeAccessFastAnalysisRequest.cpp
   src/v20180125/model/UCBActionProportion.cpp
   src/v20180125/model/DeleteIpAccessControlRequest.cpp
@@ -733,7 +735,7 @@ set(waf_src
   src/v20180125/model/DeleteBotSceneUCBRuleRequest.cpp
   src/v20180125/model/BotIdConfig.cpp
   src/v20180125/model/DeleteHostRequest.cpp
-  src/v20180125/model/QpsData.cpp
+  src/v20180125/model/ModifyIpAccessControlRequest.cpp
   src/v20180125/model/AddCustomWhiteRuleResponse.cpp
   src/v20180125/model/ModifyUserSignatureClassRequest.cpp
   src/v20180125/model/HostDel.cpp
@@ -913,6 +915,7 @@ set(waf_src
   src/v20180125/model/SessionData.cpp
   src/v20180125/model/DescribeAutoDenyIPResponse.cpp
   src/v20180125/model/SwitchDomainRulesResponse.cpp
+  src/v20180125/model/QpsData.cpp
   src/v20180125/model/ModifyCustomRuleResponse.cpp
   src/v20180125/model/LogItem.cpp
   src/v20180125/model/ApiSecPrivilegeRule.cpp
@@ -921,6 +924,7 @@ set(waf_src
   src/v20180125/model/DeleteSpartaProtectionRequest.cpp
   src/v20180125/model/UserDomainInfo.cpp
   src/v20180125/model/DescribeAntiFakeRulesResponse.cpp
+  src/v20180125/model/BotMonitorPkg.cpp
   src/v20180125/model/DescribeTopicsRequest.cpp
   src/v20180125/model/BatchDomainResult.cpp
   src/v20180125/model/ApiNameOp.cpp

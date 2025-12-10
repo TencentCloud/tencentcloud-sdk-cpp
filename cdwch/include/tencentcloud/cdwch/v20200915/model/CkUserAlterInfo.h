@@ -130,6 +130,27 @@ namespace TencentCloud
                      */
                     bool DescribeHasBeenSet() const;
 
+                    /**
+                     * 获取账户的当前密码
+                     * @return OriginalPassword 账户的当前密码
+                     * 
+                     */
+                    std::string GetOriginalPassword() const;
+
+                    /**
+                     * 设置账户的当前密码
+                     * @param _originalPassword 账户的当前密码
+                     * 
+                     */
+                    void SetOriginalPassword(const std::string& _originalPassword);
+
+                    /**
+                     * 判断参数 OriginalPassword 是否已赋值
+                     * @return OriginalPassword 是否已赋值
+                     * 
+                     */
+                    bool OriginalPasswordHasBeenSet() const;
+
                 private:
 
                     /**
@@ -155,6 +176,12 @@ namespace TencentCloud
                      */
                     std::string m_describe;
                     bool m_describeHasBeenSet;
+
+                    /**
+                     * 账户的当前密码
+                     */
+                    std::string m_originalPassword;
+                    bool m_originalPasswordHasBeenSet;
 
                 };
             }

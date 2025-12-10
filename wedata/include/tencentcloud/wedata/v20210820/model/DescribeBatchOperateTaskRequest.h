@@ -527,6 +527,69 @@ presto
                      */
                     bool CanSubmitHasBeenSet() const;
 
+                    /**
+                     * 获取返回时间字段需要转换的时区
+                     * @return TimeZone 返回时间字段需要转换的时区
+                     * 
+                     */
+                    std::string GetTimeZone() const;
+
+                    /**
+                     * 设置返回时间字段需要转换的时区
+                     * @param _timeZone 返回时间字段需要转换的时区
+                     * 
+                     */
+                    void SetTimeZone(const std::string& _timeZone);
+
+                    /**
+                     * 判断参数 TimeZone 是否已赋值
+                     * @return TimeZone 是否已赋值
+                     * 
+                     */
+                    bool TimeZoneHasBeenSet() const;
+
+                    /**
+                     * 获取任务最后更新时间最小值，ISO8601格式，如2025-07-16T15:00:00+08:00
+                     * @return MinUpdateTime 任务最后更新时间最小值，ISO8601格式，如2025-07-16T15:00:00+08:00
+                     * 
+                     */
+                    std::string GetMinUpdateTime() const;
+
+                    /**
+                     * 设置任务最后更新时间最小值，ISO8601格式，如2025-07-16T15:00:00+08:00
+                     * @param _minUpdateTime 任务最后更新时间最小值，ISO8601格式，如2025-07-16T15:00:00+08:00
+                     * 
+                     */
+                    void SetMinUpdateTime(const std::string& _minUpdateTime);
+
+                    /**
+                     * 判断参数 MinUpdateTime 是否已赋值
+                     * @return MinUpdateTime 是否已赋值
+                     * 
+                     */
+                    bool MinUpdateTimeHasBeenSet() const;
+
+                    /**
+                     * 获取任务最后更新时间最大值，ISO8601格式，如2025-07-17T15:00:00+08:00
+                     * @return MaxUpdateTime 任务最后更新时间最大值，ISO8601格式，如2025-07-17T15:00:00+08:00
+                     * 
+                     */
+                    std::string GetMaxUpdateTime() const;
+
+                    /**
+                     * 设置任务最后更新时间最大值，ISO8601格式，如2025-07-17T15:00:00+08:00
+                     * @param _maxUpdateTime 任务最后更新时间最大值，ISO8601格式，如2025-07-17T15:00:00+08:00
+                     * 
+                     */
+                    void SetMaxUpdateTime(const std::string& _maxUpdateTime);
+
+                    /**
+                     * 判断参数 MaxUpdateTime 是否已赋值
+                     * @return MaxUpdateTime 是否已赋值
+                     * 
+                     */
+                    bool MaxUpdateTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -665,6 +728,24 @@ presto
                      */
                     bool m_canSubmit;
                     bool m_canSubmitHasBeenSet;
+
+                    /**
+                     * 返回时间字段需要转换的时区
+                     */
+                    std::string m_timeZone;
+                    bool m_timeZoneHasBeenSet;
+
+                    /**
+                     * 任务最后更新时间最小值，ISO8601格式，如2025-07-16T15:00:00+08:00
+                     */
+                    std::string m_minUpdateTime;
+                    bool m_minUpdateTimeHasBeenSet;
+
+                    /**
+                     * 任务最后更新时间最大值，ISO8601格式，如2025-07-17T15:00:00+08:00
+                     */
+                    std::string m_maxUpdateTime;
+                    bool m_maxUpdateTimeHasBeenSet;
 
                 };
             }

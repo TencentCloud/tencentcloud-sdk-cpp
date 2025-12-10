@@ -39,6 +39,8 @@
 #include <tencentcloud/waf/v20180125/model/RCEPkg.h>
 #include <tencentcloud/waf/v20180125/model/LLMPkg.h>
 #include <tencentcloud/waf/v20180125/model/LLMMonPkg.h>
+#include <tencentcloud/waf/v20180125/model/BotSecurityPkg.h>
+#include <tencentcloud/waf/v20180125/model/BotMonitorPkg.h>
 
 
 namespace TencentCloud
@@ -1197,6 +1199,48 @@ namespace TencentCloud
                      */
                     bool RegionIdHasBeenSet() const;
 
+                    /**
+                     * 获取BOT安全护航信息
+                     * @return BotSecurityPkg BOT安全护航信息
+                     * 
+                     */
+                    BotSecurityPkg GetBotSecurityPkg() const;
+
+                    /**
+                     * 设置BOT安全护航信息
+                     * @param _botSecurityPkg BOT安全护航信息
+                     * 
+                     */
+                    void SetBotSecurityPkg(const BotSecurityPkg& _botSecurityPkg);
+
+                    /**
+                     * 判断参数 BotSecurityPkg 是否已赋值
+                     * @return BotSecurityPkg 是否已赋值
+                     * 
+                     */
+                    bool BotSecurityPkgHasBeenSet() const;
+
+                    /**
+                     * 获取BOT安全监测资源信息
+                     * @return BotMonitorPkg BOT安全监测资源信息
+                     * 
+                     */
+                    BotMonitorPkg GetBotMonitorPkg() const;
+
+                    /**
+                     * 设置BOT安全监测资源信息
+                     * @param _botMonitorPkg BOT安全监测资源信息
+                     * 
+                     */
+                    void SetBotMonitorPkg(const BotMonitorPkg& _botMonitorPkg);
+
+                    /**
+                     * 判断参数 BotMonitorPkg 是否已赋值
+                     * @return BotMonitorPkg 是否已赋值
+                     * 
+                     */
+                    bool BotMonitorPkgHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1521,6 +1565,18 @@ namespace TencentCloud
                      */
                     uint64_t m_regionId;
                     bool m_regionIdHasBeenSet;
+
+                    /**
+                     * BOT安全护航信息
+                     */
+                    BotSecurityPkg m_botSecurityPkg;
+                    bool m_botSecurityPkgHasBeenSet;
+
+                    /**
+                     * BOT安全监测资源信息
+                     */
+                    BotMonitorPkg m_botMonitorPkg;
+                    bool m_botMonitorPkgHasBeenSet;
 
                 };
             }
