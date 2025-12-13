@@ -708,6 +708,7 @@ set(mps_public_header_model
   include/tencentcloud/mps/v20190612/model/QualityControlData.h
   include/tencentcloud/mps/v20190612/model/DescribeOutputRISTSettings.h
   include/tencentcloud/mps/v20190612/model/DrmInfo.h
+  include/tencentcloud/mps/v20190612/model/TextTranslationRequest.h
   include/tencentcloud/mps/v20190612/model/DescribeSampleSnapshotTemplatesResponse.h
   include/tencentcloud/mps/v20190612/model/DescribeProcessImageTemplatesRequest.h
   include/tencentcloud/mps/v20190612/model/ComposeImageItem.h
@@ -778,6 +779,7 @@ set(mps_public_header_model
   include/tencentcloud/mps/v20190612/model/AiReviewPoliticalOcrTaskOutput.h
   include/tencentcloud/mps/v20190612/model/OcrFullTextConfigureInfo.h
   include/tencentcloud/mps/v20190612/model/CreateStreamLinkInputRequest.h
+  include/tencentcloud/mps/v20190612/model/TextTranslationResponse.h
   include/tencentcloud/mps/v20190612/model/ModifyStreamLinkSecurityGroupResponse.h
   include/tencentcloud/mps/v20190612/model/ModifyLiveRecordTemplateRequest.h
   include/tencentcloud/mps/v20190612/model/ModifySmartSubtitleTemplateRequest.h
@@ -1529,6 +1531,7 @@ set(mps_src
   src/v20190612/model/QualityControlData.cpp
   src/v20190612/model/DescribeOutputRISTSettings.cpp
   src/v20190612/model/DrmInfo.cpp
+  src/v20190612/model/TextTranslationRequest.cpp
   src/v20190612/model/DescribeSampleSnapshotTemplatesResponse.cpp
   src/v20190612/model/DescribeProcessImageTemplatesRequest.cpp
   src/v20190612/model/ComposeImageItem.cpp
@@ -1599,6 +1602,7 @@ set(mps_src
   src/v20190612/model/AiReviewPoliticalOcrTaskOutput.cpp
   src/v20190612/model/OcrFullTextConfigureInfo.cpp
   src/v20190612/model/CreateStreamLinkInputRequest.cpp
+  src/v20190612/model/TextTranslationResponse.cpp
   src/v20190612/model/ModifyStreamLinkSecurityGroupResponse.cpp
   src/v20190612/model/ModifyLiveRecordTemplateRequest.cpp
   src/v20190612/model/ModifySmartSubtitleTemplateRequest.cpp

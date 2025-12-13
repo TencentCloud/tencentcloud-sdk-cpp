@@ -119,12 +119,10 @@ namespace TencentCloud
                     bool InfoTypeHasBeenSet() const;
 
                     /**
-                     * 获取从活体视频中截取一定张数的最佳帧。
-- 仅部分服务支持，若需使用请与慧眼小助手沟通。
+                     * 获取从活体视频中截取一定张数的自截帧。
 - 默认值为0，最大值为10，超出10的最多只给10张。
 - InfoType需要包含3。
-                     * @return BestFramesCount 从活体视频中截取一定张数的最佳帧。
-- 仅部分服务支持，若需使用请与慧眼小助手沟通。
+                     * @return BestFramesCount 从活体视频中截取一定张数的自截帧。
 - 默认值为0，最大值为10，超出10的最多只给10张。
 - InfoType需要包含3。
                      * 
@@ -132,12 +130,10 @@ namespace TencentCloud
                     uint64_t GetBestFramesCount() const;
 
                     /**
-                     * 设置从活体视频中截取一定张数的最佳帧。
-- 仅部分服务支持，若需使用请与慧眼小助手沟通。
+                     * 设置从活体视频中截取一定张数的自截帧。
 - 默认值为0，最大值为10，超出10的最多只给10张。
 - InfoType需要包含3。
-                     * @param _bestFramesCount 从活体视频中截取一定张数的最佳帧。
-- 仅部分服务支持，若需使用请与慧眼小助手沟通。
+                     * @param _bestFramesCount 从活体视频中截取一定张数的自截帧。
 - 默认值为0，最大值为10，超出10的最多只给10张。
 - InfoType需要包含3。
                      * 
@@ -325,8 +321,7 @@ namespace TencentCloud
                     bool m_infoTypeHasBeenSet;
 
                     /**
-                     * 从活体视频中截取一定张数的最佳帧。
-- 仅部分服务支持，若需使用请与慧眼小助手沟通。
+                     * 从活体视频中截取一定张数的自截帧。
 - 默认值为0，最大值为10，超出10的最多只给10张。
 - InfoType需要包含3。
                      */

@@ -47,15 +47,47 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取生成的音频格式，默认pcm，目前支持的格式列表：流式：[pcm]，非流式 [pcm，wav]
-                     * @return Format 生成的音频格式，默认pcm，目前支持的格式列表：流式：[pcm]，非流式 [pcm，wav]
+                     * 获取生成的音频格式
+
+- TextToSpeech流式接口
+
+ 支持 pcm, 默认: pcm
+
+- TextToSpeech非流式接口
+
+ 支持 pcm,wav,  默认: pcm
+                     * @return Format 生成的音频格式
+
+- TextToSpeech流式接口
+
+ 支持 pcm, 默认: pcm
+
+- TextToSpeech非流式接口
+
+ 支持 pcm,wav,  默认: pcm
                      * 
                      */
                     std::string GetFormat() const;
 
                     /**
-                     * 设置生成的音频格式，默认pcm，目前支持的格式列表：流式：[pcm]，非流式 [pcm，wav]
-                     * @param _format 生成的音频格式，默认pcm，目前支持的格式列表：流式：[pcm]，非流式 [pcm，wav]
+                     * 设置生成的音频格式
+
+- TextToSpeech流式接口
+
+ 支持 pcm, 默认: pcm
+
+- TextToSpeech非流式接口
+
+ 支持 pcm,wav,  默认: pcm
+                     * @param _format 生成的音频格式
+
+- TextToSpeech流式接口
+
+ 支持 pcm, 默认: pcm
+
+- TextToSpeech非流式接口
+
+ 支持 pcm,wav,  默认: pcm
                      * 
                      */
                     void SetFormat(const std::string& _format);
@@ -68,15 +100,27 @@ namespace TencentCloud
                     bool FormatHasBeenSet() const;
 
                     /**
-                     * 获取采样率，默认24000， 可选16000, 24000 
-                     * @return SampleRate 采样率，默认24000， 可选16000, 24000 
+                     * 获取生成的音频采样率，默认24000
+可选
+- 16000
+- 24000 
+                     * @return SampleRate 生成的音频采样率，默认24000
+可选
+- 16000
+- 24000 
                      * 
                      */
                     uint64_t GetSampleRate() const;
 
                     /**
-                     * 设置采样率，默认24000， 可选16000, 24000 
-                     * @param _sampleRate 采样率，默认24000， 可选16000, 24000 
+                     * 设置生成的音频采样率，默认24000
+可选
+- 16000
+- 24000 
+                     * @param _sampleRate 生成的音频采样率，默认24000
+可选
+- 16000
+- 24000 
                      * 
                      */
                     void SetSampleRate(const uint64_t& _sampleRate);
@@ -91,13 +135,24 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 生成的音频格式，默认pcm，目前支持的格式列表：流式：[pcm]，非流式 [pcm，wav]
+                     * 生成的音频格式
+
+- TextToSpeech流式接口
+
+ 支持 pcm, 默认: pcm
+
+- TextToSpeech非流式接口
+
+ 支持 pcm,wav,  默认: pcm
                      */
                     std::string m_format;
                     bool m_formatHasBeenSet;
 
                     /**
-                     * 采样率，默认24000， 可选16000, 24000 
+                     * 生成的音频采样率，默认24000
+可选
+- 16000
+- 24000 
                      */
                     uint64_t m_sampleRate;
                     bool m_sampleRateHasBeenSet;

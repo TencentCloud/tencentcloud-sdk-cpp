@@ -49,7 +49,8 @@ TableInfoNew::TableInfoNew() :
     m_sortRuleHasBeenSet(false),
     m_dbClusterInfoStructHasBeenSet(false),
     m_txhBackupExpireDayHasBeenSet(false),
-    m_syncTableInfoHasBeenSet(false)
+    m_syncTableInfoHasBeenSet(false),
+    m_shardNumHasBeenSet(false)
 {
 }
 
@@ -372,6 +373,16 @@ CoreInternalOutcome TableInfoNew::Deserialize(const rapidjson::Value &value)
         m_syncTableInfoHasBeenSet = true;
     }
 
+    if (value.HasMember("ShardNum") && !value["ShardNum"].IsNull())
+    {
+        if (!value["ShardNum"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TableInfoNew.ShardNum` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_shardNum = value["ShardNum"].GetUint64();
+        m_shardNumHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -618,6 +629,14 @@ void TableInfoNew::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_syncTableInfo.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_shardNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ShardNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_shardNum, allocator);
     }
 
 }
@@ -1085,5 +1104,21 @@ void TableInfoNew::SetSyncTableInfo(const SyncTableInfo& _syncTableInfo)
 bool TableInfoNew::SyncTableInfoHasBeenSet() const
 {
     return m_syncTableInfoHasBeenSet;
+}
+
+uint64_t TableInfoNew::GetShardNum() const
+{
+    return m_shardNum;
+}
+
+void TableInfoNew::SetShardNum(const uint64_t& _shardNum)
+{
+    m_shardNum = _shardNum;
+    m_shardNumHasBeenSet = true;
+}
+
+bool TableInfoNew::ShardNumHasBeenSet() const
+{
+    return m_shardNumHasBeenSet;
 }
 

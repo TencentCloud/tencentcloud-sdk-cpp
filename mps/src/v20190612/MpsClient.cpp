@@ -7290,6 +7290,56 @@ MpsClient::StopStreamLinkFlowOutcomeCallable MpsClient::StopStreamLinkFlowCallab
     return prom->get_future();
 }
 
+MpsClient::TextTranslationOutcome MpsClient::TextTranslation(const TextTranslationRequest &request)
+{
+    auto outcome = MakeRequest(request, "TextTranslation");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        TextTranslationResponse rsp = TextTranslationResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return TextTranslationOutcome(rsp);
+        else
+            return TextTranslationOutcome(o.GetError());
+    }
+    else
+    {
+        return TextTranslationOutcome(outcome.GetError());
+    }
+}
+
+void MpsClient::TextTranslationAsync(const TextTranslationRequest& request, const TextTranslationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const TextTranslationRequest&;
+    using Resp = TextTranslationResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "TextTranslation", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MpsClient::TextTranslationOutcomeCallable MpsClient::TextTranslationCallable(const TextTranslationRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<TextTranslationOutcome>>();
+    TextTranslationAsync(
+    request,
+    [prom](
+        const MpsClient*,
+        const TextTranslationRequest&,
+        TextTranslationOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 MpsClient::WithdrawsWatermarkOutcome MpsClient::WithdrawsWatermark(const WithdrawsWatermarkRequest &request)
 {
     auto outcome = MakeRequest(request, "WithdrawsWatermark");

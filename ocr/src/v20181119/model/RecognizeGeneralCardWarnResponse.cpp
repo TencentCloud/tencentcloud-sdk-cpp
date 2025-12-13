@@ -34,7 +34,8 @@ RecognizeGeneralCardWarnResponse::RecognizeGeneralCardWarnResponse() :
     m_screenshotHasBeenSet(false),
     m_coverHasBeenSet(false),
     m_overlapHasBeenSet(false),
-    m_watermarkHasBeenSet(false)
+    m_watermarkHasBeenSet(false),
+    m_electronHasBeenSet(false)
 {
 }
 
@@ -252,6 +253,23 @@ CoreInternalOutcome RecognizeGeneralCardWarnResponse::Deserialize(const string &
         m_watermarkHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Electron") && !rsp["Electron"].IsNull())
+    {
+        if (!rsp["Electron"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `Electron` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_electron.Deserialize(rsp["Electron"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_electronHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -358,6 +376,15 @@ string RecognizeGeneralCardWarnResponse::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_watermark.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_electronHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Electron";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_electron.ToJsonObject(value[key.c_str()], allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -480,6 +507,16 @@ GeneralCardWarnInfo RecognizeGeneralCardWarnResponse::GetWatermark() const
 bool RecognizeGeneralCardWarnResponse::WatermarkHasBeenSet() const
 {
     return m_watermarkHasBeenSet;
+}
+
+GeneralCardWarnInfo RecognizeGeneralCardWarnResponse::GetElectron() const
+{
+    return m_electron;
+}
+
+bool RecognizeGeneralCardWarnResponse::ElectronHasBeenSet() const
+{
+    return m_electronHasBeenSet;
 }
 
 

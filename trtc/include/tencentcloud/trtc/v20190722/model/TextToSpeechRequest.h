@@ -150,15 +150,15 @@ namespace TencentCloud
                     bool APIKeyHasBeenSet() const;
 
                     /**
-                     * 获取TTS的模型：flow_01_turbo，flow_01_ex
-                     * @return Model TTS的模型：flow_01_turbo，flow_01_ex
+                     * 获取TTS的模型，当前固定为：flow_01_turbo
+                     * @return Model TTS的模型，当前固定为：flow_01_turbo
                      * 
                      */
                     std::string GetModel() const;
 
                     /**
-                     * 设置TTS的模型：flow_01_turbo，flow_01_ex
-                     * @param _model TTS的模型：flow_01_turbo，flow_01_ex
+                     * 设置TTS的模型，当前固定为：flow_01_turbo
+                     * @param _model TTS的模型，当前固定为：flow_01_turbo
                      * 
                      */
                     void SetModel(const std::string& _model);
@@ -171,15 +171,15 @@ namespace TencentCloud
                     bool ModelHasBeenSet() const;
 
                     /**
-                     * 获取语言参数，默认为空， 参考： (ISO 639-1) 
-                     * @return Language 语言参数，默认为空， 参考： (ISO 639-1) 
+                     * 获取 需要合成的语言（ISO 639-1），支持 zh（中文）、en（英文）、yue（粤语）、ja（日语）、ko（韩语），默认自动识别
+                     * @return Language  需要合成的语言（ISO 639-1），支持 zh（中文）、en（英文）、yue（粤语）、ja（日语）、ko（韩语），默认自动识别
                      * 
                      */
                     std::string GetLanguage() const;
 
                     /**
-                     * 设置语言参数，默认为空， 参考： (ISO 639-1) 
-                     * @param _language 语言参数，默认为空， 参考： (ISO 639-1) 
+                     * 设置 需要合成的语言（ISO 639-1），支持 zh（中文）、en（英文）、yue（粤语）、ja（日语）、ko（韩语），默认自动识别
+                     * @param _language  需要合成的语言（ISO 639-1），支持 zh（中文）、en（英文）、yue（粤语）、ja（日语）、ko（韩语），默认自动识别
                      * 
                      */
                     void SetLanguage(const std::string& _language);
@@ -224,13 +224,13 @@ namespace TencentCloud
                     bool m_aPIKeyHasBeenSet;
 
                     /**
-                     * TTS的模型：flow_01_turbo，flow_01_ex
+                     * TTS的模型，当前固定为：flow_01_turbo
                      */
                     std::string m_model;
                     bool m_modelHasBeenSet;
 
                     /**
-                     * 语言参数，默认为空， 参考： (ISO 639-1) 
+                     *  需要合成的语言（ISO 639-1），支持 zh（中文）、en（英文）、yue（粤语）、ja（日语）、ko（韩语），默认自动识别
                      */
                     std::string m_language;
                     bool m_languageHasBeenSet;

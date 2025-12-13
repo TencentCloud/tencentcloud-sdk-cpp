@@ -658,6 +658,27 @@ namespace TencentCloud
                      */
                     bool SyncTableInfoHasBeenSet() const;
 
+                    /**
+                     * 获取表格分片数量
+                     * @return ShardNum 表格分片数量
+                     * 
+                     */
+                    uint64_t GetShardNum() const;
+
+                    /**
+                     * 设置表格分片数量
+                     * @param _shardNum 表格分片数量
+                     * 
+                     */
+                    void SetShardNum(const uint64_t& _shardNum);
+
+                    /**
+                     * 判断参数 ShardNum 是否已赋值
+                     * @return ShardNum 是否已赋值
+                     * 
+                     */
+                    bool ShardNumHasBeenSet() const;
+
                 private:
 
                     /**
@@ -833,6 +854,12 @@ namespace TencentCloud
                      */
                     SyncTableInfo m_syncTableInfo;
                     bool m_syncTableInfoHasBeenSet;
+
+                    /**
+                     * 表格分片数量
+                     */
+                    uint64_t m_shardNum;
+                    bool m_shardNumHasBeenSet;
 
                 };
             }

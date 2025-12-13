@@ -220,6 +220,20 @@ SocialSecurityCard：社保卡
                      */
                     bool WatermarkHasBeenSet() const;
 
+                    /**
+                     * 获取是否电子证照（目前仅支持电子身份证、电子营业执照识别
+                     * @return Electron 是否电子证照（目前仅支持电子身份证、电子营业执照识别
+                     * 
+                     */
+                    GeneralCardWarnInfo GetElectron() const;
+
+                    /**
+                     * 判断参数 Electron 是否已赋值
+                     * @return Electron 是否已赋值
+                     * 
+                     */
+                    bool ElectronHasBeenSet() const;
+
                 private:
 
                     /**
@@ -298,6 +312,12 @@ SocialSecurityCard：社保卡
                      */
                     GeneralCardWarnInfo m_watermark;
                     bool m_watermarkHasBeenSet;
+
+                    /**
+                     * 是否电子证照（目前仅支持电子身份证、电子营业执照识别
+                     */
+                    GeneralCardWarnInfo m_electron;
+                    bool m_electronHasBeenSet;
 
                 };
             }

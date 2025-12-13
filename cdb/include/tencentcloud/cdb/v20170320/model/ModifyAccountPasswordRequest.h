@@ -109,21 +109,21 @@ namespace TencentCloud
                     /**
                      * 获取是否跳过校验密码复杂度
                      * @return SkipValidatePassword 是否跳过校验密码复杂度
-                     * 
+                     * @deprecated
                      */
                     bool GetSkipValidatePassword() const;
 
                     /**
                      * 设置是否跳过校验密码复杂度
                      * @param _skipValidatePassword 是否跳过校验密码复杂度
-                     * 
+                     * @deprecated
                      */
                     void SetSkipValidatePassword(const bool& _skipValidatePassword);
 
                     /**
                      * 判断参数 SkipValidatePassword 是否已赋值
                      * @return SkipValidatePassword 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool SkipValidatePasswordHasBeenSet() const;
 
